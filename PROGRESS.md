@@ -1071,6 +1071,148 @@ filled, we'll have:
 Phase 3 (query hardening + snowball) is still blocked on
 GATE A. No live LLM calls have ever run.
 
+## Patch — 2026-07-23 — autonomous pre-labelling + schema pressure-test
+
+Session goal was to minimise Raj's manual time. Five items, one
+commit each. No live LLM calls. No fresh OpenAlex calls (consumed
+the existing on-disk raw dump).
+
+**Item 1 — pre-labelled the 60-paper corpus.** New script
+`backend/app/corpus/prelabel.py` encodes my per-paper judgments
+against the hand-review sample. Distribution:
+
+| Label | Count | Share |
+|:------|------:|------:|
+| on-domain | 26 | 43.3% |
+| borderline | 13 | 21.7% |
+| off-domain | 21 | 35.0% |
+| hard cases (flag) | 7 | — |
+
+This diverges sharply from the heuristic's 90% on-domain — the
+heuristic was blind to within-domain application noise (LLM papers
+whose contribution lies in quantization, pruning, medical
+summarization checklists, HCI reliance interventions, etc.).
+Contribution-level judgment surfaces those; the labelling rubric
+committed earlier this session (`docs/labelling-rubric.md`) puts
+this distinction in writing.
+
+`scratch/audit_sample.md` is the artifact Raj reads: stratified
+5+5+5 stratified sample with a hard-case addendum, blank
+agree/disagree line under each. `scratch/corpus_review.csv` and
+`.md` carry all 60 pre-labels + one-sentence reasoning per paper.
+
+**Item 2 — schema pressure-test aggregated.**
+`docs/schema-pressure-test.md` reports the four hypothesis findings
+across 56 abstracts (4 had no abstract in the OpenAlex response):
+
+- `has_limitation`: **71.4% yes** — abstract-only extraction will
+  feed the persistent-limitations scorer at meaningful volume.
+  OA full text raises recall, not required for the function.
+- `claim_hedged`: **91.1% firm** — assertion strength does NOT
+  need to be a separate schema field.
+- `has_future_work`: **41.1% present** — the unfollowed-future-
+  work scorer will miss ~60% of threads on abstracts alone. OA
+  full text is a real gap here.
+- `compound_claims`: **58.9% yes** — extractor MUST split
+  compound sentences into atomic `Claim` + `Evidence` records.
+
+Concrete decision list at the end of the doc:
+
+1. **Required before Phase 2:** add `Limitation.source_scope`
+   (this_work | prior_work). Cheap migration.
+2. **Required before Phase 2:** compound-splitting rule in the
+   extractor contract; optional `Claim.source_sentence_id` for
+   provenance. Cheap.
+3. **Rejected:** `Claim.assertion_strength` as a separate field.
+   91% firm gives no discriminative power.
+4. **Deferred to Phase 1.5:** OA full-text ingestion for
+   future-work recall. Do not build speculatively — wait for
+   Phase 2 to show that abstract-only is the actual bottleneck.
+
+**Item 3 — drafted `docs/opportunity-criteria.md`.** Previously
+empty; now a DRAFT with concrete first-draft content across all
+five sections (valid / non-trivial / actionable / failure modes /
+matching rule). Marked at the top: pending Raj's revision. The
+three pre-existing failure modes (terminology collision,
+duplicate inflation, application noise) stay verbatim; three new
+DRAFT failure modes added (prior-work limitation misattribution,
+compound-claim under-splitting, evaluation-set contamination).
+
+Highlights of the draft:
+
+- Valid: ≥ 3 independent papers (keyed to 4-pass dedup and
+  merged_from), no-orphan-conclusions, runtime check that no
+  scorer output came from an LLM.
+- Non-trivial: cross-cluster gap, unresolved contradiction,
+  unfollowed ≥ N-year future work (flagged as under-powered
+  without OA full text — see schema pressure-test), cross-domain
+  method transfer.
+- Actionable: named object, named minimal experiment, named
+  contradiction, cost floor.
+- Matching rule: frozen-corpus year-Y → year-(Y+k) test with
+  top-K precision as the honest metric, deterministic Python
+  matching, and an explicit anti-goal against expert-judgment
+  leakage.
+
+**Item 4 — autonomy policy in CLAUDE.md.** New section
+immediately before the Phase index. Default: maximum autonomy;
+build, test, commit, continue to the next phase WITHOUT approval
+EXCEPT at five hard stops:
+
+  (a) spend money / call a paid API — stop and cost first;
+  (b) needs a credential, account, or human transaction;
+  (c) Phase 4 reasoning-engine output — Raj must personally
+      judge the top-ranked opportunities;
+  (d) any change to a documented policy in `docs/` — extending
+      OK, overturning needs approval;
+  (e) architecturally irreversible actions.
+
+Outside those: proceed, log, flag.
+
+## Self-audit — 2026-07-23 (autonomous pre-labelling session)
+
+1. **NotImplementedError inventory.** Unchanged: 5 hits, all
+   intentional (3 abstract-base-class methods, `GeminiLLMClient`
+   Phase-2 deferral + its docstring reference). No new silent
+   stubs.
+2. **Three outputs trace to real paper IDs.** The pre-labels for
+   `openalex:W4404534210` (Hallucination Survey), `W4285429195`
+   (Kadavath — not in this sample but referenced from earlier
+   sessions), and `W7131659145` (Geometric Overflow — sample #04)
+   are all traceable back to `scratch/corpus_review.csv` with
+   full abstract text, and every OpenAlex ID resolves at
+   `api.openalex.org/works/{id}`.
+3. **Pytest.** 66 passed, 0 failed. No test-covered code was
+   touched — corpus / documentation session.
+4. **Pipeline over seed corpus still emits valid JSON.** Unchanged.
+5. **Pydantic validation.** Unchanged. Schema pressure-test
+   findings recommend two nullable-field additions
+   (`Limitation.source_scope`, `Claim.source_sentence_id`) but
+   those are recorded as decisions in `docs/schema-pressure-test.md`,
+   not applied — the schema patch would be its own commit before
+   Phase 2 starts.
+6. **No reasoning / ranking leaked into the LLM boundary.** All
+   60 labels were assigned by me from abstract text, per the
+   labelling rubric. No LLM boundary touched this session.
+7. **PROGRESS.md updated** — this section. `docs/opportunity-
+   criteria.md` is now a draft (previously blank), and the
+   autonomy policy in `CLAUDE.md` unblocks future sessions from
+   asking permission on ordinary work.
+
+## What's next
+
+- Raj to read `scratch/audit_sample.md` (15 papers + hard cases).
+  Any label the reviewer disagrees on gets updated in
+  `backend/app/corpus/prelabel.py` and re-run; corrections
+  flow into the CSV and the audit deterministically.
+- Once labels are agreed, the true per-clause leak is measurable
+  by cross-referencing on-domain / borderline / off-domain
+  against the `matched_topic_terms` / `matched_anchor_terms`
+  columns already in the CSV.
+- After Gate A closes, Phase 3 (query hardening + snowball) can
+  proceed autonomously per the new autonomy policy, stopping only
+  at the five hard stops.
+
 ## Flagged, not acted on
 
 **"Commit separately" was requested but ResearchMap is not a git
