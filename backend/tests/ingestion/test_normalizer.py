@@ -466,3 +466,91 @@ def test_is_arxiv_doi_recognises_the_prefix():
     assert _is_arxiv_doi("10.1162/tacl_a_00407") is False
     assert _is_arxiv_doi(None) is False
     assert _is_arxiv_doi("") is False
+
+
+# --- Pass 4: arXiv-DOI-aware collapse ----------------------------------
+
+
+def test_pass4_collapses_arxiv_and_non_arxiv_doi_pair():
+    """Positive case: arXiv DOI + non-arXiv DOI, same title + shared
+    author, ANY year gap → merge with journal surviving."""
+    arxiv = _p("openalex:P_arxiv", source=Source.OPENALEX,
+               doi="10.48550/arxiv.1706.03762",
+               title="Attention Is All You Need", year=2017,
+               authors=["Ashish Vaswani", "Noam Shazeer"], citations_in_count=80)
+    journal = _p("openalex:P_neurips", source=Source.OPENALEX,
+                 doi="10.5555/neurips.2017.1",
+                 title="Attention Is All You Need", year=2018,
+                 authors=["A. Vaswani", "N. Shazeer"], citations_in_count=100_000,
+                 venue="NeurIPS")
+    out = deduplicate([arxiv, journal])
+    assert len(out) == 1
+    assert out[0].id == "openalex:P_neurips"
+    assert out[0].merged_from == ["openalex:P_arxiv"]
+
+
+def test_pass4_collapse_survives_wide_year_gap():
+    """Pass 4 has no year-window constraint (unlike pass 3). Even a
+    5-year gap merges if the arXiv/non-arXiv DOI + author signal holds."""
+    arxiv = _p("openalex:W_arxiv", source=Source.OPENALEX,
+               doi="10.48550/arxiv.1900.0001",
+               title="Long Delay Title", year=2019,
+               authors=["Long Wait"])
+    journal = _p("openalex:W_journal", source=Source.OPENALEX,
+                 doi="10.1234/late/2024",
+                 title="Long Delay Title", year=2024,
+                 authors=["Long Wait"], venue="Late Journal")
+    out = deduplicate([arxiv, journal])
+    assert len(out) == 1
+    assert out[0].id == "openalex:W_journal"
+
+
+def test_pass4_does_not_collapse_when_authors_disjoint():
+    """arXiv/non-arXiv DOI + same title but DIFFERENT authors — different
+    people writing separate papers with the same title, do NOT merge."""
+    arxiv = _p("openalex:W_arxiv", source=Source.OPENALEX,
+               doi="10.48550/arxiv.2020.001",
+               title="Generic Survey Title", year=2020,
+               authors=["Alice Alpha"])
+    journal = _p("openalex:W_journal", source=Source.OPENALEX,
+                 doi="10.1234/other/2021",
+                 title="Generic Survey Title", year=2021,
+                 authors=["Bob Beta"], venue="Journal")
+    out = deduplicate([arxiv, journal])
+    assert len(out) == 2
+
+
+def test_pass4_does_not_collapse_two_arxiv_dois():
+    """Pass 4 requires EXACTLY one side to be arXiv. Two arXiv DOIs =
+    two preprints; neither is canonical. To isolate pass 4 we use a
+    year gap wider than CROSS_YEAR_WINDOW so passes 2+3 don't fire
+    and the outcome depends entirely on pass 4."""
+    arxiv_a = _p("openalex:W_a", source=Source.OPENALEX,
+                 doi="10.48550/arxiv.2020.001",
+                 title="Two Preprints Same Title", year=2020,
+                 authors=["Shared Author"])
+    arxiv_far = _p("openalex:W_far", source=Source.OPENALEX,
+                   doi="10.48550/arxiv.2010.002",
+                   title="Two Preprints Same Title", year=2010,
+                   authors=["Shared Author"])
+    out = deduplicate([arxiv_a, arxiv_far])
+    # Pass 1 misses (different DOI), pass 2 misses (different year),
+    # pass 3 misses (year gap > CROSS_YEAR_WINDOW), pass 4 misses
+    # (both arXiv). Both records survive.
+    assert len(out) == 2
+
+
+def test_pass4_does_not_collapse_when_titles_differ():
+    """arXiv-DOI + non-arXiv-DOI + shared authors, but different titles.
+    Almost certainly two different papers by the same author — do NOT
+    merge."""
+    arxiv = _p("openalex:W_arxiv", source=Source.OPENALEX,
+               doi="10.48550/arxiv.2020.001",
+               title="First Paper by Author", year=2020,
+               authors=["Prolific Author"])
+    journal = _p("openalex:W_journal", source=Source.OPENALEX,
+                 doi="10.1234/journal.2021.1",
+                 title="Second Paper by Author", year=2021,
+                 authors=["Prolific Author"], venue="Journal")
+    out = deduplicate([arxiv, journal])
+    assert len(out) == 2

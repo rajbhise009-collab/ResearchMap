@@ -760,10 +760,125 @@ but locked in so Phase 2 doesn't invent policy at the wrong time. Key
 promise: no entity attached to a merged-away paper is silently
 dropped.
 
+## Patch — 2026-07-22 — arXiv-DOI-aware pass (change B)
+
+New pass 4 in `deduplicate()`. Fires when: one record has an arXiv
+DOI (`10.48550/arxiv.*` prefix — case-insensitive), the other has a
+non-arXiv DOI, both have the same normalized title, and there's at
+least one shared normalized last-name. **No year-window constraint**
+— the arXiv/non-arXiv DOI pair is already strong evidence, so long
+preprint→journal lags (e.g. 5-year gaps) collapse too.
+
+**Deliberately not merged by pass 4:**
+
+- arXiv-DOI + different authors → different people happen to have
+  used the same title.
+- Two arXiv DOIs → both preprints, neither is canonical; refuse.
+- arXiv-DOI + different title → almost certainly two papers by the
+  same prolific author.
+
+**Not in scope, deliberately deferred:** fuzzy / edit-distance title
+matching. Would add real false-positive surface without a scoring
+model to defend against it — waiting for that until the reasoning
+engine has an evaluator that can tell us the trade-off matters.
+
+## Live-call proof — 2026-07-22 (post-policy patch)
+
+Re-ran dedup against the v3 25-paper sample. **Before: 25. After: 23.**
+Same collapses as prior patch (both already handled by pass 3):
+
+- `openalex:W3162385798` → `openalex:W3199958362` (Jiang, 2020 arXiv
+  → 2021 TACL). Survivor's `merged_from = ["openalex:W3162385798"]`.
+- `openalex:W4388585881` → `openalex:W4404534210` (Hallucination
+  Survey, 2023 arXiv → 2024 journal). Survivor's `merged_from =
+  ["openalex:W4388585881"]`.
+
+Also verified order-independence on the real sample: reversing the
+25-paper input list produces a byte-identical output list (compared
+via `model_dump()`). That's the property the code change guarantees;
+the live sample confirms it in the wild.
+
+**NOT characterised as a rate.** This sample is known ~40% off-target
+from the earlier OR-matching issue and has 25 papers — nowhere near a
+population estimate. The value here is that the code works on real
+API data, not that we've measured how often duplicates occur.
+
+## Self-audit — 2026-07-22 (post-policy patch)
+
+1. **NotImplementedError inventory.** Unchanged: 5 hits, all
+   intentional (3 abstract-base-class methods, `GeminiLLMClient`
+   Phase-2 deferral + its docstring reference). No new silent stubs.
+2. **Three outputs trace to real paper IDs.** `openalex:W3199958362`,
+   `openalex:W4404534210`, and the untouched `openalex:W4285429195`
+   (Kadavath) all resolve at `api.openalex.org/works/{id}` with
+   matching titles/years; the two merged records both carry a
+   `merged_from` pointer to a second real OpenAlex ID.
+3. **Pytest.** 62 passed, 0 failed (+13 tests over the previous batch).
+   New coverage:
+   - `test_survivor_prefers_non_arxiv_doi_over_arxiv`
+   - `test_survivor_falls_through_to_lex_lower_id_on_total_tie`
+   - `test_dedup_is_order_independent` (the killer test)
+   - `test_merged_from_records_the_collapsed_id`
+   - `test_merged_from_accumulates_transitively_over_chain`
+   - `test_merged_from_never_includes_survivor_own_id`
+   - `test_citations_merge_policy_is_max`
+   - `test_pass4_collapses_arxiv_and_non_arxiv_doi_pair`
+   - `test_pass4_collapse_survives_wide_year_gap`
+   - `test_pass4_does_not_collapse_when_authors_disjoint`
+   - `test_pass4_does_not_collapse_two_arxiv_dois`
+   - `test_pass4_does_not_collapse_when_titles_differ`
+   - `test_is_arxiv_doi_recognises_the_prefix`
+4. **Pipeline over seed corpus still emits valid JSON.** Unchanged;
+   seed corpus has no arXiv DOIs and no cross-year duplicates.
+5. **Pydantic validation.** New `merged_from` field is a
+   `list[NonEmptyStr]` with `default_factory=list`; existing seed
+   JSON files (which lack the field) still validate via the default.
+   No schema regression.
+6. **No reasoning / ranking leaked into the LLM boundary.** Survivor
+   selection is a pure function of three explicit metadata tiers +
+   a lex tiebreak. `CITATIONS_MERGE_POLICY` is a merge rule, not a
+   ranking judgment. `LLMClient` interface still exposes only
+   `.extract()`.
+7. **PROGRESS.md updated** — this section. `docs/merge-policy.md`
+   is the source of truth for the policy; PROGRESS.md links to it
+   rather than duplicating the field table.
 
 ## Next step
 
-The arXiv-DOI-aware pass (pass 4) is the natural next patch. Also
-deferred: fixing the `by_id` internal key vs `merged.id` inconsistency
-after a merge, and re-generating the seed corpus so `merged_from`
-lands on disk.
+Nothing autonomous. Awaiting explicit call on:
+
+1. Whether to do the seed + citation snowball redesign as a **Phase
+   1.5** before Phase 2.
+2. Whether to proceed to Phase 2 extraction with the v3 keyword
+   corpus (64% strict hits, dedup + merge policy now solid) as a
+   smoke-test corpus.
+
+## Flagged, not acted on
+
+**"Commit separately" was requested but ResearchMap is not a git
+repo.** No `.git` in the project directory. I structured the two
+follow-ups as logically-independent change blocks (change A: merge
+policy + `merged_from` + order-independence + docs; change B: arXiv-
+DOI-aware pass 4) so they'd map cleanly to two commits if you
+`git init` here, but I did NOT initialise the repo or make any
+commits. Say the word and I'll init + commit both as separate
+commits with messages, or you can do it yourself.
+
+Also would want changed but not acting on:
+
+- The `by_id` internal key can differ from `merged.id` after a
+  merge where the loser was first-seen. Currently harmless (output
+  is `sorted(by_id.values())` and no downstream code reads the
+  key), but it's a latent inconsistency I'd rather clean up. Could
+  do this by rekeying `by_id[loser_id] → by_id[survivor_id]` at
+  merge time; low-risk but worth its own change.
+- The seed-corpus JSON files on disk don't carry the new
+  `merged_from` field (they were generated before it existed).
+  Currently harmless — `Paper.model_validate` fills the default —
+  but a stray `seed_generator` re-run would rewrite them all with
+  the field explicitly. Not a bug, worth normalising when
+  convenient.
+- Pass 2 (`same title, same year`) still has no author check — an
+  edge case for two truly distinct same-titled papers in the same
+  year. Not observed in the wild yet, but worth extending to
+  require author overlap for symmetry with pass 3 / pass 4.

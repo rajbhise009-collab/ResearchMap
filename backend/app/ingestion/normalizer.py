@@ -8,6 +8,9 @@ Dedup order (deterministic, most-specific first):
   2. Same (normalized-title, year) tuple → merge.
   3. Same normalized title, year within ±CROSS_YEAR_WINDOW, AND
      at least one shared normalized last-name → merge.
+  4. One record has an arXiv DOI (10.48550/arxiv.*) and the other has
+     a non-arXiv DOI, same normalized title, AND at least one shared
+     normalized last-name → merge. Fires regardless of year gap.
 
 The whole point of these passes is scoring integrity — two records for
 the same work would fake independent replication and inflate any
@@ -375,13 +378,16 @@ def _merge(survivor: Paper, loser: Paper) -> Paper:
 
 
 def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
-    """Collapse duplicate Papers via three deterministic passes.
+    """Collapse duplicate Papers via four deterministic passes.
 
     Passes (most-specific first):
       1. Same normalized DOI.
       2. Same (normalized-title, year).
       3. Same normalized title, |Δyear| ≤ CROSS_YEAR_WINDOW,
          at least one shared normalized last-name.
+      4. arXiv-DOI ↔ non-arXiv-DOI, same normalized title, ≥1 shared
+         normalized last-name. No year gap constraint — the DOI pair
+         is already strong evidence.
 
     Output is sorted by `id` so the same input in any order yields
     byte-identical results.
@@ -426,6 +432,26 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
                     if delta == 0 or delta > CROSS_YEAR_WINDOW:
                         # Same-year handled by pass 2; too-far apart is
                         # too risky to merge on title+author alone.
+                        continue
+                    if _authors_overlap(paper.authors, candidate.authors):
+                        match_id = candidate_id
+                        break
+
+        # Pass 4 — arXiv/non-arXiv DOI pair + title + shared author.
+        # Catches preprint/journal collapses even when the year gap
+        # exceeds CROSS_YEAR_WINDOW.
+        if match_id is None and paper.doi:
+            norm_t = normalize_title(paper.title)
+            if norm_t:
+                paper_is_arxiv = _is_arxiv_doi(paper.doi)
+                for candidate_id in title_index.get(norm_t, []):
+                    candidate = by_id[candidate_id]
+                    if not candidate.doi:
+                        continue
+                    candidate_is_arxiv = _is_arxiv_doi(candidate.doi)
+                    # Exactly one side must be arXiv — otherwise this
+                    # pass adds no information beyond pass 1/2/3.
+                    if paper_is_arxiv == candidate_is_arxiv:
                         continue
                     if _authors_overlap(paper.authors, candidate.authors):
                         match_id = candidate_id
