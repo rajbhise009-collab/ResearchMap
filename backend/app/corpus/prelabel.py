@@ -71,17 +71,19 @@ JUDGMENTS: dict[int, dict] = {
     1: dict(on="off-domain", lim="no", hedg="firm", fw="none", comp="no", hard=False,
             why="Contribution is a quantization compression toolkit; 'calibration' here means the calibration dataset used in post-training quantization, not confidence calibration."),
     # 02. Rationalizing predictions by adversarial information calibration
-    2: dict(on="borderline", lim="unknown", hedg="unknown", fw="unknown", comp="unknown", hard=True,
-            why="No abstract in response; title suggests calibration is central to the method but I cannot verify whether the contribution is calibration of confidence or calibration of information for a downstream classification task."),
+    # (abstract recovered from Semantic Scholar; label updated to off-domain)
+    2: dict(on="off-domain", lim="yes", hedg="firm", fw="none", comp="yes", hard=False,
+            why="Contribution is an adversarial two-model framework for extracting rationales (subphrase-level feature selection) for classifier predictions; 'information calibration' is the method name but 'calibration' here means aligning information between two models, not confidence calibration."),
     # 03. L2CEval
     3: dict(on="borderline", lim="yes", hedg="mixed", fw="explicit", comp="yes", hard=False,
             why="Contribution is a benchmark for language-to-code generation across 7 tasks; confidence calibration is one substantive assessment among many, not the main object of study."),
     # 04. Hallucination as Geometric Overflow
     4: dict(on="on-domain", lim="no", hedg="firm", fw="implied", comp="yes", hard=False,
             why="Contribution is a formal framework distinguishing hallucination as boundary violation from probabilistic miscalibration; the primary object of study is hallucination and its taxonomy."),
-    # 05. Consistency calibration for embedding generation
-    5: dict(on="borderline", lim="unknown", hedg="unknown", fw="unknown", comp="unknown", hard=True,
-            why="No abstract; title says 'consistency calibration' for task-specific embeddings, so calibration is in the method name but likely as an alignment technique for embeddings rather than confidence calibration."),
+    # 05. EGO-PLM via consistency calibration
+    # (abstract recovered from Semantic Scholar; label updated to off-domain)
+    5: dict(on="off-domain", lim="yes", hedg="firm", fw="none", comp="yes", hard=False,
+            why="Contribution is EGO-PLM, a framework using PLMs as task-specific embedding generators via adversarial alignment of pre-defined and task-specific objectives; 'consistency calibration' is the alignment technique's name, not confidence calibration."),
     # 06. Gradient-based Language Model Pruner
     6: dict(on="off-domain", lim="no", hedg="firm", fw="none", comp="no", hard=False,
             why="Contribution is a gradient-based LLM pruning method; 'calibration samples' is jargon for the small dataset used to compute pruning statistics, not confidence calibration."),
@@ -128,8 +130,10 @@ JUDGMENTS: dict[int, dict] = {
     20: dict(on="off-domain", lim="yes", hedg="firm", fw="implied", comp="yes", hard=False,
              why="Contribution is a comprehensive quantization evaluation across model scales; 'hallucination detection' appears as one downstream task the quantized models are evaluated on, not as the paper's subject."),
     # 21. Uncertainty-aware response length perception
+    # (no abstract recoverable from Semantic Scholar or arXiv; EXCLUDED from
+    # extraction corpus per recovery manifest)
     21: dict(on="borderline", lim="unknown", hedg="unknown", fw="unknown", comp="unknown", hard=True,
-             why="No abstract; title says 'uncertainty-aware' but the primary object appears to be response length perception rather than uncertainty quantification per se."),
+             why="No abstract available from OpenAlex, Semantic Scholar, or arXiv; excluded from the extraction corpus. Title alone is insufficient to place — uncertainty-aware modifier could apply to a UQ contribution or an application paper using UQ as a tool."),
     # 22. LLMs are not Fair Evaluators
     22: dict(on="borderline", lim="yes", hedg="firm", fw="implied", comp="yes", hard=True,
              why="Contribution is a three-part calibration framework fixing LLM-as-judge order bias — 'calibration' is central and the paper genuinely proposes calibration methods, but for evaluator bias rather than confidence calibration, which straddles the rubric."),
@@ -224,8 +228,9 @@ JUDGMENTS: dict[int, dict] = {
     52: dict(on="off-domain", lim="no", hedg="firm", fw="none", comp="yes", hard=False,
              why="Record is mis-titled 'Contrastive Decoding' but the abstract describes a categorical-theory unification of LLM inference methods; 'Conformal calibration snapshots' is one item in a reproducibility log, not the paper's subject."),
     # 53. Trustworthy Summarization via UQ
-    53: dict(on="borderline", lim="unknown", hedg="unknown", fw="unknown", comp="unknown", hard=True,
-             why="No abstract; title suggests UQ for summarization is central but without the abstract I cannot verify whether UQ is the primary contribution or one of several risk-awareness mechanisms."),
+    # (abstract recovered from arXiv; label remains borderline)
+    53: dict(on="borderline", lim="yes", hedg="firm", fw="none", comp="yes", hard=True,
+             why="Contribution is a summarization LLM framework integrating Bayesian UQ and a risk-aware loss; UQ is substantively half the framework but the paper's headline object is trustworthy summarization, not UQ per se — a genuinely close borderline call."),
     # 54. Reinforced Calibration for political bias
     54: dict(on="off-domain", lim="yes", hedg="firm", fw="none", comp="no", hard=False,
              why="Contribution is an RL framework for mitigating political bias in LM generation; 'reinforced calibration' is the method name but 'calibration' here means reward-weighted regeneration, not confidence calibration."),
@@ -272,10 +277,10 @@ assert len(JUDGMENTS) == 60, f"expected 60 judgments, got {len(JUDGMENTS)}"
 
 LIMITATION_SCOPE: dict[int, str] = {
     1:  "none",     # LLMC — no limitation stated
-    2:  "unknown",  # no abstract
+    2:  "prior",    # recovered; "one disadvantage of these works" — prior methods
     3:  "both",     # L2CEval — prior gap + own findings on LLM failures
     4:  "none",
-    5:  "unknown",  # no abstract
+    5:  "prior",    # recovered; "an inherent challenge of this approach" — prior
     6:  "none",
     7:  "none",
     8:  "prior",    # "existing UQ methods have fundamental limitations"
@@ -323,7 +328,7 @@ LIMITATION_SCOPE: dict[int, str] = {
     50: "both",     # "interventions lack rigorous evaluation" + own findings
     51: "both",     # "can limit utility" + own findings on LM problems
     52: "none",
-    53: "unknown",
+    53: "both",     # recovered; "avoid overconfident predictions" (own) + prior gap
     54: "prior",    # "can be politically biased" — motivating subject prop
     55: "own",      # survey duplicate of #23
     56: "prior",    # "reasons lead to high false-positive rates" of prior MIAs

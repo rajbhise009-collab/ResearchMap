@@ -1,0 +1,176 @@
+{
+  "generated_at": "2026-07-22T15:52:05.063069+00:00",
+  "sample_size": 200,
+  "openalex_missing_abstracts": 13,
+  "records": [
+    {
+      "openalex_id": "https://openalex.org/W4391826804",
+      "title": "SPeC: A Soft Prompt-Based Calibration on Performance Variability of Large Language Model in Clinical Notes Summarization",
+      "doi": "10.1016/j.jbi.2024.104606",
+      "attempts": {
+        "semantic_scholar": "hit"
+      },
+      "recovered_from": "semantic_scholar",
+      "recovered_abstract": "Electronic health records (EHRs) store an extensive array of patient information, encompassing medical histories, diagnoses, treatments, and test outcomes. These records are crucial for enabling healthcare providers to make well-informed decisions regarding patient care. Summarizing clinical notes further assists healthcare professionals in pinpointing potential health risks and making better-informed decisions. This process contributes to reducing errors and enhancing patient outcomes by ensuring providers have access to the most pertinent and current patient data. Recent research has shown that incorporating instruction prompts with large language models (LLMs) substantially boosts the efficacy of summarization tasks. However, we show that this approach also leads to increased performance variance, resulting in significantly distinct summaries even when instruction prompts share similar meanings. To tackle this challenge, we introduce a model-agnostic Soft Prompt-BasedCalibration (SPeC) pipeline that employs soft prompts to lower variance while preserving the advantages of prompt-based summarization. Experimental findings on multiple clinical note tasks and LLMs indicate that our method not only bolsters performance but also effectively regulates variance across different LLMs, providing a more consistent and reliable approach to summarizing critical medical information.",
+      "excluded": false,
+      "exclusion_reason": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4404590647",
+      "title": "chatHPC: Empowering HPC users with large language models",
+      "doi": "10.1007/s11227-024-06637-1",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "miss"
+      },
+      "recovered_from": null,
+      "recovered_abstract": null,
+      "excluded": true,
+      "exclusion_reason": "no abstract in OpenAlex; not recovered from Semantic Scholar or arXiv"
+    },
+    {
+      "openalex_id": "https://openalex.org/W7117319847",
+      "title": "HaluGNN: Hallucination detection in large language models using graph neural network",
+      "doi": "10.1016/j.eswa.2025.130857",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "miss"
+      },
+      "recovered_from": null,
+      "recovered_abstract": null,
+      "excluded": true,
+      "exclusion_reason": "no abstract in OpenAlex; not recovered from Semantic Scholar or arXiv"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4414620308",
+      "title": "Trustworthy Summarization via Uncertainty Quantification and Risk Awareness in Large Language Models",
+      "doi": "10.21203/rs.3.rs-7739054/v1",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "hit"
+      },
+      "recovered_from": "arxiv",
+      "recovered_abstract": "This study addresses the reliability of automatic summarization in high-risk scenarios and proposes a large language model framework that integrates uncertainty quantification and risk-aware mechanisms. Starting from the demands of information overload and high-risk decision-making, a conditional generation-based summarization model is constructed, and Bayesian inference is introduced during generation to model uncertainty in the parameter space, which helps avoid overconfident predictions. The uncertainty level of the generated content is measured using predictive distribution entropy, and a joint optimization of entropy regularization and risk-aware loss is applied to ensure that key information is preserved and risk attributes are explicitly expressed during information compression. On this basis, the model incorporates risk scoring and regulation modules, allowing summaries to cover the core content accurately while enhancing trustworthiness through explicit risk-level prompts. Comparative experiments and sensitivity analyses verify that the proposed method significantly improves the robustness and reliability of summarization in high-risk applications while maintaining fluency and semantic integrity. This research provides a systematic solution for trustworthy summarization and demonstrates both scalability and practical value at the methodological level.",
+      "excluded": false,
+      "exclusion_reason": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4412698017",
+      "title": "Smarter Together: Combining Large Language Models and Small Models for Physiological Signals Visual Inspection",
+      "doi": "10.1007/s41666-025-00207-7",
+      "attempts": {
+        "semantic_scholar": "hit"
+      },
+      "recovered_from": "semantic_scholar",
+      "recovered_abstract": "Large language models (LLMs) have shown promising capabilities in visually interpreting medical time-series data. However, their general-purpose design can limit domain-specific precision, and the proprietary nature of many models poses challenges for fine-tuning on specialized clinical datasets. Conversely, small specialized models (SSMs) offer strong performance on focused tasks but lack the broader reasoning needed for complex medical decision-making. To address these complementary limitations, we introduce ConMIL (Conformalized Multiple Instance Learning), a novel decision-support framework distinctively synergizes three key components: (1) a new Multiple Instance Learning (MIL) mechanism, QTrans-Pooling, designed for per-class interpretability in identifying clinically relevant physiological signal segments; (2) conformal prediction, integrated with MIL to generate calibrated, set-valued outputs with statistical reliability guarantees; and (3) a structured approach for these interpretable and uncertainty-quantified SSM outputs to enhance the visual inspection capabilities of LLMs. Our experiments on arrhythmia detection and sleep stage classification demonstrate that ConMIL can enhance the accuracy of LLMs such as ChatGPT4.0, Qwen2-VL-7B, and MiMo-VL-7B-RL. For example, ConMIL -supported Qwen2-VL-7B and MiMo-VL-7B-RL both achieve 94.92% and 96.82% precision on confident samples and (70.61% and 78.02%)/(78.10% and 71.98%) on uncertain samples for the two tasks, compared to 46.13% and 13.16% using the LLM alone. These results suggest that integrating task-specific models with LLMs may offer a promising pathway toward more interpretable and trustworthy AI-driven clinical decision support.",
+      "excluded": false,
+      "exclusion_reason": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4415897371",
+      "title": "Uncertainty-aware large language model response length perception",
+      "doi": "10.1007/s11432-024-4550-8",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "miss"
+      },
+      "recovered_from": null,
+      "recovered_abstract": null,
+      "excluded": true,
+      "exclusion_reason": "no abstract in OpenAlex; not recovered from Semantic Scholar or arXiv"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4408239465",
+      "title": "Latent-Space Adversarial Training with Post-Aware Calibration for Defending Large Language Models Against Jailbreak Attacks",
+      "doi": "10.2139/ssrn.5169050",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "hit"
+      },
+      "recovered_from": "arxiv",
+      "recovered_abstract": "Ensuring safety alignment is a critical requirement for large language models (LLMs), particularly given increasing deployment in real-world applications. Despite considerable advancements, LLMs remain susceptible to jailbreak attacks, which exploit system vulnerabilities to circumvent safety measures and elicit harmful or inappropriate outputs. Furthermore, while adversarial training-based defense methods have shown promise, a prevalent issue is the unintended over-defense behavior, wherein models excessively reject benign queries, significantly undermining their practical utility. To address these limitations, we introduce LATPC, a Latent-space Adversarial Training with Post-aware Calibration framework. LATPC dynamically identifies safety-critical latent dimensions by contrasting harmful and benign inputs, enabling the adaptive construction of targeted refusal feature removal attacks. This mechanism allows adversarial training to concentrate on real-world jailbreak tactics that disguise harmful queries as benign ones. During inference, LATPC employs an efficient embedding-level calibration mechanism to minimize over-defense behaviors with negligible computational overhead. Experimental results across five types of disguise-based jailbreak attacks demonstrate that LATPC achieves a superior balance between safety and utility compared to existing defense frameworks. Further analysis demonstrates the effectiveness of leveraging safety-critical dimensions in developing robust defense methods against jailbreak attacks.",
+      "excluded": false,
+      "exclusion_reason": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4412644237",
+      "title": "Latent-space adversarial training with post-aware calibration for defending large language models against jailbreak attacks",
+      "doi": "10.1016/j.eswa.2025.129101",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "hit"
+      },
+      "recovered_from": "arxiv",
+      "recovered_abstract": "Ensuring safety alignment is a critical requirement for large language models (LLMs), particularly given increasing deployment in real-world applications. Despite considerable advancements, LLMs remain susceptible to jailbreak attacks, which exploit system vulnerabilities to circumvent safety measures and elicit harmful or inappropriate outputs. Furthermore, while adversarial training-based defense methods have shown promise, a prevalent issue is the unintended over-defense behavior, wherein models excessively reject benign queries, significantly undermining their practical utility. To address these limitations, we introduce LATPC, a Latent-space Adversarial Training with Post-aware Calibration framework. LATPC dynamically identifies safety-critical latent dimensions by contrasting harmful and benign inputs, enabling the adaptive construction of targeted refusal feature removal attacks. This mechanism allows adversarial training to concentrate on real-world jailbreak tactics that disguise harmful queries as benign ones. During inference, LATPC employs an efficient embedding-level calibration mechanism to minimize over-defense behaviors with negligible computational overhead. Experimental results across five types of disguise-based jailbreak attacks demonstrate that LATPC achieves a superior balance between safety and utility compared to existing defense frameworks. Further analysis demonstrates the effectiveness of leveraging safety-critical dimensions in developing robust defense methods against jailbreak attacks.",
+      "excluded": false,
+      "exclusion_reason": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4411504139",
+      "title": "Shaping pre-trained language models for task-specific embedding generation via consistency calibration",
+      "doi": "10.1016/j.neunet.2025.107754",
+      "attempts": {
+        "semantic_scholar": "hit"
+      },
+      "recovered_from": "semantic_scholar",
+      "recovered_abstract": "Pre-trained language models (PLMs) have shown significant success in various downstream tasks by providing initial parameters for task-specific fine-tuning. An inherent challenge of this approach is that adapting solely to downstream tasks may lead to the forgetting of pre-trained knowledge, resulting in limited fine-tuning performance on downstream tasks. To tackle this challenge, we propose a novel approach called EGO-PLM, where PLMs serve as task-specific embedding generator. The underlying insight of EGO-PLM is to align the fine-tuning tasks for PLMs with those utilized during the pre-training phase. Within this framework, we design a task-agnostic pre-defined task that is similar to the pre-training phase and a task-specific embedding generator to adapt to specific tasks, enabling the specific task can be trained jointly with the pre-defined task. To alleviate task conflicts between pre-defined and task-specific tasks and make sure the generated embedding are task-specific, we propose consistency calibration (CoCa), which aligns the pre-defined objectives with the task-specific ones. Specifically, CoCa identifies inconsistencies between the pre-defined and task-specific objectives in an adversarial manner, subsequently calibrating these disparities through adversarial training. We validate the effectiveness of EGO-PLM using 8 datasets across 6 task categories, demonstrating consistent and substantial improvements compared to state-of-the-art baselines.",
+      "excluded": false,
+      "exclusion_reason": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4399258424",
+      "title": "A fine-grained self-adapting prompt learning approach for few-shot learning with pre-trained language models",
+      "doi": "10.1016/j.knosys.2024.111968",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "miss"
+      },
+      "recovered_from": null,
+      "recovered_abstract": null,
+      "excluded": true,
+      "exclusion_reason": "no abstract in OpenAlex; not recovered from Semantic Scholar or arXiv"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4395015967",
+      "title": "Reduce Preference Disparity Between LLMs and Humans: Calibration to Compose Human-like Ensembles",
+      "doi": "10.2139/ssrn.4802019",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "miss"
+      },
+      "recovered_from": null,
+      "recovered_abstract": null,
+      "excluded": true,
+      "exclusion_reason": "no abstract in OpenAlex; not recovered from Semantic Scholar or arXiv"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4309634482",
+      "title": "Rationalizing predictions by adversarial information calibration",
+      "doi": "10.1016/j.artint.2022.103828",
+      "attempts": {
+        "semantic_scholar": "hit"
+      },
+      "recovered_from": "semantic_scholar",
+      "recovered_abstract": "Explaining the predictions of AI models is paramount in safety-critical applications, such as in legal or medical domains. One form of explanation for a prediction is an extractive rationale, i.e., a subset of features of an instance that lead the model to give its prediction on that instance. For example, the subphrase ``he stole the mobile phone'' can be an extractive rationale for the prediction of ``Theft''. Previous works on generating extractive rationales usually employ a two-phase model: a selector that selects the most important features (i.e., the rationale) followed by a predictor that makes the prediction based exclusively on the selected features. One disadvantage of these works is that the main signal for learning to select features comes from the comparison of the answers given by the predictor to the ground-truth answers. In this work, we propose to squeeze more information from the predictor via an information calibration method. More precisely, we train two models jointly: one is a typical neural model that solves the task at hand in an accurate but black-box manner, and the other is a selector-predictor model that additionally produces a rationale for its prediction. The first model is used as a guide for the second model. We use an adversarial technique to calibrate the information extracted by the two models such that the difference between them is an indicator of the missed or over-selected features. In addition, for natural language tasks, we propose a language-model-based regularizer to encourage the extraction of fluent rationales. Experimental results on a sentiment analysis task, a hate speech recognition task as well as on three tasks from the legal domain show the effectiveness of our approach to rationale extraction.",
+      "excluded": false,
+      "exclusion_reason": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4415691446",
+      "title": "Auto-Generated AI Code Hallucinations: Detection, Impact, and Mitigation Strategies",
+      "doi": "10.2139/ssrn.5610993",
+      "attempts": {
+        "semantic_scholar": "miss",
+        "arxiv": "miss"
+      },
+      "recovered_from": null,
+      "recovered_abstract": null,
+      "excluded": true,
+      "exclusion_reason": "no abstract in OpenAlex; not recovered from Semantic Scholar or arXiv"
+    }
+  ],
+  "summary": {
+    "recovered": 7,
+    "excluded": 6
+  }
+}
