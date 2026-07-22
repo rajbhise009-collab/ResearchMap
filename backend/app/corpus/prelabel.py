@@ -17,6 +17,20 @@ Outputs:
 Each of the 60 rows gets:
   on_domain          on-domain | borderline | off-domain
   has_limitation     yes | no | unknown (unknown when abstract is missing)
+  limitation_scope   own | prior | both | none | unknown
+                     — own: paper reports a limitation of its OWN work
+                       (its method / findings / benchmark) OR a limitation
+                       of the studied subject that the paper itself
+                       investigates.
+                     — prior: paper cites a limitation of PRIOR work as
+                       motivation ("existing methods X"). Without the
+                       specific prior work being cited in the abstract,
+                       these are largely unattributable and cannot
+                       independently feed the persistent-limitations
+                       scorer.
+                     — both: paper mentions both kinds.
+                     — none: has_limitation=no.
+                     — unknown: no abstract available.
   claim_hedged       firm | hedged | mixed | unknown
   has_future_work    explicit | implied | none | unknown
   compound_claims    yes | no | unknown
@@ -238,6 +252,99 @@ JUDGMENTS: dict[int, dict] = {
 assert len(JUDGMENTS) == 60, f"expected 60 judgments, got {len(JUDGMENTS)}"
 
 
+# --- Second-pass split: for every paper where has_limitation="yes",
+# classify whether the limitation is of the paper's OWN work (or the
+# subject it's investigating) versus PRIOR work cited as motivation.
+# Only own-work + subject-finding limitations are usable evidence for
+# the persistent-limitations scorer without full attribution to the
+# specific prior paper being cited.
+#
+# Values:
+#   own      — paper reports a limitation of its own method / findings,
+#              OR reports a limitation of the studied subject as its own
+#              empirical finding (e.g. "we find LLMs are miscalibrated").
+#   prior    — paper cites a limitation of prior methods as motivation
+#              ("existing X have Y problem, so we propose Z"). Usually
+#              unattributable from abstract alone.
+#   both     — both scopes present in the same abstract.
+#   none     — has_limitation=no.
+#   unknown  — no abstract available.
+
+LIMITATION_SCOPE: dict[int, str] = {
+    1:  "none",     # LLMC — no limitation stated
+    2:  "unknown",  # no abstract
+    3:  "both",     # L2CEval — prior gap + own findings on LLM failures
+    4:  "none",
+    5:  "unknown",  # no abstract
+    6:  "none",
+    7:  "none",
+    8:  "prior",    # "existing UQ methods have fundamental limitations"
+    9:  "prior",    # "challenges persist" — general/prior
+    10: "none",
+    11: "prior",    # "existing works overlook complex nature"
+    12: "prior",    # "current LLMs are insufficient" — motivating
+    13: "none",
+    14: "prior",    # "many datasets not suitable for potent LLMs"
+    15: "own",      # BIG-Bench's own finding: model perf/calibration poor
+    16: "none",
+    17: "none",
+    18: "prior",    # "important to create benchmark datasets" — gap
+    19: "prior",    # "susceptible to prompt choice" — motivating LM state
+    20: "prior",    # "most prior work has been limited"
+    21: "unknown",
+    22: "own",      # "we uncover a systematic bias" — own finding
+    23: "own",      # survey's own analysis of subject limitations
+    24: "none",
+    25: "own",      # own finding: "LLMs systematically more confident when wrong"
+    26: "none",
+    27: "prior",    # "barrier is lack of personalization" — motivating gap
+    28: "none",
+    29: "prior",    # "existing standards inadequate"
+    30: "own",      # survey's own analysis of methods reviewed
+    31: "prior",    # "compromises model performance" — prior methods
+    32: "prior",    # "existing techniques suffer from interpretability"
+    33: "none",
+    34: "own",      # own finding about subject: LLMs overlook context
+    35: "prior",    # "existing approaches limited"
+    36: "prior",    # "existing methods exhibit limitations"
+    37: "prior",    # "labeled training data limited" — general condition
+    38: "own",      # own finding: "systematically overconfident"
+    39: "own",      # own analysis: "black-box nature" — subject property
+    40: "prior",    # "prompting is often brittle"
+    41: "prior",    # "distribution variance in LLM activations"
+    42: "prior",    # "existing approaches cannot detect"
+    43: "prior",    # "traditional methods face challenges"
+    44: "prior",    # "recent research demonstrated limitations" of prior
+    45: "prior",    # "detecting pornographic language rarely studied"
+    46: "none",
+    47: "prior",    # "reliability...not well-established"
+    48: "prior",    # "task-specific uncertainties difficult to define"
+    49: "none",
+    50: "both",     # "interventions lack rigorous evaluation" + own findings
+    51: "both",     # "can limit utility" + own findings on LM problems
+    52: "none",
+    53: "unknown",
+    54: "prior",    # "can be politically biased" — motivating subject prop
+    55: "own",      # survey duplicate of #23
+    56: "prior",    # "reasons lead to high false-positive rates" of prior MIAs
+    57: "none",
+    58: "prior",    # "remains an important open research question"
+    59: "own",      # own analysis of LLM hallucination damage in OOD
+    60: "prior",    # "LLMs often exhibit inconsistency, semantic drift"
+}
+assert len(LIMITATION_SCOPE) == 60
+# Cross-check: papers marked own/prior/both here must have has_limitation=yes
+# in JUDGMENTS; papers marked none/unknown must NOT.
+for _n, _scope in LIMITATION_SCOPE.items():
+    _lim = JUDGMENTS[_n]["lim"]
+    if _scope == "none":
+        assert _lim == "no", f"row {_n}: scope=none but lim={_lim!r}"
+    elif _scope == "unknown":
+        assert _lim == "unknown", f"row {_n}: scope=unknown but lim={_lim!r}"
+    else:  # own / prior / both
+        assert _lim == "yes", f"row {_n}: scope={_scope} but lim={_lim!r}"
+
+
 def load_rows() -> list[dict]:
     with CSV_IN.open("r", encoding="utf-8") as f:
         return list(csv.DictReader(f))
@@ -250,6 +357,7 @@ def merge(rows: list[dict]) -> list[dict]:
         j = JUDGMENTS[i]
         row["on_domain"] = j["on"]
         row["has_limitation"] = j["lim"]
+        row["limitation_scope"] = LIMITATION_SCOPE[i]
         row["claim_hedged"] = j["hedg"]
         row["has_future_work"] = j["fw"]
         row["compound_claims"] = j["comp"]
@@ -261,9 +369,17 @@ def merge(rows: list[dict]) -> list[dict]:
 
 
 def write_csv(rows: list[dict]) -> None:
-    fieldnames = list(rows[0].keys())
+    # Canonical column order — puts limitation_scope next to
+    # has_limitation and keeps label_reasoning at the end.
+    fieldnames = [
+        "openalex_id", "title", "venue", "year", "abstract_full",
+        "on_domain",
+        "has_limitation", "limitation_scope",
+        "claim_hedged", "has_future_work", "compound_claims",
+        "notes", "label_reasoning",
+    ]
     with CSV_OUT.open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
 
@@ -291,7 +407,7 @@ def write_md(rows: list[dict]) -> None:
         lines.append("")
         lines.append(f"- **on_domain:** {r['on_domain']}")
         lines.append(f"- **label_reasoning:** {r['label_reasoning']}")
-        lines.append(f"- **has_limitation:** {r['has_limitation']}")
+        lines.append(f"- **has_limitation:** {r['has_limitation']} (scope: {r['limitation_scope']})")
         lines.append(f"- **claim_hedged:** {r['claim_hedged']}")
         lines.append(f"- **has_future_work:** {r['has_future_work']}")
         lines.append(f"- **compound_claims:** {r['compound_claims']}")
@@ -388,6 +504,7 @@ def main() -> int:
     # Report summary distribution.
     from collections import Counter
     labels = Counter(r["on_domain"] for r in labelled)
+    scopes = Counter(r["limitation_scope"] for r in labelled)
     hard = sum(1 for j in JUDGMENTS.values() if j["hard"])
     print(f"Wrote {CSV_OUT.relative_to(REPO_ROOT)}")
     print(f"Wrote {MD_OUT.relative_to(REPO_ROOT)}")
@@ -398,6 +515,17 @@ def main() -> int:
         c = labels.get(k, 0)
         print(f"  {k:12s}: {c:2d} ({100*c/60:.1f}%)")
     print(f"  hard cases : {hard:2d}")
+    print()
+    print("=== Limitation scope (n=60) ===")
+    for k in ("own", "prior", "both", "none", "unknown"):
+        c = scopes.get(k, 0)
+        print(f"  {k:8s}: {c:2d} ({100*c/60:.1f}%)")
+    # Own-work + subject-finding limitations are the usable evidence
+    # for the persistent-limitations scorer without further attribution.
+    usable = scopes.get("own", 0) + scopes.get("both", 0)
+    print()
+    print(f"  usable for persistent-limitations scorer "
+          f"(own + both): {usable}/60 = {100*usable/60:.1f}%")
     return 0
 
 

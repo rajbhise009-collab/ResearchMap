@@ -10,32 +10,51 @@ number as a within-that-slice estimate, not as a corpus-wide constant.
 
 ## Findings
 
-### 1. Do abstracts state a limitation? — **71.4% yes** (40/56)
+### 1. Do abstracts state a limitation? — 71.4% yes, but **only 21.7% are usable evidence**
 
-Higher than expected. Enough that **abstract-only extraction WILL feed
-the persistent-limitations scorer** at meaningful volume. OA full text
-is NOT a hard requirement for the scorer to run; it would raise
-recall, not enable the function.
+Revised finding (this section supersedes the original 71.4% headline).
 
-Caveat: my "yes" marker did not distinguish limitations OF the paper's
-own work from limitations OF prior work stated as motivation
-("existing methods have X problem, so we…"). Both are common in
-abstracts. If we count them the same, we'll double-attribute:
-Paper A cites Paper B's limitation → the extractor emits it as a
-limitation OF Paper A. See schema decision #1 below.
+Second-pass classification of the 40 "has_limitation=yes" papers into
+scope — own-work, prior-work, or both. The result:
 
-Cross-tab by on-domain bucket (over 56 with abstracts):
+| Scope | Count | Share of 60 |
+|:------|------:|------------:|
+| own (paper's method or its own subject-finding) | 10 | 16.7% |
+| both (own + prior-work) | 3 | 5.0% |
+| prior-work only (motivational citation) | 27 | 45.0% |
+| none (has_limitation=no) | 16 | 26.7% |
+| unknown (no abstract) | 4 | 6.7% |
 
-| Bucket | has_limitation=yes | share |
-|:-------|-------------------:|------:|
-| on-domain (n=26)  | 20 | 76.9% |
-| borderline (n=9)  |  8 | 88.9% |
-| off-domain (n=21) | 12 | 57.1% |
+**Only own-work and both entries are usable evidence for the
+persistent-limitations scorer.** Prior-work limitations stated as
+motivation ("existing methods X have problem Y, so we propose Z")
+almost never name the specific prior work in the abstract; without
+that attribution, the extractor cannot honestly point the limitation
+back to the paper it belongs to. Emitting them as limitations of the
+citing paper is the prior-work-limitation-misattribution failure
+mode already listed in `docs/opportunity-criteria.md`.
 
-On-domain and borderline papers are more limitation-dense than
-off-domain — which makes sense because our target literature (UQ,
-hallucination detection) is fundamentally about known failures, so
-its abstracts open with motivational limitations of prior work.
+**Own + both = 13/60 = 21.7%.** That is **well below the ~50%
+threshold** at which the scorer can operate on abstract-only
+extraction and produce meaningful signal.
+
+**Revised conclusion: OA full text is a PREREQUISITE for the
+persistent-limitations scorer, not a lift.** Abstracts alone give
+about 22% of papers a limitation the scorer can honestly count.
+Ranking research opportunities on 22% coverage is dominated by
+noise. This flips schema decision #4 below.
+
+Cross-tab (own + both, over 56 with abstracts):
+
+| Bucket | usable | share |
+|:-------|-------:|------:|
+| on-domain (n=26)  | 8 | 30.8% |
+| borderline (n=9)  | 3 | 33.3% |
+| off-domain (n=21) | 2 |  9.5% |
+
+Even in the on-domain bucket only 31% of papers give the scorer
+usable evidence from the abstract — the abstract is the wrong
+extraction target for this specific field.
 
 ### 2. Firm vs. hedged claims — **91.1% firm** (51/56)
 
@@ -112,45 +131,67 @@ quality lifts.
 
 ### Recommended, non-blocking
 
-3. **Do NOT add `Claim.assertion_strength` as a separate field.**
-   Reason: 91% of claims read as firm; the field would have negligible
-   discriminative power. If a future scorer wants hedge information,
-   it can compute it from the claim text with a cheap linguistic
-   check, no schema needed.
-   Migration cost: **zero.** This is a rejection.
+3. **Do NOT add `Claim.assertion_strength` as a separate field —
+   FOR THIS CORPUS.** Reason: 91% of claims read as firm; the field
+   would have negligible discriminative power. If a future scorer
+   wants hedge information, it can compute it from the claim text
+   with a cheap linguistic check, no schema needed.
+   Migration cost: **zero.** This is a conditional rejection.
 
-4. **`FutureWork` extraction from abstracts is a coverage floor, not a
-   ceiling.** For Phase 2 extraction on the small-sample corpus, run
-   the extractor on abstracts and accept ~40% future-work coverage.
-   For the reasoning engine to genuinely surface unfollowed-future-
-   work threads, we will eventually need OA full text (arXiv PDF,
-   Europe PMC, publisher OA).
-   Migration cost: **larger.** OA full-text ingestion means:
-   - New literature sources: arXiv PDF fetch, Europe PMC, PubMed
+   **Domain-conditional.** ML abstracts are unusually assertive;
+   biomedical, BCI, clinical trial, and psychology literatures hedge
+   far more (routine "may", "suggest", "our data are consistent
+   with", "further work is needed" phrasings dominate). Before
+   ResearchMap is pointed at a new field, re-run this pressure-
+   test's `claim_hedged` classification on a fresh 50-abstract
+   sample from that field, and re-open decision #3 if the firm rate
+   drops below ~70%.
+
+### Reclassified — required, given the revised finding #1
+
+4. **OA full text is a PREREQUISITE for the persistent-limitations
+   scorer.** This decision was originally "deferred to Phase 1.5,
+   run abstracts first, accept 40% future-work coverage". After
+   splitting the limitation labels by scope (see finding #1),
+   abstract-only extraction gives the scorer usable evidence on
+   only 22% of papers. That is too low to feed the scorer honestly
+   — most of what looks like a limitation from an abstract is a
+   prior-work citation the extractor cannot attribute.
+
+   OA-full-text ingestion is now on the critical path for the
+   scorer to function, not a quality lift. Concretely:
+
+   - New literature sources: arXiv PDF fetch (very high coverage
+     for this domain — see finding #5 below), Europe PMC, PubMed
      Central. All exist as OA endpoints; the pattern is the same as
      OpenAlex + Semantic Scholar.
    - Storage: `Paper.fulltext` already exists in the schema; SQL
      column already there. Just needs populating.
    - Parsing: PDF → text (grobid or similar; ~1 dependency).
-   - Section detection: to isolate future-work paragraphs from
-     methodology paragraphs, use section-heading heuristics ("Future
-     Work", "Conclusion", "Discussion").
-   Recommendation: **defer to Phase 1.5, after Phase 2 has proven the
-   extraction pipeline works on abstracts.** Do not build OA
-   ingestion speculatively.
+   - Section detection: isolate future-work paragraphs and
+     limitations paragraphs from methodology sections using heading
+     heuristics ("Future Work", "Conclusion", "Discussion",
+     "Limitations", "Threats to Validity").
+
+   Recommendation: **land OA full-text ingestion before Phase 4
+   reasoning goes live.** It is safe to run Phase 2 (extraction)
+   on abstracts first as a smoke test of the pipeline — that gives
+   us end-to-end validation of prompts, cache, retry, persistence
+   — but the Phase 4 output on abstract-only extractions is
+   guaranteed to be dominated by noise, so do not ship the reasoning
+   engine on abstract-only data.
 
 ## What I would do next
 
 - Land decisions #1 (`source_scope`) and #2 (compound splitting rule)
   as a small schema patch before Phase 2 extraction starts. Both are
   cheap; both are strictly required to avoid known-broken scoring.
-- Explicitly park decision #3 (assertion strength) — write a one-line
-  "considered and rejected because 91% of the corpus is firm" note in
-  `docs/merge-policy.md` next to `Claim` policy, so a future reader
-  doesn't re-open the question.
-- Park decision #4 (OA full text). Note it in `PROGRESS.md` as a
-  Phase 1.5 candidate contingent on Phase 2 showing that abstract-only
-  future-work coverage is a bottleneck.
+- Record decision #3 (assertion strength) as **domain-conditional**
+  in the same schema doc — rejected for this corpus, not permanently.
+- **Land decision #4 (OA full-text ingestion) before Phase 4.**
+  Revised from the original defer-until-Phase-1.5 posture. Phase 2 on
+  abstracts is fine for pipeline validation; the reasoning engine
+  cannot honestly ship on 22% limitation-evidence coverage.
 
 ## Population caveat
 
