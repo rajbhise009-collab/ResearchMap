@@ -1213,6 +1213,96 @@ Outside those: proceed, log, flag.
   proceed autonomously per the new autonomy policy, stopping only
   at the five hard stops.
 
+## SPEND GATE — approval requested to run live extraction
+
+Everything above is committed and offline-runnable. This section is
+the halt point per the autonomy policy hard-stop (a).
+
+### Cost estimate — Gemini 2.5 Flash (standard tier)
+
+**Pricing** (verified from ai.google.dev/gemini-api/docs/pricing,
+2026):
+
+| Model | Input ($/1M tok) | Output ($/1M tok) |
+|:------|-----------------:|------------------:|
+| Gemini 2.5 Flash          | $0.30 | $2.50 |
+| Gemini 2.5 Flash-Lite     | $0.10 | $0.40 |
+| Gemini 2.5 Flash (Batch)  | $0.15 | $1.25 |
+| Gemini 2.5 Flash-Lite (Batch) | $0.05 | $0.20 |
+
+**Per-paper token budget** (measured from `prompts/v1.0.0/extract.md`
++ typical OpenAlex abstract):
+
+- Prompt template (rules + schema example + placeholders): ~1,500
+  input tokens.
+- Paper metadata (title + year + venue + authors + paper_id): ~100.
+- Abstract: OpenAlex abstracts run 200–400 tokens; use 300 as the
+  average.
+- **Input per paper: ~1,900 tokens.**
+- Output JSON (≈3 claims × 100 + 2 evidence × 60 + 2 methods × 80 +
+  2 limitations × 80 + 2 future_work × 60 + JSON overhead ≈ 100).
+- **Output per paper: ~1,000 tokens.**
+
+Retry allowance: `Extractor.max_retries=2`, so up to 3 attempts per
+paper. Worst-case token cost = 3× the point estimate. Real hit-rate
+on the mock tests: 1 attempt per paper. For the estimate below I
+assume 1.1 attempts on average (10% retry rate).
+
+### Estimated dollar cost
+
+| Model | 30 papers | Full 200-paper corpus |
+|:------|----------:|----------------------:|
+| **Gemini 2.5 Flash (standard, our recommendation)** | **~$0.10** | **~$0.65** |
+| Gemini 2.5 Flash-Lite (standard) | ~$0.02 | ~$0.13 |
+| Gemini 2.5 Flash (Batch, ~24h latency) | ~$0.05 | ~$0.33 |
+| Gemini 2.5 Flash-Lite (Batch) | ~$0.01 | ~$0.07 |
+
+Worst-case (all papers hit the 3-attempt limit): 3× above → **at
+most $2 for the full corpus** on standard Flash pricing.
+
+**Recommendation: Gemini 2.5 Flash standard tier.** Flash-Lite is
+~5× cheaper but is a smaller model; for a first live extraction we
+want the higher-quality outputs to compare against my pre-labels.
+The absolute cost difference ($0.65 vs $0.13) is well below noise.
+
+### Env var you need to set
+
+```bash
+export GEMINI_API_KEY=<your key>
+```
+
+Free at https://ai.google.dev/gemini-api. No credit card required
+for the free tier; the extractor will silently upgrade to paid if
+the free daily limit is hit (Google's default). Set a hard billing
+alert at $5 to be safe — cheap insurance.
+
+### What I have NOT done and will not do without approval
+
+- No live LLM call has been made this session or in any prior
+  session — the extractor was built and tested against
+  `ProgrammableMockLLMClient` and `MockLLMClient` only. The Gemini
+  client is implemented and instantiable but its `.generate()` is
+  never invoked from the test suite.
+- No API key is required to run the current test suite. `pytest -q`
+  → 114 passed, 0 failed, all offline.
+- Say "go with 30 papers on Flash" (or your preferred model) and
+  I'll run it. Say a subset ("go with 5 for a smoke test") and I'll
+  do that.
+
+### After approval — what I would do
+
+1. Read the API key from the environment (never persisted).
+2. Run the extractor over the target papers (from
+   `data/live_samples/phase2_diagnostic_raw.json`, minus the 6
+   excluded per the abstract-recovery manifest).
+3. Log per-paper token usage and running cost.
+4. Persist extractions to `data/cache/extractions/` (offline cache
+   already in place; no DB required for the smoke test).
+5. Emit a per-paper diff report comparing my pre-labels to what
+   the extractor produced — that's the first real signal of
+   whether the abstract-only pipeline is worth pursuing before we
+   build OA full-text ingestion.
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
