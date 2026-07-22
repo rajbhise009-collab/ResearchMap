@@ -1213,6 +1213,19 @@ Outside those: proceed, log, flag.
   proceed autonomously per the new autonomy policy, stopping only
   at the five hard stops.
 
+## Non-negotiable: Phase 3/4 blocked until real extractions exist
+
+Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
+layer) and 4 (reasoning engine) MUST NOT be built against the mock
+path or the seed corpus. Both phases produce scorers whose behaviour
+is only meaningful with real inputs; testing them against the seed
+corpus's planted contradictions or mock-generated claims would
+validate them against their own answer key.
+
+Gate: at least one `PaperExtraction` on disk must have an
+`extractor` value that is not `mock-seed`, `seed-fixture`, or
+`programmable-mock` before any Phase 3 or 4 file may be started.
+
 ## Flagged, not acted on
 
 **"Commit separately" was requested but ResearchMap is not a git

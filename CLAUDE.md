@@ -181,6 +181,26 @@ without losing information? If no, halt.
 
 Outside these five, do not ask; do it, log it, flag it.
 
+## Non-negotiable: no reasoning phases built against mock or seed data
+
+**Phase 3 (relationship layer) and Phase 4 (reasoning engine) must
+NOT be built against the mock LLM path or the seed corpus.** Both
+phases produce scorers whose behaviour is only meaningful when the
+inputs are real. Building them earlier — against the seed corpus's
+planted contradictions or against mock-generated claims — produces
+scorers that appear to work because they were validated against
+their own answer key.
+
+Concretely: any Phase 3 or Phase 4 code must be gated on the
+existence of a real-extraction corpus (defined as: at least one
+`PaperExtraction` on disk whose `extractor` is `gemini-flash-*` or
+another real LLM name, not `mock-seed`, `seed-fixture`, or
+`programmable-mock`). If that gate hasn't been crossed, do not start
+those phases even if they look ready.
+
+The seed corpus is for pipeline validation and offline tests, not
+for scorer validation.
+
 ## Phase index
 
 - Phase 0 — foundation: repo, data model (Pydantic + DB), config,
