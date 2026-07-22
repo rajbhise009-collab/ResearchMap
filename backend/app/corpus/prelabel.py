@@ -135,8 +135,11 @@ JUDGMENTS: dict[int, dict] = {
     21: dict(on="borderline", lim="unknown", hedg="unknown", fw="unknown", comp="unknown", hard=True,
              why="No abstract available from OpenAlex, Semantic Scholar, or arXiv; excluded from the extraction corpus. Title alone is insufficient to place — uncertainty-aware modifier could apply to a UQ contribution or an application paper using UQ as a tool."),
     # 22. LLMs are not Fair Evaluators
-    22: dict(on="borderline", lim="yes", hedg="firm", fw="implied", comp="yes", hard=True,
-             why="Contribution is a three-part calibration framework fixing LLM-as-judge order bias — 'calibration' is central and the paper genuinely proposes calibration methods, but for evaluator bias rather than confidence calibration, which straddles the rubric."),
+    # (labeller call to off-domain by Raj: this is intra-field
+    # terminology collision — "calibration" here means score
+    # normalization for judge-order bias, not confidence calibration)
+    22: dict(on="off-domain", lim="yes", hedg="firm", fw="implied", comp="yes", hard=False,
+             why="Contribution is a three-part framework fixing systematic order-bias in LLM-as-judge evaluation; 'calibration' is used in the score-normalization sense (Multiple Evidence / Balanced Position / Human-in-the-Loop) rather than confidence-accuracy calibration — an intra-field terminology collision within ML."),
     # 23. Survey on Hallucination in LLMs (2024)
     23: dict(on="on-domain", lim="yes", hedg="firm", fw="explicit", comp="no", hard=False,
              why="Contribution is a comprehensive survey of LLM hallucination taxonomy, detection methods, and mitigation strategies — hallucination in LLMs is the paper's entire scope."),
@@ -150,8 +153,10 @@ JUDGMENTS: dict[int, dict] = {
     26: dict(on="off-domain", lim="no", hedg="hedged", fw="explicit", comp="yes", hard=False,
              why="Contribution is a behavioral hypothesis about safety-tuned LLMs defaulting to shallow responses; the paper explicitly cites 'Victor Calibration' as related work but does not itself study confidence calibration."),
     # 27. Pearl personalized writing assistant
-    27: dict(on="borderline", lim="yes", hedg="firm", fw="implied", comp="yes", hard=True,
-             why="Contribution is Pearl, a personalization framework whose novelty is a 'generation-calibrated' retriever — calibration is core to the method name but the paper's subject is personalization of LLM writing assistants, not confidence calibration."),
+    # (labeller call to off-domain by Raj: paper is a personalization
+    # framework, calibration language attaches to the retriever)
+    27: dict(on="off-domain", lim="yes", hedg="firm", fw="implied", comp="yes", hard=False,
+             why="Contribution is Pearl, a personalization framework for LLM writing assistants whose novelty is a 'generation-calibrated' retriever — calibration attaches to the retriever's scoring, not to the LLM's confidence."),
     # 28. HalluciNot
     28: dict(on="on-domain", lim="no", hedg="firm", fw="none", comp="no", hard=False,
              why="Contribution is HDM-2, a hallucination detection model for enterprise LLM deployments — hallucination detection is the entire point."),
@@ -241,8 +246,12 @@ JUDGMENTS: dict[int, dict] = {
     56: dict(on="off-domain", lim="yes", hedg="firm", fw="none", comp="yes", hard=False,
              why="Contribution is SPV-MIA, a membership inference attack against fine-tuned LLMs; 'self-prompt calibration' is the method name but the paper's subject is a privacy attack, not confidence calibration."),
     # 57. SLiC-HF
-    57: dict(on="off-domain", lim="no", hedg="firm", fw="none", comp="no", hard=True,
-             why="Contribution is SLiC-HF, a preference-learning alternative to RLHF using sequence likelihood calibration; 'calibration' is central to the method but for aligning sequence probabilities to preferences, not for confidence estimation — genuinely close call."),
+    # (labeller call confirmed off-domain by Raj: intra-field
+    # terminology collision — "sequence likelihood calibration" is
+    # likelihood shaping for preference alignment, not confidence
+    # calibration)
+    57: dict(on="off-domain", lim="no", hedg="firm", fw="none", comp="no", hard=False,
+             why="Contribution is SLiC-HF, a preference-learning alternative to RLHF via sequence likelihood calibration — 'calibration' here means shaping sequence probabilities to align with human preferences, an intra-field terminology collision with the confidence-calibration sense of the term."),
     # 58. Decomposing Uncertainty via Input Clarification
     58: dict(on="on-domain", lim="yes", hedg="firm", fw="none", comp="no", hard=False,
              why="Contribution is an aleatoric/epistemic uncertainty decomposition framework for LLMs via input clarification ensembling — UQ for LLMs is the entire subject."),

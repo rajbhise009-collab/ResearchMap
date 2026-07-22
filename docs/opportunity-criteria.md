@@ -126,6 +126,24 @@ recommendation — too broad to translate into a research program.
   construct, not merely the same word. Corpus contamination makes
   this failure mode more likely, so corpus purity is a precondition
   for contradiction scoring, not a nice-to-have.
+
+  **Worked examples — intra-field collisions found in the 60-paper
+  hand-review** (all within ML, all mis-classifiable as on-domain by
+  keyword filters, all off-domain per the labelling rubric because
+  their "calibration" is a different construct):
+  - `openalex:W4378770815` *LLMs are not Fair Evaluators* — proposes
+    a three-part "calibration" framework, but the construct being
+    calibrated is LLM-as-judge order bias in **score normalization**,
+    not the model's confidence-accuracy relationship. If the scorer
+    counted this alongside confidence-calibration papers, it would
+    be pooling two unrelated phenomena.
+  - `openalex:W4377121527` *SLiC-HF: Sequence Likelihood Calibration
+    with Human Feedback* — the paper's whole method name uses
+    "calibration", but the construct is **likelihood shaping for
+    preference alignment** in the RLHF-alternative sense. Two of
+    these papers agreeing that "calibration works" would be an
+    invalid signal at the reasoning-engine level; they're not making
+    a compatible claim.
 - Duplicate or near-duplicate papers (preprint + published version,
   or the same work across venues) counted as independent sources,
   inflating replication counts and any score that depends on the
