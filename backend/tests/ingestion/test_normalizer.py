@@ -114,11 +114,12 @@ def test_from_semantic_scholar_maps_all_fields():
 
 
 def _p(pid, *, source, doi=None, title="T", year=2024, abstract=None,
-       citations_in_count=0, citations_out=None, authors=None):
+       citations_in_count=0, citations_out=None, authors=None, venue=None):
     return Paper(
         id=pid, source=source, source_id=pid.split(":", 1)[-1], doi=doi,
         title=title, abstract=abstract, year=year,
         authors=list(authors or []),
+        venue=venue,
         citations_in_count=citations_in_count,
         citations_out=list(citations_out or []),
     )
@@ -319,3 +320,149 @@ def test_author_helpers_normalize_expected_formats():
     # Empty on either side → never overlap (protects against false merges).
     assert _authors_overlap([], ["A. Smith"]) is False
     assert _authors_overlap(["A. Smith"], []) is False
+
+
+# --- Survivor rule + merge policy --------------------------------------
+
+
+def test_survivor_prefers_non_arxiv_doi_over_arxiv():
+    """Tier 1 of the survivor rule: published DOI beats preprint DOI."""
+    from backend.app.ingestion.normalizer import _pick_survivor
+    arxiv = _p("openalex:W_pre", source=Source.OPENALEX,
+               doi="10.48550/arxiv.2012.00955", title="Same Title", year=2020,
+               authors=["A. Author"], citations_in_count=500)  # high cites
+    journal = _p("openalex:W_pub", source=Source.OPENALEX,
+                 doi="10.1162/tacl_a_00407", title="Same Title", year=2021,
+                 authors=["A. Author"], citations_in_count=10)  # low cites
+    # Tuple order shouldn't matter — try both directions.
+    s1, _ = _pick_survivor(arxiv, journal)
+    s2, _ = _pick_survivor(journal, arxiv)
+    assert s1.id == "openalex:W_pub"
+    assert s2.id == "openalex:W_pub"
+    # Non-arXiv DOI beats even a 50× citation advantage on the preprint.
+
+
+def test_survivor_falls_through_to_lex_lower_id_on_total_tie():
+    """Every policy tier ties → lex-lower id wins deterministically."""
+    from backend.app.ingestion.normalizer import _pick_survivor
+    a = _p("openalex:AAA", source=Source.OPENALEX, doi=None, title="T", year=2020)
+    b = _p("openalex:BBB", source=Source.OPENALEX, doi=None, title="T", year=2020)
+    s1, _ = _pick_survivor(a, b)
+    s2, _ = _pick_survivor(b, a)
+    assert s1.id == s2.id == "openalex:AAA"
+
+
+def test_dedup_is_order_independent():
+    """The killer test. Reversed input yields identical output."""
+    forward = [
+        # A preprint/journal pair that pass 3 will collapse (Δyear = 1).
+        _p("openalex:P1_arxiv", source=Source.OPENALEX,
+           doi="10.48550/arxiv.2001.00001",
+           title="Study of Confidence Calibration", year=2020,
+           authors=["Zhengbao Jiang", "Graham Neubig"], citations_in_count=40),
+        _p("openalex:P1_journal", source=Source.OPENALEX,
+           doi="10.1162/tacl_a_00001",
+           title="Study of Confidence Calibration", year=2021,
+           authors=["Z. Jiang", "G. Neubig"], citations_in_count=163,
+           venue="TACL"),
+        # A distinct singleton that must not merge with anything.
+        _p("openalex:P2_solo", source=Source.OPENALEX,
+           doi="10.1000/solo", title="Unrelated Work", year=2022,
+           authors=["Other Person"], citations_in_count=5, venue="ACL"),
+        # A second preprint/journal pair, Δyear = 2 (still within window).
+        _p("openalex:P3_arxiv", source=Source.OPENALEX,
+           doi="10.48550/arxiv.2022.00002",
+           title="Preprint With Journal Follow-up", year=2022,
+           authors=["Long Wait", "Coauthor Someone"], citations_in_count=8),
+        _p("openalex:P3_journal", source=Source.OPENALEX,
+           doi="10.1234/journal.2024.99",
+           title="Preprint With Journal Follow-up", year=2024,
+           authors=["L. Wait", "C. Someone"], citations_in_count=25,
+           venue="Late Journal"),
+    ]
+    reverse = list(reversed(forward))
+    out_forward = deduplicate(forward)
+    out_reverse = deduplicate(reverse)
+
+    # Bytewise-identical Pydantic content, in identical order.
+    assert [p.model_dump() for p in out_forward] == [p.model_dump() for p in out_reverse]
+
+    # And the survivors are the two journal versions plus the singleton.
+    ids = [p.id for p in out_forward]
+    assert ids == sorted(ids)  # confirms the output is id-sorted
+    assert set(ids) == {"openalex:P1_journal", "openalex:P2_solo", "openalex:P3_journal"}
+
+
+def test_merged_from_records_the_collapsed_id():
+    """No silent loss — the survivor names the record it absorbed."""
+    preprint = _p("openalex:W_pre", source=Source.OPENALEX,
+                  doi=None,
+                  title="Same Title", year=2020,
+                  authors=["A. Author"])
+    journal = _p("openalex:W_pub", source=Source.OPENALEX,
+                 doi="10.1234/journal.1",
+                 title="Same Title", year=2021,
+                 authors=["A. Author"], venue="Journal")
+    out = deduplicate([preprint, journal])
+    assert len(out) == 1
+    assert out[0].id == "openalex:W_pub"
+    assert out[0].merged_from == ["openalex:W_pre"]
+
+
+def test_merged_from_accumulates_transitively_over_chain():
+    """A 3-way collapse must record BOTH losers, in stable order."""
+    a = _p("openalex:A", source=Source.OPENALEX, doi=None,
+           title="Chain Title", year=2020,
+           authors=["Shared Author"], citations_in_count=5)
+    b = _p("openalex:B", source=Source.OPENALEX, doi=None,
+           title="Chain Title", year=2021,
+           authors=["Shared Author"], citations_in_count=10)
+    c = _p("openalex:C", source=Source.OPENALEX, doi=None,
+           title="Chain Title", year=2022,
+           authors=["Shared Author"], citations_in_count=20)
+    out = deduplicate([a, b, c])
+    assert len(out) == 1
+    survivor = out[0]
+    # c wins on higher citations (tier 3 of survivor rule).
+    assert survivor.id == "openalex:C"
+    # Both losers named in merged_from.
+    assert set(survivor.merged_from) == {"openalex:A", "openalex:B"}
+    assert survivor.id not in survivor.merged_from
+
+
+def test_merged_from_never_includes_survivor_own_id():
+    """Sanity: the survivor's own id must never appear in merged_from,
+    even after multi-way collapses."""
+    survivor = _p("openalex:S", source=Source.OPENALEX,
+                  doi="10.1234/pub",
+                  title="Never Self-Refer", year=2021,
+                  authors=["A. B."], venue="V")
+    loser = _p("openalex:L", source=Source.OPENALEX, doi=None,
+               title="Never Self-Refer", year=2020,
+               authors=["A. B."])
+    out = deduplicate([survivor, loser])
+    assert out[0].id == "openalex:S"
+    assert "openalex:S" not in out[0].merged_from
+
+
+def test_citations_merge_policy_is_max():
+    """The named constant governs the merge; the default is `"max"`,
+    NOT sum (would double-count) or survivor (would lose info)."""
+    from backend.app.ingestion.normalizer import CITATIONS_MERGE_POLICY
+    assert CITATIONS_MERGE_POLICY == "max"
+    a = _p("openalex:A", source=Source.OPENALEX, doi="10.1234/one",
+           title="X", year=2020, authors=["A"], citations_in_count=40)
+    b = _p("openalex:B", source=Source.OPENALEX, doi=None,
+           title="X", year=2019, authors=["A"], citations_in_count=163)
+    out = deduplicate([a, b])
+    assert len(out) == 1
+    assert out[0].citations_in_count == 163  # not 203, not 40
+
+
+def test_is_arxiv_doi_recognises_the_prefix():
+    from backend.app.ingestion.normalizer import _is_arxiv_doi
+    assert _is_arxiv_doi("10.48550/arxiv.2012.00955") is True
+    assert _is_arxiv_doi("10.48550/ARXIV.2012.00955") is True  # case-insensitive
+    assert _is_arxiv_doi("10.1162/tacl_a_00407") is False
+    assert _is_arxiv_doi(None) is False
+    assert _is_arxiv_doi("") is False

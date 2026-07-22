@@ -85,6 +85,11 @@ class Paper(_Base):
     citations_in_count: int = Field(default=0, ge=0)
     oa_fulltext_available: bool = False
     fulltext: str | None = None
+    # IDs of records collapsed INTO this one by `deduplicate()`. Populated
+    # by ingestion when a preprint/journal pair (or any two records for
+    # the same work) merges. Never silently dropped — the collapse is
+    # always traceable back to every OpenAlex/S2 record that fed it.
+    merged_from: list[NonEmptyStr] = Field(default_factory=list)
 
     @field_validator("doi")
     @classmethod

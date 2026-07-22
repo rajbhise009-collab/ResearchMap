@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS papers (
     citations_in_count    INTEGER NOT NULL DEFAULT 0,
     oa_fulltext_available BOOLEAN NOT NULL DEFAULT FALSE,
     fulltext              TEXT,
+    -- IDs of records collapsed into this one by ingestion dedup.
+    merged_from           TEXT[] NOT NULL DEFAULT '{}',
     created_at            TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS papers_doi_idx    ON papers(doi);

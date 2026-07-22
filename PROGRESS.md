@@ -698,3 +698,72 @@ Nothing autonomous. Awaiting explicit call on:
 3. Whether to add an arXiv-DOI-aware collapse (would catch
    preprint/journal pairs where the DOIs differ but one is
    `10.48550/arxiv.*`). Currently deferred.
+## Patch — 2026-07-22 — merge policy + arXiv-DOI pass (change A)
+
+Merge semantics were previously implicit. Made everything explicit and
+deterministic. This is one logically-independent change; the arXiv
+pass below (change B) is the second.
+
+**Survivor rule — deterministic, order-independent.** Written up in
+`docs/merge-policy.md`; realised in `_survivor_key(p)` + `_pick_survivor(a, b)`.
+Precedence tiers, higher wins:
+
+    (1) is_pub_doi        — non-arXiv DOI beats arXiv-DOI beats no DOI
+    (2) has_venue         — presence of a venue string
+    (3) citations_in_count
+    tiebreak: lex-lower id
+
+`_pick_survivor(a, b)` and `_pick_survivor(b, a)` return the same
+`(survivor, loser)` pair. Removed the previous source-of-record
+ranking (OpenAlex > S2 > seed) — provider identity shouldn't decide
+which record is canonical, only paper-content signals should.
+
+**Per-field merge policy — every Paper field spelled out** in
+`docs/merge-policy.md`. Categories:
+
+- survivor-only: `id`, `source`, `source_id`, `title`
+- fill-in (survivor's if truthy, else loser's): `doi`, `abstract`,
+  `year`, `authors`, `venue`, `fulltext`
+- union: `citations_out` (order-stable, survivor first)
+- OR: `oa_fulltext_available`
+- policy-controlled: `citations_in_count`
+- transitive union: `merged_from`
+
+**`CITATIONS_MERGE_POLICY = "max"`** — named module-level constant.
+Rejected `"sum"` (double-counts anyone citing both versions) and
+`"survivor"` (silently loses information). `max` is conservative and
+grep-able; ranking (Phase 5) will read the constant, not a magic
+number.
+
+**`merged_from` list added to the `Paper` schema (Pydantic v2 + DB).**
+Every collapse writes the loser's ID (plus any prior `merged_from`)
+into the survivor's `merged_from`, transitively. Survivor's own ID is
+never in its own list. Order-stable, de-duplicated. This gives Phase 4
+the audit trail promised by the *no orphan conclusions* rule — asking
+"what did we collapse to get this record?" now has a concrete answer.
+
+Migration `001_init.sql` gained a `merged_from TEXT[] NOT NULL
+DEFAULT '{}'` column on `papers`. `PaperRow` mirrors it. No live DB
+has run against the migration, so editing it in place was safe.
+
+**Output ordering.** `deduplicate()` now returns `sorted(by_id.values(),
+key=lambda p: p.id)`. Feeding it any permutation of the same input
+produces byte-identical output. Verified by the new
+`test_dedup_is_order_independent` and separately on the live 25-paper
+sample.
+
+**Forward-compat commitment for Phase 2.** Merge policy for `Claim`,
+`Evidence`, `Methodology`, `Limitation`, `FutureWork`, and
+`ClaimRelationship` is written down in `docs/merge-policy.md` under
+*Forward-compat commitment for Phase 2* — flagged NOT-YET-IMPLEMENTED
+but locked in so Phase 2 doesn't invent policy at the wrong time. Key
+promise: no entity attached to a merged-away paper is silently
+dropped.
+
+
+## Next step
+
+The arXiv-DOI-aware pass (pass 4) is the natural next patch. Also
+deferred: fixing the `by_id` internal key vs `merged.id` inconsistency
+after a merge, and re-generating the seed corpus so `merged_from`
+lands on disk.

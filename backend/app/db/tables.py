@@ -47,6 +47,8 @@ class PaperRow(Base):
     citations_in_count: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
     oa_fulltext_available: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     fulltext: Mapped[str | None] = mapped_column(Text, nullable=True)
+    # IDs of records collapsed into this one by ingestion-time dedup.
+    merged_from: Mapped[list[str]] = mapped_column(ARRAY(String), default=list, nullable=False)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )

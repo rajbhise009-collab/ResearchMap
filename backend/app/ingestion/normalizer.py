@@ -8,15 +8,24 @@ Dedup order (deterministic, most-specific first):
   2. Same (normalized-title, year) tuple → merge.
   3. Same normalized title, year within ±CROSS_YEAR_WINDOW, AND
      at least one shared normalized last-name → merge.
-     Catches the preprint-vs-published case (arXiv 2020 → journal 2021,
-     no shared DOI) that pass 2 misses. This is a scoring-integrity
-     fix: two records for the same work would fake independent
-     replication and inflate any downstream score that counts the
-     number of distinct papers reporting a claim.
 
-When merging, we PREFER the record with a real DOI, then the one with an
-abstract, then the one with more citations. `citations_out` lists are
-union'd. The union order is stable so tests are reproducible.
+The whole point of these passes is scoring integrity — two records for
+the same work would fake independent replication and inflate any
+downstream score that counts distinct papers reporting a claim.
+
+Survivor rule (deterministic, order-independent) — see
+docs/merge-policy.md:
+  1. Non-arXiv DOI beats arXiv-DOI beats no-DOI.
+  2. Presence of a `venue` string.
+  3. Higher `citations_in_count`.
+  4. Lexically-lower `id` as the final tiebreak.
+
+Merge policy is per-field (documented in the same file). Nothing is
+silently lost: every collapsed record's ID lands in the survivor's
+`merged_from` list, transitively.
+
+The final output of `deduplicate()` is sorted by `id` so the same input
+in any order yields byte-identical results.
 """
 
 from __future__ import annotations
@@ -227,60 +236,142 @@ def from_semantic_scholar(record: dict) -> Paper:
     )
 
 
-# --- Merging + dedup ----------------------------------------------------
+# --- Merge policy -------------------------------------------------------
+#
+# Formal policy documented in docs/merge-policy.md; the constants and
+# helpers here are the runtime realisation of that policy.
+
+ARXIV_DOI_PREFIX = "10.48550/arxiv."
+
+# Policy for combining citations_in_count on merge. Choices:
+#   "max"      — take the larger of the two (default). Under-counts if
+#                a citer references BOTH versions, but that's rare;
+#                over-counting via sum() would systematically double-
+#                count anyone who cites the preprint and separately the
+#                journal, inflating persistent-limitation and support
+#                scores.
+#   "sum"      — add both. Only sensible if citation graphs are known
+#                to be disjoint per side, which OpenAlex+S2 do NOT
+#                guarantee.
+#   "survivor" — keep the survivor's count as-is, ignoring the loser.
+#                Silently loses information from the merged record.
+# Change deliberately — this is a ranking-input decision, not a detail.
+CITATIONS_MERGE_POLICY = "max"
 
 
-def _merge(primary: Paper, other: Paper) -> Paper:
-    """Merge `other` into `primary` and return a new Paper.
+def _is_arxiv_doi(doi: str | None) -> bool:
+    """True iff `doi` looks like an arXiv-issued preprint DOI.
 
-    Fields on `primary` win; empty fields fall back to `other`. Citations
-    are union'd preserving primary-first order.
+    arXiv assigns DOIs of the form `10.48550/arxiv.<paperid>`. The
+    prefix is case-preserved by the API but we normalise-lower before
+    comparing (matches `Paper.doi` post-normalization)."""
+    if not doi:
+        return False
+    return doi.lower().startswith(ARXIV_DOI_PREFIX)
+
+
+def _survivor_key(p: Paper) -> tuple[int, int, int]:
+    """Deterministic tiebreak — higher wins. Total ties are broken by
+    lex-lower id inside `_pick_survivor`.
+
+    Tiers, in priority order:
+      1. `is_pub_doi` — has a DOI that is NOT an arXiv DOI. Published
+         version beats preprint.
+      2. `has_venue`  — a venue string implies canonical publication.
+      3. `citations_in_count` — proxy for canonical-version citations.
     """
-    data = primary.model_dump()
-    other_data = other.model_dump()
+    is_pub_doi = int(bool(p.doi) and not _is_arxiv_doi(p.doi))
+    has_venue = int(bool((p.venue or "").strip()))
+    return (is_pub_doi, has_venue, p.citations_in_count)
 
+
+def _pick_survivor(a: Paper, b: Paper) -> tuple[Paper, Paper]:
+    """Return (survivor, loser). Symmetric — swapping a and b returns
+    (survivor, loser) with survivor identity unchanged."""
+    ka, kb = _survivor_key(a), _survivor_key(b)
+    if ka > kb:
+        return a, b
+    if kb > ka:
+        return b, a
+    # Total tie on every policy tier — break with lex-lower id so the
+    # choice is independent of iteration order.
+    return (a, b) if a.id <= b.id else (b, a)
+
+
+# --- Merging ------------------------------------------------------------
+
+
+def _merge(survivor: Paper, loser: Paper) -> Paper:
+    """Combine `loser` INTO `survivor` under the documented per-field
+    policy. See docs/merge-policy.md for the full table.
+
+    Summary:
+      • Identity fields (id, source, source_id, title): survivor-only.
+      • Fill-in fields (doi, abstract, year, authors, venue, fulltext):
+        keep survivor's if truthy, else take loser's.
+      • citations_in_count: policy-controlled (CITATIONS_MERGE_POLICY).
+      • citations_out: order-stable union, survivor's first.
+      • oa_fulltext_available: OR.
+      • merged_from: transitive union of every collapsed ID (survivor's
+        existing merged_from + loser.id + loser.merged_from), dedup'd
+        and stripped of the survivor's own id.
+    """
+    data = survivor.model_dump()
+    other = loser.model_dump()
+
+    # Fill-in — take loser's only when survivor's is empty.
     for field in ("doi", "abstract", "year", "venue", "fulltext"):
-        if not data.get(field) and other_data.get(field):
-            data[field] = other_data[field]
+        if not data.get(field) and other.get(field):
+            data[field] = other[field]
+    if not data.get("authors") and other.get("authors"):
+        data["authors"] = other["authors"]
 
-    if not data.get("authors") and other_data.get("authors"):
-        data["authors"] = other_data["authors"]
+    # citations_in_count — policy-controlled.
+    a_count = data.get("citations_in_count", 0) or 0
+    b_count = other.get("citations_in_count", 0) or 0
+    if CITATIONS_MERGE_POLICY == "max":
+        data["citations_in_count"] = max(a_count, b_count)
+    elif CITATIONS_MERGE_POLICY == "sum":
+        data["citations_in_count"] = a_count + b_count
+    elif CITATIONS_MERGE_POLICY == "survivor":
+        data["citations_in_count"] = a_count
+    else:
+        raise ValueError(
+            f"Unknown CITATIONS_MERGE_POLICY={CITATIONS_MERGE_POLICY!r}; "
+            "expected one of 'max' | 'sum' | 'survivor'."
+        )
 
-    data["citations_in_count"] = max(
-        data.get("citations_in_count", 0), other_data.get("citations_in_count", 0)
-    )
+    # OA availability — either side is enough.
     data["oa_fulltext_available"] = bool(
-        data.get("oa_fulltext_available") or other_data.get("oa_fulltext_available")
+        data.get("oa_fulltext_available") or other.get("oa_fulltext_available")
     )
 
+    # citations_out — order-stable union.
     seen: set[str] = set()
     combined: list[str] = []
-    for cite in list(data.get("citations_out", [])) + list(other_data.get("citations_out", [])):
+    for cite in list(data.get("citations_out", [])) + list(other.get("citations_out", [])):
         if cite and cite not in seen:
             seen.add(cite)
             combined.append(cite)
     data["citations_out"] = combined
 
+    # merged_from — every collapsed ID, transitively, order-stable,
+    # with the survivor's own id stripped so it never merges into itself.
+    survivor_id = data["id"]
+    combined_merged_from: list[str] = []
+    seen_ids: set[str] = set()
+    stream = (
+        list(data.get("merged_from") or [])
+        + [other["id"]]
+        + list(other.get("merged_from") or [])
+    )
+    for src in stream:
+        if src and src != survivor_id and src not in seen_ids:
+            seen_ids.add(src)
+            combined_merged_from.append(src)
+    data["merged_from"] = combined_merged_from
+
     return Paper.model_validate(data)
-
-
-def _pick_primary(a: Paper, b: Paper) -> tuple[Paper, Paper]:
-    """Return (primary, secondary). Prefers records with a DOI, then those
-    with an abstract, then higher citation counts. Ties break by source
-    priority: OpenAlex first (its metadata is more complete)."""
-    def score(p: Paper) -> tuple[int, int, int, int]:
-        source_rank = {
-            Source.OPENALEX.value: 3,
-            Source.SEMANTIC_SCHOLAR.value: 2,
-            Source.SEED.value: 1,
-        }.get(p.source, 0)
-        return (
-            1 if p.doi else 0,
-            1 if p.abstract else 0,
-            p.citations_in_count,
-            source_rank,
-        )
-    return (a, b) if score(a) >= score(b) else (b, a)
 
 
 def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
@@ -292,14 +383,13 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
       3. Same normalized title, |Δyear| ≤ CROSS_YEAR_WINDOW,
          at least one shared normalized last-name.
 
-    Order-stable: the first occurrence of a paper keeps its position
-    in the output list.
+    Output is sorted by `id` so the same input in any order yields
+    byte-identical results.
     """
-    seen_order: list[str] = []  # paper.id in encounter order
     by_id: dict[str, Paper] = {}
-    doi_index: dict[str, str] = {}                       # doi -> paper.id
-    title_year_index: dict[tuple[str, int | None], str] = {}  # (norm_title, year) -> paper.id
-    title_index: dict[str, list[str]] = {}               # norm_title -> [paper.id, …]
+    doi_index: dict[str, str] = {}                              # doi -> paper.id
+    title_year_index: dict[tuple[str, int | None], str] = {}    # (norm_title, year) -> paper.id
+    title_index: dict[str, list[str]] = {}                      # norm_title -> [paper.id, …]
 
     def _register(pid: str, p: Paper) -> None:
         """Update every index for a paper that now lives in by_id under
@@ -343,21 +433,24 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
 
         if match_id is not None:
             existing = by_id[match_id]
-            primary, secondary = _pick_primary(existing, paper)
-            merged = _merge(primary, secondary)
+            survivor, loser = _pick_survivor(existing, paper)
+            merged = _merge(survivor, loser)
             by_id[match_id] = merged
             _register(match_id, merged)
             continue
 
-        # New paper — appended to seen_order and registered in every index.
+        # New paper — registered in every index.
         by_id[paper.id] = paper
-        seen_order.append(paper.id)
         _register(paper.id, paper)
 
-    return [by_id[pid] for pid in seen_order]
+    # Sort by id so the output is deterministic regardless of input
+    # order — this is the property the order-independence test checks.
+    return sorted(by_id.values(), key=lambda p: p.id)
 
 
 __all__ = [
+    "ARXIV_DOI_PREFIX",
+    "CITATIONS_MERGE_POLICY",
     "CROSS_YEAR_WINDOW",
     "deduplicate",
     "from_openalex",
