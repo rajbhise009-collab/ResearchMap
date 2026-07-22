@@ -36,10 +36,17 @@ def test_seed_source_get_by_id_roundtrips(seed_dir):
 
 
 def test_mock_llm_returns_valid_extraction_for_every_seed_paper(seed_dir):
+    """Route the seed papers through the mock via the current
+    `.generate(prompt)` interface — the prompt just needs to contain
+    the `Paper ID: `<id>`` marker the mock regex-extracts."""
+    import json
+    from backend.app.models import PaperExtraction
     src = SeedLitSource(seed_dir=seed_dir)
     llm = MockLLMClient()
     for paper in src.all_papers():
-        ext = llm.extract(paper)
+        prompt = f"header\nPaper ID: `{paper.id}`\nabstract goes here"
+        raw = llm.generate(prompt)
+        ext = PaperExtraction.model_validate(json.loads(raw))
         assert ext.paper_id == paper.id
         # Extractions must contain at least one claim and one limitation.
         assert ext.claims, f"no claims for {paper.id}"
@@ -51,11 +58,6 @@ def test_mock_llm_returns_valid_extraction_for_every_seed_paper(seed_dir):
 
 
 def test_mock_llm_refuses_to_fabricate_unknown_paper(seed_dir):
-    from backend.app.models import Paper, Source
     llm = MockLLMClient()
-    unknown = Paper(
-        id="seed:9999", source=Source.SEED, source_id="9999",
-        title="Nope", year=2024,
-    )
     with pytest.raises(FileNotFoundError):
-        llm.extract(unknown)
+        llm.generate("Paper ID: `seed:9999`")

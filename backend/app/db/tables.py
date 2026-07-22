@@ -61,7 +61,9 @@ class PaperRow(Base):
         "LimitationRow", back_populates="paper", cascade="all, delete-orphan"
     )
     future_work = relationship(
-        "FutureWorkRow", back_populates="paper", cascade="all, delete-orphan"
+        "FutureWorkRow", back_populates="paper",
+        cascade="all, delete-orphan",
+        foreign_keys="FutureWorkRow.paper_id",
     )
 
 
@@ -81,6 +83,11 @@ class ClaimRow(Base):
     # If this claim was split out of a compound sentence at extraction
     # time, points at the parent Claim.id from which it was derived.
     source_sentence_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    # Which extraction produced this claim (prompt-hash provenance).
+    extraction_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("paper_extractions.id", ondelete="SET NULL"),
+        nullable=True, index=True,
+    )
 
     paper = relationship("PaperRow", back_populates="claims")
     evidence = relationship(
@@ -97,6 +104,10 @@ class EvidenceRow(Base):
     )
     description: Mapped[str] = mapped_column(Text, nullable=False)
     strength: Mapped[float] = mapped_column(Float, nullable=False)
+    extraction_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("paper_extractions.id", ondelete="SET NULL"),
+        nullable=True, index=True,
+    )
 
     claim = relationship("ClaimRow", back_populates="evidence")
 
@@ -115,6 +126,10 @@ class MethodologyRow(Base):
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
     datasets: Mapped[list[str]] = mapped_column(ARRAY(String), default=list, nullable=False)
     conditions: Mapped[list[str]] = mapped_column(ARRAY(String), default=list, nullable=False)
+    extraction_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("paper_extractions.id", ondelete="SET NULL"),
+        nullable=True, index=True,
+    )
 
     paper = relationship("PaperRow", back_populates="methodologies")
 
@@ -134,6 +149,10 @@ class LimitationRow(Base):
         String, nullable=False, default="this_work", server_default="this_work",
         index=True,
     )
+    extraction_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("paper_extractions.id", ondelete="SET NULL"),
+        nullable=True, index=True,
+    )
 
     paper = relationship("PaperRow", back_populates="limitations")
 
@@ -149,11 +168,39 @@ class FutureWorkRow(Base):
     addressed_by: Mapped[str | None] = mapped_column(
         String, ForeignKey("papers.id", ondelete="SET NULL"), nullable=True
     )
+    extraction_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("paper_extractions.id", ondelete="SET NULL"),
+        nullable=True, index=True,
+    )
 
     paper = relationship("PaperRow", back_populates="future_work", foreign_keys=[paper_id])
 
 
 # --- Relationship layer + opportunities ----------------------------------
+
+
+class PaperExtractionRow(Base):
+    """Metadata for one extraction run over one paper.
+
+    Multiple extraction runs per paper are possible when the prompt
+    version changes; each gets a distinct row. Child rows (claims,
+    evidence, limitations, methodologies, future_work) link back via
+    `extraction_id` so we can always answer "which prompt produced
+    this record?".
+    """
+
+    __tablename__ = "paper_extractions"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    paper_id: Mapped[str] = mapped_column(
+        String, ForeignKey("papers.id", ondelete="CASCADE"),
+        nullable=False, index=True,
+    )
+    extractor: Mapped[str] = mapped_column(String, nullable=False)
+    prompt_hash: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    extracted_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False,
+    )
 
 
 class ClaimRelationshipRow(Base):
@@ -204,5 +251,6 @@ __all__ = [
     "LimitationRow",
     "MethodologyRow",
     "OpportunityRow",
+    "PaperExtractionRow",
     "PaperRow",
 ]
