@@ -853,6 +853,50 @@ Nothing autonomous. Awaiting explicit call on:
    corpus (64% strict hits, dedup + merge policy now solid) as a
    smoke-test corpus.
 
+## Patch — 2026-07-23 — Phase 1 flagged-item cleanups
+
+Three flagged items from the previous session addressed together:
+
+**Item 1 — `by_id` key vs `merged.id` inconsistency.** Previously,
+after a merge where the newcomer won the survivor pick, `by_id`
+stayed keyed by the first-seen ID while the stored record's own
+`.id` was the survivor's. Downstream index lookups (`title_index`
+buckets) then referenced a key that no longer had a `by_id` entry,
+so later dedup passes silently missed collapses. New `_rekey(old,
+new)` helper rewrites every index (`doi_index`, `title_year_index`,
+`title_index`) when the survivor identity flips, and the merge
+branch removes/reinstates the `by_id` entry under the survivor's
+ID. Regression test:
+`test_by_id_key_agrees_with_merged_id_after_newcomer_wins`
+exercises a 3-way collapse where the middle record wins over the
+first-seen; without the rekey the third record wouldn't find the
+survivor.
+
+**Item 2 — Pass 2 author check.** Symmetry with passes 3 and 4:
+same-title + same-year is now conditional on ≥1 shared normalized
+last-name. Empty authors on either side refuses to merge (positive
+evidence rule). New tests:
+- `test_pass2_collapses_when_authors_overlap` (positive baseline)
+- `test_pass2_does_not_collapse_when_authors_disjoint` (two truly
+  distinct papers with the same title in the same year survive)
+- `test_pass2_refuses_merge_when_authors_missing`
+
+Two existing tests (`test_dedup_collapses_by_title_year_when_doi_missing`
+and `test_dedup_prefers_record_with_doi_and_abstract`) had no
+authors on either side; they now include `["Ashish Vaswani"]` /
+`["A. Vaswani"]` to keep their semantic intent (pass-2 title+year
+merge; DOI preference on merge) while satisfying the new rule.
+
+**Item 3 — Seed corpus regeneration.** All 35 seed paper JSONs on
+disk now carry the `merged_from: []` field explicitly. To keep
+future regenerations diff-clean, the `PaperExtraction.extracted_at`
+timestamp for seed extractions is now a fixed value
+(`2026-07-21T00:00:00Z`) instead of `datetime.now()` — regenerating
+the corpus produces byte-identical output.
+
+**Tests:** 66 passing (+4 over change B). No live LLM calls made;
+no API keys touched.
+
 ## Flagged, not acted on
 
 **"Commit separately" was requested but ResearchMap is not a git

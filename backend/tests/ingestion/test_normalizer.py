@@ -142,9 +142,11 @@ def test_dedup_collapses_by_doi():
 
 def test_dedup_collapses_by_title_year_when_doi_missing():
     a = _p("openalex:W2", source=Source.OPENALEX, doi=None,
-           title="Attention Is All You Need", year=2017, abstract="a")
+           title="Attention Is All You Need", year=2017, abstract="a",
+           authors=["Ashish Vaswani"])
     b = _p("s2:ABC", source=Source.SEMANTIC_SCHOLAR, doi=None,
-           title="attention is all you need!", year=2017)
+           title="attention is all you need!", year=2017,
+           authors=["A. Vaswani"])
     out = deduplicate([a, b])
     assert len(out) == 1
 
@@ -159,10 +161,12 @@ def test_dedup_preserves_order_of_first_occurrence():
 
 def test_dedup_prefers_record_with_doi_and_abstract():
     with_doi = _p("openalex:W1", source=Source.OPENALEX, doi="10.1/x", abstract="a",
-                   title="Attention Is All You Need", year=2017)
+                   title="Attention Is All You Need", year=2017,
+                   authors=["Ashish Vaswani"])
     without_doi = _p("s2:X", source=Source.SEMANTIC_SCHOLAR, doi=None,
                      title="Attention Is All You Need", year=2017,
-                     citations_in_count=5000)
+                     citations_in_count=5000,
+                     authors=["A. Vaswani"])
     out = deduplicate([without_doi, with_doi])
     assert len(out) == 1
     # The winning record keeps the DOI-bearing paper's ID.
@@ -538,6 +542,80 @@ def test_pass4_does_not_collapse_two_arxiv_dois():
     # pass 3 misses (year gap > CROSS_YEAR_WINDOW), pass 4 misses
     # (both arXiv). Both records survive.
     assert len(out) == 2
+
+
+# --- Pass 2 author check (symmetry with passes 3 + 4) -----------------
+
+
+def test_pass2_collapses_when_authors_overlap():
+    """Baseline positive case: same title + same year + shared author
+    → merge (this is the case pass 2 has always caught)."""
+    a = _p("openalex:W1", source=Source.OPENALEX, doi=None,
+           title="Same Year Same Title", year=2020,
+           authors=["Alice Alpha", "Charlie Chen"])
+    b = _p("openalex:W2", source=Source.OPENALEX, doi=None,
+           title="Same Year Same Title", year=2020,
+           authors=["A. Alpha"])  # first initial + last name form
+    out = deduplicate([a, b])
+    assert len(out) == 1
+
+
+def test_pass2_does_not_collapse_when_authors_disjoint():
+    """Two truly distinct papers with the same title in the same year,
+    written by different teams, must NOT merge. This is the semantic
+    reason for the pass-2 author check — the failure it prevents."""
+    a = _p("openalex:W1", source=Source.OPENALEX, doi=None,
+           title="A Survey of Neural Networks", year=2020,
+           authors=["Alice Alpha"])
+    b = _p("openalex:W2", source=Source.OPENALEX, doi=None,
+           title="A Survey of Neural Networks", year=2020,
+           authors=["Bob Beta"])
+    out = deduplicate([a, b])
+    assert len(out) == 2, "distinct same-year same-title papers must survive"
+
+
+def test_pass2_refuses_merge_when_authors_missing():
+    """Positive author evidence is required (matches passes 3 and 4).
+    If either record has empty authors we can't vouch that the
+    title+year coincidence is more than that, so we must not merge."""
+    a = _p("openalex:W1", source=Source.OPENALEX, doi=None,
+           title="Same Year Same Title", year=2020, authors=[])
+    b = _p("openalex:W2", source=Source.OPENALEX, doi=None,
+           title="Same Year Same Title", year=2020,
+           authors=["Some Person"])
+    out = deduplicate([a, b])
+    assert len(out) == 2
+
+
+# --- by_id key consistency post-merge (flagged item 2) ----------------
+
+
+def test_by_id_key_agrees_with_merged_id_after_newcomer_wins():
+    """When the newcomer wins the survivor pick, we must rekey the
+    internal by_id map so the key and the record's own .id agree.
+    Otherwise later dedup passes look up by the wrong key and can
+    miss merges. Regression test for the flagged latent bug."""
+    # First-seen record has no DOI + no venue + no cites → weak.
+    weak_first = _p("openalex:W_early", source=Source.OPENALEX, doi=None,
+                     title="Consistency Test", year=2020,
+                     authors=["A. B."])
+    # Later-seen record wins on tier 1 (has a published DOI).
+    strong_later = _p("openalex:W_late", source=Source.OPENALEX,
+                       doi="10.1234/journal.1",
+                       title="Consistency Test", year=2020,
+                       authors=["A. B."], venue="Journal")
+    # Then a THIRD record arrives with same title + year + shared
+    # author. It must find the survivor via the internal indexes; if
+    # the rekey step was skipped, title_index still points at
+    # W_early (no by_id entry) and this dedup silently fails.
+    third = _p("openalex:W_third", source=Source.OPENALEX, doi=None,
+                title="Consistency Test", year=2020,
+                authors=["A. B."])
+    out = deduplicate([weak_first, strong_later, third])
+    assert len(out) == 1, "all three should collapse into the strong record"
+    assert out[0].id == "openalex:W_late"
+    # Both losers named in merged_from.
+    assert set(out[0].merged_from) == {"openalex:W_early", "openalex:W_third"}
 
 
 def test_pass4_does_not_collapse_when_titles_differ():

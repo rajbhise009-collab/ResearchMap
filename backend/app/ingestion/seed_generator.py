@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 
 from backend.app.config import REPO_ROOT
@@ -30,6 +31,11 @@ from backend.app.models import (
     PaperExtraction,
     Source,
 )
+
+
+# Fixed timestamp for seed extractions so regenerating the corpus
+# produces byte-identical output (no diff noise from `datetime.now()`).
+_SEED_EXTRACTED_AT = datetime(2026, 7, 21, 0, 0, 0, tzinfo=timezone.utc)
 
 
 # --- Domain vocabulary ----------------------------------------------------
@@ -399,6 +405,7 @@ def make_paper(spec: PaperSpec) -> tuple[Paper, PaperExtraction]:
         methodologies=methods,
         limitations=limitations,
         future_work=future_work,
+        extracted_at=_SEED_EXTRACTED_AT,
         extractor="seed-fixture",
     )
     return paper, extraction

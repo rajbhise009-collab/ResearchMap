@@ -5,12 +5,17 @@ duplicates that arrive from multiple sources.
 
 Dedup order (deterministic, most-specific first):
   1. Same normalized DOI  → merge.
-  2. Same (normalized-title, year) tuple → merge.
+  2. Same (normalized-title, year) tuple AND ≥1 shared normalized
+     last-name → merge.
   3. Same normalized title, year within ±CROSS_YEAR_WINDOW, AND
      at least one shared normalized last-name → merge.
   4. One record has an arXiv DOI (10.48550/arxiv.*) and the other has
      a non-arXiv DOI, same normalized title, AND at least one shared
      normalized last-name → merge. Fires regardless of year gap.
+
+Passes 2, 3, and 4 all require positive author evidence — empty
+author lists on either side refuse to merge, protecting against
+collisions of unrelated papers that happen to share a title.
 
 The whole point of these passes is scoring integrity — two records for
 the same work would fake independent replication and inflate any
@@ -382,7 +387,8 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
 
     Passes (most-specific first):
       1. Same normalized DOI.
-      2. Same (normalized-title, year).
+      2. Same (normalized-title, year) AND ≥1 shared normalized
+         last-name.
       3. Same normalized title, |Δyear| ≤ CROSS_YEAR_WINDOW,
          at least one shared normalized last-name.
       4. arXiv-DOI ↔ non-arXiv-DOI, same normalized title, ≥1 shared
@@ -407,6 +413,27 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
         if norm_t and pid not in title_index.setdefault(norm_t, []):
             title_index[norm_t].append(pid)
 
+    def _rekey(old_id: str, new_id: str) -> None:
+        """Rewrite every index that pointed at `old_id` to point at
+        `new_id`. Called after a merge where the newcomer wins the
+        survivor pick, so the by_id key and the record's own .id
+        always agree afterwards."""
+        if old_id == new_id:
+            return
+        for k, v in list(doi_index.items()):
+            if v == old_id:
+                doi_index[k] = new_id
+        for k, v in list(title_year_index.items()):
+            if v == old_id:
+                title_year_index[k] = new_id
+        for norm_t, bucket in list(title_index.items()):
+            rewritten: list[str] = []
+            for x in bucket:
+                mapped = new_id if x == old_id else x
+                if mapped not in rewritten:
+                    rewritten.append(mapped)
+            title_index[norm_t] = rewritten
+
     for paper in papers:
         match_id: str | None = None
 
@@ -414,11 +441,18 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
         if paper.doi and paper.doi in doi_index:
             match_id = doi_index[paper.doi]
 
-        # Pass 2 — exact (title, year).
+        # Pass 2 — exact (title, year) + shared author.
+        # Author check required for symmetry with passes 3+4: two
+        # distinct same-titled papers published the same year with
+        # different authors are two papers, not one. Empty authors on
+        # either side refuse to merge (positive evidence rule).
         if match_id is None:
             key = (normalize_title(paper.title), paper.year)
             if key[0] and key in title_year_index:
-                match_id = title_year_index[key]
+                candidate_id = title_year_index[key]
+                candidate = by_id[candidate_id]
+                if _authors_overlap(paper.authors, candidate.authors):
+                    match_id = candidate_id
 
         # Pass 3 — cross-year title + shared author.
         if match_id is None and paper.year is not None:
@@ -461,8 +495,16 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
             existing = by_id[match_id]
             survivor, loser = _pick_survivor(existing, paper)
             merged = _merge(survivor, loser)
-            by_id[match_id] = merged
-            _register(match_id, merged)
+            survivor_id = merged.id
+            # Ensure the by_id key and merged.id always agree. If the
+            # newcomer won the survivor pick, we move the record from
+            # match_id → survivor_id and rewrite every index pointing
+            # at the old key.
+            if match_id != survivor_id:
+                del by_id[match_id]
+                _rekey(match_id, survivor_id)
+            by_id[survivor_id] = merged
+            _register(survivor_id, merged)
             continue
 
         # New paper — registered in every index.
