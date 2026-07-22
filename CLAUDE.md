@@ -140,10 +140,23 @@ Implement each of these as a Pydantic v2 model AND a DB table.
 - Phase 0 — foundation: repo, data model (Pydantic + DB), config,
   interfaces, mocks, seed corpus.
 - Phase 1 — ingestion: OpenAlex + Semantic Scholar clients, normalizer,
-  dedup, tests.
+  dedup, tests. Small-sample corpus only at this phase (100–300 papers
+  from keyword retrieval). Full-scale corpus construction — snowball
+  expansion, adjacent-domain sweeps, OA-full-text retrieval — is
+  deferred until AFTER extraction is proven on the small sample. The
+  corpus requirements are downstream of what extraction actually
+  needs: for example, if abstracts alone yield too few limitations to
+  score anything, we need OA full text, and that changes ingestion
+  and storage before we scale corpus size. Do not scale up ingestion
+  until Phase 2 tells us what the corpus has to contain.
 - Phase 2 — extraction (blocked until user approves).
 - Phase 3 — relationship layer (blocked).
 - Phase 4 — reasoning engine (blocked).
-- Phase 5 — ranking + validation (blocked).
-- Phase 6 — API (blocked).
-- Phase 7 — frontend (blocked).
+- Phase 5 — ranking (blocked).
+- Phase 6 — validation (blocked). Its own gated phase. The
+  retrospective time-split test — freezing the corpus at year Y and
+  checking whether the ranking recovers year-(Y+k) actual research
+  activity — is the project's publishable claim. It gets a full
+  phase, not a half-phase bundled with ranking.
+- Phase 7 — API (blocked).
+- Phase 8 — frontend (blocked).
