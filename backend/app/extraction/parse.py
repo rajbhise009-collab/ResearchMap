@@ -83,22 +83,36 @@ def _split_compound_text(text: str) -> list[str]:
     """Return the list of atomic claim-text substrings implied by
     the compound-splitting rules. If `text` is atomic, returns
     `[text]`."""
-    parts_by_enum = _ENUM_PATTERN.split(text)
-    parts_by_enum = [p.strip() for p in parts_by_enum if p.strip()]
-
-    # Only accept an enumeration split when we recover 2+ non-trivial
-    # clauses AND at least two of them look like independent claims.
-    if len(parts_by_enum) >= 2:
-        long_enough = [p for p in parts_by_enum if len(p.split()) >= 3]
-        with_verbs = [p for p in long_enough if _has_verblike_token(p)]
-        if len(long_enough) >= 2 and len(with_verbs) >= 2:
+    # --- Enumeration split.
+    # Only accept when we detected at least TWO enumeration markers.
+    # Atoms are the text that appears AFTER each marker, up to the
+    # next marker (or end of text). Preamble (text before the first
+    # marker) is discarded — it's typically framing like "Our
+    # contributions are" rather than an atomic claim on its own.
+    # We deliberately DO NOT require a verb on each atom — nominal
+    # contribution lists ("1) X, 2) Y, 3) Z") are compounds even
+    # though the atoms are noun phrases.
+    matches = list(_ENUM_PATTERN.finditer(text))
+    if len(matches) >= 2:
+        atoms = []
+        for i, m in enumerate(matches):
+            start = m.end()
+            end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+            atom = text[start:end].strip().rstrip(",").strip()
+            atoms.append(atom)
+        long_enough = [a for a in atoms if len(a.split()) >= 3]
+        if len(long_enough) >= 2:
             return long_enough
 
-    # Semicolon split — only when both halves have independent verbs.
+    # --- Semicolon split.
+    # More ambiguous — many valid single claims use semicolons for
+    # trailing lists ("three benchmarks were used; ETTh1, ETTh2, and
+    # Weather"). Require that every half have both a verb-like token
+    # AND enough tokens to stand alone.
     semi = [p.strip() for p in text.split(";") if p.strip()]
     if len(semi) >= 2:
         with_verbs = [p for p in semi if _has_verblike_token(p) and len(p.split()) >= 3]
-        if len(with_verbs) == len(semi) and len(semi) >= 2:
+        if len(with_verbs) == len(semi):
             return semi
 
     return [text]
