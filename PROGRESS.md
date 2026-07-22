@@ -897,6 +897,90 @@ the corpus produces byte-identical output.
 **Tests:** 66 passing (+4 over change B). No live LLM calls made;
 no API keys touched.
 
+## Phase 2 — corpus quality diagnosis (2026-07-23) → **GATE A**
+
+Live OpenAlex call — 200 papers under the frozen v3 query strategy
+(anchored `title_and_abstract.search:(anchor) AND (topic)`, filter
+`primary_topic.subfield.id:1702, type:article|preprint,
+publication_year:>2018`, default relevance sort). Single request, 10
+credits, daily balance 9,937 / 10,000.
+
+**Artifacts** (all committed):
+
+- `data/live_samples/phase2_diagnostic_raw.json` — raw response,
+  meta, credit-ledger headers. sha256[:12] logged for reproducibility.
+- `data/labelled/heuristic_full_labels.csv` — every one of the 200
+  papers with heuristic label + matched anchor/topic terms.
+- `data/labelled/corpus_relevance_review.csv` — 60-paper random
+  sample (deterministic seed 20260723) with an empty `on_domain`
+  column for hand-labelling.
+- `data/labelled/per_clause_leak.md` — the per-clause report.
+
+**Heuristic auto-label distribution (n=200):**
+
+| Label | Count | Share |
+|:------|------:|------:|
+| on-domain | 180 | 90.0% |
+| borderline | 19 | 9.5% |
+| off-domain | 1 | 0.5% |
+
+**Important — 90% is NOT precision.** The heuristic is designed
+to catch cross-domain contamination (chemistry, materials science,
+medicine venues, non-CS primary fields). The AI-subfield filter
+already removed those at query time, so the strict off-domain
+bucket is near-empty by construction. The `borderline` bucket is
+where within-AI application papers accumulate (e.g. Nature Geoscience
+review on generative AI, medical LLM summarization, chatHPC). The
+60-paper hand-review CSV is the definitive precision measurement.
+
+**Per-topic-term leak (non-on-domain rate = borderline + off-domain
+share, the informative view):**
+
+| Topic term | Matches | Non-on-domain hits | Rate |
+|:-----------|--------:|-------------------:|-----:|
+| epistemic uncertainty | 8 | 2 | 25.0% |
+| calibration | 105 | 8 | 7.6% |
+| uncertainty quantification | 31 | 2 | 6.5% |
+| hallucination | 49 | 2 | 4.1% |
+| hallucination detection | 40 | 1 | 2.5% |
+| abstention | 6 | 0 | 0.0% |
+| selective prediction | 3 | 0 | 0.0% |
+| confidence estimation | 7 | 0 | 0.0% |
+
+**Per-anchor-term leak (non-on-domain rate):**
+
+| Anchor term | Matches | Non-on-domain hits | Rate |
+|:------------|--------:|-------------------:|-----:|
+| large language model | 23 | 4 | 17.4% |
+| language model | 31 | 5 | 16.1% |
+| llm | 98 | 8 | 8.2% |
+| language models | 185 | 14 | 7.6% |
+| large language models | 159 | 12 | 7.5% |
+| llms | 138 | 10 | 7.2% |
+| neural text generation | 0 | 0 | — |
+
+Zero hits on `neural text generation` — worth dropping from the
+anchor list unless there's a specific reason it's there.
+
+**Caveats:**
+
+- 13/200 papers came back with no abstract in the OpenAlex response
+  body. For those, per-clause attribution is title-only, which
+  under-counts a few matches (2 papers had no anchor term visible,
+  9 had no topic term visible in title-only). Small enough to not
+  move the ranking; noted for honesty.
+- The heuristic's on-domain "venue in allowlist" gate is triggered
+  by arXiv on many rows. That's intentional (a lot of on-domain
+  work lives on arXiv) but it inflates the 90% figure toward
+  "papers we won't rule out" rather than "papers we're confident
+  are on-domain".
+- Random seed for the 60-paper sample is 20260723; the sample is
+  reproducible.
+
+**STOP — GATE A.** Do not proceed to Phase 3 (query hardening +
+snowball) until Raj has reviewed the 60-paper hand-label CSV and
+tells me the actual per-clause leak we're targeting.
+
 ## Flagged, not acted on
 
 **"Commit separately" was requested but ResearchMap is not a git
