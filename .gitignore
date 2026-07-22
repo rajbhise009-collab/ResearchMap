@@ -18,9 +18,15 @@ venv/
 
 # Cache (per-paper extractions and cached API responses — regenerable)
 data/cache/
-data/corpora/                # Phase 4 corpus dumps — large, regeneratable
-data/live_samples/           # raw OpenAlex JSON pulls — large, regeneratable
-data/labelled/*.filled.csv   # hand-labelled reviewer CSVs — user's private work
+
+# Phase 4 corpus dumps — large, regeneratable from the manifest
+data/corpora/
+
+# Raw OpenAlex JSON pulls — large, regeneratable from the diagnostic script
+data/live_samples/
+
+# Hand-labelled reviewer CSVs — user's private work
+data/labelled/*.filled.csv
 
 # DB artifacts
 *.db
