@@ -1,0 +1,434 @@
+{
+  "generated_at": "2026-07-22T15:55:41.496972+00:00",
+  "sample_size": 60,
+  "hits_total": 48,
+  "hit_breakdown": {
+    "openalex_doi (arxiv DOI prefix)": 41,
+    "openalex_landing_page (arxiv.org URL)": 3,
+    "arxiv_title_search (fuzzy match on title)": 4
+  },
+  "misses": 12,
+  "coverage_percent": 80.0,
+  "per_paper": [
+    {
+      "openalex_id": "https://openalex.org/W4396881553",
+      "title": "LLMC: Benchmarking Large Language Model Quantization with a Versatile Compression Toolkit",
+      "openalex_venue": "",
+      "arxiv_id": "2405.06001",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4309634482",
+      "title": "Rationalizing predictions by adversarial information calibration",
+      "openalex_venue": "",
+      "arxiv_id": "2301.06009",
+      "method": "openalex_landing"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4403296573",
+      "title": "<tt>L2CEval</tt>: Evaluating Language-to-Code Generation Capabilities of Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W7131659145",
+      "title": "Hallucination as Geometric Overflow - Separating Coherence from Admissibility in Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4411504139",
+      "title": "Shaping pre-trained language models for task-specific embedding generation via consistency calibration",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388555945",
+      "title": "Beyond Size: How Gradients Shape Pruning Decisions in Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2311.04902",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388787841",
+      "title": "R-Tuning: Instructing Large Language Models to Say `I Don't Know'",
+      "openalex_venue": "",
+      "arxiv_id": "2311.09677",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4399026321",
+      "title": "Semantic Density: Uncertainty Quantification for Large Language Models through Confidence Measurement in Semantic Space",
+      "openalex_venue": "",
+      "arxiv_id": "2405.13845",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4413269875",
+      "title": "A scalable framework for evaluating multiple language models through cross-domain generation and hallucination detection",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4386269079",
+      "title": "Bayesian Low-rank Adaptation for Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2308.13111",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4391901281",
+      "title": "Uncertainty Quantification for In-Context Learning of Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2402.10189",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4395021958",
+      "title": "BIRD: A Trustworthy Bayesian Inference Framework for Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2404.12494",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4416413428",
+      "title": "Model Hemorrhage and the Robustness Limits of Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2503.23924",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388092399",
+      "title": "Chainpoll: A high efficacy method for LLM hallucination detection",
+      "openalex_venue": "",
+      "arxiv_id": "2310.18344",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4281690148",
+      "title": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
+      "openalex_venue": "",
+      "arxiv_id": "2206.04615",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4414565279",
+      "title": "MergeQuant: Accurate 4-bit Static Quantization of Large Language Models by Channel-wise Calibration",
+      "openalex_venue": "",
+      "arxiv_id": "2503.07654",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4387559042",
+      "title": "Chain of Natural Language Inference for Reducing Large Language Model Ungrounded Hallucinations",
+      "openalex_venue": "",
+      "arxiv_id": "2310.03951",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4390528749",
+      "title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2401.00396",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4310829078",
+      "title": "Improving Few-Shot Performance of Language Models via Nearest Neighbor Calibration",
+      "openalex_venue": "",
+      "arxiv_id": "2212.02216",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4403706417",
+      "title": "Exploring the Trade-Offs: Quantization Methods, Task Difficulty, and Model Size in Large Language Models From Edge to Giant",
+      "openalex_venue": "",
+      "arxiv_id": "2409.11055",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4415897371",
+      "title": "Uncertainty-aware large language model response length perception",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4378770815",
+      "title": "Large Language Models are not Fair Evaluators",
+      "openalex_venue": "",
+      "arxiv_id": "2305.17926",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4404534210",
+      "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+      "openalex_venue": "",
+      "arxiv_id": "2311.05232",
+      "method": "arxiv_title_search"
+    },
+    {
+      "openalex_id": "https://openalex.org/W7128435343",
+      "title": "BAF–FedLLM: Behavior-Aware Federated Modeling of Student Actions via Privacy-Preserving Large Language Model",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4406603696",
+      "title": "Multiple Choice Questions: Reasoning Makes Large Language Models (LLMs) More Self-Confident, specially When They are Wrong",
+      "openalex_venue": "",
+      "arxiv_id": "2501.09775",
+      "method": "openalex_landing"
+    },
+    {
+      "openalex_id": "https://openalex.org/W7119497706",
+      "title": "Depth Avoidance in Safety-Aligned Language Models: A Qualitative Hypothesis and Measurement Framework",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388748446",
+      "title": "Pearl: Personalizing Large Language Model Writing Assistants with Generation-Calibrated Retrievers",
+      "openalex_venue": "",
+      "arxiv_id": "2311.09180",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4417248784",
+      "title": "HalluciNot: Hallucination Detection Through Context and Common Knowledge Verification",
+      "openalex_venue": "",
+      "arxiv_id": "2504.07069",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W7133217615",
+      "title": "MEDAI-LLM-SUMM: a reporting checklist for medical text summarization studies using large language models",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4411121371",
+      "title": "A Survey on Uncertainty Quantification of Large Language Models: Taxonomy, Open Research Challenges, and Future Directions",
+      "openalex_venue": "",
+      "arxiv_id": "2412.05563",
+      "method": "arxiv_title_search"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4399061648",
+      "title": "SliM-LLM: Salience-Driven Mixed-Precision Quantization for Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2405.14917",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4386561859",
+      "title": "Zero-Resource Hallucination Prevention for Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2309.02654",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4322717046",
+      "title": "Navigating the Grey Area: How Expressions of Uncertainty and Overconfidence Affect Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2302.13439",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4353007635",
+      "title": "Context-faithful Prompting for Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2303.11315",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4391505381",
+      "title": "Efficient Non-Parametric Uncertainty Quantification for Black-Box Large Language Models and Decision Planning",
+      "openalex_venue": "",
+      "arxiv_id": "2402.00251",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4416966348",
+      "title": "A hallucination detection and mitigation framework for faithful text summarization using LLMs",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4394579953",
+      "title": "Language Models in the Loop: Incorporating Prompting into Weak Supervision",
+      "openalex_venue": "",
+      "arxiv_id": "2205.02318",
+      "method": "arxiv_title_search"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4415914353",
+      "title": "LLMs are Overconfident: Evaluating Confidence Interval Calibration with FermiEval",
+      "openalex_venue": "",
+      "arxiv_id": "2510.26995",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W7139083851",
+      "title": "Do large language models (really) need statistical foundations?",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4225948283",
+      "title": "Co-training Improves Prompt-based Learning for Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2202.00828",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4389650671",
+      "title": "ASVD: Activation-aware Singular Value Decomposition for Compressing Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2312.05821",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388444554",
+      "title": "SAC3: Reliable Hallucination Detection in Black-Box Language Models via Semantic-aware Cross-check Consistency",
+      "openalex_venue": "",
+      "arxiv_id": "2311.01740",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4400222628",
+      "title": "Uncertainty Quantification in Large Language Models Through Convex Hull Analysis",
+      "openalex_venue": "",
+      "arxiv_id": "2406.19712",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4389911350",
+      "title": "Self-Evaluation Improves Selective Generation in Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2312.09300",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4393100103",
+      "title": "Facilitating Pornographic Text Detection for Open-Domain Dialogue Systems via Knowledge Distillation of Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2403.13250",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4404817104",
+      "title": "Analysing the Predictability of Language Model Performance",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    },
+    {
+      "openalex_id": "https://openalex.org/W4406072399",
+      "title": "Understanding the Relationship between Prompts and Response Uncertainty in Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2407.14845",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4399554616",
+      "title": "On Subjective Uncertainty Quantification and Calibration in Natural Language Generation",
+      "openalex_venue": "",
+      "arxiv_id": "2406.05213",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4385374425",
+      "title": "Code of \"Sirens' Whisper: Inaudible Near-Ultrasonic Jailbreaks of Speech-Driven LLMs\"",
+      "openalex_venue": "",
+      "arxiv_id": "2307.15043",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4405714852",
+      "title": "To Rely or Not to Rely? Evaluating Interventions for Appropriate Reliance on Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2412.15584",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3174266714",
+      "title": "Time-Aware Language Models as Temporal Knowledge Bases",
+      "openalex_venue": "",
+      "arxiv_id": "2106.15110",
+      "method": "openalex_landing"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4386875326",
+      "title": "Contrastive Decoding Improves Reasoning in Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2309.09117",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4414620308",
+      "title": "Trustworthy Summarization via Uncertainty Quantification and Risk Awareness in Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": "2510.01231",
+      "method": "arxiv_title_search"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3173898364",
+      "title": "Mitigating Political Bias in Language Models Through Reinforced Calibration",
+      "openalex_venue": "",
+      "arxiv_id": "2104.14795",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388585881",
+      "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+      "openalex_venue": "",
+      "arxiv_id": "2311.05232",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388652756",
+      "title": "Practical Membership Inference Attacks against Fine-tuned Large Language Models via Self-prompt Calibration",
+      "openalex_venue": "",
+      "arxiv_id": "2311.06062",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4377121527",
+      "title": "SLiC-HF: Sequence Likelihood Calibration with Human Feedback",
+      "openalex_venue": "",
+      "arxiv_id": "2305.10425",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388748038",
+      "title": "Decomposing Uncertainty for Large Language Models through Input Clarification Ensembling",
+      "openalex_venue": "",
+      "arxiv_id": "2311.08718",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4387635169",
+      "title": "Exploring Large Language Models for Multi-Modal Out-of-Distribution Detection",
+      "openalex_venue": "",
+      "arxiv_id": "2310.08027",
+      "method": "openalex_doi"
+    },
+    {
+      "openalex_id": "https://openalex.org/W7128482017",
+      "title": "Iterative Self-Questioning Supervision with Semantic Calibration for Stable Reasoning Chains in Large Language Models",
+      "openalex_venue": "",
+      "arxiv_id": null,
+      "method": null
+    }
+  ]
+}

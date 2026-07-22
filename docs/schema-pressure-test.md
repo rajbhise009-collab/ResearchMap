@@ -81,6 +81,45 @@ recall problem for `FutureWork` extraction: **the scorer looking for
 abstracts only.** Future-work paragraphs live in the paper's discussion
 / conclusion, not the abstract. See schema decision #4.
 
+### 5. arXiv full-text coverage — **80.0% (48/60)**
+
+Measured via `backend/app/corpus/arxiv_coverage.py`, three detection
+paths (all deterministic, all free):
+
+| Path | Hits |
+|:-----|-----:|
+| OpenAlex DOI has `10.48550/arxiv.` prefix | 41 |
+| OpenAlex landing/PDF URL points to arxiv.org | 3 |
+| arXiv Atom-API title search returns an exact normalized match | 4 |
+| **Total arXiv coverage** | **48 / 60 (80.0%)** |
+| Misses | 12 (TACL, Neural Networks, Scientific Reports, Zenodo, Preprints.org, Frontiers, IEEE Intelligent Systems, ACM TIST, Annals of Applied Statistics, Mathematics, ACM/IMS J. Data Sci.) |
+
+**Consequence: OA full-text ingestion via arXiv is much cheaper than
+the original Phase 1.5 deferral assumed.** The failure mode was "OA
+ingestion needs multiple sources (arXiv, Europe PMC, PubMed Central,
+publisher OA), it's a heavy build". For this corpus (LLM
+safety / calibration / hallucination), arXiv alone gets us 80%. The
+remaining 20% split roughly across journal-only, Zenodo, Preprints.org,
+and one government-funded medical checklist paper — most of them not
+individually necessary for the reasoning engine to function.
+
+Revised implementation plan for OA full text:
+
+- **Phase 1.5 v1: arXiv only.** Reaches 80% coverage. Cheap to build:
+  one endpoint (`export.arxiv.org/api/query` or direct PDF fetch),
+  one parser (arXiv distributes clean LaTeX + PDF; grobid or a
+  smaller `pypdf` + section-heading regex is enough for future-work
+  and limitations paragraph extraction).
+- **Phase 1.5 v2 (optional): Europe PMC + Semantic Scholar S2ORC.**
+  Fills the journal-only gap. Adds ~15 more papers of coverage on
+  this sample.
+- **Never in scope for this corpus:** publisher-specific paywalled
+  full text. Excluded papers stay excluded, tagged in the corpus
+  manifest.
+
+Report file: `data/labelled/arxiv_coverage_report.json` — per-paper
+detection method logged for reproducibility.
+
 ### 4. Compound-claim sentences — **58.9% yes** (33/56)
 
 Majority of abstracts contain at least one sentence carrying two or
