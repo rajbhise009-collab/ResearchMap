@@ -51,6 +51,25 @@ class RelationshipType(str, Enum):
     USES_METHOD = "uses_method"
 
 
+class LimitationScope(str, Enum):
+    """Whose limitation is this? See docs/schema-pressure-test.md
+    decision #1.
+
+    - `this_work`: a limitation of the paper's OWN method, benchmark, or
+      empirical findings — including limitations of the subject the
+      paper investigates (e.g. "we find LLMs are miscalibrated"). This
+      is the evidence the persistent-limitations scorer counts.
+    - `prior_work`: a limitation of PRIOR work cited by the paper as
+      motivation ("existing methods X have Y problem, so we…"). Almost
+      never attributable to the specific prior paper from an abstract
+      alone; feeding it to the scorer causes prior-work-limitation
+      misattribution (see opportunity-criteria.md).
+    """
+
+    THIS_WORK = "this_work"
+    PRIOR_WORK = "prior_work"
+
+
 class GapType(str, Enum):
     UNADDRESSED_LIMITATION = "unaddressed_limitation"
     UNRESOLVED_CONTRADICTION = "unresolved_contradiction"
@@ -118,6 +137,12 @@ class Claim(_Base):
     text: NonEmptyStr
     type: ClaimType
     confidence: Confidence
+    # If this claim was split out of a compound sentence during
+    # extraction, `source_sentence_id` points at the parent Claim.id
+    # from which it was derived. Populated by
+    # `backend.app.extraction.parse.split_compound_claims`. See
+    # docs/schema-pressure-test.md decision #2.
+    source_sentence_id: str | None = None
 
 
 class Methodology(_Base):
@@ -134,6 +159,11 @@ class Limitation(_Base):
     paper_id: NonEmptyStr
     text: NonEmptyStr
     normalized_category: NonEmptyStr
+    # Whose limitation this is. Default `this_work` matches the
+    # persistent-limitations scorer's usable-evidence class; extractors
+    # must set `prior_work` explicitly when the limitation is being
+    # cited from prior work rather than reported about this paper.
+    source_scope: LimitationScope = LimitationScope.THIS_WORK
 
 
 class FutureWork(_Base):
@@ -210,6 +240,7 @@ __all__ = [
     "FutureWork",
     "GapType",
     "Limitation",
+    "LimitationScope",
     "Methodology",
     "NonEmptyStr",
     "Opportunity",

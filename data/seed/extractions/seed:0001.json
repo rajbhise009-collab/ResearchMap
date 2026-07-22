@@ -6,14 +6,16 @@
       "paper_id": "seed:0001",
       "text": "Informer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Electricity at horizon 336.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0001:c2",
       "paper_id": "seed:0001",
       "text": "Informer is best characterised as sparse-attention transformer with ProbSparse self-attention.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -47,13 +49,15 @@
       "id": "seed:0001:l1",
       "paper_id": "seed:0001",
       "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
-      "normalized_category": "statistical-power"
+      "normalized_category": "statistical-power",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0001:l2",
       "paper_id": "seed:0001",
       "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
-      "normalized_category": "efficiency-measurement"
+      "normalized_category": "efficiency-measurement",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

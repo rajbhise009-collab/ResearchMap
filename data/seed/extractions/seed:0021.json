@@ -6,14 +6,16 @@
       "paper_id": "seed:0021",
       "text": "Periodicity-aware convolutional models are data-efficient on ETTh1, Weather.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0021:c2",
       "paper_id": "seed:0021",
       "text": "TimesNet is best characterised as 2D-convolutional periodicity-aware model.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -45,13 +47,15 @@
       "id": "seed:0021:l1",
       "paper_id": "seed:0021",
       "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
-      "normalized_category": "statistical-power"
+      "normalized_category": "statistical-power",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0021:l2",
       "paper_id": "seed:0021",
       "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
-      "normalized_category": "efficiency-measurement"
+      "normalized_category": "efficiency-measurement",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

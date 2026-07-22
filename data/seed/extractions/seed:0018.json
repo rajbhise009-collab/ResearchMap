@@ -6,14 +6,16 @@
       "paper_id": "seed:0018",
       "text": "Hierarchical attention narrows the horizon-720 gap versus horizon-336 for Crossformer on ETTh1, Traffic.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0018:c2",
       "paper_id": "seed:0018",
       "text": "Crossformer is best characterised as cross-dimension transformer with hierarchical encoder.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -45,13 +47,15 @@
       "id": "seed:0018:l1",
       "paper_id": "seed:0018",
       "text": "Confidence intervals or standard errors are not reported for the headline metric.",
-      "normalized_category": "statistical-reporting"
+      "normalized_category": "statistical-reporting",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0018:l2",
       "paper_id": "seed:0018",
       "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
-      "normalized_category": "missing-data"
+      "normalized_category": "missing-data",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

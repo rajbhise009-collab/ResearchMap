@@ -6,14 +6,16 @@
       "paper_id": "seed:0034",
       "text": "No forecaster in the compared set shows a statistically significant improvement over a naive last-value predictor on Exchange, ILI.",
       "type": "negative",
-      "confidence": 0.75
+      "confidence": 0.75,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0034:c2",
       "paper_id": "seed:0034",
       "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -45,13 +47,15 @@
       "id": "seed:0034:l1",
       "paper_id": "seed:0034",
       "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
-      "normalized_category": "efficiency-measurement"
+      "normalized_category": "efficiency-measurement",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0034:l2",
       "paper_id": "seed:0034",
       "text": "Distribution shift between train and test periods is not explicitly modelled.",
-      "normalized_category": "distribution-shift"
+      "normalized_category": "distribution-shift",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

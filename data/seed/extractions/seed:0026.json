@@ -6,14 +6,16 @@
       "paper_id": "seed:0026",
       "text": "Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, Weather.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0026:c2",
       "paper_id": "seed:0026",
       "text": "TimesNet is best characterised as 2D-convolutional periodicity-aware model.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -45,13 +47,15 @@
       "id": "seed:0026:l1",
       "paper_id": "seed:0026",
       "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
-      "normalized_category": "baseline-omission"
+      "normalized_category": "baseline-omission",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0026:l2",
       "paper_id": "seed:0026",
       "text": "The training corpus is limited to a single domain, so cross-domain robustness is not established.",
-      "normalized_category": "cross-domain-generalisation"
+      "normalized_category": "cross-domain-generalisation",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

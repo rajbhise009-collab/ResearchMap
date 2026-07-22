@@ -6,14 +6,16 @@
       "paper_id": "seed:0004",
       "text": "PatchTST outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm1 at horizon 336.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0004:c2",
       "paper_id": "seed:0004",
       "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -49,13 +51,15 @@
       "id": "seed:0004:l1",
       "paper_id": "seed:0004",
       "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
-      "normalized_category": "efficiency-measurement"
+      "normalized_category": "efficiency-measurement",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0004:l2",
       "paper_id": "seed:0004",
       "text": "Distribution shift between train and test periods is not explicitly modelled.",
-      "normalized_category": "distribution-shift"
+      "normalized_category": "distribution-shift",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

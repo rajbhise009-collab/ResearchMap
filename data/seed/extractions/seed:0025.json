@@ -6,14 +6,16 @@
       "paper_id": "seed:0025",
       "text": "Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, ETTh2, ETTm2.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0025:c2",
       "paper_id": "seed:0025",
       "text": "FEDformer is best characterised as frequency-enhanced decomposition transformer.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -46,13 +48,15 @@
       "id": "seed:0025:l1",
       "paper_id": "seed:0025",
       "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
-      "normalized_category": "missing-data"
+      "normalized_category": "missing-data",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0025:l2",
       "paper_id": "seed:0025",
       "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
-      "normalized_category": "baseline-omission"
+      "normalized_category": "baseline-omission",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

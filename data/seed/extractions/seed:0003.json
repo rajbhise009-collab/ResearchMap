@@ -6,14 +6,16 @@
       "paper_id": "seed:0003",
       "text": "FEDformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm2 at horizon 336.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0003:c2",
       "paper_id": "seed:0003",
       "text": "FEDformer is best characterised as frequency-enhanced decomposition transformer.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -47,13 +49,15 @@
       "id": "seed:0003:l1",
       "paper_id": "seed:0003",
       "text": "Distribution shift between train and test periods is not explicitly modelled.",
-      "normalized_category": "distribution-shift"
+      "normalized_category": "distribution-shift",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0003:l2",
       "paper_id": "seed:0003",
       "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
-      "normalized_category": "external-validity"
+      "normalized_category": "external-validity",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

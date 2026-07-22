@@ -6,14 +6,16 @@
       "paper_id": "seed:0010",
       "text": "Patch-based tokenisation restores transformer competitiveness over linear baselines on ETTh1, ETTh2, ETTm1.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0010:c2",
       "paper_id": "seed:0010",
       "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -47,13 +49,15 @@
       "id": "seed:0010:l1",
       "paper_id": "seed:0010",
       "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
-      "normalized_category": "external-validity"
+      "normalized_category": "external-validity",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0010:l2",
       "paper_id": "seed:0010",
       "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
-      "normalized_category": "statistical-power"
+      "normalized_category": "statistical-power",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

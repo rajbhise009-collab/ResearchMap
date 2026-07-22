@@ -6,14 +6,16 @@
       "paper_id": "seed:0015",
       "text": "Reported gains for DLinear do not survive covariate shift between train and test splits on ETTh1, Electricity.",
       "type": "negative",
-      "confidence": 0.75
+      "confidence": 0.75,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0015:c2",
       "paper_id": "seed:0015",
       "text": "DLinear is best characterised as decomposition linear baseline.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -45,13 +47,15 @@
       "id": "seed:0015:l1",
       "paper_id": "seed:0015",
       "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
-      "normalized_category": "missing-data"
+      "normalized_category": "missing-data",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0015:l2",
       "paper_id": "seed:0015",
       "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
-      "normalized_category": "baseline-omission"
+      "normalized_category": "baseline-omission",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

@@ -6,14 +6,16 @@
       "paper_id": "seed:0035",
       "text": "No forecaster in the compared set shows a statistically significant improvement over a naive last-value predictor on Exchange.",
       "type": "negative",
-      "confidence": 0.75
+      "confidence": 0.75,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0035:c2",
       "paper_id": "seed:0035",
       "text": "DLinear is best characterised as decomposition linear baseline.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -44,13 +46,15 @@
       "id": "seed:0035:l1",
       "paper_id": "seed:0035",
       "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
-      "normalized_category": "missing-data"
+      "normalized_category": "missing-data",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0035:l2",
       "paper_id": "seed:0035",
       "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
-      "normalized_category": "baseline-omission"
+      "normalized_category": "baseline-omission",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

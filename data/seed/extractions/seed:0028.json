@@ -6,14 +6,16 @@
       "paper_id": "seed:0028",
       "text": "Sparse attention reduces the memory footprint of long-context forecasting on ETTh1, Electricity.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0028:c2",
       "paper_id": "seed:0028",
       "text": "Informer is best characterised as sparse-attention transformer with ProbSparse self-attention.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -45,13 +47,15 @@
       "id": "seed:0028:l1",
       "paper_id": "seed:0028",
       "text": "Confidence intervals or standard errors are not reported for the headline metric.",
-      "normalized_category": "statistical-reporting"
+      "normalized_category": "statistical-reporting",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0028:l2",
       "paper_id": "seed:0028",
       "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
-      "normalized_category": "missing-data"
+      "normalized_category": "missing-data",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

@@ -6,14 +6,16 @@
       "paper_id": "seed:0014",
       "text": "Reported gains for Autoformer do not survive covariate shift between train and test splits on Electricity, Traffic.",
       "type": "negative",
-      "confidence": 0.75
+      "confidence": 0.75,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0014:c2",
       "paper_id": "seed:0014",
       "text": "Autoformer is best characterised as decomposition transformer with auto-correlation.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -45,13 +47,15 @@
       "id": "seed:0014:l1",
       "paper_id": "seed:0014",
       "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
-      "normalized_category": "efficiency-measurement"
+      "normalized_category": "efficiency-measurement",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0014:l2",
       "paper_id": "seed:0014",
       "text": "Distribution shift between train and test periods is not explicitly modelled.",
-      "normalized_category": "distribution-shift"
+      "normalized_category": "distribution-shift",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

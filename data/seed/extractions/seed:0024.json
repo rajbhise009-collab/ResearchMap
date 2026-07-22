@@ -6,14 +6,16 @@
       "paper_id": "seed:0024",
       "text": "Cross-channel dependencies are essential for accurate forecasts on high-correlation datasets like ETTh1, Weather, Electricity.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0024:c2",
       "paper_id": "seed:0024",
       "text": "iTransformer is best characterised as inverted transformer treating variates as tokens.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -46,13 +48,15 @@
       "id": "seed:0024:l1",
       "paper_id": "seed:0024",
       "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
-      "normalized_category": "efficiency-measurement"
+      "normalized_category": "efficiency-measurement",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0024:l2",
       "paper_id": "seed:0024",
       "text": "Distribution shift between train and test periods is not explicitly modelled.",
-      "normalized_category": "distribution-shift"
+      "normalized_category": "distribution-shift",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

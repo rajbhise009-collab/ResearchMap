@@ -6,14 +6,16 @@
       "paper_id": "seed:0002",
       "text": "Autoformer outperforms prior transformer and RNN baselines on ETTh1, ETTm1, Traffic at horizon 336.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0002:c2",
       "paper_id": "seed:0002",
       "text": "Autoformer is best characterised as decomposition transformer with auto-correlation.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -47,13 +49,15 @@
       "id": "seed:0002:l1",
       "paper_id": "seed:0002",
       "text": "Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity.",
-      "normalized_category": "hyperparameter-sensitivity"
+      "normalized_category": "hyperparameter-sensitivity",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0002:l2",
       "paper_id": "seed:0002",
       "text": "Attention weights are not analysed, leaving the interpretability claims unverified.",
-      "normalized_category": "interpretability"
+      "normalized_category": "interpretability",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

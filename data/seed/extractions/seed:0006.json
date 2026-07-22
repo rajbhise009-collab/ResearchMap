@@ -6,14 +6,16 @@
       "paper_id": "seed:0006",
       "text": "iTransformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Traffic at horizon 336.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0006:c2",
       "paper_id": "seed:0006",
       "text": "iTransformer is best characterised as inverted transformer treating variates as tokens.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -47,13 +49,15 @@
       "id": "seed:0006:l1",
       "paper_id": "seed:0006",
       "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
-      "normalized_category": "baseline-omission"
+      "normalized_category": "baseline-omission",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0006:l2",
       "paper_id": "seed:0006",
       "text": "The training corpus is limited to a single domain, so cross-domain robustness is not established.",
-      "normalized_category": "cross-domain-generalisation"
+      "normalized_category": "cross-domain-generalisation",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

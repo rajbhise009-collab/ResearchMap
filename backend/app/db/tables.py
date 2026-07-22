@@ -78,6 +78,9 @@ class ClaimRow(Base):
     text: Mapped[str] = mapped_column(Text, nullable=False)
     type: Mapped[str] = mapped_column(String, nullable=False, index=True)
     confidence: Mapped[float] = mapped_column(Float, nullable=False)
+    # If this claim was split out of a compound sentence at extraction
+    # time, points at the parent Claim.id from which it was derived.
+    source_sentence_id: Mapped[str | None] = mapped_column(String, nullable=True)
 
     paper = relationship("PaperRow", back_populates="claims")
     evidence = relationship(
@@ -125,6 +128,12 @@ class LimitationRow(Base):
     )
     text: Mapped[str] = mapped_column(Text, nullable=False)
     normalized_category: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    # Whose limitation this is — 'this_work' or 'prior_work'. Default
+    # this_work so pre-provenance rows keep the safer interpretation.
+    source_scope: Mapped[str] = mapped_column(
+        String, nullable=False, default="this_work", server_default="this_work",
+        index=True,
+    )
 
     paper = relationship("PaperRow", back_populates="limitations")
 

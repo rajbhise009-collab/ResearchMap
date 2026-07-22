@@ -6,14 +6,16 @@
       "paper_id": "seed:0030",
       "text": "Variate-token attention scales sub-quadratically in the number of features on Electricity, Traffic, Weather.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0030:c2",
       "paper_id": "seed:0030",
       "text": "iTransformer is best characterised as inverted transformer treating variates as tokens.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -46,13 +48,15 @@
       "id": "seed:0030:l1",
       "paper_id": "seed:0030",
       "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
-      "normalized_category": "external-validity"
+      "normalized_category": "external-validity",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0030:l2",
       "paper_id": "seed:0030",
       "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
-      "normalized_category": "statistical-power"
+      "normalized_category": "statistical-power",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [

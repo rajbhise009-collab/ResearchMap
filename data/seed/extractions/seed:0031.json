@@ -6,14 +6,16 @@
       "paper_id": "seed:0031",
       "text": "Pretrained patch-transformers transfer to unseen forecasting tasks on ETTh1, Weather, Electricity.",
       "type": "finding",
-      "confidence": 0.85
+      "confidence": 0.85,
+      "source_sentence_id": null
     },
     {
       "id": "seed:0031:c2",
       "paper_id": "seed:0031",
       "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
       "type": "method",
-      "confidence": 0.9
+      "confidence": 0.9,
+      "source_sentence_id": null
     }
   ],
   "evidence": [
@@ -46,13 +48,15 @@
       "id": "seed:0031:l1",
       "paper_id": "seed:0031",
       "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
-      "normalized_category": "statistical-power"
+      "normalized_category": "statistical-power",
+      "source_scope": "this_work"
     },
     {
       "id": "seed:0031:l2",
       "paper_id": "seed:0031",
       "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
-      "normalized_category": "efficiency-measurement"
+      "normalized_category": "efficiency-measurement",
+      "source_scope": "this_work"
     }
   ],
   "future_work": [
