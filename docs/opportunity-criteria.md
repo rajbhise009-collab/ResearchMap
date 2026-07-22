@@ -19,5 +19,12 @@
   or the same work across venues) counted as independent sources,
   inflating replication counts and any score that depends on the
   number of independent papers reporting a finding.
+- Within-domain application noise: a paper that uses the domain
+  vocabulary correctly but whose contribution lies in another task
+  (e.g. medical summarization mentioning hallucination). These are
+  not terminology collisions — the terms mean the same thing — but
+  the paper is evidence about the application, not the property.
+  Keyword filtering cannot separate these; only contribution-level
+  judgment can.
 
 ## Matching rule for retrospective validation
