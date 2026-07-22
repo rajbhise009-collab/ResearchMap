@@ -32,7 +32,8 @@ ANCHOR_TERMS: tuple[str, ...] = (
     "llms",
     "large language model",
     "large language models",
-    "neural text generation",
+    # `neural text generation` dropped after Phase 2 diagnostic showed
+    # it matched 0/200 papers — dead term inflating query length.
 )
 
 TOPIC_TERMS: tuple[str, ...] = (

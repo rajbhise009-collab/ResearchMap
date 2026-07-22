@@ -46,8 +46,9 @@ from backend.app.ingestion.openalex import OpenAlexClient  # noqa: E402
 # --- Query (frozen from v3) --------------------------------------------
 
 ANCHOR = (
-    '"language model" OR "LLM" OR "large language model" '
-    'OR "neural text generation"'
+    # "neural text generation" was in the v3 query but Phase 2 showed
+    # it matched 0/200 papers — dropped from v3.1 onward.
+    '"language model" OR "LLM" OR "large language model"'
 )
 TOPIC = (
     'calibration OR "uncertainty quantification" OR abstention '
