@@ -135,6 +135,52 @@ Implement each of these as a Pydantic v2 model AND a DB table.
 7. Update PROGRESS.md and report: what was built, audit results, next
    step, anything needed from the user.
 
+## Autonomy policy
+
+**Default to maximum autonomy.** Build, test, self-audit, commit, and
+continue to the next phase WITHOUT waiting for approval, EXCEPT at
+the five stop points below. Outside them, proceed. Do not ask
+permission for ordinary implementation choices; make them, document
+them in `PROGRESS.md`, and flag anything you would want revisited.
+
+### Hard stops — halt and report before acting
+
+(a) **Any action that spends money or calls a paid API.** Always stop
+and give Raj the estimated cost first. Examples: live LLM extraction
+(Gemini, Anthropic), Semantic Scholar API keys with billing enabled,
+OpenAlex usage over the daily quota triggering paid tiers, any
+cloud-compute launch. Cost includes credit budgets even when the
+cash-equivalent is small — the point is a spend approval, not a
+dollar threshold.
+
+(b) **Anything requiring a credential, account, or human transaction.**
+Signing up for an API, requesting an increase, verifying an email,
+running a `pip install` that prompts for authentication, opening a
+GitHub issue on someone else's repo. These all require a human
+transaction Raj must consent to.
+
+(c) **Phase 4 reasoning-engine output.** Raj must personally judge
+whether the top-ranked opportunities are good; this is the project's
+only quality signal and cannot be delegated. When Phase 4 produces
+its first ranked list, stop and hand it over — do not proceed to
+Phase 5 (ranking) or Phase 6 (validation) autonomously.
+
+(d) **Any decision that would change a documented policy in `docs/`.**
+Merge policy, labelling rubric, opportunity criteria, schema
+pressure-test conclusions. If new evidence surfaces that would
+overturn one of these, halt and report the evidence; do not silently
+rewrite the doc. Extending is fine; overturning requires approval.
+
+(e) **Anything you assess as architecturally irreversible.** Deleting
+a database, force-pushing to a shared branch (this repo has no
+remote yet, so `git push --force` is not relevant here), renaming a
+public data-model class that other modules import from a stable
+alias, removing a Pydantic field that a persisted extraction depends
+on. The heuristic: can a future session undo this in ≤ 1 commit
+without losing information? If no, halt.
+
+Outside these five, do not ask; do it, log it, flag it.
+
 ## Phase index
 
 - Phase 0 — foundation: repo, data model (Pydantic + DB), config,
