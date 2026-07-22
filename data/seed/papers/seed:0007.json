@@ -1,0 +1,24 @@
+{
+  "id": "seed:0007",
+  "source": "seed",
+  "source_id": "7",
+  "doi": null,
+  "title": "DLinear: A simple DLinear baseline matches or exceeds contemporary transformer forecasters on ETTh1, ETTh2, ETTm1",
+  "abstract": "We study long-horizon multivariate forecasting using DLinear, a decomposition linear baseline. On ETTh1, ETTh2, ETTm1, at horizon 336, A simple DLinear baseline matches or exceeds contemporary transformer forecasters on ETTh1, ETTh2, ETTm1. DLinear achieved lower average MSE than five transformer baselines across 8 datasets at horizon 336. We discuss two limitations: Attention weights are not analysed, leaving the interpretability claims unverified. Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity. Future work should address pretraining on a mixture of datasets to test transfer. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2022,
+  "authors": [
+    "F. Karolyi",
+    "M. Salinas",
+    "T. Fischer"
+  ],
+  "venue": "ICML (Seed Fixture)",
+  "citations_out": [
+    "seed:0004",
+    "seed:0005",
+    "seed:0006"
+  ],
+  "citations_in_count": 810,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

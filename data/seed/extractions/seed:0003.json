@@ -1,0 +1,75 @@
+{
+  "paper_id": "seed:0003",
+  "claims": [
+    {
+      "id": "seed:0003:c1",
+      "paper_id": "seed:0003",
+      "text": "FEDformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm2 at horizon 336.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0003:c2",
+      "paper_id": "seed:0003",
+      "text": "FEDformer is best characterised as frequency-enhanced decomposition transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0003:e1",
+      "claim_id": "seed:0003:c1",
+      "description": "Reported MSE reduction of 13% versus the strongest prior transformer on ETTh1 at horizon 336.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0003:m1",
+      "paper_id": "seed:0003",
+      "name": "FEDformer",
+      "description": "frequency-enhanced decomposition transformer",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "ETTm2",
+        "Weather"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0003:l1",
+      "paper_id": "seed:0003",
+      "text": "Distribution shift between train and test periods is not explicitly modelled.",
+      "normalized_category": "distribution-shift"
+    },
+    {
+      "id": "seed:0003:l2",
+      "paper_id": "seed:0003",
+      "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
+      "normalized_category": "external-validity"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0003:f1",
+      "paper_id": "seed:0003",
+      "text": "Investigating whether patching interacts with frequency-domain decomposition.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0003:f2",
+      "paper_id": "seed:0003",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147006Z",
+  "extractor": "seed-fixture"
+}

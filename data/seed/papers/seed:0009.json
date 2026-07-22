@@ -1,0 +1,24 @@
+{
+  "id": "seed:0009",
+  "source": "seed",
+  "source_id": "9",
+  "doi": null,
+  "title": "DLinear: Linear baselines close the gap with transformers on short-horizon forecasts over Exchange, ILI, Traffic",
+  "abstract": "We study long-horizon multivariate forecasting using DLinear, a decomposition linear baseline. On Exchange, ILI, Traffic, at horizon 96, Linear baselines close the gap with transformers on short-horizon forecasts over Exchange, ILI, Traffic. At horizon 96, DLinear was within 3% MSE of the best transformer on 3 datasets. We discuss two limitations: The training corpus is limited to a single domain, so cross-domain robustness is not established. Confidence intervals or standard errors are not reported for the headline metric. Future work should address evaluating robustness to missing values and label noise. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "C. Okafor",
+    "E. Rossi",
+    "V. Dupont"
+  ],
+  "venue": "KDD (Seed Fixture)",
+  "citations_out": [
+    "seed:0006",
+    "seed:0007",
+    "seed:0008"
+  ],
+  "citations_in_count": 150,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

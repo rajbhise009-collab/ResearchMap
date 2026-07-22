@@ -1,0 +1,24 @@
+{
+  "id": "seed:0021",
+  "source": "seed",
+  "source_id": "21",
+  "doi": null,
+  "title": "TimesNet: Periodicity-aware convolutional models are data-efficient on ETTh1, Weather",
+  "abstract": "We study long-horizon multivariate forecasting using TimesNet, a 2D-convolutional periodicity-aware model. On ETTh1, Weather, at horizon 336, Periodicity-aware convolutional models are data-efficient on ETTh1, Weather. TimesNet outperforms transformer baselines when trained on 5% of the data on ETTh1. We discuss two limitations: Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference. Computational cost is reported for a single input length; scaling behaviour is not measured. Future work should address studying performance under explicit train/test distribution shift. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "V. Dupont",
+    "E. Rossi",
+    "D. Petrov"
+  ],
+  "venue": "KDD (Seed Fixture)",
+  "citations_out": [
+    "seed:0018",
+    "seed:0019",
+    "seed:0020"
+  ],
+  "citations_in_count": 45,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

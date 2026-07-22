@@ -1,0 +1,24 @@
+{
+  "id": "seed:0017",
+  "source": "seed",
+  "source_id": "17",
+  "doi": null,
+  "title": "PatchTST: Patch tokenisation reduces long-horizon error accumulation for PatchTST on ETTh1, ETTm1, Electricity",
+  "abstract": "We study long-horizon multivariate forecasting using PatchTST, a patch-based channel-independent transformer. On ETTh1, ETTm1, Electricity, at horizon 720, Patch tokenisation reduces long-horizon error accumulation for PatchTST on ETTh1, ETTm1, Electricity. PatchTST shows a 27% smaller MSE increase from horizon 336 to 720 than autoregressive transformer baselines. We discuss two limitations: Attention weights are not analysed, leaving the interpretability claims unverified. Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity. Future work should address pretraining on a mixture of datasets to test transfer. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "D. Petrov",
+    "K. Iversen",
+    "T. Fischer"
+  ],
+  "venue": "TMLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0014",
+    "seed:0015",
+    "seed:0016"
+  ],
+  "citations_in_count": 200,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

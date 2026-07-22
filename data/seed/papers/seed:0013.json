@@ -1,0 +1,24 @@
+{
+  "id": "seed:0013",
+  "source": "seed",
+  "source_id": "13",
+  "doi": null,
+  "title": "Informer: Reported gains for Informer do not survive covariate shift between train and test splits on ETTh1, ETTh2",
+  "abstract": "We study long-horizon multivariate forecasting using Informer, a sparse-attention transformer with ProbSparse self-attention. On ETTh1, ETTh2, at horizon 336, Reported gains for Informer do not survive covariate shift between train and test splits on ETTh1, ETTh2. Held-out year-splits reduce Informer advantage to within 1% MSE of the DLinear baseline. We discuss two limitations: Distribution shift between train and test periods is not explicitly modelled. Evaluation is restricted to public benchmarks and may not reflect production settings. Future work should address investigating whether patching interacts with frequency-domain decomposition. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2022,
+  "authors": [
+    "E. Rossi",
+    "M. Salinas",
+    "S. Yamada"
+  ],
+  "venue": "ICML (Seed Fixture)",
+  "citations_out": [
+    "seed:0010",
+    "seed:0011",
+    "seed:0012"
+  ],
+  "citations_in_count": 95,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

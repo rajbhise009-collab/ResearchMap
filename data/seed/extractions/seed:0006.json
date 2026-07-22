@@ -1,0 +1,75 @@
+{
+  "paper_id": "seed:0006",
+  "claims": [
+    {
+      "id": "seed:0006:c1",
+      "paper_id": "seed:0006",
+      "text": "iTransformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Traffic at horizon 336.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0006:c2",
+      "paper_id": "seed:0006",
+      "text": "iTransformer is best characterised as inverted transformer treating variates as tokens.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0006:e1",
+      "claim_id": "seed:0006:c1",
+      "description": "Reported MSE reduction of 16% versus the strongest prior transformer on ETTh1 at horizon 336.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0006:m1",
+      "paper_id": "seed:0006",
+      "name": "iTransformer",
+      "description": "inverted transformer treating variates as tokens",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "Traffic",
+        "Weather"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0006:l1",
+      "paper_id": "seed:0006",
+      "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
+      "normalized_category": "baseline-omission"
+    },
+    {
+      "id": "seed:0006:l2",
+      "paper_id": "seed:0006",
+      "text": "The training corpus is limited to a single domain, so cross-domain robustness is not established.",
+      "normalized_category": "cross-domain-generalisation"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0006:f1",
+      "paper_id": "seed:0006",
+      "text": "Analysing attention weights to test the interpretability hypothesis.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0006:f2",
+      "paper_id": "seed:0006",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147066Z",
+  "extractor": "seed-fixture"
+}

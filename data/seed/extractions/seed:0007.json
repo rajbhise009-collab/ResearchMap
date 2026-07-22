@@ -1,0 +1,79 @@
+{
+  "paper_id": "seed:0007",
+  "claims": [
+    {
+      "id": "seed:0007:c1",
+      "paper_id": "seed:0007",
+      "text": "A simple DLinear baseline matches or exceeds contemporary transformer forecasters on ETTh1, ETTh2, ETTm1.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0007:c2",
+      "paper_id": "seed:0007",
+      "text": "DLinear is best characterised as decomposition linear baseline.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0007:e1",
+      "claim_id": "seed:0007:c1",
+      "description": "DLinear achieved lower average MSE than five transformer baselines across 8 datasets at horizon 336.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0007:m1",
+      "paper_id": "seed:0007",
+      "name": "DLinear",
+      "description": "decomposition linear baseline",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "ETTm1",
+        "ETTm2",
+        "Electricity",
+        "Traffic",
+        "Weather",
+        "ILI"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0007:l1",
+      "paper_id": "seed:0007",
+      "text": "Attention weights are not analysed, leaving the interpretability claims unverified.",
+      "normalized_category": "interpretability"
+    },
+    {
+      "id": "seed:0007:l2",
+      "paper_id": "seed:0007",
+      "text": "Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity.",
+      "normalized_category": "hyperparameter-sensitivity"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0007:f1",
+      "paper_id": "seed:0007",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0007:f2",
+      "paper_id": "seed:0007",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147085Z",
+  "extractor": "seed-fixture"
+}

@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0031",
+  "claims": [
+    {
+      "id": "seed:0031:c1",
+      "paper_id": "seed:0031",
+      "text": "Pretrained patch-transformers transfer to unseen forecasting tasks on ETTh1, Weather, Electricity.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0031:c2",
+      "paper_id": "seed:0031",
+      "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0031:e1",
+      "claim_id": "seed:0031:c1",
+      "description": "Zero-shot MSE of PatchTST pretrained on ETTh1 is within 16% of a supervised model on ETTh1.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0031:m1",
+      "paper_id": "seed:0031",
+      "name": "PatchTST",
+      "description": "patch-based channel-independent transformer",
+      "datasets": [
+        "ETTh1",
+        "Weather",
+        "Electricity"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0031:l1",
+      "paper_id": "seed:0031",
+      "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
+      "normalized_category": "statistical-power"
+    },
+    {
+      "id": "seed:0031:l2",
+      "paper_id": "seed:0031",
+      "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
+      "normalized_category": "efficiency-measurement"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0031:f1",
+      "paper_id": "seed:0031",
+      "text": "Studying performance under explicit train/test distribution shift.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0031:f2",
+      "paper_id": "seed:0031",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147614Z",
+  "extractor": "seed-fixture"
+}

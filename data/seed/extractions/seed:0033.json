@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0033",
+  "claims": [
+    {
+      "id": "seed:0033:c1",
+      "paper_id": "seed:0033",
+      "text": "Periodicity-aware convolutional models do not transfer across datasets with mismatched dominant frequencies on ETTh1, Weather.",
+      "type": "negative",
+      "confidence": 0.75
+    },
+    {
+      "id": "seed:0033:c2",
+      "paper_id": "seed:0033",
+      "text": "TimesNet is best characterised as 2D-convolutional periodicity-aware model.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0033:e1",
+      "claim_id": "seed:0033:c1",
+      "description": "Cross-dataset transfer from ETTh1 to ETTh1 yields worse MSE than training from scratch for TimesNet.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0033:m1",
+      "paper_id": "seed:0033",
+      "name": "TimesNet",
+      "description": "2D-convolutional periodicity-aware model",
+      "datasets": [
+        "ETTh1",
+        "Weather"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0033:l1",
+      "paper_id": "seed:0033",
+      "text": "Distribution shift between train and test periods is not explicitly modelled.",
+      "normalized_category": "distribution-shift"
+    },
+    {
+      "id": "seed:0033:l2",
+      "paper_id": "seed:0033",
+      "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
+      "normalized_category": "external-validity"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0033:f1",
+      "paper_id": "seed:0033",
+      "text": "Investigating whether patching interacts with frequency-domain decomposition.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0033:f2",
+      "paper_id": "seed:0033",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147644Z",
+  "extractor": "seed-fixture"
+}

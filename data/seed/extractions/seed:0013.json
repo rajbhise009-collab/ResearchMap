@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0013",
+  "claims": [
+    {
+      "id": "seed:0013:c1",
+      "paper_id": "seed:0013",
+      "text": "Reported gains for Informer do not survive covariate shift between train and test splits on ETTh1, ETTh2.",
+      "type": "negative",
+      "confidence": 0.75
+    },
+    {
+      "id": "seed:0013:c2",
+      "paper_id": "seed:0013",
+      "text": "Informer is best characterised as sparse-attention transformer with ProbSparse self-attention.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0013:e1",
+      "claim_id": "seed:0013:c1",
+      "description": "Held-out year-splits reduce Informer advantage to within 1% MSE of the DLinear baseline.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0013:m1",
+      "paper_id": "seed:0013",
+      "name": "Informer",
+      "description": "sparse-attention transformer with ProbSparse self-attention",
+      "datasets": [
+        "ETTh1",
+        "ETTh2"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0013:l1",
+      "paper_id": "seed:0013",
+      "text": "Distribution shift between train and test periods is not explicitly modelled.",
+      "normalized_category": "distribution-shift"
+    },
+    {
+      "id": "seed:0013:l2",
+      "paper_id": "seed:0013",
+      "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
+      "normalized_category": "external-validity"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0013:f1",
+      "paper_id": "seed:0013",
+      "text": "Investigating whether patching interacts with frequency-domain decomposition.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0013:f2",
+      "paper_id": "seed:0013",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147324Z",
+  "extractor": "seed-fixture"
+}

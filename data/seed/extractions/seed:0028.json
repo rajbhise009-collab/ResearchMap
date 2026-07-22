@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0028",
+  "claims": [
+    {
+      "id": "seed:0028:c1",
+      "paper_id": "seed:0028",
+      "text": "Sparse attention reduces the memory footprint of long-context forecasting on ETTh1, Electricity.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0028:c2",
+      "paper_id": "seed:0028",
+      "text": "Informer is best characterised as sparse-attention transformer with ProbSparse self-attention.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0028:e1",
+      "claim_id": "seed:0028:c1",
+      "description": "Informer uses 13% less GPU memory than full-attention transformers at input length 1024.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0028:m1",
+      "paper_id": "seed:0028",
+      "name": "Informer",
+      "description": "sparse-attention transformer with ProbSparse self-attention",
+      "datasets": [
+        "ETTh1",
+        "Electricity"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0028:l1",
+      "paper_id": "seed:0028",
+      "text": "Confidence intervals or standard errors are not reported for the headline metric.",
+      "normalized_category": "statistical-reporting"
+    },
+    {
+      "id": "seed:0028:l2",
+      "paper_id": "seed:0028",
+      "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
+      "normalized_category": "missing-data"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0028:f1",
+      "paper_id": "seed:0028",
+      "text": "Combining channel-independent tokenisation with variate-token attention.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0028:f2",
+      "paper_id": "seed:0028",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147565Z",
+  "extractor": "seed-fixture"
+}

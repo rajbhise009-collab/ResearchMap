@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0024",
+  "claims": [
+    {
+      "id": "seed:0024:c1",
+      "paper_id": "seed:0024",
+      "text": "Cross-channel dependencies are essential for accurate forecasts on high-correlation datasets like ETTh1, Weather, Electricity.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0024:c2",
+      "paper_id": "seed:0024",
+      "text": "iTransformer is best characterised as inverted transformer treating variates as tokens.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0024:e1",
+      "claim_id": "seed:0024:c1",
+      "description": "iTransformer improves MSE by 34% over channel-independent PatchTST on ETTh1.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0024:m1",
+      "paper_id": "seed:0024",
+      "name": "iTransformer",
+      "description": "inverted transformer treating variates as tokens",
+      "datasets": [
+        "ETTh1",
+        "Weather",
+        "Electricity"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0024:l1",
+      "paper_id": "seed:0024",
+      "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
+      "normalized_category": "efficiency-measurement"
+    },
+    {
+      "id": "seed:0024:l2",
+      "paper_id": "seed:0024",
+      "text": "Distribution shift between train and test periods is not explicitly modelled.",
+      "normalized_category": "distribution-shift"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0024:f1",
+      "paper_id": "seed:0024",
+      "text": "Applying the method to irregularly sampled clinical time series.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0024:f2",
+      "paper_id": "seed:0024",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147503Z",
+  "extractor": "seed-fixture"
+}

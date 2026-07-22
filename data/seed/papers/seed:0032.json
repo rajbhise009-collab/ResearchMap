@@ -1,0 +1,24 @@
+{
+  "id": "seed:0032",
+  "source": "seed",
+  "source_id": "32",
+  "doi": null,
+  "title": "iTransformer: Variate-token transformers show positive transfer across domains on ETTh1, Traffic, Exchange",
+  "abstract": "We study long-horizon multivariate forecasting using iTransformer, a inverted transformer treating variates as tokens. On ETTh1, Traffic, Exchange, at horizon 336, Variate-token transformers show positive transfer across domains on ETTh1, Traffic, Exchange. iTransformer pretrained on Electricity yields a 17% MSE reduction over random init when fine-tuned on ETTh1. We discuss two limitations: Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity. Attention weights are not analysed, leaving the interpretability claims unverified. Future work should address reporting per-seed variance and confidence intervals for the headline metric. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "L. Zhang",
+    "P. Ortega",
+    "E. Rossi"
+  ],
+  "venue": "ICLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0029",
+    "seed:0030",
+    "seed:0031"
+  ],
+  "citations_in_count": 25,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

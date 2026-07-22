@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0008",
+  "claims": [
+    {
+      "id": "seed:0008:c1",
+      "paper_id": "seed:0008",
+      "text": "A simple NLinear baseline matches or exceeds contemporary transformer forecasters on ETTh1, ETTm1, Electricity.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0008:c2",
+      "paper_id": "seed:0008",
+      "text": "NLinear is best characterised as normalization linear baseline.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0008:e1",
+      "claim_id": "seed:0008:c1",
+      "description": "NLinear achieved lower average MSE than five transformer baselines across 3 datasets at horizon 720.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0008:m1",
+      "paper_id": "seed:0008",
+      "name": "NLinear",
+      "description": "normalization linear baseline",
+      "datasets": [
+        "ETTh1",
+        "ETTm1",
+        "Electricity"
+      ],
+      "conditions": [
+        "horizon=720",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0008:l1",
+      "paper_id": "seed:0008",
+      "text": "Confidence intervals or standard errors are not reported for the headline metric.",
+      "normalized_category": "statistical-reporting"
+    },
+    {
+      "id": "seed:0008:l2",
+      "paper_id": "seed:0008",
+      "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
+      "normalized_category": "missing-data"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0008:f1",
+      "paper_id": "seed:0008",
+      "text": "Combining channel-independent tokenisation with variate-token attention.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0008:f2",
+      "paper_id": "seed:0008",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147101Z",
+  "extractor": "seed-fixture"
+}

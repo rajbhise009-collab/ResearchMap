@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0014",
+  "claims": [
+    {
+      "id": "seed:0014:c1",
+      "paper_id": "seed:0014",
+      "text": "Reported gains for Autoformer do not survive covariate shift between train and test splits on Electricity, Traffic.",
+      "type": "negative",
+      "confidence": 0.75
+    },
+    {
+      "id": "seed:0014:c2",
+      "paper_id": "seed:0014",
+      "text": "Autoformer is best characterised as decomposition transformer with auto-correlation.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0014:e1",
+      "claim_id": "seed:0014:c1",
+      "description": "Held-out year-splits reduce Autoformer advantage to within 1% MSE of the DLinear baseline.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0014:m1",
+      "paper_id": "seed:0014",
+      "name": "Autoformer",
+      "description": "decomposition transformer with auto-correlation",
+      "datasets": [
+        "Electricity",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0014:l1",
+      "paper_id": "seed:0014",
+      "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
+      "normalized_category": "efficiency-measurement"
+    },
+    {
+      "id": "seed:0014:l2",
+      "paper_id": "seed:0014",
+      "text": "Distribution shift between train and test periods is not explicitly modelled.",
+      "normalized_category": "distribution-shift"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0014:f1",
+      "paper_id": "seed:0014",
+      "text": "Applying the method to irregularly sampled clinical time series.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0014:f2",
+      "paper_id": "seed:0014",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147341Z",
+  "extractor": "seed-fixture"
+}

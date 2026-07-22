@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0011",
+  "claims": [
+    {
+      "id": "seed:0011:c1",
+      "paper_id": "seed:0011",
+      "text": "Hierarchical cross-dimension attention recovers a transformer lead on ETTh1, Electricity, Traffic.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0011:c2",
+      "paper_id": "seed:0011",
+      "text": "Crossformer is best characterised as cross-dimension transformer with hierarchical encoder.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0011:e1",
+      "claim_id": "seed:0011:c1",
+      "description": "Crossformer outperforms DLinear by 21% MSE on ETTh1 at horizon 336.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0011:m1",
+      "paper_id": "seed:0011",
+      "name": "Crossformer",
+      "description": "cross-dimension transformer with hierarchical encoder",
+      "datasets": [
+        "ETTh1",
+        "Electricity",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0011:l1",
+      "paper_id": "seed:0011",
+      "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
+      "normalized_category": "statistical-power"
+    },
+    {
+      "id": "seed:0011:l2",
+      "paper_id": "seed:0011",
+      "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
+      "normalized_category": "efficiency-measurement"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0011:f1",
+      "paper_id": "seed:0011",
+      "text": "Studying performance under explicit train/test distribution shift.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0011:f2",
+      "paper_id": "seed:0011",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147289Z",
+  "extractor": "seed-fixture"
+}

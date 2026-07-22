@@ -1,0 +1,24 @@
+{
+  "id": "seed:0035",
+  "source": "seed",
+  "source_id": "35",
+  "doi": null,
+  "title": "DLinear: No forecaster in the compared set shows a statistically significant improvement over a naive last-value predictor on Exc",
+  "abstract": "We study long-horizon multivariate forecasting using DLinear, a decomposition linear baseline. On Exchange, at horizon 336, No forecaster in the compared set shows a statistically significant improvement over a naive last-value predictor on Exchange. DLinear MSE is within one standard deviation of persistence on the Exchange benchmark. We discuss two limitations: Missing-value handling is delegated to preprocessing and not stress-tested. Comparison omits linear baselines that recent work has shown to be competitive. Future work should address reducing memory usage at input length ≥ 2048 without accuracy loss. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "W. Chen",
+    "M. Salinas",
+    "S. Yamada"
+  ],
+  "venue": "TMLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0032",
+    "seed:0033",
+    "seed:0034"
+  ],
+  "citations_in_count": 12,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

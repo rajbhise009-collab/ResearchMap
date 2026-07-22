@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0023",
+  "claims": [
+    {
+      "id": "seed:0023:c1",
+      "paper_id": "seed:0023",
+      "text": "Cross-channel dependencies are essential for accurate forecasts on high-correlation datasets like Electricity, Traffic.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0023:c2",
+      "paper_id": "seed:0023",
+      "text": "Crossformer is best characterised as cross-dimension transformer with hierarchical encoder.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0023:e1",
+      "claim_id": "seed:0023:c1",
+      "description": "Crossformer improves MSE by 33% over channel-independent PatchTST on Electricity.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0023:m1",
+      "paper_id": "seed:0023",
+      "name": "Crossformer",
+      "description": "cross-dimension transformer with hierarchical encoder",
+      "datasets": [
+        "Electricity",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0023:l1",
+      "paper_id": "seed:0023",
+      "text": "Distribution shift between train and test periods is not explicitly modelled.",
+      "normalized_category": "distribution-shift"
+    },
+    {
+      "id": "seed:0023:l2",
+      "paper_id": "seed:0023",
+      "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
+      "normalized_category": "external-validity"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0023:f1",
+      "paper_id": "seed:0023",
+      "text": "Investigating whether patching interacts with frequency-domain decomposition.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0023:f2",
+      "paper_id": "seed:0023",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147487Z",
+  "extractor": "seed-fixture"
+}

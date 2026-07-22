@@ -1,0 +1,24 @@
+{
+  "id": "seed:0028",
+  "source": "seed",
+  "source_id": "28",
+  "doi": null,
+  "title": "Informer: Sparse attention reduces the memory footprint of long-context forecasting on ETTh1, Electricity",
+  "abstract": "We study long-horizon multivariate forecasting using Informer, a sparse-attention transformer with ProbSparse self-attention. On ETTh1, Electricity, at horizon 336, Sparse attention reduces the memory footprint of long-context forecasting on ETTh1, Electricity. Informer uses 13% less GPU memory than full-attention transformers at input length 1024. We discuss two limitations: Confidence intervals or standard errors are not reported for the headline metric. Missing-value handling is delegated to preprocessing and not stress-tested. Future work should address combining channel-independent tokenisation with variate-token attention. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2022,
+  "authors": [
+    "H. Nakamura",
+    "L. Zhang",
+    "T. Fischer"
+  ],
+  "venue": "AAAI (Seed Fixture)",
+  "citations_out": [
+    "seed:0025",
+    "seed:0026",
+    "seed:0027"
+  ],
+  "citations_in_count": 190,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

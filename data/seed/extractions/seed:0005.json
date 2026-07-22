@@ -1,0 +1,75 @@
+{
+  "paper_id": "seed:0005",
+  "claims": [
+    {
+      "id": "seed:0005:c1",
+      "paper_id": "seed:0005",
+      "text": "Crossformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Electricity at horizon 336.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0005:c2",
+      "paper_id": "seed:0005",
+      "text": "Crossformer is best characterised as cross-dimension transformer with hierarchical encoder.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0005:e1",
+      "claim_id": "seed:0005:c1",
+      "description": "Reported MSE reduction of 15% versus the strongest prior transformer on ETTh1 at horizon 336.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0005:m1",
+      "paper_id": "seed:0005",
+      "name": "Crossformer",
+      "description": "cross-dimension transformer with hierarchical encoder",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "Electricity",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0005:l1",
+      "paper_id": "seed:0005",
+      "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
+      "normalized_category": "missing-data"
+    },
+    {
+      "id": "seed:0005:l2",
+      "paper_id": "seed:0005",
+      "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
+      "normalized_category": "baseline-omission"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0005:f1",
+      "paper_id": "seed:0005",
+      "text": "Reducing memory usage at input length ≥ 2048 without accuracy loss.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0005:f2",
+      "paper_id": "seed:0005",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147048Z",
+  "extractor": "seed-fixture"
+}

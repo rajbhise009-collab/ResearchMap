@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0018",
+  "claims": [
+    {
+      "id": "seed:0018:c1",
+      "paper_id": "seed:0018",
+      "text": "Hierarchical attention narrows the horizon-720 gap versus horizon-336 for Crossformer on ETTh1, Traffic.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0018:c2",
+      "paper_id": "seed:0018",
+      "text": "Crossformer is best characterised as cross-dimension transformer with hierarchical encoder.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0018:e1",
+      "claim_id": "seed:0018:c1",
+      "description": "Crossformer MSE at horizon 720 is 28% below the closest transformer baseline on ETTh1.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0018:m1",
+      "paper_id": "seed:0018",
+      "name": "Crossformer",
+      "description": "cross-dimension transformer with hierarchical encoder",
+      "datasets": [
+        "ETTh1",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=720",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0018:l1",
+      "paper_id": "seed:0018",
+      "text": "Confidence intervals or standard errors are not reported for the headline metric.",
+      "normalized_category": "statistical-reporting"
+    },
+    {
+      "id": "seed:0018:l2",
+      "paper_id": "seed:0018",
+      "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
+      "normalized_category": "missing-data"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0018:f1",
+      "paper_id": "seed:0018",
+      "text": "Combining channel-independent tokenisation with variate-token attention.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0018:f2",
+      "paper_id": "seed:0018",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147405Z",
+  "extractor": "seed-fixture"
+}

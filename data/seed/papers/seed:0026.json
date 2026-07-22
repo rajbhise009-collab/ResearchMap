@@ -1,0 +1,24 @@
+{
+  "id": "seed:0026",
+  "source": "seed",
+  "source_id": "26",
+  "doi": null,
+  "title": "TimesNet: Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, Weather",
+  "abstract": "We study long-horizon multivariate forecasting using TimesNet, a 2D-convolutional periodicity-aware model. On ETTh1, Weather, at horizon 336, Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, Weather. TimesNet reduces MSE by 11% over time-domain baselines on ETTh1. We discuss two limitations: Comparison omits linear baselines that recent work has shown to be competitive. The training corpus is limited to a single domain, so cross-domain robustness is not established. Future work should address analysing attention weights to test the interpretability hypothesis. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "V. Dupont",
+    "T. Fischer",
+    "M. Salinas"
+  ],
+  "venue": "ICLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0023",
+    "seed:0024",
+    "seed:0025"
+  ],
+  "citations_in_count": 100,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

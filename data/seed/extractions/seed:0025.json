@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0025",
+  "claims": [
+    {
+      "id": "seed:0025:c1",
+      "paper_id": "seed:0025",
+      "text": "Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, ETTh2, ETTm2.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0025:c2",
+      "paper_id": "seed:0025",
+      "text": "FEDformer is best characterised as frequency-enhanced decomposition transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0025:e1",
+      "claim_id": "seed:0025:c1",
+      "description": "FEDformer reduces MSE by 10% over time-domain baselines on ETTh1.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0025:m1",
+      "paper_id": "seed:0025",
+      "name": "FEDformer",
+      "description": "frequency-enhanced decomposition transformer",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "ETTm2"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0025:l1",
+      "paper_id": "seed:0025",
+      "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
+      "normalized_category": "missing-data"
+    },
+    {
+      "id": "seed:0025:l2",
+      "paper_id": "seed:0025",
+      "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
+      "normalized_category": "baseline-omission"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0025:f1",
+      "paper_id": "seed:0025",
+      "text": "Reducing memory usage at input length ≥ 2048 without accuracy loss.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0025:f2",
+      "paper_id": "seed:0025",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147519Z",
+  "extractor": "seed-fixture"
+}

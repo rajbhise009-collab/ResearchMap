@@ -1,0 +1,24 @@
+{
+  "id": "seed:0031",
+  "source": "seed",
+  "source_id": "31",
+  "doi": null,
+  "title": "PatchTST: Pretrained patch-transformers transfer to unseen forecasting tasks on ETTh1, Weather, Electricity",
+  "abstract": "We study long-horizon multivariate forecasting using PatchTST, a patch-based channel-independent transformer. On ETTh1, Weather, Electricity, at horizon 336, Pretrained patch-transformers transfer to unseen forecasting tasks on ETTh1, Weather, Electricity. Zero-shot MSE of PatchTST pretrained on ETTh1 is within 16% of a supervised model on ETTh1. We discuss two limitations: Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference. Computational cost is reported for a single input length; scaling behaviour is not measured. Future work should address studying performance under explicit train/test distribution shift. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "D. Petrov",
+    "K. Iversen",
+    "S. Yamada"
+  ],
+  "venue": "ICML (Seed Fixture)",
+  "citations_out": [
+    "seed:0028",
+    "seed:0029",
+    "seed:0030"
+  ],
+  "citations_in_count": 85,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

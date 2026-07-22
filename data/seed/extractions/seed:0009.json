@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0009",
+  "claims": [
+    {
+      "id": "seed:0009:c1",
+      "paper_id": "seed:0009",
+      "text": "Linear baselines close the gap with transformers on short-horizon forecasts over Exchange, ILI, Traffic.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0009:c2",
+      "paper_id": "seed:0009",
+      "text": "DLinear is best characterised as decomposition linear baseline.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0009:e1",
+      "claim_id": "seed:0009:c1",
+      "description": "At horizon 96, DLinear was within 3% MSE of the best transformer on 3 datasets.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0009:m1",
+      "paper_id": "seed:0009",
+      "name": "DLinear",
+      "description": "decomposition linear baseline",
+      "datasets": [
+        "Exchange",
+        "ILI",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=96",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0009:l1",
+      "paper_id": "seed:0009",
+      "text": "The training corpus is limited to a single domain, so cross-domain robustness is not established.",
+      "normalized_category": "cross-domain-generalisation"
+    },
+    {
+      "id": "seed:0009:l2",
+      "paper_id": "seed:0009",
+      "text": "Confidence intervals or standard errors are not reported for the headline metric.",
+      "normalized_category": "statistical-reporting"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0009:f1",
+      "paper_id": "seed:0009",
+      "text": "Evaluating robustness to missing values and label noise.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0009:f2",
+      "paper_id": "seed:0009",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147118Z",
+  "extractor": "seed-fixture"
+}

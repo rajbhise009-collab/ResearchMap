@@ -1,0 +1,77 @@
+{
+  "paper_id": "seed:0012",
+  "claims": [
+    {
+      "id": "seed:0012:c1",
+      "paper_id": "seed:0012",
+      "text": "Treating variates as tokens produces consistent transformer wins on ETTh1, ETTh2, ETTm1.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0012:c2",
+      "paper_id": "seed:0012",
+      "text": "iTransformer is best characterised as inverted transformer treating variates as tokens.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0012:e1",
+      "claim_id": "seed:0012:c1",
+      "description": "iTransformer beats both PatchTST and DLinear on 6 multivariate benchmarks.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0012:m1",
+      "paper_id": "seed:0012",
+      "name": "iTransformer",
+      "description": "inverted transformer treating variates as tokens",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "ETTm1",
+        "Weather",
+        "Electricity",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0012:l1",
+      "paper_id": "seed:0012",
+      "text": "Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity.",
+      "normalized_category": "hyperparameter-sensitivity"
+    },
+    {
+      "id": "seed:0012:l2",
+      "paper_id": "seed:0012",
+      "text": "Attention weights are not analysed, leaving the interpretability claims unverified.",
+      "normalized_category": "interpretability"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0012:f1",
+      "paper_id": "seed:0012",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0012:f2",
+      "paper_id": "seed:0012",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147308Z",
+  "extractor": "seed-fixture"
+}

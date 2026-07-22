@@ -1,0 +1,24 @@
+{
+  "id": "seed:0005",
+  "source": "seed",
+  "source_id": "5",
+  "doi": null,
+  "title": "Crossformer: Crossformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Electricity at horizon 336",
+  "abstract": "We study long-horizon multivariate forecasting using Crossformer, a cross-dimension transformer with hierarchical encoder. On ETTh1, ETTh2, Electricity, at horizon 336, Crossformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Electricity at horizon 336. Reported MSE reduction of 15% versus the strongest prior transformer on ETTh1 at horizon 336. We discuss two limitations: Missing-value handling is delegated to preprocessing and not stress-tested. Comparison omits linear baselines that recent work has shown to be competitive. Future work should address reducing memory usage at input length ≥ 2048 without accuracy loss. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "K. Iversen",
+    "V. Dupont",
+    "D. Petrov"
+  ],
+  "venue": "TMLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0002",
+    "seed:0003",
+    "seed:0004"
+  ],
+  "citations_in_count": 340,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

@@ -1,0 +1,24 @@
+{
+  "id": "seed:0016",
+  "source": "seed",
+  "source_id": "16",
+  "doi": null,
+  "title": "FEDformer: Error accumulation dominates FEDformer performance at horizon 720 on ETTh1, ETTh2, Weather",
+  "abstract": "We study long-horizon multivariate forecasting using FEDformer, a frequency-enhanced decomposition transformer. On ETTh1, ETTh2, Weather, at horizon 720, Error accumulation dominates FEDformer performance at horizon 720 on ETTh1, ETTh2, Weather. MSE at horizon 720 is 26% higher than at horizon 336 for the same FEDformer configuration. We discuss two limitations: Comparison omits linear baselines that recent work has shown to be competitive. The training corpus is limited to a single domain, so cross-domain robustness is not established. Future work should address analysing attention weights to test the interpretability hypothesis. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2022,
+  "authors": [
+    "A. Mensah",
+    "D. Petrov",
+    "W. Chen"
+  ],
+  "venue": "AAAI (Seed Fixture)",
+  "citations_out": [
+    "seed:0013",
+    "seed:0014",
+    "seed:0015"
+  ],
+  "citations_in_count": 175,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

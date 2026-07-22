@@ -1,0 +1,24 @@
+{
+  "id": "seed:0014",
+  "source": "seed",
+  "source_id": "14",
+  "doi": null,
+  "title": "Autoformer: Reported gains for Autoformer do not survive covariate shift between train and test splits on Electricity, Traffic",
+  "abstract": "We study long-horizon multivariate forecasting using Autoformer, a decomposition transformer with auto-correlation. On Electricity, Traffic, at horizon 336, Reported gains for Autoformer do not survive covariate shift between train and test splits on Electricity, Traffic. Held-out year-splits reduce Autoformer advantage to within 1% MSE of the DLinear baseline. We discuss two limitations: Computational cost is reported for a single input length; scaling behaviour is not measured. Distribution shift between train and test periods is not explicitly modelled. Future work should address applying the method to irregularly sampled clinical time series. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "T. Fischer",
+    "K. Iversen",
+    "L. Zhang"
+  ],
+  "venue": "ICLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0011",
+    "seed:0012",
+    "seed:0013"
+  ],
+  "citations_in_count": 130,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

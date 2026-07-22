@@ -1,0 +1,24 @@
+{
+  "id": "seed:0033",
+  "source": "seed",
+  "source_id": "33",
+  "doi": null,
+  "title": "TimesNet: Periodicity-aware convolutional models do not transfer across datasets with mismatched dominant frequencies on ETTh1, We",
+  "abstract": "We study long-horizon multivariate forecasting using TimesNet, a 2D-convolutional periodicity-aware model. On ETTh1, Weather, at horizon 336, Periodicity-aware convolutional models do not transfer across datasets with mismatched dominant frequencies on ETTh1, Weather. Cross-dataset transfer from ETTh1 to ETTh1 yields worse MSE than training from scratch for TimesNet. We discuss two limitations: Distribution shift between train and test periods is not explicitly modelled. Evaluation is restricted to public benchmarks and may not reflect production settings. Future work should address investigating whether patching interacts with frequency-domain decomposition. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "V. Dupont",
+    "W. Chen",
+    "D. Petrov"
+  ],
+  "venue": "KDD (Seed Fixture)",
+  "citations_out": [
+    "seed:0030",
+    "seed:0031",
+    "seed:0032"
+  ],
+  "citations_in_count": 15,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

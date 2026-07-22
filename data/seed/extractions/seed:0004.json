@@ -1,0 +1,77 @@
+{
+  "paper_id": "seed:0004",
+  "claims": [
+    {
+      "id": "seed:0004:c1",
+      "paper_id": "seed:0004",
+      "text": "PatchTST outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm1 at horizon 336.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0004:c2",
+      "paper_id": "seed:0004",
+      "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0004:e1",
+      "claim_id": "seed:0004:c1",
+      "description": "Reported MSE reduction of 14% versus the strongest prior transformer on ETTh1 at horizon 336.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0004:m1",
+      "paper_id": "seed:0004",
+      "name": "PatchTST",
+      "description": "patch-based channel-independent transformer",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "ETTm1",
+        "ETTm2",
+        "Weather",
+        "Electricity"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0004:l1",
+      "paper_id": "seed:0004",
+      "text": "Computational cost is reported for a single input length; scaling behaviour is not measured.",
+      "normalized_category": "efficiency-measurement"
+    },
+    {
+      "id": "seed:0004:l2",
+      "paper_id": "seed:0004",
+      "text": "Distribution shift between train and test periods is not explicitly modelled.",
+      "normalized_category": "distribution-shift"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0004:f1",
+      "paper_id": "seed:0004",
+      "text": "Applying the method to irregularly sampled clinical time series.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0004:f2",
+      "paper_id": "seed:0004",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147026Z",
+  "extractor": "seed-fixture"
+}

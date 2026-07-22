@@ -1,0 +1,24 @@
+{
+  "id": "seed:0006",
+  "source": "seed",
+  "source_id": "6",
+  "doi": null,
+  "title": "iTransformer: iTransformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Traffic at horizon 336",
+  "abstract": "We study long-horizon multivariate forecasting using iTransformer, a inverted transformer treating variates as tokens. On ETTh1, ETTh2, Traffic, at horizon 336, iTransformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Traffic at horizon 336. Reported MSE reduction of 16% versus the strongest prior transformer on ETTh1 at horizon 336. We discuss two limitations: Comparison omits linear baselines that recent work has shown to be competitive. The training corpus is limited to a single domain, so cross-domain robustness is not established. Future work should address analysing attention weights to test the interpretability hypothesis. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "L. Zhang",
+    "P. Ortega",
+    "S. Yamada"
+  ],
+  "venue": "NeurIPS (Seed Fixture)",
+  "citations_out": [
+    "seed:0003",
+    "seed:0004",
+    "seed:0005"
+  ],
+  "citations_in_count": 220,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

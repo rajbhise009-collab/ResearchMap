@@ -1,0 +1,72 @@
+{
+  "paper_id": "seed:0035",
+  "claims": [
+    {
+      "id": "seed:0035:c1",
+      "paper_id": "seed:0035",
+      "text": "No forecaster in the compared set shows a statistically significant improvement over a naive last-value predictor on Exchange.",
+      "type": "negative",
+      "confidence": 0.75
+    },
+    {
+      "id": "seed:0035:c2",
+      "paper_id": "seed:0035",
+      "text": "DLinear is best characterised as decomposition linear baseline.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0035:e1",
+      "claim_id": "seed:0035:c1",
+      "description": "DLinear MSE is within one standard deviation of persistence on the Exchange benchmark.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0035:m1",
+      "paper_id": "seed:0035",
+      "name": "DLinear",
+      "description": "decomposition linear baseline",
+      "datasets": [
+        "Exchange"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0035:l1",
+      "paper_id": "seed:0035",
+      "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
+      "normalized_category": "missing-data"
+    },
+    {
+      "id": "seed:0035:l2",
+      "paper_id": "seed:0035",
+      "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
+      "normalized_category": "baseline-omission"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0035:f1",
+      "paper_id": "seed:0035",
+      "text": "Reducing memory usage at input length ≥ 2048 without accuracy loss.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0035:f2",
+      "paper_id": "seed:0035",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147678Z",
+  "extractor": "seed-fixture"
+}

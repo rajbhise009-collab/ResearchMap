@@ -1,0 +1,75 @@
+{
+  "paper_id": "seed:0010",
+  "claims": [
+    {
+      "id": "seed:0010:c1",
+      "paper_id": "seed:0010",
+      "text": "Patch-based tokenisation restores transformer competitiveness over linear baselines on ETTh1, ETTh2, ETTm1.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0010:c2",
+      "paper_id": "seed:0010",
+      "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0010:e1",
+      "claim_id": "seed:0010:c1",
+      "description": "PatchTST improves MSE by an average of 20% over DLinear across 4 datasets.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0010:m1",
+      "paper_id": "seed:0010",
+      "name": "PatchTST",
+      "description": "patch-based channel-independent transformer",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "ETTm1",
+        "ETTm2"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0010:l1",
+      "paper_id": "seed:0010",
+      "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
+      "normalized_category": "external-validity"
+    },
+    {
+      "id": "seed:0010:l2",
+      "paper_id": "seed:0010",
+      "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
+      "normalized_category": "statistical-power"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0010:f1",
+      "paper_id": "seed:0010",
+      "text": "Extending the evaluation to include DLinear and NLinear as baselines.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0010:f2",
+      "paper_id": "seed:0010",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147272Z",
+  "extractor": "seed-fixture"
+}

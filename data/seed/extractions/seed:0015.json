@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0015",
+  "claims": [
+    {
+      "id": "seed:0015:c1",
+      "paper_id": "seed:0015",
+      "text": "Reported gains for DLinear do not survive covariate shift between train and test splits on ETTh1, Electricity.",
+      "type": "negative",
+      "confidence": 0.75
+    },
+    {
+      "id": "seed:0015:c2",
+      "paper_id": "seed:0015",
+      "text": "DLinear is best characterised as decomposition linear baseline.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0015:e1",
+      "claim_id": "seed:0015:c1",
+      "description": "Held-out year-splits reduce DLinear advantage to within 1% MSE of the DLinear baseline.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0015:m1",
+      "paper_id": "seed:0015",
+      "name": "DLinear",
+      "description": "decomposition linear baseline",
+      "datasets": [
+        "ETTh1",
+        "Electricity"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0015:l1",
+      "paper_id": "seed:0015",
+      "text": "Missing-value handling is delegated to preprocessing and not stress-tested.",
+      "normalized_category": "missing-data"
+    },
+    {
+      "id": "seed:0015:l2",
+      "paper_id": "seed:0015",
+      "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
+      "normalized_category": "baseline-omission"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0015:f1",
+      "paper_id": "seed:0015",
+      "text": "Reducing memory usage at input length ≥ 2048 without accuracy loss.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0015:f2",
+      "paper_id": "seed:0015",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147357Z",
+  "extractor": "seed-fixture"
+}

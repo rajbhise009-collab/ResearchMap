@@ -1,0 +1,24 @@
+{
+  "id": "seed:0020",
+  "source": "seed",
+  "source_id": "20",
+  "doi": null,
+  "title": "iTransformer: Variate-token transformers generalise from 10% of training data on ETTh1, ETTh2",
+  "abstract": "We study long-horizon multivariate forecasting using iTransformer, a inverted transformer treating variates as tokens. On ETTh1, ETTh2, at horizon 336, Variate-token transformers generalise from 10% of training data on ETTh1, ETTh2. iTransformer maintains within 30% of full-data MSE using 10% of ETTh1 and ETTh2. We discuss two limitations: Evaluation is restricted to public benchmarks and may not reflect production settings. Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference. Future work should address extending the evaluation to include dlinear and nlinear as baselines. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "L. Zhang",
+    "A. Mensah",
+    "C. Okafor"
+  ],
+  "venue": "ICLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0017",
+    "seed:0018",
+    "seed:0019"
+  ],
+  "citations_in_count": 60,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

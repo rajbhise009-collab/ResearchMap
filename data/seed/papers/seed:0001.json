@@ -1,0 +1,20 @@
+{
+  "id": "seed:0001",
+  "source": "seed",
+  "source_id": "1",
+  "doi": null,
+  "title": "Informer: Informer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Electricity at horizon 336",
+  "abstract": "We study long-horizon multivariate forecasting using Informer, a sparse-attention transformer with ProbSparse self-attention. On ETTh1, ETTh2, Electricity, at horizon 336, Informer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, Electricity at horizon 336. Reported MSE reduction of 11% versus the strongest prior transformer on ETTh1 at horizon 336. We discuss two limitations: Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference. Computational cost is reported for a single input length; scaling behaviour is not measured. Future work should address studying performance under explicit train/test distribution shift. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2021,
+  "authors": [
+    "H. Nakamura",
+    "L. Zhang",
+    "W. Chen"
+  ],
+  "venue": "ICML (Seed Fixture)",
+  "citations_out": [],
+  "citations_in_count": 612,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

@@ -1,0 +1,24 @@
+{
+  "id": "seed:0008",
+  "source": "seed",
+  "source_id": "8",
+  "doi": null,
+  "title": "NLinear: A simple NLinear baseline matches or exceeds contemporary transformer forecasters on ETTh1, ETTm1, Electricity",
+  "abstract": "We study long-horizon multivariate forecasting using NLinear, a normalization linear baseline. On ETTh1, ETTm1, Electricity, at horizon 720, A simple NLinear baseline matches or exceeds contemporary transformer forecasters on ETTh1, ETTm1, Electricity. NLinear achieved lower average MSE than five transformer baselines across 3 datasets at horizon 720. We discuss two limitations: Confidence intervals or standard errors are not reported for the headline metric. Missing-value handling is delegated to preprocessing and not stress-tested. Future work should address combining channel-independent tokenisation with variate-token attention. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "W. Chen",
+    "R. Bhatt",
+    "H. Nakamura"
+  ],
+  "venue": "ICLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0005",
+    "seed:0006",
+    "seed:0007"
+  ],
+  "citations_in_count": 265,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

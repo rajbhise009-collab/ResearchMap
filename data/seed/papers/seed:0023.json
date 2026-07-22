@@ -1,0 +1,24 @@
+{
+  "id": "seed:0023",
+  "source": "seed",
+  "source_id": "23",
+  "doi": null,
+  "title": "Crossformer: Cross-channel dependencies are essential for accurate forecasts on high-correlation datasets like Electricity, Traffic",
+  "abstract": "We study long-horizon multivariate forecasting using Crossformer, a cross-dimension transformer with hierarchical encoder. On Electricity, Traffic, at horizon 336, Cross-channel dependencies are essential for accurate forecasts on high-correlation datasets like Electricity, Traffic. Crossformer improves MSE by 33% over channel-independent PatchTST on Electricity. We discuss two limitations: Distribution shift between train and test periods is not explicitly modelled. Evaluation is restricted to public benchmarks and may not reflect production settings. Future work should address investigating whether patching interacts with frequency-domain decomposition. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "P. Ortega",
+    "F. Karolyi",
+    "W. Chen"
+  ],
+  "venue": "TMLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0020",
+    "seed:0021",
+    "seed:0022"
+  ],
+  "citations_in_count": 90,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

@@ -1,0 +1,24 @@
+{
+  "id": "seed:0019",
+  "source": "seed",
+  "source_id": "19",
+  "doi": null,
+  "title": "PatchTST: Patch-based transformers retain accuracy with 10% of the training data on ETTh1",
+  "abstract": "We study long-horizon multivariate forecasting using PatchTST, a patch-based channel-independent transformer. On ETTh1, at horizon 336, Patch-based transformers retain accuracy with 10% of the training data on ETTh1. PatchTST MSE degrades by only 29% when trained on 10% of ETTh1, versus 24% for a vanilla transformer. We discuss two limitations: The training corpus is limited to a single domain, so cross-domain robustness is not established. Confidence intervals or standard errors are not reported for the headline metric. Future work should address evaluating robustness to missing values and label noise. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "M. Salinas",
+    "P. Ortega",
+    "R. Bhatt"
+  ],
+  "venue": "ICML (Seed Fixture)",
+  "citations_out": [
+    "seed:0016",
+    "seed:0017",
+    "seed:0018"
+  ],
+  "citations_in_count": 145,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

@@ -1,0 +1,43 @@
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Cache (per-paper extractions and cached API responses — regenerable)
+data/cache/
+data/corpora/                # Phase 4 corpus dumps — large, regeneratable
+data/live_samples/           # raw OpenAlex JSON pulls — large, regeneratable
+data/labelled/*.filled.csv   # hand-labelled reviewer CSVs — user's private work
+
+# DB artifacts
+*.db
+*.sqlite
+*.sqlite3
+
+# Scratch — one-off proof runs, sample dumps, debugging output.
+# Never committed. Regenerate any file in here from the script that
+# produced it.
+scratch/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Node (frontend, later phase)
+node_modules/
+.next/

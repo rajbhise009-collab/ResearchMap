@@ -1,0 +1,24 @@
+{
+  "id": "seed:0029",
+  "source": "seed",
+  "source_id": "29",
+  "doi": null,
+  "title": "Crossformer: Patching cuts token count and delivers 14% faster training on ETTh1, Traffic",
+  "abstract": "We study long-horizon multivariate forecasting using Crossformer, a cross-dimension transformer with hierarchical encoder. On ETTh1, Traffic, at horizon 336, Patching cuts token count and delivers 14% faster training on ETTh1, Traffic. Per-epoch training time on ETTh1 is 14% lower for Crossformer than for autoregressive transformer baselines. We discuss two limitations: The training corpus is limited to a single domain, so cross-domain robustness is not established. Confidence intervals or standard errors are not reported for the headline metric. Future work should address evaluating robustness to missing values and label noise. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "K. Iversen",
+    "F. Karolyi",
+    "D. Petrov"
+  ],
+  "venue": "TMLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0026",
+    "seed:0027",
+    "seed:0028"
+  ],
+  "citations_in_count": 120,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

@@ -1,0 +1,24 @@
+{
+  "id": "seed:0034",
+  "source": "seed",
+  "source_id": "34",
+  "doi": null,
+  "title": "PatchTST: No forecaster in the compared set shows a statistically significant improvement over a naive last-value predictor on Exc",
+  "abstract": "We study long-horizon multivariate forecasting using PatchTST, a patch-based channel-independent transformer. On Exchange, ILI, at horizon 336, No forecaster in the compared set shows a statistically significant improvement over a naive last-value predictor on Exchange, ILI. PatchTST MSE is within one standard deviation of persistence on the Exchange benchmark. We discuss two limitations: Computational cost is reported for a single input length; scaling behaviour is not measured. Distribution shift between train and test periods is not explicitly modelled. Future work should address applying the method to irregularly sampled clinical time series. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "K. Iversen",
+    "F. Karolyi",
+    "R. Bhatt"
+  ],
+  "venue": "AAAI (Seed Fixture)",
+  "citations_out": [
+    "seed:0031",
+    "seed:0032",
+    "seed:0033"
+  ],
+  "citations_in_count": 20,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

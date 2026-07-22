@@ -1,0 +1,24 @@
+{
+  "id": "seed:0022",
+  "source": "seed",
+  "source_id": "22",
+  "doi": null,
+  "title": "PatchTST: Channel-independent modelling improves multivariate forecasting accuracy on ETTh1, ETTh2, ETTm1",
+  "abstract": "We study long-horizon multivariate forecasting using PatchTST, a patch-based channel-independent transformer. On ETTh1, ETTh2, ETTm1, at horizon 336, Channel-independent modelling improves multivariate forecasting accuracy on ETTh1, ETTh2, ETTm1. PatchTST outperforms channel-mixing transformers by 32% MSE on 4 multivariate datasets. We discuss two limitations: Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity. Attention weights are not analysed, leaving the interpretability claims unverified. Future work should address reporting per-seed variance and confidence intervals for the headline metric. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "D. Petrov",
+    "K. Iversen",
+    "L. Zhang"
+  ],
+  "venue": "AAAI (Seed Fixture)",
+  "citations_out": [
+    "seed:0019",
+    "seed:0020",
+    "seed:0021"
+  ],
+  "citations_in_count": 260,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0029",
+  "claims": [
+    {
+      "id": "seed:0029:c1",
+      "paper_id": "seed:0029",
+      "text": "Patching cuts token count and delivers 14% faster training on ETTh1, Traffic.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0029:c2",
+      "paper_id": "seed:0029",
+      "text": "Crossformer is best characterised as cross-dimension transformer with hierarchical encoder.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0029:e1",
+      "claim_id": "seed:0029:c1",
+      "description": "Per-epoch training time on ETTh1 is 14% lower for Crossformer than for autoregressive transformer baselines.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0029:m1",
+      "paper_id": "seed:0029",
+      "name": "Crossformer",
+      "description": "cross-dimension transformer with hierarchical encoder",
+      "datasets": [
+        "ETTh1",
+        "Traffic"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0029:l1",
+      "paper_id": "seed:0029",
+      "text": "The training corpus is limited to a single domain, so cross-domain robustness is not established.",
+      "normalized_category": "cross-domain-generalisation"
+    },
+    {
+      "id": "seed:0029:l2",
+      "paper_id": "seed:0029",
+      "text": "Confidence intervals or standard errors are not reported for the headline metric.",
+      "normalized_category": "statistical-reporting"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0029:f1",
+      "paper_id": "seed:0029",
+      "text": "Evaluating robustness to missing values and label noise.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0029:f2",
+      "paper_id": "seed:0029",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147583Z",
+  "extractor": "seed-fixture"
+}

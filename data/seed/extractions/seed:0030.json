@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0030",
+  "claims": [
+    {
+      "id": "seed:0030:c1",
+      "paper_id": "seed:0030",
+      "text": "Variate-token attention scales sub-quadratically in the number of features on Electricity, Traffic, Weather.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0030:c2",
+      "paper_id": "seed:0030",
+      "text": "iTransformer is best characterised as inverted transformer treating variates as tokens.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0030:e1",
+      "claim_id": "seed:0030:c1",
+      "description": "iTransformer attention cost grows with the number of variates rather than the input length, saving 15% memory at length 1024.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0030:m1",
+      "paper_id": "seed:0030",
+      "name": "iTransformer",
+      "description": "inverted transformer treating variates as tokens",
+      "datasets": [
+        "Electricity",
+        "Traffic",
+        "Weather"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0030:l1",
+      "paper_id": "seed:0030",
+      "text": "Evaluation is restricted to public benchmarks and may not reflect production settings.",
+      "normalized_category": "external-validity"
+    },
+    {
+      "id": "seed:0030:l2",
+      "paper_id": "seed:0030",
+      "text": "Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference.",
+      "normalized_category": "statistical-power"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0030:f1",
+      "paper_id": "seed:0030",
+      "text": "Extending the evaluation to include DLinear and NLinear as baselines.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0030:f2",
+      "paper_id": "seed:0030",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147598Z",
+  "extractor": "seed-fixture"
+}

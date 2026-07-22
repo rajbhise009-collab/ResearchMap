@@ -1,0 +1,24 @@
+{
+  "id": "seed:0015",
+  "source": "seed",
+  "source_id": "15",
+  "doi": null,
+  "title": "DLinear: Reported gains for DLinear do not survive covariate shift between train and test splits on ETTh1, Electricity",
+  "abstract": "We study long-horizon multivariate forecasting using DLinear, a decomposition linear baseline. On ETTh1, Electricity, at horizon 336, Reported gains for DLinear do not survive covariate shift between train and test splits on ETTh1, Electricity. Held-out year-splits reduce DLinear advantage to within 1% MSE of the DLinear baseline. We discuss two limitations: Missing-value handling is delegated to preprocessing and not stress-tested. Comparison omits linear baselines that recent work has shown to be competitive. Future work should address reducing memory usage at input length ≥ 2048 without accuracy loss. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "R. Bhatt",
+    "F. Karolyi",
+    "V. Dupont"
+  ],
+  "venue": "KDD (Seed Fixture)",
+  "citations_out": [
+    "seed:0012",
+    "seed:0013",
+    "seed:0014"
+  ],
+  "citations_in_count": 40,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

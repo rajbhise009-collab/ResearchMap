@@ -1,0 +1,72 @@
+{
+  "paper_id": "seed:0019",
+  "claims": [
+    {
+      "id": "seed:0019:c1",
+      "paper_id": "seed:0019",
+      "text": "Patch-based transformers retain accuracy with 10% of the training data on ETTh1.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0019:c2",
+      "paper_id": "seed:0019",
+      "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0019:e1",
+      "claim_id": "seed:0019:c1",
+      "description": "PatchTST MSE degrades by only 29% when trained on 10% of ETTh1, versus 24% for a vanilla transformer.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0019:m1",
+      "paper_id": "seed:0019",
+      "name": "PatchTST",
+      "description": "patch-based channel-independent transformer",
+      "datasets": [
+        "ETTh1"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0019:l1",
+      "paper_id": "seed:0019",
+      "text": "The training corpus is limited to a single domain, so cross-domain robustness is not established.",
+      "normalized_category": "cross-domain-generalisation"
+    },
+    {
+      "id": "seed:0019:l2",
+      "paper_id": "seed:0019",
+      "text": "Confidence intervals or standard errors are not reported for the headline metric.",
+      "normalized_category": "statistical-reporting"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0019:f1",
+      "paper_id": "seed:0019",
+      "text": "Evaluating robustness to missing values and label noise.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0019:f2",
+      "paper_id": "seed:0019",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147421Z",
+  "extractor": "seed-fixture"
+}

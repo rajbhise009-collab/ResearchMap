@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0017",
+  "claims": [
+    {
+      "id": "seed:0017:c1",
+      "paper_id": "seed:0017",
+      "text": "Patch tokenisation reduces long-horizon error accumulation for PatchTST on ETTh1, ETTm1, Electricity.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0017:c2",
+      "paper_id": "seed:0017",
+      "text": "PatchTST is best characterised as patch-based channel-independent transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0017:e1",
+      "claim_id": "seed:0017:c1",
+      "description": "PatchTST shows a 27% smaller MSE increase from horizon 336 to 720 than autoregressive transformer baselines.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0017:m1",
+      "paper_id": "seed:0017",
+      "name": "PatchTST",
+      "description": "patch-based channel-independent transformer",
+      "datasets": [
+        "ETTh1",
+        "ETTm1",
+        "Electricity"
+      ],
+      "conditions": [
+        "horizon=720",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0017:l1",
+      "paper_id": "seed:0017",
+      "text": "Attention weights are not analysed, leaving the interpretability claims unverified.",
+      "normalized_category": "interpretability"
+    },
+    {
+      "id": "seed:0017:l2",
+      "paper_id": "seed:0017",
+      "text": "Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity.",
+      "normalized_category": "hyperparameter-sensitivity"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0017:f1",
+      "paper_id": "seed:0017",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0017:f2",
+      "paper_id": "seed:0017",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147389Z",
+  "extractor": "seed-fixture"
+}

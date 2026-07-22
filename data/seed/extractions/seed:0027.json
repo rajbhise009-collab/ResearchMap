@@ -1,0 +1,73 @@
+{
+  "paper_id": "seed:0027",
+  "claims": [
+    {
+      "id": "seed:0027:c1",
+      "paper_id": "seed:0027",
+      "text": "Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, ETTh2.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0027:c2",
+      "paper_id": "seed:0027",
+      "text": "FEDformer is best characterised as frequency-enhanced decomposition transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0027:e1",
+      "claim_id": "seed:0027:c1",
+      "description": "FEDformer reduces MSE by 12% over time-domain baselines on ETTh1.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0027:m1",
+      "paper_id": "seed:0027",
+      "name": "FEDformer",
+      "description": "frequency-enhanced decomposition transformer",
+      "datasets": [
+        "ETTh1",
+        "ETTh2"
+      ],
+      "conditions": [
+        "horizon=336",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0027:l1",
+      "paper_id": "seed:0027",
+      "text": "Attention weights are not analysed, leaving the interpretability claims unverified.",
+      "normalized_category": "interpretability"
+    },
+    {
+      "id": "seed:0027:l2",
+      "paper_id": "seed:0027",
+      "text": "Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity.",
+      "normalized_category": "hyperparameter-sensitivity"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0027:f1",
+      "paper_id": "seed:0027",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0027:f2",
+      "paper_id": "seed:0027",
+      "text": "Pretraining on a mixture of datasets to test transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147549Z",
+  "extractor": "seed-fixture"
+}

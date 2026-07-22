@@ -1,0 +1,22 @@
+{
+  "id": "seed:0002",
+  "source": "seed",
+  "source_id": "2",
+  "doi": null,
+  "title": "Autoformer: Autoformer outperforms prior transformer and RNN baselines on ETTh1, ETTm1, Traffic at horizon 336",
+  "abstract": "We study long-horizon multivariate forecasting using Autoformer, a decomposition transformer with auto-correlation. On ETTh1, ETTm1, Traffic, at horizon 336, Autoformer outperforms prior transformer and RNN baselines on ETTh1, ETTm1, Traffic at horizon 336. Reported MSE reduction of 12% versus the strongest prior transformer on ETTh1 at horizon 336. We discuss two limitations: Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity. Attention weights are not analysed, leaving the interpretability claims unverified. Future work should address reporting per-seed variance and confidence intervals for the headline metric. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2021,
+  "authors": [
+    "C. Okafor",
+    "F. Karolyi",
+    "R. Bhatt"
+  ],
+  "venue": "ICLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0001"
+  ],
+  "citations_in_count": 580,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

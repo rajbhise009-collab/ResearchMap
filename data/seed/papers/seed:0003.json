@@ -1,0 +1,23 @@
+{
+  "id": "seed:0003",
+  "source": "seed",
+  "source_id": "3",
+  "doi": null,
+  "title": "FEDformer: FEDformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm2 at horizon 336",
+  "abstract": "We study long-horizon multivariate forecasting using FEDformer, a frequency-enhanced decomposition transformer. On ETTh1, ETTh2, ETTm2, at horizon 336, FEDformer outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm2 at horizon 336. Reported MSE reduction of 13% versus the strongest prior transformer on ETTh1 at horizon 336. We discuss two limitations: Distribution shift between train and test periods is not explicitly modelled. Evaluation is restricted to public benchmarks and may not reflect production settings. Future work should address investigating whether patching interacts with frequency-domain decomposition. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2022,
+  "authors": [
+    "D. Petrov",
+    "A. Mensah",
+    "P. Ortega"
+  ],
+  "venue": "KDD (Seed Fixture)",
+  "citations_out": [
+    "seed:0001",
+    "seed:0002"
+  ],
+  "citations_in_count": 510,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

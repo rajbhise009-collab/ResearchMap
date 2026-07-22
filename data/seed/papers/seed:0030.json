@@ -1,0 +1,24 @@
+{
+  "id": "seed:0030",
+  "source": "seed",
+  "source_id": "30",
+  "doi": null,
+  "title": "iTransformer: Variate-token attention scales sub-quadratically in the number of features on Electricity, Traffic, Weather",
+  "abstract": "We study long-horizon multivariate forecasting using iTransformer, a inverted transformer treating variates as tokens. On Electricity, Traffic, Weather, at horizon 336, Variate-token attention scales sub-quadratically in the number of features on Electricity, Traffic, Weather. iTransformer attention cost grows with the number of variates rather than the input length, saving 15% memory at length 1024. We discuss two limitations: Evaluation is restricted to public benchmarks and may not reflect production settings. Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference. Future work should address extending the evaluation to include dlinear and nlinear as baselines. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "L. Zhang",
+    "P. Ortega",
+    "C. Okafor"
+  ],
+  "venue": "NeurIPS (Seed Fixture)",
+  "citations_out": [
+    "seed:0027",
+    "seed:0028",
+    "seed:0029"
+  ],
+  "citations_in_count": 40,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

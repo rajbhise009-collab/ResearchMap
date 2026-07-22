@@ -1,0 +1,74 @@
+{
+  "paper_id": "seed:0016",
+  "claims": [
+    {
+      "id": "seed:0016:c1",
+      "paper_id": "seed:0016",
+      "text": "Error accumulation dominates FEDformer performance at horizon 720 on ETTh1, ETTh2, Weather.",
+      "type": "finding",
+      "confidence": 0.85
+    },
+    {
+      "id": "seed:0016:c2",
+      "paper_id": "seed:0016",
+      "text": "FEDformer is best characterised as frequency-enhanced decomposition transformer.",
+      "type": "method",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "id": "seed:0016:e1",
+      "claim_id": "seed:0016:c1",
+      "description": "MSE at horizon 720 is 26% higher than at horizon 336 for the same FEDformer configuration.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "seed:0016:m1",
+      "paper_id": "seed:0016",
+      "name": "FEDformer",
+      "description": "frequency-enhanced decomposition transformer",
+      "datasets": [
+        "ETTh1",
+        "ETTh2",
+        "Weather"
+      ],
+      "conditions": [
+        "horizon=720",
+        "input_length=336"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "seed:0016:l1",
+      "paper_id": "seed:0016",
+      "text": "Comparison omits linear baselines that recent work has shown to be competitive.",
+      "normalized_category": "baseline-omission"
+    },
+    {
+      "id": "seed:0016:l2",
+      "paper_id": "seed:0016",
+      "text": "The training corpus is limited to a single domain, so cross-domain robustness is not established.",
+      "normalized_category": "cross-domain-generalisation"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "seed:0016:f1",
+      "paper_id": "seed:0016",
+      "text": "Analysing attention weights to test the interpretability hypothesis.",
+      "addressed_by": null
+    },
+    {
+      "id": "seed:0016:f2",
+      "paper_id": "seed:0016",
+      "text": "Reporting per-seed variance and confidence intervals for the headline metric.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-21T18:00:22.147372Z",
+  "extractor": "seed-fixture"
+}

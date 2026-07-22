@@ -1,0 +1,24 @@
+{
+  "id": "seed:0004",
+  "source": "seed",
+  "source_id": "4",
+  "doi": null,
+  "title": "PatchTST: PatchTST outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm1 at horizon 336",
+  "abstract": "We study long-horizon multivariate forecasting using PatchTST, a patch-based channel-independent transformer. On ETTh1, ETTh2, ETTm1, at horizon 336, PatchTST outperforms prior transformer and RNN baselines on ETTh1, ETTh2, ETTm1 at horizon 336. Reported MSE reduction of 14% versus the strongest prior transformer on ETTh1 at horizon 336. We discuss two limitations: Computational cost is reported for a single input length; scaling behaviour is not measured. Distribution shift between train and test periods is not explicitly modelled. Future work should address applying the method to irregularly sampled clinical time series. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "M. Salinas",
+    "T. Fischer",
+    "E. Rossi"
+  ],
+  "venue": "AAAI (Seed Fixture)",
+  "citations_out": [
+    "seed:0001",
+    "seed:0002",
+    "seed:0003"
+  ],
+  "citations_in_count": 720,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

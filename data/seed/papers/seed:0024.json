@@ -1,0 +1,24 @@
+{
+  "id": "seed:0024",
+  "source": "seed",
+  "source_id": "24",
+  "doi": null,
+  "title": "iTransformer: Cross-channel dependencies are essential for accurate forecasts on high-correlation datasets like ETTh1, Weather, Electr",
+  "abstract": "We study long-horizon multivariate forecasting using iTransformer, a inverted transformer treating variates as tokens. On ETTh1, Weather, Electricity, at horizon 336, Cross-channel dependencies are essential for accurate forecasts on high-correlation datasets like ETTh1, Weather, Electricity. iTransformer improves MSE by 34% over channel-independent PatchTST on ETTh1. We discuss two limitations: Computational cost is reported for a single input length; scaling behaviour is not measured. Distribution shift between train and test periods is not explicitly modelled. Future work should address applying the method to irregularly sampled clinical time series. and reporting per-seed variance and confidence intervals for the headline metric. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "L. Zhang",
+    "H. Nakamura",
+    "S. Yamada"
+  ],
+  "venue": "NeurIPS (Seed Fixture)",
+  "citations_out": [
+    "seed:0021",
+    "seed:0022",
+    "seed:0023"
+  ],
+  "citations_in_count": 35,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

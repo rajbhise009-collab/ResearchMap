@@ -1,0 +1,24 @@
+{
+  "id": "seed:0011",
+  "source": "seed",
+  "source_id": "11",
+  "doi": null,
+  "title": "Crossformer: Hierarchical cross-dimension attention recovers a transformer lead on ETTh1, Electricity, Traffic",
+  "abstract": "We study long-horizon multivariate forecasting using Crossformer, a cross-dimension transformer with hierarchical encoder. On ETTh1, Electricity, Traffic, at horizon 336, Hierarchical cross-dimension attention recovers a transformer lead on ETTh1, Electricity, Traffic. Crossformer outperforms DLinear by 21% MSE on ETTh1 at horizon 336. We discuss two limitations: Reported gains use a single held-out split; results across seeds vary by more than the headline MSE difference. Computational cost is reported for a single input length; scaling behaviour is not measured. Future work should address studying performance under explicit train/test distribution shift. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2023,
+  "authors": [
+    "P. Ortega",
+    "L. Zhang",
+    "F. Karolyi"
+  ],
+  "venue": "TMLR (Seed Fixture)",
+  "citations_out": [
+    "seed:0008",
+    "seed:0009",
+    "seed:0010"
+  ],
+  "citations_in_count": 210,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}

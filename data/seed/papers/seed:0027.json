@@ -1,0 +1,24 @@
+{
+  "id": "seed:0027",
+  "source": "seed",
+  "source_id": "27",
+  "doi": null,
+  "title": "FEDformer: Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, ETTh2",
+  "abstract": "We study long-horizon multivariate forecasting using FEDformer, a frequency-enhanced decomposition transformer. On ETTh1, ETTh2, at horizon 336, Frequency-domain decomposition improves forecasting on strongly periodic signals in ETTh1, ETTh2. FEDformer reduces MSE by 12% over time-domain baselines on ETTh1. We discuss two limitations: Attention weights are not analysed, leaving the interpretability claims unverified. Hyperparameters are tuned per-dataset, which advantages larger models that can absorb the added capacity. Future work should address pretraining on a mixture of datasets to test transfer. and pretraining on a mixture of datasets to test transfer. [SEED-FIXTURE — not a real publication].",
+  "year": 2024,
+  "authors": [
+    "A. Mensah",
+    "R. Bhatt",
+    "F. Karolyi"
+  ],
+  "venue": "KDD (Seed Fixture)",
+  "citations_out": [
+    "seed:0024",
+    "seed:0025",
+    "seed:0026"
+  ],
+  "citations_in_count": 30,
+  "oa_fulltext_available": false,
+  "fulltext": null,
+  "seed_sample": true
+}
