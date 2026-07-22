@@ -981,6 +981,96 @@ anchor list unless there's a specific reason it's there.
 snowball) until Raj has reviewed the 60-paper hand-label CSV and
 tells me the actual per-clause leak we're targeting.
 
+## Patch — 2026-07-23 — sequencing repair to unblock labelling
+
+Seven items done, one commit each. No snowball, no live LLM calls,
+no v4 corpus, no new phase started.
+
+1. **Git history rewrite.** The 5.3 MB `phase2_diagnostic_raw.json`
+   blob that slipped into commit `819f8b7` on Phase 2 was stripped
+   from every commit using `git filter-repo --path
+   data/live_samples/phase2_diagnostic_raw.json --invert-paths`.
+   `.git` shrunk from **2.1 MB → 332 KB** (6× reduction). Blob
+   absent from every commit (`git log --all --diff-filter=A` on
+   the path returns nothing). Verified `.gitignore` blocks the
+   path via `git check-ignore -v`; the recurrence-prevention fix
+   (the inline-comment repair from the pre-filter chore commit)
+   was dropped by filter-repo along with the leaked blob, so it
+   was re-committed as `chore: fix .gitignore inline-comment bug
+   (post filter-repo)`.
+
+2. **CLAUDE.md re-sequencing.** The old Phase 5 bundled ranking +
+   validation; split into Phase 5 (ranking) and Phase 6
+   (validation) with the retrospective time-split test as
+   Phase 6's whole content. Phase 7 = API, Phase 8 = frontend.
+   Phase 1 now explicitly bounds itself to a small-sample corpus
+   with an inline note that snowball / OA-fulltext / scale-up
+   ingestion is deferred until Phase 2 tells us what the corpus
+   must contain.
+
+3. **`docs/labelling-rubric.md` written** verbatim from the spec.
+   Discriminator is contribution, not vocabulary; borderline
+   papers are KEPT with a `domain_centrality` tier, not dropped.
+
+4. **Review artifact rebuilt.** New script
+   `backend/app/corpus/build_review_artifact.py` consumes the
+   existing raw JSON dump (no fresh API call) and emits
+   `scratch/corpus_review.csv` + `scratch/corpus_review.md` (both
+   gitignored). 60 papers, deterministic same-seed sample as
+   `diagnose_v3` (`RNG_SEED=20260723`). Five metadata columns
+   prefilled (`openalex_id`, `title`, `venue`, `year`,
+   `abstract_full` — FULL untruncated), six blank columns for
+   hand labelling (`on_domain`, `has_limitation`, `claim_hedged`,
+   `has_future_work`, `compound_claims`, `notes`). The old
+   `data/labelled/corpus_relevance_review.csv` was removed as
+   superseded.
+
+5. **Dropped `neural text generation`** from `ANCHOR_TERMS` and the
+   `diagnose_v3` query. Phase 2 diagnostic showed 0/200 matches.
+   Comment retained explaining why.
+
+6. **Failure mode added** verbatim to `docs/opportunity-criteria.md`
+   under `## Named failure modes`: within-domain application noise
+   (paper uses domain vocabulary correctly but its contribution
+   lies in another task — medical summarization mentioning
+   hallucination). Consistent with the labelling rubric.
+
+## Self-audit — 2026-07-23 (sequencing repair)
+
+1. **NotImplementedError inventory.** Unchanged: 5 hits, all
+   intentional (3 abstract-base-class methods, `GeminiLLMClient`
+   Phase-2 deferral + its docstring reference).
+2. **Three outputs trace to real paper IDs.** The rebuilt review
+   artifact draws the same 60 papers from the phase-2 raw dump.
+   `W4396881553`, `W4309634482`, `W4404534210` are among them and
+   all resolve at `api.openalex.org/works/{id}`.
+3. **Pytest.** 66 passed, 0 failed. Corpus / heuristic changes
+   have no tests directly (they're diagnostic tooling) but the
+   normalizer/dedup regression suite is intact.
+4. **Pipeline over seed corpus still emits valid JSON.** Unchanged.
+5. **Pydantic validation.** Unchanged.
+6. **No reasoning / ranking leaked into the LLM boundary.** No
+   LLM boundary touched this session. The labelling rubric
+   explicitly places contribution-level judgment on the HUMAN
+   reviewer, not the LLM extraction interface.
+7. **PROGRESS.md updated** — this section. `.gitignore` fix
+   verified; blob absent from history.
+
+## What's next
+
+Blocked on your hand-label of `scratch/corpus_review.csv`. Once you
+have per-paper `on_domain` verdicts and the pressure-test columns
+filled, we'll have:
+- Real per-clause leak (not the heuristic-blind version).
+- A first data point on whether abstracts alone yield enough
+  limitations to score anything — which decides whether Phase 1
+  scaling needs OA full text.
+- Evidence for or against the four schema pressure-test hypotheses
+  (do compound claims exist? do hedged claims dominate?).
+
+Phase 3 (query hardening + snowball) is still blocked on
+GATE A. No live LLM calls have ever run.
+
 ## Flagged, not acted on
 
 **"Commit separately" was requested but ResearchMap is not a git
