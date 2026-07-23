@@ -186,6 +186,11 @@ def main() -> int:
     parser.add_argument("--auto", action="store_true",
                         help="After a clean smoke, continue to the remaining "
                              "27 without prompting.")
+    parser.add_argument("--input-source", choices=("abstract", "fulltext"),
+                        default="abstract",
+                        help="abstract (default) or fulltext. fulltext loads "
+                             "cached arXiv text into each paper and skips "
+                             "papers flagged abstract_only.")
     args = parser.parse_args()
 
     settings = get_settings()
@@ -195,6 +200,25 @@ def main() -> int:
 
     picks = stratify_thirty()
     papers_by_id = _load_papers_by_openalex_id()
+
+    # For a fulltext run, load cached arXiv text into each paper and drop
+    # the ones with no full text (they stay abstract_only in the corpus,
+    # but they cannot be part of the fulltext side of the comparison).
+    skipped_abstract_only: list[str] = []
+    if args.input_source == "fulltext":
+        from backend.app.ingestion.fulltext import load_cached_fulltext
+        kept = []
+        for r in picks:
+            paper = papers_by_id.get(r["openalex_id"])
+            ft = load_cached_fulltext(paper.id) if paper else None
+            if ft:
+                paper.fulltext = ft
+                kept.append(r)
+            else:
+                skipped_abstract_only.append(paper.id if paper else r["openalex_id"])
+        picks = kept
+        print(f"[fulltext] {len(picks)} papers have full text; "
+              f"{len(skipped_abstract_only)} abstract_only skipped")
 
     # Report composition.
     print(f"[selection] {len(picks)} papers picked")
@@ -215,7 +239,11 @@ def main() -> int:
 
     # Set up client + extractor.
     llm = GeminiLLMClient(raw_log_dir=RAW_LOG_DIR)
-    extractor = Extractor(llm=llm, cache=ExtractionCache())
+    extractor = Extractor(
+        llm=llm, cache=ExtractionCache(), input_source=args.input_source,
+    )
+    print(f"[extractor] prompt={extractor.prompt_version} "
+          f"input_source={extractor.input_source}")
 
     run_started = datetime.now(timezone.utc).isoformat()
     per_paper_records: list[dict] = []

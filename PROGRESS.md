@@ -1409,6 +1409,61 @@ unverified. It does not affect this run: the key is free-tier with no
 card, so nothing was billed regardless. All dollar figures in this
 section are labelled "reference only".
 
+## v1.1.0 prompt + Phase 1.5 full text — 2026-07-23 — PARTIAL (quota wall)
+
+### Done and committed
+
+- **Prompt v1.1.0** applied (per approval + the 2 adjustments): dropped
+  echoed provenance fields; stop extracting promotional claims as
+  findings; tightened `this_work` `source_scope` detection; confidence
+  left as faithfulness-only (NO signal attempt).
+- **Confidence policy** (`docs/confidence-policy.md`): demoted to a
+  pre-scoring filter hook, NEVER a scoring input; noted in CLAUDE.md.
+- **Compound-splitter note** (`docs/compound-splitter-note.md`): 0/30
+  fire rate is model-specific; re-measure on model change; splitter
+  stays as safety net; known bare-conjunction gap documented.
+- **`input_source` provenance**: added to cache key, `extraction_id`,
+  `PaperExtractionRow` (migration 006) so abstract and fulltext runs
+  never collide. Same lesson as model-in-key.
+- **Phase 1.5 arXiv full-text pipeline** (`ingestion/fulltext.py`):
+  arXiv-id resolution, PDF fetch + pypdf text extraction, section-aware
+  chunker (dormant on this corpus — max paper 99k tokens), abstract_only
+  flagging. 129 tests passing (+13 this session).
+- **Full text retrieved: 21/30 (70%)**, 9 abstract_only (all
+  journal-only). Manifest: `data/live_samples/fulltext_manifest.json`.
+- **Runner extended** with `--input-source fulltext` (loads cached
+  arXiv text, skips abstract_only papers).
+
+### BLOCKED — Gemini free-tier daily quota exhausted
+
+Both remaining extraction steps are walled on the `gemini-3.6-flash`
+**daily** free-tier request quota (`quotaId:
+GenerateRequestsPerDayPerProjectPerModel-FreeTier`), spent by today's
+runs. **Confirmed via a QuotaFailure response, not inferred.**
+
+State at the wall:
+- v1.1.0 **abstract** re-extraction: **8/30 complete** (cached).
+- v1.1.0 **fulltext** extraction: **0/21**.
+
+Consequences:
+- The **v1.0.0-vs-v1.1.0 metrics diff** (task 1) cannot be reported yet
+  — only 8/30 v1.1.0 abstracts exist. I will NOT compute a 30-paper
+  comparison from 8 papers.
+- The **abstract-vs-fulltext comparison** (`docs/abstract-vs-fulltext.md`,
+  task 4) is scaffolded (methodology + coverage final) with the numeric
+  table marked PENDING.
+
+**Nothing is lost** — everything is cached and idempotent. Resume with
+two commands once quota resets (~daily) or with a higher-quota key:
+```
+python -m backend.app.corpus.run_live_extraction                      # finish v1.1.0 abstracts
+python -m backend.app.corpus.run_live_extraction --input-source fulltext  # v1.1.0 fulltext
+```
+Alternative: approve a different free model (e.g. `gemini-2.5-flash-lite`,
+separate daily quota) via `GEMINI_MODEL` — caveat in the comparison doc
+(breaks comparability with the v1.0.0 baseline; abstract-vs-fulltext
+stays internally valid if both sides share the model).
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
