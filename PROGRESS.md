@@ -1303,6 +1303,112 @@ alert at $5 to be safe — cheap insurance.
    whether the abstract-only pipeline is worth pursuing before we
    build OA full-text ingestion.
 
+## Live extraction run — 2026-07-23 — Gemini 3.6 Flash, 30 papers
+
+**The real-extraction gate is now satisfied.** 30 papers extracted with
+a real LLM (`extractor` = `gemini:gemini-3.6-flash`), cached under
+`data/cache/extractions/`.
+
+### Model + infra changes this run (all committed)
+
+- **Model is config-driven** (`GEMINI_MODEL`, default
+  `gemini-flash-latest`) and **validated against `models.list` at
+  client startup** — a bad/deprecated name fails loudly, not as a
+  mid-run 404. This was needed: the approved `gemini-2.5-flash`
+  returned 404 "no longer available to new users", so I switched to
+  `gemini-3.6-flash` (current stable, resolves + returns real output).
+  **This was a model change from what was approved** — surfaced and
+  chosen per the "prefer stable, prefer better model" instruction;
+  cost is moot on the free-tier key.
+- **Model added to the cache key and to provenance.** Cache key is now
+  `(paper_id, model, prompt_hash)`; `PaperExtractionRow.model` column +
+  `extraction_id` = `<paper_id>#<model>#<prompt_hash>`. Migration 005.
+  Fixes the silent-cross-model-serving correctness bug.
+- **429 handling:** transient rate limits retried with exponential
+  backoff (8 retries, to 64s), counted separately from failures.
+- **Provenance echo bug found + fixed mid-smoke:** the model echoed the
+  prompt's example `extractor`/`extracted_at` values. The orchestrator
+  now overrides both authoritatively instead of `setdefault`.
+
+### Stratified composition (30 papers)
+
+| on_domain | count | | signal | count |
+|:----------|------:|-|:-------|------:|
+| on-domain | 20 | | compound_claims=yes (hand) | 21 |
+| borderline | 7 | | limitation_scope=prior (hand) | 17 |
+| off-domain | 3 | | limitation_scope=own (hand) | 8 |
+|  |  | | limitation_scope=both (hand) | 3 |
+
+Smoke = #14 Chainpoll, #15 BIG-Bench, #38 FermiEval — all on/borderline
+with compound claims + both scope types, to exercise the splitter and
+`source_scope` on the first three papers.
+
+### Measured results
+
+| Metric | Value |
+|:-------|:------|
+| Papers succeeded | **30 / 30** |
+| Hard failures | 0 |
+| JSON valid on 1st attempt | **30 / 30 (100%)** |
+| Retry rate (parse/validation) | 0 |
+| Rate-limit (429) hits | 8 total across runs — **all absorbed by backoff, 0 became failures** |
+| Compound-splitter fire rate | **0 / 30** — see note below |
+| `source_scope` agreement vs hand labels | **22 / 30 (73%)** |
+| Claims / paper | mean 5.9, median 5, range 2–13 |
+| Limitations / paper | mean 1.3, median 1, range 0–4 |
+| Future-work / paper | mean 0.2 — **25 / 30 had zero** |
+| `confidence` field | **~all 1.0** (29/30 papers every claim 1.0) — no signal |
+| Tokens (all runs incl. re-runs) | 22,343 in + 24,857 out = 47,200 |
+| Per-paper | ~1,400 in / ~1,550 out |
+| Reference cost | ~$0.16 clean 30-paper / ~$0.22 incl. network-interruption re-runs (free tier — **not billed**) |
+| vs. $0.10 estimate | ~2× — output tokens ~1,550/paper vs. estimated 1,000; model is more verbose |
+
+### Interpreting the surprises
+
+- **Compound-splitter fired 0 times, but that is NOT under-splitting.**
+  Gemini 3.6 Flash *pre-atomizes* — it emits "performance and
+  calibration both improve" as two separate claims itself, so the
+  splitter (which only handles enumerations/semicolons, and would
+  indeed miss bare "X and Y" conjunctions) has nothing left to do. The
+  splitter stays as a safety net for weaker models. My 58.9%
+  compound-abstract prediction was about the source text; the model
+  normalizes it away at generation time.
+- **`source_scope` 73%** — disagreements cluster on the model
+  UNDER-extracting `this_work` limitations (it reliably catches
+  prior-work motivation, misses the paper's own mild self-critiques).
+  One "disagreement" was the model being *right* (`W4414620308`, where
+  my hand-label over-read the abstract). Addressed in prompt proposal
+  change #4.
+- **`confidence` all 1.0** — the field is dead as written; prompt
+  proposal change #2 fixes it.
+- **Future-work 25/30 zero** — corpus property, not a prompt bug;
+  confirms the OA-full-text prerequisite from the schema pressure-test.
+
+### Artifacts
+
+- `scratch/extraction_spotcheck.md` — **the thing to read**: 5 papers,
+  full abstract vs. every extracted claim/limitation/future-work, incl.
+  one (#4) I flagged as questionable that turned out to be the
+  extractor being right.
+- `data/live_samples/extraction_run_*.json` — per-paper token/latency/
+  attempt accounting.
+- `docs/prompt-v1.1.0-proposal.md` — proposed prompt fixes with the
+  specific v1.0.0 behaviour each one addresses. **NOT applied** —
+  applying it invalidates the 30-paper cache, so it needs approval
+  and should land before Phase 3, not after.
+
+### Price-table source note (per the correction)
+
+`models.list` returns no pricing. The figures I gave last turn came
+from a `WebFetch` summary of `ai.google.dev/gemini-api/docs/pricing`.
+The 2.5-Flash and 2.5-Flash-Lite rows there match Google's documented
+public pricing. The newer-model rows (3.x Flash) came from the same
+fetch but I could NOT independently confirm them against a second
+source — treat the `gemini-3.6-flash` $1.50/$7.50 figure as
+unverified. It does not affect this run: the key is free-tier with no
+card, so nothing was billed regardless. All dollar figures in this
+section are labelled "reference only".
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
