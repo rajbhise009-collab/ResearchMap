@@ -76,10 +76,17 @@ class Extractor:
 
     # --- Public API -------------------------------------------------
 
+    @property
+    def model(self) -> str:
+        """The model identity used in the cache key and provenance —
+        the LLM client's `name` (e.g. 'gemini:gemini-3.6-flash',
+        'mock-seed')."""
+        return self._llm.name
+
     def extract(self, paper: Paper) -> ExtractionResult:
         """Extract one paper. Cache hit skips the LLM; cache miss calls
         the LLM up to `max_retries + 1` times before giving up."""
-        cached = self._cache.get(paper.id, self._prompt.hash)
+        cached = self._cache.get(paper.id, self.model, self._prompt.hash)
         if cached is not None:
             return ExtractionResult(extraction=cached, from_cache=True, attempts=0)
 
@@ -91,7 +98,9 @@ class Extractor:
             raw = self._llm.generate(rendered)
             try:
                 extraction = self._parse_validate_augment(paper, raw)
-                self._cache.put(paper.id, self._prompt.hash, extraction)
+                self._cache.put(
+                    paper.id, self.model, self._prompt.hash, extraction,
+                )
                 return ExtractionResult(
                     extraction=extraction, from_cache=False, attempts=attempts,
                 )
@@ -133,12 +142,15 @@ class Extractor:
         except json.JSONDecodeError as e:
             raise ExtractionParseError(paper.id, 1, e) from e
 
-        # Fill in provenance fields the model isn't asked to emit.
-        data.setdefault("extractor", self._llm.name)
-        data.setdefault(
-            "extracted_at",
-            datetime.now(timezone.utc).isoformat(),
-        )
+        # Provenance is authoritative from OUR side, not the model's.
+        # The model tends to ECHO the example values from the prompt's
+        # schema block (e.g. "extractor": "gemini-flash-2.5", a stale
+        # literal, and a made-up "extracted_at"). Those would
+        # misattribute the extraction — the very corruption the
+        # model-in-cache-key work guards against. Always override with
+        # the true model identity and the real extraction time.
+        data["extractor"] = self._llm.name
+        data["extracted_at"] = datetime.now(timezone.utc).isoformat()
         # A paper_id mismatch would indicate a mock/prompt bug — refuse.
         if data.get("paper_id") != paper.id:
             raise ExtractionValidationError(

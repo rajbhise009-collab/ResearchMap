@@ -75,9 +75,16 @@ def _sample_extraction() -> PaperExtraction:
 
 
 def test_extraction_id_is_deterministic():
-    assert extraction_id("openalex:W1", "abcdef012345") == (
-        "openalex:W1#abcdef012345"
+    assert extraction_id("openalex:W1", "gemini:m", "abcdef012345") == (
+        "openalex:W1#gemini:m#abcdef012345"
     )
+
+
+def test_extraction_id_distinguishes_model():
+    """Same paper + prompt hash, different model → different id."""
+    a = extraction_id("openalex:W1", "gemini:model-A", "hh")
+    b = extraction_id("openalex:W1", "gemini:model-B", "hh")
+    assert a != b
 
 
 def test_persist_writes_one_row_per_entity():
@@ -86,7 +93,9 @@ def test_persist_writes_one_row_per_entity():
     prompt_hash = "abcdef012345"
 
     xid = persist_extraction(session, ext, prompt_hash=prompt_hash)
-    assert xid == extraction_id(ext.paper_id, prompt_hash)
+    # model defaults to extraction.extractor ("test") when not passed.
+    assert xid == extraction_id(ext.paper_id, "test", prompt_hash)
+    assert session.merges[0].model == "test"
 
     # Row types produced.
     types = [type(m).__name__ for m in session.merges]

@@ -28,30 +28,40 @@ from backend.app.db.tables import (
 from backend.app.models import PaperExtraction
 
 
-def extraction_id(paper_id: str, prompt_hash: str) -> str:
-    """Deterministic id for a (paper, prompt version) pair."""
-    return f"{paper_id}#{prompt_hash}"
+def extraction_id(paper_id: str, model: str, prompt_hash: str) -> str:
+    """Deterministic id for a (paper, model, prompt version) triple.
+
+    The MODEL is part of the identity: two extractions of the same paper
+    under the same prompt but a different model are DIFFERENT extractions
+    and must not collide.
+    """
+    return f"{paper_id}#{model}#{prompt_hash}"
 
 
 def persist_extraction(
     session,  # sqlalchemy.orm.Session — typed loosely to avoid a hard import
     extraction: PaperExtraction,
     prompt_hash: str,
+    model: str | None = None,
 ) -> str:
     """Persist a `PaperExtraction` and its children under a shared
     extraction id. Returns the extraction id.
 
+    `model` defaults to `extraction.extractor` (the client name, which is
+    the model identity). Passed explicitly by callers that distinguish
+    the two.
+
     Uses `session.merge()` on the parent row so re-running against the
-    same (paper_id, prompt_hash) is idempotent — child rows are
-    re-inserted, so callers should delete old children first if that
-    matters. For MVP we assume the caller knows they're overwriting.
+    same (paper_id, model, prompt_hash) is idempotent.
     """
-    xid = extraction_id(extraction.paper_id, prompt_hash)
+    model = model or extraction.extractor
+    xid = extraction_id(extraction.paper_id, model, prompt_hash)
 
     parent = PaperExtractionRow(
         id=xid,
         paper_id=extraction.paper_id,
         extractor=extraction.extractor,
+        model=model,
         prompt_hash=prompt_hash,
         extracted_at=extraction.extracted_at or datetime.now(timezone.utc),
     )

@@ -55,6 +55,10 @@ class Settings(BaseSettings):
     database_url: SecretStr | None = Field(default=None, alias="DATABASE_URL")
 
     gemini_api_key: SecretStr | None = Field(default=None, alias="GEMINI_API_KEY")
+    # Model names are volatile — gemini-2.5-flash was deprecated out from
+    # under us mid-development. Keep the model in config, not hardcoded,
+    # and validate it against models.list at client startup.
+    gemini_model: str = Field(default="gemini-flash-latest", alias="GEMINI_MODEL")
     anthropic_api_key: SecretStr | None = Field(default=None, alias="ANTHROPIC_API_KEY")
 
     openalex_api_key: SecretStr | None = Field(default=None, alias="OPENALEX_API_KEY")

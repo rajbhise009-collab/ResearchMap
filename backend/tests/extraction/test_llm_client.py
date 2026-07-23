@@ -58,8 +58,29 @@ def test_gemini_client_refuses_without_api_key():
 
 
 def test_gemini_client_instantiates_with_explicit_key():
-    """Given an explicit key, the constructor succeeds. No .generate()
-    is invoked in this test — that would be a paid API call."""
-    client = GeminiLLMClient(api_key="fake-test-key")
-    assert client.name == "gemini-gemini-2.5-flash"
+    """Given an explicit key + explicit model + validate_model=False, the
+    constructor succeeds without any network call. No .generate() is
+    invoked — that would be a paid API call, and validate_model=False
+    skips the models.list check that would otherwise hit the network."""
+    client = GeminiLLMClient(
+        api_key="fake-test-key",
+        model_name="gemini-3.6-flash",
+        validate_model=False,
+    )
+    assert client.name == "gemini:gemini-3.6-flash"
+    assert client.model_name == "gemini-3.6-flash"
+    assert client.endpoint.endswith(
+        "/models/gemini-3.6-flash:generateContent"
+    )
     # We deliberately do NOT call client.generate(). That would spend.
+
+
+def test_gemini_client_reads_model_from_config(monkeypatch):
+    """When no model_name is passed, it comes from GEMINI_MODEL config."""
+    monkeypatch.setenv("GEMINI_API_KEY", "fake-test-key")
+    monkeypatch.setenv("GEMINI_MODEL", "gemini-flash-latest")
+    from backend.app import config as cfg
+    cfg.get_settings.cache_clear()
+    client = GeminiLLMClient(validate_model=False)
+    assert client.model_name == "gemini-flash-latest"
+    cfg.get_settings.cache_clear()

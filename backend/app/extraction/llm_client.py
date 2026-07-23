@@ -125,20 +125,25 @@ class GeminiLLMClient(LLMClient):
     ProgrammableMockLLMClient.
     """
 
-    name = "gemini-flash-2.5"
+    API_BASE = "https://generativelanguage.googleapis.com/v1beta"
 
-    ENDPOINT = (
-        "https://generativelanguage.googleapis.com/v1beta/models/"
-        "gemini-2.5-flash:generateContent"
-    )
+    # 429s are transient (rate limit), NOT extraction failures. Retry
+    # with exponential backoff up to this many times per call before
+    # giving up. Counted separately from parse/validation retries.
+    # Tuned for free-tier per-minute quotas: 8 retries with backoff up
+    # to 64s covers a full quota-window reset.
+    MAX_RATE_LIMIT_RETRIES = 8
+    RATE_LIMIT_BACKOFF_CAP_S = 64.0
 
     def __init__(
         self,
         *,
         api_key: str | None = None,
-        model_name: str = "gemini-2.5-flash",
+        model_name: str | None = None,
         temperature: float = 0.0,
         client=None,  # injected httpx.Client for tests
+        raw_log_dir: Path | None = None,
+        validate_model: bool = True,
     ) -> None:
         settings = get_settings()
         key = api_key
@@ -151,25 +156,84 @@ class GeminiLLMClient(LLMClient):
                 "before instantiating."
             )
         self._api_key = key
-        self._model_name = model_name
+        # Model comes from config/env, never hardcoded — model names are
+        # volatile and a bad one must fail loudly at startup, not as a
+        # mid-run 404.
+        self._model_name = model_name or settings.gemini_model
         self._temperature = temperature
-        # Lazy import — httpx is a dependency for the ingestion side too,
-        # but keep the import local so importing this module has no
-        # side effects during tests that don't instantiate the client.
         import httpx  # noqa: F401 — pulled into scope for _get_client
         self._client = client
-        self.name = f"gemini-{model_name}"
+        self.name = f"gemini:{self._model_name}"
+
+        # --- Observability. Every call updates the per-run counters
+        # below; the runner reads them after each extract() to compute
+        # per-paper cost and to attribute retries.
+        self.calls = 0
+        self.total_prompt_tokens = 0
+        self.total_output_tokens = 0
+        self.total_latency_s = 0.0
+        self.rate_limit_hits = 0  # 429s, counted separately from failures
+        self._raw_log_dir = raw_log_dir
+        self._per_paper_attempts: dict[str, int] = {}
+
+        # Fail loudly at startup if the configured model doesn't resolve.
+        if validate_model:
+            self._validate_model()
+
+    @property
+    def model_name(self) -> str:
+        return self._model_name
+
+    @property
+    def endpoint(self) -> str:
+        return f"{self.API_BASE}/models/{self._model_name}:generateContent"
 
     def _get_client(self):
         import httpx
         if self._client is None:
             self._client = httpx.Client(
-                timeout=httpx.Timeout(60.0, connect=10.0),
+                timeout=httpx.Timeout(120.0, connect=10.0),
                 headers={"User-Agent": "ResearchMap/0.1"},
             )
         return self._client
 
+    def _validate_model(self) -> None:
+        """Confirm the configured model resolves in models.list, and that
+        it supports generateContent. Raises with the available Flash
+        alternatives named, so a bad model name is caught at startup."""
+        client = self._get_client()
+        resp = client.get(
+            f"{self.API_BASE}/models",
+            params={"key": self._api_key, "pageSize": 200},
+        )
+        resp.raise_for_status()
+        models = resp.json().get("models", [])
+        # models.list returns "models/<name>"; accept either form.
+        wanted = self._model_name if self._model_name.startswith("models/") \
+            else f"models/{self._model_name}"
+        by_name = {m.get("name"): m for m in models}
+        match = by_name.get(wanted)
+        if match is None:
+            flash = sorted(
+                m["name"].removeprefix("models/")
+                for m in models
+                if "flash" in m.get("name", "").lower()
+                and "generateContent" in (m.get("supportedGenerationMethods") or [])
+            )
+            raise RuntimeError(
+                f"Configured GEMINI_MODEL={self._model_name!r} does not "
+                f"resolve in models.list. Available Flash models "
+                f"supporting generateContent: {flash}"
+            )
+        methods = match.get("supportedGenerationMethods") or []
+        if "generateContent" not in methods:
+            raise RuntimeError(
+                f"Model {self._model_name!r} exists but does not support "
+                f"generateContent (supports: {methods})."
+            )
+
     def generate(self, prompt: str) -> str:
+        import time
         import httpx
         client = self._get_client()
         payload = {
@@ -184,13 +248,43 @@ class GeminiLLMClient(LLMClient):
                 "response_mime_type": "application/json",
             },
         }
-        response = client.post(
-            self.ENDPOINT,
-            params={"key": self._api_key},
-            json=payload,
-        )
+
+        # --- Request with 429 backoff. A 429 is a rate limit, not an
+        # extraction failure; we retry it here (below the orchestrator's
+        # parse/validation retry loop) with exponential backoff and count
+        # it separately.
+        response = None
+        for rl_attempt in range(self.MAX_RATE_LIMIT_RETRIES + 1):
+            t0 = time.time()
+            response = client.post(
+                self.endpoint,
+                params={"key": self._api_key},
+                json=payload,
+            )
+            self.total_latency_s += time.time() - t0
+            if response.status_code == 429:
+                self.rate_limit_hits += 1
+                if rl_attempt < self.MAX_RATE_LIMIT_RETRIES:
+                    # Honor Retry-After if present, else exponential.
+                    retry_after = response.headers.get("retry-after")
+                    if retry_after and retry_after.isdigit():
+                        sleep_s = float(retry_after)
+                    else:
+                        sleep_s = min(2.0 ** rl_attempt, self.RATE_LIMIT_BACKOFF_CAP_S)
+                    time.sleep(sleep_s)
+                    continue
+            break
+
+        self.calls += 1
+        assert response is not None
         response.raise_for_status()
         body = response.json()
+
+        # Usage stats — Gemini returns these under usageMetadata.
+        usage = body.get("usageMetadata") or {}
+        self.total_prompt_tokens += int(usage.get("promptTokenCount") or 0)
+        self.total_output_tokens += int(usage.get("candidatesTokenCount") or 0)
+
         # Gemini's response shape: candidates[0].content.parts[0].text
         try:
             candidates = body.get("candidates") or []
@@ -202,11 +296,26 @@ class GeminiLLMClient(LLMClient):
             text = parts[0].get("text")
             if not text:
                 raise ValueError("empty text in Gemini part")
-            return text
         except (KeyError, IndexError, TypeError, ValueError) as e:
             raise RuntimeError(
                 f"Gemini returned an unexpected response shape: {e}"
             ) from e
+
+        # Tee raw response to disk if requested.
+        if self._raw_log_dir is not None:
+            import re as _re
+            m = _re.search(r"Paper ID:\s*`([^`]+)`", prompt)
+            paper_id = m.group(1) if m else "unknown"
+            self._per_paper_attempts[paper_id] = (
+                self._per_paper_attempts.get(paper_id, 0) + 1
+            )
+            attempt = self._per_paper_attempts[paper_id]
+            safe = _re.sub(r"[^A-Za-z0-9_.-]+", "_", paper_id)
+            self._raw_log_dir.mkdir(parents=True, exist_ok=True)
+            (self._raw_log_dir / f"{safe}.attempt{attempt}.txt").write_text(
+                text, encoding="utf-8"
+            )
+        return text
 
 
 __all__ = [

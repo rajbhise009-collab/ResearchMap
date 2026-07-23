@@ -30,16 +30,28 @@ def _safe(component: str) -> str:
 
 
 class ExtractionCache:
-    """Disk cache. All I/O is synchronous; the objects are small."""
+    """Disk cache. All I/O is synchronous; the objects are small.
+
+    Key is (paper_id, model, prompt_hash). The MODEL is part of the key
+    because it is part of what produced the output: without it, re-running
+    on a different model would silently serve the old model's extractions
+    and corrupt any cross-model or abstract-vs-fulltext comparison with no
+    way to detect it.
+    """
 
     def __init__(self, root: Path | None = None) -> None:
         self.root = root or (REPO_ROOT / "data" / "cache" / "extractions")
 
-    def _key_path(self, paper_id: str, prompt_hash: str) -> Path:
-        return self.root / _safe(paper_id) / f"{_safe(prompt_hash)}.json"
+    def _key_path(self, paper_id: str, model: str, prompt_hash: str) -> Path:
+        return (
+            self.root / _safe(paper_id)
+            / f"{_safe(model)}__{_safe(prompt_hash)}.json"
+        )
 
-    def get(self, paper_id: str, prompt_hash: str) -> PaperExtraction | None:
-        path = self._key_path(paper_id, prompt_hash)
+    def get(
+        self, paper_id: str, model: str, prompt_hash: str
+    ) -> PaperExtraction | None:
+        path = self._key_path(paper_id, model, prompt_hash)
         if not path.exists():
             return None
         try:
@@ -50,9 +62,11 @@ class ExtractionCache:
             # error. It will be overwritten on the next put().
             return None
 
-    def put(self, paper_id: str, prompt_hash: str,
-            extraction: PaperExtraction) -> None:
-        path = self._key_path(paper_id, prompt_hash)
+    def put(
+        self, paper_id: str, model: str, prompt_hash: str,
+        extraction: PaperExtraction,
+    ) -> None:
+        path = self._key_path(paper_id, model, prompt_hash)
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix(".json.tmp")
         tmp.write_text(extraction.model_dump_json(indent=2), encoding="utf-8")

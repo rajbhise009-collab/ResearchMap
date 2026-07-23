@@ -197,6 +197,10 @@ class PaperExtractionRow(Base):
         nullable=False, index=True,
     )
     extractor: Mapped[str] = mapped_column(String, nullable=False)
+    # The model that produced this extraction. Part of provenance
+    # alongside prompt_hash — without it, a cross-model comparison
+    # cannot tell which model any given record came from.
+    model: Mapped[str] = mapped_column(String, nullable=False, index=True)
     prompt_hash: Mapped[str] = mapped_column(String, nullable=False, index=True)
     extracted_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False,
