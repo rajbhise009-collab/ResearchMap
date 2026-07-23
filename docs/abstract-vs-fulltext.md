@@ -13,16 +13,26 @@ limitations and future-work items — which the abstract-only run
 starved (~8 own-work limitations, ~6 future-work items across 30
 papers)?
 
-## Design (clean single-variable comparison)
+## Design (clean single-variable comparison — PAIRED)
 
-Identical on every axis except the input:
+The comparison runs on the **21 papers that have BOTH an abstract and
+full text** — same paper set on both sides, so the only variable is
+input source. Comparing 30 abstracts against 21 full texts would
+confound input source with paper set: the 9 full-text misses are all
+journal-only, and journal papers may report limitations differently
+than arXiv preprints, so a 30-vs-21 comparison would measure a
+venue-mix difference on top of the input-source difference.
 
 | Axis | Value |
 |:-----|:------|
-| Papers | the same 30-paper stratified corpus |
+| Papers | the **21** papers with both abstract and full text (paired) |
 | Model | `gemini-3.6-flash` (identical) |
 | Prompt | `v1.1.0` (identical, `prompt_hash` identical) |
 | Only variable | input source: **abstract** vs. **full text** |
+
+The 30-paper abstract numbers are reported **separately, clearly
+labelled as a different (larger) set**, for context only — they are
+NOT the comparison.
 
 The `input_source` dimension is part of the cache key and provenance
 (`extraction_id`, `PaperExtractionRow.input_source`, migration 006),
@@ -54,13 +64,14 @@ active path here.
 **The comparison below is over the 21 papers with full text**, so
 that abstract-side and fulltext-side counts are on the same set.
 
-## Comparison table — PENDING (quota-blocked)
+## PAIRED comparison table — PENDING (quota-blocked)
 
-To be filled once the fulltext extraction completes. Both columns are
-over the same 21 full-text papers.
+Filled by `python -m backend.app.corpus.compare_abstract_fulltext` once
+both v1.1.0 extraction sets exist. **Both columns are over the SAME 21
+paired papers.**
 
-| Metric (per paper, n=21) | Abstract (v1.1.0) | Full text (v1.1.0) | Δ |
-|:-------------------------|:-----------------:|:------------------:|:--:|
+| Metric (per paper, n=21 paired) | Abstract (v1.1.0) | Full text (v1.1.0) | Δ / ratio |
+|:--------------------------------|:-----------------:|:------------------:|:---------:|
 | Claims / paper | _pending_ | _pending_ | |
 | Limitations / paper | _pending_ | _pending_ | |
 | **Own-work (`this_work`) limitations / paper** | _pending_ | _pending_ | |
@@ -70,11 +81,35 @@ over the same 21 full-text papers.
 | `source_scope` agreement vs hand labels | _pending_ | _pending_ | |
 | Tokens in / out per paper | _pending_ | _pending_ | |
 
-The two rows in bold are the ones the whole exercise is about: if full
-text lifts own-work limitations and future-work items substantially,
-it confirms the schema-pressure-test conclusion that OA full text is a
-prerequisite for the persistent-limitations and orphaned-future-work
-scorers, not a lift.
+The two bold rows are the whole point: full text must lift own-work
+limitations and future-work items above the threshold where the two
+starved scorers become viable. **The verdict — does it or doesn't
+it — goes here in plain language, including "it doesn't" if that is
+what the numbers say.**
+
+### 30-paper abstract set (CONTEXT ONLY — different, larger set)
+
+Reported separately so it is never confused with the paired
+comparison. These are the v1.1.0 abstract extractions over all 30
+papers (21 paired + 9 abstract_only).
+
+| Metric (per paper, n=30) | v1.1.0 abstract |
+|:-------------------------|:---------------:|
+| Claims / paper | _pending_ |
+| Own-work limitations / paper | _pending_ |
+| Future-work items / paper | _pending_ |
+
+### v1.0.0 → v1.1.0 diff (CONTEXT — 30-paper abstract set)
+
+Whether the v1.1.0 prompt changes moved the numbers vs. the v1.0.0
+baseline (both 30-paper abstract runs, same model).
+
+| Metric (per paper, n=30 abstract) | v1.0.0 | v1.1.0 | Δ |
+|:----------------------------------|:------:|:------:|:--:|
+| Claims / paper | 5.9 | _pending_ | |
+| Own-work limitations / paper | ~0.4 | _pending_ | |
+| `source_scope` agreement vs hand | 73% | _pending_ | |
+| Promotional claims (spot-check) | present | _pending_ | |
 
 ## Why this is blocked, and how to resume
 

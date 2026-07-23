@@ -179,6 +179,14 @@ recommendation — too broad to translate into a research program.
   the corpus manifest must record the ingestion cutoff date; the
   retrospective test filters any paper whose OpenAlex `updated_date`
   or `created_date` post-dates the frozen cutoff.
+- Mixed-fidelity corpus bias: full-text papers yield several times
+  more limitations and future-work items than abstract-only papers,
+  and full-text availability tracks venue (arXiv vs journal-only),
+  not scientific merit. Any scorer that counts independent papers
+  reporting something will therefore systematically over-represent
+  arXiv-available work. This is structural — ~30% of any corpus is
+  abstract-only — so it must be corrected for in scoring, not solved
+  by better retrieval.
 
 ## Matching rule for retrospective validation
 
