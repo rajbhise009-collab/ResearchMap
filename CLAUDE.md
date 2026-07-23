@@ -26,6 +26,11 @@ promising," or "decide importance" — STOP. That logic belongs in the
 reasoning engine as inspectable code. This division is the entire point of
 the project; violating it destroys its value.
 
+Corollary: `Claim.confidence` is an LLM self-assessment, so it MUST NOT
+feed any score — it is a pre-scoring filter hook only. See
+`docs/confidence-policy.md`. Any code that reads `Claim.confidence` in a
+scoring path is a violation of this rule.
+
 ## Honesty rules — non-negotiable
 
 1. Never fabricate paper content, citations, scores, or evidence. Every

@@ -202,11 +202,14 @@ def test_cache_key_uses_prompt_hash_not_version(tmp_path: Path):
 
     # Manually simulate a different prompt hash by peeking at the
     # cache slot — a lookup under a different hash misses.
-    assert cache.get(paper.id, extractor.model, "0000deadbeef") is None
+    src = extractor.input_source
+    assert cache.get(paper.id, extractor.model, src, "0000deadbeef") is None
     # A different MODEL also misses even at the right prompt hash.
-    assert cache.get(paper.id, "gemini:other-model", extractor.prompt_hash) is None
-    # The correct (model, prompt_hash) slot still hits.
-    assert cache.get(paper.id, extractor.model, extractor.prompt_hash) is not None
+    assert cache.get(paper.id, "gemini:other-model", src, extractor.prompt_hash) is None
+    # A different INPUT SOURCE also misses.
+    assert cache.get(paper.id, extractor.model, "fulltext", extractor.prompt_hash) is None
+    # The correct (model, input_source, prompt_hash) slot still hits.
+    assert cache.get(paper.id, extractor.model, src, extractor.prompt_hash) is not None
 
 
 # --- Compound splitting --------------------------------------------------

@@ -29,18 +29,19 @@ def _sample_extraction(paper_id: str = "openalex:W1") -> PaperExtraction:
 
 
 MODEL = "gemini:test-model"
+SRC = "abstract"
 
 
 def test_cache_miss_returns_none(tmp_path: Path):
     cache = ExtractionCache(root=tmp_path)
-    assert cache.get("openalex:W1", MODEL, "abcdef012345") is None
+    assert cache.get("openalex:W1", MODEL, SRC, "abcdef012345") is None
 
 
 def test_cache_put_then_get_roundtrips(tmp_path: Path):
     cache = ExtractionCache(root=tmp_path)
     original = _sample_extraction()
-    cache.put(original.paper_id, MODEL, "abcdef012345", original)
-    fetched = cache.get(original.paper_id, MODEL, "abcdef012345")
+    cache.put(original.paper_id, MODEL, SRC, "abcdef012345", original)
+    fetched = cache.get(original.paper_id, MODEL, SRC, "abcdef012345")
     assert fetched is not None
     assert fetched.paper_id == original.paper_id
     assert len(fetched.claims) == 1
@@ -60,11 +61,11 @@ def test_cache_isolates_by_prompt_hash(tmp_path: Path):
     v2_dict["extractor"] = "v2"
     v2 = PaperExtraction.model_validate(v2_dict)
 
-    cache.put("openalex:W1", MODEL, "aaaaaaaaaaaa", v1)
-    cache.put("openalex:W1", MODEL, "bbbbbbbbbbbb", v2)
+    cache.put("openalex:W1", MODEL, SRC, "aaaaaaaaaaaa", v1)
+    cache.put("openalex:W1", MODEL, SRC, "bbbbbbbbbbbb", v2)
 
-    assert cache.get("openalex:W1", MODEL, "aaaaaaaaaaaa").extractor == "v1"
-    assert cache.get("openalex:W1", MODEL, "bbbbbbbbbbbb").extractor == "v2"
+    assert cache.get("openalex:W1", MODEL, SRC, "aaaaaaaaaaaa").extractor == "v1"
+    assert cache.get("openalex:W1", MODEL, SRC, "bbbbbbbbbbbb").extractor == "v2"
 
 
 def test_cache_isolates_by_model(tmp_path: Path):
@@ -76,20 +77,35 @@ def test_cache_isolates_by_model(tmp_path: Path):
     b = _sample_extraction("openalex:W1")
     b = PaperExtraction.model_validate({**b.model_dump(), "extractor": "model-B"})
 
-    cache.put("openalex:W1", "gemini:model-A", "samehash1234", a)
-    cache.put("openalex:W1", "gemini:model-B", "samehash1234", b)
+    cache.put("openalex:W1", "gemini:model-A", SRC, "samehash1234", a)
+    cache.put("openalex:W1", "gemini:model-B", SRC, "samehash1234", b)
 
-    assert cache.get("openalex:W1", "gemini:model-A", "samehash1234").extractor == "model-A"
-    assert cache.get("openalex:W1", "gemini:model-B", "samehash1234").extractor == "model-B"
+    assert cache.get("openalex:W1", "gemini:model-A", SRC, "samehash1234").extractor == "model-A"
+    assert cache.get("openalex:W1", "gemini:model-B", SRC, "samehash1234").extractor == "model-B"
     # A third model that never wrote gets a clean miss.
-    assert cache.get("openalex:W1", "gemini:model-C", "samehash1234") is None
+    assert cache.get("openalex:W1", "gemini:model-C", SRC, "samehash1234") is None
+
+
+def test_cache_isolates_by_input_source(tmp_path: Path):
+    """Same paper + model + prompt but DIFFERENT input source (abstract
+    vs fulltext) must not collide — the controlled-comparison bug the
+    input_source-in-key fixes."""
+    cache = ExtractionCache(root=tmp_path)
+    a = PaperExtraction.model_validate(
+        {**_sample_extraction("openalex:W1").model_dump(), "extractor": "abs"})
+    f = PaperExtraction.model_validate(
+        {**_sample_extraction("openalex:W1").model_dump(), "extractor": "full"})
+    cache.put("openalex:W1", MODEL, "abstract", "hh", a)
+    cache.put("openalex:W1", MODEL, "fulltext", "hh", f)
+    assert cache.get("openalex:W1", MODEL, "abstract", "hh").extractor == "abs"
+    assert cache.get("openalex:W1", MODEL, "fulltext", "hh").extractor == "full"
 
 
 def test_corrupt_cache_entry_is_a_miss(tmp_path: Path):
     """A malformed on-disk file should be treated as a MISS, not a
     fatal error. Next put() replaces it."""
     cache = ExtractionCache(root=tmp_path)
-    path = cache._key_path("openalex:W1", MODEL, "abcdef012345")
+    path = cache._key_path("openalex:W1", MODEL, SRC, "abcdef012345")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("this is not json", encoding="utf-8")
-    assert cache.get("openalex:W1", MODEL, "abcdef012345") is None
+    assert cache.get("openalex:W1", MODEL, SRC, "abcdef012345") is None

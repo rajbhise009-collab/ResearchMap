@@ -201,6 +201,12 @@ class PaperExtractionRow(Base):
     # alongside prompt_hash — without it, a cross-model comparison
     # cannot tell which model any given record came from.
     model: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    # Input source: 'abstract' or 'fulltext'. The same paper/model/prompt
+    # gives different extractions from each; provenance must record which.
+    input_source: Mapped[str] = mapped_column(
+        String, nullable=False, default="abstract", server_default="abstract",
+        index=True,
+    )
     prompt_hash: Mapped[str] = mapped_column(String, nullable=False, index=True)
     extracted_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False,

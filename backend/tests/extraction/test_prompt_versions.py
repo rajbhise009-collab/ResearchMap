@@ -17,6 +17,7 @@ def test_at_least_one_version_exists():
     versions = available_versions()
     assert versions, "expected at least one prompt version directory"
     assert "v1.0.0" in versions
+    assert "v1.1.0" in versions
 
 
 def test_load_returns_hash_matching_file_contents():
@@ -27,8 +28,8 @@ def test_load_returns_hash_matching_file_contents():
 
 
 def test_latest_returns_highest_semver():
-    # With only v1.0.0 installed, latest returns v1.0.0.
-    assert latest_version() == "v1.0.0"
+    # v1.1.0 > v1.0.0 by semver.
+    assert latest_version() == "v1.1.0"
 
 
 def test_load_rejects_invalid_version_string():

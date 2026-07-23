@@ -32,26 +32,33 @@ def _safe(component: str) -> str:
 class ExtractionCache:
     """Disk cache. All I/O is synchronous; the objects are small.
 
-    Key is (paper_id, model, prompt_hash). The MODEL is part of the key
-    because it is part of what produced the output: without it, re-running
-    on a different model would silently serve the old model's extractions
-    and corrupt any cross-model or abstract-vs-fulltext comparison with no
-    way to detect it.
+    Key is (paper_id, model, input_source, prompt_hash). Every element is
+    part of what produced the output, so all four are in the key:
+      - MODEL: re-running on a different model would otherwise serve the
+        old model's extractions.
+      - INPUT_SOURCE ("abstract" | "fulltext"): the same paper + model +
+        prompt produces DIFFERENT extractions from the abstract vs. the
+        full text. Without this in the key the controlled abstract-vs-
+        fulltext comparison would collide — the second run would either
+        hit the first's cache or overwrite it.
+      - PROMPT_HASH: a prompt change is a different extraction.
     """
 
     def __init__(self, root: Path | None = None) -> None:
         self.root = root or (REPO_ROOT / "data" / "cache" / "extractions")
 
-    def _key_path(self, paper_id: str, model: str, prompt_hash: str) -> Path:
+    def _key_path(
+        self, paper_id: str, model: str, input_source: str, prompt_hash: str
+    ) -> Path:
         return (
             self.root / _safe(paper_id)
-            / f"{_safe(model)}__{_safe(prompt_hash)}.json"
+            / f"{_safe(model)}__{_safe(input_source)}__{_safe(prompt_hash)}.json"
         )
 
     def get(
-        self, paper_id: str, model: str, prompt_hash: str
+        self, paper_id: str, model: str, input_source: str, prompt_hash: str
     ) -> PaperExtraction | None:
-        path = self._key_path(paper_id, model, prompt_hash)
+        path = self._key_path(paper_id, model, input_source, prompt_hash)
         if not path.exists():
             return None
         try:
@@ -63,10 +70,10 @@ class ExtractionCache:
             return None
 
     def put(
-        self, paper_id: str, model: str, prompt_hash: str,
+        self, paper_id: str, model: str, input_source: str, prompt_hash: str,
         extraction: PaperExtraction,
     ) -> None:
-        path = self._key_path(paper_id, model, prompt_hash)
+        path = self._key_path(paper_id, model, input_source, prompt_hash)
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix(".json.tmp")
         tmp.write_text(extraction.model_dump_json(indent=2), encoding="utf-8")

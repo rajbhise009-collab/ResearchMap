@@ -60,11 +60,18 @@ class Extractor:
         prompt_version: str | None = None,
         cache: ExtractionCache | None = None,
         max_retries: int = DEFAULT_MAX_RETRIES,
+        input_source: str = "abstract",
     ) -> None:
         self._llm = llm
         self._prompt: PromptVersion = load(prompt_version or latest_version())
         self._cache = cache if cache is not None else ExtractionCache()
         self._max_retries = max_retries
+        if input_source not in ("abstract", "fulltext"):
+            raise ValueError(
+                f"input_source must be 'abstract' or 'fulltext', "
+                f"got {input_source!r}"
+            )
+        self._input_source = input_source
 
     @property
     def prompt_hash(self) -> str:
@@ -73,6 +80,10 @@ class Extractor:
     @property
     def prompt_version(self) -> str:
         return self._prompt.version
+
+    @property
+    def input_source(self) -> str:
+        return self._input_source
 
     # --- Public API -------------------------------------------------
 
@@ -86,7 +97,9 @@ class Extractor:
     def extract(self, paper: Paper) -> ExtractionResult:
         """Extract one paper. Cache hit skips the LLM; cache miss calls
         the LLM up to `max_retries + 1` times before giving up."""
-        cached = self._cache.get(paper.id, self.model, self._prompt.hash)
+        cached = self._cache.get(
+            paper.id, self.model, self._input_source, self._prompt.hash,
+        )
         if cached is not None:
             return ExtractionResult(extraction=cached, from_cache=True, attempts=0)
 
@@ -99,7 +112,8 @@ class Extractor:
             try:
                 extraction = self._parse_validate_augment(paper, raw)
                 self._cache.put(
-                    paper.id, self.model, self._prompt.hash, extraction,
+                    paper.id, self.model, self._input_source,
+                    self._prompt.hash, extraction,
                 )
                 return ExtractionResult(
                     extraction=extraction, from_cache=False, attempts=attempts,

@@ -28,14 +28,15 @@ from backend.app.db.tables import (
 from backend.app.models import PaperExtraction
 
 
-def extraction_id(paper_id: str, model: str, prompt_hash: str) -> str:
-    """Deterministic id for a (paper, model, prompt version) triple.
-
-    The MODEL is part of the identity: two extractions of the same paper
-    under the same prompt but a different model are DIFFERENT extractions
-    and must not collide.
+def extraction_id(
+    paper_id: str, model: str, input_source: str, prompt_hash: str
+) -> str:
+    """Deterministic id for a (paper, model, input_source, prompt)
+    quadruple. Each element is part of the identity: two extractions of
+    the same paper differing only in model, input source, or prompt are
+    DIFFERENT extractions and must not collide.
     """
-    return f"{paper_id}#{model}#{prompt_hash}"
+    return f"{paper_id}#{model}#{input_source}#{prompt_hash}"
 
 
 def persist_extraction(
@@ -43,25 +44,26 @@ def persist_extraction(
     extraction: PaperExtraction,
     prompt_hash: str,
     model: str | None = None,
+    input_source: str = "abstract",
 ) -> str:
     """Persist a `PaperExtraction` and its children under a shared
     extraction id. Returns the extraction id.
 
     `model` defaults to `extraction.extractor` (the client name, which is
-    the model identity). Passed explicitly by callers that distinguish
-    the two.
+    the model identity). `input_source` is 'abstract' or 'fulltext'.
 
     Uses `session.merge()` on the parent row so re-running against the
-    same (paper_id, model, prompt_hash) is idempotent.
+    same (paper_id, model, input_source, prompt_hash) is idempotent.
     """
     model = model or extraction.extractor
-    xid = extraction_id(extraction.paper_id, model, prompt_hash)
+    xid = extraction_id(extraction.paper_id, model, input_source, prompt_hash)
 
     parent = PaperExtractionRow(
         id=xid,
         paper_id=extraction.paper_id,
         extractor=extraction.extractor,
         model=model,
+        input_source=input_source,
         prompt_hash=prompt_hash,
         extracted_at=extraction.extracted_at or datetime.now(timezone.utc),
     )
