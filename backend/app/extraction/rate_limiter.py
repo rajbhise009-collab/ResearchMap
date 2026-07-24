@@ -117,10 +117,13 @@ class RateLimiter:
             return info
 
 
-def estimate_tokens(text: str, *, chars_per_token: int = 4) -> int:
-    """Conservative input-token estimate (chars/4). Used to gate TPM
-    before sending — deliberately rough and slightly over, so we hold
-    early rather than breach."""
+def estimate_tokens(text: str, *, chars_per_token: int = 3) -> int:
+    """Conservative input-token estimate (chars/3). Scientific full text
+    tokenizes DENSER than prose — symbols, subscripts, citations, and
+    long technical tokens push the true ratio below 4 chars/token — so
+    chars/4 under-counts, which is the unsafe direction for a TPM guard
+    (we'd breach). chars/3 over-counts slightly, holding early rather
+    than breaching."""
     return max(1, len(text) // chars_per_token)
 
 

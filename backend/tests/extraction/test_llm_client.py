@@ -216,8 +216,9 @@ def test_generate_retries_on_5xx_then_succeeds(monkeypatch):
 
 def test_generate_retries_schema_invalid_then_hardfails(monkeypatch):
     """A 200 whose body fails the caller's validator is retried up to the
-    cap, then the typed RetryableResponseError propagates. NEVER returns
-    the bad text."""
+    TIGHT schema budget, then the typed RetryableResponseError
+    propagates. NEVER returns the bad text. Schema-invalid 200s consume
+    daily quota, so the budget is deliberately small (2)."""
     calls = {"n": 0}
 
     def handler(request):
@@ -231,8 +232,40 @@ def test_generate_retries_schema_invalid_then_hardfails(monkeypatch):
     with pytest.raises(RetryableResponseError) as exc:
         client.generate("Paper ID: `x`\nprompt", validate=validate)
     assert exc.value.kind == "schema"
-    assert calls["n"] == GeminiLLMClient.MAX_ATTEMPTS   # tried the full budget
-    assert client.retries_schema == GeminiLLMClient.MAX_ATTEMPTS - 1
+    # Only the SCHEMA budget is spent — not the (larger) transport one.
+    assert calls["n"] == GeminiLLMClient.MAX_SCHEMA_ATTEMPTS  # == 2
+    assert client.retries_schema == GeminiLLMClient.MAX_SCHEMA_ATTEMPTS - 1
+
+
+def test_transport_and_schema_budgets_are_independent(monkeypatch):
+    """A run of transient 429s (transport budget) followed by a
+    schema-valid 200 succeeds — the transient retries do not eat into
+    the schema budget, and vice versa. Here: 3 per-minute 429s (within
+    the transport budget of 5) then a valid 200."""
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        if calls["n"] <= 3:
+            return _q429("GenerateRequestsPerMinutePerProjectPerModel-FreeTier")
+        return _ok('{"good":1}')
+
+    def validate(text):
+        if "good" not in text:
+            raise RetryableResponseError("schema", "bad")
+
+    client = _gemini_with_transport(handler, monkeypatch)
+    assert client.generate("Paper ID: `x`\np", validate=validate) == '{"good":1}'
+    assert calls["n"] == 4            # 3 transient + 1 success
+    assert client.retries_rpm == 3
+    assert client.retries_schema == 0
+
+
+def test_schema_budget_smaller_than_transport():
+    assert (GeminiLLMClient.MAX_SCHEMA_ATTEMPTS
+            < GeminiLLMClient.MAX_TRANSPORT_ATTEMPTS)
+    assert GeminiLLMClient.MAX_SCHEMA_ATTEMPTS == 2
+    assert GeminiLLMClient.MAX_TRANSPORT_ATTEMPTS == 5
 
 
 def test_generate_schema_invalid_then_valid_succeeds(monkeypatch):

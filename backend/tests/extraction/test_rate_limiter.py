@@ -105,6 +105,9 @@ def test_tpm_window_ages_out():
     assert info.tpm_wait_s == 0.0
 
 
-def test_estimate_tokens_is_chars_over_4():
-    assert estimate_tokens("a" * 400) == 100
+def test_estimate_tokens_is_chars_over_3():
+    # chars/3 — over-counts vs prose, the SAFE direction for a TPM guard
+    # since scientific full text tokenizes denser than 4 chars/token.
+    assert estimate_tokens("a" * 300) == 100
+    assert estimate_tokens("a" * 400) == 133
     assert estimate_tokens("") == 1  # floor of 1

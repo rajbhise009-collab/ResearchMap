@@ -194,11 +194,18 @@ class GeminiLLMClient(LLMClient):
 
     API_BASE = "https://generativelanguage.googleapis.com/v1beta"
 
-    # ONE unified attempt budget covering transient failures (per-minute
-    # / per-token 429s, 5xx, timeouts/connection errors) AND unusable
-    # 200 responses (bad JSON / schema-invalid / paper_id mismatch).
-    # Per-DAY 429s are NOT retried — they abort immediately.
-    MAX_ATTEMPTS = 5
+    # SPLIT retry budgets, because the two failure classes cost
+    # differently against the daily quota:
+    #   - Transport failures (per-minute/per-token 429, 5xx, timeouts,
+    #     connection errors) are rejected/failed BEFORE producing a
+    #     billable success, so they do NOT consume daily quota. Budget 5.
+    #   - Unusable 200s (bad JSON / schema-invalid / paper_id mismatch)
+    #     are successful responses that DID consume a daily-quota request,
+    #     so retrying one burns real quota. Tight budget 2: one bad paper
+    #     must not eat 20% of a day's free-tier allowance.
+    # Per-DAY 429s are never retried — they abort immediately.
+    MAX_TRANSPORT_ATTEMPTS = 5
+    MAX_SCHEMA_ATTEMPTS = 2
     BACKOFF_CAP_S = 120.0
 
     def __init__(
@@ -400,8 +407,16 @@ class GeminiLLMClient(LLMClient):
 
         last_transient: Exception | None = None
         last_validation: RetryableResponseError | None = None
+        # Independent budgets. Transport failures don't consume daily
+        # quota; schema-invalid 200s do — so schema gets the tight cap.
+        transport_tries = 0
+        schema_tries = 0
 
-        for attempt in range(1, self.MAX_ATTEMPTS + 1):
+        def _backoff(attempt: int) -> None:
+            time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S)
+                       * (1.0 + self._rng.uniform(-0.10, 0.10)))
+
+        while True:
             # --- Rate-limit gate (RPM + TPM) before every request.
             wait = self._limiter.acquire(est_in)
             if wait.tpm_bound:
@@ -422,10 +437,10 @@ class GeminiLLMClient(LLMClient):
             except (httpx.TransportError, httpx.TimeoutException) as e:
                 self.total_latency_s += time.time() - t0
                 last_transient = e
-                if attempt < self.MAX_ATTEMPTS:
+                transport_tries += 1
+                if transport_tries < self.MAX_TRANSPORT_ATTEMPTS:
                     self.retries_conn += 1
-                    time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S)
-                               * (1.0 + self._rng.uniform(-0.10, 0.10)))
+                    _backoff(transport_tries)
                     continue
                 break
             self.total_latency_s += time.time() - t0
@@ -445,12 +460,13 @@ class GeminiLLMClient(LLMClient):
                     )
                 last_transient = httpx.HTTPStatusError(
                     "429", request=response.request, response=response)
-                if attempt < self.MAX_ATTEMPTS:
+                transport_tries += 1
+                if transport_tries < self.MAX_TRANSPORT_ATTEMPTS:
                     if kind == "tpm":
                         self.retries_tpm += 1
                     else:
                         self.retries_rpm += 1
-                    time.sleep(self._retry_delay_seconds(response, attempt))
+                    time.sleep(self._retry_delay_seconds(response, transport_tries))
                     continue
                 break
 
@@ -459,10 +475,10 @@ class GeminiLLMClient(LLMClient):
                 last_transient = httpx.HTTPStatusError(
                     str(response.status_code), request=response.request,
                     response=response)
-                if attempt < self.MAX_ATTEMPTS:
+                transport_tries += 1
+                if transport_tries < self.MAX_TRANSPORT_ATTEMPTS:
                     self.retries_5xx += 1
-                    time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S)
-                               * (1.0 + self._rng.uniform(-0.10, 0.10)))
+                    _backoff(transport_tries)
                     continue
                 break
 
@@ -476,12 +492,17 @@ class GeminiLLMClient(LLMClient):
             try:
                 text = self._extract_text(body)
             except (KeyError, IndexError, TypeError, ValueError) as e:
-                # Malformed envelope — treat as a transient/unusable 200.
-                last_transient = RuntimeError(f"unexpected response shape: {e}")
-                if attempt < self.MAX_ATTEMPTS:
-                    time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S))
+                # Malformed envelope from a 200 — an unusable success,
+                # so it counts against the SCHEMA budget (it consumed a
+                # daily-quota request).
+                last_validation = RetryableResponseError(
+                    "parse", f"unexpected response shape: {e}")
+                schema_tries += 1
+                if schema_tries < self.MAX_SCHEMA_ATTEMPTS:
+                    self.retries_schema += 1
+                    _backoff(schema_tries)
                     continue
-                break
+                raise last_validation from e
 
             self._tee_raw(prompt, text)
 
@@ -491,24 +512,22 @@ class GeminiLLMClient(LLMClient):
                     validate(text)
                 except RetryableResponseError as e:
                     last_validation = e
-                    if attempt < self.MAX_ATTEMPTS:
+                    schema_tries += 1
+                    if schema_tries < self.MAX_SCHEMA_ATTEMPTS:
                         self.retries_schema += 1
                         # Small backoff — the model is deterministic-ish at
                         # temp 0, but a fresh sample may self-correct.
-                        time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S)
-                                   * (1.0 + self._rng.uniform(-0.10, 0.10)))
+                        _backoff(schema_tries)
                         continue
-                    # Exhausted on validation → propagate the typed error.
+                    # Exhausted the (tight) schema budget → propagate.
                     raise
             self.successes += 1
             return text
 
-        # Exhausted the attempt budget.
-        if last_validation is not None:
-            raise last_validation
+        # Transport budget exhausted.
         raise RuntimeError(
-            f"Gemini request failed after {self.MAX_ATTEMPTS} attempts: "
-            f"{last_transient!s}"
+            f"Gemini request failed after {self.MAX_TRANSPORT_ATTEMPTS} "
+            f"transport attempts: {last_transient!s}"
         ) from last_transient
 
     def _tee_raw(self, prompt: str, text: str) -> None:
