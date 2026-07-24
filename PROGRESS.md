@@ -1464,6 +1464,58 @@ separate daily quota) via `GEMINI_MODEL` — caveat in the comparison doc
 (breaks comparability with the v1.0.0 baseline; abstract-vs-fulltext
 stays internally valid if both sides share the model).
 
+## Resume attempt — 2026-07-24 — free-tier daily quota is a hard wall
+
+Quota "reset" gave only a tiny budget: after the reset I got ~1–2
+successful extractions before re-hitting the SAME per-day wall
+(`GenerateRequestsPerDayPerProjectPerModel-FreeTier`, gemini-3.6-flash).
+Probed repeatedly — the `retryDelay` bounces (31s→18s→6s→53s) and never
+clears, confirming a hard **daily** cap, not a short throttle. The
+free-tier daily allowance for this premium model is small (single- to
+low-double-digit requests/day).
+
+State: v1.1.0 abstract **9/30** cached; fulltext **0/21**. The
+comparison needs ~**42 more synchronous calls** (21 abstract + 21
+fulltext). At a handful/day that is roughly a **week** of daily
+grinding — not viable interactively.
+
+**Clean resolution that preserves comparability: a paid-tier key for
+`gemini-3.6-flash`.** Same model → the v1.0.0 baseline and both
+comparison arms stay directly comparable; paid tier removes the daily
+cap (only generous per-minute limits remain). A 42-call comparison then
+finishes in minutes. This is the recommended unblock; I did not switch
+models or tiers autonomously.
+
+### Productive work done despite the wall (committed)
+
+- **429 handling fixed (real bug):** the client honored only the
+  `Retry-After` header, which Gemini doesn't send, so it did blind
+  exponential backoff wasting minutes per rate-limited call. Now parses
+  Google's `RetryInfo.retryDelay` from the 429 body and waits exactly
+  that. (Doesn't rescue a daily-cap exhaustion — nothing does but a
+  higher quota — but makes per-minute throttling efficient.)
+- **Batch mode wired + tested** (`GeminiBatchClient`) for the 200-paper
+  run: submit/poll/collect, 20MB chunking, distinct
+  `gemini-batch:` provenance. Not executed (its own approval). Never
+  used for the comparison. See `docs/batch-and-caching.md`.
+- **Context caching decision documented:** explicit caching declined
+  (shared prefix ~1,500 tok is below the 2,048–4,096 min; per-paper
+  bodies unique). Implicit caching already on for 3.6-flash.
+- **Free-vs-paid throughput** for the 200-paper corpus (from measured
+  ~40 successful calls/day free-tier ceiling):
+  - Free tier: ~5 days per pass; ~8–9 days for the full abstract+
+    fulltext experiment.
+  - Paid tier: an afternoon (batch mode halves the cost on top).
+
+### Resume recipe (with a paid/higher-quota key)
+
+```
+python -m backend.app.corpus.run_live_extraction                          # finish v1.1.0 abstracts (9 cached)
+python -m backend.app.corpus.run_live_extraction --input-source fulltext   # v1.1.0 fulltext, 21 papers
+python -m backend.app.corpus.compare_abstract_fulltext                     # fills the paired table
+```
+Everything is cached and idempotent; no work is redone.
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
