@@ -1516,6 +1516,66 @@ python -m backend.app.corpus.compare_abstract_fulltext                     # fil
 ```
 Everything is cached and idempotent; no work is redone.
 
+## Model switch to gemini-3-flash-preview — 2026-07-24 — quota VERIFIED SMALL
+
+Switched `GEMINI_MODEL` from `gemini-3.6-flash` to
+`gemini-3-flash-preview` (the closest real name to "gemini-3-flash";
+the bare name 404s). Confirmed it resolves in models.list and returns
+200. Re-running all three comparison arms on ONE model for internal
+comparability.
+
+**Earlier 3.6-flash extractions are RETAINED but SUPERSEDED.** The
+30 v1.0.0 + 8 v1.1.0 abstract extractions on `gemini:gemini-3.6-flash`
+stay on disk under their own cache keys. Because the model is part of
+the cache key / `extraction_id` / `PaperExtractionRow`, nothing
+collides with the new `gemini:gemini-3-flash-preview` extractions —
+both model families coexist and the comparison reads only the
+new-model set.
+
+**Verified free-tier quota (per the instruction not to trust the
+~1,500 RPD figure):** the Gemini API returns NO rate-limit headers on
+200 responses, so the only ground truth is the 429 `QuotaFailure`.
+Measured: `gemini-3-flash-preview` hit
+`GenerateRequestsPerDayPerProjectPerModel-FreeTier` after ~22–25
+requests today. **Its real free daily allowance on this project is on
+the order of ~20–25 requests/day — NOT ~1,500.** Same order as
+3.6-flash. The ~1,500 number does not apply to this project/model.
+
+Arm progress today: **arm 1 (v1.0.0 abstracts) got 17/30** on
+gemini-3-flash-preview before the daily wall. Arms 2 and 3 not
+started.
+
+### Consequence
+
+The three arms need ~81 calls total. At ~20–25/day the experiment is
+a **~4-day grind** on free tier, per the measured cap — not
+completable in one session on any single model tried (3.6-flash and
+3-flash-preview both cap ~20–40/day for this project).
+
+The 5xx-retry + 10 RPM pacing + RetryInfo backoff are all now in place,
+so within a day's allowance the run is efficient; the binding limit is
+purely the daily request cap.
+
+### Decision needed (not taken autonomously)
+
+1. **Grind over ~4 days** on gemini-3-flash-preview (resume each day;
+   cache makes it idempotent). Comparability preserved.
+2. **Switch to a lite model** (`gemini-2.5-flash-lite` /
+   `gemini-flash-lite-latest`) which typically carries a much higher
+   free RPD — but it is a smaller model, a quality trade-off, and a
+   second model switch. Would need all three arms re-run on it.
+3. Reconsider paid billing (previously declined).
+
+I did not switch to a lite model or grind further autonomously —
+option 2 is a quality decision and I've already switched models once
+on instruction. Resume recipe (whichever model, once quota allows):
+```
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.0.0                     # arm 1 (17 cached)
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0                     # arm 2
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0 --input-source fulltext  # arm 3
+python -m backend.app.corpus.compare_abstract_fulltext
+```
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
