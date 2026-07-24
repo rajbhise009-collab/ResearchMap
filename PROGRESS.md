@@ -1676,6 +1676,53 @@ TPM hold under a mocked clock, 429-subtype routing, 5xx retry,
 schema-invalid retry-then-hardfail, limiter-invoked, stats summary,
 resumption).
 
+## Resume run — 2026-07-25 — arm 1 complete; daily wall hit; arms 2/3 tomorrow
+
+Ran the resume recipe on `gemini-3.6-flash` (free tier). Results:
+
+### Cache-key migration (recovered the 2026-07-23 work)
+
+The 30 v1.0.0 abstract extractions from 2026-07-23 were cached under
+the OLD 2-part key (`<model>__<prompthash>`), before `input_source`
+joined the cache key. The new 3-part lookup
+(`<model>__abstract__<prompthash>`) missed them, so arm 1 began
+re-extracting from scratch (21 fresh calls before the daily wall).
+`backend/app/extraction/migrate_cache_keys.py` copies every orphaned
+2-part file to its 3-part `abstract` name (all 2-part files predate
+full-text extraction, so input_source is unambiguously abstract).
+Idempotent. Migrated 61 orphaned files.
+
+**After migration: arm 1 (v1.0.0 abstracts) = 30/30, verified as 30
+cache hits with 0 API calls.**
+
+### Arm status
+
+| Arm | State |
+|:----|:------|
+| 1 — v1.0.0 abstracts | **30/30 complete** (21 fresh today + 9 recovered via migration) |
+| 2 — v1.1.0 abstracts | **9/30 cached**, 21 remaining |
+| 3 — v1.1.0 full text | 0/21 |
+
+### Daily wall + the fix, in production
+
+Today's successful calls before the wall: **21** (arm 1 re-extraction).
+Then arm 2 hit the per-day quota and **aborted cleanly on the FIRST
+per-day 429** — `requests=1, successes=0, daily_quota_hits=1`, exit
+code 4 — i.e. exactly 1 rejected request, no wasteful retries (the
+old behavior burned ~20). The split-budget + per-day-abort work is
+doing its job. Measured free-tier daily cap for gemini-3.6-flash on
+this project: **~21/day**.
+
+Remaining work: 21 (arm 2) + 21 (arm 3) = **42 calls → ~2 more days**
+at ~21/day. Resume tomorrow with the same recipe (arm 1 is now all
+cache hits; arm 2 resumes at paper 10; nothing is redone):
+```
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.0.0
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0 --input-source fulltext
+python -m backend.app.corpus.compare_abstract_fulltext
+```
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
