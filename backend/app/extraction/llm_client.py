@@ -173,6 +173,7 @@ class GeminiLLMClient(LLMClient):
         self.total_output_tokens = 0
         self.total_latency_s = 0.0
         self.rate_limit_hits = 0  # 429s, counted separately from failures
+        self.server_error_hits = 0  # 5xx transient errors, retried
         self._raw_log_dir = raw_log_dir
         self._per_paper_attempts: dict[str, int] = {}
 
@@ -292,6 +293,14 @@ class GeminiLLMClient(LLMClient):
                 if rl_attempt < self.MAX_RATE_LIMIT_RETRIES:
                     sleep_s = self._retry_delay_seconds(response, rl_attempt)
                     time.sleep(sleep_s)
+                    continue
+            elif response.status_code >= 500:
+                # Transient server error (503/500) — common on preview
+                # models. Retry with plain exponential backoff, capped,
+                # counted separately from rate limits.
+                self.server_error_hits += 1
+                if rl_attempt < self.MAX_RATE_LIMIT_RETRIES:
+                    time.sleep(min(2.0 ** rl_attempt, self.RATE_LIMIT_BACKOFF_CAP_S))
                     continue
             break
 

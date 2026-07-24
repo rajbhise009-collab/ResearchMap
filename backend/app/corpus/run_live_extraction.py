@@ -43,6 +43,10 @@ RAW_LOG_DIR = REPO_ROOT / "data" / "live_samples" / "extraction_attempts"
 # against the published gemini-3.6-flash standard-tier rate for reference.
 # Source: ai.google.dev/gemini-api/docs/pricing (see PROGRESS.md caveat
 # about which figures are independently verified).
+# Proactive inter-call pace (seconds) to stay under ~10 RPM free-tier.
+# 6.5s * ~10 calls ≈ just over a minute, comfortably inside 10/min.
+PACE_SECONDS = 6.5
+
 PRICE_INPUT_PER_M = 1.50
 PRICE_OUTPUT_PER_M = 7.50
 
@@ -191,6 +195,9 @@ def main() -> int:
                         help="abstract (default) or fulltext. fulltext loads "
                              "cached arXiv text into each paper and skips "
                              "papers flagged abstract_only.")
+    parser.add_argument("--prompt-version", default=None,
+                        help="Prompt version dir (e.g. v1.0.0). Default: "
+                             "latest. Use to re-run an older prompt arm.")
     args = parser.parse_args()
 
     settings = get_settings()
@@ -240,9 +247,11 @@ def main() -> int:
     # Set up client + extractor.
     llm = GeminiLLMClient(raw_log_dir=RAW_LOG_DIR)
     extractor = Extractor(
-        llm=llm, cache=ExtractionCache(), input_source=args.input_source,
+        llm=llm, cache=ExtractionCache(),
+        prompt_version=args.prompt_version,
+        input_source=args.input_source,
     )
-    print(f"[extractor] prompt={extractor.prompt_version} "
+    print(f"[extractor] model={llm.model_name} prompt={extractor.prompt_version} "
           f"input_source={extractor.input_source}")
 
     run_started = datetime.now(timezone.utc).isoformat()
@@ -257,6 +266,7 @@ def main() -> int:
                 print(f"[{name} {i:02d}] ERROR: {oid} not found in raw dump")
                 continue
             t0 = time.time()
+            result = None  # guard: may stay None if extraction raises
             # Snapshot LLM stats before this paper.
             calls_before = llm.calls
             in_before = llm.total_prompt_tokens
@@ -340,6 +350,12 @@ def main() -> int:
                 })
                 print(f"[{name} {i:02d}] "
                       f"{'RATE-LIMIT' if is_429 else 'ERROR'} {paper.id}: {e}")
+
+            # Proactive pace to respect ~10 RPM. Only after a real API
+            # call (cache hits are free). The RetryInfo-aware backoff in
+            # the client still handles TPM/RPM 429 spikes on top of this.
+            if not (result and result.from_cache):
+                time.sleep(PACE_SECONDS)
 
     # --- Smoke test.
     print("\n=== SMOKE TEST — 3 papers ===")
