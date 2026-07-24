@@ -15,10 +15,19 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from abc import ABC, abstractmethod
 from pathlib import Path
+from typing import Callable
 
 from backend.app.config import get_settings
+from backend.app.extraction.errors import RetryableResponseError
+from backend.app.extraction.rate_limiter import RateLimiter, estimate_tokens
+
+# A `validate` callback inspects a 200 response's text and raises
+# RetryableResponseError if it is unusable (bad JSON / schema-invalid /
+# paper_id mismatch). Returning None means the response is usable.
+Validator = Callable[[str], None]
 
 
 # Substring that marks a per-DAY quota violation in a 429 QuotaFailure.
@@ -57,13 +66,18 @@ class LLMClient(ABC):
     name: str = "abstract"
 
     @abstractmethod
-    def generate(self, prompt: str) -> str:
-        """Given a fully-rendered prompt, return the raw model output
-        as a string. Implementations do NOT parse or validate — that
-        is the orchestrator's job.
+    def generate(self, prompt: str, *, validate: Validator | None = None) -> str:
+        """Given a fully-rendered prompt, return the raw model output.
 
-        Malformed responses (empty string, HTTP failure, refusal)
-        should raise, never return a placeholder."""
+        If `validate` is provided, the implementation calls it on the
+        response text and treats a raised `RetryableResponseError` as an
+        unusable response worth retrying (within the implementation's
+        bounded attempts). The retry layer — rate limiting, transient
+        HTTP/429 handling, and unusable-response retries — lives in the
+        implementation; the orchestrator supplies the validator.
+
+        Malformed/exhausted responses raise, never return a
+        placeholder."""
         raise NotImplementedError
 
 
@@ -93,7 +107,7 @@ class MockLLMClient(LLMClient):
     def __init__(self, extractions_dir: Path | None = None) -> None:
         self._dir = extractions_dir or (get_settings().seed_dir / "extractions")
 
-    def generate(self, prompt: str) -> str:
+    def generate(self, prompt: str, *, validate: Validator | None = None) -> str:
         m = _MOCK_PAPER_ID_RE.search(prompt)
         if not m:
             raise RuntimeError(
@@ -108,18 +122,25 @@ class MockLLMClient(LLMClient):
                 f"MockLLMClient has no canned extraction for paper "
                 f"{paper_id!r} (looked at {path}). Refusing to fabricate."
             )
-        return path.read_text(encoding="utf-8")
+        text = path.read_text(encoding="utf-8")
+        if validate is not None:
+            validate(text)  # canned seed extractions are valid → passes
+        return text
 
 
 # --- Failing mock (for tests) -------------------------------------------
 
 
 class ProgrammableMockLLMClient(LLMClient):
-    """Returns a deterministic sequence of responses; used to exercise
-    retry-on-repair and hard-fail-after-max-retries paths in tests.
+    """Returns a deterministic sequence of responses; used in tests.
 
-    Give it a list of strings; each call to `.generate()` returns the
-    next one. When the list is exhausted, raises StopIteration."""
+    Each `.generate()` returns the next scripted response. If a
+    `validate` callback is given and raises `RetryableResponseError`,
+    the mock advances to the next scripted response (simulating a
+    retry) until one validates or the list is exhausted — at which
+    point the last RetryableResponseError propagates. This lets tests
+    script "garbage, then valid" and "garbage×N" sequences without a
+    live client."""
 
     name = "programmable-mock"
 
@@ -131,15 +152,31 @@ class ProgrammableMockLLMClient(LLMClient):
     def call_count(self) -> int:
         return self._call_count
 
-    def generate(self, prompt: str) -> str:
-        if self._call_count >= len(self._responses):
-            raise StopIteration(
-                f"ProgrammableMockLLMClient exhausted after "
-                f"{self._call_count} calls; no more responses queued."
-            )
-        r = self._responses[self._call_count]
-        self._call_count += 1
-        return r
+    @property
+    def total_requests(self) -> int:
+        """Alias so the Extractor can count attempts uniformly across
+        real and mock clients."""
+        return self._call_count
+
+    def generate(self, prompt: str, *, validate: Validator | None = None) -> str:
+        last_err: RetryableResponseError | None = None
+        while self._call_count < len(self._responses):
+            r = self._responses[self._call_count]
+            self._call_count += 1
+            if validate is None:
+                return r
+            try:
+                validate(r)
+                return r
+            except RetryableResponseError as e:
+                last_err = e
+                continue
+        if last_err is not None:
+            raise last_err
+        raise StopIteration(
+            f"ProgrammableMockLLMClient exhausted after "
+            f"{self._call_count} calls; no more responses queued."
+        )
 
 
 # --- Real Gemini client (implemented, NOT executed in tests) ------------
@@ -157,13 +194,12 @@ class GeminiLLMClient(LLMClient):
 
     API_BASE = "https://generativelanguage.googleapis.com/v1beta"
 
-    # 429s are transient (rate limit), NOT extraction failures. Retry
-    # with exponential backoff up to this many times per call before
-    # giving up. Counted separately from parse/validation retries.
-    # Tuned for free-tier per-minute quotas: 8 retries with backoff up
-    # to 64s covers a full quota-window reset.
-    MAX_RATE_LIMIT_RETRIES = 8
-    RATE_LIMIT_BACKOFF_CAP_S = 64.0
+    # ONE unified attempt budget covering transient failures (per-minute
+    # / per-token 429s, 5xx, timeouts/connection errors) AND unusable
+    # 200 responses (bad JSON / schema-invalid / paper_id mismatch).
+    # Per-DAY 429s are NOT retried — they abort immediately.
+    MAX_ATTEMPTS = 5
+    BACKOFF_CAP_S = 120.0
 
     def __init__(
         self,
@@ -174,6 +210,8 @@ class GeminiLLMClient(LLMClient):
         client=None,  # injected httpx.Client for tests
         raw_log_dir: Path | None = None,
         validate_model: bool = True,
+        limiter: RateLimiter | None = None,
+        rng=None,
     ) -> None:
         settings = get_settings()
         key = api_key
@@ -191,26 +229,53 @@ class GeminiLLMClient(LLMClient):
         # mid-run 404.
         self._model_name = model_name or settings.gemini_model
         self._temperature = temperature
+        import random
+        self._rng = rng or random.Random()
         import httpx  # noqa: F401 — pulled into scope for _get_client
         self._client = client
         self.name = f"gemini:{self._model_name}"
 
-        # --- Observability. Every call updates the per-run counters
-        # below; the runner reads them after each extract() to compute
-        # per-paper cost and to attribute retries.
-        self.calls = 0
+        # Shared client-side rate limiter (RPM + TPM). One instance per
+        # client; passing an explicit limiter lets a run share one across
+        # clients. Defaults come from config.
+        self._limiter = limiter or RateLimiter(
+            max_rpm=settings.gemini_max_rpm,
+            max_tpm=settings.gemini_max_tpm,
+            rng=self._rng,
+        )
+
+        # --- Observability counters (read by the runner for a summary).
+        self.total_requests = 0          # HTTP requests actually sent
+        self.successes = 0               # usable responses returned
         self.total_prompt_tokens = 0
         self.total_output_tokens = 0
         self.total_latency_s = 0.0
-        self.rate_limit_hits = 0  # 429s, counted separately from failures
-        self.server_error_hits = 0  # 5xx transient errors, retried
-        self.daily_quota_hits = 0  # per-day 429s (abort, never retried)
+        self.retries_rpm = 0             # per-minute 429 retries
+        self.retries_tpm = 0             # per-token 429 retries
+        self.retries_5xx = 0             # 5xx / server-error retries
+        self.retries_conn = 0            # timeout / connection-error retries
+        self.retries_schema = 0          # unusable-200 (validation) retries
+        self.daily_quota_hits = 0        # per-day 429s (abort, never retried)
+        self.limiter_delays_tpm = 0      # requests the limiter held for TPM
+        self.limiter_delays_rpm = 0      # requests the limiter held for RPM
+        # Back-compat aliases some older callers/reports read.
+        self.rate_limit_hits = 0
+        self.server_error_hits = 0
         self._raw_log_dir = raw_log_dir
         self._per_paper_attempts: dict[str, int] = {}
 
         # Fail loudly at startup if the configured model doesn't resolve.
         if validate_model:
             self._validate_model()
+
+    @property
+    def calls(self) -> int:
+        """Back-compat: older code reads `.calls` as the request count."""
+        return self.total_requests
+
+    @property
+    def limiter_wait_s(self) -> float:
+        return self._limiter.total_wait_s
 
     @property
     def model_name(self) -> str:
@@ -264,65 +329,112 @@ class GeminiLLMClient(LLMClient):
                 f"generateContent (supports: {methods})."
             )
 
-    def _retry_delay_seconds(self, response, rl_attempt: int) -> float:
-        """How long to wait after a 429. Gemini returns a precise
-        RetryInfo.retryDelay (e.g. "39s") in the error BODY (not the
-        Retry-After header), so honor that when present — blind
-        exponential backoff otherwise wastes minutes per rate-limited
-        call. Falls back to exponential, capped."""
-        # 1) Retry-After header (rare for this API but cheap to check).
-        header = response.headers.get("retry-after")
+    def _retry_delay_seconds(self, response, attempt: int) -> float:
+        """Wait before a transient retry. Honor Gemini's RetryInfo.
+        retryDelay from the 429 body when present; else exponential
+        backoff. Always add ±jitter and cap at BACKOFF_CAP_S."""
+        base = None
+        header = response.headers.get("retry-after") if response is not None else None
         if header and header.isdigit():
-            return float(header)
-        # 2) RetryInfo in the JSON error body.
+            base = float(header)
+        if base is None and response is not None:
+            try:
+                for d in response.json().get("error", {}).get("details", []):
+                    if str(d.get("@type", "")).endswith("RetryInfo"):
+                        m = re.match(r"^([0-9]+(?:\.[0-9]+)?)s$",
+                                     str(d.get("retryDelay", "")))
+                        if m:
+                            base = float(m.group(1)) + 1.0
+            except Exception:
+                pass
+        if base is None:
+            base = 2.0 ** attempt
+        base = min(base, self.BACKOFF_CAP_S)
+        jitter = 1.0 + self._rng.uniform(-0.10, 0.10)
+        return max(0.0, base * jitter)
+
+    @staticmethod
+    def _quota_kind_429(response) -> str:
+        """Classify a 429: 'day' (abort), 'tpm', 'rpm', or 'other'."""
         try:
             details = response.json().get("error", {}).get("details", [])
-            for d in details:
-                if d.get("@type", "").endswith("RetryInfo"):
-                    delay = d.get("retryDelay", "")
-                    m = re.match(r"^([0-9]+(?:\.[0-9]+)?)s$", str(delay))
-                    if m:
-                        # small pad so we clear the window edge
-                        return float(m.group(1)) + 1.0
         except Exception:
-            pass
-        # 3) Exponential fallback, capped.
-        return min(2.0 ** rl_attempt, self.RATE_LIMIT_BACKOFF_CAP_S)
+            return "other"
+        for d in details:
+            if not str(d.get("@type", "")).endswith("QuotaFailure"):
+                continue
+            for v in d.get("violations", []):
+                qid = str(v.get("quotaId", ""))
+                if "PerDay" in qid:
+                    return "day"
+                if "Token" in qid or "token" in qid:
+                    return "tpm"
+                if "PerMinute" in qid or "Minute" in qid:
+                    return "rpm"
+        return "other"
 
-    def generate(self, prompt: str) -> str:
-        import time
+    @staticmethod
+    def _extract_text(body: dict) -> str:
+        candidates = body.get("candidates") or []
+        if not candidates:
+            raise ValueError("no candidates in Gemini response")
+        parts = (candidates[0].get("content") or {}).get("parts") or []
+        if not parts:
+            raise ValueError("no parts in Gemini candidate")
+        text = parts[0].get("text")
+        if not text:
+            raise ValueError("empty text in Gemini part")
+        return text
+
+    def generate(self, prompt: str, *, validate: Validator | None = None) -> str:
         import httpx
         client = self._get_client()
         payload = {
-            "contents": [
-                {
-                    "role": "user",
-                    "parts": [{"text": prompt}],
-                }
-            ],
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
             "generationConfig": {
                 "temperature": self._temperature,
                 "response_mime_type": "application/json",
             },
         }
+        est_in = estimate_tokens(prompt)
 
-        # --- Request with 429 backoff. A 429 is a rate limit, not an
-        # extraction failure; we retry TRANSIENT ones (per-minute /
-        # per-token) with backoff. A PER-DAY quota 429 can never succeed
-        # before the daily reset, so retrying it is pure waste — abort
-        # the whole run immediately.
-        response = None
-        for rl_attempt in range(self.MAX_RATE_LIMIT_RETRIES + 1):
+        last_transient: Exception | None = None
+        last_validation: RetryableResponseError | None = None
+
+        for attempt in range(1, self.MAX_ATTEMPTS + 1):
+            # --- Rate-limit gate (RPM + TPM) before every request.
+            wait = self._limiter.acquire(est_in)
+            if wait.tpm_bound:
+                self.limiter_delays_tpm += 1
+                if self._raw_log_dir is not None:
+                    print(f"[limiter] held {wait.tpm_wait_s:.1f}s for TPM "
+                          f"(est_in={est_in})", flush=True)
+            elif wait.rpm_wait_s > 0:
+                self.limiter_delays_rpm += 1
+
+            # --- Send. Connection/timeout errors are transient.
+            self.total_requests += 1
             t0 = time.time()
-            response = client.post(
-                self.endpoint,
-                params={"key": self._api_key},
-                json=payload,
-            )
+            try:
+                response = client.post(
+                    self.endpoint, params={"key": self._api_key}, json=payload,
+                )
+            except (httpx.TransportError, httpx.TimeoutException) as e:
+                self.total_latency_s += time.time() - t0
+                last_transient = e
+                if attempt < self.MAX_ATTEMPTS:
+                    self.retries_conn += 1
+                    time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S)
+                               * (1.0 + self._rng.uniform(-0.10, 0.10)))
+                    continue
+                break
             self.total_latency_s += time.time() - t0
+
+            # --- Classify HTTP status.
             if response.status_code == 429:
                 self.rate_limit_hits += 1
-                if _is_daily_quota_429(response):
+                kind = self._quota_kind_429(response)
+                if kind == "day":
                     self.daily_quota_hits += 1
                     raise DailyQuotaError(
                         "Gemini daily free-tier quota exhausted "
@@ -331,62 +443,107 @@ class GeminiLLMClient(LLMClient):
                         "until the daily reset (~midnight Pacific). Aborting "
                         "the run — resume after reset; cached work is kept."
                     )
-                if rl_attempt < self.MAX_RATE_LIMIT_RETRIES:
-                    # Transient (per-minute / per-token) — back off.
-                    sleep_s = self._retry_delay_seconds(response, rl_attempt)
-                    time.sleep(sleep_s)
+                last_transient = httpx.HTTPStatusError(
+                    "429", request=response.request, response=response)
+                if attempt < self.MAX_ATTEMPTS:
+                    if kind == "tpm":
+                        self.retries_tpm += 1
+                    else:
+                        self.retries_rpm += 1
+                    time.sleep(self._retry_delay_seconds(response, attempt))
                     continue
-            elif response.status_code >= 500:
-                # Transient server error (503/500) — common on preview
-                # models. Retry with plain exponential backoff, capped,
-                # counted separately from rate limits.
+                break
+
+            if response.status_code >= 500:
                 self.server_error_hits += 1
-                if rl_attempt < self.MAX_RATE_LIMIT_RETRIES:
-                    time.sleep(min(2.0 ** rl_attempt, self.RATE_LIMIT_BACKOFF_CAP_S))
+                last_transient = httpx.HTTPStatusError(
+                    str(response.status_code), request=response.request,
+                    response=response)
+                if attempt < self.MAX_ATTEMPTS:
+                    self.retries_5xx += 1
+                    time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S)
+                               * (1.0 + self._rng.uniform(-0.10, 0.10)))
                     continue
-            break
+                break
 
-        self.calls += 1
-        assert response is not None
-        response.raise_for_status()
-        body = response.json()
+            response.raise_for_status()  # any other 4xx → hard error
+            body = response.json()
 
-        # Usage stats — Gemini returns these under usageMetadata.
-        usage = body.get("usageMetadata") or {}
-        self.total_prompt_tokens += int(usage.get("promptTokenCount") or 0)
-        self.total_output_tokens += int(usage.get("candidatesTokenCount") or 0)
+            usage = body.get("usageMetadata") or {}
+            self.total_prompt_tokens += int(usage.get("promptTokenCount") or 0)
+            self.total_output_tokens += int(usage.get("candidatesTokenCount") or 0)
 
-        # Gemini's response shape: candidates[0].content.parts[0].text
-        try:
-            candidates = body.get("candidates") or []
-            if not candidates:
-                raise ValueError("no candidates in Gemini response")
-            parts = (candidates[0].get("content") or {}).get("parts") or []
-            if not parts:
-                raise ValueError("no parts in Gemini candidate")
-            text = parts[0].get("text")
-            if not text:
-                raise ValueError("empty text in Gemini part")
-        except (KeyError, IndexError, TypeError, ValueError) as e:
-            raise RuntimeError(
-                f"Gemini returned an unexpected response shape: {e}"
-            ) from e
+            try:
+                text = self._extract_text(body)
+            except (KeyError, IndexError, TypeError, ValueError) as e:
+                # Malformed envelope — treat as a transient/unusable 200.
+                last_transient = RuntimeError(f"unexpected response shape: {e}")
+                if attempt < self.MAX_ATTEMPTS:
+                    time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S))
+                    continue
+                break
 
-        # Tee raw response to disk if requested.
-        if self._raw_log_dir is not None:
-            import re as _re
-            m = _re.search(r"Paper ID:\s*`([^`]+)`", prompt)
-            paper_id = m.group(1) if m else "unknown"
-            self._per_paper_attempts[paper_id] = (
-                self._per_paper_attempts.get(paper_id, 0) + 1
-            )
-            attempt = self._per_paper_attempts[paper_id]
-            safe = _re.sub(r"[^A-Za-z0-9_.-]+", "_", paper_id)
-            self._raw_log_dir.mkdir(parents=True, exist_ok=True)
-            (self._raw_log_dir / f"{safe}.attempt{attempt}.txt").write_text(
-                text, encoding="utf-8"
-            )
-        return text
+            self._tee_raw(prompt, text)
+
+            # --- Unusable-response check (bad JSON / schema / paper_id).
+            if validate is not None:
+                try:
+                    validate(text)
+                except RetryableResponseError as e:
+                    last_validation = e
+                    if attempt < self.MAX_ATTEMPTS:
+                        self.retries_schema += 1
+                        # Small backoff — the model is deterministic-ish at
+                        # temp 0, but a fresh sample may self-correct.
+                        time.sleep(min(2.0 ** attempt, self.BACKOFF_CAP_S)
+                                   * (1.0 + self._rng.uniform(-0.10, 0.10)))
+                        continue
+                    # Exhausted on validation → propagate the typed error.
+                    raise
+            self.successes += 1
+            return text
+
+        # Exhausted the attempt budget.
+        if last_validation is not None:
+            raise last_validation
+        raise RuntimeError(
+            f"Gemini request failed after {self.MAX_ATTEMPTS} attempts: "
+            f"{last_transient!s}"
+        ) from last_transient
+
+    def _tee_raw(self, prompt: str, text: str) -> None:
+        if self._raw_log_dir is None:
+            return
+        m = re.search(r"Paper ID:\s*`([^`]+)`", prompt)
+        paper_id = m.group(1) if m else "unknown"
+        self._per_paper_attempts[paper_id] = (
+            self._per_paper_attempts.get(paper_id, 0) + 1)
+        attempt = self._per_paper_attempts[paper_id]
+        safe = re.sub(r"[^A-Za-z0-9_.-]+", "_", paper_id)
+        self._raw_log_dir.mkdir(parents=True, exist_ok=True)
+        (self._raw_log_dir / f"{safe}.attempt{attempt}.txt").write_text(
+            text, encoding="utf-8")
+
+    def stats_summary(self) -> dict:
+        """End-of-run observability. effective_rpm = successes over the
+        wall-clock span the client was active (approx via total latency +
+        limiter waits)."""
+        active_s = self.total_latency_s + self.limiter_wait_s
+        eff_rpm = (self.successes / active_s * 60.0) if active_s > 0 else 0.0
+        return {
+            "total_requests": self.total_requests,
+            "successes": self.successes,
+            "retries_rpm": self.retries_rpm,
+            "retries_tpm": self.retries_tpm,
+            "retries_5xx": self.retries_5xx,
+            "retries_conn": self.retries_conn,
+            "retries_schema": self.retries_schema,
+            "daily_quota_hits": self.daily_quota_hits,
+            "limiter_wait_s": round(self.limiter_wait_s, 1),
+            "limiter_delays_rpm": self.limiter_delays_rpm,
+            "limiter_delays_tpm": self.limiter_delays_tpm,
+            "effective_rpm": round(eff_rpm, 2),
+        }
 
 
 __all__ = [

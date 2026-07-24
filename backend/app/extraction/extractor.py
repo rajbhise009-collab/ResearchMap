@@ -26,6 +26,7 @@ from backend.app.extraction.cache import ExtractionCache
 from backend.app.extraction.errors import (
     ExtractionParseError,
     ExtractionValidationError,
+    RetryableResponseError,
 )
 from backend.app.extraction.llm_client import LLMClient
 from backend.app.extraction.parse import enforce_compound_splitting
@@ -95,8 +96,13 @@ class Extractor:
         return self._llm.name
 
     def extract(self, paper: Paper) -> ExtractionResult:
-        """Extract one paper. Cache hit skips the LLM; cache miss calls
-        the LLM up to `max_retries + 1` times before giving up."""
+        """Extract one paper. Cache hit skips the LLM. On a miss the
+        client's unified retry layer handles rate limiting, transient
+        HTTP failures, AND unusable-response retries (via the validator
+        we pass); it either returns usable text or raises. We then
+        augment (compound-split, authoritative provenance) and CACHE
+        BEFORE returning, so a run that dies mid-way resumes with zero
+        rework."""
         cached = self._cache.get(
             paper.id, self.model, self._input_source, self._prompt.hash,
         )
@@ -104,33 +110,57 @@ class Extractor:
             return ExtractionResult(extraction=cached, from_cache=True, attempts=0)
 
         rendered = self._render(paper)
-        attempts = 0
-        last_error: Exception | None = None
-        while attempts <= self._max_retries:
-            attempts += 1
-            raw = self._llm.generate(rendered)
-            try:
-                extraction = self._parse_validate_augment(paper, raw)
-                self._cache.put(
-                    paper.id, self.model, self._input_source,
-                    self._prompt.hash, extraction,
-                )
-                return ExtractionResult(
-                    extraction=extraction, from_cache=False, attempts=attempts,
-                )
-            except (ExtractionParseError, ExtractionValidationError) as e:
-                # Retry — some models are stochastic and self-correct.
-                last_error = e.last_error
-                continue
+        validator = self._make_validator(paper)
+        requests_before = getattr(self._llm, "total_requests", 0)
+        try:
+            raw = self._llm.generate(rendered, validate=validator)
+        except RetryableResponseError as e:
+            # The client exhausted its attempts on an unusable response.
+            # Map the typed reason to the right hard error, naming the
+            # paper. Never persist a partial/malformed extraction.
+            attempts = getattr(self._llm, "total_requests", 0) - requests_before
+            if e.kind == "parse":
+                raise ExtractionParseError(paper.id, attempts, e) from e
+            raise ExtractionValidationError(paper.id, attempts, e) from e
 
-        # Distinguish parse vs. validation for observability.
-        if isinstance(last_error, json.JSONDecodeError):
-            raise ExtractionParseError(paper.id, attempts, last_error)
-        raise ExtractionValidationError(
-            paper.id, attempts, last_error or RuntimeError("unknown failure"),
+        # `raw` already passed the validator (parse + schema + paper_id).
+        extraction = self._parse_validate_augment(paper, raw)
+        self._cache.put(
+            paper.id, self.model, self._input_source, self._prompt.hash,
+            extraction,
+        )
+        attempts = max(1, getattr(self._llm, "total_requests", 1) - requests_before)
+        return ExtractionResult(
+            extraction=extraction, from_cache=False, attempts=attempts,
         )
 
     # --- Internals --------------------------------------------------
+
+    def _make_validator(self, paper: Paper):
+        """Build the `validate` callback passed to the client's retry
+        loop. Raises RetryableResponseError (with a typed `kind`) on any
+        unusable response so the client retries within its budget."""
+        def _validate(text: str) -> None:
+            try:
+                data = json.loads(text)
+            except json.JSONDecodeError as e:
+                raise RetryableResponseError("parse", str(e)) from e
+            if data.get("paper_id") != paper.id:
+                raise RetryableResponseError(
+                    "paper_id",
+                    f"model returned paper_id={data.get('paper_id')!r} "
+                    f"but expected {paper.id!r}",
+                )
+            # Validate against the schema (with authoritative provenance
+            # filled so the model's echoed/missing values don't fail it).
+            probe = dict(data)
+            probe["extractor"] = self._llm.name
+            probe["extracted_at"] = datetime.now(timezone.utc).isoformat()
+            try:
+                PaperExtraction.model_validate(probe)
+            except ValidationError as e:
+                raise RetryableResponseError("schema", str(e)) from e
+        return _validate
 
     def _render(self, paper: Paper) -> str:
         fulltext_section = ""

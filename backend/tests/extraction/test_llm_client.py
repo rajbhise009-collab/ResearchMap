@@ -1,15 +1,57 @@
-"""LLMClient interface tests. GeminiLLMClient is instantiated but
-never has .generate() invoked — no live spend."""
+"""LLMClient interface tests. Live Gemini is never called — the
+generate-level tests drive a mocked httpx transport and a no-wait
+limiter, so no network and no real sleeping."""
 
 from __future__ import annotations
 
+import json
+
+import httpx
 import pytest
 
+from backend.app.extraction.errors import RetryableResponseError
 from backend.app.extraction.llm_client import (
+    DailyQuotaError,
     GeminiLLMClient,
     MockLLMClient,
     ProgrammableMockLLMClient,
 )
+from backend.app.extraction.rate_limiter import RateLimiter
+
+
+def _instant_limiter():
+    """A limiter that never actually waits (sleep is a no-op) so
+    retry-path tests don't burn real time."""
+    return RateLimiter(max_rpm=1_000_000, max_tpm=10**12,
+                       clock=lambda: 0.0, sleep=lambda s: None)
+
+
+def _gemini_with_transport(handler, monkeypatch):
+    """Build a GeminiLLMClient wired to a MockTransport, an instant
+    limiter, and a no-op time.sleep so backoff waits are free."""
+    import backend.app.extraction.llm_client as mod
+    monkeypatch.setattr(mod.time, "sleep", lambda s: None, raising=False)
+    http = httpx.Client(transport=httpx.MockTransport(handler))
+    return GeminiLLMClient(
+        api_key="fake", model_name="gemini-3.6-flash", validate_model=False,
+        client=http, limiter=_instant_limiter(),
+    )
+
+
+def _q429(quota_id: str, retry_delay: str = "0s") -> httpx.Response:
+    return httpx.Response(429, json={"error": {"details": [
+        {"@type": "type.googleapis.com/google.rpc.QuotaFailure",
+         "violations": [{"quotaId": quota_id}]},
+        {"@type": "type.googleapis.com/google.rpc.RetryInfo",
+         "retryDelay": retry_delay},
+    ]}})
+
+
+def _ok(text: str = '{"ok":1}') -> httpx.Response:
+    return httpx.Response(200, json={
+        "candidates": [{"content": {"parts": [{"text": text}]}}],
+        "usageMetadata": {"promptTokenCount": 5, "candidatesTokenCount": 3},
+    })
 
 
 def test_mock_llm_extracts_paper_id_from_prompt(tmp_path):
@@ -108,84 +150,194 @@ def test_is_daily_quota_429_false_for_pertoken():
     assert _is_daily_quota_429(resp) is False
 
 
-def test_generate_aborts_immediately_on_daily_quota():
+def test_generate_aborts_immediately_on_daily_quota(monkeypatch):
     """Per-day 429 → DailyQuotaError on the FIRST hit, no retries."""
-    import httpx
-    from backend.app.extraction.llm_client import DailyQuotaError
-
     calls = {"n": 0}
 
     def handler(request):
         calls["n"] += 1
-        return httpx.Response(429, json={"error": {"details": [
-            {"@type": "type.googleapis.com/google.rpc.QuotaFailure",
-             "violations": [{"quotaId":
-                "GenerateRequestsPerDayPerProjectPerModel-FreeTier"}]},
-        ]}})
+        return _q429("GenerateRequestsPerDayPerProjectPerModel-FreeTier")
 
-    transport = httpx.MockTransport(handler)
-    http = httpx.Client(transport=transport)
-    client = GeminiLLMClient(api_key="fake", model_name="gemini-2.5-flash-lite",
-                             validate_model=False, client=http)
+    client = _gemini_with_transport(handler, monkeypatch)
     with pytest.raises(DailyQuotaError):
         client.generate("Paper ID: `x`\nprompt")
-    # Exactly ONE call — no wasteful retries against a per-day wall.
-    assert calls["n"] == 1
+    assert calls["n"] == 1          # no wasteful retries against a per-day wall
     assert client.daily_quota_hits == 1
 
 
-def test_generate_retries_on_perminute_quota_then_succeeds():
-    """Per-minute 429 IS transient → retried with backoff, then succeeds."""
-    import httpx
-
+def test_generate_retries_on_perminute_quota_then_succeeds(monkeypatch):
+    """Per-minute 429 IS transient → retried, then succeeds. Routed to
+    the rpm counter."""
     calls = {"n": 0}
 
     def handler(request):
         calls["n"] += 1
         if calls["n"] == 1:
-            return httpx.Response(429, json={"error": {"details": [
-                {"@type": "type.googleapis.com/google.rpc.QuotaFailure",
-                 "violations": [{"quotaId":
-                    "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"}]},
-                {"@type": "type.googleapis.com/google.rpc.RetryInfo",
-                 "retryDelay": "0s"},
-            ]}})
-        return httpx.Response(200, json={
-            "candidates": [{"content": {"parts": [{"text": "{\"ok\":1}"}]}}],
-            "usageMetadata": {"promptTokenCount": 5, "candidatesTokenCount": 3},
-        })
+            return _q429("GenerateRequestsPerMinutePerProjectPerModel-FreeTier")
+        return _ok()
 
-    transport = httpx.MockTransport(handler)
-    http = httpx.Client(transport=transport)
-    client = GeminiLLMClient(api_key="fake", model_name="gemini-2.5-flash-lite",
-                             validate_model=False, client=http)
+    client = _gemini_with_transport(handler, monkeypatch)
     out = client.generate("Paper ID: `x`\nprompt")
     assert out == '{"ok":1}'
-    assert calls["n"] == 2  # one 429 retry, then success
-    assert client.rate_limit_hits == 1
+    assert calls["n"] == 2
+    assert client.retries_rpm == 1
+    assert client.retries_tpm == 0
     assert client.daily_quota_hits == 0
+
+
+def test_generate_retries_on_pertoken_quota_and_routes_to_tpm(monkeypatch):
+    """Per-token 429 is transient AND should be attributed to the TPM
+    counter, so we can see which limit is binding."""
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            return _q429("GenerateContentInputTokensPerModelPerMinute-FreeTier")
+        return _ok()
+
+    client = _gemini_with_transport(handler, monkeypatch)
+    assert client.generate("Paper ID: `x`\nprompt") == '{"ok":1}'
+    assert client.retries_tpm == 1
+    assert client.retries_rpm == 0
+
+
+def test_generate_retries_on_5xx_then_succeeds(monkeypatch):
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        return httpx.Response(503) if calls["n"] == 1 else _ok()
+
+    client = _gemini_with_transport(handler, monkeypatch)
+    assert client.generate("Paper ID: `x`\nprompt") == '{"ok":1}'
+    assert client.retries_5xx == 1
+
+
+def test_generate_retries_schema_invalid_then_hardfails(monkeypatch):
+    """A 200 whose body fails the caller's validator is retried up to the
+    cap, then the typed RetryableResponseError propagates. NEVER returns
+    the bad text."""
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        return _ok('{"not":"a valid extraction"}')
+
+    def validate(text):
+        raise RetryableResponseError("schema", "bad enum value")
+
+    client = _gemini_with_transport(handler, monkeypatch)
+    with pytest.raises(RetryableResponseError) as exc:
+        client.generate("Paper ID: `x`\nprompt", validate=validate)
+    assert exc.value.kind == "schema"
+    assert calls["n"] == GeminiLLMClient.MAX_ATTEMPTS   # tried the full budget
+    assert client.retries_schema == GeminiLLMClient.MAX_ATTEMPTS - 1
+
+
+def test_generate_schema_invalid_then_valid_succeeds(monkeypatch):
+    """If a later attempt validates, the retry succeeds (no hard fail)."""
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        return _ok('bad' if calls["n"] == 1 else '{"good":1}')
+
+    def validate(text):
+        if "good" not in text:
+            raise RetryableResponseError("schema", "bad")
+
+    client = _gemini_with_transport(handler, monkeypatch)
+    assert client.generate("Paper ID: `x`\nprompt", validate=validate) == '{"good":1}'
+    assert calls["n"] == 2
+    assert client.successes == 1
+
+
+def test_generate_invokes_limiter_before_each_request(monkeypatch):
+    """The limiter's acquire() gates every request (RPM+TPM)."""
+    acquired = {"n": 0, "tokens": []}
+
+    class SpyLimiter(RateLimiter):
+        def acquire(self, est_tokens):
+            acquired["n"] += 1
+            acquired["tokens"].append(est_tokens)
+            return super().acquire(est_tokens)
+
+    def handler(request):
+        return _ok()
+
+    import backend.app.extraction.llm_client as mod
+    monkeypatch.setattr(mod.time, "sleep", lambda s: None, raising=False)
+    http = httpx.Client(transport=httpx.MockTransport(handler))
+    spy = SpyLimiter(max_rpm=10**6, max_tpm=10**12,
+                     clock=lambda: 0.0, sleep=lambda s: None)
+    client = GeminiLLMClient(api_key="fake", model_name="gemini-3.6-flash",
+                             validate_model=False, client=http, limiter=spy)
+    client.generate("Paper ID: `x`\n" + "word " * 100)
+    assert acquired["n"] == 1
+    assert acquired["tokens"][0] > 0   # estimated input tokens passed in
+
+
+def test_stats_summary_reports_categories(monkeypatch):
+    calls = {"n": 0}
+
+    def handler(request):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            return _q429("GenerateRequestsPerMinutePerProjectPerModel-FreeTier")
+        return _ok()
+
+    client = _gemini_with_transport(handler, monkeypatch)
+    client.generate("Paper ID: `x`\nprompt")
+    s = client.stats_summary()
+    assert s["successes"] == 1
+    assert s["retries_rpm"] == 1
+    assert s["total_requests"] == 2
+    assert "effective_rpm" in s
+
+
+def _fixed_rng():
+    import random
+    r = random.Random()
+    r.uniform = lambda a, b: 0.0  # kill jitter for deterministic asserts
+    return r
 
 
 def test_retry_delay_parses_retryinfo_body():
     """A 429 with Google's RetryInfo.retryDelay in the body should be
-    honored exactly (plus a 1s pad), not blind exponential backoff."""
+    honored (plus a 1s pad), not blind exponential backoff. Jitter is
+    zeroed here for a deterministic assertion."""
     import httpx
     client = GeminiLLMClient(api_key="fake", model_name="gemini-3.6-flash",
-                             validate_model=False)
+                             validate_model=False, rng=_fixed_rng())
     resp = httpx.Response(429, json={"error": {"details": [
         {"@type": "type.googleapis.com/google.rpc.RetryInfo",
          "retryDelay": "39s"},
     ]}})
-    assert client._retry_delay_seconds(resp, rl_attempt=0) == 40.0
+    assert client._retry_delay_seconds(resp, attempt=0) == 40.0
 
 
 def test_retry_delay_falls_back_to_exponential():
     import httpx
     client = GeminiLLMClient(api_key="fake", model_name="gemini-3.6-flash",
-                             validate_model=False)
+                             validate_model=False, rng=_fixed_rng())
     resp = httpx.Response(429, json={"error": {}})
-    # rl_attempt=3 -> 2**3 = 8
-    assert client._retry_delay_seconds(resp, rl_attempt=3) == 8.0
+    # attempt=3 -> 2**3 = 8, jitter zeroed
+    assert client._retry_delay_seconds(resp, attempt=3) == 8.0
+
+
+def test_retry_delay_applies_jitter_within_band():
+    """With real jitter, the delay stays within ±10% of the base."""
+    import httpx
+    client = GeminiLLMClient(api_key="fake", model_name="gemini-3.6-flash",
+                             validate_model=False)
+    resp = httpx.Response(429, json={"error": {"details": [
+        {"@type": "type.googleapis.com/google.rpc.RetryInfo",
+         "retryDelay": "10s"},
+    ]}})
+    for _ in range(20):
+        d = client._retry_delay_seconds(resp, attempt=0)
+        assert 11.0 * 0.9 <= d <= 11.0 * 1.1  # base = 10 + 1 pad
 
 
 def test_gemini_client_reads_model_from_config(monkeypatch):

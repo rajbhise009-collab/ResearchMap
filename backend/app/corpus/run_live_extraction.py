@@ -423,6 +423,7 @@ def _write_run_report(
         / f"extraction_run_{stamp}.json"
     )
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    stats = llm.stats_summary() if hasattr(llm, "stats_summary") else {}
     payload = {
         "run_started": run_started,
         "run_finished": datetime.now(timezone.utc).isoformat(),
@@ -440,6 +441,7 @@ def _write_run_report(
             "price_input_per_1M": PRICE_INPUT_PER_M,
             "price_output_per_1M": PRICE_OUTPUT_PER_M,
         },
+        "rate_limiting": stats,
         "per_paper": per_paper,
         "hard_failures": hard_failures,
     }
@@ -447,9 +449,19 @@ def _write_run_report(
     print(f"\n[report] wrote {out_path.relative_to(REPO_ROOT)}")
     print(f"[report] {len(per_paper)} papers succeeded; "
           f"{len(hard_failures)} hard failed; "
-          f"{llm.rate_limit_hits} rate-limit (429) hits; "
           f"{tokens_in} in + {tokens_out} out tokens; "
           f"${cost:.4f} reference cost (free tier — not billed)")
+    if stats:
+        print(f"[rate-limiting] requests={stats['total_requests']} "
+              f"successes={stats['successes']} | retries: "
+              f"rpm={stats['retries_rpm']} tpm={stats['retries_tpm']} "
+              f"5xx={stats['retries_5xx']} conn={stats['retries_conn']} "
+              f"schema={stats['retries_schema']} | "
+              f"daily_quota_hits={stats['daily_quota_hits']} | "
+              f"limiter_wait={stats['limiter_wait_s']}s "
+              f"(rpm-holds={stats['limiter_delays_rpm']} "
+              f"tpm-holds={stats['limiter_delays_tpm']}) | "
+              f"effective_rpm={stats['effective_rpm']}")
 
 
 if __name__ == "__main__":

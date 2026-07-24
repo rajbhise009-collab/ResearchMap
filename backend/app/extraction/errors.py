@@ -10,6 +10,21 @@ class ExtractionError(RuntimeError):
     """Base class for extraction failures."""
 
 
+class RetryableResponseError(RuntimeError):
+    """A 200 response that is UNUSABLE and worth retrying: bad JSON,
+    schema-invalid, or paper_id mismatch. Raised by a `validate`
+    callback passed into `LLMClient.generate`, caught by the client's
+    retry loop. `kind` lets the caller map the final failure to the
+    right hard error type.
+
+    kind ∈ {"parse", "schema", "paper_id"}.
+    """
+
+    def __init__(self, kind: str, message: str):
+        super().__init__(message)
+        self.kind = kind
+
+
 class ExtractionValidationError(ExtractionError):
     """The LLM's output could not be validated against the
     PaperExtraction schema, even after retries."""
@@ -41,4 +56,5 @@ __all__ = [
     "ExtractionError",
     "ExtractionParseError",
     "ExtractionValidationError",
+    "RetryableResponseError",
 ]

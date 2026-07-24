@@ -1629,6 +1629,53 @@ python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0 --input
 python -m backend.app.corpus.compare_abstract_fulltext
 ```
 
+## Client-side rate limiting + robust retry layer — 2026-07-24
+
+Rebuilt `GeminiLLMClient` so an avoidable 429 is never triggered and
+every transient failure recovers cleanly (even if slower).
+
+- **Token-bucket RPM limiter** (`rate_limiter.py`): min inter-request
+  interval = 60/`GEMINI_MAX_RPM` (default 8, config-driven), measured
+  from request START so a slow call consumes the interval (no idle on
+  top). ±10% jitter. Thread-safe, single shared instance.
+- **Token-aware TPM pacing**: estimates input tokens (chars/4) and
+  holds a request if it would push the rolling-60s window over
+  `GEMINI_MAX_TPM` (default 200k, under the 250k ceiling). Logs when a
+  hold is TPM-bound vs RPM-bound, so we can see which limit binds
+  (full text: 15–99k tokens/paper → TPM binds well under RPM).
+- **Retry layer classifies before retrying** (one unified 5-attempt
+  budget, 120s cap, RetryInfo-honoring backoff + jitter):
+  per-day 429 → `DailyQuotaError`, abort (kept, not weakened);
+  per-minute/per-token 429 → transient retry (routed to rpm/tpm
+  counters); 5xx / timeouts / connection errors → transient retry.
+- **Retries unusable 200s too**: a `validate` callback (built by the
+  Extractor: JSON parse + Pydantic schema + paper_id match) runs on
+  each 200; a `RetryableResponseError` retries within the same budget;
+  on exhaustion it raises a typed hard error naming the paper. Never
+  persists a partial/malformed extraction. This is the flash-lite
+  enum-drift case, now handled uniformly.
+- **Resumability**: each success is cached before the next request, so
+  a run that dies at paper N resumes at N+1 with zero rework —
+  verified by a kill-and-restart test (`test_resumption_from_killed_
+  run_does_no_duplicate_work`).
+- **Observability**: `stats_summary()` + the runner print total
+  requests, successes, retries by category (rpm/tpm/5xx/conn/schema),
+  limiter wait time (rpm/tpm holds), daily-quota hits, and effective
+  achieved RPM.
+
+**Scope note:** this addresses the **RPM/TPM** limits, which are what
+will bind on **paid** tier. It does **NOT** address the **per-day**
+free-tier quota wall we measured (~low tens/day across every model) —
+that one is solved only by billing. The per-day abort stays intact so
+we never waste calls against it.
+
+Preserved unchanged: per-day abort, model-in-cache-key, prompt-version
+hashing, input_source provenance, and the v1.0.0/v1.1.0 prompts
+(comparison integrity). Tests: 158 passing (+14: limiter interval &
+TPM hold under a mocked clock, 429-subtype routing, 5xx retry,
+schema-invalid retry-then-hardfail, limiter-invoked, stats summary,
+resumption).
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship

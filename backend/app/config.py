@@ -59,6 +59,11 @@ class Settings(BaseSettings):
     # under us mid-development. Keep the model in config, not hardcoded,
     # and validate it against models.list at client startup.
     gemini_model: str = Field(default="gemini-flash-latest", alias="GEMINI_MODEL")
+    # Client-side rate limiting (never trip an avoidable 429).
+    # RPM: requests/minute. TPM: input tokens/minute (set under the
+    # 250k API ceiling to leave headroom). Both configurable.
+    gemini_max_rpm: int = Field(default=8, alias="GEMINI_MAX_RPM", gt=0)
+    gemini_max_tpm: int = Field(default=200_000, alias="GEMINI_MAX_TPM", gt=0)
     anthropic_api_key: SecretStr | None = Field(default=None, alias="ANTHROPIC_API_KEY")
 
     openalex_api_key: SecretStr | None = Field(default=None, alias="OPENALEX_API_KEY")

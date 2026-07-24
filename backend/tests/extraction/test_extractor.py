@@ -10,6 +10,7 @@ Covers the four "interesting cases" the brief calls for:
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -21,6 +22,8 @@ from backend.app.extraction.errors import (
 )
 from backend.app.extraction.extractor import Extractor
 from backend.app.extraction.llm_client import (
+    DailyQuotaError,
+    LLMClient,
     MockLLMClient,
     ProgrammableMockLLMClient,
 )
@@ -115,16 +118,14 @@ def test_retry_on_malformed_then_succeeds(tmp_path: Path):
 
 def test_hard_fails_after_max_retries(tmp_path: Path):
     paper = _paper("openalex:W1")
-    # Return garbage three times — will exceed max_retries=2 (3 total
-    # attempts allowed).
+    # All-garbage: the client (here the mock) exhausts its retry budget
+    # (its scripted list) and hard-fails with a parse error.
     llm = ProgrammableMockLLMClient(["garbage"] * 4)
-    extractor = Extractor(
-        llm=llm, cache=ExtractionCache(root=tmp_path), max_retries=2,
-    )
+    extractor = Extractor(llm=llm, cache=ExtractionCache(root=tmp_path))
     with pytest.raises(ExtractionParseError):
         extractor.extract(paper)
-    # Exactly max_retries + 1 attempts were made.
-    assert llm.call_count == 3
+    # The mock advanced through all scripted responses trying to repair.
+    assert llm.call_count == 4
 
 
 def test_hard_fails_on_schema_violation(tmp_path: Path):
@@ -384,3 +385,57 @@ def test_stated_limitation_case_with_scope():
         assert len(lims) == 2
         scopes = {lim.source_scope for lim in lims}
         assert scopes == {"prior_work", "this_work"}
+
+
+# --- Resumability -------------------------------------------------------
+
+
+class _ScriptedClient(LLMClient):
+    """Succeeds for every paper except those in `fail_daily`, for which it
+    raises DailyQuotaError (simulating a mid-run daily-quota abort).
+    Tracks total_requests so we can prove cache hits do no API work."""
+
+    name = "gemini:resumetest"
+
+    def __init__(self, fail_daily: set[str]) -> None:
+        self._fail = fail_daily
+        self.total_requests = 0
+
+    def generate(self, prompt: str, *, validate=None) -> str:
+        pid = re.search(r"Paper ID: `([^`]+)`", prompt).group(1)
+        self.total_requests += 1
+        if pid in self._fail:
+            raise DailyQuotaError("daily quota exhausted (test)")
+        text = _valid_json_for(pid)
+        if validate is not None:
+            validate(text)
+        return text
+
+
+def test_resumption_from_killed_run_does_no_duplicate_work(tmp_path: Path):
+    papers = [_paper(f"openalex:W{i}") for i in (1, 2, 3, 4)]
+    cache = ExtractionCache(root=tmp_path)
+
+    # Run 1: dies (daily quota) at the 3rd paper.
+    llm1 = _ScriptedClient(fail_daily={"openalex:W3", "openalex:W4"})
+    ex1 = Extractor(llm=llm1, cache=cache)
+    done = []
+    for p in papers:
+        try:
+            ex1.extract(p)
+            done.append(p.id)
+        except DailyQuotaError:
+            break
+    assert done == ["openalex:W1", "openalex:W2"]
+    # The first two are durably cached before the abort.
+    for pid in ("openalex:W1", "openalex:W2"):
+        assert cache.get(pid, llm1.name, "abstract", ex1.prompt_hash) is not None
+
+    # Run 2 (quota reset): same cache, working client. W1/W2 are cache
+    # hits with ZERO new API calls; only W3/W4 actually hit the client.
+    llm2 = _ScriptedClient(fail_daily=set())
+    ex2 = Extractor(llm=llm2, cache=cache)
+    results = [ex2.extract(p) for p in papers]
+    assert results[0].from_cache and results[1].from_cache
+    assert not results[2].from_cache and not results[3].from_cache
+    assert llm2.total_requests == 2  # exactly W3 and W4 — no rework on W1/W2
