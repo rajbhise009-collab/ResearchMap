@@ -21,6 +21,36 @@ from pathlib import Path
 from backend.app.config import get_settings
 
 
+# Substring that marks a per-DAY quota violation in a 429 QuotaFailure.
+# Per-minute / per-token quotas use different quotaIds (…PerMinute…,
+# …Tokens…) and ARE transient, so we retry those.
+_DAILY_QUOTA_MARKER = "PerDay"
+
+
+class DailyQuotaError(RuntimeError):
+    """Raised when a 429 is a per-day quota exhaustion — which cannot
+    clear before the daily reset, so retrying is pure waste and the run
+    should abort immediately."""
+
+
+def _is_daily_quota_429(response) -> bool:
+    """True iff the 429 body carries a QuotaFailure whose quotaId marks a
+    per-DAY quota (e.g. GenerateRequestsPerDayPerProjectPerModel-FreeTier).
+    Per-minute / per-token violations return False (retry those)."""
+    try:
+        details = response.json().get("error", {}).get("details", [])
+    except Exception:
+        return False
+    for d in details:
+        if not str(d.get("@type", "")).endswith("QuotaFailure"):
+            continue
+        for v in d.get("violations", []):
+            qid = str(v.get("quotaId", ""))
+            if _DAILY_QUOTA_MARKER in qid:
+                return True
+    return False
+
+
 class LLMClient(ABC):
     """The only interface the pipeline uses to talk to an LLM."""
 
@@ -174,6 +204,7 @@ class GeminiLLMClient(LLMClient):
         self.total_latency_s = 0.0
         self.rate_limit_hits = 0  # 429s, counted separately from failures
         self.server_error_hits = 0  # 5xx transient errors, retried
+        self.daily_quota_hits = 0  # per-day 429s (abort, never retried)
         self._raw_log_dir = raw_log_dir
         self._per_paper_attempts: dict[str, int] = {}
 
@@ -276,9 +307,10 @@ class GeminiLLMClient(LLMClient):
         }
 
         # --- Request with 429 backoff. A 429 is a rate limit, not an
-        # extraction failure; we retry it here (below the orchestrator's
-        # parse/validation retry loop) with exponential backoff and count
-        # it separately.
+        # extraction failure; we retry TRANSIENT ones (per-minute /
+        # per-token) with backoff. A PER-DAY quota 429 can never succeed
+        # before the daily reset, so retrying it is pure waste — abort
+        # the whole run immediately.
         response = None
         for rl_attempt in range(self.MAX_RATE_LIMIT_RETRIES + 1):
             t0 = time.time()
@@ -290,7 +322,17 @@ class GeminiLLMClient(LLMClient):
             self.total_latency_s += time.time() - t0
             if response.status_code == 429:
                 self.rate_limit_hits += 1
+                if _is_daily_quota_429(response):
+                    self.daily_quota_hits += 1
+                    raise DailyQuotaError(
+                        "Gemini daily free-tier quota exhausted "
+                        "(GenerateRequestsPerDayPerProjectPerModel-FreeTier "
+                        f"for {self._model_name}). Retrying cannot succeed "
+                        "until the daily reset (~midnight Pacific). Aborting "
+                        "the run — resume after reset; cached work is kept."
+                    )
                 if rl_attempt < self.MAX_RATE_LIMIT_RETRIES:
+                    # Transient (per-minute / per-token) — back off.
                     sleep_s = self._retry_delay_seconds(response, rl_attempt)
                     time.sleep(sleep_s)
                     continue
@@ -348,6 +390,7 @@ class GeminiLLMClient(LLMClient):
 
 
 __all__ = [
+    "DailyQuotaError",
     "GeminiLLMClient",
     "LLMClient",
     "MockLLMClient",

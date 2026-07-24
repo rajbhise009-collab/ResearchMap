@@ -30,7 +30,10 @@ from backend.app.config import get_settings  # noqa: E402
 from backend.app.extraction.cache import ExtractionCache  # noqa: E402
 from backend.app.extraction.errors import ExtractionError  # noqa: E402
 from backend.app.extraction.extractor import Extractor  # noqa: E402
-from backend.app.extraction.llm_client import GeminiLLMClient  # noqa: E402
+from backend.app.extraction.llm_client import (  # noqa: E402
+    DailyQuotaError,
+    GeminiLLMClient,
+)
 from backend.app.models import Paper, Source  # noqa: E402
 
 
@@ -257,6 +260,7 @@ def main() -> int:
     run_started = datetime.now(timezone.utc).isoformat()
     per_paper_records: list[dict] = []
     hard_failures: list[dict] = []
+    aborted: dict = {}
 
     def _run_slice(name: str, start: int, end: int, *, verbose: bool = False) -> None:
         for i, r in enumerate(picks[start:end], start=start + 1):
@@ -322,6 +326,16 @@ def main() -> int:
                     print("  --- PARSED EXTRACTION (post-validate, post-split) ---")
                     print(ex.model_dump_json(indent=2))
                     print("  --- END ---\n")
+            except DailyQuotaError:
+                # Per-day quota exhausted — retrying anything more today
+                # is pure waste. Abort the whole run immediately; the
+                # signal propagates out of _run_slice via this flag.
+                print(f"[{name} {i:02d}] DAILY-QUOTA-EXHAUSTED at {paper.id} "
+                      f"— aborting run. Resume after the daily reset "
+                      f"(~midnight Pacific); cached work is kept.")
+                aborted["daily_quota"] = True
+                aborted["at_paper"] = paper.id
+                return
             except ExtractionError as e:
                 elapsed = time.time() - t0
                 hard_failures.append({
@@ -361,6 +375,10 @@ def main() -> int:
     print("\n=== SMOKE TEST — 3 papers ===")
     _run_slice("SMOKE", 0, 3, verbose=True)
 
+    if aborted.get("daily_quota"):
+        _write_run_report(run_started, per_paper_records, hard_failures, llm)
+        return 4  # distinct exit code for daily-quota abort
+
     if hard_failures:
         print(f"\n[smoke] {len(hard_failures)} hard failure(s) — STOPPING")
         _write_run_report(run_started, per_paper_records, hard_failures, llm)
@@ -371,12 +389,12 @@ def main() -> int:
         _write_run_report(run_started, per_paper_records, hard_failures, llm)
         return 0
 
-    # --- Remaining 27.
-    print("\n=== CONTINUING — 27 more papers ===")
+    # --- Remaining papers.
+    print("\n=== CONTINUING — remaining papers ===")
     _run_slice("RUN", 3, len(picks))
 
     _write_run_report(run_started, per_paper_records, hard_failures, llm)
-    return 0
+    return 4 if aborted.get("daily_quota") else 0
 
 
 def _write_run_report(
