@@ -232,6 +232,31 @@ class GeminiLLMClient(LLMClient):
                 f"generateContent (supports: {methods})."
             )
 
+    def _retry_delay_seconds(self, response, rl_attempt: int) -> float:
+        """How long to wait after a 429. Gemini returns a precise
+        RetryInfo.retryDelay (e.g. "39s") in the error BODY (not the
+        Retry-After header), so honor that when present — blind
+        exponential backoff otherwise wastes minutes per rate-limited
+        call. Falls back to exponential, capped."""
+        # 1) Retry-After header (rare for this API but cheap to check).
+        header = response.headers.get("retry-after")
+        if header and header.isdigit():
+            return float(header)
+        # 2) RetryInfo in the JSON error body.
+        try:
+            details = response.json().get("error", {}).get("details", [])
+            for d in details:
+                if d.get("@type", "").endswith("RetryInfo"):
+                    delay = d.get("retryDelay", "")
+                    m = re.match(r"^([0-9]+(?:\.[0-9]+)?)s$", str(delay))
+                    if m:
+                        # small pad so we clear the window edge
+                        return float(m.group(1)) + 1.0
+        except Exception:
+            pass
+        # 3) Exponential fallback, capped.
+        return min(2.0 ** rl_attempt, self.RATE_LIMIT_BACKOFF_CAP_S)
+
     def generate(self, prompt: str) -> str:
         import time
         import httpx
@@ -265,12 +290,7 @@ class GeminiLLMClient(LLMClient):
             if response.status_code == 429:
                 self.rate_limit_hits += 1
                 if rl_attempt < self.MAX_RATE_LIMIT_RETRIES:
-                    # Honor Retry-After if present, else exponential.
-                    retry_after = response.headers.get("retry-after")
-                    if retry_after and retry_after.isdigit():
-                        sleep_s = float(retry_after)
-                    else:
-                        sleep_s = min(2.0 ** rl_attempt, self.RATE_LIMIT_BACKOFF_CAP_S)
+                    sleep_s = self._retry_delay_seconds(response, rl_attempt)
                     time.sleep(sleep_s)
                     continue
             break

@@ -75,6 +75,28 @@ def test_gemini_client_instantiates_with_explicit_key():
     # We deliberately do NOT call client.generate(). That would spend.
 
 
+def test_retry_delay_parses_retryinfo_body():
+    """A 429 with Google's RetryInfo.retryDelay in the body should be
+    honored exactly (plus a 1s pad), not blind exponential backoff."""
+    import httpx
+    client = GeminiLLMClient(api_key="fake", model_name="gemini-3.6-flash",
+                             validate_model=False)
+    resp = httpx.Response(429, json={"error": {"details": [
+        {"@type": "type.googleapis.com/google.rpc.RetryInfo",
+         "retryDelay": "39s"},
+    ]}})
+    assert client._retry_delay_seconds(resp, rl_attempt=0) == 40.0
+
+
+def test_retry_delay_falls_back_to_exponential():
+    import httpx
+    client = GeminiLLMClient(api_key="fake", model_name="gemini-3.6-flash",
+                             validate_model=False)
+    resp = httpx.Response(429, json={"error": {}})
+    # rl_attempt=3 -> 2**3 = 8
+    assert client._retry_delay_seconds(resp, rl_attempt=3) == 8.0
+
+
 def test_gemini_client_reads_model_from_config(monkeypatch):
     """When no model_name is passed, it comes from GEMINI_MODEL config."""
     monkeypatch.setenv("GEMINI_API_KEY", "fake-test-key")
