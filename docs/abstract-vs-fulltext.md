@@ -87,6 +87,32 @@ starved scorers become viable. **The verdict — does it or doesn't
 it — goes here in plain language, including "it doesn't" if that is
 what the numbers say.**
 
+### Model caveat — this is a LOWER-BOUND test
+
+The comparison model is `gemini-2.5-flash-lite` (chosen because the
+free-tier daily allowance on the newer/preview Flash models —
+3.6-flash, 3-flash-preview — is only ~20-25 requests/day on this
+project, too small for the ~81-call experiment; the 2.5 Flash-Lite
+family is what the free tier is actually built around).
+
+Flash-Lite is a **smaller model**, and a smaller model may extract
+LESS well from a long full-text input than from a short abstract —
+long-context comprehension is exactly where small models degrade. So
+any measurement here is **biased AGAINST full text**: the full-text
+arm is handicapped relative to what a stronger model would produce.
+
+This makes the result asymmetric to interpret:
+- **If full text still wins** (lifts own-work limitations and
+  future-work materially above the abstract arm), the finding holds
+  **conservatively** — a stronger model would only widen the gap.
+- **If full text does NOT win**, the result is **ambiguous, not
+  negative** — it could be the small model failing to exploit the
+  full text rather than the full text lacking signal. That outcome
+  requires a re-run on a stronger model before any conclusion.
+
+The verdict section above must state which of these two regimes the
+numbers fall into.
+
 ### 30-paper abstract set (CONTEXT ONLY — different, larger set)
 
 Reported separately so it is never confused with the paired
