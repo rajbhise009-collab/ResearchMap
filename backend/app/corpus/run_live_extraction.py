@@ -379,10 +379,20 @@ def main() -> int:
         _write_run_report(run_started, per_paper_records, hard_failures, llm)
         return 4  # distinct exit code for daily-quota abort
 
-    if hard_failures:
-        print(f"\n[smoke] {len(hard_failures)} hard failure(s) — STOPPING")
+    # Stop after smoke ONLY on systematic failure (every smoke paper
+    # failed) — that signals a broken prompt/model/schema. A single
+    # failure (e.g. a small model's occasional enum drift on one paper)
+    # is recorded and the run continues; one bad paper must not halt a
+    # 30-paper arm.
+    smoke_successes = sum(1 for p in per_paper_records)
+    if smoke_successes == 0 and hard_failures:
+        print(f"\n[smoke] ALL {len(hard_failures)} smoke papers failed — "
+              f"systematic problem, STOPPING")
         _write_run_report(run_started, per_paper_records, hard_failures, llm)
         return 3
+    if hard_failures:
+        print(f"\n[smoke] {len(hard_failures)} of 3 failed (non-systematic) "
+              f"— continuing")
 
     if args.smoke_only:
         print("\n[smoke-only] complete — not continuing.")

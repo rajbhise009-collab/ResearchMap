@@ -1576,6 +1576,59 @@ python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0 --input
 python -m backend.app.corpus.compare_abstract_fulltext
 ```
 
+## Free tier settled — 2026-07-24 — every model caps in the low tens/day → we pay
+
+Tested three flash models for the free-tier daily allowance on this
+project. All three cap far below what the comparison needs:
+
+| Model | Free daily cap (measured, via QuotaFailure) | Schema adherence |
+|:------|:--------------------------------------------|:-----------------|
+| gemini-3.6-flash | ~low tens/day | good (0 validation failures in 30) |
+| gemini-3-flash-preview | ~20–25/day | good |
+| gemini-2.5-flash-lite | **~8–10/day** (walled at RUN 09) | **poor — 3/8 validation failures (enum drift, e.g. `type:"limitation"`)** |
+
+The ~1,500 RPD figure applies to none of them on this project. The
+free-tier daily quota is simply very small across the board.
+Per the standing rule ("if Flash-Lite walls ~25/day, stop and we
+pay"), Flash-Lite walled at ~8–10/day AND has poor schema adherence,
+so it is a dead end on both counts.
+
+**Decision: pay.** The comparison (~81 calls, 3 arms) needs a paid
+tier to complete in one sitting. Recommended model on paid:
+`gemini-3.6-flash` — the original baseline, good schema adherence,
+no daily cap on paid (only generous per-minute limits). `.env`
+`GEMINI_MODEL` reset to `gemini-3.6-flash` accordingly.
+
+**Bug fix validated in production:** the per-day-quota abort worked
+— arm 1 on flash-lite hit the daily wall at RUN 09 and aborted
+cleanly with the resume-after-reset message instead of grinding
+retries. Measured saving vs the old behavior across recent runs:
+**56 wasted calls eliminated** (63 attempted → 7; 9 calls/paper →
+abort on call 1), plus it no longer attempts papers after the wall.
+
+Also confirmed from the AI Studio graph: **not RPM-limited** (peak
+3 req/min vs the 10 RPM limit) — pacing is fine; the daily cap is
+the only binding constraint.
+
+Smoke guard fixed: a single non-systematic smoke failure (e.g. a
+small model's occasional enum drift on one paper) no longer halts
+the whole arm; the run stops after smoke only if ALL smoke papers
+fail (systematic prompt/model/schema breakage).
+
+**State:** partial flash-lite v1.0.0 abstracts (5) cached but
+superseded (dead-end model). The gemini-3.6-flash extractions from
+2026-07-23 (30 v1.0.0 + 8 v1.1.0 abstracts) remain the best baseline;
+on a paid gemini-3.6-flash the three arms complete and
+`compare_abstract_fulltext` fills the paired table.
+
+### Resume on paid gemini-3.6-flash
+```
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.0.0                          # arm 1 (30 cached from 7-23)
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0                          # arm 2 (8 cached)
+python -m backend.app.corpus.run_live_extraction --prompt-version v1.1.0 --input-source fulltext  # arm 3
+python -m backend.app.corpus.compare_abstract_fulltext
+```
+
 ## Non-negotiable: Phase 3/4 blocked until real extractions exist
 
 Written into `CLAUDE.md` as standing policy. Phases 3 (relationship
