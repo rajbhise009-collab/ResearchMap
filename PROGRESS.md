@@ -75,8 +75,9 @@ green.
 ### How to run
 
 ```bash
-# Backend API (no env vars needed)
-cd backend && ../.venv/bin/uvicorn app.api.app:app --reload   # docs at /docs
+# Backend API (no env vars needed) — run from the repo root; app.py uses
+# absolute backend.-prefixed imports, so it must NOT be run from backend/.
+.venv/bin/uvicorn backend.app.api.app:app --reload   # docs at /docs
 
 # Frontend — regenerate snapshot, then dev or static build
 cd frontend

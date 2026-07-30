@@ -31,6 +31,24 @@ python -m backend.cli ingest --source seed
 pytest backend/tests -v
 ```
 
+## API and frontend
+
+Both read cached reasoning output — no API keys, no `DATABASE_URL`.
+
+```bash
+# Read-only API — run from the repo ROOT (app.py uses absolute
+# backend.-prefixed imports; running from backend/ fails with
+# ModuleNotFoundError). OpenAPI docs at /docs.
+.venv/bin/uvicorn backend.app.api.app:app --reload
+
+# Frontend (static export, no runtime backend needed)
+cd frontend
+npm install
+npm run snapshot   # regenerate public/data from cached output
+npm run dev        # http://localhost:3000
+npm run build      # self-contained static site → frontend/out/
+```
+
 ## Phase status
 
 See `PROGRESS.md`.
