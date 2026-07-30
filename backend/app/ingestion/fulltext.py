@@ -104,26 +104,40 @@ def resolve_arxiv_id(
 # --- PDF fetch + text extraction ---------------------------------------
 
 
-def fetch_pdf_text(arxiv_id: str, *, client: httpx.Client) -> Optional[str]:
-    """Fetch the arXiv PDF and extract its text with pypdf. Returns None
-    on any fetch/parse failure — the caller flags the paper abstract_only."""
+def _pdf_bytes_to_text(content: bytes) -> Optional[str]:
+    """pypdf-extract text from raw PDF bytes. None on parse failure."""
     from pypdf import PdfReader
 
-    url = f"https://arxiv.org/pdf/{arxiv_id}"
-    try:
-        r = client.get(url, follow_redirects=True)
-        r.raise_for_status()
-    except httpx.HTTPError:
-        return None
-    if "application/pdf" not in r.headers.get("content-type", "") and not r.content[:4] == b"%PDF":
+    if content[:4] != b"%PDF":
         return None
     try:
-        reader = PdfReader(io.BytesIO(r.content))
+        reader = PdfReader(io.BytesIO(content))
         pages = [(p.extract_text() or "") for p in reader.pages]
     except Exception:
         return None
     text = _clean_pdf_text("\n".join(pages))
     return text or None
+
+
+def fetch_pdf_text_from_url(url: str, *, client: httpx.Client) -> Optional[str]:
+    """Fetch an arbitrary PDF URL and extract its text. None on any
+    fetch/parse failure. Used for non-arXiv OA PDFs (Unpaywall)."""
+    try:
+        r = client.get(url, follow_redirects=True)
+        r.raise_for_status()
+    except httpx.HTTPError:
+        return None
+    ctype = r.headers.get("content-type", "")
+    if "application/pdf" not in ctype and r.content[:4] != b"%PDF":
+        return None
+    return _pdf_bytes_to_text(r.content)
+
+
+def fetch_pdf_text(arxiv_id: str, *, client: httpx.Client) -> Optional[str]:
+    """Fetch the arXiv PDF and extract its text with pypdf. Returns None
+    on any fetch/parse failure — the caller flags the paper abstract_only."""
+    return fetch_pdf_text_from_url(f"https://arxiv.org/pdf/{arxiv_id}",
+                                   client=client)
 
 
 _WS_RUN = re.compile(r"[ \t]+")

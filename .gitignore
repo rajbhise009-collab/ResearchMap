@@ -47,3 +47,7 @@ scratch/
 # Node (frontend, later phase)
 node_modules/
 .next/
+
+# Generated reasoning/relationship artifacts (regenerable)
+data/reasoning/
+data/relationships/

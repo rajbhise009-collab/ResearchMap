@@ -29,11 +29,14 @@ from backend.app.config import get_settings
 
 API_BASE = "https://generativelanguage.googleapis.com/v1beta"
 
+# The live v1beta API reports states with a BATCH_STATE_ prefix
+# (BATCH_STATE_RUNNING, BATCH_STATE_SUCCEEDED, ...). Some docs/older
+# surfaces use JOB_STATE_. Match on the suffix so both work.
+_TERMINAL_SUFFIXES = {"SUCCEEDED", "FAILED", "CANCELLED", "EXPIRED"}
 TERMINAL_STATES = {
-    "JOB_STATE_SUCCEEDED",
-    "JOB_STATE_FAILED",
-    "JOB_STATE_CANCELLED",
-    "JOB_STATE_EXPIRED",
+    f"{p}_{s}"
+    for p in ("JOB_STATE", "BATCH_STATE")
+    for s in _TERMINAL_SUFFIXES
 }
 
 
@@ -45,11 +48,13 @@ class BatchJob:
 
     @property
     def done(self) -> bool:
-        return self.state in TERMINAL_STATES
+        return self.state in TERMINAL_STATES or self.state.endswith(
+            tuple(_TERMINAL_SUFFIXES)
+        )
 
     @property
     def succeeded(self) -> bool:
-        return self.state == "JOB_STATE_SUCCEEDED"
+        return self.state.endswith("SUCCEEDED")
 
 
 class GeminiBatchClient:

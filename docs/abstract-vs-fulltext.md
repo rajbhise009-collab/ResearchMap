@@ -1,17 +1,22 @@
 # Abstract vs. full text — controlled extraction comparison
 
-**Status: PARTIAL — the extraction comparison is blocked on the
-Gemini free-tier daily quota (see below). Methodology and full-text
-coverage are final; the numeric comparison table is PENDING a quota
-reset or a higher-quota key.**
+**Status: COMPLETE.** Both v1.1.0 extraction sets exist (arm 2 abstracts
+standard tier; arm 3 full text via the Gemini batch API, 50% off), all on
+`gemini-3.6-flash` at temperature 0. Numbers below are final, produced by
+`python -m backend.app.corpus.compare_abstract_fulltext`
+(`data/live_samples/abstract_vs_fulltext_numbers.json`).
 
 ## Question
 
 Does extracting from arXiv full text instead of the abstract yield
 materially more of what the reasoning-engine scorers need — own-work
 limitations and future-work items — which the abstract-only run
-starved (~8 own-work limitations, ~6 future-work items across 30
-papers)?
+starved (~0.2 own-work limitations and ~0.2 future-work items per
+paper)?
+
+**Answer: yes, decisively.** Full text lifts own-work limitations
+**11.5×** (0.19 → 2.19 per paper) and future-work items **12.6×**
+(0.14 → 1.76 per paper). See the verdict below.
 
 ## Design (clean single-variable comparison — PAIRED)
 
@@ -26,9 +31,15 @@ venue-mix difference on top of the input-source difference.
 | Axis | Value |
 |:-----|:------|
 | Papers | the **21** papers with both abstract and full text (paired) |
-| Model | `gemini-3.6-flash` (identical) |
-| Prompt | `v1.1.0` (identical, `prompt_hash` identical) |
+| Model | `gemini-3.6-flash` (identical, temp 0) |
+| Prompt | `v1.1.0` (identical, `prompt_hash` `eb8a0554bc13`) |
 | Only variable | input source: **abstract** vs. **full text** |
+
+The abstract arm ran on the synchronous standard tier; the full-text
+arm ran through the **batch API** (50% off, ~93 s turnaround here).
+Batch is the *same model at temp 0* — a delivery mechanism, not a model
+change — so both arms cache under the same `gemini:gemini-3.6-flash`
+identity, and the comparison stays single-variable.
 
 The 30-paper abstract numbers are reported **separately, clearly
 labelled as a different (larger) set**, for context only — they are
@@ -56,117 +67,137 @@ journals). Coverage skews toward on-domain arXiv preprints — which is
 the right direction, since on-domain papers are the ones the reasoning
 engine most needs full text for.
 
-Full-text sizes: 6.5k–99k tokens (mean ~22k). The largest is well
-under Gemini 3.6 Flash's context, so the chunker (`chunk_fulltext`)
-stays dormant on this corpus — a documented safety mechanism, not an
-active path here.
+Full-text sizes: 6.5k–99k tokens (mean ~22k; measured batch input
+averaged 27.3k tokens/paper incl. prompt). The largest is well under
+Gemini 3.6 Flash's context, so the chunker (`chunk_fulltext`) stayed
+dormant on this corpus — a documented safety mechanism, not an active
+path here. No call shipped more than one paper's text; one extraction
+call per paper, no multi-pass.
 
 **The comparison below is over the 21 papers with full text**, so
 that abstract-side and fulltext-side counts are on the same set.
 
-## PAIRED comparison table — PENDING (quota-blocked)
+## PAIRED comparison table (n=21, same papers both columns)
 
-Filled by `python -m backend.app.corpus.compare_abstract_fulltext` once
-both v1.1.0 extraction sets exist. **Both columns are over the SAME 21
-paired papers.**
+Both columns are over the SAME 21 paired papers, same model, same
+prompt — only the input source differs.
 
-| Metric (per paper, n=21 paired) | Abstract (v1.1.0) | Full text (v1.1.0) | Δ / ratio |
-|:--------------------------------|:-----------------:|:------------------:|:---------:|
-| Claims / paper | _pending_ | _pending_ | |
-| Limitations / paper | _pending_ | _pending_ | |
-| **Own-work (`this_work`) limitations / paper** | _pending_ | _pending_ | |
-| Prior-work limitations / paper | _pending_ | _pending_ | |
-| **Future-work items / paper** | _pending_ | _pending_ | |
-| Methodologies / paper | _pending_ | _pending_ | |
-| `source_scope` agreement vs hand labels | _pending_ | _pending_ | |
-| Tokens in / out per paper | _pending_ | _pending_ | |
+| Metric (per paper, n=21 paired) | Abstract (v1.1.0) | Full text (v1.1.0) | ratio |
+|:--------------------------------|:-----------------:|:------------------:|:-----:|
+| Claims / paper | 4.10 | 6.10 | 1.5× |
+| Limitations / paper | 1.29 | 3.62 | 2.8× |
+| **Own-work (`this_work`) limitations / paper** | **0.19** | **2.19** | **11.5×** |
+| Prior-work limitations / paper | 1.10 | 1.43 | 1.3× |
+| **Future-work items / paper** | **0.14** | **1.76** | **12.6×** |
+| Methodologies / paper | 1.19 | 1.48 | 1.2× |
+| Tokens in / out per paper | 1,639 / 1,103 | 27,288 / 2,218 | 16.6× in |
 
-The two bold rows are the whole point: full text must lift own-work
-limitations and future-work items above the threshold where the two
-starved scorers become viable. **The verdict — does it or doesn't
-it — goes here in plain language, including "it doesn't" if that is
-what the numbers say.**
+The two bold rows are the whole point.
 
-### Model caveat — this is a LOWER-BOUND test
+## VERDICT — does full text lift the two starved scorers above viability?
 
-The comparison model is `gemini-2.5-flash-lite` (chosen because the
-free-tier daily allowance on the newer/preview Flash models —
-3.6-flash, 3-flash-preview — is only ~20-25 requests/day on this
-project, too small for the ~81-call experiment; the 2.5 Flash-Lite
-family is what the free tier is actually built around).
+**Yes — unambiguously, and it is the difference between the two
+scorers being runnable and not.**
 
-Flash-Lite is a **smaller model**, and a smaller model may extract
-LESS well from a long full-text input than from a short abstract —
-long-context comprehension is exactly where small models degrade. So
-any measurement here is **biased AGAINST full text**: the full-text
-arm is handicapped relative to what a stronger model would produce.
+- **Persistent-limitations scorer** (needs own-work limitations to find
+  the same limitation recurring across independent papers): abstracts
+  yield **0.19 own-work limitations/paper** — across the 21 papers that
+  is ~4 total, far too sparse to find any limitation attested by
+  multiple papers. Full text yields **2.19/paper** (~46 total over the
+  same 21), an **11.5×** lift. At corpus scale (~200 papers) that is the
+  difference between ~40 own-work limitations (no cross-paper recurrence
+  possible) and ~440 (recurrence detectable). This scorer is **not
+  viable on abstracts and becomes viable on full text.**
 
-This makes the result asymmetric to interpret:
-- **If full text still wins** (lifts own-work limitations and
-  future-work materially above the abstract arm), the finding holds
-  **conservatively** — a stronger model would only widen the gap.
-- **If full text does NOT win**, the result is **ambiguous, not
-  negative** — it could be the small model failing to exploit the
-  full text rather than the full text lacking signal. That outcome
-  requires a re-run on a stronger model before any conclusion.
+- **Orphaned-future-work scorer** (needs future-work items to find
+  directions no later paper addressed): abstracts yield **0.14
+  future-work items/paper** — ~3 total across 21 papers, nothing to
+  reason over. Full text yields **1.76/paper** (~37 total), a **12.6×**
+  lift. Same story at corpus scale: ~40 → ~350 items. This scorer is
+  **not viable on abstracts and becomes viable on full text.**
 
-The verdict section above must state which of these two regimes the
-numbers fall into.
+The lifts are concentrated exactly where they were needed: prior-work
+limitations (already adequately captured from abstracts) barely moved
+(1.3×), while the two starved, own-paper-scoped signals moved an order
+of magnitude. Abstracts systematically omit a paper's own limitations
+and future directions — authors put those in the discussion/conclusion
+sections, which only full text contains. This is the expected
+mechanism, and the data matches it.
+
+**Plain statement:** on abstracts, the persistent-limitations and
+orphaned-future-work scorers do not have enough input to produce
+meaningful output; on full text they do. Phase 3/4 scoring of these two
+gap types must run on full-text extractions, not abstracts.
+
+### Interpretation strength — this is a conservative (lower-bound) result
+
+The comparison model, `gemini-3.6-flash`, is a small/fast "Flash"-tier
+model. A smaller model tends to exploit a long full-text input *less*
+well than a short abstract — long-context comprehension is where small
+models degrade — so this measurement is **biased AGAINST full text**:
+the full-text arm is handicapped relative to a stronger model.
+
+Because full text **wins anyway, and by ~12×**, the finding holds
+**conservatively**: a stronger extraction model would only widen the
+gap, not close it. (Had full text merely tied or lost, the result would
+have been ambiguous rather than negative — but that is not the regime
+the numbers fall into.)
+
+> Note: an earlier draft of this doc named `gemini-2.5-flash-lite` as
+> the comparison model, from a period when free-tier daily quotas forced
+> a model switch. That is superseded — paid billing removed the quota
+> wall and the entire experiment (both v1.1.0 arms) ran on
+> `gemini-3.6-flash`, keeping it directly comparable to the v1.0.0
+> baseline.
 
 ### 30-paper abstract set (CONTEXT ONLY — different, larger set)
 
 Reported separately so it is never confused with the paired
-comparison. These are the v1.1.0 abstract extractions over all 30
-papers (21 paired + 9 abstract_only).
+comparison. v1.1.0 abstract extractions over all 30 papers (21 paired +
+9 abstract_only).
 
 | Metric (per paper, n=30) | v1.1.0 abstract |
 |:-------------------------|:---------------:|
-| Claims / paper | _pending_ |
-| Own-work limitations / paper | _pending_ |
-| Future-work items / paper | _pending_ |
+| Claims / paper | 4.20 |
+| Own-work limitations / paper | 0.20 |
+| Future-work items / paper | 0.20 |
+
+Consistent with the paired abstract column — the 9 abstract_only papers
+do not shift the abstract-side picture, so the paired subset is
+representative of the abstract arm.
 
 ### v1.0.0 → v1.1.0 diff (CONTEXT — 30-paper abstract set)
 
-Whether the v1.1.0 prompt changes moved the numbers vs. the v1.0.0
-baseline (both 30-paper abstract runs, same model).
+Both 30-paper abstract runs, same model (`gemini-3.6-flash`).
 
 | Metric (per paper, n=30 abstract) | v1.0.0 | v1.1.0 | Δ |
 |:----------------------------------|:------:|:------:|:--:|
-| Claims / paper | 5.9 | _pending_ | |
-| Own-work limitations / paper | ~0.4 | _pending_ | |
-| `source_scope` agreement vs hand | 73% | _pending_ | |
-| Promotional claims (spot-check) | present | _pending_ | |
+| Claims / paper | 5.97 | 4.20 | −1.77 |
+| Own-work limitations / paper | 0.33 | 0.20 | −0.13 |
+| Prior-work limitations / paper | 1.07 | 1.07 | 0 |
+| Methodologies / paper | 1.20 | 1.10 | −0.10 |
 
-## Why this is blocked, and how to resume
+v1.1.0 is slightly more conservative on abstracts (fewer claims, fewer
+own-work limitations) — consistent with its tightened `source_scope`
+discipline suppressing over-attribution. This does not affect the
+abstract-vs-fulltext conclusion, which is measured within v1.1.0 on both
+sides. Note that even v1.0.0's more liberal 0.33 own-work
+limitations/paper is still an order of magnitude below full text's 2.19
+— the starvation is a property of abstracts, not of the prompt version.
 
-The `gemini-3.6-flash` **free-tier daily request quota** (`quotaId:
-GenerateRequestsPerDayPerProjectPerModel-FreeTier`) was exhausted by
-today's runs (the v1.0.0 baseline of 30 + the v1.1.0 abstract re-run).
-Confirmed via a `QuotaFailure` response, not inferred.
+## Cost & run accounting (final)
 
-State at the wall:
-- v1.1.0 **abstract** extraction: **8 / 30 complete**, cached.
-- v1.1.0 **fulltext** extraction: **0 / 21**.
-- Full-text retrieval: **21 / 30 complete** (no Gemini quota used).
+| | Arm 2 abstract (std) | Arm 3 full text (batch) |
+|:--|--:|--:|
+| Papers extracted | 21 fresh (+9 cache hits = 30) | 21 |
+| Input tokens | 34,434 | 573,050 |
+| Output tokens | 23,176 | 46,592 |
+| Cost | $0.2255 | $0.6045 |
+| Retries (rpm/tpm/5xx/conn/schema) | 0 / 0 / 0 / 0 / 0 | n/a (batch) |
+| Hard-failures | 0 | 0 |
 
-Everything is cached and idempotent, so resuming loses no work. When
-the quota resets (daily, ~midnight Pacific) OR with a higher-quota
-key, two commands finish the experiment:
-
-```
-# finish the v1.1.0 abstract run (22 remaining; 8 are cache hits)
-python -m backend.app.corpus.run_live_extraction
-
-# run the v1.1.0 fulltext extraction over the 21 full-text papers
-python -m backend.app.corpus.run_live_extraction --input-source fulltext
-```
-
-Then this table gets filled from the two runs' per-paper reports and
-the cached extractions, and `PROGRESS.md` updated.
-
-**Alternative if you don't want to wait:** approve a different free
-model with a separate daily quota (e.g. `gemini-2.5-flash-lite`, still
-available). Caveat: that makes v1.1.0 not directly comparable to the
-`gemini-3.6-flash` v1.0.0 baseline — but the abstract-vs-fulltext
-comparison stays internally valid as long as BOTH sides use the same
-model. Set `GEMINI_MODEL` and the client validates it at startup.
+**Total spend: $0.83** (of the $3 cap; under the $1.16 pre-spend
+projection). Dry-run over-estimated input (661k projected vs 573k
+actual) — over-estimate in the safe direction, as intended. The 9
+cached v1.1.0 abstracts registered as HITS, not re-extractions, as
+verified by the dry-run before any paid call.

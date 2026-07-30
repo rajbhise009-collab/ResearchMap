@@ -180,13 +180,66 @@ recommendation — too broad to translate into a research program.
   retrospective test filters any paper whose OpenAlex `updated_date`
   or `created_date` post-dates the frozen cutoff.
 - Mixed-fidelity corpus bias: full-text papers yield several times
-  more limitations and future-work items than abstract-only papers,
-  and full-text availability tracks venue (arXiv vs journal-only),
-  not scientific merit. Any scorer that counts independent papers
-  reporting something will therefore systematically over-represent
-  arXiv-available work. This is structural — ~30% of any corpus is
-  abstract-only — so it must be corrected for in scoring, not solved
-  by better retrieval.
+  more limitations and future-work items than abstract-only papers
+  (measured: ~2.8× limitations, ~11× own-work limitations, ~12×
+  future-work — see `docs/findings/fulltext-vs-abstract-finding.md`),
+  and full-text availability tracks venue and OA status, not scientific
+  merit. Any scorer that counts independent papers reporting something
+  will therefore systematically over-represent full-text-available work.
+  This is structural and must be corrected for in scoring, not solved by
+  better retrieval alone.
+
+  **Severity is a function of coverage — record it per corpus.** The
+  bias is not a fixed constant; it scales with the abstract-only share:
+  - At **19% full text** (the expanded corpus *before* OA recovery), the
+    bias was **severe, not marginal**: the two full-text-dependent
+    scorers effectively ran on n=38 of 200 papers, so limitation-derived
+    gaps would have over-represented arXiv-preprint-culture work almost
+    entirely — the 162 abstract-only papers contributed structure and
+    prior-work limitations but almost no own-work limitations or
+    future-work. At that level the persistent-limitations and
+    orphaned-future-work scorers are measuring "who posts to arXiv," not
+    the field.
+  - After Unpaywall + Europe PMC OA recovery, coverage is **54.5%
+    full text** (109/200; arXiv 38, Unpaywall 63, Europe PMC 8). At this
+    level the bias is **moderate, no longer severe**: the full-text
+    scorers now draw from n=109 (≈3× the pre-recovery n=38), and full
+    text is the majority of the corpus. The 45.5% abstract-only share is
+    still above the ~30% baseline of any corpus, so the mixed-fidelity
+    correction (weight or gate by `input_source`) is **still required** —
+    but the corpus is no longer dominated by abstract-only papers, and
+    the full-text-dependent scorers are now defined on a real majority of
+    the corpus rather than a small arXiv-skewed slice.
+
+  Because full-text availability correlates with venue/OA rather than
+  merit, the residual 45.5% abstract-only papers are not random: they
+  skew toward closed/hybrid journal work. Scoring must treat
+  `abstract_only=true` as a fidelity flag, not drop those papers.
+- **Small-corpus false positives.** Below a corpus size that plausibly
+  contains the addressing work, several scorers report artifacts of
+  corpus size rather than the field's behaviour:
+  - *Orphaned-future-work scoring.* "No paper addressed this
+    future-work statement" is only meaningful if a paper that *would*
+    have addressed it is plausibly in the corpus. In a small corpus
+    nearly every future-work item reads as unaddressed — not because
+    the field ignored it, but because the corpus is a reading list, not
+    a field snapshot. The scorer becomes unfalsifiable: it cannot
+    distinguish a genuinely orphaned direction from one whose follow-up
+    simply was not ingested.
+  - *Structural-hole and disjoint-bridging scorers* are undefined below
+    the size at which papers form actual clusters rather than a flat
+    reading list. A "hole" between two literatures, or a "bridge"
+    joining them, presupposes that the two literatures are each
+    represented densely enough to be clusters; with tens of papers
+    there are no clusters, only points, and the geometry these scorers
+    read does not yet exist.
+
+  Countermeasure: expand the corpus (snowball from the on-domain seeds,
+  both citation directions, with an AI-subfield gate) to a size where
+  the addressing/clustering work is plausibly present before running
+  any of these scorers. This is a precondition, like corpus purity — a
+  scorer run below its defined corpus size produces confident output
+  that is an artifact of the input, not a finding.
 
 ## Matching rule for retrospective validation
 

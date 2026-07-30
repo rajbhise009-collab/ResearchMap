@@ -2,11 +2,14 @@
 
 from backend.app.models.schemas import (
     Claim,
+    ClaimEmbedding,
     ClaimRelationship,
     ClaimType,
     Confidence,
     Evidence,
     FutureWork,
+    FutureWorkAddressal,
+    FutureWorkLabel,
     GapType,
     Limitation,
     LimitationScope,
@@ -21,11 +24,14 @@ from backend.app.models.schemas import (
 
 __all__ = [
     "Claim",
+    "ClaimEmbedding",
     "ClaimRelationship",
     "ClaimType",
     "Confidence",
     "Evidence",
     "FutureWork",
+    "FutureWorkAddressal",
+    "FutureWorkLabel",
     "GapType",
     "Limitation",
     "LimitationScope",

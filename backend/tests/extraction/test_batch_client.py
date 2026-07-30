@@ -66,6 +66,16 @@ def test_batchjob_terminal_flags():
     assert not BatchJob("x", "JOB_STATE_RUNNING").done
 
 
+def test_batchjob_terminal_flags_batch_state_prefix():
+    # The live v1beta API reports BATCH_STATE_*, not JOB_STATE_*.
+    # Regression: terminal detection must match on the state suffix.
+    assert BatchJob("x", "BATCH_STATE_SUCCEEDED").succeeded
+    assert BatchJob("x", "BATCH_STATE_SUCCEEDED").done
+    assert BatchJob("x", "BATCH_STATE_FAILED").done
+    assert not BatchJob("x", "BATCH_STATE_FAILED").succeeded
+    assert not BatchJob("x", "BATCH_STATE_RUNNING").done
+
+
 def test_results_maps_text_by_key():
     job = BatchJob("x", "JOB_STATE_SUCCEEDED", raw={
         "response": {"inlinedResponses": {"inlinedResponses": [

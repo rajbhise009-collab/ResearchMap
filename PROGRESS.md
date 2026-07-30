@@ -1409,6 +1409,387 @@ unverified. It does not affect this run: the key is free-tier with no
 card, so nothing was billed regardless. All dollar figures in this
 section are labelled "reference only".
 
+## Structural holes: k-artifact check + LLM-confirm — 2026-07-30 — STOP
+
+Two checks on the semantic structural-hole matcher.
+
+**1. Flat-in-N was a fixed-k artifact (CORRECTED).** With fixed k=8, cluster
+pairs cap at k(k-1)/2=28 regardless of N, so flat yield was by construction
+(and ~12 was hitting the output cap). Uncapped sweep with k∝N
+(`structural_k_sweep.py`): yield RISES with N — k=N/10 gives 2.8→19.2 over
+N=40→100, tracking cluster-pairs; even fixed-k=8 rises 9.6→14 uncapped.
+**docs/findings/corpus-scaling-study.md corrected**: structural-hole yield
+is size-DEPENDENT, not independent. Made k + output-cap parameters on the
+scorer (default k=8 kept).
+
+**2. LLM-confirmed the 12 leads** (dry-run $0.022 < $0.25 gate; batch,
+classification only). Verdicts: **2 substantive**, 3 trivial (larger-eval /
+apply-to-dataset), 7 not-addressing (topical adjacency). So the semantic
+shortlist has ~1-in-6 substantive precision; confirmation is essential.
+Survivors: multi-component hallucination metric vs "semantic entropy
+doesn't guarantee factuality"; SelfCheckGPT vs "API-only models can't be
+evaluated with self-familiarity". Review section rewritten with
+confirmed/rejected status per lead. 213 tests green.
+
+## Structural-hole matcher fixed (semantic) — 2026-07-30 — STOP
+
+Free, no API calls. The scaling study flagged structural holes as
+method-limited (token-overlap fired 0 at every N). Replaced the
+token-overlap proxy with **claim-embedding cosine**: a cluster-A
+method-type claim matched to the claims of a cluster-B paper that carries
+an own-work limitation (open-problem gate), clusters weakly citation-
+bridged. Limitations are NOT separately embedded (would be a paid call);
+B's area is represented by its claim embeddings, limitation text in the
+evidence trail. Semantic shortlist, not LLM-confirmed.
+
+- **Result: 0 → ~10 leads at every N** (scaling re-run: 9.4/7.8/11/9.6/12
+  across N=40..113; slope 0.24 ≈ flat). Token overlap WAS the bottleneck —
+  the signal exists (plausible leads, e.g. a hallucination method matched
+  to SelfCheckGPT's 238-passage eval limitation) but is size-INDEPENDENT:
+  more papers don't add leads, the matcher did.
+- Fixed a k-means order-sensitivity (sort paper ids) so the curve is stable.
+- 12 leads added to `scratch/opportunities_review.md` (dedicated section,
+  all flagged semantic-lead-not-finding). Full 4-scorer scaling finding
+  updated: `docs/findings/corpus-scaling-study.md`.
+- 213 tests green (+2 structural-hole fixtures). Next lever (documented,
+  not done): an LLM confirm step over the ~10 leads to separate leads from
+  findings — bounded cost, corpus-size-independent.
+
+## Corpus corrected + Phase 4 re-scored — 2026-07-29 — HARD STOP
+
+Five fixes from the investigation, in order. Only step 4 spent (dry-run
+gated $1). True final corpus **113 unique papers** (was 200).
+
+- **1. Dedup at root**: `build_expanded_manifest.py` now uses the full
+  4-pass `deduplicate()` with author data (pass #4 arXiv-DOI-aware).
+  `finalize_corpus.py` applied it to the live corpus + filtered every
+  downstream store (no orphaned refs). **2 duplicate pairs collapsed**
+  (the hallucination survey preprint/published; a clinical-safety
+  medRxiv/npj pair) — this is why #1 and #11 were the same contradiction.
+- **2. Rubric default fixed**: removed the `arxiv`-in-allowlist auto-include;
+  changed no-signal default from borderline→**exclude**; added a
+  STRONG_TOPIC set so foundational pre-LLM calibration/selective-prediction
+  work is kept without an LLM anchor. **89→85 excluded** (relabel);
+  #14 (Least Ambiguous Set-Valued Classifiers) confirmed IN. ~4 legit
+  calibration classics recovered by the strong-topic terms.
+- **3. Same-construct gate**: config `reason_gated_categories`; overloaded
+  categories (computational-cost) split by sub-construct
+  (evaluation/training/inference/sampling/memory) before clustering. The
+  5-paper computational-cost "agreement" (really ≥4 bottlenecks) no longer
+  fires.
+- **4. Regime-aware contradiction re-run** (cheap partial, $0.51 < $1 gate):
+  v1.1 pair prompt feeds sibling claims as regime context; NO schema field,
+  NO re-extract. Result: **0 contradictions** (was 2) — the temperature/
+  hallucination pair was a regime artifact, now correctly "none". Claim.
+  condition schema field documented as backlog (~$5.40) in docs.
+- **5. Re-scored**: persistent_limitations **1**, contradictions **0**,
+  orphaned_future_work **63** (all weak/corpus-relative), structural_holes
+  **0**, disjoint OFF. Fresh `scratch/opportunities_review.md` (15/15 top
+  flagged weak). The strongest prior signal was a false positive; the
+  corrected engine finds almost nothing solid — the honest truth of a
+  113-paper corpus.
+- 211 tests green. HARD STOP — re-scored output is Raj's to judge.
+
+## Phase 4 reasoning engine — 2026-07-26 — HARD STOP for Raj's judgement
+
+Deterministic Python only; no LLM in scoring (audited: no `generate()`,
+no `Claim.confidence` read). Five scorers, each pure
+`(ReasoningCorpus)->list[Opportunity]`, traced to opportunity-criteria.md
+with deviations flagged (not invented). Design: `docs/reasoning-engine.md`.
+
+- **Yield (honest, thin by design)**: persistent_limitations 5,
+  unresolved_contradictions 2, orphaned_future_work 108 (each weak/corpus-
+  relative), structural_holes 2 (coarse token proxy), disjoint_bridging 0
+  (OFF by default, under-specified in the doc).
+- **Mixed-fidelity correction** implemented (`fidelity.py`, abstract
+  up-weighted 3x dampened inverse-propensity, config). Reported both ways;
+  a NO-OP on the current qualifying set because all 5 categories reaching
+  the 3-paper floor are 100% full-text — the bias made visible (abstract
+  papers yield 15/254 own-work lims, never reach the floor).
+- **Independence** (first-author collapse) uses OpenAlex authors (free,
+  fetched+cached, 200/200). **Ranking** = score×confidence (trust-weighted);
+  top item is the genuine temperature↔hallucination contradiction.
+- Traceability flags: diversity/time-span boosters and "absence of
+  resolution" are NOT in the criteria doc (resolution unverifiable — no
+  limitation-resolution relation); stated, not faked.
+- Output: `scratch/opportunities_review.md` (top 15, 12 flagged weak),
+  `data/reasoning/opportunities.jsonl`. 211 tests green (+11 scorer fixtures).
+- **HARD STOP** (autonomy policy c): Raj judges the ranked output before
+  Phase 5/6. Not tuned against the seed corpus.
+
+## Two-stage future-work matcher + citation prior — 2026-07-26 — STOP
+
+Fixed future-work matching architecturally (not by threshold). Phase 4
+NOT started.
+
+- **Two-stage matcher** (`future_work_llm.py`, `run_futurework_match.py`):
+  cosine shortlist (0.70, recall-first) → LLM classifies each (FW, later-
+  paper) pair addressed/partial/not_addressed + justification + addressing
+  element. Classification only; persisted as `FutureWorkAddressal` rows
+  (Pydantic + table + migration 008, drift-tested) with full provenance,
+  same as ClaimRelationship. Dry-run gated LLM spend at $1 (corrected
+  pricing): 491 candidates, projected $0.85, actual ~$0.85.
+- **Re-measured on the same 40 hand labels**: raw cosine 0.74 → P=0.41
+  R=0.70 F1=0.52; **two-stage (addressed+partial) → P=0.64 R=0.90 F1=0.75**.
+  Genuinely fixes the signal (precision AND recall rise), not just moves
+  noise. addressed+partial preferred (recall 0.90 = few false orphans).
+- **Citation prior** (deterministic, free): `cites_source` recorded per
+  candidate from the 343 citation edges; never LLM-weighted. HONEST result:
+  **0 of the 40 labelled pairs carry a citation edge** (50/491 corpus-wide),
+  so improvement is UNMEASURABLE on this set — recorded, not claimed.
+- **New distribution (n=312)**: addressed 26 / partial 34 / unaddressed
+  134 (43%) / indeterminate 118 (38%). Corpus-relative caveat retained.
+- **Paraphrase test** (task 4, <$0.01, embeddings only): 9/10 reworded
+  planted contradictions still clear 0.78 vs source ⇒ shortlist likely not
+  the contradiction bottleneck. Number reported; nothing proposed.
+- 200 tests green (+5). LLM boundary, corrected thinking-token pricing,
+  model-in-key, prompt hashing, input_source provenance, v1.1.0 prompt all
+  kept. No model switch.
+
+## Pin FW threshold + correct probe scope — 2026-07-26 — STOP
+
+Two measurement tasks before Phase 4. Phase 4 NOT started.
+
+**1. Future-work match threshold pinned by measurement (0.80 → 0.74).**
+Hand-labelled 40 items in the sensitive [0.70,0.80) band (in-session, no
+LLM spend): does a later corpus paper actually address the item? P/R vs
+labels — 0.74 is the F1 optimum (P=0.41, R=0.70) and favours recall (a
+missed match = a FALSE orphan, the costly error). The old 0.80 called 0/40
+band items addressed though 10 (25%) genuinely were — it manufactured
+orphans. **Honest finding: precision peaks at ~0.57 at ANY threshold —
+future-work↔claim cosine is a weak signal; the orphan scorer inherits the
+noise.** New distribution at 0.74 + guard(K=5,T=0.65): addressed 82,
+unaddressed 113 (36%), indeterminate 117 (37%). K/T NOT independently
+pinnable from this labelled set (they govern a corpus-counterfactual, not
+match correctness) — stated, not guessed. Worksheet:
+`scratch/futurework_audit.md`. Docs: `docs/relationship-layer.md`.
+
+**2. Probe scope corrected in docs.** The recall probe (10/10, 0 FP)
+validates the CLASSIFIER given a shortlisted pair — it does NOT validate
+the SHORTLIST. Planted contradictions were built by negating source claims,
+so their 0.84–1.0 cosine is a construction artifact, not evidence real
+cross-paper contradictions clear 0.78. Recorded "shortlist recall on
+naturally-worded contradictions is UNMEASURED" as a known limitation, and
+proposed (did not run) a <$0.01 paraphrase test to measure it.
+
+- 195 tests green. LLM boundary intact; thinking-token pricing, model-in-key,
+  prompt hashing, input_source provenance, v1.1.0 prompt all kept. No model switch.
+
+## Pre-Phase-4 measurement (cost / recall / orphan guard) — 2026-07-26 — STOP
+
+Three measurement tasks before Phase 4. Phase 4 NOT started.
+
+**0. Cost reconciliation.** Console ~$7 vs tracked $4.16. Cause found:
+**uncounted thinking tokens.** gemini-3.6-flash bills `thoughtsTokenCount`
+at the output rate; accounting counted only `candidatesTokenCount`. Rates
+themselves are CORRECT ($1.50/$7.50, batch 50% off — verified 2 sources +
+reconciliation). Corrected cumulative **~$6.9 ≈ console $7** (thinking
+adds ~$2.6; contradiction batch had 139k thinking vs 17k output). No
+mystery billing — gap fully explained; pre-billing free-tier runs were
+genuinely $0. New `extraction/pricing.py` (single source of truth,
+`billed_output_tokens` = candidates + thoughts); dry-run OUT estimates
+corrected (contradiction 40→380/pair). **Every gate was ~1.7x too loose;
+now fixed. Remaining budget: ~$3 of $10.**
+
+**1. Contradiction recall — classifier is NOT biased.** 24-pair labelled
+probe (10 planted contradictions by flipping direction/magnitude/negation
++ genuine supports + unrelated controls) through the existing classifier:
+**recall 10/10 (100%), FP 0/14 (0%)**, supports 7/7, unrelated 7/7.
+Planted contradictions cosine 0.84–1.0 (0/10 below the 0.78 shortlist).
+⇒ The 148:2 supports:contradicts ratio is a **true corpus property**, not
+bias. **No prompt v1.1 and no threshold change warranted** (0.74 would
+cost $3.04, over gate + budget, adding only support/none pairs). Residual
+limitation noted: probe tests lexically-similar contradictions; very
+differently-worded cross-paper contradictions could sit below 0.78.
+
+**2. Small-corpus guard recalibrated.** Old guard (any later papers ≥10)
+gave a non-credible 91% orphan rate. New criterion: orphaned only if ≥
+`min_near_later` (5) later papers are TOPICALLY NEAR (claim cosine ≥ 0.65)
+and none matched — else indeterminate. New distribution: **13 addressed /
+177 unaddressed (57%) / 122 indeterminate (39%)**. **~39% of future-work
+items cannot support an orphan judgment at all** at n=200 (was 5%).
+Documented in `docs/relationship-layer.md`: orphan claims are
+corpus-relative, always reported with the coverage caveat; Phase 4 must
+treat indeterminate as unscoreable. K/T tunable.
+
+- 195 tests green (+9). LLM boundary intact (classification only). No
+  model switch.
+
+## Phase 3 relationship layer — 2026-07-25 — STOP for review
+
+Deterministic cross-paper relationship layer over the 200-paper corpus.
+LLM perceives single pairs; all numbers are code. Design +
+calibration: `docs/relationship-layer.md`.
+
+- **Schema**: added provenance to ClaimRelationship (both paper ids,
+  detector_model, prompt_hash, similarity) + ClaimEmbedding model/table
+  (records input_source); migration 007. Pydantic fields == ORM columns
+  == DDL, enforced by a drift test.
+- **Storage**: file-backed (`data/relationships/`), serialized from the
+  models; numpy cosine. Scale-dependent choice (Postgres ~Phase 6 / tens
+  of thousands of claims). DATABASE_URL path kept + tested on SQLite.
+- **Embeddings**: `gemini-embedding-001` (768-dim), behind an interface
+  with a deterministic mock. 1022 claims + 312 future-work embedded.
+- **Shortlist**: cosine, threshold 0.78 (calibrated) + cap 10/claim,
+  cross-paper. 522k naive pairs → **437 candidates**. Config-driven.
+- **Contradiction**: LLM classifies each pair (batch, 50% off); weight =
+  similarity × input-source fidelity (deterministic, no confidence).
+  **150 relationships: 148 supports + 2 contradicts** (287 none). The 2
+  contradictions are genuine (decoding-temperature vs hallucination).
+- **Citation graph**: 343 intra-corpus edges from OpenAlex
+  referenced_works (free).
+- **Future-work**: 312 items → 13 addressed, 284 unaddressed, **15
+  indeterminate_small_corpus** (refused to call orphaned when too few
+  later papers exist).
+- **Dry-run gate $3**: projected $0.20; actual **$0.157** contradiction +
+  ~$0.008 embeddings. Batch collection re-verified (437/437); resumable
+  batch state added after a mid-run crash (float32 cosine >1.0 clamp fix)
+  let the completed batch be reused with no re-pay.
+- 191 tests green (+25). Phase 4 (reasoning engine) NOT started — Raj
+  reviews the relationships first.
+
+## OA full-text recovery 19% → 54.5% — 2026-07-25 — STOP for review
+
+The snowball expansion collapsed full-text coverage to 19% (38/200),
+leaving the full-text-dependent scorers effectively on n=38. Recovered
+non-arXiv OA full text to lift it.
+
+- **OA retrieval** (`ingestion/oa_fulltext.py`): Unpaywall primary
+  (`api.unpaywall.org/v2/{doi}?email=`; take first `oa_locations` PDF,
+  pypdf-extract) + Europe PMC secondary (search `DOI:` → PMCID → `/{PMCID}/
+  fullTextXML`, JATS <body> text, refs dropped). Both interfaces verified
+  live, not assumed. Refactored `fetch_pdf_text` → generic
+  `fetch_pdf_text_from_url`. Free.
+- **Recovery** (`corpus/recover_oa_fulltext.py`): 162 abstract-only
+  papers attempted, **71 recovered** (63 Unpaywall, 8 Europe PMC).
+  Full text **38 → 109 (19% → 54.5%)**; 91 still abstract_only (kept
+  flagged). Full-text source: arXiv 38, Unpaywall 63, Europe PMC 8.
+  Manifest hash `44981e91c40dfe6d`.
+- **Re-extraction**: dry-run $2.52 < $6 gate, 129 HITS pre-verified,
+  actual **$1.78** (71-batch, collection re-verified 71/71). The earlier
+  hard-fail `W4416154989` resolved — Europe PMC full text → valid JSON.
+  **Corpus now 200/200 extracted.**
+- **Mixed-fidelity severity** re-assessed in `docs/opportunity-criteria.md`:
+  severe at 19% (n=38), moderate at 54.5% (n=109); correction still
+  required (45.5% abstract-only > 30% baseline).
+- **Cumulative paid spend ~$3.99 — has crossed the $3 cap figure**;
+  flagged for Raj to confirm billing cap. 166 tests green. Phase 3 NOT
+  started.
+
+## Corpus expanded 34 → 200 via snowball — 2026-07-25 — STOP for review
+
+Reason: 34 papers too small for the size-dependent Phase-3 scorers. Added
+the "Small-corpus false positives" failure mode to
+`docs/opportunity-criteria.md` (orphaned-future-work unfalsifiable, and
+structural-hole/bridging undefined, below clustering size).
+
+- **Snowball** (`snowball.py`): bounded citation walk from 26 core seeds,
+  both directions, depth 2, soft AI gate + LLM-anchor rescue, heuristic
+  labelling. 494 traversed → 166 kept (53% yield), trimmed to hit 200
+  total. 39 OpenAlex credits, **$0**. Handled failure modes #4 (hub-seed
+  dominance: one survey gave 89% of corpus → capped to 21%), #6 (23/26
+  seeds have 0 refs in OpenAlex; only 10/26 seeds contribute directly;
+  hop-2 fills target), #3 (labeller field-denylist hard-dropping
+  mis-tagged on-domain papers → added title-level rescue; on-domain
+  64→86).
+- **Composition**: 200 papers (109 core, 91 peripheral; 34 original + 166
+  snowball). Manifest hash `3e8e67d1907fd2ec`.
+- **⚠️ Full-text coverage 82% → 19%** (38/200): snowball reached
+  journal literature (Nature/Springer/Elsevier), low arXiv overlap
+  (156/166 no arXiv preprint). Size-dependent scorers benefit regardless;
+  full-text-dependent scorers (persistent-limitations,
+  orphaned-future-work) now draw from only 38 full-text papers. Non-arXiv
+  OA retrieval (Unpaywall/Europe PMC) not built — flagged for Raj.
+- **Extraction**: BATCH, 199 HITS pre-verified, dry-run $1.75 < $6 gate,
+  actual **$1.18** (167-batch). 199/200 cached; 1 permanent hard-fail
+  (`W4416154989`, bare-array output both attempts). Fixed a collect crash
+  (non-object JSON now a hard-fail, not a crash). Batch collection
+  re-verified: 167/167 and 1/1 count-guards passed.
+- **Audit sample**: `data/live_samples/snowball_audit_sample.md` (15
+  papers) — the only human-review artifact. Known residual false positive
+  flagged (ARC benchmark labelled core).
+- **Cumulative paid spend ~$2.21.** New tooling: `snowball.py`,
+  `domain_corpus.py`, `build_expanded_manifest.py`, `build_audit_sample.py`,
+  `run_batch_corpus.py`. Report: `CORPUS_REPORT.md`. Phase 3 NOT started.
+
+## Domain corpus built at full text — 2026-07-25 — STOP for review
+
+Acting on the finding: full text required for the two discussion-section
+scorers. Built the full labelled **domain corpus at full text**. Phase 3
+NOT started — awaiting review of spend + composition.
+
+- **Finding promoted** to `docs/findings/fulltext-vs-abstract-finding.md`
+  (citable: paired n=21, 11.5× own-work limits, 12.6× future-work,
+  prior-work flat as negative control, lower-bound framing).
+- **Batch bug flagged** in `docs/batch-and-caching.md`: batch has run
+  twice now; the `BATCH_STATE` vs `JOB_STATE` status-string bug is
+  documented; per-run collect-verification (results == submitted) made
+  mandatory. Re-verified on this run: 7/7 returned inline.
+- **Corpus: 34 papers** (26 core on-domain + 8 peripheral borderline,
+  tagged `domain_centrality`; borderline KEPT). 26 excluded (25
+  off-domain + 1 hard-excluded), all recorded with reasons in the
+  manifest. This is the entire labelled domain set, not a sample.
+- **Full text 27/34 (79.4%)**; 7 abstract-only flagged `abstract_only=
+  true` (all `no-arxiv-id`). Retrieval recovered 6 new full texts (21→27).
+- **New tooling**: `domain_corpus.py` (selector + centrality),
+  `build_corpus_manifest.py` (retrieve + manifest + hash),
+  `run_batch_corpus.py` (`--dry-run`/`--submit`/`--collect`, per-paper
+  input_source, count-guard).
+- **Dry-run gate ($5)**: projected $0.2588, 27 prior extractions
+  confirmed as HITS before any paid call. Actual batch spend **$0.1999**
+  (7 calls, 195,868 in / 14,123 out). Post-run: **34/34 cached, $0
+  remaining**. Manifest hash `e1edaeba3092d1cb`.
+- **Cumulative paid extraction spend ~$1.03** of the $3 cap.
+- Full report: `CORPUS_REPORT.md`. 161 tests green. No model switch;
+  pacing/retry/provenance machinery intact.
+
+## Abstract-vs-fulltext comparison COMPLETE — 2026-07-25 — paid tier
+
+The quota wall (below) is resolved: paid billing (>$3 account cap) let
+both v1.1.0 arms finish on `gemini-3.6-flash` (temp 0), keeping full
+comparability with the v1.0.0 baseline. **No model switch.**
+
+### Run
+
+- **Arm 2 — v1.1.0 abstracts, standard tier**: 30/30 (9 cache HITS +
+  21 fresh), 0 hard-fails, 0 retries of any kind, 0 daily-quota hits.
+  34,434 in + 23,176 out tokens → **$0.2255**. Effective 3.1 RPM (8 cap).
+- **Arm 3 — v1.1.0 full text, BATCH API (50% off)**: 21/21 cached,
+  0 hard-fails. Batch SUCCEEDED in ~93 s, results inline. 573,050 in +
+  46,592 out tokens → **$0.6045**. Cached under the sync
+  `gemini:gemini-3.6-flash` identity (batch = same model, delivery only)
+  so the paired comparison finds it.
+- **Total spend $0.83** — under the $1.16 pre-spend dry-run projection
+  and the $1.50 gate. Dry-run over-estimated input (661k vs 573k actual;
+  safe direction). Mandatory dry-run confirmed the 9 cached abstracts as
+  HITS before any paid call.
+- Bug caught pre-collect: live API reports `BATCH_STATE_*`, not
+  `JOB_STATE_*`; terminal-state check fixed to match on suffix. 79/79
+  extraction tests green.
+
+### Result — VERDICT (see `docs/abstract-vs-fulltext.md`)
+
+Paired, n=21, single variable = input source:
+
+| per paper | abstract | full text | ratio |
+|:--|--:|--:|--:|
+| **own-work limitations** | **0.19** | **2.19** | **11.5×** |
+| **future-work items** | **0.14** | **1.76** | **12.6×** |
+| prior-work limitations | 1.10 | 1.43 | 1.3× |
+| claims | 4.10 | 6.10 | 1.5× |
+
+**Full text lifts the two starved scorers (persistent-limitations,
+orphaned-future-work) an order of magnitude — from non-viable on
+abstracts to viable.** Lift is concentrated exactly on own-paper-scoped
+signals (authors put limitations/future work in discussion sections,
+which only full text contains); prior-work limitations, already captured
+from abstracts, barely moved. Conservative finding: `gemini-3.6-flash`
+is a small model that *under*-exploits long context, biasing the test
+AGAINST full text — it wins anyway. **Phase 3/4 scoring of these two gap
+types must use full-text extractions.** New tooling:
+`run_batch_fulltext.py`, `dryrun_cost.py`, `compare_abstract_fulltext.py`.
+Phase 3 NOT started (per instruction).
+
 ## v1.1.0 prompt + Phase 1.5 full text — 2026-07-23 — PARTIAL (quota wall)
 
 ### Done and committed

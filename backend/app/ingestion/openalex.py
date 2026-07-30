@@ -171,6 +171,49 @@ class OpenAlexClient(LitSource):
             base_params=params, limit=limit, endpoint_label=endpoint_label
         )
 
+    def raw_works(
+        self,
+        *,
+        filter: str,
+        sort: str | None = None,
+        limit: int,
+        per_page: int = 50,
+    ) -> Iterator[dict]:
+        """Yield RAW OpenAlex Work records (not normalized Paper objects)
+        for a filter query. Snowball traversal needs raw fields
+        (`referenced_works`, `topics`, `cited_by_count`,
+        `abstract_inverted_index`) that the Paper model drops.
+
+        1 credit per page (filter-only list endpoint). Paginates by
+        cursor up to `limit` records.
+        """
+        if limit <= 0:
+            return
+        remaining = limit
+        cursor = "*"
+        while remaining > 0:
+            params = {
+                "filter": filter,
+                "per-page": str(min(per_page, remaining)),
+                "cursor": cursor,
+            }
+            if sort:
+                params["sort"] = sort
+            payload = self._request(path="/works", params=params,
+                                     endpoint_label="works.list")
+            body = payload.get("body") or {}
+            results = body.get("results") or []
+            if not results:
+                return
+            for record in results:
+                if remaining <= 0:
+                    return
+                yield record
+                remaining -= 1
+            cursor = (body.get("meta") or {}).get("next_cursor")
+            if not cursor:
+                return
+
     def get_by_id(self, paper_id: str) -> Paper | None:
         """Singleton fetch — free (0 credits)."""
         native = paper_id.split(":", 1)[-1] if paper_id.startswith("openalex:") else paper_id

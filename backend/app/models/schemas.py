@@ -178,14 +178,85 @@ class ClaimRelationship(_Base):
     from_claim_id: NonEmptyStr
     to_claim_id: NonEmptyStr
     type: RelationshipType
+    # `weight` is computed by DETERMINISTIC Python (see
+    # relationships/weighting.py), never returned by an LLM. The LLM only
+    # perceives the relationship *type* for a single pair; all numbers are
+    # code. Must not read Claim.confidence (see docs/confidence-policy.md).
     weight: Confidence
     evidence_note: str | None = None
+    # --- Provenance (Phase 3). No orphan conclusions: a relationship must
+    # trace to both source papers, the detector model, and the prompt. ---
+    from_paper_id: str | None = None
+    to_paper_id: str | None = None
+    detector_model: str | None = None
+    prompt_hash: str | None = None
+    # Cosine similarity of the two claim embeddings that shortlisted this
+    # pair — a deterministic input to `weight`, recorded for audit.
+    similarity: float | None = Field(default=None, ge=-1.0, le=1.0)
 
     @field_validator("to_claim_id")
     @classmethod
     def _no_self_loop(cls, v: str, info) -> str:
         if v == info.data.get("from_claim_id"):
             raise ValueError("ClaimRelationship cannot point a claim at itself")
+        return v
+
+
+class FutureWorkLabel(str, Enum):
+    ADDRESSED = "addressed"
+    PARTIAL = "partial"
+    NOT_ADDRESSED = "not_addressed"
+
+
+class FutureWorkAddressal(_Base):
+    """An LLM verdict on whether a LATER paper addresses an EARLIER paper's
+    future-work item — the two-stage matcher's structured output (cosine
+    shortlist → LLM classification), with the same provenance discipline as
+    ClaimRelationship. The LLM sets `label`/`justification` (perception);
+    every number/flag (`similarity`, `cites_source`) is deterministic code.
+    """
+
+    id: NonEmptyStr
+    future_work_id: NonEmptyStr
+    from_paper_id: NonEmptyStr        # paper that raised the future-work item
+    to_paper_id: NonEmptyStr          # candidate later paper
+    label: FutureWorkLabel
+    justification: str | None = None
+    addressing_element: str | None = None   # the claim/method that addresses it
+    similarity: float = Field(ge=-1.0, le=1.0)   # FW <-> best claim cosine (deterministic)
+    cites_source: bool = False        # citation prior (deterministic): to cites from
+    detector_model: str | None = None
+    prompt_hash: str | None = None
+
+    @field_validator("to_paper_id")
+    @classmethod
+    def _no_self(cls, v: str, info) -> str:
+        if v == info.data.get("from_paper_id"):
+            raise ValueError("a paper cannot address its own future work")
+        return v
+
+
+class ClaimEmbedding(_Base):
+    """A claim's embedding vector plus the provenance needed for
+    mixed-fidelity correction. `input_source` (abstract | fulltext) is
+    recorded because full-text and abstract extractions differ in yield
+    and a downstream scorer must be able to weight by it."""
+
+    claim_id: NonEmptyStr
+    paper_id: NonEmptyStr
+    input_source: str
+    model: NonEmptyStr
+    dim: int = Field(ge=1)
+    # Named `embedding` to match ClaimEmbeddingRow.embedding so the model
+    # round-trips to the DB row field-for-field (schema-drift guard).
+    embedding: list[float] = Field(min_length=1)
+
+    @field_validator("embedding")
+    @classmethod
+    def _dim_matches(cls, v: list[float], info) -> list[float]:
+        dim = info.data.get("dim")
+        if dim is not None and len(v) != dim:
+            raise ValueError(f"embedding length {len(v)} != declared dim {dim}")
         return v
 
 
@@ -234,6 +305,9 @@ class PaperExtraction(_Base):
 __all__ = [
     "ClaimType",
     "ClaimRelationship",
+    "ClaimEmbedding",
+    "FutureWorkAddressal",
+    "FutureWorkLabel",
     "Claim",
     "Confidence",
     "Evidence",

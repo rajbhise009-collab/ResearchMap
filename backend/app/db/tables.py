@@ -224,8 +224,68 @@ class ClaimRelationshipRow(Base):
         String, ForeignKey("claims.id", ondelete="CASCADE"), nullable=False, index=True
     )
     type: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    # Deterministic, code-computed (relationships/weighting.py). Never an
+    # LLM number, never derived from Claim.confidence.
     weight: Mapped[float] = mapped_column(Float, nullable=False)
     evidence_note: Mapped[str | None] = mapped_column(Text, nullable=True)
+    # --- Provenance (migration 007). ---
+    from_paper_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("papers.id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    to_paper_id: Mapped[str | None] = mapped_column(
+        String, ForeignKey("papers.id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    detector_model: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    prompt_hash: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    similarity: Mapped[float | None] = mapped_column(Float, nullable=True)
+
+
+class FutureWorkAddressalRow(Base):
+    """Two-stage future-work matcher output (migration 008). Mirrors the
+    FutureWorkAddressal Pydantic model field-for-field (drift guard)."""
+
+    __tablename__ = "future_work_addressals"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    future_work_id: Mapped[str] = mapped_column(
+        String, ForeignKey("future_work.id", ondelete="CASCADE"),
+        nullable=False, index=True,
+    )
+    from_paper_id: Mapped[str] = mapped_column(
+        String, ForeignKey("papers.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    to_paper_id: Mapped[str] = mapped_column(
+        String, ForeignKey("papers.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    label: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    justification: Mapped[str | None] = mapped_column(Text, nullable=True)
+    addressing_element: Mapped[str | None] = mapped_column(Text, nullable=True)
+    similarity: Mapped[float] = mapped_column(Float, nullable=False)
+    cites_source: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    detector_model: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+    prompt_hash: Mapped[str | None] = mapped_column(String, nullable=True, index=True)
+
+
+class ClaimEmbeddingRow(Base):
+    """Claim embeddings for the Phase-3 shortlist. `input_source` is
+    recorded alongside so mixed-fidelity correction is possible
+    downstream. The `embedding` column is pgvector when on Postgres; the
+    file-backed store mirrors these columns exactly (see
+    relationships/store.py and the schema-drift test)."""
+
+    __tablename__ = "claim_embeddings"
+
+    claim_id: Mapped[str] = mapped_column(
+        String, ForeignKey("claims.id", ondelete="CASCADE"), primary_key=True
+    )
+    paper_id: Mapped[str] = mapped_column(
+        String, ForeignKey("papers.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    input_source: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    model: Mapped[str] = mapped_column(String, nullable=False, index=True)
+    dim: Mapped[int] = mapped_column(Integer, nullable=False)
+    # pgvector column on Postgres; the file store holds the same vector.
+    embedding: Mapped[list[float]] = mapped_column(ARRAY(Float), nullable=False)
 
 
 class OpportunityRow(Base):

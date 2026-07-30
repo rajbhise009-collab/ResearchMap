@@ -43,8 +43,43 @@ TOPIC_TERMS: tuple[str, ...] = (
     "selective prediction",
     "hallucination detection",
     "hallucination",         # broader match for the noun on its own
+    "hallucinations",        # plural — very common in titles/abstracts
     "confidence estimation",
     "epistemic uncertainty",
+)
+
+# High-precision, unambiguously in-domain terms. Unlike TOPIC_TERMS (which
+# require an LLM anchor to co-occur), a STRONG term alone marks a paper
+# on-domain — so FOUNDATIONAL pre-LLM work (conformal / selective
+# prediction / calibration) is kept even though it never says "LLM".
+# Deliberately specific to avoid false includes (bare "calibration" is
+# NOT here; it collides across fields).
+STRONG_TOPIC_TERMS: tuple[str, ...] = (
+    "conformal prediction",
+    "set-valued classifier",
+    "set-valued classification",
+    "selective prediction",
+    "selective classification",
+    "prediction set",
+    "expected calibration error",
+    "calibration error",
+    "uncertainty quantification",
+    "epistemic uncertainty",
+    "aleatoric uncertainty",
+    "hallucination detection",
+    "abstention",
+    "semantic entropy",
+    # Foundational calibration/uncertainty terminology (pre-LLM classics
+    # like Platt scaling, isotonic regression, deep-ensembles, OOD
+    # detection). Same rationale as #14: legitimate in-domain work that
+    # never says "LLM". Kept high-precision to avoid re-admitting noise.
+    "probability estimates",
+    "well-calibrated",
+    "well calibrated",
+    "uncertainty estimation",
+    "out-of-distribution detection",
+    "distributional shift",
+    "predictive uncertainty",
 )
 
 # --- Venue allow / denylists --------------------------------------------
@@ -82,7 +117,11 @@ VENUE_ALLOWLIST: tuple[str, ...] = (
     "findings of the association for computational linguistics",
     "findings of acl",
     "findings of emnlp",
-    "arxiv",   # accepted here — arXiv preprints are common on-domain
+    # NOTE: "arxiv" was REMOVED — arXiv is a preprint server for all of
+    # CS/ML, not a domain signal. Auto-including any arXiv paper as
+    # on-domain wrongly cleared off-topic work (e.g. BoolQ). A paper on
+    # arXiv must earn on-domain via anchor+topic, strong-topic, or a real
+    # venue — not the host.
 )
 
 # Venues where a "language model + X" mention is almost certainly a
@@ -190,7 +229,8 @@ def _co_occurs_within(text: str, a_terms: Iterable[str],
 # --- The heuristic itself ----------------------------------------------
 
 
-CO_OCCURRENCE_WINDOW = 30  # tokens between anchor and topic
+CO_OCCURRENCE_WINDOW = 30  # tokens between anchor and topic (abstract)
+TITLE_CO_OCCURRENCE_WINDOW = 12  # tighter window for the title rescue
 
 
 def _venue_hit(venue: str | None, hitlist: Iterable[str]) -> bool:
@@ -220,15 +260,30 @@ def classify(record: dict, *, abstract_text: str | None) -> tuple[str, str]:
                      or hv.get("display_name")
 
     field = _field_display_name(record)
-    text = " ".join(filter(None, [record.get("title") or "", abstract_text or ""]))
+    title = record.get("title") or ""
+    text = " ".join(filter(None, [title, abstract_text or ""]))
+
+    # Title-level on-domain rescue. When the property co-occurs with an
+    # LLM anchor IN THE TITLE (tight window), the paper is ABOUT the
+    # property — that is the rubric's contribution test — so a
+    # mis-assigned OpenAlex `primary_field` must not hard-drop it. This
+    # is failure mode #3 (the field gate dropping legitimate off-subfield
+    # papers, e.g. a hallucination survey OpenAlex tagged 'neuroscience',
+    # or a Nature semantic-entropy paper). It overrides the FIELD
+    # denylist, not the venue denylist (a chemistry-journal venue is a
+    # deliberate, reliable off-domain signal).
+    title_on_domain = _co_occurs_within(title, ANCHOR_TERMS, TOPIC_TERMS,
+                                        window=TITLE_CO_OCCURRENCE_WINDOW)
 
     # Off-domain gates (strongest signals first).
     if _venue_hit(venue_name, VENUE_DENYLIST):
         return "off-domain", f"venue in denylist: {venue_name!r}"
-    if field and any(f in field for f in DENYLIST_FIELDS):
+    if field and any(f in field for f in DENYLIST_FIELDS) and not title_on_domain:
         return "off-domain", f"primary field is off-domain: {field!r}"
 
     # On-domain gates.
+    if title_on_domain:
+        return "on-domain", "property + LLM anchor co-occur in title"
     if _venue_hit(venue_name, VENUE_ALLOWLIST):
         return "on-domain", f"venue in allowlist: {venue_name!r}"
     if _co_occurs_within(text, ANCHOR_TERMS, TOPIC_TERMS, CO_OCCURRENCE_WINDOW):
@@ -236,15 +291,23 @@ def classify(record: dict, *, abstract_text: str | None) -> tuple[str, str]:
             "on-domain",
             f"anchor+topic co-occur within {CO_OCCURRENCE_WINDOW} tokens",
         )
+    # Strong-topic-alone: a high-precision in-domain term with NO anchor
+    # required — keeps foundational pre-LLM work (conformal / selective
+    # prediction, e.g. "Least Ambiguous Set-Valued Classifiers").
+    strong = [t for t in STRONG_TOPIC_TERMS if t in text.lower()]
+    if strong:
+        return "on-domain", f"strong in-domain term: {strong[0]!r}"
 
-    # Neither — borderline. Includes AI-field papers whose abstract
-    # mentions the terms but not tightly, or papers with no venue/field
-    # information.
-    return "borderline", "no strong signal in either direction"
+    # No signal → EXCLUDE. The old default kept these as 'borderline',
+    # which let citation-neighbourhood contamination (text matching, QA
+    # benchmarks, summarization datasets) into the corpus. A paper with no
+    # positive domain signal is off-domain until proven otherwise.
+    return "off-domain", "no domain signal (default-exclude)"
 
 
 __all__ = [
     "ANCHOR_TERMS",
+    "STRONG_TOPIC_TERMS",
     "CO_OCCURRENCE_WINDOW",
     "DENYLIST_FIELDS",
     "TOPIC_TERMS",
