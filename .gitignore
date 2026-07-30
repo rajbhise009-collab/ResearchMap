@@ -56,3 +56,6 @@ data/relationships/
 frontend/public/data/
 frontend/.next/
 frontend/out/
+
+frontend/tsconfig.tsbuildinfo
+frontend/next-env.d.ts

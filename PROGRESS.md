@@ -1,5 +1,92 @@
 # PROGRESS
 
+## Phases 5–7 — ranking, API, frontend (2026-07-30) ✅
+
+Built to completion in one pass over the frozen 113-paper corpus. **No paid
+API calls** — everything reads cached reasoning/relationship/manifest files.
+
+### Phase 5 — ranking + evidence assembly (`backend/app/ranking/`)
+
+- **`schema.py`** — versioned evidence-card schema, `SCHEMA_VERSION = "1.0.0"`.
+  `ConfidenceTier` (high ≥ 0.60, medium ≥ 0.35, else low) via `tier_for()`.
+  `gap_type`, `confidence`, `confidence_tier`, `trust`, and `confirm_status`
+  are first-class fields on `EvidenceCard` — not buried in `component_scores`.
+  Every card carries `caveats`, `supporting_papers`, a resolvable
+  `evidence_trail`, and `relationship_ids`. Models are `extra="forbid"`.
+- **`assemble.py`** — `build_evidence_cards()` runs all reasoning scorers,
+  ranks by **trust = score × confidence** (descending), assigns rank, resolves
+  each trail id back to its concrete claim / limitation / future-work / method
+  / relationship / paper record, and attaches every applicable caveat:
+  `corpus_relative` (orphaned future work), `mixed_fidelity` (abstract-only
+  supporters), `generic_category`, `construct_gated`, `semantic_lead`
+  (structural holes). Structural-hole `confirm_status` (substantive / trivial /
+  not_addressing) read from the cached confirmations file.
+- **Tests** — `backend/tests/ranking/test_evidence_cards.py`: tier thresholds,
+  cards resolve to real paper IDs, **no orphan references**, trust-ordering,
+  card shape, abstract-only → mixed_fidelity. All green.
+
+Result over the corpus: **76 opportunities** — 1 persistent-limitation
+(high tier), 0 contradictions, 63 orphaned-future-work (medium), 12
+structural-hole leads (low, 2 substantive).
+
+### Phase 6 — read-only FastAPI (`backend/app/api/`)
+
+- **`data.py`** — file-backed data layer, `lru_cache` singletons, **runs with
+  no `DATABASE_URL`** (reads the same files the scorers read). Card/paper
+  lookups, corpus stats (ft/abstract split, core/peripheral, per-scorer yields,
+  spend-to-date, manifest hash), findings loader.
+- **`app.py`** — endpoints: `GET /api/opportunities` (filter
+  `gap_type`/`min_confidence`/`tier`/`scorer`, paginated), `/api/opportunities/{id}`,
+  `/api/papers` (filter `domain_centrality`/`input_source`), `/api/papers/{id}`,
+  `/api/relationships`, `/api/corpus/stats`, `/api/findings` (+`/{slug}`).
+  Auto OpenAPI at `/docs`. CORS for `localhost:3000`.
+- **`export.py`** — static snapshot generator → `frontend/public/data/`
+  (meta, opportunities + per-opportunity, papers + per-paper, relationships,
+  stats, findings). Powers the static-export site with zero runtime backend.
+- **Tests** — `backend/tests/api/test_api.py`: runs-without-DATABASE_URL,
+  pagination, filters, 404s, honest-presentation invariants (every card has
+  gap_type + tier + evidence_trail; orphans carry corpus_relative; holes carry
+  confirm_status + semantic_lead), papers/relationships/stats/findings, OpenAPI.
+  All green.
+
+### Phase 7 — Next.js + TypeScript frontend (`frontend/`)
+
+Static export (`output: "export"`); server components read the JSON snapshot
+from `public/data` at build time — no runtime fetch, works over `file://`.
+
+- **Views** — Overview (composition, per-scorer plain-language notes, honest
+  empty-state for 0 contradictions linking findings, spend + manifest hash);
+  Opportunities (trust-ranked list, filter by gap_type/tier); Opportunity detail
+  (explanation, component scores, full evidence trail linking to source papers,
+  all caveats); Papers (filter centrality/source, abstract-only flagged); Paper
+  detail (claims/limitations/future-work/methodologies, in-corpus citation links,
+  abstract-only fidelity caveat); Findings (markdown reports via react-markdown).
+- **Honest presentation** — confidence tier + caveats are visually first-class;
+  weak cards (low tier / unconfirmed holes) are de-emphasised (`.card.weak`);
+  corpus-relative orphans state "unaddressed WITHIN this 113-paper corpus, not
+  the field" inline; abstract-only papers carry the "~11× fewer own-work
+  limitations" note everywhere; no progress bars / green ticks / "high
+  confidence" badges. Every opportunity's evidence trail is one click away.
+
+**Build**: `npm run typecheck` clean; `npm run build` prerenders **200 static
+pages** to `frontend/out/` (self-contained, no hosting cost). Full backend suite
+green.
+
+### How to run
+
+```bash
+# Backend API (no env vars needed)
+cd backend && ../.venv/bin/uvicorn app.api.app:app --reload   # docs at /docs
+
+# Frontend — regenerate snapshot, then dev or static build
+cd frontend
+npm run snapshot     # python export → public/data
+npm run dev          # http://localhost:3000
+npm run build        # static site → frontend/out/  (open out/index.html)
+```
+
+---
+
 ## Phase 0 — foundation ✅
 
 Built:
