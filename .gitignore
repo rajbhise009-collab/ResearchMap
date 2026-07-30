@@ -51,3 +51,8 @@ node_modules/
 # Generated reasoning/relationship artifacts (regenerable)
 data/reasoning/
 data/relationships/
+
+# Frontend generated data + build artifacts (regenerable)
+frontend/public/data/
+frontend/.next/
+frontend/out/
