@@ -1,45 +1,41 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import type { PaperSummary } from "../../lib/types";
-import { AbstractBadge } from "../components/badges";
+import type { PaperDoc, LanguagePack } from "../../lib/types";
+import { Tag } from "../components/plain";
+import { DevKV } from "../components/DevMode";
 
-export default function PapersClient({ items }: { items: PaperSummary[] }) {
-  const [cent, setCent] = useState("all");
-  const [src, setSrc] = useState("all");
-  const shown = items.filter(
-    (p) =>
-      (cent === "all" || p.domain_centrality === cent) &&
-      (src === "all" ||
-        (src === "fulltext" ? p.input_source === "fulltext" : p.abstract_only))
+export default function PapersClient({ papers, lang }: {
+  papers: PaperDoc[];
+  lang: LanguagePack;
+}) {
+  const [source, setSource] = useState("all");
+  const shown = papers.filter(
+    (p) => source === "all" ||
+      (source === "full" ? !p.abstract_only : p.abstract_only)
   );
   return (
     <>
       <div className="filters">
-        <label className="small muted">centrality</label>
-        <select value={cent} onChange={(e) => setCent(e.target.value)}>
-          <option value="all">all</option>
-          <option value="core">core</option>
-          <option value="peripheral">peripheral</option>
-        </select>
-        <label className="small muted">source</label>
-        <select value={src} onChange={(e) => setSrc(e.target.value)}>
-          <option value="all">all</option>
-          <option value="fulltext">full text</option>
-          <option value="abstract">abstract-only</option>
-        </select>
-        <span className="spacer" />
-        <span className="small muted">{shown.length} of {items.length}</span>
+        <label>
+          what we had
+          <select value={source} onChange={(e) => setSource(e.target.value)}>
+            <option value="all">everything</option>
+            <option value="full">{lang.full_text.label}</option>
+            <option value="abstract">{lang.abstract_only.label}</option>
+          </select>
+        </label>
+        <span className="count">{shown.length} of {papers.length}</span>
       </div>
+
       {shown.map((p) => (
-        <div className="card" key={p.paper_id}>
-          <div className="row">
-            <Link href={`/papers/${p.wid}/`}>{p.title ?? p.paper_id}</Link>
-            {p.abstract_only && <AbstractBadge />}
-            <span className="pill">{p.domain_centrality}</span>
-            <span className="spacer" />
-            <span className="small muted">{p.year ?? "—"}</span>
-          </div>
+        <div className="paper-line" key={p.wid}>
+          <span className="t"><Link href={`/paper/${p.wid}/`}>{p.title}</Link></span>
+          {p.abstract_only && (
+            <Tag warn title={lang.abstract_only.text}>{lang.abstract_only.label}</Tag>
+          )}
+          {p.year && <span className="y">{p.year}</span>}
+          <DevKV title="" data={p.dev} />
         </div>
       ))}
     </>

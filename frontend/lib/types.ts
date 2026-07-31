@@ -1,5 +1,40 @@
 export type Tier = "high" | "medium" | "low";
 
+// ---- consumer-facing (the only shape the reader's view is built from) ----
+
+export interface PlainCaveat { code: string; label: string; text: string; }
+
+export interface ConsumerCard {
+  headline: string;
+  headline_is_quoted: boolean;
+  kind: string;
+  kind_id: string;
+  kind_short: string;
+  kind_long: string;
+  strength: string;
+  strength_meaning: string;
+  why: string;
+  caveats: PlainCaveat[];
+  paper_count: number;
+}
+
+export interface Fidelity { label: string; text: string; }
+
+export interface ConsumerPaper {
+  fidelity: Fidelity;
+  claims_label: string;
+  limitations_label: string;
+  future_work_label: string;
+  methods_label: string;
+  citations_label: string;
+  no_claims: string;
+  no_limitations: string;
+  no_future_work: string;
+  no_methods: string;
+}
+
+// ---- raw internals (developer mode only) ----
+
 export interface Caveat { code: string; label: string; detail: string; }
 export interface SupportingPaper {
   paper_id: string; title: string | null; year: number | null;
@@ -19,6 +54,7 @@ export interface Opportunity {
   supporting_papers: SupportingPaper[];
   evidence_trail: EvidenceItem[];
   relationship_ids: string[];
+  consumer: ConsumerCard;
 }
 export interface PaperSummary {
   paper_id: string; wid: string; title: string | null; year: number | null;
@@ -36,6 +72,7 @@ export interface PaperDetail {
   abstract: string | null;
   claims: Claim[]; limitations: Limitation[]; future_work: FutureWork[]; methodologies: Methodology[];
   cites: PaperLink[]; cited_by: PaperLink[];
+  consumer: ConsumerPaper;
 }
 export interface Stats {
   papers: number; full_text: number; abstract_only: number; core: number; peripheral: number;
@@ -43,3 +80,78 @@ export interface Stats {
   relationships: number; spend_to_date_usd: number; manifest_hash: string | null; note: string;
 }
 export interface Finding { slug: string; title: string; path: string; markdown: string; }
+
+// ---- the translation layer, shipped from Python ----
+
+export interface Kind { id: string; name: string; short: string; long: string; }
+
+export interface LanguagePack {
+  ui: Record<string, string>;
+  dev: Record<string, string>;
+  kinds: Record<string, Kind>;
+  caveats: Record<string, { label: string; text: string }>;
+  confirm_status: Record<string, { label: string; text: string }>;
+  strength_meaning: Record<string, string>;
+  strength_order: Record<string, number>;
+  abstract_only: Fidelity;
+  full_text: Fidelity;
+  search: {
+    placeholder: string;
+    hint: string;
+    searching: string;
+    in_domain: { note: string };
+    borderline: { label: string; note: string };
+    out_of_domain: { label: string; note: string; what_we_have: string; build_cta: string };
+    no_results: { label: string; note: string };
+  };
+  build_library: {
+    title: string; body: string; estimate_label: string;
+    estimates: [string, string][]; not_yet: string;
+  };
+  no_disagreements: { headline: string; body: string; link_label: string };
+}
+
+// ---- lightweight payloads handed to client components ----
+// Evidence trails stay on the server side of the build: they belong on the
+// detail page, not in every list page's JavaScript.
+
+export interface GapDoc {
+  slug: string;
+  consumer: ConsumerCard;
+  dev: Record<string, unknown>;
+}
+export interface PaperDoc {
+  wid: string;
+  title: string;
+  year: number | null;
+  abstract_only: boolean;
+  domain_centrality: string;
+  input_source: string;
+  dev: Record<string, unknown>;
+}
+
+// ---- search ----
+
+export interface IndexDoc {
+  type: "opportunity" | "paper";
+  ref: string; title: string; kind: string; strength: string;
+  terms: Record<string, number>;
+}
+export interface SearchIndex {
+  n_docs: number; max_idf: number;
+  idf: Record<string, number>;
+  docs: IndexDoc[];
+  synonyms: Record<string, string[]>;
+  stopwords: string[];
+}
+export interface SearchHit {
+  type: "opportunity" | "paper";
+  ref: string; title: string; kind: string; strength: string;
+  score: number; matched: string[];
+}
+export interface SearchResult {
+  verdict: "in_domain" | "borderline" | "out_of_domain" | "empty";
+  coverage: number; best: number; breadth: number; n_matched: number;
+  hits: SearchHit[];
+  known: string[]; unknown: string[]; expanded: string[];
+}

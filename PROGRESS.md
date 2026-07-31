@@ -1,5 +1,109 @@
 # PROGRESS
 
+## Consumer rebuild — plain language, honest search (2026-07-31) ✅
+
+Rebuilt the frontend as a consumer product. Corpus frozen at 113 papers;
+**no paid API calls** — spend unchanged at $7.40.
+
+### The core constraint: a query box that can't promise "ask anything"
+
+The backend holds one subject. A search box implies otherwise, so the gate
+that decides *in-domain / borderline / out-of-domain* is the load-bearing
+piece of the whole rebuild.
+
+**No paid call was needed.** The corpus embeddings came from a paid model,
+so embedding a fresh query into that space would cost money per search and
+need a live server — which the static export doesn't have. Instead
+`backend/app/api/search_index.py` builds a term-weight index over the
+library's own vocabulary at build time and ships it as JSON; the browser
+matches against it. Free, serverless, and it is *what makes the honest
+refusal possible* — an index that knows the library's whole vocabulary can
+tell "I have nothing on this" apart from "I have something weak".
+
+The gate took several passes to get right. Notes for whoever touches it:
+
+- **Rarity is the wrong signal.** The first version scored domain fit by
+  IDF and rated "treatment options for early stage melanoma" as in-domain:
+  every word except *melanoma* appears somewhere in any large text, and
+  rare words scored *highest*. Domain-defining terms are the **frequent**
+  ones here (hallucination 119 docs, uncertainty 56, calibration 44).
+- **An absent word outweighs several bland present ones** (`UNKNOWN_WEIGHT
+  = 3.5`). Nobody types "melanoma" by accident, so an unseen word is
+  almost always the subject of the question.
+- **Breadth separates covered from incidental.** "Image recognition
+  accuracy" is understood word-for-word and matches a few papers, but the
+  library has no body of work on it — true in-domain questions match
+  42–71 of 189 documents, generic-ML ones 8–26. Hence `BREADTH_IN_DOMAIN`.
+- **Everyday phrasing must reach the technical term.** Nobody types
+  "hallucination"; they type "makes things up". `DOMAIN_SYNONYMS` maps
+  them. Expansion helps *ranking* but is deliberately excluded from the
+  coverage figure, so it can never talk an out-of-domain query into
+  looking understood.
+- "AI" survives tokenising despite being two letters, and "know"/"trust"
+  are not stopwords — *"does the model know when it doesn't know"* is this
+  library's central question.
+
+Result: 28/28 on the hand-labelled query set across all three verdicts.
+
+### Plain language: one module, not scattered strings
+
+`backend/app/api/language.py` is the single source for every consumer
+word, exported to `language.json`; the frontend renders it and carries no
+copy of its own. Headlines are built from the papers' own text (an
+unfollowed question is shown as the researcher wrote it), never from
+internal titles like "Orphaned future-work direction from W2514278201".
+
+The jargon ban is split, which matters: `PLUMBING_TERMS` (scorer,
+`component_score`, cosine…) can never appear anywhere, including inside
+quotes; `AUTHORED_BANNED` (corpus, epistemic, "structural hole") is banned
+in copy we write but allowed inside sentences quoted verbatim from papers —
+"corpus fidelity" and "epistemic uncertainty" are the field's own words and
+rewriting a researcher's sentence would put words in their mouth. Developer
+copy is exempt by design.
+
+### Honesty that survived the rewrite
+
+- Strength is three words with a sentence each — Strong / Worth a look /
+  Unverified lead. No bars, no percentages, no ticks anywhere in the CSS.
+- An unconfirmed method-transfer lead can never read as "Strong",
+  whatever its raw numbers say.
+- Fixed a real inversion found by reading the rendered page: a lead that
+  *had* been checked still carried "a promising match we haven't verified".
+  The confirmation note now replaces that caveat — and says the check was
+  done by a language model, not a specialist.
+- Findings reports are raw working notes and read like it, so each is
+  topped with a note saying exactly that rather than being paraphrased
+  into something it isn't.
+
+### Developer mode
+
+Toggle in the footer. State is React context mirrored to `?dev=1` —
+no localStorage, no sessionStorage, no cookies. Reveals raw scores,
+component scores, scorer + parameters, query analysis (coverage, breadth,
+matched terms), pipeline provenance, corpus composition, spend, and the
+underlying JSON for the current view.
+
+### Tests (311 total, all green)
+
+- `test_language.py` — jargon and numeric-internal leaks, weak results
+  always carrying a caveat, the 113-paper caveat naming its real limit.
+- `test_search.py` — the in-domain, borderline and out-of-domain sets,
+  including the incidental-vocabulary-overlap case the gate exists for.
+- `test_search_parity.py` — **compiles `frontend/lib/search.ts` and runs
+  it against the Python**, asserting identical tokens, verdicts, coverage,
+  breadth and ranking. Comments promising two implementations agree are
+  worth nothing on their own.
+- `test_rendered_output.py` — audits the built HTML with markup stripped,
+  catching template-level leaks the source tests cannot see.
+
+### Routes
+
+`/` query · `/gaps` browse · `/gap/[slug]` full story · `/papers`,
+`/paper/[wid]` · `/library` composition + findings · `/findings/[slug]`.
+200 static pages, 98 kB first load (the index is fetched lazily).
+
+---
+
 ## Phases 5–7 — ranking, API, frontend (2026-07-30) ✅
 
 Built to completion in one pass over the frozen 113-paper corpus. **No paid

@@ -14,7 +14,7 @@ from pathlib import Path
 REPO_ROOT = Path("/Users/rajbhise/Downloads/claudecode/ResearchMap")
 sys.path.insert(0, str(REPO_ROOT))
 
-from backend.app.api import data  # noqa: E402
+from backend.app.api import data, language, search_index  # noqa: E402
 from backend.app.ranking.schema import SCHEMA_VERSION  # noqa: E402
 
 DEFAULT_OUT = REPO_ROOT / "frontend" / "public" / "data"
@@ -36,7 +36,13 @@ def _write(path: Path, obj) -> None:
 def export(outdir: Path = DEFAULT_OUT) -> int:
     _write(outdir / "meta.json", {"schema_version": SCHEMA_VERSION})
 
-    cards = [{**c.model_dump(), "slug": slug(c.id)} for c in data.cards()]
+    # Every card carries its plain-English face alongside the raw values.
+    # Developer mode shows the raw side; the consumer view never touches it.
+    cards = []
+    for c in data.cards():
+        card = {**c.model_dump(), "slug": slug(c.id)}
+        card["consumer"] = language.consumer_card(card)
+        cards.append(card)
     _write(outdir / "opportunities.json", {"schema_version": SCHEMA_VERSION,
                                            "total": len(cards), "items": cards})
     for c in cards:
@@ -44,10 +50,16 @@ def export(outdir: Path = DEFAULT_OUT) -> int:
 
     papers = [{**p, "wid": _wid(p["paper_id"])} for p in data.paper_summaries()]
     _write(outdir / "papers.json", {"total": len(papers), "items": papers})
+    details = []
     for p in papers:
         detail = data.paper_detail(p["paper_id"])
         detail["wid"] = p["wid"]
+        detail["consumer"] = language.consumer_paper(detail)
         _write(outdir / "paper" / f"{p['wid']}.json", detail)
+        details.append(detail)
+
+    _write(outdir / "language.json", language.language_pack())
+    _write(outdir / "search-index.json", search_index.build_index(cards, details))
 
     _write(outdir / "relationships.json",
            {"items": [r.model_dump() for r in data.relationships()]})

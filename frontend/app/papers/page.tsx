@@ -1,16 +1,21 @@
-import { getPapers } from "../../lib/data";
+import { getPaperDocs, getLanguage } from "../../lib/data";
 import PapersClient from "./PapersClient";
 
 export default function PapersPage() {
-  const items = getPapers();
+  const papers = getPaperDocs();
+  const lang = getLanguage();
+  const abstractOnly = papers.filter((p) => p.abstract_only).length;
   return (
     <>
-      <h1>Corpus papers</h1>
-      <p className="lede">
-        {items.length} papers after dedup + relabel. Abstract-only papers are flagged —
-        they yield ~11× fewer own-work limitations than full text.
-      </p>
-      <PapersClient items={items} />
+      <div className="hero" style={{ marginBottom: "2.5rem" }}>
+        <h1 style={{ fontSize: "2rem" }}>{lang.ui.all_papers}</h1>
+        <p className="lede">
+          The {papers.length} papers this library is built from. For {abstractOnly} of
+          them we only had the summary — those are marked, because we know
+          less about them than the rest.
+        </p>
+      </div>
+      <PapersClient papers={papers} lang={lang} />
     </>
   );
 }

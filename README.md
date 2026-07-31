@@ -35,6 +35,14 @@ pytest backend/tests -v
 
 Both read cached reasoning output — no API keys, no `DATABASE_URL`.
 
+The frontend is a consumer-facing search tool over one library. Because that
+library covers a single subject, the search gate classifies every question as
+in-domain, borderline, or out-of-domain, and refuses rather than returning
+weak matches dressed up as answers. Search is a term-weight index built at
+build time from the library's own vocabulary — no embedding calls, no spend,
+no server. `backend/app/api/language.py` is the single source of all
+user-facing wording; the frontend carries no copy of its own.
+
 ```bash
 # Read-only API — run from the repo ROOT (app.py uses absolute
 # backend.-prefixed imports; running from backend/ fails with

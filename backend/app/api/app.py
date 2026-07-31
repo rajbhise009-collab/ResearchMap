@@ -7,8 +7,27 @@ from __future__ import annotations
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.app.api import data
+from functools import lru_cache
+
+from backend.app.api import data, export, language, search_index
 from backend.app.ranking.schema import SCHEMA_VERSION
+
+
+@lru_cache(maxsize=1)
+def _index() -> dict:
+    """The search index, built once from the same cached files everything
+    else reads. No embedding calls, no spend."""
+    cards = []
+    for c in data.cards():
+        card = {**c.model_dump(), "slug": export.slug(c.id)}
+        card["consumer"] = language.consumer_card(card)
+        cards.append(card)
+    details = []
+    for p in data.paper_summaries():
+        d = data.paper_detail(p["paper_id"])
+        d["wid"] = p["paper_id"].split(":")[-1]
+        details.append(d)
+    return search_index.build_index(cards, details)
 
 app = FastAPI(
     title="ResearchMap API",
@@ -31,7 +50,8 @@ def root():
     return {"name": "ResearchMap API", "schema_version": SCHEMA_VERSION,
             "endpoints": ["/api/opportunities", "/api/opportunities/{id}",
                           "/api/papers", "/api/papers/{id}", "/api/relationships",
-                          "/api/corpus/stats", "/api/findings", "/docs"]}
+                          "/api/corpus/stats", "/api/findings", "/api/search",
+                          "/api/language", "/docs"]}
 
 
 @app.get("/api/opportunities")
@@ -110,6 +130,29 @@ def finding(slug: str):
     if f is None:
         raise HTTPException(404, f"finding {slug!r} not found")
     return f
+
+
+@app.get("/api/language")
+def language_pack():
+    """Every word the consumer interface shows, from the single translation
+    layer. The frontend renders these — it does not carry its own copy."""
+    return language.language_pack()
+
+
+@app.get("/api/search")
+def search(q: str = Query("", description="A question in plain English"),
+           limit: int = Query(20, ge=1, le=100)):
+    """Search the library, and say honestly when it cannot answer.
+
+    `verdict` is the important field: `in_domain` results are answers,
+    `borderline` results sit at the edge of what the library covers, and
+    `out_of_domain` means the subject is absent — in which case hits are
+    withheld rather than shown as weak matches.
+    """
+    result = search_index.search(_index(), q, limit=limit)
+    if result["verdict"] == "out_of_domain":
+        result["hits"] = []
+    return result
 
 
 __all__ = ["app"]
