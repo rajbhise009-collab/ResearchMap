@@ -177,6 +177,59 @@ def test_breadth_is_what_separates_covered_from_incidental(index):
 
 
 # --------------------------------------------------------------------------
+# Terminology collision — same word, different field.
+#
+# The library's defining terms are polysemous. "Calibration" here means the
+# alignment between an LLM's stated confidence and its accuracy; in a
+# medical-imaging paper it means fine-tuning an imaging device. Same word,
+# unrelated meanings. A frequency-weighted gate that only asks "did we
+# understand every word" will misroute these — the words ARE understood,
+# just in a completely different sense.
+#
+# What actually separates them is BREADTH: a genuine domain question hits a
+# real body of work; a collision picks up one high-scoring document that
+# stacked hits on the frequent word and nothing else. This test list is the
+# regression harness for the failure mode PROGRESS notes warned about six
+# times over.
+# --------------------------------------------------------------------------
+
+TERMINOLOGY_COLLISIONS = [
+    "calibration of medical imaging equipment",
+    "camera calibration for stereo vision",
+    "calibrating a pressure sensor",
+    "uncertainty quantification in weather forecasting",
+    "hallucinations in schizophrenia",
+    "calibration of scientific instruments",
+    "hallucinations induced by psychedelic drugs",
+    "treatment of neurological hallucinations",
+]
+
+
+@pytest.mark.parametrize("q", TERMINOLOGY_COLLISIONS)
+def test_terminology_collision_is_refused(index, q):
+    """The library's frequent words used in an unrelated sense must not
+    look in-domain. Borderline is also unacceptable — borderline shows
+    results that this reader would find plainly irrelevant."""
+    r = S.search(index, q)
+    assert r["verdict"] == "out_of_domain", (
+        q, r["verdict"], r["coverage"], r["best"], r["breadth"])
+
+
+def test_the_signal_that_catches_the_collision_is_breadth(index):
+    """The medical-imaging collision has coverage in the rescue zone and a
+    respectable single-document best score. Only breadth exposes it as a
+    scattering pattern (one frequent word pulling one strong hit) rather
+    than a body of work."""
+    r = S.search(index, "calibration of medical imaging equipment")
+    assert r["breadth"] < 0.24, r["breadth"]
+    # And when breadth is legitimately high, the same coverage zone is
+    # correctly rescued to borderline instead of refused.
+    legit = S.search(index, "legal contract review with AI")
+    assert legit["breadth"] >= 0.24
+    assert legit["verdict"] == "borderline"
+
+
+# --------------------------------------------------------------------------
 # Index shape
 # --------------------------------------------------------------------------
 

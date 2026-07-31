@@ -15,6 +15,12 @@ const IN_DOMAIN_COVERAGE = 0.62;
 const IN_DOMAIN_BEST = 0.05;
 const RESCUE_COVERAGE = 0.28;
 const RESCUE_BEST = 0.2;
+// The rescue path additionally requires a body of work, not one strong
+// document match on a frequent term. Same-word-different-field collisions
+// ("calibration of medical imaging equipment") produce one high-scoring
+// EHR paper via the "medical" term and nothing else — breadth catches that
+// where coverage and best do not.
+const RESCUE_BREADTH = 0.24;
 const BREADTH_IN_DOMAIN = 0.18;
 
 const SUFFIXES: [string, string][] = [
@@ -139,7 +145,7 @@ export function search(index: SearchIndex, query: string, limit = 20): SearchRes
     verdict = "in_domain";
   } else if (coverage >= IN_DOMAIN_COVERAGE && best > 0) {
     verdict = "borderline";
-  } else if (coverage >= RESCUE_COVERAGE && best >= RESCUE_BEST) {
+  } else if (coverage >= RESCUE_COVERAGE && best >= RESCUE_BEST && breadth >= RESCUE_BREADTH) {
     verdict = "borderline";
   } else {
     verdict = "out_of_domain";

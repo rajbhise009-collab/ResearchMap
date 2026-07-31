@@ -269,9 +269,17 @@ UNKNOWN_WEIGHT = 3.5
 IN_DOMAIN_COVERAGE = 0.62
 IN_DOMAIN_BEST = 0.05
 # A weak-vocabulary query is only rescued into "borderline" by a genuinely
-# strong document match, not a faint one.
+# strong document match, not a faint one — AND enough documents matching
+# that the topic really has a foothold in the library. Breadth is what stops
+# the failure mode this project has documented six times: "calibration of
+# medical imaging equipment" uses "calibration" and "medical" correctly but
+# in an unrelated sense. Both are frequent enough that one high-scoring
+# document exists (an EHR-LLM paper stacking "medical" hits), but only a
+# handful of documents match — no body of work — so breadth catches it
+# where coverage and best alone did not.
 RESCUE_COVERAGE = 0.28
 RESCUE_BEST = 0.20
+RESCUE_BREADTH = 0.24
 # How much of the library has to say *something* before we claim the subject
 # is covered. A question built entirely from generic machine-learning words
 # ("image recognition accuracy") is understood word-for-word and will match a
@@ -338,7 +346,7 @@ def search(index: dict[str, Any], query: str, limit: int = 20) -> dict[str, Any]
         # We understood every word, but the library holds only a thin scatter
         # on it — the edge of what it covers, and we say so.
         verdict = "borderline"
-    elif coverage >= RESCUE_COVERAGE and best >= RESCUE_BEST:
+    elif coverage >= RESCUE_COVERAGE and best >= RESCUE_BEST and breadth >= RESCUE_BREADTH:
         verdict = "borderline"
     else:
         verdict = "out_of_domain"
