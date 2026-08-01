@@ -15,7 +15,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path("/Users/rajbhise/Downloads/claudecode/ResearchMap")
+REPO_ROOT = Path(__file__).resolve().parents[3]  # backend/app/corpus/x.py
 sys.path.insert(0, str(REPO_ROOT))
 
 from backend.app.extraction.cache import ExtractionCache  # noqa: E402

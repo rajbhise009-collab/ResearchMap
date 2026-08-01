@@ -11,7 +11,11 @@ import re
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path("/Users/rajbhise/Downloads/claudecode/ResearchMap")
+# Locate the repo root from this file's own path — never a hardcoded
+# absolute path. Layout: backend/app/api/export.py, so parents[3] is the
+# repo root. Anyone cloning this repo (or moving it after clone) needs
+# this to keep working without editing the file.
+REPO_ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(REPO_ROOT))
 
 from backend.app.api import data, language, search_index  # noqa: E402

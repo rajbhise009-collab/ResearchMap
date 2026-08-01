@@ -9,7 +9,23 @@ opportunities with fully traceable justification.
 deterministic Python — no LLM ever judges "importance." See `CLAUDE.md`
 for the full working discipline.
 
-## Setup
+## Quick start (macOS, no terminal needed)
+
+**Double-click `ResearchMap.command`** in Finder. It installs anything
+missing, builds the site, opens your browser, and stays running until you
+press any key in the Terminal window. Needs Node.js (nodejs.org) and
+Python 3 (installs itself when Xcode tools are present); the launcher
+tells you which is missing if either isn't there.
+
+<details>
+<summary>Terminal equivalent</summary>
+
+```bash
+./ResearchMap.command
+```
+</details>
+
+## Setup (developers)
 
 ```bash
 python -m venv .venv

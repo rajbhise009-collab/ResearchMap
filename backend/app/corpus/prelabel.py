@@ -45,7 +45,7 @@ import csv
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path("/Users/rajbhise/Downloads/claudecode/ResearchMap")
+REPO_ROOT = Path(__file__).resolve().parents[3]  # backend/app/corpus/x.py
 sys.path.insert(0, str(REPO_ROOT))
 
 CSV_IN = REPO_ROOT / "scratch" / "corpus_review.csv"

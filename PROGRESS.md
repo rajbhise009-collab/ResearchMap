@@ -1,5 +1,133 @@
 # PROGRESS
 
+## Hardened for first-time users (2026-08-01) ✅
+
+Four related pieces of work: a regression test for the search gate's
+worst-documented failure mode, a double-click launcher for macOS, a full
+premium UI pass, and repo-path portability. Corpus frozen at 113 papers;
+no paid API calls; spend unchanged at $7.40. 320 tests green (was 311,
++9 collision tests).
+
+### Search gate: same-word-different-field collisions
+
+The gate refused 4 of 5 obvious collisions on the unknown-word penalty
+alone, but "calibration of medical imaging equipment" slipped through as
+`borderline` — `calibration`, `medical`, and `imag` are all understood
+(library holds LLM-medical and vision-language papers), leaving only
+`equipment` unknown, which barely tipped coverage below the rescue
+threshold. Rescue then fired on a single strong hit against an EHR paper.
+
+The signal that separates same-word-different-field from real membership
+is **breadth** — a real domain-adjacent question hits many documents (a
+body of work); a collision picks up one high-scoring document that
+stacked hits on the frequent term and nothing else. Medical-imaging
+matched 20% of docs; legal-contract-review-with-AI (correctly borderline)
+matched 33%. Rescue now requires `breadth >= 0.24` alongside the existing
+coverage and best thresholds. Applied identically in the TypeScript twin;
+the parity test still holds.
+
+Regression harness in `test_search.py::TERMINOLOGY_COLLISIONS` locks in
+all eight collision variants plus an explicit "breadth is the signal"
+test.
+
+### `ResearchMap.command` — Finder double-click launcher
+
+For anyone who doesn't open a Terminal:
+
+- Detects Python 3 and Node.js; loads nvm and Homebrew paths so a
+  non-interactive shell sees them.
+- Installs frontend deps on first run (`npm install`), snapshots data,
+  builds the static site, picks a free port, starts a local server,
+  opens the browser.
+- Custom static handler serves `out/404.html` for unknown paths so the
+  reader never sees Python's stock "Error response" body.
+- Every failure path prints plain English with a log path — never a
+  Python traceback or an npm error dump surfaced raw. Terminal is held
+  open with "press return to close" so the message isn't lost.
+- Clean shutdown on any key, on Ctrl-C, or on Terminal being closed
+  (SIGINT/SIGTERM/HUP/EXIT all route to the same idempotent shutdown).
+- Verified end-to-end from a truly fresh state (no node_modules, no
+  prior build, empty public/data) — zero leaked processes afterwards.
+
+### Premium UI pass
+
+Rebuilt the CSS as a considered design system rather than a pile of
+ad-hoc rules:
+
+- **Type**: modular scale (1.200) on tuned optical sizes; Charter and
+  Iowan Old Style ship locally on macOS/iOS, so no network fonts and no
+  CLS; tabular figures where numbers align.
+- **Palette**: warm off-white light and matched-not-inverted warm-neutral
+  dark; layered surfaces (paper → raise-1 → raise-2); one accent (deep
+  teal in light, muted teal in dark) that carries every interactive
+  affordance; explicit `data-theme=light|dark` overrides via `?theme=`
+  URL param so headless-Chrome iteration can verify both palettes.
+- **Motion**: tokenised durations and cubic-bezier easing; every
+  transition respects `prefers-reduced-motion`.
+
+New behaviours:
+
+- **⌘K palette** (also Ctrl-K, "/", and `#palette` in the URL). Search-
+  as-you-type, keyboard-nav, honest inline OOD refusal so a query the
+  library can't cover doesn't quietly show weak matches.
+- **Search-as-you-type on the landing form** with a 140ms debounce and a
+  skeleton state during the first index load.
+- **Sticky "On this page" sidebar** on gap + paper detail pages, using
+  IntersectionObserver to highlight the current section — no scrollspy
+  library, no runtime cost.
+- **Real 404** (`app/not-found.tsx`) on-brand and honest ("That page
+  isn't here"); launcher serves it for unknown paths.
+- **Two-column hero** on the landing so the desktop layout is balanced;
+  stacks below the query on mobile.
+- **Accessibility**: skip-to-content link on every page, semantic
+  landmarks, keyboard focus rings on every focusable element,
+  `overflow-x: hidden` as the defensive floor. Verified in built HTML.
+
+Honesty invariants (verified in the rendered static export):
+
+- Zero `<progress>`, `role="progressbar"`, or `aria-valuenow` anywhere.
+- No confidence percentages, gauges, coloured ticks — strength stays a
+  word with a sentence describing what it means.
+- Caveats stay first-class and inline, in a full-size cream panel, never
+  in a footnote or tooltip.
+- OOD refusal behaviour unchanged — still routes to the honest empty
+  panel; fixed a double-period bug the redesign surfaced there.
+- Dev toggle removed from the footer; only entry point is now `?dev=1`,
+  and once on the toggle shows inside the developer banner as a
+  "turn off" button. Zero visible entry point in the consumer UI.
+- Zero-contradictions empty state still self-explaining.
+
+### Repo-path portability
+
+Twenty-eight Python scripts under `backend/app/{api,corpus,reasoning,
+relationships,extraction}/` hardcoded the repo's absolute path in a
+`REPO_ROOT` constant. Fixed all to `Path(__file__).resolve().parents[3]`.
+Anyone can now `git clone` and move the repo without editing anything.
+
+### First-run verification
+
+Launched with `node_modules/`, `frontend/out/`, `frontend/.next/`, and
+`frontend/public/data/` all stashed. The launcher installed deps, ran
+the export, built 199 pages, picked a free port, served, opened,
+shut down cleanly. No leaked processes. Full API suite runs with
+`env -i` (no `DATABASE_URL`, no API keys).
+
+### How to run
+
+```bash
+# Double-click ResearchMap.command in Finder — no terminal knowledge required.
+# Terminal equivalent (both work):
+./ResearchMap.command
+
+# API (from repo root, no env vars needed)
+.venv/bin/uvicorn backend.app.api.app:app --reload   # docs at /docs
+
+# Tests
+cd backend && ../.venv/bin/python -m pytest -q
+```
+
+---
+
 ## Consumer rebuild — plain language, honest search (2026-07-31) ✅
 
 Rebuilt the frontend as a consumer product. Corpus frozen at 113 papers;
