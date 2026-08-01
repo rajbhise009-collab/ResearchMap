@@ -1,5 +1,113 @@
 # PROGRESS
 
+## Two delivery paths: native .app + public web (2026-08-01) ✅
+
+Same build, two ways to open it. Corpus frozen at 113 papers; no paid API
+calls; spend unchanged at $7.40. 320 tests green.
+
+### Path A — `ResearchMap.app` (macOS bundle)
+
+Double-clickable in Finder, runs silently — no Terminal window opens.
+Uses native macOS notifications for setup progress and modal dialogs for
+errors. Dock icon stays for the app's lifetime; right-click → Quit
+(SIGTERM) shuts down cleanly.
+
+- **Bundle**: standard `Contents/{Info.plist, MacOS/ResearchMap,
+  Resources/AppIcon.icns}`.
+- **Icon**: typographic mark in the site's design language — warm paper
+  squircle, deep-teal serif "R", subtle bookmark accent. SVG source at
+  `resources/icon/icon.svg`; rasterised at every required size (16, 32,
+  128, 256, 512 at 1x and 2x) and bundled by `iconutil` into a proper
+  `.icns`. Reads cleanly at 32×32 in the Dock.
+- **Shared logic**: `scripts/rm-lib.sh` holds every side-effecting op
+  (prereq check, install, snapshot, build, port pick, server lifecycle).
+  Both `.command` and `.app` source it and supply their own UI shims
+  (`ui_step`, `ui_ok`, `ui_note`, `ui_fail`) — the terminal launcher
+  writes ANSI to stdout; the app writes to `~/Library/Logs/ResearchMap/`
+  and surfaces user-facing messages via `osascript`.
+- **Bundle guardrail**: the exec checks it sits inside its repo (looking
+  for `backend/` and `scripts/rm-lib.sh` adjacent). If someone drags the
+  .app out of the folder, they get a dialog explaining why.
+- **Gatekeeper**: bundle is unsigned; first launch needs right-click →
+  Open. Documented in the README.
+- **Verified**: end-to-end from a stashed clone-shape state (no
+  `node_modules`, no `frontend/out`, no `.next`, no `public/data`) —
+  installed deps, snapshotted, built, served, opened browser, quit on
+  SIGTERM with zero leaked processes.
+
+### Path B — public web (GitHub Pages + Vercel)
+
+Static export deploys as-is. No server, no runtime keys, no billing.
+
+- **`basePath` support** in `next.config.mjs` via `BASE_PATH` env var.
+  `basePath` + `assetPrefix` set together so Next rewrites every URL —
+  routes, static assets — through the prefix. `frontend/lib/basePath.ts`
+  exposes the same value at runtime for `/public/` fetches (which Next
+  does *not* auto-prefix); every runtime fetch now goes through
+  `asset(...)`.
+- **Favicon** meta wired to `<link rel="icon">` in the layout head with
+  the basePath applied — Next's `metadata.icons` doesn't respect
+  `basePath` and would 404 on subpath deploys.
+- **`.github/workflows/deploy-pages.yml`** — on push to `main`: setup
+  node+python, `npm ci`, run the export, build with
+  `BASE_PATH=/<repo>`, upload artifact, deploy to Pages. Concurrency
+  guard cancels older runs. No secrets, no env vars, no billing plan.
+- **`vercel.json`** — zero-config import. Vercel deploys at the domain
+  root (no basePath). Free tier.
+- **Verified**: both variants build cleanly; every asset URL correctly
+  prefixed. Full JS-driven headless-Chrome test with the site staged
+  under `/ResearchMap/` — landing, gap detail, paper detail, library,
+  favicon, search-index fetch, and OOD refusal all work.
+
+### Dev-mode policy: keep it fully accessible on public deploys
+
+**Recommendation** (implemented): `?dev=1` continues to expose trust
+scores, component scores, cosine similarities, manifest hash, spend,
+provenance, and raw JSON on public deploys — no gating.
+
+Reasoning: transparency isn't a feature of ResearchMap, it IS
+ResearchMap. The "LLMs extract, code reasons" premise requires
+inspectability. `?dev=1` is opt-in, comes with a clear "Developer mode is
+on" banner, and anyone who types the URL parameter is technical enough
+to interpret raw numbers. Splitting into public/dev build modes
+fragments the codebase for no offsetting benefit.
+
+**Flag**: the `SPEND_TO_DATE_USD = 7.4` figure is the maintainer's
+cumulative history, not methodological transparency. If someone forks
+and deploys, that number becomes misleading until they edit the constant
+(clearly named in `backend/app/api/data.py`). Not gating it via env var
+by default — but say the word and I'll add one.
+
+### Framing for public visitors
+
+- Landing eyebrow now reads **"Working prototype · One library"** so a
+  first-time visitor immediately understands scope.
+- "Build a library for this" panel copy rewritten to unambiguously read
+  as a preview, not a broken button: "This panel is a preview, not a
+  working button." The panel still shows honest cost estimates ($8–15,
+  3–5 hours) so visitors know what would be involved.
+
+### What Raj needs to do to publish
+
+1. Push this branch to a GitHub remote.
+2. Repository Settings → Pages → **Source: GitHub Actions**.
+3. That's it. The workflow runs on push to `main` and deploys to
+   `https://<your-username>.github.io/<repo>/`.
+
+For Vercel: sign in at vercel.com, Add New → Project, pick the repo,
+deploy. Nothing else to configure.
+
+### How to run
+
+```bash
+# macOS native  →  double-click ResearchMap.app in Finder
+# Terminal      →  ./ResearchMap.command
+# API           →  .venv/bin/uvicorn backend.app.api.app:app --reload
+# Tests         →  cd backend && ../.venv/bin/python -m pytest -q
+```
+
+---
+
 ## Hardened for first-time users (2026-08-01) ✅
 
 Four related pieces of work: a regression test for the search gate's

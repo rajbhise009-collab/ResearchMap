@@ -15,6 +15,7 @@ import type {
   GapDoc, PaperDoc, LanguagePack, SearchIndex, SearchResult,
 } from "../../lib/types";
 import { search } from "../../lib/search";
+import { asset } from "../../lib/basePath";
 
 const DEBOUNCE_MS = 90;
 
@@ -36,7 +37,7 @@ function CommandPalette({ lang, gaps, papers }: {
     if (!open || index) return;
     let live = true;
     // Relative fetch so it works whether the user is at / or /gap/xyz/.
-    fetch("/data/search-index.json")
+    fetch(asset("/data/search-index.json"))
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then((j: SearchIndex) => { if (live) setIndex(j); })
       .catch(() => {});

@@ -526,10 +526,12 @@ BUILD_LIBRARY = {
         ("Then", "the same search you just tried would work on that subject"),
     ],
     "not_yet": (
-        "This button doesn't do anything yet — building a library isn't "
-        "automated, and it spends real money, so it needs a human to start it. "
-        "This panel is here so you know exactly what would happen and what it "
-        "would cost, rather than finding out afterwards."
+        "This panel is a preview, not a working button. Building a library "
+        "isn't automated yet, and it spends real money, so it needs a human "
+        "to start it. The estimates above are here so you know exactly what "
+        "would happen and what it would cost — not so you can trigger it "
+        "from this page. If you want a library built for a subject you care "
+        "about, get in touch with the maintainer."
     ),
 }
 

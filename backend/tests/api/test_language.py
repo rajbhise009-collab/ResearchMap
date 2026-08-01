@@ -186,4 +186,13 @@ def test_build_library_panel_states_cost_and_that_it_is_not_wired_up():
     joined = " ".join(v for _, v in b["estimates"]).lower()
     assert "$" in joined, "the cost has to be shown, not hidden"
     assert "hour" in joined
-    assert "doesn't do anything yet" in b["not_yet"]
+    # The panel must explicitly state that clicking it does not build a
+    # library — a public visitor who arrives here shouldn't think the
+    # button will start something and then be surprised nothing happens.
+    ny = b["not_yet"].lower()
+    assert any(phrase in ny for phrase in (
+        "isn't automated",     # "Building a library isn't automated yet"
+        "not a working",       # "not a working button"
+        "doesn't",             # older phrasing kept as a hedge
+    )), f"not_yet copy must make the not-yet nature clear: {b['not_yet']!r}"
+    assert "human" in ny, "should say a human has to start it"

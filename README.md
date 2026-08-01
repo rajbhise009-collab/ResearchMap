@@ -11,11 +11,23 @@ for the full working discipline.
 
 ## Quick start (macOS, no terminal needed)
 
-**Double-click `ResearchMap.command`** in Finder. It installs anything
-missing, builds the site, opens your browser, and stays running until you
-press any key in the Terminal window. Needs Node.js (nodejs.org) and
-Python 3 (installs itself when Xcode tools are present); the launcher
-tells you which is missing if either isn't there.
+Two ways to open it, use whichever you prefer:
+
+- **Double-click `ResearchMap.app`** in Finder. Native launcher — no
+  Terminal window opens. macOS notifications appear during setup;
+  quit from the Dock icon (right-click → Quit) to stop the local
+  server cleanly.
+- **Double-click `ResearchMap.command`** — same thing but through a
+  Terminal window that shows what's happening. Press any key in that
+  window to quit.
+
+Both need Node.js (nodejs.org, LTS build) and Python 3 (`xcode-select
+--install` installs it). The launchers tell you which is missing if
+either isn't there.
+
+**First launch of `ResearchMap.app`**: macOS Gatekeeper blocks unsigned
+apps on first open. Right-click the .app → **Open** → **Open** in the
+dialog. Once approved, future launches are one double-click.
 
 <details>
 <summary>Terminal equivalent</summary>
@@ -24,6 +36,34 @@ tells you which is missing if either isn't there.
 ./ResearchMap.command
 ```
 </details>
+
+## Publish to the web (free)
+
+The static export is self-contained — no server, no keys, search runs
+in the browser. Two zero-cost paths are wired up:
+
+### GitHub Pages
+
+Push to `main`; `.github/workflows/deploy-pages.yml` builds and deploys
+automatically. **One-time setup**: in the repository's Settings → Pages,
+set **Source** to **GitHub Actions**. The workflow uses no secrets, no
+env vars, no billing plan.
+
+The build passes `BASE_PATH=/<repo-name>` so the site works at
+`https://<user>.github.io/<repo>/`.
+
+### Vercel
+
+`vercel.json` is set up for a zero-config import. Sign in at vercel.com,
+click **Add New** → **Project**, pick this repo, keep defaults, deploy.
+Free tier. No env vars needed.
+
+### Any other static host
+
+`npm run build` produces `frontend/out/` — a self-contained folder of
+HTML, JS, CSS, and JSON. Upload the folder to any static host (Netlify,
+Cloudflare Pages, S3+CloudFront, plain nginx). If the deploy is under a
+subpath, build with `BASE_PATH=/subpath npm run build`.
 
 ## Setup (developers)
 

@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: `${lang.ui.product_name} — ${lang.ui.tagline}`,
   description: lang.ui.what_it_does,
 };
+// Next's metadata.icons doesn't apply basePath — it emits the raw URL as
+// given. For a subpath deploy that would 404. Compose the correct URL
+// once from the build-time env vars and emit the tags in <head> ourselves.
+// Read BASE_PATH first (what's actually set during the build); fall back
+// to NEXT_PUBLIC_BASE_PATH for anyone who set only that.
+const BASE = (
+  process.env.BASE_PATH ||
+  process.env.NEXT_PUBLIC_BASE_PATH ||
+  ""
+).replace(/\/$/, "");
 
 // Small script that runs before paint: if the URL says ?theme=light|dark,
 // stamp it on <html> so the CSS palette matches. Kept inline so there's
@@ -21,6 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`${BASE}/favicon-32.png`} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>

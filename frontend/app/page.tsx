@@ -8,7 +8,7 @@ export default function Landing() {
     <>
       <div className="hero-grid">
         <div className="hero">
-          <div className="eyebrow">A literature-based discovery tool</div>
+          <div className="eyebrow">Working prototype · One library</div>
           <h1>{lang.ui.tagline}</h1>
           <p className="lede">{lang.ui.what_it_does}</p>
           <p className="covers">{lang.ui.library_summary}</p>

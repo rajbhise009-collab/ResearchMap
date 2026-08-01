@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+#
+# ResearchMap.app — Finder-native launcher.
+#
+# Sits inside the repo it launches (ResearchMap/ResearchMap.app/). Runs
+# silently: no Terminal window, native notifications for progress, native
+# dialogs for errors. Dock icon stays visible for the app's lifetime;
+# right-click → Quit (SIGTERM) shuts the local server down cleanly.
+#
+# The install/build/serve logic is shared with ResearchMap.command via
+# scripts/rm-lib.sh — this file is just the macOS-native UI wrapping it.
+
+set -u
+
+# .../ResearchMap/ResearchMap.app/Contents/MacOS/ResearchMap
+readonly EXEC_DIR="$(cd "$(dirname "$0")" && pwd)"
+readonly APP_BUNDLE="$(cd "$EXEC_DIR/../.." && pwd)"           # ResearchMap.app
+REPO="$(dirname "$APP_BUNDLE")"                                # containing folder
+export REPO
+
+# All output goes to the log — there's no controlling terminal. Users see
+# messages via osascript notification / dialog instead.
+readonly LOG_DIR="$HOME/Library/Logs/ResearchMap"
+readonly RM_LOG="$LOG_DIR/launcher.log"
+mkdir -p "$LOG_DIR"
+export RM_LOG
+exec >>"$RM_LOG" 2>&1
+echo "==== ResearchMap.app started at $(date) ===="
+echo "APP_BUNDLE=$APP_BUNDLE"
+echo "REPO=$REPO"
+
+# --- guardrail: the app must sit inside its repo ------------------------
+if [ ! -d "$REPO/backend" ] || [ ! -f "$REPO/scripts/rm-lib.sh" ]; then
+  osascript -e "display dialog \"ResearchMap.app must stay inside the ResearchMap project folder.\n\nThe app looks for its files at:\n$REPO\n\nMove the whole ResearchMap folder together, or run ResearchMap.command instead.\" with title \"ResearchMap\" buttons {\"OK\"} default button 1 with icon stop" >/dev/null 2>&1 || true
+  exit 1
+fi
+
+# --- native UI shims for rm-lib.sh -------------------------------------
+# `osascript display notification` shows a discreet macOS notification;
+# `display dialog` shows a modal error users have to dismiss. The lib
+# writes prose messages assuming a Terminal; we tag them for the log and
+# only surface milestones + fatals to the user.
+_notify() {
+  # Escape double quotes for AppleScript.
+  local msg="${1//\"/\\\"}"
+  osascript -e "display notification \"$msg\" with title \"ResearchMap\"" 2>/dev/null || true
+}
+_dialog_error() {
+  local title="${1//\"/\\\"}"
+  local body="${2//\"/\\\"}"
+  osascript -e "display dialog \"$body\" with title \"ResearchMap — $title\" buttons {\"Show log\", \"OK\"} default button 2 with icon stop" 2>/tmp/rm-dialog-result || true
+  if grep -q "Show log" /tmp/rm-dialog-result 2>/dev/null; then
+    open -R "$RM_LOG" 2>/dev/null || open "$RM_LOG" 2>/dev/null || true
+  fi
+  rm -f /tmp/rm-dialog-result
+}
+
+ui_step() { echo "[step] $*"; case "$*" in
+    *"installing"*) _notify "First run: installing dependencies (30–90s)…" ;;
+    *"Building"*)   _notify "Building the site (15–30s)…" ;;
+esac; }
+ui_ok()   { echo "[ok] $*"; }
+ui_note() { echo "[note] $*"; }
+ui_fail() {
+  local title="$1"; local body="${2:-}"
+  echo "[FAIL] $title"
+  echo "$body"
+  _dialog_error "$title" "$title
+
+$body"
+  exit 1
+}
+
+# --- setup + serve ------------------------------------------------------
+# shellcheck disable=SC1091
+. "$REPO/scripts/rm-lib.sh"
+
+rm_check_prereqs
+rm_install_frontend_deps
+rm_build_site
+rm_start_server
+
+_notify "ResearchMap is open in your browser."
+
+# --- lifecycle: stay alive; clean up on quit ----------------------------
+_shutdown() {
+  echo "[shutdown] $(date)"
+  rm_shutdown
+  exit 0
+}
+# When the user quits from Dock (right-click → Quit) macOS sends SIGTERM
+# to the app's executable. INT/HUP/EXIT are for defence in depth.
+trap _shutdown TERM INT HUP EXIT
+
+# Foreground-wait on the server keeps this exec alive → Dock icon stays
+# visible for the entire session. Without the wait, we'd exit and macOS
+# would remove the Dock icon while the backgrounded server kept running.
+wait "$SERVER_PID"

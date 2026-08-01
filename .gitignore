@@ -61,3 +61,5 @@ frontend/tsconfig.tsbuildinfo
 frontend/next-env.d.ts
 .launcher.log
 .shots-*/
+resources/icon/*.iconset/
+resources/icon/wrap.html

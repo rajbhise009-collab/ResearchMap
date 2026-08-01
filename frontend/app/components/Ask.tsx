@@ -13,6 +13,7 @@ import type {
   GapDoc, PaperDoc, LanguagePack, SearchIndex, SearchResult,
 } from "../../lib/types";
 import { search } from "../../lib/search";
+import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
 import { DevKV } from "./DevMode";
 
@@ -40,7 +41,7 @@ export default function Ask({ lang, gaps, papers }: {
   // Preload the index so the first keystroke is already answered.
   useEffect(() => {
     let live = true;
-    fetch("data/search-index.json")
+    fetch(asset("/data/search-index.json"))
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
       .then((j: SearchIndex) => { if (live) setIndex(j); })
       .catch(() => { if (live) setIndexError(true); });

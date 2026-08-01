@@ -1,0 +1,89 @@
+name: Deploy to GitHub Pages
+
+# Publishes the static export to GitHub Pages on every push to main.
+# The build runs entirely on cached reasoning output — no paid API calls,
+# no secrets required, no runtime keys.
+#
+# Two things to do once, by hand, before this workflow can succeed:
+#   1. In the repo Settings → Pages: set "Source" to "GitHub Actions".
+#   2. Nothing else. No env vars, no secrets, no billing plan.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissions the deploy step needs.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer push cancels an older still-running run.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Python deps for the export step
+        # The export module only needs pydantic + numpy from requirements;
+        # skip the LLM/DB stack that isn't touched here.
+        run: |
+          python -m pip install --upgrade pip
+          pip install "pydantic>=2" "numpy>=1.26"
+
+      - name: Snapshot the reasoning cache into frontend/public/data
+        run: python -m backend.app.api.export
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build (subpath = repository name)
+        # GitHub Pages project sites live at username.github.io/<repo>/,
+        # so the build must be prefixed with /<repo>. github.repository is
+        # "owner/repo" — take everything after the slash.
+        working-directory: frontend
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build
+
+      - name: Add SPA-style 404 fallback
+        # GitHub Pages serves 404.html for any unknown path — Next already
+        # produced one at out/404.html. Copy the same to a top-level
+        # 404.html inside the artifact so Pages finds it without ambiguity.
+        run: cp frontend/out/404.html frontend/out/404-fallback.html || true
+
+      - uses: actions/configure-pages@v5
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
