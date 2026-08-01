@@ -56,7 +56,8 @@ _dialog_error() {
 }
 
 ui_step() { echo "[step] $*"; case "$*" in
-    *"installing"*) _notify "First run: installing dependencies (30–90s)…" ;;
+    *"installing frontend"*) _notify "First run: installing frontend dependencies (30–90s)…" ;;
+    *"installing"*|*"backend"*) _notify "First run: installing the Python backend (~30s)…" ;;
     *"Building"*)   _notify "Building the site (15–30s)…" ;;
 esac; }
 ui_ok()   { echo "[ok] $*"; }
@@ -77,10 +78,16 @@ $body"
 
 rm_check_prereqs
 rm_install_frontend_deps
+rm_ensure_python_env
 rm_build_site
 rm_start_server
 
-_notify "ResearchMap is open in your browser."
+# Native-window mode: Chrome --app=URL (chromeless, own Dock icon, feels
+# like a real Mac app). Falls back to the default browser when Chrome
+# isn't installed. The same URL still works in any browser tab — the log
+# and dev-mode notification carry it for anyone who wants to share it.
+rm_open window "$URL"
+_notify "ResearchMap is running · also open at $URL"
 
 # --- lifecycle: stay alive; clean up on quit ----------------------------
 _shutdown() {

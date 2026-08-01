@@ -4,10 +4,15 @@ DATABASE_URL and makes no external calls. Auto OpenAPI at /docs.
 
 from __future__ import annotations
 
+from functools import lru_cache
+from pathlib import Path
+from typing import Any
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-
-from functools import lru_cache
+from fastapi.responses import FileResponse, Response
+from fastapi.staticfiles import StaticFiles
+from starlette.types import Scope
 
 from backend.app.api import data, export, language, search_index
 from backend.app.ranking.schema import SCHEMA_VERSION
@@ -153,6 +158,56 @@ def search(q: str = Query("", description="A question in plain English"),
     if result["verdict"] == "out_of_domain":
         result["hits"] = []
     return result
+
+
+# --------------------------------------------------------------------------
+# Frontend mount.
+#
+# When frontend/out/ exists (i.e. the site has been built), the same uvicorn
+# process serves both API and frontend. That's what makes the launcher's
+# "opens as a real app" experience possible: one URL for everything, no
+# separate static server to babysit.
+#
+# Mounted LAST so /api/* routes above win first. Also gracefully absent
+# when the site hasn't been built — hosted deploys of just the API are
+# still valid.
+# --------------------------------------------------------------------------
+
+_STATIC_ROOT = Path(__file__).resolve().parents[3] / "frontend" / "out"
+
+
+class _FrontendStatic(StaticFiles):
+    """StaticFiles with two departures from the default:
+
+    1. Unknown paths return `out/404.html` with a proper 404 status, so the
+       reader sees ResearchMap's on-brand not-found page instead of an
+       "{"detail":"Not Found"}" JSON blob or a stock Starlette body.
+    2. Directory requests without a trailing slash (`/gap/xyz`) get an
+       explicit 308 redirect to the slash form (`/gap/xyz/`). Next's static
+       export ships each route as `<slug>/index.html`, and StaticFiles
+       resolves those only for trailing-slash URLs; without this, a shared
+       link missing its trailing slash 404s.
+    """
+
+    async def get_response(self, path: str, scope: Scope) -> Response:
+        response = await super().get_response(path, scope)
+        if response.status_code == 404:
+            # Try appending /index.html — handles the missing-trailing-slash case.
+            if path and not path.endswith("/"):
+                index_try = await super().get_response(f"{path}/index.html", scope)
+                if index_try.status_code == 200:
+                    from fastapi.responses import RedirectResponse
+                    return RedirectResponse(url=f"/{path}/", status_code=308)
+            # Fall back to the on-brand 404 page.
+            nf = Path(self.directory) / "404.html"
+            if nf.is_file():
+                return FileResponse(nf, status_code=404, media_type="text/html")
+        return response
+
+
+if _STATIC_ROOT.is_dir():
+    app.mount("/", _FrontendStatic(directory=str(_STATIC_ROOT), html=True),
+              name="frontend")
 
 
 __all__ = ["app"]

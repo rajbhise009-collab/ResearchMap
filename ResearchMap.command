@@ -52,12 +52,16 @@ trap 'rm_shutdown; printf "  ${GREEN}✓${RESET} Stopped.\n"' EXIT INT TERM HUP
 banner
 rm_check_prereqs
 rm_install_frontend_deps
+rm_ensure_python_env
 rm_build_site
 rm_start_server
+rm_open browser "$URL"
 
-printf "\n${GREEN}ResearchMap is open in your browser.${RESET}\n"
-printf "${DIM}Keep this window open while you use it.${RESET}\n\n"
-printf "  Press ${B}any key${RESET} in this window to stop the server and quit.\n\n"
+printf "\n${GREEN}ResearchMap is running.${RESET}\n"
+printf "  Open in your browser:  ${B}%s${RESET}\n" "$URL"
+printf "  API docs (developers): ${B}%sdocs${RESET}\n\n" "$URL"
+printf "${DIM}Keep this window open while you use it.${RESET}\n"
+printf "  Press ${B}any key${RESET} to stop the server and quit.\n\n"
 
 # Any key triggers shutdown, not just Enter.
 IFS= read -r -s -n 1 _ || true

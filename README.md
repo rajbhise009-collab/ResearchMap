@@ -13,17 +13,23 @@ for the full working discipline.
 
 Two ways to open it, use whichever you prefer:
 
-- **Double-click `ResearchMap.app`** in Finder. Native launcher — no
-  Terminal window opens. macOS notifications appear during setup;
-  quit from the Dock icon (right-click → Quit) to stop the local
-  server cleanly.
-- **Double-click `ResearchMap.command`** — same thing but through a
-  Terminal window that shows what's happening. Press any key in that
-  window to quit.
+- **Double-click `ResearchMap.app`** in Finder. Opens in its own window
+  (Chrome app-mode — no browser tabs, no address bar, feels native).
+  Progress shows as macOS notifications during first-run setup. Quit
+  from the Dock icon (right-click → **Quit**) to shut everything down.
+- **Double-click `ResearchMap.command`** — same app, but through a
+  Terminal window that shows what's happening and opens in your default
+  browser. Press any key in that window to quit.
+
+Both start the full stack: the FastAPI backend and the frontend from a
+single local URL that you can also open in any browser (Safari, Firefox,
+another Chrome window). The URL is printed in the Terminal window and
+included in the macOS notification.
 
 Both need Node.js (nodejs.org, LTS build) and Python 3 (`xcode-select
---install` installs it). The launchers tell you which is missing if
-either isn't there.
+--install` installs it). On first launch the app installs frontend
+dependencies (~180 MB npm) and a small Python backend (~30 MB pip);
+subsequent launches skip both.
 
 **First launch of `ResearchMap.app`**: macOS Gatekeeper blocks unsigned
 apps on first open. Right-click the .app → **Open** → **Open** in the

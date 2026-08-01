@@ -92,6 +92,50 @@ so you can see the exact error npm reports."
   return 0
 }
 
+# -- Python venv for the FastAPI stack ------------------------------------
+# The launcher used to serve static files with `python3 -m http.server`,
+# which needs no Python packages at all. Now the "genuine app" path serves
+# both the frontend AND live /api/* endpoints from one uvicorn process, so
+# we need a small Python env with fastapi + uvicorn + pydantic + numpy.
+#
+# On first run, create .venv with just those four packages (~30 MB). If a
+# venv already exists (e.g. developer already installed all of
+# requirements.txt), we leave it alone.
+rm_ensure_python_env() {
+  local venv="$REPO/.venv"
+  local uv="$venv/bin/uvicorn"
+  if [ -x "$uv" ]; then return 0; fi
+
+  ui_step "First run: setting up the Python backend (once)"
+  ui_note "Installing fastapi + uvicorn + pydantic + numpy (~30 MB)."
+  if [ ! -d "$venv" ]; then
+    ( cd "$REPO" && python3 -m venv .venv ) >>"$RM_LOG" 2>&1
+  fi
+  if [ ! -x "$venv/bin/pip" ]; then
+    ui_fail "Couldn't create a Python virtual environment." \
+"macOS ships with python3 (via Xcode Command Line Tools), but the 'venv'
+module didn't produce a working install. The full log is at:
+    $RM_LOG
+
+Try running 'xcode-select --install' in Terminal and launching again."
+    return 1
+  fi
+  "$venv/bin/pip" install --quiet --upgrade pip >>"$RM_LOG" 2>&1
+  "$venv/bin/pip" install --quiet \
+      "fastapi>=0.100" "uvicorn>=0.20" "pydantic>=2" "numpy>=1.26" \
+      >>"$RM_LOG" 2>&1
+  if [ ! -x "$uv" ]; then
+    ui_fail "Couldn't install the Python backend." \
+"The full log is at:
+    $RM_LOG
+
+A common cause is being offline. Try again with a network connection."
+    return 1
+  fi
+  ui_ok "Backend installed"
+  return 0
+}
+
 # -- build if stale -------------------------------------------------------
 rm_needs_build() {
   [ ! -f "$RM_BUILT_MARK" ] && return 0
@@ -147,14 +191,17 @@ print(s.getsockname()[1]); s.close()
 PY
 }
 
-# Serves out/ with a custom 404 handler so users never see Python's stock
-# "Error response" body — they see our on-brand 404.html instead.
+# Start the local web server.
 #
-# Implementation note: the server program is written to a tempfile before
-# launch. A `python3 - <<PY … PY &` heredoc into a backgrounded process
-# is fragile inside a sourced library (the parent's file descriptor state
-# leaks in strange ways). A separate tempfile is straightforward and
-# self-contained; macOS clears /tmp on boot, so nothing to garbage-collect.
+# Two backends, one interface:
+#   - uvicorn (when the Python env exists) serves the FastAPI app, which
+#     itself mounts frontend/out/ at / — one process, /api/* and / from
+#     the same origin. This is the "complete application" path.
+#   - python3 -m http.server (fallback, static-only) — serves the built
+#     frontend but exposes no live /api endpoints. Used when the Python
+#     backend can't be installed.
+#
+# Sets SERVER_PID and URL for the caller.
 rm_start_server() {
   ui_step "Starting a local web server"
   PORT=$(rm_pick_free_port 2>/dev/null || true)
@@ -165,9 +212,27 @@ launcher again."
     return 1
   fi
 
-  local server_py
-  server_py="$(mktemp -t rm-server.XXXXXX.py)"
-  cat > "$server_py" <<'PY'
+  URL="http://127.0.0.1:$PORT/"
+  local uv="$REPO/.venv/bin/uvicorn"
+
+  if [ -x "$uv" ]; then
+    # Full-stack: uvicorn serves frontend + /api/*.
+    # `exec` inside the subshell REPLACES the subshell with uvicorn, so
+    # $! becomes uvicorn's own PID — not a wrapper subshell whose child
+    # keeps running after we kill the wrapper.
+    ( cd "$REPO" && exec "$uv" backend.app.api.app:app \
+        --host 127.0.0.1 --port "$PORT" --log-level warning \
+        >>"$RM_LOG" 2>&1 ) &
+    SERVER_PID=$!
+    SERVER_KIND="uvicorn"
+  else
+    # Fallback: static-only via the stdlib http.server with our on-brand
+    # 404 handler. Fires when rm_ensure_python_env couldn't run (e.g.
+    # offline first launch). The URL still works and shows the site;
+    # only the /api/* endpoints are absent.
+    local server_py
+    server_py="$(mktemp -t rm-server.XXXXXX.py)"
+    cat > "$server_py" <<'PY'
 import functools, http.server, os, socketserver, sys
 root, port = sys.argv[1], int(sys.argv[2])
 NF = os.path.join(root, "404.html")
@@ -187,15 +252,15 @@ Handler = functools.partial(H, directory=root)
 with socketserver.TCPServer(("127.0.0.1", port), Handler) as httpd:
     httpd.serve_forever()
 PY
-  python3 "$server_py" "$RM_OUT_DIR" "$PORT" >>"$RM_LOG" 2>&1 &
-  SERVER_PID=$!
-  # The tempfile stays for the server's lifetime — small, self-contained,
-  # and macOS clears /tmp on boot.
+    python3 "$server_py" "$RM_OUT_DIR" "$PORT" >>"$RM_LOG" 2>&1 &
+    SERVER_PID=$!
+    SERVER_KIND="static"
+  fi
 
-  # Poll for readiness rather than sleeping a fixed interval.
-  local URL="http://127.0.0.1:$PORT/"
+  # Poll for readiness rather than sleeping a fixed interval. uvicorn
+  # takes ~1s to bind on a cold start; http.server is instant.
   local i
-  for i in 1 2 3 4 5 6 7 8 9 10; do
+  for i in $(seq 1 40); do
     if curl -s -o /dev/null "$URL"; then break; fi
     sleep 0.15
   done
@@ -206,8 +271,42 @@ This is unusual — please paste that log if it keeps happening."
     return 1
   fi
 
-  ui_ok "Serving $URL"
-  open "$URL" 2>/dev/null || true
+  case "$SERVER_KIND" in
+    uvicorn) ui_ok "Serving $URL  (full stack — /api endpoints included)" ;;
+    static)  ui_ok "Serving $URL  (frontend only — /api endpoints unavailable)" ;;
+  esac
+  return 0
+}
+
+# -- opening the app window ---------------------------------------------
+# Two modes, one interface:
+#   window  — Chrome's --app=URL: chromeless standalone window with its
+#             own Dock icon and favicon in the title bar. Feels like a
+#             native app. Falls back to a normal browser tab if Chrome
+#             isn't installed.
+#   browser — default browser tab (the launcher's classic behaviour).
+#
+# Sets APP_WINDOW_PID when a Chrome app window was launched (so callers
+# that care about window lifecycle can wait on it).
+rm_open() {
+  local mode="${1:-browser}"
+  local url="${2:-$URL}"
+  local chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+  if [ "$mode" = "window" ] && [ -x "$chrome" ]; then
+    # A dedicated user-data-dir keeps this window separate from the user's
+    # main Chrome profile — no logged-in accounts leak in, extensions don't
+    # run, and Chrome treats each launch as its own "installed" app.
+    local udd="$HOME/Library/Application Support/ResearchMap/chrome-app"
+    mkdir -p "$udd"
+    "$chrome" --app="$url" --user-data-dir="$udd" \
+      --no-first-run --no-default-browser-check >>"$RM_LOG" 2>&1 &
+    APP_WINDOW_PID=$!
+    return 0
+  fi
+
+  # Fallback: whatever the user set as their default browser.
+  open "$url" 2>/dev/null || true
   return 0
 }
 
@@ -216,6 +315,11 @@ rm_shutdown() {
   # Idempotent — trap can fire twice (e.g. ^C during a read).
   if [ -n "${RM_SHUTDOWN_DONE:-}" ]; then return; fi
   RM_SHUTDOWN_DONE=1
+  # Kill the Chrome app window first so its "connection refused" alert
+  # doesn't flash for a beat while the server is being torn down.
+  if [ -n "${APP_WINDOW_PID:-}" ] && kill -0 "$APP_WINDOW_PID" 2>/dev/null; then
+    kill "$APP_WINDOW_PID" 2>/dev/null || true
+  fi
   if [ -n "${SERVER_PID:-}" ] && kill -0 "$SERVER_PID" 2>/dev/null; then
     kill "$SERVER_PID" 2>/dev/null || true
     local i

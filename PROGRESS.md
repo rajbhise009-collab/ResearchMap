@@ -1,5 +1,104 @@
 # PROGRESS
 
+## The .app becomes a genuine app (2026-08-02) ✅
+
+Double-clicking `ResearchMap.app` no longer just opens a browser tab. It
+now opens a chromeless native-feeling window (Chrome `--app=URL` mode)
+against a real full-stack server: FastAPI serving both the frontend and
+the live `/api/*` endpoints from a single URL that also works from any
+other browser tab.
+
+Corpus frozen at 113 papers; no paid API calls; spend unchanged at $7.40.
+320 tests green.
+
+### One server, two surfaces
+
+`backend/app/api/app.py` now mounts `frontend/out/` at `/` behind all its
+`/api/*` routes. `_FrontendStatic` (a small `StaticFiles` subclass) does
+two things the default doesn't:
+
+- Falls back to `out/404.html` (with a real 404 status) for unknown
+  paths, so readers see the on-brand not-found page instead of an
+  `{"detail":"Not Found"}` blob.
+- Serves a 308 redirect from `/gap/xyz` to `/gap/xyz/` — Next's static
+  export ships each route as `<slug>/index.html`, and a shared link
+  missing its trailing slash would otherwise 404.
+
+The mount only activates when `out/` exists, so the API-only deploy
+(`uvicorn` without a build) still works.
+
+### Launcher: uvicorn with a graceful fallback
+
+`scripts/rm-lib.sh` now:
+
+- Bootstraps a minimal Python venv on first run (`fastapi`, `uvicorn`,
+  `pydantic`, `numpy` — ~30 MB total) if `.venv/bin/uvicorn` isn't
+  present. Developers who already installed the full requirements.txt
+  are left alone.
+- Prefers **uvicorn** for the full-stack experience (frontend + live
+  `/api/*` from one origin).
+- Falls back to `python3 -m http.server` (with the on-brand 404 handler)
+  when the Python backend can't be installed — offline first launch, no
+  internet at conference wifi, whatever. The URL still shows the site;
+  only `/api/*` is unavailable, and the "Serving …" line tells the user
+  which mode is running.
+- Fixed a subtle process-leak bug in the background-launch path: without
+  `exec` inside the subshell, `$!` was the wrapper subshell's PID (which
+  exits immediately), so uvicorn survived as an orphan with PPID=1 after
+  a "clean" shutdown. `( cd "$REPO" && exec "$uv" ... ) &` fixes it.
+
+### `rm_open window` — the "genuine app" feel
+
+New `rm_open` function in the shared library takes a mode:
+
+- `window` — Chrome's `--app=URL` mode: chromeless standalone window,
+  favicon in the title bar, its own Dock icon, no browser tabs or
+  address bar. A dedicated Chrome user-data-dir keeps this profile
+  isolated from the user's regular Chrome (no logged-in accounts, no
+  extensions). Falls back to `open URL` when Chrome isn't installed.
+- `browser` — default browser tab; the launcher's classic behaviour.
+
+`ResearchMap.app` uses `window`. `ResearchMap.command` uses `browser`
+(Terminal users typically want browser tabs so they can use dev tools,
+extensions, and multiple tabs).
+
+`rm_shutdown` was updated to kill the Chrome app window first (so its
+"connection refused" alert doesn't flash while the server is being torn
+down), then the server.
+
+### Verified
+
+`.app` launch from a truly fresh state:
+- Native window opened in ~2s
+- Uvicorn serving both frontend and API from one URL
+- Every endpoint checked from an independent HTTP client (as if
+  browsing the URL from another app): landing 200, /api/language 200,
+  /api/search 200, gap detail 200, unknown path 404
+- SIGTERM (Dock → Quit) shuts down uvicorn AND the Chrome app window —
+  zero leaked processes
+
+`.command` launch: same full-stack behaviour, opens default browser.
+
+### How to run
+
+Same as before, but now full-stack:
+
+```bash
+# Native app window (Chrome app mode; fallback to default browser)
+double-click ResearchMap.app     # in Finder
+
+# Terminal + default browser
+./ResearchMap.command
+
+# Bare API only (no frontend, no launcher)
+.venv/bin/uvicorn backend.app.api.app:app --reload
+
+# Tests
+cd backend && ../.venv/bin/python -m pytest -q
+```
+
+---
+
 ## Two delivery paths: native .app + public web (2026-08-01) ✅
 
 Same build, two ways to open it. Corpus frozen at 113 papers; no paid API
