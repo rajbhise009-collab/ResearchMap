@@ -71,7 +71,7 @@ export default function GapsClient({ gaps, lang }: {
           </div>
         )
       ) : (
-        <div className="results">
+        <div className="results-list">
           {shown.map((g) => (
             <GapResult key={g.slug} gap={g} readMore={lang.ui.read_more} />
           ))}

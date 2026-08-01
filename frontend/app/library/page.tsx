@@ -22,8 +22,11 @@ export default function LibraryPage() {
 
   return (
     <>
-      <div className="hero" style={{ marginBottom: "2.5rem" }}>
-        <h1 style={{ fontSize: "2rem" }}>The library</h1>
+      <div className="hero" style={{ marginBottom: "var(--s-7)" }}>
+        <div className="eyebrow">The library · Composition and findings</div>
+        <h1 style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.6rem)" }}>
+          The library
+        </h1>
         <p className="lede">
           What is in here, what we could read of it, and what the tool found
           when it looked.
@@ -67,14 +70,14 @@ export default function LibraryPage() {
           return (
             <div className="evidence-item" key={k.id}>
               <div className="src">
-                <strong style={{ color: "var(--ink)" }}>
-                  {n} {n === 1 ? "result" : "results"}
+                <strong className="tnum" style={{ color: "var(--ink-strong)", fontFamily: "var(--font-sans)", fontSize: "var(--step-1)" }}>
+                  {n}
                 </strong>
-                <span>{k.name}</span>
+                <span>{k.name.toLowerCase()}</span>
               </div>
               <p style={{ margin: 0 }}>{k.long}</p>
               {n > 0 && (
-                <p className="small" style={{ marginTop: "0.5rem" }}>
+                <p className="small" style={{ marginTop: "var(--s-3)" }}>
                   <Link href="/gaps/">See them →</Link>
                 </p>
               )}

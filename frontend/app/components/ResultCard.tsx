@@ -14,9 +14,9 @@ export function GapResult({ gap, readMore }: { gap: GapDoc; readMore: string }) 
   const href = `/gap/${gap.slug}/`;
   return (
     <article className={weak ? "result is-weak" : "result"}>
-      <div className="result-kind">
+      <div className="result-head">
         <span>{c.kind}</span>
-        <span aria-hidden>·</span>
+        <span className="sep" aria-hidden>·</span>
         <Strength label={c.strength} />
       </div>
 
@@ -30,8 +30,10 @@ export function GapResult({ gap, readMore }: { gap: GapDoc; readMore: string }) 
 
       <Caveats items={c.caveats} />
 
-      <div className="result-foot" style={{ marginTop: "0.85rem" }}>
-        <Link href={href}>{readMore} →</Link>
+      <div className="result-foot">
+        <Link href={href} className="read-more">
+          {readMore} <span aria-hidden>→</span>
+        </Link>
         <span>
           {c.paper_count} {c.paper_count === 1 ? "paper" : "papers"} behind this
         </span>
@@ -49,9 +51,9 @@ export function PaperResult({ paper, fidelityLabel, fidelityNote }: {
 }) {
   return (
     <article className="result">
-      <div className="result-kind">
+      <div className="result-head">
         <span>Paper</span>
-        {paper.year && (<><span aria-hidden>·</span><span>{paper.year}</span></>)}
+        {paper.year && (<><span className="sep" aria-hidden>·</span><span>{paper.year}</span></>)}
         {paper.abstract_only && (
           <Tag warn title={fidelityNote}>{fidelityLabel}</Tag>
         )}

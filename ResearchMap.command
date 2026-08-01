@@ -193,11 +193,30 @@ start_server() {
     pause_and_exit 1
   fi
 
-  # Serve with an explicit directory argument (python 3.7+). Running from
-  # OUT_DIR would work too, but this way the child process doesn't inherit
-  # a working directory the parent script depends on.
-  python3 -m http.server "$PORT" --bind 127.0.0.1 --directory "$OUT_DIR" \
-    >>"$LOG" 2>&1 &
+  # Serve with a tiny custom handler that returns out/404.html for unknown
+  # paths — Python's stock http.server hard-codes its own 404 body, which
+  # is a jarring break out of the app's design. The rest of the behaviour
+  # is identical to `python3 -m http.server`.
+  python3 - "$OUT_DIR" "$PORT" >>"$LOG" 2>&1 <<'PY' &
+import functools, http.server, os, socketserver, sys
+root, port = sys.argv[1], int(sys.argv[2])
+NF = os.path.join(root, "404.html")
+class H(http.server.SimpleHTTPRequestHandler):
+    def send_error(self, code, message=None, explain=None):
+        if code == 404 and os.path.isfile(NF):
+            with open(NF, "rb") as f: body = f.read()
+            self.send_response(404)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+        super().send_error(code, message, explain)
+socketserver.TCPServer.allow_reuse_address = True
+Handler = functools.partial(H, directory=root)
+with socketserver.TCPServer(("127.0.0.1", port), Handler) as httpd:
+    httpd.serve_forever()
+PY
   SERVER_PID=$!
 
   # Give the server a moment to bind. Poll instead of a fixed sleep so we

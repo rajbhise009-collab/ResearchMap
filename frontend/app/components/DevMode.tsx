@@ -3,55 +3,53 @@
 // navigation) and is mirrored into the URL as ?dev=1 (so it survives a
 // reload and can be shared). Deliberately no localStorage, sessionStorage
 // or cookies — nothing is written to the browser.
+//
+// Spec-critical: no visible entry point in the consumer UI. The only way
+// in is ?dev=1. Once on, the banner appears with a button to turn it off.
 
 import {
   createContext, useCallback, useContext, useEffect, useState, type ReactNode,
 } from "react";
 
-const Ctx = createContext<{ dev: boolean; toggle: () => void }>({
+const Ctx = createContext<{ dev: boolean; setDev: (v: boolean) => void }>({
   dev: false,
-  toggle: () => {},
+  setDev: () => {},
 });
 
 export function DevModeProvider({ children }: { children: ReactNode }) {
-  const [dev, setDev] = useState(false);
+  const [dev, setDevState] = useState(false);
 
   // Seed from the URL once mounted. Reading location during render would
   // break the static prerender, so it happens in an effect.
   useEffect(() => {
     const p = new URLSearchParams(window.location.search).get("dev");
-    if (p === "1") setDev(true);
+    if (p === "1") setDevState(true);
   }, []);
 
-  const toggle = useCallback(() => {
-    setDev((prev) => {
-      const next = !prev;
-      const url = new URL(window.location.href);
-      if (next) url.searchParams.set("dev", "1");
-      else url.searchParams.delete("dev");
-      window.history.replaceState(null, "", url.toString());
-      return next;
-    });
+  const setDev = useCallback((next: boolean) => {
+    setDevState(next);
+    const url = new URL(window.location.href);
+    if (next) url.searchParams.set("dev", "1");
+    else url.searchParams.delete("dev");
+    window.history.replaceState(null, "", url.toString());
   }, []);
 
-  return <Ctx.Provider value={{ dev, toggle }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ dev, setDev }}>{children}</Ctx.Provider>;
 }
 
 export const useDev = () => useContext(Ctx);
 
-export function DevToggle({ label }: { label: string }) {
-  const { dev, toggle } = useDev();
-  return (
-    <button className="dev-toggle" aria-pressed={dev} onClick={toggle}>
-      {label}{dev ? " · on" : ""}
-    </button>
-  );
-}
-
 export function DevBanner({ note }: { note: string }) {
-  const { dev } = useDev();
+  const { dev, setDev } = useDev();
   if (!dev) return null;
-  return <div className="dev-banner">{note}</div>;
+  return (
+    <div className="dev-banner" role="status">
+      <span>{note}</span>
+      <button className="dev-off" onClick={() => setDev(false)}>
+        Turn off
+      </button>
+    </div>
+  );
 }
 
 /** A block that only exists when developer mode is on. */
@@ -74,7 +72,7 @@ export function DevKV({ title, data }: { title: string; data: Record<string, unk
   if (!rows.length) return null;
   return (
     <div className="dev">
-      <h4>{title}</h4>
+      {title && <h4>{title}</h4>}
       <div className="kv">
         {rows.map(([k, v]) => (
           <div key={k} style={{ display: "contents" }}>
