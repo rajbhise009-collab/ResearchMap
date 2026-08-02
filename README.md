@@ -35,6 +35,16 @@ subsequent launches skip both.
 apps on first open. Right-click the .app → **Open** → **Open** in the
 dialog. Once approved, future launches are one double-click.
 
+**Don't keep the project in `~/Downloads`, `~/Documents`, or `~/Desktop`**.
+Modern macOS treats those as protected user-data locations and silently
+blocks unsigned apps from reading files inside them — the .app would
+launch, be unable to read its own scripts, and quit without visible
+error. Move the whole `ResearchMap` folder to your home folder (`~/`),
+`~/Applications`, or `~/dev/` and it just works. The .app detects this
+situation and shows a native dialog explaining the fix if you launch it
+from a protected location. `ResearchMap.command` from Terminal is
+unaffected — Terminal has broad file-access grants by default.
+
 <details>
 <summary>Terminal equivalent</summary>
 

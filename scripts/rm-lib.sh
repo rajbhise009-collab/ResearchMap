@@ -24,7 +24,11 @@
 : "${REPO:?REPO must be set before sourcing rm-lib.sh}"
 readonly RM_OUT_DIR="$REPO/frontend/out"
 readonly RM_BUILT_MARK="$RM_OUT_DIR/index.html"
-readonly RM_LOG="${RM_LOG:-$REPO/.launcher.log}"
+# Callers may have already exported RM_LOG (the .app writes to
+# ~/Library/Logs; the .command writes to the repo). Assign only if unset,
+# and don't mark readonly so re-sourcing this lib is harmless.
+: "${RM_LOG:=$REPO/.launcher.log}"
+export RM_LOG
 
 # -- Node discovery -------------------------------------------------------
 # On a fresh Mac the shell that launches us is often non-interactive, so

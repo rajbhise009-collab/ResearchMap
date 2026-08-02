@@ -20,8 +20,8 @@ export REPO
 
 # All output goes to the log — there's no controlling terminal. Users see
 # messages via osascript notification / dialog instead.
-readonly LOG_DIR="$HOME/Library/Logs/ResearchMap"
-readonly RM_LOG="$LOG_DIR/launcher.log"
+LOG_DIR="$HOME/Library/Logs/ResearchMap"
+RM_LOG="$LOG_DIR/launcher.log"
 mkdir -p "$LOG_DIR"
 export RM_LOG
 exec >>"$RM_LOG" 2>&1
@@ -29,8 +29,62 @@ echo "==== ResearchMap.app started at $(date) ===="
 echo "APP_BUNDLE=$APP_BUNDLE"
 echo "REPO=$REPO"
 
+# --- preflight: TCC file-access check ----------------------------------
+# On modern macOS (Ventura+), an app launched from Finder that sits in
+# ~/Downloads, ~/Documents, or ~/Desktop is blocked from reading its own
+# adjacent files unless the user grants "Files and Folders → Downloads"
+# in System Settings. The failure is silent — the source command below
+# would just fail with "Operation not permitted" and every rm_* function
+# would be undefined. That's the "nothing happens" report.
+#
+# Test read access to the shared library up front and show a clear
+# actionable dialog with three good options.
+_lib="$REPO/scripts/rm-lib.sh"
+if [ ! -r "$_lib" ] || ! cat "$_lib" >/dev/null 2>&1; then
+  # Distinguish "missing" from "blocked" so the dialog says the right thing.
+  parent_dir="$(basename "$(dirname "$REPO")")"
+  case "$parent_dir" in
+    Downloads|Documents|Desktop)
+      # TCC-protected location. This is by far the most common cause.
+      title="macOS is blocking ResearchMap.app"
+      body="The app can't read its own files because it lives in your ${parent_dir} folder, which macOS treats as protected.
+
+The fix (any one is fine):
+
+  •  Move the whole ResearchMap folder to a non-protected location — e.g. drag it into ~/Applications, or your home folder (~).
+
+  •  Or open Terminal and run:
+        mv \"$REPO\" ~/ResearchMap
+
+  •  Or grant permission in System Settings → Privacy & Security → Files and Folders → ResearchMap → enable ${parent_dir} Folder.
+
+After moving or granting permission, double-click ResearchMap.app again."
+      ;;
+    *)
+      title="ResearchMap.app can't read its own files"
+      body="The app looks for its files here:
+$REPO
+
+If you moved just the .app out of the ResearchMap folder, put it back — the .app must sit inside the project folder.
+
+If the whole folder is intact, macOS may be blocking file access. Try running ResearchMap.command from Terminal to see the exact error."
+      ;;
+  esac
+  echo "[preflight FAIL] cannot read $_lib"
+  osascript <<APPLESCRIPT >/dev/null 2>&1 || true
+tell application "System Events"
+  activate
+  display dialog "$body" with title "$title" buttons {"Open Downloads folder", "OK"} default button 2 with icon stop
+  if button returned of result is "Open Downloads folder" then
+    do shell script "open $HOME/Downloads"
+  end if
+end tell
+APPLESCRIPT
+  exit 1
+fi
+
 # --- guardrail: the app must sit inside its repo ------------------------
-if [ ! -d "$REPO/backend" ] || [ ! -f "$REPO/scripts/rm-lib.sh" ]; then
+if [ ! -d "$REPO/backend" ]; then
   osascript -e "display dialog \"ResearchMap.app must stay inside the ResearchMap project folder.\n\nThe app looks for its files at:\n$REPO\n\nMove the whole ResearchMap folder together, or run ResearchMap.command instead.\" with title \"ResearchMap\" buttons {\"OK\"} default button 1 with icon stop" >/dev/null 2>&1 || true
   exit 1
 fi
