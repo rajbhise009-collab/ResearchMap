@@ -208,8 +208,16 @@ for scorer validation.
 
 ## Phase index
 
+**Numbering note (2026-08-03).** The commits shipping API and frontend
+were labelled "Phase 6" and "Phase 7" in commit messages and PROGRESS.md,
+skipping the validation phase originally slated as Phase 6 here. That
+labelling is a historical fact in the git log — do not renumber the
+commits — but the plan's numbering is the source of truth for what's
+DONE and what's OUTSTANDING. **Validation (retrospective time-split
+test) has not been built.**
+
 - Phase 0 — foundation: repo, data model (Pydantic + DB), config,
-  interfaces, mocks, seed corpus.
+  interfaces, mocks, seed corpus. **BUILT.**
 - Phase 1 — ingestion: OpenAlex + Semantic Scholar clients, normalizer,
   dedup, tests. Small-sample corpus only at this phase (100–300 papers
   from keyword retrieval). Full-scale corpus construction — snowball
@@ -219,15 +227,30 @@ for scorer validation.
   needs: for example, if abstracts alone yield too few limitations to
   score anything, we need OA full text, and that changes ingestion
   and storage before we scale corpus size. Do not scale up ingestion
-  until Phase 2 tells us what the corpus has to contain.
-- Phase 2 — extraction (blocked until user approves).
-- Phase 3 — relationship layer (blocked).
-- Phase 4 — reasoning engine (blocked).
-- Phase 5 — ranking (blocked).
-- Phase 6 — validation (blocked). Its own gated phase. The
-  retrospective time-split test — freezing the corpus at year Y and
-  checking whether the ranking recovers year-(Y+k) actual research
-  activity — is the project's publishable claim. It gets a full
-  phase, not a half-phase bundled with ranking.
-- Phase 7 — API (blocked).
-- Phase 8 — frontend (blocked).
+  until Phase 2 tells us what the corpus has to contain. **BUILT.**
+- Phase 2 — extraction. **BUILT** (real Gemini extraction over the
+  113-paper corpus, ~$7.40 spend to date).
+- Phase 3 — relationship layer. **BUILT** (2026-07-25; see PROGRESS.md).
+- Phase 4 — reasoning engine. **BUILT** (2026-07-26).
+- Phase 5 — ranking. **BUILT** (2026-07-30; commit `98566be`
+  "Phase 5: ranking + versioned evidence-card assembly").
+- Phase 6 — validation. **NOT BUILT — OUTSTANDING.** Its own gated
+  phase. The retrospective time-split test — freezing the corpus at
+  year Y and checking whether the ranking recovers year-(Y+k) actual
+  research activity — is the project's publishable claim. It gets a
+  full phase, not a half-phase bundled with ranking. The commits
+  labelled "Phase 6" (`cceac22` "Phase 6: read-only FastAPI + static
+  snapshot export") actually shipped Phase 7 (API); validation was
+  skipped in that push and remains the next real piece of work.
+- Phase 7 — API. **BUILT** (2026-07-30; the commit above is misnamed
+  "Phase 6" in the message but implements this phase per the plan).
+  Adds no reasoning or ranking — read-only over the file-backed
+  reasoning output.
+- Phase 8 — frontend. **BUILT** (2026-07-31 consumer rebuild; 2026-08-01
+  premium UI pass; 2026-08-02 wired to the live FastAPI for the .app's
+  full-stack "genuine app" mode). Includes the honest search gate and
+  the plain-language translation layer.
+
+The next work-shaped thing is Phase 6 (validation). Nothing that ships
+after this line should be described as "complete" without acknowledging
+validation is still owed.

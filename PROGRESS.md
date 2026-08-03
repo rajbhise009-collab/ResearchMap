@@ -1,5 +1,15 @@
 # PROGRESS
 
+## Outstanding — Phase 6 (validation)
+
+**Validation has not been built.** The commits labelled "Phase 6" in the
+git log (`cceac22` "Phase 6: read-only FastAPI + static snapshot export")
+actually shipped Phase 7 (API) per the plan in `CLAUDE.md`. Phase 6 —
+the retrospective time-split test that is the project's publishable
+claim — was skipped in that push and remains the next real piece of
+work. Nothing shipped since should be described as "complete" without
+this caveat. See CLAUDE.md § Phase index for the full reconciliation.
+
 ## The .app becomes a genuine app (2026-08-02) ✅
 
 Double-clicking `ResearchMap.app` no longer just opens a browser tab. It
