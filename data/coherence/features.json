@@ -1,0 +1,236 @@
+[
+  {
+    "slug": "llm-calibration",
+    "name": "LLM calibration / hallucination / uncertainty",
+    "reputation": "measured",
+    "note": "The ONE ground-truth domain: measured 0 confirmed contradictions on 113 papers, some structural-hole leads.",
+    "n_matching_in_openalex": 20952,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.033,
+      "citation_reciprocity": 0.0,
+      "citation_modularity": 0.3753,
+      "review_ratio": 0.17,
+      "temporal_churn": 0.9323,
+      "venue_concentration": 0.0634,
+      "term_vector_spread": 0.9469,
+      "median_year": 2024,
+      "year_span": 5
+    },
+    "verdict": {
+      "contested_score": 0.818,
+      "contested_band": "high",
+      "method_transfer_score": 0.799,
+      "method_transfer_band": "high",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "protein-structure-prediction",
+    "name": "Protein structure prediction (post-AlphaFold)",
+    "reputation": "consolidated",
+    "note": "AlphaFold consolidated the field around one dominant approach; expect low contestedness.",
+    "n_matching_in_openalex": 31944,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.0654,
+      "citation_reciprocity": 0.0342,
+      "citation_modularity": 0.2467,
+      "review_ratio": 0.01,
+      "temporal_churn": 0.8326,
+      "venue_concentration": 0.063,
+      "term_vector_spread": 0.9145,
+      "median_year": 2022,
+      "year_span": 3
+    },
+    "verdict": {
+      "contested_score": 0.395,
+      "contested_band": "low",
+      "method_transfer_score": 0.808,
+      "method_transfer_band": "high",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "empirical-software-engineering",
+    "name": "Empirical software engineering (bug prediction)",
+    "reputation": "contested",
+    "note": "Persistent methodological arguments about metrics, datasets, external validity; classic disputed field.",
+    "n_matching_in_openalex": 625,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.0275,
+      "citation_reciprocity": 0.0,
+      "citation_modularity": 0.323,
+      "review_ratio": 0.03,
+      "temporal_churn": 0.7673,
+      "venue_concentration": 0.0492,
+      "term_vector_spread": 0.836,
+      "median_year": 2019,
+      "year_span": 10
+    },
+    "verdict": {
+      "contested_score": 0.684,
+      "contested_band": "high",
+      "method_transfer_score": 0.679,
+      "method_transfer_band": "high",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "ml-fairness",
+    "name": "Fairness in machine learning",
+    "reputation": "contested",
+    "note": "Definitions of fairness proven mutually incompatible; should score as contested.",
+    "n_matching_in_openalex": 2477,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.0121,
+      "citation_reciprocity": 0.0,
+      "citation_modularity": 0.4461,
+      "review_ratio": 0.11,
+      "temporal_churn": 0.8695,
+      "venue_concentration": 0.0162,
+      "term_vector_spread": 0.9453,
+      "median_year": 2021,
+      "year_span": 6
+    },
+    "verdict": {
+      "contested_score": 0.667,
+      "contested_band": "high",
+      "method_transfer_score": 0.621,
+      "method_transfer_band": "moderate",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "diet-and-mortality",
+    "name": "Diet composition and all-cause mortality",
+    "reputation": "contested",
+    "note": "Notorious for meta-analyses reaching opposite conclusions on the same food group.",
+    "n_matching_in_openalex": 6917,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.0094,
+      "citation_reciprocity": 0.0,
+      "citation_modularity": 0.6821,
+      "review_ratio": 0.08,
+      "temporal_churn": 0.9621,
+      "venue_concentration": 0.0382,
+      "term_vector_spread": 0.9578,
+      "median_year": 2019,
+      "year_span": 8
+    },
+    "verdict": {
+      "contested_score": 0.44,
+      "contested_band": "moderate",
+      "method_transfer_score": 0.594,
+      "method_transfer_band": "moderate",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "formal-methods-concurrency",
+    "name": "Formal verification of concurrent systems",
+    "reputation": "consolidated",
+    "note": "Small, tight community; established theoretical foundations; expect low contestedness, low churn.",
+    "n_matching_in_openalex": 793,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.0152,
+      "citation_reciprocity": 0.0,
+      "citation_modularity": 0.4475,
+      "review_ratio": 0.02,
+      "temporal_churn": 0.9254,
+      "venue_concentration": 0.0804,
+      "term_vector_spread": 0.9806,
+      "median_year": 2018,
+      "year_span": 10
+    },
+    "verdict": {
+      "contested_score": 0.546,
+      "contested_band": "moderate",
+      "method_transfer_score": 0.652,
+      "method_transfer_band": "high",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "transformer-attention",
+    "name": "Transformer attention mechanisms",
+    "reputation": "consolidated",
+    "note": "Vaswani et al. established the canon; most work extends rather than argues.",
+    "n_matching_in_openalex": 15559,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.0136,
+      "citation_reciprocity": 0.0328,
+      "citation_modularity": 0.5867,
+      "review_ratio": 0.03,
+      "temporal_churn": 0.9128,
+      "venue_concentration": 0.0866,
+      "term_vector_spread": 0.9679,
+      "median_year": 2021,
+      "year_span": 7
+    },
+    "verdict": {
+      "contested_score": 0.147,
+      "contested_band": "low",
+      "method_transfer_score": 0.636,
+      "method_transfer_band": "moderate",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "microplastics-health",
+    "name": "Microplastics and human health",
+    "reputation": "contested",
+    "note": "Rapidly emerging field, methodological arguments about detection and dose-response; expect moderate-high contestedness.",
+    "n_matching_in_openalex": 25771,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.044,
+      "citation_reciprocity": 0.0,
+      "citation_modularity": 0.2661,
+      "review_ratio": 0.25,
+      "temporal_churn": 0.7527,
+      "venue_concentration": 0.0652,
+      "term_vector_spread": 0.9102,
+      "median_year": 2020,
+      "year_span": 6
+    },
+    "verdict": {
+      "contested_score": 1.0,
+      "contested_band": "high",
+      "method_transfer_score": 0.773,
+      "method_transfer_band": "high",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  },
+  {
+    "slug": "deep-rl-continuous-control",
+    "name": "Deep RL for continuous control",
+    "reputation": "contested",
+    "note": "Well-known irreproducibility crisis for RL benchmarks; expect contestedness.",
+    "n_matching_in_openalex": 4551,
+    "features": {
+      "n_papers": 100,
+      "intracorpus_reference_rate": 0.0133,
+      "citation_reciprocity": 0.0,
+      "citation_modularity": 0.4082,
+      "review_ratio": 0.22,
+      "temporal_churn": 0.842,
+      "venue_concentration": 0.076,
+      "term_vector_spread": 0.8017,
+      "median_year": 2019,
+      "year_span": 7
+    },
+    "verdict": {
+      "contested_score": 0.852,
+      "contested_band": "high",
+      "method_transfer_score": 0.633,
+      "method_transfer_band": "moderate",
+      "caveat": "These scores are HYPOTHESIS-DRIVEN, not validated. The predictor has been calibrated on a single ground-truth domain (n=1). Treat as a discussion aid, not a decision."
+    }
+  }
+]
