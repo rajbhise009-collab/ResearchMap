@@ -11,11 +11,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type {
   GapDoc, PaperDoc, LanguagePack, SearchIndex, SearchResult,
+  PreflightResult,
 } from "../../lib/types";
 import { search } from "../../lib/search";
+import { useDev, DevKV, DevJSON } from "./DevMode";
 import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
-import { DevKV } from "./DevMode";
 
 const EXAMPLES = [
   "why do language models sound confident when they're wrong",
@@ -265,11 +266,47 @@ function SearchIcon({ className }: { className?: string }) {
   );
 }
 
-/** The honest refusal, plus what it would take to fix it. */
+/** The honest refusal, plus a live pre-flight check on the subject the
+ *  user asked about. The pre-flight uses ONLY free OpenAlex metadata
+ *  (no LLM, no extraction, no spend) and returns:
+ *   - how much literature exists on the subject
+ *   - a hypothesis-driven diagnostic about what kinds of findings the
+ *     reasoning engine would likely surface
+ *   - a cost + time estimate for building the library
+ *
+ *  This only works when the full stack is running (uvicorn serving
+ *  /api/*). On a static host with no backend, we fall back to the copy
+ *  from the translation layer — same headline, no live diagnostic.
+ */
 function OutOfDomain({ lang, query }: { lang: LanguagePack; query: string }) {
   const [showBuild, setShowBuild] = useState(false);
+  const [preflight, setPreflight] = useState<PreflightResult | null>(null);
+  const [preflightState, setPreflightState] = useState<
+    "idle" | "loading" | "ok" | "unavailable"
+  >("idle");
+  const { dev } = useDev();
   const S = lang.search.out_of_domain;
   const B = lang.build_library;
+
+  // Lazily fetch when the user opens the panel. Aborts if the panel
+  // gets closed before the response returns.
+  useEffect(() => {
+    if (!showBuild || preflightState !== "idle" || !query.trim()) return;
+    setPreflightState("loading");
+    const ctrl = new AbortController();
+    fetch(`/api/preflight?q=${encodeURIComponent(query)}`, { signal: ctrl.signal })
+      .then(async (r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return (await r.json()) as PreflightResult;
+      })
+      .then((data) => { setPreflight(data); setPreflightState("ok"); })
+      .catch((e) => {
+        if ((e as Error).name === "AbortError") return;
+        setPreflightState("unavailable");
+      });
+    return () => ctrl.abort();
+  }, [showBuild, preflightState, query]);
+
   return (
     <div style={{ marginTop: "var(--s-7)" }}>
       <div className="empty">
@@ -296,6 +333,27 @@ function OutOfDomain({ lang, query }: { lang: LanguagePack; query: string }) {
         <div className="panel">
           <h2>{B.title}</h2>
           <p>{B.body}</p>
+
+          {preflightState === "loading" && (
+            <p className="small muted" style={{ marginTop: "var(--s-4)" }}>
+              Looking up how much literature exists on this…
+            </p>
+          )}
+
+          {preflightState === "ok" && preflight && (
+            <PreflightBlock preflight={preflight} devMode={dev} />
+          )}
+
+          {preflightState === "unavailable" && (
+            <p className="small muted" style={{ marginTop: "var(--s-4)" }}>
+              (Live pre-flight isn&apos;t available on this deployment —
+              it only runs when the local backend is up. Estimates below
+              are for a typical ~200-paper build.)
+            </p>
+          )}
+
+          {/* Static fallback — always shown so the panel is informative
+              even without a live pre-flight. */}
           <div className="estimate">
             <p className="section-eyebrow" style={{ marginBottom: "var(--s-3)" }}>
               {B.estimate_label}
@@ -315,6 +373,38 @@ function OutOfDomain({ lang, query }: { lang: LanguagePack; query: string }) {
           </div>
           <p className="not-yet">{B.not_yet}</p>
         </div>
+      )}
+    </div>
+  );
+}
+
+/** Renders the live pre-flight result inside the "Build a library" panel.
+ *  Consumer view: three plain-language lines (coverage, diagnostic,
+ *  cost/time). Dev view: raw features, verdict, cost projection, and
+ *  the top paper titles OpenAlex returned for the query — all clearly
+ *  framed as "hypothesis, not guarantee." */
+function PreflightBlock({ preflight, devMode }: {
+  preflight: PreflightResult;
+  devMode: boolean;
+}) {
+  const c = preflight.consumer;
+  return (
+    <div style={{ marginTop: "var(--s-5)" }}>
+      <p className="section-eyebrow">Pre-flight diagnostic</p>
+
+      <p style={{ margin: "var(--s-2) 0 var(--s-3)" }}>{c.coverage_line}</p>
+      <p style={{ margin: 0 }}>{c.diagnostic_line}</p>
+      <p style={{ margin: "var(--s-4) 0 0", fontWeight: 500 }}>
+        {c.estimate_headline}
+      </p>
+
+      {devMode && (
+        <>
+          <DevKV title="preflight — features" data={preflight.dev.features} />
+          <DevKV title="preflight — verdict" data={preflight.dev.verdict} />
+          <DevKV title="preflight — cost projection" data={preflight.dev.cost_projection} />
+          <DevJSON title="preflight — top OpenAlex results" data={preflight.dev.top_paper_titles || []} />
+        </>
       )}
     </div>
   );

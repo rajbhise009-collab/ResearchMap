@@ -144,6 +144,44 @@ def language_pack():
     return language.language_pack()
 
 
+@app.get("/api/preflight")
+def library_preflight(q: str = Query("", description="A question or subject in plain English")):
+    """Free pre-flight for the 'Build a library for this' button.
+
+    On an out-of-domain query, this fetches the top ~50 papers about
+    the subject from OpenAlex (~10 free credits), runs the coherence
+    predictor from `backend.app.coherence.features`, and returns a
+    plain-language summary safe for a public visitor plus full internals
+    under `dev`.
+
+    The dev block is exposed unconditionally — same policy as `?dev=1`
+    on the frontend: transparency, not concealment. See
+    docs/findings/domain-coherence-predictor.md for the caveats: the
+    predictor is a HYPOTHESIS, not a validated model, and the "dev"
+    label frames it as such.
+    """
+    from backend.app.coherence.preflight import preflight
+    if not q.strip():
+        raise HTTPException(400, "q is required")
+    try:
+        result = preflight(q)
+    except RuntimeError as e:
+        # OpenAlex key not configured — return a 503 so the frontend can
+        # show a graceful "preflight unavailable" note rather than crash.
+        raise HTTPException(503, str(e))
+    return {
+        "query": result.query,
+        "n_openalex_matches": result.n_openalex_matches,
+        "n_sampled": result.n_sampled,
+        "consumer": result.consumer_summary,
+        "dev": {
+            "features": result.features,
+            "verdict": result.verdict,
+            **result.dev_details,
+        },
+    }
+
+
 @app.get("/api/search")
 def search(q: str = Query("", description="A question in plain English"),
            limit: int = Query(20, ge=1, le=100)):

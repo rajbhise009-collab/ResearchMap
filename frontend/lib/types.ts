@@ -33,6 +33,61 @@ export interface ConsumerPaper {
   no_methods: string;
 }
 
+// ---- pre-flight predictor result ----------------------------------------
+// GET /api/preflight?q=… — computed live from free OpenAlex metadata.
+// The consumer view is what a public visitor sees; `dev` is the full
+// hypothesis-vs-guarantee internals surfaced only under ?dev=1.
+// See docs/findings/domain-coherence-predictor.md for the honesty story.
+
+export interface PreflightConsumer {
+  headline: string;
+  coverage_line: string;
+  diagnostic_line: string;
+  diagnostic_confidence: string;
+  estimate_headline: string;
+}
+
+export interface PreflightDev {
+  features: {
+    n_papers: number;
+    intracorpus_reference_rate: number;
+    citation_reciprocity: number;
+    citation_modularity: number;
+    review_ratio: number;
+    temporal_churn: number;
+    venue_concentration: number;
+    term_vector_spread: number;
+    median_year: number | null;
+    year_span: number | null;
+  };
+  verdict: {
+    contested_score: number;
+    contested_band: string;
+    method_transfer_score: number;
+    method_transfer_band: string;
+    caveat: string;
+  };
+  cost_projection: {
+    target_papers: number;
+    est_extraction_usd: number;
+    est_pair_classification_usd: number;
+    est_total_usd: number;
+    est_hours: string;
+  };
+  credit_headers?: Record<string, unknown> | null;
+  openalex_filter?: string;
+  cache_path?: string;
+  top_paper_titles?: (string | null)[];
+}
+
+export interface PreflightResult {
+  query: string;
+  n_openalex_matches: number;
+  n_sampled: number;
+  consumer: PreflightConsumer;
+  dev: PreflightDev;
+}
+
 // ---- raw internals (developer mode only) ----
 
 export interface Caveat { code: string; label: string; detail: string; }

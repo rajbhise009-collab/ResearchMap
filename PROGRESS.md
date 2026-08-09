@@ -1,5 +1,114 @@
 # PROGRESS
 
+## Coherence predictor + reusable scaling tool + preflight wiring (2026-08-09) ✅
+
+Two new capabilities, both designed to spend less and know more before
+spending. No paid API calls; corpus frozen at 113 papers; spend unchanged
+at $7.40. 348 tests green (was 320; +14 coherence, +6 scaling, +8
+preflight).
+
+### Part A — metadata-only domain-coherence pre-flight
+
+`backend/app/coherence/` — features + verdict + fetch CLI + 9-domain
+sample cached under `data/coherence/`. Uses free OpenAlex `filter=`
+list calls (90 credits total of a 100,000/day quota; $0). Features:
+intracorpus reference rate, citation reciprocity, greedy-Louvain
+modularity, review ratio, temporal churn (JS divergence over cited-
+work distributions), venue HHI, Jaccard title-term spread.
+
+Composite scores (`contested_score`, `method_transfer_score`) are
+unweighted hypothesis-driven means — no data-fit weights because n=1
+is not enough to fit anything without overfitting.
+
+The finding at `docs/findings/domain-coherence-predictor.md` reports
+honestly: discriminates 7 of 9 domains by reputation, gets **the one
+measured domain (llm-calibration) wrong** (predicts contested, we
+measured zero contradictions). Documents the v0.1→v0.2 reversal where
+initial "reviews signal consolidation" got flipped by data. Includes
+what full validation would cost (~$12-16 for two-domain contrast,
+~$18-24 for three).
+
+### Part B — reusable scaling tool
+
+`backend/app/reasoning/scaling_tool.py` + `run_scaling_tool.py`. Takes
+any ReasoningCorpus + ScorerSpec list, returns per-N per-scorer curves
+with log-log slope + fit-confidence band + machine-readable caveats
+per curve.
+
+**The single most important thing this fixes**: the fixed-k lesson
+from the hand-run study. Every scorer that can bound yield by
+construction declares a `bounded_yield` ceiling; the tool either
+flags the curve `parameter_bound:_caps_yield_at_N` (if unmasked and
+no `scale_with_n`) or notes the parameter was scaled with N — either
+way the caveat rides IN the report, not just in a companion doc.
+
+All-zero curves get `all_zeros:bound_only` — the true rate is bounded
+at ~1/candidates, never proven absent. Log-log fits with too few
+non-zero points get `fit_confidence: low` or `unmeasurable`; the
+report never silently extrapolates from an unmeasurable curve.
+
+Reproduces the hand-run scaling study (`docs/findings/corpus-scaling-
+study.md`) exactly on candidate/orphan/persistent/structural curves.
+One INVESTIGATED divergence: log-log regression over all 5 points
+gives candidate slope 1.77; doc's endpoint-only fit gives 1.89.
+Regression is the more principled number; documented in the test
+message. Cost projection at N=800: tool $36 vs doc $40, 10% lower
+because of the honest slope.
+
+Also fixed a projection bug found during test: my first draft used
+`pairs = N^slope` with implicit intercept 1 — that gave $293 at N=800
+vs the doc's $40. Anchoring the projection at the measured reference
+point fixes it and matches the doc within 10%.
+
+### Part C — wired into "Build a library for this"
+
+`/api/preflight?q=…` — runs Part A live on the user's OOD subject
+using OpenAlex free (~10 credits per uncached query; on-disk cache
+under `data/coherence/queries/`). Returns a plain-language
+consumer summary (three lines: coverage, diagnostic, cost/time) and
+full internals under `dev`.
+
+Frontend `OutOfDomain` component fetches the endpoint when the user
+opens the panel and renders `PreflightBlock`. Dev-mode surface shows
+raw features, verdict scores, cost projection, and the top OpenAlex
+titles for the query — same policy as everywhere else: transparency,
+not concealment.
+
+Degrades gracefully on the static export: if the fetch fails (no
+backend behind the static hosting), the panel shows a "live pre-
+flight isn't available on this deployment" note and falls back to
+the static translation-layer copy. The button STILL isn't wired to
+build anything — that stays a human transaction per the not_yet copy.
+
+### Honesty invariants (pinned by test)
+
+- Diagnostic language ALWAYS includes "hypothesis" / "haven't
+  validated" / "not a guarantee" (`test_diagnostic_never_promises_it
+  _is_validated`).
+- Dev verdict ALWAYS carries the n=1 caveat
+  (`test_dev_verdict_carries_the_n1_caveat`).
+- Consumer copy ALWAYS omits "click here to build", "starting the
+  build" (`test_consumer_never_says_the_button_works`).
+- Bounded-yield parameters ALWAYS surface as machine-readable caveats
+  in the scaling report (`test_bounded_scorer_without_scaling_gets
+  _flagged`).
+
+### How to run
+
+```bash
+# .app: preflight fetches live on first click, cached thereafter.
+# .command: same, terminal-native.
+# Bare tools:
+python -m backend.app.coherence.fetch --all          # 8-domain feature table
+python -m backend.app.reasoning.run_scaling_tool     # reproduce scaling study
+curl 'http://127.0.0.1:PORT/api/preflight?q=protein+structure'  # live preflight
+
+# Tests
+cd backend && ../.venv/bin/python -m pytest -q
+```
+
+---
+
 ## Outstanding — Phase 6 (validation)
 
 **Validation has not been built.** The commits labelled "Phase 6" in the
