@@ -140,6 +140,12 @@ export interface Finding { slug: string; title: string; path: string; markdown: 
 
 export interface Kind { id: string; name: string; short: string; long: string; }
 
+export interface Attribution {
+  label: string;
+  intro: string;
+  items: [string, string, string][];   // [name, url, note]
+}
+
 export interface LanguagePack {
   ui: Record<string, string>;
   dev: Record<string, string>;
@@ -164,6 +170,7 @@ export interface LanguagePack {
     estimates: [string, string][]; not_yet: string;
   };
   no_disagreements: { headline: string; body: string; link_label: string };
+  attribution: Attribution;
 }
 
 // ---- lightweight payloads handed to client components ----

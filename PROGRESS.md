@@ -1,5 +1,87 @@
 # PROGRESS
 
+## Public-deploy prep — MIT license, dev-mode gate, attribution, keyless CI (2026-09-27) ✅
+
+Shipping-prep pass to publish ResearchMap as a public product. No paid API
+calls; corpus frozen at 113 papers; spend unchanged at $7.40. **349 tests
+green** (was 348; +1 attribution).
+
+### Architectural + content audit
+
+- **Nothing in the public build can cost money.** `frontend/out/` is pure
+  static HTML/JS/CSS + JSON. No API routes ship. The two runtime `fetch`
+  calls are `search-index.json` (static file, free) and `/api/preflight`
+  (free-tier OpenAlex when a backend exists — 404s with a graceful
+  fallback on static hosts). No paid-API strings (`gemini`, `anthropic`,
+  `openai`, `API_KEY`) anywhere in `out/`.
+- **No full-text leakage.** Scanned all 197 files under
+  `frontend/public/data/`. Max text lengths — abstract 3306 (OpenAlex,
+  not full text), claim 256, limitation 258, future_work 237, methodology
+  272. No `body`/`fulltext`/`ocr_text`/`pdf_text` fields survive from
+  Unpaywall/Europe PMC/arXiv PDFs.
+
+### Dev mode env-gated
+
+`ENABLE_DEV` build-time env → exposed to client as
+`NEXT_PUBLIC_ENABLE_DEV`. In `DevMode.tsx`, both the URL seed effect and
+the `setDev` callback early-return unless it is `"1"`. Wired into
+`scripts/rm-lib.sh` (line 178) so `.command`/`.app` builds get dev on.
+`vercel.json` and `deploy-pages.yml` don't set it — `?dev=1` is inert on
+public deploys, banner never renders, all `<Dev*>` blocks stay hidden.
+Reverses the 2026-08-01 "no gating" recommendation for public deploys
+specifically; local dev is unchanged.
+
+### Attribution + framing on every page
+
+`backend/app/api/language.py` now owns an `ATTRIBUTION` block credited to
+OpenAlex (CC0), Semantic Scholar, Unpaywall, Europe PMC, arXiv. The
+layout footer renders it on every page — landing, `/gap/[slug]`,
+`/paper/[wid]`, `/library`, `/papers`, `/gaps`, `/findings/[slug]`,
+`/404`. Same for the new `FOOTER_SCOPE`: `"Working prototype · one
+library · 113 papers on language-model reliability. Not a comprehensive
+research tool."` — so a public visitor landing on a shared gap or paper
+link sees the frame, not just the landing eyebrow.
+
+`PLUMBING_TERMS` narrowed `"openalex"` → `"openalex:"` (the ID prefix)
+so the bare source-name is a legitimate word in the footer.
+`test_attribution_block_names_the_five_required_sources` locks the list.
+
+### LICENSE
+
+MIT at `/LICENSE`. Chose MIT over Apache-2.0: research prototype, no
+patentable algorithm, MIT's brevity wins for academic uptake. Includes a
+DATA-SOURCE ATTRIBUTION section clarifying upstream data terms (CC0,
+etc.) are separate — code is MIT-licensed, the data is not relicensed.
+
+### Deploy configs — snapshot is committed, keyless CI
+
+**Blocker found and fixed.** The old `vercel.json` and `deploy-pages.yml`
+ran `python -m backend.app.api.export` at build time — that would have
+failed in fresh-clone CI because `data/reasoning/`,
+`data/relationships/`, `data/cache/`, and
+`data/live_samples/expanded_corpus_manifest.json` are all gitignored.
+The 2026-08-01 "Verified end-to-end from a fresh state" claim was made
+with those files locally present.
+
+Fix: unignored `frontend/public/data/` and committed the 2.1 MB / 197-
+file snapshot to the repo. Dropped Python entirely from both CI paths.
+Both configs now just `npm ci && npm run build`. Regenerating the
+snapshot stays a local dev step (`npm run snapshot`) when the manifest
+changes. Trade: repo grew by 2.1 MB and the snapshot can drift from
+source if snapshot isn't re-run — but the alternative (commit 15 MB of
+intermediate data) is worse.
+
+Verified: root build (Vercel-shaped) and subpath build
+(`BASE_PATH=/ResearchMap`, GH-Pages-shaped) both produce a working
+static export with attribution + framing on every page and dev-mode
+gated off.
+
+### Outstanding
+
+- Live verification on the deployed public URL (task 8) — blocked on
+  Raj connecting the Vercel/GH-Pages side.
+- Phase 6 (validation) still outstanding, unchanged.
+
 ## Coherence predictor + reusable scaling tool + preflight wiring (2026-08-09) ✅
 
 Two new capabilities, both designed to spend less and know more before

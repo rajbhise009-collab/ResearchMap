@@ -66,7 +66,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="foot-in">
                 <span className="foot-brand">{lang.ui.product_name}</span>
                 <span className="foot-dot" aria-hidden>·</span>
-                <span>{lang.ui.library_summary}</span>
+                <span>{lang.ui.footer_scope}</span>
+              </div>
+              <div className="foot-sources">
+                <span className="foot-sources-label">{lang.attribution.label}:</span>{" "}
+                <span className="foot-sources-intro">{lang.attribution.intro}</span>
+                <ul className="foot-sources-list">
+                  {lang.attribution.items.map(([name, url, note]) => (
+                    <li key={name}>
+                      <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+                      <span className="foot-sources-note"> — {note}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </footer>
           </DevModeProvider>

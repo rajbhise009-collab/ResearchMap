@@ -19,6 +19,12 @@
  */
 const BASE_PATH = (process.env.BASE_PATH || "").replace(/\/$/, "");
 
+// Developer mode (?dev=1) is a build-time capability, off by default.
+// Local launchers (.command / .app / rm-lib.sh) set ENABLE_DEV=1 before
+// building so ?dev=1 works there. Public deploys (Vercel, GitHub Pages)
+// do NOT set this env var, so ?dev=1 is inert in the shipped bundle.
+const ENABLE_DEV = process.env.ENABLE_DEV === "1" ? "1" : "";
+
 const nextConfig = {
   output: "export",          // static HTML export -> frontend/out (no hosting cost)
   trailingSlash: true,       // each route -> dir/index.html, works on any static host
@@ -27,8 +33,9 @@ const nextConfig = {
   basePath: BASE_PATH || undefined,
   assetPrefix: BASE_PATH || undefined,
   env: {
-    // Exposed to client code as process.env.NEXT_PUBLIC_BASE_PATH.
+    // Exposed to client code as process.env.NEXT_PUBLIC_*.
     NEXT_PUBLIC_BASE_PATH: BASE_PATH,
+    NEXT_PUBLIC_ENABLE_DEV: ENABLE_DEV,
   },
 };
 export default nextConfig;

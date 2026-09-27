@@ -175,7 +175,10 @@ to be regenerated first."
   ui_ok "Snapshot refreshed"
 
   ui_note "Compiling the frontend; usually 15-30 seconds."
-  ( cd "$REPO/frontend" && npm run build --silent ) >>"$RM_LOG" 2>&1
+  # ENABLE_DEV=1 turns on ?dev=1 in the local build only. Public deploys
+  # (Vercel, GitHub Pages workflow) don't set this, so their bundle can't
+  # activate dev mode from the URL.
+  ( cd "$REPO/frontend" && ENABLE_DEV=1 npm run build --silent ) >>"$RM_LOG" 2>&1
   if [ ! -f "$RM_BUILT_MARK" ]; then
     ui_fail "The frontend build didn't produce a site." \
 "The build log is at:

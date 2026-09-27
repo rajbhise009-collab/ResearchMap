@@ -6,10 +6,18 @@
 //
 // Spec-critical: no visible entry point in the consumer UI. The only way
 // in is ?dev=1. Once on, the banner appears with a button to turn it off.
+//
+// Build-time gate: NEXT_PUBLIC_ENABLE_DEV is "1" only when the build set
+// ENABLE_DEV=1 (local .command / .app / rm-lib.sh). Vercel and GitHub
+// Pages builds don't set it, so ?dev=1 is inert on public deploys — the
+// context stays false, the banner never renders, and every <Dev*> block
+// stays hidden regardless of the URL.
 
 import {
   createContext, useCallback, useContext, useEffect, useState, type ReactNode,
 } from "react";
+
+const DEV_ENABLED = process.env.NEXT_PUBLIC_ENABLE_DEV === "1";
 
 const Ctx = createContext<{ dev: boolean; setDev: (v: boolean) => void }>({
   dev: false,
@@ -22,11 +30,13 @@ export function DevModeProvider({ children }: { children: ReactNode }) {
   // Seed from the URL once mounted. Reading location during render would
   // break the static prerender, so it happens in an effect.
   useEffect(() => {
+    if (!DEV_ENABLED) return;
     const p = new URLSearchParams(window.location.search).get("dev");
     if (p === "1") setDevState(true);
   }, []);
 
   const setDev = useCallback((next: boolean) => {
+    if (!DEV_ENABLED) return;
     setDevState(next);
     const url = new URL(window.location.href);
     if (next) url.searchParams.set("dev", "1");

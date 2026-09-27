@@ -30,11 +30,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -42,15 +37,11 @@ jobs:
           cache: "npm"
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Install Python deps for the export step
-        # The export module only needs pydantic + numpy from requirements;
-        # skip the LLM/DB stack that isn't touched here.
-        run: |
-          python -m pip install --upgrade pip
-          pip install "pydantic>=2" "numpy>=1.26"
-
-      - name: Snapshot the reasoning cache into frontend/public/data
-        run: python -m backend.app.api.export
+      # The static snapshot at frontend/public/data/ IS committed. The
+      # deploy no longer regenerates it — regeneration is a local
+      # developer step (`npm run snapshot`) that needs the full
+      # data/reasoning + data/relationships + data/cache tree, none of
+      # which is committed. Public deploys just build the frontend.
 
       - name: Install frontend dependencies
         working-directory: frontend

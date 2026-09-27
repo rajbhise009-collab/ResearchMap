@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pip install --upgrade pip && pip install 'pydantic>=2' 'numpy>=1.26' && python -m backend.app.api.export && cd frontend && npm ci && npm run build",
+  "buildCommand": "cd frontend && npm ci && npm run build",
   "outputDirectory": "frontend/out",
   "cleanUrls": true,
   "trailingSlash": true

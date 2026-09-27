@@ -48,12 +48,15 @@ scratch/
 node_modules/
 .next/
 
-# Generated reasoning/relationship artifacts (regenerable)
+# Generated reasoning/relationship artifacts (regenerable — the shipped
+# snapshot at frontend/public/data/ IS committed, so public deploys build
+# from source without needing to regenerate reasoning first).
 data/reasoning/
 data/relationships/
 
-# Frontend generated data + build artifacts (regenerable)
-frontend/public/data/
+# Frontend build outputs (regenerable). The snapshot at
+# frontend/public/data/ is NOT ignored — see block above; it's the input
+# that lets Vercel / GitHub Pages build without a Python step.
 frontend/.next/
 frontend/out/
 

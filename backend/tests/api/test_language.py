@@ -71,13 +71,28 @@ def test_authored_copy_avoids_our_internal_names(cards):
 
 def test_no_internal_jargon_in_the_shipped_language_pack():
     """The developer-mode block is exempt by design — its job is to show
-    the internals everything else hides."""
-    pack = {k: v for k, v in language.language_pack().items() if k != "dev"}
+    the internals everything else hides. The attribution block credits the
+    data sources by name (OpenAlex, Europe PMC, arXiv, …) — those are the
+    sources' own names, not our plumbing, and the plumbing check would
+    misfire on `openalex` there."""
+    exempt = {"dev", "attribution"}
+    pack = {k: v for k, v in language.language_pack().items() if k not in exempt}
     offenders = []
     for s in _consumer_strings(pack):
         for hit in language.jargon_hits(s):
             offenders.append((hit, s[:90]))
     assert not offenders, f"internal vocabulary in the shipped copy: {offenders[:5]}"
+
+
+def test_attribution_block_names_the_five_required_sources():
+    """The public deploy has to credit every upstream data source. Change
+    this list only alongside a matching update to what the pipeline actually
+    consumes."""
+    names = {n for n, _url, _note in language.ATTRIBUTION["items"]}
+    required = {"OpenAlex", "Semantic Scholar", "Unpaywall", "Europe PMC", "arXiv"}
+    assert required <= names, f"missing sources: {required - names}"
+    for _n, url, _note in language.ATTRIBUTION["items"]:
+        assert url.startswith("https://"), f"non-https attribution URL: {url}"
 
 
 def test_no_numeric_internals_leak_into_headlines(cards):

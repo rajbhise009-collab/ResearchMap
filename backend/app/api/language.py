@@ -539,6 +539,30 @@ BUILD_LIBRARY = {
 # Everything else the interface says.
 # --------------------------------------------------------------------------
 
+FOOTER_SCOPE = (
+    "Working prototype · one library · 113 papers on "
+    f"{LIBRARY_NAME.lower()}. Not a comprehensive research tool."
+)
+
+# Attribution required by the upstream data sources and honest for the
+# reader who wants to know where anything here came from.
+ATTRIBUTION = {
+    "label": "Sources",
+    "intro": (
+        "Paper metadata, citations and abstracts come from these openly "
+        "licensed sources. Only short, structured extractions (claims, "
+        "limitations, future-work statements) are shown here — full text "
+        "was read to produce those extractions, not republished."
+    ),
+    "items": [
+        ("OpenAlex", "https://openalex.org/", "primary source of paper metadata, citations and abstracts (CC0)"),
+        ("Semantic Scholar", "https://www.semanticscholar.org/", "metadata enrichment"),
+        ("Unpaywall", "https://unpaywall.org/", "open-access PDFs for extraction"),
+        ("Europe PMC", "https://europepmc.org/", "open-access full-text (JATS) for extraction"),
+        ("arXiv", "https://arxiv.org/", "preprint full-text for extraction"),
+    ],
+}
+
 UI = {
     "product_name": "ResearchMap",
     "tagline": TAGLINE,
@@ -546,6 +570,7 @@ UI = {
     "library_name": LIBRARY_NAME,
     "library_covers": LIBRARY_COVERS,
     "library_summary": LIBRARY_SUMMARY,
+    "footer_scope": FOOTER_SCOPE,
     "one_library_note": ONE_LIBRARY_NOTE,
     "results_heading": "What we found",
     "evidence_heading": "The evidence",
@@ -606,6 +631,7 @@ def language_pack() -> dict[str, Any]:
         "search": SEARCH,
         "build_library": BUILD_LIBRARY,
         "no_disagreements": NO_DISAGREEMENTS,
+        "attribution": ATTRIBUTION,
     }
 
 
@@ -620,7 +646,12 @@ def language_pack() -> dict[str, Any]:
 PLUMBING_TERMS = [
     "scorer", "component_score", "gap_type", "confirm_status", "input_source",
     "abstract_only", "schema_version", "manifest", "n_independent",
-    "trust score", "cosine", "openalex", "phase 4", "phase 5", "phase 6",
+    "trust score", "cosine",
+    # `openalex:` (with colon) is the paper-id prefix we never want in consumer
+    # copy — matches "openalex:W4399803256" etc. The bare word `OpenAlex` is a
+    # legitimate data-source name used in the attribution footer.
+    "openalex:",
+    "phase 4", "phase 5", "phase 6",
     "confidence tier",
 ]
 

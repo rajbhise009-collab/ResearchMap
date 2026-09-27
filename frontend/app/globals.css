@@ -366,6 +366,29 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 .foot-brand { color: var(--muted); }
 .foot-dot { color: var(--rule-strong); }
 
+.foot-sources {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 var(--s-5) var(--s-5);
+  font-size: var(--step--2);
+  color: var(--faint);
+  border-top: 1px dashed var(--rule);
+  padding-top: var(--s-4);
+}
+.foot-sources-label { color: var(--muted); font-weight: 500; }
+.foot-sources-intro { color: var(--faint); }
+.foot-sources-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--s-3) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-5);
+}
+.foot-sources-list li { display: inline; }
+.foot-sources-list a { color: var(--muted); }
+.foot-sources-note { color: var(--faint); }
+
 /* ==========================================================================
    4. Landing
    ========================================================================== */
