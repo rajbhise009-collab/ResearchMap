@@ -1,0 +1,183 @@
+{
+  "generated_at": "2026-09-29T03:39:49.171326Z",
+  "diet-and-mortality": {
+    "n_extractions": 59,
+    "assertion_strength": {
+      "total_claims": 338,
+      "firm": 337,
+      "hedged": 1,
+      "firm_share": 0.9970414201183432,
+      "hedged_share": 0.0029585798816568047
+    },
+    "gap_type_counts": {
+      "n_papers": 59,
+      "n_limitations": 88,
+      "limitation_category_top": [
+        {
+          "category": "small-sample-size",
+          "n_independent_papers": 4
+        },
+        {
+          "category": "sparse-prior-literature",
+          "n_independent_papers": 2
+        },
+        {
+          "category": "residual-confounding",
+          "n_independent_papers": 2
+        },
+        {
+          "category": "measurement-bias",
+          "n_independent_papers": 2
+        },
+        {
+          "category": "low-evidence-quality",
+          "n_independent_papers": 2
+        },
+        {
+          "category": "sample-size",
+          "n_independent_papers": 2
+        },
+        {
+          "category": "consensus-based-guidance",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "unproven-long-term-efficacy",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "diagnostic-tool-limitation",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "lack-of-screening-evidence",
+          "n_independent_papers": 1
+        }
+      ],
+      "n_future_work_items": 37
+    },
+    "contradiction_summary": {
+      "n_contradictions": 7,
+      "examples": [
+        {
+          "a_paper_id": "openalex:W2109401990",
+          "b_paper_id": "openalex:W2513212958",
+          "a_text": "Unprocessed red meat consumption is not associated with incident stroke.",
+          "b_text": "Consumption of 100 g/day of unprocessed red meat is associated with an 11% increased risk of stroke.",
+          "similarity": 0.8958173990249634,
+          "explanation": "Claim A asserts that unprocessed red meat consumption has no association with incident stroke, whereas Claim B states that it is associated with an increased risk of stroke."
+        },
+        {
+          "a_paper_id": "openalex:W2126726883",
+          "b_paper_id": "openalex:W2787107952",
+          "a_text": "The decreased risk of myocardial infarction was similar between men consuming less than 10 g of alcohol per drinking day and those consuming 30 g or more.",
+          "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+          "similarity": 0.8676896095275879,
+          "explanation": "Claim A indicates that the risk reduction for myocardial infarction is similar regardless of alcohol intake level, whereas Claim B asserts a continuous, log-linear decrease in risk with higher alcohol consumption."
+        },
+        {
+          "a_paper_id": "openalex:W2109129984",
+          "b_paper_id": "openalex:W2787107952",
+          "a_text": "Alcohol consumption is not significantly associated with overall incident stroke compared with non-drinking (pooled adjusted RR 0.98, 95% CI 0.91 to 1.06).",
+          "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+          "similarity": 0.8521416783332825,
+          "explanation": "Claim A finds no significant overall association between alcohol consumption and incident stroke, whereas Claim B reports that higher alcohol consumption is linearly associated with an increased stroke risk."
+        },
+        {
+          "a_paper_id": "openalex:W2064137374",
+          "b_paper_id": "openalex:W2787107952",
+          "a_text": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship with the relative risk of ischemic stroke.",
+          "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+          "similarity": 0.8443945646286011,
+          "explanation": "Claim A asserts a J-shaped curvilinear dose-response relationship between alcohol consumption and stroke risk, whereas Claim B asserts a linear relationship where higher consumption is consistently associated with higher risk."
+        },
+        {
+          "a_paper_id": "openalex:W2109401990",
+          "b_paper_id": "openalex:W2955331731",
+          "a_text": "Unprocessed red meat intake is not associated with incident diabetes mellitus.",
+          "b_text": "Higher intake of red meat is associated with increased incidence of type 2 diabetes.",
+          "similarity": 0.8277457356452942,
+          "explanation": "Claim A finds no association between unprocessed red meat intake and incident diabetes, whereas Claim B reports that higher intake of red meat is associated with an increased incidence of type 2 diabetes."
+        }
+      ]
+    }
+  },
+  "ml-fairness": {
+    "n_extractions": 51,
+    "assertion_strength": {
+      "total_claims": 258,
+      "firm": 254,
+      "hedged": 4,
+      "firm_share": 0.9844961240310077,
+      "hedged_share": 0.015503875968992248
+    },
+    "gap_type_counts": {
+      "n_papers": 51,
+      "n_limitations": 114,
+      "limitation_category_top": [
+        {
+          "category": "accuracy-fairness-tradeoff",
+          "n_independent_papers": 3
+        },
+        {
+          "category": "training-data-bias",
+          "n_independent_papers": 2
+        },
+        {
+          "category": "statistical-parity-inadequacy",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "metric-availability-dependency",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "dimension-scaling-loss",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "open-theoretical-gap",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "demographic-parity-flaws",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "causal-unidentifiability",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "utility-tradeoff",
+          "n_independent_papers": 1
+        },
+        {
+          "category": "label-bias-dependence",
+          "n_independent_papers": 1
+        }
+      ],
+      "n_future_work_items": 76
+    },
+    "contradiction_summary": {
+      "n_contradictions": 0,
+      "examples": []
+    }
+  },
+  "llm-calibration-baseline": {
+    "assertion_strength": {
+      "firm_share": 0.911,
+      "source": "docs/schema-pressure-test.md \u00a72 (n=56)"
+    },
+    "contradictions": {
+      "n_contradictions": 0,
+      "source": "frozen 2026-07 result, docs/findings/corpus-scaling-study.md"
+    }
+  },
+  "predictor_check": {
+    "predictor_score_diet": 0.44,
+    "predictor_score_llm_cal": 0.818,
+    "confirmed_llm_cal": 0,
+    "confirmed_diet": 7,
+    "verdict": "Reputation BEAT predictor: diet-and-mortality's 0.44 'moderate' rating understated its actual contradiction yield (7 confirmed vs LLM-cal's 0 at predictor score 0.818)."
+  }
+}

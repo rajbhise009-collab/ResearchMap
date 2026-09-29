@@ -1,0 +1,75 @@
+{
+  "n": 7,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2109401990:c5",
+      "to_claim_id": "openalex:W2513212958:c1",
+      "similarity": 0.8958173990249634,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Unprocessed red meat consumption is not associated with incident stroke.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 100 g/day of unprocessed red meat is associated with an 11% increased risk of stroke.",
+      "explanation": "Claim A asserts that unprocessed red meat consumption has no association with incident stroke, whereas Claim B states that it is associated with an increased risk of stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c3",
+      "to_claim_id": "openalex:W2787107952:c7",
+      "similarity": 0.8676896095275879,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "The decreased risk of myocardial infarction was similar between men consuming less than 10 g of alcohol per drinking day and those consuming 30 g or more.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "explanation": "Claim A indicates that the risk reduction for myocardial infarction is similar regardless of alcohol intake level, whereas Claim B asserts a continuous, log-linear decrease in risk with higher alcohol consumption."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c4",
+      "to_claim_id": "openalex:W2787107952:c2",
+      "similarity": 0.8521416783332825,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is not significantly associated with overall incident stroke compared with non-drinking (pooled adjusted RR 0.98, 95% CI 0.91 to 1.06).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+      "explanation": "Claim A finds no significant overall association between alcohol consumption and incident stroke, whereas Claim B reports that higher alcohol consumption is linearly associated with an increased stroke risk."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c2",
+      "to_claim_id": "openalex:W2787107952:c2",
+      "similarity": 0.8443945646286011,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship with the relative risk of ischemic stroke.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+      "explanation": "Claim A asserts a J-shaped curvilinear dose-response relationship between alcohol consumption and stroke risk, whereas Claim B asserts a linear relationship where higher consumption is consistently associated with higher risk."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c2",
+      "to_claim_id": "openalex:W2955331731:c4",
+      "similarity": 0.8277457356452942,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Unprocessed red meat intake is not associated with incident diabetes mellitus.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of red meat is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Claim A finds no association between unprocessed red meat intake and incident diabetes, whereas Claim B reports that higher intake of red meat is associated with an increased incidence of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c5",
+      "to_claim_id": "openalex:W2311763102:c5",
+      "similarity": 0.8177447319030762,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "b_paper_id": "openalex:W2311763102",
+      "b_text": "Analyses of higher-quality, bias-free studies fail to find a reduced mortality risk for low-volume alcohol drinkers.",
+      "explanation": "Claim A asserts that alcohol consumption lowers all-cause mortality risk, whereas Claim B states that higher-quality studies show no such reduction in mortality risk."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c5",
+      "to_claim_id": "openalex:W2311763102:c4",
+      "similarity": 0.8032279014587402,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "b_paper_id": "openalex:W2311763102",
+      "b_text": "After adjusting for abstainer biases and study quality characteristics, low-volume alcohol consumption shows no significant reduction in mortality risk.",
+      "explanation": "Claim A finds that alcohol consumption significantly reduces all-cause mortality risk, whereas Claim B finds no significant reduction in mortality risk after controlling for abstainer biases and study quality."
+    }
+  ]
+}

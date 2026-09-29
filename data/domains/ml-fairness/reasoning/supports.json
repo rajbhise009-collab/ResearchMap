@@ -1,0 +1,325 @@
+{
+  "n": 32,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2097246321:c1",
+      "to_claim_id": "openalex:W2116984840:c1",
+      "similarity": 0.9317241907119751,
+      "a_paper_id": "openalex:W2097246321",
+      "a_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "b_paper_id": "openalex:W2116984840",
+      "b_text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "explanation": "Both claims assert that removing a sensitive attribute from a dataset fails to eliminate discrimination because of correlations with the remaining attributes."
+    },
+    {
+      "from_claim_id": "openalex:W2974817986:c4",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8662105798721313,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AIF360 provides algorithms to mitigate algorithmic bias in datasets and models.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Claim B specifies the number and type of tools included in AI Fairness 360, directly reinforcing Claim A's statement that the toolkit provides bias mitigation algorithms."
+    },
+    {
+      "from_claim_id": "openalex:W2097246321:c1",
+      "to_claim_id": "openalex:W2784397426:c5",
+      "similarity": 0.8647278547286987,
+      "a_paper_id": "openalex:W2097246321",
+      "a_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Removing a protected variable directly from training data fails to yield a debiased model because other features remain correlated with the protected variable.",
+      "explanation": "Both claims assert that simply removing a sensitive or protected attribute from training data does not eliminate bias because other correlated features remain."
+    },
+    {
+      "from_claim_id": "openalex:W2026019770:c2",
+      "to_claim_id": "openalex:W2116984840:c1",
+      "similarity": 0.8643267750740051,
+      "a_paper_id": "openalex:W2026019770",
+      "a_text": "Removing discriminatory attributes from a dataset is insufficient to guarantee non-discrimination when background knowledge is available.",
+      "b_paper_id": "openalex:W2116984840",
+      "b_text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "explanation": "Both claims independently state that simply removing sensitive or discriminatory attributes from a dataset is insufficient to eliminate discrimination."
+    },
+    {
+      "from_claim_id": "openalex:W2974817986:c2",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8623891472816467,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AIF360 provides fairness metrics for datasets and machine learning models.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Claim B details the specific metrics and features provided by AI Fairness 360, reinforcing Claim A's statement that the toolkit offers fairness metrics for datasets and models."
+    },
+    {
+      "from_claim_id": "openalex:W2097246321:c1",
+      "to_claim_id": "openalex:W2150997454:c1",
+      "similarity": 0.8538391590118408,
+      "a_paper_id": "openalex:W2097246321",
+      "a_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "b_paper_id": "openalex:W2150997454",
+      "b_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "explanation": "Both claims independently assert that removing sensitive attributes from training data is insufficient to prevent models from producing discriminatory outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2116984840:c1",
+      "to_claim_id": "openalex:W2150997454:c1",
+      "similarity": 0.8493020534515381,
+      "a_paper_id": "openalex:W2116984840",
+      "a_text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "b_paper_id": "openalex:W2150997454",
+      "b_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "explanation": "Both claims assert that removing sensitive attributes from a dataset or training process is insufficient to eliminate discriminatory outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2795743913:c4",
+      "to_claim_id": "openalex:W3136620301:c5",
+      "similarity": 0.8491247892379761,
+      "a_paper_id": "openalex:W2795743913",
+      "a_text": "Perceptions of algorithmic fairness or unfairness can substantially affect user trust in a company or product.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Perceived fairness of algorithms has a significant positive impact on satisfaction with algorithmic systems.",
+      "explanation": "Both claims independently demonstrate that perceived algorithmic fairness positively influences user evaluations and attitudes, specifically regarding trust and satisfaction."
+    },
+    {
+      "from_claim_id": "openalex:W2974817986:c1",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8475406169891357,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AI Fairness 360 (AIF360) is an open-source Python toolkit for algorithmic fairness released under an Apache v2.0 license.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Both claims provide complementary facts about the AI Fairness 360 Python package for algorithmic fairness, mutually reinforcing its identity and capabilities."
+    },
+    {
+      "from_claim_id": "openalex:W2026019770:c2",
+      "to_claim_id": "openalex:W2150997454:c1",
+      "similarity": 0.8426584005355835,
+      "a_paper_id": "openalex:W2026019770",
+      "a_text": "Removing discriminatory attributes from a dataset is insufficient to guarantee non-discrimination when background knowledge is available.",
+      "b_paper_id": "openalex:W2150997454",
+      "b_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "explanation": "Both claims independently demonstrate that simply removing sensitive or discriminatory attributes from a dataset does not prevent models from making discriminatory predictions."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c2",
+      "to_claim_id": "openalex:W4288414189:c1",
+      "similarity": 0.8404069542884827,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported fairness measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Predictions made on preprocessed (de-biased) data are rated as fairer than those made on raw data.",
+      "explanation": "Both claims independently reinforce the finding that data preprocessing significantly influences how fairness is evaluated and perceived in machine learning outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2809878087:c1",
+      "to_claim_id": "openalex:W3101206394:c1",
+      "similarity": 0.837831974029541,
+      "a_paper_id": "openalex:W2809878087",
+      "a_text": "More than twenty different notions of algorithmic fairness have been proposed in recent years.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "explanation": "Both claims independently highlight the rapid expansion and resulting diversity of definitions and terminology within algorithmic fairness research."
+    },
+    {
+      "from_claim_id": "openalex:W2150997454:c1",
+      "to_claim_id": "openalex:W2157928966:c1",
+      "similarity": 0.8356233239173889,
+      "a_paper_id": "openalex:W2150997454",
+      "a_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "b_paper_id": "openalex:W2157928966",
+      "b_text": "Standard classification models trained on biased data inherit and reproduce discriminatory behavior towards affected groups.",
+      "explanation": "Both claims find that standard classification models trained on biased data reproduce discriminatory behavior toward protected or affected groups."
+    },
+    {
+      "from_claim_id": "openalex:W2974817986:c3",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8336966633796692,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AIF360 provides explanations for fairness metrics.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Both claims independently assert that AI Fairness 360 includes a feature or facility for providing metric explanations."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c1",
+      "to_claim_id": "openalex:W2809878087:c1",
+      "similarity": 0.8324240446090698,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "There are at least six distinct formal definitions of algorithmic fairness in risk assessment contexts.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "More than twenty different notions of algorithmic fairness have been proposed in recent years.",
+      "explanation": "Both claims independently reinforce the finding that algorithmic fairness is characterized by a multiplicity of distinct formal definitions and notions."
+    },
+    {
+      "from_claim_id": "openalex:W2809878087:c4",
+      "to_claim_id": "openalex:W3101206394:c3",
+      "similarity": 0.8319128751754761,
+      "a_paper_id": "openalex:W2809878087",
+      "a_text": "The authors systematically collect and explain prominent definitions of fairness for algorithmic classification.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "Fairness definitions across existing literature can be organized into a notationally consistent catalog.",
+      "explanation": "Both claims mutually reinforce the idea that fairness definitions in algorithmic classification literature can be systematically collected and organized into a unified catalog."
+    },
+    {
+      "from_claim_id": "openalex:W2116984840:c1",
+      "to_claim_id": "openalex:W2784397426:c5",
+      "similarity": 0.8281682729721069,
+      "a_paper_id": "openalex:W2116984840",
+      "a_text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Removing a protected variable directly from training data fails to yield a debiased model because other features remain correlated with the protected variable.",
+      "explanation": "Both claims assert that removing a sensitive or protected attribute from a dataset fails to eliminate bias due to correlations with remaining features."
+    },
+    {
+      "from_claim_id": "openalex:W2157928966:c1",
+      "to_claim_id": "openalex:W2765146466:c1",
+      "similarity": 0.8256359696388245,
+      "a_paper_id": "openalex:W2157928966",
+      "a_text": "Standard classification models trained on biased data inherit and reproduce discriminatory behavior towards affected groups.",
+      "b_paper_id": "openalex:W2765146466",
+      "b_text": "Algorithmic machine learning models can produce unfair decisions by reproducing biases present in historical training data.",
+      "explanation": "Both claims assert that machine learning models inherit and reproduce biases present in their training data, leading to unfair or discriminatory outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2963174898:c1",
+      "to_claim_id": "openalex:W4288414189:c1",
+      "similarity": 0.8215892910957336,
+      "a_paper_id": "openalex:W2963174898",
+      "a_text": "A probabilistic formulation of data pre-processing can be used to reduce discrimination in algorithmic decision making.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Predictions made on preprocessed (de-biased) data are rated as fairer than those made on raw data.",
+      "explanation": "Both claims mutually reinforce the idea that data preprocessing effectively enhances fairness in algorithmic decision-making, addressing both discrimination reduction and human perception."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W2809878087:c1",
+      "similarity": 0.820263683795929,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "More than twenty different notions of algorithmic fairness have been proposed in recent years.",
+      "explanation": "Claim B's observation of numerous proposed fairness notions mutually reinforces Claim A's conceptualization of fairness as a placeholder for a variety of distinct normative considerations."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W3101206394:c1",
+      "similarity": 0.8176231384277344,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "explanation": "Both claims mutually reinforce the idea that fairness in machine learning encompasses a wide variety of distinct, and often inconsistent, conceptualizations and terminology."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c2",
+      "to_claim_id": "openalex:W4289438483:c2",
+      "similarity": 0.8150090575218201,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported fairness measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Reweighing and optimized pre-processing algorithms improve statistical parity difference and disparate impact metrics across Adult, German Credit, and COMPAS datasets.",
+      "explanation": "Claim B provides specific empirical evidence that preprocessing methods improve fairness metrics, supporting Claim A's general assertion that preprocessing choices impact fairness measures."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c1",
+      "to_claim_id": "openalex:W3101206394:c3",
+      "similarity": 0.8106158971786499,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "There are at least six distinct formal definitions of algorithmic fairness in risk assessment contexts.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "Fairness definitions across existing literature can be organized into a notationally consistent catalog.",
+      "explanation": "Both claims recognize the existence of multiple formal fairness definitions in the literature, with one noting their diversity and the other showing they can be systematically cataloged."
+    },
+    {
+      "from_claim_id": "openalex:W2040825624:c1",
+      "to_claim_id": "openalex:W2116984840:c1",
+      "similarity": 0.8093060851097107,
+      "a_paper_id": "openalex:W2040825624",
+      "a_text": "Simply avoiding the use of sensitive features is insufficient for eliminating biases in algorithmic determinations.",
+      "b_paper_id": "openalex:W2116984840",
+      "b_text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "explanation": "Both claims independently conclude that excluding sensitive attributes fails to eliminate algorithmic bias, with Claim B specifying that correlations among remaining attributes cause the discrimination to persist."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c1",
+      "to_claim_id": "openalex:W4289438483:c2",
+      "similarity": 0.8090880513191223,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported accuracy measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Reweighing and optimized pre-processing algorithms improve statistical parity difference and disparate impact metrics across Adult, German Credit, and COMPAS datasets.",
+      "explanation": "Claim B provides specific empirical evidence that preprocessing algorithms alter fairness metrics, supporting Claim A's general assertion that preprocessing choices impact algorithm evaluation measures."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c2",
+      "to_claim_id": "openalex:W4386564359:c1",
+      "similarity": 0.8060302138328552,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "No risk assignment method can simultaneously satisfy calibration within groups, balance for the negative class, and balance for the positive class except in instances allowing perfect prediction or having equal base rates across groups.",
+      "explanation": "Both claims state the same impossibility theorem in algorithmic fairness: calibration and error rate balance cannot be simultaneously achieved when base rates differ across groups and predictions are imperfect."
+    },
+    {
+      "from_claim_id": "openalex:W2543774860:c1",
+      "to_claim_id": "openalex:W2599025709:c2",
+      "similarity": 0.8039373159408569,
+      "a_paper_id": "openalex:W2543774860",
+      "a_text": "When recidivism prevalence differs between two groups, a test-fair risk score cannot achieve equal false positive and false negative rates across those groups simultaneously.",
+      "b_paper_id": "openalex:W2599025709",
+      "b_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "explanation": "Both claims assert the same fundamental impossibility result in algorithmic fairness: when base rates differ across groups, predictive parity (test-fairness/conditional use accuracy equality) and equal error rates cannot be simultaneously satisfied."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c3",
+      "to_claim_id": "openalex:W2885659818:c5",
+      "similarity": 0.8038983941078186,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "Excluding or discounting protected group attributes from a fitting procedure reduces overall prediction accuracy when those attributes share non-redundant associations with the outcome.",
+      "b_paper_id": "openalex:W2885659818",
+      "b_text": "Excluding protected characteristics from risk models reduces aggregate and individual utility whenever those attributes carry predictive information.",
+      "explanation": "Both claims assert that removing protected attributes with predictive value from statistical models results in reduced predictive accuracy or utility."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W2809878087:c2",
+      "similarity": 0.8037075400352478,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "There is no clear agreement on which fairness definition to apply in each situation.",
+      "explanation": "Both claims reinforce the idea that fairness in machine learning encompasses multiple distinct normative concepts rather than a single, universally agreed-upon standard."
+    },
+    {
+      "from_claim_id": "openalex:W2765146466:c1",
+      "to_claim_id": "openalex:W2902802452:c1",
+      "similarity": 0.8034346103668213,
+      "a_paper_id": "openalex:W2765146466",
+      "a_text": "Algorithmic machine learning models can produce unfair decisions by reproducing biases present in historical training data.",
+      "b_paper_id": "openalex:W2902802452",
+      "b_text": "Machine-learning models trained on historical data can harm protected groups through incorrect predictions or withholding of resources.",
+      "explanation": "Both claims mutually reinforce the finding that machine learning models trained on historical data can result in unfair outcomes and harm to protected groups."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c6",
+      "to_claim_id": "openalex:W2784397426:c1",
+      "similarity": 0.8022150993347168,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Using a balanced sensitive attribute distribution in adversarial training decreases primary task classification accuracy.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "explanation": "Both claims indicate that applying adversarial techniques to remove bias results in a decrease in primary task classification accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2040825624:c1",
+      "to_claim_id": "openalex:W2097246321:c1",
+      "similarity": 0.80135178565979,
+      "a_paper_id": "openalex:W2040825624",
+      "a_text": "Simply avoiding the use of sensitive features is insufficient for eliminating biases in algorithmic determinations.",
+      "b_paper_id": "openalex:W2097246321",
+      "b_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "explanation": "Both claims find that excluding sensitive attributes is ineffective for eliminating algorithmic bias, with Claim B explaining that correlations among attributes cause this failure."
+    }
+  ]
+}

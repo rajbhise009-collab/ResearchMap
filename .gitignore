@@ -54,6 +54,12 @@ node_modules/
 data/reasoning/
 data/relationships/
 
+# Multi-domain snowball raw records — large (18MB diet + 15MB fairness),
+# regeneratable via `python -m backend.app.corpus.multi_domain --domain
+# <slug> --stage snowball`. Everything downstream (prelabelled.json,
+# audit_sample.md, reasoning/) IS committed.
+data/domains/*/snowball.json
+
 # Frontend build outputs (regenerable). The snapshot at
 # frontend/public/data/ is NOT ignored — see block above; it's the input
 # that lets Vercel / GitHub Pages build without a Python step.

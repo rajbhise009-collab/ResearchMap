@@ -232,3 +232,21 @@ wrong; the direction of that error (over-predicting contestedness
 from surveys-as-responses-to-disagreement) is documented so the next
 person to touch this knows what to watch out for. It's a starting
 point for a validation loop, not a substitute for one.
+
+## Live validation loop underway (2026-09-28)
+
+Two new domains being built to n=3 total, deliberately spanning the
+predictor's confidence range so this run measures whether it discriminates:
+
+| domain | contested score | band | reputational label | why chosen |
+|:--|--:|:--|:--|:--|
+| **diet-and-mortality** | 0.440 | moderate | contested | **Chosen AGAINST its score.** Reputationally the classic "meta-analyses reach opposite conclusions" domain; the predictor scores it moderate because its very high modularity (0.68) reads as "isolated schools" — the doc's named ambiguous case. Raj can judge the outputs (red meat, saturated fat, alcohol are nameable disagreements). |
+| **ml-fairness** | 0.667 | high | contested | Aligned with score. Documented impossibility results (Kleinberg / Chouldechova) give the contradiction scorer nameable targets. |
+
+The diet pick doubles as a **test of the predictor**: if diet produces
+substantial confirmed contradictions after Part D scoring, the score's
+0.44 was wrong and reputational judgment beat the metric. If it produces
+zero, the predictor was right and the reputational label was misleading.
+Either result goes back into this finding after Part D. Not silently
+rewriting the doc's earlier conclusions — extending them with n=3.
+

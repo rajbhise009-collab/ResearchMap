@@ -393,8 +393,23 @@ class GeminiLLMClient(LLMClient):
             raise ValueError("empty text in Gemini part")
         return text
 
+    def set_run_context(self, *, stage: str,
+                         est_output_tokens: int = 5000) -> None:
+        """Set the stage tag + est-output-tokens the spend ledger uses for
+        the next call(s). Caller sets before an extraction batch, an
+        contradiction pass, etc. Overrides last for the whole
+        client instance; call again to switch stage."""
+        self._current_stage = stage
+        self._current_est_output = est_output_tokens
+
     def generate(self, prompt: str, *, validate: Validator | None = None) -> str:
         import httpx
+        # Spend guard — CALL-TIME enforcement. Any refusal here surfaces
+        # as SpendCapExceededError; the caller halts.
+        from backend.app.extraction.spend_ledger import SpendLedger
+        ledger = SpendLedger.load()
+        stage = getattr(self, "_current_stage", "unknown")
+        est_out = getattr(self, "_current_est_output", 5000)
         client = self._get_client()
         payload = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -404,6 +419,9 @@ class GeminiLLMClient(LLMClient):
             },
         }
         est_in = estimate_tokens(prompt)
+        ledger.check_headroom(prompt_tokens_est=est_in,
+                                output_tokens_est=est_out,
+                                batch=False, stage=stage)
 
         last_transient: Exception | None = None
         last_validation: RetryableResponseError | None = None
@@ -486,8 +504,17 @@ class GeminiLLMClient(LLMClient):
             body = response.json()
 
             usage = body.get("usageMetadata") or {}
-            self.total_prompt_tokens += int(usage.get("promptTokenCount") or 0)
-            self.total_output_tokens += int(usage.get("candidatesTokenCount") or 0)
+            prompt_tok = int(usage.get("promptTokenCount") or 0)
+            cand_tok = int(usage.get("candidatesTokenCount") or 0)
+            thoughts_tok = int(usage.get("thoughtsTokenCount") or 0)
+            self.total_prompt_tokens += prompt_tok
+            self.total_output_tokens += cand_tok
+            # Post-call record — every 200 bills, including retries that
+            # returned a schema-invalid response.
+            ledger.record(stage=stage, model=self._model_name, batch=False,
+                          prompt_tokens=prompt_tok,
+                          candidates_tokens=cand_tok,
+                          thoughts_tokens=thoughts_tok)
 
             try:
                 text = self._extract_text(body)

@@ -1,0 +1,225 @@
+{
+  "n": 22,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2786122898:c6",
+      "to_claim_id": "openalex:W3035447285:c2",
+      "similarity": 0.8502252101898193,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "No single fairness-aware algorithm consistently dominates across both accuracy and fairness measures.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "explanation": "Claim A addresses the lack of a single superior algorithm across both accuracy and fairness metrics, while Claim B addresses the general accuracy trade-off associated with fairness mitigation algorithms."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c1",
+      "to_claim_id": "openalex:W2809878087:c4",
+      "similarity": 0.8423570990562439,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "There are at least six distinct formal definitions of algorithmic fairness in risk assessment contexts.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "The authors systematically collect and explain prominent definitions of fairness for algorithmic classification.",
+      "explanation": "Claim A asserts a specific count of formal fairness definitions, whereas Claim B describes a paper's scope of collecting and explaining prominent definitions without asserting a specific count or finding."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c1",
+      "to_claim_id": "openalex:W4288414189:c1",
+      "similarity": 0.8342875242233276,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported accuracy measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Predictions made on preprocessed (de-biased) data are rated as fairer than those made on raw data.",
+      "explanation": "Claim A addresses the effect of data preprocessing on algorithmic accuracy metrics, while Claim B focuses on human perceptions of fairness for predictions made on preprocessed data."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c2",
+      "to_claim_id": "openalex:W4386564359:c4",
+      "similarity": 0.8277339935302734,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with the conjunction of balance for the positive class and balance for the negative class when two groups have unequal base rates.",
+      "explanation": "The claims present distinct impossibility theorems involving different combinations of fairness criteria under unequal base rates."
+    },
+    {
+      "from_claim_id": "openalex:W2809878087:c4",
+      "to_claim_id": "openalex:W3101206394:c1",
+      "similarity": 0.8197759985923767,
+      "a_paper_id": "openalex:W2809878087",
+      "a_text": "The authors systematically collect and explain prominent definitions of fairness for algorithmic classification.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "explanation": "Claim A describes a specific paper's methodology in collecting fairness definitions, whereas Claim B describes a general trend of inconsistent terminology in algorithmic fairness research."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c5",
+      "to_claim_id": "openalex:W3035447285:c2",
+      "similarity": 0.8184149861335754,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Actual predictions made by different fairness-enhancing algorithms vary significantly from one another.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "explanation": "Claim A addresses the variability in specific predictions between different fairness algorithms, while Claim B focuses on the trade-off between fairness mitigation and overall model accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2795743913:c4",
+      "to_claim_id": "openalex:W3136620301:c4",
+      "similarity": 0.817179799079895,
+      "a_paper_id": "openalex:W2795743913",
+      "a_text": "Perceptions of algorithmic fairness or unfairness can substantially affect user trust in a company or product.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "explanation": "Claim A addresses the impact of fairness perceptions on user trust, while Claim B identifies outcome favorability as a factor that shapes those fairness perceptions."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c9",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.8155509233474731,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "There is an empirical trade-off between negative outcome group calibration (s-calibration-) and true positive rate (s-TPR) across fairness algorithms.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Both claims address trade-offs among algorithmic fairness metrics, but they focus on different combinations of criteria."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c1",
+      "to_claim_id": "openalex:W2885659818:c1",
+      "similarity": 0.8142530918121338,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "There are at least six distinct formal definitions of algorithmic fairness in risk assessment contexts.",
+      "b_paper_id": "openalex:W2885659818",
+      "b_text": "Formal mathematical definitions of algorithmic fairness can be categorized into two broad families: those constraining decision effects on disparities, and those constraining protected characteristic effects on decisions.",
+      "explanation": "Claim A quantifies the number of specific fairness definitions, while Claim B proposes a two-family taxonomy for categorizing definitions, making their statements compatible without directly supporting or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c8",
+      "to_claim_id": "openalex:W2784397426:c1",
+      "similarity": 0.8120203018188477,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on low-income examples (<=50K) most effectively reduces the equality gap for the low-income label class.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "explanation": "Claim A addresses how targeted adversarial training reduces the equality gap for a specific label class, whereas Claim B reports the overall impact of adversarial debiasing on predictive accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c1",
+      "to_claim_id": "openalex:W3035447285:c2",
+      "similarity": 0.8118327260017395,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported accuracy measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "explanation": "Claim A focuses on how data preprocessing choices influence reported accuracy metrics, while Claim B addresses the trade-off between applying fairness mitigation algorithms and overall model accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c2",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.8103851675987244,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "While both claims address fairness trade-offs when base rates differ, Claim A focuses on the incompatibility between conditional use accuracy equality and error rate equality, whereas Claim B focuses on the inconsistency between statistical parity and calibration."
+    },
+    {
+      "from_claim_id": "openalex:W1979769549:c1",
+      "to_claim_id": "openalex:W2963174898:c4",
+      "similarity": 0.8095541596412659,
+      "a_paper_id": "openalex:W1979769549",
+      "a_text": "Discrimination-aware classification can be achieved without requiring data modification.",
+      "b_paper_id": "openalex:W2963174898",
+      "b_text": "Data discrimination can be significantly reduced at a small cost in classification accuracy.",
+      "explanation": "Claim A addresses the methodology of achieving fair classification without modifying data, whereas Claim B focuses on the trade-off between accuracy and discrimination reduction."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c1",
+      "to_claim_id": "openalex:W2753845591:c2",
+      "similarity": 0.8092116713523865,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "Equalized odds requires a predictor and protected attribute to be independent conditional on the true outcome variable.",
+      "b_paper_id": "openalex:W2753845591",
+      "b_text": "A predictor is counterfactually fair if it is constructed as a function of non-descendants of the protected attributes in the causal graph.",
+      "explanation": "The claims discuss two distinct algorithmic fairness criteria\u2014equalized odds and counterfactual fairness\u2014without reinforcing or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c7",
+      "to_claim_id": "openalex:W2784397426:c1",
+      "similarity": 0.8084033727645874,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on high-income examples (>50K) most effectively reduces the equality gap for the high-income label class.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "explanation": "Claim A addresses how training on specific subsets affects the equality gap, while Claim B reports the impact of adversarial debiasing on overall predictive accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c4",
+      "to_claim_id": "openalex:W2753845591:c4",
+      "similarity": 0.8073657155036926,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "An optimal equalized odds predictor can be derived directly from the Bayes optimal regressor and the protected attribute.",
+      "b_paper_id": "openalex:W2753845591",
+      "b_text": "In a linear model under Scenario 1, regressing the outcome on both protected attributes and observable features produces a counterfactually fair predictor.",
+      "explanation": "The claims address different fairness criteria\u2014equalized odds versus counterfactual fairness\u2014under distinct modeling assumptions."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c1",
+      "to_claim_id": "openalex:W2753845591:c1",
+      "similarity": 0.8060927391052246,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "Equalized odds requires a predictor and protected attribute to be independent conditional on the true outcome variable.",
+      "b_paper_id": "openalex:W2753845591",
+      "b_text": "A predictor is counterfactually fair if its distribution over possible predictions for an individual remains unchanged under a counterfactual intervention on protected attributes.",
+      "explanation": "The claims independently define two distinct fairness criteria\u2014equalized odds and counterfactual fairness\u2014without asserting contradictory or mutually reinforcing findings."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c2",
+      "to_claim_id": "openalex:W2963174898:c1",
+      "similarity": 0.804883599281311,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported fairness measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W2963174898",
+      "b_text": "A probabilistic formulation of data pre-processing can be used to reduce discrimination in algorithmic decision making.",
+      "explanation": "Both claims address data preprocessing in algorithmic fairness, but Claim A focuses on how preprocessing choices alter reported fairness metrics while Claim B proposes a specific method to reduce discrimination."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c2",
+      "to_claim_id": "openalex:W2599025709:c2",
+      "similarity": 0.8038480281829834,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "Equal opportunity requires equal true positive rates across protected attribute groups for the advantaged outcome.",
+      "b_paper_id": "openalex:W2599025709",
+      "b_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "explanation": "Claim A defines the specific condition required for equal opportunity, whereas Claim B proves an impossibility theorem regarding the simultaneous satisfaction of multiple fairness criteria under certain conditions."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c4",
+      "to_claim_id": "openalex:W3035447285:c2",
+      "similarity": 0.8032817840576172,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Techniques optimizing for one fairness measure often perform well on different fairness measures.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "explanation": "Claim A addresses how optimizing for one fairness metric affects other fairness metrics, whereas Claim B addresses the trade-off between fairness mitigation and overall model accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c9",
+      "to_claim_id": "openalex:W3035447285:c2",
+      "similarity": 0.801361620426178,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "There is an empirical trade-off between negative outcome group calibration (s-calibration-) and true positive rate (s-TPR) across fairness algorithms.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "explanation": "While both claims discuss trade-offs associated with fairness algorithms, Claim A specifically addresses a trade-off between negative outcome group calibration and true positive rate, whereas Claim B addresses the impact on overall model accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c7",
+      "to_claim_id": "openalex:W3035447285:c2",
+      "similarity": 0.8010701537132263,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Fairness-preserving algorithms exhibit significant variability in fairness measures arising from variations in training-test splits.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "explanation": "Claim A addresses the variability of fairness measures due to data splits, whereas Claim B focuses on the trade-off between fairness mitigation and model accuracy."
+    }
+  ]
+}

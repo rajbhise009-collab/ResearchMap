@@ -69,6 +69,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <span>{lang.ui.footer_scope}</span>
               </div>
               <div className="foot-sources">
+                <span className="foot-sources-label">{lang.libraries_note.label}:</span>{" "}
+                <span className="foot-sources-intro">{lang.libraries_note.intro}</span>
+                <ul className="foot-sources-list">
+                  {lang.libraries_note.items.map((lib) => (
+                    <li key={lib.slug}>
+                      <strong>{lib.name}</strong>{" "}
+                      <span className="foot-sources-note">
+                        ({lib.n_papers} papers) — {lib.note}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="foot-sources">
                 <span className="foot-sources-label">{lang.attribution.label}:</span>{" "}
                 <span className="foot-sources-intro">{lang.attribution.intro}</span>
                 <ul className="foot-sources-list">

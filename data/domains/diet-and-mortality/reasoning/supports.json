@@ -1,0 +1,605 @@
+{
+  "n": 60,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2109401990:c4",
+      "to_claim_id": "openalex:W2513212958:c6",
+      "similarity": 0.8972774744033813,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 19% higher risk of incident diabetes mellitus per 50-g serving per day.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 50 g/day of processed meat is associated with a 32% increased risk of diabetes.",
+      "explanation": "Both claims independently report a positive association between a 50 g/day intake of processed meat and an increased risk of diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c4",
+      "to_claim_id": "openalex:W2955331731:c5",
+      "similarity": 0.8962971568107605,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 19% higher risk of incident diabetes mellitus per 50-g serving per day.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of processed meat is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims independently find that higher intake of processed meat is associated with an increased risk of developing diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c6",
+      "to_claim_id": "openalex:W2955331731:c1",
+      "similarity": 0.8948229551315308,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of whole grain is inversely related to type two diabetes.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of whole grains is inversely associated with type 2 diabetes incidence.",
+      "explanation": "Both claims report a consistent inverse association between whole grain intake and the incidence of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2513212958:c6",
+      "to_claim_id": "openalex:W2955331731:c5",
+      "similarity": 0.8851705193519592,
+      "a_paper_id": "openalex:W2513212958",
+      "a_text": "Consumption of 50 g/day of processed meat is associated with a 32% increased risk of diabetes.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of processed meat is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims report that a higher consumption of processed meat is associated with an increased risk or incidence of diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c3",
+      "to_claim_id": "openalex:W2513212958:c7",
+      "similarity": 0.8650221824645996,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 42% higher risk of incident coronary heart disease per 50-g serving per day.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 50 g/day of processed meat is associated with a 24% increased risk of cardiovascular mortality.",
+      "explanation": "Both claims independently demonstrate that consuming 50 g/day of processed meat increases the risk of adverse cardiovascular outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c6",
+      "to_claim_id": "openalex:W2787107952:c2",
+      "similarity": 0.8625463247299194,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Heavy alcohol consumption (>60 g/day) is associated with an increased risk of incident stroke compared with abstainers (RR 1.62, 95% CI 1.32 to 1.98).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+      "explanation": "Both claims find a positive association between higher levels of alcohol consumption and an increased risk of stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2113024584:c1",
+      "to_claim_id": "openalex:W2955331731:c7",
+      "similarity": 0.8609821796417236,
+      "a_paper_id": "openalex:W2113024584",
+      "a_text": "Individuals in the highest quantile of sugar-sweetened beverage intake have a 26% greater risk of developing type 2 diabetes compared to those in the lowest quantile.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of sugar sweetened beverages is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims assert that higher consumption of sugar-sweetened beverages is associated with an increased risk of developing type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c1",
+      "to_claim_id": "openalex:W2787107952:c7",
+      "similarity": 0.8570594191551208,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "Men who consumed alcohol three to four days per week had a decreased risk of myocardial infarction compared with men who consumed alcohol less than once per week.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "explanation": "Both claims independently demonstrate a protective association between higher or more frequent alcohol consumption and the risk of myocardial infarction."
+    },
+    {
+      "from_claim_id": "openalex:W2033941910:c4",
+      "to_claim_id": "openalex:W2113024584:c1",
+      "similarity": 0.852654218673706,
+      "a_paper_id": "openalex:W2033941910",
+      "a_text": "Consuming 1 or more sugar-sweetened soft drinks per day is associated with an increased relative risk of type 2 diabetes compared with consuming less than 1 per month.",
+      "b_paper_id": "openalex:W2113024584",
+      "b_text": "Individuals in the highest quantile of sugar-sweetened beverage intake have a 26% greater risk of developing type 2 diabetes compared to those in the lowest quantile.",
+      "explanation": "Both claims independently indicate that higher consumption of sugar-sweetened beverages is associated with an increased risk of developing type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c5",
+      "to_claim_id": "openalex:W2311763102:c1",
+      "similarity": 0.848835289478302,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "b_paper_id": "openalex:W2311763102",
+      "b_text": "Unadjusted meta-analysis shows low-volume drinkers (1.3-24.9 g ethanol per day) have a reduced all-cause mortality risk compared to abstainers.",
+      "explanation": "Both claims state that drinking alcohol at moderate or general levels is associated with a reduced risk of all-cause mortality compared to non-drinking or abstaining."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c1",
+      "to_claim_id": "openalex:W2787107952:c2",
+      "similarity": 0.8451918363571167,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Heavy alcohol consumption monotonically increases the relative risk of hemorrhagic stroke.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+      "explanation": "Both claims independently indicate that increased alcohol intake leads to a higher risk of stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c6",
+      "to_claim_id": "openalex:W2787107952:c7",
+      "similarity": 0.8435949683189392,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "A 12.5-g increase in daily alcohol consumption over a four-year follow-up period was associated with a decreased risk of myocardial infarction.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "explanation": "Both claims independently report that increased alcohol consumption is associated with a lower risk of myocardial infarction."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c5",
+      "to_claim_id": "openalex:W2787107952:c7",
+      "similarity": 0.8427166938781738,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "Consumption of alcohol with meals did not substantially alter the inverse association with myocardial infarction risk.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "explanation": "Both claims affirm an inverse association between alcohol consumption and the risk of myocardial infarction."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c2",
+      "to_claim_id": "openalex:W2787107952:c7",
+      "similarity": 0.8412805795669556,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "Men who consumed alcohol five to seven days per week had a decreased risk of myocardial infarction compared with men who consumed alcohol less than once per week.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "explanation": "Both claims independently report a reduced risk of myocardial infarction associated with higher levels of alcohol consumption."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c2",
+      "to_claim_id": "openalex:W2109129984:c7",
+      "similarity": 0.8409262895584106,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship with the relative risk of ischemic stroke.",
+      "b_paper_id": "openalex:W2109129984",
+      "b_text": "Alcohol consumption shows differing risk associations by stroke subtype, with a lower risk for incident ischaemic stroke (RR 0.92, 95% CI 0.85 to 1.00) and an elevated risk for incident haemorrhagic stroke (RR 1.14, 95% CI 0.97 to 1.34).",
+      "explanation": "Both claims find that alcohol consumption is associated with a reduced risk of ischemic stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2946931470:c1",
+      "to_claim_id": "openalex:W4392600894:c1",
+      "similarity": 0.8406416773796082,
+      "a_paper_id": "openalex:W2946931470",
+      "a_text": "Higher intake of ultra-processed food is associated with a higher risk of overall cardiovascular disease.",
+      "b_paper_id": "openalex:W4392600894",
+      "b_text": "Greater exposure to ultra-processed foods is directly associated with a higher risk of incident cardiovascular disease related mortality (risk ratio 1.50, 95% confidence interval 1.37 to 1.63).",
+      "explanation": "Both claims find that higher intake or exposure to ultra-processed foods is associated with an increased risk of cardiovascular disease outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c3",
+      "to_claim_id": "openalex:W2315875886:c3",
+      "similarity": 0.8405324816703796,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Low to moderate alcohol consumption is associated with a protective effect against ischemic stroke.",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Moderate alcohol intake of 5 to 14 g per day is associated with a decreased risk of ischemic stroke in middle-aged women.",
+      "explanation": "Both claims indicate that moderate alcohol intake is associated with a reduced risk or protective effect against ischemic stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c2",
+      "to_claim_id": "openalex:W2955331731:c2",
+      "similarity": 0.8375426530838013,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of dietary fiber is inversely related to type two diabetes.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of cereal fibre is inversely associated with type 2 diabetes incidence.",
+      "explanation": "Both claims report an inverse association between fiber intake\u2014specifically dietary fiber in general and cereal fiber\u2014and type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c5",
+      "to_claim_id": "openalex:W2311763102:c2",
+      "similarity": 0.8358198404312134,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "b_paper_id": "openalex:W2311763102",
+      "b_text": "Unadjusted meta-analysis shows occasional drinkers (<1.3 g ethanol per day) have a reduced mortality risk compared to abstainers.",
+      "explanation": "Both claims state that consuming alcohol is associated with a reduced risk of all-cause mortality compared to abstainers or non-drinkers."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c1",
+      "to_claim_id": "openalex:W2109129984:c6",
+      "similarity": 0.8347070217132568,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Heavy alcohol consumption monotonically increases the relative risk of hemorrhagic stroke.",
+      "b_paper_id": "openalex:W2109129984",
+      "b_text": "Heavy alcohol consumption (>60 g/day) is associated with an increased risk of incident stroke compared with abstainers (RR 1.62, 95% CI 1.32 to 1.98).",
+      "explanation": "Both claims report a mutually reinforcing finding that heavy alcohol consumption increases the risk of stroke, with one focusing on overall incident stroke and the other on hemorrhagic stroke specifically."
+    },
+    {
+      "from_claim_id": "openalex:W2033941910:c4",
+      "to_claim_id": "openalex:W2789317488:c9",
+      "similarity": 0.8340059518814087,
+      "a_paper_id": "openalex:W2033941910",
+      "a_text": "Consuming 1 or more sugar-sweetened soft drinks per day is associated with an increased relative risk of type 2 diabetes compared with consuming less than 1 per month.",
+      "b_paper_id": "openalex:W2789317488",
+      "b_text": "High consumption of sugar-sweetened beverages is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 1.30).",
+      "explanation": "Both claims independently report that high consumption of sugar-sweetened beverages or soft drinks is associated with an increased risk of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2033941910:c4",
+      "to_claim_id": "openalex:W2955331731:c7",
+      "similarity": 0.8321536779403687,
+      "a_paper_id": "openalex:W2033941910",
+      "a_text": "Consuming 1 or more sugar-sweetened soft drinks per day is associated with an increased relative risk of type 2 diabetes compared with consuming less than 1 per month.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of sugar sweetened beverages is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims report that higher consumption of sugar-sweetened beverages is associated with an increased risk or incidence of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2789317488:c1",
+      "to_claim_id": "openalex:W2955331731:c1",
+      "similarity": 0.829806923866272,
+      "a_paper_id": "openalex:W2789317488",
+      "a_text": "Low whole grains consumption is associated with an increased risk of type 2 diabetes mellitus with convincing epidemiological evidence.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of whole grains is inversely associated with type 2 diabetes incidence.",
+      "explanation": "Both claims independently indicate that higher consumption of whole grains is associated with a reduced risk or incidence of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c6",
+      "to_claim_id": "openalex:W2955331731:c2",
+      "similarity": 0.8293188214302063,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of whole grain is inversely related to type two diabetes.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of cereal fibre is inversely associated with type 2 diabetes incidence.",
+      "explanation": "Both claims independently report a protective, inverse association between grain-derived dietary components and the incidence of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2946931470:c2",
+      "to_claim_id": "openalex:W4392600894:c1",
+      "similarity": 0.828209400177002,
+      "a_paper_id": "openalex:W2946931470",
+      "a_text": "Higher intake of ultra-processed food is associated with a higher risk of coronary heart disease.",
+      "b_paper_id": "openalex:W4392600894",
+      "b_text": "Greater exposure to ultra-processed foods is directly associated with a higher risk of incident cardiovascular disease related mortality (risk ratio 1.50, 95% confidence interval 1.37 to 1.63).",
+      "explanation": "Both claims find that higher consumption of ultra-processed foods is associated with an increased risk of adverse cardiovascular outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c2",
+      "to_claim_id": "openalex:W2787107952:c7",
+      "similarity": 0.8251405954360962,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of incident coronary heart disease compared with non-drinking (pooled adjusted RR 0.71, 95% CI 0.66 to 0.77).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "explanation": "Both claims independently find that alcohol consumption is associated with a reduced risk of cardiovascular events, specifically coronary heart disease and myocardial infarction."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c3",
+      "to_claim_id": "openalex:W2109129984:c7",
+      "similarity": 0.8245030641555786,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Low to moderate alcohol consumption is associated with a protective effect against ischemic stroke.",
+      "b_paper_id": "openalex:W2109129984",
+      "b_text": "Alcohol consumption shows differing risk associations by stroke subtype, with a lower risk for incident ischaemic stroke (RR 0.92, 95% CI 0.85 to 1.00) and an elevated risk for incident haemorrhagic stroke (RR 1.14, 95% CI 0.97 to 1.34).",
+      "explanation": "Both claims find that alcohol consumption is associated with a reduced risk or protective effect against ischemic stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2513212958:c6",
+      "to_claim_id": "openalex:W2955331731:c6",
+      "similarity": 0.8229367733001709,
+      "a_paper_id": "openalex:W2513212958",
+      "a_text": "Consumption of 50 g/day of processed meat is associated with a 32% increased risk of diabetes.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of bacon is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims report that consuming processed meats, such as bacon, is associated with an increased risk of developing diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2917793655:c3",
+      "to_claim_id": "openalex:W3194401096:c1",
+      "similarity": 0.8222509026527405,
+      "a_paper_id": "openalex:W2917793655",
+      "a_text": "The criteria for causality between the Mediterranean diet and cardiovascular health outcomes were met.",
+      "b_paper_id": "openalex:W3194401096",
+      "b_text": "Adherence to the Mediterranean diet reduces the incidence of cardiovascular outcomes.",
+      "explanation": "Both claims assert a causal relationship between adherence to the Mediterranean diet and a reduction in adverse cardiovascular outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c1",
+      "to_claim_id": "openalex:W2335592377:c3",
+      "similarity": 0.8215705752372742,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of cardiovascular disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.70 to 0.80).",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Cardiovascular disease death rates were 30 to 40 percent lower among men reporting at least one drink daily compared with nondrinkers.",
+      "explanation": "Both claims find that alcohol consumption is associated with a significantly reduced risk of cardiovascular disease mortality compared to non-drinking."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c4",
+      "to_claim_id": "openalex:W2955331731:c4",
+      "similarity": 0.8212249279022217,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 19% higher risk of incident diabetes mellitus per 50-g serving per day.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of red meat is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims independently indicate that higher consumption of meat categories (processed meat and red meat) is associated with an increased risk of diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c3",
+      "to_claim_id": "openalex:W2315875886:c2",
+      "similarity": 0.8208867907524109,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of coronary heart disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.68 to 0.81).",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Alcohol intake of 25 g or more per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "explanation": "Both claims report that alcohol consumption is associated with a reduced risk of coronary heart disease."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c6",
+      "to_claim_id": "openalex:W2789317488:c1",
+      "similarity": 0.8204495906829834,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of whole grain is inversely related to type two diabetes.",
+      "b_paper_id": "openalex:W2789317488",
+      "b_text": "Low whole grains consumption is associated with an increased risk of type 2 diabetes mellitus with convincing epidemiological evidence.",
+      "explanation": "Both claims assert that higher whole grain consumption is associated with a reduced risk of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c4",
+      "to_claim_id": "openalex:W2955331731:c6",
+      "similarity": 0.8192412257194519,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 19% higher risk of incident diabetes mellitus per 50-g serving per day.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of bacon is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims indicate that consuming processed meat products, such as bacon, is associated with an increased risk of developing diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c2",
+      "to_claim_id": "openalex:W2315875886:c3",
+      "similarity": 0.8176988363265991,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship with the relative risk of ischemic stroke.",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Moderate alcohol intake of 5 to 14 g per day is associated with a decreased risk of ischemic stroke in middle-aged women.",
+      "explanation": "Claim B provides specific evidence of a reduced risk of ischemic stroke at moderate alcohol intake, which aligns with the initial protective dip of the J-shaped dose-response curve described in Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W1600958960:c4",
+      "to_claim_id": "openalex:W2581745547:c1",
+      "similarity": 0.8168125152587891,
+      "a_paper_id": "openalex:W1600958960",
+      "a_text": "Reducing saturated fat intake has little or no effect on cardiovascular mortality.",
+      "b_paper_id": "openalex:W2581745547",
+      "b_text": "Higher intakes of saturated fatty acids are not associated with higher risks of coronary heart disease.",
+      "explanation": "Both claims indicate that saturated fat intake does not significantly increase the risk of cardiovascular disease or related mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2113024584:c1",
+      "to_claim_id": "openalex:W2789317488:c9",
+      "similarity": 0.8155840635299683,
+      "a_paper_id": "openalex:W2113024584",
+      "a_text": "Individuals in the highest quantile of sugar-sweetened beverage intake have a 26% greater risk of developing type 2 diabetes compared to those in the lowest quantile.",
+      "b_paper_id": "openalex:W2789317488",
+      "b_text": "High consumption of sugar-sweetened beverages is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 1.30).",
+      "explanation": "Both claims find that high intake of sugar-sweetened beverages is associated with an increased risk of developing type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c5",
+      "to_claim_id": "openalex:W2335592377:c7",
+      "similarity": 0.8154039978981018,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Alcohol consumption was associated with a small reduction in the overall risk of death in middle age (ages 35 to 69).",
+      "explanation": "Both claims report that alcohol consumption is associated with a reduced risk of all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W1600958960:c3",
+      "to_claim_id": "openalex:W2581745547:c1",
+      "similarity": 0.8150207996368408,
+      "a_paper_id": "openalex:W1600958960",
+      "a_text": "Reducing saturated fat intake has little or no effect on all-cause mortality.",
+      "b_paper_id": "openalex:W2581745547",
+      "b_text": "Higher intakes of saturated fatty acids are not associated with higher risks of coronary heart disease.",
+      "explanation": "Both claims independently reinforce the finding that saturated fat intake does not significantly increase major health risks or mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c2",
+      "to_claim_id": "openalex:W2955331731:c1",
+      "similarity": 0.8149194717407227,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of dietary fiber is inversely related to type two diabetes.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of whole grains is inversely associated with type 2 diabetes incidence.",
+      "explanation": "Both claims report a protective effect against type 2 diabetes from related dietary components, as whole grains are a major source of dietary fiber."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c5",
+      "to_claim_id": "openalex:W3035463546:c5",
+      "similarity": 0.8140751123428345,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "A 20-percentile increase in diet scores measured by Alternate Healthy Eating Index and Alternate Mediterranean Diet is associated with a 7 to 15% reduction in cardiovascular disease mortality.",
+      "b_paper_id": "openalex:W3035463546",
+      "b_text": "Higher dietary scores for HEI-2015, AMED, HPDI, and AHEI were statistically significantly associated with a lower risk of coronary heart disease.",
+      "explanation": "Both claims find that higher diet quality scores, specifically using AHEI and AMED, are associated with a reduced risk of cardiovascular and coronary heart diseases."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c1",
+      "to_claim_id": "openalex:W2335592377:c4",
+      "similarity": 0.8131969571113586,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of cardiovascular disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.70 to 0.80).",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Cardiovascular disease death rates were 30 to 40 percent lower among women reporting at least one drink daily compared with nondrinkers.",
+      "explanation": "Both claims report a lower risk of cardiovascular disease mortality among alcohol consumers compared to non-drinkers."
+    },
+    {
+      "from_claim_id": "openalex:W2131745222:c2",
+      "to_claim_id": "openalex:W2789317488:c9",
+      "similarity": 0.8129779100418091,
+      "a_paper_id": "openalex:W2131745222",
+      "a_text": "In 2010, an estimated 133,000 deaths worldwide from diabetes mellitus were attributable to sugar-sweetened beverage consumption.",
+      "b_paper_id": "openalex:W2789317488",
+      "b_text": "High consumption of sugar-sweetened beverages is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 1.30).",
+      "explanation": "Both claims independently present findings that link sugar-sweetened beverage consumption to harmful diabetes outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c1",
+      "to_claim_id": "openalex:W2311763102:c1",
+      "similarity": 0.8127071261405945,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of cardiovascular disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.70 to 0.80).",
+      "b_paper_id": "openalex:W2311763102",
+      "b_text": "Unadjusted meta-analysis shows low-volume drinkers (1.3-24.9 g ethanol per day) have a reduced all-cause mortality risk compared to abstainers.",
+      "explanation": "Both claims report a protective association between alcohol consumption and mortality risk compared to non-drinking, with Claim A focusing on cardiovascular disease mortality and Claim B on all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c1",
+      "to_claim_id": "openalex:W2335592377:c3",
+      "similarity": 0.811400830745697,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "Men who consumed alcohol three to four days per week had a decreased risk of myocardial infarction compared with men who consumed alcohol less than once per week.",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Cardiovascular disease death rates were 30 to 40 percent lower among men reporting at least one drink daily compared with nondrinkers.",
+      "explanation": "Both claims report that regular alcohol consumption in men is associated with a reduced risk of adverse cardiovascular outcomes compared to low or no alcohol intake."
+    },
+    {
+      "from_claim_id": "openalex:W2581745547:c3",
+      "to_claim_id": "openalex:W2625336870:c8",
+      "similarity": 0.8110135793685913,
+      "a_paper_id": "openalex:W2581745547",
+      "a_text": "Replacing saturated fatty acids with cis-polyunsaturated fatty acids is associated with significant coronary heart disease risk reduction.",
+      "b_paper_id": "openalex:W2625336870",
+      "b_text": "Lowering intake of saturated fat and replacing it with unsaturated fats, especially polyunsaturated fats, will lower the incidence of CVD.",
+      "explanation": "Both claims assert that replacing saturated fats with polyunsaturated fats reduces the risk or incidence of cardiovascular/coronary heart disease."
+    },
+    {
+      "from_claim_id": "openalex:W2033941910:c5",
+      "to_claim_id": "openalex:W2113024584:c1",
+      "similarity": 0.8105907440185547,
+      "a_paper_id": "openalex:W2033941910",
+      "a_text": "Consuming 1 or more fruit punch drinks per day is associated with an increased risk of type 2 diabetes compared with consuming less than 1 per month.",
+      "b_paper_id": "openalex:W2113024584",
+      "b_text": "Individuals in the highest quantile of sugar-sweetened beverage intake have a 26% greater risk of developing type 2 diabetes compared to those in the lowest quantile.",
+      "explanation": "Both claims independently report that higher consumption of sugary beverages is associated with an increased risk of developing type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c3",
+      "to_claim_id": "openalex:W2315875886:c1",
+      "similarity": 0.8097614645957947,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of coronary heart disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.68 to 0.81).",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Moderate alcohol intake of 5 to 14 g per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "explanation": "Both claims find that alcohol consumption is associated with a reduced risk of coronary heart disease."
+    },
+    {
+      "from_claim_id": "openalex:W2335592377:c5",
+      "to_claim_id": "openalex:W2787107952:c1",
+      "similarity": 0.8090725541114807,
+      "a_paper_id": "openalex:W2335592377",
+      "a_text": "Overall death rates were lowest among men and women reporting about one drink daily.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "The threshold for lowest risk of all-cause mortality in current drinkers is approximately 100 g of alcohol per week.",
+      "explanation": "Both claims indicate that low-level alcohol intake, defined either as approximately one drink daily or around 100 grams per week, is associated with the lowest risk of all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c3",
+      "to_claim_id": "openalex:W2946931470:c2",
+      "similarity": 0.8083617687225342,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 42% higher risk of incident coronary heart disease per 50-g serving per day.",
+      "b_paper_id": "openalex:W2946931470",
+      "b_text": "Higher intake of ultra-processed food is associated with a higher risk of coronary heart disease.",
+      "explanation": "Both claims independently find that higher consumption of processed dietary items, specifically processed meat or ultra-processed foods, is associated with an increased risk of coronary heart disease."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c1",
+      "to_claim_id": "openalex:W2311763102:c2",
+      "similarity": 0.8061402440071106,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of cardiovascular disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.70 to 0.80).",
+      "b_paper_id": "openalex:W2311763102",
+      "b_text": "Unadjusted meta-analysis shows occasional drinkers (<1.3 g ethanol per day) have a reduced mortality risk compared to abstainers.",
+      "explanation": "Both claims indicate that alcohol consumption is associated with a reduced mortality risk compared to abstaining or non-drinking."
+    },
+    {
+      "from_claim_id": "openalex:W2315875886:c1",
+      "to_claim_id": "openalex:W2335592377:c7",
+      "similarity": 0.8058925271034241,
+      "a_paper_id": "openalex:W2315875886",
+      "a_text": "Moderate alcohol intake of 5 to 14 g per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Alcohol consumption was associated with a small reduction in the overall risk of death in middle age (ages 35 to 69).",
+      "explanation": "Both claims report a protective association of alcohol consumption in middle age, with reduced coronary heart disease risk reinforcing a reduction in overall mortality risk."
+    },
+    {
+      "from_claim_id": "openalex:W2946931470:c3",
+      "to_claim_id": "openalex:W4392600894:c1",
+      "similarity": 0.8051741719245911,
+      "a_paper_id": "openalex:W2946931470",
+      "a_text": "Higher intake of ultra-processed food is associated with a higher risk of cerebrovascular disease.",
+      "b_paper_id": "openalex:W4392600894",
+      "b_text": "Greater exposure to ultra-processed foods is directly associated with a higher risk of incident cardiovascular disease related mortality (risk ratio 1.50, 95% confidence interval 1.37 to 1.63).",
+      "explanation": "Both claims report a positive association between higher intake of ultra-processed foods and an increased risk of adverse vascular outcomes, specifically cerebrovascular disease and cardiovascular mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2774826291:c3",
+      "to_claim_id": "openalex:W3194401096:c1",
+      "similarity": 0.8030723333358765,
+      "a_paper_id": "openalex:W2774826291",
+      "a_text": "The Mediterranean diet shows a beneficial effect in the primary and secondary prevention of cardiovascular disease.",
+      "b_paper_id": "openalex:W3194401096",
+      "b_text": "Adherence to the Mediterranean diet reduces the incidence of cardiovascular outcomes.",
+      "explanation": "Both claims assert that adherence to the Mediterranean diet has a protective effect against cardiovascular disease and related outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2430898493:c5",
+      "to_claim_id": "openalex:W2955331731:c4",
+      "similarity": 0.802327036857605,
+      "a_paper_id": "openalex:W2430898493",
+      "a_text": "Animal foods are independently positively associated with type 2 diabetes incidence when mutually adjusted for healthy plant foods and less healthy plant foods.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of red meat is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims report a positive association between the consumption of animal-based foods, specifically red meat, and an increased incidence of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c2",
+      "to_claim_id": "openalex:W2315875886:c2",
+      "similarity": 0.8016198873519897,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of incident coronary heart disease compared with non-drinking (pooled adjusted RR 0.71, 95% CI 0.66 to 0.77).",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Alcohol intake of 25 g or more per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "explanation": "Both claims find that alcohol consumption is associated with a reduced risk of coronary heart disease."
+    },
+    {
+      "from_claim_id": "openalex:W2155329925:c5",
+      "to_claim_id": "openalex:W2593977293:c2",
+      "similarity": 0.8014123439788818,
+      "a_paper_id": "openalex:W2155329925",
+      "a_text": "High dietary salt was responsible for an estimated 102,000 deaths in the US in 2005.",
+      "b_paper_id": "openalex:W2593977293",
+      "b_text": "High sodium intake was associated with the highest number of estimated diet-related cardiometabolic deaths in 2012, accounting for 66,508 deaths (9.5%).",
+      "explanation": "Both claims independently find that high dietary sodium or salt intake is a major contributor to estimated deaths in the US population."
+    },
+    {
+      "from_claim_id": "openalex:W2033941910:c5",
+      "to_claim_id": "openalex:W2955331731:c7",
+      "similarity": 0.8007262945175171,
+      "a_paper_id": "openalex:W2033941910",
+      "a_text": "Consuming 1 or more fruit punch drinks per day is associated with an increased risk of type 2 diabetes compared with consuming less than 1 per month.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of sugar sweetened beverages is associated with increased incidence of type 2 diabetes.",
+      "explanation": "Both claims report that consuming sugary drinks, such as fruit punch, is associated with an increased risk of developing type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2335592377:c6",
+      "to_claim_id": "openalex:W2787107952:c1",
+      "similarity": 0.8000874519348145,
+      "a_paper_id": "openalex:W2335592377",
+      "a_text": "All-cause mortality increased with heavier drinking, particularly among adults under age 60 with lower risk of cardiovascular disease.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "The threshold for lowest risk of all-cause mortality in current drinkers is approximately 100 g of alcohol per week.",
+      "explanation": "Both claims find that higher levels of alcohol consumption increase the risk of all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c6",
+      "to_claim_id": "openalex:W2315875886:c2",
+      "similarity": 0.8000796437263489,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "A 12.5-g increase in daily alcohol consumption over a four-year follow-up period was associated with a decreased risk of myocardial infarction.",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Alcohol intake of 25 g or more per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "explanation": "Both claims independently indicate that higher or increased alcohol consumption is associated with a reduced risk of adverse cardiovascular outcomes."
+    }
+  ]
+}

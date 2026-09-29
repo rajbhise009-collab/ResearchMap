@@ -540,9 +540,53 @@ BUILD_LIBRARY = {
 # --------------------------------------------------------------------------
 
 FOOTER_SCOPE = (
-    "Working prototype · one library · 113 papers on "
+    "Working prototype · currently shown: 113 papers on "
     f"{LIBRARY_NAME.lower()}. Not a comprehensive research tool."
 )
+
+# Multi-library manifest — the one place a user-facing view learns that
+# other libraries exist. Kept in sync with
+# backend/app/api/multi_library_export.py::LIBRARIES; anything visible
+# to the reader lives here so the translation-layer honesty tests can
+# police it.
+LIBRARIES_NOTE = {
+    "label": "Libraries in this project",
+    "intro": (
+        "Each library is one subject read through the same pipeline. "
+        "The library currently on screen is the one this URL renders; "
+        "the others are on the same domain under /library/<slug>/."
+    ),
+    "items": [
+        {
+            "slug": "llm-calibration",
+            "name": "Language-model reliability",
+            "n_papers": 113,
+            "note": "The oldest, most-scored library in the project.",
+        },
+        {
+            "slug": "diet-and-mortality",
+            "name": "Diet and all-cause mortality",
+            "n_papers": 100,
+            "note": (
+                "Research-literature analysis, not dietary or medical "
+                "advice. The papers behind these results contradict each "
+                "other on some of the most common questions (red meat, "
+                "saturated fat, alcohol, low-carb). Take medical "
+                "decisions to a clinician who knows you."
+            ),
+        },
+        {
+            "slug": "ml-fairness",
+            "name": "Algorithmic fairness in machine learning",
+            "n_papers": 100,
+            "note": (
+                "Definitions of fairness are provably incompatible in "
+                "general. Papers here disagree about which incompatibility "
+                "matters for which decision."
+            ),
+        },
+    ],
+}
 
 # Attribution required by the upstream data sources and honest for the
 # reader who wants to know where anything here came from.
@@ -632,6 +676,7 @@ def language_pack() -> dict[str, Any]:
         "build_library": BUILD_LIBRARY,
         "no_disagreements": NO_DISAGREEMENTS,
         "attribution": ATTRIBUTION,
+        "libraries_note": LIBRARIES_NOTE,
     }
 
 

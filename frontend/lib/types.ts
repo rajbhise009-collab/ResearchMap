@@ -146,6 +146,19 @@ export interface Attribution {
   items: [string, string, string][];   // [name, url, note]
 }
 
+export interface LibraryEntry {
+  slug: string;
+  name: string;
+  n_papers: number;
+  note: string;
+}
+
+export interface LibrariesNote {
+  label: string;
+  intro: string;
+  items: LibraryEntry[];
+}
+
 export interface LanguagePack {
   ui: Record<string, string>;
   dev: Record<string, string>;
@@ -171,6 +184,7 @@ export interface LanguagePack {
   };
   no_disagreements: { headline: string; body: string; link_label: string };
   attribution: Attribution;
+  libraries_note: LibrariesNote;
 }
 
 // ---- lightweight payloads handed to client components ----

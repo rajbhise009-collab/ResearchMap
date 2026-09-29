@@ -1,0 +1,194 @@
+{
+  "contradiction_run": {
+    "slug": "diet-and-mortality",
+    "elapsed_s": 727.8043649196625,
+    "stats": {
+      "supports": 60,
+      "contradicts": 7,
+      "none": 30
+    },
+    "contradiction_examples": [
+      {
+        "from_claim_id": "openalex:W2109401990:c5",
+        "to_claim_id": "openalex:W2513212958:c1",
+        "similarity": 0.8958173990249634,
+        "a_paper_id": "openalex:W2109401990",
+        "a_text": "Unprocessed red meat consumption is not associated with incident stroke.",
+        "b_paper_id": "openalex:W2513212958",
+        "b_text": "Consumption of 100 g/day of unprocessed red meat is associated with an 11% increased risk of stroke.",
+        "explanation": "Claim A asserts that unprocessed red meat consumption has no association with incident stroke, whereas Claim B states that it is associated with an increased risk of stroke."
+      },
+      {
+        "from_claim_id": "openalex:W2126726883:c3",
+        "to_claim_id": "openalex:W2787107952:c7",
+        "similarity": 0.8676896095275879,
+        "a_paper_id": "openalex:W2126726883",
+        "a_text": "The decreased risk of myocardial infarction was similar between men consuming less than 10 g of alcohol per drinking day and those consuming 30 g or more.",
+        "b_paper_id": "openalex:W2787107952",
+        "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+        "explanation": "Claim A indicates that the risk reduction for myocardial infarction is similar regardless of alcohol intake level, whereas Claim B asserts a continuous, log-linear decrease in risk with higher alcohol consumption."
+      },
+      {
+        "from_claim_id": "openalex:W2109129984:c4",
+        "to_claim_id": "openalex:W2787107952:c2",
+        "similarity": 0.8521416783332825,
+        "a_paper_id": "openalex:W2109129984",
+        "a_text": "Alcohol consumption is not significantly associated with overall incident stroke compared with non-drinking (pooled adjusted RR 0.98, 95% CI 0.91 to 1.06).",
+        "b_paper_id": "openalex:W2787107952",
+        "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+        "explanation": "Claim A finds no significant overall association between alcohol consumption and incident stroke, whereas Claim B reports that higher alcohol consumption is linearly associated with an increased stroke risk."
+      },
+      {
+        "from_claim_id": "openalex:W2064137374:c2",
+        "to_claim_id": "openalex:W2787107952:c2",
+        "similarity": 0.8443945646286011,
+        "a_paper_id": "openalex:W2064137374",
+        "a_text": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship with the relative risk of ischemic stroke.",
+        "b_paper_id": "openalex:W2787107952",
+        "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+        "explanation": "Claim A asserts a J-shaped curvilinear dose-response relationship between alcohol consumption and stroke risk, whereas Claim B asserts a linear relationship where higher consumption is consistently associated with higher risk."
+      },
+      {
+        "from_claim_id": "openalex:W2109401990:c2",
+        "to_claim_id": "openalex:W2955331731:c4",
+        "similarity": 0.8277457356452942,
+        "a_paper_id": "openalex:W2109401990",
+        "a_text": "Unprocessed red meat intake is not associated with incident diabetes mellitus.",
+        "b_paper_id": "openalex:W2955331731",
+        "b_text": "Higher intake of red meat is associated with increased incidence of type 2 diabetes.",
+        "explanation": "Claim A finds no association between unprocessed red meat intake and incident diabetes, whereas Claim B reports that higher intake of red meat is associated with an increased incidence of type 2 diabetes."
+      }
+    ]
+  },
+  "assertion_strength": {
+    "total_claims": 338,
+    "distribution": {
+      "unknown": 338
+    },
+    "firm_share": 0.0,
+    "hedged_share": 0.0
+  },
+  "gap_type_counts": {
+    "n_papers": 59,
+    "n_limitations": 88,
+    "limitation_categories": {
+      "small-sample-size": 4,
+      "sparse-prior-literature": 2,
+      "residual-confounding": 2,
+      "measurement-bias": 2,
+      "low-evidence-quality": 2,
+      "sample-size": 2,
+      "consensus-based-guidance": 1,
+      "unproven-long-term-efficacy": 1,
+      "diagnostic-tool-limitation": 1,
+      "lack-of-screening-evidence": 1,
+      "cross-sectional-study-design": 1,
+      "bmi-dependent-measurement-failure": 1,
+      "lack-of-standardized-assay": 1,
+      "reductionist-dietary-assessment": 1,
+      "lack-of-prior-quantitative-synthesis": 1,
+      "outdated-prior-literature": 1,
+      "variable-study-quality": 1,
+      "lack-of-beverage-specific-data": 1,
+      "sparse-stroke-subtype-mortality-data": 1,
+      "statistical-heterogeneity": 1,
+      "unclear-mechanisms": 1,
+      "inconsistent-literature": 1,
+      "unstudied-population": 1,
+      "subgroup-non-significance": 1,
+      "inconsistent-prior-literature": 1,
+      "limited-number-of-studies": 1,
+      "lack-of-established-national-associations": 1,
+      "omitted-physiological-mechanisms": 1,
+      "morbidity-excluded": 1,
+      "unaddressed-heterogeneity": 1,
+      "self-reported-data-bias": 1,
+      "lack-of-lifecourse-data": 1,
+      "unmeasured-outcomes": 1,
+      "residual-reverse-causation": 1,
+      "prior-work-methodological-gaps": 1,
+      "controversial-prior-evidence": 1,
+      "self-reported-dietary-assessment": 1,
+      "observational-residual-confounding": 1,
+      "subjective-food-classification": 1,
+      "dichotomous-dietary-categorization": 1,
+      "lack-of-plant-food-differentiation": 1,
+      "non-causal-design": 1,
+      "exposure-misclassification": 1,
+      "limited-statistical-power": 1,
+      "short-follow-up-duration": 1,
+      "selection-bias": 1,
+      "self-report-bias": 1,
+      "observational-confounding": 1,
+      "cohort-inconsistency": 1,
+      "methodological-flaws-in-prior-work": 1,
+      "randomization-protocol-deviations": 1,
+      "sampling-bias": 1,
+      "measurement-error": 1,
+      "missing-metrics": 1,
+      "sample-representativeness": 1,
+      "high-level-overview": 1,
+      "classification-imprecision": 1,
+      "lack-of-evidence": 1,
+      "unclear-mechanism-or-pattern-effect": 1,
+      "unknown-mechanism": 1,
+      "knowledge-gap": 1,
+      "subgroup-restriction": 1,
+      "statistical-power-limitation": 1,
+      "reporting-bias": 1,
+      "methodological-constraint": 1,
+      "confounding-factors": 1,
+      "limited-data": 1,
+      "statistical-power": 1,
+      "lack-of-autopsy-data": 1,
+      "limited-extrapolatability": 1,
+      "abstainer-misclassification-bias": 1,
+      "knowledge-gaps": 1,
+      "uncontrolled-confounders": 1,
+      "lack-of-prior-longterm-studies": 1,
+      "lack-of-disaggregated-global-estimates": 1,
+      "prior-work-outcome-aggregation": 1,
+      "diagnostic-imprecision": 1,
+      "self-report-measurement-bias": 1,
+      "reference-group-adjustment-bias": 1,
+      "restricted-demographic": 1
+    },
+    "n_future_work_items": 37
+  },
+  "ledger": {
+    "cap_inr": 850.0,
+    "cap_usd": 10.119047619047619,
+    "cumulative_usd": 5.894718,
+    "cumulative_inr": 495.156312,
+    "remaining_usd": 4.2243296190476185,
+    "remaining_inr": 354.843688,
+    "n_calls": 304,
+    "by_stage": {
+      "extract_diet": {
+        "calls": 59,
+        "cost_usd": 2.805886500000001,
+        "cost_inr": 235.69446599999995
+      },
+      "extract_fairness": {
+        "calls": 53,
+        "cost_usd": 2.5165905000000004,
+        "cost_inr": 211.39360200000007
+      },
+      "contradiction_diet-and-mortality": {
+        "calls": 128,
+        "cost_usd": 0.4062389999999999,
+        "cost_inr": 34.12407599999998
+      },
+      "contradiction_ml-fairness": {
+        "calls": 54,
+        "cost_usd": 0.1657019999999999,
+        "cost_inr": 13.918968000000001
+      },
+      "unknown": {
+        "calls": 10,
+        "cost_usd": 0.00030000000000000003,
+        "cost_inr": 0.025200000000000004
+      }
+    }
+  }
+}

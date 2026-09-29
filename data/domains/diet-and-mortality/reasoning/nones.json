@@ -1,0 +1,305 @@
+{
+  "n": 30,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2109129984:c7",
+      "to_claim_id": "openalex:W2787107952:c2",
+      "similarity": 0.8659090995788574,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption shows differing risk associations by stroke subtype, with a lower risk for incident ischaemic stroke (RR 0.92, 95% CI 0.85 to 1.00) and an elevated risk for incident haemorrhagic stroke (RR 1.14, 95% CI 0.97 to 1.34).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+      "explanation": "Claim A examines risk associations for specific stroke subtypes, whereas Claim B assesses the overall linear risk of total stroke relative to alcohol intake."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c2",
+      "to_claim_id": "openalex:W2109129984:c4",
+      "similarity": 0.8590298891067505,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship with the relative risk of ischemic stroke.",
+      "b_paper_id": "openalex:W2109129984",
+      "b_text": "Alcohol consumption is not significantly associated with overall incident stroke compared with non-drinking (pooled adjusted RR 0.98, 95% CI 0.91 to 1.06).",
+      "explanation": "Claim A refers specifically to a non-linear dose-response relationship with ischemic stroke, while Claim B evaluates the overall risk across all stroke types compared to non-drinking."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c6",
+      "to_claim_id": "openalex:W2513212958:c1",
+      "similarity": 0.8412834405899048,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat consumption is not associated with incident stroke.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 100 g/day of unprocessed red meat is associated with an 11% increased risk of stroke.",
+      "explanation": "The claims evaluate different types of meat (processed meat versus unprocessed red meat), so they refer to distinct constructs."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c8",
+      "to_claim_id": "openalex:W2955331731:c1",
+      "similarity": 0.8395348191261292,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of whole grain is inversely related to cardiovascular disease.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of whole grains is inversely associated with type 2 diabetes incidence.",
+      "explanation": "While both claims indicate health benefits from whole grain intake, they address different medical outcomes: cardiovascular disease and type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c4",
+      "to_claim_id": "openalex:W2787107952:c7",
+      "similarity": 0.8388900756835938,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "No single type of alcoholic beverage conferred an additional risk reduction for myocardial infarction beyond drinking frequency.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "explanation": "Claim A addresses whether the type of alcoholic beverage provides additional risk reduction for myocardial infarction beyond drinking frequency, whereas Claim B focuses on the quantitative association between total alcohol intake and myocardial infarction risk."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c3",
+      "to_claim_id": "openalex:W2513212958:c6",
+      "similarity": 0.8379216194152832,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 42% higher risk of incident coronary heart disease per 50-g serving per day.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 50 g/day of processed meat is associated with a 32% increased risk of diabetes.",
+      "explanation": "The claims examine the association of processed meat consumption with two distinct health outcomes\u2014coronary heart disease and diabetes\u2014making them neither mutually supporting nor contradictory."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c5",
+      "to_claim_id": "openalex:W2955331731:c1",
+      "similarity": 0.8379033207893372,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of whole grain is inversely related to obesity.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of whole grains is inversely associated with type 2 diabetes incidence.",
+      "explanation": "The claims examine different health outcomes associated with whole grain intake, specifically obesity versus type 2 diabetes incidence."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c1",
+      "to_claim_id": "openalex:W2513212958:c3",
+      "similarity": 0.8368406295776367,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Unprocessed red meat intake is not associated with incident coronary heart disease.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 100 g/day of unprocessed red meat is associated with a 15% increased risk of cardiovascular mortality.",
+      "explanation": "Claim A evaluates incident coronary heart disease while Claim B focuses on cardiovascular mortality, representing distinct health outcomes that neither directly support nor contradict each other."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c2",
+      "to_claim_id": "openalex:W2787107952:c3",
+      "similarity": 0.8353297710418701,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of incident coronary heart disease compared with non-drinking (pooled adjusted RR 0.71, 95% CI 0.66 to 0.77).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of coronary disease excluding myocardial infarction (HR 1.06 per 100 g/week higher consumption).",
+      "explanation": "The claims examine different specific endpoints and comparisons, with one comparing overall alcohol drinkers to non-drinkers for total incident coronary heart disease and the other evaluating a linear dose-response for coronary disease excluding myocardial infarction."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c5",
+      "to_claim_id": "openalex:W2311763102:c6",
+      "similarity": 0.8316606879234314,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "b_paper_id": "openalex:W2311763102",
+      "b_text": "Estimates of all-cause mortality risk from alcohol consumption are significantly altered by study design and quality characteristics.",
+      "explanation": "Claim A provides a specific estimate for the association between alcohol consumption and all-cause mortality, while Claim B discusses how study design and quality affect such risk estimates in general."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c7",
+      "to_claim_id": "openalex:W2955331731:c1",
+      "similarity": 0.8248567581176758,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of whole grain is inversely related to cancer.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Increased intake of whole grains is inversely associated with type 2 diabetes incidence.",
+      "explanation": "The claims discuss the effect of whole grain intake on two different health outcomes, cancer and type 2 diabetes, making them neither supporting nor contradicting."
+    },
+    {
+      "from_claim_id": "openalex:W1600958960:c4",
+      "to_claim_id": "openalex:W2581745547:c4",
+      "similarity": 0.823003888130188,
+      "a_paper_id": "openalex:W1600958960",
+      "a_text": "Reducing saturated fat intake has little or no effect on cardiovascular mortality.",
+      "b_paper_id": "openalex:W2581745547",
+      "b_text": "Saturated fatty acid reduction has little direct effect on stroke risk.",
+      "explanation": "Although both claims suggest that reducing saturated fat intake has minimal impact, they address distinct health outcomes: cardiovascular mortality and stroke risk."
+    },
+    {
+      "from_claim_id": "openalex:W1963683487:c4",
+      "to_claim_id": "openalex:W2734724639:c3",
+      "similarity": 0.822536826133728,
+      "a_paper_id": "openalex:W1963683487",
+      "a_text": "The NAFLD Fibrosis Score achieves an AUROC of 0.85 for predicting advanced fibrosis in patients with NAFLD.",
+      "b_paper_id": "openalex:W2734724639",
+      "b_text": "Advanced fibrosis in NAFLD refers specifically to stage 3 bridging fibrosis or stage 4 cirrhosis.",
+      "explanation": "Claim A reports the predictive accuracy of a diagnostic score, whereas Claim B provides a definition of advanced fibrosis in NAFLD."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c3",
+      "to_claim_id": "openalex:W2787107952:c3",
+      "similarity": 0.8224079012870789,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of coronary heart disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.68 to 0.81).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of coronary disease excluding myocardial infarction (HR 1.06 per 100 g/week higher consumption).",
+      "explanation": "The claims evaluate different outcomes and comparisons, with one examining coronary heart disease mortality between drinkers and non-drinkers and the other examining the dose-response relationship of alcohol consumption on coronary disease excluding myocardial infarction."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c3",
+      "to_claim_id": "openalex:W2335592377:c3",
+      "similarity": 0.8184546828269958,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "The decreased risk of myocardial infarction was similar between men consuming less than 10 g of alcohol per drinking day and those consuming 30 g or more.",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Cardiovascular disease death rates were 30 to 40 percent lower among men reporting at least one drink daily compared with nondrinkers.",
+      "explanation": "Claim A compares different levels of alcohol intake regarding myocardial infarction risk, while Claim B compares drinkers to nondrinkers regarding cardiovascular disease mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c4",
+      "to_claim_id": "openalex:W2109129984:c4",
+      "similarity": 0.8181580901145935,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "For women, the relative risk of alcohol consumption on stroke differs significantly when comparing mortality endpoints to morbidity endpoints.",
+      "b_paper_id": "openalex:W2109129984",
+      "b_text": "Alcohol consumption is not significantly associated with overall incident stroke compared with non-drinking (pooled adjusted RR 0.98, 95% CI 0.91 to 1.06).",
+      "explanation": "Claim A addresses differences between mortality and morbidity endpoints in women specifically, whereas Claim B provides a pooled overall association for incident stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c1",
+      "to_claim_id": "openalex:W2787107952:c3",
+      "similarity": 0.8177335858345032,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of cardiovascular disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.70 to 0.80).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of coronary disease excluding myocardial infarction (HR 1.06 per 100 g/week higher consumption).",
+      "explanation": "Claim A addresses overall cardiovascular disease mortality comparing drinkers to non-drinkers, whereas Claim B examines the dose-response relationship between higher alcohol consumption and the risk of a specific subset of coronary disease."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c4",
+      "to_claim_id": "openalex:W2513212958:c7",
+      "similarity": 0.8176823854446411,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 19% higher risk of incident diabetes mellitus per 50-g serving per day.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 50 g/day of processed meat is associated with a 24% increased risk of cardiovascular mortality.",
+      "explanation": "The claims evaluate the impact of processed meat intake on two different health outcomes: incident diabetes mellitus and cardiovascular mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c5",
+      "to_claim_id": "openalex:W2787107952:c1",
+      "similarity": 0.8163271546363831,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "The threshold for lowest risk of all-cause mortality in current drinkers is approximately 100 g of alcohol per week.",
+      "explanation": "Claim A compares all-cause mortality between drinkers and non-drinkers, while Claim B identifies the optimal consumption threshold among current drinkers, making them related in topic but neither mutually supportive nor contradictory."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c2",
+      "to_claim_id": "openalex:W2955331731:c5",
+      "similarity": 0.8135843276977539,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Unprocessed red meat intake is not associated with incident diabetes mellitus.",
+      "b_paper_id": "openalex:W2955331731",
+      "b_text": "Higher intake of processed meat is associated with increased incidence of type 2 diabetes.",
+      "explanation": "The claims examine different dietary exposures\u2014unprocessed red meat versus processed meat\u2014and therefore do not directly support or contradict each other."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c4",
+      "to_claim_id": "openalex:W2513212958:c8",
+      "similarity": 0.813513994216919,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Processed meat intake is associated with a 19% higher risk of incident diabetes mellitus per 50-g serving per day.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 50 g/day of processed meat is associated with an 18% increased risk of colorectal cancer.",
+      "explanation": "The claims evaluate the impact of processed meat consumption on different health outcomes, specifically diabetes mellitus and colorectal cancer."
+    },
+    {
+      "from_claim_id": "openalex:W2311763102:c6",
+      "to_claim_id": "openalex:W2787107952:c1",
+      "similarity": 0.8128369450569153,
+      "a_paper_id": "openalex:W2311763102",
+      "a_text": "Estimates of all-cause mortality risk from alcohol consumption are significantly altered by study design and quality characteristics.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "The threshold for lowest risk of all-cause mortality in current drinkers is approximately 100 g of alcohol per week.",
+      "explanation": "Claim A addresses how study design influences mortality risk estimates for alcohol consumption, while Claim B identifies a specific threshold for lowest mortality risk in current drinkers."
+    },
+    {
+      "from_claim_id": "openalex:W1600958960:c3",
+      "to_claim_id": "openalex:W2581745547:c4",
+      "similarity": 0.8125410676002502,
+      "a_paper_id": "openalex:W1600958960",
+      "a_text": "Reducing saturated fat intake has little or no effect on all-cause mortality.",
+      "b_paper_id": "openalex:W2581745547",
+      "b_text": "Saturated fatty acid reduction has little direct effect on stroke risk.",
+      "explanation": "The claims examine the effects of reducing saturated fat on two different outcomes: all-cause mortality and stroke risk."
+    },
+    {
+      "from_claim_id": "openalex:W1600958960:c5",
+      "to_claim_id": "openalex:W2581745547:c4",
+      "similarity": 0.8121105432510376,
+      "a_paper_id": "openalex:W1600958960",
+      "a_text": "Reducing saturated fat intake has little or no effect on non-fatal myocardial infarction.",
+      "b_paper_id": "openalex:W2581745547",
+      "b_text": "Saturated fatty acid reduction has little direct effect on stroke risk.",
+      "explanation": "The claims address the effect of reducing saturated fat on two distinct health outcomes: non-fatal myocardial infarction and stroke risk."
+    },
+    {
+      "from_claim_id": "openalex:W1963683487:c3",
+      "to_claim_id": "openalex:W2734724639:c10",
+      "similarity": 0.8094683885574341,
+      "a_paper_id": "openalex:W1963683487",
+      "a_text": "In patients with severe obesity undergoing bariatric surgery, the prevalence of NAFLD can exceed 90%.",
+      "b_paper_id": "openalex:W2734724639",
+      "b_text": "Bariatric surgery is not recommended as a primary treatment for NASH.",
+      "explanation": "Claim A addresses the prevalence of non-alcoholic fatty liver disease in bariatric surgery patients, whereas Claim B addresses clinical treatment recommendations for non-alcoholic steatohepatitis."
+    },
+    {
+      "from_claim_id": "openalex:W2492799977:c7",
+      "to_claim_id": "openalex:W2513212958:c3",
+      "similarity": 0.8091496825218201,
+      "a_paper_id": "openalex:W2492799977",
+      "a_text": "Substituting 3% of energy from plant protein for protein from unprocessed red meat was associated with lower all-cause mortality.",
+      "b_paper_id": "openalex:W2513212958",
+      "b_text": "Consumption of 100 g/day of unprocessed red meat is associated with a 15% increased risk of cardiovascular mortality.",
+      "explanation": "The claims address different outcome measures (all-cause mortality versus cardiovascular mortality) and different dietary exposures (protein substitution versus absolute consumption)."
+    },
+    {
+      "from_claim_id": "openalex:W2430898493:c3",
+      "to_claim_id": "openalex:W4392600894:c2",
+      "similarity": 0.8084127902984619,
+      "a_paper_id": "openalex:W2430898493",
+      "a_text": "Higher adherence to an unhealthful plant-based diet index (uPDI) is positively associated with type 2 diabetes incidence after adjusting for BMI and multivariable risk factors (pooled HR for extreme deciles 1.16, 95% CI 1.08-1.25, p trend < 0.001).",
+      "b_paper_id": "openalex:W4392600894",
+      "b_text": "Greater dose-response exposure to ultra-processed foods is directly associated with a higher risk of incident type 2 diabetes (risk ratio 1.12, 95% confidence interval 1.11 to 1.13).",
+      "explanation": "The claims evaluate distinct dietary exposures\u2014an unhealthful plant-based diet index versus ultra-processed food consumption\u2014in relation to type 2 diabetes risk."
+    },
+    {
+      "from_claim_id": "openalex:W2064137374:c4",
+      "to_claim_id": "openalex:W2787107952:c2",
+      "similarity": 0.8039282560348511,
+      "a_paper_id": "openalex:W2064137374",
+      "a_text": "For women, the relative risk of alcohol consumption on stroke differs significantly when comparing mortality endpoints to morbidity endpoints.",
+      "b_paper_id": "openalex:W2787107952",
+      "b_text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+      "explanation": "Claim A addresses differences in alcohol-related stroke risk between mortality and morbidity endpoints in women, while Claim B quantifies the overall dose-response relationship between alcohol intake and stroke risk."
+    },
+    {
+      "from_claim_id": "openalex:W2109401990:c1",
+      "to_claim_id": "openalex:W2492799977:c7",
+      "similarity": 0.8020873665809631,
+      "a_paper_id": "openalex:W2109401990",
+      "a_text": "Unprocessed red meat intake is not associated with incident coronary heart disease.",
+      "b_paper_id": "openalex:W2492799977",
+      "b_text": "Substituting 3% of energy from plant protein for protein from unprocessed red meat was associated with lower all-cause mortality.",
+      "explanation": "Claim A evaluates the direct association between unprocessed red meat intake and incident coronary heart disease, whereas Claim B focuses on the effect of substituting plant protein for unprocessed red meat on all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2955331731:c5",
+      "to_claim_id": "openalex:W4392600894:c2",
+      "similarity": 0.8010766506195068,
+      "a_paper_id": "openalex:W2955331731",
+      "a_text": "Higher intake of processed meat is associated with increased incidence of type 2 diabetes.",
+      "b_paper_id": "openalex:W4392600894",
+      "b_text": "Greater dose-response exposure to ultra-processed foods is directly associated with a higher risk of incident type 2 diabetes (risk ratio 1.12, 95% confidence interval 1.11 to 1.13).",
+      "explanation": "The claims evaluate different specific dietary exposures (processed meat versus ultra-processed foods) in relation to type 2 diabetes risk."
+    }
+  ]
+}
