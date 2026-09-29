@@ -146,6 +146,22 @@ export interface Attribution {
   items: [string, string, string][];   // [name, url, note]
 }
 
+export interface LibraryManifest {
+  slug: string;
+  name: string;
+  short_name: string;
+  blurb: string;
+  n_papers: number;
+  is_default: boolean;
+  not_advice_note: string | null;
+  snapshot_path: string;         // e.g. "/data" or "/data/library/<slug>"
+}
+
+export interface LibrariesManifest {
+  libraries: LibraryManifest[];
+  default_slug: string;
+}
+
 export interface LibraryEntry {
   slug: string;
   name: string;

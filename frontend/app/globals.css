@@ -366,6 +366,56 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 .foot-brand { color: var(--muted); }
 .foot-dot { color: var(--rule-strong); }
 
+/* Library switcher — used inside the hero card's kicker and the
+   masthead. Plain <select> with a subtle label so it doesn't try to be
+   a bespoke dropdown widget. */
+.lib-switcher {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.lib-switcher select {
+  font: inherit;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.lib-switcher select:hover { border-color: var(--rule-strong); }
+.lib-switcher select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.lib-switcher-label { text-transform: uppercase; letter-spacing: 0.06em; font-size: var(--step--2); }
+
+/* Diet's not-medical-advice safety note. Rendered inside the hero, in
+   a paper-cream panel so a reader can't miss it. */
+.not-advice {
+  margin-top: var(--s-5);
+  padding: var(--s-4) var(--s-5);
+  background: var(--surface-raise-1, #faf3e6);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.not-advice strong { color: var(--fg); }
+
+.lib-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--surface-raise-1, #faf3e6);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: var(--step--2);
+  color: var(--muted);
+}
+.lib-badge-count { color: var(--faint); }
+
 .foot-sources {
   max-width: var(--wide);
   margin: 0 auto;

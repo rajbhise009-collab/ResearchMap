@@ -4,12 +4,18 @@ import fs from "fs";
 import path from "path";
 import type {
   Opportunity, PaperSummary, PaperDetail, Stats, Finding, LanguagePack,
-  GapDoc, PaperDoc,
+  GapDoc, PaperDoc, LibrariesManifest,
 } from "./types";
 
 const DATA = path.join(process.cwd(), "public", "data");
 function read<T>(rel: string): T {
   return JSON.parse(fs.readFileSync(path.join(DATA, rel), "utf8")) as T;
+}
+
+/** The 3-library manifest — read at build time so the switcher, the
+ *  hero and the language pack can all agree on what's available. */
+export function getLibraries(): LibrariesManifest {
+  return read<LibrariesManifest>("libraries.json");
 }
 
 export function getOpportunities(): Opportunity[] {

@@ -40,12 +40,43 @@ export default function Ask({ lang, gaps, papers }: {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   // Preload the index so the first keystroke is already answered.
+  // Reads the currently-selected library's search-index (via ?lib=…);
+  // falls back to the root snapshot for the legacy single-library
+  // deploy shape.
   useEffect(() => {
     let live = true;
-    fetch(asset("/data/search-index.json"))
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((j: SearchIndex) => { if (live) setIndex(j); })
-      .catch(() => { if (live) setIndexError(true); });
+    // Two-step: fetch libraries.json to know the selected library's
+    // snapshot_path, then fetch that library's search-index. If
+    // libraries.json is absent (old deploy) fall back to root.
+    const loadIndex = async () => {
+      let indexUrl = asset("/data/search-index.json");
+      try {
+        const libResp = await fetch(asset("/data/libraries.json"));
+        if (libResp.ok) {
+          const manifest = await libResp.json();
+          const requested = new URLSearchParams(window.location.search).get("lib");
+          const remembered = (() => {
+            try { return window.localStorage.getItem("researchmap.library"); }
+            catch { return null; }
+          })();
+          const slug = requested || remembered || manifest.default_slug;
+          const lib = (manifest.libraries || []).find((l: any) => l.slug === slug)
+                       || (manifest.libraries || [])[0];
+          if (lib?.snapshot_path) {
+            indexUrl = asset(`${lib.snapshot_path}/search-index.json`);
+          }
+        }
+      } catch { /* libraries.json missing — legacy deploy */ }
+      try {
+        const r = await fetch(indexUrl);
+        if (!r.ok) throw new Error(String(r.status));
+        const j: SearchIndex = await r.json();
+        if (live) setIndex(j);
+      } catch {
+        if (live) setIndexError(true);
+      }
+    };
+    loadIndex();
     return () => { live = false; };
   }, []);
 
