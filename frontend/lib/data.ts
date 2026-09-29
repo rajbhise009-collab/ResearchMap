@@ -18,6 +18,45 @@ export function getLibraries(): LibrariesManifest {
   return read<LibrariesManifest>("libraries.json");
 }
 
+/** Union of every paper id / opportunity slug across every library —
+ *  used by generateStaticParams so each detail URL exists in the static
+ *  export regardless of which library owns it. The client component at
+ *  the route then fetches from the active library's snapshot; if the
+ *  id doesn't exist there, it renders the NotInLibrary fallback. */
+export function allPaperWidsAcrossLibraries(): string[] {
+  const wids = new Set<string>();
+  const manifest = getLibraries();
+  for (const lib of manifest.libraries) {
+    // snapshot_path is /data or /data/library/<slug>; on disk it's
+    // public/data/... — strip the leading /data/ or use root.
+    const relBase = lib.snapshot_path === "/data"
+      ? "" : lib.snapshot_path.replace(/^\/data\//, "");
+    try {
+      const paperDir = path.join(DATA, relBase, "paper");
+      for (const f of fs.readdirSync(paperDir)) {
+        if (f.endsWith(".json")) wids.add(f.slice(0, -5));
+      }
+    } catch { /* library may not have paper/ yet */ }
+  }
+  return Array.from(wids).sort();
+}
+
+export function allOpportunitySlugsAcrossLibraries(): string[] {
+  const slugs = new Set<string>();
+  const manifest = getLibraries();
+  for (const lib of manifest.libraries) {
+    const relBase = lib.snapshot_path === "/data"
+      ? "" : lib.snapshot_path.replace(/^\/data\//, "");
+    try {
+      const oppDir = path.join(DATA, relBase, "opportunity");
+      for (const f of fs.readdirSync(oppDir)) {
+        if (f.endsWith(".json")) slugs.add(f.slice(0, -5));
+      }
+    } catch { /* library may not have opportunity/ yet */ }
+  }
+  return Array.from(slugs).sort();
+}
+
 export function getOpportunities(): Opportunity[] {
   return read<{ items: Opportunity[] }>("opportunities.json").items;
 }
