@@ -130,5 +130,18 @@
     },
     "n_future_work_items": 76
   },
-  "n_confirmed_contradictions": 0
+  "n_confirmed_contradictions": 0,
+  "scorer_yields": {
+    "unresolved_contradictions": 0,
+    "persistent_limitations": 0,
+    "orphaned_future_work": 0,
+    "structural_holes": 0,
+    "structural_holes_substantive": 0
+  },
+  "core": 100,
+  "peripheral": 0,
+  "spend_to_date_usd": 0.0,
+  "manifest_hash": null,
+  "relationships": 0,
+  "note": "Multi-domain library \u2014 extraction 59% (diet) or 51% (fairness) of 100-paper target; only contradiction scoring ran (structural-hole confirmations and future-work matching skipped per Gate-3 cuts)."
 }

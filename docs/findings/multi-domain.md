@@ -24,51 +24,87 @@ from 59+51 without re-paying.
 
 ## 2. Contradiction yield — does the coherent-domain result generalise?
 
-| library | shortlisted pairs | confirmed contradictions | supports | none |
-|:--|--:|--:|--:|--:|
-| LLM calibration (frozen 2026-07) | 437 | **0** | 148 | 289 |
-| Diet & mortality | 97 | **7** | 60 | 30 |
-| ML fairness | 54 | **0** | 32 | 22 |
+| library | shortlisted pairs | Gemini-flagged contradictions | audited genuine | audited artifact | audited duplicate |
+|:--|--:|--:|--:|--:|--:|
+| LLM calibration (frozen 2026-07) | 437 | 0 | 0 | — | — |
+| Diet & mortality | 97 | 7 | **5** | 1 | 1 |
+| ML fairness | 54 | 0 | 0 | — | — |
 
 **Diet-and-mortality is the first ResearchMap library to produce
-confirmed contradictions** (LLM-cal and ml-fairness both come in at
-zero). This is the whole point of the multi-library expansion.
+confirmed contradictions.** Hand-audit reduced the raw 7 to 5 genuine
+(comparable population / dose / study design) after dropping one
+regime-conflation artifact and one duplicate. The five below are the
+final set; the audit trace is in the section below the examples.
 
-### Five diet contradiction examples
+### The 5 audited genuine diet contradictions
 
-Every pair here is two claims from two different papers that Gemini
-classified as `"relationship": "contradicts"` at temperature 0. The
-full list is at `data/domains/diet-and-mortality/reasoning/contradictions.json`.
+Every pair below is two claims from two different papers that Gemini
+classified as `"relationship": "contradicts"` at temperature 0 AND that
+survived a hand-audit for population / dose / study-design comparability.
 
-1. **Red meat and stroke.** Claim A (paper W2101006064): "Unprocessed
-   red meat consumption is not associated with incident stroke." vs
-   Claim B (paper W2109401990): "Consumption of 100 g/day of
-   unprocessed red meat is associated with an 11% increased risk of
-   stroke." — direct contradiction on the same food group and outcome.
-2. **Alcohol and myocardial infarction, dose-response shape.** Claim A:
-   "The decreased risk of myocardial infarction was similar between men
-   consuming less than 10 g of alcohol per drinking day" (flat below
-   threshold). Claim B: "Increased alcohol consumption is log-linearly
-   associated with a lower risk of myocardial infarction (HR 0.94 per
-   100 g/w)" (linear, continuous).
-3. **Alcohol and stroke, presence of association.** Claim A: "Alcohol
-   consumption is not significantly associated with overall incident
-   stroke compared with non-drinking." Claim B: "Higher alcohol
-   consumption is roughly linearly associated with a higher risk of
-   stroke (HR 1.14 per 100 g/week higher consumption)."
-4. **Alcohol and ischemic stroke, dose-response shape.** Claim A:
-   "Alcohol consumption exhibits a curvilinear J-shaped dose-response
-   relationship with the relative risk of ischemic stroke." Claim B:
+1. **Red meat and stroke.** A (`W2109401990`, Circulation 2010,
+   dose-response meta-analysis): "Unprocessed red meat consumption is
+   not associated with incident stroke." B (`W2513212958`, J Intern
+   Med 2016, literature review + meta-synthesis): "Consumption of 100
+   g/day of unprocessed red meat is associated with an 11% increased
+   risk of stroke." Same construct (unprocessed red meat + incident
+   stroke), both meta-analytic; the 2010 pooled null vs the 2016
+   updated point estimate is the classic time-updated red-meat
+   literature disagreement.
+2. **Alcohol and stroke, presence of association.** A (`W2109129984`,
+   BMJ 2011 systematic review + meta-analysis): "Alcohol consumption
+   is not significantly associated with overall incident stroke
+   compared with non-drinking (pooled adjusted RR 0.98)." B
+   (`W2787107952`, Lancet 2018 IPD meta-analysis, n=599 912): "Higher
+   alcohol consumption is roughly linearly associated with a higher
+   risk of stroke (HR 1.14 per 100 g/week)." Same construct (alcohol
+   + incident stroke); both meta-analytic on general adult drinkers.
+3. **Alcohol and ischemic stroke, dose-response shape.** A
+   (`W2064137374`, BMC Public Health 2010 meta-regression with
+   fractional polynomials): "Alcohol consumption exhibits a curvilinear
+   J-shaped dose-response relationship with the relative risk of
+   ischemic stroke." B (`W2787107952`, Lancet 2018 IPD linear model):
    "Higher alcohol consumption is roughly linearly associated with a
-   higher risk of stroke" — J-shape vs linear.
-5. **Red meat and type 2 diabetes.** Claim A: "Unprocessed red meat
-   intake is not associated with incident diabetes mellitus." Claim B:
-   "Higher intake of red meat is associated with increased incidence
-   of type 2 diabetes."
+   higher risk of stroke." Both meta-analyses; the disagreement is
+   model choice (fractional-polynomial J-shape vs linear).
+4. **Red meat and type 2 diabetes.** A (`W2109401990`, Circulation
+   2010 dose-response meta-analysis): "Unprocessed red meat intake is
+   not associated with incident diabetes mellitus." B (`W2955331731`,
+   BMJ 2019 umbrella review of meta-analyses): "Higher intake of red
+   meat is associated with increased incidence of type 2 diabetes."
+   Same time-updated red-meat pattern as #1.
+5. **Alcohol and all-cause mortality, J-shape vs quality-adjusted null.**
+   A (`W2109129984`, BMJ 2011 systematic review + meta-analysis):
+   "Alcohol consumption is associated with a lower risk of all-cause
+   mortality compared with non-drinking (pooled adjusted RR 0.87)."
+   B (`W2311763102`, J Stud Alcohol Drugs 2016 systematic review +
+   meta-regression): "Analyses of higher-quality, bias-free studies
+   fail to find a reduced mortality risk for low-volume alcohol
+   drinkers." This is Stockwell's abstainer-bias-adjusted re-analysis
+   overturning the earlier J-shape — the central controversy in
+   alcohol epidemiology.
 
-These are exactly the disagreements the diet-mortality literature is
-famous for. The contradiction scorer names them correctly. That's the
-test — and it passes.
+### Hand-audit results per pair
+
+| pair | verdict | reason |
+|--:|:--|:--|
+| 1 | GENUINE | both meta-analytic, same construct, time-updated disagreement |
+| 2 | ARTIFACT | different dose constructs (per-drinking-day vs per-week) and different populations (US men-only prospective cohort vs mixed IPD) — regime conflation |
+| 3 | GENUINE | comparable populations + methods; disagreement on aggregate direction |
+| 4 | GENUINE | same construct + populations; disagreement on model choice |
+| 5 | GENUINE | same construct, time-updated |
+| 6 | GENUINE | same construct, quality-adjustment disagreement |
+| 7 | DUPLICATE of 6 | same paper pair, near-identical claim wording |
+
+Audited count: **5 genuine confirmed contradictions**. Still well above
+the ≥3 threshold that triggers the "reputation beat predictor" verdict
+in §3 — that verdict stands.
+
+The single artifact (pair 2) is exactly the regime-conflation failure
+LLM-calibration's own scorer showed in an earlier iteration (see
+`docs/findings/RESEARCHMAP-FINDINGS.md`); catching it here is a
+reminder that a hand-audit remains part of the honest contradiction
+count, not an optional polish.
 
 ### Fairness produced zero — a real finding, not a scorer failure
 
@@ -106,34 +142,54 @@ Two of the three measurements now contradict the predictor's ranking.
 The predictor discriminates by reputation (still true; see the
 finding) but is now measured wrong on 2 of 3 ground-truth domains.
 
-## 4. Assertion-strength — three-way contrast (with a caveat)
+## 4. Assertion-strength — REPORTED AS UNTESTED
 
 The prediction going into this run: **biomedical hedges more than ML**,
 so diet-and-mortality would show a lower firm-share than LLM-cal.
 
-Lexical hedge classifier (`multi_domain_findings.is_hedged`): a claim
-is `hedged` if its text contains any of ~20 hedge markers (`may`,
-`might`, `could`, `possibly`, `appears to`, `seems to`, `suggests`,
-`likely`, `remains unclear`, etc.). Otherwise firm.
+**No number in this section survives the honesty bar.** Three
+successive attempts and why each was dropped:
 
-| library | claims | firm | hedged | firm-share |
-|:--|--:|--:|--:|--:|
-| LLM calibration (2026-07 hand-sampled) | 56 | 51 | 5 | **91.1%** |
-| Diet & mortality (2026-09 lexical) | 338 | 337 | 1 | 99.7% |
-| ML fairness (2026-09 lexical) | 258 | 254 | 4 | 98.4% |
+1. **Lexical hedge classifier** (`is_hedged` in
+   `multi_domain_findings.py`) came in at diet 99.7% / fairness 98.4%
+   firm vs the LLM-cal hand baseline of 91.1% (n=56,
+   `docs/schema-pressure-test.md` §2). Dropped as blunt on this
+   vocabulary.
+2. **LLM-based classifier** (`multi_domain_hedge.py`, Gemini-3.6-flash,
+   temp 0) ran on 200 of 338 diet claims before being halted at the
+   ₹150 gate (actual hedge-stage spend: ₹28.93). Reported diet at 96%
+   firm — same directional signal as the lexical run. **Halted with
+   partial data**, so no cross-domain contrast to publish.
+3. **Extraction-strip audit** (hand-comparison of 5 firm-labelled
+   diet claims against their source abstracts): 2 of 5 showed
+   extraction stripping hedge language ("inconsistently associated"
+   → "not associated"; "indicate" → "shows"), 3 of 5 had firm source
+   wording (typically epidemiological RR-with-CI reporting) that the
+   extractor preserved faithfully.
 
-**Interpretation:** the lexical classifier looks substantially STRICTER
-than the hand-sampled LLM-cal baseline (which classified 5 of 56 as
-hedged including nuanced cases the lexical classifier would miss).
-The 99.7% / 98.4% numbers reflect the lexical classifier's blunt-
-ness, not domain-conditional firmness. **The domain-hedging
-hypothesis is UNDER-TESTED here** — a follow-up would need to either
-(a) hand-label a comparable sample from all three libraries, or
-(b) add a stronger hedge detector (e.g. LLM-based short-context
-classifier at ~$0.02/claim, ~$12 for all 596 claims).
+**Interpretation:** the firm-share numbers a classifier produces
+against these extractions are a mix of (a) genuine source-abstract
+firmness — biomedical papers often report primary findings as RRs
+with CIs, which reads firm — and (b) extraction-prompt-induced
+firmness — the v1.1.0 prompt tends to rewrite "may reduce" as
+"reduces" when producing atomic claims. **No classifier that sees
+only the extracted claim text can separate (a) from (b).**
 
-Recording this honestly rather than pretending the lexical numbers
-are a fair three-way contrast.
+The honest verdict: **domain-conditional hedging cannot be measured
+from these extractions.** A fair three-way contrast would need to
+either (i) apply the classifier to source-abstract sentences before
+extraction, or (ii) re-prompt extraction to preserve hedge tokens.
+Both are structural changes to the pipeline, not a follow-up run.
+
+The **91.1% LLM-cal baseline** in
+`docs/schema-pressure-test.md` §2 stands — it was a hand-classified
+sample of 56 raw source-abstract sentences, not extracted claims, and
+does not have the extraction-strip problem this section flags.
+
+Files kept for the audit: `data/domains/diet-and-mortality/hedge/`
+directory (partial run, no labels.json written because the process was
+killed mid-loop; the ledger entries in `data/spend_ledger.json` under
+`hedge_diet-and-mortality` record the 200 calls that ran).
 
 ## 5. Full-text coverage effect
 

@@ -26,20 +26,25 @@ FX rate used throughout: **1 USD = ₹84**. Spend cap: **₹850** (~$10.12).
 
 ## Spend (final, from persistent ledger `data/spend_ledger.json`)
 
+Including the two follow-up passes (contradiction audit — free; LLM
+hedge classifier — halted at the ₹150 stage gate).
+
 | stage | calls | USD | INR |
 |:--|--:|--:|--:|
 | extract_diet | 59 | $2.806 | ₹235.69 |
 | extract_fairness | 53 | $2.517 | ₹211.39 |
 | contradiction_diet-and-mortality | 128 | $0.406 | ₹34.12 |
 | contradiction_ml-fairness | 54 | $0.166 | ₹13.92 |
-| embedding (unstaged) | 20 | $0.0006 | ₹0.05 |
-| **Total NEW** | **314** | **$5.895** | **₹495.18** |
+| hedge_diet-and-mortality (halted 200/338) | 200 | $0.345 | ₹28.93 |
+| embedding (unstaged) | 30 | $0.001 | ₹0.08 |
+| **Total NEW** | **524** | **$6.240** | **₹524.14** |
 | Cap | | $10.12 | **₹850.00** |
-| Remaining | | $4.22 | **₹354.82** |
+| Remaining | | $3.88 | **₹325.86** |
 
-Spend guard was armed the whole run and never tripped. The mid-run
-halt of extractions was a prudential call (to preserve budget for the
-contradiction pass), not a guard-trip.
+Spend guard was armed the whole run and never tripped. Hedge stage
+halted at ₹28.93 — comfortably under the ₹150 stage gate. Extraction
+mid-run halt was a prudential call (to preserve budget for
+contradiction), not a guard-trip.
 
 ## Corpus stats
 
@@ -93,38 +98,55 @@ borderline, matching my hand-labels on those cases.
 Full detail at `docs/findings/multi-domain.md`. Highlights (populated
 from `data/domains/multi_domain_findings.json` at run end):
 
-### Contradiction yield
+### Contradiction yield (hand-audited)
 
-| library | pairs classified | confirmed contradictions |
-|:--|--:|--:|
-| LLM calibration (frozen) | 437 | 0 |
-| Diet & mortality | 97 | **7** |
-| ML fairness | 54 | 0 |
-
-Diet is the first ResearchMap library to produce confirmed
-contradictions. Five example pairs (red-meat/stroke, alcohol/MI dose
-shape, alcohol/stroke presence, alcohol/stroke shape, red-meat/T2D)
-are quoted in `docs/findings/multi-domain.md` §2.
-
-### Assertion-strength — three-way contrast (with caveat)
-
-| library | claims | firm | hedged | firm-share |
+| library | Gemini-flagged | audited genuine | artifact | duplicate |
 |:--|--:|--:|--:|--:|
-| LLM calibration (hand-sampled 2026-07, n=56) | 56 | 51 | 5 | 91.1% |
-| Diet & mortality (lexical 2026-09, n=338) | 338 | 337 | 1 | 99.7% |
-| ML fairness (lexical 2026-09, n=258) | 258 | 254 | 4 | 98.4% |
+| LLM calibration (frozen) | 0 / 437 | 0 | — | — |
+| Diet & mortality | 7 / 97 | **5** | 1 | 1 |
+| ML fairness | 0 / 54 | 0 | — | — |
 
-The lexical hedge classifier looks blunter than the hand-sampled
-baseline. The 99.7% / 98.4% numbers reflect classifier bluntness, not
-domain-conditional firmness. **Under-tested here** — full test would
-need either hand-labelling or an LLM-based hedge classifier (~$12).
+Hand-audit dropped raw 7 → **5 genuine confirmed contradictions**
+after removing one regime-conflation artifact (Pair 2: NEJM 2003 men-
+only cohort per-drinking-day vs Lancet 2018 IPD per-week — different
+populations and dose constructs) and one duplicate (Pairs 6 and 7
+were the same paper pair with near-identical claim wording).
+
+The 5 genuine pairs are the canonical diet-mortality disagreements:
+red meat / stroke, alcohol / stroke presence, alcohol / ischemic
+stroke shape (J vs linear), red meat / T2D, alcohol / all-cause
+mortality (J-shape vs Stockwell's quality-adjusted null). See
+`docs/findings/multi-domain.md` §2 for the full audit table.
+
+### Assertion-strength — REPORTED AS UNTESTED
+
+Three attempts, none published as a domain-conditional finding:
+
+1. **Lexical classifier**: diet 99.7% / fairness 98.4% firm vs
+   LLM-cal hand baseline 91.1%. Dropped as blunt on this vocabulary.
+2. **LLM classifier** (halted 200/338 diet at ₹150 gate — actual
+   spend ₹28.93): diet 96% firm — same signal.
+3. **Extraction-strip audit** (5 firm-labelled diet claims vs source
+   abstracts): **2 of 5 clearly stripped hedges** (Micha 2010:
+   "inconsistently associated" → "not associated"; Stockwell 2016:
+   "indicate" → "shows"). 3 of 5 had firm source wording that the
+   extractor preserved.
+
+Firm-share numbers here are a mix of genuine source firmness and
+extraction-prompt-induced firmness — no classifier that sees only the
+extracted claim text can separate them. **Domain-conditional hedging
+cannot be measured from these extractions.** See
+`docs/findings/multi-domain.md` §4 for the full write-up. The
+`91.1%` LLM-cal baseline stands (hand-classified source-abstract
+sentences, not extracted claims — no extraction-strip problem).
 
 ### Predictor check
 
 **REPUTATION BEAT PREDICTOR** — diet-and-mortality's 0.44 (moderate)
-predictor score produced **7 confirmed contradictions** vs LLM-cal's 0
-at 0.818. Two of the three ground-truth measurements now contradict the
-predictor's ranking. See `docs/findings/multi-domain.md` §3 for detail.
+predictor score produced **5 audited-genuine confirmed contradictions**
+vs LLM-cal's 0 at 0.818. Two of the three ground-truth measurements
+now contradict the predictor's ranking. The audited count 5 is well
+above the ≥3 threshold that triggers this verdict.
 
 ### Full-text coverage effect
 

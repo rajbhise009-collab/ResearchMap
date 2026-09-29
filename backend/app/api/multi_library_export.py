@@ -104,7 +104,16 @@ def write_llm_calibration_snapshot(out_root: Path) -> dict:
 
 def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     """Write a domain's snapshot under out_root/library/<slug>/. Reads
-    from data/domains/<slug>/ prelabel + extractions + reasoning."""
+    from data/domains/<slug>/ prelabel + extractions + reasoning.
+
+    Emits the same file set as the LLM-cal snapshot so the frontend can
+    read from any library with one code path:
+      meta.json, papers.json, stats.json, search-index.json,
+      language.json, findings.json, relationships.json, opportunities.json
+      + paper/{wid}.json per paper (with extraction embedded)
+      + opportunity/{slug}.json per confirmed contradiction (as a
+        contradiction-typed gap card).
+    """
     from backend.app.corpus.multi_domain import _prelabel_path
     from backend.app.corpus.multi_domain_reason import (
         DOMAINS,   # aliased to accept full or short slug
@@ -112,6 +121,7 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         gap_type_counts,
         load_extractions,
     )
+    from backend.app.api import language as lang_mod
 
     if slug not in DOMAINS:
         raise KeyError(slug)
@@ -121,6 +131,8 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
 
     prelabel = json.loads(_prelabel_path(DOMAINS[slug]).read_text())
     entries = prelabel["entries"]
+    exts = load_extractions(slug)
+    ext_by_pid = {e.paper_id: e for e in exts}
 
     # meta.json
     (lib_dir / "meta.json").write_text(json.dumps({
@@ -129,7 +141,7 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "n_papers": len(entries),
     }, indent=2))
 
-    # papers.json
+    # papers.json (summary list)
     papers = [
         {
             "paper_id": e.get("openalex_id") or f"openalex:{e['wid']}",
@@ -147,38 +159,136 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     (lib_dir / "papers.json").write_text(json.dumps(
         {"total": len(papers), "items": papers}, indent=2))
 
+    # per-paper detail: paper/{wid}.json with full extraction embedded
+    paper_dir = lib_dir / "paper"
+    paper_dir.mkdir(exist_ok=True)
+    for e in entries:
+        pid = f"openalex:{e['wid']}"
+        ext = ext_by_pid.get(pid)
+        detail = {
+            "paper_id": pid, "wid": e["wid"],
+            "title": e.get("title"), "year": e.get("year"),
+            "doi": e.get("doi"), "venue": e.get("venue"),
+            "domain_centrality": e.get("domain_centrality"),
+            "input_source": e.get("input_source"),
+            "abstract_only": e.get("input_source") != "fulltext",
+            "abstract": e.get("abstract"),
+            "claims": [c.model_dump() for c in (ext.claims or [])] if ext else [],
+            "limitations": [l.model_dump() for l in (ext.limitations or [])] if ext else [],
+            "future_work": [f.model_dump() for f in (ext.future_work or [])] if ext else [],
+            "methodologies": [m.model_dump() for m in (ext.methodologies or [])] if ext else [],
+            "cites": [], "cited_by": [],
+            "consumer": lang_mod.consumer_paper({
+                "abstract_only": e.get("input_source") != "fulltext",
+            }),
+        }
+        (paper_dir / f"{e['wid']}.json").write_text(json.dumps(detail))
+
+    # opportunities.json + per-opportunity detail (from confirmed
+    # contradictions since that's the only scoring output we have for
+    # the multi-domain libraries in this run).
+    contra_path = REPO_ROOT / "data" / "domains" / slug / "reasoning" / "contradictions.json"
+    contradictions = []
+    if contra_path.exists():
+        contradictions = json.loads(contra_path.read_text()).get("items", [])
+    opp_dir = lib_dir / "opportunity"
+    opp_dir.mkdir(exist_ok=True)
+    opportunity_summaries = []
+    for i, c in enumerate(contradictions, 1):
+        opp_slug = (f"opp-contra-{slug}-{i:02d}-"
+                    f"{_slug(c['a_paper_id'])}-{_slug(c['b_paper_id'])}")[:120]
+        card = {
+            "id": opp_slug, "slug": opp_slug, "rank": i,
+            "gap_type": "disagreement",
+            "scorer": "unresolved_contradictions",
+            "title": f"Two papers disagree ({slug})",
+            "similarity": c.get("similarity"),
+            "explanation": c.get("explanation"),
+            "a_paper_id": c.get("a_paper_id"), "b_paper_id": c.get("b_paper_id"),
+            "a_text": c.get("a_text"), "b_text": c.get("b_text"),
+            "supporting_papers": [c.get("a_paper_id"), c.get("b_paper_id")],
+            "confidence_tier": "medium",
+            "confirm_status": None,
+            "consumer": {
+                "headline": "Two papers report findings that disagree",
+                "kind": "A disagreement between papers",
+                "kind_id": "disagreement",
+                "strength": "Worth a look",
+                "why": c.get("explanation", "")[:400],
+                "caveats": [],
+                "paper_count": 2,
+            },
+        }
+        (opp_dir / f"{opp_slug}.json").write_text(json.dumps(card))
+        opportunity_summaries.append({
+            "id": opp_slug, "slug": opp_slug, "rank": i,
+            "gap_type": "disagreement", "consumer": card["consumer"],
+        })
+    (lib_dir / "opportunities.json").write_text(json.dumps({
+        "schema_version": "1.0.0",
+        "total": len(opportunity_summaries),
+        "items": opportunity_summaries,
+    }))
+
     # stats.json
     n_full = sum(1 for e in entries if e.get("input_source") == "fulltext")
-    exts = load_extractions(slug)
     strength = assertion_strength_distribution(exts) if exts else {}
     gap = gap_type_counts(exts) if exts else {}
-    reasoning_dir = REPO_ROOT / "data" / "domains" / slug / "reasoning"
-    contra_path = reasoning_dir / "contradictions.json"
-    n_contra = 0
-    if contra_path.exists():
-        n_contra = json.loads(contra_path.read_text()).get("n", 0)
     (lib_dir / "stats.json").write_text(json.dumps({
         "papers": len(entries), "full_text": n_full,
         "abstract_only": len(entries) - n_full,
         "n_extractions": len(exts),
         "assertion_strength": strength,
         "gap_type_counts": gap,
-        "n_confirmed_contradictions": n_contra,
+        "n_confirmed_contradictions": len(contradictions),
+        "scorer_yields": {
+            "unresolved_contradictions": len(contradictions),
+            "persistent_limitations": 0,       # not scored on these libs yet
+            "orphaned_future_work": 0,
+            "structural_holes": 0,
+            "structural_holes_substantive": 0,
+        },
+        "core": sum(1 for e in entries if e.get("domain_centrality") == "core"),
+        "peripheral": sum(1 for e in entries
+                           if e.get("domain_centrality") == "peripheral"),
+        "spend_to_date_usd": 0.0,
+        "manifest_hash": None,
+        "relationships": len(contradictions),
+        "note": ("Multi-domain library — extraction 59% (diet) or 51% "
+                 "(fairness) of 100-paper target; only contradiction "
+                 "scoring ran (structural-hole confirmations and future-"
+                 "work matching skipped per Gate-3 cuts)."),
     }, indent=2))
 
-    # search-index.json — build a per-library term index (title + abstract)
+    # search-index.json — per-library term index (title + abstract)
     idx = _build_search_index(entries)
     (lib_dir / "search-index.json").write_text(json.dumps(idx))
 
-    # opportunities.json — placeholder until full Phase-4 scoring wires
-    # up in a follow-up. For now: gap_type_counts summary only.
-    (lib_dir / "opportunities.json").write_text(json.dumps({
-        "note": "per-domain scoring output pending; see stats.json for "
-                "gap_type_counts summary",
-        "total": 0, "items": [],
+    # language.json — copy the shared translation layer so the frontend
+    # loads the same shape from any library.
+    (lib_dir / "language.json").write_text(json.dumps(lang_mod.language_pack()))
+
+    # findings.json — reuse the shared findings docs (multi-domain, etc.)
+    from backend.app.api import data as data_mod
+    (lib_dir / "findings.json").write_text(json.dumps({
+        "items": data_mod.findings(),
     }))
 
-    return {"slug": slug, "n_papers": len(entries), "n_extractions": len(exts)}
+    # relationships.json — for now, just the contradiction pairs
+    (lib_dir / "relationships.json").write_text(json.dumps({
+        "items": [
+            {"from_paper_id": c.get("a_paper_id"),
+             "to_paper_id": c.get("b_paper_id"),
+             "type": "contradicts",
+             "note": c.get("explanation", "")[:400]}
+            for c in contradictions
+        ],
+    }))
+
+    return {"slug": slug, "n_papers": len(entries),
+            "n_extractions": len(exts),
+            "n_paper_files": len(entries),
+            "n_opportunity_files": len(opportunity_summaries)}
 
 
 _TOKEN_RE = re.compile(r"[a-z0-9]+(?:['-][a-z0-9]+)*")
