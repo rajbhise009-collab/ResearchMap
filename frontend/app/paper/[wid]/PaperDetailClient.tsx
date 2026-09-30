@@ -9,6 +9,7 @@ import { Tag } from "../../components/plain";
 import { DevKV, DevJSON } from "../../components/DevMode";
 import GapSidebar from "../../gap/[slug]/GapSidebar";
 import { useLibraryData, NotInLibrary } from "../../components/useLibraryData";
+import { PaperExport } from "../../components/CiteExport";
 import type { PaperDetail, LanguagePack } from "../../../lib/types";
 
 const wid = (pid: string) => pid.split(":").pop() as string;
@@ -176,6 +177,13 @@ export default function PaperDetailClient({ wid: routeWid, lang }: {
             )}
           </section>
         )}
+
+        <PaperExport paper={{
+          paper_id: p.paper_id, wid: p.wid, title: p.title,
+          year: p.year, doi: p.doi,
+          venue: (p as any).venue ?? null,
+          authors: (p as any).authors ?? undefined,
+        }} />
 
         <DevKV title={lang.dev.provenance_heading} data={{
           paper_id: p.paper_id,

@@ -9,6 +9,7 @@ import { Strength, Caveats, Tag } from "../../components/plain";
 import { DevKV, DevJSON } from "../../components/DevMode";
 import GapSidebar from "./GapSidebar";
 import { useLibraryData, NotInLibrary } from "../../components/useLibraryData";
+import { GapExport } from "../../components/CiteExport";
 import type { LanguagePack } from "../../../lib/types";
 
 const wid = (pid: string) => (pid || "").split(":").pop() as string;
@@ -240,6 +241,21 @@ export default function GapDetailClient({ slug, lang }: {
           <h2>What kind of gap this is</h2>
           <p>{c.kind_long ?? ""}</p>
         </section>
+
+        <GapExport
+          gapSlug={slug}
+          contradictionExplanation={o.explanation || c.headline}
+          verdict={c.verdict}
+          papers={supporters.map((sp) => ({
+            paper_id: sp.paper_id,
+            title: sp.title ?? null,
+            year: sp.year ?? null,
+            doi: (sp as any).doi ?? null,
+            short_text:
+              sp.paper_id === o.a_paper_id ? (o.a_text ?? "")
+              : sp.paper_id === o.b_paper_id ? (o.b_text ?? "") : "",
+          }))}
+        />
 
         <DevKV title={lang.dev.raw_values} data={{
           id: o.id ?? "", scorer: o.scorer ?? "", gap_type: o.gap_type ?? "",

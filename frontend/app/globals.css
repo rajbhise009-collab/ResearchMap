@@ -412,6 +412,33 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 
 .set-aside { margin-top: var(--s-8); border-top: 1px solid var(--rule); padding-top: var(--s-6); }
 
+.cite-block { margin-top: var(--s-8); border-top: 1px dashed var(--rule); padding-top: var(--s-6); }
+.cite-row { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-4); }
+.cite-actions { display: inline-flex; gap: var(--s-3); }
+.cite-btn {
+  font: inherit;
+  font-size: var(--step--1);
+  padding: 6px 12px;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--rule-strong);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cite-btn:hover { border-color: var(--accent); color: var(--accent); }
+.cite-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bib-preview {
+  background: var(--surface-raise-1, #faf3e6);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: var(--s-4);
+  overflow-x: auto;
+  font-size: var(--step--2);
+}
+.how-to-cite { margin-top: var(--s-5); }
+.how-to-cite summary { cursor: pointer; color: var(--muted); font-size: var(--step--1); }
+.how-to-cite p { margin: var(--s-3) 0; }
+
 .lib-badge {
   display: inline-block;
   padding: 2px 8px;
