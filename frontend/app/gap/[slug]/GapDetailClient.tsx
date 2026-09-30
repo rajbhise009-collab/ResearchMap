@@ -66,6 +66,15 @@ interface OpportunityLike {
   similarity?: number;
   explanation?: string;
   title?: string;
+  cites_both?: {
+    query_date: string;
+    total: number;
+    top: Array<{
+      wid: string; openalex_id?: string; doi?: string | null;
+      title?: string | null; year?: number | null;
+      cited_by_count?: number; venue?: string | null;
+    }>;
+  } | null;
 }
 
 export default function GapDetailClient({ slug, lang }: {
@@ -209,6 +218,47 @@ export default function GapDetailClient({ slug, lang }: {
                 </div>
               );
             })}
+          </section>
+        )}
+
+        {o.cites_both && (
+          <section id="cites-both" className="block">
+            <h2>Later papers that cite both sides</h2>
+            <p className="block-lede">
+              These are papers that cite BOTH of the two disagreeing
+              papers above. That means they discuss the disagreement —
+              not that they resolved or settled it.
+              {o.cites_both.total > o.cites_both.top.length && (
+                <> Top {o.cites_both.top.length} by citation count; {o.cites_both.total} in total (OpenAlex, queried {o.cites_both.query_date}).</>
+              )}
+              {o.cites_both.total <= o.cites_both.top.length && (
+                <> {o.cites_both.total} in total (OpenAlex, queried {o.cites_both.query_date}).</>
+              )}
+            </p>
+            {o.cites_both.top.length === 0 ? (
+              <p className="muted">
+                No later papers in OpenAlex cite both sides. This is
+                what an unaddressed disagreement looks like — not a
+                signal that either side is correct.
+              </p>
+            ) : (
+              o.cites_both.top.map((w) => (
+                <div className="paper-line" key={w.wid}>
+                  <span className="t">
+                    {w.doi ? (
+                      <a href={`https://doi.org/${w.doi}`}
+                          target="_blank" rel="noreferrer">
+                        {w.title ?? w.wid}
+                      </a>
+                    ) : (w.title ?? w.wid)}
+                  </span>
+                  {w.year && <span className="y tnum">{w.year}</span>}
+                  {w.venue && (
+                    <span className="small muted"> {w.venue}</span>
+                  )}
+                </div>
+              ))
+            )}
           </section>
         )}
 

@@ -190,6 +190,15 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     from backend.app.api.contradiction_audit import (
         attach_verdicts, audit_summary,
     )
+    from backend.app.api.cites_both import load_cites_both, _wid as _oawid
+    cites_both = load_cites_both(slug) or {"records": []}
+    # Build a lookup keyed by canonical (a_wid, b_wid) sorted pair for
+    # attaching cites-both to each contradiction card.
+    cb_by_pair = {}
+    for rec in cites_both.get("records", []):
+        key = tuple(sorted([_oawid(rec["a_paper_id"]),
+                             _oawid(rec["b_paper_id"])]))
+        cb_by_pair[key] = rec
     contra_path = REPO_ROOT / "data" / "domains" / slug / "reasoning" / "contradictions.json"
     contradictions = []
     if contra_path.exists():
@@ -217,6 +226,9 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         opp_slug = (f"opp-contra-{slug}-{i:02d}-"
                     f"{_slug(c['a_paper_id'])}-{_slug(c['b_paper_id'])}")[:120]
         verdict = c["audit"]["verdict"]
+        pair_key = tuple(sorted([_oawid(c.get("a_paper_id", "")),
+                                    _oawid(c.get("b_paper_id", ""))]))
+        cites_both_rec = cb_by_pair.get(pair_key)
         card = {
             "id": opp_slug, "slug": opp_slug, "rank": i,
             "gap_type": "disagreement",
@@ -230,6 +242,10 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "confidence_tier": "medium" if verdict == "genuine" else "low",
             "confirm_status": None,
             "audit": c["audit"],  # verdict + reason + basis + date
+            "cites_both": ({"query_date": cites_both.get("query_date"),
+                             "total": cites_both_rec["total_cites_both"],
+                             "top": cites_both_rec["top"]}
+                            if cites_both_rec else None),
             "consumer": {
                 "headline": _verdict_headline.get(verdict, _verdict_headline["unaudited"]),
                 "kind": "A disagreement between papers",
