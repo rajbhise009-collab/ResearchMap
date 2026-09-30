@@ -218,6 +218,7 @@ export interface LanguagePack {
   build_library: {
     title: string; body: string; estimate_label: string;
     estimates: [string, string][]; not_yet: string;
+    predictor_note?: string;
   };
   no_disagreements: { headline: string; body: string; link_label: string };
   attribution: Attribution;

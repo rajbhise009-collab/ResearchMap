@@ -403,6 +403,11 @@ function OutOfDomain({ lang, query }: { lang: LanguagePack; query: string }) {
             )}
           </div>
           <p className="not-yet">{B.not_yet}</p>
+          {B.predictor_note && (
+            <p className="not-advice" role="note" style={{ marginTop: "var(--s-4)" }}>
+              <strong>About the pre-flight number:</strong> {B.predictor_note}
+            </p>
+          )}
         </div>
       )}
     </div>

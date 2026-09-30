@@ -243,6 +243,107 @@ predictor's confidence range so this run measures whether it discriminates:
 | **diet-and-mortality** | 0.440 | moderate | contested | **Chosen AGAINST its score.** Reputationally the classic "meta-analyses reach opposite conclusions" domain; the predictor scores it moderate because its very high modularity (0.68) reads as "isolated schools" — the doc's named ambiguous case. Raj can judge the outputs (red meat, saturated fat, alcohol are nameable disagreements). |
 | **ml-fairness** | 0.667 | high | contested | Aligned with score. Documented impossibility results (Kleinberg / Chouldechova) give the contradiction scorer nameable targets. |
 
+## Measured record — n = 3 (2026-09-30 update, DO NOT REFIT)
+
+The multi-domain expansion finished with two new libraries partially
+scored. **Do not use these three points to refit the weights** — n=3
+is far below the noise floor of a 7-feature composite, and one of the
+two new points is confounded by partial extraction. This section
+records the numbers so the next validation attempt (~8–10 domains
+minimum) has a starting table, not a prediction claim.
+
+| library | predictor score | predictor label | raw flagged | audited genuine | claims-read coverage | confounds |
+|:--|--:|:--|--:|--:|:--|:--|
+| llm-calibration | 0.818 | high | 0 | 0 | 113 / 113 (100%) | none — full extraction, frozen manifest |
+| diet-and-mortality | 0.440 | moderate | 7 | **5** | 59 / 100 (59%) | partial extraction; hand-audit not expert-review |
+| ml-fairness | 0.667 | high | 0 | 0 | 51 / 100 (51%) | partial extraction; scorer likely mismatched to definitional disagreement (see below) |
+
+Two of three predictions miss:
+- **diet** scored moderate yet produced 5 genuine contradictions;
+- **ml-fairness** scored high yet produced 0 — but the 0 is confounded
+  by partial extraction AND (see next section) a likely scorer-domain
+  mismatch, so it is NOT clean evidence against the predictor.
+
+### Fairness-miss free diagnostic (no new spend)
+
+Hypothesis: the contradiction scorer looks for EMPIRICAL disagreement
+("does X reduce Y or not") while fairness's famous disagreements are
+DEFINITIONAL / THEORETICAL — different papers formalize incompatible
+fairness definitions.
+
+Method (all reads, no calls):
+1. Search the 51 extracted fairness papers for impossibility /
+   incompatibility papers by title. Found 6:
+   - Kleinberg-Mullainathan-Raghavan 2016 (`W4386564359`, "Inherent
+     Trade-Offs in the Fair Determination of Risk Scores")
+   - Berk et al. 2018 (`W2599025709`, "Fairness in Criminal Justice
+     Risk Assessments")
+   - Friedler et al. 2016 (`W2524301210`, "On the (im)possibility
+     of fairness")
+   - Corbett-Davies et al. 2017 (`W2584805976`, "Algorithmic
+     Decision Making and the Cost of Fairness")
+   - Menon-Williamson 2018 (`W2790025105`, "The cost of fairness in
+     binary classification")
+   - Chouldechova / Roth 2018 (`W2808105152`, "Inherent Trade-Offs
+     in Algorithmic Fairness")
+2. Scan the classifier's pair verdicts (contradictions.json,
+   supports.json, nones.json) for pairs involving any of those six
+   paper ids.
+
+Results:
+- **0** pairs marked `contradicts`.
+- **1** pair marked `supports` (W2599025709 ↔ W4386564359):
+  Gemini said *"Both claims state the same impossibility theorem in
+  algorithmic fairness: calibration and error rate balance cannot be
+  simultaneously achieved when base rates differ."* Correct call.
+- **3** pairs marked `none`. Representative Gemini rationale:
+  *"The claims present distinct impossibility theorems involving
+  different combinations of fairness criteria under unequal base
+  rates."* Also *"Both claims address trade-offs among algorithmic
+  fairness metrics, but they focus on different combinations of
+  criteria."*
+
+**Reading:** the classifier is behaving correctly per its prompt — two
+impossibility theorems about DIFFERENT metric combinations aren't
+logically contradictory; they're complementary results. The famous
+Kleinberg vs Chouldechova "disagreement" is not one theorem asserting
+what another denies; it is two independent proofs that different
+sets of fairness metrics can't coexist. The scorer's `contradicts`
+definition ("cannot both be true about the same construct") never
+fires because they DO both hold — for different constructs.
+
+**Hypothesis (not established):** the contradiction scorer's built-in
+notion of disagreement (empirical claim vs empirical claim) is a
+poor fit for fields where disagreement is definitional / axiomatic.
+A domain-typed scorer variant — one that flags DEFINITIONAL
+incompatibility explicitly — would likely find several genuine
+disagreements in this fairness corpus. Building that variant is out
+of scope for this run.
+
+### What a recalibration would need
+
+The current composite scores are unweighted means of 3 features each
+per axis, chosen by hypothesis alone (see §"Method" above). Anything
+worth calling "recalibration" would need:
+
+1. **Measured yield on 8–10 domains** across a range of predicted
+   scores. n=3 is not enough to fit anything without overfitting.
+2. **ml-fairness re-run at full extraction** (100/100, not 51/100)
+   so its 0 is not confounded by partial coverage.
+3. **Scorer-variant for definitional disagreement**, or at least a
+   documented rule that low measured yield on a corpus known for
+   definitional disagreements is expected and not evidence against
+   the predictor.
+4. Even after (1)–(3), any weight fit should hold out at least 2
+   domains as a validation set — otherwise the fit tests itself.
+
+Until those are done, the predictor stays where it is: **a
+hypothesis-driven diagnostic that discriminates domains by
+reputation, is measurably wrong on 2 of 3 ground-truth cases, and
+must not be presented as validated.**
+
+## The 2026-09-28 chosen domains — original selection notes
+
 The diet pick doubles as a **test of the predictor**: if diet produces
 substantial confirmed contradictions after Part D scoring, the score's
 0.44 was wrong and reputational judgment beat the metric. If it produces

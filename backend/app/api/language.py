@@ -533,6 +533,13 @@ BUILD_LIBRARY = {
         "from this page. If you want a library built for a subject you care "
         "about, get in touch with the maintainer."
     ),
+    "predictor_note": (
+        "The pre-flight score you see is a hypothesis-driven diagnostic, "
+        "not a validated predictor. Its measured record so far is 1 of 3 "
+        "domains correct (LLM-cal correct; diet and fairness both missed, "
+        "one confounded by partial extraction). Reading it as a guarantee "
+        "would be wrong."
+    ),
 }
 
 # --------------------------------------------------------------------------
