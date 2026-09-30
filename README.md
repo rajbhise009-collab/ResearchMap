@@ -55,8 +55,12 @@ unaffected — Terminal has broad file-access grants by default.
 
 ## Publish to the web (free)
 
-The static export is self-contained — no server, no keys, search runs
-in the browser. Two zero-cost paths are wired up:
+The static export is self-contained — no backend server, no keys.
+Search runs against a term-weight index in the browser. When deployed
+publicly to Vercel, `@vercel/analytics` sends anonymised page-view
+counts to Vercel Web Analytics (no cookies, no identifiers, no query
+text) — the local `.app`/`.command` and `?dev=1` do not load the
+analytics script. Two zero-cost hosting paths are wired up:
 
 ### GitHub Pages
 

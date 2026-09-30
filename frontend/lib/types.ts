@@ -222,6 +222,7 @@ export interface LanguagePack {
   no_disagreements: { headline: string; body: string; link_label: string };
   attribution: Attribution;
   libraries_note: LibrariesNote;
+  privacy_note: { label: string; body: string };
 }
 
 // ---- lightweight payloads handed to client components ----

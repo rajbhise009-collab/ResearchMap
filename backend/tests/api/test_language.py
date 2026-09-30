@@ -75,7 +75,7 @@ def test_no_internal_jargon_in_the_shipped_language_pack():
     data sources by name (OpenAlex, Europe PMC, arXiv, …) — those are the
     sources' own names, not our plumbing, and the plumbing check would
     misfire on `openalex` there."""
-    exempt = {"dev", "attribution", "libraries_note"}
+    exempt = {"dev", "attribution", "libraries_note", "privacy_note"}
     pack = {k: v for k, v in language.language_pack().items() if k not in exempt}
     offenders = []
     for s in _consumer_strings(pack):

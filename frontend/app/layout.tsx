@@ -4,6 +4,7 @@ import { getLanguage, getGapDocs, getPaperDocs } from "../lib/data";
 import { DevModeProvider, DevBanner } from "./components/DevMode";
 import Nav from "./components/Nav";
 import CommandPalette, { PaletteHint } from "./components/CommandPalette";
+import OptionalAnalytics from "./components/OptionalAnalytics";
 
 const lang = getLanguage();
 
@@ -94,7 +95,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   ))}
                 </ul>
               </div>
+              <div className="foot-sources">
+                <span className="foot-sources-label">{lang.privacy_note.label}:</span>{" "}
+                <span className="foot-sources-intro">{lang.privacy_note.body}</span>
+              </div>
             </footer>
+            <OptionalAnalytics />
           </DevModeProvider>
         </div>
       </body>

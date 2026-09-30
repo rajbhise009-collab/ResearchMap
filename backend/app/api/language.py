@@ -544,6 +544,24 @@ FOOTER_SCOPE = (
     f"{LIBRARY_NAME.lower()}. Not a comprehensive research tool."
 )
 
+# Short plain-language privacy note. Rendered in the footer on the
+# public deploy so a visitor knows what the deployed site collects
+# (page views only — Vercel Web Analytics free tier) and what stays
+# on their device (the search itself; the .bib and .csv downloads).
+PRIVACY_NOTE = {
+    "label": "Privacy",
+    "body": (
+        "On the public deploy this page sends anonymised page-view "
+        "counts to Vercel Web Analytics (which URLs got visited, "
+        "roughly what country, no cookies, no cross-site tracking, no "
+        "identifiers). What you type into the search box runs against "
+        "an index in your browser — the query itself is not sent "
+        "anywhere. Downloads (.bib, .csv) are generated locally. The "
+        "local .app / .command versions and ?dev=1 opt out of "
+        "analytics entirely."
+    ),
+}
+
 # Multi-library manifest — the one place a user-facing view learns that
 # other libraries exist. Kept in sync with
 # backend/app/api/multi_library_export.py::LIBRARIES; anything visible
@@ -677,6 +695,7 @@ def language_pack() -> dict[str, Any]:
         "no_disagreements": NO_DISAGREEMENTS,
         "attribution": ATTRIBUTION,
         "libraries_note": LIBRARIES_NOTE,
+        "privacy_note": PRIVACY_NOTE,
     }
 
 
