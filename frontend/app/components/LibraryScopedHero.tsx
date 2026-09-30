@@ -15,7 +15,11 @@ interface LibStats {
   papers?: number;
   full_text?: number;
   abstract_only?: number;
+  n_extractions?: number;
+  extraction_coverage_note?: string;
+  extraction_coverage_share?: number;
   n_confirmed_contradictions?: number;
+  raw_flagged_contradictions?: number;
   scorer_yields?: Record<string, number>;
   note?: string;
 }
@@ -105,6 +109,11 @@ export default function LibraryScopedHero({ tagline, whatItDoes }: {
             </dd>
           </div>
         </dl>
+        {stats?.extraction_coverage_note && (
+          <p className="small muted coverage-note">
+            {stats.extraction_coverage_note}
+          </p>
+        )}
       </aside>
     </div>
   );

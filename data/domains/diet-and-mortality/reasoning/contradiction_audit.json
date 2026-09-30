@@ -1,0 +1,73 @@
+{
+  "domain": "diet-and-mortality",
+  "date": "2026-09-30",
+  "basis": "builder's hand review against the source abstracts (venue, method, population, dose, outcome)",
+  "not_expert_review": true,
+  "note": "This is the pipeline builder's own read for internal QA. The expert-review packet in docs/review/diet-contradictions/ is what settles disputed pairs.",
+  "method": "Each raw-flagged pair is looked up by the two paper IDs AND the exact claim text — index-based mapping is fragile if the contradictions.json is regenerated in a different order.",
+  "verdicts": [
+    {
+      "a_paper_id": "openalex:W2109401990",
+      "b_paper_id": "openalex:W2513212958",
+      "a_text_starts": "Unprocessed red meat consumption is not associated with incident stroke.",
+      "b_text_starts": "Consumption of 100 g/day of unprocessed red meat is associated with an 11% increased risk",
+      "verdict": "genuine",
+      "reason": "Both are meta-analyses of unprocessed red meat and incident stroke on comparable adult populations; a 2010 pooled null vs a 2016 updated point estimate — the canonical time-updated red-meat disagreement.",
+      "topic": "red meat / stroke"
+    },
+    {
+      "a_paper_id": "openalex:W2126726883",
+      "b_paper_id": "openalex:W2787107952",
+      "a_text_starts": "The decreased risk of myocardial infarction was similar between men consuming less than 10",
+      "b_text_starts": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction",
+      "verdict": "artifact",
+      "reason": "Different populations (US male health professionals only vs mixed IPD across 19 countries) AND different dose constructs (per-drinking-day vs per-week). The apparent conflict evaporates once the measures are reconciled — a regime-conflation, not a real disagreement.",
+      "topic": "alcohol / MI dose-shape"
+    },
+    {
+      "a_paper_id": "openalex:W2109129984",
+      "b_paper_id": "openalex:W2787107952",
+      "a_text_starts": "Alcohol consumption is not significantly associated with overall incident stroke compared",
+      "b_text_starts": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke",
+      "verdict": "genuine",
+      "reason": "Both are meta-analyses of adult drinkers with comparable methods; an older pooled null vs a newer IPD's linear positive slope. Direct disagreement on whether an aggregate association exists.",
+      "topic": "alcohol / stroke — is there an association?"
+    },
+    {
+      "a_paper_id": "openalex:W2064137374",
+      "b_paper_id": "openalex:W2787107952",
+      "a_text_starts": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship",
+      "b_text_starts": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke",
+      "verdict": "genuine",
+      "reason": "Both meta-analyses on comparable populations; the disagreement is model choice (fractional-polynomial J-shape vs assumed linear). A modelling-choice disagreement on the same construct is a substantive disagreement.",
+      "topic": "alcohol / ischemic stroke dose-shape"
+    },
+    {
+      "a_paper_id": "openalex:W2109401990",
+      "b_paper_id": "openalex:W2955331731",
+      "a_text_starts": "Unprocessed red meat intake is not associated with incident diabetes mellitus.",
+      "b_text_starts": "Higher intake of red meat is associated with increased incidence of type 2 diabetes.",
+      "verdict": "genuine",
+      "reason": "Same time-updated red-meat pattern as pair #1: 2010 pooled null vs 2019 umbrella-positive on the same construct.",
+      "topic": "red meat / type 2 diabetes"
+    },
+    {
+      "a_paper_id": "openalex:W2109129984",
+      "b_paper_id": "openalex:W2311763102",
+      "a_text_starts": "Alcohol consumption is associated with a lower risk of all-cause mortality",
+      "b_text_starts": "Analyses of higher-quality, bias-free studies fail to find a reduced mortality risk",
+      "verdict": "genuine",
+      "reason": "Same construct (light drinking vs abstention on all-cause mortality) but with Stockwell's abstainer-bias correction applied. The central controversy in alcohol epidemiology; systematic reviews reaching opposite conclusions after quality adjustment.",
+      "topic": "alcohol / all-cause mortality — J-shape vs quality-adjusted null"
+    },
+    {
+      "a_paper_id": "openalex:W2109129984",
+      "b_paper_id": "openalex:W2311763102",
+      "a_text_starts": "Alcohol consumption is associated with a lower risk of all-cause mortality",
+      "b_text_starts": "After adjusting for abstainer biases and study quality characteristics, low-volume alcohol",
+      "verdict": "duplicate",
+      "reason": "Same paper pair and same topic as the pair immediately above (BMJ 2011 vs Stockwell 2016 alcohol/mortality). The other Claim B here is a near-identical restatement of the abstainer-bias correction. Counted once.",
+      "topic": "alcohol / all-cause mortality — duplicate of previous"
+    }
+  ]
+}

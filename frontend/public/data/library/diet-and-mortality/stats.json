@@ -3,6 +3,8 @@
   "full_text": 17,
   "abstract_only": 83,
   "n_extractions": 59,
+  "extraction_coverage_note": "Claims read from 59 of 100 papers. The remaining 41 were not extracted (budget halt); their content is not reflected in the scorer's output. Treat any 'zero' finding as bounded above, not a clean negative.",
+  "extraction_coverage_share": 0.59,
   "assertion_strength": {
     "total_claims": 338,
     "distribution": {
@@ -99,9 +101,18 @@
     },
     "n_future_work_items": 37
   },
-  "n_confirmed_contradictions": 7,
+  "n_confirmed_contradictions": 5,
+  "raw_flagged_contradictions": 7,
+  "contradiction_audit": {
+    "raw_flagged": 7,
+    "genuine": 5,
+    "artifact": 1,
+    "duplicate": 1,
+    "unaudited": 0,
+    "confirmed": 5
+  },
   "scorer_yields": {
-    "unresolved_contradictions": 7,
+    "unresolved_contradictions": 5,
     "persistent_limitations": 0,
     "orphaned_future_work": 0,
     "structural_holes": 0,

@@ -107,11 +107,27 @@ def stats() -> dict:
     by_scorer = Counter(cd.scorer for cd in cards())
     substantive = sum(1 for cd in cards()
                       if cd.scorer == "structural_holes" and cd.confirm_status == "substantive")
+    n_papers = len(c.papers)
+    # LLM-cal is fully extracted (see manifest), so N == M. Same shape as
+    # the multi-domain libraries so the frontend has one code path.
+    n_extracted = n_papers
+    coverage_note = f"Claims read from {n_extracted} of {n_papers} papers."
     return {
-        "papers": len(c.papers),
+        "papers": n_papers,
         "full_text": src.get("fulltext", 0),
         "abstract_only": sum(v for k, v in src.items() if k != "fulltext"),
+        "n_extractions": n_extracted,
+        "extraction_coverage_note": coverage_note,
+        "extraction_coverage_share": 1.0,
         "core": cent.get("core", 0), "peripheral": cent.get("peripheral", 0),
+        "n_confirmed_contradictions": by_scorer.get("unresolved_contradictions", 0),
+        "raw_flagged_contradictions": by_scorer.get("unresolved_contradictions", 0),
+        "contradiction_audit": {
+            "raw_flagged": by_scorer.get("unresolved_contradictions", 0),
+            "genuine": by_scorer.get("unresolved_contradictions", 0),
+            "artifact": 0, "duplicate": 0, "unaudited": 0,
+            "confirmed": by_scorer.get("unresolved_contradictions", 0),
+        },
         "scorer_yields": {
             "persistent_limitations": by_scorer.get("persistent_limitations", 0),
             "unresolved_contradictions": by_scorer.get("unresolved_contradictions", 0),

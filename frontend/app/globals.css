@@ -405,6 +405,13 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .not-advice strong { color: var(--fg); }
 
+.coverage-note {
+  margin-top: var(--s-3);
+  font-style: italic;
+}
+
+.set-aside { margin-top: var(--s-8); border-top: 1px solid var(--rule); padding-top: var(--s-6); }
+
 .lib-badge {
   display: inline-block;
   padding: 2px 8px;

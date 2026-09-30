@@ -184,19 +184,39 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         }
         (paper_dir / f"{e['wid']}.json").write_text(json.dumps(detail))
 
-    # opportunities.json + per-opportunity detail (from confirmed
-    # contradictions since that's the only scoring output we have for
-    # the multi-domain libraries in this run).
+    # opportunities.json + per-opportunity detail with per-pair audit
+    # verdicts attached. Genuine ones headline; artifact + duplicate go
+    # in the "set aside" section on the UI. Never hidden.
+    from backend.app.api.contradiction_audit import (
+        attach_verdicts, audit_summary,
+    )
     contra_path = REPO_ROOT / "data" / "domains" / slug / "reasoning" / "contradictions.json"
     contradictions = []
     if contra_path.exists():
         contradictions = json.loads(contra_path.read_text()).get("items", [])
+    audited_contradictions = attach_verdicts(slug, contradictions)
+    audit_counts = audit_summary(slug, contradictions)
+
+    _verdict_headline = {
+        "genuine": "Two papers report findings that genuinely disagree",
+        "artifact": "Flagged but set aside — different conditions",
+        "duplicate": "Flagged but set aside — duplicate of another pair",
+        "unaudited": "Two papers report findings that disagree (unaudited)",
+    }
+    _verdict_strength = {
+        "genuine": "Worth a look",
+        "artifact": "Unverified lead",
+        "duplicate": "Unverified lead",
+        "unaudited": "Unverified lead",
+    }
+
     opp_dir = lib_dir / "opportunity"
     opp_dir.mkdir(exist_ok=True)
     opportunity_summaries = []
-    for i, c in enumerate(contradictions, 1):
+    for i, c in enumerate(audited_contradictions, 1):
         opp_slug = (f"opp-contra-{slug}-{i:02d}-"
                     f"{_slug(c['a_paper_id'])}-{_slug(c['b_paper_id'])}")[:120]
+        verdict = c["audit"]["verdict"]
         card = {
             "id": opp_slug, "slug": opp_slug, "rank": i,
             "gap_type": "disagreement",
@@ -207,14 +227,19 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "a_paper_id": c.get("a_paper_id"), "b_paper_id": c.get("b_paper_id"),
             "a_text": c.get("a_text"), "b_text": c.get("b_text"),
             "supporting_papers": [c.get("a_paper_id"), c.get("b_paper_id")],
-            "confidence_tier": "medium",
+            "confidence_tier": "medium" if verdict == "genuine" else "low",
             "confirm_status": None,
+            "audit": c["audit"],  # verdict + reason + basis + date
             "consumer": {
-                "headline": "Two papers report findings that disagree",
+                "headline": _verdict_headline.get(verdict, _verdict_headline["unaudited"]),
                 "kind": "A disagreement between papers",
                 "kind_id": "disagreement",
-                "strength": "Worth a look",
+                "strength": _verdict_strength.get(verdict, "Unverified lead"),
                 "why": c.get("explanation", "")[:400],
+                "verdict": verdict,  # so the UI can render "set aside" section
+                "verdict_reason": c["audit"].get("reason", ""),
+                "verdict_basis": c["audit"].get("basis", ""),
+                "verdict_topic": c["audit"].get("topic", ""),
                 "caveats": [],
                 "paper_count": 2,
             },
@@ -223,26 +248,42 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         opportunity_summaries.append({
             "id": opp_slug, "slug": opp_slug, "rank": i,
             "gap_type": "disagreement", "consumer": card["consumer"],
+            "verdict": verdict,
         })
     (lib_dir / "opportunities.json").write_text(json.dumps({
         "schema_version": "1.0.0",
         "total": len(opportunity_summaries),
+        "audit": audit_counts,
         "items": opportunity_summaries,
     }))
 
-    # stats.json
+    # stats.json — with EXTRACTION COVERAGE plainly stated so the UI
+    # can render "Claims read from N of M papers" instead of the raw
+    # "M papers" number that hides partial extraction.
     n_full = sum(1 for e in entries if e.get("input_source") == "fulltext")
+    n_extracted = len(exts)
+    coverage_note = (
+        f"Claims read from {n_extracted} of {len(entries)} papers."
+        + (f" The remaining {len(entries) - n_extracted} were not extracted "
+            "(budget halt); their content is not reflected in the scorer's "
+            "output. Treat any 'zero' finding as bounded above, not a clean "
+            "negative." if n_extracted < len(entries) else "")
+    )
     strength = assertion_strength_distribution(exts) if exts else {}
     gap = gap_type_counts(exts) if exts else {}
     (lib_dir / "stats.json").write_text(json.dumps({
         "papers": len(entries), "full_text": n_full,
         "abstract_only": len(entries) - n_full,
-        "n_extractions": len(exts),
+        "n_extractions": n_extracted,
+        "extraction_coverage_note": coverage_note,
+        "extraction_coverage_share": (n_extracted / len(entries)) if entries else 0.0,
         "assertion_strength": strength,
         "gap_type_counts": gap,
-        "n_confirmed_contradictions": len(contradictions),
+        "n_confirmed_contradictions": audit_counts["confirmed"],
+        "raw_flagged_contradictions": audit_counts["raw_flagged"],
+        "contradiction_audit": audit_counts,
         "scorer_yields": {
-            "unresolved_contradictions": len(contradictions),
+            "unresolved_contradictions": audit_counts["confirmed"],
             "persistent_limitations": 0,       # not scored on these libs yet
             "orphaned_future_work": 0,
             "structural_holes": 0,

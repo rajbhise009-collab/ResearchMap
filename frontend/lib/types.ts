@@ -16,6 +16,12 @@ export interface ConsumerCard {
   why: string;
   caveats: PlainCaveat[];
   paper_count: number;
+  // Contradiction-only audit fields (present on multi-domain
+  // contradiction cards; absent on LLM-cal orphan/hole/limitation cards)
+  verdict?: string;
+  verdict_reason?: string;
+  verdict_basis?: string;
+  verdict_topic?: string;
 }
 
 export interface Fidelity { label: string; text: string; }
@@ -129,8 +135,23 @@ export interface PaperDetail {
   cites: PaperLink[]; cited_by: PaperLink[];
   consumer: ConsumerPaper;
 }
+export interface ContradictionAudit {
+  raw_flagged: number;
+  genuine: number;
+  artifact: number;
+  duplicate: number;
+  unaudited: number;
+  confirmed: number;
+}
+
 export interface Stats {
   papers: number; full_text: number; abstract_only: number; core: number; peripheral: number;
+  n_extractions?: number;
+  extraction_coverage_note?: string;
+  extraction_coverage_share?: number;
+  n_confirmed_contradictions?: number;
+  raw_flagged_contradictions?: number;
+  contradiction_audit?: ContradictionAudit;
   scorer_yields: Record<string, number>;
   relationships: number; spend_to_date_usd: number; manifest_hash: string | null; note: string;
 }

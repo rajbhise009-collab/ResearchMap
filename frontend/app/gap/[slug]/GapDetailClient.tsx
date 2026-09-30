@@ -52,6 +52,10 @@ interface OpportunityLike {
     strength: string; strength_meaning?: string; why: string;
     caveats?: Array<{ code: string; label?: string; text?: string }>;
     paper_count?: number;
+    verdict?: string;
+    verdict_reason?: string;
+    verdict_basis?: string;
+    verdict_topic?: string;
   };
   // Multi-domain contradiction card fields
   a_paper_id?: string;
@@ -133,6 +137,21 @@ export default function GapDetailClient({ slug, lang }: {
             {c.headline_is_quoted ? `“${c.headline}”` : c.headline}
           </h1>
           {c.kind_short && <p className="subtitle">{c.kind_short}.</p>}
+          {c.verdict && c.verdict !== "genuine" && (
+            <div className="not-advice" role="note" style={{ marginTop: "var(--s-4)" }}>
+              <strong>
+                {c.verdict === "artifact"
+                  ? "Set aside by hand-audit as a different-conditions artifact."
+                  : c.verdict === "duplicate"
+                    ? "Set aside by hand-audit as a duplicate of another pair."
+                    : "Not yet hand-audited."}
+              </strong>
+              {c.verdict_reason && (<><br /><span>{c.verdict_reason}</span></>)}
+              {c.verdict_basis && (
+                <><br /><span className="small muted">Basis: {c.verdict_basis}</span></>
+              )}
+            </div>
+          )}
         </header>
 
         <section id="why" className="block">
