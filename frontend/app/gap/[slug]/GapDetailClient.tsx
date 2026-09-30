@@ -10,6 +10,7 @@ import { DevKV, DevJSON } from "../../components/DevMode";
 import GapSidebar from "./GapSidebar";
 import { useLibraryData, NotInLibrary } from "../../components/useLibraryData";
 import { GapExport } from "../../components/CiteExport";
+import ContradictionTimeline from "../../components/ContradictionTimeline";
 import type { LanguagePack } from "../../../lib/types";
 
 const wid = (pid: string) => (pid || "").split(":").pop() as string;
@@ -219,6 +220,23 @@ export default function GapDetailClient({ slug, lang }: {
               );
             })}
           </section>
+        )}
+
+        {o.cites_both && contradictionPair && (
+          <ContradictionTimeline
+            a={{
+              year: supporters[0]?.year ?? null,
+              short: o.a_paper_id ? wid(o.a_paper_id) : "A",
+            }}
+            b={{
+              year: supporters[1]?.year ?? null,
+              short: o.b_paper_id ? wid(o.b_paper_id) : "B",
+            }}
+            citesBoth={o.cites_both.top.map((w) => ({
+              year: w.year, title: w.title,
+            }))}
+            queryDate={o.cites_both.query_date}
+          />
         )}
 
         {o.cites_both && (
