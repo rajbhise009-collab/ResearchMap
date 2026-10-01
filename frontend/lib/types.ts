@@ -149,6 +149,7 @@ export interface Stats {
   papers: number; full_text: number; abstract_only: number; core: number; peripheral: number;
   n_extractions?: number;
   extraction_coverage_note?: string;
+  zero_finding_note?: string | null;
   extraction_coverage_share?: number;
   n_confirmed_contradictions?: number;
   raw_flagged_contradictions?: number;

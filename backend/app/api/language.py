@@ -546,9 +546,16 @@ BUILD_LIBRARY = {
 # Everything else the interface says.
 # --------------------------------------------------------------------------
 
+FOOTER_SCOPE_PREFIX = "Working prototype · currently shown"
+FOOTER_SCOPE_SUFFIX = "Not a comprehensive research tool."
+
+# Legacy constant kept for backwards-compat with any caller that reads
+# the raw string. The actual footer uses the dynamic client component
+# `FooterScope.tsx` that reads the active library and renders
+# "{PREFIX}: {n_papers} papers on {library_name}. {SUFFIX}" live.
 FOOTER_SCOPE = (
-    "Working prototype · currently shown: 113 papers on "
-    f"{LIBRARY_NAME.lower()}. Not a comprehensive research tool."
+    f"{FOOTER_SCOPE_PREFIX}: 113 papers on {LIBRARY_NAME.lower()}. "
+    f"{FOOTER_SCOPE_SUFFIX}"
 )
 
 # Short plain-language privacy note. Rendered in the footer on the
@@ -562,10 +569,13 @@ PRIVACY_NOTE = {
         "counts to Vercel Web Analytics (which URLs got visited, "
         "roughly what country, no cookies, no cross-site tracking, no "
         "identifiers). What you type into the search box runs against "
-        "an index in your browser — the query itself is not sent "
-        "anywhere. Downloads (.bib, .csv) are generated locally. The "
-        "local .app / .command versions and ?dev=1 opt out of "
-        "analytics entirely."
+        "an index in your browser — the query itself is NOT sent to "
+        "any server. A scrubber for refused / out-of-domain queries "
+        "exists in the code but is not wired to anything — custom "
+        "events require Vercel Pro, which this deploy does not use. "
+        "Downloads (.bib, .csv) are generated locally. The local "
+        ".app / .command versions and ?dev=1 opt out of analytics "
+        "entirely."
     ),
 }
 
@@ -579,7 +589,8 @@ LIBRARIES_NOTE = {
     "intro": (
         "Each library is one subject read through the same pipeline. "
         "The library currently on screen is the one this URL renders; "
-        "the others are on the same domain under /library/<slug>/."
+        "to switch, use the picker at the top of the page or append "
+        "?lib=<slug> to any URL (?lib= wins over the stored choice)."
     ),
     "items": [
         {
@@ -640,6 +651,8 @@ UI = {
     "library_covers": LIBRARY_COVERS,
     "library_summary": LIBRARY_SUMMARY,
     "footer_scope": FOOTER_SCOPE,
+    "footer_scope_prefix": FOOTER_SCOPE_PREFIX,
+    "footer_scope_suffix": FOOTER_SCOPE_SUFFIX,
     "one_library_note": ONE_LIBRARY_NOTE,
     "results_heading": "What we found",
     "evidence_heading": "The evidence",

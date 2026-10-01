@@ -5,6 +5,7 @@ import { DevModeProvider, DevBanner } from "./components/DevMode";
 import Nav from "./components/Nav";
 import CommandPalette, { PaletteHint } from "./components/CommandPalette";
 import OptionalAnalytics from "./components/OptionalAnalytics";
+import FooterScope from "./components/FooterScope";
 
 const lang = getLanguage();
 
@@ -67,7 +68,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="foot-in">
                 <span className="foot-brand">{lang.ui.product_name}</span>
                 <span className="foot-dot" aria-hidden>·</span>
-                <span>{lang.ui.footer_scope}</span>
+                <span>
+                  <FooterScope
+                    prefix={lang.ui.footer_scope_prefix ?? "Working prototype · currently shown"}
+                    suffix={lang.ui.footer_scope_suffix ?? "Not a comprehensive research tool."}
+                    fallback={lang.ui.footer_scope}
+                  />
+                </span>
               </div>
               <div className="foot-sources">
                 <span className="foot-sources-label">{lang.libraries_note.label}:</span>{" "}

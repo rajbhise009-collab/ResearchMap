@@ -17,6 +17,7 @@ interface LibStats {
   abstract_only?: number;
   n_extractions?: number;
   extraction_coverage_note?: string;
+  zero_finding_note?: string | null;
   extraction_coverage_share?: number;
   n_confirmed_contradictions?: number;
   raw_flagged_contradictions?: number;
@@ -88,10 +89,21 @@ export default function LibraryScopedHero({ tagline, whatItDoes }: {
             <dd>
               <span className="num tnum">{stats?.full_text ?? "…"}</span>
               {stats?.papers != null && (
-                <span className="small muted"> of {stats.papers}</span>
+                <span className="small muted"> of {stats.papers} papers</span>
               )}
             </dd>
           </div>
+          {stats?.n_extractions != null && (
+            <div>
+              <dt>Claims extracted from</dt>
+              <dd>
+                <span className="num tnum">{stats.n_extractions}</span>
+                {stats?.papers != null && (
+                  <span className="small muted"> of {stats.papers} papers</span>
+                )}
+              </dd>
+            </div>
+          )}
           <div>
             <dt>{stats?.n_confirmed_contradictions != null
                     ? "Confirmed disagreements"
@@ -112,6 +124,11 @@ export default function LibraryScopedHero({ tagline, whatItDoes }: {
         {stats?.extraction_coverage_note && (
           <p className="small muted coverage-note">
             {stats.extraction_coverage_note}
+          </p>
+        )}
+        {stats?.zero_finding_note && (
+          <p className="small muted coverage-note">
+            {stats.zero_finding_note}
           </p>
         )}
       </aside>

@@ -302,15 +302,27 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
 
     # stats.json — with EXTRACTION COVERAGE plainly stated so the UI
     # can render "Claims read from N of M papers" instead of the raw
-    # "M papers" number that hides partial extraction.
+    # "M papers" number that hides partial extraction. Two separate
+    # lines so the UI never has to parse them apart:
+    # - coverage_note: ALWAYS shown; the plain "N of M read" + "we
+    #   stopped reading to stay within budget" sentence when partial.
+    # - zero_note:    ONLY shown on libraries whose confirmed-
+    #   contradictions count is 0 (so Diet, which has 5 confirmed,
+    #   never sees it). Phrases "zero" as a floor — unread papers
+    #   could hold disagreements — not a ceiling, which was backwards.
     n_full = sum(1 for e in entries if e.get("input_source") == "fulltext")
     n_extracted = len(exts)
+    n_missing = len(entries) - n_extracted
     coverage_note = (
         f"Claims read from {n_extracted} of {len(entries)} papers."
-        + (f" The remaining {len(entries) - n_extracted} were not extracted "
-            "(budget halt); their content is not reflected in the scorer's "
-            "output. Treat any 'zero' finding as bounded above, not a clean "
-            "negative." if n_extracted < len(entries) else "")
+        + (f" We stopped reading to stay within budget, so the remaining "
+           f"{n_missing} papers are not reflected in these results."
+           if n_missing > 0 else "")
+    )
+    zero_note = (
+        "Zero here means none were found among the papers read. "
+        "It does not mean none exist."
+        if audit_counts["confirmed"] == 0 else None
     )
     strength = assertion_strength_distribution(exts) if exts else {}
     gap = gap_type_counts(exts) if exts else {}
@@ -319,6 +331,7 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "abstract_only": len(entries) - n_full,
         "n_extractions": n_extracted,
         "extraction_coverage_note": coverage_note,
+        "zero_finding_note": zero_note,
         "extraction_coverage_share": (n_extracted / len(entries)) if entries else 0.0,
         "assertion_strength": strength,
         "gap_type_counts": gap,

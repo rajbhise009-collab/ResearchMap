@@ -112,12 +112,19 @@ def stats() -> dict:
     # the multi-domain libraries so the frontend has one code path.
     n_extracted = n_papers
     coverage_note = f"Claims read from {n_extracted} of {n_papers} papers."
+    n_contra = by_scorer.get("unresolved_contradictions", 0)
+    zero_note = (
+        "Zero here means none were found among the papers read. "
+        "It does not mean none exist."
+        if n_contra == 0 else None
+    )
     return {
         "papers": n_papers,
         "full_text": src.get("fulltext", 0),
         "abstract_only": sum(v for k, v in src.items() if k != "fulltext"),
         "n_extractions": n_extracted,
         "extraction_coverage_note": coverage_note,
+        "zero_finding_note": zero_note,
         "extraction_coverage_share": 1.0,
         "core": cent.get("core", 0), "peripheral": cent.get("peripheral", 0),
         "n_confirmed_contradictions": by_scorer.get("unresolved_contradictions", 0),

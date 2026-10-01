@@ -3,7 +3,8 @@
   "full_text": 50,
   "abstract_only": 50,
   "n_extractions": 51,
-  "extraction_coverage_note": "Claims read from 51 of 100 papers. The remaining 49 were not extracted (budget halt); their content is not reflected in the scorer's output. Treat any 'zero' finding as bounded above, not a clean negative.",
+  "extraction_coverage_note": "Claims read from 51 of 100 papers. We stopped reading to stay within budget, so the remaining 49 papers are not reflected in these results.",
+  "zero_finding_note": "Zero here means none were found among the papers read. It does not mean none exist.",
   "extraction_coverage_share": 0.51,
   "assertion_strength": {
     "total_claims": 258,
