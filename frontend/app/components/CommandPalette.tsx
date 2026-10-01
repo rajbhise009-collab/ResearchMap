@@ -32,17 +32,82 @@ function CommandPalette({ lang, gaps, papers }: {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  // Same lazy fetch pattern as Ask — no double load if both are on the page.
+  // Resolve the active library's snapshot path (same ?lib= /
+  // localStorage / default_slug sequence as everywhere else) and fetch
+  // THAT library's search-index. Without this the palette loads the
+  // LLM-cal index even when the user has switched to Diet.
+  const [activeSnapshot, setActiveSnapshot] = useState<string>("/data");
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
   useEffect(() => {
     if (!open || index) return;
     let live = true;
-    // Relative fetch so it works whether the user is at / or /gap/xyz/.
-    fetch(asset("/data/search-index.json"))
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((j: SearchIndex) => { if (live) setIndex(j); })
-      .catch(() => {});
+    const loadIndex = async () => {
+      let snapshotPath = "/data";
+      try {
+        const r = await fetch(asset("/data/libraries.json"));
+        if (r.ok) {
+          const m = await r.json();
+          const requested = new URLSearchParams(window.location.search).get("lib");
+          const remembered = (() => {
+            try { return window.localStorage.getItem("researchmap.library"); }
+            catch { return null; }
+          })();
+          const slug = requested || remembered || m.default_slug;
+          const lib = (m.libraries || []).find((l: any) => l.slug === slug)
+                       || (m.libraries || [])[0];
+          if (lib) {
+            snapshotPath = lib.snapshot_path;
+            if (live) {
+              setActiveSnapshot(snapshotPath);
+              setActiveSlug(lib.slug);
+            }
+          }
+        }
+      } catch {}
+      try {
+        const rr = await fetch(asset(`${snapshotPath}/search-index.json`));
+        if (!rr.ok) return;
+        const j: SearchIndex = await rr.json();
+        if (live) setIndex(j);
+      } catch {}
+    };
+    loadIndex();
     return () => { live = false; };
   }, [open, index]);
+
+  // Fetch per-library opportunities + papers once the palette opens so
+  // the hit→card lookup matches the active library. Falls back to the
+  // SSR props if the fetches fail or the library has no file (so
+  // legacy single-library deploys keep working).
+  const [liveGaps, setLiveGaps] = useState<GapDoc[] | null>(null);
+  const [livePapers, setLivePapers] = useState<PaperDoc[] | null>(null);
+  useEffect(() => {
+    if (!open) return;
+    let live = true;
+    (async () => {
+      try {
+        const [oppR, papR] = await Promise.all([
+          fetch(asset(`${activeSnapshot}/opportunities.json`)),
+          fetch(asset(`${activeSnapshot}/papers.json`)),
+        ]);
+        if (oppR.ok && live) {
+          const oj = await oppR.json();
+          setLiveGaps((oj.items || []).map((o: any) => ({
+            slug: o.slug, consumer: o.consumer, dev: {},
+          }) as unknown as GapDoc));
+        }
+        if (papR.ok && live) {
+          const pj = await papR.json();
+          setLivePapers((pj.items || []).map((p: any) => ({
+            wid: p.wid, title: p.title ?? p.wid,
+            year: p.year, abstract_only: p.abstract_only,
+            domain_centrality: p.domain_centrality, dev: {},
+          }) as unknown as PaperDoc));
+        }
+      } catch {}
+    })();
+    return () => { live = false; };
+  }, [open, activeSnapshot]);
 
   // ⌘K / Ctrl-K / "/" opens; Esc closes.
   useEffect(() => {
@@ -91,8 +156,15 @@ function CommandPalette({ lang, gaps, papers }: {
     return () => clearTimeout(t);
   }, [q, index]);
 
-  const gapBySlug = useMemo(() => new Map(gaps.map((g) => [g.slug, g])), [gaps]);
-  const paperByWid = useMemo(() => new Map(papers.map((p) => [p.wid, p])), [papers]);
+  const effectiveGaps = liveGaps ?? gaps;
+  const effectivePapers = livePapers ?? papers;
+  const gapBySlug = useMemo(
+    () => new Map(effectiveGaps.map((g) => [g.slug, g])),
+    [effectiveGaps]);
+  const paperByWid = useMemo(
+    () => new Map(effectivePapers.map((p) => [p.wid, p])),
+    [effectivePapers]);
+  const suffix = activeSlug ? `?lib=${encodeURIComponent(activeSlug)}` : "";
 
   type Item = { href: string; title: string; kind: string; strength?: string };
   const items: Item[] = useMemo(() => {
@@ -101,19 +173,27 @@ function CommandPalette({ lang, gaps, papers }: {
     for (const h of result.hits) {
       if (h.type === "opportunity") {
         const g = gapBySlug.get(h.ref);
-        if (g) out.push({
-          href: `/gap/${g.slug}/`,
-          title: g.consumer.headline_is_quoted ? `“${g.consumer.headline}”` : g.consumer.headline,
-          kind: g.consumer.kind,
-          strength: g.consumer.strength,
+        // Fall back to the hit's own fields when the lookup map doesn't
+        // know this slug — see Ask.tsx for the same pattern.
+        out.push({
+          href: `/gap/${h.ref}/${suffix}`,
+          title: g?.consumer.headline_is_quoted
+            ? `“${g.consumer.headline}”`
+            : (g?.consumer.headline ?? h.title),
+          kind: g?.consumer.kind ?? (h.kind || "A result"),
+          strength: g?.consumer.strength ?? (h.strength || "Unverified lead"),
         });
       } else {
         const p = paperByWid.get(h.ref);
-        if (p) out.push({ href: `/paper/${p.wid}/`, title: p.title, kind: "Paper" });
+        out.push({
+          href: `/paper/${h.ref}/${suffix}`,
+          title: p?.title ?? h.title,
+          kind: "Paper",
+        });
       }
     }
     return out.slice(0, 10);
-  }, [result, gapBySlug, paperByWid]);
+  }, [result, gapBySlug, paperByWid, suffix]);
 
   const go = useCallback((href: string) => {
     setOpen(false);

@@ -39,46 +39,115 @@ export default function Ask({ lang, gaps, papers }: {
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
+  // Per-library opportunities + papers, resolved client-side from the
+  // active library's snapshot (so the Ask box's lookup maps match the
+  // library the index was built from — the SSR props below are
+  // LLM-cal-only). Without this, a Diet search returns correct hits
+  // but the UI drops them because `gapBySlug.get(dietSlug)` is undef.
+  const [liveGaps, setLiveGaps] = useState<GapDoc[] | null>(null);
+  const [livePapers, setLivePapers] = useState<PaperDoc[] | null>(null);
+  const [otherLibHits, setOtherLibHits] = useState<
+    { slug: string; name: string } | null>(null);
+
   // Preload the index so the first keystroke is already answered.
   // Reads the currently-selected library's search-index (via ?lib=…);
   // falls back to the root snapshot for the legacy single-library
   // deploy shape.
   useEffect(() => {
     let live = true;
-    // Two-step: fetch libraries.json to know the selected library's
-    // snapshot_path, then fetch that library's search-index. If
-    // libraries.json is absent (old deploy) fall back to root.
-    const loadIndex = async () => {
-      let indexUrl = asset("/data/search-index.json");
+    const loadAll = async () => {
+      let snapshotPath = "/data";
+      let activeSlug: string | null = null;
+      let allLibs: Array<{ slug: string; name: string;
+                            snapshot_path: string }> = [];
       try {
         const libResp = await fetch(asset("/data/libraries.json"));
         if (libResp.ok) {
           const manifest = await libResp.json();
+          allLibs = manifest.libraries || [];
           const requested = new URLSearchParams(window.location.search).get("lib");
           const remembered = (() => {
             try { return window.localStorage.getItem("researchmap.library"); }
             catch { return null; }
           })();
           const slug = requested || remembered || manifest.default_slug;
-          const lib = (manifest.libraries || []).find((l: any) => l.slug === slug)
-                       || (manifest.libraries || [])[0];
-          if (lib?.snapshot_path) {
-            indexUrl = asset(`${lib.snapshot_path}/search-index.json`);
+          const lib = allLibs.find((l) => l.slug === slug) || allLibs[0];
+          if (lib) {
+            snapshotPath = lib.snapshot_path;
+            activeSlug = lib.slug;
           }
         }
       } catch { /* libraries.json missing — legacy deploy */ }
       try {
-        const r = await fetch(indexUrl);
+        const r = await fetch(asset(`${snapshotPath}/search-index.json`));
         if (!r.ok) throw new Error(String(r.status));
         const j: SearchIndex = await r.json();
         if (live) setIndex(j);
       } catch {
         if (live) setIndexError(true);
       }
+      // Fetch opportunities + papers for the ACTIVE library so the
+      // result-lookup maps are keyed on this library's slugs/wids.
+      try {
+        const [oppResp, papResp] = await Promise.all([
+          fetch(asset(`${snapshotPath}/opportunities.json`)),
+          fetch(asset(`${snapshotPath}/papers.json`)),
+        ]);
+        if (oppResp.ok && live) {
+          const oj = await oppResp.json();
+          setLiveGaps((oj.items || []).map((o: any) => ({
+            slug: o.slug, consumer: o.consumer,
+            dev: { rank: o.rank ?? 0, gap_type: o.gap_type ?? "" },
+          })));
+        }
+        if (papResp.ok && live) {
+          const pj = await papResp.json();
+          setLivePapers((pj.items || []).map((p: any) => ({
+            wid: p.wid, title: p.title ?? p.wid,
+            year: p.year, abstract_only: p.abstract_only,
+            domain_centrality: p.domain_centrality,
+            dev: { year: p.year, abstract_only: p.abstract_only ?? null,
+                    domain_centrality: p.domain_centrality ?? "" },
+          })));
+        }
+      } catch { /* missing — fall back to SSR props */ }
+      // Stash the other libraries' metadata for the OOD suggestion.
+      if (activeSlug && allLibs.length > 1) {
+        (window as any).__researchmap_other_libs =
+          allLibs.filter((l) => l.slug !== activeSlug);
+      }
     };
-    loadIndex();
+    loadAll();
     return () => { live = false; };
   }, []);
+
+  // When the current library returns out_of_domain but another library's
+  // index would say in_domain for the same query, surface a one-line
+  // "wrong library?" nudge. Keeps the honest OOD refusal next to it, so
+  // the user still sees that the current library cannot answer.
+  useEffect(() => {
+    setOtherLibHits(null);
+    if (!result || result.verdict !== "out_of_domain") return;
+    const others = (window as any).__researchmap_other_libs as
+      Array<{ slug: string; name: string; snapshot_path: string }> | undefined;
+    if (!others || !committed.trim()) return;
+    let live = true;
+    (async () => {
+      for (const other of others) {
+        try {
+          const r = await fetch(asset(`${other.snapshot_path}/search-index.json`));
+          if (!r.ok) continue;
+          const idx = await r.json();
+          const probe = search(idx, committed, 1);
+          if (probe.verdict === "in_domain" && live) {
+            setOtherLibHits({ slug: other.slug, name: other.name });
+            return;
+          }
+        } catch {}
+      }
+    })();
+    return () => { live = false; };
+  }, [result, committed]);
 
   // "/" from anywhere focuses the input. It's the fastest way to start a
   // second question after reading one result.
@@ -127,17 +196,46 @@ export default function Ask({ lang, gaps, papers }: {
 
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); run(q); };
 
-  const gapBySlug = useMemo(() => new Map(gaps.map((g) => [g.slug, g])), [gaps]);
-  const paperByWid = useMemo(() => new Map(papers.map((p) => [p.wid, p])), [papers]);
+  // Prefer the live per-library maps (fetched from the active library's
+  // snapshot); fall back to the SSR-provided LLM-cal props so legacy
+  // single-library deploys keep working.
+  const effectiveGaps = liveGaps ?? gaps;
+  const effectivePapers = livePapers ?? papers;
+  const gapBySlug = useMemo(
+    () => new Map(effectiveGaps.map((g) => [g.slug, g])),
+    [effectiveGaps]);
+  const paperByWid = useMemo(
+    () => new Map(effectivePapers.map((p) => [p.wid, p])),
+    [effectivePapers]);
 
+  // When the lookup map doesn't have a hit's ref (which happens on
+  // libraries that ship a card the SSR props never saw), synth a
+  // minimal GapDoc / PaperDoc from the hit's own fields so the result
+  // STILL renders a card instead of silently dropping it.
   const gapHits = (result?.hits ?? [])
     .filter((h) => h.type === "opportunity")
-    .map((h) => gapBySlug.get(h.ref))
-    .filter((x): x is GapDoc => !!x);
+    .map((h): GapDoc => gapBySlug.get(h.ref) ?? ({
+      slug: h.ref,
+      consumer: {
+        headline: h.title, headline_is_quoted: false,
+        kind: h.kind || "A result", kind_id: h.kind || "result",
+        kind_short: "", kind_long: "",
+        strength: h.strength || "Unverified lead",
+        strength_meaning: "",
+        why: "", caveats: [], paper_count: 0,
+      },
+      dev: { rank: 0, gap_type: h.kind || "" },
+    } as unknown as GapDoc));
   const paperHits = (result?.hits ?? [])
     .filter((h) => h.type === "paper")
-    .map((h) => paperByWid.get(h.ref))
-    .filter((x): x is PaperDoc => !!x)
+    .map((h): PaperDoc => paperByWid.get(h.ref) ?? ({
+      wid: h.ref,
+      title: h.title,
+      year: null,
+      abstract_only: false,
+      domain_centrality: "",
+      dev: { year: null, abstract_only: null, domain_centrality: "" },
+    } as unknown as PaperDoc))
     .slice(0, 8);
 
   const S = lang.search;
@@ -208,7 +306,19 @@ export default function Ask({ lang, gaps, papers }: {
         )}
 
         {result?.verdict === "out_of_domain" && (
-          <OutOfDomain lang={lang} query={committed} />
+          <>
+            {otherLibHits && (
+              <div className="caveat" style={{ marginTop: "var(--s-6)" }}>
+                <span className="cav-label">Maybe wrong library?</span>
+                This looks like it's about the{" "}
+                <strong>{otherLibHits.name}</strong> library.{" "}
+                <a href={`?lib=${encodeURIComponent(otherLibHits.slug)}&q=${encodeURIComponent(committed)}`}>
+                  Switch and ask there →
+                </a>
+              </div>
+            )}
+            <OutOfDomain lang={lang} query={committed} />
+          </>
         )}
 
         {showResults && (

@@ -254,5 +254,8 @@ def test_index_carries_no_paid_call_and_no_embeddings(index):
     """Search is built from the library's own words precisely so that it
     costs nothing and needs no server."""
     assert "embedding" not in index
+    # `gate` holds per-library in_domain/rescue thresholds derived from
+    # the library's own data at build time — added so the frontend uses
+    # thresholds that fit each library, not LLM-cal's constants.
     assert set(index) == {"n_docs", "max_idf", "idf", "docs", "synonyms",
-                          "stopwords"}
+                          "stopwords", "gate"}

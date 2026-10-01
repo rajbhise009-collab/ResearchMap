@@ -140,12 +140,22 @@ export function search(index: SearchIndex, query: string, limit = 20): SearchRes
   const best = hits.length ? hits[0].score : 0;
   const breadth = index.n_docs ? hits.length / index.n_docs : 0;
 
+  // Per-library gate thresholds carried on the index; the constants
+  // above remain the fallback for an older index without them.
+  const g = (index as any).gate || {};
+  const inCov  = Number(g.in_domain_coverage ?? IN_DOMAIN_COVERAGE);
+  const inBest = Number(g.in_domain_best     ?? IN_DOMAIN_BEST);
+  const inBr   = Number(g.in_domain_breadth  ?? BREADTH_IN_DOMAIN);
+  const rCov   = Number(g.rescue_coverage    ?? RESCUE_COVERAGE);
+  const rBest  = Number(g.rescue_best        ?? RESCUE_BEST);
+  const rBr    = Number(g.rescue_breadth     ?? RESCUE_BREADTH);
+
   let verdict: SearchResult["verdict"];
-  if (coverage >= IN_DOMAIN_COVERAGE && best >= IN_DOMAIN_BEST && breadth >= BREADTH_IN_DOMAIN) {
+  if (coverage >= inCov && best >= inBest && breadth >= inBr) {
     verdict = "in_domain";
-  } else if (coverage >= IN_DOMAIN_COVERAGE && best > 0) {
+  } else if (coverage >= inCov && best > 0) {
     verdict = "borderline";
-  } else if (coverage >= RESCUE_COVERAGE && best >= RESCUE_BEST && breadth >= RESCUE_BREADTH) {
+  } else if (coverage >= rCov && best >= rBest && breadth >= rBr) {
     verdict = "borderline";
   } else {
     verdict = "out_of_domain";

@@ -136,3 +136,73 @@ def test_the_gate_agrees_on_the_case_it_exists_for(index, ts_output):
     q = "treatment options for early stage melanoma"
     assert S.search(index, q)["verdict"] == "out_of_domain"
     assert ts_output["verdicts"][q]["verdict"] == "out_of_domain"
+
+
+# ---- Parity across ALL three shipped indexes -----------------------------
+
+PER_LIBRARY_QUERIES = {
+    "llm-calibration":    ["hallucination", "calibration", "alcohol",
+                            "treatment for early stage melanoma",
+                            "camera calibration for stereo vision"],
+    "diet-and-mortality": ["alcohol", "red meat", "fairness",
+                            "does alcohol increase stroke risk",
+                            "camera calibration for stereo vision"],
+    "ml-fairness":        ["fairness", "algorithmic bias", "alcohol",
+                            "fair classification",
+                            "camera calibration for stereo vision"],
+}
+
+PER_LIBRARY_INDEX_PATHS = {
+    "llm-calibration":    REPO / "frontend" / "public" / "data" / "search-index.json",
+    "diet-and-mortality": REPO / "frontend" / "public" / "data" / "library"
+                           / "diet-and-mortality" / "search-index.json",
+    "ml-fairness":        REPO / "frontend" / "public" / "data" / "library"
+                           / "ml-fairness" / "search-index.json",
+}
+
+
+@pytest.fixture(scope="module")
+def ts_runner(tmp_path_factory):
+    """Compile frontend/lib/search.ts once and return a callable that
+    runs it over any given index + list of queries. Reuses the compiled
+    JS across libraries so the per-library parity sweep doesn't recompile
+    per call."""
+    tmp = tmp_path_factory.mktemp("ts")
+    tsc = FRONTEND / "node_modules" / ".bin" / "tsc"
+    subprocess.run(
+        [str(tsc), "lib/search.ts", "lib/types.ts", "--outDir", str(tmp),
+         "--module", "commonjs", "--target", "es2020",
+         "--moduleResolution", "node", "--skipLibCheck"],
+        cwd=FRONTEND, check=True, capture_output=True, timeout=180,
+    )
+    (tmp / "harness.js").write_text(HARNESS)
+
+    def run(index_dict: dict, queries: list[str]) -> dict:
+        idx_path = tmp / "index.json"
+        idx_path.write_text(json.dumps(index_dict))
+        proc = subprocess.run(
+            ["node", "harness.js", str(idx_path),
+             json.dumps([]), json.dumps(queries)],
+            cwd=tmp, check=True, capture_output=True, text=True, timeout=120,
+        )
+        return json.loads(proc.stdout)
+    return run
+
+
+@pytest.mark.parametrize("slug,query",
+    [(s, q) for s, qs in PER_LIBRARY_QUERIES.items() for q in qs],
+    ids=lambda v: v if isinstance(v, str) else repr(v))
+def test_each_library_search_parity(ts_runner, slug, query):
+    """For every (library, query) pair the Python and TS gate must
+    agree on the verdict and the top ref ordering. Catches drift in
+    per-library gate thresholds between the two implementations."""
+    path = PER_LIBRARY_INDEX_PATHS[slug]
+    if not path.exists():
+        pytest.skip(f"index for {slug} not built — run multi_library_export")
+    idx = json.loads(path.read_text())
+    py = S.search(idx, query, 5)
+    ts = ts_runner(idx, [query])["verdicts"][query]
+    assert py["verdict"] == ts["verdict"], (
+        f"[{slug}] {query!r}: python={py['verdict']} ts={ts['verdict']}")
+    assert [h["ref"] for h in py["hits"]] == ts["top"], (
+        f"[{slug}] {query!r}: ranking disagrees")

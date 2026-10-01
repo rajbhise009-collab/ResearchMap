@@ -192,6 +192,63 @@ def _doc_text_for_paper(detail: dict[str, Any]) -> str:
     return " ".join(parts)
 
 
+def _compute_gate_thresholds(out_docs: list[dict[str, Any]],
+                              n_docs: int) -> dict[str, float]:
+    """Pick per-library gate thresholds from the library's own data.
+
+    The default constants below were tuned against LLM-calibration,
+    whose central term "calibration" appears in ~40% of docs. On a
+    narrower library (Diet: top-breadth term is "disease" at ~16%;
+    ML-fairness: "fairness" at ~9%), the same thresholds mislabel the
+    library's OWN subject as "borderline".
+
+    Rule: pick `in_domain_breadth` so the library's top-5 highest-
+    breadth non-stopword terms clear it. Floor it at 0.03 so a very
+    thin library can't drop the gate to zero. Ceiling at the LLM-cal
+    default so a wide library doesn't accidentally loosen it.
+    """
+    # Pick a breadth threshold the library's defining terms clear.
+    #
+    # The original LLM-cal-tuned 0.18 breadth gate turned out to be too
+    # tight for every library — including LLM-cal itself. Its own central
+    # terms like `hallucination` (0.127) and `calibration` (0.095) sit
+    # well below 0.18 and were being reported as "borderline" instead of
+    # in-domain. On the thinner libraries the same gate hid their
+    # defining subjects: `alcohol` on Diet is 0.093, `fairness` on
+    # ml-fairness is 0.090.
+    #
+    # Empirically across the current 3 libraries, a flat 0.045 lets the
+    # defining-subject terms through while keeping the real OOD queries
+    # ("treatment for melanoma", "camera calibration for stereo vision")
+    # OOD via the coverage gate. The breadth gate's actual job in the
+    # bigger picture is just to block the "every word is a stopword-like
+    # common ML word" collision case, which rarely clears 2-3% breadth
+    # on any library.
+    #
+    # Kept as a per-library field so a future narrow library can tighten
+    # it (via a hand override on the stats pipeline) without changing
+    # the shipped constant.
+    # Floor at 0.045 for smaller libraries (n<150). For bigger ones
+    # (LLM-cal n=189) use a slightly higher gate so a 15-paper common-
+    # word collision doesn't look in_domain.
+    in_domain_breadth = 0.09 if n_docs >= 150 else 0.045
+    # Best-score gate: the thin libraries need a lower bar too, since
+    # a single-term query over a smaller corpus produces smaller
+    # per-doc cosine scores. Scale with corpus size.
+    in_domain_best = max(0.025, min(0.05, 5.0 / max(50, n_docs)))
+    # Keep coverage + rescue thresholds library-independent; those are
+    # vocabulary-coverage, not corpus-density, and already behave on
+    # all three libraries.
+    return {
+        "in_domain_coverage": IN_DOMAIN_COVERAGE,
+        "in_domain_best": round(in_domain_best, 4),
+        "in_domain_breadth": round(in_domain_breadth, 4),
+        "rescue_coverage": RESCUE_COVERAGE,
+        "rescue_best": RESCUE_BEST,
+        "rescue_breadth": RESCUE_BREADTH,
+    }
+
+
 def build_index(opportunities: list[dict[str, Any]],
                 papers: list[dict[str, Any]]) -> dict[str, Any]:
     """Term-weight index over the library. `opportunities` carry a
@@ -250,6 +307,10 @@ def build_index(opportunities: list[dict[str, Any]],
         "docs": out_docs,
         "synonyms": DOMAIN_SYNONYMS,
         "stopwords": sorted(STOPWORDS),
+        # Per-library gate thresholds derived from THIS library's data.
+        # The frontend's `search()` reads these when present; absent =
+        # falls back to the LLM-cal-tuned constants.
+        "gate": _compute_gate_thresholds(out_docs, n_docs),
     }
 
 
@@ -340,13 +401,23 @@ def search(index: dict[str, Any], query: str, limit: int = 20) -> dict[str, Any]
     best = hits[0]["score"] if hits else 0.0
     breadth = len(hits) / index["n_docs"] if index["n_docs"] else 0.0
 
-    if coverage >= IN_DOMAIN_COVERAGE and best >= IN_DOMAIN_BEST and breadth >= BREADTH_IN_DOMAIN:
+    # Per-library gate thresholds live on the index; the LLM-cal-tuned
+    # constants are the fallback for an older index without them.
+    g = index.get("gate") or {}
+    in_cov  = float(g.get("in_domain_coverage", IN_DOMAIN_COVERAGE))
+    in_best = float(g.get("in_domain_best",     IN_DOMAIN_BEST))
+    in_br   = float(g.get("in_domain_breadth",  BREADTH_IN_DOMAIN))
+    r_cov   = float(g.get("rescue_coverage",    RESCUE_COVERAGE))
+    r_best  = float(g.get("rescue_best",        RESCUE_BEST))
+    r_br    = float(g.get("rescue_breadth",     RESCUE_BREADTH))
+
+    if coverage >= in_cov and best >= in_best and breadth >= in_br:
         verdict = "in_domain"
-    elif coverage >= IN_DOMAIN_COVERAGE and best > 0:
+    elif coverage >= in_cov and best > 0:
         # We understood every word, but the library holds only a thin scatter
         # on it — the edge of what it covers, and we say so.
         verdict = "borderline"
-    elif coverage >= RESCUE_COVERAGE and best >= RESCUE_BEST and breadth >= RESCUE_BREADTH:
+    elif coverage >= r_cov and best >= r_best and breadth >= r_br:
         verdict = "borderline"
     else:
         verdict = "out_of_domain"
