@@ -1,0 +1,86 @@
+name: weekly-refresh
+
+on:
+  schedule:
+    # Mondays 09:00 UTC — slightly after European morning so a human can
+    # see the created issue when they first look at the repo.
+    # GitHub pauses scheduled workflows after 60 days of repo inactivity;
+    # see docs/weekly-refresh.md.
+    - cron: "0 9 * * 1"
+  # Also runnable from the Actions tab, with optional overrides, so a
+  # human can trigger a one-off scan without waiting for Monday.
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: "How many days back to scan OpenAlex for new works."
+        required: false
+        default: "10"
+      top_n:
+        description: "Max candidates per query."
+        required: false
+        default: "10"
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install runtime dependencies
+        # The refresh module needs only httpx + pydantic (already in
+        # requirements.txt). Full dev install is overkill; install the
+        # pinned httpx and pydantic directly to keep the job fast.
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install httpx pydantic
+
+      - name: Run weekly refresh
+        env:
+          # Required. Fail loudly here (empty secret -> module prints
+          # ERROR and exits 2) rather than silently running zero queries.
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          LOOKBACK: ${{ github.event.inputs.lookback_days || '10' }}
+          TOPN: ${{ github.event.inputs.top_n || '10' }}
+        run: |
+          test -n "$OPENALEX_API_KEY" || {
+            echo "::error::OPENALEX_API_KEY repo secret is empty — add it in Settings → Secrets → Actions."
+            exit 1
+          }
+          mkdir -p .refresh-out
+          python -m backend.app.refresh.weekly_candidates \
+            --lookback-days "$LOOKBACK" \
+            --top-n "$TOPN" \
+            --out .refresh-out/result.json \
+            --body-out .refresh-out/body.md
+
+      - name: Open the weekly-refresh issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATE=$(date -u +%F)
+          TITLE="Weekly refresh candidates — $DATE"
+          # One issue per run — do not reopen a closed one, and do not
+          # amend a prior week's issue. A clean weekly stream is easier
+          # to read than one giant open thread.
+          gh issue create \
+            --title "$TITLE" \
+            --body-file .refresh-out/body.md \
+            --label "weekly-refresh" || {
+              echo "::warning::gh issue create failed; printing body to logs instead"
+              cat .refresh-out/body.md
+            }
+
+      - name: Upload JSON result as a run artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-refresh-${{ github.run_id }}
+          path: .refresh-out/
+          retention-days: 30

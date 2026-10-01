@@ -1,0 +1,25 @@
+[
+  {
+    "match": "cites:W2109401990,cites:W2513212958",
+    "response": {
+      "meta": {"count": 2},
+      "results": [
+        {
+          "id": "https://openalex.org/W_SAMPLE_1",
+          "display_name": "A recent meta-analysis of red meat and stroke risk",
+          "publication_year": 2026,
+          "doi": "https://doi.org/10.9/sample.rm.stroke",
+          "primary_location": {"source": {"homepage_url": "https://example.org"}},
+          "cited_by_count": 0
+        },
+        {
+          "id": "https://openalex.org/W_SAMPLE_2",
+          "display_name": "Commentary on red-meat / stroke meta-analyses",
+          "publication_year": 2026,
+          "doi": null,
+          "primary_location": {"source": {"homepage_url": null}}
+        }
+      ]
+    }
+  }
+]
