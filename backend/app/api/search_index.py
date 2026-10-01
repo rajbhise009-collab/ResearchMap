@@ -143,8 +143,26 @@ def tokenize_pairs(text: str) -> list[tuple[str, str]]:
 
 
 def tokenize(text: str) -> list[str]:
-    """Lowercase -> alphanumeric runs -> drop stopwords/short -> stem."""
-    return [t for t, _ in tokenize_pairs(text)]
+    """Lowercase -> alphanumeric runs -> drop stopwords/short -> stem.
+
+    Returns single-word stems plus bigrams (stem_a__stem_b) for every
+    adjacent token pair. The index builder keeps bigrams that appear
+    in ≥ `PHRASE_MIN_DOC_FREQ` docs so core multi-word phrases like
+    "demographic parity" register as a single vocab entry, which both
+    boosts their retrieval weight and makes a bare phrase query land
+    as in_domain instead of a weaker two-word intersection.
+    """
+    pairs = tokenize_pairs(text)
+    singles = [t for t, _ in pairs]
+    bigrams = [f"{singles[i]}__{singles[i+1]}"
+                for i in range(len(singles) - 1)]
+    return singles + bigrams
+
+
+# Mimimum document frequency for a bigram/trigram to survive. ≤2 is
+# usually noise; 3 has worked across all 3 current libraries as the
+# "a real phrase, not a coincidental two-word adjacency" boundary.
+PHRASE_MIN_DOC_FREQ = 3
 
 
 def expand_query(tokens: Iterable[str], raw_words: Iterable[str]) -> list[str]:
@@ -165,6 +183,11 @@ def raw_words(text: str) -> list[str]:
 # --------------------------------------------------------------------------
 
 TOP_TERMS_PER_DOC = 45
+# Separate single-vs-bigram caps so bigrams (which outnumber singles 10×
+# in some libraries and tend to have higher idf) don't evict single
+# content words like "hallucination" from a doc's term vector.
+TOP_SINGLES_PER_DOC = 45
+TOP_BIGRAMS_PER_DOC = 25
 
 
 def _doc_text_for_opportunity(card: dict[str, Any], consumer: dict[str, Any]) -> str:
@@ -279,9 +302,17 @@ def build_index(opportunities: list[dict[str, Any]],
     for d in docs:
         df.update(set(d["tokens"]))
 
-    # Terms seen exactly once are usually typos or one-off strings; keeping
-    # them bloats the payload without helping either matching or the gate.
-    vocab = {t: c for t, c in df.items() if c >= 2}
+    # Single-word terms seen exactly once are usually typos or one-off
+    # strings; keeping them bloats the payload without helping either
+    # matching or the gate. Bigrams (containing "__") need the stricter
+    # PHRASE_MIN_DOC_FREQ because many two-word adjacencies are
+    # coincidental; only phrases that recur in several papers are real
+    # multi-word subjects.
+    def _keep(term: str, c: int) -> bool:
+        if "__" in term:
+            return c >= PHRASE_MIN_DOC_FREQ
+        return c >= 2
+    vocab = {t: c for t, c in df.items() if _keep(t, c)}
     idf = {t: math.log((n_docs + 1) / (c + 0.5)) for t, c in vocab.items()}
     max_idf = max(idf.values()) if idf else 1.0
 
@@ -292,7 +323,17 @@ def build_index(opportunities: list[dict[str, Any]],
             continue
         peak = max(tf.values())
         weights = {t: (0.5 + 0.5 * c / peak) * idf[t] for t, c in tf.items()}
-        top = dict(sorted(weights.items(), key=lambda kv: -kv[1])[:TOP_TERMS_PER_DOC])
+        # Keep the top-N single words AND the top-M bigrams separately,
+        # then union. This prevents bigrams (high-idf, abundant) from
+        # evicting content singles like "hallucination" from a doc's
+        # term vector.
+        singles_sorted = sorted(
+            ((t, w) for t, w in weights.items() if "__" not in t),
+            key=lambda kv: -kv[1])[:TOP_SINGLES_PER_DOC]
+        bigrams_sorted = sorted(
+            ((t, w) for t, w in weights.items() if "__" in t),
+            key=lambda kv: -kv[1])[:TOP_BIGRAMS_PER_DOC]
+        top = dict(singles_sorted + bigrams_sorted)
         norm = math.sqrt(sum(v * v for v in top.values())) or 1.0
         out_docs.append({
             "type": d["type"], "ref": d["ref"], "title": d["title"],
@@ -349,16 +390,43 @@ RESCUE_BREADTH = 0.24
 BREADTH_IN_DOMAIN = 0.18
 
 
-def search(index: dict[str, Any], query: str, limit: int = 20) -> dict[str, Any]:
+def search(index: dict[str, Any], query: str, limit: int = 20,
+            *, prefix_last: bool = False) -> dict[str, Any]:
     """Returns verdict (`in_domain` | `borderline` | `out_of_domain` |
-    `empty`) plus ranked hits and the numbers behind the decision."""
+    `empty`) plus ranked hits and the numbers behind the decision.
+
+    `prefix_last` is for type-ahead: when True, the LAST whitespace-
+    terminated token of the raw query is treated as a prefix and
+    expanded against the vocabulary (any term whose stem starts with
+    the typed prefix joins the retrieval set). The verdict is still
+    computed from COMPLETE tokens only, so a prefix match can boost
+    retrieval but can never promote an out-of-domain query into
+    in_domain mid-typing.
+    """
     pairs = tokenize_pairs(query)
     words = [w for _, w in pairs]
     base = [t for t, _ in pairs]
     idf: dict[str, float] = index["idf"]
     max_idf: float = index["max_idf"]
 
-    if not base:
+    # Prefix expansion for the last typed word (if it isn't already a
+    # vocab entry). The TOKENIZER drops words shorter than 3 chars; we
+    # mirror that threshold here so one- or two-letter trailing text is
+    # ignored entirely — otherwise typing "a" against Diet would expand
+    # into every vocab term starting with "a".
+    prefix_added: list[str] = []
+    if prefix_last and query and not query[-1].isspace():
+        last_raw = re.findall(r"[a-z0-9]+", query.lower())
+        tail = last_raw[-1] if last_raw else ""
+        if tail and len(tail) >= 3:
+            tail_stem = _stem(tail)
+            # Only expand if the final token isn't ALREADY a known vocab
+            # term — if it is, the normal retrieval path handles it.
+            if tail_stem not in idf:
+                prefix_added = [t for t in idf
+                                 if t.startswith(tail_stem) and "__" not in t]
+
+    if not base and not prefix_added:
         return {"verdict": "empty", "coverage": 0.0, "best": 0.0,
                 "breadth": 0.0, "hits": [], "n_matched": 0,
                 "known": [], "unknown": [], "expanded": []}
@@ -378,12 +446,24 @@ def search(index: dict[str, Any], query: str, limit: int = 20) -> dict[str, Any]
     unknown_mass = len(unknown) * max_idf * UNKNOWN_WEIGHT
     coverage = known_mass / (known_mass + unknown_mass) if (known_mass + unknown_mass) else 0.0
 
-    expanded = expand_query(base, words)
+    # Adjacent-pair bigrams: so a query like "demographic parity" matches
+    # the shipped bigram vocab entry `demographic__parity` (indexed when
+    # the phrase appears in ≥PHRASE_MIN_DOC_FREQ docs) and lands on the
+    # library's own technical concept rather than the two-word
+    # intersection.
+    bigrams = [f"{base[i]}__{base[i+1]}" for i in range(len(base) - 1)]
+    expanded = expand_query(base, words) + bigrams + prefix_added
     qtf = Counter(t for t in expanded if t in idf)
     qvec: dict[str, float] = {}
     if qtf:
         peak = max(qtf.values())
-        qw = {t: (0.5 + 0.5 * c / peak) * idf[t] for t, c in qtf.items()}
+        # Exact-token matches should rank above prefix-only matches, so
+        # halve the TF weight of terms that only appeared via prefix
+        # expansion. This keeps "alcohol" matching the alcohol gaps
+        # before any random "alcohol-related" term from a prefix query.
+        prefix_set = set(prefix_added) - set(base)
+        qw = {t: (0.5 + 0.5 * c / peak) * idf[t] * (0.5 if t in prefix_set else 1.0)
+              for t, c in qtf.items()}
         norm = math.sqrt(sum(v * v for v in qw.values())) or 1.0
         qvec = {t: v / norm for t, v in qw.items()}
 
@@ -397,7 +477,8 @@ def search(index: dict[str, Any], query: str, limit: int = 20) -> dict[str, Any]
             hits.append({"type": d["type"], "ref": d["ref"], "title": d["title"],
                          "kind": d["kind"], "strength": d["strength"],
                          "score": round(score, 5), "matched": matched})
-    hits.sort(key=lambda h: -h["score"])
+    # Rank: higher score first; gaps (type=opportunity) above papers on tie.
+    hits.sort(key=lambda h: (-h["score"], 0 if h["type"] == "opportunity" else 1))
     best = hits[0]["score"] if hits else 0.0
     breadth = len(hits) / index["n_docs"] if index["n_docs"] else 0.0
 
@@ -411,7 +492,22 @@ def search(index: dict[str, Any], query: str, limit: int = 20) -> dict[str, Any]
     r_best  = float(g.get("rescue_best",        RESCUE_BEST))
     r_br    = float(g.get("rescue_breadth",     RESCUE_BREADTH))
 
+    # Specific-term bypass: a query whose understood tokens (singles OR
+    # bigrams) are highly specific to this library — very high IDF, e.g.
+    # "COMPAS", "demographic parity", "semantic entropy" — gets
+    # in_domain even when only a handful of papers mention it. Rare
+    # technical terms don't need the breadth gate; one or two
+    # authoritative hits is the signal. Only applies when coverage is
+    # 1.0 (every token known) so a rare word beside an OOD one can't
+    # sneak through.
+    HIGH_IDF = max_idf * 0.55
+    matched_specifically = [t for t in qvec if idf.get(t, 0.0) >= HIGH_IDF]
+    specific_hit = (coverage >= 0.95 and best > 0
+                    and matched_specifically and breadth > 0)
+
     if coverage >= in_cov and best >= in_best and breadth >= in_br:
+        verdict = "in_domain"
+    elif specific_hit:
         verdict = "in_domain"
     elif coverage >= in_cov and best > 0:
         # We understood every word, but the library holds only a thin scatter
