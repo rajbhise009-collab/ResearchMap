@@ -19,6 +19,7 @@ export interface ConsumerCard {
   // Contradiction-only audit fields (present on multi-domain
   // contradiction cards; absent on LLM-cal orphan/hole/limitation cards)
   verdict?: string;
+  verdict_label?: string | null;
   verdict_reason?: string;
   verdict_basis?: string;
   verdict_topic?: string;

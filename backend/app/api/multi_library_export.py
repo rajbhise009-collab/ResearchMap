@@ -206,12 +206,10 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     audited_contradictions = attach_verdicts(slug, contradictions)
     audit_counts = audit_summary(slug, contradictions)
 
-    _verdict_headline = {
-        "genuine": "Two papers report findings that genuinely disagree",
-        "artifact": "Flagged but set aside — different conditions",
-        "duplicate": "Flagged but set aside — duplicate of another pair",
-        "unaudited": "Two papers report findings that disagree (unaudited)",
-    }
+    from backend.app.api.contradiction_titles import (
+        make_title, make_verdict_label, make_set_aside_title, dedupe_titles,
+    )
+
     _verdict_strength = {
         "genuine": "Worth a look",
         "artifact": "Unverified lead",
@@ -219,10 +217,30 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "unaudited": "Unverified lead",
     }
 
+    # Pre-derive per-pair titles so collisions are resolved before any
+    # downstream consumer sees them. The distinguisher is the first clause
+    # of the audit `reason` — only appended when a title would otherwise
+    # collide (never a number).
+    pre_titled = []
+    for c in audited_contradictions:
+        verdict = c["audit"]["verdict"]
+        topic = c["audit"].get("topic") or None
+        a_text = c.get("a_text", "")
+        b_text = c.get("b_text", "")
+        if verdict in ("artifact", "duplicate"):
+            base = make_set_aside_title(verdict, topic, a_text, b_text)
+        else:
+            base = make_title(topic, a_text, b_text)
+        reason = (c["audit"].get("reason") or "").split(".")[0]
+        distinguisher = reason[:60].strip() if reason else ""
+        pre_titled.append((base, distinguisher))
+    resolved_titles = dedupe_titles(pre_titled)
+
     opp_dir = lib_dir / "opportunity"
     opp_dir.mkdir(exist_ok=True)
     opportunity_summaries = []
-    for i, c in enumerate(audited_contradictions, 1):
+    for i, (c, headline) in enumerate(
+            zip(audited_contradictions, resolved_titles), 1):
         opp_slug = (f"opp-contra-{slug}-{i:02d}-"
                     f"{_slug(c['a_paper_id'])}-{_slug(c['b_paper_id'])}")[:120]
         verdict = c["audit"]["verdict"]
@@ -233,12 +251,20 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "id": opp_slug, "slug": opp_slug, "rank": i,
             "gap_type": "disagreement",
             "scorer": "unresolved_contradictions",
-            "title": f"Two papers disagree ({slug})",
+            "title": headline,
             "similarity": c.get("similarity"),
             "explanation": c.get("explanation"),
             "a_paper_id": c.get("a_paper_id"), "b_paper_id": c.get("b_paper_id"),
             "a_text": c.get("a_text"), "b_text": c.get("b_text"),
-            "supporting_papers": [c.get("a_paper_id"), c.get("b_paper_id")],
+            "supporting_papers": [
+                {"paper_id": c.get("a_paper_id"),
+                 "title": next((e.get("title") for e in entries
+                                if f"openalex:{e['wid']}" == c.get("a_paper_id")), None)},
+                {"paper_id": c.get("b_paper_id"),
+                 "title": next((e.get("title") for e in entries
+                                if f"openalex:{e['wid']}" == c.get("b_paper_id")), None)},
+            ],
+            "supporting_paper_ids": [c.get("a_paper_id"), c.get("b_paper_id")],
             "confidence_tier": "medium" if verdict == "genuine" else "low",
             "confirm_status": None,
             "audit": c["audit"],  # verdict + reason + basis + date
@@ -247,12 +273,13 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
                              "top": cites_both_rec["top"]}
                             if cites_both_rec else None),
             "consumer": {
-                "headline": _verdict_headline.get(verdict, _verdict_headline["unaudited"]),
+                "headline": headline,
                 "kind": "A disagreement between papers",
                 "kind_id": "disagreement",
                 "strength": _verdict_strength.get(verdict, "Unverified lead"),
                 "why": c.get("explanation", "")[:400],
-                "verdict": verdict,  # so the UI can render "set aside" section
+                "verdict": verdict,
+                "verdict_label": make_verdict_label(verdict),
                 "verdict_reason": c["audit"].get("reason", ""),
                 "verdict_basis": c["audit"].get("basis", ""),
                 "verdict_topic": c["audit"].get("topic", ""),
@@ -317,8 +344,24 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
                  "work matching skipped per Gate-3 cuts)."),
     }, indent=2))
 
-    # search-index.json — per-library term index (title + abstract)
-    idx = _build_search_index(entries)
+    # search-index.json — same shape as the LLM-cal library uses. The
+    # frontend's `search()` reads `doc.terms` as a {token→weight} dict
+    # and reads `doc.type`/`ref`/`title`/`kind`/`strength`; the earlier
+    # per-library builder wrote `wid` and a sorted-list `terms`, which
+    # Quick Search silently matched zero hits against. Build the real
+    # shape by reusing `search_index.build_index` over the opportunity
+    # cards + paper detail records this library just produced.
+    from backend.app.api.search_index import build_index as _build_real_idx
+    _opp_cards_for_idx = []
+    for _summary in opportunity_summaries:
+        _p = (opp_dir / f"{_summary['slug']}.json")
+        _opp_cards_for_idx.append(json.loads(_p.read_text()))
+    _paper_details_for_idx = []
+    for _e in entries:
+        _p = (paper_dir / f"{_e['wid']}.json")
+        if _p.exists():
+            _paper_details_for_idx.append(json.loads(_p.read_text()))
+    idx = _build_real_idx(_opp_cards_for_idx, _paper_details_for_idx)
     (lib_dir / "search-index.json").write_text(json.dumps(idx))
 
     # language.json — copy the shared translation layer so the frontend
@@ -346,39 +389,6 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "n_extractions": len(exts),
             "n_paper_files": len(entries),
             "n_opportunity_files": len(opportunity_summaries)}
-
-
-_TOKEN_RE = re.compile(r"[a-z0-9]+(?:['-][a-z0-9]+)*")
-
-
-def _build_search_index(entries: list[dict]) -> dict:
-    """Small term-weight index for the frontend search gate. Each doc is
-    represented by its title + abstract tokens; the gate matches an
-    incoming query against these to decide in-domain / borderline / OOD
-    per this library."""
-    from collections import Counter
-    import math
-
-    docs = []
-    df = Counter()
-    for e in entries:
-        text = f"{e.get('title') or ''} {e.get('abstract') or ''}"
-        toks = set(_TOKEN_RE.findall(text.lower()))
-        docs.append({"wid": e["wid"], "title": e.get("title"),
-                     "terms": sorted(toks)})
-        for t in toks:
-            df[t] += 1
-    n = max(1, len(docs))
-    idf = {t: math.log(n / c) for t, c in df.items()}
-    max_idf = max(idf.values()) if idf else 0.0
-    return {
-        "n_docs": n,
-        "max_idf": max_idf,
-        "idf": idf,
-        "docs": docs,
-        "synonyms": {},
-        "stopwords": [],
-    }
 
 
 # ---- Cross-library router ------------------------------------------------

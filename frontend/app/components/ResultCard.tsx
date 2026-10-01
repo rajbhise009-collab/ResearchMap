@@ -26,6 +26,13 @@ export function GapResult({ gap, readMore }: { gap: GapDoc; readMore: string }) 
         </Link>
       </h3>
 
+      {c.verdict_label && (
+        <p className="verdict-chip small sans"
+           data-verdict={c.verdict || "unaudited"}>
+          {c.verdict_label}
+        </p>
+      )}
+
       <p className="why">{c.why}</p>
 
       <Caveats items={c.caveats} />

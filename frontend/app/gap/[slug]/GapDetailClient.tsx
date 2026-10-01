@@ -4,6 +4,7 @@
 // in that library's opportunities, renders NotInLibrary instead of
 // silently rendering LLM-cal content.
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { Strength, Caveats, Tag } from "../../components/plain";
 import { DevKV, DevJSON } from "../../components/DevMode";
@@ -55,6 +56,7 @@ interface OpportunityLike {
     caveats?: Array<{ code: string; label?: string; text?: string }>;
     paper_count?: number;
     verdict?: string;
+    verdict_label?: string | null;
     verdict_reason?: string;
     verdict_basis?: string;
     verdict_topic?: string;
@@ -83,6 +85,19 @@ export default function GapDetailClient({ slug, lang }: {
   lang: LanguagePack;
 }) {
   const res = useLibraryData<OpportunityLike>(`opportunity/${slug}.json`);
+
+  // Set a topic-specific document.title so the browser tab reads
+  // "Red meat and stroke: ..." instead of the shared app title. The
+  // page's <title> is set at build time to the app name; we overwrite
+  // it per gap once the JSON arrives.
+  const docTitle =
+    res.state === "ready" ? res.data.consumer.headline : null;
+  useEffect(() => {
+    if (!docTitle) return;
+    const prev = document.title;
+    document.title = `${docTitle} — ResearchMap`;
+    return () => { document.title = prev; };
+  }, [docTitle]);
 
   if (res.state === "loading") {
     return <p className="muted">Loading the gap…</p>;
@@ -148,16 +163,16 @@ export default function GapDetailClient({ slug, lang }: {
             {c.headline_is_quoted ? `“${c.headline}”` : c.headline}
           </h1>
           {c.kind_short && <p className="subtitle">{c.kind_short}.</p>}
+          {c.verdict_label && (
+            <p className="verdict-chip small sans"
+               data-verdict={c.verdict || "unaudited"}
+               style={{ marginTop: "var(--s-3)" }}>
+              {c.verdict_label}
+            </p>
+          )}
           {c.verdict && c.verdict !== "genuine" && (
             <div className="not-advice" role="note" style={{ marginTop: "var(--s-4)" }}>
-              <strong>
-                {c.verdict === "artifact"
-                  ? "Set aside by hand-audit as a different-conditions artifact."
-                  : c.verdict === "duplicate"
-                    ? "Set aside by hand-audit as a duplicate of another pair."
-                    : "Not yet hand-audited."}
-              </strong>
-              {c.verdict_reason && (<><br /><span>{c.verdict_reason}</span></>)}
+              {c.verdict_reason && <span>{c.verdict_reason}</span>}
               {c.verdict_basis && (
                 <><br /><span className="small muted">Basis: {c.verdict_basis}</span></>
               )}
@@ -312,7 +327,7 @@ export default function GapDetailClient({ slug, lang }: {
 
         <GapExport
           gapSlug={slug}
-          contradictionExplanation={o.explanation || c.headline}
+          contradictionExplanation={c.headline}
           verdict={c.verdict}
           papers={supporters.map((sp) => ({
             paper_id: sp.paper_id,

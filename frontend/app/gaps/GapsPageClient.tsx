@@ -19,12 +19,6 @@ interface OpportunitiesFile {
   }>;
 }
 
-const VERDICT_HEADLINE: Record<string, string> = {
-  artifact: "Flagged but set aside — different conditions",
-  duplicate: "Flagged but set aside — duplicate of another pair",
-  unaudited: "Flagged, no hand-audit recorded yet",
-};
-
 export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
   const res = useLibraryData<OpportunitiesFile>("opportunities.json");
   const stats = useLibraryData<Stats>("stats.json");
@@ -85,10 +79,17 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
               {setAside.map((o) => (
                 <div className="evidence-item" key={o.slug}>
                   <div className="src">
-                    <span>{VERDICT_HEADLINE[o.verdict ?? "unaudited"]}</span>
+                    <strong>{o.consumer.headline}</strong>
                     <Link href={`/gap/${o.slug}/${suffix}`}>see the flagged pair →</Link>
                   </div>
-                  <p style={{ margin: 0 }}>
+                  {o.consumer.verdict_label && (
+                    <p className="verdict-chip small sans"
+                       data-verdict={o.verdict || "unaudited"}
+                       style={{ margin: "var(--s-2) 0 0" }}>
+                      {o.consumer.verdict_label}
+                    </p>
+                  )}
+                  <p style={{ margin: "var(--s-2) 0 0" }}>
                     <strong>Why set aside:</strong>{" "}
                     {o.consumer.verdict_reason || "See detail page."}
                   </p>

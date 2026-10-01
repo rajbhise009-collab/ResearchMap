@@ -17,6 +17,8 @@ import json
 
 import pytest
 
+from backend.app.api.search_index import tokenize as _tokenize
+
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA = REPO_ROOT / "frontend" / "public" / "data"
 
@@ -39,13 +41,29 @@ LIBRARIES = ("llm-calibration", "diet-and-mortality", "ml-fairness")
 def _term_score(index: dict, term: str) -> tuple[float, float]:
     """Return (breadth, idf-weighted coverage) for `term` in `index`.
     breadth = share of docs that contain the term.
-    coverage = idf(term) if present else 0."""
+    coverage = idf(term) if present else 0.
+
+    The index stores STEMMED tokens (so the query must be stemmed the
+    same way before lookup — matching how the frontend actually
+    tokenizes a query at search time)."""
     if not index:
         return (0.0, 0.0)
+    stems = _tokenize(term)
+    if not stems:
+        return (0.0, 0.0)
+    stem = stems[0]
     n = index.get("n_docs", 0) or 0
-    df = sum(1 for d in index.get("docs", []) if term in d.get("terms", []))
+    # `terms` on each doc is either a dict {stem→weight} (authoritative
+    # builder) or a list of raw tokens (older per-library builder).
+    df = 0
+    for d in index.get("docs", []):
+        t = d.get("terms", {})
+        if isinstance(t, dict):
+            if stem in t: df += 1
+        else:
+            if stem in t: df += 1
     breadth = df / n if n else 0.0
-    idf = index.get("idf", {}).get(term, 0.0)
+    idf = index.get("idf", {}).get(stem, 0.0)
     return (breadth, idf)
 
 
