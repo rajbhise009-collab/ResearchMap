@@ -41,8 +41,28 @@ DIET_REASONING = REPO_ROOT / "data" / "domains" / "diet-and-mortality" / "reason
 DIET_PRELABEL = REPO_ROOT / "data" / "domains" / "diet-and-mortality" / "prelabelled.json"
 OUT_DIR = REPO_ROOT / "docs" / "review" / "diet-contradictions"
 
-SEED = 20260930
+# The shuffle seed is intentionally overridable. The default makes the
+# packet reproducible for a given run of this script; a public repo
+# cannot keep its production seed in code because knowing the seed +
+# running the generator deanonymises any previously-exposed answer
+# key. Override with env var `PACKET_SEED` or the --seed CLI arg; the
+# chosen value is recorded ONLY in the private
+# ~/ResearchMap-private/answer_key.json file, never in the committed
+# packet files.
+#
+# The seed value shipped in this file was ROTATED on 2026-10-01 after
+# an earlier push accidentally exposed the previous answer key. Any
+# previously-shared answer key no longer maps to the committed packet.
+import os
+SEED = int(os.environ.get("PACKET_SEED", "20261001"))
 N_CONTROLS = 6
+
+# The answer key MUST land outside the repo. Overridable with
+# --key-out / PACKET_KEY_DIR so a dry run can use a tmp dir.
+_DEFAULT_PRIVATE = Path(os.environ.get(
+    "PACKET_KEY_DIR",
+    str(Path.home() / "ResearchMap-private"),
+))
 
 RESPONSE_OPTIONS = [
     ("genuine",        "Genuine disagreement — comparable people, exposure, outcome"),
@@ -343,41 +363,69 @@ def _recruitment_message() -> str:
     )
 
 
-def build_packet(out_dir: Path = OUT_DIR) -> dict:
+def build_packet(out_dir: Path = OUT_DIR,
+                 key_out_dir: Path = _DEFAULT_PRIVATE,
+                 seed: int = SEED) -> dict:
     items = build_items()
-    rng = random.Random(SEED)
+    rng = random.Random(seed)
     rng.shuffle(items)
     out_dir.mkdir(parents=True, exist_ok=True)
     md = _md_packet(items)
     (out_dir / "packet.md").write_text(md)
     (out_dir / "packet.html").write_text(_html_packet(md))
     (out_dir / "response_form.csv").write_text(_response_form_csv(items))
-    key_dir = out_dir / "_answer_key_DO_NOT_SHARE"
-    key_dir.mkdir(exist_ok=True)
-    (key_dir / "answer_key.json").write_text(
-        json.dumps(_answer_key(items), indent=2)
+
+    # Answer key goes to a PRIVATE directory outside the repo. The repo
+    # is public; the key would deanonymise the packet. A committed
+    # answer_key_DO_NOT_SHARE/ directory is ignored by .gitignore so
+    # a stray local run cannot leak it either.
+    key_out_dir.mkdir(parents=True, exist_ok=True)
+    answer_key = _answer_key(items)
+    answer_key["seed"] = seed
+    (key_out_dir / "answer_key.json").write_text(
+        json.dumps(answer_key, indent=2)
     )
-    (key_dir / "README.md").write_text(
+    (key_out_dir / "README.md").write_text(
         "# DO NOT SHARE — answer key for the diet review packet\n\n"
-        "This directory contains the mapping from item IDs to the audit's\n"
-        "own verdicts. Sharing it with a reviewer defeats the blind "
-        "review.\n\n"
-        "The packet.md / packet.html / response_form.csv one directory up\n"
-        "are safe to send.\n"
+        "This directory lives OUTSIDE the (public) ResearchMap repo on\n"
+        "purpose. The committed `.gitignore` also hides the in-repo path\n"
+        "`docs/review/diet-contradictions/_answer_key_DO_NOT_SHARE/` so an\n"
+        "accidental local run cannot leak it either.\n\n"
+        "The packet.md / packet.html / response_form.csv files (in the\n"
+        "repo under `docs/review/diet-contradictions/`) are safe to send.\n\n"
+        "To score responses:\n"
+        "    python -m backend.app.review.score_responses \\\n"
+        "        --responses path/to/response.csv \\\n"
+        "        --key ~/ResearchMap-private/answer_key.json\n"
     )
+
     (out_dir / "recruitment-message.md").write_text(_recruitment_message())
     return {
         "n_items": len(items),
         "n_genuine": sum(1 for i in items if i["provenance"] == "genuine"),
         "n_artifact": sum(1 for i in items if i["provenance"] == "artifact"),
         "n_control": sum(1 for i in items if i["provenance"] == "control"),
-        "seed": SEED,
+        "seed_recorded_in_private_key": True,
         "out_dir": str(out_dir.relative_to(REPO_ROOT)),
+        "key_out_dir": str(key_out_dir),
     }
 
 
 def main() -> int:
-    r = build_packet()
+    import argparse
+    p = argparse.ArgumentParser()
+    p.add_argument("--seed", type=int, default=SEED,
+                    help="Shuffle seed. Default is the env var PACKET_SEED "
+                         "or the module default; stays out of committed files.")
+    p.add_argument("--key-out", type=Path, default=_DEFAULT_PRIVATE,
+                    help="Directory OUTSIDE the repo where answer_key.json "
+                         "is written. Default: ~/ResearchMap-private/")
+    p.add_argument("--out-dir", type=Path, default=OUT_DIR,
+                    help="Directory in the repo for packet.md etc. "
+                         "Default: docs/review/diet-contradictions/")
+    args = p.parse_args()
+    r = build_packet(out_dir=args.out_dir, key_out_dir=args.key_out,
+                      seed=args.seed)
     print(json.dumps(r, indent=2))
     return 0
 

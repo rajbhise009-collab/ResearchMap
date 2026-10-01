@@ -3,6 +3,12 @@
 .env.*
 !.env.example
 
+# Blind-review answer key — must stay out of the public tree.
+# Written locally by `python -m backend.app.review.build_diet_packet`
+# to `~/ResearchMap-private/answer_key.json`. See
+# docs/review/diet-contradictions/README.md for the scorer wiring.
+docs/review/diet-contradictions/_answer_key_DO_NOT_SHARE/
+
 # Python
 __pycache__/
 *.pyc

@@ -201,12 +201,24 @@ def _render_md(scored: dict) -> str:
     return "\n".join(L) + "\n"
 
 
+_DEFAULT_KEY = Path.home() / "ResearchMap-private" / "answer_key.json"
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--responses", nargs="+", type=Path, required=True)
-    p.add_argument("--key", type=Path, required=True)
+    # The answer key lives OUTSIDE the public repo (the repo is public,
+    # the key would deanonymise the packet). Default: the private
+    # directory the build_diet_packet.py script writes to.
+    p.add_argument("--key", type=Path, default=_DEFAULT_KEY,
+                    help=f"Path to answer_key.json. Default: {_DEFAULT_KEY}")
     p.add_argument("--out", type=Path)
     args = p.parse_args()
+    if not args.key.exists():
+        print(f"ERROR: answer key not found at {args.key}. "
+               "Run `python -m backend.app.review.build_diet_packet` first, "
+               "or pass --key <path>.")
+        return 2
     responses = load_responses(args.responses)
     scored = score(responses, args.key)
     md = _render_md(scored)
