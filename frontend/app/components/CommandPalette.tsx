@@ -174,7 +174,14 @@ function CommandPalette({ lang, gaps, papers }: {
 
   type Item = { href: string; title: string; kind: string; strength?: string };
   const items: Item[] = useMemo(() => {
-    if (!result || result.verdict === "out_of_domain" || result.verdict === "empty") return [];
+    if (!result || result.verdict === "empty") return [];
+    // Short OOD queries like "alc" (prefix of "alcohol") can retrieve
+    // real hits even though the verdict is out_of_domain (the whole
+    // single word isn't in the vocab, so coverage = 0). Show the
+    // retrieved hits — the type-ahead experience is useless if we hide
+    // them. The OOD banner below is suppressed when hits are present.
+    const hitsBlocked = result.verdict === "out_of_domain" && result.hits.length === 0;
+    if (hitsBlocked) return [];
     const out: Item[] = [];
     for (const h of result.hits) {
       if (h.type === "opportunity") {
@@ -267,13 +274,18 @@ function CommandPalette({ lang, gaps, papers }: {
               {lang.search.borderline.note}
             </div>
           )}
-          {showOOD && q.trim() && (
+          {/* OOD banner inside the palette only renders when we have NO
+              hits — otherwise the retrieval (which may have surfaced
+              valid prefix matches like "alc" → the alcohol gaps) is
+              what the reader should see. */}
+          {showOOD && q.trim() && items.length === 0 && (
             <div className="cmdk-empty" style={{ textAlign: "left" }}>
               <strong style={{ color: "var(--ink-strong)", display: "block", marginBottom: 6 }}>
                 {lang.search.out_of_domain.label}
               </strong>
-              {lang.search.out_of_domain.note.replace("{covers}", lang.ui.library_covers)}.{" "}
-              <a href="/" onClick={(e) => { e.preventDefault(); go("/"); }}>
+              Press Enter to see the full honest-refusal panel.{" "}
+              <a href={`/?q=${encodeURIComponent(q)}${activeSlug ? `&lib=${activeSlug}` : ""}`}
+                 onClick={(e) => { e.preventDefault(); go(`/?q=${encodeURIComponent(q)}${suffix ? "&" + suffix.slice(1) : ""}`); }}>
                 See what this library covers →
               </a>
             </div>
