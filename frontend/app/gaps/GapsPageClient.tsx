@@ -44,6 +44,10 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
     stats.state === "ready" && stats.data.extraction_coverage_note
       ? stats.data.extraction_coverage_note
       : null;
+  const zeroNote =
+    stats.state === "ready" && stats.data.zero_finding_note
+      ? stats.data.zero_finding_note
+      : null;
 
   return (
     <>
@@ -61,6 +65,9 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
         </p>
         {coverageNote && (
           <p className="coverage-note small muted">{coverageNote}</p>
+        )}
+        {zeroNote && (
+          <p className="coverage-note small muted">{zeroNote}</p>
         )}
       </div>
 
