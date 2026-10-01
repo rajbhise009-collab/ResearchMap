@@ -23,7 +23,15 @@ const EXAMPLES = [
   "when should a chatbot refuse to answer",
   "fake citations in AI answers",
 ];
-const DEBOUNCE_MS = 140;
+const DEBOUNCE_MS = 200;
+// How long after the last keystroke do the "borderline"/"out of domain"
+// banners become visible. The reader must not see a refusal flash during
+// typing; only after they've paused long enough that they clearly meant
+// to look at that query as a whole.
+const BANNER_PAUSE_MS = 700;
+// Minimum characters before the type-ahead box reaches for the index.
+// Under 3 chars we show nothing (no results, no banner).
+const MIN_TYPEAHEAD_CHARS = 3;
 
 export default function Ask({ lang, gaps, papers }: {
   lang: LanguagePack;
@@ -48,6 +56,9 @@ export default function Ask({ lang, gaps, papers }: {
   const [livePapers, setLivePapers] = useState<PaperDoc[] | null>(null);
   const [otherLibHits, setOtherLibHits] = useState<
     { slug: string; name: string } | null>(null);
+  const [activeLib, setActiveLib] = useState<
+    { slug: string; name: string; blurb?: string } | null>(null);
+  const [libStats, setLibStats] = useState<any | null>(null);
 
   // Preload the index so the first keystroke is already answered.
   // Reads the currently-selected library's search-index (via ?lib=…);
@@ -75,6 +86,10 @@ export default function Ask({ lang, gaps, papers }: {
           if (lib) {
             snapshotPath = lib.snapshot_path;
             activeSlug = lib.slug;
+            if (live) {
+              setActiveLib({ slug: lib.slug, name: lib.name,
+                             blurb: (lib as any).blurb });
+            }
           }
         }
       } catch { /* libraries.json missing — legacy deploy */ }
@@ -89,10 +104,14 @@ export default function Ask({ lang, gaps, papers }: {
       // Fetch opportunities + papers for the ACTIVE library so the
       // result-lookup maps are keyed on this library's slugs/wids.
       try {
-        const [oppResp, papResp] = await Promise.all([
+        const [oppResp, papResp, statsResp] = await Promise.all([
           fetch(asset(`${snapshotPath}/opportunities.json`)),
           fetch(asset(`${snapshotPath}/papers.json`)),
+          fetch(asset(`${snapshotPath}/stats.json`)),
         ]);
+        if (statsResp.ok && live) {
+          setLibStats(await statsResp.json());
+        }
         if (oppResp.ok && live) {
           const oj = await oppResp.json();
           setLiveGaps((oj.items || []).map((o: any) => ({
@@ -173,25 +192,55 @@ export default function Ask({ lang, gaps, papers }: {
     if (u) setQ(u);
   }, []);
 
+  // `banner` controls whether the borderline/out-of-domain banners are
+  // allowed to render. Starts off while the user is typing and flips on
+  // after BANNER_PAUSE_MS of silence or when they press Enter / Ask.
+  // That way the typing path never flashes a refusal between keystrokes.
+  const [bannerAllowed, setBannerAllowed] = useState(false);
+
   const run = useCallback((text: string) => {
     if (!index || !text.trim()) return;
+    // Enter / Ask uses complete-tokens-only (no prefix expansion) so the
+    // final verdict matches today's behaviour.
     setResult(search(index, text, 24));
     setCommitted(text);
-    // Nudge the viewport toward the results on the first ask.
+    setBannerAllowed(true);
     requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }, [index]);
 
   // Debounced live search: as-you-type once the query settles.
+  // - Under MIN_TYPEAHEAD_CHARS: no results, no banner (neutral state).
+  // - Otherwise: type-ahead with prefix on the LAST token for retrieval.
+  // - Banner (borderline / OOD label) stays suppressed until a pause of
+  //   BANNER_PAUSE_MS after the last keystroke OR Enter / Ask.
   useEffect(() => {
-    if (!index || !q.trim()) { setAsking(false); return; }
+    if (!index) { setAsking(false); return; }
+    const trimmed = q.trim();
+    if (!trimmed) {
+      setResult(null); setCommitted(""); setAsking(false);
+      setBannerAllowed(false);
+      return;
+    }
+    if (trimmed.length < MIN_TYPEAHEAD_CHARS) {
+      setResult(null); setAsking(false);
+      setBannerAllowed(false);
+      return;
+    }
     if (q === committed) return;
     setAsking(true);
+    setBannerAllowed(false);
     const t = setTimeout(() => {
-      setResult(search(index, q, 24));
+      // prefixLast: expand the last typed word as a prefix so "alc"
+      // retrieves the alcohol gaps mid-typing. The verdict is still
+      // computed from complete tokens — prefix never promotes OOD → in.
+      setResult(search(index, q, 24, { prefixLast: true }));
       setCommitted(q);
       setAsking(false);
     }, DEBOUNCE_MS);
-    return () => { clearTimeout(t); setAsking(false); };
+    const banner = setTimeout(() => setBannerAllowed(true), BANNER_PAUSE_MS);
+    return () => {
+      clearTimeout(t); clearTimeout(banner); setAsking(false);
+    };
   }, [q, committed, index]);
 
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); run(q); };
@@ -305,7 +354,10 @@ export default function Ask({ lang, gaps, papers }: {
           </div>
         )}
 
-        {result?.verdict === "out_of_domain" && (
+        {/* Out-of-domain banner is only allowed to render after a pause
+            of about 700 ms or Enter — so a word being typed never
+            flashes a refusal between keystrokes. */}
+        {result?.verdict === "out_of_domain" && bannerAllowed && (
           <>
             {otherLibHits && (
               <div className="caveat" style={{ marginTop: "var(--s-6)" }}>
@@ -317,7 +369,7 @@ export default function Ask({ lang, gaps, papers }: {
                 </a>
               </div>
             )}
-            <OutOfDomain lang={lang} query={committed} />
+            <OutOfDomain lang={lang} query={committed} activeLibrary={activeLib} />
           </>
         )}
 
@@ -325,16 +377,19 @@ export default function Ask({ lang, gaps, papers }: {
           <>
             <div className="verdict-line">
               <span className="count">
-                {gapHits.length + paperHits.length} results
+                {gapHits.length} gap{gapHits.length === 1 ? "" : "s"} ·{" "}
+                {paperHits.length} paper{paperHits.length === 1 ? "" : "s"}
               </span>
               <span>for</span>
               <span className="query">“{committed}”</span>
-              {result.verdict === "borderline" && (
+              {/* Edge-of-library tag held back until the banner is
+                  allowed — same reason as the OOD panel. */}
+              {bannerAllowed && result.verdict === "borderline" && (
                 <span style={{ color: "var(--note-icon)" }}>· at the edge of this library</span>
               )}
             </div>
 
-            {result.verdict === "borderline" && (
+            {bannerAllowed && result.verdict === "borderline" && (
               <div className="caveat" style={{ marginTop: 0 }}>
                 <span className="cav-label">{S.borderline.label}</span>
                 {S.borderline.note}
@@ -348,7 +403,7 @@ export default function Ask({ lang, gaps, papers }: {
               </div>
             ) : (
               <>
-                {gapHits.length > 0 && (
+                {gapHits.length > 0 ? (
                   <section style={{ marginTop: "var(--s-6)" }}>
                     <p className="section-eyebrow">Gaps we found</p>
                     <div className="results-list">
@@ -356,6 +411,33 @@ export default function Ask({ lang, gaps, papers }: {
                         <GapResult key={g.slug} gap={g} readMore={lang.ui.read_more} />
                       ))}
                     </div>
+                  </section>
+                ) : (
+                  /* ZERO-GAP HONESTY: the library has papers matching
+                     this query but no gap cards. Call it out in plain
+                     language, reusing the library's own zero_finding_note
+                     and coverage line (never hard-coded). */
+                  <section style={{ marginTop: "var(--s-6)" }} className="empty">
+                    <h3>
+                      {(libStats?.n_confirmed_contradictions ?? 0) === 0
+                       && (libStats?.scorer_yields
+                            ? Object.values(libStats.scorer_yields).reduce(
+                                (a: number, b: any) => a + (Number(b) || 0), 0)
+                            : 0) === 0
+                        ? "This library has no gaps to show yet."
+                        : "No gaps match this search."}
+                    </h3>
+                    <p>
+                      {paperHits.length > 0
+                        ? `${paperHits.length} paper${paperHits.length === 1 ? "" : "s"} match${paperHits.length === 1 ? "es" : ""} below.`
+                        : "No matching papers either."}
+                    </p>
+                    {libStats?.zero_finding_note && (
+                      <p className="small muted">
+                        {libStats.zero_finding_note}{" "}
+                        {libStats.extraction_coverage_note}
+                      </p>
+                    )}
                   </section>
                 )}
                 {paperHits.length > 0 && (
@@ -419,15 +501,43 @@ function SearchIcon({ className }: { className?: string }) {
  *  /api/*). On a static host with no backend, we fall back to the copy
  *  from the translation layer — same headline, no live diagnostic.
  */
-function OutOfDomain({ lang, query }: { lang: LanguagePack; query: string }) {
+function OutOfDomain({ lang, query, activeLibrary }: {
+  lang: LanguagePack; query: string;
+  activeLibrary: { slug: string; name: string; blurb?: string } | null;
+}) {
   const [showBuild, setShowBuild] = useState(false);
   const [preflight, setPreflight] = useState<PreflightResult | null>(null);
   const [preflightState, setPreflightState] = useState<
     "idle" | "loading" | "ok" | "unavailable"
   >("idle");
+  const [otherLibs, setOtherLibs] = useState<
+    Array<{ slug: string; name: string; blurb?: string }> | null>(null);
   const { dev } = useDev();
   const S = lang.search.out_of_domain;
   const B = lang.build_library;
+
+  // Fetch the other libraries so the OOD panel can list switch links.
+  useEffect(() => {
+    let live = true;
+    fetch(asset("/data/libraries.json"))
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((m) => {
+        if (!live) return;
+        const others = (m.libraries || [])
+          .filter((l: any) => !activeLibrary || l.slug !== activeLibrary.slug);
+        setOtherLibs(others);
+      })
+      .catch(() => {});
+    return () => { live = false; };
+  }, [activeLibrary]);
+
+  // Prefer the active library's own copy. Falls back to the LLM-cal-
+  // tuned language-pack strings when we don't yet know the library
+  // (pre-hydration / legacy single-library deploy).
+  const covers = activeLibrary?.blurb || lang.ui.library_covers;
+  const summary = activeLibrary
+    ? `Right now this library holds papers on ${activeLibrary.name.toLowerCase()}: ${activeLibrary.blurb || ""}`
+    : lang.ui.library_summary;
 
   // Lazily fetch when the user opens the panel. Aborts if the panel
   // gets closed before the response returns.
@@ -452,19 +562,42 @@ function OutOfDomain({ lang, query }: { lang: LanguagePack; query: string }) {
     <div style={{ marginTop: "var(--s-7)" }}>
       <div className="empty">
         <h3>{S.label}</h3>
-        <p>{S.note.replace("{covers}", lang.ui.library_covers)}</p>
-        <p className="small muted">{lang.ui.one_library_note}</p>
+        <p>{S.note.replace("{covers}", covers)}</p>
       </div>
 
       <section className="block">
         <h2>{S.what_we_have}</h2>
-        <p>{lang.ui.library_summary}</p>
+        <p>{summary}</p>
         <p className="small" style={{ marginTop: "var(--s-4)" }}>
-          <Link href="/gaps/">{lang.ui.all_opportunities}</Link>
+          <Link href={`/gaps/${activeLibrary ? `?lib=${activeLibrary.slug}` : ""}`}>
+            {lang.ui.all_opportunities}
+          </Link>
           <span className="foot-dot" style={{ margin: "0 var(--s-3)", color: "var(--rule-strong)" }}>·</span>
-          <Link href="/papers/">{lang.ui.all_papers}</Link>
+          <Link href={`/papers/${activeLibrary ? `?lib=${activeLibrary.slug}` : ""}`}>
+            {lang.ui.all_papers}
+          </Link>
         </p>
       </section>
+
+      {otherLibs && otherLibs.length > 0 && (
+        <section className="block">
+          <h2>Other libraries you can try</h2>
+          <ul className="foot-sources-list">
+            {otherLibs.map((lib) => (
+              <li key={lib.slug}>
+                <strong>{lib.name}</strong>
+                {lib.blurb && (
+                  <span className="foot-sources-note"> — {lib.blurb}</span>
+                )}
+                {" "}
+                <a href={`?lib=${encodeURIComponent(lib.slug)}&q=${encodeURIComponent(query)}`}>
+                  switch and ask there →
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {!showBuild ? (
         <button className="cta" onClick={() => setShowBuild(true)}>

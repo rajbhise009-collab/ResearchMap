@@ -144,13 +144,19 @@ function CommandPalette({ lang, gaps, papers }: {
     else { setQ(""); setResult(null); setSelected(0); }
   }, [open]);
 
-  // Debounced search-as-you-type. 90ms is short enough to feel instant on
-  // a modern machine, long enough to skip the middle of a keystroke run.
+  // Debounced search-as-you-type. The retrieval uses prefix matching
+  // on the last typed token (3-char minimum) so partial typing like
+  // "alc" surfaces the alcohol gaps mid-type. The verdict is still
+  // computed from COMPLETE tokens only inside search(), so a prefix
+  // cannot make an OOD query look in_domain.
   useEffect(() => {
     if (!index) return;
-    if (!q.trim()) { setResult(null); setSelected(0); return; }
+    const trimmed = q.trim();
+    if (!trimmed || trimmed.length < 3) {
+      setResult(null); setSelected(0); return;
+    }
     const t = setTimeout(() => {
-      setResult(search(index, q, 12));
+      setResult(search(index, q, 12, { prefixLast: true }));
       setSelected(0);
     }, DEBOUNCE_MS);
     return () => clearTimeout(t);
