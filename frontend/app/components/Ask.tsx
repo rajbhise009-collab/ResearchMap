@@ -200,9 +200,10 @@ export default function Ask({ lang, gaps, papers }: {
 
   const run = useCallback((text: string) => {
     if (!index || !text.trim()) return;
-    // Enter / Ask uses complete-tokens-only (no prefix expansion) so the
-    // final verdict matches today's behaviour.
-    setResult(search(index, text, 24));
+    // Enter / Ask expands a trailing prefix to its best completion so
+    // "alc" + Enter behaves like "alcohol" + Enter — the verdict reads
+    // the full word.
+    setResult(search(index, text, 24, { expandTrailing: true }));
     setCommitted(text);
     setBannerAllowed(true);
     requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -213,6 +214,11 @@ export default function Ask({ lang, gaps, papers }: {
   // - Otherwise: type-ahead with prefix on the LAST token for retrieval.
   // - Banner (borderline / OOD label) stays suppressed until a pause of
   //   BANNER_PAUSE_MS after the last keystroke OR Enter / Ask.
+  //
+  // Depending only on `q` and `index` here is deliberate: the earlier
+  // version depended on `committed` too, so the setCommitted() inside
+  // the debounce fired a re-run that cancelled the 700 ms banner timer
+  // and left bannerAllowed stuck at false forever.
   useEffect(() => {
     if (!index) { setAsking(false); return; }
     const trimmed = q.trim();
@@ -226,13 +232,13 @@ export default function Ask({ lang, gaps, papers }: {
       setBannerAllowed(false);
       return;
     }
-    if (q === committed) return;
     setAsking(true);
     setBannerAllowed(false);
     const t = setTimeout(() => {
       // prefixLast: expand the last typed word as a prefix so "alc"
       // retrieves the alcohol gaps mid-typing. The verdict is still
-      // computed from complete tokens — prefix never promotes OOD → in.
+      // computed from complete tokens only; a half-typed trailing word
+      // produces verdict "typing" rather than out_of_domain.
       setResult(search(index, q, 24, { prefixLast: true }));
       setCommitted(q);
       setAsking(false);
@@ -241,7 +247,7 @@ export default function Ask({ lang, gaps, papers }: {
     return () => {
       clearTimeout(t); clearTimeout(banner); setAsking(false);
     };
-  }, [q, committed, index]);
+  }, [q, index]);
 
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); run(q); };
 
@@ -288,7 +294,13 @@ export default function Ask({ lang, gaps, papers }: {
     .slice(0, 8);
 
   const S = lang.search;
-  const showResults = result && result.verdict !== "out_of_domain" && result.verdict !== "empty";
+  // Results render for in-domain / borderline / typing. Only
+  // out_of_domain and empty hide the results pane. The OOD panel
+  // further gates on bannerAllowed so nothing flashes mid-typing.
+  const showResults = result
+    && result.verdict !== "out_of_domain"
+    && result.verdict !== "empty";
+  const isTyping = result?.verdict === "typing" || !!result?.typing;
 
   return (
     <>
@@ -383,13 +395,23 @@ export default function Ask({ lang, gaps, papers }: {
               <span>for</span>
               <span className="query">“{committed}”</span>
               {/* Edge-of-library tag held back until the banner is
-                  allowed — same reason as the OOD panel. */}
-              {bannerAllowed && result.verdict === "borderline" && (
+                  allowed — same reason as the OOD panel. Never fires
+                  during the typing state. */}
+              {bannerAllowed && !isTyping && result.verdict === "borderline" && (
                 <span style={{ color: "var(--note-icon)" }}>· at the edge of this library</span>
               )}
             </div>
 
-            {bannerAllowed && result.verdict === "borderline" && (
+            {/* Typing hint: half-typed trailing word. Neutral — never
+                a refusal or an edge label. */}
+            {isTyping && result.trailing_prefix && (
+              <p className="small muted" style={{ margin: "var(--s-2) 0 0" }}>
+                Showing matches for &lsquo;{result.trailing_prefix}&hellip;&rsquo;.
+                Press Enter to search the full word.
+              </p>
+            )}
+
+            {bannerAllowed && !isTyping && result.verdict === "borderline" && (
               <div className="caveat" style={{ marginTop: 0 }}>
                 <span className="cav-label">{S.borderline.label}</span>
                 {S.borderline.note}

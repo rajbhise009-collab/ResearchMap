@@ -175,11 +175,11 @@ function CommandPalette({ lang, gaps, papers }: {
   type Item = { href: string; title: string; kind: string; strength?: string };
   const items: Item[] = useMemo(() => {
     if (!result || result.verdict === "empty") return [];
-    // Short OOD queries like "alc" (prefix of "alcohol") can retrieve
-    // real hits even though the verdict is out_of_domain (the whole
-    // single word isn't in the vocab, so coverage = 0). Show the
-    // retrieved hits — the type-ahead experience is useless if we hide
-    // them. The OOD banner below is suppressed when hits are present.
+    // "typing" verdict always shows hits — the trailing word is still
+    // being spelled out. OOD with hits also shows them (short OOD-
+    // looking queries like "alc" retrieve the alcohol gaps via prefix
+    // even though the single word isn't in the vocab).
+    if (result.verdict === "typing") { /* fall through to render hits */ }
     const hitsBlocked = result.verdict === "out_of_domain" && result.hits.length === 0;
     if (hitsBlocked) return [];
     const out: Item[] = [];
@@ -225,8 +225,9 @@ function CommandPalette({ lang, gaps, papers }: {
 
   if (!open) return null;
 
+  const isTyping = result?.verdict === "typing" || !!result?.typing;
   const showOOD = result?.verdict === "out_of_domain";
-  const showBorderline = result?.verdict === "borderline";
+  const showBorderline = result?.verdict === "borderline" && !isTyping;
 
   return (
     <div
