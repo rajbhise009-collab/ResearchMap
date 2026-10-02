@@ -1,5 +1,5 @@
 {
-  "n": 60,
+  "n": 83,
   "items": [
     {
       "from_claim_id": "openalex:W2109401990:c4",
@@ -600,6 +600,236 @@
       "b_paper_id": "openalex:W2315875886",
       "b_text": "Alcohol intake of 25 g or more per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
       "explanation": "Both claims independently indicate that higher or increased alcohol consumption is associated with a reduced risk of adverse cardiovascular outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2103825558:c5",
+      "to_claim_id": "openalex:W2120021843:c2",
+      "similarity": 0.9248743653297424,
+      "a_paper_id": "openalex:W2103825558",
+      "a_text": "Correlation coefficients between mean calorie-adjusted intakes from four one-week diet records and the subsequent questionnaire ranged from 0.36 for vitamin A without supplements to 0.75 for vitamin C with supplements.",
+      "b_paper_id": "openalex:W2120021843",
+      "b_text": "Correlation coefficients between energy-adjusted nutrient intakes measured by diet records and the second questionnaire ranged from 0.28 for iron without supplements to 0.86 for vitamin C with supplements, with a mean r of 0.59.",
+      "explanation": "Both claims independently demonstrate moderate-to-strong correlations between energy-adjusted nutrient intakes assessed by diet records and dietary questionnaires."
+    },
+    {
+      "from_claim_id": "openalex:W1963683487:c4",
+      "to_claim_id": "openalex:W2025106732:c7",
+      "similarity": 0.9211433529853821,
+      "a_paper_id": "openalex:W1963683487",
+      "a_text": "The NAFLD Fibrosis Score achieves an AUROC of 0.85 for predicting advanced fibrosis in patients with NAFLD.",
+      "b_paper_id": "openalex:W2025106732",
+      "b_text": "NAFLD fibrosis score achieves a pooled AUROC of 0.85 for identifying NASH with advanced fibrosis.",
+      "explanation": "Both claims independently report that the NAFLD fibrosis score achieves an AUROC of 0.85 for identifying advanced fibrosis in patients with NAFLD or NASH."
+    },
+    {
+      "from_claim_id": "openalex:W2033941910:c1",
+      "to_claim_id": "openalex:W2160517070:c4",
+      "similarity": 0.8964106440544128,
+      "a_paper_id": "openalex:W2033941910",
+      "a_text": "Increasing sugar-sweetened soft drink consumption from 1 or fewer drinks per week to 1 or more drinks per day is associated with greater weight gain over a 4-year period in women.",
+      "b_paper_id": "openalex:W2160517070",
+      "b_text": "Increased daily intake of sugar-sweetened beverages is associated with 4-year weight gain.",
+      "explanation": "Both claims independently find that increased consumption of sugar-sweetened beverages is associated with weight gain over a four-year period."
+    },
+    {
+      "from_claim_id": "openalex:W2103825558:c5",
+      "to_claim_id": "openalex:W2120021843:c3",
+      "similarity": 0.8781538009643555,
+      "a_paper_id": "openalex:W2103825558",
+      "a_text": "Correlation coefficients between mean calorie-adjusted intakes from four one-week diet records and the subsequent questionnaire ranged from 0.36 for vitamin A without supplements to 0.75 for vitamin C with supplements.",
+      "b_paper_id": "openalex:W2120021843",
+      "b_text": "Adjusting for week-to-week variation in diet record intakes increased the mean correlation coefficient between energy-adjusted nutrient intakes from diet records and the questionnaire to r = 0.65.",
+      "explanation": "Both claims independently demonstrate positive correlations between energy-adjusted nutrient intakes measured by diet records and dietary questionnaires."
+    },
+    {
+      "from_claim_id": "openalex:W1976428272:c3",
+      "to_claim_id": "openalex:W2127427274:c3",
+      "similarity": 0.8751760721206665,
+      "a_paper_id": "openalex:W1976428272",
+      "a_text": "Adjustment for baseline values of established risk factors substantially attenuates the association between triglyceride values and coronary heart disease risk.",
+      "b_paper_id": "openalex:W2127427274",
+      "b_text": "Triglyceride level is not significantly associated with coronary heart disease risk after adjustment for conventional risk factors (HR 0.99 per 1-SD higher value).",
+      "explanation": "Both claims find that adjusting for established risk factors attenuates the association between triglyceride levels and coronary heart disease risk to a non-significant level."
+    },
+    {
+      "from_claim_id": "openalex:W2033941910:c2",
+      "to_claim_id": "openalex:W2160517070:c4",
+      "similarity": 0.8733087182044983,
+      "a_paper_id": "openalex:W2033941910",
+      "a_text": "Decreasing sugar-sweetened soft drink consumption is associated with smaller weight gain over a 4-year period in women.",
+      "b_paper_id": "openalex:W2160517070",
+      "b_text": "Increased daily intake of sugar-sweetened beverages is associated with 4-year weight gain.",
+      "explanation": "Both claims independently demonstrate a positive association between sugar-sweetened beverage consumption and weight gain over a four-year period."
+    },
+    {
+      "from_claim_id": "openalex:W2103825558:c4",
+      "to_claim_id": "openalex:W2120021843:c3",
+      "similarity": 0.8612903356552124,
+      "a_paper_id": "openalex:W2103825558",
+      "a_text": "Nutrient intakes from diet records tended to correlate more strongly with questionnaire intakes after adjustment for total caloric intake, with the exception of sucrose and total carbohydrate.",
+      "b_paper_id": "openalex:W2120021843",
+      "b_text": "Adjusting for week-to-week variation in diet record intakes increased the mean correlation coefficient between energy-adjusted nutrient intakes from diet records and the questionnaire to r = 0.65.",
+      "explanation": "Both claims demonstrate that applying statistical adjustments to diet record data improves its correlation with questionnaire-based nutrient intake measurements."
+    },
+    {
+      "from_claim_id": "openalex:W2128917543:c3",
+      "to_claim_id": "openalex:W2335592377:c4",
+      "similarity": 0.85355144739151,
+      "a_paper_id": "openalex:W2128917543",
+      "a_text": "Women who were moderate to occasionally heavy alcohol users had a 34-46% lower risk of death from coronary heart disease compared with light users.",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Cardiovascular disease death rates were 30 to 40 percent lower among women reporting at least one drink daily compared with nondrinkers.",
+      "explanation": "Both claims independently report a similar reduction in cardiovascular or coronary heart disease mortality among women who regularly consume alcohol."
+    },
+    {
+      "from_claim_id": "openalex:W2128917543:c2",
+      "to_claim_id": "openalex:W2335592377:c3",
+      "similarity": 0.8497660756111145,
+      "a_paper_id": "openalex:W2128917543",
+      "a_text": "Men who consumed less than 5 drinks per day throughout their lifetime had a 24% lower cardiovascular disease mortality compared with lifetime light users.",
+      "b_paper_id": "openalex:W2335592377",
+      "b_text": "Cardiovascular disease death rates were 30 to 40 percent lower among men reporting at least one drink daily compared with nondrinkers.",
+      "explanation": "Both claims find that regular or moderate alcohol consumption is associated with lower cardiovascular disease mortality compared to light or no alcohol intake."
+    },
+    {
+      "from_claim_id": "openalex:W2128917543:c3",
+      "to_claim_id": "openalex:W2315875886:c1",
+      "similarity": 0.8476181626319885,
+      "a_paper_id": "openalex:W2128917543",
+      "a_text": "Women who were moderate to occasionally heavy alcohol users had a 34-46% lower risk of death from coronary heart disease compared with light users.",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Moderate alcohol intake of 5 to 14 g per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "explanation": "Both claims indicate that moderate alcohol consumption in women is associated with a reduced risk of coronary heart disease."
+    },
+    {
+      "from_claim_id": "openalex:W1999950621:c1",
+      "to_claim_id": "openalex:W2025106732:c1",
+      "similarity": 0.844201922416687,
+      "a_paper_id": "openalex:W1999950621",
+      "a_text": "Subjects with NAFLD exhibit a 69% increased mortality compared to the general Swedish population.",
+      "b_paper_id": "openalex:W2025106732",
+      "b_text": "NAFLD is associated with increased overall mortality compared to general population controls.",
+      "explanation": "Both claims report that non-alcoholic fatty liver disease is associated with an increased risk of mortality compared to the general population."
+    },
+    {
+      "from_claim_id": "openalex:W1963683487:c6",
+      "to_claim_id": "openalex:W2025106732:c6",
+      "similarity": 0.8410746455192566,
+      "a_paper_id": "openalex:W1963683487",
+      "a_text": "Plasma CK18 fragment levels predict steatohepatitis in NAFLD with a sensitivity of 78% and specificity of 87%.",
+      "b_paper_id": "openalex:W2025106732",
+      "b_text": "Cytokeratin-18 has a pooled AUROC of 0.82 for differentiating NASH from simple steatosis.",
+      "explanation": "Both claims independently demonstrate that cytokeratin-18 (CK18) serves as an effective diagnostic biomarker for steatohepatitis (NASH)."
+    },
+    {
+      "from_claim_id": "openalex:W2128917543:c3",
+      "to_claim_id": "openalex:W2315875886:c2",
+      "similarity": 0.8375059962272644,
+      "a_paper_id": "openalex:W2128917543",
+      "a_text": "Women who were moderate to occasionally heavy alcohol users had a 34-46% lower risk of death from coronary heart disease compared with light users.",
+      "b_paper_id": "openalex:W2315875886",
+      "b_text": "Alcohol intake of 25 g or more per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "explanation": "Both claims indicate that higher or moderate levels of alcohol consumption in women are associated with a reduced risk of coronary heart disease."
+    },
+    {
+      "from_claim_id": "openalex:W2119546263:c5",
+      "to_claim_id": "openalex:W2160517070:c8",
+      "similarity": 0.834327757358551,
+      "a_paper_id": "openalex:W2119546263",
+      "a_text": "Intake of whole grain is inversely related to obesity.",
+      "b_paper_id": "openalex:W2160517070",
+      "b_text": "Increased daily intake of whole grains is inversely associated with 4-year weight gain.",
+      "explanation": "Both claims independently find that higher whole grain consumption is associated with reduced body weight and lower risk of weight gain or obesity."
+    },
+    {
+      "from_claim_id": "openalex:W2103825558:c10",
+      "to_claim_id": "openalex:W2120021843:c5",
+      "similarity": 0.8343036770820618,
+      "a_paper_id": "openalex:W2103825558",
+      "a_text": "A simple self-administered dietary questionnaire can provide useful information about individual nutrient intakes over a one-year period.",
+      "b_paper_id": "openalex:W2120021843",
+      "b_text": "The expanded 131-item semiquantitative food frequency questionnaire provides a useful measure of intake for many nutrients over a one-year period.",
+      "explanation": "Both claims independently conclude that self-administered dietary questionnaires effectively capture individual nutrient intakes over a one-year timeframe."
+    },
+    {
+      "from_claim_id": "openalex:W2109129984:c1",
+      "to_claim_id": "openalex:W2128917543:c2",
+      "similarity": 0.819223940372467,
+      "a_paper_id": "openalex:W2109129984",
+      "a_text": "Alcohol consumption is associated with a lower risk of cardiovascular disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.70 to 0.80).",
+      "b_paper_id": "openalex:W2128917543",
+      "b_text": "Men who consumed less than 5 drinks per day throughout their lifetime had a 24% lower cardiovascular disease mortality compared with lifetime light users.",
+      "explanation": "Both claims report a similar reduction in cardiovascular disease mortality risk associated with alcohol consumption."
+    },
+    {
+      "from_claim_id": "openalex:W2122520859:c5",
+      "to_claim_id": "openalex:W2127427274:c7",
+      "similarity": 0.8191946744918823,
+      "a_paper_id": "openalex:W2122520859",
+      "a_text": "At baseline age 55-64 years, the relative risk per 1 mmol/L higher total cholesterol is 1.20 for ischemic stroke.",
+      "b_paper_id": "openalex:W2127427274",
+      "b_text": "Higher non-HDL-C is associated with an increased risk of ischemic stroke (HR 1.12 per 1-SD higher value).",
+      "explanation": "Both claims independently show that higher cholesterol levels (total cholesterol and non-HDL-C) are associated with an increased risk of ischemic stroke."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c1",
+      "to_claim_id": "openalex:W2128917543:c2",
+      "similarity": 0.8180678486824036,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "Men who consumed alcohol three to four days per week had a decreased risk of myocardial infarction compared with men who consumed alcohol less than once per week.",
+      "b_paper_id": "openalex:W2128917543",
+      "b_text": "Men who consumed less than 5 drinks per day throughout their lifetime had a 24% lower cardiovascular disease mortality compared with lifetime light users.",
+      "explanation": "Both claims indicate that moderate alcohol consumption in men is associated with a reduced risk of adverse cardiovascular outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2103825558:c7",
+      "to_claim_id": "openalex:W2120021843:c3",
+      "similarity": 0.8163585662841797,
+      "a_paper_id": "openalex:W2103825558",
+      "a_text": "74% of subjects in the lowest quintile of calorie-adjusted intake computed from diet records were in the lowest two questionnaire quintiles.",
+      "b_paper_id": "openalex:W2120021843",
+      "b_text": "Adjusting for week-to-week variation in diet record intakes increased the mean correlation coefficient between energy-adjusted nutrient intakes from diet records and the questionnaire to r = 0.65.",
+      "explanation": "Both claims provide complementary evidence of strong concordance between energy-adjusted nutrient intakes measured by diet records and questionnaires."
+    },
+    {
+      "from_claim_id": "openalex:W2103825558:c7",
+      "to_claim_id": "openalex:W2120021843:c2",
+      "similarity": 0.8151031732559204,
+      "a_paper_id": "openalex:W2103825558",
+      "a_text": "74% of subjects in the lowest quintile of calorie-adjusted intake computed from diet records were in the lowest two questionnaire quintiles.",
+      "b_paper_id": "openalex:W2120021843",
+      "b_text": "Correlation coefficients between energy-adjusted nutrient intakes measured by diet records and the second questionnaire ranged from 0.28 for iron without supplements to 0.86 for vitamin C with supplements, with a mean r of 0.59.",
+      "explanation": "Both claims demonstrate a moderate to high degree of agreement between dietary records and food questionnaires for measuring energy-adjusted nutrient intakes."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c2",
+      "to_claim_id": "openalex:W2128917543:c2",
+      "similarity": 0.8088195323944092,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "Men who consumed alcohol five to seven days per week had a decreased risk of myocardial infarction compared with men who consumed alcohol less than once per week.",
+      "b_paper_id": "openalex:W2128917543",
+      "b_text": "Men who consumed less than 5 drinks per day throughout their lifetime had a 24% lower cardiovascular disease mortality compared with lifetime light users.",
+      "explanation": "Both claims report a protective association between alcohol consumption and reduced cardiovascular risk or mortality in men."
+    },
+    {
+      "from_claim_id": "openalex:W1999950621:c2",
+      "to_claim_id": "openalex:W2025106732:c1",
+      "similarity": 0.8031569719314575,
+      "a_paper_id": "openalex:W1999950621",
+      "a_text": "Subjects with NASH exhibit an 86% increased mortality compared to the general Swedish population.",
+      "b_paper_id": "openalex:W2025106732",
+      "b_text": "NAFLD is associated with increased overall mortality compared to general population controls.",
+      "explanation": "Both claims find that nonalcoholic fatty liver conditions (NASH and NAFLD) are associated with increased mortality compared to general population controls."
+    },
+    {
+      "from_claim_id": "openalex:W2034114152:c3",
+      "to_claim_id": "openalex:W2789317488:c3",
+      "similarity": 0.8008463978767395,
+      "a_paper_id": "openalex:W2034114152",
+      "a_text": "The positive association between television watching time and type 2 diabetes risk persists after adjustment for body mass index.",
+      "b_paper_id": "openalex:W2789317488",
+      "b_text": "Increased sedentary time is associated with an increased risk of type 2 diabetes mellitus with convincing epidemiological evidence (HR 1.91).",
+      "explanation": "Both claims report a positive association between sedentary behaviors, such as television watching, and an increased risk of type 2 diabetes."
     }
   ]
 }

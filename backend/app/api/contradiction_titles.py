@@ -46,6 +46,15 @@ TOPIC_TITLES: dict[str, str] = {
     "alcohol / all-cause mortality — J-shape vs quality-adjusted null":
         "Alcohol and all-cause mortality: does a protective J-shape survive "
         "adjustment for abstainer-bias and study quality?",
+    "triglycerides / coronary heart disease — independent of other risk factors?":
+        "Triglycerides and coronary heart disease: a raised risk, or no link "
+        "once other risk factors are accounted for?",
+    "triglycerides / coronary heart disease — EPIC-Norfolk estimate (duplicate)":
+        "Triglycerides and coronary heart disease: the EPIC-Norfolk cohort "
+        "estimate (restated)",
+    "triglycerides / coronary heart disease — Reykjavik estimate (duplicate)":
+        "Triglycerides and coronary heart disease: the Reykjavik cohort "
+        "estimate (restated)",
     "alcohol / all-cause mortality — duplicate of previous":
         "Alcohol and all-cause mortality: does the protective J-shape "
         "survive abstainer-bias correction? (restated)",

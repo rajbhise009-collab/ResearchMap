@@ -1,5 +1,5 @@
 {
-  "n": 7,
+  "n": 10,
   "items": [
     {
       "from_claim_id": "openalex:W2109401990:c5",
@@ -70,6 +70,36 @@
       "b_paper_id": "openalex:W2311763102",
       "b_text": "After adjusting for abstainer biases and study quality characteristics, low-volume alcohol consumption shows no significant reduction in mortality risk.",
       "explanation": "Claim A finds that alcohol consumption significantly reduces all-cause mortality risk, whereas Claim B finds no significant reduction in mortality risk after controlling for abstainer biases and study quality."
+    },
+    {
+      "from_claim_id": "openalex:W1976428272:c6",
+      "to_claim_id": "openalex:W2127427274:c3",
+      "similarity": 0.8428341150283813,
+      "a_paper_id": "openalex:W1976428272",
+      "a_text": "A meta-analysis of 29 studies shows an adjusted odds ratio for coronary heart disease of 1.72 (95% CI, 1.56 to 1.90) comparing individuals in the top third with those in the bottom third of usual log-triglyceride values.",
+      "b_paper_id": "openalex:W2127427274",
+      "b_text": "Triglyceride level is not significantly associated with coronary heart disease risk after adjustment for conventional risk factors (HR 0.99 per 1-SD higher value).",
+      "explanation": "Claim A reports a significant increase in coronary heart disease risk associated with higher triglyceride levels, whereas Claim B finds no significant association after adjusting for conventional risk factors."
+    },
+    {
+      "from_claim_id": "openalex:W1976428272:c5",
+      "to_claim_id": "openalex:W2127427274:c3",
+      "similarity": 0.8148424029350281,
+      "a_paper_id": "openalex:W1976428272",
+      "a_text": "In the EPIC-Norfolk study, the adjusted odds ratio for coronary heart disease comparing the top third with the bottom third of usual log-triglyceride values is 1.57 (95% CI, 1.10 to 2.24).",
+      "b_paper_id": "openalex:W2127427274",
+      "b_text": "Triglyceride level is not significantly associated with coronary heart disease risk after adjustment for conventional risk factors (HR 0.99 per 1-SD higher value).",
+      "explanation": "Claim A reports a statistically significant increased risk of coronary heart disease associated with higher triglyceride levels, whereas Claim B reports no significant association after adjusting for risk factors."
+    },
+    {
+      "from_claim_id": "openalex:W1976428272:c4",
+      "to_claim_id": "openalex:W2127427274:c3",
+      "similarity": 0.8135247230529785,
+      "a_paper_id": "openalex:W1976428272",
+      "a_text": "In the Reykjavik study, the adjusted odds ratio for coronary heart disease comparing the top third with the bottom third of usual log-triglyceride values is 1.76 (95% CI, 1.39 to 2.21).",
+      "b_paper_id": "openalex:W2127427274",
+      "b_text": "Triglyceride level is not significantly associated with coronary heart disease risk after adjustment for conventional risk factors (HR 0.99 per 1-SD higher value).",
+      "explanation": "Claim A finds a significant positive association between triglyceride levels and coronary heart disease risk after adjustment, whereas Claim B finds no significant association."
     }
   ]
 }
