@@ -13,22 +13,21 @@ FX: 1 USD = ₹84.
 | library | slug | papers | core | peripheral | full-text | extracted | notes |
 |:--|:--|--:|--:|--:|--:|--:|:--|
 | LLM calibration | `llm-calibration` | 113 | — | — | 67 (59%) | 113 (100%) | frozen; not re-extracted |
-| Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | **59 (59%)** | new; blind-audit 12/15 = 80% |
-| ML fairness | `ml-fairness` | 100 | 96 | 4 | 50 (50%) | **51 (51%)** | new; blind-audit 10/10 = 100% |
+| Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | **100 (100%)** | iteration-3 finished extraction |
+| ML fairness | `ml-fairness` | 100 | 96 | 4 | 50 (50%) | **73 (73%)** | iteration-3 extended coverage; ran into spend cap |
 
-Extractions were halted at ~50-60% of target on both new domains — a
-deliberate call to preserve ledger headroom for the contradiction
-pass, which is what answers the central "does contested domain produce
-contradictions" question. Cache is intact; a follow-up run can resume
-from 59+51 without re-paying.
+Diet is now at full coverage. ml-fairness got from 51 → 73 of 100 before
+iteration-3's ₹300 run ceiling was hit. The cache is intact; a follow-up
+run can resume from 73 without re-paying the previous ₹240 of
+extraction spend.
 
 ## 2. Contradiction yield — does the coherent-domain result generalise?
 
 | library | shortlisted pairs | Gemini-flagged contradictions | audited genuine | audited artifact | audited duplicate |
 |:--|--:|--:|--:|--:|--:|
 | LLM calibration (frozen 2026-07) | 437 | 0 | 0 | — | — |
-| Diet & mortality | 97 | 7 | **5** | 1 | 1 |
-| ML fairness | 54 | 0 | 0 | — | — |
+| Diet & mortality (full) | 189 | 7 | **5** | 1 | 1 |
+| ML fairness (73/100 + 135 of 698 new pairs classified) | 189 | 0 | 0 | — | — |
 
 **Diet-and-mortality is the first ResearchMap library to produce
 confirmed contradictions.** Hand-audit reduced the raw 7 to 5 genuine

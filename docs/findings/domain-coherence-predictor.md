@@ -243,26 +243,30 @@ predictor's confidence range so this run measures whether it discriminates:
 | **diet-and-mortality** | 0.440 | moderate | contested | **Chosen AGAINST its score.** Reputationally the classic "meta-analyses reach opposite conclusions" domain; the predictor scores it moderate because its very high modularity (0.68) reads as "isolated schools" — the doc's named ambiguous case. Raj can judge the outputs (red meat, saturated fat, alcohol are nameable disagreements). |
 | **ml-fairness** | 0.667 | high | contested | Aligned with score. Documented impossibility results (Kleinberg / Chouldechova) give the contradiction scorer nameable targets. |
 
-## Measured record — n = 3 (2026-09-30 update, DO NOT REFIT)
+## Measured record — n = 3 (2026-10-02 update, DO NOT REFIT)
 
-The multi-domain expansion finished with two new libraries partially
-scored. **Do not use these three points to refit the weights** — n=3
-is far below the noise floor of a 7-feature composite, and one of the
-two new points is confounded by partial extraction. This section
-records the numbers so the next validation attempt (~8–10 domains
-minimum) has a starting table, not a prediction claim.
+The multi-domain expansion finished with two new libraries. Diet is at
+full extraction coverage, ml-fairness is at 73/100 after an iteration-3
+run hit the spend cap. **Do not use these three points to refit the
+weights** — n=3 is far below the noise floor of a 7-feature composite,
+and ml-fairness is still partially extracted. This section records the
+numbers so the next validation attempt (~8–10 domains minimum) has a
+starting table, not a prediction claim.
 
 | library | predictor score | predictor label | raw flagged | audited genuine | claims-read coverage | confounds |
 |:--|--:|:--|--:|--:|:--|:--|
 | llm-calibration | 0.818 | high | 0 | 0 | 113 / 113 (100%) | none — full extraction, frozen manifest |
-| diet-and-mortality | 0.440 | moderate | 7 | **5** | 59 / 100 (59%) | partial extraction; hand-audit not expert-review |
-| ml-fairness | 0.667 | high | 0 | 0 | 51 / 100 (51%) | partial extraction; scorer likely mismatched to definitional disagreement (see below) |
+| diet-and-mortality | 0.440 | moderate | 7 | **5** | 100 / 100 (100%) | hand-audit not expert-review |
+| ml-fairness | 0.667 | high | 0 | 0 | 73 / 100 (73%) | partial extraction; hypothesis-level scorer-mismatch (see below) |
 
-Two of three predictions miss:
-- **diet** scored moderate yet produced 5 genuine contradictions;
-- **ml-fairness** scored high yet produced 0 — but the 0 is confounded
-  by partial extraction AND (see next section) a likely scorer-domain
-  mismatch, so it is NOT clean evidence against the predictor.
+Two of three predictions still miss, now with less confounding on diet:
+- **diet** scored moderate yet produced 5 genuine contradictions, at
+  FULL extraction coverage — the confounder is gone, the miss stays.
+- **ml-fairness** scored high yet produced 0 — the extra coverage
+  (51 → 73) did not surface any contradictions. The 0 is still
+  partially confounded (27 of 100 papers unread) AND the hypothesis
+  below about scorer-domain mismatch remains unresolved. Not clean
+  evidence against the predictor; not clean evidence for it either.
 
 ### Fairness-miss free diagnostic (no new spend)
 
