@@ -145,6 +145,16 @@ class Extractor:
                 data = json.loads(text)
             except json.JSONDecodeError as e:
                 raise RetryableResponseError("parse", str(e)) from e
+            # A valid extraction is an object; some paper responses have
+            # come back as a bare list (likely the model returned the
+            # claims array without wrapping it). Treat that as a
+            # retryable parse failure instead of an unhandled
+            # AttributeError that halts the whole run.
+            if not isinstance(data, dict):
+                raise RetryableResponseError(
+                    "parse",
+                    f"model returned top-level {type(data).__name__}, "
+                    "expected a JSON object with paper_id/claims/…")
             if data.get("paper_id") != paper.id:
                 raise RetryableResponseError(
                     "paper_id",
