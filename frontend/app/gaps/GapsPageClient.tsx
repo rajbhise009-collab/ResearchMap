@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useLibraryData } from "../components/useLibraryData";
 import type { GapDoc, LanguagePack, Stats } from "../../lib/types";
 import GapsClient from "./GapsClient";
+import { DevKV } from "../components/DevMode";
 
 interface OpportunitiesFile {
   total: number;
@@ -78,6 +79,10 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
         )}
         {zeroNote && (
           <p className="coverage-note small muted">{zeroNote}</p>
+        )}
+        {res.state === "ready" && res.data.audit && (
+          <DevKV title="Raw counts (classifier flags vs hand audit)"
+                 data={res.data.audit} />
         )}
       </div>
 
