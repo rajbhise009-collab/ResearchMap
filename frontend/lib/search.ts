@@ -75,19 +75,20 @@ export function tokenize(
 }
 
 export function search(index: SearchIndex, query: string, limit = 20,
-                       opts: { prefixLast?: boolean } = {}): SearchResult {
+                       opts: { prefixLast?: boolean;
+                               expandTrailing?: boolean } = {}): SearchResult {
   const stopwords = new Set(index.stopwords);
   const syn = index.synonyms;
-  const pairs = tokenizePairs(query, stopwords, syn);
+  let pairs = tokenizePairs(query, stopwords, syn);
   const idf = index.idf;
   const maxIdf = index.max_idf;
 
-  // Prefix-expansion for the last typed token (type-ahead). Mirrors the
-  // Python twin's `prefix_last` arg. The verdict is still computed from
-  // complete tokens only, so a prefix cannot promote an OOD query into
-  // in-domain mid-typing.
+  // Prefix-expansion for the last typed token. Mirrors the Python twin's
+  // `prefix_last` / `expand_trailing` args.
   const prefixAdded: string[] = [];
-  if (opts.prefixLast && query && !/\s$/.test(query)) {
+  let trailingIsPrefix = false;
+  let bestPrefix: string | null = null;
+  if ((opts.prefixLast || opts.expandTrailing) && query && !/\s$/.test(query)) {
     const words = (query || "").toLowerCase().match(/[a-z0-9]+/g) || [];
     const tail = words.length ? words[words.length - 1] : "";
     if (tail && tail.length >= 3) {
@@ -96,7 +97,26 @@ export function search(index: SearchIndex, query: string, limit = 20,
         for (const t of Object.keys(idf)) {
           if (!t.includes("__") && t.startsWith(tailStem)) prefixAdded.push(t);
         }
+        if (prefixAdded.length > 0) {
+          trailingIsPrefix = true;
+          // Lowest idf = highest DF = most common library term with
+          // that prefix. The best "most likely finish".
+          bestPrefix = prefixAdded.reduce(
+            (best, cur) => (idf[cur] < idf[best] ? cur : best),
+            prefixAdded[0]);
+        }
       }
+    }
+  }
+
+  // Enter / Ask path: swap the trailing prefix for its best completion
+  // so the whole-query verdict reads as if the user had typed the full
+  // word.
+  if (opts.expandTrailing && trailingIsPrefix && bestPrefix) {
+    const lastStem = pairs.length ? pairs[pairs.length - 1][0] : "";
+    if (lastStem && !(lastStem in idf)) {
+      pairs = [...pairs.slice(0, -1), [bestPrefix, bestPrefix]];
+      trailingIsPrefix = false;
     }
   }
 
@@ -104,15 +124,20 @@ export function search(index: SearchIndex, query: string, limit = 20,
     return {
       verdict: "empty", coverage: 0, best: 0, breadth: 0, n_matched: 0,
       hits: [], known: [], unknown: [], expanded: [],
+      typing: false, trailing_prefix: null,
     };
   }
 
   const understood = (tok: string, word: string) =>
     tok in idf || (syn[word] || []).some((s) => stem(s) in idf);
 
+  // Exclude the trailing-prefix token from the verdict — it's still
+  // being typed, so it cannot push the verdict either way. It stays in
+  // the retrieval set below.
+  const verdictPairs = trailingIsPrefix ? pairs.slice(0, -1) : pairs;
   const known: string[] = [];
   const unknown: string[] = [];
-  for (const [t, w] of pairs) (understood(t, w) ? known : unknown).push(t);
+  for (const [t, w] of verdictPairs) (understood(t, w) ? known : unknown).push(t);
 
   const knownMass = known.reduce((a, t) => a + (idf[t] ?? maxIdf), 0);
   const unknownMass = unknown.length * maxIdf * UNKNOWN_WEIGHT;
@@ -210,9 +235,18 @@ export function search(index: SearchIndex, query: string, limit = 20,
     verdict = "out_of_domain";
   }
 
+  // A half-typed trailing word must never land as out_of_domain.
+  if (trailingIsPrefix) {
+    if (verdictPairs.length === 0 || verdict === "out_of_domain") {
+      verdict = "typing";
+    }
+  }
+
   return {
     verdict, coverage, best, breadth, n_matched: hits.length,
     hits: hits.slice(0, limit), known, unknown,
     expanded: [...qvec.keys()].sort(),
+    typing: trailingIsPrefix,
+    trailing_prefix: bestPrefix,
   };
 }

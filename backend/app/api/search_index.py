@@ -391,17 +391,28 @@ BREADTH_IN_DOMAIN = 0.18
 
 
 def search(index: dict[str, Any], query: str, limit: int = 20,
-            *, prefix_last: bool = False) -> dict[str, Any]:
-    """Returns verdict (`in_domain` | `borderline` | `out_of_domain` |
-    `empty`) plus ranked hits and the numbers behind the decision.
+            *, prefix_last: bool = False,
+            expand_trailing: bool = False) -> dict[str, Any]:
+    """Returns verdict + ranked hits and the numbers behind the decision.
+
+    `verdict` is one of `in_domain` | `borderline` | `out_of_domain` |
+    `empty` | `typing`. `typing` is new: it means "the trailing word is
+    still being spelled out and the complete-token count of what's been
+    typed so far isn't enough to form a verdict". The UI should treat
+    `typing` like "show results, no banner" — never render a refusal.
 
     `prefix_last` is for type-ahead: when True, the LAST whitespace-
     terminated token of the raw query is treated as a prefix and
     expanded against the vocabulary (any term whose stem starts with
-    the typed prefix joins the retrieval set). The verdict is still
-    computed from COMPLETE tokens only, so a prefix match can boost
-    retrieval but can never promote an out-of-domain query into
-    in_domain mid-typing.
+    the typed prefix joins the retrieval set). The verdict is computed
+    EXCLUDING that trailing prefix token so a half-typed word cannot
+    produce an out_of_domain label.
+
+    `expand_trailing` is for the Enter / Ask path: if the trailing
+    token has prefix matches, treat the user as having typed its best
+    match (highest DF — the most common library term starting with
+    those letters) for BOTH retrieval AND verdict. So "alc" + Enter
+    behaves like "alcohol" + Enter.
     """
     pairs = tokenize_pairs(query)
     words = [w for _, w in pairs]
@@ -415,21 +426,42 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
     # ignored entirely — otherwise typing "a" against Diet would expand
     # into every vocab term starting with "a".
     prefix_added: list[str] = []
-    if prefix_last and query and not query[-1].isspace():
+    trailing_is_prefix = False
+    # The best prefix expansion (highest DF) — used by expand_trailing
+    # and surfaced in the result so the UI can offer a neutral hint
+    # like "Showing matches for 'alc…'".
+    best_prefix: str | None = None
+    if (prefix_last or expand_trailing) and query and not query[-1].isspace():
         last_raw = re.findall(r"[a-z0-9]+", query.lower())
         tail = last_raw[-1] if last_raw else ""
         if tail and len(tail) >= 3:
             tail_stem = _stem(tail)
-            # Only expand if the final token isn't ALREADY a known vocab
-            # term — if it is, the normal retrieval path handles it.
             if tail_stem not in idf:
-                prefix_added = [t for t in idf
-                                 if t.startswith(tail_stem) and "__" not in t]
+                matches = [t for t in idf
+                            if t.startswith(tail_stem) and "__" not in t]
+                if matches:
+                    trailing_is_prefix = True
+                    prefix_added = matches
+                    # Pick the highest-DF match as the "most likely
+                    # finish". `idf` is log((n+1)/(df+0.5)) — lower idf
+                    # ⇒ higher df ⇒ more frequent in the corpus.
+                    best_prefix = min(matches, key=lambda t: idf[t])
+
+    # On Enter / Ask: swap the trailing prefix out of `pairs` for its
+    # best completion so coverage and the whole-query verdict read as
+    # if the full word had been typed.
+    if expand_trailing and trailing_is_prefix and best_prefix is not None:
+        if pairs and _stem(pairs[-1][1]) not in idf:
+            pairs = pairs[:-1] + [(best_prefix, best_prefix)]
+            base = [t for t, _ in pairs]
+            words = [w for _, w in pairs]
+            trailing_is_prefix = False   # it's a complete token now
 
     if not base and not prefix_added:
         return {"verdict": "empty", "coverage": 0.0, "best": 0.0,
                 "breadth": 0.0, "hits": [], "n_matched": 0,
-                "known": [], "unknown": [], "expanded": []}
+                "known": [], "unknown": [], "expanded": [],
+                "typing": False, "trailing_prefix": None}
 
     # A word counts as understood if the library uses it, or if it is
     # everyday phrasing for something the library does use ("make things up"
@@ -440,11 +472,16 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
             return True
         return any(_stem(s) in idf for s in DOMAIN_SYNONYMS.get(word, []))
 
-    known = [t for t, w in pairs if understood(t, w)]
-    unknown = [t for t, w in pairs if not understood(t, w)]
+    # Exclude the trailing-prefix token from the known/unknown
+    # classification — it's still being typed, so it cannot push the
+    # verdict either way. Keep it ONLY in the retrieval set below.
+    verdict_pairs = (pairs[:-1] if trailing_is_prefix else list(pairs))
+    known = [t for t, w in verdict_pairs if understood(t, w)]
+    unknown = [t for t, w in verdict_pairs if not understood(t, w)]
     known_mass = sum(idf.get(t, max_idf) for t in known)
     unknown_mass = len(unknown) * max_idf * UNKNOWN_WEIGHT
-    coverage = known_mass / (known_mass + unknown_mass) if (known_mass + unknown_mass) else 0.0
+    coverage = (known_mass / (known_mass + unknown_mass)
+                if (known_mass + unknown_mass) else 0.0)
 
     # Adjacent-pair bigrams: so a query like "demographic parity" matches
     # the shipped bigram vocab entry `demographic__parity` (indexed when
@@ -518,11 +555,29 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
     else:
         verdict = "out_of_domain"
 
+    # TYPING state: a half-typed trailing word must never land as
+    # out_of_domain. If the complete tokens (verdict_pairs) are empty
+    # OR the only "signal" came from the trailing prefix, call it
+    # "typing" — the UI treats it as "show results, no banner". When
+    # the complete tokens by themselves ARE in_domain / borderline,
+    # keep that verdict (user is specifying further, not asking
+    # something foreign).
+    if trailing_is_prefix:
+        if not verdict_pairs:
+            verdict = "typing"
+        elif verdict == "out_of_domain":
+            # The complete-token prefix wouldn't be in-domain alone, but
+            # the trailing word may finish into something that would be.
+            # Fall through to "typing" rather than refuse mid-word.
+            verdict = "typing"
+
     return {"verdict": verdict, "coverage": round(coverage, 4),
             "best": round(best, 5), "breadth": round(breadth, 4),
             "hits": hits[:limit], "n_matched": len(hits),
             "known": known, "unknown": unknown,
-            "expanded": sorted(set(qvec))}
+            "expanded": sorted(set(qvec)),
+            "typing": trailing_is_prefix,
+            "trailing_prefix": best_prefix}
 
 
 def load(path) -> dict[str, Any]:

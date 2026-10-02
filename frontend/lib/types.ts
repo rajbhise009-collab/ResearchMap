@@ -267,8 +267,15 @@ export interface SearchHit {
   score: number; matched: string[];
 }
 export interface SearchResult {
-  verdict: "in_domain" | "borderline" | "out_of_domain" | "empty";
+  verdict: "in_domain" | "borderline" | "out_of_domain" | "empty" | "typing";
   coverage: number; best: number; breadth: number; n_matched: number;
   hits: SearchHit[];
   known: string[]; unknown: string[]; expanded: string[];
+  // Set by type-ahead when the trailing word is still being spelled
+  // out. `typing: true` means "show results, no banner". The
+  // trailing_prefix is the highest-DF vocab term that starts with the
+  // typed prefix — the "most likely finish" the UI can echo back
+  // ("Showing matches for 'alc…'").
+  typing?: boolean;
+  trailing_prefix?: string | null;
 }
