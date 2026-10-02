@@ -324,11 +324,12 @@ def batch_collect(slug: str, *, client=None) -> dict:
 
 
 def run_batch(slug: str, *, poll_interval_s: float = 30.0,
-              max_retries: int = 2, client=None) -> dict:
+              max_retries: int = 2, client=None,
+              only_pids: set[str] | None = None) -> dict:
     """Submit → wait → collect. Schema-invalid papers are resubmitted up
     to `max_retries` times, then hard-failed by name."""
     rounds = []
-    retry_pids: set[str] | None = None
+    retry_pids: set[str] | None = only_pids
     for attempt in range(max_retries + 1):
         sub = batch_submit(slug, only_pids=retry_pids, client=client)
         if not sub.get("submitted"):

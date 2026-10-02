@@ -1,5 +1,5 @@
 {
-  "n": 121,
+  "n": 136,
   "items": [
     {
       "from_claim_id": "openalex:W2786122898:c6",
@@ -1210,6 +1210,156 @@
       "b_paper_id": "openalex:W3203106571",
       "b_text": "Social perspectives on algorithmic fairness frequently treat technical fairness approaches as a black box without analyzing specific technical operationalizations or trade-offs.",
       "explanation": "Claim A addresses the conceptual nature of the term fairness in machine learning, whereas Claim B focuses on how social perspectives treat technical fairness approaches, representing distinct aspects of fairness research."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c2",
+      "to_claim_id": "openalex:W4386564359:c4",
+      "similarity": 0.872998833656311,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "Achieving balance for both negative and positive classes alongside within-group calibration requires either equal base rates across protected groups or perfect prediction accuracy.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with the conjunction of balance for the positive class and balance for the negative class when two groups have unequal base rates.",
+      "explanation": "The claims discuss different mathematical impossibility results involving distinct combinations of fairness criteria, with one addressing calibration and the other addressing statistical parity."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c2",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.872679591178894,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "Achieving balance for both negative and positive classes alongside within-group calibration requires either equal base rates across protected groups or perfect prediction accuracy.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "The claims address different impossibility theorems in algorithmic fairness, with Claim A focusing on the incompatibility of calibration and equalized odds, while Claim B focuses on calibration and statistical parity."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c3",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.8260559439659119,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "A scoring function exhibiting both separation and demographic parity implies either equal base rates across groups or zero predictive utility.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "While both claims describe mathematical trade-offs involving statistical parity and unequal base rates, they address different fairness criteria (separation versus calibration) and thus state distinct, independent impossibility results."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c3",
+      "to_claim_id": "openalex:W4386564359:c1",
+      "similarity": 0.8256407380104065,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "A scoring function exhibiting both separation and demographic parity implies either equal base rates across groups or zero predictive utility.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "No risk assignment method can simultaneously satisfy calibration within groups, balance for the negative class, and balance for the positive class except in instances allowing perfect prediction or having equal base rates across groups.",
+      "explanation": "While both claims present mathematical impossibility results regarding fairness criteria in machine learning, they analyze different combinations of fairness constraints."
+    },
+    {
+      "from_claim_id": "openalex:W2885659818:c4",
+      "to_claim_id": "openalex:W2900885930:c5",
+      "similarity": 0.8415085673332214,
+      "a_paper_id": "openalex:W2885659818",
+      "a_text": "For almost every collection of group-specific risk distributions with densities on [0, 1], no utility-maximizing threshold decision policy with optimal threshold 0 < t < 1 satisfies demographic parity or equalized false positive rates.",
+      "b_paper_id": "openalex:W2900885930",
+      "b_text": "Decision rules that maximize utility under a demographic parity constraint generally require using sensitive attributes during both probability estimation and threshold selection.",
+      "explanation": "Claim A addresses the impossibility of unconstrained single-threshold utility-maximizing policies satisfying demographic parity, whereas Claim B describes the requirements for maximizing utility under a demographic parity constraint."
+    },
+    {
+      "from_claim_id": "openalex:W4210736086:c2",
+      "to_claim_id": "openalex:W4288758404:c3",
+      "similarity": 0.8411152958869934,
+      "a_paper_id": "openalex:W4210736086",
+      "a_text": "Fairness-enhancing mechanisms in machine learning can be categorized into pre-process, in-process, and post-process mechanisms.",
+      "b_paper_id": "openalex:W4288758404",
+      "b_text": "In-processing fairness mitigation techniques can be categorized into explicit and implicit methods based on where fairness is achieved.",
+      "explanation": "Claim A categorizes general fairness-enhancing mechanisms by pipeline stage, while Claim B provides a further sub-categorization specifically for in-processing techniques."
+    },
+    {
+      "from_claim_id": "openalex:W2750585749:c1",
+      "to_claim_id": "openalex:W2753845591:c1",
+      "similarity": 0.8284459114074707,
+      "a_paper_id": "openalex:W2750585749",
+      "a_text": "Predictions can be made approximately fair with respect to multiple possible causal models simultaneously.",
+      "b_paper_id": "openalex:W2753845591",
+      "b_text": "A predictor is counterfactually fair if its distribution over possible predictions for an individual remains unchanged under a counterfactual intervention on protected attributes.",
+      "explanation": "Claim B defines the concept of counterfactual fairness, whereas Claim A asserts a feasibility result regarding achieving approximate fairness across multiple causal models."
+    },
+    {
+      "from_claim_id": "openalex:W1988368118:c2",
+      "to_claim_id": "openalex:W2097246321:c1",
+      "similarity": 0.8221138715744019,
+      "a_paper_id": "openalex:W1988368118",
+      "a_text": "Existing discrimination-aware techniques introduce reverse discrimination when decision differences across sensitive groups are explainable by other attributes.",
+      "b_paper_id": "openalex:W2097246321",
+      "b_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "explanation": "The claims discuss different limitations in machine learning fairness, with Claim A focusing on over-correction in discrimination-aware techniques and Claim B focusing on under-correction when simply removing sensitive attributes."
+    },
+    {
+      "from_claim_id": "openalex:W3167179910:c7",
+      "to_claim_id": "openalex:W4220718380:c3",
+      "similarity": 0.821027398109436,
+      "a_paper_id": "openalex:W3167179910",
+      "a_text": "Only 2% (n = 2) of reviewed studies used machine learning for algorithmic fairness.",
+      "b_paper_id": "openalex:W4220718380",
+      "b_text": "All 8 reviewed studies that implemented mitigation methods successfully increased algorithmic fairness based on their chosen metrics.",
+      "explanation": "The claims report findings from different systematic reviews examining distinct subsets of studies and aspects of algorithmic fairness."
+    },
+    {
+      "from_claim_id": "openalex:W1988368118:c2",
+      "to_claim_id": "openalex:W2116984840:c1",
+      "similarity": 0.8146502375602722,
+      "a_paper_id": "openalex:W1988368118",
+      "a_text": "Existing discrimination-aware techniques introduce reverse discrimination when decision differences across sensitive groups are explainable by other attributes.",
+      "b_paper_id": "openalex:W2116984840",
+      "b_text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "explanation": "Claim A addresses how discrimination-aware techniques can cause reverse discrimination when differences are explainable by other attributes, while Claim B addresses why simply removing sensitive attributes fails to eliminate discrimination due to proxy correlations."
+    },
+    {
+      "from_claim_id": "openalex:W4289438483:c4",
+      "to_claim_id": "openalex:W4296186062:c2",
+      "similarity": 0.8137152791023254,
+      "a_paper_id": "openalex:W4289438483",
+      "a_text": "Reject option classification substantially improves fairness metrics on the Adult dataset but causes a significant reduction in classification accuracy.",
+      "b_paper_id": "openalex:W4296186062",
+      "b_text": "Model accuracy and fairness metrics on the Adult dataset are highly sensitive to the arbitrary $50,000 binary income threshold.",
+      "explanation": "Claim A discusses the effect of reject option classification on accuracy and fairness, while Claim B addresses how fairness and accuracy metrics are affected by the dataset's income threshold."
+    },
+    {
+      "from_claim_id": "openalex:W2784397426:c1",
+      "to_claim_id": "openalex:W2909334458:c5",
+      "similarity": 0.8080480098724365,
+      "a_paper_id": "openalex:W2784397426",
+      "a_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "b_paper_id": "openalex:W2909334458",
+      "b_text": "On the Adult dataset under demographic parity constraints, the re-weighting method achieves a test fairness violation of 0.0037 with 16.51% test error.",
+      "explanation": "The claims evaluate two different debiasing methods (adversarial debiasing versus re-weighting) on the Adult dataset, so they neither support nor contradict each other."
+    },
+    {
+      "from_claim_id": "openalex:W3167179910:c7",
+      "to_claim_id": "openalex:W4220718380:c6",
+      "similarity": 0.8070398569107056,
+      "a_paper_id": "openalex:W3167179910",
+      "a_text": "Only 2% (n = 2) of reviewed studies used machine learning for algorithmic fairness.",
+      "b_paper_id": "openalex:W4220718380",
+      "b_text": "Equal opportunity difference was the most commonly observed fairness metric used to evaluate racial bias in the reviewed literature.",
+      "explanation": "Claim A reports the percentage of studies using machine learning for algorithmic fairness in a specific review, while Claim B identifies the most common fairness metric for racial bias in another review."
+    },
+    {
+      "from_claim_id": "openalex:W3167179910:c4",
+      "to_claim_id": "openalex:W4220718380:c5",
+      "similarity": 0.8051333427429199,
+      "a_paper_id": "openalex:W3167179910",
+      "a_text": "Seventy percent (n = 57) of the reviewed studies employed machine learning for pure prediction tasks.",
+      "b_paper_id": "openalex:W4220718380",
+      "b_text": "Convolutional neural networks were the most frequent machine learning modeling technique used across the reviewed studies.",
+      "explanation": "Claim A discusses the proportion of studies focused on pure prediction tasks, while Claim B describes the specific machine learning architecture most commonly used, addressing different aspects across distinct literature reviews."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c4",
+      "to_claim_id": "openalex:W3152256433:c4",
+      "similarity": 0.8045251369476318,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "A scoring function exhibiting both sufficiency and demographic parity implies equal base rates across protected groups.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "A manifestly fair and uniquely optimal predictive algorithm can violate statistical fairness criteria even when base rates are equal across groups.",
+      "explanation": "Claim A establishes a mathematical implication regarding sufficiency and demographic parity, while Claim B addresses whether optimal algorithms satisfy statistical fairness criteria under equal base rates."
     }
   ]
 }

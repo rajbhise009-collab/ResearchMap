@@ -13,21 +13,33 @@ FX: 1 USD = ₹84.
 | library | slug | papers | core | peripheral | full-text | extracted | notes |
 |:--|:--|--:|--:|--:|--:|--:|:--|
 | LLM calibration | `llm-calibration` | 113 | — | — | 67 (59%) | 113 (100%) | frozen; not re-extracted |
-| Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | **100 (100%)** | iteration-3 finished extraction |
-| ML fairness | `ml-fairness` | 100 | 96 | 4 | 50 (50%) | **73 (73%)** | iteration-3 extended coverage; ran into spend cap |
+| Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | **100 (100%)** | completed in iteration 3 (sync) |
+| ML fairness | `ml-fairness` | 100 | 96 | 4 | 50 (50%) | **100 (100%)** | 51 → 73 in iteration 3 (sync), 73 → 100 in iteration 4 (batch) |
 
-Diet is now at full coverage. ml-fairness got from 51 → 73 of 100 before
-iteration-3's ₹300 run ceiling was hit. The cache is intact; a follow-up
-run can resume from 73 without re-paying the previous ₹240 of
-extraction spend.
+Both new libraries are now at full extraction coverage. The last 27
+ML-fairness papers were extracted through the batch API in iteration 4
+(₹72.75 for 28 batch results including one retry, from the ledger).
 
 ## 2. Contradiction yield — does the coherent-domain result generalise?
 
-| library | pairs classified | Gemini-flagged contradictions | audited genuine | audited artifact | audited duplicate |
+| library | shortlisted pairs (classified) | Gemini-flagged contradictions | audited genuine | audited artifact | audited duplicate |
 |:--|--:|--:|--:|--:|--:|
-| LLM calibration (frozen 2026-07) | 437 | 0 | 0 | — | — |
-| Diet & mortality | 97 (from the 59-paper set; pairs involving the 41 papers added in iteration 3 are unclassified) | 7 | **5** | 1 | 1 |
-| ML fairness | 189 (of 752 shortlisted at 73/100 coverage) | 0 | 0 | — | — |
+| LLM calibration (frozen 2026-07) | 437 (437) | 0 | 0 | — | — |
+| Diet & mortality (100 papers) | 152 (152) | 10 | **5** | 2 | 3 |
+| ML fairness (100 papers) | 95 (95) | 0 | 0 | — | — |
+
+Shortlist settings for the two new libraries: cosine threshold 0.80,
+at most 2 candidates per claim (see §7). Iteration 3 mistakenly ran its
+incremental pass at 0.72 / 4, so the ML-fairness verdict files also hold
+verdicts for pairs outside the documented shortlist; none of those is a
+contradiction, and they are kept rather than deleted.
+
+The three diet flags added in iteration 4 are one paper pair (Sarwar
+2006, Circulation, vs the Emerging Risk Factors Collaboration 2009, JAMA)
+on triglycerides and coronary heart disease. Hand audit: one artifact
+(different adjustment and contrast; Sarwar's own conclusion leaves the
+independent link open) and two duplicates (its EPIC-Norfolk and Reykjavik
+components). The headline stays at 5.
 
 **Diet-and-mortality is the first ResearchMap library to produce
 confirmed contradictions.** Hand-audit reduced the raw 7 to 5 genuine

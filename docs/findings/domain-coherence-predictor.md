@@ -243,32 +243,31 @@ predictor's confidence range so this run measures whether it discriminates:
 | **diet-and-mortality** | 0.440 | moderate | contested | **Chosen AGAINST its score.** Reputationally the classic "meta-analyses reach opposite conclusions" domain; the predictor scores it moderate because its very high modularity (0.68) reads as "isolated schools" — the doc's named ambiguous case. Raj can judge the outputs (red meat, saturated fat, alcohol are nameable disagreements). |
 | **ml-fairness** | 0.667 | high | contested | Aligned with score. Documented impossibility results (Kleinberg / Chouldechova) give the contradiction scorer nameable targets. |
 
-## Measured record — n = 3 (2026-10-02 update, DO NOT REFIT)
+## Measured record — n = 3 (2026-10-02 iteration-4 update, DO NOT REFIT)
 
-The multi-domain expansion finished with two new libraries. Diet is at
-full extraction coverage, ml-fairness is at 73/100 after an iteration-3
-run hit the spend cap. **Do not use these three points to refit the
-weights** — n=3 is far below the noise floor of a 7-feature composite,
-and ml-fairness is still partially extracted. This section records the
-numbers so the next validation attempt (~8–10 domains minimum) has a
+Both new libraries are now at full extraction coverage, and every
+shortlisted claim pair in each has been classified (threshold 0.80,
+cap 2). **Do not use these three points to refit the weights** — n=3 is
+far below the noise floor of a 7-feature composite. This section records
+the numbers so the next validation attempt (~8–10 domains minimum) has a
 starting table, not a prediction claim.
 
-| library | predictor score | predictor label | raw flagged | audited genuine | claims-read coverage | confounds |
-|:--|--:|:--|--:|--:|:--|:--|
-| llm-calibration | 0.818 | high | 0 | 0 | 113 / 113 (100%) | none — full extraction, frozen manifest |
-| diet-and-mortality | 0.440 | moderate | 7 | **5** | 100 / 100 (100%) | hand-audit not expert-review |
-| ml-fairness | 0.667 | high | 0 | 0 | 73 / 100 (73%) | partial extraction; hypothesis-level scorer-mismatch (see below) |
+| library | predictor score | predictor label | raw flagged | audited genuine | claims-read coverage | pairs checked | confounds |
+|:--|--:|:--|--:|--:|:--|:--|:--|
+| llm-calibration | 0.818 | high | 0 | 0 | 113 / 113 (100%) | 437 / 437 | none — full extraction, frozen manifest |
+| diet-and-mortality | 0.440 | moderate | 10 | **5** | 100 / 100 (100%) | 152 / 152 | hand audit is the builder's, not expert review |
+| ml-fairness | 0.667 | high | 0 | 0 | 100 / 100 (100%) | 95 / 95 | hypothesis-level scorer-mismatch (see below) |
 
-Two of three predictions still miss, now with less confounding on diet:
-- **diet** scored moderate yet produced 5 genuine contradictions.
-  Extraction is now complete, but pairs involving the 41 papers added
-  in iteration 3 have not been classified, so the yield is a floor and
-  the coverage confounder is reduced, not gone.
-- **ml-fairness** scored high yet produced 0 — the extra coverage
-  (51 → 73) did not surface any contradictions. The 0 is still
-  partially confounded (27 of 100 papers unread) AND the hypothesis
-  below about scorer-domain mismatch remains unresolved. Not clean
-  evidence against the predictor; not clean evidence for it either.
+Two of three predictions miss, now without coverage confounding:
+- **diet** scored moderate yet produced 5 genuine contradictions. The
+  three extra flags from the full-coverage pass were set aside by hand
+  audit (one artifact, two duplicates), so the count did not move.
+- **ml-fairness** scored high yet produced 0 at full coverage. Of the
+  25 shortlisted pairs touching the impossibility-result papers, 0 were
+  flagged; Friedler et al.'s "(im)possibility" paper had no shortlisted
+  pairs at all. Why the classifier finds no contradictions here is not
+  established. The idea that fairness disagreements are definitional
+  rather than empirical remains a **hypothesis**, not a finding.
 
 ### Fairness-miss free diagnostic (no new spend)
 

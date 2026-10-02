@@ -1,5 +1,5 @@
 {
-  "n": 68,
+  "n": 82,
   "items": [
     {
       "from_claim_id": "openalex:W2097246321:c1",
@@ -680,6 +680,146 @@
       "b_paper_id": "openalex:W3101206394",
       "b_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
       "explanation": "Both claims independently reinforce the finding that the field of algorithmic fairness lacks standardized consensus regarding its definitions, terminology, and applications."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c2",
+      "to_claim_id": "openalex:W4386564359:c1",
+      "similarity": 0.9103993773460388,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "Achieving balance for both negative and positive classes alongside within-group calibration requires either equal base rates across protected groups or perfect prediction accuracy.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "No risk assignment method can simultaneously satisfy calibration within groups, balance for the negative class, and balance for the positive class except in instances allowing perfect prediction or having equal base rates across groups.",
+      "explanation": "Both claims assert the same impossibility result that achieving within-group calibration alongside balance for positive and negative classes is impossible unless base rates are equal or prediction is perfect."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c2",
+      "to_claim_id": "openalex:W4386564359:c2",
+      "similarity": 0.8515484929084778,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "Achieving balance for both negative and positive classes alongside within-group calibration requires either equal base rates across protected groups or perfect prediction accuracy.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Satisfying approximate versions of calibration within groups, balance for the negative class, and balance for the positive class within error epsilon requires the instance to satisfy an f(epsilon)-approximate version of perfect prediction or an f(epsilon)-approximate version of equal base rates.",
+      "explanation": "Claim B generalizes the trade-off between calibration, balance across classes, and base rates stated in Claim A to an approximate setting, reinforcing the same underlying impossibility result."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c2",
+      "to_claim_id": "openalex:W2900885930:c2",
+      "similarity": 0.8360434174537659,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "b_paper_id": "openalex:W2900885930",
+      "b_text": "Achieving balance for both negative and positive classes alongside within-group calibration requires either equal base rates across protected groups or perfect prediction accuracy.",
+      "explanation": "Both claims assert the same fundamental impossibility result in algorithmic fairness: predictive calibration and equalized error rates across groups are mutually incompatible unless outcome base rates are identical or predictions are perfectly accurate."
+    },
+    {
+      "from_claim_id": "openalex:W2808105152:c1",
+      "to_claim_id": "openalex:W3152256433:c1",
+      "similarity": 0.8311114311218262,
+      "a_paper_id": "openalex:W2808105152",
+      "a_text": "There are inherent trade-offs between key fairness conditions in algorithmic classification.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "explanation": "Both claims assert that key algorithmic fairness conditions inherently conflict with one another under general conditions."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c4",
+      "to_claim_id": "openalex:W4386564359:c4",
+      "similarity": 0.8224531412124634,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "A scoring function exhibiting both sufficiency and demographic parity implies equal base rates across protected groups.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with the conjunction of balance for the positive class and balance for the negative class when two groups have unequal base rates.",
+      "explanation": "Both claims independently demonstrate that demographic parity is incompatible with outcome-conditioned fairness metrics\u2014sufficiency in Claim A and separation/class balance in Claim B\u2014unless base rates are equal across groups."
+    },
+    {
+      "from_claim_id": "openalex:W4285059900:c3",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.8221002221107483,
+      "a_paper_id": "openalex:W4285059900",
+      "a_text": "Simultaneously equalizing multiple error-based parity metrics across groups is mathematically impossible when base rates are unequal and models are imperfect.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Both claims independently demonstrate mathematical impossibility trade-offs between different fairness criteria when group base rates are unequal."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c1",
+      "to_claim_id": "openalex:W2808105152:c1",
+      "similarity": 0.8166648149490356,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "Certain mathematical measures of fairness in machine learning are impossible to satisfy simultaneously except in rare and contrived circumstances.",
+      "b_paper_id": "openalex:W2808105152",
+      "b_text": "There are inherent trade-offs between key fairness conditions in algorithmic classification.",
+      "explanation": "Both claims assert that different mathematical measures or conditions of fairness in algorithmic machine learning cannot be simultaneously satisfied due to inherent trade-offs."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c2",
+      "to_claim_id": "openalex:W4285059900:c3",
+      "similarity": 0.8124316334724426,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "b_paper_id": "openalex:W4285059900",
+      "b_text": "Simultaneously equalizing multiple error-based parity metrics across groups is mathematically impossible when base rates are unequal and models are imperfect.",
+      "explanation": "Both claims assert that equalizing multiple fairness and error-rate metrics across groups is mathematically impossible when base rates differ and models are imperfect."
+    },
+    {
+      "from_claim_id": "openalex:W2909334458:c5",
+      "to_claim_id": "openalex:W4289438483:c3",
+      "similarity": 0.8697628974914551,
+      "a_paper_id": "openalex:W2909334458",
+      "a_text": "On the Adult dataset under demographic parity constraints, the re-weighting method achieves a test fairness violation of 0.0037 with 16.51% test error.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Applying the Reweighing pre-processor on the Adult dataset test partition reduces the statistical parity difference from -0.2021 to -0.0119.",
+      "explanation": "Both claims independently demonstrate that applying re-weighting methods on the Adult dataset effectively reduces demographic parity violations."
+    },
+    {
+      "from_claim_id": "openalex:W2753845591:c3",
+      "to_claim_id": "openalex:W4285059900:c2",
+      "similarity": 0.862023651599884,
+      "a_paper_id": "openalex:W2753845591",
+      "a_text": "Omitting protected attributes while regressing on observable features (fairness through unawareness) fails to achieve counterfactual fairness in Scenario 1.",
+      "b_paper_id": "openalex:W4285059900",
+      "b_text": "Completely ignoring protected group attributes, known as fairness through unawareness, fails to prevent discriminatory outcomes due to correlation with proxy variables.",
+      "explanation": "Both claims independently demonstrate that fairness through unawareness is insufficient for preventing unfair or discriminatory outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W4210736086:c2",
+      "to_claim_id": "openalex:W4288758404:c2",
+      "similarity": 0.8538904190063477,
+      "a_paper_id": "openalex:W4210736086",
+      "a_text": "Fairness-enhancing mechanisms in machine learning can be categorized into pre-process, in-process, and post-process mechanisms.",
+      "b_paper_id": "openalex:W4288758404",
+      "b_text": "In-processing methods incorporate fairness directly during model design to induce intrinsically fair models.",
+      "explanation": "Claim B details how in-processing methods function, reinforcing the categorization of fairness-enhancing mechanisms established in Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W4210736086:c2",
+      "to_claim_id": "openalex:W4288758404:c4",
+      "similarity": 0.8518712520599365,
+      "a_paper_id": "openalex:W4210736086",
+      "a_text": "Fairness-enhancing mechanisms in machine learning can be categorized into pre-process, in-process, and post-process mechanisms.",
+      "b_paper_id": "openalex:W4288758404",
+      "b_text": "Explicit in-processing methods directly incorporate fairness metrics into training objectives.",
+      "explanation": "Claim B elaborates on the in-processing category introduced in Claim A's taxonomy by detailing how explicit in-processing methods function."
+    },
+    {
+      "from_claim_id": "openalex:W2900885930:c4",
+      "to_claim_id": "openalex:W3152256433:c1",
+      "similarity": 0.8310701847076416,
+      "a_paper_id": "openalex:W2900885930",
+      "a_text": "A scoring function exhibiting both sufficiency and demographic parity implies equal base rates across protected groups.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "explanation": "Both claims assert that satisfying multiple statistical fairness criteria simultaneously requires equal base rates across protected groups."
+    },
+    {
+      "from_claim_id": "openalex:W2097246321:c1",
+      "to_claim_id": "openalex:W4285059900:c2",
+      "similarity": 0.8210206627845764,
+      "a_paper_id": "openalex:W2097246321",
+      "a_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "b_paper_id": "openalex:W4285059900",
+      "b_text": "Completely ignoring protected group attributes, known as fairness through unawareness, fails to prevent discriminatory outcomes due to correlation with proxy variables.",
+      "explanation": "Both claims independently assert that removing or ignoring protected attributes fails to prevent discrimination due to correlations with proxy or other variables."
     }
   ]
 }

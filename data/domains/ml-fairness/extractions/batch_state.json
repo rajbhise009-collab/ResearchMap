@@ -1,0 +1,14 @@
+{
+  "batch_id": "iqhavxm4e5qzu20z9aoivos4mtjhe3jkjdvy",
+  "slug": "fairness",
+  "input_source": {
+    "openalex:W4376958471": "fulltext",
+    "openalex:W2610178560": "abstract",
+    "openalex:W2904642422": "abstract"
+  },
+  "n_submitted": 3,
+  "projected_inr": 7.077231,
+  "ledger_recorded": true,
+  "submitted_at": 1790962116.565696,
+  "recorded_inr": 6.317576999999999
+}

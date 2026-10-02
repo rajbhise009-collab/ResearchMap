@@ -1,90 +1,75 @@
 # New-library scorer status
 
-**Date:** 2026-10-02 (iteration-3 update). Diagnostic — numbers come
-from the shipped `frontend/public/data/library/<slug>/stats.json`
-snapshots and from the files under `data/domains/<slug>/reasoning/`.
+**Date:** 2026-10-02 (iteration-4 update). Every number below comes from
+the shipped `frontend/public/data/library/<slug>/stats.json`, the files
+under `data/domains/<slug>/reasoning/` (including `coverage.json` and the
+hand-audit file), or `data/spend_ledger.json`.
 
-The reasoning engine runs five scorers; each either ran or was
-skipped. "Skipped" is not the same as "ran and produced zero".
+The reasoning engine has five scorers. "Skipped" is not the same as "ran
+and produced zero".
 
 ## Summary
 
-| library | papers | claims read | unresolved_contradictions | persistent_limitations | orphaned_future_work | structural_holes |
-|:--|--:|--:|--:|--:|--:|--:|
-| llm-calibration | 113 | 113 (100%) | 0 | 1 | 63 | 12 (2 substantive) |
-| diet-and-mortality | 100 | **100 (100%)** | 5 confirmed | 2 | — skipped (paid) | — skipped (needs embeddings) |
-| ml-fairness | 100 | **73 (73%)** | 0 | 1 | — skipped (paid) | — skipped (needs embeddings) |
+| library | papers | claims read | disagreement check | confirmed contradictions | persistent limitations | orphaned future work | structural holes |
+|:--|--:|--:|:--|--:|--:|:--|:--|
+| llm-calibration | 113 | 113 (100%) | 437 / 437 pairs | 0 | 1 | 63 | 12 (2 substantive) |
+| diet-and-mortality | 100 | 100 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | skipped (paid, by design) | not run (pipeline not built) |
+| ml-fairness | 100 | 100 (100%) | 95 / 95 pairs | 0 | 1 | skipped (paid, by design) | not run (pipeline not built) |
 
-## What iteration 3 changed
+"Pairs" are shortlisted claim pairs. Diet and ML-fairness: cosine
+similarity ≥ 0.80, at most 2 candidates per claim (their documented
+settings). LLM-cal used its own Phase-3 settings (≥ 0.78, up to 10 per
+claim; docs/relationship-layer.md), so the counts are not comparable
+across libraries.
 
-- **Diet** went from 59/100 to **100/100 extracted**. All 41 remaining
-  papers extracted via sync Gemini-flash v1.1.0. No new contradictions
-  surfaced (still 5 audited-genuine, 1 artifact, 1 duplicate).
-- **ml-fairness** went from 51/100 to **73/100 extracted** (hit the
-  ₹300 run cap mid-way). Still **0 contradictions** after
-  classifying 135 additional pairs (of 698 new shortlisted pairs).
-- Persistent-limitations: diet=2 ("small-sample-size",
-  "residual-confounding"), ml-fairness=1 ("accuracy-fairness-tradeoff").
-  These are a free, code-only count (categories with ≥3 unique
-  own-work-scope limitation sources), not the full Phase-4 scorer.
-- Orphaned-future-work matching is **paid, skipped by design** on the
-  new libraries. Lowest-value output per rupee; not planned to run.
-- Structural-hole scoring + LLM confirmations: **deferred.** The
-  scorer needs claim embeddings + an addressal-graph the multi-domain
-  pipeline doesn't build yet. Running the LLM-confirm step for ~15
-  top leads per library would be ~₹60-120 — out of this run's budget.
+## What iteration 4 changed
 
-## llm-calibration
+- **Diet:** the 58 shortlisted pairs left unclassified after iteration 3
+  were classified (58 calls, ₹16.36 from the ledger). 3 new flags, all one
+  paper pair on triglycerides and coronary heart disease; hand audit set
+  all three aside (1 artifact, 2 duplicates). Headline unchanged at 5.
+- **ML-fairness:** the last 27 papers were extracted through the batch
+  API (28 batch results including one retry, ₹72.75), then the 29 new
+  shortlisted pairs were classified (₹7.77). 0 flags.
+- Both libraries' disagreement checks are now complete for their full
+  extraction sets.
 
-Unchanged. All five scorers ran against the full 113-paper
-extraction. 76 total opportunities. The 0 for `unresolved_contradictions`
-is a real zero. No further runs planned.
+## Persistent limitations
 
-## diet-and-mortality (now complete)
+Code-only count: a normalised limitation category reported as a
+limitation of the paper's own work by at least 3 papers. Not the full
+Phase-4 scorer (that needs the claim-embedding and addressal pipeline
+the multi-domain libraries don't have). No gap card is published for
+these counts.
 
-- **unresolved_contradictions**: the iteration-3 incremental pass made
-  81 classifier calls (₹23.85) on pairs involving the new papers, but
-  the run was stopped before its output was written, so **no new
-  verdicts were saved**. Pairs involving the 41 newly extracted papers
-  are therefore unclassified, and whether they contain further
-  contradictions is unknown. The audit stays at 5 genuine + 1 artifact
-  + 1 duplicate over the original 97 classified pairs.
-- **persistent_limitations**: 2 categories recur in ≥3 papers.
-  Reported as counts; the full scorer (with corrected-independence
-  calculation and the LLM-cal rubric) is out of scope for this run.
-- `orphaned_future_work`, `structural_holes`: skipped as above.
+## Orphaned future work — skipped by design
 
-## ml-fairness
+Matching future-work statements against later papers is paid and the
+lowest-value output per rupee. It is not planned for the new libraries.
 
-- **unresolved_contradictions**: ran at 73/100 extraction coverage. 752
-  total shortlist pairs, 54 already classified, 698 new candidates. The
-  spend cap hit after 135 of 698 new pairs were classified (0 new
-  contradicts, 36 supports, 99 nones). Still **0 contradictions.**
-- Famous impossibility papers: iteration 2 found 6 in the extracted
-  set. Counted from the saved verdict files after iteration 3: 29 pairs
-  involve them — 14 `supports`, 15 `none`, 0 `contradicts`. The
-  per-pair explanations for the new pairs were not re-read this run.
-  The idea that fairness disagreements are **definitional / theoretical
-  and the empirical-claim classifier doesn't catch them** is a
-  hypothesis, not a finding.
-- `persistent_limitations`: 1 category (code-only count; no gap card
-  is published for it).
-- `orphaned_future_work`, `structural_holes`: skipped.
+## Structural holes — not run
 
-### What a full-coverage ml-fairness run would need
+The scorer needs the embeddings + addressal graph that the LLM-cal
+library has and the multi-domain pipeline does not build. Building it is
+engineering work, not spend.
 
-- Extract remaining 27 papers: ~₹60-100 at the observed sync rate
-  (would need a separate approved spend window).
-- Run contradiction classifier on remaining 563 shortlist pairs:
-  ~₹150-200.
-- Total to finish ml-fairness contradictions: **~₹250-₹300**.
-- Does not meaningfully fit under the current ₹850 ledger cap without
-  explicit cap raise, since we're at ₹824 cumulative after this run.
+## ML-fairness impossibility-result papers (full coverage)
 
-## Cost to run the full ml-fairness contradictions pass
+Pairs touching these papers at the documented settings, from the saved
+verdict files:
 
-Not a decision for this iteration. The information is here so a next
-spend window has concrete numbers; the scorer-match hypothesis would
-need a different experimental design (compare classifier verdicts to
-a labelled hand-set of fairness-literature pairs) before another
-₹250 is a sensible spend.
+| paper | shortlisted | classified | contradicts |
+|:--|--:|--:|--:|
+| Kleinberg, Mullainathan, Raghavan 2016 | 12 | 12 | 0 |
+| Chouldechova 2017 | 1 | 1 | 0 |
+| Friedler et al. 2016 — "On the (im)possibility of fairness" | 0 | 0 | 0 |
+| Berk et al. 2018 | 10 | 10 | 0 |
+| Corbett-Davies et al. 2017 | 0 | 0 | 0 |
+| Menon & Williamson 2018 | 0 | 0 | 0 |
+| "Inherent Trade-Offs in Algorithmic Fairness" 2018 | 2 | 2 | 0 |
+
+Friedler et al.'s paper was never compared with anything: none of its
+claims reached the similarity threshold against another paper's claims.
+Why the classifier flags no contradictions in this library is not
+established. That fairness disagreements are definitional rather than
+empirical is a **hypothesis**, not a finding.

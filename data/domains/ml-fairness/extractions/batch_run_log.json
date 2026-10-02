@@ -1,0 +1,16 @@
+[
+  {
+    "attempt": 0,
+    "slug": "fairness",
+    "cache_hits": 97,
+    "submitted": 3,
+    "batch_id": "iqhavxm4e5qzu20z9aoivos4mtjhe3jkjdvy",
+    "projected_inr": 7.077231,
+    "status": "collected",
+    "n_submitted": 3,
+    "n_returned": 3,
+    "cached": 3,
+    "hard_fails": [],
+    "recorded_inr": 6.317576999999999
+  }
+]
