@@ -326,6 +326,22 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     )
     strength = assertion_strength_distribution(exts) if exts else {}
     gap = gap_type_counts(exts) if exts else {}
+
+    # Code-only persistent-limitations count: a limitation category
+    # that recurs in ≥3 extracted papers (own_work scope) counts as a
+    # "persistent" one. Mirrors the LLM-cal scorer's minimum-paper
+    # threshold without running the full Phase-4 engine (which needs
+    # claim embeddings + addressal relations the multi-domain libs
+    # don't have yet).
+    from collections import defaultdict
+    cat_papers: dict[str, set] = defaultdict(set)
+    for ext in exts:
+        for lim in (ext.limitations or []):
+            if lim.source_scope == "this_work":
+                cat_papers[lim.normalized_category or "uncategorized"].add(
+                    ext.paper_id)
+    n_persistent = sum(1 for ps in cat_papers.values() if len(ps) >= 3)
+
     (lib_dir / "stats.json").write_text(json.dumps({
         "papers": len(entries), "full_text": n_full,
         "abstract_only": len(entries) - n_full,
@@ -340,9 +356,9 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "contradiction_audit": audit_counts,
         "scorer_yields": {
             "unresolved_contradictions": audit_counts["confirmed"],
-            "persistent_limitations": 0,       # not scored on these libs yet
-            "orphaned_future_work": 0,
-            "structural_holes": 0,
+            "persistent_limitations": n_persistent,
+            "orphaned_future_work": 0,    # paid, out of this iteration's budget
+            "structural_holes": 0,        # needs embeddings; deferred
             "structural_holes_substantive": 0,
         },
         "core": sum(1 for e in entries if e.get("domain_centrality") == "core"),

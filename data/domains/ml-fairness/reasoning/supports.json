@@ -1,5 +1,5 @@
 {
-  "n": 32,
+  "n": 68,
   "items": [
     {
       "from_claim_id": "openalex:W2097246321:c1",
@@ -320,6 +320,366 @@
       "b_paper_id": "openalex:W2097246321",
       "b_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
       "explanation": "Both claims find that excluding sensitive attributes is ineffective for eliminating algorithmic bias, with Claim B explaining that correlations among attributes cause this failure."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c1",
+      "to_claim_id": "openalex:W3203106571:c3",
+      "similarity": 0.8673602938652039,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "Certain mathematical measures of fairness in machine learning are impossible to satisfy simultaneously except in rare and contrived circumstances.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "It is mathematically impossible to simultaneously fulfill all group-level mathematical definitions of fairness.",
+      "explanation": "Both claims assert the mathematical impossibility of simultaneously satisfying multiple definitions of fairness."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c5",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.849981427192688,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Using a balanced sensitive attribute distribution in adversarial training improves fairness metrics across all tested measures compared to an unbalanced distribution.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim B explains how an imbalanced sensitive attribute degrades adversarial performance, which reinforces Claim A's finding that balancing the sensitive attribute distribution improves fairness metrics."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c4",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.8466144800186157,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Using a balanced distribution over the sensitive attribute in adversarial training stabilizes model performance and reduces variance across training runs.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Both claims address the negative impact of sensitive attribute imbalance in adversarial training, with one identifying the failure mode caused by imbalance and the other demonstrating that balancing the distribution stabilizes performance."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c1",
+      "to_claim_id": "openalex:W3152256433:c1",
+      "similarity": 0.8415461182594299,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "Certain mathematical measures of fairness in machine learning are impossible to satisfy simultaneously except in rare and contrived circumstances.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "explanation": "Both claims assert the mathematical impossibility of simultaneously satisfying multiple algorithmic fairness criteria, with Claim B specifying the particular condition under which this holds."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c1",
+      "to_claim_id": "openalex:W4386564359:c4",
+      "similarity": 0.8385117650032043,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with the conjunction of balance for the positive class and balance for the negative class when two groups have unequal base rates.",
+      "explanation": "Both claims assert that satisfying multiple statistical fairness criteria simultaneously is mathematically impossible when base rates differ across groups."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c1",
+      "to_claim_id": "openalex:W3203106571:c3",
+      "similarity": 0.8305674195289612,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "It is mathematically impossible to simultaneously fulfill all group-level mathematical definitions of fairness.",
+      "explanation": "Both claims assert the fundamental mathematical impossibility of simultaneously satisfying all group-level or statistical fairness criteria."
+    },
+    {
+      "from_claim_id": "openalex:W2026019770:c2",
+      "to_claim_id": "openalex:W2097246321:c1",
+      "similarity": 0.8298995494842529,
+      "a_paper_id": "openalex:W2026019770",
+      "a_text": "Removing discriminatory attributes from a dataset is insufficient to guarantee non-discrimination when background knowledge is available.",
+      "b_paper_id": "openalex:W2097246321",
+      "b_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "explanation": "Both claims assert that simply removing sensitive or discriminatory attributes from a dataset is ineffective at preventing discrimination due to external knowledge or correlated features."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c1",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.8256140351295471,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Both claims assert that statistical fairness criteria are mutually incompatible when base rates differ across groups."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c1",
+      "to_claim_id": "openalex:W4386564359:c1",
+      "similarity": 0.8239730000495911,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "No risk assignment method can simultaneously satisfy calibration within groups, balance for the negative class, and balance for the positive class except in instances allowing perfect prediction or having equal base rates across groups.",
+      "explanation": "Both claims assert the fundamental impossibility theorem in algorithmic fairness, stating that key statistical fairness criteria cannot be simultaneously satisfied unless base rates are equal across groups."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c2",
+      "to_claim_id": "openalex:W3152256433:c1",
+      "similarity": 0.8083053231239319,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "explanation": "Both claims assert that statistical criteria for algorithmic fairness cannot be simultaneously satisfied when base rates differ across groups."
+    },
+    {
+      "from_claim_id": "openalex:W2040825624:c1",
+      "to_claim_id": "openalex:W2150997454:c1",
+      "similarity": 0.8004940152168274,
+      "a_paper_id": "openalex:W2040825624",
+      "a_text": "Simply avoiding the use of sensitive features is insufficient for eliminating biases in algorithmic determinations.",
+      "b_paper_id": "openalex:W2150997454",
+      "b_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "explanation": "Both claims independently assert that removing sensitive features or attributes from training data is insufficient to prevent algorithmic bias or discrimination."
+    },
+    {
+      "from_claim_id": "openalex:W2150997454:c1",
+      "to_claim_id": "openalex:W2157928966:c3",
+      "similarity": 0.7996392846107483,
+      "a_paper_id": "openalex:W2150997454",
+      "a_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "b_paper_id": "openalex:W2157928966",
+      "b_text": "Training a standard classification model on a massaged, unbiased dataset yields a non-discriminating classifier.",
+      "explanation": "Both claims reinforce the principle that a standard classifier's discrimination directly reflects the bias present in its training dataset."
+    },
+    {
+      "from_claim_id": "openalex:W2765146466:c1",
+      "to_claim_id": "openalex:W4210736086:c1",
+      "similarity": 0.7993720769882202,
+      "a_paper_id": "openalex:W2765146466",
+      "a_text": "Algorithmic machine learning models can produce unfair decisions by reproducing biases present in historical training data.",
+      "b_paper_id": "openalex:W4210736086",
+      "b_text": "Algorithmic decision making in machine learning can be inherently prone to unfairness even without explicit intent.",
+      "explanation": "Both claims reinforce the finding that machine learning models can produce unfair outcomes through automated mechanisms rather than intentional discrimination."
+    },
+    {
+      "from_claim_id": "openalex:W2543774860:c4",
+      "to_claim_id": "openalex:W2599025709:c4",
+      "similarity": 0.7988477945327759,
+      "a_paper_id": "openalex:W2543774860",
+      "a_text": "In the Broward County dataset, the COMPAS false negative rate is 28% for Black defendants compared to 48% for White defendants.",
+      "b_paper_id": "openalex:W2599025709",
+      "b_text": "In an empirical arraignment dataset tuned for equal conditional use accuracy (.93 for Blacks, .94 for Whites), the false negative rate for White offenders was .93 compared to .49 for Black offenders.",
+      "explanation": "Both claims independently find that false negative rates in risk assessment tools are substantially higher for White defendants than for Black defendants."
+    },
+    {
+      "from_claim_id": "openalex:W2040825624:c2",
+      "to_claim_id": "openalex:W2097246321:c1",
+      "similarity": 0.7974475026130676,
+      "a_paper_id": "openalex:W2040825624",
+      "a_text": "Biases persist in determinations when sensitive features are excluded due to the indirect influence of sensitive information.",
+      "b_paper_id": "openalex:W2097246321",
+      "b_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "explanation": "Both claims assert that excluding sensitive attributes fails to eliminate bias because sensitive information still influences outcomes through correlations with other features."
+    },
+    {
+      "from_claim_id": "openalex:W2543774860:c3",
+      "to_claim_id": "openalex:W2599025709:c5",
+      "similarity": 0.7941887378692627,
+      "a_paper_id": "openalex:W2543774860",
+      "a_text": "In the Broward County dataset, the COMPAS false positive rate is 45% for Black defendants compared to 23% for White defendants.",
+      "b_paper_id": "openalex:W2599025709",
+      "b_text": "In an empirical arraignment dataset tuned for equal conditional use accuracy (.93 for Blacks, .94 for Whites), the false positive rate for Black offenders was .24 compared to .02 for White offenders.",
+      "explanation": "Both claims independently demonstrate that algorithmic risk assessments yield substantially higher false positive rates for Black individuals compared to White individuals across different datasets and settings."
+    },
+    {
+      "from_claim_id": "openalex:W2795743913:c4",
+      "to_claim_id": "openalex:W4288414189:c6",
+      "similarity": 0.7931432723999023,
+      "a_paper_id": "openalex:W2795743913",
+      "a_text": "Perceptions of algorithmic fairness or unfairness can substantially affect user trust in a company or product.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "An individual's prior trust in machine learning systems positively correlates with their overall perceived fairness ratings of model predictions.",
+      "explanation": "Both claims independently demonstrate a mutually reinforcing positive relationship between user trust and perceived algorithmic fairness."
+    },
+    {
+      "from_claim_id": "openalex:W1979769549:c2",
+      "to_claim_id": "openalex:W2157928966:c3",
+      "similarity": 0.7926667928695679,
+      "a_paper_id": "openalex:W1979769549",
+      "a_text": "Discrimination-aware classification can be achieved without requiring classifier tweaking.",
+      "b_paper_id": "openalex:W2157928966",
+      "b_text": "Training a standard classification model on a massaged, unbiased dataset yields a non-discriminating classifier.",
+      "explanation": "Claim B illustrates a specific pre-processing method that validates Claim A's assertion that discrimination-aware classification can be accomplished without modifying the classifier itself."
+    },
+    {
+      "from_claim_id": "openalex:W2100960835:c3",
+      "to_claim_id": "openalex:W2790697880:c3",
+      "similarity": 0.791558027267456,
+      "a_paper_id": "openalex:W2100960835",
+      "a_text": "Statistical parity alone is insufficient as a notion of fairness because it can allow individual-level unfairness, reduced utility, and self-fulfilling prophecies.",
+      "b_paper_id": "openalex:W2790697880",
+      "b_text": "Demographic parity and equal opportunity cause active harm to a protected group when applied over-eagerly in settings where the protected group proportion is small.",
+      "explanation": "Both claims independently highlight that applying demographic or statistical parity as a fairness metric can result in harmful outcomes and reduced utility."
+    },
+    {
+      "from_claim_id": "openalex:W2150997454:c1",
+      "to_claim_id": "openalex:W2784397426:c5",
+      "similarity": 0.7904837727546692,
+      "a_paper_id": "openalex:W2150997454",
+      "a_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Removing a protected variable directly from training data fails to yield a debiased model because other features remain correlated with the protected variable.",
+      "explanation": "Both claims assert that removing sensitive or protected attributes from training data is insufficient to eliminate model bias, with Claim B explaining the proxy variable mechanism behind the finding in Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W2157928966:c1",
+      "to_claim_id": "openalex:W3035447285:c1",
+      "similarity": 0.7895182371139526,
+      "a_paper_id": "openalex:W2157928966",
+      "a_text": "Standard classification models trained on biased data inherit and reproduce discriminatory behavior towards affected groups.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Without debiasing algorithms, deep learning models amplify biases present in training data.",
+      "explanation": "Both claims independently assert that machine learning models propagate or exacerbate existing biases in training data when debiasing techniques are not applied."
+    },
+    {
+      "from_claim_id": "openalex:W2543774860:c1",
+      "to_claim_id": "openalex:W4386564359:c1",
+      "similarity": 0.7876721620559692,
+      "a_paper_id": "openalex:W2543774860",
+      "a_text": "When recidivism prevalence differs between two groups, a test-fair risk score cannot achieve equal false positive and false negative rates across those groups simultaneously.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "No risk assignment method can simultaneously satisfy calibration within groups, balance for the negative class, and balance for the positive class except in instances allowing perfect prediction or having equal base rates across groups.",
+      "explanation": "Both claims assert the impossibility of simultaneously achieving calibration (test-fairness) and equal false positive/negative rates across groups with differing base rates."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c3",
+      "to_claim_id": "openalex:W4386564359:c1",
+      "similarity": 0.7835656404495239,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Purported statistical fairness criteria (except calibration) can be simultaneously violated by a manifestly fair and uniquely optimal predictive algorithm.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "No risk assignment method can simultaneously satisfy calibration within groups, balance for the negative class, and balance for the positive class except in instances allowing perfect prediction or having equal base rates across groups.",
+      "explanation": "Both claims demonstrate theoretical limitations of statistical fairness criteria, highlighting how metrics like class balance fail or conflict with properties such as calibration and optimal prediction."
+    },
+    {
+      "from_claim_id": "openalex:W2097246321:c1",
+      "to_claim_id": "openalex:W2550530154:c8",
+      "similarity": 0.782829225063324,
+      "a_paper_id": "openalex:W2097246321",
+      "a_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "b_paper_id": "openalex:W2550530154",
+      "b_text": "Predictive models trained on data modified by Disparate Impact Removal retain significant indirect discrimination (0.167 for SVM and 0.168 for Decision Tree) in test set predictions.",
+      "explanation": "Both claims find that removing or modifying sensitive attributes in training data fails to completely eliminate indirect discrimination in predictive models."
+    },
+    {
+      "from_claim_id": "openalex:W2765146466:c1",
+      "to_claim_id": "openalex:W3035447285:c1",
+      "similarity": 0.7827404737472534,
+      "a_paper_id": "openalex:W2765146466",
+      "a_text": "Algorithmic machine learning models can produce unfair decisions by reproducing biases present in historical training data.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Without debiasing algorithms, deep learning models amplify biases present in training data.",
+      "explanation": "Both claims independently assert that machine learning models propagate or exacerbate biases present in their training data."
+    },
+    {
+      "from_claim_id": "openalex:W2765146466:c7",
+      "to_claim_id": "openalex:W3203106571:c1",
+      "similarity": 0.7818042635917664,
+      "a_paper_id": "openalex:W2765146466",
+      "a_text": "Real-world machine learning fairness challenges are institutionally and contextually grounded rather than abstract constrained optimization problems.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "Algorithmic fairness is an inherently social concept and should be approached through a sociotechnical lens.",
+      "explanation": "Both claims assert that algorithmic fairness cannot be reduced to purely technical or abstract optimization problems, emphasizing instead its contextually grounded and sociotechnical nature."
+    },
+    {
+      "from_claim_id": "openalex:W2040825624:c1",
+      "to_claim_id": "openalex:W2784397426:c5",
+      "similarity": 0.7817870378494263,
+      "a_paper_id": "openalex:W2040825624",
+      "a_text": "Simply avoiding the use of sensitive features is insufficient for eliminating biases in algorithmic determinations.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Removing a protected variable directly from training data fails to yield a debiased model because other features remain correlated with the protected variable.",
+      "explanation": "Both claims assert that removing sensitive or protected variables is insufficient to eliminate algorithmic bias, with Claim B providing the mechanism of feature correlation that explains Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W2809878087:c3",
+      "similarity": 0.7809900641441345,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "The same classification case can be evaluated as fair according to some definitions and unfair according to others.",
+      "explanation": "Both claims mutually reinforce the idea that fairness in machine learning encompasses multiple distinct normative definitions, which can lead to differing evaluations of the same classification."
+    },
+    {
+      "from_claim_id": "openalex:W2100960835:c1",
+      "to_claim_id": "openalex:W2162670686:c2",
+      "similarity": 0.78032386302948,
+      "a_paper_id": "openalex:W2100960835",
+      "a_text": "Fairness in classification can be formalized as a Lipschitz condition on a randomized classifier requiring that similar individuals map to similar probability distributions over outcomes.",
+      "b_paper_id": "openalex:W2162670686",
+      "b_text": "The proposed learning algorithm achieves individual fairness by treating similar individuals similarly.",
+      "explanation": "Both claims assert the core principle of individual fairness, which mandates that similar individuals should receive similar treatment or outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2543774860:c1",
+      "to_claim_id": "openalex:W3152256433:c1",
+      "similarity": 0.7797333002090454,
+      "a_paper_id": "openalex:W2543774860",
+      "a_text": "When recidivism prevalence differs between two groups, a test-fair risk score cannot achieve equal false positive and false negative rates across those groups simultaneously.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "explanation": "Both claims assert that satisfying multiple statistical fairness criteria simultaneously is mathematically impossible when base rates or prevalence differ across groups."
+    },
+    {
+      "from_claim_id": "openalex:W2026019770:c2",
+      "to_claim_id": "openalex:W2040825624:c1",
+      "similarity": 0.7792325615882874,
+      "a_paper_id": "openalex:W2026019770",
+      "a_text": "Removing discriminatory attributes from a dataset is insufficient to guarantee non-discrimination when background knowledge is available.",
+      "b_paper_id": "openalex:W2040825624",
+      "b_text": "Simply avoiding the use of sensitive features is insufficient for eliminating biases in algorithmic determinations.",
+      "explanation": "Both claims independently assert that removing or ignoring sensitive attributes is insufficient to prevent algorithmic bias or discrimination."
+    },
+    {
+      "from_claim_id": "openalex:W2162670686:c3",
+      "to_claim_id": "openalex:W2963174898:c2",
+      "similarity": 0.7780536413192749,
+      "a_paper_id": "openalex:W2162670686",
+      "a_text": "Fairness can be formulated as an optimization problem of finding a data representation that balances data encoding quality with protected group membership obfuscation.",
+      "b_paper_id": "openalex:W2963174898",
+      "b_text": "Convex optimization can learn a data transformation that simultaneously controls discrimination, limits sample distortion, and preserves utility.",
+      "explanation": "Both claims independently assert that fair data representations can be learned using optimization techniques that balance utility and sample quality with fairness goals."
+    },
+    {
+      "from_claim_id": "openalex:W4288414189:c1",
+      "to_claim_id": "openalex:W4289438483:c2",
+      "similarity": 0.7775657176971436,
+      "a_paper_id": "openalex:W4288414189",
+      "a_text": "Predictions made on preprocessed (de-biased) data are rated as fairer than those made on raw data.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Reweighing and optimized pre-processing algorithms improve statistical parity difference and disparate impact metrics across Adult, German Credit, and COMPAS datasets.",
+      "explanation": "Both claims mutually reinforce the finding that pre-processing techniques enhance the fairness of machine learning predictions compared to using raw data."
+    },
+    {
+      "from_claim_id": "openalex:W2543774860:c1",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.7768376469612122,
+      "a_paper_id": "openalex:W2543774860",
+      "a_text": "When recidivism prevalence differs between two groups, a test-fair risk score cannot achieve equal false positive and false negative rates across those groups simultaneously.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Both claims independently demonstrate mathematical incompatibilities between calibration and other group-level fairness criteria when base rates differ between groups."
+    },
+    {
+      "from_claim_id": "openalex:W2157928966:c1",
+      "to_claim_id": "openalex:W4210736086:c1",
+      "similarity": 0.776767909526825,
+      "a_paper_id": "openalex:W2157928966",
+      "a_text": "Standard classification models trained on biased data inherit and reproduce discriminatory behavior towards affected groups.",
+      "b_paper_id": "openalex:W4210736086",
+      "b_text": "Algorithmic decision making in machine learning can be inherently prone to unfairness even without explicit intent.",
+      "explanation": "Both claims independently assert that machine learning models can produce discriminatory or unfair outcomes without explicit intent."
+    },
+    {
+      "from_claim_id": "openalex:W2809878087:c2",
+      "to_claim_id": "openalex:W3101206394:c1",
+      "similarity": 0.7758892178535461,
+      "a_paper_id": "openalex:W2809878087",
+      "a_text": "There is no clear agreement on which fairness definition to apply in each situation.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "explanation": "Both claims independently reinforce the finding that the field of algorithmic fairness lacks standardized consensus regarding its definitions, terminology, and applications."
     }
   ]
 }

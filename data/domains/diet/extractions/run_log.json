@@ -1,0 +1,610 @@
+{
+  "slug": "diet",
+  "elapsed_s": 42.0623197555542,
+  "stats": {
+    "cache_hit": 98,
+    "extracted": 2
+  },
+  "per_paper": [
+    {
+      "wid": "W2734724639",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2166000498",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1963683487",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2155329925",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1983531379",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2789495752",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2226817873",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2113024584",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2033941910",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2109129984",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2625336870",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2119546263",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2335592377",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2807745201",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2109401990",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2593977293",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2125436925",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2787107952",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2323151514",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2430898493",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2735659721",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2946931470",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W3194401096",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2315875886",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2589088833",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2917793655",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W3037505531",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W4392600894",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2702919331",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2126726883",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1970605722",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2885382674",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2480974182",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2774826291",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2492799977",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2789317488",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1600958960",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2109003937",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W3020869775",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2311763102",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2913125611",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W4229029536",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2808291487",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1955611966",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1996328388",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2038328432",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1749005812",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2790374493",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2513212958",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2955331731",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2581745547",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2034819178",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2734661169",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2114345764",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W3035463546",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2131745222",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2064137374",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2049646863",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1687499721",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2032318187",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2128917543",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2568755678",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1583941205",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1503681091",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2746156504",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2520937487",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2127264189",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1617145133",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1520609538",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2103825558",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2141659719",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1622799587",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2127427274",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1922087192",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2160517070",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2121393149",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1941424948",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2120021843",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1848464647",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2121413294",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2036747551",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1996559225",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W3008279587",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2912465744",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1976428272",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2108688205",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2025106732",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2152200355",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1932640386",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1894174368",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2024961803",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2123820248",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W3080685158",
+      "input_source": "fulltext",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2065828665",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2026310866",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W1937575131",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2225912682",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2034114152",
+      "input_source": "abstract",
+      "from_cache": true,
+      "ok": true
+    },
+    {
+      "wid": "W2122520859",
+      "input_source": "fulltext",
+      "from_cache": false,
+      "ok": true
+    },
+    {
+      "wid": "W1999950621",
+      "input_source": "abstract",
+      "from_cache": false,
+      "ok": true
+    }
+  ]
+}

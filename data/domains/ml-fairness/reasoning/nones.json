@@ -1,5 +1,5 @@
 {
-  "n": 22,
+  "n": 121,
   "items": [
     {
       "from_claim_id": "openalex:W2786122898:c6",
@@ -220,6 +220,996 @@
       "b_paper_id": "openalex:W3035447285",
       "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
       "explanation": "Claim A addresses the variability of fairness measures due to data splits, whereas Claim B focuses on the trade-off between fairness mitigation and model accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c6",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.8695017695426941,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Using a balanced sensitive attribute distribution in adversarial training decreases primary task classification accuracy.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim A focuses on how a balanced sensitive attribute distribution affects primary task classification accuracy, while Claim B addresses how imbalanced sensitive attributes bias the adversary when using cross-entropy loss."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c9",
+      "to_claim_id": "openalex:W3043023066:c2",
+      "similarity": 0.8248587250709534,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "There is an empirical trade-off between negative outcome group calibration (s-calibration-) and true positive rate (s-TPR) across fairness algorithms.",
+      "b_paper_id": "openalex:W3043023066",
+      "b_text": "Penalizing group fairness violations results in heterogeneous effects on measures of fairness in calibration and cross-group ranking across experimental conditions.",
+      "explanation": "Claim A identifies a specific trade-off between negative outcome calibration and true positive rate, whereas Claim B broadly observes heterogeneous effects of fairness penalties on calibration and ranking across conditions."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c9",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.8150286078453064,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Adversarial fair representation learning remains effective at improving fairness metrics with sensitive attribute datasets as small as 500 examples (1.5% of total training data).",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim A addresses the effectiveness of adversarial fair representation learning under small sensitive attribute dataset sizes, whereas Claim B focuses on the limitations of cross-entropy adversarial loss under class imbalance."
+    },
+    {
+      "from_claim_id": "openalex:W2622808887:c4",
+      "to_claim_id": "openalex:W3035447285:c2",
+      "similarity": 0.8148377537727356,
+      "a_paper_id": "openalex:W2622808887",
+      "a_text": "Individual fairness is generally more costly in terms of accuracy loss than group fairness across most studied datasets.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "explanation": "Claim A compares the relative accuracy costs of individual versus group fairness, while Claim B makes a general assertion about fairness mitigation algorithms reducing model accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W3203106571:c2",
+      "similarity": 0.809203028678894,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "The existing literature on algorithmic fairness is dominated by technical perspectives that reduce fairness to a mathematical construct.",
+      "explanation": "Claim A offers a conceptual framing of how fairness should be understood, whereas Claim B describes the descriptive reality of how current literature treats the concept."
+    },
+    {
+      "from_claim_id": "openalex:W2809878087:c1",
+      "to_claim_id": "openalex:W3203106571:c2",
+      "similarity": 0.8068831562995911,
+      "a_paper_id": "openalex:W2809878087",
+      "a_text": "More than twenty different notions of algorithmic fairness have been proposed in recent years.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "The existing literature on algorithmic fairness is dominated by technical perspectives that reduce fairness to a mathematical construct.",
+      "explanation": "Claim A discusses the quantity and variety of fairness definitions, while Claim B characterizes the dominant technical nature of the literature, making them related in topic but neither mutually reinforcing nor contradictory."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W2809878087:c4",
+      "similarity": 0.8062570691108704,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "The authors systematically collect and explain prominent definitions of fairness for algorithmic classification.",
+      "explanation": "Claim A makes a conceptual argument about the nature of fairness in machine learning, whereas Claim B simply describes an authors' work in collecting and explaining various definitions of fairness."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c7",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.8040109872817993,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on high-income examples (>50K) most effectively reduces the equality gap for the high-income label class.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim A focuses on the effectiveness of training an adversarial head on a specific subset of data to reduce an equality gap, whereas Claim B examines how cross-entropy loss affects adversary predictions under sensitive attribute imbalance."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c8",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.8032338619232178,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on low-income examples (<=50K) most effectively reduces the equality gap for the low-income label class.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim A addresses the efficacy of training an adversarial head on a specific subset to reduce the equality gap, while Claim B focuses on how cross-entropy loss affects adversary predictions under sensitive attribute imbalance."
+    },
+    {
+      "from_claim_id": "openalex:W3101206394:c1",
+      "to_claim_id": "openalex:W3203106571:c2",
+      "similarity": 0.8028814196586609,
+      "a_paper_id": "openalex:W3101206394",
+      "a_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "The existing literature on algorithmic fairness is dominated by technical perspectives that reduce fairness to a mathematical construct.",
+      "explanation": "Both claims discuss characteristics of the algorithmic fairness literature, but one addresses inconsistencies in terminology and notation while the other highlights the dominance of mathematical perspectives."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c4",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.8014562129974365,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "A manifestly fair and uniquely optimal predictive algorithm can violate statistical fairness criteria even when base rates are equal across groups.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Claim A addresses the violation of statistical fairness criteria when base rates are equal, whereas Claim B focuses on the incompatibility of statistical parity and calibration when base rates are unequal."
+    },
+    {
+      "from_claim_id": "openalex:W3159960173:c1",
+      "to_claim_id": "openalex:W3203106571:c2",
+      "similarity": 0.7987395524978638,
+      "a_paper_id": "openalex:W3159960173",
+      "a_text": "There is a scarcity of suitable educational materials on aspects of algorithmic fairness.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "The existing literature on algorithmic fairness is dominated by technical perspectives that reduce fairness to a mathematical construct.",
+      "explanation": "The claims address different aspects of algorithmic fairness\u2014the availability of educational materials versus the technical focus of existing literature\u2014and neither directly support nor contradict each other."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c6",
+      "to_claim_id": "openalex:W2885659818:c2",
+      "similarity": 0.7985992431640625,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "No single fairness-aware algorithm consistently dominates across both accuracy and fairness measures.",
+      "b_paper_id": "openalex:W2885659818",
+      "b_text": "Both primary families of formal fairness definitions typically yield strongly Pareto dominated decision policies analytically and empirically.",
+      "explanation": "Claim A addresses the lack of a universally superior algorithm across accuracy and fairness metrics, while Claim B focuses on the Pareto inefficiency introduced by enforcing formal fairness definitions."
+    },
+    {
+      "from_claim_id": "openalex:W2097246321:c1",
+      "to_claim_id": "openalex:W2599025709:c3",
+      "similarity": 0.7984470725059509,
+      "a_paper_id": "openalex:W2097246321",
+      "a_text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "b_paper_id": "openalex:W2599025709",
+      "b_text": "Excluding or discounting protected group attributes from a fitting procedure reduces overall prediction accuracy when those attributes share non-redundant associations with the outcome.",
+      "explanation": "Claim A addresses the failure of removing sensitive attributes to eliminate discrimination, whereas Claim B focuses on the impact of attribute removal on overall prediction accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c7",
+      "to_claim_id": "openalex:W2784397426:c2",
+      "similarity": 0.7982668280601501,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on high-income examples (>50K) most effectively reduces the equality gap for the high-income label class.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "On the UCI Adult Dataset with adversarial debiasing, false negative rates across female (0.0647) and male (0.0701) subgroups showed no statistically significant difference (p = 0.62).",
+      "explanation": "Claim A discusses the targeted effect of training an adversarial head on high-income examples, while Claim B reports a specific statistical finding regarding gender sub-group false negative rates on the UCI Adult dataset."
+    },
+    {
+      "from_claim_id": "openalex:W2157928966:c3",
+      "to_claim_id": "openalex:W2784397426:c5",
+      "similarity": 0.7982343435287476,
+      "a_paper_id": "openalex:W2157928966",
+      "a_text": "Training a standard classification model on a massaged, unbiased dataset yields a non-discriminating classifier.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Removing a protected variable directly from training data fails to yield a debiased model because other features remain correlated with the protected variable.",
+      "explanation": "Claim A addresses the effect of training on a massaged, unbiased dataset, whereas Claim B specifically addresses removing only the protected variable, which represents a different preprocessing intervention."
+    },
+    {
+      "from_claim_id": "openalex:W1979769549:c2",
+      "to_claim_id": "openalex:W2963174898:c4",
+      "similarity": 0.7977544069290161,
+      "a_paper_id": "openalex:W1979769549",
+      "a_text": "Discrimination-aware classification can be achieved without requiring classifier tweaking.",
+      "b_paper_id": "openalex:W2963174898",
+      "b_text": "Data discrimination can be significantly reduced at a small cost in classification accuracy.",
+      "explanation": "Claim A addresses how discrimination-aware classification can be achieved, while Claim B focuses on the trade-off between discrimination reduction and accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c3",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.7975055575370789,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Purported statistical fairness criteria (except calibration) can be simultaneously violated by a manifestly fair and uniquely optimal predictive algorithm.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Both claims address limitations of statistical fairness criteria, but Claim A focuses on how uniquely optimal algorithms violate non-calibration statistical criteria, while Claim B highlights the specific incompatibility between statistical parity and calibration when base rates differ."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c7",
+      "to_claim_id": "openalex:W2784397426:c3",
+      "similarity": 0.7966620922088623,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on high-income examples (>50K) most effectively reduces the equality gap for the high-income label class.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "On the UCI Adult Dataset with adversarial debiasing, false positive rates across female (0.4458) and male (0.4349) subgroups showed no statistically significant difference (p = 0.25).",
+      "explanation": "Claim A discusses the effect of adversarial training on the equality gap for income classes, while Claim B reports empirical false positive rate differences between gender subgroups on a specific dataset."
+    },
+    {
+      "from_claim_id": "openalex:W2785011159:c2",
+      "to_claim_id": "openalex:W2964316623:c2",
+      "similarity": 0.7963092923164368,
+      "a_paper_id": "openalex:W2785011159",
+      "a_text": "The COMPAS recidivism risk assessment software is no more fair in its predictions than predictions made by people with little or no criminal justice expertise.",
+      "b_paper_id": "openalex:W2964316623",
+      "b_text": "A majority of survey respondents judged five of the ten evaluated COMPAS features as unfair to use for predicting criminal recidivism risk.",
+      "explanation": "Claim A compares the overall predictive fairness of COMPAS to layperson predictions, while Claim B evaluates public perceptions regarding the fairness of specific input features used by COMPAS."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c1",
+      "to_claim_id": "openalex:W2963174898:c1",
+      "similarity": 0.7956727743148804,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported accuracy measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W2963174898",
+      "b_text": "A probabilistic formulation of data pre-processing can be used to reduce discrimination in algorithmic decision making.",
+      "explanation": "Claim A discusses how data preprocessing choices affect accuracy metrics in fairness-aware algorithms, whereas Claim B proposes a specific probabilistic preprocessing technique to mitigate discrimination."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c5",
+      "to_claim_id": "openalex:W2788416960:c2",
+      "similarity": 0.7956388592720032,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "The expected loss of an equalized odds classifier derived from an approximate regressor is bounded by twice the square root of two times the conditional Kolmogorov distance to the Bayes optimal regressor.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "The optimal objective value of the equalized odds adversary upper-bounds the equalized odds distance of any classifier learned from the representation.",
+      "explanation": "The claims establish different theoretical bounds regarding equalized odds, with Claim A bounding expected loss via distance to a Bayes optimal regressor and Claim B bounding fairness distance via an adversarial objective."
+    },
+    {
+      "from_claim_id": "openalex:W2790697880:c3",
+      "to_claim_id": "openalex:W3035447285:c3",
+      "similarity": 0.7956302762031555,
+      "a_paper_id": "openalex:W2790697880",
+      "a_text": "Demographic parity and equal opportunity cause active harm to a protected group when applied over-eagerly in settings where the protected group proportion is small.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Fairness mitigation methods that achieve demographic parity can result in unfairness with regard to equality of opportunity or odds.",
+      "explanation": "Both claims discuss drawbacks of enforcing demographic parity, but Claim A focuses on active harm to small protected groups while Claim B addresses trade-offs between competing fairness definitions."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W3101206394:c3",
+      "similarity": 0.7953296303749084,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "Fairness definitions across existing literature can be organized into a notationally consistent catalog.",
+      "explanation": "Claim A conceptualizes fairness as a placeholder for normative considerations, while Claim B focuses on the practical task of organizing existing mathematical definitions into a consistent catalog."
+    },
+    {
+      "from_claim_id": "openalex:W3136620301:c5",
+      "to_claim_id": "openalex:W4288414189:c6",
+      "similarity": 0.794722855091095,
+      "a_paper_id": "openalex:W3136620301",
+      "a_text": "Perceived fairness of algorithms has a significant positive impact on satisfaction with algorithmic systems.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "An individual's prior trust in machine learning systems positively correlates with their overall perceived fairness ratings of model predictions.",
+      "explanation": "The claims address different relationships within algorithmic perception, one linking perceived fairness to system satisfaction and the other linking prior trust to perceived fairness."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c9",
+      "to_claim_id": "openalex:W2784397426:c1",
+      "similarity": 0.7939742207527161,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Adversarial fair representation learning remains effective at improving fairness metrics with sensitive attribute datasets as small as 500 examples (1.5% of total training data).",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "explanation": "Claim A addresses the efficacy of adversarial fair representation learning with limited sensitive attribute data, while Claim B reports the impact of adversarial debiasing on predictive accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W3101206394:c1",
+      "to_claim_id": "openalex:W3203106571:c5",
+      "similarity": 0.7938607931137085,
+      "a_paper_id": "openalex:W3101206394",
+      "a_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "Social perspectives on algorithmic fairness frequently treat technical fairness approaches as a black box without analyzing specific technical operationalizations or trade-offs.",
+      "explanation": "Both claims address limitations in algorithmic fairness literature, but Claim A focuses on internal inconsistencies in terminology and notation, whereas Claim B addresses how social perspectives treat technical methods as a black box."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c8",
+      "to_claim_id": "openalex:W2784397426:c2",
+      "similarity": 0.7932072877883911,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on low-income examples (<=50K) most effectively reduces the equality gap for the low-income label class.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "On the UCI Adult Dataset with adversarial debiasing, false negative rates across female (0.0647) and male (0.0701) subgroups showed no statistically significant difference (p = 0.62).",
+      "explanation": "Claim A focuses on training an adversarial head on income-based examples to reduce the equality gap, whereas Claim B reports on false negative rates across gender subgroups using adversarial debiasing."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c2",
+      "to_claim_id": "openalex:W3136620301:c4",
+      "similarity": 0.7927811145782471,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Standards clarity alone does not increase perceived fairness in algorithmic allocations.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "explanation": "The claims examine different factors affecting perceived algorithmic fairness, with Claim A focusing on standards clarity and Claim B focusing on outcome favorability."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c2",
+      "to_claim_id": "openalex:W3136620301:c5",
+      "similarity": 0.7922019958496094,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Standards clarity alone does not increase perceived fairness in algorithmic allocations.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Perceived fairness of algorithms has a significant positive impact on satisfaction with algorithmic systems.",
+      "explanation": "Claim A examines antecedents that do not affect perceived fairness, whereas Claim B examines the downstream effects of perceived fairness on user satisfaction."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c3",
+      "to_claim_id": "openalex:W3136620301:c4",
+      "similarity": 0.7920878529548645,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Outcome explanation produces mixed effects on perceived fairness, increasing it in some contexts and decreasing it in others.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "explanation": "Claim A addresses how outcome explanations affect perceived fairness, whereas Claim B focuses on how outcome favorability influences fairness perceptions."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c5",
+      "to_claim_id": "openalex:W3136620301:c4",
+      "similarity": 0.7920690178871155,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Outcome control consistently improves perceived fairness in algorithmic goods division.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "explanation": "Claim A addresses the effect of outcome control on perceived fairness, whereas Claim B addresses the impact of outcome favorability on perceived fairness."
+    },
+    {
+      "from_claim_id": "openalex:W3136620301:c4",
+      "to_claim_id": "openalex:W4210708600:c10",
+      "similarity": 0.7918602824211121,
+      "a_paper_id": "openalex:W3136620301",
+      "a_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "b_paper_id": "openalex:W4210708600",
+      "b_text": "Interactional justice perceptions are higher when an AI makes a positive decision compared to when a human makes a negative decision.",
+      "explanation": "Claim A addresses how outcome favorability affects general algorithmic fairness perceptions, whereas Claim B specifically compares interactional justice perceptions between positive AI decisions and negative human decisions."
+    },
+    {
+      "from_claim_id": "openalex:W2809878087:c4",
+      "to_claim_id": "openalex:W2885659818:c1",
+      "similarity": 0.7912429571151733,
+      "a_paper_id": "openalex:W2809878087",
+      "a_text": "The authors systematically collect and explain prominent definitions of fairness for algorithmic classification.",
+      "b_paper_id": "openalex:W2885659818",
+      "b_text": "Formal mathematical definitions of algorithmic fairness can be categorized into two broad families: those constraining decision effects on disparities, and those constraining protected characteristic effects on decisions.",
+      "explanation": "Claim A describes an effort to collect and explain fairness definitions, while Claim B presents a specific taxonomy for categorizing those definitions."
+    },
+    {
+      "from_claim_id": "openalex:W3101206394:c1",
+      "to_claim_id": "openalex:W3159960173:c1",
+      "similarity": 0.7911096811294556,
+      "a_paper_id": "openalex:W3101206394",
+      "a_text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "b_paper_id": "openalex:W3159960173",
+      "b_text": "There is a scarcity of suitable educational materials on aspects of algorithmic fairness.",
+      "explanation": "Both claims address challenges within the field of algorithmic fairness, but one concerns inconsistencies in research literature while the other concerns a lack of educational resources."
+    },
+    {
+      "from_claim_id": "openalex:W2550530154:c7",
+      "to_claim_id": "openalex:W2784397426:c1",
+      "similarity": 0.7910085320472717,
+      "a_paper_id": "openalex:W2550530154",
+      "a_text": "Predictive models trained on PSE-DR modified Adult data maintain indirect discriminatory effects below 0.05 while achieving around 80.55% prediction accuracy.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "explanation": "The claims evaluate two different debiasing techniques on the UCI Adult dataset, so their specific accuracy and fairness outcomes neither support nor contradict each other."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c8",
+      "to_claim_id": "openalex:W2784397426:c3",
+      "similarity": 0.7908587455749512,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on low-income examples (<=50K) most effectively reduces the equality gap for the low-income label class.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "On the UCI Adult Dataset with adversarial debiasing, false positive rates across female (0.4458) and male (0.4349) subgroups showed no statistically significant difference (p = 0.25).",
+      "explanation": "Claim A addresses how training an adversarial model on specific income classes reduces equality gaps, whereas Claim B reports on gender-based false positive rate differences on the UCI Adult Dataset."
+    },
+    {
+      "from_claim_id": "openalex:W2622808887:c4",
+      "to_claim_id": "openalex:W2786122898:c6",
+      "similarity": 0.7907601594924927,
+      "a_paper_id": "openalex:W2622808887",
+      "a_text": "Individual fairness is generally more costly in terms of accuracy loss than group fairness across most studied datasets.",
+      "b_paper_id": "openalex:W2786122898",
+      "b_text": "No single fairness-aware algorithm consistently dominates across both accuracy and fairness measures.",
+      "explanation": "Claim A compares the relative accuracy costs of individual versus group fairness, whereas Claim B states that no single algorithm consistently performs best across both accuracy and fairness metrics."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c3",
+      "to_claim_id": "openalex:W2784397426:c5",
+      "similarity": 0.7904165983200073,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "Excluding or discounting protected group attributes from a fitting procedure reduces overall prediction accuracy when those attributes share non-redundant associations with the outcome.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Removing a protected variable directly from training data fails to yield a debiased model because other features remain correlated with the protected variable.",
+      "explanation": "Claim A addresses the impact of removing protected attributes on prediction accuracy, whereas Claim B addresses its failure to effectively eliminate bias."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c1",
+      "to_claim_id": "openalex:W2753845591:c4",
+      "similarity": 0.7895042896270752,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "Equalized odds requires a predictor and protected attribute to be independent conditional on the true outcome variable.",
+      "b_paper_id": "openalex:W2753845591",
+      "b_text": "In a linear model under Scenario 1, regressing the outcome on both protected attributes and observable features produces a counterfactually fair predictor.",
+      "explanation": "The claims address different fairness criteria, with Claim A defining equalized odds and Claim B describing a condition for achieving counterfactual fairness."
+    },
+    {
+      "from_claim_id": "openalex:W2784397426:c1",
+      "to_claim_id": "openalex:W4289438483:c3",
+      "similarity": 0.7892313003540039,
+      "a_paper_id": "openalex:W2784397426",
+      "a_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Applying the Reweighing pre-processor on the Adult dataset test partition reduces the statistical parity difference from -0.2021 to -0.0119.",
+      "explanation": "The claims evaluate different debiasing techniques (adversarial debiasing versus reweighing) and measure different outcome metrics (predictive accuracy versus statistical parity difference) on the Adult dataset."
+    },
+    {
+      "from_claim_id": "openalex:W2599025709:c2",
+      "to_claim_id": "openalex:W2790697880:c3",
+      "similarity": 0.7890394926071167,
+      "a_paper_id": "openalex:W2599025709",
+      "a_text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "b_paper_id": "openalex:W2790697880",
+      "b_text": "Demographic parity and equal opportunity cause active harm to a protected group when applied over-eagerly in settings where the protected group proportion is small.",
+      "explanation": "Claim A addresses a mathematical impossibility theorem between specific fairness metrics, whereas Claim B discusses the practical negative impacts of enforcing fairness metrics under small group proportions."
+    },
+    {
+      "from_claim_id": "openalex:W1979769549:c1",
+      "to_claim_id": "openalex:W2157928966:c3",
+      "similarity": 0.7890190482139587,
+      "a_paper_id": "openalex:W1979769549",
+      "a_text": "Discrimination-aware classification can be achieved without requiring data modification.",
+      "b_paper_id": "openalex:W2157928966",
+      "b_text": "Training a standard classification model on a massaged, unbiased dataset yields a non-discriminating classifier.",
+      "explanation": "Claim A states that discrimination-aware classification can be achieved without modifying data, while Claim B describes a specific data-modification approach, presenting two distinct methods for achieving fairness rather than supporting or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c6",
+      "to_claim_id": "openalex:W3043023066:c2",
+      "similarity": 0.7889053821563721,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "No single fairness-aware algorithm consistently dominates across both accuracy and fairness measures.",
+      "b_paper_id": "openalex:W3043023066",
+      "b_text": "Penalizing group fairness violations results in heterogeneous effects on measures of fairness in calibration and cross-group ranking across experimental conditions.",
+      "explanation": "Both claims discuss variability in fairness interventions, but Claim A focuses on algorithm performance across accuracy and fairness, whereas Claim B addresses the specific effects of group fairness penalties on calibration and ranking metrics."
+    },
+    {
+      "from_claim_id": "openalex:W2100960835:c3",
+      "to_claim_id": "openalex:W3152256433:c2",
+      "similarity": 0.7884658575057983,
+      "a_paper_id": "openalex:W2100960835",
+      "a_text": "Statistical parity alone is insufficient as a notion of fairness because it can allow individual-level unfairness, reduced utility, and self-fulfilling prophecies.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "Statistical criteria of algorithmic fairness, except calibration, are not necessary conditions for fairness.",
+      "explanation": "Claim A asserts that statistical parity is not a sufficient condition for fairness, whereas Claim B asserts that statistical criteria are generally not necessary conditions for fairness, making them distinct claims about different logical properties."
+    },
+    {
+      "from_claim_id": "openalex:W2014352947:c4",
+      "to_claim_id": "openalex:W2550530154:c8",
+      "similarity": 0.7883601784706116,
+      "a_paper_id": "openalex:W2014352947",
+      "a_text": "On the Adult Income dataset, full geometric data repair reduces classification utility (1-BER) using SVM from approximately 74% to 72% while eliminating disparate impact.",
+      "b_paper_id": "openalex:W2550530154",
+      "b_text": "Predictive models trained on data modified by Disparate Impact Removal retain significant indirect discrimination (0.167 for SVM and 0.168 for Decision Tree) in test set predictions.",
+      "explanation": "Claim A asserts that geometric data repair successfully eliminates disparate impact on the Adult dataset, whereas Claim B evaluates downstream test-set predictions to show that indirect discrimination still persists."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c2",
+      "to_claim_id": "openalex:W2790697880:c3",
+      "similarity": 0.7882074117660522,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "Equal opportunity requires equal true positive rates across protected attribute groups for the advantaged outcome.",
+      "b_paper_id": "openalex:W2790697880",
+      "b_text": "Demographic parity and equal opportunity cause active harm to a protected group when applied over-eagerly in settings where the protected group proportion is small.",
+      "explanation": "Claim A provides the definition of equal opportunity, while Claim B analyzes the negative consequences of applying equal opportunity in specific contexts."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c5",
+      "to_claim_id": "openalex:W3043023066:c2",
+      "similarity": 0.7881399989128113,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Actual predictions made by different fairness-enhancing algorithms vary significantly from one another.",
+      "b_paper_id": "openalex:W3043023066",
+      "b_text": "Penalizing group fairness violations results in heterogeneous effects on measures of fairness in calibration and cross-group ranking across experimental conditions.",
+      "explanation": "Claim A addresses the variance in specific predictions across different fairness algorithms, whereas Claim B focuses on the varied impacts of group fairness penalties on calibration and ranking metrics across conditions."
+    },
+    {
+      "from_claim_id": "openalex:W2753845591:c2",
+      "to_claim_id": "openalex:W2885659818:c6",
+      "similarity": 0.788139283657074,
+      "a_paper_id": "openalex:W2753845591",
+      "a_text": "A predictor is counterfactually fair if it is constructed as a function of non-descendants of the protected attributes in the causal graph.",
+      "b_paper_id": "openalex:W2885659818",
+      "b_text": "Under path-specific fairness with full covariate conditioning, decision policies must be constant across individuals sharing non-causally affected covariates under mild structural conditions.",
+      "explanation": "The claims discuss different causal fairness criteria\u2014counterfactual fairness versus path-specific fairness\u2014and make distinct assertions about their respective conditions."
+    },
+    {
+      "from_claim_id": "openalex:W4210736086:c2",
+      "to_claim_id": "openalex:W4288414189:c1",
+      "similarity": 0.7880440354347229,
+      "a_paper_id": "openalex:W4210736086",
+      "a_text": "Fairness-enhancing mechanisms in machine learning can be categorized into pre-process, in-process, and post-process mechanisms.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Predictions made on preprocessed (de-biased) data are rated as fairer than those made on raw data.",
+      "explanation": "Claim A outlines a taxonomy of fairness-enhancing mechanisms, while Claim B empirically evaluates human perception of predictions generated from a specific pre-processing approach."
+    },
+    {
+      "from_claim_id": "openalex:W2795743913:c1",
+      "to_claim_id": "openalex:W3203106571:c5",
+      "similarity": 0.7879323959350586,
+      "a_paper_id": "openalex:W2795743913",
+      "a_text": "The concept of algorithmic fairness was largely unfamiliar to participants from marginalized populations.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "Social perspectives on algorithmic fairness frequently treat technical fairness approaches as a black box without analyzing specific technical operationalizations or trade-offs.",
+      "explanation": "Claim A addresses the level of familiarity marginalized populations have with algorithmic fairness, while Claim B focuses on how social perspectives analyze technical fairness approaches."
+    },
+    {
+      "from_claim_id": "openalex:W2885659818:c1",
+      "to_claim_id": "openalex:W3101206394:c3",
+      "similarity": 0.7872620820999146,
+      "a_paper_id": "openalex:W2885659818",
+      "a_text": "Formal mathematical definitions of algorithmic fairness can be categorized into two broad families: those constraining decision effects on disparities, and those constraining protected characteristic effects on decisions.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "Fairness definitions across existing literature can be organized into a notationally consistent catalog.",
+      "explanation": "Claim A proposes a specific taxonomy for fairness definitions based on mathematical constraints, whereas Claim B asserts that fairness definitions can be compiled into a notationally consistent catalog."
+    },
+    {
+      "from_claim_id": "openalex:W3043023066:c2",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.7870743870735168,
+      "a_paper_id": "openalex:W3043023066",
+      "a_text": "Penalizing group fairness violations results in heterogeneous effects on measures of fairness in calibration and cross-group ranking across experimental conditions.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Claim A describes empirical variability when enforcing group fairness penalties, whereas Claim B states a theoretical impossibility result between statistical parity and calibration under unequal base rates."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c6",
+      "to_claim_id": "openalex:W2753845591:c2",
+      "similarity": 0.7867114543914795,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "Oblivious fairness tests cannot distinguish between different causal dependency structures that share identical joint distributions over outcome, protected attribute, and score.",
+      "b_paper_id": "openalex:W2753845591",
+      "b_text": "A predictor is counterfactually fair if it is constructed as a function of non-descendants of the protected attributes in the causal graph.",
+      "explanation": "Claim A addresses the inability of observational fairness tests to differentiate causal structures, while Claim B defines a causal condition for achieving counterfactual fairness."
+    },
+    {
+      "from_claim_id": "openalex:W3136620301:c4",
+      "to_claim_id": "openalex:W4210708600:c1",
+      "similarity": 0.7866666316986084,
+      "a_paper_id": "openalex:W3136620301",
+      "a_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "b_paper_id": "openalex:W4210708600",
+      "b_text": "When decisions are positive, interactional justice perceptions are significantly higher if the decision is made by a human rather than an AI.",
+      "explanation": "Claim A addresses how personal outcome valence affects perceived algorithmic fairness, whereas Claim B compares interactional justice perceptions between human and AI decision-makers specifically for positive outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2116984840:c1",
+      "to_claim_id": "openalex:W2599025709:c3",
+      "similarity": 0.786058783531189,
+      "a_paper_id": "openalex:W2116984840",
+      "a_text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "b_paper_id": "openalex:W2599025709",
+      "b_text": "Excluding or discounting protected group attributes from a fitting procedure reduces overall prediction accuracy when those attributes share non-redundant associations with the outcome.",
+      "explanation": "Both claims discuss the impact of removing protected attributes, but Claim A focuses on the persistence of discrimination due to correlated attributes, whereas Claim B focuses on the loss of predictive accuracy due to non-redundant information."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c3",
+      "to_claim_id": "openalex:W2809878087:c2",
+      "similarity": 0.7859084010124207,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "A large number of fairness measures tend to strongly correlate with one another.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "There is no clear agreement on which fairness definition to apply in each situation.",
+      "explanation": "While both claims pertain to fairness definitions, Claim A addresses empirical correlations between metrics while Claim B concerns the lack of consensus on selecting a definition for a specific context."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c3",
+      "to_claim_id": "openalex:W4288414189:c4",
+      "similarity": 0.7858882546424866,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Outcome explanation produces mixed effects on perceived fairness, increasing it in some contexts and decreasing it in others.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Case-based explanations are rated as generally less fair overall compared to influence-based and demographic-based explanations.",
+      "explanation": "The claims discuss the impact of different types of explanations on perceived fairness without directly reinforcing or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2100960835:c2",
+      "to_claim_id": "openalex:W2530395818:c3",
+      "similarity": 0.7855161428451538,
+      "a_paper_id": "openalex:W2100960835",
+      "a_text": "Minimizing expected utility loss subject to the Lipschitz fairness constraint can be formulated as a linear program and solved efficiently.",
+      "b_paper_id": "openalex:W2530395818",
+      "b_text": "Optimal equalized odds derived predictors can be constructed from learned binary predictors using linear programming post-processing.",
+      "explanation": "The claims apply linear programming to different fairness constructs, specifically Lipschitz fairness and equalized odds."
+    },
+    {
+      "from_claim_id": "openalex:W2809878087:c1",
+      "to_claim_id": "openalex:W3159960173:c1",
+      "similarity": 0.7853283286094666,
+      "a_paper_id": "openalex:W2809878087",
+      "a_text": "More than twenty different notions of algorithmic fairness have been proposed in recent years.",
+      "b_paper_id": "openalex:W3159960173",
+      "b_text": "There is a scarcity of suitable educational materials on aspects of algorithmic fairness.",
+      "explanation": "The claims address different aspects of algorithmic fairness\u2014one regarding the multiplicity of formal definitions and the other regarding educational materials\u2014neither supporting nor contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c6",
+      "to_claim_id": "openalex:W3136620301:c4",
+      "similarity": 0.7851327657699585,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Outcome control improves perceived fairness by enabling users to recognize algorithmic limitations and reallocate goods to fit their specific contexts.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "explanation": "Both claims address factors influencing perceived algorithmic fairness, but Claim A focuses on user control over outcomes while Claim B focuses on the personal favorability of the outcome."
+    },
+    {
+      "from_claim_id": "openalex:W2543774860:c5",
+      "to_claim_id": "openalex:W2885659818:c9",
+      "similarity": 0.7846294641494751,
+      "a_paper_id": "openalex:W2543774860",
+      "a_text": "Racial differences in false positive rates for COMPAS persist across prior criminal record count subgroups among defendants charged with misdemeanor offenses.",
+      "b_paper_id": "openalex:W2885659818",
+      "b_text": "Gender-blind COMPAS scores overstate recidivism risk for women compared to men with equivalent criminal histories.",
+      "explanation": "Claim A addresses racial disparities in COMPAS false positive rates, whereas Claim B focuses on gender-based overestimation of recidivism risk, making their findings distinct."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c2",
+      "to_claim_id": "openalex:W4210736086:c2",
+      "similarity": 0.7846040725708008,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported fairness measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W4210736086",
+      "b_text": "Fairness-enhancing mechanisms in machine learning can be categorized into pre-process, in-process, and post-process mechanisms.",
+      "explanation": "Claim A discusses the empirical impact of preprocessing choices on fairness measures, whereas Claim B presents a conceptual taxonomy of fairness-enhancing mechanisms."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c5",
+      "to_claim_id": "openalex:W2784397426:c1",
+      "similarity": 0.784598171710968,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Using a balanced sensitive attribute distribution in adversarial training improves fairness metrics across all tested measures compared to an unbalanced distribution.",
+      "b_paper_id": "openalex:W2784397426",
+      "b_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "explanation": "Claim A addresses the impact of sensitive attribute distribution on fairness metrics in adversarial training, whereas Claim B reports the effect of adversarial debiasing on predictive accuracy on a specific dataset."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c5",
+      "to_claim_id": "openalex:W4288414189:c1",
+      "similarity": 0.7839529514312744,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Actual predictions made by different fairness-enhancing algorithms vary significantly from one another.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Predictions made on preprocessed (de-biased) data are rated as fairer than those made on raw data.",
+      "explanation": "Claim A addresses the prediction variability among different fairness-enhancing algorithms, while Claim B focuses on human perception of fairness regarding preprocessed data versus raw data."
+    },
+    {
+      "from_claim_id": "openalex:W2162670686:c2",
+      "to_claim_id": "openalex:W2786122898:c5",
+      "similarity": 0.7837681174278259,
+      "a_paper_id": "openalex:W2162670686",
+      "a_text": "The proposed learning algorithm achieves individual fairness by treating similar individuals similarly.",
+      "b_paper_id": "openalex:W2786122898",
+      "b_text": "Actual predictions made by different fairness-enhancing algorithms vary significantly from one another.",
+      "explanation": "Claim A asserts that a specific proposed algorithm achieves individual fairness, whereas Claim B observes that different fairness-enhancing algorithms produce significantly varying predictions."
+    },
+    {
+      "from_claim_id": "openalex:W2964116855:c2",
+      "to_claim_id": "openalex:W3101206394:c3",
+      "similarity": 0.7833330035209656,
+      "a_paper_id": "openalex:W2964116855",
+      "a_text": "The UA framework unifies prior attempts at formalizing algorithmic fairness.",
+      "b_paper_id": "openalex:W3101206394",
+      "b_text": "Fairness definitions across existing literature can be organized into a notationally consistent catalog.",
+      "explanation": "Both claims address the unification and organization of existing fairness definitions, but one claims a specific framework unifies formalizations while the other asserts that definitions can be organized into a notationally consistent catalog."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c3",
+      "to_claim_id": "openalex:W4210708600:c10",
+      "similarity": 0.7827588319778442,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Outcome explanation produces mixed effects on perceived fairness, increasing it in some contexts and decreasing it in others.",
+      "b_paper_id": "openalex:W4210708600",
+      "b_text": "Interactional justice perceptions are higher when an AI makes a positive decision compared to when a human makes a negative decision.",
+      "explanation": "Claim A addresses the mixed effects of outcome explanations on perceived fairness, while Claim B compares interactional justice based on decision outcome valence and agent type."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c8",
+      "to_claim_id": "openalex:W4289438483:c3",
+      "similarity": 0.7817049622535706,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on low-income examples (<=50K) most effectively reduces the equality gap for the low-income label class.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Applying the Reweighing pre-processor on the Adult dataset test partition reduces the statistical parity difference from -0.2021 to -0.0119.",
+      "explanation": "The two claims evaluate different fairness interventions and metrics, so they neither support nor contradict each other."
+    },
+    {
+      "from_claim_id": "openalex:W2964316623:c2",
+      "to_claim_id": "openalex:W4288414189:c2",
+      "similarity": 0.7815455794334412,
+      "a_paper_id": "openalex:W2964316623",
+      "a_text": "A majority of survey respondents judged five of the ten evaluated COMPAS features as unfair to use for predicting criminal recidivism risk.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Predictions on cases exhibiting disparate impact are rated as less fair than those on non-impacted cases.",
+      "explanation": "Both claims address human perceptions of fairness in algorithmic decision-making, but Claim A focuses on specific COMPAS features while Claim B evaluates the effect of disparate impact on prediction fairness ratings."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c4",
+      "to_claim_id": "openalex:W2809878087:c2",
+      "similarity": 0.7814490795135498,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Techniques optimizing for one fairness measure often perform well on different fairness measures.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "There is no clear agreement on which fairness definition to apply in each situation.",
+      "explanation": "Claim A addresses how optimization techniques transfer across different fairness metrics, while Claim B concerns the lack of consensus on selecting appropriate fairness definitions for specific contexts."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c3",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.7810982465744019,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head exclusively on negative target class instances (Y=0) theoretically enforces equality of opportunity for the negative class.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim A addresses how restricting the adversary to negative target class instances enforces a specific fairness metric, whereas Claim B focuses on how sensitive attribute imbalance affects cross-entropy adversarial loss."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c1",
+      "to_claim_id": "openalex:W4210736086:c2",
+      "similarity": 0.7810776233673096,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Data preprocessing choices impact the reported accuracy measures of fairness-aware machine learning algorithms.",
+      "b_paper_id": "openalex:W4210736086",
+      "b_text": "Fairness-enhancing mechanisms in machine learning can be categorized into pre-process, in-process, and post-process mechanisms.",
+      "explanation": "Claim A addresses how data preprocessing impacts accuracy evaluation, while Claim B presents a taxonomy for categorizing fairness-enhancing mechanisms."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c3",
+      "to_claim_id": "openalex:W2788416960:c2",
+      "similarity": 0.7810174822807312,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "Optimal equalized odds derived predictors can be constructed from learned binary predictors using linear programming post-processing.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "The optimal objective value of the equalized odds adversary upper-bounds the equalized odds distance of any classifier learned from the representation.",
+      "explanation": "The claims address different methodologies for achieving equalized odds, with one focusing on post-processing via linear programming and the other on adversarial bounds in representation learning."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c4",
+      "to_claim_id": "openalex:W2753845591:c1",
+      "similarity": 0.7809970378875732,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "An optimal equalized odds predictor can be derived directly from the Bayes optimal regressor and the protected attribute.",
+      "b_paper_id": "openalex:W2753845591",
+      "b_text": "A predictor is counterfactually fair if its distribution over possible predictions for an individual remains unchanged under a counterfactual intervention on protected attributes.",
+      "explanation": "Claim A addresses the derivation of an equalized odds predictor, whereas Claim B defines counterfactual fairness, describing two different fairness constructs."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c4",
+      "to_claim_id": "openalex:W2809878087:c1",
+      "similarity": 0.7804610133171082,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "Techniques optimizing for one fairness measure often perform well on different fairness measures.",
+      "b_paper_id": "openalex:W2809878087",
+      "b_text": "More than twenty different notions of algorithmic fairness have been proposed in recent years.",
+      "explanation": "Claim A discusses the performance of optimization techniques across different fairness metrics, whereas Claim B simply notes the number of fairness definitions that have been proposed."
+    },
+    {
+      "from_claim_id": "openalex:W3136620301:c3",
+      "to_claim_id": "openalex:W4288414189:c5",
+      "similarity": 0.7803193926811218,
+      "a_paper_id": "openalex:W3136620301",
+      "a_text": "Conservative users perceive the inclusion of sensitive features like gender and race in algorithmic decision-making systems as fairer than liberal users do.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Sensitivity-based explanations significantly lower perceived fairness on disparately impacted cases specifically among individuals who consider using the race feature to be unfair.",
+      "explanation": "Claim A examines how political ideology influences perceived fairness of sensitive feature inclusion, whereas Claim B focuses on how sensitivity-based explanations affect fairness perceptions among individuals opposed to using race as a feature."
+    },
+    {
+      "from_claim_id": "openalex:W2964316623:c1",
+      "to_claim_id": "openalex:W4288414189:c2",
+      "similarity": 0.7801625728607178,
+      "a_paper_id": "openalex:W2964316623",
+      "a_text": "A person's assessment of eight latent properties of a feature accurately predicts whether they will judge the feature's use in algorithmic decision making as fair with over 85% accuracy.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Predictions on cases exhibiting disparate impact are rated as less fair than those on non-impacted cases.",
+      "explanation": "Claim A addresses how feature-level latent properties predict fairness judgments, while Claim B focuses on how case-level disparate impact affects perceived fairness, making them distinct findings about fairness perception."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c4",
+      "to_claim_id": "openalex:W4386564359:c4",
+      "similarity": 0.7797774076461792,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "A manifestly fair and uniquely optimal predictive algorithm can violate statistical fairness criteria even when base rates are equal across groups.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with the conjunction of balance for the positive class and balance for the negative class when two groups have unequal base rates.",
+      "explanation": "The claims discuss trade-offs involving statistical fairness criteria under different conditions, specifically equal versus unequal base rates across groups."
+    },
+    {
+      "from_claim_id": "openalex:W3043023066:c2",
+      "to_claim_id": "openalex:W4289751798:c6",
+      "similarity": 0.7797432541847229,
+      "a_paper_id": "openalex:W3043023066",
+      "a_text": "Penalizing group fairness violations results in heterogeneous effects on measures of fairness in calibration and cross-group ranking across experimental conditions.",
+      "b_paper_id": "openalex:W4289751798",
+      "b_text": "The proportional contribution of between-group unfairness to overall individual unfairness increases as sensitive feature groups are refined through intersectionality.",
+      "explanation": "Claim A addresses the trade-offs of penalizing group fairness on calibration and ranking, while Claim B examines how intersectional group refinement affects the ratio of between-group to individual unfairness."
+    },
+    {
+      "from_claim_id": "openalex:W2784397426:c2",
+      "to_claim_id": "openalex:W4289438483:c3",
+      "similarity": 0.7794334888458252,
+      "a_paper_id": "openalex:W2784397426",
+      "a_text": "On the UCI Adult Dataset with adversarial debiasing, false negative rates across female (0.0647) and male (0.0701) subgroups showed no statistically significant difference (p = 0.62).",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Applying the Reweighing pre-processor on the Adult dataset test partition reduces the statistical parity difference from -0.2021 to -0.0119.",
+      "explanation": "The claims evaluate different debiasing methods (adversarial debiasing vs. reweighing) and different fairness metrics (false negative rate parity vs. statistical parity difference) on the Adult dataset."
+    },
+    {
+      "from_claim_id": "openalex:W2964316623:c1",
+      "to_claim_id": "openalex:W3136620301:c3",
+      "similarity": 0.778728187084198,
+      "a_paper_id": "openalex:W2964316623",
+      "a_text": "A person's assessment of eight latent properties of a feature accurately predicts whether they will judge the feature's use in algorithmic decision making as fair with over 85% accuracy.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Conservative users perceive the inclusion of sensitive features like gender and race in algorithmic decision-making systems as fairer than liberal users do.",
+      "explanation": "Claim A focuses on predicting fairness perceptions based on feature properties, while Claim B addresses how user political ideology influences fairness perceptions of sensitive features."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c2",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.778414249420166,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head exclusively on positive target class instances (Y=1) theoretically enforces equality of opportunity for the positive class.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim A discusses how conditioning adversarial training on positive instances targets equality of opportunity, while Claim B addresses how sensitive attribute imbalance affects cross-entropy adversarial loss."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c7",
+      "to_claim_id": "openalex:W4289438483:c3",
+      "similarity": 0.7784126996994019,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on high-income examples (>50K) most effectively reduces the equality gap for the high-income label class.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Applying the Reweighing pre-processor on the Adult dataset test partition reduces the statistical parity difference from -0.2021 to -0.0119.",
+      "explanation": "The claims discuss different bias mitigation techniques (adversarial training vs. reweighing) and evaluate different fairness metrics."
+    },
+    {
+      "from_claim_id": "openalex:W2784397426:c1",
+      "to_claim_id": "openalex:W4289438483:c4",
+      "similarity": 0.7782444953918457,
+      "a_paper_id": "openalex:W2784397426",
+      "a_text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "Reject option classification substantially improves fairness metrics on the Adult dataset but causes a significant reduction in classification accuracy.",
+      "explanation": "The claims describe the accuracy impacts of two different fairness interventions (adversarial debiasing versus reject option classification) on the Adult dataset."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c2",
+      "to_claim_id": "openalex:W4386564359:c3",
+      "similarity": 0.7780728340148926,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Statistical criteria of algorithmic fairness, except calibration, are not necessary conditions for fairness.",
+      "b_paper_id": "openalex:W4386564359",
+      "b_text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "explanation": "Claim A addresses whether statistical criteria are necessary conditions for fairness, whereas Claim B states a mathematical impossibility theorem regarding the simultaneous satisfaction of statistical parity and calibration."
+    },
+    {
+      "from_claim_id": "openalex:W3136620301:c4",
+      "to_claim_id": "openalex:W4288414189:c6",
+      "similarity": 0.7780129909515381,
+      "a_paper_id": "openalex:W3136620301",
+      "a_text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "An individual's prior trust in machine learning systems positively correlates with their overall perceived fairness ratings of model predictions.",
+      "explanation": "Both claims address factors influencing perceived algorithmic fairness, but one focuses on outcome favorability while the other focuses on prior trust in machine learning systems."
+    },
+    {
+      "from_claim_id": "openalex:W2725155646:c1",
+      "to_claim_id": "openalex:W2788416960:c3",
+      "similarity": 0.7779875993728638,
+      "a_paper_id": "openalex:W2725155646",
+      "a_text": "Training the adversarial head on data containing both positive and negative target label classes (Y=1 and Y=0) theoretically enforces demographic parity in predictions.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "explanation": "Claim A describes a theoretical condition for enforcing demographic parity through target label classes, whereas Claim B identifies a specific failure mode of cross-entropy loss under imbalanced sensitive attributes."
+    },
+    {
+      "from_claim_id": "openalex:W2885659818:c1",
+      "to_claim_id": "openalex:W3203106571:c3",
+      "similarity": 0.7778780460357666,
+      "a_paper_id": "openalex:W2885659818",
+      "a_text": "Formal mathematical definitions of algorithmic fairness can be categorized into two broad families: those constraining decision effects on disparities, and those constraining protected characteristic effects on decisions.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "It is mathematically impossible to simultaneously fulfill all group-level mathematical definitions of fairness.",
+      "explanation": "Claim A categorizes mathematical definitions of fairness into two conceptual families, while Claim B states an impossibility result about simultaneously satisfying all group-level definitions."
+    },
+    {
+      "from_claim_id": "openalex:W2622808887:c2",
+      "to_claim_id": "openalex:W4289751798:c5",
+      "similarity": 0.7773601412773132,
+      "a_paper_id": "openalex:W2622808887",
+      "a_text": "Any constant regressor exactly minimizes all of the proposed fairness regularizers.",
+      "b_paper_id": "openalex:W4289751798",
+      "b_text": "A classifier achieves zero individual unfairness under a zero-normalized inequality index if and only if a classifier achieves zero empirical prediction loss.",
+      "explanation": "Claim A addresses constant regressors minimizing fairness regularizers, whereas Claim B connects zero individual unfairness under a specific index to zero empirical prediction loss."
+    },
+    {
+      "from_claim_id": "openalex:W2530395818:c4",
+      "to_claim_id": "openalex:W2788416960:c2",
+      "similarity": 0.777292788028717,
+      "a_paper_id": "openalex:W2530395818",
+      "a_text": "An optimal equalized odds predictor can be derived directly from the Bayes optimal regressor and the protected attribute.",
+      "b_paper_id": "openalex:W2788416960",
+      "b_text": "The optimal objective value of the equalized odds adversary upper-bounds the equalized odds distance of any classifier learned from the representation.",
+      "explanation": "The claims address different theoretical properties of equalized odds\u2014deriving post-processing predictors versus bounding distance in adversarial representation learning\u2014without supporting or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2786122898:c6",
+      "to_claim_id": "openalex:W3035447285:c3",
+      "similarity": 0.776877760887146,
+      "a_paper_id": "openalex:W2786122898",
+      "a_text": "No single fairness-aware algorithm consistently dominates across both accuracy and fairness measures.",
+      "b_paper_id": "openalex:W3035447285",
+      "b_text": "Fairness mitigation methods that achieve demographic parity can result in unfairness with regard to equality of opportunity or odds.",
+      "explanation": "Claim A addresses the lack of a universally optimal algorithm across accuracy and fairness metrics, whereas Claim B addresses trade-offs between different mathematical definitions of fairness."
+    },
+    {
+      "from_claim_id": "openalex:W3136620301:c2",
+      "to_claim_id": "openalex:W4288414189:c5",
+      "similarity": 0.7768524885177612,
+      "a_paper_id": "openalex:W3136620301",
+      "a_text": "Explanations for decisions made by algorithmic decision-making systems increase user perceptions of fairness in news recommender systems.",
+      "b_paper_id": "openalex:W4288414189",
+      "b_text": "Sensitivity-based explanations significantly lower perceived fairness on disparately impacted cases specifically among individuals who consider using the race feature to be unfair.",
+      "explanation": "The claims examine different types of explanations and contexts, with Claim A focusing generally on news recommender systems and Claim B focusing on sensitivity-based explanations in disparately impacted cases."
+    },
+    {
+      "from_claim_id": "openalex:W2790697880:c3",
+      "to_claim_id": "openalex:W3152256433:c4",
+      "similarity": 0.7768124341964722,
+      "a_paper_id": "openalex:W2790697880",
+      "a_text": "Demographic parity and equal opportunity cause active harm to a protected group when applied over-eagerly in settings where the protected group proportion is small.",
+      "b_paper_id": "openalex:W3152256433",
+      "b_text": "A manifestly fair and uniquely optimal predictive algorithm can violate statistical fairness criteria even when base rates are equal across groups.",
+      "explanation": "The claims discuss different aspects of algorithmic fairness, with Claim A focusing on the potential harm of enforcing fairness constraints in small protected groups and Claim B focusing on optimal algorithms violating statistical criteria despite equal base rates."
+    },
+    {
+      "from_claim_id": "openalex:W2983996708:c5",
+      "to_claim_id": "openalex:W3136620301:c5",
+      "similarity": 0.776729166507721,
+      "a_paper_id": "openalex:W2983996708",
+      "a_text": "Outcome control consistently improves perceived fairness in algorithmic goods division.",
+      "b_paper_id": "openalex:W3136620301",
+      "b_text": "Perceived fairness of algorithms has a significant positive impact on satisfaction with algorithmic systems.",
+      "explanation": "Claim A focuses on an antecedent that increases perceived fairness, whereas Claim B focuses on a downstream consequence of perceived fairness on user satisfaction."
+    },
+    {
+      "from_claim_id": "openalex:W1979769549:c3",
+      "to_claim_id": "openalex:W2963174898:c4",
+      "similarity": 0.7767053842544556,
+      "a_paper_id": "openalex:W1979769549",
+      "a_text": "The reject option of probabilistic classifiers can be exploited to reduce discrimination in classification.",
+      "b_paper_id": "openalex:W2963174898",
+      "b_text": "Data discrimination can be significantly reduced at a small cost in classification accuracy.",
+      "explanation": "Claim A describes a specific technique using the reject option to reduce discrimination, while Claim B states a general trade-off regarding the impact of discrimination reduction on classification accuracy."
+    },
+    {
+      "from_claim_id": "openalex:W2622808887:c4",
+      "to_claim_id": "openalex:W3043023066:c2",
+      "similarity": 0.7766155004501343,
+      "a_paper_id": "openalex:W2622808887",
+      "a_text": "Individual fairness is generally more costly in terms of accuracy loss than group fairness across most studied datasets.",
+      "b_paper_id": "openalex:W3043023066",
+      "b_text": "Penalizing group fairness violations results in heterogeneous effects on measures of fairness in calibration and cross-group ranking across experimental conditions.",
+      "explanation": "Claim A compares the accuracy cost of individual versus group fairness, while Claim B discusses the varied impacts of group fairness penalties on calibration and cross-group ranking metrics."
+    },
+    {
+      "from_claim_id": "openalex:W2765146466:c3",
+      "to_claim_id": "openalex:W2795743913:c1",
+      "similarity": 0.7762570381164551,
+      "a_paper_id": "openalex:W2765146466",
+      "a_text": "Organizations often lack the knowledge and capacity required to identify emergent fairness issues in complex sociotechnical systems.",
+      "b_paper_id": "openalex:W2795743913",
+      "b_text": "The concept of algorithmic fairness was largely unfamiliar to participants from marginalized populations.",
+      "explanation": "Claim A addresses organizational knowledge regarding fairness issues, whereas Claim B focuses on the familiarity of marginalized populations with algorithmic fairness."
+    },
+    {
+      "from_claim_id": "openalex:W2773523653:c4",
+      "to_claim_id": "openalex:W3203106571:c5",
+      "similarity": 0.7759239077568054,
+      "a_paper_id": "openalex:W2773523653",
+      "a_text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "b_paper_id": "openalex:W3203106571",
+      "b_text": "Social perspectives on algorithmic fairness frequently treat technical fairness approaches as a black box without analyzing specific technical operationalizations or trade-offs.",
+      "explanation": "Claim A addresses the conceptual nature of the term fairness in machine learning, whereas Claim B focuses on how social perspectives treat technical fairness approaches, representing distinct aspects of fairness research."
     }
   ]
 }
