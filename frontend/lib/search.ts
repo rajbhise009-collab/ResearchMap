@@ -97,6 +97,15 @@ export function search(index: SearchIndex, query: string, limit = 20,
         for (const t of Object.keys(idf)) {
           if (!t.includes("__") && t.startsWith(tailStem)) prefixAdded.push(t);
         }
+      } else if (opts.prefixLast && !opts.expandTrailing) {
+        // Complete word that starts a MORE frequent library term
+        // ("fair" -> "fairness"): still being typed. Typing-time only.
+        for (const t of Object.keys(idf)) {
+          if (t !== tailStem && !t.includes("__") && t.startsWith(tailStem)
+              && idf[t] < idf[tailStem]) prefixAdded.push(t);
+        }
+      }
+      {
         if (prefixAdded.length > 0) {
           trailingIsPrefix = true;
           // Lowest idf = highest DF = most common library term with
@@ -236,10 +245,10 @@ export function search(index: SearchIndex, query: string, limit = 20,
   }
 
   // A half-typed trailing word must never land as out_of_domain.
-  if (trailingIsPrefix) {
-    if (verdictPairs.length === 0 || verdict === "out_of_domain") {
-      verdict = "typing";
-    }
+  // Complete tokens still drive refusal; only a lone half-typed word is
+  // "typing".
+  if (trailingIsPrefix && verdictPairs.length === 0) {
+    verdict = "typing";
   }
 
   return {

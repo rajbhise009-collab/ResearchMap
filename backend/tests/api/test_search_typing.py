@@ -144,3 +144,32 @@ def test_partial_trailing_of_ood_is_typing_or_ood_never_in_domain(slug, query):
     assert r["verdict"] in ("typing", "out_of_domain"), (
         f"[{slug}] {query!r}: got {r['verdict']!r} — "
         f"a half-typed OOD query must not flash in_domain / borderline")
+
+
+# ---- Iteration-4 regressions ---------------------------------------------
+
+def test_short_complete_word_that_starts_a_frequent_term_is_typing():
+    """At full ML-fairness coverage "fair" became a vocabulary word and was
+    judged alone ("edge of this library"). It also starts the far more
+    frequent "fairness", so mid-typing it must be the typing state."""
+    idx = _load("ml-fairness")
+    r = search(idx, "fair", prefix_last=True)
+    assert r["verdict"] == "typing" and r["typing"] is True, r["verdict"]
+    assert r["hits"]
+
+
+def test_enter_never_rewrites_a_complete_word():
+    """Enter (expand_trailing) must not swap a real word for a longer one."""
+    idx = _load("ml-fairness")
+    assert (search(idx, "fair", expand_trailing=True)["verdict"]
+            == search(idx, "fair")["verdict"])
+
+
+@pytest.mark.parametrize("slug", list(INDEX_PATHS.keys()))
+@pytest.mark.parametrize("query", ["camera cal", "melanoma tre", "stock mar"])
+def test_complete_unknown_word_drives_refusal_mid_typing(slug, query):
+    """A complete, unknown first word ("camera") decides the verdict even
+    while the last word is half-typed: refused, never "typing"."""
+    idx = _load(slug)
+    r = search(idx, query, prefix_last=True)
+    assert r["verdict"] == "out_of_domain", (slug, query, r["verdict"])

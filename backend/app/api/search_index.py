@@ -446,6 +446,17 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
                     # finish". `idf` is log((n+1)/(df+0.5)) — lower idf
                     # ⇒ higher df ⇒ more frequent in the corpus.
                     best_prefix = min(matches, key=lambda t: idf[t])
+            elif prefix_last and not expand_trailing:
+                # A complete vocab word that is also the start of a MORE
+                # frequent library term ("fair" -> "fairness") is still
+                # being typed. Typing-time only: Enter never rewrites a
+                # real word.
+                longer = [t for t in idf if t != tail_stem and "__" not in t
+                          and t.startswith(tail_stem) and idf[t] < idf[tail_stem]]
+                if longer:
+                    trailing_is_prefix = True
+                    prefix_added = longer
+                    best_prefix = min(longer, key=lambda t: idf[t])
 
     # On Enter / Ask: swap the trailing prefix out of `pairs` for its
     # best completion so coverage and the whole-query verdict read as
@@ -562,14 +573,10 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
     # the complete tokens by themselves ARE in_domain / borderline,
     # keep that verdict (user is specifying further, not asking
     # something foreign).
-    if trailing_is_prefix:
-        if not verdict_pairs:
-            verdict = "typing"
-        elif verdict == "out_of_domain":
-            # The complete-token prefix wouldn't be in-domain alone, but
-            # the trailing word may finish into something that would be.
-            # Fall through to "typing" rather than refuse mid-word.
-            verdict = "typing"
+    # Complete tokens still drive refusal: "camera cal" is refused on
+    # account of "camera" (after the UI's pause), not held in "typing".
+    if trailing_is_prefix and not verdict_pairs:
+        verdict = "typing"
 
     return {"verdict": verdict, "coverage": round(coverage, 4),
             "best": round(best, 5), "breadth": round(breadth, 4),
