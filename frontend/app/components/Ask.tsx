@@ -441,11 +441,10 @@ export default function Ask({ lang, gaps, papers }: {
                      and coverage line (never hard-coded). */
                   <section style={{ marginTop: "var(--s-6)" }} className="empty">
                     <h3>
-                      {(libStats?.n_confirmed_contradictions ?? 0) === 0
-                       && (libStats?.scorer_yields
-                            ? Object.values(libStats.scorer_yields).reduce(
-                                (a: number, b: any) => a + (Number(b) || 0), 0)
-                            : 0) === 0
+                      {/* Count actual gap cards, not scorer_yields: a
+                          yield (e.g. a code-only persistent-limitations
+                          count) isn't a card the reader can open. */}
+                      {liveGaps !== null && liveGaps.length === 0
                         ? "This library has no gaps to show yet."
                         : "No gaps match this search."}
                     </h3>

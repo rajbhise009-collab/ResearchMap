@@ -21,3 +21,14 @@
 [PASS] ml-fairness home: 73 of 100 coverage
 [PASS] llm-cal home: 113 + no verdict labels
 [PASS] MOBILE diet 'alc' settled: alcohol + no refusal
+
+## Post-audit additions (same day)
+
+The original 15 checks accepted any "paper" text for ml-fairness "fair",
+so they could not detect a wrong zero-gap message. After switching the
+zero-gap condition to count actual gap cards (a code-only
+persistent-limitations yield had made ml-fairness say "No gaps match"
+instead of "no gaps to show yet"):
+
+- [PASS] ml-fairness 'fair' settled: "This library has no gaps to show yet." + zero-note present
+- [PASS] diet-and-mortality 'mediterranean' settled: gaps shown or "No gaps match this search."
