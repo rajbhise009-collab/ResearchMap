@@ -19,7 +19,11 @@ def test_load_audit_diet_reads_expected_fields():
     a = load_audit("diet-and-mortality")
     assert a["domain"] == "diet-and-mortality"
     assert a["basis"] and "hand review" in a["basis"].lower()
-    assert len(a["verdicts"]) == 7
+    assert len(a["verdicts"]) == 10
+    # The iteration-2 audit (first 7) must never be rewritten by later passes.
+    assert [v["verdict"] for v in a["verdicts"][:7]] == [
+        "genuine", "artifact", "genuine", "genuine", "genuine", "genuine",
+        "duplicate"]
 
 
 def test_verdict_lookup_maps_by_content_not_index():
@@ -64,10 +68,10 @@ def test_audit_summary_for_diet_matches_hand_count():
     p = Path("data/domains/diet-and-mortality/reasoning/contradictions.json")
     items = json.loads(p.read_text()).get("items", [])
     s = audit_summary("diet-and-mortality", items)
-    assert s["raw_flagged"] == 7
+    assert s["raw_flagged"] == 10
     assert s["genuine"] == 5, s
-    assert s["artifact"] == 1, s
-    assert s["duplicate"] == 1, s
+    assert s["artifact"] == 2, s
+    assert s["duplicate"] == 3, s
     assert s["unaudited"] == 0, s
     assert s["confirmed"] == 5, s
 
