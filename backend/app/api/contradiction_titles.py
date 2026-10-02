@@ -153,7 +153,7 @@ def make_verdict_label(verdict: str) -> str | None:
     if verdict == "duplicate":
         return "Set aside: duplicate of another pair"
     if verdict == "unaudited":
-        return "Flagged, no by-hand check recorded yet"
+        return "Flagged by the system, not yet checked"
     return None
 
 

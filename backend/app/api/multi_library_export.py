@@ -319,9 +319,34 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
            f"{n_missing} papers are not reflected in these results."
            if n_missing > 0 else "")
     )
+    # What the disagreement check has actually covered, from
+    # reasoning/coverage.json (written by the classifier run). Absent file
+    # => we cannot say, so we say nothing rather than imply completeness.
+    cov_path = REPO_ROOT / "data" / "domains" / slug / "reasoning" / "coverage.json"
+    cov = json.loads(cov_path.read_text()) if cov_path.exists() else None
+    check_note = None
+    check_block = None
+    if cov:
+        pending = int(cov.get("papers_with_pending_pairs", 0))
+        covered = n_extracted - pending
+        check_block = {k: cov.get(k) for k in (
+            "shortlist_pairs", "classified_pairs", "unclassified_pairs",
+            "papers_with_pending_pairs", "complete", "date", "shortlist_settings")}
+        check_block["papers_covered"] = covered
+        if cov.get("complete"):
+            check_note = ("The disagreement check compared every shortlisted pair "
+                          f"of claims across all {n_extracted} papers read.")
+        else:
+            check_note = (f"The disagreement check has covered {covered} of the "
+                          f"{n_extracted} papers read. Claim pairs involving the "
+                          f"other {pending} are still pending "
+                          f"({cov['unclassified_pairs']} pairs not yet checked).")
+    incomplete_check = bool(cov) and not cov.get("complete")
     zero_note = (
-        "Zero here means none were found among the papers read. "
-        "It does not mean none exist."
+        ("Zero here means none were found among the claim pairs checked so "
+         "far. It does not mean none exist." if incomplete_check else
+         "Zero here means none were found among the papers read. "
+         "It does not mean none exist.")
         if audit_counts["confirmed"] == 0 else None
     )
     strength = assertion_strength_distribution(exts) if exts else {}
@@ -348,6 +373,8 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "n_extractions": n_extracted,
         "extraction_coverage_note": coverage_note,
         "zero_finding_note": zero_note,
+        "disagreement_check_note": check_note,
+        "disagreement_check": check_block,
         "extraction_coverage_share": (n_extracted / len(entries)) if entries else 0.0,
         "assertion_strength": strength,
         "gap_type_counts": gap,
@@ -367,10 +394,12 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "spend_to_date_usd": 0.0,
         "manifest_hash": None,
         "relationships": len(contradictions),
-        "note": ("Multi-domain library — extraction 59% (diet) or 51% "
-                 "(fairness) of 100-paper target; only contradiction "
-                 "scoring ran (structural-hole confirmations and future-"
-                 "work matching skipped per Gate-3 cuts)."),
+        "note": (f"Multi-domain library — claims extracted from {n_extracted} "
+                 f"of {len(entries)} papers. Scorers run: contradictions "
+                 "(hand-audited) and a code-only persistent-limitations count. "
+                 "Not run: structural holes (needs an embeddings + addressal "
+                 "pipeline) and orphaned-future-work matching (paid; skipped "
+                 "by design)."),
     }, indent=2))
 
     # search-index.json — same shape as the LLM-cal library uses. The

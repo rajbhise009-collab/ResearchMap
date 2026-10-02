@@ -31,6 +31,9 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
   const setAside = items.filter(
     (o) => o.verdict === "artifact" || o.verdict === "duplicate"
   );
+  // Flagged by the classifier but not hand-checked yet: shown, never
+  // counted in the headline, never mixed in with checked disagreements.
+  const unchecked = items.filter((o) => o.verdict === "unaudited");
   const genuineGaps: GapDoc[] = genuine.map((o) => ({
     slug: o.slug, consumer: o.consumer,
     dev: { rank: o.rank ?? 0, gap_type: o.gap_type ?? "" },
@@ -47,6 +50,10 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
   const zeroNote =
     stats.state === "ready" && stats.data.zero_finding_note
       ? stats.data.zero_finding_note
+      : null;
+  const checkNote =
+    stats.state === "ready" && stats.data.disagreement_check_note
+      ? stats.data.disagreement_check_note
       : null;
 
   return (
@@ -66,6 +73,9 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
         {coverageNote && (
           <p className="coverage-note small muted">{coverageNote}</p>
         )}
+        {checkNote && (
+          <p className="coverage-note small muted">{checkNote}</p>
+        )}
         {zeroNote && (
           <p className="coverage-note small muted">{zeroNote}</p>
         )}
@@ -74,6 +84,29 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
       {res.state === "ready" && (
         <>
           <GapsClient gaps={genuineGaps} lang={lang} />
+
+          {unchecked.length > 0 && (
+            <section className="block set-aside">
+              <h2>Flagged by the system, not yet checked ({unchecked.length})</h2>
+              <p className="block-lede">
+                The classifier flagged these as possible disagreements, but
+                nobody has checked them against the source papers yet. They
+                are not counted in the headline.
+              </p>
+              {unchecked.map((o) => (
+                <div className="evidence-item" key={o.slug}>
+                  <div className="src">
+                    <strong>{o.consumer.headline}</strong>
+                    <Link href={`/gap/${o.slug}/${suffix}`}>see the flagged pair →</Link>
+                  </div>
+                  <p className="verdict-chip small sans" data-verdict="unaudited"
+                     style={{ margin: "var(--s-2) 0 0" }}>
+                    Flagged by the system, not yet checked
+                  </p>
+                </div>
+              ))}
+            </section>
+          )}
 
           {setAside.length > 0 && (
             <section className="block set-aside">

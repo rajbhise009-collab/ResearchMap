@@ -5,6 +5,20 @@
   "n_extractions": 100,
   "extraction_coverage_note": "Claims read from 100 of 100 papers.",
   "zero_finding_note": null,
+  "disagreement_check_note": "The disagreement check has covered 75 of the 100 papers read. Claim pairs involving the other 25 are still pending (58 pairs not yet checked).",
+  "disagreement_check": {
+    "shortlist_pairs": 152,
+    "classified_pairs": 94,
+    "unclassified_pairs": 58,
+    "papers_with_pending_pairs": 25,
+    "complete": false,
+    "date": "2026-10-02",
+    "shortlist_settings": {
+      "threshold": 0.8,
+      "max_per_claim": 2
+    },
+    "papers_covered": 75
+  },
   "extraction_coverage_share": 1.0,
   "assertion_strength": {
     "total_claims": 562,
@@ -174,5 +188,5 @@
   "spend_to_date_usd": 0.0,
   "manifest_hash": null,
   "relationships": 7,
-  "note": "Multi-domain library \u2014 extraction 59% (diet) or 51% (fairness) of 100-paper target; only contradiction scoring ran (structural-hole confirmations and future-work matching skipped per Gate-3 cuts)."
+  "note": "Multi-domain library \u2014 claims extracted from 100 of 100 papers. Scorers run: contradictions (hand-audited) and a code-only persistent-limitations count. Not run: structural holes (needs an embeddings + addressal pipeline) and orphaned-future-work matching (paid; skipped by design)."
 }

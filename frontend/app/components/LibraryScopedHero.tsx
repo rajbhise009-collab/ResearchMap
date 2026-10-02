@@ -18,6 +18,7 @@ interface LibStats {
   n_extractions?: number;
   extraction_coverage_note?: string;
   zero_finding_note?: string | null;
+  disagreement_check_note?: string | null;
   extraction_coverage_share?: number;
   n_confirmed_contradictions?: number;
   raw_flagged_contradictions?: number;
@@ -124,6 +125,11 @@ export default function LibraryScopedHero({ tagline, whatItDoes }: {
         {stats?.extraction_coverage_note && (
           <p className="small muted coverage-note">
             {stats.extraction_coverage_note}
+          </p>
+        )}
+        {stats?.disagreement_check_note && (
+          <p className="small muted coverage-note">
+            {stats.disagreement_check_note}
           </p>
         )}
         {stats?.zero_finding_note && (

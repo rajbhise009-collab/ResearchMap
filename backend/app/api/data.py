@@ -125,6 +125,11 @@ def stats() -> dict:
         "n_extractions": n_extracted,
         "extraction_coverage_note": coverage_note,
         "zero_finding_note": zero_note,
+        # Phase 3 classified every shortlisted pair across the frozen
+        # 113-paper manifest (docs/relationship-layer.md).
+        "disagreement_check_note": ("The disagreement check compared every "
+                                    "shortlisted pair of claims across all "
+                                    f"{n_papers} papers read."),
         "extraction_coverage_share": 1.0,
         "core": cent.get("core", 0), "peripheral": cent.get("peripheral", 0),
         "n_confirmed_contradictions": by_scorer.get("unresolved_contradictions", 0),

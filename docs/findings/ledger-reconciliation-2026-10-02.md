@@ -1,5 +1,7 @@
 # Ledger / Google-console reconciliation — 2026-10-02
 
+**In one line:** the project's own call-by-call ledger records more model spend than Google's billing console showed when last checked, and the project budgets against the ledger (the higher figure).
+
 **Date:** 2026-10-02. Free diagnostic; no new spend to produce it.
 
 ## The gap

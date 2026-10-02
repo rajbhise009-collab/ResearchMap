@@ -674,6 +674,10 @@ UI = {
     "findings_heading": "How we checked our own work",
     "findings_intro": "Where the method has limits, we wrote them down rather "
                       "than smoothing them over.",
+    "budget_note": "Spending note: our own call-by-call spending ledger records "
+                   "more model spend than Google's billing console showed when "
+                   "we last checked. We budget against the ledger, the higher "
+                   "of the two.",
     "findings_are_technical": "This is a working note written for the people "
                               "building this tool, so it uses technical "
                               "shorthand rather than the plain wording used "

@@ -30,12 +30,17 @@ def coverage_path(slug: str) -> Path:
     return _reason_dir(slug) / "coverage.json"
 
 
-def write_coverage(slug: str, exts, pairs, *, note: str = "") -> dict:
+def write_coverage(slug: str, exts, pairs, *, note: str = "",
+                   threshold: float | None = None,
+                   max_per_claim: int | None = None) -> dict:
     """Record shortlist vs classified counts for the CURRENT extraction set."""
     done = load_classified_keys(slug)
     keys = {(p.from_claim_id, p.to_claim_id) for p in pairs}
     classified = len(keys & done)
     paper_ids = sorted(e.paper_id for e in exts)
+    claim_paper = {c.id: e.paper_id for e in exts for c in (e.claims or [])}
+    pending = sorted({claim_paper[k[i]] for k in keys - done for i in (0, 1)
+                      if k[i] in claim_paper})
     cov = {
         "date": time.strftime("%Y-%m-%d"),
         "n_papers_in_check": len(paper_ids),
@@ -43,7 +48,11 @@ def write_coverage(slug: str, exts, pairs, *, note: str = "") -> dict:
         "shortlist_pairs": len(keys),
         "classified_pairs": classified,
         "unclassified_pairs": len(keys) - classified,
+        "papers_with_pending_pairs": len(pending),
+        "pending_paper_ids": pending,
         "complete": classified == len(keys),
+        "shortlist_settings": {"threshold": threshold,
+                               "max_per_claim": max_per_claim},
         "note": note,
     }
     p = coverage_path(slug)
@@ -52,7 +61,14 @@ def write_coverage(slug: str, exts, pairs, *, note: str = "") -> dict:
     return cov
 
 
-def run(slug: str, *, threshold: float = 0.72, max_per_claim: int = 4,
+# Documented shortlist settings for the multi-domain libraries
+# (docs/findings/multi-domain.md §7: tightened from 0.72/4 to 0.80/2).
+LIBRARY_THRESHOLD = 0.80
+LIBRARY_MAX_PER_CLAIM = 2
+
+
+def run(slug: str, *, threshold: float = LIBRARY_THRESHOLD,
+        max_per_claim: int = LIBRARY_MAX_PER_CLAIM,
         max_inr: float | None = None, projected_inr_per_call: float | None = None,
         priority_papers: set[str] | None = None, dry_run: bool = False) -> dict:
     slug = DOMAINS[slug].slug
@@ -73,12 +89,14 @@ def run(slug: str, *, threshold: float = 0.72, max_per_claim: int = 4,
                "shortlist_pairs": len(pairs), "unseen_pairs": len(unseen),
                "embeddings": embed_stats}
     if dry_run:
-        summary["coverage"] = write_coverage(slug, exts, pairs)
+        summary["coverage"] = write_coverage(slug, exts, pairs, threshold=threshold,
+                                             max_per_claim=max_per_claim)
         return summary
     res = classify_pairs(slug, exts, unseen, max_inr=max_inr,
                          projected_inr_per_call=projected_inr_per_call)
     summary["classify"] = res
-    summary["coverage"] = write_coverage(slug, exts, pairs)
+    summary["coverage"] = write_coverage(slug, exts, pairs, threshold=threshold,
+                                         max_per_claim=max_per_claim)
     return summary
 
 
@@ -86,8 +104,8 @@ def main() -> int:
     import argparse
     p = argparse.ArgumentParser()
     p.add_argument("--slug", required=True)
-    p.add_argument("--threshold", type=float, default=0.72)
-    p.add_argument("--max-per-claim", type=int, default=4)
+    p.add_argument("--threshold", type=float, default=LIBRARY_THRESHOLD)
+    p.add_argument("--max-per-claim", type=int, default=LIBRARY_MAX_PER_CLAIM)
     p.add_argument("--max-inr", type=float)
     p.add_argument("--projected-inr-per-call", type=float)
     p.add_argument("--priority-papers", nargs="*")
@@ -99,6 +117,7 @@ def main() -> int:
             priority_papers=set(a.priority_papers) if a.priority_papers else None,
             dry_run=a.dry_run)
     r.get("coverage", {}).pop("paper_ids", None)
+    r.get("coverage", {}).pop("pending_paper_ids", None)
     print(json.dumps(r, indent=2, default=str))
     return 0
 

@@ -60,6 +60,12 @@ export default function LibraryPageClient({ lang }: { lang: LanguagePack }) {
             {stats.abstract_only} we only had the summary — and that matters
             more than it sounds: {lang.abstract_only.text.toLowerCase()}
           </p>
+          {stats.extraction_coverage_note && (
+            <p className="small muted">{stats.extraction_coverage_note}</p>
+          )}
+          {stats.disagreement_check_note && (
+            <p className="small muted">{stats.disagreement_check_note}</p>
+          )}
           <p className="small">
             <Link href={`/papers/${suffix}`}>Browse all {stats.papers} papers →</Link>
           </p>
@@ -109,6 +115,7 @@ export default function LibraryPageClient({ lang }: { lang: LanguagePack }) {
       <section className="block">
         <h2>{lang.ui.findings_heading}</h2>
         <p>{lang.ui.findings_intro}</p>
+        {lang.ui.budget_note && <p className="small muted">{lang.ui.budget_note}</p>}
         <p className="small muted sans">{lang.ui.findings_are_technical}</p>
         {findings.map((f) => (
           <div className="paper-line" key={f.slug}>

@@ -150,6 +150,11 @@ export interface Stats {
   n_extractions?: number;
   extraction_coverage_note?: string;
   zero_finding_note?: string | null;
+  disagreement_check_note?: string | null;
+  disagreement_check?: {
+    shortlist_pairs: number; classified_pairs: number; unclassified_pairs: number;
+    papers_with_pending_pairs: number; papers_covered: number; complete: boolean;
+  } | null;
   extraction_coverage_share?: number;
   n_confirmed_contradictions?: number;
   raw_flagged_contradictions?: number;
