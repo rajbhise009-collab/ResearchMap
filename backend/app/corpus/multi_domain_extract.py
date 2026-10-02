@@ -75,7 +75,9 @@ def _paper_from_entry(e: dict) -> Paper:
 
 
 def _extractions_dir(slug: str) -> Path:
-    return REPO_ROOT / "data" / "domains" / slug / "extractions"
+    # Always the full library slug, whether called with "diet" or
+    # "diet-and-mortality" (earlier runs wrote under the short name).
+    return REPO_ROOT / "data" / "domains" / DOMAINS[slug].slug / "extractions"
 
 
 def dry_run(slug: str) -> dict:

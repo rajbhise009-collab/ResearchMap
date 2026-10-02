@@ -78,3 +78,6 @@ frontend/next-env.d.ts
 .shots-*/
 resources/icon/*.iconset/
 resources/icon/wrap.html
+
+# Per-library claim-embedding cache (regenerable; not read by the UI)
+data/domains/*/reasoning/claim_embeddings.json

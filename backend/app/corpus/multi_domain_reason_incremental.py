@@ -1,131 +1,104 @@
-"""Incremental contradiction classifier: classify ONLY unseen pairs.
+"""Incremental contradiction pass: classify ONLY pairs not yet paid for.
 
-Loads existing contradictions.json / supports.json / nones.json for the
-slug, computes the shortlist on the current (possibly larger) extraction
-set, filters out pairs already classified, calls the LLM on the
-remainder only, and merges the new verdicts back into the JSONs.
+Builds the shortlist on the current extraction set (embeddings cached per
+claim, so only new claims hit the API), classifies unseen pairs via
+classify_pairs (which saves each verdict as it returns and skips anything
+already classified), and writes `reasoning/coverage.json` — the record of
+what the disagreement check has actually covered. The snapshot export
+reads coverage.json to state that coverage plainly on the site.
 
-Preserves every existing verdict exactly. Never re-classifies an audited
-pair.
+Optional `--priority-papers`: pairs touching those paper ids are classified
+first (used for the ML-fairness impossibility-paper re-check).
 """
 
 from __future__ import annotations
 
 import json
 import sys
-from collections import Counter
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-from backend.app.corpus.multi_domain_reason import (
-    _reason_dir, compute_shortlist, load_extractions, classify_pairs,
+from backend.app.corpus.multi_domain_reason import (  # noqa: E402
+    DOMAINS, LAST_EMBED_STATS, _reason_dir, classify_pairs, compute_shortlist,
+    load_classified_keys, load_extractions,
 )
 
 
-def _load_seen_pairs(slug: str) -> set[tuple[str, str]]:
-    """Pair key = (from_claim_id, to_claim_id), order-stable. Union of
-    all three verdict files."""
-    seen: set[tuple[str, str]] = set()
-    d = _reason_dir(slug)
-    for name in ("contradictions.json", "supports.json", "nones.json"):
-        p = d / name
-        if not p.exists():
-            continue
-        data = json.loads(p.read_text())
-        for item in data.get("items", []):
-            k = (item.get("from_claim_id"), item.get("to_claim_id"))
-            seen.add(k)
-    return seen
+def coverage_path(slug: str) -> Path:
+    return _reason_dir(slug) / "coverage.json"
 
 
-def _merge_results(slug: str, new_result: dict) -> None:
-    """Union new verdicts into the three on-disk JSON files. Existing
-    entries are kept — never overwritten by this incremental pass."""
-    out_dir = _reason_dir(slug)
-    for name in ("contradictions.json", "supports.json", "nones.json"):
-        p = out_dir / name
-        existing = json.loads(p.read_text()) if p.exists() else {"items": []}
-        existing_keys = {(it.get("from_claim_id"), it.get("to_claim_id"))
-                         for it in existing.get("items", [])}
-        # Pull the matching new items. classify_pairs wrote its own
-        # files already — load them, filter to not-already-present, append.
-        new_file = out_dir / name
-        new_data = json.loads(new_file.read_text()) if new_file.exists() else {"items": []}
-        appended = 0
-        for it in new_data.get("items", []):
-            k = (it.get("from_claim_id"), it.get("to_claim_id"))
-            if k in existing_keys:
-                continue
-            existing.setdefault("items", []).append(it)
-            existing_keys.add(k)
-            appended += 1
-        existing["n"] = len(existing["items"])
-        p.write_text(json.dumps(existing, indent=2))
-
-
-def run(slug: str, *, threshold: float = 0.72,
-         max_per_claim: int = 4) -> dict:
-    """Return summary dict with counts."""
-    exts = load_extractions(slug)
-    all_pairs = compute_shortlist(
-        exts, threshold=threshold, max_per_claim=max_per_claim,
-        use_real_embeddings=True)
-    seen = _load_seen_pairs(slug)
-    new_pairs = [p for p in all_pairs
-                 if (p.from_claim_id, p.to_claim_id) not in seen]
-    stats = {
-        "slug": slug,
-        "n_extractions": len(exts),
-        "n_total_shortlist_pairs": len(all_pairs),
-        "n_already_classified_pairs": len(all_pairs) - len(new_pairs),
-        "n_new_pairs_to_classify": len(new_pairs),
+def write_coverage(slug: str, exts, pairs, *, note: str = "") -> dict:
+    """Record shortlist vs classified counts for the CURRENT extraction set."""
+    done = load_classified_keys(slug)
+    keys = {(p.from_claim_id, p.to_claim_id) for p in pairs}
+    classified = len(keys & done)
+    paper_ids = sorted(e.paper_id for e in exts)
+    cov = {
+        "date": time.strftime("%Y-%m-%d"),
+        "n_papers_in_check": len(paper_ids),
+        "paper_ids": paper_ids,
+        "shortlist_pairs": len(keys),
+        "classified_pairs": classified,
+        "unclassified_pairs": len(keys) - classified,
+        "complete": classified == len(keys),
+        "note": note,
     }
-    if not new_pairs:
-        print(f"[reason-incr:{slug}] no new pairs — nothing to classify.")
-        return stats
-    print(f"[reason-incr:{slug}] {len(new_pairs)} new pairs "
-          f"(of {len(all_pairs)} total)")
+    p = coverage_path(slug)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(cov, indent=2))
+    return cov
 
-    # Backup existing files so we can restore after classify_pairs
-    # (which overwrites with ONLY the new-pair results).
-    d = _reason_dir(slug)
-    backup = {}
-    for name in ("contradictions.json", "supports.json", "nones.json",
-                  "failures.json"):
-        p = d / name
-        if p.exists():
-            backup[name] = json.loads(p.read_text())
 
-    cls_result = classify_pairs(slug, exts, new_pairs)
-    # classify_pairs wrote the NEW pair results — merge with backups.
-    for name, old in backup.items():
-        if name == "failures.json":
-            # append new failures
-            new = json.loads((d / name).read_text()) if (d / name).exists() else {"items": []}
-            merged_items = old.get("items", []) + new.get("items", [])
-            (d / name).write_text(json.dumps({
-                "n": len(merged_items), "items": merged_items}, indent=2))
-            continue
-        new = json.loads((d / name).read_text()) if (d / name).exists() else {"items": []}
-        merged_items = old.get("items", []) + new.get("items", [])
-        (d / name).write_text(json.dumps({
-            "n": len(merged_items), "items": merged_items}, indent=2))
-
-    stats.update(cls_result)
-    return stats
+def run(slug: str, *, threshold: float = 0.72, max_per_claim: int = 4,
+        max_inr: float | None = None, projected_inr_per_call: float | None = None,
+        priority_papers: set[str] | None = None, dry_run: bool = False) -> dict:
+    slug = DOMAINS[slug].slug
+    exts = load_extractions(slug)
+    pairs = compute_shortlist(exts, threshold=threshold,
+                              max_per_claim=max_per_claim,
+                              use_real_embeddings=True, slug=slug)
+    embed_stats = dict(LAST_EMBED_STATS)
+    done = load_classified_keys(slug)
+    unseen = [p for p in pairs if (p.from_claim_id, p.to_claim_id) not in done]
+    if priority_papers:
+        claim_paper = {c.id: e.paper_id for e in exts for c in (e.claims or [])}
+        def touches(p):
+            return (claim_paper.get(p.from_claim_id) in priority_papers
+                    or claim_paper.get(p.to_claim_id) in priority_papers)
+        unseen.sort(key=lambda p: (0 if touches(p) else 1))
+    summary = {"slug": slug, "n_extractions": len(exts),
+               "shortlist_pairs": len(pairs), "unseen_pairs": len(unseen),
+               "embeddings": embed_stats}
+    if dry_run:
+        summary["coverage"] = write_coverage(slug, exts, pairs)
+        return summary
+    res = classify_pairs(slug, exts, unseen, max_inr=max_inr,
+                         projected_inr_per_call=projected_inr_per_call)
+    summary["classify"] = res
+    summary["coverage"] = write_coverage(slug, exts, pairs)
+    return summary
 
 
 def main() -> int:
     import argparse
     p = argparse.ArgumentParser()
-    p.add_argument("--slug", choices=["diet-and-mortality", "ml-fairness"],
-                    required=True)
+    p.add_argument("--slug", required=True)
     p.add_argument("--threshold", type=float, default=0.72)
     p.add_argument("--max-per-claim", type=int, default=4)
-    args = p.parse_args()
-    r = run(args.slug, threshold=args.threshold,
-             max_per_claim=args.max_per_claim)
+    p.add_argument("--max-inr", type=float)
+    p.add_argument("--projected-inr-per-call", type=float)
+    p.add_argument("--priority-papers", nargs="*")
+    p.add_argument("--dry-run", action="store_true",
+                   help="shortlist + coverage only; no classifier calls")
+    a = p.parse_args()
+    r = run(a.slug, threshold=a.threshold, max_per_claim=a.max_per_claim,
+            max_inr=a.max_inr, projected_inr_per_call=a.projected_inr_per_call,
+            priority_papers=set(a.priority_papers) if a.priority_papers else None,
+            dry_run=a.dry_run)
+    r.get("coverage", {}).pop("paper_ids", None)
     print(json.dumps(r, indent=2, default=str))
     return 0
 
