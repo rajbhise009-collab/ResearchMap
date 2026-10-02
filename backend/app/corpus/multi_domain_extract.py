@@ -92,8 +92,12 @@ def dry_run(slug: str) -> dict:
     n_full = n_abs = 0
     n_cached = 0
     for e in entries:
-        pid = e.get("openalex_id") or f"openalex:{e['wid']}"
-        # Both possible input_source keys are checked for cache hit
+        # Normalise the prelabel's openalex_id (which may be a full URL
+        # https://openalex.org/W…) to the openalex:WID form the cache
+        # was keyed under during extraction. Same logic as
+        # _paper_from_entry below.
+        _raw = e.get("openalex_id", "")
+        pid = _raw if _raw.startswith("openalex:") else f"openalex:{e['wid']}"
         cached_ft = cache.get(pid, "gemini:gemini-3.6-flash", "fulltext", prompt_hash)
         cached_ab = cache.get(pid, "gemini:gemini-3.6-flash", "abstract", prompt_hash)
         if cached_ft is not None or cached_ab is not None:
@@ -147,7 +151,8 @@ def run(slug: str, *, batch: bool = False, halt_on_first_fail: bool = False) -> 
     per_paper: list[dict] = []
     t0 = time.time()
     for i, e in enumerate(entries, 1):
-        pid = e.get("openalex_id") or f"openalex:{e['wid']}"
+        _raw = e.get("openalex_id", "")
+        pid = _raw if _raw.startswith("openalex:") else f"openalex:{e['wid']}"
         input_source = "fulltext" if e.get("input_source") == "fulltext" else "abstract"
         extractor = Extractor(llm=llm, cache=cache, input_source=input_source)
         paper = _paper_from_entry(e)
