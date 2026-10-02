@@ -193,6 +193,14 @@ def _submit(records, papers, model, cache, renderers) -> int:
         print("[batch] nothing to do — corpus fully cached.")
         return 0
     prompts = {pid: v[0] for pid, v in uncached.items()}
+    # Call-time cap guard at the batch rate, before anything is submitted.
+    from backend.app.extraction.spend_ledger import SpendLedger
+    est_in = sum(estimate_tokens(p) for p in prompts.values())
+    est_out = sum(OUT_FULLTEXT if v[1] == "fulltext" else OUT_ABSTRACT
+                  for v in uncached.values())
+    SpendLedger.load().check_headroom(prompt_tokens_est=est_in,
+                                      output_tokens_est=est_out,
+                                      batch=True, stage="extract_corpus_batch")
     client = GeminiBatchClient(model_name=get_settings().gemini_model)
     batch_id = client.submit(prompts, display_name="researchmap-corpus")
     STATE.write_text(json.dumps({
@@ -222,7 +230,17 @@ def _collect(records, papers, model, cache) -> int:
     if not job.succeeded:
         print(f"[batch] job did not succeed: {job.state}")
         return 4
-    results = client.results(job)
+    with_usage = client.results_with_usage(job)
+    results = {k: t for k, (t, _u) in with_usage.items()}
+    # Every returned result was billed by Google, so record it before the
+    # shape guard can abort. Exactly once per job (state flag).
+    if not st.get("ledger_recorded"):
+        from backend.app.extraction.batch_client import record_batch_usage
+        inr = record_batch_usage(with_usage, stage="extract_corpus_batch",
+                                 model=get_settings().gemini_model)
+        st["ledger_recorded"] = True
+        STATE.write_text(json.dumps(st, indent=2))
+        print(f"[batch] ledger: recorded {len(with_usage)} results, ₹{inr:.2f} (batch rate)")
     # Results-shape guard (the documented batch risk).
     print(f"[batch] results returned: {len(results)} / {n_submitted} submitted")
     if len(results) < n_submitted:

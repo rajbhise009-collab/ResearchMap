@@ -41,6 +41,17 @@ def _isolated_env(monkeypatch):
     cfg.get_settings.cache_clear()
 
 
+@pytest.fixture(autouse=True)
+def _isolated_ledger(tmp_path, monkeypatch):
+    """Never let a test write to the real data/spend_ledger.json. Mock-
+    transport client tests used to leak 5-token "unknown" entries into it."""
+    from backend.app.extraction import spend_ledger as sl
+    monkeypatch.setattr(sl.SpendLedger, "_instance",
+                        sl.SpendLedger(path=tmp_path / "ledger.json"))
+    yield
+    sl.SpendLedger._instance = None
+
+
 @pytest.fixture
 def seed_dir() -> Path:
     return REPO_ROOT / "data" / "seed"

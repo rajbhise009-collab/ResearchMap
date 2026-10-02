@@ -10,7 +10,8 @@ is gated by SpendLedger at call time. `set_run_context(stage=..., ...)`
 tags the ledger entries for later per-stage reporting.
 
 CLI:
-    python -m backend.app.corpus.multi_domain_extract --domain diet
+    python -m backend.app.corpus.multi_domain_extract --domain diet            # batch (default)
+    python -m backend.app.corpus.multi_domain_extract --domain diet --sync     # full-price sync
     python -m backend.app.corpus.multi_domain_extract --domain fairness --dry-run
 """
 
@@ -202,16 +203,167 @@ def run(slug: str, *, batch: bool = False, halt_on_first_fail: bool = False) -> 
             "ledger": SpendLedger.load().snapshot()}
 
 
+# --------------------------------------------------------------------------
+# Batch path (default). 50% of the sync price; every returned result is
+# billed to the ledger at batch=True, exactly once per job.
+# --------------------------------------------------------------------------
+
+MODEL_ID = "gemini:gemini-3.6-flash"   # cache identity, same as sync path
+
+
+def _pid(e: dict) -> str:
+    raw = e.get("openalex_id", "")
+    return raw if raw.startswith("openalex:") else f"openalex:{e['wid']}"
+
+
+def _batch_state_path(slug: str) -> Path:
+    return _extractions_dir(slug) / "batch_state.json"
+
+
+def _uncached_batch_prompts(slug: str, only_pids: set[str] | None = None):
+    """{pid: (prompt, input_source)} for entries not yet cached."""
+    from backend.app.corpus.run_batch_corpus import _make_renderer, V11
+    cache = ExtractionCache()
+    renderers = {s: _make_renderer(s) for s in ("abstract", "fulltext")}
+    entries = json.loads(_prelabel_path(DOMAINS[slug]).read_text())["entries"]
+    out: dict[str, tuple[str, str]] = {}
+    hits = 0
+    for e in entries:
+        pid = _pid(e)
+        if only_pids is not None and pid not in only_pids:
+            continue
+        src = "fulltext" if e.get("input_source") == "fulltext" else "abstract"
+        if (cache.get(pid, MODEL_ID, "fulltext", V11.hash) is not None
+                or cache.get(pid, MODEL_ID, "abstract", V11.hash) is not None):
+            hits += 1
+            continue
+        paper = _paper_from_entry(e)
+        if src == "fulltext" and not paper.fulltext:
+            src = "abstract"   # full text missing from cache: fall back honestly
+        out[pid] = (renderers[src]._render(paper), src)
+    return out, hits
+
+
+def batch_submit(slug: str, *, gate_mult: float = 1.5,
+                 only_pids: set[str] | None = None, client=None) -> dict:
+    """Render uncached prompts, gate (projection × gate_mult must fit the
+    ledger headroom at the batch rate), submit ONE batch, save state."""
+    from backend.app.extraction.batch_client import GeminiBatchClient
+    from backend.app.extraction.rate_limiter import estimate_tokens
+    prompts, hits = _uncached_batch_prompts(slug, only_pids)
+    if not prompts:
+        return {"slug": slug, "cache_hits": hits, "submitted": 0}
+    est_in = sum(estimate_tokens(p) for p, _s in prompts.values())
+    est_out = sum(OUT_TOKENS_FULLTEXT if s == "fulltext" else OUT_TOKENS_ABSTRACT
+                  for _p, s in prompts.values())
+    proj_inr = cost(est_in, est_out, batch=True) * 84.0
+    SpendLedger.load().check_headroom(
+        prompt_tokens_est=int(est_in * gate_mult),
+        output_tokens_est=int(est_out * gate_mult),
+        batch=True, stage=f"extract_{slug}_batch")
+    client = client or GeminiBatchClient(model_name=MODEL_ID.split(":", 1)[1])
+    batch_id = client.submit({k: v[0] for k, v in prompts.items()},
+                             display_name=f"researchmap-{slug}")
+    state = {"batch_id": batch_id, "slug": slug,
+             "input_source": {k: v[1] for k, v in prompts.items()},
+             "n_submitted": len(prompts), "projected_inr": proj_inr,
+             "ledger_recorded": False, "submitted_at": time.time()}
+    _extractions_dir(slug).mkdir(parents=True, exist_ok=True)
+    _batch_state_path(slug).write_text(json.dumps(state, indent=2))
+    return {"slug": slug, "cache_hits": hits, "submitted": len(prompts),
+            "batch_id": batch_id, "projected_inr": proj_inr}
+
+
+def batch_collect(slug: str, *, client=None) -> dict:
+    """Poll the saved job; when SUCCEEDED, bill every result to the ledger
+    (once), then validate + cache each. Returns status + hard-fail list."""
+    from backend.app.corpus.run_batch_corpus import _validate_and_cache
+    from backend.app.extraction.batch_client import (
+        GeminiBatchClient, record_batch_usage,
+    )
+    sp = _batch_state_path(slug)
+    st = json.loads(sp.read_text())
+    client = client or GeminiBatchClient(model_name=MODEL_ID.split(":", 1)[1],
+                                         validate_model=False)
+    job = client.poll(st["batch_id"])
+    if not job.done:
+        return {"status": "pending", "state": job.state}
+    if not job.succeeded:
+        return {"status": "failed", "state": job.state}
+    with_usage = client.results_with_usage(job)
+    if not st.get("ledger_recorded"):
+        inr = record_batch_usage(with_usage, stage=f"extract_{slug}_batch",
+                                 model=MODEL_ID.split(":", 1)[1])
+        st["ledger_recorded"] = True
+        st["recorded_inr"] = inr
+        sp.write_text(json.dumps(st, indent=2))
+    entries = {_pid(e): e for e in
+               json.loads(_prelabel_path(DOMAINS[slug]).read_text())["entries"]}
+    cache = ExtractionCache()
+    ok, fails = 0, []
+    for pid, (text, _u) in with_usage.items():
+        e = entries.get(pid)
+        if e is None:
+            fails.append((pid, "unknown-paper"))
+            continue
+        paper = _paper_from_entry(e)
+        src = st["input_source"].get(pid, "abstract")
+        outcome = _validate_and_cache(paper, text, src=src, model=MODEL_ID, cache=cache)
+        if outcome == "ok":
+            ok += 1
+        else:
+            fails.append((pid, outcome))
+    missing = sorted(set(st["input_source"]) - set(with_usage))
+    for pid in missing:
+        fails.append((pid, "no-result-returned"))
+    return {"status": "collected", "n_submitted": st["n_submitted"],
+            "n_returned": len(with_usage), "cached": ok, "hard_fails": fails,
+            "recorded_inr": st.get("recorded_inr")}
+
+
+def run_batch(slug: str, *, poll_interval_s: float = 30.0,
+              max_retries: int = 2, client=None) -> dict:
+    """Submit → wait → collect. Schema-invalid papers are resubmitted up
+    to `max_retries` times, then hard-failed by name."""
+    rounds = []
+    retry_pids: set[str] | None = None
+    for attempt in range(max_retries + 1):
+        sub = batch_submit(slug, only_pids=retry_pids, client=client)
+        if not sub.get("submitted"):
+            rounds.append({"attempt": attempt, **sub})
+            break
+        print(f"[batch:{slug}] attempt {attempt}: submitted {sub['submitted']} "
+              f"(cache hits {sub['cache_hits']}), projected ₹{sub['projected_inr']:.2f}",
+              flush=True)
+        while True:
+            res = batch_collect(slug, client=client)
+            if res["status"] != "pending":
+                break
+            time.sleep(poll_interval_s)
+        rounds.append({"attempt": attempt, **sub, **res})
+        print(f"[batch:{slug}] attempt {attempt}: {res}", flush=True)
+        if res["status"] != "collected" or not res["hard_fails"]:
+            break
+        retry_pids = {pid for pid, _why in res["hard_fails"]}
+    out_dir = _extractions_dir(slug)
+    (out_dir / "batch_run_log.json").write_text(json.dumps(rounds, indent=2, default=str))
+    return {"slug": slug, "rounds": rounds, "ledger": SpendLedger.load().snapshot()["cumulative_inr"]}
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--domain", choices=sorted(DOMAINS), required=True)
     p.add_argument("--dry-run", action="store_true",
                    help="project spend only; no LLM calls")
+    p.add_argument("--sync", action="store_true",
+                   help="use the synchronous (full-price) path instead of batch")
     args = p.parse_args()
     if args.dry_run:
         result = dry_run(args.domain)
-    else:
+    elif args.sync:
         result = run(args.domain)
+    else:
+        result = run_batch(args.domain)
     print(json.dumps(result, indent=2, default=str))
     return 0
 

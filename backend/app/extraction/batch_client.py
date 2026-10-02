@@ -188,13 +188,18 @@ class GeminiBatchClient:
     # --- Results ----------------------------------------------------
 
     def results(self, job: BatchJob) -> dict[str, str]:
-        """Extract raw response text per key from a SUCCEEDED job's inline
-        responses. (File-based results would need a download step; inline
-        is what `submit` uses.)"""
-        out: dict[str, str] = {}
+        """Raw response text per key (see results_with_usage)."""
+        return {k: text for k, (text, _u) in self.results_with_usage(job).items()}
+
+    def results_with_usage(self, job: BatchJob) -> dict[str, tuple[str, dict]]:
+        """(text, usageMetadata) per key from a SUCCEEDED job's inline
+        responses. The usage block is what the ledger needs to bill each
+        result. (File-based results would need a download step; inline is
+        what `submit` uses.)"""
+        out: dict[str, tuple[str, dict]] = {}
         resp = job.raw.get("response", {}) or {}
         inlined = (
-            resp.get("inlinedResponses", {}).get("inlinedResponses")
+            (resp.get("inlinedResponses") or {}).get("inlinedResponses")
             or resp.get("inlined_responses")
             or []
         )
@@ -206,8 +211,27 @@ class GeminiBatchClient:
             except (KeyError, IndexError, TypeError):
                 text = ""
             if key:
-                out[key] = text
+                out[key] = (text, r.get("usageMetadata") or {})
         return out
+
+
+def record_batch_usage(results: dict[str, tuple[str, dict]], *, stage: str,
+                       model: str, ledger=None) -> float:
+    """Bill every returned batch result to the spend ledger at the batch
+    rate (50% off). Returns the INR recorded. Call exactly once per
+    collected job — callers guard with a `ledger_recorded` flag."""
+    from backend.app.extraction.spend_ledger import SpendLedger
+    ledger = ledger or SpendLedger.load()
+    total = 0.0
+    for _key, (_text, usage) in results.items():
+        e = ledger.record(
+            stage=stage, model=model, batch=True,
+            prompt_tokens=int(usage.get("promptTokenCount") or 0),
+            candidates_tokens=int(usage.get("candidatesTokenCount") or 0),
+            thoughts_tokens=int(usage.get("thoughtsTokenCount") or 0),
+        )
+        total += e.cost_inr
+    return total
 
 
 def chunk_requests(
@@ -231,4 +255,5 @@ def chunk_requests(
     return chunks
 
 
-__all__ = ["BatchJob", "GeminiBatchClient", "chunk_requests", "TERMINAL_STATES"]
+__all__ = ["BatchJob", "GeminiBatchClient", "chunk_requests", "TERMINAL_STATES",
+           "record_batch_usage"]
