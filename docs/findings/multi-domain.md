@@ -23,11 +23,11 @@ extraction spend.
 
 ## 2. Contradiction yield — does the coherent-domain result generalise?
 
-| library | shortlisted pairs | Gemini-flagged contradictions | audited genuine | audited artifact | audited duplicate |
+| library | pairs classified | Gemini-flagged contradictions | audited genuine | audited artifact | audited duplicate |
 |:--|--:|--:|--:|--:|--:|
 | LLM calibration (frozen 2026-07) | 437 | 0 | 0 | — | — |
-| Diet & mortality (full) | 189 | 7 | **5** | 1 | 1 |
-| ML fairness (73/100 + 135 of 698 new pairs classified) | 189 | 0 | 0 | — | — |
+| Diet & mortality | 97 (from the 59-paper set; pairs involving the 41 papers added in iteration 3 are unclassified) | 7 | **5** | 1 | 1 |
+| ML fairness | 189 (of 752 shortlisted at 73/100 coverage) | 0 | 0 | — | — |
 
 **Diet-and-mortality is the first ResearchMap library to produce
 confirmed contradictions.** Hand-audit reduced the raw 7 to 5 genuine

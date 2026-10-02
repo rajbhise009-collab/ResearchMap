@@ -260,8 +260,10 @@ starting table, not a prediction claim.
 | ml-fairness | 0.667 | high | 0 | 0 | 73 / 100 (73%) | partial extraction; hypothesis-level scorer-mismatch (see below) |
 
 Two of three predictions still miss, now with less confounding on diet:
-- **diet** scored moderate yet produced 5 genuine contradictions, at
-  FULL extraction coverage — the confounder is gone, the miss stays.
+- **diet** scored moderate yet produced 5 genuine contradictions.
+  Extraction is now complete, but pairs involving the 41 papers added
+  in iteration 3 have not been classified, so the yield is a floor and
+  the coverage confounder is reduced, not gone.
 - **ml-fairness** scored high yet produced 0 — the extra coverage
   (51 → 73) did not surface any contradictions. The 0 is still
   partially confounded (27 of 100 papers unread) AND the hypothesis

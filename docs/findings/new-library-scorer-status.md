@@ -42,10 +42,13 @@ is a real zero. No further runs planned.
 
 ## diet-and-mortality (now complete)
 
-- **unresolved_contradictions**: ran. Full-coverage shortlist produced
-  37 additional pair candidates on top of the previous run (128 → 165
-  classifier calls). **No new genuine contradictions emerged.** The
-  audit stays at 5 genuine + 1 artifact + 1 duplicate.
+- **unresolved_contradictions**: the iteration-3 incremental pass made
+  81 classifier calls (₹23.85) on pairs involving the new papers, but
+  the run was stopped before its output was written, so **no new
+  verdicts were saved**. Pairs involving the 41 newly extracted papers
+  are therefore unclassified, and whether they contain further
+  contradictions is unknown. The audit stays at 5 genuine + 1 artifact
+  + 1 duplicate over the original 97 classified pairs.
 - **persistent_limitations**: 2 categories recur in ≥3 papers.
   Reported as counts; the full scorer (with corrected-independence
   calculation and the LLM-cal rubric) is out of scope for this run.
@@ -58,14 +61,14 @@ is a real zero. No further runs planned.
   spend cap hit after 135 of 698 new pairs were classified (0 new
   contradicts, 36 supports, 99 nones). Still **0 contradictions.**
 - Famous impossibility papers: iteration 2 found 6 in the extracted
-  set. At 73/100 coverage, we picked up more pairs involving them —
-  all classified as `supports` (same theorem, different authors) or
-  `none` (distinct impossibility results on different metric
-  combinations), none as `contradicts`. The hypothesis that these are
-  **definitional / theoretical disagreements the empirical-claim
-  classifier doesn't catch** remains the leading explanation,
-  **labelled as hypothesis, not stated as fact**.
-- `persistent_limitations`: 1 category.
+  set. Counted from the saved verdict files after iteration 3: 29 pairs
+  involve them — 14 `supports`, 15 `none`, 0 `contradicts`. The
+  per-pair explanations for the new pairs were not re-read this run.
+  The idea that fairness disagreements are **definitional / theoretical
+  and the empirical-claim classifier doesn't catch them** is a
+  hypothesis, not a finding.
+- `persistent_limitations`: 1 category (code-only count; no gap card
+  is published for it).
 - `orphaned_future_work`, `structural_holes`: skipped.
 
 ### What a full-coverage ml-fairness run would need
