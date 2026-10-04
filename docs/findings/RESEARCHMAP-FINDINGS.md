@@ -207,19 +207,21 @@ what the numbers actually rest on.
 
 Contradiction-based LBD — the Swanson-style promise of "the engine finds the
 disagreement no one noticed" — **requires a contested field.** Our corpus
-returned **zero confirmed contradictions**, and that is the *correct* answer,
-not a scorer failure: LLM calibration/uncertainty is a young, coherent
-sub-field where papers largely corroborate or address orthogonal questions;
-genuine same-construct, same-regime disagreements are rare. The candidate
-count scaled ~N^1.89 while confirmed stayed at 0 precisely because the
-interactions exist but the disagreements don't.
+returned **zero confirmed contradictions**. Why is not established. One
+hypothesis, untested: LLM calibration/uncertainty is a young, coherent
+sub-field where papers largely corroborate or address orthogonal questions,
+so genuine same-construct, same-regime disagreements are rare. The
+alternative — the shortlist or classifier misses disagreements that are
+there — has not been ruled out. What was measured: the candidate count
+scaled ~N^1.89 while confirmed stayed at 0.
 
 **State this as a domain-selection precondition:** before building
 contradiction/structural-hole LBD, verify the target field is *contested and
-mature* enough to contain the signal. A young consensus field will pay the
-quadratic candidate bill for near-zero contradiction yield — not because the
-method is broken, but because the field has not yet disagreed. Field
-selection is a design decision upstream of any scorer.
+mature* enough to contain the signal. If the hypothesis above holds, a young
+consensus field will pay the quadratic candidate bill for near-zero
+contradiction yield because the field has not yet disagreed, not because the
+method is broken; that has not been tested. Field selection is a design
+decision upstream of any scorer.
 
 ---
 
@@ -237,8 +239,9 @@ selection is a design decision upstream of any scorer.
   including reversing our own scaling conclusion.
 
 **What didn't (in this domain).**
-- Contradiction-based discovery: 0, because the field is coherent (§5) — a
-  precondition failure, not a code failure.
+- Contradiction-based discovery: 0 confirmed. Why is not established (§5):
+  a coherent field is one hypothesis; a shortlist or classifier miss has
+  not been ruled out.
 - Persistent-limitations: only generic categories (computational-cost,
   small-sample-size) reached the evidence floor; low actionability.
 - Orphaned-future-work: fires often but each item is weak and corpus-relative.

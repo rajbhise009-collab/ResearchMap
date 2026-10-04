@@ -265,7 +265,8 @@
   },
   "core": 100,
   "peripheral": 0,
-  "spend_to_date_usd": 0.0,
+  "spend_to_date_usd": 5.1101,
+  "spend_note": "From the project's spend ledger: extraction, disagreement-check and hedge-classifier calls for this library. Embedding calls made before 2026-10-04 were not recorded and are not included.",
   "manifest_hash": null,
   "relationships": 0,
   "note": "Multi-domain library \u2014 claims extracted from 100 of 100 papers. Scorers run: contradictions (hand-audited) and a code-only persistent-limitations count. Not run: structural holes (needs an embeddings + addressal pipeline) and orphaned-future-work matching (paid; skipped by design)."

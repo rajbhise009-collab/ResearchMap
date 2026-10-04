@@ -155,8 +155,9 @@ Every viable target exceeds the ~$2.6 remaining budget, and — per the curves
 
 ## So what (method finding, corpus-independent)
 
-For a coherent domain, "just add papers" pays a quadratic (candidate) bill
-for zero **contradiction** yield. For **structural holes**, method quality
+In this library, "just add papers" paid a quadratic (candidate) bill for
+zero **contradiction** yield (that the field is coherent is one
+hypothesis, untested). For **structural holes**, method quality
 was the first bottleneck (semantic matcher: 0 → 12 leads) and corpus size is
 a real second lever (k∝N: yield rises with N). But precision is low: an LLM
 confirm step ($0.02, 12 calls) judged only **2 of 12 leads SUBSTANTIVE** — 3

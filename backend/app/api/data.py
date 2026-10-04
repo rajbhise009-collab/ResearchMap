@@ -5,6 +5,8 @@ singletons); call `reset()` in tests to reload.
 
 from __future__ import annotations
 
+import re
+
 import json
 from functools import lru_cache
 from pathlib import Path
@@ -150,15 +152,18 @@ def stats() -> dict:
         "relationships": len(relationships()),
         "spend_to_date_usd": SPEND_TO_DATE_USD,
         "manifest_hash": manifest().get("manifest_hash"),
-        "note": ("0 contradictions is the correct result for a coherent field — "
-                 "candidates scale ~N^1.89 while confirmed stays at 0. See findings."),
+        "note": ("0 confirmed contradictions among the papers read — candidates "
+                 "scale ~N^1.89 while confirmed stays at 0. Why is not "
+                 "established. See findings."),
     }
 
 
 def findings() -> list[dict]:
     out = []
     for path in sorted(FINDINGS_DIR.glob("*.md")):
-        text = path.read_text()
+        # Drop the doc_numbers generator markers (<!-- gen:x --> lines);
+        # they are build plumbing, not reader text.
+        text = re.sub(r"^<!-- /?gen:[\w-]+ -->\n", "", path.read_text(), flags=re.M)
         title = next((ln[2:].strip() for ln in text.splitlines() if ln.startswith("# ")),
                      path.stem)
         out.append({"slug": path.stem, "title": title, "path": f"docs/findings/{path.name}",

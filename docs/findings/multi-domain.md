@@ -1,53 +1,85 @@
 # Multi-domain expansion — 3-library results
 
-**2026-09-29.** Wave 2 of ResearchMap. Built two additional libraries
-alongside the frozen LLM-calibration library (113 papers, manifest hash
-`44981e91c40dfe6d`, unchanged), then compared contradiction yield,
-assertion-strength distribution, and full-text-coverage effect across
-all three. Total NEW spend: **₹495.18 (~$5.90)** of the ₹850 cap.
+**First written 2026-09-29; numbers regenerated 2026-10-04.** Wave 2 of
+ResearchMap. Built two additional libraries alongside the frozen
+LLM-calibration library (113 papers, manifest hash `44981e91c40dfe6d`,
+unchanged), then compared contradiction yield, assertion-strength
+distribution, and full-text coverage across all three.
+
+Every table in this document is generated from data files by
+`python -m backend.app.corpus.doc_numbers` (sources listed in that
+script). Prose between the tables is hand-written.
 
 FX: 1 USD = ₹84.
 
 ## 1. Corpus stats
 
-| library | slug | papers | core | peripheral | full-text | extracted | notes |
-|:--|:--|--:|--:|--:|--:|--:|:--|
-| LLM calibration | `llm-calibration` | 113 | — | — | 67 (59%) | 113 (100%) | frozen; not re-extracted |
-| Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | **100 (100%)** | completed in iteration 3 (sync) |
-| ML fairness | `ml-fairness` | 100 | 96 | 4 | 50 (50%) | **100 (100%)** | 51 → 73 in iteration 3 (sync), 73 → 100 in iteration 4 (batch) |
+<!-- gen:corpus -->
+| library | slug | papers | core | peripheral | full text | claims extracted |
+|:--|:--|--:|--:|--:|--:|--:|
+| LLM calibration | `llm-calibration` | 113 | 100 | 13 | 67 (59%) | 113 of 113 |
+| Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | 100 of 100 |
+| ML fairness | `ml-fairness` | 100 | 100 | 0 | 50 (50%) | 100 of 100 |
+<!-- /gen:corpus -->
 
-Both new libraries are now at full extraction coverage. The last 27
-ML-fairness papers were extracted through the batch API in iteration 4
-(₹72.75 for 28 batch results including one retry, from the ledger).
+Diet & mortality was completed in iteration 3 (synchronous API). ML
+fairness went 51 → 73 papers in iteration 3 (synchronous) and 73 → 100 in
+iteration 4 (batch API). Both new libraries are at full extraction
+coverage.
 
-## 2. Contradiction yield — does the coherent-domain result generalise?
+## 2. Contradiction yield
 
-| library | shortlisted pairs (classified) | Gemini-flagged contradictions | audited genuine | audited artifact | audited duplicate |
-|:--|--:|--:|--:|--:|--:|
-| LLM calibration (frozen 2026-07) | 437 (437) | 0 | 0 | — | — |
-| Diet & mortality (100 papers) | 152 (152) | 10 | **5** | 2 | 3 |
-| ML fairness (100 papers) | 95 (95) | 0 | 0 | — | — |
+<!-- gen:yield -->
+| library (shortlist settings) | shortlisted pairs | classified | flagged by classifier | hand-audited genuine | artifact | duplicate |
+|:--|--:|--:|--:|--:|--:|--:|
+| LLM calibration (frozen 2026-07; threshold 0.78, cap 10) | 437 | 437 | 2 | 0 | — | — |
+| Diet & mortality (threshold 0.80, cap 2) | 152 | 152 | 10 | 5 | 2 | 3 |
+| ML fairness (threshold 0.80, cap 2) | 95 | 95 | 0 | 0 | — | — |
+<!-- /gen:yield -->
 
-Shortlist settings for the two new libraries: cosine threshold 0.80,
-at most 2 candidates per claim (see §7). Iteration 3 mistakenly ran its
-incremental pass at 0.72 / 4, so the ML-fairness verdict files also hold
-verdicts for pairs outside the documented shortlist; none of those is a
-contradiction, and they are kept rather than deleted.
+Only shortlisted pairs are ever checked: a pair of claims reaches the
+classifier only if their embeddings are at least as similar as the
+library's threshold, and each claim keeps at most its top few neighbours.
+A disagreement between two claims that are not similar enough to be
+shortlisted is never looked at.
 
-The three diet flags added in iteration 4 are one paper pair (Sarwar
-2006, Circulation, vs the Emerging Risk Factors Collaboration 2009, JAMA)
-on triglycerides and coronary heart disease. Hand audit: one artifact
-(different adjustment and contrast; Sarwar's own conclusion leaves the
-independent link open) and two duplicates (its EPIC-Norfolk and Reykjavik
-components). The headline stays at 5.
+LLM calibration uses its own, earlier settings (threshold 0.78, cap 10).
+Its classifier flagged 2 pairs; a later regime-context check (see
+`RESEARCHMAP-FINDINGS.md`, "Experimental-regime conflation") set both
+aside, so its confirmed count is 0.
 
-**Diet-and-mortality is the first ResearchMap library to produce
-confirmed contradictions.** Hand-audit reduced the raw 7 to 5 genuine
-(comparable population / dose / study design) after dropping one
-regime-conflation artifact and one duplicate. The five below are the
-final set; the audit trace is in the section below the examples.
+Iteration 3 mistakenly ran its incremental pass at 0.72 / 4, so the
+ML-fairness verdict files also hold verdicts for pairs outside the
+documented shortlist; none of those is a contradiction, and they are kept
+rather than deleted. They are not counted in the table above.
 
-### The 5 audited genuine diet contradictions
+### Diet & mortality — hand-audit of every flagged pair
+
+<!-- gen:diet-audit -->
+| pair | verdict | topic | papers | reason |
+|--:|:--|:--|:--|:--|
+| 1 | genuine | red meat / stroke | `W2109401990` vs `W2513212958` | Both are meta-analyses of unprocessed red meat and incident stroke on comparable adult populations; a 2010 pooled null vs a 2016 updated point estimate — the canonical time-updated red-meat disagreement. |
+| 2 | artifact | alcohol / MI dose-shape | `W2126726883` vs `W2787107952` | Different populations (US male health professionals only vs mixed IPD across 19 countries) AND different dose constructs (per-drinking-day vs per-week). The apparent conflict evaporates once the measures are reconciled — a regime-conflation, not a real disagreement. |
+| 3 | genuine | alcohol / stroke — is there an association? | `W2109129984` vs `W2787107952` | Both are meta-analyses of adult drinkers with comparable methods; an older pooled null vs a newer IPD's linear positive slope. Direct disagreement on whether an aggregate association exists. |
+| 4 | genuine | alcohol / ischemic stroke dose-shape | `W2064137374` vs `W2787107952` | Both meta-analyses on comparable populations; the disagreement is model choice (fractional-polynomial J-shape vs assumed linear). A modelling-choice disagreement on the same construct is a substantive disagreement. |
+| 5 | genuine | red meat / type 2 diabetes | `W2109401990` vs `W2955331731` | Same time-updated red-meat pattern as pair #1: 2010 pooled null vs 2019 umbrella-positive on the same construct. |
+| 6 | genuine | alcohol / all-cause mortality — J-shape vs quality-adjusted null | `W2109129984` vs `W2311763102` | Same construct (light drinking vs abstention on all-cause mortality) but with Stockwell's abstainer-bias correction applied. The central controversy in alcohol epidemiology; systematic reviews reaching opposite conclusions after quality adjustment. |
+| 7 | duplicate | alcohol / all-cause mortality — duplicate of previous | `W2109129984` vs `W2311763102` | Same paper pair and same topic as the pair immediately above (BMJ 2011 vs Stockwell 2016 alcohol/mortality). The other Claim B here is a near-identical restatement of the abstainer-bias correction. Counted once. |
+| 8 | artifact | triglycerides / coronary heart disease — independent of other risk factors? | `W1976428272` vs `W2127427274` | Different adjustment and contrast: Sarwar 2006's own conclusion says its triglyceride–heart-disease link depends heavily on other risk factors and leaves any independent link open, while the 2009 pooled analysis reports the per-standard-deviation estimate alongside the other blood lipids, so both statements can be true. |
+| 9 | duplicate | triglycerides / coronary heart disease — EPIC-Norfolk estimate (duplicate) | `W1976428272` vs `W2127427274` | Same paper pair and same finding as the triglyceride pair above; the EPIC-Norfolk estimate is one component of Sarwar 2006's pooled result. |
+| 10 | duplicate | triglycerides / coronary heart disease — Reykjavik estimate (duplicate) | `W1976428272` vs `W2127427274` | Same paper pair and same finding as the triglyceride pair above; the Reykjavik estimate is one component of Sarwar 2006's pooled result. |
+<!-- /gen:diet-audit -->
+
+All verdicts are the builder's hand review against the source abstracts,
+not expert review. The expert-review packet in
+`docs/review/diet-contradictions/` is what settles disputed pairs. The
+three "duplicate" verdicts are the same two papers counted more than once
+through different claims (see `duplicate-check.md`).
+
+**Diet-and-mortality is the first ResearchMap library with hand-confirmed
+contradictions.**
+
+### The audited genuine diet contradictions
 
 Every pair below is two claims from two different papers that Gemini
 classified as `"relationship": "contradicts"` at temperature 0 AND that
@@ -59,9 +91,8 @@ survived a hand-audit for population / dose / study-design comparability.
    Med 2016, literature review + meta-synthesis): "Consumption of 100
    g/day of unprocessed red meat is associated with an 11% increased
    risk of stroke." Same construct (unprocessed red meat + incident
-   stroke), both meta-analytic; the 2010 pooled null vs the 2016
-   updated point estimate is the classic time-updated red-meat
-   literature disagreement.
+   stroke), both meta-analytic; a 2010 pooled null vs a 2016 updated
+   point estimate.
 2. **Alcohol and stroke, presence of association.** A (`W2109129984`,
    BMJ 2011 systematic review + meta-analysis): "Alcohol consumption
    is not significantly associated with overall incident stroke
@@ -83,7 +114,9 @@ survived a hand-audit for population / dose / study-design comparability.
    not associated with incident diabetes mellitus." B (`W2955331731`,
    BMJ 2019 umbrella review of meta-analyses): "Higher intake of red
    meat is associated with increased incidence of type 2 diabetes."
-   Same time-updated red-meat pattern as #1.
+   Same time-updated red-meat pattern as #1. (Doubt raised in iteration
+   4: A says *unprocessed* red meat, B says red meat — possibly a
+   different exposure. Verdict unchanged pending expert review.)
 5. **Alcohol and all-cause mortality, J-shape vs quality-adjusted null.**
    A (`W2109129984`, BMJ 2011 systematic review + meta-analysis):
    "Alcohol consumption is associated with a lower risk of all-cause
@@ -91,67 +124,75 @@ survived a hand-audit for population / dose / study-design comparability.
    B (`W2311763102`, J Stud Alcohol Drugs 2016 systematic review +
    meta-regression): "Analyses of higher-quality, bias-free studies
    fail to find a reduced mortality risk for low-volume alcohol
-   drinkers." This is Stockwell's abstainer-bias-adjusted re-analysis
-   overturning the earlier J-shape — the central controversy in
-   alcohol epidemiology.
+   drinkers." An abstainer-bias-adjusted re-analysis set against the
+   earlier J-shape.
 
-### Hand-audit results per pair
+The single regime-conflation artifact among the first seven flags (alcohol
+/ MI dose-shape) is the same failure LLM-calibration's scorer showed in an
+earlier iteration; catching it here is a reminder that the hand-audit is
+part of the honest contradiction count, not optional polish.
 
-| pair | verdict | reason |
-|--:|:--|:--|
-| 1 | GENUINE | both meta-analytic, same construct, time-updated disagreement |
-| 2 | ARTIFACT | different dose constructs (per-drinking-day vs per-week) and different populations (US men-only prospective cohort vs mixed IPD) — regime conflation |
-| 3 | GENUINE | comparable populations + methods; disagreement on aggregate direction |
-| 4 | GENUINE | same construct + populations; disagreement on model choice |
-| 5 | GENUINE | same construct, time-updated |
-| 6 | GENUINE | same construct, quality-adjustment disagreement |
-| 7 | DUPLICATE of 6 | same paper pair, near-identical claim wording |
+### ML fairness — what was measured
 
-Audited count: **5 genuine confirmed contradictions**. Still well above
-the ≥3 threshold that triggers the "reputation beat predictor" verdict
-in §3 — that verdict stands.
+- Claims extracted from 100 of 100 papers.
+- 95 of 95 shortlisted pairs classified; 0 flagged as contradictions.
+- Pairs touching the impossibility-result papers, rebuilt from the cached
+  claim embeddings at the library's shortlist settings:
 
-The single artifact (pair 2) is exactly the regime-conflation failure
-LLM-calibration's own scorer showed in an earlier iteration (see
-`docs/findings/RESEARCHMAP-FINDINGS.md`); catching it here is a
-reminder that a hand-audit remains part of the honest contradiction
-count, not an optional polish.
+<!-- gen:impossibility -->
+| paper | shortlisted pairs | classified | flagged |
+|:--|--:|--:|--:|
+| Inherent Trade-Offs in the Fair Determination of Risk Scores (2016) (`W4386564359`) | 12 | 12 | 0 |
+| Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments (2017) (`W2543774860`) | 1 | 1 | 0 |
+| On the (im)possibility of fairness (2016) (`W2524301210`) | 0 | 0 | 0 |
+| Fairness in Criminal Justice Risk Assessments: The State of the Art (2018) (`W2599025709`) | 10 | 10 | 0 |
+| Algorithmic Decision Making and the Cost of Fairness (2017) (`W2584805976`) | 0 | 0 | 0 |
+| The cost of fairness in binary classification (2018) (`W2790025105`) | 0 | 0 | 0 |
+| Inherent Trade-Offs in Algorithmic Fairness (2018) (`W2808105152`) | 2 | 2 | 0 |
+<!-- /gen:impossibility -->
 
-### Fairness produced zero — a real finding, not a scorer failure
+"On the (im)possibility of fairness" was never compared with anything:
+none of its claims reached the similarity threshold against another
+paper's claims.
 
-ml-fairness at 0/54 pairs mirrors LLM-calibration's 0/437. The reason
-is domain-shaped: the fairness literature is organised around
-IMPOSSIBILITY theorems (Kleinberg-Mullainathan-Raghavan;
-Chouldechova). Once you know two fairness criteria are provably
-incompatible in general, subsequent papers don't disagree — they pick
-which criterion to prioritize for which decision and cite the
-impossibility. That's `supports` or `none`, not `contradicts`.
+### Why zero? Not established
 
-## 3. Predictor check — was diet chosen against a wrong score?
+The zero is a measurement of this pipeline on this corpus. Why it is
+zero has not been tested. Candidate explanations, none of them tested:
 
-Diet-and-mortality was picked despite its **0.44 (moderate)** contested
-score, on the reputational grounds that meta-analyses in this field
-famously disagree. The predictor put LLM-calibration at 0.818 (high)
-and diet at 0.44 — the exact opposite ranking of what actual yield
-turned out to be:
+- **(a)** Fairness disagreements are mostly definitional or theoretical
+  (which criterion to use), not between empirical claims of the kind the
+  classifier is asked about.
+- **(b)** The shortlist threshold or the classifier misses them: the
+  disagreeing claims are not similar enough to be shortlisted, or the
+  classifier labels them `supports` or `none`.
+- **(c)** Extraction phrased the claims so they no longer conflict (for
+  example, by dropping the conditions under which each holds).
 
-| library | predictor contested score | measured confirmed contradictions |
+Only shortlisted pairs were ever checked, so nothing here says the
+literature contains no disagreements.
+
+## 3. Predictor check
+
+Diet-and-mortality was picked despite its moderate contested score, on the
+reputational grounds that meta-analyses in this field famously disagree.
+
+<!-- gen:predictor -->
+| library | predictor contested score | hand-audited confirmed contradictions |
 |:--|--:|--:|
 | LLM calibration | 0.818 (high) | 0 |
-| Diet & mortality | **0.44 (moderate)** | **7** |
+| Diet & mortality | 0.44 (moderate) | 5 |
 | ML fairness | 0.667 (high) | 0 |
+<!-- /gen:predictor -->
 
-**Reputation beat the predictor.** The 0.44 rating understated diet's
-actual contradiction yield by a factor of ∞ (compared to LLM-cal's
-zero at 0.818). The `docs/findings/domain-coherence-predictor.md`
-finding already flagged diet as the "predictor miss" case (high
-modularity being ambiguous between "distinct schools argue" and
-"distinct application areas don't interact"); this run confirms diet
-sits in the "distinct schools argue" reading, not the neutral one.
-
-Two of the three measurements now contradict the predictor's ranking.
-The predictor discriminates by reputation (still true; see the
-finding) but is now measured wrong on 2 of 3 ground-truth domains.
+On these three libraries the predictor's ordering does not match the
+measured yield: the two libraries it scored highest have zero confirmed
+contradictions, and the one it scored moderate has the only non-zero
+count. Three libraries are far too few to fit or reject the predictor;
+`domain-coherence-predictor.md` already flagged diet as its likely miss
+(high modularity is ambiguous between "distinct schools argue" and
+"distinct application areas don't interact"). The diet result is
+consistent with the first reading; it does not establish it.
 
 ## 4. Assertion-strength — REPORTED AS UNTESTED
 
@@ -168,9 +209,10 @@ successive attempts and why each was dropped:
    vocabulary.
 2. **LLM-based classifier** (`multi_domain_hedge.py`, Gemini-3.6-flash,
    temp 0) ran on 200 of 338 diet claims before being halted at the
-   ₹150 gate (actual hedge-stage spend: ₹28.93). Reported diet at 96%
-   firm — same directional signal as the lexical run. **Halted with
-   partial data**, so no cross-domain contrast to publish.
+   ₹150 gate (actual hedge-stage spend: see §6, `hedge_diet-and-mortality`).
+   Reported diet at 96% firm — same directional signal as the lexical
+   run. **Halted with partial data**, so no cross-domain contrast to
+   publish.
 3. **Extraction-strip audit** (hand-comparison of 5 firm-labelled
    diet claims against their source abstracts): 2 of 5 showed
    extraction stripping hedge language ("inconsistently associated"
@@ -200,72 +242,79 @@ does not have the extraction-strip problem this section flags.
 Files kept for the audit: `data/domains/diet-and-mortality/hedge/`
 directory (partial run, no labels.json written because the process was
 killed mid-loop; the ledger entries in `data/spend_ledger.json` under
-`hedge_diet-and-mortality` record the 200 calls that ran).
+`hedge_diet-and-mortality` record the calls that ran).
 
-## 5. Full-text coverage effect
+## 5. Full-text coverage
 
-| library | full-text | share | scorers that depend on it |
-|:--|--:|--:|:--|
-| LLM calibration | 67 | 59% | persistent-limitations, orphaned-future-work |
-| Diet & mortality | **17** | **17%** | same |
-| ML fairness | 50 | 50% | same |
+<!-- gen:fulltext -->
+| library | full text | abstract only | full-text share |
+|:--|--:|--:|--:|
+| LLM calibration | 67 | 46 | 59% |
+| Diet & mortality | 17 | 83 | 17% |
+| ML fairness | 50 | 50 | 50% |
+<!-- /gen:fulltext -->
 
-Diet's 17% is the run's worst by a wide margin. Biomedical journals
-(Wiley, Elsevier, Oxford) are frequently not open-access; green-OA
-copies often 403 at the publisher. Extracted from 59 diet papers,
-only ~10 had full-text (17% × 59). The persistent-limitations scorer
-draws from ~10 diet papers vs 67 LLM-cal papers — **any raw diet
-limitation counts should be discounted by the coverage ratio (~6×)
-when compared to LLM-cal**.
+Diet's full-text share is the lowest of the three. Biomedical journals are
+frequently not open access, and green-OA copies often return 403 at the
+publisher. The persistent-limitations and orphaned-future-work scorers
+draw on full text where it exists, so raw diet limitation counts are not
+directly comparable with the other two libraries.
 
-Fairness at 50% is closer to LLM-cal's 59% and gives that scorer
-comparable footing.
+Gap-type raw counts from the extractions:
 
-Gap-type raw counts from extractions (`n_limitations`, `n_future_work`):
-
-| library | n_limitations | n_future_work |
-|:--|--:|--:|
-| Diet & mortality | 88 (from 59 papers, ~10 full-text) | 37 |
-| ML fairness | 114 (from 51 papers, ~25 full-text) | 76 |
+<!-- gen:gap-types -->
+| library | papers extracted | limitations | future-work items |
+|:--|--:|--:|--:|
+| Diet & mortality | 100 (17 full text) | 141 | 57 |
+| ML fairness | 100 (50 full text) | 218 | 146 |
+<!-- /gen:gap-types -->
 
 ## 6. Spend
 
-Final ledger (`data/spend_ledger.json`):
+The whole ledger (`data/spend_ledger.json`), by stage. This includes
+spend from before this multi-domain wave. The
+`correction_mock_test_entries` row is an appended negative entry that
+removes 190 entries proven to have been written by mock-transport unit
+tests, not by billed calls (`ledger-unknown-entries.md`); no history was
+edited.
 
-| stage | calls | USD | INR |
+<!-- gen:spend -->
+| stage | entries | USD | INR |
 |:--|--:|--:|--:|
-| extract_diet | 59 | $2.806 | ₹235.69 |
-| extract_fairness | 53 | $2.517 | ₹211.39 |
-| contradiction_diet-and-mortality | 128 | $0.406 | ₹34.12 |
-| contradiction_ml-fairness | 54 | $0.166 | ₹13.92 |
-| unknown (embedding calls via generate) | 20 | $0.0006 | ₹0.05 |
-| **Total NEW** | **314** | **$5.895** | **₹495.18** |
-| Cap | | $10.12 | ₹850.00 |
-| Remaining | | $4.22 | **₹354.82** |
+| `contradiction_diet-and-mortality` | 267 | $0.8849 | ₹74.33 |
+| `contradiction_ml-fairness` | 218 | $0.6878 | ₹57.77 |
+| `correction_mock_test_entries` | 1 | $-0.0057 | ₹-0.48 |
+| `extract_diet` | 101 | $4.6220 | ₹388.25 |
+| `extract_fairness` | 75 | $3.5563 | ₹298.73 |
+| `extract_fairness_batch` | 28 | $0.8660 | ₹72.75 |
+| `hedge_diet-and-mortality` | 200 | $0.3444 | ₹28.93 |
+| `unknown` | 200 | $0.0060 | ₹0.50 |
+| **total (ledger, after corrections)** | 1090 | **$10.9618** | **₹920.79** |
+| ceiling (`cap_inr`) |  | $10.9618 | ₹920.79 |
+| remaining |  |  | ₹0.00 |
+<!-- /gen:spend -->
 
-Well under cap. The spend guard was armed the whole run but never
-tripped — the mid-run halt of extractions to preserve budget was a
-prudential call, not a guard-trip.
+The project budgets against this ledger, which records more spend than
+Google's billing console showed when last checked
+(`ledger-reconciliation-2026-10-02.md`). Embedding calls were not
+ledgered before iteration 5, so their past cost is not measured; from
+iteration 5 on they are recorded (estimated tokens, upper-bound rate).
 
 ## 7. Cuts applied (in order)
 
-- **(a) SKIP STRUCTURAL-HOLE LLM CONFIRMATIONS** — applied at dry-run.
+- **(a) Skip structural-hole LLM confirmations** — applied at dry-run.
 - **(b) Tighten per-claim contradiction cap 4→2, threshold 0.72→0.80** —
   applied after the first diet shortlist produced 596 pairs (2-hour
-  runtime). Cut pair count 5-6× with no meaningful quality loss (still
-  found 7 real contradictions).
+  runtime). These remain the settings for both new libraries.
 - **(c) Reduce corpus size** — not applied to the corpus itself (100
-  kept per domain), but effectively applied via halting extraction at
-  59+51 to preserve contradiction-pass budget.
+  kept per domain). Extraction was halted at 59 diet + 51 fairness papers
+  in the first wave to preserve budget; both libraries were completed to
+  100 of 100 in iterations 3 and 4.
 
 ## 8. What was skipped and why
 
 - **Structural-hole LLM confirmations** — cut (a). Shortlists still
   fire deterministically over extractions; the LLM confirm step is
-  a distinct rerunnable pass.
-- **Future-work matching** — same rerunnable class. Raw future-work
-  item counts still in each library's stats.json (37 diet, 76
-  fairness).
-- **Extraction papers 60-100 diet, 52-100 fairness** — halted for
-  budget; cache is intact; a follow-up would resume from cache and
-  add the remainder.
+  a distinct rerunnable pass. Not run for the new libraries.
+- **Future-work matching** — same rerunnable class; not run for the new
+  libraries. Raw future-work item counts are in §5.

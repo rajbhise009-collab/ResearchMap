@@ -48,18 +48,18 @@ rate, halving them would give ≈ ₹301 ≈ console.
 | hedge_diet-and-mortality (n=200) | 28.93 | 1.00x |
 | contradiction_diet-and-mortality (n=128) | 34.12 | 1.00x |
 | contradiction_ml-fairness (n=54) | 13.92 | 1.00x |
-| unknown (n=190, tests + probes) | 0.48 | 1.00x |
+| unknown (n=190, mock-transport unit tests — see `ledger-unknown-entries.md`) | 0.48 | 1.00x |
 
 ## Conclusion
 
-**Hypothesis not confirmed.** The ledger is accurate at ₹524.14. No
-pricing correction. No history rewrite.
+**Hypothesis not confirmed.** No pricing error found at ₹524.14. No
+pricing correction. No history rewrite. (Later finding: that total
+included entries written by unit tests, not billed calls; see the
+addendum.)
 
-The console lag is the remaining candidate: Google's cost explorer
-can take hours to catch up on recent calls, and when the per-call
-cost is small ($0.0026 → ₹0.22 for a typical extraction) the UI
-aggregates lossy. The console's number should drift upward to meet
-the ledger over the next day or two.
+Console lag is the remaining candidate explanation: Google's cost
+explorer can take hours to catch up on recent calls. This has not been
+tested.
 
 ## Operational decisions
 
@@ -83,3 +83,17 @@ the ledger over the next day or two.
   BatchClient instance instead of a GeminiLLMClient — but the batch
   client's responses have different metadata and the orchestrator
   isn't ready for it today.
+
+## Addendum — 2026-10-04 (iteration 5)
+
+- The `unknown`-stage entries were written by mock-transport unit tests,
+  not billed calls. 190 are proven and removed by one appended correction
+  entry; 10 cannot be proven and stay counted. Details and numbers:
+  `ledger-unknown-entries.md`.
+- After that correction the ledger still records more than the console
+  figure above. The remaining gap is unexplained.
+- Embedding calls were never ledgered before iteration 5; their past cost
+  is not measured.
+- Batch extraction has recorded to the ledger at half price since
+  iteration 4. The section above on using the batch API describes the
+  code as it was on 2026-10-02.

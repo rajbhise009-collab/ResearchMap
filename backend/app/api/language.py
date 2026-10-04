@@ -605,9 +605,9 @@ LIBRARIES_NOTE = {
             "n_papers": 100,
             "note": (
                 "Research-literature analysis, not dietary or medical "
-                "advice. The papers behind these results contradict each "
-                "other on some of the most common questions (red meat, "
-                "saturated fat, alcohol, low-carb). Take medical "
+                "advice. Some papers here disagree with each other, "
+                "for example on red meat and on alcohol (checked by hand, "
+                "not by experts). Take medical "
                 "decisions to a clinician who knows you."
             ),
         },
@@ -616,9 +616,10 @@ LIBRARIES_NOTE = {
             "name": "Algorithmic fairness in machine learning",
             "n_papers": 100,
             "note": (
-                "Definitions of fairness are provably incompatible in "
-                "general. Papers here disagree about which incompatibility "
-                "matters for which decision."
+                "Some definitions of fairness are mathematically proven "
+                "unable to all hold at once. Our disagreement check found "
+                "no conflicting claims among the papers read; why is not "
+                "established."
             ),
         },
     ],

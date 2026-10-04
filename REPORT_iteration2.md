@@ -60,7 +60,7 @@ bounded above, not a clean negative."*
 |:--|--:|:--|--:|:--|:--|
 | llm-calibration | 0.818 | high | 0 | 100% | none |
 | diet-and-mortality | 0.440 | moderate | 5 | 59% | partial extraction; hand-audit not expert review |
-| ml-fairness | 0.667 | high | 0 | 51% | partial + likely scorer-mismatch (definitional not empirical disagreement) |
+| ml-fairness | 0.667 | high | 0 | 51% | partial + scorer-mismatch hypothesis (definitional not empirical disagreement), untested [wording corrected 2026-10-04] |
 
 Free fairness-miss diagnostic: found 6 impossibility/incompatibility
 papers in the fairness corpus (Kleinberg-Mullainathan-Raghavan 2016,

@@ -254,7 +254,7 @@ starting table, not a prediction claim.
 
 | library | predictor score | predictor label | raw flagged | audited genuine | claims-read coverage | pairs checked | confounds |
 |:--|--:|:--|--:|--:|:--|:--|:--|
-| llm-calibration | 0.818 | high | 0 | 0 | 113 / 113 (100%) | 437 / 437 | none — full extraction, frozen manifest |
+| llm-calibration | 0.818 | high | 2 | 0 | 113 / 113 (100%) | 437 / 437 | own shortlist settings (0.78, cap 10); both flags set aside as regime conflation |
 | diet-and-mortality | 0.440 | moderate | 10 | **5** | 100 / 100 (100%) | 152 / 152 | hand audit is the builder's, not expert review |
 | ml-fairness | 0.667 | high | 0 | 0 | 100 / 100 (100%) | 95 / 95 | hypothesis-level scorer-mismatch (see below) |
 
@@ -267,9 +267,29 @@ Two of three predictions miss, now without coverage confounding:
   flagged; Friedler et al.'s "(im)possibility" paper had no shortlisted
   pairs at all. Why the classifier finds no contradictions here is not
   established. The idea that fairness disagreements are definitional
-  rather than empirical remains a **hypothesis**, not a finding.
+  rather than empirical remains a **hypothesis**, not a finding; see
+  `multi-domain.md` §2 "Why zero? Not established" for the candidate
+  explanations, none tested.
 
-### Fairness-miss free diagnostic (no new spend)
+Per-paper counts at full coverage (generated from the cached claim
+embeddings and verdict files):
+
+<!-- gen:impossibility -->
+| paper | shortlisted pairs | classified | flagged |
+|:--|--:|--:|--:|
+| Inherent Trade-Offs in the Fair Determination of Risk Scores (2016) (`W4386564359`) | 12 | 12 | 0 |
+| Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments (2017) (`W2543774860`) | 1 | 1 | 0 |
+| On the (im)possibility of fairness (2016) (`W2524301210`) | 0 | 0 | 0 |
+| Fairness in Criminal Justice Risk Assessments: The State of the Art (2018) (`W2599025709`) | 10 | 10 | 0 |
+| Algorithmic Decision Making and the Cost of Fairness (2017) (`W2584805976`) | 0 | 0 | 0 |
+| The cost of fairness in binary classification (2018) (`W2790025105`) | 0 | 0 | 0 |
+| Inherent Trade-Offs in Algorithmic Fairness (2018) (`W2808105152`) | 2 | 2 | 0 |
+<!-- /gen:impossibility -->
+
+### Fairness-miss free diagnostic (no new spend; run at 51 of 100 papers)
+
+This diagnostic predates full coverage and is kept as a record. The
+counts above supersede its counts.
 
 Hypothesis: the contradiction scorer looks for EMPIRICAL disagreement
 ("does X reduce Y or not") while fairness's famous disagreements are
@@ -308,21 +328,19 @@ Results:
   fairness metrics, but they focus on different combinations of
   criteria."*
 
-**Reading:** the classifier is behaving correctly per its prompt — two
-impossibility theorems about DIFFERENT metric combinations aren't
-logically contradictory; they're complementary results. The famous
-Kleinberg vs Chouldechova "disagreement" is not one theorem asserting
-what another denies; it is two independent proofs that different
-sets of fairness metrics can't coexist. The scorer's `contradicts`
-definition ("cannot both be true about the same construct") never
-fires because they DO both hold — for different constructs.
+**Reading (the builder's interpretation of these four verdicts; not
+tested):** the classifier's rationales describe the impossibility
+results as concerning different combinations of fairness criteria, so
+under its prompt's definition of `contradicts` ("cannot both be true
+about the same construct") it did not flag them. Whether that is the
+reason the library yields zero is not established.
 
 **Hypothesis (not established):** the contradiction scorer's built-in
 notion of disagreement (empirical claim vs empirical claim) is a
 poor fit for fields where disagreement is definitional / axiomatic.
 A domain-typed scorer variant — one that flags DEFINITIONAL
-incompatibility explicitly — would likely find several genuine
-disagreements in this fairness corpus. Building that variant is out
+incompatibility explicitly — might find disagreements in this fairness
+corpus; that is untested. Building that variant is out
 of scope for this run.
 
 ### What a recalibration would need
@@ -333,14 +351,16 @@ worth calling "recalibration" would need:
 
 1. **Measured yield on 8–10 domains** across a range of predicted
    scores. n=3 is not enough to fit anything without overfitting.
-2. **ml-fairness re-run at full extraction** (100/100, not 51/100)
-   so its 0 is not confounded by partial coverage.
-3. **Scorer-variant for definitional disagreement**, or at least a
-   documented rule that low measured yield on a corpus known for
-   definitional disagreements is expected and not evidence against
-   the predictor.
-4. Even after (1)–(3), any weight fit should hold out at least 2
+2. **Scorer-variant for definitional disagreement**, if hypothesis (a)
+   in `multi-domain.md` §2 is ever tested and holds — or else a
+   documented reason why ml-fairness's zero should or should not count
+   against the predictor.
+3. Even after (1)–(2), any weight fit should hold out at least 2
    domains as a validation set — otherwise the fit tests itself.
+
+Done: **ml-fairness re-run at full extraction** (iteration 4,
+2026-10-02): 100 of 100 papers, 95 of 95 shortlisted pairs, still 0
+flagged. Its zero is no longer confounded by partial coverage.
 
 Until those are done, the predictor stays where it is: **a
 hypothesis-driven diagnostic that discriminates domains by
