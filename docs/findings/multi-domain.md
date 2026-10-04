@@ -187,8 +187,9 @@ written down so a reader can weigh them (generated from each library's
 - **ML fairness.** 123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted.
 <!-- /gen:audit-doubts -->
 
-The two doubted diet pairs are items 13 and 14 of a second expert-review
-packet, `docs/review/diet-contradictions-v2/`.
+The two doubted diet pairs have been added to a second expert-review
+packet, `docs/review/diet-contradictions-v2/`. Which packet items they are
+is recorded only in the private answer key, so the packet stays blind.
 
 ## 3. Predictor check
 
