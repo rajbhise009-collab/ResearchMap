@@ -584,6 +584,16 @@ PRIVACY_NOTE = {
 # backend/app/api/multi_library_export.py::LIBRARIES; anything visible
 # to the reader lives here so the translation-layer honesty tests can
 # police it.
+# Paper counts for the multi-domain libraries come from their corpus files,
+# never a literal (a merge changes them).
+def _domain_n_papers(slug: str) -> int:
+    import json as _json
+    from pathlib import Path as _Path
+    f = (_Path(__file__).resolve().parents[3] / "data" / "domains" / slug
+         / "prelabelled.json")
+    return len(_json.loads(f.read_text())["entries"])
+
+
 LIBRARIES_NOTE = {
     "label": "Libraries in this project",
     "intro": (
@@ -602,7 +612,7 @@ LIBRARIES_NOTE = {
         {
             "slug": "diet-and-mortality",
             "name": "Diet and all-cause mortality",
-            "n_papers": 100,
+            "n_papers": _domain_n_papers("diet-and-mortality"),
             "note": (
                 "Research-literature analysis, not dietary or medical "
                 "advice. Some papers here disagree with each other, "
@@ -614,7 +624,7 @@ LIBRARIES_NOTE = {
         {
             "slug": "ml-fairness",
             "name": "Algorithmic fairness in machine learning",
-            "n_papers": 100,
+            "n_papers": _domain_n_papers("ml-fairness"),
             "note": (
                 "Some definitions of fairness are mathematically proven "
                 "unable to all hold at once. Our disagreement check found "

@@ -1,0 +1,53 @@
+{
+  "n": 4,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2974817986:c4",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8662105798721313,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AIF360 provides algorithms to mitigate algorithmic bias in datasets and models.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Claim B specifies the number and type of tools included in AI Fairness 360, directly reinforcing Claim A's statement that the toolkit provides bias mitigation algorithms.",
+      "dropped_from": "supports.json",
+      "reason": "both claims belong to openalex:W2974817986 after merge"
+    },
+    {
+      "from_claim_id": "openalex:W2974817986:c2",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8623891472816467,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AIF360 provides fairness metrics for datasets and machine learning models.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Claim B details the specific metrics and features provided by AI Fairness 360, reinforcing Claim A's statement that the toolkit offers fairness metrics for datasets and models.",
+      "dropped_from": "supports.json",
+      "reason": "both claims belong to openalex:W2974817986 after merge"
+    },
+    {
+      "from_claim_id": "openalex:W2974817986:c1",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8475406169891357,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AI Fairness 360 (AIF360) is an open-source Python toolkit for algorithmic fairness released under an Apache v2.0 license.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Both claims provide complementary facts about the AI Fairness 360 Python package for algorithmic fairness, mutually reinforcing its identity and capabilities.",
+      "dropped_from": "supports.json",
+      "reason": "both claims belong to openalex:W2974817986 after merge"
+    },
+    {
+      "from_claim_id": "openalex:W2974817986:c3",
+      "to_claim_id": "openalex:W4289438483:c1",
+      "similarity": 0.8336966633796692,
+      "a_paper_id": "openalex:W2974817986",
+      "a_text": "AIF360 provides explanations for fairness metrics.",
+      "b_paper_id": "openalex:W4289438483",
+      "b_text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "explanation": "Both claims independently assert that AI Fairness 360 includes a feature or facility for providing metric explanations.",
+      "dropped_from": "supports.json",
+      "reason": "both claims belong to openalex:W2974817986 after merge"
+    }
+  ]
+}

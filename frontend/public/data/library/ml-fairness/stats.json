@@ -1,23 +1,23 @@
 {
-  "papers": 100,
+  "papers": 99,
   "full_text": 50,
-  "abstract_only": 50,
-  "n_extractions": 100,
-  "extraction_coverage_note": "Claims read from 100 of 100 papers.",
+  "abstract_only": 49,
+  "n_extractions": 99,
+  "extraction_coverage_note": "Claims read from 99 of 99 papers.",
   "zero_finding_note": "Zero here means none were found among the papers read. It does not mean none exist.",
-  "disagreement_check_note": "The disagreement check compared every shortlisted pair of claims across all 100 papers read.",
+  "disagreement_check_note": "The disagreement check compared every shortlisted pair of claims across all 99 papers read.",
   "disagreement_check": {
-    "shortlist_pairs": 95,
-    "classified_pairs": 95,
+    "shortlist_pairs": 91,
+    "classified_pairs": 91,
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
-    "date": "2026-10-02",
+    "date": "2026-10-04",
     "shortlist_settings": {
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 100
+    "papers_covered": 99
   },
   "extraction_coverage_share": 1.0,
   "assertion_strength": {
@@ -30,14 +30,14 @@
     "hedged_share": 0.012875536480686695
   },
   "gap_type_counts": {
-    "n_papers": 100,
+    "n_papers": 99,
     "n_limitations": 218,
     "limitation_categories": {
       "accuracy-fairness-tradeoff": 3,
       "algorithmic-bias": 3,
       "optimization-instability": 2,
-      "training-data-bias": 2,
       "fairness-metric-incompatibility": 2,
+      "training-data-bias": 2,
       "search-scope-restriction": 2,
       "statistical-parity-inadequacy": 1,
       "metric-availability-dependency": 1,
@@ -69,6 +69,9 @@
       "preprocessing-interaction-limitation": 1,
       "historical-training-data-bias": 1,
       "simplified-empirical-scope": 1,
+      "small-dataset-degradation": 1,
+      "demo-scope-constraint": 1,
+      "incomplete-justice-scope": 1,
       "unfalsifiable-assumptions": 1,
       "criterion-incompatibility": 1,
       "unawareness-bias-leakage": 1,
@@ -121,9 +124,6 @@
       "algorithm-inflexibility": 1,
       "limited-attribute-handling": 1,
       "legal-and-technical-limitations": 1,
-      "small-dataset-degradation": 1,
-      "demo-scope-constraint": 1,
-      "incomplete-justice-scope": 1,
       "unobservable-construct-space": 1,
       "unstated-prior-assumptions": 1,
       "crowdworker-sample-bias": 1,
@@ -263,11 +263,11 @@
     "structural_holes": 0,
     "structural_holes_substantive": 0
   },
-  "core": 100,
+  "core": 99,
   "peripheral": 0,
   "spend_to_date_usd": 5.1101,
   "spend_note": "From the project's spend ledger: extraction, disagreement-check and hedge-classifier calls for this library. Embedding calls made before 2026-10-04 were not recorded and are not included.",
   "manifest_hash": null,
   "relationships": 0,
-  "note": "Multi-domain library \u2014 claims extracted from 100 of 100 papers. Scorers run: contradictions (hand-audited) and a code-only persistent-limitations count. Not run: structural holes (needs an embeddings + addressal pipeline) and orphaned-future-work matching (paid; skipped by design)."
+  "note": "Multi-domain library \u2014 claims extracted from 99 of 99 papers. Scorers run: contradictions (hand-audited) and a code-only persistent-limitations count. Not run: structural holes (needs an embeddings + addressal pipeline) and orphaned-future-work matching (paid; skipped by design)."
 }

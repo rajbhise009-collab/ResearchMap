@@ -223,13 +223,79 @@ def duplicates() -> str:
                    "candidates for hand review"], ["l", "r", "r", "r"], rows)
 
 
+def _check(slug: str) -> tuple[int, int, int, int]:
+    """(papers, extracted, shortlisted, classified) for any library."""
+    s = _stats(slug)
+    if slug == "llm-calibration":
+        rel = _j(DATA / "relationships" / "relationship_summary.json")["contradiction_stats"]
+        return s["papers"], s["n_extractions"], rel["candidates"], rel["classified"]
+    cov = _j(DATA / "domains" / slug / "reasoning" / "coverage.json")
+    return s["papers"], s["n_extractions"], cov["shortlist_pairs"], cov["classified_pairs"]
+
+
+def _flagged(slug: str) -> int:
+    if slug == "llm-calibration":
+        return _j(DATA / "relationships" / "relationship_summary.json")["contradiction_stats"]["contradicts"]
+    return _j(DATA / "domains" / slug / "reasoning" / "contradictions.json")["n"]
+
+
+CONFOUNDS = {
+    "llm-calibration": "own shortlist settings (0.78, cap 10); both flags set aside as regime conflation",
+    "diet-and-mortality": "hand audit is the builder's, not expert review",
+    "ml-fairness": "zero not explained (see multi-domain.md §2, hypotheses untested)",
+}
+
+
+def measured() -> str:
+    feats = {f["slug"]: f["verdict"] for f in _j(DATA / "coherence" / "features.json")}
+    rows = []
+    for slug in ("llm-calibration", *NEW_LIBS):
+        n, ext, sl, cl = _check(slug)
+        v = feats[slug]
+        rows.append([slug, v["contested_score"], v["contested_band"], _flagged(slug),
+                     _stats(slug)["n_confirmed_contradictions"],
+                     f"{ext} / {n} ({round(100 * ext / n)}%)", f"{cl} / {sl}", CONFOUNDS[slug]])
+    return _table(["library", "predictor score", "predictor label", "raw flagged",
+                   "audited genuine", "claims-read coverage", "pairs checked", "confounds"],
+                  ["l", "r", "l", "r", "r", "l", "l", "l"], rows)
+
+
+def mlf_facts() -> str:
+    n, ext, sl, cl = _check("ml-fairness")
+    return "\n".join([f"- Claims extracted from {ext} of {n} papers.",
+                      f"- {cl} of {sl} shortlisted pairs classified; "
+                      f"{_flagged('ml-fairness')} flagged as contradictions."])
+
+
+def scorer_status() -> str:
+    rows = []
+    for slug in ("llm-calibration", *NEW_LIBS):
+        n, ext, sl, cl = _check(slug)
+        s = _stats(slug)
+        y = s["scorer_yields"]
+        conf = s["n_confirmed_contradictions"]
+        fl = _flagged(slug)
+        rows.append([slug, n, f"{ext} ({round(100 * ext / n)}%)", f"{cl} / {sl} pairs",
+                     f"{conf} (of {fl} flagged)" if fl else conf,
+                     y.get("persistent_limitations", 0),
+                     y["orphaned_future_work"] if slug == "llm-calibration" else "skipped (paid, by design)",
+                     f"{y['structural_holes']} ({y['structural_holes_substantive']} substantive)"
+                     if slug == "llm-calibration" else "not run (pipeline not built)"])
+    return _table(["library", "papers", "claims read", "disagreement check",
+                   "confirmed contradictions", "persistent limitations",
+                   "orphaned future work", "structural holes"],
+                  ["l", "r", "r", "l", "r", "r", "l", "l"], rows)
+
+
 BLOCKS = {
     "multi-domain.md": {"corpus": corpus, "yield": yield_table, "diet-audit": diet_audit,
                         "impossibility": impossibility, "predictor": predictor,
+                        "mlf-facts": mlf_facts,
                         "fulltext": fulltext, "gap-types": gap_types, "spend": spend},
     "ledger-unknown-entries.md": {"unknown": unknown_entries, "spend": spend},
-    "domain-coherence-predictor.md": {"impossibility": impossibility},
-    "duplicate-check.md": {"duplicates": duplicates},
+    "domain-coherence-predictor.md": {"impossibility": impossibility, "measured": measured},
+    "new-library-scorer-status.md": {"scorer-status": scorer_status},
+    # duplicate-check.md is a dated record (pre-merge); its table is frozen.
 }
 
 

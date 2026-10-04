@@ -252,11 +252,13 @@ far below the noise floor of a 7-feature composite. This section records
 the numbers so the next validation attempt (~8–10 domains minimum) has a
 starting table, not a prediction claim.
 
+<!-- gen:measured -->
 | library | predictor score | predictor label | raw flagged | audited genuine | claims-read coverage | pairs checked | confounds |
 |:--|--:|:--|--:|--:|:--|:--|:--|
 | llm-calibration | 0.818 | high | 2 | 0 | 113 / 113 (100%) | 437 / 437 | own shortlist settings (0.78, cap 10); both flags set aside as regime conflation |
-| diet-and-mortality | 0.440 | moderate | 10 | **5** | 100 / 100 (100%) | 152 / 152 | hand audit is the builder's, not expert review |
-| ml-fairness | 0.667 | high | 0 | 0 | 100 / 100 (100%) | 95 / 95 | hypothesis-level scorer-mismatch (see below) |
+| diet-and-mortality | 0.44 | moderate | 10 | 5 | 100 / 100 (100%) | 152 / 152 | hand audit is the builder's, not expert review |
+| ml-fairness | 0.667 | high | 0 | 0 | 99 / 99 (100%) | 91 / 91 | zero not explained (see multi-domain.md §2, hypotheses untested) |
+<!-- /gen:measured -->
 
 Two of three predictions miss, now without coverage confounding:
 - **diet** scored moderate yet produced 5 genuine contradictions. The
@@ -360,7 +362,8 @@ worth calling "recalibration" would need:
 
 Done: **ml-fairness re-run at full extraction** (iteration 4,
 2026-10-02): 100 of 100 papers, 95 of 95 shortlisted pairs, still 0
-flagged. Its zero is no longer confounded by partial coverage.
+flagged. (After the 2026-10-04 merge of a duplicate paper the library has
+99 papers; current counts are in the table above.) Its zero is no longer confounded by partial coverage.
 
 Until those are done, the predictor stays where it is: **a
 hypothesis-driven diagnostic that discriminates domains by

@@ -43,46 +43,13 @@
     },
     {
       "slug": "ml-fairness",
-      "n_papers": 100,
+      "n_papers": 99,
       "n_without_authors": 0,
       "four_pass_replay": {
-        "n_after": 100,
+        "n_after": 99,
         "merges": []
       },
       "candidates_for_hand_review": [
-        {
-          "a": "W2974817986",
-          "b": "W4289438483",
-          "a_title": "AI Fairness 360: An extensible toolkit for detecting and mitigating algorithmic bias",
-          "b_title": "AI Fairness 360: An Extensible Toolkit for Detecting, Understanding, and\\n Mitigating Unwanted Algorithmic Bias",
-          "a_year": 2019,
-          "b_year": 2018,
-          "a_doi": "10.1147/jrd.2019.2942287",
-          "b_doi": "10.48550/arxiv.1810.01943",
-          "shared_last_names": [
-            "bellamy",
-            "dey",
-            "hind",
-            "hoffman",
-            "houde",
-            "kannan",
-            "lohia",
-            "martino",
-            "mehta",
-            "nagar",
-            "ramamurthy",
-            "richards",
-            "saha",
-            "sattigeri",
-            "singh",
-            "varshney",
-            "zhang"
-          ],
-          "reasons": [
-            "title similarity 0.87",
-            "arXiv/non-arXiv DOI pair, title similarity 0.87"
-          ]
-        },
         {
           "a": "W2100960835",
           "b": "W2892038960",

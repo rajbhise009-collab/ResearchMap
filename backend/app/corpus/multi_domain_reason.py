@@ -108,17 +108,29 @@ def load_extractions(slug: str) -> list[PaperExtraction]:
     cache = ExtractionCache()
     prompt_hash = load(latest_version()).hash
     payload = json.loads(_prelabel_path(DOMAINS[slug]).read_text())
+    def _cached(pid: str):
+        for src in ("fulltext", "abstract"):
+            ext = cache.get(pid, "gemini:gemini-3.6-flash", src, prompt_hash)
+            if ext is not None:
+                return ext
+        return None
+
     out = []
     for e in payload["entries"]:
         # Cache key uses `openalex:W...`; prelabelled entries store
         # openalex_id as the URL form `https://openalex.org/W...` which
         # would hash to a different directory.
-        pid = f"openalex:{e['wid']}"
-        for src in ("fulltext", "abstract"):
-            ext = cache.get(pid, "gemini:gemini-3.6-flash", src, prompt_hash)
-            if ext is not None:
-                out.append(ext)
-                break
+        ext = _cached(f"openalex:{e['wid']}")
+        if ext is None:
+            continue
+        # A merged entry carries its losers' ids (docs/merge-policy.md);
+        # their extractions are folded onto the survivor so nothing the
+        # loser contributed is silently lost.
+        losers = [x for x in (_cached(m) for m in e.get("merged_from", [])) if x]
+        if losers:
+            from backend.app.corpus.merges import union_extraction
+            ext = union_extraction(ext, losers)
+        out.append(ext)
     return out
 
 

@@ -1,0 +1,38 @@
+{
+  "slug": "ml-fairness",
+  "date": "2026-10-04",
+  "merges": [
+    {
+      "survivor": "W2974817986",
+      "losers": [
+        "W4289438483"
+      ],
+      "rule": "same work: arXiv preprint (2018) and IBM J. Res. Dev. version (2019) of AI Fairness 360; same authors, near-identical abstract. Survivor by docs/merge-policy.md tier 1 (non-arXiv DOI).",
+      "decided": "2026-10-04, owner decision in the iteration-6 brief",
+      "evidence": "docs/findings/duplicate-check.md"
+    }
+  ],
+  "before": {
+    "papers": 100,
+    "full_text": 50,
+    "extractions": 100,
+    "claims": 466,
+    "shortlist_pairs": 95,
+    "shortlist_classified": 95,
+    "flagged_contradictions": 0,
+    "supports_verdicts": 82,
+    "none_verdicts": 136
+  },
+  "after": {
+    "papers": 99,
+    "full_text": 50,
+    "extractions": 99,
+    "claims": 466,
+    "shortlist_pairs": 91,
+    "shortlist_classified": 91,
+    "flagged_contradictions": 0,
+    "supports_verdicts": 78,
+    "none_verdicts": 136
+  },
+  "verdicts_dropped_by_merge": 4
+}

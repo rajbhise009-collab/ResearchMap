@@ -1,5 +1,5 @@
 {
-  "total": 100,
+  "total": 99,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -163,8 +163,8 @@
       "doi": "https://doi.org/10.1147/jrd.2019.2942287",
       "venue": "IBM Journal of Research and Development",
       "domain_centrality": "core",
-      "input_source": "abstract_only",
-      "abstract_only": true
+      "input_source": "fulltext",
+      "abstract_only": false
     },
     {
       "paper_id": "https://openalex.org/W2753845591",
@@ -440,17 +440,6 @@
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
-    },
-    {
-      "paper_id": "https://openalex.org/W4289438483",
-      "wid": "W4289438483",
-      "title": "AI Fairness 360: An Extensible Toolkit for Detecting, Understanding, and\\n Mitigating Unwanted Algorithmic Bias",
-      "year": 2018,
-      "doi": "https://doi.org/10.48550/arxiv.1810.01943",
-      "venue": "arXiv (Cornell University)",
-      "domain_centrality": "core",
-      "input_source": "fulltext",
-      "abstract_only": false
     },
     {
       "paper_id": "https://openalex.org/W2524301210",

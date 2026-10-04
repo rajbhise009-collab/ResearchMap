@@ -1,0 +1,11 @@
+{
+  "merges": [
+    {
+      "survivor": "W2974817986",
+      "losers": ["W4289438483"],
+      "rule": "same work: arXiv preprint (2018) and IBM J. Res. Dev. version (2019) of AI Fairness 360; same authors, near-identical abstract. Survivor by docs/merge-policy.md tier 1 (non-arXiv DOI).",
+      "decided": "2026-10-04, owner decision in the iteration-6 brief",
+      "evidence": "docs/findings/duplicate-check.md"
+    }
+  ]
+}

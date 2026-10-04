@@ -19,7 +19,7 @@ FX: 1 USD = ₹84.
 |:--|:--|--:|--:|--:|--:|--:|
 | LLM calibration | `llm-calibration` | 113 | 100 | 13 | 67 (59%) | 113 of 113 |
 | Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | 100 of 100 |
-| ML fairness | `ml-fairness` | 100 | 100 | 0 | 50 (50%) | 100 of 100 |
+| ML fairness | `ml-fairness` | 99 | 99 | 0 | 50 (51%) | 99 of 99 |
 <!-- /gen:corpus -->
 
 Diet & mortality was completed in iteration 3 (synchronous API). ML
@@ -34,7 +34,7 @@ coverage.
 |:--|--:|--:|--:|--:|--:|--:|
 | LLM calibration (frozen 2026-07; threshold 0.78, cap 10) | 437 | 437 | 2 | 0 | — | — |
 | Diet & mortality (threshold 0.80, cap 2) | 152 | 152 | 10 | 5 | 2 | 3 |
-| ML fairness (threshold 0.80, cap 2) | 95 | 95 | 0 | 0 | — | — |
+| ML fairness (threshold 0.80, cap 2) | 91 | 91 | 0 | 0 | — | — |
 <!-- /gen:yield -->
 
 Only shortlisted pairs are ever checked: a pair of claims reaches the
@@ -134,8 +134,10 @@ part of the honest contradiction count, not optional polish.
 
 ### ML fairness — what was measured
 
-- Claims extracted from 100 of 100 papers.
-- 95 of 95 shortlisted pairs classified; 0 flagged as contradictions.
+<!-- gen:mlf-facts -->
+- Claims extracted from 99 of 99 papers.
+- 91 of 91 shortlisted pairs classified; 0 flagged as contradictions.
+<!-- /gen:mlf-facts -->
 - Pairs touching the impossibility-result papers, rebuilt from the cached
   claim embeddings at the library's shortlist settings:
 
@@ -251,7 +253,7 @@ killed mid-loop; the ledger entries in `data/spend_ledger.json` under
 |:--|--:|--:|--:|
 | LLM calibration | 67 | 46 | 59% |
 | Diet & mortality | 17 | 83 | 17% |
-| ML fairness | 50 | 50 | 50% |
+| ML fairness | 50 | 49 | 51% |
 <!-- /gen:fulltext -->
 
 Diet's full-text share is the lowest of the three. Biomedical journals are
@@ -266,7 +268,7 @@ Gap-type raw counts from the extractions:
 | library | papers extracted | limitations | future-work items |
 |:--|--:|--:|--:|
 | Diet & mortality | 100 (17 full text) | 141 | 57 |
-| ML fairness | 100 (50 full text) | 218 | 146 |
+| ML fairness | 99 (50 full text) | 218 | 146 |
 <!-- /gen:gap-types -->
 
 ## 6. Spend
@@ -309,7 +311,8 @@ iteration 5 on they are recorded (estimated tokens, upper-bound rate).
 - **(c) Reduce corpus size** — not applied to the corpus itself (100
   kept per domain). Extraction was halted at 59 diet + 51 fairness papers
   in the first wave to preserve budget; both libraries were completed to
-  100 of 100 in iterations 3 and 4.
+  100 of 100 in iterations 3 and 4. ML fairness has 99 papers since the
+  2026-10-04 merge of a duplicate (`duplicate-check-v2.md`).
 
 ## 8. What was skipped and why
 

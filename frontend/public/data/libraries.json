@@ -25,7 +25,7 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "n_papers": 100,
+      "n_papers": 99,
       "is_default": false,
       "not_advice_note": null,
       "snapshot_path": "/data/library/ml-fairness"

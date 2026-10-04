@@ -42,6 +42,12 @@ def _slug(text: str) -> str:
 # The one place that lists all three libraries. If a fourth is added, the
 # manifest grows here and the frontend selector picks it up automatically.
 
+def _prelabel_count(slug: str) -> int:
+    """Paper count from the library's corpus file (a merge changes it)."""
+    f = REPO_ROOT / "data" / "domains" / slug / "prelabelled.json"
+    return len(json.loads(f.read_text())["entries"])
+
+
 LLM_CAL_MANIFEST = {
     "slug": "llm-calibration",
     "name": "Language-model reliability",
@@ -61,7 +67,7 @@ DIET_MANIFEST = {
     "blurb": ("What the epidemiology and clinical-trial literature says "
               "about diet — food groups, dietary patterns, and specific "
               "regimes — and mortality-related outcomes."),
-    "n_papers": 100,
+    "n_papers": _prelabel_count("diet-and-mortality"),
     "is_default": False,
     # Raj-required disclaimer for a biomedical library.
     "not_advice_note": (
@@ -79,7 +85,7 @@ FAIRNESS_MANIFEST = {
     "blurb": ("Definitions and metrics for fair machine-learning "
               "classifiers, incompatibility results between them, "
               "bias-mitigation methods, and audits of deployed systems."),
-    "n_papers": 100,
+    "n_papers": _prelabel_count("ml-fairness"),
     "is_default": False,
     "not_advice_note": None,
 }
@@ -182,6 +188,12 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     # per-paper detail: paper/{wid}.json with full extraction embedded
     paper_dir = lib_dir / "paper"
     paper_dir.mkdir(exist_ok=True)
+    # Papers no longer in the library (e.g. merged away) must not keep a
+    # stale public page.
+    _keep = {f"{e['wid']}.json" for e in entries}
+    for _old in paper_dir.glob("*.json"):
+        if _old.name not in _keep:
+            _old.unlink()
     for e in entries:
         pid = f"openalex:{e['wid']}"
         ext = ext_by_pid.get(pid)
@@ -193,6 +205,8 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "input_source": e.get("input_source"),
             "abstract_only": e.get("input_source") != "fulltext",
             "abstract": e.get("abstract"),
+            # Records merged into this one (docs/merge-policy.md provenance).
+            "merged_from": e.get("merged_from", []),
             "claims": [c.model_dump() for c in (ext.claims or [])] if ext else [],
             "limitations": [l.model_dump() for l in (ext.limitations or [])] if ext else [],
             "future_work": [f.model_dump() for f in (ext.future_work or [])] if ext else [],

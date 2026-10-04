@@ -10,11 +10,13 @@ and produced zero".
 
 ## Summary
 
+<!-- gen:scorer-status -->
 | library | papers | claims read | disagreement check | confirmed contradictions | persistent limitations | orphaned future work | structural holes |
 |:--|--:|--:|:--|--:|--:|:--|:--|
-| llm-calibration | 113 | 113 (100%) | 437 / 437 pairs | 0 | 1 | 63 | 12 (2 substantive) |
+| llm-calibration | 113 | 113 (100%) | 437 / 437 pairs | 0 (of 2 flagged) | 1 | 63 | 12 (2 substantive) |
 | diet-and-mortality | 100 | 100 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | skipped (paid, by design) | not run (pipeline not built) |
-| ml-fairness | 100 | 100 (100%) | 95 / 95 pairs | 0 | 1 | skipped (paid, by design) | not run (pipeline not built) |
+| ml-fairness | 99 | 99 (100%) | 91 / 91 pairs | 0 | 1 | skipped (paid, by design) | not run (pipeline not built) |
+<!-- /gen:scorer-status -->
 
 "Pairs" are shortlisted claim pairs. Diet and ML-fairness: cosine
 similarity ≥ 0.80, at most 2 candidates per claim (their documented
