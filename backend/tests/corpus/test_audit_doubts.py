@@ -22,3 +22,9 @@ def test_doubts_shipped_to_both_new_libraries():
         s = json.loads((REPO / "frontend" / "public" / "data" / "library" / slug
                         / "stats.json").read_text())
         assert s["audit_doubts"], slug
+
+
+def test_doubt_text_does_not_claim_the_packet_was_sent():
+    for d in json.loads((DIET / "audit_doubts.json").read_text())["items"]:
+        assert "sent for expert review" not in d["text"]
+        assert "not yet sent" in d["text"]

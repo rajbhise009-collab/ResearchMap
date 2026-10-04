@@ -39,8 +39,8 @@ def diet() -> dict:
         items.append({"audit_pair": n, "topic": v["topic"], "verdict": v["verdict"],
                       "a_paper_id": v["a_paper_id"], "b_paper_id": v["b_paper_id"],
                       "text": (f"We doubt our own \"disagreement\" verdict on {v['topic']}: "
-                               f"{reason} The verdict is unchanged and the pair has been "
-                               "sent for expert review.")})
+                               f"{reason} The verdict is unchanged; the pair has been added "
+                               "to a packet for expert review (not yet sent).")})
     return {"slug": "diet-and-mortality", "items": items}
 
 

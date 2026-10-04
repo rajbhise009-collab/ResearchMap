@@ -182,8 +182,8 @@ written down so a reader can weigh them (generated from each library's
 `reasoning/audit_doubts.json` by `backend/app/corpus/audit_doubts.py`):
 
 <!-- gen:audit-doubts -->
-- **Diet & mortality.** We doubt our own "disagreement" verdict on red meat / stroke: one paper reports no link while the other gives a risk per 100 g a day — the same kind of difference in how results were measured that got the triglyceride pair set aside. The verdict is unchanged and the pair has been sent for expert review.
-- **Diet & mortality.** We doubt our own "disagreement" verdict on red meat / type 2 diabetes: one paper is about unprocessed red meat and the other about red meat in general, which may not be the same exposure. The verdict is unchanged and the pair has been sent for expert review.
+- **Diet & mortality.** We doubt our own "disagreement" verdict on red meat / stroke: one paper reports no link while the other gives a risk per 100 g a day — the same kind of difference in how results were measured that got the triglyceride pair set aside. The verdict is unchanged; the pair has been added to a packet for expert review (not yet sent).
+- **Diet & mortality.** We doubt our own "disagreement" verdict on red meat / type 2 diabetes: one paper is about unprocessed red meat and the other about red meat in general, which may not be the same exposure. The verdict is unchanged; the pair has been added to a packet for expert review (not yet sent).
 - **ML fairness.** 123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted.
 <!-- /gen:audit-doubts -->
 
