@@ -61,10 +61,11 @@ def write_coverage(slug: str, exts, pairs, *, note: str = "",
     return cov
 
 
-# Documented shortlist settings for the multi-domain libraries
-# (docs/findings/multi-domain.md §7: tightened from 0.72/4 to 0.80/2).
-LIBRARY_THRESHOLD = 0.80
-LIBRARY_MAX_PER_CLAIM = 2
+# Shortlist settings: shared with multi_domain_reason (single source).
+from backend.app.corpus.multi_domain_reason import (  # noqa: E402
+    LIBRARY_MAX_PER_CLAIM,
+    LIBRARY_THRESHOLD,
+)
 
 
 def run(slug: str, *, threshold: float = LIBRARY_THRESHOLD,

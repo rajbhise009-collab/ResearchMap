@@ -44,6 +44,11 @@ from backend.app.extraction.pricing import (  # noqa: E402
     OUT_TOKENS_FULLTEXT,
     cost,
 )
+from backend.app.extraction.spend_gate import (  # noqa: E402
+    EXTRACTION_GATE_MULT,
+    SpendGateRefused,
+    preflight,
+)
 from backend.app.extraction.spend_ledger import (  # noqa: E402
     SpendCapExceededError,
     SpendLedger,
@@ -141,7 +146,15 @@ def run(slug: str, *, batch: bool = False, halt_on_first_fail: bool = False) -> 
     Halts on:
       - DailyQuotaError (per-day 429) — must resume after reset
       - SpendCapExceededError (guard trip) — must resume after cap raise
+
+    Refuses to start (SpendGateRefused) if the dry-run projection for the
+    uncached papers x1.5 exceeds the ledger's remaining ceiling.
     """
+    proj = dry_run(slug)
+    n_new = proj["n_full_new"] + proj["n_abstract_new"]
+    if n_new:
+        preflight(stage=f"extract_{slug}", projected_inr=proj["proj_cost_inr"],
+                  n_calls=n_new, multiplier=EXTRACTION_GATE_MULT)
     cache = ExtractionCache()
     llm = GeminiLLMClient(validate_model=False, raw_log_dir=None)
     est_out = OUT_TOKENS_FULLTEXT  # over-project for either kind
@@ -246,7 +259,7 @@ def _uncached_batch_prompts(slug: str, only_pids: set[str] | None = None):
     return out, hits
 
 
-def batch_submit(slug: str, *, gate_mult: float = 1.5,
+def batch_submit(slug: str, *, gate_mult: float = EXTRACTION_GATE_MULT,
                  only_pids: set[str] | None = None, client=None) -> dict:
     """Render uncached prompts, gate (projection × gate_mult must fit the
     ledger headroom at the batch rate), submit ONE batch, save state."""
@@ -259,6 +272,8 @@ def batch_submit(slug: str, *, gate_mult: float = 1.5,
     est_out = sum(OUT_TOKENS_FULLTEXT if s == "fulltext" else OUT_TOKENS_ABSTRACT
                   for _p, s in prompts.values())
     proj_inr = cost(est_in, est_out, batch=True) * 84.0
+    preflight(stage=f"extract_{slug}_batch", projected_inr=proj_inr,
+              n_calls=len(prompts), multiplier=gate_mult)
     SpendLedger.load().check_headroom(
         prompt_tokens_est=int(est_in * gate_mult),
         output_tokens_est=int(est_out * gate_mult),
@@ -361,12 +376,16 @@ def main() -> int:
     p.add_argument("--sync", action="store_true",
                    help="use the synchronous (full-price) path instead of batch")
     args = p.parse_args()
-    if args.dry_run:
-        result = dry_run(args.domain)
-    elif args.sync:
-        result = run(args.domain)
-    else:
-        result = run_batch(args.domain)
+    try:
+        if args.dry_run:
+            result = dry_run(args.domain)
+        elif args.sync:
+            result = run(args.domain)
+        else:
+            result = run_batch(args.domain)
+    except SpendGateRefused as refused:
+        print(f"[extract:{args.domain}] REFUSED — {refused}")
+        return 2
     print(json.dumps(result, indent=2, default=str))
     return 0
 

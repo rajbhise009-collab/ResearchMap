@@ -41,11 +41,35 @@ def _isolated_env(monkeypatch):
     cfg.get_settings.cache_clear()
 
 
+REAL_SPEND_FILES = (REPO_ROOT / "data" / "spend_ledger.json",
+                    REPO_ROOT / "data" / "spend_projections.jsonl")
+
+
+def _fingerprint(paths) -> dict:
+    import hashlib
+    return {str(p): (hashlib.sha256(p.read_bytes()).hexdigest()
+                     if p.exists() else None) for p in paths}
+
+
+@pytest.fixture(autouse=True, scope="session")
+def _real_ledger_guard():
+    """Fail the session if any test changed the real ledger or projection
+    log. (Mock-transport client tests once leaked 200 5-token "unknown"
+    entries into data/spend_ledger.json — see
+    docs/findings/ledger-unknown-entries.md.)"""
+    before = _fingerprint(REAL_SPEND_FILES)
+    yield
+    after = _fingerprint(REAL_SPEND_FILES)
+    assert before == after, f"a test modified a real spend file: {before} -> {after}"
+
+
 @pytest.fixture(autouse=True)
 def _isolated_ledger(tmp_path, monkeypatch):
-    """Never let a test write to the real data/spend_ledger.json. Mock-
-    transport client tests used to leak 5-token "unknown" entries into it."""
+    """Never let a test write to the real data/spend_ledger.json or
+    data/spend_projections.jsonl: every default path points into tmp."""
     from backend.app.extraction import spend_ledger as sl
+    monkeypatch.setenv("SPEND_LEDGER_PATH", str(tmp_path / "ledger.json"))
+    monkeypatch.setenv("SPEND_PROJECTIONS_PATH", str(tmp_path / "projections.jsonl"))
     monkeypatch.setattr(sl.SpendLedger, "_instance",
                         sl.SpendLedger(path=tmp_path / "ledger.json"))
     yield

@@ -18,7 +18,7 @@ per-domain findings questions from CLAUDE.md § "How you work":
 
 CLI:
     python -m backend.app.corpus.multi_domain_reason --domain diet
-                    [--dry-run] [--max-per-claim 4] [--threshold 0.72]
+                    [--dry-run] [--max-per-claim 2] [--threshold 0.80]
 """
 
 from __future__ import annotations
@@ -48,6 +48,13 @@ from backend.app.extraction.llm_client import (  # noqa: E402
 )
 from backend.app.extraction.pricing import OUT_TOKENS_PAIR, cost  # noqa: E402
 from backend.app.extraction.prompt_versions import latest_version, load  # noqa: E402
+from backend.app.extraction.spend_gate import (  # noqa: E402
+    CLASSIFICATION_GATE_MULT,
+    OVERRUN_FACTOR,
+    OverrunMonitor,
+    SpendGateRefused,
+    preflight,
+)
 from backend.app.extraction.spend_ledger import (  # noqa: E402
     SpendCapExceededError,
     SpendLedger,
@@ -141,14 +148,29 @@ def _embedding_cache_path(slug: str) -> Path:
     return _reason_dir(slug) / "claim_embeddings.json"
 
 
+# Documented shortlist settings for the multi-domain libraries
+# (docs/findings/multi-domain.md §7: tightened from 0.72/4 to 0.80/2).
+# The single source for every runner in this package.
+LIBRARY_THRESHOLD = 0.80
+LIBRARY_MAX_PER_CLAIM = 2
+
+# Classification projection per pair (input tokens observed ~250-350; output
+# incl. thinking from pricing.OUT_TOKENS_PAIR).
+IN_TOKENS_PAIR = 300
+
+
+def projected_inr_per_pair() -> float:
+    return cost(IN_TOKENS_PAIR, OUT_TOKENS_PAIR, batch=False) * 84.0
+
+
 # Number of claims embedded by the API in the most recent compute_shortlist
-# call (cache misses). Reported because embedding calls are not ledgered.
+# call (cache misses). Embedding calls are ledgered by GeminiEmbeddingClient.
 LAST_EMBED_STATS: dict = {}
 
 
 def compute_shortlist(exts: list[PaperExtraction], *,
-                       threshold: float = 0.72,
-                       max_per_claim: int = 4,
+                       threshold: float = LIBRARY_THRESHOLD,
+                       max_per_claim: int = LIBRARY_MAX_PER_CLAIM,
                        use_real_embeddings: bool = True,
                        slug: str | None = None,
                        embed_client=None) -> list:
@@ -173,7 +195,8 @@ def compute_shortlist(exts: list[PaperExtraction], *,
         missing = [k for k in dict.fromkeys(keys) if k not in cache]
         if missing:
             text_by_key = dict(zip(keys, texts))
-            client = embed_client or GeminiEmbeddingClient()
+            client = embed_client or GeminiEmbeddingClient(
+                stage=f"embed_{slug or 'claims'}")
             new = client.embed([text_by_key[k] for k in missing])
             cache.update({k: [round(x, 6) for x in v] for k, v in zip(missing, new)})
             if cp:
@@ -188,8 +211,8 @@ def compute_shortlist(exts: list[PaperExtraction], *,
                             cross_paper_only=True)
 
 
-def dry_run(slug: str, *, threshold: float = 0.72,
-             max_per_claim: int = 4) -> dict:
+def dry_run(slug: str, *, threshold: float = LIBRARY_THRESHOLD,
+             max_per_claim: int = LIBRARY_MAX_PER_CLAIM) -> dict:
     """Project contradiction-pass cost without any LLM call."""
     exts = load_extractions(slug)
     pairs = compute_shortlist(exts, threshold=threshold,
@@ -199,8 +222,7 @@ def dry_run(slug: str, *, threshold: float = 0.72,
     # dry-run projection using MockEmbeddingClient over-projects pair
     # count (typical), so cost projection is upper-bound rather than
     # exact. The real run will produce fewer / more relevant pairs.
-    IN_PAIR = 300     # observed ~250-350 tokens per pair prompt
-    proj_in = len(pairs) * IN_PAIR
+    proj_in = len(pairs) * IN_TOKENS_PAIR
     proj_out = len(pairs) * OUT_TOKENS_PAIR
     proj_usd = cost(proj_in, proj_out, batch=False)
     return {
@@ -298,14 +320,18 @@ def classify_pairs(slug: str, exts: list[PaperExtraction], pairs: list,
                     *, halt_on_first_fail: bool = False, llm=None,
                     max_inr: float | None = None,
                     projected_inr_per_call: float | None = None,
-                    overrun_factor: float = 1.5,
-                    check_every: int = 10) -> dict:
+                    overrun_factor: float = OVERRUN_FACTOR,
+                    gate: bool = True) -> dict:
     """Classify each NOT-yet-classified pair once. Every verdict (and every
     paid failure) is appended to verdicts.jsonl as soon as it returns, so a
     crash or kill loses at most the in-flight call and a restart never
-    re-pays for a saved pair. Halts on: spend cap, daily quota, `max_inr`
-    of new spend in this call, or actual cost per call exceeding
-    projection x overrun_factor."""
+    re-pays for a saved pair.
+
+    Before any call (when `gate`): the projection for the unseen pairs is
+    recorded and the stage is refused if projection x2 exceeds the ledger's
+    remaining ceiling (spend_gate.preflight). Halts on: spend cap, daily
+    quota, `max_inr` of new spend in this call, or running cost per call
+    exceeding projection x overrun_factor."""
     domain_name = DOMAINS[slug].name
     if llm is None:
         llm = GeminiLLMClient(validate_model=False)
@@ -319,9 +345,21 @@ def classify_pairs(slug: str, exts: list[PaperExtraction], pairs: list,
     done = load_classified_keys(slug)
     todo = [p for p in pairs if _pair_key(p.from_claim_id, p.to_claim_id) not in done]
     stats = Counter({"skipped_already_classified": len(pairs) - len(todo)})
+    per_call = projected_inr_per_call or projected_inr_per_pair()
+    t0 = time.time()
+    if gate and todo:
+        try:
+            preflight(stage=f"contradiction_{slug}",
+                      projected_inr=per_call * len(todo), n_calls=len(todo),
+                      multiplier=CLASSIFICATION_GATE_MULT)
+        except SpendGateRefused as refused:
+            print(f"[reason:{slug}] REFUSED — {refused}", flush=True)
+            return {"slug": slug, "elapsed_s": 0.0, "stats": dict(stats),
+                    "n_todo": len(todo), "halted": f"gate refused: {refused}",
+                    "run_inr": 0.0, "file_counts": None}
     ledger = SpendLedger.load()
     start_inr = ledger.snapshot()["cumulative_inr"]
-    t0 = time.time()
+    monitor = OverrunMonitor(per_call, factor=overrun_factor, ledger=ledger)
     halted = None
     try:
         for i, p in enumerate(todo, 1):
@@ -329,11 +367,9 @@ def classify_pairs(slug: str, exts: list[PaperExtraction], pairs: list,
             if max_inr is not None and spent >= max_inr:
                 halted = f"run budget ₹{max_inr:.2f} reached"
                 break
-            calls = stats["calls"]
-            if (projected_inr_per_call and calls and calls % check_every == 0
-                    and spent / calls > projected_inr_per_call * overrun_factor):
-                halted = (f"cost per call ₹{spent / calls:.3f} > "
-                          f"{overrun_factor}x projection ₹{projected_inr_per_call:.3f}")
+            over = monitor.check(stats["calls"])
+            if over:
+                halted = over
                 break
             a_pid, a_text = text_by_id[p.from_claim_id]
             b_pid, b_text = text_by_id[p.to_claim_id]
@@ -438,8 +474,8 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--domain", choices=sorted(DOMAINS), required=True)
     p.add_argument("--dry-run", action="store_true")
-    p.add_argument("--threshold", type=float, default=0.72)
-    p.add_argument("--max-per-claim", type=int, default=4)
+    p.add_argument("--threshold", type=float, default=LIBRARY_THRESHOLD)
+    p.add_argument("--max-per-claim", type=int, default=LIBRARY_MAX_PER_CLAIM)
     p.add_argument("--mock-embeddings", action="store_true",
                    help="use MockEmbeddingClient (free, deterministic; not "
                         "semantic — for smoke tests)")

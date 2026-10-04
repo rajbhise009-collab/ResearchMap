@@ -77,7 +77,8 @@ class GeminiEmbeddingClient(EmbeddingClient):
 
     def __init__(
         self, *, api_key: str | None = None, model_name: str | None = None,
-        dim: int | None = None, client=None,
+        dim: int | None = None, client=None, stage: str = "embedding",
+        ledger=None,
     ) -> None:
         settings = get_settings()
         key = api_key
@@ -90,6 +91,10 @@ class GeminiEmbeddingClient(EmbeddingClient):
         self.dim = dim or settings.embedding_dim
         self.name = f"gemini:{self._model_name}"
         self._client = client
+        # Every paid chunk is checked against, and recorded in, the spend
+        # ledger (estimated tokens, upper-bound rate — see spend_ledger.py).
+        self.stage = stage
+        self._ledger = ledger
 
     def _get_client(self):
         import httpx
@@ -103,10 +108,16 @@ class GeminiEmbeddingClient(EmbeddingClient):
     BATCH = 100  # batchEmbedContents cap
 
     def embed(self, texts: list[str]) -> list[list[float]]:
+        from backend.app.extraction.rate_limiter import estimate_tokens
+        from backend.app.extraction.spend_ledger import SpendLedger
+        ledger = self._ledger or SpendLedger.load()
         client = self._get_client()
         out: list[list[float]] = []
         for i in range(0, len(texts), self.BATCH):
             chunk = texts[i:i + self.BATCH]
+            est_in = sum(estimate_tokens(t) for t in chunk)
+            ledger.check_embedding_headroom(input_tokens_est=est_in,
+                                            stage=self.stage)
             payload = {"requests": [
                 {
                     "model": f"models/{self._model_name}",
@@ -120,6 +131,8 @@ class GeminiEmbeddingClient(EmbeddingClient):
                 params={"key": self._api_key}, json=payload,
             )
             r.raise_for_status()
+            ledger.record_embedding(stage=self.stage, model=self._model_name,
+                                    input_tokens_est=est_in, n_texts=len(chunk))
             for emb in r.json().get("embeddings") or []:
                 values = emb.get("values") or []
                 out.append(l2_normalize([float(x) for x in values]))

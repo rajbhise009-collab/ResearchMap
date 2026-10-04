@@ -27,7 +27,15 @@ Public API:
                   thoughts_tokens=..., batch=False, stage=...)
 
 The `SPEND_LEDGER_DISABLED=1` env var lets tests bypass the guard
-(mocked clients never hit real spend).
+(mocked clients never hit real spend). `SPEND_LEDGER_PATH` points the
+default ledger somewhere else; the test suite sets it to a temp file so no
+test can touch `data/spend_ledger.json`.
+
+Embedding calls (`record_embedding`) are ledgered too. `batchEmbedContents`
+returns no token counts, so input tokens are ESTIMATED from text length and
+priced at EMBED_IN_PER_M, a deliberately high upper-bound rate that has NOT
+been verified against Google's embedding price list. Embedding entries are
+marked `tokens_estimated=True`, `rate_basis="upper_bound_unverified"`.
 """
 
 from __future__ import annotations
@@ -49,6 +57,15 @@ from backend.app.extraction.pricing import (
 # Repo-anchored path so multiple processes converge on the same file.
 _REPO_ROOT = Path(__file__).resolve().parents[3]
 LEDGER_PATH = _REPO_ROOT / "data" / "spend_ledger.json"
+
+
+def default_ledger_path() -> Path:
+    env = os.environ.get("SPEND_LEDGER_PATH")
+    return Path(env) if env else LEDGER_PATH
+
+# Upper bound for embedding input pricing: the generation input rate. NOT a
+# verified embedding price — chosen so the ceiling can never under-count.
+EMBED_IN_PER_M = IN_PER_M
 
 # Cap in INR. Convert to USD via a stated FX rate so the assertion below
 # uses one number everywhere. Both are stored in the ledger so a reader
@@ -120,8 +137,8 @@ class SpendLedger:
 
     _instance: Optional["SpendLedger"] = None
 
-    def __init__(self, path: Path = LEDGER_PATH):
-        self.path = path
+    def __init__(self, path: Path | None = None):
+        self.path = Path(path) if path is not None else default_ledger_path()
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self._state: LedgerState | None = None
 
@@ -218,6 +235,44 @@ class SpendLedger:
         self._write(state)
         return entry
 
+    def check_embedding_headroom(self, *, input_tokens_est: int,
+                                  stage: str) -> None:
+        """Raise SpendCapExceededError if an embedding call of this size
+        would exceed the cap (upper-bound rate)."""
+        if self._disabled():
+            return
+        state = self._read()
+        projected = input_tokens_est * EMBED_IN_PER_M / 1e6
+        if state.cumulative_usd + projected > state.cap_usd:
+            raise SpendCapExceededError(
+                projected_usd=projected, cumulative_usd=state.cumulative_usd,
+                cap_usd=state.cap_usd, stage=stage)
+
+    def record_embedding(self, *, stage: str, model: str,
+                         input_tokens_est: int, n_texts: int) -> dict:
+        """Called AFTER a successful embedding response."""
+        state = self._read()
+        cost_usd = input_tokens_est * EMBED_IN_PER_M / 1e6
+        entry = {
+            "ts": time.time(), "stage": stage, "model": model, "batch": False,
+            "prompt_tokens": int(input_tokens_est), "candidates_tokens": 0,
+            "thoughts_tokens": 0, "billed_output_tokens": 0,
+            "cost_usd": cost_usd, "cost_inr": cost_usd * FX_USD_TO_INR,
+            "kind": "embedding", "n_texts": int(n_texts),
+            "tokens_estimated": True, "rate_basis": "upper_bound_unverified",
+        }
+        state.entries.append(entry)
+        self._write(state)
+        return entry
+
+    def append_correction(self, entry: dict) -> dict:
+        """Append a correction entry (negative cost) — history is never
+        edited. Caller supplies stage, cost_usd and its evidence."""
+        state = self._read()
+        state.entries.append(entry)
+        self._write(state)
+        return entry
+
     # --- Convenience --------------------------------------------------
 
     def snapshot(self) -> dict:
@@ -246,6 +301,7 @@ def _stage_totals(entries: list[dict]) -> dict:
 
 
 __all__ = [
-    "CAP_INR", "CAP_USD", "FX_USD_TO_INR", "LEDGER_PATH",
+    "CAP_INR", "CAP_USD", "FX_USD_TO_INR", "LEDGER_PATH", "EMBED_IN_PER_M",
+    "default_ledger_path",
     "SpendLedger", "SpendCapExceededError", "LedgerEntry",
 ]
