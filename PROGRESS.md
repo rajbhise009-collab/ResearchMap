@@ -1,5 +1,24 @@
 # PROGRESS
 
+## Iteration 5 — honesty + ledger integrity fixes (2026-10-04) ✅
+
+No paid calls (ledger cap frozen at the corrected cumulative). **605 tests
+green.** Validation (Phase 6) is still owed. Details: `REPORT_iteration5.md`.
+
+- Public findings no longer state an untested explanation as fact
+  (multi-domain §2 rewritten; RESEARCHMAP-FINDINGS §5; footer notes);
+  `test_public_claims.py` guards it.
+- Every doc number generated from data: `backend/app/corpus/doc_numbers.py`
+  (`--check` fails on stale blocks).
+- Ledger: 190 mock-test entries proven and removed by one appended
+  correction (`ledger_audit.py`, `docs/findings/ledger-unknown-entries.md`);
+  tests can no longer touch the real ledger (session guard).
+- Spend gate coded: x2 classification / x1.5 extraction preflight with the
+  projection recorded, 1.5x per-call overrun halt; embeddings ledgered.
+- Duplicate check (`duplicate_check.py`, `docs/findings/duplicate-check.md`):
+  one preprint/published pair in ml-fairness; the 4-pass dedup never ran
+  on the new libraries.
+
 ## Public-deploy prep — MIT license, dev-mode gate, attribution, keyless CI (2026-09-27) ✅
 
 Shipping-prep pass to publish ResearchMap as a public product. No paid API
