@@ -1,5 +1,23 @@
 # PROGRESS
 
+## Iteration 6 — owner decisions applied (2026-10-04) ✅
+
+No paid calls (ledger unchanged at the frozen cap). **626 tests green.**
+Validation (Phase 6) is still owed. Details: `REPORT_iteration6.md`.
+
+- ml-fairness: AI Fairness 360 preprint merged into the 2019 journal
+  version (merge-policy survivor rule, `merged_from` kept, extraction
+  unioned); 100 -> 99 papers, 95 -> 91 shortlisted pairs, 4 self-supports
+  dropped; 0 flagged before and after.
+- Dedup pass 5 (title similarity + numeric and abstract guards) in
+  `normalizer.py`; `docs/merge-policy.md` extended;
+  `docs/findings/duplicate-check-v2.md`; no further merges.
+- LLM-cal: `44981e91c40dfe6d` documented as a frozen label; content
+  fingerprint in `data/llm_cal_fingerprint.json`, checked by tests.
+- Audit doubts shipped (library page + multi-domain.md); second diet
+  expert packet `docs/review/diet-contradictions-v2/` (v1 untouched; key
+  outside the repo).
+
 ## Iteration 5 — honesty + ledger integrity fixes (2026-10-04) ✅
 
 No paid calls (ledger cap frozen at the corrected cumulative). **605 tests

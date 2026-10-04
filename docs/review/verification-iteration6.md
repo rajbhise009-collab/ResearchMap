@@ -1,7 +1,7 @@
 # Iteration-6 verification — 55/55 pass
 
 - Date: 2026-10-04
-- Build sha (HEAD of the tree the static build was made from): `ac11a98453374cc4df034c6a1f1cb1e4f4c7fe21`
+- Build sha (HEAD of the tree the static build was made from): `75e3735ad4817fff63a5e9ab36700463686e14a3`
 - Production static build (`npm run build`, no ENABLE_DEV), served from frontend/out.
 - Playwright + system Chrome; fresh context per check; library via ?lib=<slug>.
 - Settled state: 1500 ms after the last keystroke.
@@ -63,3 +63,11 @@
 [PASS] llm-calibration: /library shows no spend figure
 [PASS] diet-and-mortality: /library shows no spend figure
 [PASS] ml-fairness: /library shows no spend figure
+
+## Run history
+
+- Run 1 (build of `ac11a98`): 55/55. A manual look at the audit-doubts
+  screenshot showed the doubt text said the pairs had "been sent for
+  expert review" — untrue (the packet has not been sent). Fixed at the
+  source in `backend/app/corpus/audit_doubts.py`, with a test.
+- Run 2 (this file, rebuilt after the fix): 55/55.
