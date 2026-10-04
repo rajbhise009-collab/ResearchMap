@@ -215,12 +215,21 @@ def unknown_entries() -> str:
     return "\n".join(lines)
 
 
+def duplicates() -> str:
+    d = _j(DATA / "duplicate_check.json")
+    rows = [[LIB_NAMES[l["slug"]], l["n_papers"], l["four_pass_replay"]["n_after"],
+             len(l["candidates_for_hand_review"])] for l in d["libraries"]]
+    return _table(["library", "papers", "after replaying the 4-pass dedup",
+                   "candidates for hand review"], ["l", "r", "r", "r"], rows)
+
+
 BLOCKS = {
     "multi-domain.md": {"corpus": corpus, "yield": yield_table, "diet-audit": diet_audit,
                         "impossibility": impossibility, "predictor": predictor,
                         "fulltext": fulltext, "gap-types": gap_types, "spend": spend},
     "ledger-unknown-entries.md": {"unknown": unknown_entries, "spend": spend},
     "domain-coherence-predictor.md": {"impossibility": impossibility},
+    "duplicate-check.md": {"duplicates": duplicates},
 }
 
 

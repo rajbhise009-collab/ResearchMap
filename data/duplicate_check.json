@@ -1,0 +1,141 @@
+{
+  "title_sim_threshold": 0.85,
+  "arxiv_sim_threshold": 0.75,
+  "libraries": [
+    {
+      "slug": "llm-calibration",
+      "n_papers": 113,
+      "n_without_authors": 0,
+      "four_pass_replay": {
+        "n_after": 113,
+        "merges": []
+      },
+      "candidates_for_hand_review": [
+        {
+          "a": "W7131427313",
+          "b": "W7147133480",
+          "a_title": "Mitigating Bias and Hallucinations in LLMs through Prompt Engineering and Knowledge-Grounded Approaches in Healthcare Domain: A Systematic Literature Review",
+          "b_title": "Mitigating Bias and Hallucinations in LLMs Through Prompt Engineering and Knowledge-Grounded Approaches in Healthcare Domain",
+          "a_year": 2025,
+          "b_year": 2026,
+          "a_doi": "10.1109/icatc68823.2025.11407841",
+          "b_doi": "10.1109/icarc68737.2026.11453821",
+          "shared_last_names": [
+            "ishadya",
+            "jayalal",
+            "withanaarachchi"
+          ],
+          "reasons": [
+            "title similarity 0.89"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "diet-and-mortality",
+      "n_papers": 100,
+      "n_without_authors": 0,
+      "four_pass_replay": {
+        "n_after": 100,
+        "merges": []
+      },
+      "candidates_for_hand_review": []
+    },
+    {
+      "slug": "ml-fairness",
+      "n_papers": 100,
+      "n_without_authors": 0,
+      "four_pass_replay": {
+        "n_after": 100,
+        "merges": []
+      },
+      "candidates_for_hand_review": [
+        {
+          "a": "W2974817986",
+          "b": "W4289438483",
+          "a_title": "AI Fairness 360: An extensible toolkit for detecting and mitigating algorithmic bias",
+          "b_title": "AI Fairness 360: An Extensible Toolkit for Detecting, Understanding, and\\n Mitigating Unwanted Algorithmic Bias",
+          "a_year": 2019,
+          "b_year": 2018,
+          "a_doi": "10.1147/jrd.2019.2942287",
+          "b_doi": "10.48550/arxiv.1810.01943",
+          "shared_last_names": [
+            "bellamy",
+            "dey",
+            "hind",
+            "hoffman",
+            "houde",
+            "kannan",
+            "lohia",
+            "martino",
+            "mehta",
+            "nagar",
+            "ramamurthy",
+            "richards",
+            "saha",
+            "sattigeri",
+            "singh",
+            "varshney",
+            "zhang"
+          ],
+          "reasons": [
+            "title similarity 0.87",
+            "arXiv/non-arXiv DOI pair, title similarity 0.87"
+          ]
+        },
+        {
+          "a": "W2100960835",
+          "b": "W2892038960",
+          "a_title": "Fairness through awareness",
+          "b_title": "Fairness through Causal Awareness",
+          "a_year": 2012,
+          "b_year": 2019,
+          "a_doi": "10.1145/2090236.2090255",
+          "b_doi": "10.1145/3287560.3287564",
+          "shared_last_names": [
+            "pitassi",
+            "zemel"
+          ],
+          "reasons": [
+            "title similarity 0.88"
+          ]
+        }
+      ]
+    }
+  ],
+  "diet_audit_duplicates": [
+    {
+      "pair": 7,
+      "a_paper_id": "openalex:W2109129984",
+      "b_paper_id": "openalex:W2311763102",
+      "a_text_starts": "Alcohol consumption is associated with a lower risk of all-cause mortality",
+      "b_text_starts": "After adjusting for abstainer biases and study quality characteristics, low-volume alcohol",
+      "same_two_papers_as_pair": [
+        6
+      ],
+      "kind": "same two papers, different claim (one paper pair counted more than once)"
+    },
+    {
+      "pair": 9,
+      "a_paper_id": "openalex:W1976428272",
+      "b_paper_id": "openalex:W2127427274",
+      "a_text_starts": "In the EPIC-Norfolk study, the adjusted odds ratio for coronary heart disease comparing th",
+      "b_text_starts": "Triglyceride level is not significantly associated with coronary heart disease risk after ",
+      "same_two_papers_as_pair": [
+        8
+      ],
+      "kind": "same two papers, different claim (one paper pair counted more than once)"
+    },
+    {
+      "pair": 10,
+      "a_paper_id": "openalex:W1976428272",
+      "b_paper_id": "openalex:W2127427274",
+      "a_text_starts": "In the Reykjavik study, the adjusted odds ratio for coronary heart disease comparing the t",
+      "b_text_starts": "Triglyceride level is not significantly associated with coronary heart disease risk after ",
+      "same_two_papers_as_pair": [
+        8
+      ],
+      "kind": "same two papers, different claim (one paper pair counted more than once)"
+    }
+  ]
+}
