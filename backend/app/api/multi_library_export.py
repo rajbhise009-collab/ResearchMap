@@ -42,6 +42,11 @@ def _slug(text: str) -> str:
 # The one place that lists all three libraries. If a fourth is added, the
 # manifest grows here and the frontend selector picks it up automatically.
 
+def _audit_doubts(slug: str) -> list[str]:
+    p = REPO_ROOT / "data" / "domains" / slug / "reasoning" / "audit_doubts.json"
+    return [it["text"] for it in json.loads(p.read_text())["items"]] if p.exists() else []
+
+
 def _prelabel_count(slug: str) -> int:
     """Paper count from the library's corpus file (a merge changes it)."""
     f = REPO_ROOT / "data" / "domains" / slug / "prelabelled.json"
@@ -408,6 +413,9 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "extraction_coverage_note": coverage_note,
         "zero_finding_note": zero_note,
         "disagreement_check_note": check_note,
+        # Plain-language doubts about our own audit (never a verdict change):
+        # backend/app/corpus/audit_doubts.py -> reasoning/audit_doubts.json.
+        "audit_doubts": _audit_doubts(slug),
         "disagreement_check": check_block,
         "extraction_coverage_share": (n_extracted / len(entries)) if entries else 0.0,
         "assertion_strength": strength,

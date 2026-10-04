@@ -1,0 +1,21 @@
+{
+  "slug": "diet-and-mortality",
+  "items": [
+    {
+      "audit_pair": 1,
+      "topic": "red meat / stroke",
+      "verdict": "genuine",
+      "a_paper_id": "openalex:W2109401990",
+      "b_paper_id": "openalex:W2513212958",
+      "text": "We doubt our own \"disagreement\" verdict on red meat / stroke: one paper reports no link while the other gives a risk per 100 g a day \u2014 the same kind of difference in how results were measured that got the triglyceride pair set aside. The verdict is unchanged and the pair has been sent for expert review."
+    },
+    {
+      "audit_pair": 5,
+      "topic": "red meat / type 2 diabetes",
+      "verdict": "genuine",
+      "a_paper_id": "openalex:W2109401990",
+      "b_paper_id": "openalex:W2955331731",
+      "text": "We doubt our own \"disagreement\" verdict on red meat / type 2 diabetes: one paper is about unprocessed red meat and the other about red meat in general, which may not be the same exposure. The verdict is unchanged and the pair has been sent for expert review."
+    }
+  ]
+}

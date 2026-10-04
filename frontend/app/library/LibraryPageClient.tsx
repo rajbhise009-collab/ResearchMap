@@ -116,6 +116,14 @@ export default function LibraryPageClient({ lang }: { lang: LanguagePack }) {
         <h2>{lang.ui.findings_heading}</h2>
         <p>{lang.ui.findings_intro}</p>
         {lang.ui.budget_note && <p className="small muted">{lang.ui.budget_note}</p>}
+        {stats?.audit_doubts && stats.audit_doubts.length > 0 && (
+          <div className="audit-doubts">
+            <p className="small"><strong>{lang.ui.audit_doubts_heading}</strong></p>
+            <ul className="small">
+              {stats.audit_doubts.map((d, i) => <li key={i}>{d}</li>)}
+            </ul>
+          </div>
+        )}
         <p className="small muted sans">{lang.ui.findings_are_technical}</p>
         {findings.map((f) => (
           <div className="paper-line" key={f.slug}>

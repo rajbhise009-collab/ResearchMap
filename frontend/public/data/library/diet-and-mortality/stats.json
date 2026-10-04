@@ -6,6 +6,10 @@
   "extraction_coverage_note": "Claims read from 100 of 100 papers.",
   "zero_finding_note": null,
   "disagreement_check_note": "The disagreement check compared every shortlisted pair of claims across all 100 papers read.",
+  "audit_doubts": [
+    "We doubt our own \"disagreement\" verdict on red meat / stroke: one paper reports no link while the other gives a risk per 100 g a day \u2014 the same kind of difference in how results were measured that got the triglyceride pair set aside. The verdict is unchanged and the pair has been sent for expert review.",
+    "We doubt our own \"disagreement\" verdict on red meat / type 2 diabetes: one paper is about unprocessed red meat and the other about red meat in general, which may not be the same exposure. The verdict is unchanged and the pair has been sent for expert review."
+  ],
   "disagreement_check": {
     "shortlist_pairs": 152,
     "classified_pairs": 152,

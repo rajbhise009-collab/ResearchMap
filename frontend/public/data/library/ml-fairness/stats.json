@@ -6,6 +6,9 @@
   "extraction_coverage_note": "Claims read from 99 of 99 papers.",
   "zero_finding_note": "Zero here means none were found among the papers read. It does not mean none exist.",
   "disagreement_check_note": "The disagreement check compared every shortlisted pair of claims across all 99 papers read.",
+  "audit_doubts": [
+    "123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted."
+  ],
   "disagreement_check": {
     "shortlist_pairs": 91,
     "classified_pairs": 91,

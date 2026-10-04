@@ -1,0 +1,15 @@
+{
+  "slug": "ml-fairness",
+  "outside_shortlist": {
+    "contradicts": 0,
+    "supports": 31,
+    "none": 92
+  },
+  "below_threshold": 113,
+  "items": [
+    {
+      "n_verdicts": 123,
+      "text": "123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted."
+    }
+  ]
+}

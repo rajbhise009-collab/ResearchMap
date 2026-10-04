@@ -151,6 +151,7 @@ export interface Stats {
   extraction_coverage_note?: string;
   zero_finding_note?: string | null;
   disagreement_check_note?: string | null;
+  audit_doubts?: string[];
   disagreement_check?: {
     shortlist_pairs: number; classified_pairs: number; unclassified_pairs: number;
     papers_with_pending_pairs: number; papers_covered: number; complete: boolean;

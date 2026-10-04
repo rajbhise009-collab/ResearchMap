@@ -175,6 +175,21 @@ zero has not been tested. Candidate explanations, none of them tested:
 Only shortlisted pairs were ever checked, so nothing here says the
 literature contains no disagreements.
 
+### Audit doubts
+
+No published verdict has changed. These are doubts about our own checks,
+written down so a reader can weigh them (generated from each library's
+`reasoning/audit_doubts.json` by `backend/app/corpus/audit_doubts.py`):
+
+<!-- gen:audit-doubts -->
+- **Diet & mortality.** We doubt our own "disagreement" verdict on red meat / stroke: one paper reports no link while the other gives a risk per 100 g a day — the same kind of difference in how results were measured that got the triglyceride pair set aside. The verdict is unchanged and the pair has been sent for expert review.
+- **Diet & mortality.** We doubt our own "disagreement" verdict on red meat / type 2 diabetes: one paper is about unprocessed red meat and the other about red meat in general, which may not be the same exposure. The verdict is unchanged and the pair has been sent for expert review.
+- **ML fairness.** 123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted.
+<!-- /gen:audit-doubts -->
+
+The two doubted diet pairs are items 13 and 14 of a second expert-review
+packet, `docs/review/diet-contradictions-v2/`.
+
 ## 3. Predictor check
 
 Diet-and-mortality was picked despite its moderate contested score, on the

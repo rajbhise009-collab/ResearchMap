@@ -689,6 +689,7 @@ UI = {
                    "more model spend than Google's billing console showed when "
                    "we last checked. We budget against the ledger, the higher "
                    "of the two.",
+    "audit_doubts_heading": "Our own verdicts we now doubt",
     "findings_are_technical": "This is a working note written for the people "
                               "building this tool, so it uses technical "
                               "shorthand rather than the plain wording used "

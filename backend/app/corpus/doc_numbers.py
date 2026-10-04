@@ -332,10 +332,19 @@ def v2_counts() -> str:
                   ["l", "r", "r", "r", "r", "r", "r", "r", "r"], rows)
 
 
+def audit_doubts() -> str:
+    lines = []
+    for slug in NEW_LIBS:
+        p = DATA / "domains" / slug / "reasoning" / "audit_doubts.json"
+        for it in (_j(p)["items"] if p.exists() else []):
+            lines.append(f"- **{LIB_NAMES[slug]}.** {it['text']}")
+    return "\n".join(lines)
+
+
 BLOCKS = {
     "multi-domain.md": {"corpus": corpus, "yield": yield_table, "diet-audit": diet_audit,
                         "impossibility": impossibility, "predictor": predictor,
-                        "mlf-facts": mlf_facts,
+                        "mlf-facts": mlf_facts, "audit-doubts": audit_doubts,
                         "fulltext": fulltext, "gap-types": gap_types, "spend": spend},
     "ledger-unknown-entries.md": {"unknown": unknown_entries, "spend": spend},
     "domain-coherence-predictor.md": {"impossibility": impossibility, "measured": measured},
