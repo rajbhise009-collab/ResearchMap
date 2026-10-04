@@ -58,7 +58,7 @@ def _llm_cal_papers() -> list[Paper]:
         out.append(Paper.model_construct(
             id=f"openalex:{w}", source="openalex", source_id=w,
             doi=normalize_doi(r.get("doi")), title=r.get("title") or "",
-            abstract=None, year=r.get("year"), authors=authors.get(w, []),
+            abstract=r.get("abstract"), year=r.get("year"), authors=authors.get(w, []),
             venue=None, citations_out=[], citations_in_count=0,
             oa_fulltext_available=False, fulltext=None, merged_from=[]))
     return out
@@ -122,7 +122,70 @@ def diet_audit_duplicates() -> list[dict]:
     return out
 
 
+# ---- v2: title-similarity pass (pass 5), REPORT-ONLY ----------------------
+
+OUT_V2 = DATA / "duplicate_check_v2.json"
+
+
+def _sweep_pool(slug: str) -> list[Paper]:
+    """Every raw OpenAlex record seen for a library (kept AND rejected) —
+    a wider negative population for choosing thresholds."""
+    if slug == "llm-calibration":
+        return _llm_cal_papers()
+    s = json.loads((DATA / "domains" / slug / "snowball.json").read_text())
+    seen, out = set(), []
+    for r in s["records"] + s.get("rejected_records", []):
+        if r["id"] not in seen:
+            seen.add(r["id"])
+            out.append(from_openalex(r))
+    return out
+
+
+def _pre_merge_fairness() -> list[Paper]:
+    """The ML-fairness corpus as it was before the 2026-10-04 merge."""
+    papers = _new_library_papers("ml-fairness")
+    snow = {_wid(r["id"]): r for r in json.loads(
+        (DATA / "domains" / "ml-fairness" / "snowball.json").read_text())["records"]}
+    merges = json.loads((DATA / "domains" / "ml-fairness" / "merges.json").read_text())["merges"]
+    return papers + [from_openalex(snow[lo]) for m in merges for lo in m["losers"]]
+
+
+def report_v2() -> dict:
+    from backend.app.ingestion import normalizer as N
+    sets = {
+        "llm-calibration": _llm_cal_papers(),
+        "diet-and-mortality": _new_library_papers("diet-and-mortality"),
+        "ml-fairness": _new_library_papers("ml-fairness"),
+        "ml-fairness (before the 2026-10-04 merge)": _pre_merge_fairness(),
+    }
+    out = {"rule": {"title_jaccard_min": N.TITLE_SIM_JACCARD,
+                    "abstract_jaccard_min": N.ABSTRACT_SIM_JACCARD,
+                    "year_window": N.TITLE_SIM_YEAR_WINDOW,
+                    "report_floor_title_jaccard": 0.6},
+           "corpora": {}, "sweep": {}}
+    for name, ps in sets.items():
+        c = N.title_similarity_candidates(ps)
+        out["corpora"][name] = {"n_papers": len(ps), "candidates": c,
+                                "would_merge": sum(x["merge"] for x in c)}
+    for slug in ("llm-calibration", "diet-and-mortality", "ml-fairness"):
+        ps = _sweep_pool(slug)
+        c = N.title_similarity_candidates(ps)
+        out["sweep"][slug] = {"n_records": len(ps), "candidates": c,
+                              "would_merge": sum(x["merge"] for x in c)}
+    OUT_V2.write_text(json.dumps(out, indent=2) + "\n")
+    return out
+
+
 def main() -> int:
+    if "--v2" in sys.argv:
+        r = report_v2()
+        for k, v in r["corpora"].items():
+            print(f"corpus {k}: {v['n_papers']} papers, {len(v['candidates'])} candidates, "
+                  f"{v['would_merge']} would merge")
+        for k, v in r["sweep"].items():
+            print(f"sweep {k}: {v['n_records']} records, {len(v['candidates'])} candidates, "
+                  f"{v['would_merge']} would merge")
+        return 0
     libs = [check_library(s) for s in ("llm-calibration", "diet-and-mortality", "ml-fairness")]
     out = {"title_sim_threshold": TITLE_SIM, "arxiv_sim_threshold": ARXIV_SIM,
            "libraries": libs, "diet_audit_duplicates": diet_audit_duplicates()}

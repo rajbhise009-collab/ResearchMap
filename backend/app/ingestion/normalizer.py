@@ -12,6 +12,12 @@ Dedup order (deterministic, most-specific first):
   4. One record has an arXiv DOI (10.48550/arxiv.*) and the other has
      a non-arXiv DOI, same normalized title, AND at least one shared
      normalized last-name → merge. Fires regardless of year gap.
+  5. Title similarity (catches a retitled journal version of a preprint):
+     same normalized FIRST-author surname, |Δyear| ≤ TITLE_SIM_YEAR_WINDOW,
+     title-token Jaccard ≥ TITLE_SIM_JACCARD, identical numeric title
+     tokens, AND both abstracts present with abstract-token Jaccard ≥
+     ABSTRACT_SIM_JACCARD. Thresholds and the sweep behind them:
+     docs/merge-policy.md, docs/findings/duplicate-check-v2.md.
 
 Passes 2, 3, and 4 all require positive author evidence — empty
 author lists on either side refuse to merge, protecting against
@@ -266,6 +272,74 @@ ARXIV_DOI_PREFIX = "10.48550/arxiv."
 # Change deliberately — this is a ranking-input decision, not a detail.
 CITATIONS_MERGE_POLICY = "max"
 
+# Pass 5 (title similarity). Conservative by design — a false merge fakes
+# that two papers are one, which is worse than a missed duplicate.
+TITLE_SIM_YEAR_WINDOW = 2
+TITLE_SIM_JACCARD = 0.75
+ABSTRACT_SIM_JACCARD = 0.50
+_WORD_RE = re.compile(r"[a-z0-9]+")
+
+
+def _title_tokens(title: str | None) -> set[str]:
+    return set(normalize_title(title or "").split())
+
+
+def _numeric_tokens(title: str | None) -> set[str]:
+    return {t for t in _title_tokens(title) if any(c.isdigit() for c in t)}
+
+
+def _jaccard(a: set[str], b: set[str]) -> float:
+    return len(a & b) / len(a | b) if (a | b) else 0.0
+
+
+def title_similarity_check(a: Paper, b: Paper) -> dict:
+    """Evaluate pass 5 for one pair. Returns every measured quantity and
+    `merge` (bool) plus `blocked_by` (the first failed condition)."""
+    fa = _normalize_last_name(a.authors[0]) if a.authors else ""
+    fb = _normalize_last_name(b.authors[0]) if b.authors else ""
+    tj = _jaccard(_title_tokens(a.title), _title_tokens(b.title))
+    aa = set(_WORD_RE.findall((a.abstract or "").lower()))
+    ab = set(_WORD_RE.findall((b.abstract or "").lower()))
+    aj = _jaccard(aa, ab) if aa and ab else None
+    out = {"first_author_a": fa, "first_author_b": fb,
+           "year_a": a.year, "year_b": b.year,
+           "title_jaccard": round(tj, 4),
+           "numeric_a": sorted(_numeric_tokens(a.title)),
+           "numeric_b": sorted(_numeric_tokens(b.title)),
+           "abstract_jaccard": None if aj is None else round(aj, 4)}
+    checks = [
+        ("first_author", bool(fa) and fa == fb),
+        ("year_window", a.year is not None and b.year is not None
+         and abs(a.year - b.year) <= TITLE_SIM_YEAR_WINDOW),
+        ("title_jaccard", tj >= TITLE_SIM_JACCARD),
+        ("numeric_tokens", out["numeric_a"] == out["numeric_b"]),
+        ("abstracts_present", aj is not None),
+        ("abstract_jaccard", aj is not None and aj >= ABSTRACT_SIM_JACCARD),
+    ]
+    failed = [name for name, ok in checks if not ok]
+    out["blocked_by"] = failed[0] if failed else None
+    out["merge"] = not failed
+    return out
+
+
+def title_similarity_candidates(papers: Iterable[Paper], *,
+                                min_title_jaccard: float = 0.6) -> list[dict]:
+    """REPORT-ONLY view of pass 5: every pair with the same first-author
+    surname, years in window, distinct titles and title Jaccard ≥
+    `min_title_jaccard`, with the full check result. Merges nothing."""
+    ps = sorted(papers, key=lambda p: p.id)
+    out = []
+    for i, a in enumerate(ps):
+        for b in ps[i + 1:]:
+            r = title_similarity_check(a, b)
+            if (r["first_author_a"] and r["first_author_a"] == r["first_author_b"]
+                    and r["year_a"] is not None and r["year_b"] is not None
+                    and abs(r["year_a"] - r["year_b"]) <= TITLE_SIM_YEAR_WINDOW
+                    and min_title_jaccard <= r["title_jaccard"] < 1.0):
+                out.append({"a": a.id, "b": b.id, "a_title": a.title,
+                            "b_title": b.title, **r})
+    return out
+
 
 def _is_arxiv_doi(doi: str | None) -> bool:
     """True iff `doi` looks like an arXiv-issued preprint DOI.
@@ -382,7 +456,7 @@ def _merge(survivor: Paper, loser: Paper) -> Paper:
     return Paper.model_validate(data)
 
 
-def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
+def deduplicate(papers: Iterable[Paper], *, title_similarity: bool = True) -> list[Paper]:
     """Collapse duplicate Papers via four deterministic passes.
 
     Passes (most-specific first):
@@ -394,6 +468,9 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
       4. arXiv-DOI ↔ non-arXiv-DOI, same normalized title, ≥1 shared
          normalized last-name. No year gap constraint — the DOI pair
          is already strong evidence.
+      5. Title similarity (`title_similarity_check`); disable with
+         `title_similarity=False`. Among several matches the lexically
+         lowest id is taken, so the choice never depends on input order.
 
     Output is sorted by `id` so the same input in any order yields
     byte-identical results.
@@ -491,6 +568,13 @@ def deduplicate(papers: Iterable[Paper]) -> list[Paper]:
                         match_id = candidate_id
                         break
 
+        # Pass 5 — title similarity (see title_similarity_check).
+        if match_id is None and title_similarity and paper.authors and paper.abstract:
+            hits = [cid for cid, cand in by_id.items()
+                    if title_similarity_check(paper, cand)["merge"]]
+            if hits:
+                match_id = min(hits)
+
         if match_id is not None:
             existing = by_id[match_id]
             survivor, loser = _pick_survivor(existing, paper)
@@ -520,7 +604,12 @@ __all__ = [
     "ARXIV_DOI_PREFIX",
     "CITATIONS_MERGE_POLICY",
     "CROSS_YEAR_WINDOW",
+    "ABSTRACT_SIM_JACCARD",
+    "TITLE_SIM_JACCARD",
+    "TITLE_SIM_YEAR_WINDOW",
     "deduplicate",
+    "title_similarity_candidates",
+    "title_similarity_check",
     "from_openalex",
     "from_semantic_scholar",
     "normalize_doi",

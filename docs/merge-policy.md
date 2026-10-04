@@ -11,6 +11,49 @@ forward-compat commitment (last section) it governs merges for
 
 ---
 
+## Matching passes
+
+Passes 1–4 are described in the `normalizer.py` module docstring (DOI;
+title + year + shared author; cross-year title + shared author;
+arXiv/non-arXiv DOI + title + shared author). Pass 5 was added on
+2026-10-04 (owner decision, iteration 6):
+
+### Pass 5 — title similarity
+
+Catches a journal version that was retitled after its preprint, which
+passes 1–4 miss because they need an identical DOI or normalized title.
+All of these must hold:
+
+| condition | value | constant |
+|:--|:--|:--|
+| same normalized first-author surname | — | — |
+| years within | 2 | `TITLE_SIM_YEAR_WINDOW` |
+| title-token Jaccard at least | 0.75 | `TITLE_SIM_JACCARD` |
+| numeric title tokens identical | (e.g. edition years, version numbers) | — |
+| both abstracts present, abstract-token Jaccard at least | 0.50 | `ABSTRACT_SIM_JACCARD` |
+
+When several earlier records match, the lexically lowest id is taken.
+`deduplicate(papers, title_similarity=False)` disables the pass;
+`title_similarity_candidates()` is a report-only view that merges nothing.
+
+**Why these thresholds** (sweep in `docs/findings/duplicate-check-v2.md`,
+data in `data/duplicate_check_v2.json`). Over every same-first-author,
+within-two-years pair in the three libraries plus every raw OpenAlex
+record seen while building the two new ones, the only true duplicate
+with distinct titles is AI Fairness 360 (title Jaccard 0.80, abstract
+Jaccard 0.62). Title similarity alone cannot separate it safely: a
+different-work pair by the same authors scores 0.78, and annual
+editions of the same guideline chapter score up to 0.88. The two extra
+guards remove every such negative in the sweep: the numeric-token rule
+blocks the annual editions (whose abstracts can be identical), and the
+abstract rule blocks the same-authors different-study pair (abstract
+Jaccard 0.24). Requiring both abstracts means a pair with a missing
+abstract is never merged by this pass. A false merge (two works counted
+as one) is treated as worse than a missed duplicate, so anything the
+rule does not clear is listed for a human, not merged.
+
+---
+
 ## Survivor rule
 
 Deterministic, order-independent. Given two records `a` and `b` matched

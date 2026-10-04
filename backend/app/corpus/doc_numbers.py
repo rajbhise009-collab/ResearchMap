@@ -287,6 +287,51 @@ def scorer_status() -> str:
                   ["l", "r", "r", "l", "r", "r", "l", "l"], rows)
 
 
+def _v2_rows(section: str) -> str:
+    d = _j(DATA / "duplicate_check_v2.json")
+    rows = []
+    for name, v in d[section].items():
+        if not v["candidates"]:
+            rows.append([name, f"`{v.get('n_papers', v.get('n_records'))}`", "—", "—", "—", "—", "—", "no candidates"])
+        for c in v["candidates"]:
+            rows.append([name, f"`{c['a'].split(':')[-1]}` / `{c['b'].split(':')[-1]}`",
+                         f"{c['year_a']} / {c['year_b']}", c["title_jaccard"],
+                         " ".join(c["numeric_a"]) or "—", " ".join(c["numeric_b"]) or "—",
+                         "—" if c["abstract_jaccard"] is None else c["abstract_jaccard"],
+                         "**merge**" if c["merge"] else f"blocked: {c['blocked_by']}"])
+    head = "papers" if section == "corpora" else "records"
+    return _table(["set", f"pair (or {head} scanned)", "years", "title Jaccard",
+                   "numbers A", "numbers B", "abstract Jaccard", "rule outcome"],
+                  ["l", "l", "l", "r", "l", "l", "r", "l"], rows)
+
+
+def v2_corpora() -> str:
+    return _v2_rows("corpora")
+
+
+def v2_sweep() -> str:
+    return _v2_rows("sweep")
+
+
+def v2_counts() -> str:
+    rows = []
+    for slug in ("llm-calibration", *NEW_LIBS):
+        log_p = DATA / "domains" / slug / "merge_log.json"
+        if log_p.exists():
+            lg = _j(log_p)
+            b, a = lg["before"], lg["after"]
+            rows.append([LIB_NAMES[slug], b["papers"], a["papers"], b["shortlist_pairs"],
+                         a["shortlist_pairs"], b["supports_verdicts"], a["supports_verdicts"],
+                         b["flagged_contradictions"], a["flagged_contradictions"]])
+        else:
+            n, _ext, sl, _cl = _check(slug)
+            rows.append([LIB_NAMES[slug], n, n, sl, sl, "unchanged", "unchanged",
+                         _flagged(slug), _flagged(slug)])
+    return _table(["library", "papers before", "papers after", "shortlisted pairs before",
+                   "after", "supports verdicts before", "after", "flagged before", "after"],
+                  ["l", "r", "r", "r", "r", "r", "r", "r", "r"], rows)
+
+
 BLOCKS = {
     "multi-domain.md": {"corpus": corpus, "yield": yield_table, "diet-audit": diet_audit,
                         "impossibility": impossibility, "predictor": predictor,
@@ -295,6 +340,8 @@ BLOCKS = {
     "ledger-unknown-entries.md": {"unknown": unknown_entries, "spend": spend},
     "domain-coherence-predictor.md": {"impossibility": impossibility, "measured": measured},
     "new-library-scorer-status.md": {"scorer-status": scorer_status},
+    "duplicate-check-v2.md": {"v2-corpora": v2_corpora, "v2-sweep": v2_sweep,
+                              "v2-counts": v2_counts},
     # duplicate-check.md is a dated record (pre-merge); its table is frozen.
 }
 

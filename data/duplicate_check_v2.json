@@ -1,0 +1,193 @@
+{
+  "rule": {
+    "title_jaccard_min": 0.75,
+    "abstract_jaccard_min": 0.5,
+    "year_window": 2,
+    "report_floor_title_jaccard": 0.6
+  },
+  "corpora": {
+    "llm-calibration": {
+      "n_papers": 113,
+      "candidates": [
+        {
+          "a": "openalex:W7131427313",
+          "b": "openalex:W7147133480",
+          "a_title": "Mitigating Bias and Hallucinations in LLMs through Prompt Engineering and Knowledge-Grounded Approaches in Healthcare Domain: A Systematic Literature Review",
+          "b_title": "Mitigating Bias and Hallucinations in LLMs Through Prompt Engineering and Knowledge-Grounded Approaches in Healthcare Domain",
+          "first_author_a": "ishadya",
+          "first_author_b": "ishadya",
+          "year_a": 2025,
+          "year_b": 2026,
+          "title_jaccard": 0.7778,
+          "numeric_a": [],
+          "numeric_b": [],
+          "abstract_jaccard": 0.2417,
+          "blocked_by": "abstract_jaccard",
+          "merge": false
+        }
+      ],
+      "would_merge": 0
+    },
+    "diet-and-mortality": {
+      "n_papers": 100,
+      "candidates": [],
+      "would_merge": 0
+    },
+    "ml-fairness": {
+      "n_papers": 99,
+      "candidates": [],
+      "would_merge": 0
+    },
+    "ml-fairness (before the 2026-10-04 merge)": {
+      "n_papers": 100,
+      "candidates": [
+        {
+          "a": "openalex:W2974817986",
+          "b": "openalex:W4289438483",
+          "a_title": "AI Fairness 360: An extensible toolkit for detecting and mitigating algorithmic bias",
+          "b_title": "AI Fairness 360: An Extensible Toolkit for Detecting, Understanding, and\\n Mitigating Unwanted Algorithmic Bias",
+          "first_author_a": "bellamy",
+          "first_author_b": "bellamy",
+          "year_a": 2019,
+          "year_b": 2018,
+          "title_jaccard": 0.8,
+          "numeric_a": [
+            "360"
+          ],
+          "numeric_b": [
+            "360"
+          ],
+          "abstract_jaccard": 0.6178,
+          "blocked_by": null,
+          "merge": true
+        }
+      ],
+      "would_merge": 1
+    }
+  },
+  "sweep": {
+    "llm-calibration": {
+      "n_records": 113,
+      "candidates": [
+        {
+          "a": "openalex:W7131427313",
+          "b": "openalex:W7147133480",
+          "a_title": "Mitigating Bias and Hallucinations in LLMs through Prompt Engineering and Knowledge-Grounded Approaches in Healthcare Domain: A Systematic Literature Review",
+          "b_title": "Mitigating Bias and Hallucinations in LLMs Through Prompt Engineering and Knowledge-Grounded Approaches in Healthcare Domain",
+          "first_author_a": "ishadya",
+          "first_author_b": "ishadya",
+          "year_a": 2025,
+          "year_b": 2026,
+          "title_jaccard": 0.7778,
+          "numeric_a": [],
+          "numeric_b": [],
+          "abstract_jaccard": 0.2417,
+          "blocked_by": "abstract_jaccard",
+          "merge": false
+        }
+      ],
+      "would_merge": 0
+    },
+    "diet-and-mortality": {
+      "n_records": 428,
+      "candidates": [
+        {
+          "a": "openalex:W1617145133",
+          "b": "openalex:W3143437408",
+          "a_title": "Global, regional, and national comparative risk assessment of 79 behavioural, environmental and occupational, and metabolic risks or clusters of risks, 1990\u20132015: a systematic analysis for the Global Burden of Disease Study 2015",
+          "b_title": "Global, regional, and national comparative risk assessment of 79 behavioural, environmental and occupational, and metabolic risks or clusters of risks in 188 countries, 1990\u20132013: a systematic analysis for the Global Burden of Disease Study 2013",
+          "first_author_a": "forouzanfar",
+          "first_author_b": "forouzanfar",
+          "year_a": 2016,
+          "year_b": 2015,
+          "title_jaccard": 0.7742,
+          "numeric_a": [
+            "19902015",
+            "2015",
+            "79"
+          ],
+          "numeric_b": [
+            "188",
+            "19902013",
+            "2013",
+            "79"
+          ],
+          "abstract_jaccard": null,
+          "blocked_by": "numeric_tokens",
+          "merge": false
+        },
+        {
+          "a": "openalex:W4249178369",
+          "b": "openalex:W4255618880",
+          "a_title": "4. Lifestyle Management: Standards of Medical Care in Diabetes\u20142018",
+          "b_title": "5. Lifestyle Management:Standards of Medical Care in Diabetes\u20142019",
+          "first_author_a": "association",
+          "first_author_b": "association",
+          "year_a": 2017,
+          "year_b": 2018,
+          "title_jaccard": 0.6364,
+          "numeric_a": [
+            "4",
+            "diabetes2018"
+          ],
+          "numeric_b": [
+            "5",
+            "diabetes2019"
+          ],
+          "abstract_jaccard": 1.0,
+          "blocked_by": "title_jaccard",
+          "merge": false
+        },
+        {
+          "a": "openalex:W4311263988",
+          "b": "openalex:W4405187504",
+          "a_title": "5. Facilitating Positive Health Behaviors and Well-being to Improve Health Outcomes:Standards of Care in Diabetes\u20142023",
+          "b_title": "5. Facilitating Positive Health Behaviors and Well-being to Improve Health Outcomes: Standards of Care in Diabetes\u20142025",
+          "first_author_a": "elsayed",
+          "first_author_b": "elsayed",
+          "year_a": 2022,
+          "year_b": 2024,
+          "title_jaccard": 0.8824,
+          "numeric_a": [
+            "5",
+            "diabetes2023"
+          ],
+          "numeric_b": [
+            "5",
+            "diabetes2025"
+          ],
+          "abstract_jaccard": 0.9577,
+          "blocked_by": "numeric_tokens",
+          "merge": false
+        }
+      ],
+      "would_merge": 0
+    },
+    "ml-fairness": {
+      "n_records": 645,
+      "candidates": [
+        {
+          "a": "openalex:W2974817986",
+          "b": "openalex:W4289438483",
+          "a_title": "AI Fairness 360: An extensible toolkit for detecting and mitigating algorithmic bias",
+          "b_title": "AI Fairness 360: An Extensible Toolkit for Detecting, Understanding, and\\n Mitigating Unwanted Algorithmic Bias",
+          "first_author_a": "bellamy",
+          "first_author_b": "bellamy",
+          "year_a": 2019,
+          "year_b": 2018,
+          "title_jaccard": 0.8,
+          "numeric_a": [
+            "360"
+          ],
+          "numeric_b": [
+            "360"
+          ],
+          "abstract_jaccard": 0.6178,
+          "blocked_by": null,
+          "merge": true
+        }
+      ],
+      "would_merge": 1
+    }
+  }
+}
