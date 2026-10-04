@@ -1,0 +1,272 @@
+{
+  "n_entries": 1090,
+  "by_stage": {
+    "contradiction_diet-and-mortality": {
+      "calls": 267,
+      "inr": 74.3346,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "contradiction_ml-fairness": {
+      "calls": 218,
+      "inr": 57.7743,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "correction_mock_test_entries": {
+      "calls": 1,
+      "inr": -0.4788,
+      "models": [
+        "n/a"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "extract_diet": {
+      "calls": 101,
+      "inr": 388.2495,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "extract_fairness": {
+      "calls": 75,
+      "inr": 298.7296,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "extract_fairness_batch": {
+      "calls": 28,
+      "inr": 72.7469,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        true
+      ]
+    },
+    "hedge_diet-and-mortality": {
+      "calls": 200,
+      "inr": 28.9304,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "unknown": {
+      "calls": 200,
+      "inr": 0.504,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        false
+      ]
+    }
+  },
+  "unknown_stage": {
+    "n": 200,
+    "inr": 0.504,
+    "n_with_mock_signature": 200,
+    "n_proven_mock": 190,
+    "proven_mock_inr": 0.4788,
+    "proven_mock_usd": 0.0057,
+    "n_unknown_not_proven": 10,
+    "bursts": [
+      {
+        "first_index": 174,
+        "last_index": 183,
+        "n": 10,
+        "span_s": 0.019,
+        "ts_first": 1790652565.430298,
+        "proven_mock": true
+      },
+      {
+        "first_index": 304,
+        "last_index": 313,
+        "n": 10,
+        "span_s": 0.0244,
+        "ts_first": 1790653231.146415,
+        "proven_mock": true
+      },
+      {
+        "first_index": 314,
+        "last_index": 323,
+        "n": 10,
+        "span_s": 0.0217,
+        "ts_first": 1790653325.628648,
+        "proven_mock": true
+      },
+      {
+        "first_index": 524,
+        "last_index": 533,
+        "n": 10,
+        "span_s": 0.0311,
+        "ts_first": 1790670386.563364,
+        "proven_mock": true
+      },
+      {
+        "first_index": 534,
+        "last_index": 543,
+        "n": 10,
+        "span_s": 0.0285,
+        "ts_first": 1790671567.032992,
+        "proven_mock": true
+      },
+      {
+        "first_index": 544,
+        "last_index": 553,
+        "n": 10,
+        "span_s": 0.0316,
+        "ts_first": 1790673532.228383,
+        "proven_mock": true
+      },
+      {
+        "first_index": 554,
+        "last_index": 558,
+        "n": 5,
+        "span_s": 0.6059,
+        "ts_first": 1790673681.405074,
+        "proven_mock": false
+      },
+      {
+        "first_index": 559,
+        "last_index": 563,
+        "n": 5,
+        "span_s": 0.6291,
+        "ts_first": 1790673682.4831731,
+        "proven_mock": false
+      },
+      {
+        "first_index": 564,
+        "last_index": 573,
+        "n": 10,
+        "span_s": 0.0332,
+        "ts_first": 1790790826.220593,
+        "proven_mock": true
+      },
+      {
+        "first_index": 574,
+        "last_index": 583,
+        "n": 10,
+        "span_s": 0.0319,
+        "ts_first": 1790790993.209621,
+        "proven_mock": true
+      },
+      {
+        "first_index": 584,
+        "last_index": 593,
+        "n": 10,
+        "span_s": 0.0336,
+        "ts_first": 1790791246.906695,
+        "proven_mock": true
+      },
+      {
+        "first_index": 594,
+        "last_index": 603,
+        "n": 10,
+        "span_s": 0.0352,
+        "ts_first": 1790791271.7369862,
+        "proven_mock": true
+      },
+      {
+        "first_index": 604,
+        "last_index": 613,
+        "n": 10,
+        "span_s": 0.0328,
+        "ts_first": 1790791486.684746,
+        "proven_mock": true
+      },
+      {
+        "first_index": 614,
+        "last_index": 623,
+        "n": 10,
+        "span_s": 0.0329,
+        "ts_first": 1790791511.844287,
+        "proven_mock": true
+      },
+      {
+        "first_index": 624,
+        "last_index": 633,
+        "n": 10,
+        "span_s": 0.041,
+        "ts_first": 1790791693.4739058,
+        "proven_mock": true
+      },
+      {
+        "first_index": 634,
+        "last_index": 643,
+        "n": 10,
+        "span_s": 0.0356,
+        "ts_first": 1790791784.542523,
+        "proven_mock": true
+      },
+      {
+        "first_index": 644,
+        "last_index": 653,
+        "n": 10,
+        "span_s": 0.0298,
+        "ts_first": 1790791950.045533,
+        "proven_mock": true
+      },
+      {
+        "first_index": 654,
+        "last_index": 663,
+        "n": 10,
+        "span_s": 0.0295,
+        "ts_first": 1790792098.7585962,
+        "proven_mock": true
+      },
+      {
+        "first_index": 664,
+        "last_index": 673,
+        "n": 10,
+        "span_s": 0.0305,
+        "ts_first": 1790792286.208925,
+        "proven_mock": true
+      },
+      {
+        "first_index": 674,
+        "last_index": 683,
+        "n": 10,
+        "span_s": 0.0324,
+        "ts_first": 1790792338.046815,
+        "proven_mock": true
+      },
+      {
+        "first_index": 964,
+        "last_index": 973,
+        "n": 10,
+        "span_s": 0.0405,
+        "ts_first": 1790940592.455809,
+        "proven_mock": true
+      }
+    ]
+  },
+  "raw_cumulative_inr": 921.2692,
+  "correction_present": true,
+  "corrected_cumulative_inr": 920.7904,
+  "proven_mock_index_range": [
+    174,
+    973
+  ],
+  "cap_inr": 920.79036
+}
