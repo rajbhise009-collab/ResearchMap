@@ -2,8 +2,9 @@
 
 **First written 2026-09-29; numbers regenerated 2026-10-04.** Wave 2 of
 ResearchMap. Built two additional libraries alongside the frozen
-LLM-calibration library (113 papers, manifest hash `44981e91c40dfe6d`,
-unchanged), then compared contradiction yield, assertion-strength
+LLM-calibration library (113 papers, manifest label `44981e91c40dfe6d`,
+unchanged; a frozen identifier, not a content hash — the content
+fingerprint is in `data/llm_cal_fingerprint.json`), then compared contradiction yield, assertion-strength
 distribution, and full-text coverage across all three.
 
 Every table in this document is generated from data files by

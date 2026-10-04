@@ -151,11 +151,19 @@ def stats() -> dict:
         },
         "relationships": len(relationships()),
         "spend_to_date_usd": SPEND_TO_DATE_USD,
+        # A frozen LABEL, not a content hash; the content fingerprint sits
+        # beside it (backend/app/corpus/llm_cal_fingerprint.py).
         "manifest_hash": manifest().get("manifest_hash"),
+        "content_fingerprint_sha256": _fingerprint().get("fingerprint_sha256"),
         "note": ("0 confirmed contradictions among the papers read — candidates "
                  "scale ~N^1.89 while confirmed stays at 0. Why is not "
                  "established. See findings."),
     }
+
+
+def _fingerprint() -> dict:
+    p = REPO_ROOT / "data" / "llm_cal_fingerprint.json"
+    return json.loads(p.read_text()) if p.exists() else {}
 
 
 def findings() -> list[dict]:

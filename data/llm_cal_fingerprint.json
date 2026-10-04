@@ -1,0 +1,9 @@
+{
+  "label": "44981e91c40dfe6d",
+  "label_note": "Frozen identifier written at manifest generation (2026-07-25), before later steps changed the records. A label, not a content hash.",
+  "fingerprint_sha256": "5ee219f437e0b9e379c50316eb64c7eb2371c77e1fa0a00e9a640507c76fd8f7",
+  "n_records": 113,
+  "method": "SHA-256 over the manifest records, each as canonical JSON (sort_keys, separators=(',', ':'), ensure_ascii=False), lines sorted, joined with '\\n', UTF-8",
+  "source": "data/live_samples/expanded_corpus_manifest.json (gitignored)",
+  "script": "backend/app/corpus/llm_cal_fingerprint.py"
+}
