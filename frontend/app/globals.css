@@ -37,6 +37,8 @@
   --note-bg: #fbf3dd;       /* caveat surface */
   --note-rule: #d4b063;
   --note-icon: #b0842e;
+  --note-ink: #7a5a17;        /* text on --note-bg (5.7:1) */
+  --surface-raise-1: #faf3e6;
 
   --shadow-1: 0 1px 2px rgba(20, 18, 10, 0.04),
               0 1px 3px rgba(20, 18, 10, 0.03);
@@ -122,6 +124,10 @@
     --note-bg: #201a0d;
     --note-rule: #4d3e1e;
     --note-icon: #b58a3b;
+  --note-ink: #b58a3b;
+  --surface-raise-1: #1a1913;
+    --note-ink: #b58a3b;
+    --surface-raise-1: #1a1913;
 
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35),
                 0 1px 3px rgba(0, 0, 0, 0.25);
@@ -153,6 +159,8 @@
   --note-bg: #201a0d;
   --note-rule: #4d3e1e;
   --note-icon: #b58a3b;
+  --note-ink: #b58a3b;
+  --surface-raise-1: #1a1913;
   --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.25);
   --shadow-2: 0 3px 12px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-3: 0 16px 40px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.35);
@@ -238,6 +246,8 @@ button {
 button:focus-visible { outline: none; box-shadow: var(--focus); border-radius: var(--radius-sm); }
 :focus-visible { outline: none; }
 input:focus-visible { box-shadow: var(--focus); }
+summary:focus-visible, pre:focus-visible, select:focus-visible,
+[tabindex]:focus-visible { box-shadow: var(--focus); border-radius: var(--radius-sm); }
 
 ::selection { background: color-mix(in oklab, var(--accent) 24%, transparent); }
 
@@ -838,7 +848,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--note-icon);
+  color: var(--note-ink);
   margin-bottom: var(--s-2);
 }
 
@@ -1076,7 +1086,7 @@ section.block p { color: var(--ink-soft); }
   white-space: nowrap;
   font-weight: 500;
 }
-.tag.warn { color: var(--note-icon); border-color: var(--note-rule); background: var(--note-bg); }
+.tag.warn { color: var(--note-ink); border-color: var(--note-rule); background: var(--note-bg); }
 
 .quote-list { list-style: none; padding: 0; margin: 0; }
 .quote-list li {
@@ -1433,4 +1443,19 @@ section.block p { color: var(--ink-soft); }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Layout stability: client-loaded content must not push the footer or the
+   library card around (Lighthouse CLS). */
+main#main { min-height: 100vh; }
+.hero-libblock { min-height: 11rem; }
+@media (max-width: 720px) { .hero-libblock { min-height: 15rem; } }
+
+.detail-grid .not-advice { margin-bottom: var(--s-5); }
+.verdict-doubt {
+  margin-top: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-left: 3px solid var(--note-rule);
+  background: var(--note-bg);
+  color: var(--ink);
 }

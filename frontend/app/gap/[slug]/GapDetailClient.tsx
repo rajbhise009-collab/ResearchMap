@@ -4,17 +4,16 @@
 // in that library's opportunities, renders NotInLibrary instead of
 // silently rendering LLM-cal content.
 
-import { useEffect } from "react";
 import Link from "next/link";
 import { Strength, Caveats, Tag } from "../../components/plain";
 import { DevKV, DevJSON } from "../../components/DevMode";
 import GapSidebar from "./GapSidebar";
 import { useLibraryData, LibrarySwitchNotice } from "../../components/useLibraryData";
 import NotFoundBody from "../../components/NotFoundBody";
-import { site } from "../../../lib/site";
 import { GapExport } from "../../components/CiteExport";
 import ContradictionTimeline from "../../components/ContradictionTimeline";
 import type { LanguagePack } from "../../../lib/types";
+import { doiUrl } from "../../../lib/doi";
 
 const wid = (pid: string) => (pid || "").split(":").pop() as string;
 
@@ -62,6 +61,7 @@ interface OpportunityLike {
     verdict_reason?: string;
     verdict_basis?: string;
     verdict_topic?: string;
+    verdict_doubt?: string | null;
   };
   // Multi-domain contradiction card fields
   a_paper_id?: string;
@@ -89,18 +89,9 @@ export default function GapDetailClient({ slug, lang, owners }: {
 }) {
   const res = useLibraryData<OpportunityLike>(`opportunity/${slug}.json`, owners);
 
-  // Set a topic-specific document.title so the browser tab reads
-  // "Red meat and stroke: ..." instead of the shared app title. The
-  // page's <title> is set at build time to the app name; we overwrite
-  // it per gap once the JSON arrives.
-  const docTitle =
-    res.state === "ready" ? res.data.consumer.headline : null;
-  useEffect(() => {
-    if (!docTitle) return;
-    const prev = document.title;
-    document.title = `${docTitle} — ${site.siteName}`;
-    return () => { document.title = prev; };
-  }, [docTitle]);
+  // The page <title> is built per gap at build time (page.tsx
+  // generateMetadata, from the owning library's record), so it is not
+  // overwritten here.
 
   if (res.state === "loading") {
     return <p className="muted">Loading the gap…</p>;
@@ -176,6 +167,11 @@ export default function GapDetailClient({ slug, lang, owners }: {
                data-verdict={c.verdict || "unaudited"}
                style={{ marginTop: "var(--s-3)" }}>
               {c.verdict_label}
+            </p>
+          )}
+          {c.verdict_doubt && (
+            <p className="verdict-doubt small" role="note">
+              <strong>Our own doubt:</strong> {c.verdict_doubt}
             </p>
           )}
           {c.verdict && c.verdict !== "genuine" && (
@@ -287,7 +283,7 @@ export default function GapDetailClient({ slug, lang, owners }: {
                 <div className="paper-line" key={w.wid}>
                   <span className="t">
                     {w.doi ? (
-                      <a href={`https://doi.org/${w.doi}`}
+                      <a href={doiUrl(w.doi) ?? undefined}
                           target="_blank" rel="noreferrer">
                         {w.title ?? w.wid}
                       </a>

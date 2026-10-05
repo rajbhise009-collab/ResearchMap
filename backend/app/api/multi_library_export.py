@@ -42,6 +42,17 @@ def _slug(text: str) -> str:
 # The one place that lists all three libraries. If a fourth is added, the
 # manifest grows here and the frontend selector picks it up automatically.
 
+def _doubt_for(slug: str, a_pid: str | None, b_pid: str | None, verdict: str) -> str | None:
+    p = REPO_ROOT / "data" / "domains" / slug / "reasoning" / "audit_doubts.json"
+    if not p.exists():
+        return None
+    for it in json.loads(p.read_text())["items"]:
+        if ({it.get("a_paper_id"), it.get("b_paper_id")} == {a_pid, b_pid}
+                and it.get("verdict") == verdict):
+            return it["text"]
+    return None
+
+
 def _audit_doubts(slug: str) -> list[str]:
     p = REPO_ROOT / "data" / "domains" / slug / "reasoning" / "audit_doubts.json"
     return [it["text"] for it in json.loads(p.read_text())["items"]] if p.exists() else []
@@ -322,6 +333,9 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
                 "verdict_reason": c["audit"].get("reason", ""),
                 "verdict_basis": c["audit"].get("basis", ""),
                 "verdict_topic": c["audit"].get("topic", ""),
+                # Our own published doubt about this verdict, if any
+                # (reasoning/audit_doubts.json); the verdict is unchanged.
+                "verdict_doubt": _doubt_for(slug, c.get("a_paper_id"), c.get("b_paper_id"), verdict),
                 "caveats": [],
                 "paper_count": 2,
             },

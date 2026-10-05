@@ -13,6 +13,7 @@ import NotFoundBody from "../../components/NotFoundBody";
 import { site } from "../../../lib/site";
 import { PaperExport } from "../../components/CiteExport";
 import type { PaperDetail, LanguagePack } from "../../../lib/types";
+import { bareDoi, doiUrl } from "../../../lib/doi";
 
 const wid = (pid: string) => pid.split(":").pop() as string;
 
@@ -78,8 +79,8 @@ export default function PaperDetailClient({ wid: routeWid, lang, owners }: {
           <h1>{p.title}</h1>
           {p.doi && (
             <p className="subtitle">
-              <a href={`https://doi.org/${p.doi}`} target="_blank" rel="noreferrer">
-                doi.org/{p.doi} ↗
+              <a href={doiUrl(p.doi) ?? undefined} target="_blank" rel="noreferrer">
+                doi.org/{bareDoi(p.doi)} ↗
               </a>
             </p>
           )}

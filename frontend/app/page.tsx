@@ -1,4 +1,4 @@
-import { getLanguage, getGapDocs, getPaperDocs, getSiteFacts } from "../lib/data";
+import { getLanguage, getSiteFacts } from "../lib/data";
 import Ask from "./components/Ask";
 import LibraryScopedHero from "./components/LibraryScopedHero";
 import { pageMeta } from "../lib/meta";
@@ -24,7 +24,9 @@ export default function Landing() {
       {/* Ask stays scoped to the default library's search index for
           now — full per-library search routing lives in Ask.tsx and
           hits the current library's snapshot_path when ?lib=…. */}
-      <Ask lang={lang} gaps={getGapDocs()} papers={getPaperDocs()} />
+      {/* Ask fetches the active library's gaps and papers itself; the
+          props are only a fallback, so nothing is embedded in the HTML. */}
+      <Ask lang={lang} gaps={[]} papers={[]} />
     </>
   );
 }

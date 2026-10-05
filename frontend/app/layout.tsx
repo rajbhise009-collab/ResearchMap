@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { site, SITE_URL, IS_PRODUCTION } from "../lib/site";
 import { ogImageFor } from "../lib/meta";
-import { getLanguage, getGapDocs, getPaperDocs } from "../lib/data";
+import { getLanguage } from "../lib/data";
 import { DevModeProvider, DevBanner } from "./components/DevMode";
 import Nav from "./components/Nav";
 import CommandPalette, { PaletteHint } from "./components/CommandPalette";
@@ -76,11 +76,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 page so ⌘K works from every route without a round trip. It
                 stays hidden until the user hits ⌘K or focuses the masthead
                 hint. */}
-            <CommandPalette
-              lang={lang}
-              gaps={getGapDocs()}
-              papers={getPaperDocs()}
-            />
+            {/* The palette fetches the active library's gaps and papers when
+                it opens; embedding every library's documents here would ship
+                them inside every page's HTML (measured ~1 MB per page). */}
+            <CommandPalette lang={lang} gaps={[]} papers={[]} />
             <header className="masthead" role="banner">
               <div className="masthead-in">
                 <a className="wordmark" href="/">{site.siteName}</a>

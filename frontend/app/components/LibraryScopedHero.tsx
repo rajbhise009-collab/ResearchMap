@@ -60,6 +60,9 @@ export default function LibraryScopedHero({ tagline, whatItDoes, qualifier, fact
         <h1>{tagline}</h1>
         {qualifier && <p className="hero-qualifier">{qualifier}</p>}
         <p className="lede">{whatItDoes}</p>
+        {/* Library-specific lines appear after the active library is known
+            (client-side); their space is reserved so nothing below jumps. */}
+        <div className="hero-libblock">
         {current && (
           <p className="covers">
             <strong>{current.name}.</strong>{" "}
@@ -77,6 +80,7 @@ export default function LibraryScopedHero({ tagline, whatItDoes, qualifier, fact
             <strong>Note:</strong> {current.not_advice_note}
           </p>
         )}
+        </div>
       </div>
 
       <aside className="about-card" aria-label="About the selected library">

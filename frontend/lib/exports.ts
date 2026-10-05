@@ -7,6 +7,7 @@
 //   biber handles UTF-8 natively).
 // - CSV escaping wraps every cell in double-quotes and doubles internal
 //   double-quotes, per RFC 4180.
+import { bareDoi } from "./doi";
 
 export interface PaperLike {
   paper_id?: string;
@@ -117,7 +118,7 @@ export function paperToBibtex(p: PaperLike, key: string): string {
     authorField,
     bibField("year", Number.isFinite(p.year as number) ? String(p.year) : null),
     bibField("journal", p.venue || null),
-    bibField("doi", p.doi || null),
+    bibField("doi", bareDoi(p.doi)),
   ].filter((x): x is string => x !== null);
   const type = p.venue ? "article" : "misc";
   return `@${type}{${key},\n${fields.join(",\n")}\n}`;

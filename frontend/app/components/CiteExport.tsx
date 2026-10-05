@@ -14,6 +14,7 @@ import {
   toCsv, downloadText,
 } from "../../lib/exports";
 import { absUrl, site } from "../../lib/site";
+import { bareDoi } from "../../lib/doi";
 
 async function copy(text: string): Promise<boolean> {
   try {
@@ -150,7 +151,7 @@ export function GapExport({
   ];
   const csvRows = papers.map((p) => [
     p.paper_id ?? "", p.title ?? "", p.year ?? "",
-    p.doi ?? "", p.short_text ?? "", verdict ?? "",
+    bareDoi(p.doi) ?? "", p.short_text ?? "", verdict ?? "",
   ]);
   return (
     <section className="block cite-block">
@@ -183,7 +184,7 @@ export function PaperExport({ paper }: { paper: PaperLike }) {
       <p className="block-lede">
         Single-entry BibTeX below. Cite key <code>{key}</code>.
       </p>
-      <pre className="bib-preview"><code>{bib}</code></pre>
+      <pre className="bib-preview" tabIndex={0} aria-label="BibTeX preview"><code>{bib}</code></pre>
       <BibtexButtons papers={[paper]} filename={`${key}.bib`} />
       <HowToCite pageName={paper.title || (paper.wid ?? "paper")} />
     </section>
