@@ -227,6 +227,7 @@ export interface LanguagePack {
     title: string; body: string; estimate_label: string;
     estimates: [string, string][]; not_yet: string;
     predictor_note?: string;
+    consumer_body?: string;
   };
   no_disagreements: { headline: string; body: string; link_label: string };
   attribution: Attribution;
@@ -285,3 +286,18 @@ export interface SearchResult {
   typing?: boolean;
   trailing_prefix?: string | null;
 }
+
+export interface SiteFactsLibrary {
+  slug: string; name: string; short_name: string; blurb: string;
+  built: string | null; built_basis: string | null;
+  papers: number; claims_read: number | null; full_text: number; abstract_only: number;
+  gap_cards: number;
+  disagreement_check: {
+    shortlisted: number; classified: number; flagged: number;
+    hand_checked: number | null; confirmed: number; set_aside: number;
+    checked_how: string | null;
+  } | null;
+  audit_doubts: string[];
+  not_advice: boolean;
+}
+export interface SiteFacts { generated_by: string; libraries: SiteFactsLibrary[]; }

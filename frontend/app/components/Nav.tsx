@@ -6,6 +6,7 @@ const LINKS = [
   ["/gaps/", "What we found"],
   ["/papers/", "Papers"],
   ["/library/", "The library"],
+  ["/about/", "About"],
 ];
 
 export default function Nav() {

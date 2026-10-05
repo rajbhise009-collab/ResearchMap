@@ -1,5 +1,8 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Link from "next/link";
+import { site, SITE_URL, IS_PRODUCTION } from "../lib/site";
+import { ogImageFor } from "../lib/meta";
 import { getLanguage, getGapDocs, getPaperDocs } from "../lib/data";
 import { DevModeProvider, DevBanner } from "./components/DevMode";
 import Nav from "./components/Nav";
@@ -9,10 +12,37 @@ import FooterScope from "./components/FooterScope";
 
 const lang = getLanguage();
 
+const HOME_TITLE = `${site.siteName} — ${lang.ui.tagline}`;
+
+// Defaults every page inherits; each page sets its own title, description,
+// canonical URL and share tags (lib/meta.ts). Non-production builds
+// (VERCEL_ENV !== "production") are noindex.
 export const metadata: Metadata = {
-  title: `${lang.ui.product_name} — ${lang.ui.tagline}`,
+  metadataBase: new URL(SITE_URL),
+  title: HOME_TITLE,
   description: lang.ui.what_it_does,
+  applicationName: site.siteName,
+  robots: IS_PRODUCTION ? { index: true, follow: true } : { index: false, follow: false },
+  openGraph: {
+    title: HOME_TITLE, description: lang.ui.what_it_does, siteName: site.siteName,
+    type: "website", url: SITE_URL + "/",
+    images: [{ url: ogImageFor(null), width: 1200, height: 630, alt: site.siteName }],
+  },
+  twitter: { card: "summary_large_image", title: HOME_TITLE, description: lang.ui.what_it_does,
+             images: [ogImageFor(null)] },
 };
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f5ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f0f0b" },
+  ],
+};
+
+const TRUST_LINKS: Array<[string, string]> = [
+  ["/about/", "About"], ["/method/", "Method"], ["/privacy/", "Privacy"],
+  ["/terms/", "Terms"], ["/contact/", "Contact · report a problem"],
+];
 // Next's metadata.icons doesn't apply basePath — it emits the raw URL as
 // given. For a subpath deploy that would 404. Compose the correct URL
 // once from the build-time env vars and emit the tags in <head> ourselves.
@@ -35,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" type="image/svg+xml" href={`${BASE}/favicon.svg`} />
         <link rel="icon" type="image/png" sizes="32x32" href={`${BASE}/favicon-32.png`} />
+        <link rel="apple-touch-icon" sizes="180x180" href={`${BASE}/apple-touch-icon.png`} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
@@ -52,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             />
             <header className="masthead" role="banner">
               <div className="masthead-in">
-                <a className="wordmark" href="/">{lang.ui.product_name}</a>
+                <a className="wordmark" href="/">{site.siteName}</a>
                 <Nav />
                 <span className="grow" />
                 <PaletteHint />
@@ -66,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
             <footer className="foot" role="contentinfo">
               <div className="foot-in">
-                <span className="foot-brand">{lang.ui.product_name}</span>
+                <span className="foot-brand">{site.siteName}</span>
                 <span className="foot-dot" aria-hidden>·</span>
                 <span>
                   <FooterScope
@@ -76,6 +107,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   />
                 </span>
               </div>
+              <nav className="foot-links" aria-label="About this site">
+                {TRUST_LINKS.map(([href, label]) => (
+                  <Link key={href} href={href}>{label}</Link>
+                ))}
+              </nav>
               <div className="foot-sources">
                 <span className="foot-sources-label">{lang.libraries_note.label}:</span>{" "}
                 <span className="foot-sources-intro">{lang.libraries_note.intro}</span>

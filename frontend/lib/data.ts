@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import type {
   Opportunity, PaperSummary, PaperDetail, Stats, Finding, LanguagePack,
-  GapDoc, PaperDoc, LibrariesManifest,
+  GapDoc, PaperDoc, LibrariesManifest, LibraryManifest, SiteFacts,
 } from "./types";
 
 const DATA = path.join(process.cwd(), "public", "data");
@@ -129,4 +129,55 @@ export function getPaperDocs(): PaperDoc[] {
       year: p.year ?? "null",
     },
   }));
+}
+
+// ---- Library ownership (build time) --------------------------------------
+
+function relBase(snapshotPath: string): string {
+  return snapshotPath === "/data" ? "" : snapshotPath.replace(/^\/data\//, "");
+}
+
+/** Libraries (manifest order) whose snapshot contains this id. A deep link
+ *  uses this to open in the owning library (lib/activeLibrary.ts). */
+export function ownersOf(kind: "paper" | "opportunity", id: string): string[] {
+  const out: string[] = [];
+  for (const lib of getLibraries().libraries) {
+    if (fs.existsSync(path.join(DATA, relBase(lib.snapshot_path), kind, `${id}.json`))) {
+      out.push(lib.slug);
+    }
+  }
+  return out;
+}
+
+/** The owning library (default among owners, else first) — what a link
+ *  without ?lib opens, and therefore what the page's metadata describes. */
+export function primaryOwner(kind: "paper" | "opportunity", id: string): LibraryManifest | null {
+  const m = getLibraries();
+  const owners = ownersOf(kind, id);
+  const slug = owners.includes(m.default_slug) ? m.default_slug : owners[0];
+  return m.libraries.find((l) => l.slug === slug) ?? null;
+}
+
+export function readFromLibrary<T>(lib: LibraryManifest, rel: string): T {
+  return read<T>(path.join(relBase(lib.snapshot_path), rel));
+}
+
+/** Facts for the trust pages and library headers (backend/app/api/site_facts.py). */
+export function getSiteFacts(): SiteFacts {
+  return read<SiteFacts>("site-facts.json");
+}
+
+/** Gap headlines that appear on more than one card (across all libraries).
+ *  Their page titles get a distinguishing suffix so every title is unique. */
+let _dupHeadlines: Set<string> | null = null;
+export function duplicateGapHeadlines(): Set<string> {
+  if (_dupHeadlines) return _dupHeadlines;
+  const count = new Map<string, number>();
+  for (const lib of getLibraries().libraries) {
+    const items = readFromLibrary<{ items: Array<{ consumer: { headline: string } }> }>(
+      lib, "opportunities.json").items;
+    for (const it of items) count.set(it.consumer.headline, (count.get(it.consumer.headline) || 0) + 1);
+  }
+  _dupHeadlines = new Set([...count.entries()].filter(([, n]) => n > 1).map(([h]) => h));
+  return _dupHeadlines;
 }
