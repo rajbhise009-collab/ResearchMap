@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use ResearchMap, please cite it using these metadata. Its output is an unvalidated prototype's and should not be cited as a primary research finding."
+title: "ResearchMap: literature-based discovery of open research questions"
+type: software
+authors:
+  - name: "ResearchMap contributors"
+repository-code: "https://github.com/rajbhise009-collab/ResearchMap"
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-05"
+keywords:
+  - literature-based discovery
+  - research gaps
+  - scientific literature

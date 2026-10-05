@@ -1,142 +1,109 @@
 # ResearchMap
 
-A literature-based discovery (LBD) system. Ingests scientific papers for
-one domain, decomposes each into structured knowledge, builds a
-relationship layer across papers, and ranks evidence-backed research
-opportunities with fully traceable justification.
+ResearchMap reads the research papers on one subject and lists questions those
+papers leave open: things a paper said should be studied next that no later
+paper in the collection took up, limits that keep coming back, and pairs of
+findings that appear to disagree. Every result links to the papers and
+sentences behind it.
 
-**Core rule:** LLMs extract, code reasons. Every score and ranking is
-deterministic Python — no LLM ever judges "importance." See `CLAUDE.md`
-for the full working discipline.
+It is a working prototype and a research aid. It is not peer review and not
+advice of any kind.
 
-## Quick start (macOS, no terminal needed)
+## What it is not
 
-Two ways to open it, use whichever you prefer:
+- **Not complete.** It only knows the papers in the selected library. "Nobody
+  has answered this" means "no paper in this library answered it".
+- **Not validated.** Whether the questions it lists predict later research has
+  not been tested yet.
+- **Not a full reading of every paper.** Where no open-access copy exists, only
+  the abstract is read, and each paper's page says which.
+- **Not independent review.** Disagreements were checked by hand by the
+  person who built the project, not by outside experts.
 
-- **Double-click `ResearchMap.app`** in Finder. Opens in its own window
-  (Chrome app-mode — no browser tabs, no address bar, feels native).
-  Progress shows as macOS notifications during first-run setup. Quit
-  from the Dock icon (right-click → **Quit**) to shut everything down.
-- **Double-click `ResearchMap.command`** — same app, but through a
-  Terminal window that shows what's happening and opens in your default
-  browser. Press any key in that window to quit.
+## How it works
 
-Both start the full stack: the FastAPI backend and the frontend from a
-single local URL that you can also open in any browser (Safari, Firefox,
-another Chrome window). The URL is printed in the Terminal window and
-included in the macOS notification.
+1. Papers on one subject are collected from [OpenAlex](https://openalex.org)
+   and sorted into on-topic, borderline and off-topic by fixed keyword rules.
+2. A language model (Google Gemini) reads each paper and writes down, in a
+   fixed format, its claims, the limits it admits, its methods and what it
+   says should be studied next. It does not rank or judge anything.
+3. Plain code compares those notes across papers. For possible
+   disagreements, code shortlists pairs of very similar claims and the model
+   is asked about one pair at a time whether they conflict.
+4. Code orders the results by fixed rules. The model's own confidence never
+   feeds a score.
+5. Results are checked by hand where possible, and doubts about those checks
+   are published.
 
-Both need Node.js (nodejs.org, LTS build) and Python 3 (`xcode-select
---install` installs it). On first launch the app installs frontend
-dependencies (~180 MB npm) and a small Python backend (~30 MB pip);
-subsequent launches skip both.
+The governing rule is **LLMs extract, code reasons**. See `CLAUDE.md`.
 
-**First launch of `ResearchMap.app`**: macOS Gatekeeper blocks unsigned
-apps on first open. Right-click the .app → **Open** → **Open** in the
-dialog. Once approved, future launches are one double-click.
+## The libraries
 
-**Don't keep the project in `~/Downloads`, `~/Documents`, or `~/Desktop`**.
-Modern macOS treats those as protected user-data locations and silently
-blocks unsigned apps from reading files inside them — the .app would
-launch, be unable to read its own scripts, and quit without visible
-error. Move the whole `ResearchMap` folder to your home folder (`~/`),
-`~/Applications`, or `~/dev/` and it just works. The .app detects this
-situation and shows a native dialog explaining the fix if you launch it
-from a protected location. `ResearchMap.command` from Terminal is
-unaffected — Terminal has broad file-access grants by default.
+| Library | Subject |
+|:--|:--|
+| Language-model reliability | How language models express confidence, when they should refuse to answer, how uncertainty is measured, and why they state false things as fact |
+| Diet and all-cause mortality | What the epidemiology and trial literature says about diet and mortality-related outcomes (not dietary or medical advice) |
+| Algorithmic fairness in machine learning | Fairness definitions and metrics, incompatibility results, bias-mitigation methods and audits |
 
-<details>
-<summary>Terminal equivalent</summary>
+Current counts (papers, how many were read in full, what was checked by hand)
+are generated from the data and shown on the site's **Method** page. Libraries
+are built one subject at a time and do not update themselves.
 
-```bash
-./ResearchMap.command
-```
-</details>
+## Run it locally
 
-## Publish to the web (free)
-
-The static export is self-contained — no backend server, no keys.
-Search runs against a term-weight index in the browser. When deployed
-publicly to Vercel, `@vercel/analytics` sends anonymised page-view
-counts to Vercel Web Analytics (no cookies, no identifiers, no query
-text) — the local `.app`/`.command` and `?dev=1` do not load the
-analytics script. Two zero-cost hosting paths are wired up:
-
-### GitHub Pages
-
-Push to `main`; `.github/workflows/deploy-pages.yml` builds and deploys
-automatically. **One-time setup**: in the repository's Settings → Pages,
-set **Source** to **GitHub Actions**. The workflow uses no secrets, no
-env vars, no billing plan.
-
-The build passes `BASE_PATH=/<repo-name>` so the site works at
-`https://<user>.github.io/<repo>/`.
-
-### Vercel
-
-`vercel.json` is set up for a zero-config import. Sign in at vercel.com,
-click **Add New** → **Project**, pick this repo, keep defaults, deploy.
-Free tier. No env vars needed.
-
-### Any other static host
-
-`npm run build` produces `frontend/out/` — a self-contained folder of
-HTML, JS, CSS, and JSON. Upload the folder to any static host (Netlify,
-Cloudflare Pages, S3+CloudFront, plain nginx). If the deploy is under a
-subpath, build with `BASE_PATH=/subpath npm run build`.
-
-## Setup (developers)
+Requirements: Python 3.11+, Node.js 20+.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+# Python side (tests, snapshot export) — no API keys needed
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env      # optional — offline seed run needs nothing set
-```
+pytest backend/tests
 
-## Run the offline seed pipeline
-
-The seed corpus (`data/seed/`) is committed. The full pipeline and test
-suite run with zero API keys and zero network access.
-
-```bash
-# End-to-end ingestion over the seed corpus, JSON to stdout
-python -m backend.cli ingest --source seed
-
-# Tests
-pytest backend/tests -v
-```
-
-## API and frontend
-
-Both read cached reasoning output — no API keys, no `DATABASE_URL`.
-
-The frontend is a consumer-facing search tool over one library. Because that
-library covers a single subject, the search gate classifies every question as
-in-domain, borderline, or out-of-domain, and refuses rather than returning
-weak matches dressed up as answers. Search is a term-weight index built at
-build time from the library's own vocabulary — no embedding calls, no spend,
-no server. `backend/app/api/language.py` is the single source of all
-user-facing wording; the frontend carries no copy of its own.
-
-```bash
-# Read-only API — run from the repo ROOT (app.py uses absolute
-# backend.-prefixed imports; running from backend/ fails with
-# ModuleNotFoundError). OpenAPI docs at /docs.
-.venv/bin/uvicorn backend.app.api.app:app --reload
-
-# Frontend (static export, no runtime backend needed)
+# Website (static export, no server at runtime)
 cd frontend
 npm install
-npm run snapshot   # regenerate public/data from cached output
-npm run dev        # http://localhost:3000
-npm run build      # self-contained static site → frontend/out/
+npm run dev          # http://localhost:3000
+npm run build        # static site in frontend/out/
+npm run launch-check # pre-launch checklist over frontend/out/
 ```
 
-## Phase status
+The committed snapshot in `frontend/public/data/` is everything the site
+needs. `npm run snapshot` (or `python -m backend.app.api.multi_library_export`)
+regenerates it from the cached pipeline output. Live paper collection and
+extraction need API keys (see `.env.example`) and cost money; nothing in the
+website or the test suite calls a paid API.
 
-See `PROGRESS.md`.
+On macOS, `ResearchMap.app` / `ResearchMap.command` start the local stack
+without a terminal (keep the folder outside `~/Downloads`, `~/Documents` and
+`~/Desktop`, which macOS protects).
 
-## Repository layout
+## Deploying
 
-See the "Repository layout" section of `CLAUDE.md`.
+The site is a static export. On Vercel, `vercel.json` builds it as is. Set
+`NEXT_PUBLIC_SITE_URL` to the site's public address so canonical links,
+share previews and the sitemap use it; only production builds
+(`VERCEL_ENV=production`) are indexable. The site name lives in
+`frontend/site.config.json`. Step-by-step launch notes: `docs/LAUNCH.md`.
+
+## Licence
+
+Code: [MIT](LICENSE). Paper metadata comes from OpenAlex (CC0); paper text
+belongs to its authors and publishers, and the site shows only short
+extracted claims, abstracts and links, never full text.
+
+## How to cite
+
+Use the metadata in [`CITATION.cff`](CITATION.cff) (GitHub shows a "Cite this
+repository" button). Results are an unvalidated prototype's output and should
+not be cited as primary research findings.
+
+## Contact
+
+Use the site's **Contact** page, or open an issue in this repository.
+
+## Sources and attribution
+
+[OpenAlex](https://openalex.org) (CC0) for paper metadata and abstracts;
+[Semantic Scholar](https://www.semanticscholar.org),
+[Unpaywall](https://unpaywall.org), [Europe PMC](https://europepmc.org) and
+[arXiv](https://arxiv.org) for enrichment and open-access full text.
