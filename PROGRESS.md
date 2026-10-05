@@ -1,5 +1,23 @@
 # PROGRESS
 
+## Launch readiness (2026-10-05) ✅
+
+No paid calls (ledger byte-identical). **631 tests green.** Validation
+(Phase 6) is still owed. Details: `REPORT_launch.md`.
+
+- Shared links open in the owning library (build-time owner map); storage
+  failures never break the site; on-brand 404.
+- One site URL (`NEXT_PUBLIC_SITE_URL`) and one site name
+  (`frontend/site.config.json`); per-page metadata, share images, sitemap,
+  robots (noindex outside production), manifest, icons.
+- Trust pages (/about, /method, /privacy, /terms, /contact);
+  `npm run launch-check`; copy that does not exceed the data.
+- QA (tools/qa): shared links, console, failure modes, Chromium+WebKit
+  search, axe WCAG 2.1 AA, keyboard, crawl, Lighthouse; fixes for contrast,
+  focus, CLS, page weight and double-prefixed DOI links.
+- Repo audit: public, no secrets; the old answer key is still served by SHA
+  on GitHub (owner decision needed).
+
 ## Iteration 6 — owner decisions applied (2026-10-04) ✅
 
 No paid calls (ledger unchanged at the frozen cap). **626 tests green.**
