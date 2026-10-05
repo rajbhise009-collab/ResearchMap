@@ -16,6 +16,7 @@ import type {
 } from "../../lib/types";
 import { search } from "../../lib/search";
 import { asset } from "../../lib/basePath";
+import { storageGet, LIBRARY_KEY } from "../../lib/storage";
 
 const DEBOUNCE_MS = 90;
 
@@ -48,10 +49,7 @@ function CommandPalette({ lang, gaps, papers }: {
         if (r.ok) {
           const m = await r.json();
           const requested = new URLSearchParams(window.location.search).get("lib");
-          const remembered = (() => {
-            try { return window.localStorage.getItem("researchmap.library"); }
-            catch { return null; }
-          })();
+          const remembered = storageGet(LIBRARY_KEY);
           const slug = requested || remembered || m.default_slug;
           const lib = (m.libraries || []).find((l: any) => l.slug === slug)
                        || (m.libraries || [])[0];

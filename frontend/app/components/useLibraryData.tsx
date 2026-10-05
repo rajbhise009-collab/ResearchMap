@@ -8,12 +8,14 @@
 import { useEffect, useState } from "react";
 import { asset } from "../../lib/basePath";
 import type { LibrariesManifest, LibraryManifest } from "../../lib/types";
+import { storageGet, LIBRARY_KEY } from "../../lib/storage";
+import { resolveOwner } from "../../lib/activeLibrary";
 
-const LS_KEY = "researchmap.library";
+const LS_KEY = LIBRARY_KEY;
 
 export type LibraryDataState<T> =
   | { state: "loading"; data: null; library: LibraryManifest | null }
-  | { state: "ready"; data: T; library: LibraryManifest }
+  | { state: "ready"; data: T; library: LibraryManifest; autoSwitched?: boolean }
   | { state: "missing"; data: null; library: LibraryManifest;
       manifest: LibrariesManifest }
   | { state: "error"; data: null; library: LibraryManifest | null;
@@ -31,10 +33,8 @@ function currentSlug(manifest: LibrariesManifest | null): string | null {
   if (typeof window === "undefined") return null;
   const urlLib = new URLSearchParams(window.location.search).get("lib");
   if (urlLib) return urlLib;
-  try {
-    const remembered = window.localStorage.getItem(LS_KEY);
-    if (remembered) return remembered;
-  } catch {}
+  const remembered = storageGet(LS_KEY);
+  if (remembered) return remembered;
   return manifest?.default_slug ?? null;
 }
 
@@ -47,7 +47,7 @@ function currentSlug(manifest: LibrariesManifest | null): string | null {
  * callers render a "not in this library" fallback instead of silently
  * showing default-library content.
  */
-export function useLibraryData<T>(relPath: string): LibraryDataState<T> {
+export function useLibraryData<T>(relPath: string, owners?: string[]): LibraryDataState<T> {
   const [s, setS] = useState<LibraryDataState<T>>({
     state: "loading", data: null, library: null,
   });
@@ -55,7 +55,15 @@ export function useLibraryData<T>(relPath: string): LibraryDataState<T> {
     let live = true;
     (async () => {
       const manifest = await loadManifest();
-      const slug = currentSlug(manifest);
+      // Deep links: switch to the library that owns this id (built-time
+      // owners list), so a shared URL opens correctly in a fresh browser.
+      let slug = currentSlug(manifest);
+      let autoSwitched = false;
+      if (manifest && owners && owners.length) {
+        const r = resolveOwner(manifest, owners);
+        slug = r.slug;
+        autoSwitched = r.autoSwitched;
+      }
       const library = (manifest?.libraries || []).find((l) => l.slug === slug)
                         || manifest?.libraries?.[0];
       if (!library) {
@@ -89,50 +97,22 @@ export function useLibraryData<T>(relPath: string): LibraryDataState<T> {
         }
         if (!r.ok) throw new Error(String(r.status));
         const j = (await r.json()) as T;
-        if (live) setS({ state: "ready", data: j, library });
+        if (live) setS({ state: "ready", data: j, library, autoSwitched });
       } catch (e) {
         if (live) setS({ state: "error", data: null, library, reason: String(e) });
       }
     })();
     return () => { live = false; };
-  }, [relPath]);
+  }, [relPath, owners ? owners.join(",") : ""]); // eslint-disable-line react-hooks/exhaustive-deps
   return s;
 }
 
-/**
- * "Not in this library" fallback: names the current library and, when
- * the manifest is available, tells the reader which other libraries
- * might contain the requested item. Deliberately blunt — silence would
- * be dishonest.
- */
-export function NotInLibrary({ library, manifest, kind, id, backHref }: {
-  library: LibraryManifest;
-  manifest: LibrariesManifest;
-  kind: "paper" | "gap";
-  id: string;
-  backHref: string;
-}) {
-  const others = manifest.libraries.filter((l) => l.slug !== library.slug);
+/** Small notice shown when a shared link opened a different library than
+ *  the one the reader had selected. */
+export function LibrarySwitchNotice({ library }: { library: LibraryManifest }) {
   return (
-    <div className="not-in-library">
-      <h1 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}>
-        This {kind} isn&apos;t in <em>{library.name}</em>.
-      </h1>
-      <p className="lede">
-        The <code>{id}</code> URL exists, but the {library.short_name} library
-        doesn&apos;t include it. Switching libraries via the selector on the
-        landing page may find it.
-      </p>
-      <p>Other libraries in this project:</p>
-      <ul>
-        {others.map((l) => (
-          <li key={l.slug}>
-            <a href={`/?lib=${encodeURIComponent(l.slug)}`}>{l.name}</a>{" "}
-            <span className="small muted">({l.n_papers} papers)</span>
-          </li>
-        ))}
-      </ul>
-      <p><a href={backHref} className="crumb">← back to this library&apos;s list</a></p>
-    </div>
+    <p className="lib-switch-notice small sans" role="status">
+      Opened in the <strong>{library.name}</strong> library.
+    </p>
   );
 }

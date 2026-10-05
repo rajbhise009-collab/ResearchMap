@@ -8,25 +8,27 @@ import Link from "next/link";
 import { Tag } from "../../components/plain";
 import { DevKV, DevJSON } from "../../components/DevMode";
 import GapSidebar from "../../gap/[slug]/GapSidebar";
-import { useLibraryData, NotInLibrary } from "../../components/useLibraryData";
+import { useLibraryData, LibrarySwitchNotice } from "../../components/useLibraryData";
+import NotFoundBody from "../../components/NotFoundBody";
+import { site } from "../../../lib/site";
 import { PaperExport } from "../../components/CiteExport";
 import type { PaperDetail, LanguagePack } from "../../../lib/types";
 
 const wid = (pid: string) => pid.split(":").pop() as string;
 
-export default function PaperDetailClient({ wid: routeWid, lang }: {
+export default function PaperDetailClient({ wid: routeWid, lang, owners }: {
   wid: string;
   lang: LanguagePack;
+  owners: string[];
 }) {
-  const res = useLibraryData<PaperDetail>(`paper/${routeWid}.json`);
+  const res = useLibraryData<PaperDetail>(`paper/${routeWid}.json`, owners);
 
   if (res.state === "loading") {
     return <p className="muted">Loading the paper…</p>;
   }
   if (res.state === "missing") {
     return (
-      <NotInLibrary library={res.library} manifest={res.manifest}
-                     kind="paper" id={routeWid} backHref="/papers/" />
+      <NotFoundBody what="paper" libraries={res.manifest.libraries} />
     );
   }
   if (res.state === "error") {
@@ -57,6 +59,12 @@ export default function PaperDetailClient({ wid: routeWid, lang }: {
           <span aria-hidden>←</span> {lang.ui.all_papers}
         </Link>
 
+        {res.autoSwitched && <LibrarySwitchNotice library={res.library} />}
+        {res.library.not_advice_note && (
+          <p className="not-advice" role="note">
+            <strong>Note:</strong> {res.library.not_advice_note}
+          </p>
+        )}
         <header className="detail-head">
           <div className="result-head">
             <span>Paper</span>

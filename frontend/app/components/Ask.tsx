@@ -17,6 +17,7 @@ import { search } from "../../lib/search";
 import { useDev, DevKV, DevJSON } from "./DevMode";
 import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
+import { storageGet, LIBRARY_KEY } from "../../lib/storage";
 
 const EXAMPLES = [
   "why do language models sound confident when they're wrong",
@@ -77,10 +78,7 @@ export default function Ask({ lang, gaps, papers }: {
           const manifest = await libResp.json();
           allLibs = manifest.libraries || [];
           const requested = new URLSearchParams(window.location.search).get("lib");
-          const remembered = (() => {
-            try { return window.localStorage.getItem("researchmap.library"); }
-            catch { return null; }
-          })();
+          const remembered = storageGet(LIBRARY_KEY);
           const slug = requested || remembered || manifest.default_slug;
           const lib = allLibs.find((l) => l.slug === slug) || allLibs[0];
           if (lib) {
@@ -563,7 +561,8 @@ function OutOfDomain({ lang, query, activeLibrary }: {
   // Lazily fetch when the user opens the panel. Aborts if the panel
   // gets closed before the response returns.
   useEffect(() => {
-    if (!showBuild || preflightState !== "idle" || !query.trim()) return;
+    // Developer mode only: the consumer view never calls the pre-flight.
+    if (!dev || !showBuild || preflightState !== "idle" || !query.trim()) return;
     setPreflightState("loading");
     const ctrl = new AbortController();
     fetch(`/api/preflight?q=${encodeURIComponent(query)}`, { signal: ctrl.signal })
@@ -577,7 +576,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
         setPreflightState("unavailable");
       });
     return () => ctrl.abort();
-  }, [showBuild, preflightState, query]);
+  }, [dev, showBuild, preflightState, query]);
 
   return (
     <div style={{ marginTop: "var(--s-7)" }}>
@@ -627,6 +626,11 @@ function OutOfDomain({ lang, query, activeLibrary }: {
       ) : (
         <div className="panel">
           <h2>{B.title}</h2>
+          {!dev ? (
+            <p>
+              {B.consumer_body} <Link href="/contact/">Contact</Link>
+            </p>
+          ) : (<>
           <p>{B.body}</p>
 
           {preflightState === "loading" && (
@@ -672,6 +676,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
               <strong>About the pre-flight number:</strong> {B.predictor_note}
             </p>
           )}
+          </>)}
         </div>
       )}
     </div>

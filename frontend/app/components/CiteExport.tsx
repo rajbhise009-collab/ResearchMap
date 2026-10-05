@@ -8,11 +8,12 @@
 // - "How to cite this page" line — ResearchMap analysis-tool citation
 //   with URL + access date, states output is unvalidated prototype.
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   PaperLike, papersToBibtex, paperToBibtex, citeKey, dedupeCiteKeys,
   toCsv, downloadText,
 } from "../../lib/exports";
+import { absUrl, site } from "../../lib/site";
 
 async function copy(text: string): Promise<boolean> {
   try {
@@ -77,16 +78,29 @@ export function CsvDownload({ headers, rows, filename }: {
   );
 }
 
-/** "How to cite THIS page" — ResearchMap-as-analysis-tool + URL + date.
- *  Always states the output is unvalidated prototype. */
+/** Canonical, shareable URL of the current page: the configured site URL
+ *  (never the preview host), the path, and ?lib=<active library> when the
+ *  page is library-scoped. */
+export function canonicalPageUrl(): string {
+  if (typeof window === "undefined") return "";
+  const base = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
+  let path = window.location.pathname;
+  if (base && path.startsWith(base)) path = path.slice(base.length) || "/";
+  const lib = new URLSearchParams(window.location.search).get("lib");
+  return absUrl(path, lib);
+}
+
+/** "How to cite THIS page" — the site as an analysis tool + canonical URL +
+ *  date. Always states the output is unvalidated prototype. */
 export function HowToCite({ pageName, note }: {
   pageName: string;
   note?: string;
 }) {
-  const url = typeof window !== "undefined" ? window.location.href : "";
+  const [url, setUrl] = useState("");
+  useEffect(() => { setUrl(canonicalPageUrl()); }, []);
   const today = new Date().toISOString().slice(0, 10);
   const cite =
-    `ResearchMap. "${pageName}." Prototype literature-analysis tool. ` +
+    `${site.siteName}. "${pageName}." Prototype literature-analysis tool. ` +
     `Retrieved ${today} from ${url}. ` +
     `Output is an unvalidated prototype and should not be cited as a ` +
     `primary research finding.`;
@@ -102,6 +116,13 @@ export function HowToCite({ pageName, note }: {
           onClick={async () => { await copy(cite); }}
         >
           Copy citation
+        </button>{" "}
+        <button
+          type="button"
+          className="cite-btn"
+          onClick={async () => { await copy(canonicalPageUrl()); }}
+        >
+          Copy link
         </button>
       </details>
     </div>

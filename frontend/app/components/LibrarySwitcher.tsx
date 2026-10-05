@@ -13,8 +13,10 @@
 import { useEffect, useMemo, useState, useCallback } from "react";
 import { asset } from "../../lib/basePath";
 import type { LibrariesManifest, LibraryManifest } from "../../lib/types";
+import { storageGet, storageSet, LIBRARY_KEY } from "../../lib/storage";
+import { LIBRARY_EVENT } from "../../lib/activeLibrary";
 
-const LS_KEY = "researchmap.library";
+const LS_KEY = LIBRARY_KEY;
 
 export function useLibraries(): LibrariesManifest | null {
   const [m, setM] = useState<LibrariesManifest | null>(null);
@@ -37,12 +39,19 @@ export function useCurrentLibrary(libraries: LibrariesManifest | null): LibraryM
     if (typeof window === "undefined") return;
     const url = new URLSearchParams(window.location.search).get("lib");
     if (url) { setSlug(url); return; }
-    try {
-      const remembered = window.localStorage.getItem(LS_KEY);
-      if (remembered) { setSlug(remembered); return; }
-    } catch {}
+    const remembered = storageGet(LS_KEY);
+    if (remembered) { setSlug(remembered); return; }
     setSlug(libraries?.default_slug ?? null);
   }, [libraries]);
+  // A deep link may switch library after load (lib/activeLibrary.ts).
+  useEffect(() => {
+    const on = (e: Event) => {
+      const next = (e as CustomEvent<{ slug: string }>).detail?.slug;
+      if (next) setSlug(next);
+    };
+    window.addEventListener(LIBRARY_EVENT, on);
+    return () => window.removeEventListener(LIBRARY_EVENT, on);
+  }, []);
   return useMemo(() => {
     if (!libraries || !slug) return libraries?.libraries[0] ?? null;
     return libraries.libraries.find((l) => l.slug === slug) ?? libraries.libraries[0];
@@ -64,7 +73,7 @@ export function LibrarySwitcher() {
   const current = useCurrentLibrary(libraries);
   const onChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     const s = e.target.value;
-    try { window.localStorage.setItem(LS_KEY, s); } catch {}
+    storageSet(LS_KEY, s);
     // Hard reload so server-rendered content re-hydrates with the new
     // library's data (client-side data-fetch handles the sections that
     // are already client components).

@@ -9,7 +9,9 @@ import Link from "next/link";
 import { Strength, Caveats, Tag } from "../../components/plain";
 import { DevKV, DevJSON } from "../../components/DevMode";
 import GapSidebar from "./GapSidebar";
-import { useLibraryData, NotInLibrary } from "../../components/useLibraryData";
+import { useLibraryData, LibrarySwitchNotice } from "../../components/useLibraryData";
+import NotFoundBody from "../../components/NotFoundBody";
+import { site } from "../../../lib/site";
 import { GapExport } from "../../components/CiteExport";
 import ContradictionTimeline from "../../components/ContradictionTimeline";
 import type { LanguagePack } from "../../../lib/types";
@@ -80,11 +82,12 @@ interface OpportunityLike {
   } | null;
 }
 
-export default function GapDetailClient({ slug, lang }: {
+export default function GapDetailClient({ slug, lang, owners }: {
   slug: string;
   lang: LanguagePack;
+  owners: string[];
 }) {
-  const res = useLibraryData<OpportunityLike>(`opportunity/${slug}.json`);
+  const res = useLibraryData<OpportunityLike>(`opportunity/${slug}.json`, owners);
 
   // Set a topic-specific document.title so the browser tab reads
   // "Red meat and stroke: ..." instead of the shared app title. The
@@ -95,7 +98,7 @@ export default function GapDetailClient({ slug, lang }: {
   useEffect(() => {
     if (!docTitle) return;
     const prev = document.title;
-    document.title = `${docTitle} — ResearchMap`;
+    document.title = `${docTitle} — ${site.siteName}`;
     return () => { document.title = prev; };
   }, [docTitle]);
 
@@ -104,8 +107,7 @@ export default function GapDetailClient({ slug, lang }: {
   }
   if (res.state === "missing") {
     return (
-      <NotInLibrary library={res.library} manifest={res.manifest}
-                     kind="gap" id={slug} backHref="/gaps/" />
+      <NotFoundBody what="gap" libraries={res.manifest.libraries} />
     );
   }
   if (res.state === "error") {
@@ -151,6 +153,12 @@ export default function GapDetailClient({ slug, lang }: {
           <span aria-hidden>←</span> {lang.ui.all_opportunities}
         </Link>
 
+        {res.autoSwitched && <LibrarySwitchNotice library={res.library} />}
+        {res.library.not_advice_note && (
+          <p className="not-advice" role="note">
+            <strong>Note:</strong> {res.library.not_advice_note}
+          </p>
+        )}
         <header className="detail-head">
           <div className="result-head">
             <span>{c.kind}</span>
