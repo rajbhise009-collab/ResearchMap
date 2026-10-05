@@ -534,6 +534,9 @@ def main() -> int:
     manifest = libraries_manifest()
     (out_root / "libraries.json").write_text(json.dumps(manifest, indent=2))
     print(f"→ libraries.json written ({len(manifest['libraries'])} libraries)")
+    from backend.app.api import site_facts
+    site_facts.build()
+    print("→ site-facts.json written")
     return 0
 
 

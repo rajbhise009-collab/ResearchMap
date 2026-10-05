@@ -36,10 +36,17 @@ from typing import Any
 TAGLINE = "Find research questions nobody has answered yet."
 
 WHAT_IT_DOES = (
-    "This tool reads a library of research papers and looks for gaps — "
-    "questions a paper said needed studying that nobody followed up on, "
-    "problems that several teams independently ran into, and methods from "
-    "one line of work that might solve a problem in another."
+    "This tool reads a library of research papers on one subject and looks "
+    "for gaps — questions a paper said needed studying that no later paper "
+    "in the library followed up on, problems that several teams ran into, "
+    "findings that appear to disagree, and methods from one line of work "
+    "that might help with a problem in another."
+)
+
+# Shown directly under the headline (which stays as written).
+HEADLINE_QUALIFIER = (
+    "Results come only from the papers in the selected library. They are a "
+    "starting point for reading, not a verdict."
 )
 
 LIBRARY_NAME = "Language-model reliability"
@@ -57,9 +64,9 @@ LIBRARY_SUMMARY = (
 # The honest boundary. One domain, because building another costs real
 # money and hours of batch processing.
 ONE_LIBRARY_NOTE = (
-    "This tool searches one library at a time. Building a library means "
-    "reading thousands of papers with an AI model — that costs real money "
-    "and takes hours, so only this one exists so far."
+    "This tool searches one library at a time. Each library is built one "
+    "subject at a time by reading its papers with an AI model, so only a "
+    "few subjects are covered so far."
 )
 
 # --------------------------------------------------------------------------
@@ -166,14 +173,14 @@ def kind_for(card: dict[str, Any]) -> dict[str, str]:
 
 # The empty state for disagreements is a finding, not a blank panel.
 NO_DISAGREEMENTS = {
-    "headline": "No disagreements found — and that is a real result.",
+    "headline": "No disagreements found among the pairs we checked.",
     "body": (
-        "We checked every pair of papers that could plausibly disagree, and "
-        "found none that actually contradict each other. This is not a bug or "
-        "an empty database. The papers in this library largely agree with each "
-        "other; they build on shared assumptions rather than arguing. As the "
-        "library grows the number of pairs we check grows much faster than the "
-        "number of real disagreements, which so far has stayed at zero."
+        "We compared pairs of very similar claims from different papers in "
+        "this library, and none was flagged as conflicting. That is a "
+        "measurement, not proof that the papers agree: two findings that "
+        "disagree but are worded differently are never compared, and papers "
+        "outside the library are not included. Why this library shows none "
+        "has not been established."
     ),
     "link_label": "Read how we checked",
 }
@@ -500,7 +507,7 @@ SEARCH = {
             "only covers {covers}."
         ),
         "what_we_have": "What this library does cover",
-        "build_cta": "Build a library for this",
+        "build_cta": "Want a library on this subject?",
     },
     "no_results": {
         "label": "Nothing matched",
@@ -512,7 +519,15 @@ SEARCH = {
 # The honest cost of the thing we're offering. Non-functional for now, and
 # the UI says so.
 BUILD_LIBRARY = {
-    "title": "Building a new library",
+    "title": "Libraries on new subjects",
+    # The only text the consumer view shows. Cost, time and the pre-flight
+    # predictor are developer-mode details (?dev=1): nothing here may imply
+    # a purchase or a build that runs from this page.
+    "consumer_body": (
+        "Libraries are built one subject at a time, and there isn't one on "
+        "this subject yet. If you'd like one, you can suggest it on the "
+        "contact page."
+    ),
     "body": (
         "A library is built by collecting papers on a subject and reading each "
         "one with an AI model to pull out what it found, what didn't work, and "
@@ -535,10 +550,10 @@ BUILD_LIBRARY = {
     ),
     "predictor_note": (
         "The pre-flight score you see is a hypothesis-driven diagnostic, "
-        "not a validated predictor. Its measured record so far is 1 of 3 "
-        "domains correct (LLM-cal correct; diet and fairness both missed, "
-        "one confounded by partial extraction). Reading it as a guarantee "
-        "would be wrong."
+        "not a validated predictor. On the three libraries built so far "
+        "its ranking did not match what was found (see the "
+        "domain-coherence-predictor working note). Reading it as a "
+        "guarantee would be wrong."
     ),
 }
 
@@ -570,10 +585,7 @@ PRIVACY_NOTE = {
         "roughly what country, no cookies, no cross-site tracking, no "
         "identifiers). What you type into the search box runs against "
         "an index in your browser — the query itself is NOT sent to "
-        "any server. A scrubber for refused / out-of-domain queries "
-        "exists in the code but is not wired to anything — custom "
-        "events require Vercel Pro, which this deploy does not use. "
-        "Downloads (.bib, .csv) are generated locally. The local "
+        "any server. Downloads (.bib, .csv) are generated locally. The local "
         ".app / .command versions and ?dev=1 opt out of analytics "
         "entirely."
     ),
@@ -584,6 +596,14 @@ PRIVACY_NOTE = {
 # backend/app/api/multi_library_export.py::LIBRARIES; anything visible
 # to the reader lives here so the translation-layer honesty tests can
 # police it.
+def _site_name() -> str:
+    """The site name lives in frontend/site.config.json (one place to rename)."""
+    import json as _json
+    from pathlib import Path as _Path
+    f = _Path(__file__).resolve().parents[3] / "frontend" / "site.config.json"
+    return _json.loads(f.read_text())["siteName"]
+
+
 # Paper counts for the multi-domain libraries come from their corpus files,
 # never a literal (a merge changes them).
 def _domain_n_papers(slug: str) -> int:
@@ -655,9 +675,10 @@ ATTRIBUTION = {
 }
 
 UI = {
-    "product_name": "ResearchMap",
+    "product_name": _site_name(),
     "tagline": TAGLINE,
     "what_it_does": WHAT_IT_DOES,
+    "headline_qualifier": HEADLINE_QUALIFIER,
     "library_name": LIBRARY_NAME,
     "library_covers": LIBRARY_COVERS,
     "library_summary": LIBRARY_SUMMARY,

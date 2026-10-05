@@ -1,0 +1,120 @@
+import Link from "next/link";
+import { getSiteFacts } from "../../lib/data";
+import { pageMeta } from "../../lib/meta";
+import { site } from "../../lib/site";
+
+export const metadata = pageMeta({
+  title: "Method",
+  description: `How ${site.siteName} reads papers, what was checked by hand and by whom, and the known limits of each library.`,
+  path: "/method/",
+});
+
+const nm = (v: number | null | undefined) => (v === null || v === undefined ? "not measured" : String(v));
+
+export default function Method() {
+  const facts = getSiteFacts();
+  return (
+    <article className="trust">
+      <h1>Method</h1>
+      <p className="lede">
+        The rule behind the whole project: a language model only turns paper text into
+        structured notes, and (for possible disagreements) answers one narrow question about
+        one pair of claims at a time. Everything that counts, ranks or decides what to show is
+        ordinary code that anyone can read in the public source.
+      </p>
+
+      <h2>The pipeline</h2>
+      <ol>
+        <li><strong>Collect.</strong> Papers on one subject are gathered from OpenAlex and
+          sorted into on-topic, borderline and off-topic by fixed keyword rules (venue, field,
+          and whether the subject&apos;s key terms appear together). Off-topic papers are
+          dropped.</li>
+        <li><strong>Read.</strong> A Google Gemini model reads each paper — the full text where
+          an open-access copy could be found, otherwise the abstract — and records its claims,
+          stated limits, methods and suggested next steps.</li>
+        <li><strong>Compare.</strong> Code looks for questions a paper raised that no later
+          paper in the library took up, and for limits that recur. For disagreements, code
+          shortlists pairs of claims whose wording is very similar; only shortlisted pairs are
+          ever checked, and the model is asked about each pair on its own.</li>
+        <li><strong>Order.</strong> Code ranks results by fixed rules. The model&apos;s own
+          confidence is never used in a score.</li>
+        <li><strong>Check.</strong> Flagged disagreements are checked by hand (below). Doubts
+          about our own checks are published, not hidden.</li>
+      </ol>
+
+      <h2>What each library contains</h2>
+      <table>
+        <thead><tr><th>Library</th><th>Papers</th><th>Claims read from</th><th>Full text</th><th>Abstract only</th><th>Built</th></tr></thead>
+        <tbody>
+          {facts.libraries.map((l) => (
+            <tr key={l.slug}>
+              <td>{l.name}</td><td>{l.papers}</td>
+              <td>{l.claims_read === null ? "not measured" : `${l.claims_read} of ${l.papers}`}</td>
+              <td>{l.full_text}</td><td>{l.abstract_only}</td>
+              <td>{l.built ?? "not measured"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h2>What was checked by hand, and by whom</h2>
+      <table>
+        <thead><tr><th>Library</th><th>Similar claim pairs checked</th><th>Flagged as disagreeing</th><th>Kept after checking</th><th>Set aside</th><th>How</th></tr></thead>
+        <tbody>
+          {facts.libraries.map((l) => {
+            const d = l.disagreement_check;
+            return (
+              <tr key={l.slug}>
+                <td>{l.name}</td>
+                <td>{d ? `${d.classified} of ${d.shortlisted}` : "not measured"}</td>
+                <td>{nm(d?.flagged)}</td>
+                <td>{nm(d?.confirmed)}</td>
+                <td>{nm(d?.set_aside)}</td>
+                <td>{d?.checked_how ?? (d && d.flagged === 0 ? "nothing was flagged" : "not measured")}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <p className="small">
+        All hand checks so far were done by the person who built the project, not by
+        independent experts. A blind review packet for the diet disagreements has been prepared
+        for outside experts but has not been sent.
+      </p>
+      {facts.libraries.some((l) => l.audit_doubts.length) && (
+        <>
+          <h2>Verdicts we now doubt</h2>
+          <ul>
+            {facts.libraries.flatMap((l) => l.audit_doubts.map((d, i) => (
+              <li key={`${l.slug}-${i}`}><strong>{l.short_name}:</strong> {d}</li>
+            )))}
+          </ul>
+        </>
+      )}
+
+      <h2>Known limits</h2>
+      <ul>
+        <li><strong>Partial reading.</strong>{" "}
+          {facts.libraries.map((l, i) => (
+            <span key={l.slug}>{i ? "; " : ""}{l.name}: {l.abstract_only} of {l.papers} papers read
+              from the abstract only</span>
+          ))}. A limit or next step mentioned only in the body of a paper can be missed.</li>
+        <li><strong>Only what is in the library.</strong> A question can look unanswered here
+          because the paper that answered it is not in the collection.</li>
+        <li><strong>Only similar pairs are compared.</strong> Two findings that disagree but
+          are worded differently are never shortlisted, so they are never checked. Zero
+          disagreements means none were found among the pairs checked, not that none exist.</li>
+        <li><strong>The model can misread.</strong> Notes are extracted by a language model and
+          can drop a condition or overstate a finding. Each result links to the paper so you
+          can check.</li>
+        <li><strong>Not yet validated.</strong> Whether the listed questions predict later
+          research has not been tested.</li>
+      </ul>
+      <p className="small muted">
+        The detailed working notes are on the <Link href="/library/">library page</Link>.
+        Numbers on this page are generated from the project&apos;s data files by a script in the
+        source code.
+      </p>
+    </article>
+  );
+}

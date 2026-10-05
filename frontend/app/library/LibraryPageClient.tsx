@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { DevKV } from "../components/DevMode";
 import { useLibraryData } from "../components/useLibraryData";
-import type { Stats, LanguagePack } from "../../lib/types";
+import type { Stats, LanguagePack, SiteFactsLibrary } from "../../lib/types";
 
 interface OpportunitiesFile {
   total: number;
@@ -10,7 +10,9 @@ interface OpportunitiesFile {
 }
 interface FindingsFile { items: Array<{ slug: string; title: string }>; }
 
-export default function LibraryPageClient({ lang }: { lang: LanguagePack }) {
+export default function LibraryPageClient({ lang, facts }: {
+  lang: LanguagePack; facts: SiteFactsLibrary[];
+}) {
   const statsRes = useLibraryData<Stats>("stats.json");
   const oppsRes = useLibraryData<OpportunitiesFile>("opportunities.json");
   const findingsRes = useLibraryData<FindingsFile>("findings.json");
@@ -44,6 +46,15 @@ export default function LibraryPageClient({ lang }: { lang: LanguagePack }) {
           What is in the {library?.short_name ?? "this"} library, what we could
           read of it, and what the tool found when it looked.
         </p>
+        {(() => {
+          const f = library ? facts.find((x) => x.slug === library.slug) : undefined;
+          return f ? (
+            <p className="library-built">
+              Library built {f.built ?? "(date not measured)"} · {f.papers} papers ·
+              {" "}claims read from {f.claims_read ?? "not measured"} of {f.papers}
+            </p>
+          ) : null;
+        })()}
         {library?.not_advice_note && (
           <p className="not-advice" role="note">
             <strong>Note:</strong> {library.not_advice_note}

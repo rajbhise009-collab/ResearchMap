@@ -1,0 +1,82 @@
+{
+  "generated_by": "backend/app/api/site_facts.py",
+  "libraries": [
+    {
+      "slug": "llm-calibration",
+      "name": "Language-model reliability",
+      "short_name": "LLM calibration",
+      "blurb": "How language models express confidence, when they should refuse to answer, how their uncertainty is measured, and why they state false things as fact.",
+      "built": "2026-07-30",
+      "built_basis": "file date of the library's frozen gap list (data/reasoning/opportunities.jsonl)",
+      "papers": 113,
+      "claims_read": 113,
+      "full_text": 67,
+      "abstract_only": 46,
+      "gap_cards": 76,
+      "disagreement_check": {
+        "shortlisted": 437,
+        "classified": 437,
+        "flagged": 2,
+        "hand_checked": null,
+        "confirmed": 0,
+        "set_aside": 2,
+        "checked_how": "both flags set aside after a regime-context re-check (different experimental conditions)"
+      },
+      "audit_doubts": [],
+      "not_advice": false
+    },
+    {
+      "slug": "diet-and-mortality",
+      "name": "Diet and all-cause mortality",
+      "short_name": "Diet & mortality",
+      "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
+      "built": "2026-10-02",
+      "built_basis": "last run of the disagreement check over the final corpus",
+      "papers": 100,
+      "claims_read": 100,
+      "full_text": 17,
+      "abstract_only": 83,
+      "gap_cards": 5,
+      "disagreement_check": {
+        "shortlisted": 152,
+        "classified": 152,
+        "flagged": 10,
+        "hand_checked": 10,
+        "confirmed": 5,
+        "set_aside": 5,
+        "checked_how": "by hand, by the project's builder, against the two papers' abstracts; not independent expert review"
+      },
+      "audit_doubts": [
+        "We doubt our own \"disagreement\" verdict on red meat / stroke: one paper reports no link while the other gives a risk per 100 g a day \u2014 the same kind of difference in how results were measured that got the triglyceride pair set aside. The verdict is unchanged; the pair has been added to a packet for expert review (not yet sent).",
+        "We doubt our own \"disagreement\" verdict on red meat / type 2 diabetes: one paper is about unprocessed red meat and the other about red meat in general, which may not be the same exposure. The verdict is unchanged; the pair has been added to a packet for expert review (not yet sent)."
+      ],
+      "not_advice": true
+    },
+    {
+      "slug": "ml-fairness",
+      "name": "Algorithmic fairness in machine learning",
+      "short_name": "ML fairness",
+      "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
+      "built": "2026-10-04",
+      "built_basis": "last run of the disagreement check over the final corpus",
+      "papers": 99,
+      "claims_read": 99,
+      "full_text": 50,
+      "abstract_only": 49,
+      "gap_cards": 0,
+      "disagreement_check": {
+        "shortlisted": 91,
+        "classified": 91,
+        "flagged": 0,
+        "hand_checked": 0,
+        "confirmed": 0,
+        "set_aside": 0,
+        "checked_how": null
+      },
+      "audit_doubts": [
+        "123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted."
+      ],
+      "not_advice": false
+    }
+  ]
+}

@@ -10,6 +10,7 @@
 import { useEffect, useState } from "react";
 import { useLibraries, useCurrentLibrary, LibrarySwitcher } from "./LibrarySwitcher";
 import { asset } from "../../lib/basePath";
+import type { SiteFactsLibrary } from "../../lib/types";
 
 interface LibStats {
   papers?: number;
@@ -26,13 +27,16 @@ interface LibStats {
   note?: string;
 }
 
-export default function LibraryScopedHero({ tagline, whatItDoes }: {
+export default function LibraryScopedHero({ tagline, whatItDoes, qualifier, facts }: {
   tagline: string;
   whatItDoes: string;
+  qualifier?: string;
+  facts: SiteFactsLibrary[];
 }) {
   const libraries = useLibraries();
   const current = useCurrentLibrary(libraries);
   const [stats, setStats] = useState<LibStats | null>(null);
+  const fact = current ? facts.find((f) => f.slug === current.slug) : undefined;
 
   useEffect(() => {
     if (!current) return;
@@ -54,11 +58,18 @@ export default function LibraryScopedHero({ tagline, whatItDoes }: {
       <div className="hero">
         <div className="eyebrow">{eyebrow}</div>
         <h1>{tagline}</h1>
+        {qualifier && <p className="hero-qualifier">{qualifier}</p>}
         <p className="lede">{whatItDoes}</p>
         {current && (
           <p className="covers">
             <strong>{current.name}.</strong>{" "}
             {current.blurb}
+          </p>
+        )}
+        {fact && (
+          <p className="library-built">
+            Library built {fact.built ?? "(date not measured)"} · {fact.papers} papers ·
+            {" "}claims read from {fact.claims_read ?? "not measured"} of {fact.papers}
           </p>
         )}
         {current?.not_advice_note && (
@@ -106,21 +117,15 @@ export default function LibraryScopedHero({ tagline, whatItDoes }: {
             </div>
           )}
           <div>
-            <dt>{stats?.n_confirmed_contradictions != null
-                    ? "Confirmed disagreements"
-                    : "Gaps found"}</dt>
-            <dd>
-              <span className="num tnum">
-                {stats?.n_confirmed_contradictions != null
-                  ? stats.n_confirmed_contradictions
-                  : (stats?.scorer_yields
-                      ? Object.values(stats.scorer_yields)
-                          .reduce<number>((a, b) => a + (Number(b) || 0), 0)
-                        - Number(stats.scorer_yields.structural_holes_substantive ?? 0)
-                      : "…")}
-              </span>
-            </dd>
+            <dt>Results you can open</dt>
+            <dd><span className="num tnum">{fact?.gap_cards ?? "…"}</span></dd>
           </div>
+          {stats?.n_confirmed_contradictions != null && (
+            <div>
+              <dt>Disagreements kept after checking</dt>
+              <dd><span className="num tnum">{stats.n_confirmed_contradictions}</span></dd>
+            </div>
+          )}
         </dl>
         {stats?.extraction_coverage_note && (
           <p className="small muted coverage-note">
