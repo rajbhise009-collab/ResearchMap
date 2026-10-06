@@ -10,7 +10,8 @@ import path from "path";
 const root = path.dirname(new URL(import.meta.url).pathname);
 const FE = path.resolve(root, "..");
 const OUT = path.join(FE, "out");
-const cfg = JSON.parse(fs.readFileSync(path.join(FE, "site.config.json"), "utf8"));
+// SITE_CONFIG overrides the config path (used by tests).
+const cfg = JSON.parse(fs.readFileSync(process.env.SITE_CONFIG || path.join(FE, "site.config.json"), "utf8"));
 const results = [];
 const check = (ok, label, detail = "") => results.push({ ok, label, detail });
 

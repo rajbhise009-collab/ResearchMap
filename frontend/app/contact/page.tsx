@@ -1,5 +1,6 @@
 import { pageMeta } from "../../lib/meta";
-import { site, contactRoutes } from "../../lib/site";
+import { site } from "../../lib/site";
+import { contactContent } from "../../lib/contact";
 
 export const metadata = pageMeta({
   title: "Contact",
@@ -8,7 +9,7 @@ export const metadata = pageMeta({
 });
 
 export default function Contact() {
-  const { email, issues } = contactRoutes();
+  const { lines, none } = contactContent(site);
   return (
     <article className="trust">
       <h1>Contact</h1>
@@ -16,21 +17,24 @@ export default function Contact() {
         Found a result that looks wrong, a broken link, or a subject you would like a library
         for? Please tell us.
       </p>
-      {email || issues ? (
-        <ul>
-          {email && <li>Email: <a href={`mailto:${email}`}>{email}</a></li>}
-          {issues && <li>Or open an issue on GitHub: <a href={issues}>{issues.replace(/^https:\/\//, "")}</a></li>}
-        </ul>
+      {none ? (
+        <p>{none}</p>
       ) : (
-        <p>A contact address has not been set up yet.</p>
+        <ul>
+          {lines.map((l) => (
+            <li key={l.href}>{l.lead} <a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
       )}
       {(site.authorName || site.affiliation) && (
         <p className="small muted">
           {[site.authorName, site.affiliation].filter(Boolean).join(" · ")}
         </p>
       )}
-      <p className="small muted">When reporting a result, the page address is the most useful
-        thing to include.</p>
+      {!none && (
+        <p className="small muted">When reporting a result, the page address is the most useful
+          thing to include.</p>
+      )}
     </article>
   );
 }

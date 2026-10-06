@@ -30,12 +30,3 @@ export function absUrl(path: string, lib?: string | null): string {
   const q = lib ? `?lib=${encodeURIComponent(lib)}` : "";
   return `${SITE_URL}${p}${q}`;
 }
-
-/** Contact route per the site rule: email if configured, GitHub Issues only
- *  if the repository is public, otherwise nothing. */
-export function contactRoutes(): { email: string | null; issues: string | null } {
-  const email = site.contactEmail.trim() || null;
-  const issues = site.repoIsPublic && site.repoUrl.trim()
-    ? `${site.repoUrl.replace(/\/+$/, "")}/issues` : null;
-  return { email, issues };
-}
