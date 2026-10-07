@@ -93,15 +93,25 @@ def _caveats(scorer, opp, supporting, confirm_status, n_papers) -> list[Caveat]:
     return cav
 
 
-def build_evidence_cards(corpus: ReasoningCorpus | None = None) -> list[EvidenceCard]:
+def build_evidence_cards(corpus: ReasoningCorpus | None = None, *,
+                         scorers: list[str] | None = None,
+                         confirmations_path=None,
+                         scorer_kwargs: dict[str, dict] | None = None) -> list[EvidenceCard]:
+    """Defaults reproduce LLM calibration exactly. A multi-domain library
+    passes its own corpus, the scorers it ran, its confirmations file and
+    per-scorer arguments (e.g. structural-hole k scaled with N)."""
     corpus = corpus or load_reasoning_corpus()
     L = _lookups(corpus)
     n_papers = len(corpus.papers)
-    conf = json.loads(CONFIRMATIONS.read_text()) if CONFIRMATIONS.exists() else {}
+    cp = confirmations_path or CONFIRMATIONS
+    conf = json.loads(cp.read_text()) if cp.exists() else {}
+    kwargs = scorer_kwargs or {}
 
     tagged: list[tuple[str, Opportunity]] = []
     for name, fn in S.SCORERS.items():
-        for o in fn(corpus):
+        if scorers is not None and name not in scorers:
+            continue
+        for o in fn(corpus, **kwargs.get(name, {})):
             tagged.append((name, o))
     tagged.sort(key=lambda t: -(t[1].score * t[1].confidence))
 
