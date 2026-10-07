@@ -78,6 +78,48 @@ def _disagreement(slug: str) -> dict | None:
                             "abstracts; not independent expert review") if v else None}
 
 
+# Result types in plain words, in the order the site lists them.
+RESULT_TYPES = [
+    ("unresolved_contradictions", "disagreement between papers", "disagreements between papers"),
+    ("persistent_limitations", "recurring limitation", "recurring limitations"),
+    ("structural_holes", "unexplored connection", "unexplored connections"),
+    ("orphaned_future_work", "open question", "open questions"),
+]
+ZERO_NOTE = ("none were found among the papers read, which is not the same as "
+             "none existing")
+DISJOINT_NOTE = ("A fifth, experimental check (papers linked only through a third "
+                 "paper) is switched off in every library until it can be validated.")
+
+
+def _results(st: dict, n_cards: int) -> tuple[list[dict], int]:
+    y = st.get("scorer_yields") or {}
+    skipped = st.get("scorers_skipped") or {}
+    rows = []
+    for key, one, many in RESULT_TYPES:
+        if key in skipped:
+            rows.append({"type": key, "count": None, "label": many,
+                         "note": f"not checked: {skipped[key]}"})
+            continue
+        n = int(y.get(key, 0) or 0)
+        rows.append({"type": key, "count": n, "label": one if n == 1 else many,
+                     "note": ZERO_NOTE if n == 0 else None})
+    total = sum(r["count"] or 0 for r in rows)
+    if total != n_cards:
+        raise ValueError(f"result breakdown {total} != result cards {n_cards}")
+    return rows, total
+
+
+def _check_line(dc: dict | None) -> str | None:
+    if not dc:
+        return None
+    if dc["classified"] == dc["shortlisted"]:
+        return (f"The disagreement check compared every pair of closely similar claims from "
+                f"different papers ({dc['shortlisted']} pairs); pairs worded differently are "
+                "never compared.")
+    return (f"The disagreement check has compared {dc['classified']} of {dc['shortlisted']} "
+            "pairs of closely similar claims so far.")
+
+
 def build() -> dict:
     manifest = _j(PUB / "libraries.json")
     builds = _builds()
@@ -86,9 +128,10 @@ def build() -> dict:
         d = _lib_dir(lib["snapshot_path"])
         st = _j(d / "stats.json")
         opps = _j(d / "opportunities.json")
-        n_gaps = opps.get("total", len(opps.get("items", [])))
-        audit = opps.get("audit") or {}
-        visible = audit.get("confirmed", n_gaps) if audit else n_gaps
+        visible = sum(1 for it in opps.get("items", [])
+                      if it.get("verdict") in (None, "genuine"))
+        results, total = _results(st, visible)
+        dc = _disagreement(lib["slug"])
         libs.append({
             "slug": lib["slug"], "name": lib["name"], "short_name": lib["short_name"],
             "blurb": lib["blurb"],
@@ -98,7 +141,11 @@ def build() -> dict:
             "claims_read": st.get("n_extractions"),
             "full_text": st["full_text"], "abstract_only": st["abstract_only"],
             "gap_cards": visible,
-            "disagreement_check": _disagreement(lib["slug"]),
+            "results": results,
+            "results_total": total,
+            "check_line": _check_line(dc),
+            "not_run": DISJOINT_NOTE,
+            "disagreement_check": dc,
             "audit_doubts": st.get("audit_doubts", []),
             "not_advice": bool(lib.get("not_advice_note")),
         })

@@ -5,7 +5,7 @@
   "n_extractions": 100,
   "extraction_coverage_note": "Claims read from 100 of 100 papers.",
   "zero_finding_note": null,
-  "disagreement_check_note": "The disagreement check compared every shortlisted pair of claims across all 100 papers read.",
+  "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [
     "We doubt our own \"disagreement\" verdict on red meat / stroke: one paper reports no link while the other gives a risk per 100 g a day \u2014 the same kind of difference in how results were measured that got the triglyceride pair set aside. The verdict is unchanged; the pair has been added to a packet for expert review (not yet sent).",
     "We doubt our own \"disagreement\" verdict on red meat / type 2 diabetes: one paper is about unprocessed red meat and the other about red meat in general, which may not be the same exposure. The verdict is unchanged; the pair has been added to a packet for expert review (not yet sent)."
@@ -183,15 +183,16 @@
   "scorer_yields": {
     "unresolved_contradictions": 5,
     "persistent_limitations": 2,
-    "orphaned_future_work": 0,
+    "orphaned_future_work": 5,
     "structural_holes": 0,
     "structural_holes_substantive": 0
   },
+  "scorers_skipped": {},
   "core": 67,
   "peripheral": 33,
-  "spend_to_date_usd": 5.8514,
+  "spend_to_date_usd": 5.9035,
   "spend_note": "From the project's spend ledger: extraction, disagreement-check and hedge-classifier calls for this library. Embedding calls made before 2026-10-04 were not recorded and are not included.",
   "manifest_hash": null,
   "relationships": 10,
-  "note": "Multi-domain library \u2014 claims extracted from 100 of 100 papers. Scorers run: contradictions (hand-audited) and a code-only persistent-limitations count. Not run: structural holes (needs an embeddings + addressal pipeline) and orphaned-future-work matching (paid; skipped by design)."
+  "note": "Multi-domain library \u2014 claims extracted from 100 of 100 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

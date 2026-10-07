@@ -371,7 +371,8 @@ def headline(card: dict[str, Any]) -> str:
         m = re.search(r"'([^']+)'", card.get("title", ""))
         method = m.group(1) if m else "A method from another line of work"
         papers = _trail(card, "paper")
-        target = papers[1].get("title") if len(papers) > 1 else None
+        # Evidence-trail paper items carry the title in `text`.
+        target = (papers[1].get("title") or papers[1].get("text")) if len(papers) > 1 else None
         if target:
             return f"“{method}” might solve a problem reported by “{_sentence(target, 120)}”"
         return f"“{method}” might solve a problem reported in another line of work"

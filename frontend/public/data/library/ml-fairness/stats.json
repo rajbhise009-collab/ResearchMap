@@ -5,7 +5,7 @@
   "n_extractions": 99,
   "extraction_coverage_note": "Claims read from 99 of 99 papers.",
   "zero_finding_note": "Zero here means none were found among the papers read. It does not mean none exist.",
-  "disagreement_check_note": "The disagreement check compared every shortlisted pair of claims across all 99 papers read.",
+  "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [
     "123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted."
   ],
@@ -263,14 +263,17 @@
     "unresolved_contradictions": 0,
     "persistent_limitations": 1,
     "orphaned_future_work": 0,
-    "structural_holes": 0,
+    "structural_holes": 2,
     "structural_holes_substantive": 0
+  },
+  "scorers_skipped": {
+    "orphaned_future_work": "seeing whether later papers took up each paper's suggested next steps needs a paid language-model pass that did not fit this run's budget, so open questions are not listed for this library yet"
   },
   "core": 99,
   "peripheral": 0,
-  "spend_to_date_usd": 5.1101,
+  "spend_to_date_usd": 5.1239,
   "spend_note": "From the project's spend ledger: extraction, disagreement-check and hedge-classifier calls for this library. Embedding calls made before 2026-10-04 were not recorded and are not included.",
   "manifest_hash": null,
   "relationships": 0,
-  "note": "Multi-domain library \u2014 claims extracted from 99 of 99 papers. Scorers run: contradictions (hand-audited) and a code-only persistent-limitations count. Not run: structural holes (needs an embeddings + addressal pipeline) and orphaned-future-work matching (paid; skipped by design)."
+  "note": "Multi-domain library \u2014 claims extracted from 99 of 99 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes. Skipped: orphaned future work."
 }

@@ -346,6 +346,17 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "gap_type": "disagreement", "consumer": card["consumer"],
             "verdict": verdict,
         })
+    # Phase-4 scorer cards (persistent limitations, structural holes and,
+    # where the matcher ran, orphaned future work) — same scorers and
+    # translation as LLM calibration (backend/app/api/library_cards.py).
+    from backend.app.api.library_cards import scorer_cards
+    extra_cards, extra_yields, skipped_scorers = scorer_cards(slug)
+    for j, card in enumerate(extra_cards, len(opportunity_summaries) + 1):
+        (opp_dir / f"{card['slug']}.json").write_text(json.dumps(card))
+        opportunity_summaries.append({
+            "id": card["slug"], "slug": card["slug"], "rank": j,
+            "gap_type": card["gap_type"], "consumer": card["consumer"],
+        })
     (lib_dir / "opportunities.json").write_text(json.dumps({
         "schema_version": "1.0.0",
         "total": len(opportunity_summaries),
@@ -387,8 +398,8 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "papers_with_pending_pairs", "complete", "date", "shortlist_settings")}
         check_block["papers_covered"] = covered
         if cov.get("complete"):
-            check_note = ("The disagreement check compared every shortlisted pair "
-                          f"of claims across all {n_extracted} papers read.")
+            check_note = ("The disagreement check compared every pair of closely "
+                          "similar claims from different papers.")
         else:
             check_note = (f"The disagreement check has covered {covered} of the "
                           f"{n_extracted} papers read. Claim pairs involving the "
@@ -405,20 +416,6 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     strength = assertion_strength_distribution(exts) if exts else {}
     gap = gap_type_counts(exts) if exts else {}
 
-    # Code-only persistent-limitations count: a limitation category
-    # that recurs in ≥3 extracted papers (own_work scope) counts as a
-    # "persistent" one. Mirrors the LLM-cal scorer's minimum-paper
-    # threshold without running the full Phase-4 engine (which needs
-    # claim embeddings + addressal relations the multi-domain libs
-    # don't have yet).
-    from collections import defaultdict
-    cat_papers: dict[str, set] = defaultdict(set)
-    for ext in exts:
-        for lim in (ext.limitations or []):
-            if lim.source_scope == "this_work":
-                cat_papers[lim.normalized_category or "uncategorized"].add(
-                    ext.paper_id)
-    n_persistent = sum(1 for ps in cat_papers.values() if len(ps) >= 3)
 
     (lib_dir / "stats.json").write_text(json.dumps({
         "papers": len(entries), "full_text": n_full,
@@ -439,11 +436,9 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "contradiction_audit": audit_counts,
         "scorer_yields": {
             "unresolved_contradictions": audit_counts["confirmed"],
-            "persistent_limitations": n_persistent,
-            "orphaned_future_work": 0,    # paid, out of this iteration's budget
-            "structural_holes": 0,        # needs embeddings; deferred
-            "structural_holes_substantive": 0,
+            **extra_yields,
         },
+        "scorers_skipped": skipped_scorers,
         "core": sum(1 for e in entries if e.get("domain_centrality") == "core"),
         "peripheral": sum(1 for e in entries
                            if e.get("domain_centrality") == "peripheral"),
@@ -455,11 +450,12 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "manifest_hash": None,
         "relationships": len(contradictions),
         "note": (f"Multi-domain library — claims extracted from {n_extracted} "
-                 f"of {len(entries)} papers. Scorers run: contradictions "
-                 "(hand-audited) and a code-only persistent-limitations count. "
-                 "Not run: structural holes (needs an embeddings + addressal "
-                 "pipeline) and orphaned-future-work matching (paid; skipped "
-                 "by design)."),
+                 f"of {len(entries)} papers. Scorers run: disagreement check "
+                 "(hand-audited), " + ", ".join(
+                     k.replace("_", " ") for k, v in extra_yields.items()
+                     if k != "structural_holes_substantive")
+                 + (". Skipped: " + ", ".join(k.replace("_", " ") for k in skipped_scorers)
+                    if skipped_scorers else "") + "."),
     }, indent=2))
 
     # search-index.json — same shape as the LLM-cal library uses. The
