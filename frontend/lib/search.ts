@@ -253,7 +253,14 @@ export function search(index: SearchIndex, query: string, limit = 20,
 
   return {
     verdict, coverage, best, breadth, n_matched: hits.length,
-    hits: hits.slice(0, limit), known, unknown,
+    // Gaps and papers are shown in separate sections, so each gets its own
+    // cap: in a library where the query word is everywhere ("fair" in the
+    // fairness library), papers would otherwise crowd every gap out.
+    hits: [...hits.filter((h) => h.type === "opportunity").slice(0, limit),
+           ...hits.filter((h) => h.type !== "opportunity").slice(0, limit)]
+      .sort((a, b) => (b.score - a.score)
+        || ((a.type === "opportunity" ? 0 : 1) - (b.type === "opportunity" ? 0 : 1))),
+    known, unknown,
     expanded: [...qvec.keys()].sort(),
     typing: trailingIsPrefix,
     trailing_prefix: bestPrefix,

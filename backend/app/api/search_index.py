@@ -334,6 +334,13 @@ def build_index(opportunities: list[dict[str, Any]],
             ((t, w) for t, w in weights.items() if "__" in t),
             key=lambda kv: -kv[1])[:TOP_BIGRAMS_PER_DOC]
         top = dict(singles_sorted + bigrams_sorted)
+        # A document's own title (a gap's headline, a paper's title) is what
+        # a reader types. Its words always stay in the vector, at their
+        # computed weight, even when a very common word (e.g. "fairness" in
+        # the fairness library) would otherwise be cut by the top-N limit.
+        for t in tokenize(d["title"]):
+            if t in weights and t not in top:
+                top[t] = weights[t]
         norm = math.sqrt(sum(v * v for v in top.values())) or 1.0
         out_docs.append({
             "type": d["type"], "ref": d["ref"], "title": d["title"],
@@ -580,7 +587,12 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
 
     return {"verdict": verdict, "coverage": round(coverage, 4),
             "best": round(best, 5), "breadth": round(breadth, 4),
-            "hits": hits[:limit], "n_matched": len(hits),
+            # Mirrors lib/search.ts: gaps and papers capped separately
+            # (shown in separate sections), then merged in score order.
+            "hits": sorted([h for h in hits if h["type"] == "opportunity"][:limit]
+                           + [h for h in hits if h["type"] != "opportunity"][:limit],
+                           key=lambda h: (-h["score"], 0 if h["type"] == "opportunity" else 1)),
+            "n_matched": len(hits),
             "known": known, "unknown": unknown,
             "expanded": sorted(set(qvec)),
             "typing": trailing_is_prefix,
