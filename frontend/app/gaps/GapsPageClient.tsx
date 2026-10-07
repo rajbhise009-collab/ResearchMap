@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useLibraryData } from "../components/useLibraryData";
-import type { GapDoc, LanguagePack, Stats } from "../../lib/types";
+import type { GapDoc, LanguagePack, SiteFactsLibrary } from "../../lib/types";
+import LibrarySummary from "../components/LibrarySummary";
 import GapsClient from "./GapsClient";
 import { DevKV } from "../components/DevMode";
 
@@ -20,9 +21,10 @@ interface OpportunitiesFile {
   }>;
 }
 
-export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
+export default function GapsPageClient({ lang, facts }: {
+  lang: LanguagePack; facts: SiteFactsLibrary[];
+}) {
   const res = useLibraryData<OpportunitiesFile>("opportunities.json");
-  const stats = useLibraryData<Stats>("stats.json");
   const items = res.state === "ready" ? res.data.items : [];
   // Split by verdict. If the library has no audit (e.g. LLM-cal),
   // everything is treated as ready-to-show (verdict undefined ⇒ genuine).
@@ -44,18 +46,7 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
   const librarySlug = res.state === "ready" ? res.library.slug : null;
   const suffix = librarySlug ? `?lib=${encodeURIComponent(librarySlug)}` : "";
 
-  const coverageNote =
-    stats.state === "ready" && stats.data.extraction_coverage_note
-      ? stats.data.extraction_coverage_note
-      : null;
-  const zeroNote =
-    stats.state === "ready" && stats.data.zero_finding_note
-      ? stats.data.zero_finding_note
-      : null;
-  const checkNote =
-    stats.state === "ready" && stats.data.disagreement_check_note
-      ? stats.data.disagreement_check_note
-      : null;
+  const fact = librarySlug ? facts.find((f) => f.slug === librarySlug) : undefined;
 
   return (
     <>
@@ -71,15 +62,7 @@ export default function GapsPageClient({ lang }: { lang: LanguagePack }) {
           )}
           {res.state === "error" && "Couldn't load the gap list."}
         </p>
-        {coverageNote && (
-          <p className="coverage-note small muted">{coverageNote}</p>
-        )}
-        {checkNote && (
-          <p className="coverage-note small muted">{checkNote}</p>
-        )}
-        {zeroNote && (
-          <p className="coverage-note small muted">{zeroNote}</p>
-        )}
+        {fact && <LibrarySummary fact={fact} />}
         {res.state === "ready" && res.data.audit && (
           <DevKV title="Raw counts (classifier flags vs hand audit)"
                  data={res.data.audit} />

@@ -8,6 +8,13 @@ interface OpportunitiesFile {
   total: number;
   items: Array<{ slug: string; consumer: { kind_id: string } }>;
 }
+// Scorer type (site-facts.json) -> the reader-facing kind id (language pack).
+const SCORER_KIND: Record<string, string> = {
+  unresolved_contradictions: "disagreement",
+  persistent_limitations: "unaddressed_limitation",
+  structural_holes: "method_transfer",
+  orphaned_future_work: "unfollowed_future_work",
+};
 interface FindingsFile { items: Array<{ slug: string; title: string }>; }
 
 export default function LibraryPageClient({ lang, facts }: {
@@ -23,6 +30,7 @@ export default function LibraryPageClient({ lang, facts }: {
   const library = statsRes.state === "ready" ? statsRes.library
                     : oppsRes.state === "ready" ? oppsRes.library : null;
   const suffix = library ? `?lib=${encodeURIComponent(library.slug)}` : "";
+  const fact = library ? facts.find((x) => x.slug === library.slug) : undefined;
 
   const byKind = new Map<string, number>();
   for (const o of opps) {
@@ -46,15 +54,6 @@ export default function LibraryPageClient({ lang, facts }: {
           What is in the {library?.short_name ?? "this"} library, what we could
           read of it, and what the tool found when it looked.
         </p>
-        {(() => {
-          const f = library ? facts.find((x) => x.slug === library.slug) : undefined;
-          return f ? (
-            <p className="library-built">
-              Library built {f.built ?? "(date not measured)"} · {f.papers} papers ·
-              {" "}claims read from {f.claims_read ?? "not measured"} of {f.papers}
-            </p>
-          ) : null;
-        })()}
         {library?.not_advice_note && (
           <p className="not-advice" role="note">
             <strong>Note:</strong> {library.not_advice_note}
@@ -71,14 +70,9 @@ export default function LibraryPageClient({ lang, facts }: {
             {stats.abstract_only} we only had the summary — and that matters
             more than it sounds: {lang.abstract_only.text.toLowerCase()}
           </p>
-          {stats.extraction_coverage_note && (
-            <p className="small muted">{stats.extraction_coverage_note}</p>
-          )}
-          {stats.disagreement_check_note && (
-            <p className="small muted">{stats.disagreement_check_note}</p>
-          )}
+          {fact?.built && <p className="small muted">Library built {fact.built}.</p>}
           <p className="small">
-            <Link href={`/papers/${suffix}`}>Browse all {stats.papers} papers →</Link>
+            <Link href={`/papers/${suffix}`}>Browse the papers →</Link>
           </p>
         </section>
       )}
@@ -86,8 +80,9 @@ export default function LibraryPageClient({ lang, facts }: {
       <section className="block">
         <h2>What the tool found</h2>
         {kinds.map((k) => {
-          const n = byKind.get(k.id) || 0;
-          if (n === 0 && k.id === "disagreement") {
+          const r = fact?.results.find((x) => SCORER_KIND[x.type] === k.id);
+          const n = r?.count ?? (byKind.get(k.id) || 0);
+          if (r && r.count === 0 && k.id === "disagreement") {
             return (
               <div className="empty" key={k.id}>
                 <h3>{lang.no_disagreements.headline}</h3>
@@ -109,10 +104,15 @@ export default function LibraryPageClient({ lang, facts }: {
                   color: "var(--ink-strong)",
                   fontFamily: "var(--font-sans)",
                   fontSize: "var(--step-1)",
-                }}>{n}</strong>
+                }}>{r && r.count === null ? "—" : n}</strong>
                 <span>{k.name.toLowerCase()}</span>
               </div>
               <p style={{ margin: 0 }}>{k.long}</p>
+              {r?.note && (
+                <p className="small muted" style={{ marginTop: "var(--s-2)" }}>
+                  {r.note.charAt(0).toUpperCase() + r.note.slice(1)}.
+                </p>
+              )}
               {n > 0 && (
                 <p className="small" style={{ marginTop: "var(--s-3)" }}>
                   <Link href={`/gaps/${suffix}`}>See them →</Link>

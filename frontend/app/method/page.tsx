@@ -34,7 +34,7 @@ export default function Method() {
           stated limits, methods and suggested next steps.</li>
         <li><strong>Compare.</strong> Code looks for questions a paper raised that no later
           paper in the library took up, and for limits that recur. For disagreements, code
-          shortlists pairs of claims whose wording is very similar; only shortlisted pairs are
+          picks out pairs of claims whose wording is very similar; only those pairs are
           ever checked, and the model is asked about each pair on its own.</li>
         <li><strong>Order.</strong> Code ranks results by fixed rules. The model&apos;s own
           confidence is never used in a score.</li>
@@ -56,6 +56,35 @@ export default function Method() {
           ))}
         </tbody>
       </table>
+
+      <h2>What was found in each library</h2>
+      <table>
+        <thead><tr><th>Library</th><th>Results</th><th>By type</th></tr></thead>
+        <tbody>
+          {facts.libraries.map((l) => (
+            <tr key={l.slug}>
+              <td>{l.name}</td>
+              <td>{l.results_total}</td>
+              <td>
+                {l.results.map((r) => (
+                  <div key={r.type}>
+                    {r.count === null
+                      ? <>{r.label.charAt(0).toUpperCase() + r.label.slice(1)}: {r.note}.</>
+                      : <>{r.count} {r.label}{r.count === 0 ? ` (${r.note})` : ""}</>}
+                  </div>
+                ))}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="small">
+        Every library goes through the same four checks with the same thresholds. For the
+        method-transfer check, the number of topic groups grows with the size of the library,
+        and the strongest leads (at most 15 per library) are checked one by one by a language
+        model, which labels each as substantive, trivial or not addressing the problem. {" "}
+        {facts.libraries[0]?.not_run}
+      </p>
 
       <h2>What was checked by hand, and by whom</h2>
       <table>
@@ -102,7 +131,7 @@ export default function Method() {
         <li><strong>Only what is in the library.</strong> A question can look unanswered here
           because the paper that answered it is not in the collection.</li>
         <li><strong>Only similar pairs are compared.</strong> Two findings that disagree but
-          are worded differently are never shortlisted, so they are never checked. Zero
+          are worded differently are never picked out, so they are never checked. Zero
           disagreements means none were found among the pairs checked, not that none exist.</li>
         <li><strong>The model can misread.</strong> Notes are extracted by a language model and
           can drop a condition or overstate a finding. Each result links to the paper so you

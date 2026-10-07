@@ -59,7 +59,6 @@ export default function Ask({ lang, gaps, papers }: {
     { slug: string; name: string } | null>(null);
   const [activeLib, setActiveLib] = useState<
     { slug: string; name: string; blurb?: string } | null>(null);
-  const [libStats, setLibStats] = useState<any | null>(null);
 
   // Preload the index so the first keystroke is already answered.
   // Reads the currently-selected library's search-index (via ?lib=…);
@@ -102,14 +101,10 @@ export default function Ask({ lang, gaps, papers }: {
       // Fetch opportunities + papers for the ACTIVE library so the
       // result-lookup maps are keyed on this library's slugs/wids.
       try {
-        const [oppResp, papResp, statsResp] = await Promise.all([
+        const [oppResp, papResp] = await Promise.all([
           fetch(asset(`${snapshotPath}/opportunities.json`)),
           fetch(asset(`${snapshotPath}/papers.json`)),
-          fetch(asset(`${snapshotPath}/stats.json`)),
         ]);
-        if (statsResp.ok && live) {
-          setLibStats(await statsResp.json());
-        }
         if (oppResp.ok && live) {
           const oj = await oppResp.json();
           setLiveGaps((oj.items || []).map((o: any) => ({
@@ -451,10 +446,10 @@ export default function Ask({ lang, gaps, papers }: {
                         ? `${paperHits.length} paper${paperHits.length === 1 ? "" : "s"} match${paperHits.length === 1 ? "es" : ""} below.`
                         : "No matching papers either."}
                     </p>
-                    {libStats?.zero_finding_note && (
+                    {liveGaps !== null && liveGaps.length === 0 && (
                       <p className="small muted">
-                        {libStats.zero_finding_note}{" "}
-                        {libStats.extraction_coverage_note}
+                        None were found among the papers read, which is not the
+                        same as none existing.
                       </p>
                     )}
                   </section>

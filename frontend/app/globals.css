@@ -1459,3 +1459,34 @@ main#main { min-height: 100vh; }
   background: var(--note-bg);
   color: var(--ink);
 }
+
+/* Library summary: one visible line + "How this library was built" toggle */
+.lib-summary { margin-top: var(--s-3); }
+.lib-summary-line {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  color: var(--ink-strong);
+}
+.lib-summary-zero { margin: var(--s-2) 0 0; color: var(--ink-soft); }
+.lib-summary-toggle {
+  margin-top: var(--s-3);
+  padding: var(--s-2) 0;
+  min-height: 44px;            /* touch target */
+  background: none;
+  border: 0;
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.lib-summary-panel ul {
+  margin: var(--s-2) 0 0;
+  padding-left: 1.1em;
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+.lib-summary-panel li { margin: var(--s-2) 0; }

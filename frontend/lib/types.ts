@@ -299,5 +299,9 @@ export interface SiteFactsLibrary {
   } | null;
   audit_doubts: string[];
   not_advice: boolean;
+  results: Array<{ type: string; count: number | null; label: string; note: string | null }>;
+  results_total: number;
+  check_line: string | null;
+  not_run: string;
 }
 export interface SiteFacts { generated_by: string; libraries: SiteFactsLibrary[]; }

@@ -1,4 +1,4 @@
-import { getLanguage } from "../../lib/data";
+import { getLanguage, getSiteFacts } from "../../lib/data";
 import GapsPageClient from "./GapsPageClient";
 import { pageMeta } from "../../lib/meta";
 
@@ -9,5 +9,5 @@ export const metadata = pageMeta({
 });
 
 export default function GapsPage() {
-  return <GapsPageClient lang={getLanguage()} />;
+  return <GapsPageClient lang={getLanguage()} facts={getSiteFacts().libraries} />;
 }
