@@ -303,14 +303,18 @@ edited.
 | `contradiction_diet-and-mortality` | 267 | $0.8849 | ₹74.33 |
 | `contradiction_ml-fairness` | 218 | $0.6878 | ₹57.77 |
 | `correction_mock_test_entries` | 1 | $-0.0057 | ₹-0.48 |
+| `embed_fw_diet-and-mortality` | 1 | $0.0041 | ₹0.34 |
+| `embed_fw_ml-fairness` | 2 | $0.0098 | ₹0.83 |
 | `extract_diet` | 101 | $4.6220 | ₹388.25 |
 | `extract_fairness` | 75 | $3.5563 | ₹298.73 |
 | `extract_fairness_batch` | 28 | $0.8660 | ₹72.75 |
+| `fw_match_diet-and-mortality` | 23 | $0.0481 | ₹4.04 |
 | `hedge_diet-and-mortality` | 200 | $0.3444 | ₹28.93 |
+| `hole_confirm_ml-fairness` | 2 | $0.0039 | ₹0.33 |
 | `unknown` | 200 | $0.0060 | ₹0.50 |
-| **total (ledger, after corrections)** | 1090 | **$10.9618** | **₹920.79** |
-| ceiling (`cap_inr`) |  | $10.9618 | ₹920.79 |
-| remaining |  |  | ₹0.00 |
+| **total (ledger, after corrections)** | 1118 | **$11.0277** | **₹926.33** |
+| ceiling (`cap_inr`) |  | $11.7857 | ₹990.00 |
+| remaining |  |  | ₹63.67 |
 <!-- /gen:spend -->
 
 The project budgets against this ledger, which records more spend than
@@ -331,10 +335,37 @@ iteration 5 on they are recorded (estimated tokens, upper-bound rate).
   100 of 100 in iterations 3 and 4. ML fairness has 99 papers since the
   2026-10-04 merge of a duplicate (`duplicate-check-v2.md`).
 
-## 8. What was skipped and why
+## 8. All four scorers on the new libraries (2026-10-07)
 
-- **Structural-hole LLM confirmations** — cut (a). Shortlists still
-  fire deterministically over extractions; the LLM confirm step is
-  a distinct rerunnable pass. Not run for the new libraries.
-- **Future-work matching** — same rerunnable class; not run for the new
-  libraries. Raw future-work item counts are in §5.
+The two new libraries now run the same scorers, thresholds and plain-language
+translation as LLM calibration (`backend/app/api/library_cards.py`,
+`backend/app/reasoning/library_corpus.py`). Results per scorer:
+
+<!-- gen:scorer-yields -->
+| library | disagreements kept after checking | recurring limitations | method-transfer leads | unfollowed questions | total results |
+|:--|--:|--:|--:|--:|--:|
+| LLM calibration | 0 | 1 | 12 | 63 | 76 |
+| Diet & mortality | 5 | 2 | 0 | 5 | 12 |
+| ML fairness | 0 | 1 | 2 | skipped (budget) | 3 |
+<!-- /gen:scorer-yields -->
+
+- **Persistent limitations** — free, code only, same minimum of 3
+  independent papers.
+- **Structural holes** — topic groups k = max(2, round(√N)) = 10 (the
+  scaling study's correction), the same similarity threshold (0.72) and
+  weak-bridge rule (at most 2 citation edges between groups). Diet has 1
+  method-type claim among its 562, so the method-transfer scorer has almost
+  nothing to work from and found no leads. ML fairness has many candidate
+  pairs above the similarity threshold, but its topic groups cite each other
+  heavily, so only 2 pass the weak-bridge rule. Both were checked by the
+  language model with LLM calibration's prompt and labelled "not
+  addressing"; they are shown as unverified leads with that label.
+- **Orphaned future work** — the two-stage matcher (cosine shortlist 0.70,
+  up to 4 later papers per item, then a language-model check) ran on Diet.
+  For ML fairness its projection, doubled for safety, did not fit the
+  remaining budget, so it was skipped and the site says so.
+- **Disjoint bridging** — off in every library, as before.
+- Diet's five audited disagreements and their audit are unchanged.
+
+Why these counts are what they are is described above as measured; whether
+more papers, or a different scorer, would change them has not been tested.

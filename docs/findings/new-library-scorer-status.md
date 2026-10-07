@@ -1,6 +1,7 @@
 # New-library scorer status
 
-**Date:** 2026-10-02 (iteration-4 update). Every number below comes from
+**Date:** 2026-10-02 (iteration-4 update; scorer sections updated
+2026-10-07 when all four scorers were run on the new libraries). Every number below comes from
 the shipped `frontend/public/data/library/<slug>/stats.json`, the files
 under `data/domains/<slug>/reasoning/` (including `coverage.json` and the
 hand-audit file), or `data/spend_ledger.json`.
@@ -14,8 +15,8 @@ and produced zero".
 | library | papers | claims read | disagreement check | confirmed contradictions | persistent limitations | orphaned future work | structural holes |
 |:--|--:|--:|:--|--:|--:|:--|:--|
 | llm-calibration | 113 | 113 (100%) | 437 / 437 pairs | 0 (of 2 flagged) | 1 | 63 | 12 (2 substantive) |
-| diet-and-mortality | 100 | 100 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | skipped (paid, by design) | not run (pipeline not built) |
-| ml-fairness | 99 | 99 (100%) | 91 / 91 pairs | 0 | 1 | skipped (paid, by design) | not run (pipeline not built) |
+| diet-and-mortality | 100 | 100 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | 5 | 0 (0 substantive) |
+| ml-fairness | 99 | 99 (100%) | 91 / 91 pairs | 0 | 1 | skipped (budget) | 2 (0 substantive) |
 <!-- /gen:scorer-status -->
 
 "Pairs" are shortlisted claim pairs. Diet and ML-fairness: cosine
@@ -38,22 +39,23 @@ across libraries.
 
 ## Persistent limitations
 
-Code-only count: a normalised limitation category reported as a
-limitation of the paper's own work by at least 3 papers. Not the full
-Phase-4 scorer (that needs the claim-embedding and addressal pipeline
-the multi-domain libraries don't have). No gap card is published for
-these counts.
+Since 2026-10-07 this is the full Phase-4 scorer, the same code and
+thresholds as LLM calibration (at least 3 independent papers report the same
+own-work limitation category). Each result is published as a gap card.
 
-## Orphaned future work — skipped by design
+## Orphaned future work
 
-Matching future-work statements against later papers is paid and the
-lowest-value output per rupee. It is not planned for the new libraries.
+Ran on diet-and-mortality on 2026-10-07 (two-stage matcher: cosine
+shortlist, then a language-model check of each candidate pair). Skipped for
+ml-fairness: its projected cost, doubled as the safety gate requires, did
+not fit the remaining budget. See `multi-domain.md` §8.
 
-## Structural holes — not run
+## Structural holes
 
-The scorer needs the embeddings + addressal graph that the LLM-cal
-library has and the multi-domain pipeline does not build. Building it is
-engineering work, not spend.
+Ran on both new libraries on 2026-10-07 with topic groups scaled to library
+size (k = 10) and the leads checked by a language model (at most 15 per
+library). Counts are in the table above; why they are low is in
+`multi-domain.md` §8.
 
 ## ML-fairness impossibility-result papers (full coverage)
 

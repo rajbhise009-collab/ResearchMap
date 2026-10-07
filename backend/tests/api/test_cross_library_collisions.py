@@ -53,17 +53,15 @@ def _term_score(index: dict, term: str) -> tuple[float, float]:
         return (0.0, 0.0)
     stem = stems[0]
     n = index.get("n_docs", 0) or 0
-    # `terms` on each doc is either a dict {stem→weight} (authoritative
-    # builder) or a list of raw tokens (older per-library builder).
-    df = 0
-    for d in index.get("docs", []):
-        t = d.get("terms", {})
-        if isinstance(t, dict):
-            if stem in t: df += 1
-        else:
-            if stem in t: df += 1
-    breadth = df / n if n else 0.0
     idf = index.get("idf", {}).get(stem, 0.0)
+    # Document frequency from the index's own idf, which the builder computes
+    # over each document's FULL vocabulary as ln((N+1)/(df+0.5))
+    # (backend/app/api/search_index.py). The per-document `terms` lists are
+    # truncated to each document's top-weighted words, so counting stems in
+    # them undercounts common words (e.g. "fairness": 5 of 102 by the lists,
+    # 79 of 102 in fact) and made this test flip when documents were added.
+    df = ((n + 1) / math.exp(idf) - 0.5) if (idf and n) else 0.0
+    breadth = df / n if n else 0.0
     return (breadth, idf)
 
 

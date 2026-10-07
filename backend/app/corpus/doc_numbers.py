@@ -278,9 +278,9 @@ def scorer_status() -> str:
         rows.append([slug, n, f"{ext} ({round(100 * ext / n)}%)", f"{cl} / {sl} pairs",
                      f"{conf} (of {fl} flagged)" if fl else conf,
                      y.get("persistent_limitations", 0),
-                     y["orphaned_future_work"] if slug == "llm-calibration" else "skipped (paid, by design)",
-                     f"{y['structural_holes']} ({y['structural_holes_substantive']} substantive)"
-                     if slug == "llm-calibration" else "not run (pipeline not built)"])
+                     "skipped (budget)" if "orphaned_future_work" in (s.get("scorers_skipped") or {})
+                     else y.get("orphaned_future_work", 0),
+                     f"{y.get('structural_holes', 0)} ({y.get('structural_holes_substantive', 0)} substantive)"])
     return _table(["library", "papers", "claims read", "disagreement check",
                    "confirmed contradictions", "persistent limitations",
                    "orphaned future work", "structural holes"],
@@ -341,10 +341,29 @@ def audit_doubts() -> str:
     return "\n".join(lines)
 
 
+def scorer_yields() -> str:
+    labels = [("unresolved_contradictions", "disagreements kept after checking"),
+              ("persistent_limitations", "recurring limitations"),
+              ("structural_holes", "method-transfer leads"),
+              ("orphaned_future_work", "unfollowed questions")]
+    rows = []
+    for slug in ("llm-calibration", *NEW_LIBS):
+        st = _stats(slug)
+        y, sk = st.get("scorer_yields", {}), st.get("scorers_skipped", {}) or {}
+        row = [LIB_NAMES[slug]]
+        for k, _l in labels:
+            row.append("skipped (budget)" if k in sk else y.get(k, 0))
+        row.append(sum(y.get(k, 0) for k, _l in labels if k not in sk))
+        rows.append(row)
+    return _table(["library"] + [l for _k, l in labels] + ["total results"],
+                  ["l", "r", "r", "r", "r", "r"], rows)
+
+
 BLOCKS = {
     "multi-domain.md": {"corpus": corpus, "yield": yield_table, "diet-audit": diet_audit,
                         "impossibility": impossibility, "predictor": predictor,
                         "mlf-facts": mlf_facts, "audit-doubts": audit_doubts,
+                        "scorer-yields": scorer_yields,
                         "fulltext": fulltext, "gap-types": gap_types, "spend": spend},
     "ledger-unknown-entries.md": {"unknown": unknown_entries, "spend": spend},
     "domain-coherence-predictor.md": {"impossibility": impossibility, "measured": measured},
