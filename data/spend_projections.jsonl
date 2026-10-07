@@ -1,0 +1,5 @@
+{"ts": 1791352981.031146, "stage": "embed_fw_diet-and-mortality", "n_calls": 57, "projected_inr": 0.3417, "multiplier": 1.5, "padded_inr": 0.5126, "cumulative_inr": 920.7904, "cap_inr": 990.0, "remaining_inr": 69.2096, "allowed": true}
+{"ts": 1791352983.17218, "stage": "embed_fw_ml-fairness", "n_calls": 146, "projected_inr": 0.8266, "multiplier": 1.5, "padded_inr": 1.2398, "cumulative_inr": 921.1321, "cap_inr": 990.0, "remaining_inr": 68.8679, "allowed": true}
+{"ts": 1791353042.2030442, "stage": "hole_confirm_ml-fairness", "n_calls": 2, "projected_inr": 0.299, "multiplier": 2.0, "padded_inr": 0.598, "cumulative_inr": 921.9586, "cap_inr": 990.0, "remaining_inr": 68.0414, "allowed": true}
+{"ts": 1791353224.206819, "stage": "fw_match_diet-and-mortality", "n_calls": 23, "projected_inr": 3.3861, "multiplier": 2.0, "padded_inr": 6.7721, "cumulative_inr": 922.2848, "cap_inr": 990.0, "remaining_inr": 67.7152, "allowed": true}
+{"ts": 1791353390.982184, "stage": "fw_match_ml-fairness", "n_calls": 225, "projected_inr": 32.8283, "multiplier": 2.0, "padded_inr": 65.6566, "cumulative_inr": 926.3252, "cap_inr": 990.0, "remaining_inr": 63.6748, "allowed": false}

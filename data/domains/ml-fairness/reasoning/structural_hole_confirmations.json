@@ -1,0 +1,22 @@
+{
+  "opp:hole:W2809878087->W2610178560": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's method of using a single unifying case study to demonstrate fairness definitions does not address Paper B's limitation of being restricted to a single organizational context.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W2809878087",
+    "b_pid": "openalex:W2610178560",
+    "method": "Unifying Case Study Demonstration",
+    "limitation": "The allocation algorithm design and evaluation are part of an ongoing project focused on a single organization context (412 Food Rescue)."
+  },
+  "opp:hole:W3101206394->W2610178560": {
+    "verdict": "not_addressing",
+    "reason": "Synthesizing a taxonomy of theoretical fairness definitions does not address Paper B's limitation of being empirically restricted to a single organizational context.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W3101206394",
+    "b_pid": "openalex:W2610178560",
+    "method": "Taxonomic Conceptual Synthesis",
+    "limitation": "The allocation algorithm design and evaluation are part of an ongoing project focused on a single organization context (412 Food Rescue)."
+  }
+}

@@ -3,6 +3,7 @@
   python -m backend.app.corpus.ledger_audit                 # print + write data/ledger_audit.json
   python -m backend.app.corpus.ledger_audit --append-correction
   python -m backend.app.corpus.ledger_audit --freeze-cap    # cap := cumulative (₹0 new spend)
+  python -m backend.app.corpus.ledger_audit --set-cap 990   # owner-approved ceiling (INR)
 
 Mock-test entries. `backend/tests/extraction/test_llm_client.py` drives
 GeminiLLMClient through an httpx MockTransport (api_key="fake") whose 200
@@ -134,10 +135,22 @@ def freeze_cap(ledger: SpendLedger) -> float:
     return state.cap_inr
 
 
+def set_cap(ledger: SpendLedger, cap_inr: float) -> float:
+    """Owner-approved ceiling. Only the cap field changes; entries never do."""
+    state = ledger._read()
+    if cap_inr < state.cumulative_inr:
+        raise ValueError(f"cap ₹{cap_inr} is below cumulative ₹{state.cumulative_inr:.2f}")
+    state.cap_inr = float(cap_inr)
+    state.cap_usd = state.cap_inr / state.fx_usd_to_inr
+    ledger._write(state)
+    return state.cap_inr
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--append-correction", action="store_true")
     p.add_argument("--freeze-cap", action="store_true")
+    p.add_argument("--set-cap", type=float)
     a = p.parse_args()
     ledger = SpendLedger.load()
     if a.append_correction:
@@ -146,6 +159,8 @@ def main() -> int:
               f"appended ₹{e['cost_inr']:.4f} over {len(e['corrects_indices'])} entries")
     if a.freeze_cap:
         print(f"cap frozen at ₹{freeze_cap(ledger):.4f}")
+    if a.set_cap is not None:
+        print(f"cap set to ₹{set_cap(ledger, a.set_cap):.2f}")
     rep = audit(ledger._read().entries)
     out = {k: v for k, v in rep.items() if k != "proven_mock_indices"}
     out["proven_mock_index_range"] = ([min(rep["proven_mock_indices"]),
