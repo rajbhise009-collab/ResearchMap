@@ -157,8 +157,18 @@ def test_corpus_relative_caveat_names_the_real_limit(cards):
     orphans = [c for c in cards if c["scorer"] == "orphaned_future_work"]
     assert orphans
     for c in orphans[:5]:
-        texts = " ".join(x["text"] for x in language.caveats_for(c))
+        texts = " ".join(x["text"] for x in language.caveats_for({**c, "library_papers": 113}))
         assert "113" in texts
+    # every library's shipped cards state THAT library's size
+    import json
+    from pathlib import Path
+    data = Path(__file__).resolve().parents[3] / "frontend" / "public" / "data"
+    for lib in json.loads((data / "libraries.json").read_text())["libraries"]:
+        d = data if lib["snapshot_path"] == "/data" else data / lib["snapshot_path"].removeprefix("/data/")
+        for f in (d / "opportunity").glob("*.json"):
+            for cav in json.loads(f.read_text())["consumer"]["caveats"]:
+                if cav["code"] == "corpus_relative":
+                    assert f"is {lib['n_papers']} papers" in cav["text"], (lib["slug"], f.name)
         assert "whole field" in texts or "not the whole field" in texts
 
 

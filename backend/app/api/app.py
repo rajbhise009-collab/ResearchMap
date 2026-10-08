@@ -25,6 +25,7 @@ def _index() -> dict:
     cards = []
     for c in data.cards():
         card = {**c.model_dump(), "slug": export.slug(c.id)}
+        card.setdefault("library_papers", 113)   # the API serves LLM calibration
         card["consumer"] = language.consumer_card(card)
         cards.append(card)
     details = []

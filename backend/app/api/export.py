@@ -47,6 +47,7 @@ def export(outdir: Path = DEFAULT_OUT) -> int:
         if c.scorer == "structural_holes" and not c.confirm_status:
             continue   # unconfirmed leads are not shown (see library_cards)
         card = {**c.model_dump(), "slug": slug(c.id)}
+        card["library_papers"] = 113          # the frozen LLM-calibration corpus
         card["consumer"] = language.consumer_card(card)
         if card["consumer"].get("verdict"):
             card["verdict"] = card["consumer"]["verdict"]

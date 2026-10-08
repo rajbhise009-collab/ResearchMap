@@ -59,6 +59,12 @@ def _dedupe(cards: list[dict]) -> None:
             c["consumer"]["headline"] = f"{h} ({(sp.get('title') or c['id'])[:80]})"
 
 
+def _library_papers(slug: str) -> int:
+    import json as _json
+    from backend.app.config import REPO_ROOT
+    return len(_json.loads((REPO_ROOT / "data" / "domains" / slug / "prelabelled.json").read_text())["entries"])
+
+
 def scorer_cards(slug: str) -> tuple[list[dict], dict, dict[str, str]]:
     """(cards ready for the snapshot, yields per scorer, skipped scorers)."""
     from backend.app.ranking.assemble import build_evidence_cards
@@ -79,6 +85,7 @@ def scorer_cards(slug: str) -> tuple[list[dict], dict, dict[str, str]]:
             continue
         d = c.model_dump(mode="json")
         d["slug"] = f"opp-{slug}-{_slugify(c.id.removeprefix('opp:'))}"
+        d["library_papers"] = _library_papers(slug)
         d["consumer"] = language.consumer_card(d)
         if d["consumer"].get("verdict"):
             d["verdict"] = d["consumer"]["verdict"]

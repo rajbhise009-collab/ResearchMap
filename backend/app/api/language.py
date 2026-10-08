@@ -191,9 +191,11 @@ NO_DISAGREEMENTS = {
 
 CAVEATS = {
     "corpus_relative": {
-        "label": "Only checked within these 113 papers",
+        # {n}: the card's own library size (set by the exporter that builds
+        # the card); never a literal, since libraries differ and grow.
+        "label": "Only checked within these {n} papers",
         "text": "Nothing in this library followed this up — but this library "
-                "is 113 papers, not the whole field. Somebody outside it may "
+                "is {n} papers, not the whole field. Somebody outside it may "
                 "well have answered this already. Check before you invest.",
     },
     "mixed_fidelity": {
@@ -273,7 +275,13 @@ def caveats_for(card: dict[str, Any]) -> list[dict[str, str]]:
             continue
         t = CAVEATS.get(code)
         if t:
-            out.append({"code": code, **t})
+            n = card.get("library_papers")
+            def fill(v: str) -> str:   # no size known: say it without a number
+                if n is not None:
+                    return v.replace("{n}", str(n))
+                return v.replace("these {n} papers", "this library's papers").replace(
+                    "is {n} papers", "is a limited set of papers")
+            out.append({"code": code, **{k: fill(v) for k, v in t.items()}})
     if is_hole and status:
         cs = CONFIRM_STATUS.get(status)
         if cs:

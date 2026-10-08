@@ -27,11 +27,22 @@ from typing import Iterable
 
 VERDICT_WORDS = {"genuine", "genuinely", "settled", "resolved", "confirmed"}
 
-# Hand-curated titles for the exact `topic` strings in the diet audit.
+# Hand-curated titles for the exact `topic` strings in the hand audits.
 # Each is a plain question that names exposure and outcome. The map is the
 # single place to add a new entry when a future audit introduces a new
 # `topic` — the fallback below handles unaudited pairs.
 TOPIC_TITLES: dict[str, str] = {
+    # social media & adolescent mental health (audit 2026-10-09)
+    "smartphones and adolescent well-being":
+        "Smartphones and teenagers' well-being: a real decline, or too small to matter?",
+    "rising depression across birth cohorts":
+        "Depression across generations: a real rise, or an artifact of recall?",
+    "screen time / well-being at low use":
+        "A little screen time and children's well-being: no difference, or slightly better?",
+    "cyberbullying and suicidality":
+        "Cyberbullying and suicidal thoughts: mixed evidence, or a strong link?",
+    "social media use and life satisfaction":
+        "Social media and life satisfaction: a decline, or a trivial effect?",
     "red meat / stroke":
         "Red meat and stroke: no association, or an increased risk?",
     "red meat / type 2 diabetes":
