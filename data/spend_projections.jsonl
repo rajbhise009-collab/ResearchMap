@@ -3,3 +3,4 @@
 {"ts": 1791353042.2030442, "stage": "hole_confirm_ml-fairness", "n_calls": 2, "projected_inr": 0.299, "multiplier": 2.0, "padded_inr": 0.598, "cumulative_inr": 921.9586, "cap_inr": 990.0, "remaining_inr": 68.0414, "allowed": true}
 {"ts": 1791353224.206819, "stage": "fw_match_diet-and-mortality", "n_calls": 23, "projected_inr": 3.3861, "multiplier": 2.0, "padded_inr": 6.7721, "cumulative_inr": 922.2848, "cap_inr": 990.0, "remaining_inr": 67.7152, "allowed": true}
 {"ts": 1791353390.982184, "stage": "fw_match_ml-fairness", "n_calls": 225, "projected_inr": 32.8283, "multiplier": 2.0, "padded_inr": 65.6566, "cumulative_inr": 926.3252, "cap_inr": 990.0, "remaining_inr": 63.6748, "allowed": false}
+{"ts": 1791467202.153321, "stage": "fw_match_ml-fairness", "n_calls": 225, "projected_inr": 32.8283, "multiplier": 2.0, "padded_inr": 65.6566, "cumulative_inr": 926.3252, "cap_inr": 1200.0, "remaining_inr": 273.6748, "allowed": true}

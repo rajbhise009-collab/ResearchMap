@@ -1,5 +1,5 @@
 {
-  "n_entries": 1090,
+  "n_entries": 1118,
   "by_stage": {
     "contradiction_diet-and-mortality": {
       "calls": 267,
@@ -26,6 +26,26 @@
       "inr": -0.4788,
       "models": [
         "n/a"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "embed_fw_diet-and-mortality": {
+      "calls": 1,
+      "inr": 0.3417,
+      "models": [
+        "gemini-embedding-001"
+      ],
+      "batch": [
+        false
+      ]
+    },
+    "embed_fw_ml-fairness": {
+      "calls": 2,
+      "inr": 0.8266,
+      "models": [
+        "gemini-embedding-001"
       ],
       "batch": [
         false
@@ -61,6 +81,16 @@
         true
       ]
     },
+    "fw_match_diet-and-mortality": {
+      "calls": 23,
+      "inr": 4.0404,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        true
+      ]
+    },
     "hedge_diet-and-mortality": {
       "calls": 200,
       "inr": 28.9304,
@@ -69,6 +99,16 @@
       ],
       "batch": [
         false
+      ]
+    },
+    "hole_confirm_ml-fairness": {
+      "calls": 2,
+      "inr": 0.3262,
+      "models": [
+        "gemini-3.6-flash"
+      ],
+      "batch": [
+        true
       ]
     },
     "unknown": {
@@ -261,12 +301,12 @@
       }
     ]
   },
-  "raw_cumulative_inr": 921.2692,
+  "raw_cumulative_inr": 926.804,
   "correction_present": true,
-  "corrected_cumulative_inr": 920.7904,
+  "corrected_cumulative_inr": 926.3252,
   "proven_mock_index_range": [
     174,
     973
   ],
-  "cap_inr": 990.0
+  "cap_inr": 1200.0
 }
