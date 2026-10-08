@@ -356,6 +356,7 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         opportunity_summaries.append({
             "id": card["slug"], "slug": card["slug"], "rank": j,
             "gap_type": card["gap_type"], "consumer": card["consumer"],
+            **({"verdict": card["verdict"]} if card.get("verdict") else {}),
         })
     (lib_dir / "opportunities.json").write_text(json.dumps({
         "schema_version": "1.0.0",

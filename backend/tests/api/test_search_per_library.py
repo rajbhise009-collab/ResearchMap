@@ -167,12 +167,17 @@ def test_index_contains_opportunities_if_the_library_has_any(slug: str):
         opps_path = DATA / "opportunities.json"
     else:
         opps_path = DATA / "library" / slug / "opportunities.json"
+    from backend.app.api.language import is_visible
     opps = json.loads(opps_path.read_text()).get("items", [])
-    opp_refs = {o["slug"] for o in opps}
+    # Results (nothing set them aside) must all be searchable; set-aside and
+    # not-yet-checked items must never be search hits.
+    opp_refs = {o["slug"] for o in opps if is_visible(o)}
+    hidden = {o["slug"] for o in opps if not is_visible(o)}
     indexed_opp_refs = {d["ref"] for d in idx["docs"] if d["type"] == "opportunity"}
     missing = opp_refs - indexed_opp_refs
     assert not missing, (
         f"[{slug}] opportunities not in search index: {sorted(missing)[:5]}")
+    assert not (hidden & indexed_opp_refs), f"[{slug}] set-aside items are searchable"
 
 
 # ---- Hit-reachability regression -----------------------------------------

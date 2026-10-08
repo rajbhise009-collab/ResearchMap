@@ -342,21 +342,26 @@ def audit_doubts() -> str:
 
 
 def scorer_yields() -> str:
-    labels = [("unresolved_contradictions", "disagreements kept after checking"),
-              ("persistent_limitations", "recurring limitations"),
-              ("structural_holes", "method-transfer leads"),
-              ("orphaned_future_work", "unfollowed questions")]
+    """Visible results per type, from site-facts.json (what the site shows),
+    plus items set aside after checking."""
+    facts = {l["slug"]: l for l in _j(REPO_ROOT / "frontend" / "public" / "data"
+                                      / "site-facts.json")["libraries"]}
+    order = [("unresolved_contradictions", "disagreements kept after checking"),
+             ("persistent_limitations", "recurring limitations"),
+             ("structural_holes", "method-transfer leads"),
+             ("orphaned_future_work", "unfollowed questions")]
     rows = []
     for slug in ("llm-calibration", *NEW_LIBS):
-        st = _stats(slug)
-        y, sk = st.get("scorer_yields", {}), st.get("scorers_skipped", {}) or {}
+        f = facts[slug]
+        by = {r["type"]: r for r in f["results"]}
         row = [LIB_NAMES[slug]]
-        for k, _l in labels:
-            row.append("skipped (budget)" if k in sk else y.get(k, 0))
-        row.append(sum(y.get(k, 0) for k, _l in labels if k not in sk))
+        for k, _l in order:
+            r = by[k]
+            row.append("skipped (budget)" if r["count"] is None else r["count"])
+        row += [f.get("set_aside_total", 0), f["results_total"]]
         rows.append(row)
-    return _table(["library"] + [l for _k, l in labels] + ["total results"],
-                  ["l", "r", "r", "r", "r", "r"], rows)
+    return _table(["library"] + [l for _k, l in order] + ["set aside after checking", "total results"],
+                  ["l", "r", "r", "r", "r", "r", "r"], rows)
 
 
 BLOCKS = {

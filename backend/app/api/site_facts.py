@@ -91,22 +91,37 @@ DISJOINT_NOTE = ("A fifth, experimental check (papers linked only through a thir
                  "paper) is switched off in every library until it can be validated.")
 
 
-def _results(st: dict, n_cards: int) -> tuple[list[dict], int]:
-    y = st.get("scorer_yields") or {}
+KIND_TO_TYPE = {"disagreement": "unresolved_contradictions",
+                "unaddressed_limitation": "persistent_limitations",
+                "method_transfer": "structural_holes",
+                "unfollowed_future_work": "orphaned_future_work"}
+
+
+def _results(st: dict, items: list[dict]) -> tuple[list[dict], int, int]:
+    """Counts come from the cards themselves: visible = nothing set it
+    aside. (rows, visible total, set-aside total)."""
+    from backend.app.api.language import is_visible
     skipped = st.get("scorers_skipped") or {}
+    vis: dict[str, int] = {}
+    aside = 0
+    for it in items:
+        if is_visible(it):
+            t = KIND_TO_TYPE.get(it["consumer"].get("kind_id"), "other")
+            vis[t] = vis.get(t, 0) + 1
+        else:
+            aside += 1
+    if "other" in vis:
+        raise ValueError(f"unknown result kind in cards: {vis}")
     rows = []
     for key, one, many in RESULT_TYPES:
         if key in skipped:
             rows.append({"type": key, "count": None, "label": many,
                          "note": f"not checked: {skipped[key]}"})
             continue
-        n = int(y.get(key, 0) or 0)
+        n = vis.get(key, 0)
         rows.append({"type": key, "count": n, "label": one if n == 1 else many,
                      "note": ZERO_NOTE if n == 0 else None})
-    total = sum(r["count"] or 0 for r in rows)
-    if total != n_cards:
-        raise ValueError(f"result breakdown {total} != result cards {n_cards}")
-    return rows, total
+    return rows, sum(vis.values()), aside
 
 
 def _check_line(dc: dict | None) -> str | None:
@@ -128,9 +143,8 @@ def build() -> dict:
         d = _lib_dir(lib["snapshot_path"])
         st = _j(d / "stats.json")
         opps = _j(d / "opportunities.json")
-        visible = sum(1 for it in opps.get("items", [])
-                      if it.get("verdict") in (None, "genuine"))
-        results, total = _results(st, visible)
+        results, total, aside = _results(st, opps.get("items", []))
+        visible = total
         dc = _disagreement(lib["slug"])
         libs.append({
             "slug": lib["slug"], "name": lib["name"], "short_name": lib["short_name"],
@@ -143,6 +157,7 @@ def build() -> dict:
             "gap_cards": visible,
             "results": results,
             "results_total": total,
+            "set_aside_total": aside,
             "check_line": _check_line(dc),
             "not_run": DISJOINT_NOTE,
             "disagreement_check": dc,

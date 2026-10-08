@@ -76,6 +76,8 @@ def scorer_cards(slug: str) -> tuple[list[dict], dict, dict[str, str]]:
         d = c.model_dump(mode="json")
         d["slug"] = f"opp-{slug}-{_slugify(c.id.removeprefix('opp:'))}"
         d["consumer"] = language.consumer_card(d)
+        if d["consumer"].get("verdict"):
+            d["verdict"] = d["consumer"]["verdict"]
         out.append(d)
     _dedupe(out)
     for d in out:

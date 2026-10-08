@@ -17,7 +17,7 @@ are removed by one appended correction entry; the other 10 stay counted.
 - All 200 carry the mock-test signature (5 prompt tokens, 3 output tokens, 0 thinking tokens).
 - Proven mock (signature + burst of exactly 10 inside one second): **190** entries, ₹0.48, in 19 bursts.
 - Not proven, so still counted: **10** entries (₹0.03).
-- Ledger before correction: ₹921.27; after the appended correction: **₹920.79**.
+- Ledger before correction: ₹926.80; after the appended correction: **₹926.33**.
 <!-- /gen:unknown -->
 
 Every one is recorded as model `gemini-3.6-flash`, `batch=false`.

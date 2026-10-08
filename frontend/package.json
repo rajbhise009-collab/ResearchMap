@@ -5,11 +5,12 @@
   "scripts": {
     "snapshot": "python3 -m backend.app.api.export",
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/consistency.mjs && next build && node scripts/consistency.mjs --built",
     "start": "next start",
     "export": "next build",
     "typecheck": "tsc --noEmit",
-    "launch-check": "node scripts/launch-check.mjs"
+    "launch-check": "node scripts/launch-check.mjs",
+    "consistency": "node scripts/consistency.mjs --built"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

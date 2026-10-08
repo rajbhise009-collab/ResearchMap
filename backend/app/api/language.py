@@ -437,6 +437,32 @@ def why_it_surfaced(card: dict[str, Any]) -> str:
 # Assembling the consumer view of one result.
 # --------------------------------------------------------------------------
 
+# A method-transfer lead the confirmation step rejected is not a result:
+# it moves to "Set aside after checking". The reason is chosen by code from
+# the label; the checker's own wording is not shown.
+SET_ASIDE_REASONS = {
+    "not_addressing": ("A language-model check found that the method does not actually "
+                       "address this problem; the two are related in topic only."),
+    "trivial": ("A language-model check found that the idea reduces to running a broader "
+                "evaluation or applying a known method to new data."),
+}
+VISIBLE_VERDICTS = (None, "genuine")
+
+
+def set_aside_for(card: dict[str, Any]) -> dict[str, str] | None:
+    if card.get("scorer") == "structural_holes" and card.get("confirm_status") in SET_ASIDE_REASONS:
+        return {"verdict": "set_aside",
+                "verdict_label": "Set aside after checking",
+                "verdict_reason": SET_ASIDE_REASONS[card["confirm_status"]]}
+    return None
+
+
+def is_visible(card: dict[str, Any]) -> bool:
+    """A result counts and is searchable only if nothing set it aside."""
+    v = card.get("verdict") or (card.get("consumer") or {}).get("verdict")
+    return v in VISIBLE_VERDICTS
+
+
 def consumer_card(card: dict[str, Any]) -> dict[str, Any]:
     """The plain-English face of one opportunity. No internals cross over."""
     k = kind_for(card)
@@ -456,6 +482,7 @@ def consumer_card(card: dict[str, Any]) -> dict[str, Any]:
         "why": why_it_surfaced(card),
         "caveats": caveats_for(card),
         "paper_count": len(card.get("supporting_papers", [])),
+        **(set_aside_for(card) or {}),
     }
 
 

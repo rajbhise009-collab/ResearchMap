@@ -33,11 +33,27 @@ def test_cards_unique_topic_titles_no_verdict_words(slug):
         assert reason and reason[0].islower()
 
 
-def test_orphaned_future_work_runs_only_with_matcher_output():
-    run, skipped = scorer_plan("ml-fairness")
+def test_orphaned_future_work_runs_only_with_matcher_output(tmp_path, monkeypatch):
+    from backend.app.api import library_cards as LC
+    monkeypatch.setattr(LC, "DOMAINS", tmp_path)
+    (tmp_path / "x" / "reasoning").mkdir(parents=True)
+    run, skipped = scorer_plan("x")
     assert "orphaned_future_work" not in run and "orphaned_future_work" in skipped
-    run, skipped = scorer_plan("diet-and-mortality")
+    (tmp_path / "x" / "reasoning" / "fw_addressals.jsonl").write_text('{"id": "fwa:1"}\n')
+    run, skipped = scorer_plan("x")
     assert "orphaned_future_work" in run and not skipped
+
+
+def test_rejected_method_leads_are_set_aside_not_results():
+    from backend.app.api.language import consumer_card, is_visible
+    for status, visible in [("substantive", True), (None, True),
+                            ("not_addressing", False), ("trivial", False)]:
+        card = {"scorer": "structural_holes", "confirm_status": status, "title": "t",
+                "component_scores": {}, "evidence_trail": [], "supporting_papers": []}
+        c = consumer_card(card)
+        assert is_visible({"consumer": c}) is visible, status
+        if not visible:
+            assert c["verdict_label"] == "Set aside after checking" and c["verdict_reason"]
 
 
 def test_diet_disagreement_cards_unchanged_by_new_scorers():

@@ -278,7 +278,12 @@ def build_index(opportunities: list[dict[str, Any]],
     `consumer` block; `papers` are full detail records."""
     docs: list[dict[str, Any]] = []
 
+    from backend.app.api.language import is_visible
     for card in opportunities:
+        # Set-aside and not-yet-checked items are not results: they stay
+        # on /gaps in their own sections but are never search hits.
+        if not is_visible(card):
+            continue
         docs.append({
             "type": "opportunity",
             "ref": card["slug"],

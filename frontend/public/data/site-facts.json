@@ -12,7 +12,7 @@
       "claims_read": 113,
       "full_text": 67,
       "abstract_only": 46,
-      "gap_cards": 76,
+      "gap_cards": 66,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -28,7 +28,7 @@
         },
         {
           "type": "structural_holes",
-          "count": 12,
+          "count": 2,
           "label": "unexplored connections",
           "note": null
         },
@@ -39,7 +39,8 @@
           "note": null
         }
       ],
-      "results_total": 76,
+      "results_total": 66,
+      "set_aside_total": 10,
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (437 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {
@@ -93,6 +94,7 @@
         }
       ],
       "results_total": 12,
+      "set_aside_total": 5,
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (152 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {
@@ -121,7 +123,7 @@
       "claims_read": 99,
       "full_text": 50,
       "abstract_only": 49,
-      "gap_cards": 3,
+      "gap_cards": 55,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -137,18 +139,19 @@
         },
         {
           "type": "structural_holes",
-          "count": 2,
+          "count": 0,
           "label": "unexplored connections",
-          "note": null
+          "note": "none were found among the papers read, which is not the same as none existing"
         },
         {
           "type": "orphaned_future_work",
-          "count": null,
+          "count": 54,
           "label": "open questions",
-          "note": "not checked: seeing whether later papers took up each paper's suggested next steps needs a paid language-model pass that did not fit this run's budget, so open questions are not listed for this library yet"
+          "note": null
         }
       ],
-      "results_total": 3,
+      "results_total": 55,
+      "set_aside_total": 2,
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (91 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {

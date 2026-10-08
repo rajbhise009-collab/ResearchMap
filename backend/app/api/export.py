@@ -46,6 +46,8 @@ def export(outdir: Path = DEFAULT_OUT) -> int:
     for c in data.cards():
         card = {**c.model_dump(), "slug": slug(c.id)}
         card["consumer"] = language.consumer_card(card)
+        if card["consumer"].get("verdict"):
+            card["verdict"] = card["consumer"]["verdict"]
         cards.append(card)
     _write(outdir / "opportunities.json", {"schema_version": SCHEMA_VERSION,
                                            "total": len(cards), "items": cards})

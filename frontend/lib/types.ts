@@ -301,6 +301,7 @@ export interface SiteFactsLibrary {
   not_advice: boolean;
   results: Array<{ type: string; count: number | null; label: string; note: string | null }>;
   results_total: number;
+  set_aside_total: number;
   check_line: string | null;
   not_run: string;
 }

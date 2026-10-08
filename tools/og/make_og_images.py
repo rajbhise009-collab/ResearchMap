@@ -98,6 +98,14 @@ def main() -> int:
             ip.screenshot(path=str(path), type="png", clip={"x": 0, "y": 0, "width": size, "height": size})
             ip.close()
         br.close()
+    # What each image says, so the consistency check can compare it with the
+    # current data (frontend/scripts/consistency.mjs).
+    (OUT / "manifest.json").write_text(json.dumps({
+        "site_name": site,
+        "libraries": {l["slug"]: {"papers": l["papers"], "claims_read": l["claims_read"],
+                                  "built": l["built"]} for l in facts},
+        "total_papers": total, "n_libraries": len(facts),
+    }, indent=2) + "\n")
     bad = []
     for path, _ in jobs:
         n = path.stat().st_size

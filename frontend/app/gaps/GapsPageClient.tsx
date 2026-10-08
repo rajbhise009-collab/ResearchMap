@@ -32,7 +32,7 @@ export default function GapsPageClient({ lang, facts }: {
     (o) => !o.verdict || o.verdict === "genuine"
   );
   const setAside = items.filter(
-    (o) => o.verdict === "artifact" || o.verdict === "duplicate"
+    (o) => o.verdict === "artifact" || o.verdict === "duplicate" || o.verdict === "set_aside"
   );
   // Flagged by the classifier but not hand-checked yet: shown, never
   // counted in the headline, never mixed in with checked disagreements.
@@ -98,11 +98,12 @@ export default function GapsPageClient({ lang, facts }: {
 
           {setAside.length > 0 && (
             <section className="block set-aside">
-              <h2>Flagged but set aside ({setAside.length})</h2>
+              <h2>Set aside after checking ({setAside.length})</h2>
               <p className="block-lede">
-                These were flagged by the classifier but excluded from the
-                headline count by hand-audit. They stay visible so nothing
-                is silently dropped.
+                These came up but were set aside after a check: disagreements by
+                hand against the papers, method-transfer leads by a language-model
+                check. They are not counted as results, and they stay visible so
+                nothing is silently dropped.
               </p>
               {setAside.map((o) => (
                 <div className="evidence-item" key={o.slug}>

@@ -309,12 +309,13 @@ edited.
 | `extract_fairness` | 75 | $3.5563 | ₹298.73 |
 | `extract_fairness_batch` | 28 | $0.8660 | ₹72.75 |
 | `fw_match_diet-and-mortality` | 23 | $0.0481 | ₹4.04 |
+| `fw_match_ml-fairness` | 225 | $0.3836 | ₹32.22 |
 | `hedge_diet-and-mortality` | 200 | $0.3444 | ₹28.93 |
 | `hole_confirm_ml-fairness` | 2 | $0.0039 | ₹0.33 |
 | `unknown` | 200 | $0.0060 | ₹0.50 |
-| **total (ledger, after corrections)** | 1118 | **$11.0277** | **₹926.33** |
-| ceiling (`cap_inr`) |  | $11.7857 | ₹990.00 |
-| remaining |  |  | ₹63.67 |
+| **total (ledger, after corrections)** | 1343 | **$11.4113** | **₹958.55** |
+| ceiling (`cap_inr`) |  | $14.2857 | ₹1,200.00 |
+| remaining |  |  | ₹241.45 |
 <!-- /gen:spend -->
 
 The project budgets against this ledger, which records more spend than
@@ -342,11 +343,11 @@ translation as LLM calibration (`backend/app/api/library_cards.py`,
 `backend/app/reasoning/library_corpus.py`). Results per scorer:
 
 <!-- gen:scorer-yields -->
-| library | disagreements kept after checking | recurring limitations | method-transfer leads | unfollowed questions | total results |
-|:--|--:|--:|--:|--:|--:|
-| LLM calibration | 0 | 1 | 12 | 63 | 76 |
-| Diet & mortality | 5 | 2 | 0 | 5 | 12 |
-| ML fairness | 0 | 1 | 2 | skipped (budget) | 3 |
+| library | disagreements kept after checking | recurring limitations | method-transfer leads | unfollowed questions | set aside after checking | total results |
+|:--|--:|--:|--:|--:|--:|--:|
+| LLM calibration | 0 | 1 | 2 | 63 | 10 | 66 |
+| Diet & mortality | 5 | 2 | 0 | 5 | 5 | 12 |
+| ML fairness | 0 | 1 | 0 | 54 | 2 | 55 |
 <!-- /gen:scorer-yields -->
 
 - **Persistent limitations** — free, code only, same minimum of 3
