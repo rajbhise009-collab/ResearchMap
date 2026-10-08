@@ -111,7 +111,10 @@ class LiveOpenAlexClient:
         p = dict(params)
         p["api_key"] = self._key
         r = self._client.get(f"{OA_BASE}{path}", params=p)
-        r.raise_for_status()
+        if r.status_code >= 400:
+            # not raise_for_status(): its message carries the URL and key
+            raise httpx.HTTPStatusError(f"OpenAlex HTTP {r.status_code} on {path}",
+                                        request=r.request, response=r)
         return r.json()
 
 

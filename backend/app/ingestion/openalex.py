@@ -295,9 +295,12 @@ class OpenAlexClient(LitSource):
                 f"Daily limit={self.credits.last_limit}, "
                 f"remaining={self.credits.last_remaining}."
             )
-        if response.status_code >= 500 or response.status_code == 429:
-            response.raise_for_status()  # tenacity retries
-        response.raise_for_status()
+        if response.status_code >= 400:
+            # Not raise_for_status(): its message carries the full URL,
+            # which includes the API key. 429/5xx are retried by tenacity.
+            raise httpx.HTTPStatusError(
+                f"OpenAlex HTTP {response.status_code} on {path}",
+                request=response.request, response=response)
         return {"body": response.json(), "headers": dict(response.headers)}
 
 
