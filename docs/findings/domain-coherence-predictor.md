@@ -258,6 +258,7 @@ starting table, not a prediction claim.
 | llm-calibration | 0.818 | high | 2 | 0 | 113 / 113 (100%) | 437 / 437 | own shortlist settings (0.78, cap 10); both flags set aside as regime conflation |
 | diet-and-mortality | 0.44 | moderate | 10 | 5 | 100 / 100 (100%) | 152 / 152 | hand audit is the builder's, not expert review |
 | ml-fairness | 0.667 | high | 0 | 0 | 99 / 99 (100%) | 91 / 91 | zero not explained (see multi-domain.md §2, hypotheses untested) |
+| social-media-teen-mental-health | 0.829 | high | 6 | 2 | 99 / 100 (99%) | 179 / 179 | 22% full text; the rubric does not enforce the adolescent population (blind audit 87% in/out, 67% exact); builder's audit, not experts |
 <!-- /gen:measured -->
 
 Two of three predictions miss, now without coverage confounding:

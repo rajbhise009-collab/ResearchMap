@@ -1,0 +1,65 @@
+{
+  "n": 6,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2896921383:c2",
+      "to_claim_id": "openalex:W2999059035:c4",
+      "similarity": 0.8681650757789612,
+      "a_paper_id": "openalex:W2896921383",
+      "a_text": "Non-users and low users (1 hour per day) of screens generally do not differ in psychological well-being.",
+      "b_paper_id": "openalex:W2999059035",
+      "b_text": "Light users of digital media exhibit slightly higher psychological well-being than non-users.",
+      "explanation": "Claim A asserts that there is no difference in psychological well-being between non-users and low users, whereas Claim B asserts that light users have higher psychological well-being than non-users."
+    },
+    {
+      "from_claim_id": "openalex:W1965892473:c1",
+      "to_claim_id": "openalex:W2153813098:c1",
+      "similarity": 0.8122788071632385,
+      "a_paper_id": "openalex:W1965892473",
+      "a_text": "Rates of major depression increased in cohorts born after World War II.",
+      "b_paper_id": "openalex:W2153813098",
+      "b_text": "Depression rates in children born between 1965 and 1996 showed no effect of year of birth.",
+      "explanation": "Claim A asserts that depression rates increased in post-World War II birth cohorts, whereas Claim B finds no birth-year effect on depression rates for cohorts born between 1965 and 1996."
+    },
+    {
+      "from_claim_id": "openalex:W1892688171:c4",
+      "to_claim_id": "openalex:W2068511562:c5",
+      "similarity": 0.8119956851005554,
+      "a_paper_id": "openalex:W1892688171",
+      "a_text": "Results regarding the association between cyberbullying and self-harm or suicidality are conflicting.",
+      "b_paper_id": "openalex:W2068511562",
+      "b_text": "Suicidal ideation is among the strongest associations with cyberbullying victimization.",
+      "explanation": "Claim A states that evidence regarding the link between cyberbullying and suicidality is conflicting, whereas Claim B asserts a clear and strong association between cyberbullying victimization and suicidal ideation."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c9",
+      "to_claim_id": "openalex:W2998834126:c6",
+      "similarity": 0.8075894117355347,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "The decrease in adolescent psychological well-being may be at least partially due to the rapid adoption of smartphones and the subsequent shift in time use.",
+      "b_paper_id": "openalex:W2998834126",
+      "b_text": "The estimated associations between daily digital technology usage and adolescents' well-being are unlikely to be of clinical or practical significance.",
+      "explanation": "Claim A suggests that smartphone adoption meaningfully contributes to a decline in adolescent well-being, whereas Claim B asserts that the link between digital technology use and well-being is too small to be practically significant."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c2",
+      "to_claim_id": "openalex:W2944221730:c2",
+      "similarity": 0.8063650131225586,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Facebook use over a two-week period predicts declines in overall life satisfaction over time.",
+      "b_paper_id": "openalex:W2944221730",
+      "b_text": "The median longitudinal within-person effect of social media use on life satisfaction was trivial in size (beta = -0.05).",
+      "explanation": "Claim A asserts that social media use predicts declines in life satisfaction over time, whereas Claim B finds that the longitudinal within-person effect of social media use on life satisfaction is trivial in size."
+    },
+    {
+      "from_claim_id": "openalex:W1965892473:c9",
+      "to_claim_id": "openalex:W2153813098:c6",
+      "similarity": 0.8031601309776306,
+      "a_paper_id": "openalex:W1965892473",
+      "a_text": "Cohort changes in depression rates cannot be fully attributed to artifacts of reporting, recall, mortality, or labeling.",
+      "b_paper_id": "openalex:W2153813098",
+      "b_text": "There is no evidence for an increased prevalence of child or adolescent depression over the past 30 years when concurrent assessment is used.",
+      "explanation": "Claim A asserts that historical changes in depression rates reflect real cohort shifts rather than measurement artifacts, whereas Claim B finds no evidence of increased depression prevalence when controlling for recall artifacts through concurrent assessment."
+    }
+  ]
+}

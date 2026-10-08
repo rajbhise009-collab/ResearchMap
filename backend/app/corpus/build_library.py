@@ -5,7 +5,7 @@
 
 Stages, each idempotent (saved batch state; nothing is paid twice):
   extract     batch extraction of every uncached paper (projection x1.5)
-  claims      claim embeddings (fractions of a rupee; ledgered by the client)
+  claims      claim embeddings (about ₹0.5 per 100 claims; ledgered by the client)
   disagree    disagreement check on every shortlisted pair, BATCH mode (x2)
   fw-embed    future-work embeddings
   fw-match    two-stage future-work matcher, batch (x2)

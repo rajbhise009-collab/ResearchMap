@@ -15,8 +15,13 @@
       "papers": 99,
       "claims_read": 99,
       "built": "2026-10-04"
+    },
+    "social-media-teen-mental-health": {
+      "papers": 100,
+      "claims_read": 99,
+      "built": null
     }
   },
-  "total_papers": 312,
-  "n_libraries": 3
+  "total_papers": 412,
+  "n_libraries": 4
 }

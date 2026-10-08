@@ -1,0 +1,1045 @@
+{
+  "n": 104,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2549950368:c1",
+      "to_claim_id": "openalex:W2573955387:c2",
+      "similarity": 0.9308640956878662,
+      "a_paper_id": "openalex:W2549950368",
+      "a_text": "Facebook use affects well-being negatively.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "Overall, the use of Facebook is negatively associated with well-being.",
+      "explanation": "Both claims independently find a negative relationship between Facebook use and well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c5",
+      "to_claim_id": "openalex:W2788235370:c3",
+      "similarity": 0.9070801138877869,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on nonscreen activities were less likely to report mental health issues.",
+      "b_paper_id": "openalex:W2788235370",
+      "b_text": "Adolescents who spent less time on nonscreen activities had lower psychological well-being.",
+      "explanation": "Both claims assert a positive link between engagement in nonscreen activities and better adolescent psychological outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c5",
+      "to_claim_id": "openalex:W2896921383:c3",
+      "similarity": 0.8912588357925415,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Psychological well-being was lower in years when adolescents spent more time on screens.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Associations between screen time and lower psychological well-being are larger among adolescents than among younger children.",
+      "explanation": "Both claims report a negative relationship between screen time and psychological well-being in adolescents, with Claim B reinforcing Claim A by showing this association is particularly pronounced in this age group."
+    },
+    {
+      "from_claim_id": "openalex:W2568525121:c4",
+      "to_claim_id": "openalex:W2999059035:c1",
+      "similarity": 0.8830335140228271,
+      "a_paper_id": "openalex:W2568525121",
+      "a_text": "Female adolescents report significantly higher weekly time spent on social media than male adolescents.",
+      "b_paper_id": "openalex:W2999059035",
+      "b_text": "Adolescent girls spend more time on smartphones, social media, texting, general computer use, and online than adolescent boys.",
+      "explanation": "Both claims independently state that adolescent females spend more time on social media compared to adolescent males."
+    },
+    {
+      "from_claim_id": "openalex:W1782232633:c1",
+      "to_claim_id": "openalex:W2531561814:c4",
+      "similarity": 0.8722003698348999,
+      "a_paper_id": "openalex:W1782232633",
+      "a_text": "Depression is a predictor of Facebook intrusion.",
+      "b_paper_id": "openalex:W2531561814",
+      "b_text": "Depression is positively correlated with negative online social networking interactions, Facebook addiction or pathological SNS use, and Facebook intrusion.",
+      "explanation": "Both claims assert a positive link between depression and Facebook intrusion, with Claim A specifically framing depression as a predictor."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c5",
+      "to_claim_id": "openalex:W2788235370:c6",
+      "similarity": 0.8710967302322388,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on nonscreen activities were less likely to report mental health issues.",
+      "b_paper_id": "openalex:W2788235370",
+      "b_text": "Psychological well-being was higher in years when adolescents spent more time on nonscreen activities.",
+      "explanation": "Both claims report a positive association between adolescents spending time on nonscreen activities and better psychological well-being or fewer mental health issues."
+    },
+    {
+      "from_claim_id": "openalex:W2578856715:c4",
+      "to_claim_id": "openalex:W2998834126:c6",
+      "similarity": 0.866520345211029,
+      "a_paper_id": "openalex:W2578856715",
+      "a_text": "Digital-screen engagement in excess of derived inflection points accounts for 1.0% or less of the observed variability in adolescent mental well-being.",
+      "b_paper_id": "openalex:W2998834126",
+      "b_text": "The estimated associations between daily digital technology usage and adolescents' well-being are unlikely to be of clinical or practical significance.",
+      "explanation": "Both claims independently assert that the association between digital technology use and adolescent well-being is extremely small and practically negligible."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c2",
+      "to_claim_id": "openalex:W2896921383:c3",
+      "similarity": 0.8647076487541199,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Adolescents who spent more time on electronic communication and screens had lower psychological well-being.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Associations between screen time and lower psychological well-being are larger among adolescents than among younger children.",
+      "explanation": "Both claims affirm a negative association between screen time and psychological well-being in adolescents, with Claim B reinforcing Claim A by noting the effect is particularly pronounced in this age group."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c3",
+      "to_claim_id": "openalex:W2553776800:c3",
+      "similarity": 0.8615218997001648,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Thirteen percent of reviewed studies (n = 4) found no statistically significant correlation between online social networking engagement and depression symptoms.",
+      "b_paper_id": "openalex:W2553776800",
+      "b_text": "Of 30 studies examining total frequency or time spent on social networking sites, 8 found a direct positive association with depression and 16 found a nonsignificant association.",
+      "explanation": "Both claims report findings from literature reviews demonstrating that a notable portion of studies find no statistically significant association between social media engagement and depression."
+    },
+    {
+      "from_claim_id": "openalex:W2143095451:c1",
+      "to_claim_id": "openalex:W2766751125:c1",
+      "similarity": 0.8551302552223206,
+      "a_paper_id": "openalex:W2143095451",
+      "a_text": "The most dangerous form of suicidal desire is caused by the simultaneous presence of thwarted belongingness and perceived burdensomeness, along with hopelessness about these states.",
+      "b_paper_id": "openalex:W2766751125",
+      "b_text": "The interaction between thwarted belongingness and perceived burdensomeness is significantly associated with suicidal ideation.",
+      "explanation": "Both claims independently assert that the combination or interaction of thwarted belongingness and perceived burdensomeness is significantly linked to suicidal desire and ideation."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c1",
+      "to_claim_id": "openalex:W2999059035:c3",
+      "similarity": 0.8532814383506775,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "The magnitude of association between social media use and depressive symptoms is larger for adolescent girls than for boys.",
+      "b_paper_id": "openalex:W2999059035",
+      "b_text": "Associations between moderate or heavy digital media use and low psychological well-being or mental health issues are larger for adolescent girls than for boys.",
+      "explanation": "Both claims independently find that the negative association between digital or social media use and mental health issues is stronger for adolescent girls than for boys."
+    },
+    {
+      "from_claim_id": "openalex:W2566585401:c4",
+      "to_claim_id": "openalex:W2908500884:c1",
+      "similarity": 0.852975070476532,
+      "a_paper_id": "openalex:W2566585401",
+      "a_text": "For adolescent girls, feeling depressed triggers higher social networking site involvement.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "The magnitude of association between social media use and depressive symptoms is larger for adolescent girls than for boys.",
+      "explanation": "Both claims independently reinforce the finding of a strong link between social media use and depression specifically among adolescent girls."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c4",
+      "to_claim_id": "openalex:W2999059035:c3",
+      "similarity": 0.8528862595558167,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on new media were more likely to report mental health issues.",
+      "b_paper_id": "openalex:W2999059035",
+      "b_text": "Associations between moderate or heavy digital media use and low psychological well-being or mental health issues are larger for adolescent girls than for boys.",
+      "explanation": "Both claims identify a positive link between digital media use and mental health issues in adolescents, with the second claim adding specific detail regarding gender differences."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c1",
+      "to_claim_id": "openalex:W2553776800:c3",
+      "similarity": 0.8515605330467224,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Sixteen percent of reviewed empirical studies (n = 5) found a statistically significant positive correlation between engagement in online social networking and depression symptoms, with effect sizes ranging from r=.15 to r=.26.",
+      "b_paper_id": "openalex:W2553776800",
+      "b_text": "Of 30 studies examining total frequency or time spent on social networking sites, 8 found a direct positive association with depression and 16 found a nonsignificant association.",
+      "explanation": "Both claims present literature review findings indicating that only a minority of empirical studies find a statistically significant positive association between social media use and depression symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c5",
+      "to_claim_id": "openalex:W2896921383:c1",
+      "similarity": 0.8505041003227234,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Psychological well-being was lower in years when adolescents spent more time on screens.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "After 1 hour per day of screen use, higher daily screen time is associated with lower psychological well-being among children and adolescents aged 2 to 17.",
+      "explanation": "Both claims find a negative relationship between screen time and psychological well-being among adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c1",
+      "to_claim_id": "openalex:W2573955387:c4",
+      "similarity": 0.8492598533630371,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Facebook use predicts moment-to-moment declines in affective well-being over time.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "The negative associations between Facebook use and well-being are robust to multivariate cross-sectional analyses and 2-wave prospective analyses.",
+      "explanation": "Both claims independently demonstrate a negative association between Facebook use and well-being across different temporal and analytical frameworks."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c9",
+      "to_claim_id": "openalex:W2957614298:c2",
+      "similarity": 0.8473132252693176,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Social media use of 5 or more hours daily retains an independent 11% higher depressive symptom score after adjusting for mediating factors.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Increased social media use is associated with higher depressive symptoms across individuals.",
+      "explanation": "Both claims independently indicate a positive association between higher levels of social media use and increased depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2402700:c1",
+      "to_claim_id": "openalex:W2513928994:c9",
+      "similarity": 0.8449360728263855,
+      "a_paper_id": "openalex:W2402700",
+      "a_text": "Social media activity contains behavioral signals capable of predicting major depressive disorder in individuals prior to reported onset.",
+      "b_paper_id": "openalex:W2513928994",
+      "b_text": "Predictive markers of depression are detectable in Instagram posts made prior to the date of first clinical diagnosis.",
+      "explanation": "Both claims assert that social media posts contain detectable indicators capable of predicting depression prior to an official diagnosis or onset."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c6",
+      "to_claim_id": "openalex:W2788235370:c3",
+      "similarity": 0.8447615504264832,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Since 2010, adolescents spent more time on new media screen activities and less time on nonscreen activities.",
+      "b_paper_id": "openalex:W2788235370",
+      "b_text": "Adolescents who spent less time on nonscreen activities had lower psychological well-being.",
+      "explanation": "Claim A establishes a trend of decreasing nonscreen activity among adolescents, which mutually reinforces Claim B's finding that spending less time on nonscreen activities is linked to lower psychological well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c2",
+      "to_claim_id": "openalex:W2957614298:c2",
+      "similarity": 0.8440592288970947,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across cross-sectional studies is r = 0.12.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Increased social media use is associated with higher depressive symptoms across individuals.",
+      "explanation": "Both claims indicate a positive association between social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c3",
+      "to_claim_id": "openalex:W2957614298:c2",
+      "similarity": 0.8436310887336731,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across longitudinal studies is r = 0.12.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Increased social media use is associated with higher depressive symptoms across individuals.",
+      "explanation": "Both claims assert a positive association between social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2074577226:c2",
+      "to_claim_id": "openalex:W2957614298:c3",
+      "similarity": 0.843396008014679,
+      "a_paper_id": "openalex:W2074577226",
+      "a_text": "Internet addiction tendencies are positively associated with depressive symptoms across the sample.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Increased computer use is associated with higher depressive symptoms across individuals.",
+      "explanation": "Both claims independently demonstrate a positive relationship between digital technology engagement\u2014measured as internet addiction tendencies or computer use\u2014and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2415849311:c3",
+      "to_claim_id": "openalex:W2908500884:c1",
+      "similarity": 0.84272301197052,
+      "a_paper_id": "openalex:W2415849311",
+      "a_text": "Greater overall social media use in adolescents is associated with higher levels of anxiety and depression.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "The magnitude of association between social media use and depressive symptoms is larger for adolescent girls than for boys.",
+      "explanation": "Claim B reinforces Claim A's finding of a link between social media use and depressive symptoms in adolescents by detailing how the strength of this association varies by gender."
+    },
+    {
+      "from_claim_id": "openalex:W2549950368:c1",
+      "to_claim_id": "openalex:W2573955387:c4",
+      "similarity": 0.8418050408363342,
+      "a_paper_id": "openalex:W2549950368",
+      "a_text": "Facebook use affects well-being negatively.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "The negative associations between Facebook use and well-being are robust to multivariate cross-sectional analyses and 2-wave prospective analyses.",
+      "explanation": "Both claims assert that Facebook use is linked to lower well-being, with Claim B providing evidence that this negative association is methodologically robust."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c2",
+      "to_claim_id": "openalex:W2573955387:c4",
+      "similarity": 0.8381690979003906,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Facebook use over a two-week period predicts declines in overall life satisfaction over time.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "The negative associations between Facebook use and well-being are robust to multivariate cross-sectional analyses and 2-wave prospective analyses.",
+      "explanation": "Both claims independently find that Facebook use is linked to negative outcomes in overall well-being and life satisfaction over time."
+    },
+    {
+      "from_claim_id": "openalex:W2554464434:c1",
+      "to_claim_id": "openalex:W2770314219:c1",
+      "similarity": 0.8368818163871765,
+      "a_paper_id": "openalex:W2554464434",
+      "a_text": "The 12-month prevalence of major depressive episodes in adolescents increased from 8.7% in 2005 to 11.3% in 2014.",
+      "b_paper_id": "openalex:W2770314219",
+      "b_text": "Depressive symptoms among U.S. adolescents in grades 8 through 12 increased between 2010 and 2015, especially among females.",
+      "explanation": "Both claims independently document an increase in adolescent depression and depressive symptoms over overlapping time periods in the 2000s and 2010s."
+    },
+    {
+      "from_claim_id": "openalex:W2568525121:c3",
+      "to_claim_id": "openalex:W2908500884:c3",
+      "similarity": 0.8366187214851379,
+      "a_paper_id": "openalex:W2568525121",
+      "a_text": "Adolescents at-risk of problematic social media use report significantly higher levels of depressive symptoms compared to non-risk and low-risk peers.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Boys spending 3 to <5 hours daily on social media show a 21% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "explanation": "Both claims independently demonstrate a positive link between higher or problematic social media use and increased depressive symptoms in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W2908500884:c5",
+      "similarity": 0.8357776403427124,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Boys spending 5 or more hours daily on social media show a 35% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "explanation": "Claim B provides specific empirical evidence of a positive association between high social media use and increased depressive symptoms, supporting the general correlation reported in Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c2",
+      "to_claim_id": "openalex:W2896921383:c1",
+      "similarity": 0.8355786800384521,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Adolescents who spent more time on electronic communication and screens had lower psychological well-being.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "After 1 hour per day of screen use, higher daily screen time is associated with lower psychological well-being among children and adolescents aged 2 to 17.",
+      "explanation": "Both claims independently indicate that increased screen time is associated with lower psychological well-being in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W2908500884:c3",
+      "similarity": 0.8355677723884583,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Boys spending 3 to <5 hours daily on social media show a 21% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "explanation": "Both claims independently demonstrate a positive association between social media use and increased depressive symptoms in young people."
+    },
+    {
+      "from_claim_id": "openalex:W2566585401:c4",
+      "to_claim_id": "openalex:W2908500884:c4",
+      "similarity": 0.8351849913597107,
+      "a_paper_id": "openalex:W2566585401",
+      "a_text": "For adolescent girls, feeling depressed triggers higher social networking site involvement.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Girls spending 5 or more hours daily on social media show a 50% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "explanation": "Both claims independently demonstrate a positive link between social media use and depressive symptoms in adolescent girls."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c1",
+      "to_claim_id": "openalex:W2593771132:c2",
+      "similarity": 0.8345265984535217,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Sixteen percent of reviewed empirical studies (n = 5) found a statistically significant positive correlation between engagement in online social networking and depression symptoms, with effect sizes ranging from r=.15 to r=.26.",
+      "b_paper_id": "openalex:W2593771132",
+      "b_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across cross-sectional studies is r = 0.12.",
+      "explanation": "Both claims independently report review findings indicating a small positive correlation between social media engagement and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c2",
+      "to_claim_id": "openalex:W2549950368:c2",
+      "similarity": 0.8339196443557739,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Facebook use over a two-week period predicts declines in overall life satisfaction over time.",
+      "b_paper_id": "openalex:W2549950368",
+      "b_text": "Taking a break from Facebook increases life satisfaction.",
+      "explanation": "Both claims provide mutually reinforcing evidence that Facebook usage negatively impacts overall life satisfaction."
+    },
+    {
+      "from_claim_id": "openalex:W1965892473:c2",
+      "to_claim_id": "openalex:W2554464434:c3",
+      "similarity": 0.8327970504760742,
+      "a_paper_id": "openalex:W1965892473",
+      "a_text": "The age of onset of major depression decreased, with an increase in rates in late teenaged and early adult years.",
+      "b_paper_id": "openalex:W2554464434",
+      "b_text": "The increase in major depressive episode prevalence was larger and statistically significant only in the age range of 12 to 20 years.",
+      "explanation": "Both claims independently report a significant increase in depression rates specifically among adolescents and young adults."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c1",
+      "to_claim_id": "openalex:W2593771132:c3",
+      "similarity": 0.8326579332351685,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Sixteen percent of reviewed empirical studies (n = 5) found a statistically significant positive correlation between engagement in online social networking and depression symptoms, with effect sizes ranging from r=.15 to r=.26.",
+      "b_paper_id": "openalex:W2593771132",
+      "b_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across longitudinal studies is r = 0.12.",
+      "explanation": "Both claims independently report a small positive correlation between social media engagement and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2415849311:c2",
+      "to_claim_id": "openalex:W2568525121:c2",
+      "similarity": 0.8325597643852234,
+      "a_paper_id": "openalex:W2415849311",
+      "a_text": "Greater overall social media use in adolescents is associated with lower self-esteem.",
+      "b_paper_id": "openalex:W2568525121",
+      "b_text": "Adolescents at-risk of problematic social media use report significantly lower self-esteem compared to non-risk and low-risk peers.",
+      "explanation": "Both claims independently demonstrate a negative association between social media involvement\u2014whether measured as overall usage or problematic usage\u2014and adolescent self-esteem."
+    },
+    {
+      "from_claim_id": "openalex:W1719054056:c3",
+      "to_claim_id": "openalex:W2030386269:c1",
+      "similarity": 0.8312402367591858,
+      "a_paper_id": "openalex:W1719054056",
+      "a_text": "Cognitive therapy addresses anxiety by restructuring patient assumptions across cognitive, affective, and behavioral components.",
+      "b_paper_id": "openalex:W2030386269",
+      "b_text": "Cognitive therapy provides structured models and techniques for assessing and treating specific anxiety disorders.",
+      "explanation": "Both claims affirm that cognitive therapy effectively treats anxiety disorders through structured, component-based frameworks and techniques."
+    },
+    {
+      "from_claim_id": "openalex:W2415849311:c3",
+      "to_claim_id": "openalex:W2751422871:c3",
+      "similarity": 0.8305275440216064,
+      "a_paper_id": "openalex:W2415849311",
+      "a_text": "Greater overall social media use in adolescents is associated with higher levels of anxiety and depression.",
+      "b_paper_id": "openalex:W2751422871",
+      "b_text": "Adolescent anxiety and depressive symptoms are highest among adolescents with both a relatively high number of parent-reported social media accounts and relatively high FoMO.",
+      "explanation": "Both claims find that greater adolescent social media engagement\u2014whether measured by overall use or number of accounts\u2014is associated with higher levels of anxiety and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W1849635709:c4",
+      "to_claim_id": "openalex:W2017596542:c1",
+      "similarity": 0.8301883935928345,
+      "a_paper_id": "openalex:W1849635709",
+      "a_text": "Daily social networking site use of more than 2 hours is independently associated with high levels of psychological distress in children and adolescents.",
+      "b_paper_id": "openalex:W2017596542",
+      "b_text": "Frequent Facebook interaction is directly associated with greater psychological distress.",
+      "explanation": "Both claims find that frequent or high-duration social media use is positively associated with psychological distress."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c9",
+      "to_claim_id": "openalex:W2957614298:c4",
+      "similarity": 0.829316258430481,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Social media use of 5 or more hours daily retains an independent 11% higher depressive symptom score after adjusting for mediating factors.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Within-person annual increases in social media use are associated with concurrent increases in depressive symptoms.",
+      "explanation": "Both claims provide mutually reinforcing evidence that higher or increased levels of social media use are associated with elevated depressive symptoms in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W1849635709:c4",
+      "to_claim_id": "openalex:W2972459530:c1",
+      "similarity": 0.8291575312614441,
+      "a_paper_id": "openalex:W1849635709",
+      "a_text": "Daily social networking site use of more than 2 hours is independently associated with high levels of psychological distress in children and adolescents.",
+      "b_paper_id": "openalex:W2972459530",
+      "b_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with internalizing problems alone among adolescents.",
+      "explanation": "Both claims independently report a significant association between high daily social media use and adverse mental health outcomes in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W2908500884:c4",
+      "similarity": 0.8290138840675354,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Girls spending 5 or more hours daily on social media show a 50% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "explanation": "Claim B provides specific evidence of a positive association between heavy social media use and depressive symptoms, which reinforces Claim A's general finding of a correlation between social media use and depressive symptoms in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c4",
+      "to_claim_id": "openalex:W2788235370:c2",
+      "similarity": 0.8275883197784424,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on new media were more likely to report mental health issues.",
+      "b_paper_id": "openalex:W2788235370",
+      "b_text": "Adolescents who spent more time on electronic communication and screens had lower psychological well-being.",
+      "explanation": "Both claims report that increased engagement with digital media and screens is linked to worse mental health outcomes in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2568525121:c3",
+      "to_claim_id": "openalex:W2908500884:c2",
+      "similarity": 0.8274136185646057,
+      "a_paper_id": "openalex:W2568525121",
+      "a_text": "Adolescents at-risk of problematic social media use report significantly higher levels of depressive symptoms compared to non-risk and low-risk peers.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Girls spending 3 to <5 hours daily on social media show a 26% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "explanation": "Both claims independently demonstrate a positive association between increased or problematic social media involvement and higher levels of depressive symptoms in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c2",
+      "to_claim_id": "openalex:W2944221730:c1",
+      "similarity": 0.827375054359436,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across cross-sectional studies is r = 0.12.",
+      "b_paper_id": "openalex:W2944221730",
+      "b_text": "The median cross-sectional correlation between adolescent social media use and life satisfaction across all operationalizations was small and negative (psi = -0.13).",
+      "explanation": "Both claims report small negative associations between social media use and adolescent mental well-being, as reflected by increased depressive symptoms and decreased life satisfaction."
+    },
+    {
+      "from_claim_id": "openalex:W2074577226:c4",
+      "to_claim_id": "openalex:W2314751257:c3",
+      "similarity": 0.8271257877349854,
+      "a_paper_id": "openalex:W2074577226",
+      "a_text": "Young people are significantly more likely to show Internet addictive symptoms than older people.",
+      "b_paper_id": "openalex:W2314751257",
+      "b_text": "Age is inversely related to the addictive use of social media and video games.",
+      "explanation": "Both claims independently demonstrate an inverse relationship between age and the risk or prevalence of addictive behaviors related to digital technology and the internet."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c5",
+      "to_claim_id": "openalex:W2553776800:c1",
+      "similarity": 0.8262903690338135,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Depression is negatively correlated with Facebook social support satisfaction, positive social comparison, number of Facebook friends, and perceived Facebook social connectedness.",
+      "b_paper_id": "openalex:W2553776800",
+      "b_text": "Positive interactions, social support, and social connectedness on social networking sites were consistently related to lower levels of depression and anxiety.",
+      "explanation": "Both claims indicate that higher levels of online social support and social connectedness are associated with lower levels of depression."
+    },
+    {
+      "from_claim_id": "openalex:W2140296281:c3",
+      "to_claim_id": "openalex:W2593771132:c1",
+      "similarity": 0.826079249382019,
+      "a_paper_id": "openalex:W2140296281",
+      "a_text": "Instant messenger use is positively associated with depression six months later in adolescents.",
+      "b_paper_id": "openalex:W2593771132",
+      "b_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "explanation": "Both claims report a positive statistical association between online communication/social media use and depressive symptoms in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2415849311:c3",
+      "to_claim_id": "openalex:W2972459530:c2",
+      "similarity": 0.8256876468658447,
+      "a_paper_id": "openalex:W2415849311",
+      "a_text": "Greater overall social media use in adolescents is associated with higher levels of anxiety and depression.",
+      "b_paper_id": "openalex:W2972459530",
+      "b_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with comorbid internalizing and externalizing problems among adolescents.",
+      "explanation": "Both claims independently indicate that higher social media use among adolescents is associated with increased mental health risks, particularly internalizing problems such as anxiety and depression."
+    },
+    {
+      "from_claim_id": "openalex:W2578856715:c1",
+      "to_claim_id": "openalex:W2896921383:c1",
+      "similarity": 0.8252195715904236,
+      "a_paper_id": "openalex:W2578856715",
+      "a_text": "The relationship between daily digital-screen time and adolescent mental well-being is described by concave-down quadratic functions.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "After 1 hour per day of screen use, higher daily screen time is associated with lower psychological well-being among children and adolescents aged 2 to 17.",
+      "explanation": "Both claims describe a non-linear, inverted U-shaped relationship where moderate screen use is not harmful, but increasing screen time past a threshold is associated with lower mental well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2568525121:c3",
+      "to_claim_id": "openalex:W2908500884:c5",
+      "similarity": 0.8250555396080017,
+      "a_paper_id": "openalex:W2568525121",
+      "a_text": "Adolescents at-risk of problematic social media use report significantly higher levels of depressive symptoms compared to non-risk and low-risk peers.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Boys spending 5 or more hours daily on social media show a 35% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "explanation": "Both claims independently report a positive association between high or problematic social media use and elevated depressive symptoms in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c7",
+      "to_claim_id": "openalex:W2549950368:c1",
+      "similarity": 0.8247432112693787,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Direct social interaction magnifies the negative effect of Facebook use on affective well-being.",
+      "b_paper_id": "openalex:W2549950368",
+      "b_text": "Facebook use affects well-being negatively.",
+      "explanation": "Both claims independently assert that Facebook use has a negative impact on well-being, with Claim A adding a specific condition that magnifies this effect."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c3",
+      "to_claim_id": "openalex:W2957614298:c4",
+      "similarity": 0.8243624567985535,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across longitudinal studies is r = 0.12.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Within-person annual increases in social media use are associated with concurrent increases in depressive symptoms.",
+      "explanation": "Both claims independently report a positive association between social media use and depressive symptoms in longitudinal contexts."
+    },
+    {
+      "from_claim_id": "openalex:W2549950368:c1",
+      "to_claim_id": "openalex:W2573955387:c5",
+      "similarity": 0.8242946267127991,
+      "a_paper_id": "openalex:W2549950368",
+      "a_text": "Facebook use affects well-being negatively.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "The negative associations of Facebook use are comparable to or greater in magnitude than the positive impact of offline interactions.",
+      "explanation": "Both claims assert that Facebook use is associated with negative outcomes, with Claim B further detailing the relative magnitude of these negative impacts."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c1",
+      "to_claim_id": "openalex:W2549950368:c1",
+      "similarity": 0.8241730332374573,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Facebook use predicts moment-to-moment declines in affective well-being over time.",
+      "b_paper_id": "openalex:W2549950368",
+      "b_text": "Facebook use affects well-being negatively.",
+      "explanation": "Both claims independently conclude that using Facebook has a negative impact on well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c6",
+      "to_claim_id": "openalex:W2553776800:c2",
+      "similarity": 0.8238055109977722,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Social comparison and rumination act as candidate mediators in the relationship between social networking site use and depression.",
+      "b_paper_id": "openalex:W2553776800",
+      "b_text": "Negative interactions and social comparisons on social networking sites were related to higher levels of depression and anxiety.",
+      "explanation": "Both claims provide mutually reinforcing findings that social comparison on social networking sites is linked to higher levels of depression."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c8",
+      "to_claim_id": "openalex:W2573955387:c4",
+      "similarity": 0.8227044343948364,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Individual difference variables such as network size, perceived support, gender, self-esteem, depression, and motivation do not moderate Facebook's impact on well-being declines.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "The negative associations between Facebook use and well-being are robust to multivariate cross-sectional analyses and 2-wave prospective analyses.",
+      "explanation": "Both claims independently reinforce the conclusion that the negative relationship between Facebook use and well-being is robust and consistent, holding true across individual differences and different analytical methods."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c4",
+      "to_claim_id": "openalex:W2553776800:c2",
+      "similarity": 0.822459876537323,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Depression is positively correlated with negative online social networking interactions, Facebook addiction or pathological SNS use, and Facebook intrusion.",
+      "b_paper_id": "openalex:W2553776800",
+      "b_text": "Negative interactions and social comparisons on social networking sites were related to higher levels of depression and anxiety.",
+      "explanation": "Both claims report a positive association between negative social media interactions and higher levels of depression."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c2",
+      "to_claim_id": "openalex:W2573955387:c2",
+      "similarity": 0.8221864104270935,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Facebook use over a two-week period predicts declines in overall life satisfaction over time.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "Overall, the use of Facebook is negatively associated with well-being.",
+      "explanation": "Both claims report a negative association between Facebook use and indicators of psychological well-being, such as overall life satisfaction."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c3",
+      "to_claim_id": "openalex:W2573955387:c1",
+      "similarity": 0.8219121098518372,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Direct social interaction predicts increases in affective well-being over time.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "Face-to-face social interactions enhance well-being.",
+      "explanation": "Both claims assert that direct, face-to-face social interactions positively contribute to an individual's well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c5",
+      "to_claim_id": "openalex:W2896921383:c8",
+      "similarity": 0.8219109773635864,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Psychological well-being was lower in years when adolescents spent more time on screens.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Moderate use of screens (4 hours per day vs 1 hour per day) is associated with lower psychological well-being.",
+      "explanation": "Both claims independently find that higher levels of screen time are associated with lower psychological well-being in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2017596542:c1",
+      "to_claim_id": "openalex:W2052878984:c3",
+      "similarity": 0.8217909932136536,
+      "a_paper_id": "openalex:W2017596542",
+      "a_text": "Frequent Facebook interaction is directly associated with greater psychological distress.",
+      "b_paper_id": "openalex:W2052878984",
+      "b_text": "Individuals who use Facebook exhibit higher anxiety compared to non-users.",
+      "explanation": "Both claims independently find a positive association between Facebook usage and adverse mental health outcomes such as psychological distress and anxiety."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c9",
+      "to_claim_id": "openalex:W2896921383:c3",
+      "similarity": 0.8217629790306091,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "The decrease in adolescent psychological well-being may be at least partially due to the rapid adoption of smartphones and the subsequent shift in time use.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Associations between screen time and lower psychological well-being are larger among adolescents than among younger children.",
+      "explanation": "Both claims report a negative link between digital screen or smartphone time and psychological well-being in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2568525121:c3",
+      "to_claim_id": "openalex:W2751422871:c3",
+      "similarity": 0.8212882280349731,
+      "a_paper_id": "openalex:W2568525121",
+      "a_text": "Adolescents at-risk of problematic social media use report significantly higher levels of depressive symptoms compared to non-risk and low-risk peers.",
+      "b_paper_id": "openalex:W2751422871",
+      "b_text": "Adolescent anxiety and depressive symptoms are highest among adolescents with both a relatively high number of parent-reported social media accounts and relatively high FoMO.",
+      "explanation": "Both claims independently demonstrate that higher or more problematic engagement with social media is associated with increased depressive symptoms in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2031193130:c2",
+      "to_claim_id": "openalex:W2415849311:c2",
+      "similarity": 0.8210957050323486,
+      "a_paper_id": "openalex:W2031193130",
+      "a_text": "Certain social networking site activities might be associated with low self-esteem, especially in children and adolescents.",
+      "b_paper_id": "openalex:W2415849311",
+      "b_text": "Greater overall social media use in adolescents is associated with lower self-esteem.",
+      "explanation": "Both claims independently indicate a negative link between social media involvement and self-esteem in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2578856715:c1",
+      "to_claim_id": "openalex:W2772977815:c3",
+      "similarity": 0.8209596872329712,
+      "a_paper_id": "openalex:W2578856715",
+      "a_text": "The relationship between daily digital-screen time and adolescent mental well-being is described by concave-down quadratic functions.",
+      "b_paper_id": "openalex:W2772977815",
+      "b_text": "Digital screen time is linked to positive affect via small parabolic functions.",
+      "explanation": "Both claims independently identify a non-linear, parabolic (quadratic) relationship between digital screen time and positive aspects of adolescent mental health."
+    },
+    {
+      "from_claim_id": "openalex:W2578856715:c4",
+      "to_claim_id": "openalex:W2998834126:c4",
+      "similarity": 0.820857048034668,
+      "a_paper_id": "openalex:W2578856715",
+      "a_text": "Digital-screen engagement in excess of derived inflection points accounts for 1.0% or less of the observed variability in adolescent mental well-being.",
+      "b_paper_id": "openalex:W2998834126",
+      "b_text": "Recent large-scale preregistered studies report small associations between daily digital technology usage and adolescents' well-being.",
+      "explanation": "Both claims independently indicate that the association between digital technology or screen use and adolescent mental well-being is very small."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c1",
+      "to_claim_id": "openalex:W2625284073:c3",
+      "similarity": 0.820380687713623,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Sixteen percent of reviewed empirical studies (n = 5) found a statistically significant positive correlation between engagement in online social networking and depression symptoms, with effect sizes ranging from r=.15 to r=.26.",
+      "b_paper_id": "openalex:W2625284073",
+      "b_text": "The correlations between time spent on social networking sites and negative psychological well-being indicators (depression and loneliness) are weak.",
+      "explanation": "Both claims describe the correlation between social networking use and depression symptoms as weak, with Claim A providing specific effect sizes (r=.15 to .26) that align with Claim B's characterization."
+    },
+    {
+      "from_claim_id": "openalex:W1849635709:c3",
+      "to_claim_id": "openalex:W2770314219:c4",
+      "similarity": 0.8197610378265381,
+      "a_paper_id": "openalex:W1849635709",
+      "a_text": "Daily social networking site use of more than 2 hours is independently associated with poor self-rated mental health in children and adolescents.",
+      "b_paper_id": "openalex:W2770314219",
+      "b_text": "Adolescents who spent more time on new media were more likely to report mental health issues.",
+      "explanation": "Both claims independently find that increased time spent on social or new media is associated with a higher likelihood of mental health issues in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2554464434:c1",
+      "to_claim_id": "openalex:W2957614298:c1",
+      "similarity": 0.8176411986351013,
+      "a_paper_id": "openalex:W2554464434",
+      "a_text": "The 12-month prevalence of major depressive episodes in adolescents increased from 8.7% in 2005 to 11.3% in 2014.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Depressive symptoms in adolescents increased yearly over a 4-year period.",
+      "explanation": "Both claims report an upward trend in adolescent depression and depressive symptoms over time."
+    },
+    {
+      "from_claim_id": "openalex:W1849635709:c4",
+      "to_claim_id": "openalex:W2972459530:c2",
+      "similarity": 0.8168596625328064,
+      "a_paper_id": "openalex:W1849635709",
+      "a_text": "Daily social networking site use of more than 2 hours is independently associated with high levels of psychological distress in children and adolescents.",
+      "b_paper_id": "openalex:W2972459530",
+      "b_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with comorbid internalizing and externalizing problems among adolescents.",
+      "explanation": "Both claims independently find that spending high amounts of daily time on social media is significantly associated with adverse mental health outcomes in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2549950368:c4",
+      "to_claim_id": "openalex:W2573955387:c2",
+      "similarity": 0.8168408870697021,
+      "a_paper_id": "openalex:W2549950368",
+      "a_text": "The positive well-being effects of taking a break from Facebook are significantly greater for heavy Facebook users.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "Overall, the use of Facebook is negatively associated with well-being.",
+      "explanation": "Both claims mutually reinforce the finding that Facebook usage adversely affects well-being, as overall use is negatively associated with well-being and taking a break from it yields positive well-being effects."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c4",
+      "to_claim_id": "openalex:W2896921383:c6",
+      "similarity": 0.8156799077987671,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on new media were more likely to report mental health issues.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to have been treated by a mental health professional in the last 12 months (RR 2.22).",
+      "explanation": "Both claims independently find that higher screen or new media use among adolescents is associated with an increased likelihood of mental health issues or receiving mental health treatment."
+    },
+    {
+      "from_claim_id": "openalex:W1965892473:c2",
+      "to_claim_id": "openalex:W2554464434:c2",
+      "similarity": 0.8154361844062805,
+      "a_paper_id": "openalex:W1965892473",
+      "a_text": "The age of onset of major depression decreased, with an increase in rates in late teenaged and early adult years.",
+      "b_paper_id": "openalex:W2554464434",
+      "b_text": "The 12-month prevalence of major depressive episodes in young adults increased from 8.8% in 2005 to 9.6% in 2014.",
+      "explanation": "Both claims report an increase in major depression rates or prevalence among young adults."
+    },
+    {
+      "from_claim_id": "openalex:W2017596542:c1",
+      "to_claim_id": "openalex:W2052878984:c4",
+      "similarity": 0.8144997358322144,
+      "a_paper_id": "openalex:W2017596542",
+      "a_text": "Frequent Facebook interaction is directly associated with greater psychological distress.",
+      "b_paper_id": "openalex:W2052878984",
+      "b_text": "Individuals who use Facebook exhibit higher stress compared to non-users.",
+      "explanation": "Both claims independently find a positive association between Facebook use and heightened psychological distress or stress."
+    },
+    {
+      "from_claim_id": "openalex:W2121693378:c4",
+      "to_claim_id": "openalex:W2560151242:c1",
+      "similarity": 0.8143543601036072,
+      "a_paper_id": "openalex:W2121693378",
+      "a_text": "An online self-help cognitive behavioral therapy program produced a modest reduction in depressive symptoms in young adults post-test with an effect size of d = 0.20.",
+      "b_paper_id": "openalex:W2560151242",
+      "b_text": "Computerised cognitive behavioural therapy (cCBT) provides clinical benefit for depression in adolescents and young adults.",
+      "explanation": "Both claims report that online or computerized cognitive behavioral therapy provides clinical benefits by reducing depressive symptoms in young adults."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W2751422871:c1",
+      "similarity": 0.813330888748169,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W2751422871",
+      "b_text": "Parent and adolescent reports of adolescent social media account counts are moderately correlated with parent-reported DSM-5 symptoms of inattention, hyperactivity/impulsivity, ODD, anxiety, and depression.",
+      "explanation": "Both claims independently report a positive correlation between adolescent social media engagement and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W2944221730:c1",
+      "similarity": 0.812966525554657,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W2944221730",
+      "b_text": "The median cross-sectional correlation between adolescent social media use and life satisfaction across all operationalizations was small and negative (psi = -0.13).",
+      "explanation": "Both claims independently demonstrate a small, negative association between adolescent social media use and measures of psychological well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c3",
+      "to_claim_id": "openalex:W2625284073:c3",
+      "similarity": 0.8125288486480713,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Thirteen percent of reviewed studies (n = 4) found no statistically significant correlation between online social networking engagement and depression symptoms.",
+      "b_paper_id": "openalex:W2625284073",
+      "b_text": "The correlations between time spent on social networking sites and negative psychological well-being indicators (depression and loneliness) are weak.",
+      "explanation": "Both claims indicate that the association between social media use and depression is generally weak or non-existent in some studies."
+    },
+    {
+      "from_claim_id": "openalex:W2573955387:c2",
+      "to_claim_id": "openalex:W2625284073:c1",
+      "similarity": 0.8116216063499451,
+      "a_paper_id": "openalex:W2573955387",
+      "a_text": "Overall, the use of Facebook is negatively associated with well-being.",
+      "b_paper_id": "openalex:W2625284073",
+      "b_text": "The overall correlation between time spent on social networking sites and psychological well-being is low (r = -0.07).",
+      "explanation": "Both claims report a negative association between social media use and psychological well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2031193130:c2",
+      "to_claim_id": "openalex:W2121583115:c7",
+      "similarity": 0.8108580708503723,
+      "a_paper_id": "openalex:W2031193130",
+      "a_text": "Certain social networking site activities might be associated with low self-esteem, especially in children and adolescents.",
+      "b_paper_id": "openalex:W2121583115",
+      "b_text": "Negative feedback on profile decreases adolescents' social self-esteem.",
+      "explanation": "Claim B provides a specific example of how a social networking site activity, namely receiving negative profile feedback, leads to lower self-esteem in adolescents as generally suggested by Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W2031193130:c1",
+      "to_claim_id": "openalex:W2553776800:c3",
+      "similarity": 0.810777485370636,
+      "a_paper_id": "openalex:W2031193130",
+      "a_text": "Prolonged use of social networking sites may be related to signs and symptoms of depression.",
+      "b_paper_id": "openalex:W2553776800",
+      "b_text": "Of 30 studies examining total frequency or time spent on social networking sites, 8 found a direct positive association with depression and 16 found a nonsignificant association.",
+      "explanation": "Claim B provides empirical evidence showing that multiple studies found a direct positive association between social media use and depression, which reinforces Claim A's assertion that prolonged use may be related to depression."
+    },
+    {
+      "from_claim_id": "openalex:W2118360093:c5",
+      "to_claim_id": "openalex:W2573955387:c1",
+      "similarity": 0.8107436299324036,
+      "a_paper_id": "openalex:W2118360093",
+      "a_text": "Face-to-face communication is strongly associated with positive social well-being in young girls.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "Face-to-face social interactions enhance well-being.",
+      "explanation": "Both claims assert that face-to-face social interactions or communication have a positive impact on well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2896921383:c8",
+      "to_claim_id": "openalex:W2999059035:c6",
+      "similarity": 0.8105250000953674,
+      "a_paper_id": "openalex:W2896921383",
+      "a_text": "Moderate use of screens (4 hours per day vs 1 hour per day) is associated with lower psychological well-being.",
+      "b_paper_id": "openalex:W2999059035",
+      "b_text": "Heavy users of digital media are often twice as likely as low users to experience low psychological well-being or mental health issues.",
+      "explanation": "Both claims find that higher levels of screen or digital media use are associated with lower psychological well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c1",
+      "to_claim_id": "openalex:W2957614298:c1",
+      "similarity": 0.8091758489608765,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Depressive symptoms among U.S. adolescents in grades 8 through 12 increased between 2010 and 2015, especially among females.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Depressive symptoms in adolescents increased yearly over a 4-year period.",
+      "explanation": "Both claims independently report an increase in adolescent depressive symptoms over a multi-year period."
+    },
+    {
+      "from_claim_id": "openalex:W2126370723:c1",
+      "to_claim_id": "openalex:W2593771132:c1",
+      "similarity": 0.8084930181503296,
+      "a_paper_id": "openalex:W2126370723",
+      "a_text": "There is a statistically significant positive correlation between BDI-II depression scores and time spent on online social networking in high school students.",
+      "b_paper_id": "openalex:W2593771132",
+      "b_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "explanation": "Both claims report a statistically significant positive correlation between social media use and depressive symptoms in young people."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c4",
+      "to_claim_id": "openalex:W2999059035:c6",
+      "similarity": 0.8082658648490906,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on new media were more likely to report mental health issues.",
+      "b_paper_id": "openalex:W2999059035",
+      "b_text": "Heavy users of digital media are often twice as likely as low users to experience low psychological well-being or mental health issues.",
+      "explanation": "Both claims report a positive association between higher digital/new media use and an increased likelihood of experiencing mental health issues."
+    },
+    {
+      "from_claim_id": "openalex:W2031193130:c1",
+      "to_claim_id": "openalex:W2957614298:c2",
+      "similarity": 0.8082129955291748,
+      "a_paper_id": "openalex:W2031193130",
+      "a_text": "Prolonged use of social networking sites may be related to signs and symptoms of depression.",
+      "b_paper_id": "openalex:W2957614298",
+      "b_text": "Increased social media use is associated with higher depressive symptoms across individuals.",
+      "explanation": "Both claims report a positive association between increased or prolonged social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2578856715:c4",
+      "to_claim_id": "openalex:W2998834126:c3",
+      "similarity": 0.8081186413764954,
+      "a_paper_id": "openalex:W2578856715",
+      "a_text": "Digital-screen engagement in excess of derived inflection points accounts for 1.0% or less of the observed variability in adolescent mental well-being.",
+      "b_paper_id": "openalex:W2998834126",
+      "b_text": "Research on digital technology usage and adolescent mental health has generated a mix of conflicting small positive, negative, and null associations.",
+      "explanation": "Claim A's finding of a tiny association aligns with Claim B's characterization of the literature as yielding small or null associations."
+    },
+    {
+      "from_claim_id": "openalex:W2625284073:c2",
+      "to_claim_id": "openalex:W2944221730:c1",
+      "similarity": 0.8077582120895386,
+      "a_paper_id": "openalex:W2625284073",
+      "a_text": "The correlations between time spent on social networking sites and positive psychological well-being indicators (self-esteem and life satisfaction) are close to 0.",
+      "b_paper_id": "openalex:W2944221730",
+      "b_text": "The median cross-sectional correlation between adolescent social media use and life satisfaction across all operationalizations was small and negative (psi = -0.13).",
+      "explanation": "Both claims independently indicate that the association between adolescent social media use and life satisfaction is minimal, being either close to zero or small and negative."
+    },
+    {
+      "from_claim_id": "openalex:W1892688171:c2",
+      "to_claim_id": "openalex:W2068511562:c6",
+      "similarity": 0.8073869347572327,
+      "a_paper_id": "openalex:W1892688171",
+      "a_text": "Correlations between cyberbullying and anxiety among children and adolescents are inconsistent or weak.",
+      "b_paper_id": "openalex:W2068511562",
+      "b_text": "Methodological and sample characteristics serve as moderators of relationships between cyberbullying and behavioral/psychological variables.",
+      "explanation": "Claim B's finding that methodological and sample characteristics act as moderators helps explain and reinforce the inconsistent correlations between cyberbullying and anxiety noted in Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W2402700:c8",
+      "to_claim_id": "openalex:W2513928994:c9",
+      "similarity": 0.8072654604911804,
+      "a_paper_id": "openalex:W2402700",
+      "a_text": "An RBF Support Vector Machine classifier using dimension-reduced social media and demographic features achieves 70.35% positive class accuracy and 0.742 precision in predicting depression ahead of onset.",
+      "b_paper_id": "openalex:W2513928994",
+      "b_text": "Predictive markers of depression are detectable in Instagram posts made prior to the date of first clinical diagnosis.",
+      "explanation": "Both claims independently demonstrate that social media data contains detectable predictive markers capable of forecasting depression prior to its formal onset or diagnosis."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c4",
+      "to_claim_id": "openalex:W2896921383:c7",
+      "similarity": 0.8070492744445801,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on new media were more likely to report mental health issues.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to have taken medication for a psychological or behavioral issue in the last 12 months (RR 2.99).",
+      "explanation": "Both claims independently indicate that higher screen or new media use among adolescents is associated with an increased likelihood of mental health issues or related interventions."
+    },
+    {
+      "from_claim_id": "openalex:W2549950368:c6",
+      "to_claim_id": "openalex:W2573955387:c2",
+      "similarity": 0.8059296607971191,
+      "a_paper_id": "openalex:W2549950368",
+      "a_text": "The positive well-being effects of taking a break from Facebook are significantly greater for users who tend to envy others on Facebook.",
+      "b_paper_id": "openalex:W2573955387",
+      "b_text": "Overall, the use of Facebook is negatively associated with well-being.",
+      "explanation": "The finding that taking a break from Facebook improves well-being reinforces the finding that Facebook use is negatively associated with well-being."
+    },
+    {
+      "from_claim_id": "openalex:W1994045792:c6",
+      "to_claim_id": "openalex:W3101126289:c5",
+      "similarity": 0.8058173656463623,
+      "a_paper_id": "openalex:W1994045792",
+      "a_text": "Loneliness predicts subsequent increases in Facebook usage over time.",
+      "b_paper_id": "openalex:W3101126289",
+      "b_text": "Participants feeling lonely were more inclined to use social media to cope with lacking social contact.",
+      "explanation": "Both claims independently find that loneliness leads to an increased inclination toward or actual usage of social media platforms."
+    },
+    {
+      "from_claim_id": "openalex:W1849635709:c3",
+      "to_claim_id": "openalex:W2972459530:c1",
+      "similarity": 0.8058088421821594,
+      "a_paper_id": "openalex:W1849635709",
+      "a_text": "Daily social networking site use of more than 2 hours is independently associated with poor self-rated mental health in children and adolescents.",
+      "b_paper_id": "openalex:W2972459530",
+      "b_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with internalizing problems alone among adolescents.",
+      "explanation": "Both claims independently demonstrate that spending substantial daily time on social media is significantly associated with adverse mental health outcomes in adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2415849311:c3",
+      "to_claim_id": "openalex:W2566585401:c5",
+      "similarity": 0.8051919341087341,
+      "a_paper_id": "openalex:W2415849311",
+      "a_text": "Greater overall social media use in adolescents is associated with higher levels of anxiety and depression.",
+      "b_paper_id": "openalex:W2566585401",
+      "b_text": "For adolescent boys, anxiety triggers higher social networking site involvement.",
+      "explanation": "Claim B provides a specific directional mechanism in adolescent boys that reinforces the positive association between social media use and anxiety identified in Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c9",
+      "to_claim_id": "openalex:W3005199011:c1",
+      "similarity": 0.8036277890205383,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "The decrease in adolescent psychological well-being may be at least partially due to the rapid adoption of smartphones and the subsequent shift in time use.",
+      "b_paper_id": "openalex:W3005199011",
+      "b_text": "In the last decade, increasing mental distress and treatment for mental health conditions among youth in North America has paralleled a steep rise in the use of smartphones and social media by children and adolescents.",
+      "explanation": "Both claims assert a consistent link between increased smartphone use and a rise in adolescent mental health issues or declining well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c4",
+      "to_claim_id": "openalex:W2908500884:c9",
+      "similarity": 0.8034710884094238,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "Trimming and filling outlying studies reduces the random-effects pooled correlation estimate between social media use and depressive symptoms to r = 0.09.",
+      "b_paper_id": "openalex:W2908500884",
+      "b_text": "Social media use of 5 or more hours daily retains an independent 11% higher depressive symptom score after adjusting for mediating factors.",
+      "explanation": "Both claims independently demonstrate a positive association between social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2052878984:c4",
+      "to_claim_id": "openalex:W2549950368:c1",
+      "similarity": 0.8031136989593506,
+      "a_paper_id": "openalex:W2052878984",
+      "a_text": "Individuals who use Facebook exhibit higher stress compared to non-users.",
+      "b_paper_id": "openalex:W2549950368",
+      "b_text": "Facebook use affects well-being negatively.",
+      "explanation": "Both claims independently indicate that Facebook use is associated with adverse psychological outcomes, specifically increased stress and reduced overall well-being."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c5",
+      "to_claim_id": "openalex:W2896921383:c7",
+      "similarity": 0.8028877973556519,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on nonscreen activities were less likely to report mental health issues.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to have taken medication for a psychological or behavioral issue in the last 12 months (RR 2.99).",
+      "explanation": "Both claims provide mutually reinforcing findings that screen time is associated with poorer adolescent mental health outcomes, while non-screen activities are associated with fewer issues."
+    },
+    {
+      "from_claim_id": "openalex:W2751422871:c1",
+      "to_claim_id": "openalex:W2972459530:c2",
+      "similarity": 0.8025774359703064,
+      "a_paper_id": "openalex:W2751422871",
+      "a_text": "Parent and adolescent reports of adolescent social media account counts are moderately correlated with parent-reported DSM-5 symptoms of inattention, hyperactivity/impulsivity, ODD, anxiety, and depression.",
+      "b_paper_id": "openalex:W2972459530",
+      "b_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with comorbid internalizing and externalizing problems among adolescents.",
+      "explanation": "Both claims provide mutually reinforcing evidence that greater adolescent social media involvement\u2014measured either by account counts or time spent\u2014is associated with increased internalizing and externalizing mental health problems."
+    },
+    {
+      "from_claim_id": "openalex:W2314751257:c5",
+      "to_claim_id": "openalex:W2568525121:c4",
+      "similarity": 0.800545871257782,
+      "a_paper_id": "openalex:W2314751257",
+      "a_text": "Being female is significantly associated with addictive use of social media.",
+      "b_paper_id": "openalex:W2568525121",
+      "b_text": "Female adolescents report significantly higher weekly time spent on social media than male adolescents.",
+      "explanation": "Both claims independently indicate that female adolescents have significantly higher levels of social media engagement compared to males, whether measured by addictive use or time spent."
+    },
+    {
+      "from_claim_id": "openalex:W2770314219:c5",
+      "to_claim_id": "openalex:W2896921383:c6",
+      "similarity": 0.800370991230011,
+      "a_paper_id": "openalex:W2770314219",
+      "a_text": "Adolescents who spent more time on nonscreen activities were less likely to report mental health issues.",
+      "b_paper_id": "openalex:W2896921383",
+      "b_text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to have been treated by a mental health professional in the last 12 months (RR 2.22).",
+      "explanation": "Both claims provide mutually reinforcing findings that greater engagement with non-screen activities is associated with better adolescent mental health, whereas high screen use is linked to increased mental health issues."
+    }
+  ]
+}

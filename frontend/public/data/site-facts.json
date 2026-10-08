@@ -182,6 +182,65 @@
         "123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted."
       ],
       "not_advice": false
+    },
+    {
+      "slug": "social-media-teen-mental-health",
+      "name": "Social media and adolescent mental health",
+      "short_name": "Social media & teens",
+      "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
+      "built": null,
+      "built_basis": null,
+      "papers": 100,
+      "claims_read": 99,
+      "full_text": 22,
+      "abstract_only": 78,
+      "gap_cards": 32,
+      "results": [
+        {
+          "type": "unresolved_contradictions",
+          "count": 2,
+          "label": "disagreements between papers",
+          "note": null
+        },
+        {
+          "type": "persistent_limitations",
+          "count": 4,
+          "label": "recurring limitations",
+          "note": null
+        },
+        {
+          "type": "structural_holes",
+          "count": 0,
+          "label": "unexplored connections",
+          "note": "none were found among the papers read, which is not the same as none existing"
+        },
+        {
+          "type": "orphaned_future_work",
+          "count": 26,
+          "label": "open questions",
+          "note": null
+        }
+      ],
+      "results_total": 32,
+      "set_aside_total": 5,
+      "growth": {
+        "grows": true,
+        "added": 0,
+        "last_added": null
+      },
+      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (179 pairs); pairs worded differently are never compared.",
+      "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
+      "disagreement_check": {
+        "shortlisted": 179,
+        "classified": 179,
+        "flagged": 6,
+        "hand_checked": 6,
+        "confirmed": 2,
+        "set_aside": 4,
+        "checked_how": "by hand, by the project's builder, against the two papers' abstracts; not independent expert review"
+      },
+      "audit_doubts": [],
+      "not_advice": true
     }
   ]
 }

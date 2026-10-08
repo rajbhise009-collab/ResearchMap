@@ -34,10 +34,14 @@ sys.path.insert(0, str(REPO_ROOT))
 DATA = REPO_ROOT / "data"
 LIB = REPO_ROOT / "frontend" / "public" / "data" / "library"
 DOCS = REPO_ROOT / "docs" / "findings"
-NEW_LIBS = ("diet-and-mortality", "ml-fairness")
-LIB_NAMES = {"llm-calibration": "LLM calibration",
-             "diet-and-mortality": "Diet & mortality",
-             "ml-fairness": "ML fairness"}
+def _registry_built() -> list[dict]:
+    return [l for l in json.loads((REPO_ROOT / "data" / "library_registry.json").read_text())["libraries"]
+            if l["status"] == "built"]
+
+
+# Every built library except the frozen LLM-calibration baseline, in registry order.
+NEW_LIBS = tuple(l["slug"] for l in _registry_built() if l["slug"] != "llm-calibration")
+LIB_NAMES = {l["slug"]: l["short_name"] for l in _registry_built()}
 
 # Impossibility-result papers re-examined in iteration 4 (OpenAlex work ids,
 # read from the ML-fairness corpus). Labels come from the paper files.
@@ -142,11 +146,20 @@ def impossibility() -> str:
     return _table(["paper", "shortlisted pairs", "classified", "flagged"], ["l", "r", "r", "r"], rows)
 
 
-def predictor() -> str:
+def _predictor_verdict(slug: str) -> dict:
+    """From the 2026-08 study (features.json), else computed from the
+    domain-selection fetch cached under data/coherence/<slug>/."""
     feats = {f["slug"]: f["verdict"] for f in _j(DATA / "coherence" / "features.json")}
+    if slug in feats:
+        return feats[slug]
+    from backend.app.coherence import features as F
+    return F.verdict(F.features(_j(DATA / "coherence" / slug / "openalex.json")["results"]))
+
+
+def predictor() -> str:
     rows = []
     for slug in ("llm-calibration", *NEW_LIBS):
-        v = feats[slug]
+        v = _predictor_verdict(slug)
         rows.append([LIB_NAMES[slug], f"{v['contested_score']} ({v['contested_band']})",
                      _stats(slug)["n_confirmed_contradictions"]])
     return _table(["library", "predictor contested score", "hand-audited confirmed contradictions"],
@@ -192,8 +205,12 @@ def spend() -> str:
     tot_i = sum(v[2] for v in by.values())
     rows.append(["**total (ledger, after corrections)**", sum(v[0] for v in by.values()),
                  f"**${tot_u:.4f}**", f"**{_inr(tot_i)}**"])
-    rows.append(["ceiling (`cap_inr`)", "", f"${L['cap_usd']:.4f}", _inr(L["cap_inr"])])
-    rows.append(["remaining", "", "", _inr(max(0.0, L["cap_inr"] - tot_i))])
+    from backend.app.extraction import money
+    cfg = money.load()
+    rem = money.remaining_inr(cfg, L["cumulative_inr"], L["entries"])
+    rows.append(["ceiling (config/money.json: account total − safety buffer)", "", "",
+                 _inr(money.ceiling_inr(cfg))])
+    rows.append(["remaining (money rule)", "", "", _inr(rem)])
     return _table(["stage", "entries", "USD", "INR"], ["l", "r", "r", "r"], rows)
 
 
@@ -243,18 +260,20 @@ CONFOUNDS = {
     "llm-calibration": "own shortlist settings (0.78, cap 10); both flags set aside as regime conflation",
     "diet-and-mortality": "hand audit is the builder's, not expert review",
     "ml-fairness": "zero not explained (see multi-domain.md §2, hypotheses untested)",
+    "social-media-teen-mental-health": ("22% full text; the rubric does not enforce the adolescent population "
+                                        "(blind audit 87% in/out, 67% exact); builder's audit, not experts"),
 }
 
 
 def measured() -> str:
-    feats = {f["slug"]: f["verdict"] for f in _j(DATA / "coherence" / "features.json")}
     rows = []
     for slug in ("llm-calibration", *NEW_LIBS):
         n, ext, sl, cl = _check(slug)
-        v = feats[slug]
+        v = _predictor_verdict(slug)
         rows.append([slug, v["contested_score"], v["contested_band"], _flagged(slug),
                      _stats(slug)["n_confirmed_contradictions"],
-                     f"{ext} / {n} ({round(100 * ext / n)}%)", f"{cl} / {sl}", CONFOUNDS[slug]])
+                     f"{ext} / {n} ({round(100 * ext / n)}%)", f"{cl} / {sl}",
+                     CONFOUNDS.get(slug, "built 2026-10 or later; one hand audit by the builder, not experts")])
     return _table(["library", "predictor score", "predictor label", "raw flagged",
                    "audited genuine", "claims-read coverage", "pairs checked", "confounds"],
                   ["l", "r", "l", "r", "r", "l", "l", "l"], rows)

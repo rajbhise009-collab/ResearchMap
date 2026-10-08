@@ -111,6 +111,18 @@ DOMAIN_SYNONYMS = {
     "explain": ["explainability", "interpretability"],
     "explanation": ["explainability", "interpretability"],
     "understand": ["interpretability", "explainability"],
+    # Everyday words for the social media & adolescent mental health library
+    # (2026-10-09): readers write "teenage" and "kids", papers write
+    # "adolescent" and "children".
+    "teenage": ["adolescent", "teen", "youth"],
+    "teenager": ["adolescent", "teen", "youth"],
+    "kid": ["child", "children", "youth"],
+    "kids": ["child", "children", "youth"],
+    "youngsters": ["youth", "adolescent"],
+    "phone": ["smartphone", "phone"],
+    "phones": ["smartphone", "phone"],
+    "tiktok": ["social", "media"],
+    "snapchat": ["social", "media"],
 }
 
 

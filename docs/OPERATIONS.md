@@ -1,112 +1,141 @@
 # Operations runbook
 
 Two GitHub Actions workflows keep the site growing and watched. Nothing else
-runs on its own. The website itself is static: visitors never trigger an API
-call, so they cannot run up costs.
+runs on its own. The website is static: visitors never trigger an API call,
+so they cannot run up costs.
 
 ## What runs when
 
 | Workflow | When | What it does | Costs |
 |---|---|---|---|
-| **Weekly grow** (`.github/workflows/weekly-grow.yml`) | Mondays 05:23 UTC (10:53 IST), or **Actions → Weekly grow → Run workflow** | Adds new papers to the Diet & mortality and ML fairness libraries, checks them, rebuilds the site data, and publishes only if every check passes | Gemini, capped (below) |
-| **Daily health** (`.github/workflows/daily-health.yml`) | Daily 06:41 UTC (12:11 IST), or run it by hand | Checks the live site (headers, sitemap, share images, search smoke checks) | Free |
+| **Weekly grow** (`.github/workflows/weekly-grow.yml`) | Mondays 05:23 UTC (10:53 IST), or **Actions → Weekly grow → Run workflow** | Adds papers to every growing library, builds a queued library when money allows, checks everything, publishes only if every check passes | Gemini, paced by the money rule (below) |
+| **Daily health** (`.github/workflows/daily-health.yml`) | Daily 06:41 UTC (12:11 IST), or by hand | Checks the live site (headers, sitemap, share images, search smoke checks) | Free |
 | Vercel | On every push to `main` | Rebuilds and deploys the site | Free |
 
-The LLM calibration library is **not** grown. Its corpus is the frozen
-baseline for the planned validation test (git tag `llm-cal-baseline-v1`).
+### Which libraries exist
 
-### One weekly run, step by step
+`data/library_registry.json` is the one place a library is declared.
 
-Each run does two things, a week apart: it collects the batch it submitted
-last week, and it submits a new one.
+| status | meaning |
+|---|---|
+| `built` | On the site. Grown every week unless `frozen`. |
+| `queued` | Prepared (rubric, papers, blind audit passed). The weekly run builds it when money allows. |
+| `building` | Its extraction batch is submitted. The next weekly run finishes it. |
+| `not-ready` | Failed its rubric audit. Never built automatically; see its `not_ready_reason`. |
 
-1. **Safety checks.** The run stops if a required secret is missing, if the
-   lifetime ledger has no headroom, or if an earlier run's `grow/<date>`
-   branch is still unmerged (the bookkeeping on `main` would be out of date).
-2. **Collect.** Last week's Gemini batch is fetched and billed to
-   `data/spend_ledger.json` once, at the batch rate (half price). Papers that
-   extracted cleanly join their library. Papers that failed are listed in the
-   Issue and left out.
-3. **Follow-on checks** on the new material. Each one runs only if its
-   projection fits this week's budget:
-   - the disagreement check on new claim pairs. A new disagreement shows on
-     the site as **"Flagged by the system, not yet checked"** and never counts
-     in any headline until you audit it;
-   - the future-work matcher, which decides whether new papers answer old
-     open questions and whether the new papers' own questions are open.
-     Open questions keep their "weak" label;
-   - confirmation of method-transfer leads. A lead is shown only after this
-     check has looked at it.
-4. **Rebuild** the site data, the generated numbers in the docs, and (only
-   when what they show changed) the share images.
-5. **Submit** next week's batch. For each library the run:
-   - finds candidates with free OpenAlex queries: papers that cite both sides
-     of a checked disagreement, papers that cite a paper whose open question
-     is still unanswered, and recent papers that cite the library;
-   - keeps only those the library's labelling rubric accepts;
-   - removes duplicates (same id, DOI or title; the full ingestion dedupe;
-     anything already in the library or already pending);
-   - fetches open-access full text where it exists;
-   - submits at most 15 papers per library, fewer if the budget runs out.
-6. **Release fingerprint** (`docs/releases/<date>.json`) and a changelog
-   entry (`docs/CHANGELOG.md`).
-7. **Publish gates.** Every one must pass:
+LLM calibration is `frozen`. Its corpus is the baseline for the planned
+validation test (tag `llm-cal-baseline-v1`).
+
+## The money rule (the only spending limit)
+
+`config/money.json`:
+
+- **Ceiling** = `account_total_inr` − `safety_buffer_inr` (1500 − 50 = ₹1450).
+- **Remaining:**
+  - while `console_spent_inr` is empty: ceiling − the ledger total
+    (`data/spend_ledger.json`). The ledger rounds projections up, so this is
+    conservative;
+  - once you fill in `console_spent_inr` and `console_spent_date`: ceiling −
+    console_spent_inr − ledger spend recorded after that date.
+- **Enforcement:** at call time, before every paid call, in every path
+  (local, batch, Actions). A call that would cross it is refused.
+- **Weekly budget** = min(₹60, remaining ÷ weeks left in a 12-week horizon
+  starting 2026-10-12). It is recalculated every run.
+- **Queued library:** built only when its extraction projection ×1.5 plus
+  four weeks of growth fits what remains.
+- **Padding:** every projection is padded before it is committed to
+  (extraction ×1.5, classification ×2). A stage halts if the real cost per
+  call exceeds 1.5× the projection. Batch state is saved, so nothing is paid
+  twice.
+
+Each run's Issue shows the remaining money, the weeks left and this week's
+budget.
+
+## One weekly run, step by step
+
+1. **Checks.** The run stops if a secret is missing.
+   - If `config/growth.json` says `"paused": true`, it does nothing except
+     open its Issue.
+   - If a `grow/<date>` branch from a failed run is still open, it collects
+     what was already paid for but starts nothing new.
+2. **Collect** last week's batches. Each is billed to the ledger once, at the
+   batch rate. Papers that extracted cleanly join their library.
+3. **Follow-on checks** on the new material, within the week's budget:
+   - **The disagreement check.** New disagreements show as
+     **"Flagged by the system, not yet checked"** and never count until you
+     audit them.
+   - **The future-work matcher.** Open questions keep their "weak" label.
+   - **Method-transfer confirmation.** A lead is shown only after this check
+     has looked at it.
+4. **Finish a library being built**, if one was started last week. It gets
+   the same checks, and its disagreements are flagged, not counted.
+5. **Rebuild** site data, docs numbers and (when needed) share images.
+6. **Submit** next week's papers. For each growing library:
+   - find candidates with free OpenAlex queries (papers citing both sides of
+     a checked disagreement, citing a paper whose open question is
+     unanswered, or recently citing the library);
+   - keep those its rubric accepts;
+   - dedupe (id, DOI, title, full ingestion dedupe);
+   - fetch open full text.
+
+   The week's budget is then shared round-robin, one paper per library per
+   round. Libraries with the most open candidates go first, then those with
+   the fewest papers. At most 15 papers per library.
+7. **Start a queued library** if it is affordable. Its extraction is
+   submitted now and finished next week.
+8. **Fingerprint and changelog:** `docs/releases/<date>.json` and
+   `docs/CHANGELOG.md`.
+9. **Publish gates.** Every one must pass:
    - full test suite, typecheck and production build;
-   - the docs-numbers check and the cross-surface consistency script;
+   - the docs check and the cross-surface consistency script;
    - the banned-phrase tests and the search regression suite;
    - the hardening tests, the browser "curious visitor" checks, and the
      smoke checks on the built site.
-8. **Publish.**
-   - **All gates pass:** commit to `main` and push. Vercel deploys. After
-     about 5 minutes the run checks the live site.
-   - **Any gate fails:** nothing goes to `main`. The run's work goes to the
-     branch `grow/<date>`.
-9. **One Issue per run,** titled "Weekly grow — <date>".
+10. **Publish.**
+    - **All pass:** commit to `main` and push. Vercel deploys. After about
+      5 minutes the run checks the live site.
+    - **Any gate fails:** the site is not changed. The run's work goes to
+      `grow/<date>`, and the bookkeeping (everything under `data/`) is
+      committed to main so nothing paid for is lost.
+11. **One Issue per run,** "Weekly grow — <date>".
 
-## What it costs
+### When something goes wrong
 
-- **Weekly budget:** `WEEKLY_BUDGET_INR`, default **₹25**. This covers new
-  spending decided in that run, with every projection padded before
-  committing to it: extraction ×1.5, classification ×2. Last week's batch,
-  collected this week, was paid for out of last week's budget.
-- **Lifetime ceiling:** the ledger's `cap_inr` (₹1200). It is enforced in
-  code before every paid call. At the ceiling the run stops and opens an
-  Issue.
-- **Typical cost:** about ₹1 per abstract-only paper at the batch rate. Full
-  text costs more. So ₹25 a week means roughly 10–15 new papers.
-- **OpenAlex:** a few dozen free credits a week.
-- **Your Google Cloud billing cap** is separate from all of this and is not
-  changed by anything here.
-
-To see the spend: each run's Issue gives "recorded this run", "new
-commitments" and the lifetime total. The ledger itself is
-`data/spend_ledger.json` (append-only).
+| what | what the run does | what you do |
+|---|---|---|
+| OpenAlex or Gemini hiccup | Retries with backoff (four tries). | Nothing. |
+| Still failing after retries | Stops. Commits only the bookkeeping under `data/` to main (ledger, batch states, extractions), so paid work is kept. The site is unchanged, and next week resumes. | Nothing, unless it repeats for weeks. |
+| Money runs out (at the start or mid-run) | No new spending. Batches already submitted are still collected. The site stays live. The Issue status says **BUDGET EXHAUSTED**. | Either enter the console's real spend in `config/money.json` (`console_spent_inr` plus `console_spent_date`; the ledger usually overstates, so this frees money), or add money and raise `account_total_inr`. Commit. |
+| A publish gate fails | Site unchanged. Branch `grow/<date>` plus an Issue with the failing output. Later runs collect, but start nothing new while that branch exists. | Fix it on the branch, merge into main, delete the branch. |
+| Missing or invalid secret | Stops before doing anything. | Add or replace the secret. |
+| Live site fails after publishing | Reports it; nothing is auto-reverted. | Roll back (below). |
 
 ## What each Issue means
 
 | Issue | Status line | What to do |
 |---|---|---|
-| Weekly grow — <date> | **published to main** | Read the new items. Audit any flagged pairs (below). |
-| Weekly grow — <date> | **publish gates failed — nothing published** | See "A run failed". |
-| Weekly grow — <date> | **stopped cleanly — nothing published** | The Issue's "What you need to do" section says exactly what. Typical causes: a missing or invalid secret, Gemini or OpenAlex down (re-run later), lifetime ceiling reached, an unmerged `grow/<date>` branch. |
-| Weekly grow — <date> | **… LIVE CHECK FAILED** | See "Roll back". |
-| Daily health check failing | (open) | The live site failed its checks. Look at the output; roll back if the site is broken. It closes itself when the checks pass again. |
+| Weekly grow — <date> | **published to main** | Read the new items. Audit any flagged pairs. |
+| Weekly grow — <date> | **… BUDGET EXHAUSTED** | See the money row above. |
+| Weekly grow — <date> | **publish gates failed — the site was not changed** | See "A run failed". |
+| Weekly grow — <date> | **stopped cleanly — the site was not changed** | Read "What you need to do" in the Issue. |
+| Weekly grow — <date> | **paused** | Nothing; set `paused` to false to resume. |
+| Weekly grow — <date> | **… LIVE CHECK FAILED** | Roll back (below). |
+| Daily health check failing | (open) | The live site failed its checks. It closes itself when they pass again. |
 
-Issues labelled `needs-action` need you; `weekly-grow` alone means the run
-was routine.
+`needs-action` marks the Issues that need you.
 
 ## Auditing flagged disagreements
 
-Each run's Issue lists new pairs with a checkbox and a link to the card. For
-each pair:
+Each Issue lists new pairs with a checkbox and a link to the card. For each
+pair:
 
-1. Open the card. Read both abstracts (linked from the card).
+1. Open the card and read both abstracts.
 2. Decide one verdict:
    - `genuine`: same question, comparable populations, opposite findings;
    - `artifact`: they measure different things;
    - `duplicate`: the same disagreement as another pair.
-3. Add the verdict to `data/domains/<library>/reasoning/contradiction_audit.json`,
-   in the `verdicts` list:
+3. Add the verdict to `data/domains/<library>/reasoning/contradiction_audit.json`
+   under `verdicts`:
    ```json
    {"a_paper_id": "openalex:W…", "b_paper_id": "openalex:W…",
     "a_text_starts": "<first ~60 characters of claim A>",
@@ -114,81 +143,70 @@ each pair:
     "verdict": "genuine", "reason": "<one line>", "topic": "<short topic>"}
    ```
    The ids and texts are in `data/domains/<library>/reasoning/contradictions.json`.
-4. Commit to `main`. The next weekly run publishes the result. To publish it
-   sooner, run `python -m backend.app.api.multi_library_export`, then
-   `cd frontend && npm run build` locally, and commit.
+4. Commit. The next run publishes it.
 
 The workflow never writes to `contradiction_audit.json`, the frozen review
-folders under `docs/review/`, or the baseline tag. Your verdicts are only
-ever changed by you.
+folders under `docs/review/`, or the baseline tag.
 
-## Pause growth
+## Pause, resume, change the pace
 
-- **Pause:** Actions → **Weekly grow** → ⋯ → **Disable workflow**. Re-enable
-  it the same way.
-- **Run with (almost) no new spending:** set the repository variable
-  `WEEKLY_BUDGET_INR` to `0`. The run still collects a batch already
-  submitted (that spending already happened) and embeds the collected
-  papers' claims (fractions of a rupee; the site cannot be rebuilt
-  without them), but submits nothing and runs no paid checks.
-
-## Change the weekly budget
-
-GitHub → repo **Settings → Secrets and variables → Actions → Variables** →
-`WEEKLY_BUDGET_INR` (create or edit). The value is in rupees, for example
-`25`. A manual run also takes a one-off value in the **Run workflow** form.
-The lifetime ceiling still applies whatever the weekly value is.
+- **Pause everything:** set `"paused": true` in `config/growth.json` and
+  commit. Set it back to `false` to resume. Or disable the workflow in the
+  Actions tab.
+- **Lower a week's budget:** the repository variable `WEEKLY_BUDGET_INR`, or
+  the Run workflow form. It can only lower the computed budget, never raise
+  it.
+- **Change the pace** (₹60 cap, 12-week horizon, 4-week reserve for queued
+  libraries): edit `config/money.json`.
 
 ## Roll back
 
-- **The site is broken:** Vercel → the project → **Deployments** → the
-  previous deployment → ⋯ → **Promote to Production**. This is instant and
-  changes nothing in git. Nothing is ever auto-reverted.
-- **A week's data should be undone:** revert that run's commit, but keep
-  the bookkeeping. The money was spent, and the batch state lets the next
-  run collect what was paid for:
+- **Site broken:** Vercel → the project → **Deployments** → the previous
+  deployment → ⋯ → **Promote to Production**.
+- **Undo a week's data but keep the bookkeeping** (the money was spent):
   ```bash
   git revert --no-commit <weekly-grow-commit>
-  git checkout <weekly-grow-commit> -- data/spend_ledger.json data/spend_projections.jsonl data/domains/diet-and-mortality/grow data/domains/ml-fairness/grow
+  git checkout <weekly-grow-commit> -- data/spend_ledger.json data/spend_projections.jsonl data/domains data/cache data/library_registry.json
   git commit -m "revert weekly grow <date> (bookkeeping kept)"
   ```
 
-## A run failed
+## A run failed (publish gate)
 
-The Issue shows which gate failed, with its output. The run's work is on
-`grow/<date>`. Growth is paused until that branch is gone, because it
-carries the ledger update.
+The Issue shows which gate failed and its output. The bookkeeping is already
+on main. The rest of the run's work is on `grow/<date>`.
 
-1. Look at the failure. Fix it on the branch, or on `main` if the cause is
-   there.
-2. Merge `grow/<date>` into `main`. This keeps the spend record and the
-   pending batch.
-3. Delete the branch. The next run (or a manual one) proceeds normally.
-
-Delete the branch without merging only if its Issue says the run recorded
-no spend and submitted nothing.
+1. Fix the cause, on the branch or on main.
+2. Merge `grow/<date>` into main, or delete it if the fix is on main.
+3. Delete the branch. The next run returns to normal.
 
 ## Secrets and variables
 
 | Name | Kind | Used by |
 |---|---|---|
-| `GEMINI_API_KEY` | secret | Weekly grow (the "Grow, gate, publish" step only). Use a key restricted to the Generative Language API. |
+| `GEMINI_API_KEY` | secret | Weekly grow ("Grow, gate, publish" step only). Use a key restricted to the Generative Language API. |
 | `OPENALEX_API_KEY` | secret | Weekly grow (same step) |
-| `WEEKLY_BUDGET_INR` | variable (optional) | Weekly grow; default 25 |
+| `WEEKLY_BUDGET_INR` | variable (optional) | Lowers the computed weekly budget |
 | `NEXT_PUBLIC_SITE_URL` | variable (optional) | Both workflows; default `https://researchmap-one.vercel.app` |
 
-Secrets are never printed: every message the runner writes is passed
-through a redaction step. To rotate a key, replace the secret value in
-Settings; nothing in the repository changes.
+Secrets are never printed. Every message is redacted, and OpenAlex errors
+never carry the request URL, which holds the key.
 
 ## Testing the workflows without spending anything
 
 ```bash
-.venv/bin/python tools/grow/e2e_mock.py           # ~40 min, every gate
-.venv/bin/python tools/grow/e2e_mock.py --quick   # gates skipped
+.venv/bin/python tools/grow/e2e_mock.py           # every gate where it matters
+.venv/bin/python tools/grow/e2e_mock.py --quick   # gates skipped except scenario 7
+.venv/bin/python tools/qa/synthetic_libs.py       # the UI with 8 libraries
 ```
 
-This runs seven scenarios in a throwaway clone, with mocked OpenAlex and
-Gemini, the clone's own copy of the ledger, and a local stand-in for GitHub:
-two normal weeks, a missing secret, an OpenAlex outage, the unmerged-branch
-guard, a failing gate, and the daily health check going down and up.
+The end-to-end test runs ten scenarios in a throwaway clone, with mocked
+OpenAlex and Gemini, a temporary ledger and money config, and a local
+stand-in for GitHub:
+
+1. Two normal weeks, including a queued library built and published.
+2. A missing secret.
+3. An OpenAlex outage (bookkeeping kept) and the unblocked next week.
+4. Money running out mid-run.
+5. A failing gate and the run after it.
+6. Pause and resume.
+7. The health check going down and up.

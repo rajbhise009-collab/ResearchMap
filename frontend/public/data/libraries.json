@@ -29,6 +29,16 @@
       "not_advice_note": null,
       "n_papers": 99,
       "snapshot_path": "/data/library/ml-fairness"
+    },
+    {
+      "slug": "social-media-teen-mental-health",
+      "name": "Social media and adolescent mental health",
+      "short_name": "Social media & teens",
+      "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
+      "is_default": false,
+      "not_advice_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service.",
+      "n_papers": 100,
+      "snapshot_path": "/data/library/social-media-teen-mental-health"
     }
   ],
   "default_slug": "llm-calibration"

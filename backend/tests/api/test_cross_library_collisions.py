@@ -35,7 +35,8 @@ def _load_index(slug: str) -> dict | None:
     return json.loads(path.read_text())
 
 
-LIBRARIES = ("llm-calibration", "diet-and-mortality", "ml-fairness")
+# Every built library (any number of them).
+LIBRARIES = tuple(l["slug"] for l in json.loads((DATA / "libraries.json").read_text())["libraries"])
 
 
 def _term_score(index: dict, term: str) -> tuple[float, float]:
@@ -140,3 +141,31 @@ def test_all_libraries_have_a_search_index():
         assert idx is not None, slug
         assert idx.get("n_docs", 0) > 0, slug
         assert isinstance(idx.get("docs"), list), slug
+
+
+# ---- terms shared with the social media & adolescent mental health library
+# (added 2026-10-09). Skipped if that library is not built.
+
+SOCIAL = "social-media-teen-mental-health"
+
+
+@pytest.mark.skipif(SOCIAL not in LIBRARIES, reason="social-media library not built")
+@pytest.mark.parametrize("term", ["social media", "adolescents", "depression", "screen time"])
+def test_social_terms_route_to_social_library(term):
+    winner, scores = _route(term)
+    assert winner == SOCIAL, scores
+
+
+@pytest.mark.skipif(SOCIAL not in LIBRARIES, reason="social-media library not built")
+def test_mortality_still_routes_to_diet():
+    winner, scores = _route("mortality")
+    assert winner == "diet-and-mortality", scores
+
+
+@pytest.mark.skipif(SOCIAL not in LIBRARIES, reason="social-media library not built")
+def test_social_question_is_answered_only_by_social_library():
+    from backend.app.api.search_index import search
+    q = "social media and teenage depression"
+    verdicts = {s: search(_load_index(s), q)["verdict"] for s in LIBRARIES}
+    assert verdicts[SOCIAL] == "in_domain", verdicts
+    assert all(v != "in_domain" for s, v in verdicts.items() if s != SOCIAL), verdicts

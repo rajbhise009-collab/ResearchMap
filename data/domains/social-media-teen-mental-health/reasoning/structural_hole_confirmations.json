@@ -1,0 +1,12 @@
+{
+  "opp:hole:W2030386269->W2289545039": {
+    "verdict": "not_addressing",
+    "reason": "Cognitive therapy provides a therapeutic framework and manualized techniques, which does not address the methodological limitation of lacking randomized controlled trial (RCT) validation for app recommendations.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W2030386269",
+    "b_pid": "openalex:W2289545039",
+    "method": "Cognitive Therapy for Anxiety Disorders",
+    "limitation": "The recommendations presented in this review have not been rigorously validated by RCTs specifically in a mental health smartphone app setting."
+  }
+}

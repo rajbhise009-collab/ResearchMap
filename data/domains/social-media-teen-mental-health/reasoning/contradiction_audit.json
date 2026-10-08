@@ -1,0 +1,64 @@
+{
+  "domain": "social-media-teen-mental-health",
+  "date": "2026-10-09",
+  "basis": "builder's hand review against the source abstracts (population, exposure, outcome, method, time scale)",
+  "not_expert_review": true,
+  "note": "The pipeline builder's own read (Claude, in the build session), not an expert review. Only 'genuine' pairs count anywhere on the site.",
+  "method": "Each raw-flagged pair is looked up by the two paper IDs AND the exact claim text.",
+  "verdicts": [
+    {
+      "a_paper_id": "openalex:W2896921383",
+      "b_paper_id": "openalex:W2999059035",
+      "a_text_starts": "Non-users and low users (1 hour per day) of screens generall",
+      "b_text_starts": "Light users of digital media exhibit slightly higher psychol",
+      "verdict": "artifact",
+      "reason": "Different exposures and ages (all screens incl. TV, ages 2-17, vs digital media, ages 13-18); 'no difference' vs 'slightly higher' differ in size, not direction.",
+      "topic": "screen time / well-being at low use"
+    },
+    {
+      "a_paper_id": "openalex:W1965892473",
+      "b_paper_id": "openalex:W2153813098",
+      "a_text_starts": "Rates of major depression increased in cohorts born after Wo",
+      "b_text_starts": "Depression rates in children born between 1965 and 1996 show",
+      "verdict": "duplicate",
+      "reason": "Same two papers as the cohort-artifact pair; counted once.",
+      "topic": "rising depression across birth cohorts"
+    },
+    {
+      "a_paper_id": "openalex:W1892688171",
+      "b_paper_id": "openalex:W2068511562",
+      "a_text_starts": "Results regarding the association between cyberbullying and",
+      "b_text_starts": "Suicidal ideation is among the strongest associations with c",
+      "verdict": "artifact",
+      "reason": "One paper describes the literature as mixed; the other reports a pooled association for a narrower outcome (suicidal ideation). Not opposite findings.",
+      "topic": "cyberbullying and suicidality"
+    },
+    {
+      "a_paper_id": "openalex:W2788235370",
+      "b_paper_id": "openalex:W2998834126",
+      "a_text_starts": "The decrease in adolescent psychological well-being may be a",
+      "b_text_starts": "The estimated associations between daily digital technology",
+      "verdict": "genuine",
+      "reason": "Both address whether adolescents' digital technology use meaningfully lowers well-being in comparable national samples; one attributes the post-2012 decline partly to smartphones, the other finds associations too small to matter.",
+      "topic": "smartphones and adolescent well-being"
+    },
+    {
+      "a_paper_id": "openalex:W1994045792",
+      "b_paper_id": "openalex:W2944221730",
+      "a_text_starts": "Facebook use over a two-week period predicts declines in ove",
+      "b_text_starts": "The median longitudinal within-person effect of social media",
+      "verdict": "artifact",
+      "reason": "Young adults over two weeks vs adolescents over years, and both find negative effects; they disagree on size, not direction.",
+      "topic": "social media use and life satisfaction"
+    },
+    {
+      "a_paper_id": "openalex:W1965892473",
+      "b_paper_id": "openalex:W2153813098",
+      "a_text_starts": "Cohort changes in depression rates cannot be fully attribute",
+      "b_text_starts": "There is no evidence for an increased prevalence of child or",
+      "verdict": "genuine",
+      "reason": "Whether the cohort rise in depression is real or an artifact of retrospective recall: the later meta-analysis using concurrent assessment tests exactly the evidence the earlier paper relies on and finds no birth-year effect.",
+      "topic": "rising depression across birth cohorts"
+    }
+  ]
+}

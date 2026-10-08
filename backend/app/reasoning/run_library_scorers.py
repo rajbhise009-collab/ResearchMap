@@ -197,7 +197,9 @@ def fwmatch(slug: str, *, dry_run: bool, client=None,
     rc, cands = fw_candidates(slug)
     ap = addressals_path(slug)
     done = {json.loads(l)["id"] for l in ap.read_text().splitlines() if l.strip()} if ap.exists() else set()
-    fw_text = {fw.id: fw.text for fw, _m in rc.future_work}
+    # every future-work item, not only the already-checked ones the corpus
+    # view exposes to the scorers (a new library has none checked yet)
+    fw_text = {fw.id: fw.text for fw, _m in rc._loaded.future_work()}
     todo = [c for c in cands if f"fwa:{c.fw_id}__{c.to_paper_id}" not in done]
     prompts = {f"{c.fw_id}||{c.to_paper_id}": F.build_prompt(c, fw_text[c.fw_id]) for c in todo}
     res = {"slug": slug, "fw_items": len(rc.fw_ids), "candidate_pairs": len(cands),

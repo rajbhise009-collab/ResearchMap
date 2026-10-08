@@ -1,0 +1,205 @@
+{
+  "slug": "social-media-teen-mental-health",
+  "query_date": "2026-10-09",
+  "n_genuine_pairs_queried": 2,
+  "credits_used": 2,
+  "note": "Papers listed here cite both sides of the disagreement \u2014 this means they discuss it, not that they resolved it.",
+  "records": [
+    {
+      "a_paper_id": "openalex:W2788235370",
+      "b_paper_id": "openalex:W2998834126",
+      "verdict_topic": "smartphones and adolescent well-being",
+      "total_cites_both": 47,
+      "top": [
+        {
+          "wid": "W3110709293",
+          "openalex_id": "https://openalex.org/W3110709293",
+          "doi": "https://doi.org/10.1016/j.chb.2020.106645",
+          "title": "Social media use intensity, social media use problems, and mental health among adolescents: Investigating directionality and mediating processes",
+          "year": 2020,
+          "cited_by_count": 328,
+          "venue": "Computers in Human Behavior"
+        },
+        {
+          "wid": "W3091837505",
+          "openalex_id": "https://openalex.org/W3091837505",
+          "doi": "https://doi.org/10.1017/beq.2020.32",
+          "title": "Ethics of the Attention Economy: The Problem of Social Media Addiction",
+          "year": 2020,
+          "cited_by_count": 293,
+          "venue": "Business Ethics Quarterly"
+        },
+        {
+          "wid": "W4406682011",
+          "openalex_id": "https://openalex.org/W4406682011",
+          "doi": "https://doi.org/10.3389/fpsyt.2024.1517533",
+          "title": "The youth mental health crisis: analysis and solutions",
+          "year": 2025,
+          "cited_by_count": 174,
+          "venue": "Frontiers in Psychiatry"
+        },
+        {
+          "wid": "W4200424174",
+          "openalex_id": "https://openalex.org/W4200424174",
+          "doi": "https://doi.org/10.1016/j.chb.2021.107144",
+          "title": "International perspectives on social media use among adolescents: Implications for mental and social well-being and substance use",
+          "year": 2021,
+          "cited_by_count": 96,
+          "venue": "Computers in Human Behavior"
+        },
+        {
+          "wid": "W3090679770",
+          "openalex_id": "https://openalex.org/W3090679770",
+          "doi": "https://doi.org/10.1016/j.ypmed.2020.106270",
+          "title": "Longitudinal association between social media use and psychological distress among adolescents",
+          "year": 2020,
+          "cited_by_count": 89,
+          "venue": "Preventive Medicine"
+        },
+        {
+          "wid": "W4206528580",
+          "openalex_id": "https://openalex.org/W4206528580",
+          "doi": "https://doi.org/10.31234/osf.io/5stx4",
+          "title": "Teens and social media during the COVID-19 pandemic: Staying socially connected while physically distant",
+          "year": 2020,
+          "cited_by_count": 83,
+          "venue": null
+        },
+        {
+          "wid": "W4400036942",
+          "openalex_id": "https://openalex.org/W4400036942",
+          "doi": "https://doi.org/10.1016/j.ssmmh.2024.100331",
+          "title": "Does social media use make us happy? A meta-analysis on social media and positive well-being outcomes",
+          "year": 2024,
+          "cited_by_count": 74,
+          "venue": "SSM - Mental Health"
+        },
+        {
+          "wid": "W4380265438",
+          "openalex_id": "https://openalex.org/W4380265438",
+          "doi": "https://doi.org/10.1016/j.caeo.2023.100144",
+          "title": "Developing digital resilience: An educational intervention improves elementary students\u2019 response to digital challenges",
+          "year": 2023,
+          "cited_by_count": 66,
+          "venue": "Computers and Education Open"
+        },
+        {
+          "wid": "W3210570593",
+          "openalex_id": "https://openalex.org/W3210570593",
+          "doi": "https://doi.org/10.1016/j.chb.2021.107084",
+          "title": "The complex association between social media use intensity and adolescent wellbeing: A longitudinal investigation of five factors that may affect the association",
+          "year": 2021,
+          "cited_by_count": 65,
+          "venue": "Computers in Human Behavior"
+        },
+        {
+          "wid": "W4310222556",
+          "openalex_id": "https://openalex.org/W4310222556",
+          "doi": "https://doi.org/10.3390/brainsci12121625",
+          "title": "Understanding Problematic Social Media Use in Adolescents with Attention-Deficit/Hyperactivity Disorder (ADHD): A Narrative Review and Clinical Recommendations",
+          "year": 2022,
+          "cited_by_count": 61,
+          "venue": "Brain Sciences"
+        }
+      ]
+    },
+    {
+      "a_paper_id": "openalex:W1965892473",
+      "b_paper_id": "openalex:W2153813098",
+      "verdict_topic": "rising depression across birth cohorts",
+      "total_cites_both": 17,
+      "top": [
+        {
+          "wid": "W2770314219",
+          "openalex_id": "https://openalex.org/W2770314219",
+          "doi": "https://doi.org/10.1177/2167702617723376",
+          "title": "Increases in Depressive Symptoms, Suicide-Related Outcomes, and Suicide Rates Among U.S. Adolescents After 2010 and Links to Increased New Media Screen Time",
+          "year": 2017,
+          "cited_by_count": 1697,
+          "venue": "Clinical Psychological Science"
+        },
+        {
+          "wid": "W2151772574",
+          "openalex_id": "https://openalex.org/W2151772574",
+          "doi": "https://doi.org/10.1016/j.cpr.2009.10.005",
+          "title": "Birth cohort increases in psychopathology among young Americans, 1938\u20132007: A cross-temporal meta-analysis of the MMPI",
+          "year": 2009,
+          "cited_by_count": 560,
+          "venue": "Clinical Psychology Review"
+        },
+        {
+          "wid": "W2926589548",
+          "openalex_id": "https://openalex.org/W2926589548",
+          "doi": "https://doi.org/10.1007/s00127-019-01697-8",
+          "title": "Recent increases in depressive symptoms among US adolescents: trends from 1991 to 2018",
+          "year": 2019,
+          "cited_by_count": 464,
+          "venue": "Social Psychiatry and Psychiatric Epidemiology"
+        },
+        {
+          "wid": "W2146077957",
+          "openalex_id": "https://openalex.org/W2146077957",
+          "doi": "https://doi.org/10.1111/j.1365-2923.2009.03310.x",
+          "title": "Generational changes and their impact in the classroom: teaching Generation Me",
+          "year": 2009,
+          "cited_by_count": 433,
+          "venue": "Medical Education"
+        },
+        {
+          "wid": "W2024734573",
+          "openalex_id": "https://openalex.org/W2024734573",
+          "doi": "https://doi.org/10.1007/s11205-014-0647-1",
+          "title": "Time Period and Birth Cohort Differences in Depressive Symptoms in the U.S., 1982\u20132013",
+          "year": 2014,
+          "cited_by_count": 157,
+          "venue": "Social Indicators Research"
+        },
+        {
+          "wid": "W2108152239",
+          "openalex_id": "https://openalex.org/W2108152239",
+          "doi": "https://doi.org/10.1177/2167696812466842",
+          "title": "The Evidence for Generation We and Against Generation Me",
+          "year": 2013,
+          "cited_by_count": 154,
+          "venue": "Emerging Adulthood"
+        },
+        {
+          "wid": "W2165822425",
+          "openalex_id": "https://openalex.org/W2165822425",
+          "doi": "https://doi.org/10.1093/aje/kwu029",
+          "title": "Age, Period, and Cohort Effects in Psychological Distress in the United States and Canada",
+          "year": 2014,
+          "cited_by_count": 107,
+          "venue": "American Journal of Epidemiology"
+        },
+        {
+          "wid": "W2025415637",
+          "openalex_id": "https://openalex.org/W2025415637",
+          "doi": "https://doi.org/10.1177/1403494807088457",
+          "title": "Trends in depressive symptoms, anxiety symptoms and visits to healthcare specialists: A national study among Icelandic adolescents",
+          "year": 2008,
+          "cited_by_count": 76,
+          "venue": "Scandinavian Journal of Public Health"
+        },
+        {
+          "wid": "W2109155173",
+          "openalex_id": "https://openalex.org/W2109155173",
+          "doi": "https://doi.org/10.1080/13674670902725108",
+          "title": "I am happy in my faith: the influence of religious affiliation, saliency, and practice on depressive symptoms and treatment preference",
+          "year": 2009,
+          "cited_by_count": 40,
+          "venue": "Mental Health Religion & Culture"
+        },
+        {
+          "wid": "W2373393173",
+          "openalex_id": "https://openalex.org/W2373393173",
+          "doi": "https://doi.org/10.1097/mib.0000000000000734",
+          "title": "Empirically Supported Use of Psychiatric Medications in Adolescents and Adults with IBD",
+          "year": 2016,
+          "cited_by_count": 38,
+          "venue": "Inflammatory Bowel Diseases"
+        }
+      ]
+    }
+  ]
+}

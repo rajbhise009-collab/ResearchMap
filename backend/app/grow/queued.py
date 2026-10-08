@@ -35,7 +35,9 @@ def building() -> list[dict]:
 
 
 def open_fulltext(lib: dict, cl: Clients) -> dict:
-    """Free. Fills input_source for prepared entries that do not have it."""
+    """Free. Fills input_source for prepared entries that do not have it, and
+    re-fetches full text that an earlier preparation found but that is not
+    in this checkout's cache (full text is never committed)."""
     from backend.app.corpus import records
     from backend.app.corpus.multi_domain import DOMAINS, _prelabel_path
     cfg = DOMAINS[_key(lib)]
@@ -43,10 +45,16 @@ def open_fulltext(lib: dict, cl: Clients) -> dict:
     pre = json.loads(p.read_text())
     recs = {r.get("id", "").rsplit("/", 1)[-1]: r for r in records.load(cfg.slug)["records"]}
     n_ft = 0
+    from backend.app.ingestion.fulltext import load_cached_fulltext
     for e in pre["entries"]:
-        if "input_source" in e:
-            n_ft += e["input_source"] == "fulltext"
+        if e.get("input_source") == "abstract_only":
             continue
+        if e.get("input_source") == "fulltext" and (load_cached_fulltext(f"openalex:{e['wid']}")
+                                                     or load_cached_fulltext(e["wid"])):
+            n_ft += 1
+            continue
+        # not looked for yet, or found once but not in this checkout's cache
+        # (full text is never committed): fetch it again
         try:
             src = cl.fulltext(e, recs.get(e["wid"], {}))
         except Exception:  # noqa: BLE001

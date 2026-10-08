@@ -474,7 +474,7 @@ def _followon(slug: str, cl: Clients, budget: Budget) -> dict:
     out: dict[str, Any] = {"slug": slug}
 
     # a. disagreement check on new claim pairs (new claims embedded first;
-    #    embeddings are fractions of a paisa and ledgered by the client)
+    #    embeddings cost about half a paisa per claim and are ledgered by the client)
     exts = R.load_extractions(slug)
     pairs = R.compute_shortlist(exts, use_real_embeddings=True, slug=slug, embed_client=cl.embed)
     done = R.load_classified_keys(slug)

@@ -21,6 +21,7 @@ FX: 1 USD = ₹84.
 | LLM calibration | `llm-calibration` | 113 | 100 | 13 | 67 (59%) | 113 of 113 |
 | Diet & mortality | `diet-and-mortality` | 100 | 67 | 33 | 17 (17%) | 100 of 100 |
 | ML fairness | `ml-fairness` | 99 | 99 | 0 | 50 (51%) | 99 of 99 |
+| Social media & teens | `social-media-teen-mental-health` | 100 | 68 | 32 | 22 (22%) | 99 of 100 |
 <!-- /gen:corpus -->
 
 Diet & mortality was completed in iteration 3 (synchronous API). ML
@@ -36,6 +37,7 @@ coverage.
 | LLM calibration (frozen 2026-07; threshold 0.78, cap 10) | 437 | 437 | 2 | 0 | — | — |
 | Diet & mortality (threshold 0.80, cap 2) | 152 | 152 | 10 | 5 | 2 | 3 |
 | ML fairness (threshold 0.80, cap 2) | 91 | 91 | 0 | 0 | — | — |
+| Social media & teens (threshold 0.80, cap 2) | 179 | 179 | 6 | 2 | 3 | 1 |
 <!-- /gen:yield -->
 
 Only shortlisted pairs are ever checked: a pair of claims reaches the
@@ -202,6 +204,7 @@ reputational grounds that meta-analyses in this field famously disagree.
 | LLM calibration | 0.818 (high) | 0 |
 | Diet & mortality | 0.44 (moderate) | 5 |
 | ML fairness | 0.667 (high) | 0 |
+| Social media & teens | 0.829 (high) | 2 |
 <!-- /gen:predictor -->
 
 On these three libraries the predictor's ordering does not match the
@@ -271,6 +274,7 @@ killed mid-loop; the ledger entries in `data/spend_ledger.json` under
 | LLM calibration | 67 | 46 | 59% |
 | Diet & mortality | 17 | 83 | 17% |
 | ML fairness | 50 | 49 | 51% |
+| Social media & teens | 22 | 78 | 22% |
 <!-- /gen:fulltext -->
 
 Diet's full-text share is the lowest of the three. Biomedical journals are
@@ -286,6 +290,7 @@ Gap-type raw counts from the extractions:
 |:--|--:|--:|--:|
 | Diet & mortality | 100 (17 full text) | 141 | 57 |
 | ML fairness | 99 (50 full text) | 218 | 146 |
+| Social media & teens | 99 (22 full text) | 136 | 93 |
 <!-- /gen:gap-types -->
 
 ## 6. Spend
@@ -302,20 +307,26 @@ edited.
 |:--|--:|--:|--:|
 | `contradiction_diet-and-mortality` | 267 | $0.8849 | ₹74.33 |
 | `contradiction_ml-fairness` | 218 | $0.6878 | ₹57.77 |
+| `contradiction_social-media-teen-mental-health` | 179 | $0.3005 | ₹25.24 |
 | `correction_mock_test_entries` | 1 | $-0.0057 | ₹-0.48 |
 | `embed_fw_diet-and-mortality` | 1 | $0.0041 | ₹0.34 |
 | `embed_fw_ml-fairness` | 2 | $0.0098 | ₹0.83 |
+| `embed_fw_social-media-teen-mental-health` | 1 | $0.0060 | ₹0.50 |
+| `embed_social-media-teen-mental-health` | 5 | $0.0244 | ₹2.05 |
 | `extract_diet` | 101 | $4.6220 | ₹388.25 |
 | `extract_fairness` | 75 | $3.5563 | ₹298.73 |
 | `extract_fairness_batch` | 28 | $0.8660 | ₹72.75 |
+| `extract_social-media_batch` | 100 | $1.5277 | ₹128.32 |
 | `fw_match_diet-and-mortality` | 23 | $0.0481 | ₹4.04 |
 | `fw_match_ml-fairness` | 225 | $0.3836 | ₹32.22 |
+| `fw_match_social-media-teen-mental-health` | 129 | $0.2465 | ₹20.70 |
 | `hedge_diet-and-mortality` | 200 | $0.3444 | ₹28.93 |
 | `hole_confirm_ml-fairness` | 2 | $0.0039 | ₹0.33 |
+| `hole_confirm_social-media-teen-mental-health` | 1 | $0.0021 | ₹0.18 |
 | `unknown` | 200 | $0.0060 | ₹0.50 |
-| **total (ledger, after corrections)** | 1343 | **$11.4113** | **₹958.55** |
-| ceiling (`cap_inr`) |  | $14.2857 | ₹1,200.00 |
-| remaining |  |  | ₹241.45 |
+| **total (ledger, after corrections)** | 1758 | **$13.5183** | **₹1,135.54** |
+| ceiling (config/money.json: account total − safety buffer) |  |  | ₹1,450.00 |
+| remaining (money rule) |  |  | ₹314.46 |
 <!-- /gen:spend -->
 
 The project budgets against this ledger, which records more spend than
@@ -348,6 +359,7 @@ translation as LLM calibration (`backend/app/api/library_cards.py`,
 | LLM calibration | 0 | 1 | 2 | 63 | 10 | 66 |
 | Diet & mortality | 5 | 2 | 0 | 5 | 5 | 12 |
 | ML fairness | 0 | 1 | 0 | 54 | 2 | 55 |
+| Social media & teens | 2 | 4 | 0 | 26 | 5 | 32 |
 <!-- /gen:scorer-yields -->
 
 - **Persistent limitations** — free, code only, same minimum of 3

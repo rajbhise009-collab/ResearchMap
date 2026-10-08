@@ -80,6 +80,29 @@ less weight than the reputation judgement.
 - **Stereotype threat** has almost no open full text (4 %).
 - **Empirical software engineering** has a small field and little open full text.
 
+## What happened next (2026-10-09)
+
+**Blind self-audits.** I labelled 15 papers per domain from titles and abstracts only, with the rubric's labels hidden. A rubric passes at 80 % in-or-out agreement, with one fix allowed.
+
+| domain | first audit | after the one fix | result |
+|:--|--:|--:|:--|
+| Nudges | 87 % (rubric fixed once before auditing, after inspecting the first pre-label) | — | ready |
+| Social media & teens | 87 % | — | ready |
+| Ego depletion | 67 % | 87 % | queued |
+| Growth mindset | 67 % | 87 % | queued |
+| Minimum wage | 60 % | 67 % | **not ready** |
+| Deep-RL evaluation (added when minimum wage failed) | 53 % | 67 % | **not ready** |
+| Microplastics (added when deep RL failed) | 60 % | 67 % | **not ready** |
+
+The failures share one cause. The shared rubric code keeps a paper as borderline when it has only an outcome term, or when anchor and topic words appear far apart. In broad fields such as labour economics, reinforcement learning and environmental science, that admits many papers about the general field rather than the question. Fixing it needs a change to the shared rubric code or a human-written rubric, so these three wait for the owner (`data/library_registry.json`, status `not-ready`).
+
+**Money.** Social media & teens was built in full: extraction ₹128.32, claim embeddings ₹2.05, disagreement check ₹25.24, plus the future-work matcher and lead confirmation. That left too little of the run's ₹320 for all of Nudges: its extraction alone projects ₹181 with the ×1.5 padding. Following the rule "build the first library completely before starting the second", Nudges stays **queued**, prepared down to its full text. The weekly workflow builds it as soon as the money rule says it is affordable.
+
+**Social media & teens, disagreement check.** 179 closely similar claim pairs were compared, and 6 were flagged. Hand-checked against the abstracts: 2 genuine, 3 artifact, 1 duplicate. The two genuine pairs:
+
+- whether smartphone-era screen use meaningfully lowered adolescents' well-being (Twenge et al. 2018 vs Odgers & Jensen 2020);
+- whether the rise in depression across birth cohorts is real or an artifact of recall (1989 cohort studies vs Costello et al. 2006).
+
 ## Limits of this choice
 
 - **Reputation, audience and advice risk are one person's judgement**, written down so they can be argued with.
