@@ -302,6 +302,8 @@ export interface SiteFactsLibrary {
   results: Array<{ type: string; count: number | null; label: string; note: string | null }>;
   results_total: number;
   set_aside_total: number;
+  /** What the weekly growth run has added so far (counted, not assumed). */
+  growth: { grows: boolean; added: number; last_added: string | null };
   check_line: string | null;
   not_run: string;
 }

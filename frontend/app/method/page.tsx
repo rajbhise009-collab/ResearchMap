@@ -57,6 +57,42 @@ export default function Method() {
         </tbody>
       </table>
 
+      <h2>How the libraries grow</h2>
+      <p>
+        {facts.libraries.filter((l) => l.growth.grows).map((l) => l.name).join(" and ")} are set up
+        to grow once a week. An automated run looks in OpenAlex for three kinds of new paper: papers that cite
+        both sides of a checked disagreement, papers that cite a paper whose open question is
+        unanswered, and recent papers that cite the library. It keeps the papers the library&apos;s
+        labelling rules accept, removes duplicates, and has a language model take notes on them as
+        above. Code then runs the same checks again. A run changes the site only if every automated
+        test passes; otherwise nothing is published.
+      </p>
+      <ul>
+        <li>A newly found disagreement is shown as &ldquo;Flagged by the system, not yet
+          checked&rdquo; and is not counted anywhere on this site until it has been checked by
+          hand.</li>
+        <li>A method-transfer lead is shown only after the language-model check has looked at
+          it.</li>
+        <li>Spending on the language model is capped per week and in total, in code, before any
+          call is made.</li>
+      </ul>
+      <table>
+        <thead><tr><th>Library</th><th>Papers added by weekly runs</th><th>Last added</th></tr></thead>
+        <tbody>
+          {facts.libraries.filter((l) => l.growth.grows).map((l) => (
+            <tr key={l.slug}>
+              <td>{l.name}</td><td>{l.growth.added}</td>
+              <td>{l.growth.last_added ?? "none yet"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="small">
+        {facts.libraries.filter((l) => !l.growth.grows).map((l) => l.name).join(" and ")} does
+        not grow: it is kept fixed so that a planned test (whether its results pointed to research
+        that was later done) has a fixed starting point.
+      </p>
+
       <h2>What was found in each library</h2>
       <table>
         <thead><tr><th>Library</th><th>Results</th><th>By type</th></tr></thead>

@@ -1,5 +1,22 @@
 # PROGRESS
 
+## Final run — publish-ready, unsupervised-safe, weekly growth (2026-10-08) ✅
+
+- Part 1: ML fairness future-work matching (₹32.22, batch). Ledger ₹958.55 / ₹1200.
+- Part 2: set-aside results moved out of the results list on every library and surface
+  (LLM-cal 76→66, Diet 12, ML 3→1→55 after Part 1); `frontend/scripts/consistency.mjs`
+  gates the build.
+- Part 3: curious-user hunt — 13 issues fixed (incl. a search crash on `constructor`);
+  `tools/qa/hunt.py` (76 checks, Chromium + WebKit), `test_hardening.py`,
+  `tools/qa/smoke.py`.
+- Part 4: `weekly-grow.yml` + `daily-health.yml` (replacing weekly-refresh.yml);
+  `backend/app/grow/`, `tools/grow/` (runner, issues, health, offline e2e). Fresh-checkout
+  data committed (extraction cache, LLM-cal reasoning, embeddings, slim records).
+- Part 5: `docs/OPERATIONS.md`, `docs/LAUNCH.md` §9/§11, growth copy on /method and /about
+  (counted, not promised).
+- Still owed: **Phase 6 validation** (retrospective time-split test). Unchanged by this run.
+- Details: REPORT_final.md.
+
 ## Launch readiness (2026-10-05) ✅
 
 No paid calls (ledger byte-identical). **631 tests green.** Validation

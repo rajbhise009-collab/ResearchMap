@@ -64,7 +64,12 @@ export default function About() {
         </tbody>
       </table>
       <p className="small muted">
-        Libraries are built one subject at a time. They do not update themselves.
+        Libraries are built one subject at a time.{" "}
+        {facts.libraries.filter((l) => l.growth.grows).map((l) => l.name).join(" and ")} are set up
+        to add new papers once a week, and a week&apos;s additions are published only when every
+        automated check passes (see <Link href="/method/">Method</Link>).{" "}
+        {facts.libraries.filter((l) => !l.growth.grows).map((l) => l.name).join(" and ")} is kept
+        fixed.
       </p>
     </article>
   );
