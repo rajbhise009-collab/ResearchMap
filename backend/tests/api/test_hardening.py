@@ -72,15 +72,20 @@ def test_open_questions_are_verbatim_quotes_with_their_paper():
 
 
 def test_no_claim_of_automatic_growth_until_it_runs():
-    """'weekly'/'automatically updated' may appear on public pages only once
-    the growth workflow has passed its end-to-end test (Part 5)."""
+    """Public copy may mention weekly growth only once the growth workflow
+    has passed its end-to-end test (marker written by tools/grow/e2e_mock.py
+    on a full pass), and must then say it from data, not promise it."""
     marker = REPO / "docs" / "releases" / "growth-e2e-passed.json"
-    text = " ".join(p.read_text() for p in (FE / "app").rglob("page.tsx"))
+    text = " ".join(p.read_text() for p in (FE / "app").rglob("*.tsx"))
     text += (FE / "public" / "data" / "language.json").read_text()
-    claims = re.findall(r"(?i)\b(updated weekly|weekly growth|grows every week|every monday|updates itself|"
-                        r"automatically (updated|refreshed))\b", text)
+    claims = re.findall(r"(?i)\b(week(?:ly)?|every monday|updates? (?:it|them)sel(?:f|ves)|"
+                        r"automatically (?:updated|refreshed))\b", text)
     if not marker.exists():
         assert not claims, claims
+    else:
+        m = json.loads(marker.read_text())
+        assert m["full"] and m["failed"] == 0, m
+        assert "do not update themselves" not in text
 
 
 # ---- query hygiene and safety rules (real TS modules) ---------------------

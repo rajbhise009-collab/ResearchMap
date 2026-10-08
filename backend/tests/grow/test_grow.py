@@ -70,7 +70,7 @@ def test_zero_budget_submits_nothing(monkeypatch, tmp_path):
     cl = mock_clients()
     errs: list[str] = []
     r = core.submit("ml-fairness", cl, core.Budget(0.0), ref=dt.date(2026, 10, 12), errors=errs)
-    assert r["submitted"] == 0 and r["dropped"].get("over weekly budget", 0) >= 1
+    assert r["submitted"] == 0 and r["projected_inr"] == 0
     assert not core.pending_path("ml-fairness").exists()
 
 

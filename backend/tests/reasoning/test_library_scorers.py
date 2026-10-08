@@ -59,8 +59,10 @@ def test_rejected_method_leads_are_set_aside_not_results():
 def test_diet_disagreement_cards_unchanged_by_new_scorers():
     o = json.loads((REPO / "frontend/public/data/library/diet-and-mortality/opportunities.json").read_text())
     contra = [i for i in o["items"] if i["slug"].startswith("opp-contra-")]
-    assert len(contra) == 10 and o["audit"]["confirmed"] == 5
+    raw = json.loads((REPO / "data/domains/diet-and-mortality/reasoning/contradictions.json").read_text())["items"]
+    assert len(contra) == len(raw) >= 10
     assert all(i.get("verdict") for i in contra)
+    assert o["audit"]["confirmed"] == sum(i["verdict"] == "genuine" for i in contra) >= 5
 
 
 def test_hole_confirm_k_scales_with_n():

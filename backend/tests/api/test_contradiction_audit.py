@@ -64,16 +64,25 @@ def test_attach_verdicts_for_the_diet_seven():
     assert attached[2]["audit"]["verdict"] == "duplicate"
 
 
+# The 2026-10 hand audit of the first 10 diet pairs. It is append-only:
+# weekly growth may add newly flagged pairs (unaudited until the owner
+# checks them) and the owner may add verdicts, but these entries never change.
+DIET_AUDIT_V1_SHA256 = "27ca2303cf768178910e2ed27eb2e344d25dd0b0a3e0de22c1a2b7fb2329b16a"
+
+
 def test_audit_summary_for_diet_matches_hand_count():
+    import hashlib
+    audit = json.loads(Path("data/domains/diet-and-mortality/reasoning/contradiction_audit.json").read_text())
+    first = audit["verdicts"][:10]
+    assert hashlib.sha256(json.dumps(first, sort_keys=True).encode()).hexdigest() == DIET_AUDIT_V1_SHA256
+    assert [v["verdict"] for v in first].count("genuine") == 5
     p = Path("data/domains/diet-and-mortality/reasoning/contradictions.json")
     items = json.loads(p.read_text()).get("items", [])
     s = audit_summary("diet-and-mortality", items)
-    assert s["raw_flagged"] == 10
-    assert s["genuine"] == 5, s
-    assert s["artifact"] == 2, s
-    assert s["duplicate"] == 3, s
-    assert s["unaudited"] == 0, s
-    assert s["confirmed"] == 5, s
+    assert s["genuine"] >= 5 and s["artifact"] >= 2 and s["duplicate"] >= 3, s
+    assert s["raw_flagged"] == s["genuine"] + s["artifact"] + s["duplicate"] + s["unaudited"], s
+    assert s["raw_flagged"] - s["unaudited"] == len(audit["verdicts"]), s   # every verdict maps to a pair
+    assert s["confirmed"] == s["genuine"], s
 
 
 def test_unaudited_domain_gets_unaudited_verdicts():

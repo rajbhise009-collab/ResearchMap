@@ -137,6 +137,18 @@ def _check_line(dc: dict | None) -> str | None:
             "pairs of closely similar claims so far.")
 
 
+def _growth(slug: str) -> dict:
+    """What the weekly growth run has actually added (counted from the
+    library's entries, never assumed)."""
+    from backend.app.grow.core import GROW_SLUGS
+    if slug not in GROW_SLUGS:
+        return {"grows": False, "added": 0, "last_added": None}
+    pre = DATA / "domains" / slug / "prelabelled.json"
+    entries = _j(pre)["entries"] if pre.exists() else []
+    added = [e.get("added_on") for e in entries if e.get("added_by") == "weekly-grow"]
+    return {"grows": True, "added": len(added), "last_added": max(added) if added else None}
+
+
 def build() -> dict:
     manifest = _j(PUB / "libraries.json")
     builds = _builds()
@@ -160,6 +172,7 @@ def build() -> dict:
             "results": results,
             "results_total": total,
             "set_aside_total": aside,
+            "growth": _growth(lib["slug"]),
             "check_line": _check_line(dc),
             "not_run": DISJOINT_NOTE,
             "disagreement_check": dc,

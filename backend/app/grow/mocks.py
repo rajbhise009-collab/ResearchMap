@@ -73,13 +73,29 @@ class MockOpenAlex:
             r["referenced_works"] = [src["id"]]
             return r
 
+        # Clean candidates are synthetic (not copies of library papers, whose
+        # text would double-count in search), worded from the library's own
+        # rubric terms so the rubric accepts them.
+        from backend.app.corpus.multi_domain_reason import DOMAINS
+        cfg = DOMAINS[slug]
+        a, t, st = cfg.anchor_terms[0], cfg.topic_terms[0], cfg.strong_topic_terms[0]
+        pair = (cfg.pair_terms or (t,))[0]
+        def synth(r, tag):
+            text = (f"We examined {st} and {pair} in test cohort {tag}. "
+                    f"The {a} measure and {t} were recorded for every participant.")
+            r["abstract_inverted_index"] = {}
+            for pos, w in enumerate(text.split()):
+                r["abstract_inverted_index"].setdefault(w, []).append(pos)
+            r["authorships"] = [{"author": {"display_name": f"Test Author {tag}"}}]
+            return r
+
         for i in range(4):
-            out.append(mk(core[i], i, f"{core[i]['title']} — weekly growth test record {wk}-{i}"))
-        out.append(mk(core[4], 4, f"Weekly growth test record {wk}: DOI duplicate", doi=core[5].get("doi")))
+            out.append(synth(mk(core[i], i, f"Weekly growth test record {wk}-{i}: {st} and {pair}"), f"{wk}-{i}"))
+        out.append(synth(mk(core[4], 4, f"Weekly growth test record {wk}: DOI duplicate",
+                            doi=core[5].get("doi")), f"{wk}-doi"))
         out.append(mk(core[6], 5, core[6]["title"]))                       # title duplicate
-        out.append(mk(core[7], 6, f"Weekly growth test record {wk}: twin candidate"))
-        twin = mk(core[7], 7, f"Weekly growth test record {wk}: twin candidate")
-        out.append(twin)                                                    # duplicate among candidates
+        out.append(synth(mk(core[7], 6, f"Weekly growth test record {wk}: twin candidate"), f"{wk}-twin"))
+        out.append(synth(mk(core[7], 7, f"Weekly growth test record {wk}: twin candidate"), f"{wk}-twin"))
         off = snow.get("rejected_records") or []
         if off:
             out.append(mk(off[0], 8, off[0].get("title") or "Off-topic record"))
@@ -102,7 +118,7 @@ class MockOpenAlex:
         elif cited and set(cited[0].split("|")) <= self._orphan_sources(slug):
             sel = pool[2:4]
         else:
-            sel = pool[4:]
+            sel = pool[2:]
         return {"results": [{k: r.get(k) for k in ("id", "doi", "display_name", "publication_year",
                                                    "cited_by_count", "is_retracted", "is_paratext")}
                             for r in sel]}
