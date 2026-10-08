@@ -457,6 +457,12 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     # search-index.json — same shape as the LLM-cal library uses. The
     # frontend's `search()` reads `doc.terms` as a {token→weight} dict
     # and reads `doc.type`/`ref`/`title`/`kind`/`strength`; the earlier
+    # A result that no longer exists (e.g. a method-transfer lead that new
+    # papers dissolved) must not keep a stale public page.
+    _keep_opp = {f"{o['slug']}.json" for o in opportunity_summaries}
+    for _old in opp_dir.glob("*.json"):
+        if _old.name not in _keep_opp:
+            _old.unlink()
     # per-library builder wrote `wid` and a sorted-list `terms`, which
     # Quick Search silently matched zero hits against. Build the real
     # shape by reusing `search_index.build_index` over the opportunity
