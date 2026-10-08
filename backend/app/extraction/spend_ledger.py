@@ -157,13 +157,23 @@ class SpendLedger:
     def _read(self) -> LedgerState:
         if self.path.exists():
             data = json.loads(self.path.read_text())
-            return LedgerState(
+            state = LedgerState(
                 cap_inr=data.get("cap_inr", CAP_INR),
                 cap_usd=data.get("cap_usd", CAP_USD),
                 fx_usd_to_inr=data.get("fx_usd_to_inr", FX_USD_TO_INR),
                 entries=list(data.get("entries", [])),
             )
-        return LedgerState()
+        else:
+            state = LedgerState()
+        # The money rule (config/money.json) replaces the stored cap for the
+        # real ledger, or for any ledger when MONEY_CONFIG_PATH is set (tests).
+        if self.path.resolve() == LEDGER_PATH.resolve() or os.environ.get("MONEY_CONFIG_PATH"):
+            from backend.app.extraction import money
+            cap = money.effective_cap_inr(state.cumulative_inr, state.entries)
+            if cap is not None:
+                state.cap_inr = round(cap, 6)
+                state.cap_usd = state.cap_inr / state.fx_usd_to_inr
+        return state
 
     def _write(self, state: LedgerState) -> None:
         tmp = self.path.with_suffix(".tmp")

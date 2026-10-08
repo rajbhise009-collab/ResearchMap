@@ -1,0 +1,11 @@
+{
+  "account_total_inr": 1500,
+  "safety_buffer_inr": 50,
+  "console_spent_inr": null,
+  "console_spent_date": null,
+  "growth_horizon_weeks": 12,
+  "growth_horizon_start": "2026-10-12",
+  "weekly_budget_max_inr": 60,
+  "queued_domain_reserve_weeks": 4,
+  "note": "The only spending limit. Ceiling = account_total_inr - safety_buffer_inr, measured on data/spend_ledger.json. If console_spent_inr is set (with console_spent_date, YYYY-MM-DD), remaining = ceiling - console_spent_inr - ledger spend recorded after that date. See backend/app/extraction/money.py and docs/OPERATIONS.md."
+}
