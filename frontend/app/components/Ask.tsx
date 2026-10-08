@@ -18,6 +18,7 @@ import { useDev, DevKV, DevJSON } from "./DevMode";
 import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
 import { storageGet, LIBRARY_KEY } from "../../lib/storage";
+import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
 
 const EXAMPLES = [
   "why do language models sound confident when they're wrong",
@@ -107,7 +108,12 @@ export default function Ask({ lang, gaps, papers }: {
         ]);
         if (oppResp.ok && live) {
           const oj = await oppResp.json();
-          setLiveGaps((oj.items || []).map((o: any) => ({
+          // Only results count: set-aside and not-yet-checked items live on
+          // /gaps in their own sections, never in search.
+          setLiveGaps((oj.items || []).filter((o: any) => {
+            const v = o.verdict ?? o.consumer?.verdict ?? null;
+            return v === null || v === "genuine";
+          }).map((o: any) => ({
             slug: o.slug, consumer: o.consumer,
             dev: { rank: o.rank ?? 0, gap_type: o.gap_type ?? "" },
           })));
@@ -181,8 +187,8 @@ export default function Ask({ lang, gaps, papers }: {
   // Setting only `q` lets the debounced effect below run the search once
   // the index is ready.
   useEffect(() => {
-    const u = new URLSearchParams(window.location.search).get("q");
-    if (u) setQ(u);
+    const u = cleanQuery(new URLSearchParams(window.location.search).get("q"));
+    if (u.trim()) setQ(u);
   }, []);
 
   // `banner` controls whether the borderline/out-of-domain banners are
@@ -304,7 +310,9 @@ export default function Ask({ lang, gaps, papers }: {
             id="ask-input"
             ref={inputRef}
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => setQ(cleanQuery(e.target.value))}
+            maxLength={MAX_QUERY}
+            dir="auto"
             placeholder={S.placeholder}
             aria-label={S.placeholder}
             autoComplete="off"
@@ -386,7 +394,7 @@ export default function Ask({ lang, gaps, papers }: {
                 {paperHits.length} paper{paperHits.length === 1 ? "" : "s"}
               </span>
               <span>for</span>
-              <span className="query">“{committed}”</span>
+              <span className="query">“<bdi>{echoQuery(committed)}</bdi>”</span>
               {/* Edge-of-library tag held back until the banner is
                   allowed — same reason as the OOD panel. Never fires
                   during the typing state. */}
@@ -661,7 +669,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
             {query && (
               <div className="row">
                 <span className="k">Subject</span>
-                <span className="v" style={{ fontStyle: "italic" }}>“{query}”</span>
+                <span className="v" style={{ fontStyle: "italic" }}>“<bdi>{echoQuery(query)}</bdi>”</span>
               </div>
             )}
           </div>

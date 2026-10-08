@@ -17,6 +17,7 @@ import type {
 import { search } from "../../lib/search";
 import { asset } from "../../lib/basePath";
 import { storageGet, LIBRARY_KEY } from "../../lib/storage";
+import { cleanQuery, MAX_QUERY } from "../../lib/query";
 
 const DEBOUNCE_MS = 90;
 
@@ -239,7 +240,9 @@ function CommandPalette({ lang, gaps, papers }: {
           className="cmdk-input"
           placeholder={lang.search.placeholder}
           value={q}
-          onChange={(e) => setQ(e.target.value)}
+          onChange={(e) => setQ(cleanQuery(e.target.value))}
+          maxLength={MAX_QUERY}
+          dir="auto"
           aria-label={lang.search.placeholder}
         />
         <div className="cmdk-list" role="listbox">
