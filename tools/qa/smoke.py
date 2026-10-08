@@ -3,10 +3,12 @@
   .venv/bin/python tools/qa/smoke.py [BASE] [--engines chromium,webkit] [--quick]
 
 Per engine, desktop and iPhone 13: a shared Diet link with no ?lib opens
-Diet; Diet "alc", ML fairness "fair", LLM calibration "halluc" give results
-including gaps; "melanoma treatment" is refused on all three libraries; axe
-finds zero serious/critical issues on the home page, /gaps and a gap page;
-no console errors anywhere. Exit 1 on any failure. --quick: Chromium
+Diet; then for EVERY library in libraries.json: its card, one settled search
+with gap results (Diet "alc", ML fairness "fair", LLM calibration "halluc",
+others their most distinctive in-domain title phrase), "melanoma treatment"
+refused, /gaps lists results, one gap page with its headline and (desktop) a
+working .bib export; axe finds zero serious/critical issues on the home
+page, /gaps and a gap page; no console errors anywhere. Exit 1 on any failure. --quick: Chromium
 desktop only (the daily health check).
 """
 from __future__ import annotations
@@ -29,10 +31,37 @@ def rec(ok, label, detail=""):
     print(f"[{'PASS' if ok else 'FAIL'}] {label}" + (f" — {detail}" if detail and not ok else ""), flush=True)
 
 
+LIBS = json.loads((DATA / "libraries.json").read_text())["libraries"]
+SETTLED = {"diet-and-mortality": "alc", "ml-fairness": "fair", "llm-calibration": "halluc"}
+
+
+def _lib_dir(lib):
+    return DATA if lib["snapshot_path"] == "/data" else DATA / lib["snapshot_path"].removeprefix("/data/")
+
+
+def _first_gap(lib):
+    items = json.loads((_lib_dir(lib) / "opportunities.json").read_text())["items"]
+    vis = [i for i in items if i.get("verdict") in (None, "genuine")]
+    return vis[0] if vis else None
+
+
+def _phrase(slug):
+    """A settled search for a library without a hand-picked one: its most
+    distinctive title phrase that the search answers in_domain."""
+    sys.path.insert(0, str(ROOT))
+    sys.path.insert(0, str(ROOT / "backend" / "tests" / "api"))
+    from backend.app.api.search_index import search
+    import test_search_autogen as A
+    for q in A.queries(slug):
+        if search(A.INDEX[slug], q)["verdict"] == "in_domain":
+            return q
+    return slug.replace("-", " ")
+
+
 def ctx(p, br, mobile):
-    kw = {}
+    kw = {"accept_downloads": True}
     if mobile:
-        kw = dict(p.devices["iPhone 13"])
+        kw = {**dict(p.devices["iPhone 13"]), "accept_downloads": True}
         kw.pop("default_browser_type", None)
     c = br.new_context(**kw)
     # Analytics is not part of the site under test (404s until enabled).
@@ -82,23 +111,39 @@ def run(p, base, engine, mobile, axe):
         and pg.evaluate("new URLSearchParams(location.search).get('lib')") == "diet-and-mortality",
         f"{tag} shared Diet link with no ?lib opens Diet")
     c.close()
-    for slug, q in [("diet-and-mortality", "alc"), ("ml-fairness", "fair"), ("llm-calibration", "halluc")]:
+    for lib in LIBS:
+        slug, q = lib["slug"], SETTLED.get(lib["slug"]) or _phrase(lib["slug"])
         c = ctx(p, br, mobile)
         pg = page(c, errs)
         pg.goto(f"{base}/?lib={slug}")
         settle(pg, 500)
+        card = pg.locator(".about-card").first.inner_text() if pg.locator(".about-card").count() else ""
+        rec(lib["name"] in card, f"{tag} {slug} library card shows its name", card[:80])
         b, n, g = search(pg, q)
         banner = "that's not in this library" in b or "at the edge of this library" in b
         rec(n > 0 and g > 0 and not banner, f"{tag} {slug} '{q}' → results incl. gaps",
             f"results={n} gaps={g} banner={banner}")
-        c.close()
-    for slug in ("llm-calibration", "diet-and-mortality", "ml-fairness"):
-        c = ctx(p, br, mobile)
-        pg = page(c, errs)
-        pg.goto(f"{base}/?lib={slug}")
-        settle(pg, 500)
         b, _, _ = search(pg, "melanoma treatment")
         rec("that's not in this library" in b, f"{tag} {slug} 'melanoma treatment' refuses")
+        c.close()
+        c = ctx(p, br, mobile)
+        pg = page(c, errs)
+        pg.goto(f"{base}/gaps/?lib={slug}")
+        settle(pg)
+        cards = pg.locator(".results-list > *").count()
+        rec(cards > 0, f"{tag} {slug} /gaps lists results", str(cards))
+        first = _first_gap(lib)
+        if first:
+            pg.goto(f"{base}/gap/{first['slug']}/")
+            settle(pg)
+            h1 = pg.locator("h1").first.inner_text().strip().strip("“”\"")   # quoted headlines
+            rec(h1 == first["consumer"]["headline"], f"{tag} {slug} gap page shows its headline",
+                f"{h1[:60]!r} vs {first['consumer']['headline'][:60]!r}")
+            if not mobile:      # downloads are a desktop check
+                with pg.expect_download(timeout=8000) as dl:
+                    pg.get_by_role("button", name="Download .bib").first.click()
+                ok = dl.value.suggested_filename.endswith(".bib")
+                rec(ok, f"{tag} {slug} gap page export downloads a .bib", dl.value.suggested_filename)
         c.close()
     if axe:
         for path in ("/?lib=diet-and-mortality", "/gaps/?lib=ml-fairness", f"/gap/{diet['slug']}/"):
