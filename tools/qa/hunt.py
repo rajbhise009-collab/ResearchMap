@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "frontend" / "public" / "data"
 QA = Path.home() / "ResearchMap-private" / "launch-qa"
 R: list[tuple[str, bool, str, str]] = []
+NOTES: list[str] = []
 
 
 def rec(sec, ok, label, detail=""):
@@ -105,13 +106,28 @@ def url(br):
         c = ctx(br)
         pg = c.new_page()
         ev = guard(pg)
+        edge = None
         try:
             resp = pg.goto(BASE + p)
             status = resp.status if resp else 0
+            edge = resp.headers.get("x-vercel-error") if resp else None
+            if resp and not edge and resp.status == 403 and resp.headers.get("server") == "Vercel" \
+                    and resp.headers.get("x-vercel-id") and "masthead" not in (resp.text() or ""):
+                edge = "FIREWALL_FORBIDDEN"
         except Exception as e:  # noqa: BLE001
             status = -1
             ev["errors"].append(str(e)[:80])
         settle(pg, 700)
+        if edge and status in (400, 403):
+            # Refused by the hosting platform's edge before any site code runs
+            # (plain "Bad request" + request id). Not configurable on a static
+            # site; checked to contain nothing internal.
+            b = body(pg)
+            ok = len(b) < 400 and not any(k in b.lower() for k in ("traceback", "/users/", "error:", " at "))
+            rec(S, ok, f"{p[:60]} → refused by the hosting platform ({status} {edge}); no internals")
+            NOTES.append(f"{p}: platform edge {status} {edge} (not the site's 404 page)")
+            c.close()
+            continue
         b = body(pg)
         notfound = "isn't here" in b
         ok = (len(b.strip()) > 150 and "Application error" not in b and not ev["dialogs"]
@@ -439,6 +455,8 @@ def main() -> int:
     QA.mkdir(parents=True, exist_ok=True)
     (QA / "hunt.json").write_text(json.dumps([{"section": a, "ok": b, "label": c, "detail": d}
                                               for a, b, c, d in R], indent=2))
+    for n in NOTES:
+        print("NOTE", n)
     print(f"\nPASS={sum(ok for _, ok, _, _ in R)} FAIL={sum(not ok for _, ok, _, _ in R)}")
     return 0 if all(ok for _, ok, _, _ in R) else 1
 

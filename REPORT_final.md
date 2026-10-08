@@ -72,11 +72,76 @@ In local developer builds only, `?dev=1` shows the banner "Developer mode is on 
 
 ## Part 4: unsupervised operations
 
-PLACEHOLDER_E2E
+`.github/workflows/weekly-grow.yml` and `.github/workflows/daily-health.yml` replace `weekly-refresh.yml`. Their security:
+
+- triggers are `schedule` and `workflow_dispatch` only;
+- actions are pinned by commit SHA;
+- permissions are minimal (grow: contents and issues write; health: contents read, issues write);
+- secrets go only into the one step that needs them, and every message is redacted.
+
+`backend/tests/grow` enforces all of this.
+
+The full flow, phases and Issue meanings are in **docs/OPERATIONS.md**. In short: collect last week's batch (billed once, batch rate), budget-gated follow-on checks, rebuild, submit the new batch (₹25 × 1.5 padding, plus the lifetime ceiling), fingerprint and changelog, gates, then main or `grow/<date>`, a live check, and one Issue.
+
+**Mocked end-to-end test** (`tools/grow/e2e_mock.py`): a throwaway clone, a local bare repository standing in for GitHub, mocked OpenAlex and Gemini, the clone's own copy of the ledger, and file-backed Issues. **Result: 38/38 checks passed, every publish gate run for real** (marker `docs/releases/growth-e2e-passed.json`, tested commit `23d80c9`).
+
+| Scenario | Checked |
+|:--|:--|
+| 1. Week 1 | Exits 0. Main advanced (`ls-remote` = local). A batch pending per library. Issue "published". Fingerprint records every gate passing. |
+| 2. Week 2 | Papers added to both libraries: exactly the submitted ones that extracted cleanly. The planted DOI duplicate, title duplicate, twin and off-topic record were dropped. Last week's batch was billed at the batch rate. Site facts show the new counts. A new disagreement shows as "Flagged by the system, not yet checked" and does not count. Every shown method-transfer lead was confirmed. The Issue has an audit checklist, and a changelog entry was written. |
+| 3. Missing secret | Exit 2, nothing pushed. The Issue names the secret to add. The secret that *was* set appears nowhere. |
+| 4. OpenAlex down after collecting | Exit 2, main untouched. Work and spend record pushed to `grow/<date>`. The Issue explains. |
+| 5. Unmerged `grow/*` | Refuses to run: nothing spent, nothing submitted. The Issue names the branch. |
+| 6. Failing gate | Exit 1, nothing to main, `grow/<date>` pushed. The Issue shows the failed gate's output. |
+| 7. Daily health | Site down: Issue opened. Site up: Issue closed. |
+| All | The real ledger was never touched, and no secret appears in any Issue. |
+
+**What the test found and I fixed:**
+
+- A fresh checkout could not rebuild the site (needed data was gitignored).
+- LLM calibration's "built" date came from a file's mtime.
+- A result dissolved by new papers kept a stale page in the sitemap.
+- Gates ran tests before the build, so 19 rendered-output tests silently skipped.
+- Two tests froze the disagreement count at 10. They now pin the hand audit by hash and allow new, unaudited pairs.
+- My own search test caught a mock artifact.
+
+No real paid call was made in testing.
 
 ## Part 6: verify and publish
 
-PLACEHOLDER_PUBLISH
+**Local, on the final build:**
+
+- **Tests:** 673 passed, with nothing skipped because a build was missing.
+- **Typecheck and production build:** pass, and the consistency script runs inside the build.
+- **Docs check:** current.
+- **Browser hunt:** 76/76 on Chromium and 76/76 on WebKit.
+- **Smoke checks: 44/44** across Chromium and WebKit, desktop and iPhone 13:
+  - a Diet shared link with no `?lib` opens Diet;
+  - Diet "alc", ML fairness "fair" and LLM calibration "halluc" give results including gaps;
+  - "melanoma treatment" refuses on all three libraries;
+  - axe finds 0 serious or critical issues on 3 page types;
+  - no console errors.
+
+**Pushed** (each confirmed by exit code 0 and `git ls-remote` equal to the local sha):
+
+- `iteration-2` → `4efa6c6`;
+- `main` → `4efa6c6`, fast-forward from `9fb1222`;
+- tag `llm-cal-baseline-v1` → `994cbf5` (annotated, on `0a25083`).
+
+One small tools/report commit follows; its sha is in the summary.
+
+**Production, about 4 minutes after the push** (https://researchmap-one.vercel.app):
+
+- **Live check:** 0 failed, 11 passed, 1 warning (the analytics script returns 404 until you enable Web Analytics), 2 skipped (no custom domain yet).
+- **Smoke checks: 44/44.** The new /method "How the libraries grow" section is live.
+- **Hunt against production: 73 site checks pass.** Three hostile URLs never reach the site. Vercel's edge refuses them with its own plain response (no internals, no stack trace) instead of the on-brand 404, and a static site cannot change that:
+  - `/gap/%00/` → 400 "Bad request";
+  - `/gap/..%2f..%2fetc%2fpasswd/` → 400 "Bad request";
+  - `/data/../../etc/passwd` → 403 "Forbidden" (Vercel firewall).
+
+  The hunt now records these as platform refusals, and only when Vercel's own headers are present.
+
+No revert was needed.
 
 ## What you need to do (I can't do these)
 
