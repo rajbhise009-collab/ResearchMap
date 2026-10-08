@@ -78,8 +78,9 @@ def test_no_claim_of_automatic_growth_until_it_runs():
     marker = REPO / "docs" / "releases" / "growth-e2e-passed.json"
     text = " ".join(p.read_text() for p in (FE / "app").rglob("*.tsx"))
     text += (FE / "public" / "data" / "language.json").read_text()
+    denial = "do not update themselves"                 # the honest statement before growth
     claims = re.findall(r"(?i)\b(week(?:ly)?|every monday|updates? (?:it|them)sel(?:f|ves)|"
-                        r"automatically (?:updated|refreshed))\b", text)
+                        r"automatically (?:updated|refreshed))\b", text.replace(denial, ""))
     if not marker.exists():
         assert not claims, claims
     else:
