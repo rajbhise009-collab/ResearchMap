@@ -42,7 +42,9 @@ def _lib_dir(snapshot_path: str) -> Path:
 def _builds() -> dict:
     known = _j(BUILDS) if BUILDS.exists() else {}
     opp = DATA / "reasoning" / "opportunities.jsonl"
-    if opp.exists():
+    # LLM calibration is frozen: its recorded date stands. A file's mtime is
+    # only a fallback for a first record (a fresh checkout resets mtimes).
+    if opp.exists() and "llm-calibration" not in known:
         known["llm-calibration"] = {
             "date": datetime.fromtimestamp(opp.stat().st_mtime).date().isoformat(),
             "basis": "file date of the library's frozen gap list (data/reasoning/opportunities.jsonl)"}

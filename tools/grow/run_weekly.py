@@ -338,7 +338,11 @@ def main() -> int:
             say(f"submit {slug}: {r.get('submitted', 0)} papers, projected ₹{r.get('projected_inr', 0):.2f}")
             p2.append(r)
         diff = diff_items(before, items_snapshot())
-    except core.GrowStop as stop:
+    except Exception as exc:  # noqa: BLE001  (GrowStop or anything unexpected)
+        stop = exc if isinstance(exc, core.GrowStop) else core.GrowStop(
+            f"unexpected error: {type(exc).__name__}: {exc}",
+            "Open this run's log in the Actions tab. Nothing reached main; if a branch is named "
+            "below, it holds this run's bookkeeping (including any spend record).")
         say(f"STOP: {stop.what}")
         l1 = ledger_inr() if l0[1] else l0
         branch = None

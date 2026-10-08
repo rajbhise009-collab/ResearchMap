@@ -34,7 +34,9 @@ data/cache/*
 data/corpora/
 
 # Raw OpenAlex JSON pulls — large, regeneratable from the diagnostic script
-data/live_samples/
+data/live_samples/*
+# LLM-calibration's corpus manifest is read by the snapshot export.
+!data/live_samples/expanded_corpus_manifest.json
 
 # Hand-labelled reviewer CSVs — user's private work
 data/labelled/*.filled.csv
