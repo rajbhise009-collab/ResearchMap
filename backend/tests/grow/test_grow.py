@@ -65,6 +65,8 @@ def test_zero_budget_submits_nothing(monkeypatch, tmp_path):
     monkeypatch.setenv("GROW_DATE", "2026-10-12")
     from backend.app.grow.mocks import mock_clients
     monkeypatch.setenv("GROW_MOCK_STATE", str(tmp_path))
+    # independent of any batch a real weekly run left pending
+    monkeypatch.setattr(core, "pending_path", lambda slug: tmp_path / f"{slug}-pending.json")
     cl = mock_clients()
     errs: list[str] = []
     r = core.submit("ml-fairness", cl, core.Budget(0.0), ref=dt.date(2026, 10, 12), errors=errs)

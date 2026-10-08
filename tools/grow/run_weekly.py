@@ -143,10 +143,11 @@ def gates() -> list[dict]:
         say("gates skipped (mock run, GROW_GATES=skip)")
         return [{"gate": "(skipped: mock run)", "ok": True, "tail": ""}]
     t = "backend/tests/api/"
+    # Build first: the rendered-output tests and the browser checks need it.
     steps = [
-        ("full tests", [PY, "-m", "pytest", "backend/tests", "-q"], ROOT),
         ("typecheck", ["npm", "run", "typecheck"], FE),
         ("production build (+ consistency before and after)", ["npm", "run", "build"], FE),
+        ("full tests", [PY, "-m", "pytest", "backend/tests", "-q"], ROOT),
         ("docs check", [PY, "-m", "backend.app.corpus.doc_numbers", "--check"], ROOT),
         ("consistency script", ["node", "scripts/consistency.mjs", "--built"], FE),
         ("banned-phrase tests", [PY, "-m", "pytest", "-q", t + "test_rendered_output.py", t + "test_language.py",
@@ -162,7 +163,7 @@ def gates() -> list[dict]:
         res.append({"gate": name, "ok": r.returncode == 0,
                     "tail": "" if r.returncode == 0 else redact((r.stdout + r.stderr).strip()[-800:])})
         say(f"gate {'PASS' if r.returncode == 0 else 'FAIL'}: {name}")
-    built = all(g["ok"] for g in res[:3])
+    built = res[1]["ok"]
     for name, script, extra in (("browser hunt (Part 3)", "tools/qa/hunt.py", []),
                                 ("smoke checks on the build", "tools/qa/smoke.py", ["--engines=chromium"])):
         if not built:

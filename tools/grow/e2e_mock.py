@@ -148,7 +148,8 @@ def main() -> int:
         check(1, remote_head() != m0 and remote_head() == git("rev-parse", "HEAD"),
               "main advanced on the remote (ls-remote == local HEAD)")
         check(1, all(pend.values()), "a batch is pending for each library", pend)
-        check(1, it and it["state"] == "open" and "published to main" in it["body"], "one Issue, status published")
+        check(1, it and it["state"] == "open" and it["body"].startswith("**Status:** published to main"),
+              "one Issue, status published")
         check(1, (WORK / "docs" / "releases" / f"{d1}.json").exists(), "release fingerprint written")
         fpp = WORK / "docs" / "releases" / f"{d1}.json"
         fp = json.loads(fpp.read_text()) if fpp.exists() else {"gates": None}
