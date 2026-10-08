@@ -161,7 +161,7 @@ export interface Stats {
   raw_flagged_contradictions?: number;
   contradiction_audit?: ContradictionAudit;
   scorer_yields: Record<string, number>;
-  relationships: number; spend_to_date_usd: number; manifest_hash: string | null; note: string;
+  relationships: number; manifest_hash: string | null; note: string;
 }
 export interface Finding { slug: string; title: string; path: string; markdown: string; }
 

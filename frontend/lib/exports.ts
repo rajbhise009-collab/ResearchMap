@@ -145,8 +145,14 @@ export function toCsv(headers: string[], rows: Array<Array<unknown>>): string {
 
 // ---- Trigger a browser download ----------------------------------------
 
+// A double-click (or a stuck key) must not start the same download twice.
+let lastDownload = { name: "", at: 0 };
+
 export function downloadText(filename: string, mime: string, text: string) {
   if (typeof window === "undefined") return;
+  const now = Date.now();
+  if (lastDownload.name === filename && now - lastDownload.at < 1000) return;
+  lastDownload = { name: filename, at: now };
   const blob = new Blob([text], { type: `${mime};charset=utf-8` });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -155,5 +161,6 @@ export function downloadText(filename: string, mime: string, text: string) {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  // Revoking immediately can cancel the download in some browsers.
+  setTimeout(() => URL.revokeObjectURL(url), 30_000);
 }

@@ -79,7 +79,7 @@ export default function PaperDetailClient({ wid: routeWid, lang, owners }: {
           <h1>{p.title}</h1>
           {p.doi && (
             <p className="subtitle">
-              <a href={doiUrl(p.doi) ?? undefined} target="_blank" rel="noreferrer">
+              <a href={doiUrl(p.doi) ?? undefined} target="_blank" rel="noopener noreferrer">
                 doi.org/{bareDoi(p.doi)} ↗
               </a>
             </p>

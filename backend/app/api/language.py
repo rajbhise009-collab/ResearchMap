@@ -437,6 +437,15 @@ def why_it_surfaced(card: dict[str, Any]) -> str:
 # Assembling the consumer view of one result.
 # --------------------------------------------------------------------------
 
+_EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+
+
+def redact_contacts(text: str | None) -> str | None:
+    """Abstracts sometimes carry a corresponding author's email address. The
+    site has no reason to republish it."""
+    return _EMAIL.sub("[email address removed]", text) if text else text
+
+
 # A method-transfer lead the confirmation step rejected is not a result:
 # it moves to "Set aside after checking". The reason is chosen by code from
 # the label; the checker's own wording is not shown.

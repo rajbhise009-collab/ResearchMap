@@ -70,6 +70,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>
+        <noscript>
+          <div className="noscript">
+            <strong>This site needs JavaScript.</strong> Search, results and paper pages
+            are loaded in your browser. Please turn JavaScript on, or use a browser that
+            supports it. Nothing is tracked or sent anywhere when you do.
+          </div>
+        </noscript>
         <div className="shell">
           <DevModeProvider>
             {/* The command palette needs the whole library resident on the

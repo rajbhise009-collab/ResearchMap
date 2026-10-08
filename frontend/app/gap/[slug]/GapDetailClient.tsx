@@ -284,7 +284,7 @@ export default function GapDetailClient({ slug, lang, owners }: {
                   <span className="t">
                     {w.doi ? (
                       <a href={doiUrl(w.doi) ?? undefined}
-                          target="_blank" rel="noreferrer">
+                          target="_blank" rel="noopener noreferrer">
                         {w.title ?? w.wid}
                       </a>
                     ) : (w.title ?? w.wid)}

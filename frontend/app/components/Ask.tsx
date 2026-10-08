@@ -17,8 +17,9 @@ import { search } from "../../lib/search";
 import { useDev, DevKV, DevJSON } from "./DevMode";
 import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
-import { storageGet, LIBRARY_KEY } from "../../lib/storage";
+import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
+import { adviceLike, panelBlocked, selfHarm } from "../../lib/safety";
 
 const EXAMPLES = [
   "why do language models sound confident when they're wrong",
@@ -59,7 +60,7 @@ export default function Ask({ lang, gaps, papers }: {
   const [otherLibHits, setOtherLibHits] = useState<
     { slug: string; name: string } | null>(null);
   const [activeLib, setActiveLib] = useState<
-    { slug: string; name: string; blurb?: string } | null>(null);
+    { slug: string; name: string; blurb?: string; not_advice_note?: string | null } | null>(null);
 
   // Preload the index so the first keystroke is already answered.
   // Reads the currently-selected library's search-index (via ?lib=…);
@@ -86,7 +87,8 @@ export default function Ask({ lang, gaps, papers }: {
             activeSlug = lib.slug;
             if (live) {
               setActiveLib({ slug: lib.slug, name: lib.name,
-                             blurb: (lib as any).blurb });
+                             blurb: (lib as any).blurb,
+                             not_advice_note: (lib as any).not_advice_note ?? null });
             }
           }
         }
@@ -171,9 +173,7 @@ export default function Ask({ lang, gaps, papers }: {
   // second question after reading one result.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      const inField = document.activeElement instanceof HTMLElement &&
-        ["INPUT", "TEXTAREA"].includes(document.activeElement.tagName);
-      if (e.key === "/" && !inField) {
+      if (e.key === "/" && !typingInField() && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
         inputRef.current?.focus();
       }
@@ -403,6 +403,19 @@ export default function Ask({ lang, gaps, papers }: {
               )}
             </div>
 
+            {/* Medical safety: in a library with a not-advice note (Diet),
+                results always lead with it; advice-like phrasing adds a
+                plain sentence that we cannot advise anyone. */}
+            {activeLib?.not_advice_note && (
+              <p className="not-advice" role="note" style={{ marginTop: "var(--s-3)" }}>
+                {adviceLike(committed) && (
+                  <><strong>We can&apos;t tell you what to eat or drink.</strong>{" "}
+                  This only shows what research papers report.{" "}</>
+                )}
+                <strong>Note:</strong> {activeLib.not_advice_note}
+              </p>
+            )}
+
             {/* Typing hint: half-typed trailing word. Neutral — never
                 a refusal or an edge label. */}
             {isTyping && result.trailing_prefix && (
@@ -527,6 +540,8 @@ function OutOfDomain({ lang, query, activeLibrary }: {
   lang: LanguagePack; query: string;
   activeLibrary: { slug: string; name: string; blurb?: string } | null;
 }) {
+  const blocked = panelBlocked(query);
+  const harm = selfHarm(query);
   const [showBuild, setShowBuild] = useState(false);
   const [preflight, setPreflight] = useState<PreflightResult | null>(null);
   const [preflightState, setPreflightState] = useState<
@@ -622,7 +637,13 @@ function OutOfDomain({ lang, query, activeLibrary }: {
         </section>
       )}
 
-      {!showBuild ? (
+      {harm && (
+        <p className="not-advice" role="note" style={{ marginTop: "var(--s-5)" }}>
+          If you are thinking about harming yourself, please contact local emergency
+          services or a crisis line in your country now. You deserve support from a person.
+        </p>
+      )}
+      {blocked ? null : !showBuild ? (
         <button className="cta" onClick={() => setShowBuild(true)}>
           {S.build_cta} <span aria-hidden>→</span>
         </button>

@@ -74,9 +74,27 @@ export function tokenize(
   return singles.concat(bigrams);
 }
 
+// The index's lookup tables are plain JSON objects. A query word such as
+// "constructor", "toString" or "__proto__" would otherwise hit
+// Object.prototype instead of the index (and crash the search). Give every
+// table a null prototype once, the first time an index is searched.
+const prepared = new WeakSet<object>();
+function nullProto<T extends object>(o: T): T {
+  if (o && Object.getPrototypeOf(o) !== null) Object.setPrototypeOf(o, null);
+  return o;
+}
+function prepare(index: SearchIndex): void {
+  if (prepared.has(index)) return;
+  nullProto(index.idf as object);
+  if (index.synonyms) nullProto(index.synonyms as object);
+  for (const d of index.docs) nullProto(d.terms as object);
+  prepared.add(index);
+}
+
 export function search(index: SearchIndex, query: string, limit = 20,
                        opts: { prefixLast?: boolean;
                                expandTrailing?: boolean } = {}): SearchResult {
+  prepare(index);
   const stopwords = new Set(index.stopwords);
   const syn = index.synonyms;
   let pairs = tokenizePairs(query, stopwords, syn);

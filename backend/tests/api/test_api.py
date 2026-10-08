@@ -81,7 +81,9 @@ def test_relationships_and_stats():
     s = client.get("/api/corpus/stats").json()
     assert s["papers"] == s["full_text"] + s["abstract_only"]
     assert s["core"] + s["peripheral"] == s["papers"]
-    assert "scorer_yields" in s and "spend_to_date_usd" in s and "manifest_hash" in s
+    assert "scorer_yields" in s and "manifest_hash" in s
+    # Costs are not published per library in the data files.
+    assert "spend_to_date_usd" not in s
 
 
 def test_findings():

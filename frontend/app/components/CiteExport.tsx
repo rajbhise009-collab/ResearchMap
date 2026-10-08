@@ -38,7 +38,7 @@ interface EvidenceRow {
 export function BibtexButtons({ papers, filename }: {
   papers: PaperLike[]; filename: string;
 }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<"ok" | "blocked" | null>(null);
   if (papers.length === 0) return null;
   const bib = papersToBibtex(papers);
   return (
@@ -48,10 +48,11 @@ export function BibtexButtons({ papers, filename }: {
         className="cite-btn"
         onClick={async () => {
           const ok = await copy(bib);
-          if (ok) { setCopied(true); setTimeout(() => setCopied(false), 1400); }
+          setCopied(ok ? "ok" : "blocked");
+          setTimeout(() => setCopied(null), 2400);
         }}
       >
-        {copied ? "Copied ✓" : "Copy BibTeX"}
+        {copied === "ok" ? "Copied ✓" : "Copy BibTeX"}
       </button>
       <button
         type="button"
@@ -60,6 +61,9 @@ export function BibtexButtons({ papers, filename }: {
       >
         Download .bib
       </button>
+      <span className="small muted" role="status" aria-live="polite">
+        {copied === "blocked" ? "Your browser blocked copying. Use “Download .bib” instead." : ""}
+      </span>
     </div>
   );
 }
@@ -98,6 +102,9 @@ export function HowToCite({ pageName, note }: {
   note?: string;
 }) {
   const [url, setUrl] = useState("");
+  const [status, setStatus] = useState("");
+  const BLOCKED = "Your browser blocked copying. Select the text above and copy it by hand.";
+  const flash = (m: string) => { setStatus(m); setTimeout(() => setStatus(""), 4000); };
   useEffect(() => { setUrl(canonicalPageUrl()); }, []);
   const today = new Date().toISOString().slice(0, 10);
   const cite =
@@ -114,17 +121,18 @@ export function HowToCite({ pageName, note }: {
         <button
           type="button"
           className="cite-btn"
-          onClick={async () => { await copy(cite); }}
+          onClick={async () => { flash((await copy(cite)) ? "Citation copied." : BLOCKED); }}
         >
           Copy citation
         </button>{" "}
         <button
           type="button"
           className="cite-btn"
-          onClick={async () => { await copy(canonicalPageUrl()); }}
+          onClick={async () => { flash((await copy(canonicalPageUrl())) ? "Link copied." : BLOCKED); }}
         >
           Copy link
         </button>
+        <p className="small muted" role="status" aria-live="polite">{status}</p>
       </details>
     </div>
   );

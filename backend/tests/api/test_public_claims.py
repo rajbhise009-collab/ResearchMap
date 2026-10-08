@@ -96,3 +96,16 @@ def test_spend_figures_never_rendered_in_ui():
                  if "node_modules" not in p.parts and ".next" not in p.parts
                  and "spend_to_date_usd" in p.read_text()]
     assert offenders == []
+
+
+def test_no_costs_or_contact_emails_in_shipped_data():
+    """Public data files carry no per-library spend figures and no email
+    addresses (author contacts are redacted from abstracts)."""
+    import re
+    email = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+    bad = []
+    for p in PUBLIC.rglob("*.json"):
+        t = p.read_text()
+        if "spend_to_date_usd" in t or "spend_note" in t or email.search(t):
+            bad.append(str(p.relative_to(REPO)))
+    assert not bad, bad[:5]

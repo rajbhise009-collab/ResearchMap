@@ -10,3 +10,10 @@ export function storageGet(key: string): string | null {
 export function storageSet(key: string, value: string): void {
   try { window.localStorage.setItem(key, value); } catch { /* unavailable */ }
 }
+
+/** True when the user is typing somewhere (keyboard shortcuts stay off). */
+export function typingInField(): boolean {
+  const el = typeof document !== "undefined" ? document.activeElement : null;
+  if (!(el instanceof HTMLElement)) return false;
+  return ["INPUT", "TEXTAREA", "SELECT"].includes(el.tagName) || el.isContentEditable;
+}

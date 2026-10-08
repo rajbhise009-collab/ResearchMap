@@ -16,7 +16,7 @@ import type {
 } from "../../lib/types";
 import { search } from "../../lib/search";
 import { asset } from "../../lib/basePath";
-import { storageGet, LIBRARY_KEY } from "../../lib/storage";
+import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, MAX_QUERY } from "../../lib/query";
 
 const DEBOUNCE_MS = 90;
@@ -108,15 +108,19 @@ function CommandPalette({ lang, gaps, papers }: {
     return () => { live = false; };
   }, [open, activeSnapshot]);
 
-  // ⌘K / Ctrl-K / "/" opens; Esc closes.
+  // ⌘K / Ctrl-K / "/" opens; Esc closes. Shortcuts never fire while the
+  // visitor is typing in another field; on a page with the main search box,
+  // "/" belongs to that box (Ask.tsx), not to the palette.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      const inField = document.activeElement instanceof HTMLElement &&
-        ["INPUT", "TEXTAREA"].includes(document.activeElement.tagName);
+      const inPalette = document.activeElement instanceof HTMLElement &&
+        document.activeElement.classList.contains("cmdk-input");
+      const inField = typingInField() && !inPalette;
       if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) {
+        if (inField) return;
         e.preventDefault();
         setOpen((v) => !v);
-      } else if (e.key === "/" && !inField && !open) {
+      } else if (e.key === "/" && !inField && !open && !document.getElementById("ask-input")) {
         e.preventDefault();
         setOpen(true);
       } else if (e.key === "Escape" && open) {
@@ -125,6 +129,19 @@ function CommandPalette({ lang, gaps, papers }: {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  // When the palette closes, focus goes back to where it was (never lost
+  // to <body>, never trapped).
+  const returnFocus = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (open) {
+      returnFocus.current = document.activeElement instanceof HTMLElement
+        ? document.activeElement : null;
+    } else if (returnFocus.current && document.contains(returnFocus.current)) {
+      returnFocus.current.focus();
+      returnFocus.current = null;
+    }
   }, [open]);
 
   // The button in the masthead flips the open state — no separate handler.

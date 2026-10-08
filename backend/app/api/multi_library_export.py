@@ -220,7 +220,7 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "domain_centrality": e.get("domain_centrality"),
             "input_source": e.get("input_source"),
             "abstract_only": e.get("input_source") != "fulltext",
-            "abstract": e.get("abstract"),
+            "abstract": lang_mod.redact_contacts(e.get("abstract")),
             # Records merged into this one (docs/merge-policy.md provenance).
             "merged_from": e.get("merged_from", []),
             "claims": [c.model_dump() for c in (ext.claims or [])] if ext else [],
@@ -443,11 +443,6 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "core": sum(1 for e in entries if e.get("domain_centrality") == "core"),
         "peripheral": sum(1 for e in entries
                            if e.get("domain_centrality") == "peripheral"),
-        "spend_to_date_usd": _ledger_spend_usd(slug),
-        "spend_note": ("From the project's spend ledger: extraction, "
-                       "disagreement-check and hedge-classifier calls for this "
-                       "library. Embedding calls made before 2026-10-04 were "
-                       "not recorded and are not included."),
         "manifest_hash": None,
         "relationships": len(contradictions),
         "note": (f"Multi-domain library — claims extracted from {n_extracted} "

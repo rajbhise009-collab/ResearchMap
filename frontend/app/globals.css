@@ -1490,3 +1490,28 @@ main#main { min-height: 100vh; }
   color: var(--ink-soft);
 }
 .lib-summary-panel li { margin: var(--s-2) 0; }
+
+/* JavaScript off: a plain message instead of an empty shell. */
+.noscript {
+  max-width: var(--wide); margin: var(--s-5) auto; padding: var(--s-4) var(--s-5);
+  border: 2px solid var(--note-rule); background: var(--note-bg); color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* Forced colors / Windows high contrast: box-shadow focus rings and tinted
+   backgrounds disappear, so give them real outlines and borders. */
+@media (forced-colors: active) {
+  :focus-visible { outline: 2px solid CanvasText !important; outline-offset: 2px; }
+  .not-advice, .verdict-doubt, .lib-switch-notice, .caveat, .verdict-chip, .cite-btn,
+  .lib-summary-toggle, .tag { border: 1px solid CanvasText; }
+}
+
+/* Print: the reading content only. */
+@media print {
+  .masthead, .skip, .cmdk-scrim, .ask, .lib-summary-toggle, .foot-links,
+  .cite-btn, .how-to-cite button, nav, .filters, .lib-switcher { display: none !important; }
+  .lib-summary-panel[hidden] { display: block !important; }
+  body { background: #fff; color: #000; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
+  main#main { min-height: 0; }
+}

@@ -269,8 +269,6 @@
   "scorers_skipped": {},
   "core": 99,
   "peripheral": 0,
-  "spend_to_date_usd": 5.5074,
-  "spend_note": "From the project's spend ledger: extraction, disagreement-check and hedge-classifier calls for this library. Embedding calls made before 2026-10-04 were not recorded and are not included.",
   "manifest_hash": null,
   "relationships": 0,
   "note": "Multi-domain library \u2014 claims extracted from 99 of 99 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
