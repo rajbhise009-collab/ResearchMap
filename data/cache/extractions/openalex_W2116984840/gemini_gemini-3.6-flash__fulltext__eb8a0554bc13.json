@@ -1,0 +1,184 @@
+{
+  "paper_id": "openalex:W2116984840",
+  "claims": [
+    {
+      "id": "openalex:W2116984840:c1",
+      "paper_id": "openalex:W2116984840",
+      "text": "Removing the sensitive attribute from a dataset does not always remove discrimination due to correlations with remaining attributes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2116984840:c2",
+      "paper_id": "openalex:W2116984840",
+      "text": "Applying Preferential Sampling with a J48 base learner on the Census Income dataset reduces discrimination from 16.48% to 3.32%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2116984840:c3",
+      "paper_id": "openalex:W2116984840",
+      "text": "Applying Preferential Sampling with a J48 base learner on the Census Income dataset reduces classification accuracy from 86.05% to 84.30%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2116984840:c4",
+      "paper_id": "openalex:W2116984840",
+      "text": "For deterministic classifiers that do not utilize scoring rankers, lowering discrimination results in a strictly linear decrease in accuracy.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2116984840:e1",
+      "claim_id": "openalex:W2116984840:c1",
+      "description": "In experiments across multiple datasets without the sensitive attribute S, discrimination remained high: 16.65% on Census Income, 38.07% on Communities and Crimes, and 17.92% on Dutch 2001 Census.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2116984840:e2",
+      "claim_id": "openalex:W2116984840:c2",
+      "description": "Table and text results for 10-fold cross-validation show J48 with Preferential Sampling achieved 3.32% discrimination compared to 16.48% for untreated J48.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2116984840:e3",
+      "claim_id": "openalex:W2116984840:c3",
+      "description": "Cross-validation results state accuracy fell from 86.05% to 84.3% when J48 was combined with PS on the Census Income dataset.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2116984840:e4",
+      "claim_id": "openalex:W2116984840:c4",
+      "description": "Theorem 2 proves that for non-scoring classifiers, E[acc(C) - acc(C')] = (2acc(C) - 1) * min(db, dw) / d * (disc(C) - disc(C')).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2116984840:m1",
+      "paper_id": "openalex:W2116984840",
+      "name": "Massaging",
+      "description": "A data preprocessing technique that relabels borderline promotion and demotion candidates identified by a ranking classifier to eliminate discrimination from the training set.",
+      "datasets": [
+        "Census Income",
+        "Communities and Crimes",
+        "Dutch 2001 Census"
+      ],
+      "conditions": [
+        "binary sensitive attribute",
+        "two-class target variable"
+      ]
+    },
+    {
+      "id": "openalex:W2116984840:m2",
+      "paper_id": "openalex:W2116984840",
+      "name": "Reweighing",
+      "description": "A data preprocessing technique that assigns weights to training tuples based on expected versus observed probabilities under statistical independence without altering class labels.",
+      "datasets": [
+        "Census Income",
+        "Communities and Crimes",
+        "Dutch 2001 Census"
+      ],
+      "conditions": [
+        "base learner must support instance weights",
+        "binary sensitive attribute",
+        "two-class target variable"
+      ]
+    },
+    {
+      "id": "openalex:W2116984840:m3",
+      "paper_id": "openalex:W2116984840",
+      "name": "Preferential Sampling",
+      "description": "A sampling technique that prioritizes duplicating or removing borderline objects identified by a ranker to achieve expected non-discriminatory group sizes.",
+      "datasets": [
+        "Census Income",
+        "Communities and Crimes",
+        "Dutch 2001 Census"
+      ],
+      "conditions": [
+        "binary sensitive attribute",
+        "two-class target variable"
+      ]
+    },
+    {
+      "id": "openalex:W2116984840:m4",
+      "paper_id": "openalex:W2116984840",
+      "name": "Uniform Sampling",
+      "description": "A sampling technique that applies uniform stratified sampling with replacement across four sensitive-attribute and class combinations to reach non-discriminatory group sizes.",
+      "datasets": [
+        "Census Income",
+        "Communities and Crimes",
+        "Dutch 2001 Census"
+      ],
+      "conditions": [
+        "binary sensitive attribute",
+        "two-class target variable"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2116984840:l1",
+      "paper_id": "openalex:W2116984840",
+      "text": "The formalizations and techniques presented are concentrated on the case with only one binary sensitive attribute and a binary classification problem.",
+      "normalized_category": "binary-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2116984840:l2",
+      "paper_id": "openalex:W2116984840",
+      "text": "Massaging is intrusive because it changes the ground-truth class labels of training data objects.",
+      "normalized_category": "label-modification",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2116984840:l3",
+      "paper_id": "openalex:W2116984840",
+      "text": "Reweighing cannot be directly applied to classifier learning algorithms that do not support weighted instances.",
+      "normalized_category": "base-learner-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2116984840:l4",
+      "paper_id": "openalex:W2116984840",
+      "text": "Naive attribute suppression fails to prevent indirect discrimination due to proxy attributes that correlate with the sensitive attribute.",
+      "normalized_category": "redlining-effect",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2116984840:f1",
+      "paper_id": "openalex:W2116984840",
+      "text": "Extend non-discrimination constraints to conditional non-discrimination constraints where correlation with the sensitive attribute is allowed if explainable by neutral attributes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2116984840:f2",
+      "paper_id": "openalex:W2116984840",
+      "text": "Extend preprocessing techniques to support multi-class classification problems and sensitive attributes with more than two values.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2116984840:f3",
+      "paper_id": "openalex:W2116984840",
+      "text": "Develop techniques to handle multiple sensitive attributes simultaneously, such as combinations of gender and ethnicity.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2116984840:f4",
+      "paper_id": "openalex:W2116984840",
+      "text": "Adapt discrimination-aware preprocessing techniques to handle numerical sensitive attributes.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:06:34.860842Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

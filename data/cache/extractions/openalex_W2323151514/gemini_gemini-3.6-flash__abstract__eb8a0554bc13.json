@@ -1,0 +1,140 @@
+{
+  "paper_id": "openalex:W2323151514",
+  "claims": [
+    {
+      "id": "openalex:W2323151514:c1",
+      "paper_id": "openalex:W2323151514",
+      "text": "A high-fiber diet lowers mean daily preprandial plasma glucose concentrations compared to an ADA-recommended moderate-fiber diet in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2323151514:c2",
+      "paper_id": "openalex:W2323151514",
+      "text": "A high-fiber diet decreases daily urinary glucose excretion in patients with type 2 diabetes compared to a moderate-fiber diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2323151514:c3",
+      "paper_id": "openalex:W2323151514",
+      "text": "A high-fiber diet lowers the area under the curve for 24-hour plasma glucose concentrations by 10 percent in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2323151514:c4",
+      "paper_id": "openalex:W2323151514",
+      "text": "A high-fiber diet lowers the area under the curve for 24-hour insulin concentrations by 12 percent in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2323151514:c5",
+      "paper_id": "openalex:W2323151514",
+      "text": "A high-fiber diet reduces plasma total cholesterol concentrations by 6.7 percent in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2323151514:c6",
+      "paper_id": "openalex:W2323151514",
+      "text": "A high-fiber diet reduces triglyceride concentrations by 10.2 percent in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2323151514:c7",
+      "paper_id": "openalex:W2323151514",
+      "text": "A high-fiber diet reduces very-low-density lipoprotein cholesterol concentrations by 12.5 percent in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2323151514:e1",
+      "claim_id": "openalex:W2323151514:c1",
+      "description": "During the sixth week, mean daily preprandial plasma glucose concentrations were 13 mg per deciliter lower (95 percent confidence interval, 1 to 24 mg per deciliter; P=0.04) on the high-fiber diet compared to the ADA diet.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2323151514:e2",
+      "claim_id": "openalex:W2323151514:c2",
+      "description": "Daily urinary glucose excretion mean median difference was 1.3 g (0.23; 95 percent confidence interval, 0.03 to 1.83 g; P=0.008) lower on the high-fiber diet.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2323151514:e3",
+      "claim_id": "openalex:W2323151514:c3",
+      "description": "The high-fiber diet lowered the area under the curve for 24-hour plasma glucose concentrations by 10 percent (P=0.02).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2323151514:e4",
+      "claim_id": "openalex:W2323151514:c4",
+      "description": "The high-fiber diet lowered the area under the curve for 24-hour insulin concentrations by 12 percent (P=0.05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2323151514:e5",
+      "claim_id": "openalex:W2323151514:c5",
+      "description": "The high-fiber diet reduced plasma total cholesterol concentrations by 6.7 percent (P=0.02).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2323151514:e6",
+      "claim_id": "openalex:W2323151514:c6",
+      "description": "The high-fiber diet reduced triglyceride concentrations by 10.2 percent (P=0.02).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2323151514:e7",
+      "claim_id": "openalex:W2323151514:c7",
+      "description": "The high-fiber diet reduced very-low-density lipoprotein cholesterol concentrations by 12.5 percent (P=0.01).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2323151514:m1",
+      "paper_id": "openalex:W2323151514",
+      "name": "Randomized Crossover Dietary Trial",
+      "description": "A randomized crossover study comparing six weeks of an ADA moderate-fiber diet (24 g total fiber) against six weeks of an unfortified high-fiber diet (50 g total fiber) in patients with type 2 diabetes mellitus.",
+      "datasets": [],
+      "conditions": [
+        "13 patients with type 2 diabetes mellitus",
+        "Two 6-week intervention periods in a randomized crossover design",
+        "Diets prepared in a research kitchen with identical macronutrient and energy content",
+        "Moderate-fiber diet (24 g total: 8 g soluble, 16 g insoluble)",
+        "High-fiber diet (50 g total: 25 g soluble, 25 g insoluble)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2323151514:l1",
+      "paper_id": "openalex:W2323151514",
+      "text": "The effect of increasing the intake of dietary fiber on glycemic control in patients with type 2 diabetes mellitus is controversial in existing literature.",
+      "normalized_category": "controversial-prior-evidence",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2323151514:l2",
+      "paper_id": "openalex:W2323151514",
+      "text": "The study intervention was evaluated on a small sample size of 13 patients with type 2 diabetes mellitus over six-week period durations.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:09:12.670979Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,145 @@
+{
+  "paper_id": "openalex:W2784397426",
+  "claims": [
+    {
+      "id": "openalex:W2784397426:c1",
+      "paper_id": "openalex:W2784397426",
+      "text": "Adversarial debiasing on the UCI Adult Dataset reduced predictive accuracy slightly from 86.0% to 84.5%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2784397426:c2",
+      "paper_id": "openalex:W2784397426",
+      "text": "On the UCI Adult Dataset with adversarial debiasing, false negative rates across female (0.0647) and male (0.0701) subgroups showed no statistically significant difference (p = 0.62).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2784397426:c3",
+      "paper_id": "openalex:W2784397426",
+      "text": "On the UCI Adult Dataset with adversarial debiasing, false positive rates across female (0.4458) and male (0.4349) subgroups showed no statistically significant difference (p = 0.25).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2784397426:c4",
+      "paper_id": "openalex:W2784397426",
+      "text": "In word analogy task debiasing, the dot product between the learned parameter vector w and the gender direction g increased from 0.08 without debiasing to 0.55 with debiasing.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2784397426:c5",
+      "paper_id": "openalex:W2784397426",
+      "text": "Removing a protected variable directly from training data fails to yield a debiased model because other features remain correlated with the protected variable.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2784397426:e1",
+      "claim_id": "openalex:W2784397426:c1",
+      "description": "The authors state that debiasing has only a small effect on overall accuracy (86.0% vs 84.5%) on the UCI Adult dataset.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2784397426:e2",
+      "claim_id": "openalex:W2784397426:c2",
+      "description": "With debiasing, FNR values are 0.0647 for females and 0.0701 for males, with a two-proportion two-tail large sample z-test yielding p = 0.62.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2784397426:e3",
+      "claim_id": "openalex:W2784397426:c3",
+      "description": "With debiasing, FPR values are 0.4458 for females and 0.4349 for males, with a two-proportion two-tail large sample z-test yielding p = 0.25.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2784397426:e4",
+      "claim_id": "openalex:W2784397426:c4",
+      "description": "Without debiasing, w^T g = 0.08 and ||w|| = 0.82; with debiasing, w^T g = 0.55 and ||w|| = 0.96.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2784397426:e5",
+      "claim_id": "openalex:W2784397426:c5",
+      "description": "Citing Lum and Johndrow (2016), the paper notes that removing protected variables fails to debias due to variable correlations.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2784397426:m1",
+      "paper_id": "openalex:W2784397426",
+      "name": "Adversarial Debiasing Framework",
+      "description": "Simultaneously trains a predictor network to predict target Y and an adversary network predicting protected variable Z, modifying predictor weight updates via gradient projection and hyperparameter scaling to minimize protected variable information.",
+      "datasets": [
+        "UCI Adult Dataset",
+        "Google Analogy Dataset"
+      ],
+      "conditions": [
+        "Adam optimizer",
+        "Dynamic hyperparameter scaling alpha = sqrt(t)",
+        "Gradient projection step"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2784397426:l1",
+      "paper_id": "openalex:W2784397426",
+      "text": "Removing the protected variable from training data fails to eliminate bias because other variables remain correlated with it.",
+      "normalized_category": "naive-debiasing-deficiency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2784397426:l2",
+      "paper_id": "openalex:W2784397426",
+      "text": "The adversarial training algorithm can run into local minima and produce results closer to demographic parity than equality of odds unless hyperparameter scaling is carefully adjusted over time.",
+      "normalized_category": "optimization-instability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2784397426:l3",
+      "paper_id": "openalex:W2784397426",
+      "text": "Theoretical convergence guarantees rely on assumptions of loss function concavity and convexity that are generally not satisfied in standard neural network architectures.",
+      "normalized_category": "restrictive-theoretical-assumptions",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2784397426:f1",
+      "paper_id": "openalex:W2784397426",
+      "text": "Investigate whether debiased word embeddings maintain utility in downstream tasks beyond simple word analogies.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2784397426:f2",
+      "paper_id": "openalex:W2784397426",
+      "text": "Develop training stabilization techniques to prevent algorithmic divergence when hyperparameters are improperly tuned.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2784397426:f3",
+      "paper_id": "openalex:W2784397426",
+      "text": "Explore combining multiple adversaries to eliminate demographic and racial biases in image recognition systems.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2784397426:f4",
+      "paper_id": "openalex:W2784397426",
+      "text": "Determine whether complex predictors require correspondingly complex adversaries in continuous protected/target variable scenarios.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:05:58.289061Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

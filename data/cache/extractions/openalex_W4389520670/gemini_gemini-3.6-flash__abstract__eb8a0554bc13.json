@@ -1,0 +1,96 @@
+{
+  "paper_id": "openalex:W4389520670",
+  "claims": [
+    {
+      "id": "openalex:W4389520670:c1",
+      "paper_id": "openalex:W4389520670",
+      "text": "ALCE is an automatic evaluation benchmark for evaluating LLMs' citation generation.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c2",
+      "paper_id": "openalex:W4389520670",
+      "text": "ALCE's automatic metrics along fluency, correctness, and citation quality correlate strongly with human judgments.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c3",
+      "paper_id": "openalex:W4389520670",
+      "text": "The best evaluated LLM systems lack complete citation support 50% of the time on the ELI5 dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389520670:e1",
+      "claim_id": "openalex:W4389520670:c2",
+      "description": "The authors developed automatic metrics along fluency, correctness, and citation quality and demonstrated strong correlation with human judgements.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389520670:e2",
+      "claim_id": "openalex:W4389520670:c3",
+      "description": "Experiments show that on the ELI5 dataset, even the best models lack complete citation support 50% of the time.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389520670:m1",
+      "paper_id": "openalex:W4389520670",
+      "name": "ALCE Benchmark",
+      "description": "An end-to-end evaluation benchmark collecting diverse questions and retrieval corpora to measure LLM fluency, correctness, and citation quality automatically.",
+      "datasets": [
+        "ELI5"
+      ],
+      "conditions": [
+        "end-to-end evidence retrieval and text generation",
+        "novel prompting strategies"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389520670:l1",
+      "paper_id": "openalex:W4389520670",
+      "text": "Existing work relies on commercial search engines and human evaluation, making it challenging to reproduce and compare different modeling approaches.",
+      "normalized_category": "reproducibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389520670:l2",
+      "paper_id": "openalex:W4389520670",
+      "text": "Even the best evaluated models lack complete citation support 50% of the time on the ELI5 dataset.",
+      "normalized_category": "citation-incomplete",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389520670:f1",
+      "paper_id": "openalex:W4389520670",
+      "text": "Developing better retrievers for citation generation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389520670:f2",
+      "paper_id": "openalex:W4389520670",
+      "text": "Advancing long-context LLMs for citation-backed generation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389520670:f3",
+      "paper_id": "openalex:W4389520670",
+      "text": "Improving the ability of LLMs to synthesize information from multiple sources.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.092466Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

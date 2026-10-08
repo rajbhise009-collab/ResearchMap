@@ -1,0 +1,223 @@
+{
+  "paper_id": "openalex:W4391809309",
+  "claims": [
+    {
+      "id": "openalex:W4391809309:c1",
+      "paper_id": "openalex:W4391809309",
+      "text": "Qwen-14B-Chat achieved an average accuracy of 95.52% on 1,500 manually annotated clinical observations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c2",
+      "paper_id": "openalex:W4391809309",
+      "text": "Qwen-14B-Chat achieved an average precision of 92.93% on 1,500 manually annotated clinical observations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c3",
+      "paper_id": "openalex:W4391809309",
+      "text": "Baichuan2-13B-Chat achieved an average accuracy of 95.86% on 1,500 manually annotated clinical observations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c4",
+      "paper_id": "openalex:W4391809309",
+      "text": "Baichuan2-13B-Chat achieved an average precision of 90.08% on 1,500 manually annotated clinical observations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c5",
+      "paper_id": "openalex:W4391809309",
+      "text": "The INT4-quantified version of Qwen-14B-Chat achieved an average accuracy of 97.28% on the annotated test subset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c6",
+      "paper_id": "openalex:W4391809309",
+      "text": "The INT4-quantified version of Qwen-14B-Chat achieved a 0% null ratio across all observations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c7",
+      "paper_id": "openalex:W4391809309",
+      "text": "Qwen-14B-Chat recorded a mean null ratio of 0.02% across 25,709 clinical observations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c8",
+      "paper_id": "openalex:W4391809309",
+      "text": "Baichuan2-13B-Chat recorded a mean null ratio of 0.21% across 25,709 clinical observations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c9",
+      "paper_id": "openalex:W4391809309",
+      "text": "Executing Q&A scale extraction at a concurrency level of 3 requests increases extraction speed by 17.9% compared to a single request.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c10",
+      "paper_id": "openalex:W4391809309",
+      "text": "Omitting the corpus pre-extraction step leads to degraded accuracy, precision, and processing speed.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391809309:e1",
+      "claim_id": "openalex:W4391809309:c1",
+      "description": "QWEN attained an average accuracy of 95.52% evaluated against local expert annotations across 1,500 randomly selected observations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e2",
+      "claim_id": "openalex:W4391809309:c2",
+      "description": "QWEN attained an average precision of 92.93% evaluated against local expert annotations across 1,500 randomly selected observations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e3",
+      "claim_id": "openalex:W4391809309:c3",
+      "description": "BAICHUAN displayed an average accuracy of 95.86% across 1,500 expert-annotated observations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e4",
+      "claim_id": "openalex:W4391809309:c4",
+      "description": "BAICHUAN displayed an average precision of 90.08% across 1,500 expert-annotated observations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e5",
+      "claim_id": "openalex:W4391809309:c5",
+      "description": "Official-release INT4 version of QWEN achieved an average accuracy of 97.28% on consumer-grade GPU deployment.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e6",
+      "claim_id": "openalex:W4391809309:c6",
+      "description": "Evaluation of QWEN(INT4) demonstrated a null ratio of 0%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e7",
+      "claim_id": "openalex:W4391809309:c7",
+      "description": "Across all 25,709 observations, QWEN exhibited a mean null ratio of 0.02%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e8",
+      "claim_id": "openalex:W4391809309:c8",
+      "description": "Across all 25,709 observations, BAICHUAN recorded a mean null ratio of 0.21%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e9",
+      "claim_id": "openalex:W4391809309:c9",
+      "description": "Experiments with 100 observations at different concurrency levels showed optimal performance at concurrency of 3, enhancing speed by 17.9%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391809309:e10",
+      "claim_id": "openalex:W4391809309:c10",
+      "description": "Directly feeding the long text of chief complaints and medical histories yielded poor performance in accuracy, precision, and time consumption.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391809309:m1",
+      "paper_id": "openalex:W4391809309",
+      "name": "External Chain-of-Thought Modular LLM Extraction Pipeline",
+      "description": "A four-stage framework that decomposes clinical feature extraction into concept preparation, corpus pre-extraction, question generation, and Q&A scale extraction using local low-parameter open-source LLMs.",
+      "datasets": [
+        "25,709 pregnancy admission records from People's Hospital of Guangxi Zhuang Autonomous Region",
+        "ACOG 2018 guidelines",
+        "NICE 2019 guidelines"
+      ],
+      "conditions": [
+        "Local intranet deployment",
+        "NVIDIA DGX-A100 (2x40GB) GPUs",
+        "NVIDIA RTX 3090 GPU for INT4 quantized variant",
+        "Qwen-14B-Chat",
+        "Baichuan2-13B-Chat",
+        "Temperature set to 0",
+        "max_token restricted to 20",
+        "Concurrency level of 3 requests"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391809309:l1",
+      "paper_id": "openalex:W4391809309",
+      "text": "The experimental validation selected a limited set of only 68 concepts to balance execution time constraints.",
+      "normalized_category": "limited-concept-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4391809309:l2",
+      "paper_id": "openalex:W4391809309",
+      "text": "Raw clinical patient data were sourced exclusively from a single hospital, which limits the generalizability of the findings.",
+      "normalized_category": "single-center-study",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4391809309:l3",
+      "paper_id": "openalex:W4391809309",
+      "text": "The approach was evaluated using only two specific low-parameter Chinese LLM architectures (Qwen-14B-Chat and Baichuan2-13B-Chat).",
+      "normalized_category": "limited-model-evaluation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4391809309:l4",
+      "paper_id": "openalex:W4391809309",
+      "text": "Submitting patient data to non-open-source cloud LLM platforms introduces patient privacy and data security challenges.",
+      "normalized_category": "data-privacy-concerns",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4391809309:l5",
+      "paper_id": "openalex:W4391809309",
+      "text": "Directly processing extensive unsegmented clinical text with LLMs frequently induces feature hallucinations and information loss.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4391809309:f1",
+      "paper_id": "openalex:W4391809309",
+      "text": "Validate the compatibility and effectiveness of the modular extraction pipeline across emerging and broader LLM architectures.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4391809309:f2",
+      "paper_id": "openalex:W4391809309",
+      "text": "Explore multi-instance deployment strategies per GPU combined with CPU execution to scale processing speeds for large clinical cohorts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.972525Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

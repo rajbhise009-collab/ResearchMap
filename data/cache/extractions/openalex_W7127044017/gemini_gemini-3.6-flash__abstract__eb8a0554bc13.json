@@ -1,0 +1,105 @@
+{
+  "paper_id": "openalex:W7127044017",
+  "claims": [
+    {
+      "id": "openalex:W7127044017:c1",
+      "paper_id": "openalex:W7127044017",
+      "text": "Established LLMs align with human estimates from the Fagen–Ulmschneider survey only for some words of estimative probability presented in English.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c2",
+      "paper_id": "openalex:W7127044017",
+      "text": "Divergence between human and LLM interpretation of words of estimative probability is observed for prompts using gendered contexts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c3",
+      "paper_id": "openalex:W7127044017",
+      "text": "Divergence between human and LLM interpretation of words of estimative probability is observed for prompts using Chinese contexts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c4",
+      "paper_id": "openalex:W7127044017",
+      "text": "GPT-4 exhibits performance gaps when consistently mapping statistical expressions of uncertainty to appropriate words of estimative probability.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7127044017:e1",
+      "claim_id": "openalex:W7127044017:c1",
+      "description": "Empirical study comparing LLM responses to human estimates from the Fagen–Ulmschneider survey shows alignment only for a subset of English WEPs.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7127044017:e2",
+      "claim_id": "openalex:W7127044017:c2",
+      "description": "Empirical evaluation demonstrated divergences in WEP interpretation when prompts contained gendered contexts.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7127044017:e3",
+      "claim_id": "openalex:W7127044017:c3",
+      "description": "Empirical evaluation demonstrated divergences in WEP interpretation when prompts contained Chinese contexts.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7127044017:e4",
+      "claim_id": "openalex:W7127044017:c4",
+      "description": "Investigation into GPT-4's mapping of statistical uncertainty expressions to WEPs revealed significant performance gaps.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7127044017:m1",
+      "paper_id": "openalex:W7127044017",
+      "name": "Empirical WEP Alignment Evaluation",
+      "description": "An empirical study comparing human survey estimates with LLM interpretations of words of estimative probability across varied context conditions.",
+      "datasets": [
+        "Fagen–Ulmschneider survey"
+      ],
+      "conditions": [
+        "English contexts",
+        "Gendered contexts",
+        "Chinese contexts"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7127044017:l1",
+      "paper_id": "openalex:W7127044017",
+      "text": "Established LLMs align with human estimates only for some WEPs presented in English, failing to align consistently across all WEPs.",
+      "normalized_category": "partial-alignment",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7127044017:l2",
+      "paper_id": "openalex:W7127044017",
+      "text": "LLM interpretation of WEPs diverges from human norms when presented in gendered or Chinese contexts.",
+      "normalized_category": "context-sensitivity-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7127044017:l3",
+      "paper_id": "openalex:W7127044017",
+      "text": "GPT-4 displays significant performance gaps in consistently mapping statistical expressions of uncertainty to appropriate WEPs.",
+      "normalized_category": "mapping-inconsistency",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.104774Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

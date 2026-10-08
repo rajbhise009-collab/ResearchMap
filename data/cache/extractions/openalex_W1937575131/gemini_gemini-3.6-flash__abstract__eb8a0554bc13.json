@@ -1,0 +1,140 @@
+{
+  "paper_id": "openalex:W1937575131",
+  "claims": [
+    {
+      "id": "openalex:W1937575131:c1",
+      "paper_id": "openalex:W1937575131",
+      "text": "The pooled mean prevalence of NAFLD in children from general population studies is 7.6% (95% CI: 5.5% to 10.3%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1937575131:c2",
+      "paper_id": "openalex:W1937575131",
+      "text": "The pooled mean prevalence of NAFLD in children attending child obesity clinics is 34.2% (95% CI: 27.8% to 41.2%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1937575131:c3",
+      "paper_id": "openalex:W1937575131",
+      "text": "Prevalence of NAFLD in children and adolescents is generally higher in males compared with females.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1937575131:c4",
+      "paper_id": "openalex:W1937575131",
+      "text": "Prevalence of NAFLD in children and adolescents increases incrementally with greater BMI.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1937575131:c5",
+      "paper_id": "openalex:W1937575131",
+      "text": "Estimated NAFLD prevalence in clinical population studies varies by region, with the highest prevalence observed in Asia.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1937575131:c6",
+      "paper_id": "openalex:W1937575131",
+      "text": "There is no evidence that NAFLD prevalence in children and adolescents has changed over time.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1937575131:c7",
+      "paper_id": "openalex:W1937575131",
+      "text": "NAFLD prevalence estimates in obese children and adolescents are substantially lower when elevated ALT is used as the diagnostic criterion compared to biopsies, ultrasound, or MRI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1937575131:e1",
+      "claim_id": "openalex:W1937575131:c1",
+      "description": "The pooled mean prevalence of NAFLD in children from general population studies was 7.6% (95%CI: 5.5% to 10.3%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1937575131:e2",
+      "claim_id": "openalex:W1937575131:c2",
+      "description": "34.2% (95% CI: 27.8% to 41.2%) in studies based on child obesity clinics.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1937575131:e3",
+      "claim_id": "openalex:W1937575131:c3",
+      "description": "There was evidence that prevalence was generally higher in males compared with females.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1937575131:e4",
+      "claim_id": "openalex:W1937575131:c4",
+      "description": "and increased incrementally with greater BMI.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1937575131:e5",
+      "claim_id": "openalex:W1937575131:c5",
+      "description": "There was evidence for differences between regions in clinical population studies, with estimated prevalence being highest in Asia.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1937575131:e6",
+      "claim_id": "openalex:W1937575131:c6",
+      "description": "There was no evidence that prevalence changed over time.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1937575131:e7",
+      "claim_id": "openalex:W1937575131:c7",
+      "description": "Prevalence estimates in studies of children/adolescents attending obesity clinics and in obese children/adolescents from the general population were substantially lower when elevated alanine aminotransferase (ALT) was used to assess NAFLD compared with biopsies, ultrasound scan (USS) or magnetic resonance imaging (MRI).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1937575131:m1",
+      "paper_id": "openalex:W1937575131",
+      "name": "Systematic Review and Meta-Analysis",
+      "description": "A systematic review and meta-analysis of all studies reporting prevalence of NAFLD using any diagnostic method in young people aged 1-19 years.",
+      "datasets": [
+        "General population pediatric NAFLD studies",
+        "Child obesity clinic NAFLD studies"
+      ],
+      "conditions": [
+        "Participants aged 1-19 years",
+        "Any diagnostic method for NAFLD (ALT, USS, MRI, biopsy)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1937575131:l1",
+      "paper_id": "openalex:W1937575131",
+      "text": "Prior narrative reviews quoted wide-ranging general population prevalences (9% to 37%) without systematic review methodology.",
+      "normalized_category": "lack-of-systematic-synthesis",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1937575131:l2",
+      "paper_id": "openalex:W1937575131",
+      "text": "There was marked heterogeneity between studies in both general population and clinical population analyses (I2 = 98%).",
+      "normalized_category": "study-heterogeneity",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:48:15.815152Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,57 @@
+{
+  "paper_id": "openalex:W2808105152",
+  "claims": [
+    {
+      "id": "openalex:W2808105152:c1",
+      "paper_id": "openalex:W2808105152",
+      "text": "There are inherent trade-offs between key fairness conditions in algorithmic classification.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2808105152:c2",
+      "paper_id": "openalex:W2808105152",
+      "text": "Methods for promoting fairness can be extended to classification and selection problems involving sets rather than individuals.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2808105152:e1",
+      "claim_id": "openalex:W2808105152:c1",
+      "description": "The paper discusses recent research establishing inherent trade-offs between competing fairness conditions for classification algorithms.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2808105152:e2",
+      "claim_id": "openalex:W2808105152:c2",
+      "description": "The authors examine methods for promoting fairness in classification and selection problems that act on sets.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2808105152:m1",
+      "paper_id": "openalex:W2808105152",
+      "name": "Theoretical Analysis of Fairness Conditions",
+      "description": "Evaluation and review of mathematical definitions and trade-offs among criteria for algorithmic fairness.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2808105152:l1",
+      "paper_id": "openalex:W2808105152",
+      "text": "Multiple key fairness conditions in algorithmic classification cannot be simultaneously satisfied due to inherent trade-offs.",
+      "normalized_category": "inherent-fairness-tradeoffs",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:21:17.129634Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

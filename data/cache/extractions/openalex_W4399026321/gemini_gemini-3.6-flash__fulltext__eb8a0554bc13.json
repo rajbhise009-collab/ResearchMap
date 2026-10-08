@@ -1,0 +1,170 @@
+{
+  "paper_id": "openalex:W4399026321",
+  "claims": [
+    {
+      "id": "openalex:W4399026321:c1",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic Density achieves higher AUROC scores than six baseline UQ metrics across 26 out of 28 model-dataset evaluations on four free-form question-answering benchmarks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c2",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic Density achieves higher average AUPR scores than six baseline UQ metrics across 27 out of 28 model-dataset evaluations on four free-form question-answering benchmarks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c3",
+      "paper_id": "openalex:W4399026321",
+      "text": "The performance improvements of Semantic Density over alternative UQ metrics are statistically significant with p-values below 10^-6 in paired t-tests.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c4",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic Density retains reliable AUROC performance when using as few as four reference responses.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c5",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic Density achieves higher AUROC scores than baseline UQ metrics in 6 out of 7 open-source LLMs on the DUC-2004 single-document summarization task.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c6",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic Density estimates response confidence by combining length-normalized LLM output probabilities with NLI-based contextual semantic distance expectations via a dimension-invariant kernel.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399026321:e1",
+      "claim_id": "openalex:W4399026321:c1",
+      "description": "SD performs best in 26 out of 28 cases for AUROC across seven LLMs (Llama-2, Llama-3, Mistral, Mixtral) and four QA datasets (CoQA, TriviaQA, SciQ, NQ).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399026321:e2",
+      "claim_id": "openalex:W4399026321:c2",
+      "description": "SD performs best in 27 out of 28 cases for AUPR-average across seven LLMs and four QA datasets.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399026321:e3",
+      "claim_id": "openalex:W4399026321:c3",
+      "description": "Paired t-test p-values comparing SD against SE, P(True), Deg, NL, NE, and PE ranged from 1.16E-7 to 4.83E-17.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399026321:e4",
+      "claim_id": "openalex:W4399026321:c4",
+      "description": "Experiments reducing reference responses from 10 to 1 showed that performance decreases only minutely as long as at least four reference samples are provided.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399026321:e5",
+      "claim_id": "openalex:W4399026321:c5",
+      "description": "On DUC-2004 Task 1 summarization, SD achieved the highest AUROC for 6 out of 7 LLMs, ranging from 0.552 to 0.679.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399026321:e6",
+      "claim_id": "openalex:W4399026321:c6",
+      "description": "Algorithm 1 and Equations 6-9 define SD using length-normalized sampling probabilities, DeBERTa NLI contradiction/neutral class probabilities, and a unnormalized Epanechnikov kernel.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399026321:m1",
+      "paper_id": "openalex:W4399026321",
+      "name": "Semantic Density Framework",
+      "description": "An off-the-shelf, response-wise uncertainty quantification method that estimates probability density in continuous semantic space using kernel functions over NLI-derived contextual distances weighted by LLM sequence probabilities.",
+      "datasets": [
+        "CoQA",
+        "TriviaQA",
+        "SciQ",
+        "Natural Questions (NQ)",
+        "DUC-2004"
+      ],
+      "conditions": [
+        "7 LLMs: Llama-2-13B, Llama-2-70B, Llama-3-8B, Llama-3-70B, Mistral-7B, Mixtral-8x7B, Mixtral-8x22B",
+        "NLI Model: microsoft/deberta-large-mnli",
+        "Sampling method: Diverse Beam Search",
+        "Temperature scaling applied to token probabilities during postprocessing (temperature=0.1)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399026321:l1",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic Density requires access to the output token probabilities generated by the LLM, which may not be exposed by certain proprietary black-box API models.",
+      "normalized_category": "token-probability-access-required",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399026321:l2",
+      "paper_id": "openalex:W4399026321",
+      "text": "The experimental evaluation was primarily limited to sentence-level response generations rather than direct long-paragraph generation.",
+      "normalized_category": "sentence-level-evaluation-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399026321:l3",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic entropy is prompt-wise rather than response-wise and relies on binary one-cut semantic equivalence without accounting for fine-grained semantic distance.",
+      "normalized_category": "prompt-wise-and-binary-equivalence",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399026321:l4",
+      "paper_id": "openalex:W4399026321",
+      "text": "Supervised fine-tuning or classifier-based UQ approaches require task-specific ground-truth confidence labels and model-specific training.",
+      "normalized_category": "task-and-model-specific-training",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4399026321:f1",
+      "paper_id": "openalex:W4399026321",
+      "text": "Develop new sampling strategies that explicitly encourage better coverage of the semantic space for generating reference responses.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399026321:f2",
+      "paper_id": "openalex:W4399026321",
+      "text": "Develop text embedding methods capable of measuring contextual semantic similarity between responses more reliably.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399026321:f3",
+      "paper_id": "openalex:W4399026321",
+      "text": "Design specialized kernel functions tailored specifically to capture semantic relationships in semantic space efficiently.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399026321:f4",
+      "paper_id": "openalex:W4399026321",
+      "text": "Extend Semantic Density to long multi-paragraph responses by decomposing text into sentence-level claims or factoids.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.638769Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

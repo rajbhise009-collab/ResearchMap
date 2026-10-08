@@ -1,0 +1,228 @@
+{
+  "paper_id": "openalex:W7127044017",
+  "claims": [
+    {
+      "id": "openalex:W7127044017:c1",
+      "paper_id": "openalex:W7127044017",
+      "text": "GPT-3.5 and GPT-4 probability distributions diverge significantly from human survey distributions for 13 out of 17 WEPs presented in concise English contexts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c2",
+      "paper_id": "openalex:W7127044017",
+      "text": "Human and GPT probability distributions are statistically indistinguishable for high-certainty WEPs such as 'almost certain' and 'almost no chance'.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c3",
+      "paper_id": "openalex:W7127044017",
+      "text": "GPT-3.5 consistently exhibits lower divergence from human WEP estimates than GPT-4 across most contextual analyses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c4",
+      "paper_id": "openalex:W7127044017",
+      "text": "GPT probability distributions under gender-specific narrative contexts exhibit lower variability compared to human distributions, with several WEP distributions collapsing into a single point.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c5",
+      "paper_id": "openalex:W7127044017",
+      "text": "ERNIE-4.0 probability distributions show low KL divergence compared to human distributions for 16 WEPs, but display statistically significant Brunner-Munzel test differences for 10 WEPs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c6",
+      "paper_id": "openalex:W7127044017",
+      "text": "Chain-of-Thought prompting significantly improves GPT-4's performance only when evaluated using empirical consistency.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c7",
+      "paper_id": "openalex:W7127044017",
+      "text": "GPT-4 achieves significantly higher pair-wise consistency when provided with five WEP choices compared to three WEP choices.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7127044017:c8",
+      "paper_id": "openalex:W7127044017",
+      "text": "GPT-4 achieves higher empirical consistency and empirical monotonicity consistency when provided with three WEP choices compared to five WEP choices.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7127044017:e1",
+      "claim_id": "openalex:W7127044017:c1",
+      "description": "Brunner-Munzel test indicates statistically significant differences for 13 WEPs, including an absolute median difference of 15% for 'likely' between humans and GPT-4 (BM score = 0.221, p < 0.01).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7127044017:e2",
+      "claim_id": "openalex:W7127044017:c2",
+      "description": "Brunner-Munzel tests yielded p = 0.678 for 'almost certain' and p = 0.907 for 'almost no chance' when comparing humans and GPT-4.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7127044017:e3",
+      "claim_id": "openalex:W7127044017:c3",
+      "description": "Evaluations across contextual analyses show GPT-3.5 probability estimations remain closer to human human survey distributions than GPT-4.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7127044017:e4",
+      "claim_id": "openalex:W7127044017:c4",
+      "description": "Under gendered prompts, GPT distributions for terms like 'highly unlikely', 'improbable', and 'highly likely' collapse into a single point.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7127044017:e5",
+      "claim_id": "openalex:W7127044017:c5",
+      "description": "KL divergence was low across 16 WEPs for ERNIE-4.0 vs humans, but Brunner-Munzel tests detected significant central tendency differences for 10 WEPs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7127044017:e6",
+      "claim_id": "openalex:W7127044017:c6",
+      "description": "Paired t-tests showed statistically significant gains for CoT prompting on empirical consistency across scenarios (Height: t(59) = -4.15, p < 0.01; Score: t(59) = -2.82, p < 0.01; Sound: t(59) = -2.61, p = 0.01).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7127044017:e7",
+      "claim_id": "openalex:W7127044017:c7",
+      "description": "Pair-wise consistency evaluation yielded t(179) = 6.48, p < 0.01, d = 0.673 in favor of the five-choice setting over the three-choice setting.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7127044017:e8",
+      "claim_id": "openalex:W7127044017:c8",
+      "description": "Three-choice setting outperformed five-choice setting on empirical consistency (t(359) = -2.35, p < 0.05) and empirical monotonicity consistency (t(287) = -4.15, p < 0.01).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7127044017:m1",
+      "paper_id": "openalex:W7127044017",
+      "name": "WEP Probability Elicitation Benchmarking",
+      "description": "Elicits numerical probability estimates for 17 WEPs from language models across four narrative context settings and two languages, comparing elicited distributions to human survey data using KL divergence and Brunner-Munzel tests.",
+      "datasets": [
+        "Fagen-Ulmschneider survey dataset",
+        "Concise Narrative Contexts",
+        "Extended Narrative Contexts",
+        "Female-centric Narrative Contexts",
+        "Male-centric Narrative Contexts"
+      ],
+      "conditions": [
+        "English language prompts",
+        "Chinese language prompts",
+        "Temperature = 0"
+      ]
+    },
+    {
+      "id": "openalex:W7127044017:m2",
+      "paper_id": "openalex:W7127044017",
+      "name": "Statistical Uncertainty to WEP Consistency Evaluation",
+      "description": "Evaluates GPT-4's ability to consistently select appropriate WEPs when presented with numerical sample data across three scenarios using four custom consistency metrics under standard and Chain-of-Thought prompting.",
+      "datasets": [
+        "Synthetic statistical scenarios (Height, Score, Sound)"
+      ],
+      "conditions": [
+        "Standard prompting",
+        "Chain-of-Thought prompting",
+        "3-choice options",
+        "5-choice options",
+        "Narrow numerical range (mean 100, SD 10)",
+        "Wide numerical range (mean 100, SD 40)",
+        "Temperature = 0"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7127044017:l1",
+      "paper_id": "openalex:W7127044017",
+      "text": "The reference human uncertainty estimates were obtained from a single online survey with 123 participants, which may not be fully representative of the broader population's understanding of WEPs.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7127044017:l2",
+      "paper_id": "openalex:W7127044017",
+      "text": "Elicited numeric probability outputs from LLMs are sensitive to prompting templates and decoding parameters, representing output-level behavior rather than internal belief states.",
+      "normalized_category": "prompt-sensitivity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7127044017:l3",
+      "paper_id": "openalex:W7127044017",
+      "text": "The evaluation of GPT-4's mapping from statistical uncertainty to WEPs relies on artificially generated data scenarios rather than complex real-world data.",
+      "normalized_category": "synthetic-data-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7127044017:l4",
+      "paper_id": "openalex:W7127044017",
+      "text": "The study only evaluated 17 specific WEPs present in the Fagen-Ulmschneider survey rather than a broader spectrum of probabilistic expressions.",
+      "normalized_category": "limited-wep-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7127044017:l5",
+      "paper_id": "openalex:W7127044017",
+      "text": "The evaluation focused on static prompts and did not examine dynamic adjustments of probability estimations during multi-turn interactive conversations.",
+      "normalized_category": "static-prompting-limitation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7127044017:f1",
+      "paper_id": "openalex:W7127044017",
+      "text": "Survey a broader and more diverse demographic population using robust probability elicitation techniques to validate human WEP baseline estimates.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7127044017:f2",
+      "paper_id": "openalex:W7127044017",
+      "text": "Evaluate LLM performance in mapping statistical uncertainty to WEPs using real-world scenarios and empirical statistical data from scientific publications.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7127044017:f3",
+      "paper_id": "openalex:W7127044017",
+      "text": "Conduct cross-linguistic uncertainty estimation studies covering a broader set of languages using formal linguistic equivalence testing.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7127044017:f4",
+      "paper_id": "openalex:W7127044017",
+      "text": "Examine how LLMs dynamically update and adjust their WEP probability estimations in response to evolving contexts within interactive dialogue.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7127044017:f5",
+      "paper_id": "openalex:W7127044017",
+      "text": "Investigate whether human listeners attribute similar levels of confidence and credibility to estimative uncertainty statements generated by AI models compared to humans.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.986253Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

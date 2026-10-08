@@ -1,0 +1,179 @@
+{
+  "paper_id": "openalex:W2725155646",
+  "claims": [
+    {
+      "id": "openalex:W2725155646:c1",
+      "paper_id": "openalex:W2725155646",
+      "text": "Training the adversarial head on data containing both positive and negative target label classes (Y=1 and Y=0) theoretically enforces demographic parity in predictions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c2",
+      "paper_id": "openalex:W2725155646",
+      "text": "Training the adversarial head exclusively on positive target class instances (Y=1) theoretically enforces equality of opportunity for the positive class.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c3",
+      "paper_id": "openalex:W2725155646",
+      "text": "Training the adversarial head exclusively on negative target class instances (Y=0) theoretically enforces equality of opportunity for the negative class.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c4",
+      "paper_id": "openalex:W2725155646",
+      "text": "Using a balanced distribution over the sensitive attribute in adversarial training stabilizes model performance and reduces variance across training runs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c5",
+      "paper_id": "openalex:W2725155646",
+      "text": "Using a balanced sensitive attribute distribution in adversarial training improves fairness metrics across all tested measures compared to an unbalanced distribution.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c6",
+      "paper_id": "openalex:W2725155646",
+      "text": "Using a balanced sensitive attribute distribution in adversarial training decreases primary task classification accuracy.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c7",
+      "paper_id": "openalex:W2725155646",
+      "text": "Training the adversarial head on high-income examples (>50K) most effectively reduces the equality gap for the high-income label class.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c8",
+      "paper_id": "openalex:W2725155646",
+      "text": "Training the adversarial head on low-income examples (<=50K) most effectively reduces the equality gap for the low-income label class.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2725155646:c9",
+      "paper_id": "openalex:W2725155646",
+      "text": "Adversarial fair representation learning remains effective at improving fairness metrics with sensitive attribute datasets as small as 500 examples (1.5% of total training data).",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2725155646:e1",
+      "claim_id": "openalex:W2725155646:c1",
+      "description": "If the adversarial head uses data S containing both Y = 1 and Y = 0, latent representation h is uncorrelated with Z, resulting in P(Y^=1|Z=1) = P(Y^=1|Z=0), which defines demographic parity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2725155646:e2",
+      "claim_id": "openalex:W2725155646:c2",
+      "description": "When the adversarial head only uses data for Y = 1, h is uncorrelated with Z conditioned on Y = 1, giving P(Y^=1|Y=1, Z=1) = P(Y^=1|Y=1, Z=0), matching equality of opportunity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2725155646:e3",
+      "claim_id": "openalex:W2725155646:e3",
+      "description": "When the adversarial head is only trained on data for Y = 0, P(Y^=0|Y=0, Z=1) = P(Y^=0|Y=0, Z=0), enforcing equality of opportunity for the negative class.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2725155646:e4",
+      "claim_id": "openalex:W2725155646:c4",
+      "description": "Experiments comparing Figures 2 and 3 show that balanced sensitive attribute data stabilizes the model with much smaller standard deviation across identical training runs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2725155646:e5",
+      "claim_id": "openalex:W2725155646:c5",
+      "description": "Comparing Figure 2 to Figure 3 shows balanced data achieves near-zero equality gaps and parity gaps, whereas unbalanced data maintains larger gap metrics across adversary weights.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2725155646:e6",
+      "claim_id": "openalex:W2725155646:c6",
+      "description": "Figure 2 shows accuracy dropping to around 0.765–0.795 with balanced Z data, compared to higher accuracies (up to 0.84) in Figure 3 with unbalanced Z data.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2725155646:e7",
+      "claim_id": "openalex:W2725155646:c7",
+      "description": "Figure 2 shows the Equality Gap (>50K) drops closest to 0.00 when using the 'High Income' data distribution for the adversary.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2725155646:e8",
+      "claim_id": "openalex:W2725155646:c8",
+      "description": "Figure 2 shows the Equality Gap (<=50K) drops closest to 0.00 when using the 'Low Income' data distribution for the adversary.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2725155646:e9",
+      "claim_id": "openalex:W2725155646:c9",
+      "description": "Figure 4 shows that even with a dataset size of 500 examples (1.5% of training data), parity gap and equality gaps drop significantly as adversary weight lambda increases.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2725155646:m1",
+      "paper_id": "openalex:W2725155646",
+      "name": "Adversarial Fair Representation Learning with Data Distribution Variant S",
+      "description": "A multi-head deep neural network architecture where one head predicts the primary target label and an adversarial head predicts the sensitive attribute via a negative gradient layer to remove sensitive information from the shared hidden embedding.",
+      "datasets": [
+        "UCI Adult dataset"
+      ],
+      "conditions": [
+        "128-width ReLU hidden layer",
+        "Logistic loss for primary and adversarial heads",
+        "Adagrad optimizer with step size 0.01 for 100,000 steps",
+        "Batch size 32",
+        "Evaluated across varying sensitive attribute balance (balanced vs unbalanced)",
+        "Evaluated across varying target label distributions (low income, high income, equal balance)",
+        "Evaluated across adversarial dataset sizes (500, 1000, 2000, 4000 examples)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2725155646:l1",
+      "paper_id": "openalex:W2725155646",
+      "text": "Post-processing calibration methods for fairness require observing the sensitive attribute during model serving, which is infeasible when attributes are unobservable or expensive to obtain.",
+      "normalized_category": "inference-time-attribute-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2725155646:l2",
+      "paper_id": "openalex:W2725155646",
+      "text": "Prior adversarial debiasing approaches do not analyze or specify the effect of limited or skewed training data distributions on the fairness definition being optimized.",
+      "normalized_category": "lack-of-data-distribution-analysis",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2725155646:l3",
+      "paper_id": "openalex:W2725155646",
+      "text": "Enforcing unbiased latent representations directly inside the model acts as a strong constraint that significantly degrades overall classification accuracy.",
+      "normalized_category": "accuracy-fairness-tradeoff",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:17:19.906639Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

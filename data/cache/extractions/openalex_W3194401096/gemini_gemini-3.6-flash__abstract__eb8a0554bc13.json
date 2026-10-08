@@ -1,0 +1,143 @@
+{
+  "paper_id": "openalex:W3194401096",
+  "claims": [
+    {
+      "id": "openalex:W3194401096:c1",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adherence to the Mediterranean diet reduces the incidence of cardiovascular outcomes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3194401096:c2",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adherence to the Mediterranean diet reduces cardiovascular risk factors including obesity, hypertension, metabolic syndrome, and dyslipidaemia.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3194401096:c3",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adherence to the Mediterranean diet is associated with lower rates of incident diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3194401096:c4",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adherence to the Mediterranean diet improves glycaemic control in diabetic patients compared to control diets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3194401096:c5",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adherence to the Mediterranean diet reduces overall mortality and cardiovascular mortality in prospective studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3194401096:c6",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adherence to the Mediterranean diet is associated with less age-related cognitive dysfunction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3194401096:c7",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adherence to the Mediterranean diet is associated with lower incidence of neurodegenerative disorders, particularly Alzheimer's disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3194401096:c8",
+      "paper_id": "openalex:W3194401096",
+      "text": "The Mediterranean diet has relatively low water, nitrogen, and carbon footprints.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3194401096:e1",
+      "claim_id": "openalex:W3194401096:c1",
+      "description": "Earlier research confirmed by recent studies has provided strong evidence for the benefits of the MedDiet on cardiovascular health, including reduction in the incidence of cardiovascular outcomes",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3194401096:e2",
+      "claim_id": "openalex:W3194401096:c2",
+      "description": "as well as risk factors including obesity, hypertension, metabolic syndrome, and dyslipidaemia.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3194401096:e3",
+      "claim_id": "openalex:W3194401096:c3",
+      "description": "There is also evidence that MedDiet is associated with lower rates of incident diabetes",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3194401096:e4",
+      "claim_id": "openalex:W3194401096:c4",
+      "description": "and better glycaemic control in diabetic patients compared to control diets.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3194401096:e5",
+      "claim_id": "openalex:W3194401096:c5",
+      "description": "In prospective studies, adherence to the MedDiet reduced mortality, especially cardiovascular mortality, hence increased longevity.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3194401096:e6",
+      "claim_id": "openalex:W3194401096:c6",
+      "description": "In addition, it has been associated with less age-related cognitive dysfunction",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3194401096:e7",
+      "claim_id": "openalex:W3194401096:c7",
+      "description": "and lower incidence of neurodegenerative disorders, particularly Alzheimer's disease.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3194401096:e8",
+      "claim_id": "openalex:W3194401096:c8",
+      "description": "Furthermore, the relatively low environmental impacts (water, nitrogen and carbon footprint) of the MedDiet is an additional positive aspect of the Mediterranean dietary model.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3194401096:m1",
+      "paper_id": "openalex:W3194401096",
+      "name": "Comprehensive Narrative Review",
+      "description": "Synthesized evidence from observational and intervention studies regarding the health outcomes, clinical diseases, risk factors, and environmental impact of the Mediterranean diet.",
+      "datasets": [],
+      "conditions": [
+        "observational studies",
+        "intervention studies"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W3194401096:f1",
+      "paper_id": "openalex:W3194401096",
+      "text": "Adapting the Mediterranean lifestyle model to non-Mediterranean regions with country-specific and culturally appropriate variations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:12:33.342604Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

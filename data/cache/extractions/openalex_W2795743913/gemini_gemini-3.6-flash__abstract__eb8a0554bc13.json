@@ -1,0 +1,81 @@
+{
+  "paper_id": "openalex:W2795743913",
+  "claims": [
+    {
+      "id": "openalex:W2795743913:c1",
+      "paper_id": "openalex:W2795743913",
+      "text": "The concept of algorithmic fairness was largely unfamiliar to participants from marginalized populations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795743913:c2",
+      "paper_id": "openalex:W2795743913",
+      "text": "Learning about algorithmic unfairness elicited negative feelings among participants that connect to national discussions about racial injustice and economic inequality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795743913:c3",
+      "paper_id": "openalex:W2795743913",
+      "text": "Participants expressed concerns about potential harms from algorithmic systems to themselves and society.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795743913:c4",
+      "paper_id": "openalex:W2795743913",
+      "text": "Perceptions of algorithmic fairness or unfairness can substantially affect user trust in a company or product.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2795743913:e1",
+      "claim_id": "openalex:W2795743913:c1",
+      "description": "While the concept of algorithmic fairness was largely unfamiliar",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2795743913:e2",
+      "claim_id": "openalex:W2795743913:c2",
+      "description": "learning about algorithmic (un)fairness elicited negative feelings that connect to current national discussions about racial injustice and economic inequality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2795743913:e3",
+      "claim_id": "openalex:W2795743913:c3",
+      "description": "In addition to their concerns about potential harms to themselves and society",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2795743913:e4",
+      "claim_id": "openalex:W2795743913:c4",
+      "description": "participants also indicated that algorithmic fairness (or lack thereof) could substantially affect their trust in a company or product.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2795743913:m1",
+      "paper_id": "openalex:W2795743913",
+      "name": "Qualitative Workshops and Interviews",
+      "description": "Conducted workshops and interviews with 44 participants from populations marginalized by race or class in the United States to explore perceptions of algorithmic fairness.",
+      "datasets": [],
+      "conditions": [
+        "44 participants",
+        "marginalized by race or class",
+        "United States"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:19:55.937048Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

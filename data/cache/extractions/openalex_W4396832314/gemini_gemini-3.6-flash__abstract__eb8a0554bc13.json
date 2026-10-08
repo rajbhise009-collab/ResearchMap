@@ -1,0 +1,80 @@
+{
+  "paper_id": "openalex:W4396832314",
+  "claims": [
+    {
+      "id": "openalex:W4396832314:c1",
+      "paper_id": "openalex:W4396832314",
+      "text": "CharacterMeet facilitates iterative character construction for creative writers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396832314:c2",
+      "paper_id": "openalex:W4396832314",
+      "text": "Writers using CharacterMeet alternate between writing and personalized exploration through visual idea generation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396832314:c3",
+      "paper_id": "openalex:W4396832314",
+      "text": "Visuals and audio in CharacterMeet enhance user immersion during the creative writing process.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396832314:c4",
+      "paper_id": "openalex:W4396832314",
+      "text": "CharacterMeet allows creative writers to progressively manifest story characters through conversation while customizing context, appearance, voice, and background images.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4396832314:e1",
+      "claim_id": "openalex:W4396832314:c1",
+      "description": "Findings from a user study (N=14) with creative writers showed that the system supported iterative character construction stages.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4396832314:e2",
+      "claim_id": "openalex:W4396832314:c2",
+      "description": "User study participants, including those with typically linear writing workflows, alternated between writing and idea visualization on CharacterMeet.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4396832314:e3",
+      "claim_id": "openalex:W4396832314:c3",
+      "description": "Participant observations and feedback indicated that visual and audio features enhanced immersion.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4396832314:e4",
+      "claim_id": "openalex:W4396832314:c4",
+      "description": "CharacterMeet prototype implementation allows customizing context, character appearance, voice, and background image alongside conversational avatar interaction.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4396832314:m1",
+      "paper_id": "openalex:W4396832314",
+      "name": "CharacterMeet User Evaluation",
+      "description": "A user study examining the thinking and usage patterns of creative writers interacting with an LLM-powered avatar prototype system.",
+      "datasets": [],
+      "conditions": [
+        "N=14 creative writers",
+        "Interaction with CharacterMeet prototype system"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.117916Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

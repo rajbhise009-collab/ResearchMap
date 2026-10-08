@@ -1,0 +1,105 @@
+{
+  "paper_id": "openalex:W4406679533",
+  "claims": [
+    {
+      "id": "openalex:W4406679533:c1",
+      "paper_id": "openalex:W4406679533",
+      "text": "Users tend to overestimate the accuracy of LLM responses when provided with default explanations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c2",
+      "paper_id": "openalex:W4406679533",
+      "text": "Longer LLM explanations increase user confidence even when the extra length does not improve answer accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c3",
+      "paper_id": "openalex:W4406679533",
+      "text": "Adjusting LLM explanations to better reflect internal confidence narrows the calibration gap between human confidence and model confidence.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c4",
+      "paper_id": "openalex:W4406679533",
+      "text": "Adjusting LLM explanations to better reflect internal confidence narrows the discrimination gap in distinguishing correct from incorrect answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c5",
+      "paper_id": "openalex:W4406679533",
+      "text": "Adjusting LLM explanations to better reflect internal confidence improves user perception of LLM accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406679533:e1",
+      "claim_id": "openalex:W4406679533:c1",
+      "description": "Experiments with multiple-choice and short-answer questions reveal that users tend to overestimate accuracy when provided default explanations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406679533:e2",
+      "claim_id": "openalex:W4406679533:c2",
+      "description": "User confidence increased with longer explanations even when extra length provided no improvement in answer accuracy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406679533:e3",
+      "claim_id": "openalex:W4406679533:c3",
+      "description": "Adjusting explanations to reflect internal model confidence resulted in a narrowed calibration gap.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406679533:e4",
+      "claim_id": "openalex:W4406679533:c4",
+      "description": "Adjusting explanations to reflect internal model confidence resulted in a narrowed discrimination gap.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406679533:e5",
+      "claim_id": "openalex:W4406679533:c5",
+      "description": "Adjusting explanations to reflect internal model confidence significantly improved user perception of LLM accuracy.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406679533:m1",
+      "paper_id": "openalex:W4406679533",
+      "name": "Human evaluation of LLM response confidence and accuracy",
+      "description": "Behavioral experiments evaluating user confidence, calibration gap, and discrimination gap using multiple-choice and short-answer questions under default and confidence-adjusted LLM explanation conditions.",
+      "datasets": [],
+      "conditions": [
+        "multiple-choice questions",
+        "short-answer questions",
+        "default explanations",
+        "confidence-adjusted explanations",
+        "varied explanation length"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406679533:l1",
+      "paper_id": "openalex:W4406679533",
+      "text": "Less is understood about how effectively LLMs convey uncertainty to users compared to their internal confidence assessment.",
+      "normalized_category": "uncertainty-communication-understanding",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.079912Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

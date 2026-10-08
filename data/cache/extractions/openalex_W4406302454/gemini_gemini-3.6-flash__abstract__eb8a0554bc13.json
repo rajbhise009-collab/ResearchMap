@@ -1,0 +1,70 @@
+{
+  "paper_id": "openalex:W4406302454",
+  "claims": [
+    {
+      "id": "openalex:W4406302454:c1",
+      "paper_id": "openalex:W4406302454",
+      "text": "Large language models are vulnerable to jailbreaking attacks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406302454:c2",
+      "paper_id": "openalex:W4406302454",
+      "text": "Large language models are vulnerable to data poisoning attacks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406302454:c3",
+      "paper_id": "openalex:W4406302454",
+      "text": "Large language models are vulnerable to personally identifiable information leakage attacks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406302454:e1",
+      "claim_id": "openalex:W4406302454:c1",
+      "description": "The authors identify jailbreaking attacks as a primary security and privacy vulnerability affecting LLMs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406302454:e2",
+      "claim_id": "openalex:W4406302454:c2",
+      "description": "The authors highlight data poisoning attacks as a key threat compromising LLM security.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406302454:e3",
+      "claim_id": "openalex:W4406302454:c3",
+      "description": "The survey notes that LLMs are subject to privacy attacks involving personally identifiable information leakage.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406302454:m1",
+      "paper_id": "openalex:W4406302454",
+      "name": "Literature Survey",
+      "description": "A systematic review evaluating LLM security vulnerabilities, privacy risks across domains, emerging attacks, and defense mechanisms.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4406302454:f1",
+      "paper_id": "openalex:W4406302454",
+      "text": "Address existing research gaps regarding LLM security and privacy challenges in domain-specific applications such as transportation, education, and healthcare.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.114219Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

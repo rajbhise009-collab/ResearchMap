@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W4411934268",
+  "claims": [
+    {
+      "id": "openalex:W4411934268:c1",
+      "paper_id": "openalex:W4411934268",
+      "text": "Abstention can mitigate hallucinations in LLM systems.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411934268:c2",
+      "paper_id": "openalex:W4411934268",
+      "text": "Abstention can enhance safety in LLM systems.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411934268:c3",
+      "paper_id": "openalex:W4411934268",
+      "text": "Abstention in LLMs can be examined from three perspectives: the query, the model, and human values.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4411934268:e1",
+      "claim_id": "openalex:W4411934268:c1",
+      "description": "Abstention, the refusal of large language models (LLMs) to provide an answer, is increasingly recognized for its potential to mitigate hallucinations",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4411934268:e2",
+      "claim_id": "openalex:W4411934268:c2",
+      "description": "Abstention, the refusal of large language models (LLMs) to provide an answer, is increasingly recognized for its potential to... enhance safety in LLM systems.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4411934268:e3",
+      "claim_id": "openalex:W4411934268:c3",
+      "description": "In this survey, we introduce a framework to examine abstention from three perspectives: the query, the model, and human values.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4411934268:m1",
+      "paper_id": "openalex:W4411934268",
+      "name": "Three-Perspective Abstention Survey Framework",
+      "description": "A framework that organizes abstention literature, methods, benchmarks, and evaluation metrics across the query, model, and human values perspectives.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4411934268:l1",
+      "paper_id": "openalex:W4411934268",
+      "text": "Prior work on abstention methods, benchmarks, and evaluation metrics exhibits limitations across various perspectives.",
+      "normalized_category": "prior-work-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4411934268:f1",
+      "paper_id": "openalex:W4411934268",
+      "text": "Investigating whether abstention can be achieved as a meta-capability that transcends specific tasks or domains.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4411934268:f2",
+      "paper_id": "openalex:W4411934268",
+      "text": "Exploring opportunities to optimize abstention abilities in specific contexts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.099071Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

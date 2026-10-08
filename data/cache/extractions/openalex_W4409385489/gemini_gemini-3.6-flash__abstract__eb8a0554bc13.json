@@ -1,0 +1,64 @@
+{
+  "paper_id": "openalex:W4409385489",
+  "claims": [
+    {
+      "id": "openalex:W4409385489:c1",
+      "paper_id": "openalex:W4409385489",
+      "text": "Integrating Large Language Models with structured knowledge bases combines generative language understanding with precise knowledge representation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409385489:c2",
+      "paper_id": "openalex:W4409385489",
+      "text": "The integration of LLMs and knowledge bases involves technical, operational, and ethical challenges.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4409385489:e1",
+      "claim_id": "openalex:W4409385489:c1",
+      "description": "This approach aims to combine the generative language understanding of LLMs and the precise knowledge representation systems by which they are integrated.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4409385489:e2",
+      "claim_id": "openalex:W4409385489:c2",
+      "description": "This article surveys the relationship between LLMs and knowledge bases, looks at how they can be applied in practice, and discusses related technical, operational, and ethical challenges.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4409385489:m1",
+      "paper_id": "openalex:W4409385489",
+      "name": "Comprehensive Literature Survey",
+      "description": "A systematic survey analyzing existing literature on the integration of large language models and knowledge-based systems.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4409385489:l1",
+      "paper_id": "openalex:W4409385489",
+      "text": "Existing solutions for integrating LLMs and knowledge bases encounter technical, operational, and ethical challenges.",
+      "normalized_category": "integration-challenges",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4409385489:f1",
+      "paper_id": "openalex:W4409385489",
+      "text": "Address main research gaps in integrating generative AI with knowledge bases to support practical deployment across various sectors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.119686Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,92 @@
+{
+  "paper_id": "openalex:W4406205485",
+  "claims": [
+    {
+      "id": "openalex:W4406205485:c1",
+      "paper_id": "openalex:W4406205485",
+      "text": "Large language models face safety concerns, such as hallucinations, that undermine their trustworthiness and effectiveness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406205485:c2",
+      "paper_id": "openalex:W4406205485",
+      "text": "Large language models face security concerns, such as backdoor attacks, that undermine their trustworthiness and effectiveness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406205485:c3",
+      "paper_id": "openalex:W4406205485",
+      "text": "Large language models face privacy concerns, such as privacy leakage, that undermine their trustworthiness and effectiveness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406205485:c4",
+      "paper_id": "openalex:W4406205485",
+      "text": "Safety, security, and privacy in large language models constitute distinct research domains with individual definitions.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406205485:e1",
+      "claim_id": "openalex:W4406205485:c1",
+      "description": "These challenges include safety, security, and privacy concerns that undermine their trustworthiness and effectiveness, such as hallucinations, backdoor attacks, and privacy leakage.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406205485:e2",
+      "claim_id": "openalex:W4406205485:c2",
+      "description": "These challenges include safety, security, and privacy concerns that undermine their trustworthiness and effectiveness, such as hallucinations, backdoor attacks, and privacy leakage.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406205485:e3",
+      "claim_id": "openalex:W4406205485:c3",
+      "description": "These challenges include safety, security, and privacy concerns that undermine their trustworthiness and effectiveness, such as hallucinations, backdoor attacks, and privacy leakage.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406205485:e4",
+      "claim_id": "openalex:W4406205485:c4",
+      "description": "Previous works often conflated safety issues with security concerns. In contrast, our study provides clearer and more reasonable definitions for safety, security, and privacy within the context of LLMs.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406205485:m1",
+      "paper_id": "openalex:W4406205485",
+      "name": "Comprehensive Survey and Taxonomic Categorization",
+      "description": "A systematic literature review and taxonomy organizing vulnerabilities, defenses, and research challenges across safety, security, and privacy in LLMs.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406205485:l1",
+      "paper_id": "openalex:W4406205485",
+      "text": "Previous literature often conflated safety issues with security concerns in the context of large language models.",
+      "normalized_category": "conceptual-conflation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4406205485:f1",
+      "paper_id": "openalex:W4406205485",
+      "text": "Investigate unique research challenges to enhance the robustness and reliability of LLMs against emerging threats in safety, security, and privacy.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.098157Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

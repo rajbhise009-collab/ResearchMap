@@ -1,0 +1,134 @@
+{
+  "paper_id": "openalex:W4415740074",
+  "claims": [
+    {
+      "id": "openalex:W4415740074:c1",
+      "paper_id": "openalex:W4415740074",
+      "text": "The proposed framework achieved an F1-score of 0.968-0.983 when trained on the full dataset of 700 patient notes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c2",
+      "paper_id": "openalex:W4415740074",
+      "text": "The proposed framework achieved an F1-score of 0.960-0.973 when trained on a few-shot subset of 100 patient notes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c3",
+      "paper_id": "openalex:W4415740074",
+      "text": "The two-phase framework reduced hallucinated features by 89.9% on the private dataset compared to the baseline LLM with few-shot in-context learning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c4",
+      "paper_id": "openalex:W4415740074",
+      "text": "The two-phase framework reduced missing features by 88.9% on the private dataset compared to the baseline LLM with few-shot in-context learning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c5",
+      "paper_id": "openalex:W4415740074",
+      "text": "Expected calibration error increased from 0.060 to 0.147 during calibration evaluation on few-shot training.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c6",
+      "paper_id": "openalex:W4415740074",
+      "text": "Brier score improved from 0.087 to 0.036 during calibration evaluation on few-shot training.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c7",
+      "paper_id": "openalex:W4415740074",
+      "text": "The average model confidence remained stable at 0.84 (SD 0.003) despite F1 improvements from 0.819 to 0.986.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4415740074:e1",
+      "claim_id": "openalex:W4415740074:c1",
+      "description": "The framework achieved an F1-score of 0.968-0.983 on the full dataset of 700 patient notes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e2",
+      "claim_id": "openalex:W4415740074:c2",
+      "description": "Achieved 0.960-0.973 with a few-shot subset of 100 of 700 patient notes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e3",
+      "claim_id": "openalex:W4415740074:c3",
+      "description": "It reduced hallucinations by 89.9% (from 3081 to 311 features) on the private dataset compared with the baseline LLM.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e4",
+      "claim_id": "openalex:W4415740074:c4",
+      "description": "It reduced missing features by 88.9% (from 6376 to 708) on the private dataset compared with the baseline LLM.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e5",
+      "claim_id": "openalex:W4415740074:c5",
+      "description": "Calibration evaluation on few-shot training showed that the expected calibration error increased from 0.060 to 0.147.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e6",
+      "claim_id": "openalex:W4415740074:c6",
+      "description": "The Brier score improved from 0.087 to 0.036.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e7",
+      "claim_id": "openalex:W4415740074:c7",
+      "description": "The average model confidence remained stable at 0.84 (SD 0.003) despite F1 improvements from 0.819 to 0.986.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4415740074:m1",
+      "paper_id": "openalex:W4415740074",
+      "name": "Two-Phase LLM Fine-Tuning Framework",
+      "description": "A two-phase framework combining instruction fine-tuning to teach feature extraction with confidence-regularization fine-tuning to penalize overconfident incorrect predictions.",
+      "datasets": [
+        "United States Medical Licensing Examination Step-2 Clinical Skills dataset"
+      ],
+      "conditions": [
+        "Full dataset (700 patient notes)",
+        "Few-shot dataset (100 patient notes)",
+        "Public test split (200 patient notes)",
+        "Private test split (1839 patient notes)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4415740074:l1",
+      "paper_id": "openalex:W4415740074",
+      "text": "Traditional calibration metrics show misalignment as expected calibration error increased from 0.060 to 0.147 on few-shot training.",
+      "normalized_category": "calibration-misalignment",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.105016Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

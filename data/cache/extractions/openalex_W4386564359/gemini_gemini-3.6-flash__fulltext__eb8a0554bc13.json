@@ -1,0 +1,146 @@
+{
+  "paper_id": "openalex:W4386564359",
+  "claims": [
+    {
+      "id": "openalex:W4386564359:c1",
+      "paper_id": "openalex:W4386564359",
+      "text": "No risk assignment method can simultaneously satisfy calibration within groups, balance for the negative class, and balance for the positive class except in instances allowing perfect prediction or having equal base rates across groups.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386564359:c2",
+      "paper_id": "openalex:W4386564359",
+      "text": "Satisfying approximate versions of calibration within groups, balance for the negative class, and balance for the positive class within error epsilon requires the instance to satisfy an f(epsilon)-approximate version of perfect prediction or an f(epsilon)-approximate version of equal base rates.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386564359:c3",
+      "paper_id": "openalex:W4386564359",
+      "text": "Statistical parity is inconsistent with calibration within groups when two groups have unequal base rates.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386564359:c4",
+      "paper_id": "openalex:W4386564359",
+      "text": "Statistical parity is inconsistent with the conjunction of balance for the positive class and balance for the negative class when two groups have unequal base rates.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386564359:c5",
+      "paper_id": "openalex:W4386564359",
+      "text": "Determining whether a non-trivial integral fair risk assignment exists under equal base rates is NP-complete.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386564359:e1",
+      "claim_id": "openalex:W4386564359:c1",
+      "description": "Theorem 1.1 establishes that any risk assignment satisfying calibration within groups (A), balance for negative class (B), and balance for positive class (C) must either allow for perfect prediction (p_sigma in {0,1}) or have equal base rates (mu_1/N_1 = mu_2/N_2).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386564359:e2",
+      "claim_id": "openalex:W4386564359:c2",
+      "description": "Theorem 1.2 proves that for any epsilon > 0, an instance satisfying epsilon-approximate versions of conditions (A), (B), and (C) must satisfy either f(epsilon)-approximate perfect prediction or f(epsilon)-approximate equal base rates, where f(epsilon) = sqrt(epsilon) * max(1, 3*sqrt(epsilon) + 3/4).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386564359:e3",
+      "claim_id": "openalex:W4386564359:c3",
+      "description": "Summing both sides of the group calibration identity n_t^T P X = n_t^T X V and dividing by N_t shows that statistical parity (equal average scores across groups) contradicts unequal group base rates.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4386564359:e4",
+      "claim_id": "openalex:W4386564359:c4",
+      "description": "If average scores assigned to positive and negative classes are equal across groups, the overall group score averages cannot be equal unless the base rate proportions of positive and negative class members are identical.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4386564359:e5",
+      "claim_id": "openalex:W4386564359:c5",
+      "description": "Section 4.2 and Appendix provide a polynomial-time reduction from the Subset Sum problem to the problem of deciding whether a non-trivial integral fair risk assignment exists.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386564359:m1",
+      "paper_id": "openalex:W4386564359",
+      "name": "Linear algebraic formalization of fairness trade-offs",
+      "description": "Formulates risk assignments, group feature distributions, calibration, and error balance conditions as a system of vector and matrix equations to prove exact and approximate incompatibility theorems.",
+      "datasets": [],
+      "conditions": [
+        "Unequal base rates between groups",
+        "Imperfect prediction (p_sigma in (0, 1))"
+      ]
+    },
+    {
+      "id": "openalex:W4386564359:m2",
+      "paper_id": "openalex:W4386564359",
+      "name": "Subset Sum reduction for integral assignment hardness",
+      "description": "Maps instances of the Subset Sum problem into feature vectors, group frequencies, and positive class probabilities to construct an NP-hardness proof for non-trivial integral fair risk assignments.",
+      "datasets": [],
+      "conditions": [
+        "Equal group base rates",
+        "Integral risk assignments (no splitting of individuals with identical feature vectors)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386564359:l1",
+      "paper_id": "openalex:W4386564359",
+      "text": "The NP-completeness proof applies only to integral risk assignments where individuals with the same feature vector cannot be split across bins, leaving open the computational complexity of the non-integral setting.",
+      "normalized_category": "theoretical-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386564359:l2",
+      "paper_id": "openalex:W4386564359",
+      "text": "The analysis does not resolve how conflicts between competing definitions of fairness should be handled in practice or policy decisions.",
+      "normalized_category": "normative-scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386564359:l3",
+      "paper_id": "openalex:W4386564359",
+      "text": "Existing commercial and clinical risk prediction tools (e.g. COMPAS) that achieve calibration within groups fail to satisfy balance for positive and negative classes when group base rates differ.",
+      "normalized_category": "existing-method-incompatibility",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4386564359:f1",
+      "paper_id": "openalex:W4386564359",
+      "text": "Determining whether a polynomial-time algorithm exists to find a fair assignment of minimum loss or decide existence of a non-trivial fair assignment when feature vectors can be split across multiple bins.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4386564359:f2",
+      "paper_id": "openalex:W4386564359",
+      "text": "Searching for risk assignments that satisfy calibration together with only one of the two balance conditions in settings where false positive and false negative costs differ significantly.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4386564359:f3",
+      "paper_id": "openalex:W4386564359",
+      "text": "Determining how the theoretical trade-offs between calibration and balance conditions can be incorporated into broader families of proposed fairness definitions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:14:39.303426Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

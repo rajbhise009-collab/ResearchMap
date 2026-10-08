@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W2962996600",
+  "claims": [
+    {
+      "id": "openalex:W2962996600:c1",
+      "paper_id": "openalex:W2962996600",
+      "text": "LCSTS is a dataset constructed from the Chinese microblogging website Sina Weibo for Chinese short text summarization.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962996600:c2",
+      "paper_id": "openalex:W2962996600",
+      "text": "The LCSTS corpus consists of over 2 million real Chinese short texts paired with author-provided short summaries.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962996600:c3",
+      "paper_id": "openalex:W2962996600",
+      "text": "Relevance was manually tagged for 10,666 short text and summary pairs in LCSTS.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962996600:c4",
+      "paper_id": "openalex:W2962996600",
+      "text": "Recurrent neural networks can be applied to generate short text summaries on the LCSTS dataset.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2962996600:e1",
+      "claim_id": "openalex:W2962996600:c1",
+      "description": "The authors state: 'we introduce a large corpus of Chinese short text summarization dataset constructed from the Chinese microblogging website Sina Weibo'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2962996600:e2",
+      "claim_id": "openalex:W2962996600:c2",
+      "description": "The authors state: 'This corpus consists of over 2 million real Chinese short texts with short summaries given by the author of each text.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2962996600:e3",
+      "claim_id": "openalex:W2962996600:c3",
+      "description": "The authors state: 'We also manually tagged the relevance of 10,666 short summaries with their corresponding short texts.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2962996600:e4",
+      "claim_id": "openalex:W2962996600:c4",
+      "description": "The authors state: 'Based on the corpus, we introduce recurrent neural network for the summary generation'",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2962996600:m1",
+      "paper_id": "openalex:W2962996600",
+      "name": "Recurrent Neural Network Short Text Summarization",
+      "description": "Constructed a Chinese short text summarization dataset from Sina Weibo and trained recurrent neural networks to generate summaries.",
+      "datasets": [
+        "Sina Weibo",
+        "LCSTS"
+      ],
+      "conditions": [
+        "Chinese short text summarization",
+        "Author-provided short summaries"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2962996600:l1",
+      "paper_id": "openalex:W2962996600",
+      "text": "Automatic text summarization research is hindered by the lack of large text summarization datasets.",
+      "normalized_category": "lack-of-large-datasets",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.112250Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,147 @@
+{
+  "paper_id": "openalex:W3198760712",
+  "claims": [
+    {
+      "id": "openalex:W3198760712:c1",
+      "paper_id": "openalex:W3198760712",
+      "text": "Existing technical solutions for AI responsibility are narrow in scope, focusing primarily on scoring or classification tasks with an emphasis on fairness and unwanted bias.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3198760712:c2",
+      "paper_id": "openalex:W3198760712",
+      "text": "A survey by Doteveryone revealed that 59% of tech workers have worked on products they felt were harmful to society.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3198760712:c3",
+      "paper_id": "openalex:W3198760712",
+      "text": "A survey by Doteveryone revealed that more than 25% of AI workers who experienced working on harmful products quit their jobs as a result.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3198760712:c4",
+      "paper_id": "openalex:W3198760712",
+      "text": "An investigation into Princeton Review online tutoring prices showed that Asian customers were 1.8 times more likely to be charged higher prices regardless of income.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3198760712:c5",
+      "paper_id": "openalex:W3198760712",
+      "text": "Social Responsibility of AI can be structured into a four-level hierarchy consisting of functional, legal, ethical, and philanthropic responsibilities.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3198760712:c6",
+      "paper_id": "openalex:W3198760712",
+      "text": "Socially Responsible AI Algorithms operationalize societal well-being across three functional dimensions: protecting users, informing users, and preventing or mitigating negative impacts.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3198760712:e1",
+      "claim_id": "openalex:W3198760712:c1",
+      "description": "However, existing technical solutions are narrow in scope and have been primarily directed towards algorithms for scoring or classification tasks, with an emphasis on fairness and unwanted bias.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3198760712:e2",
+      "claim_id": "openalex:W3198760712:c2",
+      "description": "A report published by Martha Lane Fox's Doteveryone think tank (Miller C, 2019) reveals that 59% of tech workers have worked on products they felt harmful to society...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3198760712:e3",
+      "claim_id": "openalex:W3198760712:c3",
+      "description": "...and more than 25% of workers in AI who had such an experience quit their jobs as a result.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3198760712:e4",
+      "claim_id": "openalex:W3198760712:c4",
+      "description": "Asians were 1.8 times more likely to pay higher price, regardless of their income (Angwin & Larson, 2015).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3198760712:e5",
+      "claim_id": "openalex:W3198760712:c5",
+      "description": "Drawing on theories in business research, we then present a pyramid of Social Responsibility of AI that outlines four specific AI responsibilities in a hierarchy... functional, legal, ethical, and philanthropic responsibilities.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3198760712:e6",
+      "claim_id": "openalex:W3198760712:c6",
+      "description": "We further discuss how to leverage this framework to improve societal well-being through protection, information, and prevention/mitigation.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3198760712:m1",
+      "paper_id": "openalex:W3198760712",
+      "name": "Socially Responsible AI Framework Synthesis",
+      "description": "A systematic survey and conceptual framework mapping subjects, causes, objectives, means, and societal roles of socially responsible AI algorithms.",
+      "datasets": [],
+      "conditions": [
+        "Literature taxonomy synthesis across bias, fairness, interpretability, privacy, safety, and causal learning"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3198760712:l1",
+      "paper_id": "openalex:W3198760712",
+      "text": "Prior research in responsible AI is narrowly focused on independent topics like fairness or interpretability in scoring/classification tasks, lacking a holistic view of sociotechnical relations.",
+      "normalized_category": "narrow-scope-prior-work",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3198760712:l2",
+      "paper_id": "openalex:W3198760712",
+      "text": "Model transparency introduces security paradoxes where disclosures and post-hoc explanations can be purposefully manipulated or exploited by adversaries.",
+      "normalized_category": "transparency-vulnerability-tradeoff",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3198760712:f1",
+      "paper_id": "openalex:W3198760712",
+      "text": "Incorporating causal learning methods to address model robustness, transferability, and cause-effect explanations in responsible AI.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3198760712:f2",
+      "paper_id": "openalex:W3198760712",
+      "text": "Designing context-aware socially responsible AI algorithms that integrate social context and algorithmic feedback loops.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3198760712:f3",
+      "paper_id": "openalex:W3198760712",
+      "text": "Developing provably robust AI defenses ('AI firewalls') that automatically detect weak spots and intercept malicious inputs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3198760712:f4",
+      "paper_id": "openalex:W3198760712",
+      "text": "Modeling temporal dynamics and feedback loops to evaluate and guarantee long-term algorithmic fairness.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:19:15.452515Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

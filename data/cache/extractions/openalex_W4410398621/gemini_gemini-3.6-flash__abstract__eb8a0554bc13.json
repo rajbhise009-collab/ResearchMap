@@ -1,0 +1,67 @@
+{
+  "paper_id": "openalex:W4410398621",
+  "claims": [
+    {
+      "id": "openalex:W4410398621:c1",
+      "paper_id": "openalex:W4410398621",
+      "text": "Current versions of large language models lack the ability to provide rational and coherent representations of probabilistic beliefs.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410398621:c2",
+      "paper_id": "openalex:W4410398621",
+      "text": "Previous work suggests that large language models can perform complex reasoning.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410398621:c3",
+      "paper_id": "openalex:W4410398621",
+      "text": "Previous work suggests that large language models can perform well-calibrated uncertainty quantification.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410398621:e1",
+      "claim_id": "openalex:W4410398621:c1",
+      "description": "we find that current versions of this class of model lack the ability to provide rational and coherent representations of probabilistic beliefs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410398621:e2",
+      "claim_id": "openalex:W4410398621:c2",
+      "description": "Despite previous work suggesting that LLMs can perform complex reasoning...",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W4410398621:e3",
+      "claim_id": "openalex:W4410398621:c3",
+      "description": "Despite previous work suggesting that LLMs can perform... well-calibrated uncertainty quantification...",
+      "strength": 0.7
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410398621:m1",
+      "paper_id": "openalex:W4410398621",
+      "name": "Indeterminate Truth Value Uncertainty Quantification Evaluation",
+      "description": "Evaluation of LLM probabilistic reasoning using a novel dataset of claims with indeterminate truth values and established uncertainty quantification techniques.",
+      "datasets": [
+        "dataset of claims with indeterminate truth values"
+      ],
+      "conditions": [
+        "well-established techniques for uncertainty quantification"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.104557Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

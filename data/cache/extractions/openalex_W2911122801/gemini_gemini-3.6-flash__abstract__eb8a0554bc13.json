@@ -1,0 +1,79 @@
+{
+  "paper_id": "openalex:W2911122801",
+  "claims": [
+    {
+      "id": "openalex:W2911122801:c1",
+      "paper_id": "openalex:W2911122801",
+      "text": "A single algorithm drives a health care decision for over 70 million people in the US.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2911122801:c2",
+      "paper_id": "openalex:W2911122801",
+      "text": "Patients anticipated to have complex and intensive future health care needs are enrolled in care management programs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2911122801:c3",
+      "paper_id": "openalex:W2911122801",
+      "text": "Care management programs provide greater attention from trained providers.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2911122801:c4",
+      "paper_id": "openalex:W2911122801",
+      "text": "Care management programs provide help with coordination of care.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2911122801:e1",
+      "claim_id": "openalex:W2911122801:c1",
+      "description": "A single algorithm drives an important health care decision for over 70 million people in the US.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2911122801:e2",
+      "claim_id": "openalex:W2911122801:c2",
+      "description": "When health systems anticipate that a patient will have especially complex and intensive future health care needs, she is enrolled in a 'care management' program",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2911122801:e3",
+      "claim_id": "openalex:W2911122801:c3",
+      "description": "care management program... provides considerable additional resources: greater attention from trained providers",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2911122801:e4",
+      "claim_id": "openalex:W2911122801:c4",
+      "description": "care management program... provides considerable additional resources: ... help with coordination of her care.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2911122801:m1",
+      "paper_id": "openalex:W2911122801",
+      "name": "Algorithm-guided care management program enrollment",
+      "description": "Health systems use an algorithmic prediction of future care needs to select high-need patients for targeted care management programs.",
+      "datasets": [],
+      "conditions": [
+        "US healthcare systems"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:21:17.129928Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

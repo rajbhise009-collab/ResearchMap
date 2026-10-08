@@ -1,0 +1,134 @@
+{
+  "paper_id": "openalex:W1976428272",
+  "claims": [
+    {
+      "id": "openalex:W1976428272:c1",
+      "paper_id": "openalex:W1976428272",
+      "text": "Log-triglyceride values demonstrate within-person correlation coefficients of 0.64 over 4 years and 0.63 over 12 years.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1976428272:c2",
+      "paper_id": "openalex:W1976428272",
+      "text": "The long-term stability of log-triglyceride values is similar to that of blood pressure and total serum cholesterol.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1976428272:c3",
+      "paper_id": "openalex:W1976428272",
+      "text": "Adjustment for baseline values of established risk factors substantially attenuates the association between triglyceride values and coronary heart disease risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1976428272:c4",
+      "paper_id": "openalex:W1976428272",
+      "text": "In the Reykjavik study, the adjusted odds ratio for coronary heart disease comparing the top third with the bottom third of usual log-triglyceride values is 1.76 (95% CI, 1.39 to 2.21).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1976428272:c5",
+      "paper_id": "openalex:W1976428272",
+      "text": "In the EPIC-Norfolk study, the adjusted odds ratio for coronary heart disease comparing the top third with the bottom third of usual log-triglyceride values is 1.57 (95% CI, 1.10 to 2.24).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1976428272:c6",
+      "paper_id": "openalex:W1976428272",
+      "text": "A meta-analysis of 29 studies shows an adjusted odds ratio for coronary heart disease of 1.72 (95% CI, 1.56 to 1.90) comparing individuals in the top third with those in the bottom third of usual log-triglyceride values.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1976428272:e1",
+      "claim_id": "openalex:W1976428272:c1",
+      "description": "within-person correlation coefficients of 0.64 [95% CI, 0.60 to 0.68] over 4 years and 0.63 [95% CI, 0.57 to 0.70] over 12 years",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1976428272:e2",
+      "claim_id": "openalex:W1976428272:c2",
+      "description": "The long-term stability of log-triglyceride values ... was similar to those of blood pressure and total serum cholesterol.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1976428272:e3",
+      "claim_id": "openalex:W1976428272:c3",
+      "description": "After adjustment for baseline values of several established risk factors, the strength of the association was substantially attenuated",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1976428272:e4",
+      "claim_id": "openalex:W1976428272:c4",
+      "description": "the adjusted odds ratio for coronary heart disease was 1.76 (95% CI, 1.39 to 2.21) in the Reykjavik study",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1976428272:e5",
+      "claim_id": "openalex:W1976428272:c5",
+      "description": "and 1.57 (95% CI, 1.10 to 2.24) in the EPIC-Norfolk study in a comparison of individuals in the top third with those in the bottom third of usual log-triglyceride values",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1976428272:e6",
+      "claim_id": "openalex:W1976428272:c6",
+      "description": "adjusted odds ratio, 1.72; 95% CI, 1.56 to 1.90 ... observed in an updated meta-analysis involving a total of 10,158 incident coronary heart disease cases from 262,525 participants in 29 studies",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1976428272:m1",
+      "paper_id": "openalex:W1976428272",
+      "name": "Nested case-control study and updated meta-analysis",
+      "description": "Evaluated serum triglyceride concentrations in two population-based cohort studies using nested case-control comparisons and combined results with a meta-analysis of 27 prospective studies.",
+      "datasets": [
+        "Reykjavik study",
+        "EPIC-Norfolk study"
+      ],
+      "conditions": [
+        "General Western populations",
+        "Comparison of top third vs bottom third of log-triglyceride values",
+        "Adjustment for baseline values of established risk factors"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1976428272:l1",
+      "paper_id": "openalex:W1976428272",
+      "text": "The association between triglyceride concentrations and coronary heart disease risk depends considerably on levels of established risk factors, leaving the nature of any independent association unconfirmed.",
+      "normalized_category": "confounding-risk-factor-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1976428272:l2",
+      "paper_id": "openalex:W1976428272",
+      "text": "Prior epidemiological studies had reported associations between serum triglyceride concentrations and coronary heart disease risk, but had not reliably quantified the association.",
+      "normalized_category": "unreliable-quantification-in-prior-studies",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1976428272:f1",
+      "paper_id": "openalex:W1976428272",
+      "text": "Further studies are needed to help assess the nature of any independent associations between triglyceride values and coronary heart disease risk.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:45:18.530669Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

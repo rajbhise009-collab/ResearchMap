@@ -1,0 +1,140 @@
+{
+  "paper_id": "openalex:W2962996600",
+  "claims": [
+    {
+      "id": "openalex:W2962996600:c1",
+      "paper_id": "openalex:W2962996600",
+      "text": "RNN models with context outperform RNN models without context on both character and word based inputs for Chinese short text summarization.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962996600:c2",
+      "paper_id": "openalex:W2962996600",
+      "text": "Character-based input models outperform word-based input models in short text summarization using RNN architectures.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962996600:c3",
+      "paper_id": "openalex:W2962996600",
+      "text": "In Part II of the LCSTS dataset, short text and summary pairs with relevance scores 1 and 2 account for less than 20 percent of the sampled data.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962996600:c4",
+      "paper_id": "openalex:W2962996600",
+      "text": "The main training subset (Part I) of the LCSTS dataset contains 2,400,591 Chinese short text and summary pairs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2962996600:e1",
+      "claim_id": "openalex:W2962996600:c1",
+      "description": "Table 2 shows RNN with context achieved ROUGE-1 of 0.108 (Char) and 0.087 (Word) compared to 0.061 (Char) and 0.043 (Word) for RNN without context.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2962996600:e2",
+      "claim_id": "openalex:W2962996600:c2",
+      "description": "Table 2 reports Character-based RNN with context achieved 0.108 ROUGE-1, 0.073 ROUGE-2, and 0.107 ROUGE-L, outperforming Word-based RNN with context which achieved 0.087 ROUGE-1, 0.054 ROUGE-2, and 0.085 ROUGE-L.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2962996600:e3",
+      "claim_id": "openalex:W2962996600:c3",
+      "description": "The paper notes that the percent of score 1 (942 pairs) and score 2 (1,039 pairs) is less than 20% out of 10,666 total human-labeled pairs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2962996600:e4",
+      "claim_id": "openalex:W2962996600:c4",
+      "description": "Table 1 specifies Part I contains 2,400,591 (short text, summary) pairs mined from Sina Weibo.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2962996600:m1",
+      "paper_id": "openalex:W2962996600",
+      "name": "LCSTS Dataset Construction Pipeline",
+      "description": "A multi-stage mining process that crawls weibos from verified organization seed accounts on Sina Weibo and applies filtering rules to extract short text and summary pairs.",
+      "datasets": [
+        "Sina Weibo"
+      ],
+      "conditions": [
+        "Accounts verified with blue V tag and > 1 million followers",
+        "Short text length >= 80 characters",
+        "Summary length between 10 and 30 characters"
+      ]
+    },
+    {
+      "id": "openalex:W2962996600:m2",
+      "paper_id": "openalex:W2962996600",
+      "name": "GRU RNN Encoder-Decoder Summarization",
+      "description": "A sequence-to-sequence neural network using GRU units with character or word tokens to generate concise summaries from short input texts.",
+      "datasets": [
+        "LCSTS Part I",
+        "LCSTS Part III"
+      ],
+      "conditions": [
+        "Character-based input (4,000 vocabulary size)",
+        "Word-based input using Jieba (50,000 vocabulary size)",
+        "Beam search size 10",
+        "ADADELTA optimizer"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2962996600:l1",
+      "paper_id": "openalex:W2962996600",
+      "text": "The scale of existing summarization datasets is usually very small, mostly less than 1,000 documents.",
+      "normalized_category": "dataset-scale-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2962996600:l2",
+      "paper_id": "openalex:W2962996600",
+      "text": "Word-based models produce many UNK tokens in generated summaries due to word segmentation missing out-of-vocabulary entity names.",
+      "normalized_category": "out-of-vocabulary-unk-generation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2962996600:l3",
+      "paper_id": "openalex:W2962996600",
+      "text": "Modeling the entire short text as a single sequence may be suboptimal given that short texts often contain multiple distinct sentences.",
+      "normalized_category": "flat-sequence-modeling",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2962996600:f1",
+      "paper_id": "openalex:W2962996600",
+      "text": "Exploring hierarchical RNN architectures to handle short texts containing multiple sentences.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2962996600:f2",
+      "paper_id": "openalex:W2962996600",
+      "text": "Addressing the rare word problem for word-based neural generative summarization models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2962996600:f3",
+      "paper_id": "openalex:W2962996600",
+      "text": "Constructing a large-scale document summarization dataset from naturally annotated web resources.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.998612Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

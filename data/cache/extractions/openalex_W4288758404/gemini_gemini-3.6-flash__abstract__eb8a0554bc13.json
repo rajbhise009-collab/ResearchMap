@@ -1,0 +1,89 @@
+{
+  "paper_id": "openalex:W4288758404",
+  "claims": [
+    {
+      "id": "openalex:W4288758404:c1",
+      "paper_id": "openalex:W4288758404",
+      "text": "Machine learning models can exhibit discrimination against minority groups in decision-making processes.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288758404:c2",
+      "paper_id": "openalex:W4288758404",
+      "text": "In-processing methods incorporate fairness directly during model design to induce intrinsically fair models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288758404:c3",
+      "paper_id": "openalex:W4288758404",
+      "text": "In-processing fairness mitigation techniques can be categorized into explicit and implicit methods based on where fairness is achieved.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288758404:c4",
+      "paper_id": "openalex:W4288758404",
+      "text": "Explicit in-processing methods directly incorporate fairness metrics into training objectives.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288758404:c5",
+      "paper_id": "openalex:W4288758404",
+      "text": "Implicit in-processing methods focus on refining latent representation learning.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4288758404:e1",
+      "claim_id": "openalex:W4288758404:c1",
+      "description": "the models could show discrimination against minority groups and result in fairness issues in a decision-making process",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4288758404:e2",
+      "claim_id": "openalex:W4288758404:c2",
+      "description": "fairness is directly taken into consideration during model design to induce intrinsically fair models",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4288758404:e3",
+      "claim_id": "openalex:W4288758404:c3",
+      "description": "Based on where the fairness is achieved in the model, we categorize them into explicit and implicit methods",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4288758404:e4",
+      "claim_id": "openalex:W4288758404:c4",
+      "description": "the former directly incorporates fairness metrics in training objectives",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4288758404:e5",
+      "claim_id": "openalex:W4288758404:c5",
+      "description": "and the latter focuses on refining latent representation learning",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4288758404:f1",
+      "paper_id": "openalex:W4288758404",
+      "text": "Addressing key research challenges in in-processing machine learning fairness mitigation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.135882Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

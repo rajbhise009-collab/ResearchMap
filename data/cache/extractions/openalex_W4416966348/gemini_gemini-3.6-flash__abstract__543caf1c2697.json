@@ -1,0 +1,120 @@
+{
+  "paper_id": "openalex:W4416966348",
+  "claims": [
+    {
+      "id": "openalex:W4416966348:c1",
+      "paper_id": "openalex:W4416966348",
+      "text": "Existing text summarization methods suffer from hallucinations where generated summaries contain information not present in the source text.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416966348:c2",
+      "paper_id": "openalex:W4416966348",
+      "text": "Existing hallucination detection and mitigation methods lack transparency in their underlying mechanisms.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416966348:c3",
+      "paper_id": "openalex:W4416966348",
+      "text": "The proposed Question-Answer Generation, Sorting, and Evaluation (Q-S-E) methodology enables quantitative detection of hallucinations in summaries.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416966348:c4",
+      "paper_id": "openalex:W4416966348",
+      "text": "The proposed iterative hallucination resolution mechanism enhances the transparency of the modification process.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416966348:c5",
+      "paper_id": "openalex:W4416966348",
+      "text": "The proposed framework significantly improves the factual consistency of summaries across CNN/Daily Mail, PubMed, and ArXiv datasets.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416966348:c6",
+      "paper_id": "openalex:W4416966348",
+      "text": "The proposed framework preserves the informational completeness of summaries while improving factual consistency.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4416966348:e1",
+      "claim_id": "openalex:W4416966348:c1",
+      "description": "the domain continues to face substantial challenges, particularly the issue of hallucination where summaries contain information not present in the source text.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4416966348:e2",
+      "claim_id": "openalex:W4416966348:c2",
+      "description": "Existing methods exhibit limitations in effectively detecting and mitigating hallucinations, often lacking transparency in their underlying mechanisms.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4416966348:e3",
+      "claim_id": "openalex:W4416966348:c3",
+      "description": "employs a Question-Answer Generation, Sorting, and Evaluation (Q-S-E) methodology to enable the quantitative detection of hallucinations in summaries.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4416966348:e4",
+      "claim_id": "openalex:W4416966348:c4",
+      "description": "incorporates an iterative hallucination resolution mechanism, which enhances the transparency of the modification process",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4416966348:e5",
+      "claim_id": "openalex:W4416966348:c5",
+      "description": "Experimental results on three benchmark datasets CNN/Daily Mail, PubMed, and ArXiv demonstrate that our approach markedly improves the factual consistency of summaries",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4416966348:e6",
+      "claim_id": "openalex:W4416966348:c6",
+      "description": "demonstrate that our approach markedly improves the factual consistency of summaries while preserving their informational completeness.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4416966348:m1",
+      "paper_id": "openalex:W4416966348",
+      "name": "Question-Answer Generation, Sorting, and Evaluation (Q-S-E) framework",
+      "description": "A hallucination detection and mitigation framework that uses a Q-S-E pipeline to quantitatively detect hallucinations and an iterative LLM resolution mechanism to modify summaries transparently.",
+      "datasets": [
+        "CNN/Daily Mail",
+        "PubMed",
+        "ArXiv"
+      ],
+      "conditions": [
+        "LLM-based text summarization",
+        "iterative hallucination resolution"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4416966348:l1",
+      "paper_id": "openalex:W4416966348",
+      "text": "Existing methods exhibit limitations in effectively detecting and mitigating hallucinations, often lacking transparency in their underlying mechanisms.",
+      "normalized_category": "lack-of-transparency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:27:19.791607Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

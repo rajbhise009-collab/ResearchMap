@@ -1,0 +1,180 @@
+{
+  "paper_id": "openalex:W2953075226",
+  "claims": [
+    {
+      "id": "openalex:W2953075226:c1",
+      "paper_id": "openalex:W2953075226",
+      "text": "The single RE2 model achieves an accuracy of 88.9% on the SNLI test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c2",
+      "paper_id": "openalex:W2953075226",
+      "text": "The ensemble RE2 model achieves an accuracy of 89.9% on the SNLI test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c3",
+      "paper_id": "openalex:W2953075226",
+      "text": "The RE2 model achieves an accuracy of 86.0% on the SciTail test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c4",
+      "paper_id": "openalex:W2953075226",
+      "text": "The RE2 model achieves an accuracy of 89.2% on the Quora Question Pairs test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c5",
+      "paper_id": "openalex:W2953075226",
+      "text": "The RE2 model achieves a MAP score of 0.7452 on the WikiQA test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c6",
+      "paper_id": "openalex:W2953075226",
+      "text": "The RE2 model achieves an MRR score of 0.7618 on the WikiQA test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c7",
+      "paper_id": "openalex:W2953075226",
+      "text": "The CPU inference speed of RE2 with 3 blocks is 6 times faster than CSRAN for a batch size of 8.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c8",
+      "paper_id": "openalex:W2953075226",
+      "text": "The CPU inference speed of RE2 with 3 blocks is at least 17 times faster than DIIN for a batch size of 8.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c9",
+      "paper_id": "openalex:W2953075226",
+      "text": "RE2 uses augmented residual connections to integrate original point-wise features, previous aligned features, and contextual features across stacked blocks.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2953075226:e1",
+      "claim_id": "openalex:W2953075226:c1",
+      "description": "Table 1 lists RE2 (ours) accuracy as 88.9±0.1 on the SNLI test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953075226:e2",
+      "claim_id": "openalex:W2953075226:c2",
+      "description": "Table 1 lists RE2 (ensemble) accuracy as 89.9 on the SNLI test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953075226:e3",
+      "claim_id": "openalex:W2953075226:c3",
+      "description": "Table 2 lists RE2 (ours) accuracy as 86.0±0.6 on the SciTail test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953075226:e4",
+      "claim_id": "openalex:W2953075226:c4",
+      "description": "Table 3 lists RE2 (ours) accuracy as 89.2±0.2 on the Quora test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953075226:e5",
+      "claim_id": "openalex:W2953075226:c5",
+      "description": "Table 4 lists RE2 (ours) MAP as 0.7452 ±0.0044 on the WikiQA test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953075226:e6",
+      "claim_id": "openalex:W2953075226:c6",
+      "description": "Table 4 lists RE2 (ours) MRR as 0.7618 ±0.0040 on the WikiQA test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953075226:e7",
+      "claim_id": "openalex:W2953075226:c7",
+      "description": "Table 5 reports RE2 (3 blocks) taking 0.05 s/batch compared to CSRAN taking 0.28 s/batch on Intel Core i7 CPUs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2953075226:e8",
+      "claim_id": "openalex:W2953075226:c8",
+      "description": "Table 5 reports RE2 (3 blocks) taking 0.05 s/batch compared to DIIN taking 0.85 s/batch (and 1.79 s/batch with EM feature) on Intel Core i7 CPUs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2953075226:e9",
+      "claim_id": "openalex:W2953075226:c9",
+      "description": "Section 2.1 describes formulation x_i^(n) = [x_i^(1); o_i^(n-1) + o_i^(n-2)] connecting blocks and maintaining embedding, residual, and encoded vectors.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2953075226:m1",
+      "paper_id": "openalex:W2953075226",
+      "name": "RE2 Architecture",
+      "description": "A neural text matching architecture composed of embedding, encoding, alignment, fusion, pooling, and prediction layers connected by augmented residual connections across N consecutive blocks.",
+      "datasets": [
+        "SNLI",
+        "SciTail",
+        "Quora Question Pairs",
+        "WikiQA"
+      ],
+      "conditions": [
+        "Fixed 840B-300d GloVe word vectors",
+        "Vanilla multi-layer convolutional networks with kernel size 3 as encoders",
+        "Adam optimizer with exponentially decaying learning rate and linear warmup",
+        "Weight normalization and He initialization",
+        "Intel Core i7 CPU for inference speed benchmark"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2953075226:l1",
+      "paper_id": "openalex:W2953075226",
+      "text": "Deeper stacked architectures in prior work suffer from inefficient propagation of lower-level features and vanishing gradients, making them harder to train.",
+      "normalized_category": "gradient-vanishing",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2953075226:l2",
+      "paper_id": "openalex:W2953075226",
+      "text": "On the WikiQA dataset, the proposed method is not robust to structural hyperparameter changes and exhibits high performance variance across random seeds.",
+      "normalized_category": "hyperparameter-sensitivity",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2953075226:f1",
+      "paper_id": "openalex:W2953075226",
+      "text": "Further investigation of the high performance variance on the WikiQA dataset.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.005330Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

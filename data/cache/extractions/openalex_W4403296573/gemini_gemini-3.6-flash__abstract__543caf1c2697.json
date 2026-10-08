@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W4403296573",
+  "claims": [
+    {
+      "id": "openalex:W4403296573:c1",
+      "paper_id": "openalex:W4403296573",
+      "text": "Large language models pretrained on code demonstrate strong capabilities in generating programs from natural language inputs.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403296573:c2",
+      "paper_id": "openalex:W4403296573",
+      "text": "L2CEval systematically evaluates language-to-code generation across 7 tasks spanning semantic parsing, math reasoning, and Python programming.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403296573:c3",
+      "paper_id": "openalex:W4403296573",
+      "text": "Model size, pretraining data, instruction tuning, and prompting methods affect language-to-code generation performance in LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403296573:c4",
+      "paper_id": "openalex:W4403296573",
+      "text": "L2CEval assesses confidence calibration of LLMs in language-to-code tasks.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403296573:c5",
+      "paper_id": "openalex:W4403296573",
+      "text": "Human evaluations identify typical failure modes across different language-to-code tasks and models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403296573:e1",
+      "claim_id": "openalex:W4403296573:c1",
+      "description": "Abstract states that LLMs pretrained on code 'have demonstrated strong capabilities in generating programs from natural language inputs.'",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4403296573:e2",
+      "claim_id": "openalex:W4403296573:c2",
+      "description": "Abstract describes L2CEval as 'a systematic evaluation of the language-to-code generation capabilities of LLMs on 7 tasks across the domain spectrum of semantic parsing, math reasoning, and Python programming'.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4403296573:e3",
+      "claim_id": "openalex:W4403296573:c3",
+      "description": "Abstract states the evaluation involves 'analyzing the factors that potentially affect their performance, such as model size, pretraining data, instruction tuning, and different prompting methods.'",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4403296573:e4",
+      "claim_id": "openalex:W4403296573:c4",
+      "description": "Abstract notes 'In addition, we assess confidence calibration'.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4403296573:e5",
+      "claim_id": "openalex:W4403296573:c5",
+      "description": "Abstract states 'and conduct human evaluations to identify typical failures across different tasks and models.'",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403296573:m1",
+      "paper_id": "openalex:W4403296573",
+      "name": "L2CEval",
+      "description": "A evaluation benchmark and framework assessing LLM language-to-code capabilities across 7 tasks, alongside confidence calibration and human evaluation of failures.",
+      "datasets": [],
+      "conditions": [
+        "model size",
+        "pretraining data",
+        "instruction tuning",
+        "prompting methods"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403296573:l1",
+      "paper_id": "openalex:W4403296573",
+      "text": "Existing studies lack a comprehensive evaluation of LLMs' language-to-code generation capabilities.",
+      "normalized_category": "lacks-comprehensive-evaluation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4403296573:l2",
+      "paper_id": "openalex:W4403296573",
+      "text": "Existing studies focus narrowly on specific tasks, model architectures, or learning paradigms, leading to fragmented understanding.",
+      "normalized_category": "narrow-evaluation-scope",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4403296573:f1",
+      "paper_id": "openalex:W4403296573",
+      "text": "Update evaluation results for future models (e.g., LLaMA-3, StarCoder2) on the project website.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-23T16:02:26.454921Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

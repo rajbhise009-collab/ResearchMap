@@ -1,0 +1,57 @@
+{
+  "paper_id": "openalex:W4391017628",
+  "claims": [
+    {
+      "id": "openalex:W4391017628:c1",
+      "paper_id": "openalex:W4391017628",
+      "text": "Researchers remain unclear about important aspects of Natural Language Generation (NLG) evaluation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391017628:c2",
+      "paper_id": "openalex:W4391017628",
+      "text": "Current classifications of hallucination and omission in data-text NLG can be synthesized using a logic-based approach.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391017628:e1",
+      "claim_id": "openalex:W4391017628:c1",
+      "description": "The author notes that despite advances in NLG and LLMs, researchers are still unclear about important aspects of NLG evaluation.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4391017628:e2",
+      "claim_id": "openalex:W4391017628:c2",
+      "description": "The author examines current classifications of hallucination and omission in data-text NLG to propose a logic-based synthesis.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391017628:m1",
+      "paper_id": "openalex:W4391017628",
+      "name": "Logic-based synthesis",
+      "description": "A logic-based synthesis of existing classifications of hallucination and omission in data-text NLG.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391017628:l1",
+      "paper_id": "openalex:W4391017628",
+      "text": "All current thinking about hallucination has remaining limitations.",
+      "normalized_category": "conceptual-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.101119Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

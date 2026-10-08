@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W4389520286",
+  "claims": [
+    {
+      "id": "openalex:W4389520286:c1",
+      "paper_id": "openalex:W4389520286",
+      "text": "SummIt is an iterative text summarization framework using large language models that refines generated summaries through self-evaluation and feedback.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520286:c2",
+      "paper_id": "openalex:W4389520286",
+      "text": "Human evaluation validates the effectiveness of SummIt's iterative summary refinements.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520286:c3",
+      "paper_id": "openalex:W4389520286",
+      "text": "The iterative refinement process in SummIt introduces a potential issue of over-correction.",
+      "type": "negative",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389520286:e1",
+      "claim_id": "openalex:W4389520286:c1",
+      "description": "The authors introduce SummIt, which enables LLMs like ChatGPT to refine summaries iteratively via self-evaluation and feedback.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520286:e2",
+      "claim_id": "openalex:W4389520286:c2",
+      "description": "A human evaluation was conducted to validate the effectiveness of the model's summary refinements.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4389520286:e3",
+      "claim_id": "openalex:W4389520286:c3",
+      "description": "Human evaluation revealed a potential issue of over-correction during the refinement process.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389520286:m1",
+      "paper_id": "openalex:W4389520286",
+      "name": "SummIt",
+      "description": "An iterative text summarization framework based on large language models that incorporates self-evaluation, feedback, and optional knowledge and topic extractors.",
+      "datasets": [
+        "three benchmark summarization datasets"
+      ],
+      "conditions": [
+        "iterative self-evaluation and feedback",
+        "integration of knowledge and topic extractors"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389520286:l1",
+      "paper_id": "openalex:W4389520286",
+      "text": "One-shot text summarization systems generate summaries in a single step, which can produce hallucinations or miss key details relevant to reader interests.",
+      "normalized_category": "one-shot-generation-hallucinations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389520286:l2",
+      "paper_id": "openalex:W4389520286",
+      "text": "The iterative refinement approach in SummIt exhibits a potential issue of over-correction.",
+      "normalized_category": "over-correction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.096468Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

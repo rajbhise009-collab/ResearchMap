@@ -1,0 +1,90 @@
+{
+  "paper_id": "openalex:W2024961803",
+  "claims": [
+    {
+      "id": "openalex:W2024961803:c1",
+      "paper_id": "openalex:W2024961803",
+      "text": "Response behavior in alcohol self-reports is influenced by the interaction of social context factors, respondent characteristics, and task attributes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2024961803:c2",
+      "paper_id": "openalex:W2024961803",
+      "text": "Self-report methods offer a reliable approach to measuring alcohol consumption.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2024961803:c3",
+      "paper_id": "openalex:W2024961803",
+      "text": "Self-report methods offer a valid approach to measuring alcohol consumption.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2024961803:e1",
+      "claim_id": "openalex:W2024961803:c1",
+      "description": "Response behavior is influenced by the interaction of social context factors, respondent characteristics, and task attributes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2024961803:e2",
+      "claim_id": "openalex:W2024961803:c2",
+      "description": "Self-report methods offer a reliable and valid approach to measuring alcohol consumption.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2024961803:e3",
+      "claim_id": "openalex:W2024961803:c3",
+      "description": "Self-report methods offer a reliable and valid approach to measuring alcohol consumption.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2024961803:m1",
+      "paper_id": "openalex:W2024961803",
+      "name": "Literature Review",
+      "description": "A review of factors influencing response accuracy, relative merits of self-report approaches, and the utility of alternative confirmatory measures in alcohol self-reports.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2024961803:l1",
+      "paper_id": "openalex:W2024961803",
+      "text": "Many questions remain unanswered regarding how task demands interact with different drinking patterns to affect response accuracy.",
+      "normalized_category": "unanswered-questions",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2024961803:f1",
+      "paper_id": "openalex:W2024961803",
+      "text": "Investigate how task demands interact with different patterns of drinking behavior to affect response accuracy.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2024961803:f2",
+      "paper_id": "openalex:W2024961803",
+      "text": "Use multiple data sources to examine the extent of self-report response bias and determine whether it varies as a function of respondent characteristics or assessment timing.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2024961803:f3",
+      "paper_id": "openalex:W2024961803",
+      "text": "Conduct research directed at understanding the cognitive processes involved in response behavior to improve accuracy.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:47:09.079801Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

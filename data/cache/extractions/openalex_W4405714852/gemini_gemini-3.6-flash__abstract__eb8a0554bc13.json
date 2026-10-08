@@ -1,0 +1,106 @@
+{
+  "paper_id": "openalex:W4405714852",
+  "claims": [
+    {
+      "id": "openalex:W4405714852:c1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Reliance interventions reduce over-reliance on Large Language Model advice.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c2",
+      "paper_id": "openalex:W4405714852",
+      "text": "Reliance interventions generally fail to improve appropriate reliance on Large Language Models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c3",
+      "paper_id": "openalex:W4405714852",
+      "text": "Users become more confident after making wrong reliance decisions in certain contexts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c4",
+      "paper_id": "openalex:W4405714852",
+      "text": "Users demonstrate poor calibration when making wrong reliance decisions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4405714852:e1",
+      "claim_id": "openalex:W4405714852:c1",
+      "description": "Our findings indicate that while interventions reduce over-reliance...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4405714852:e2",
+      "claim_id": "openalex:W4405714852:c2",
+      "description": "...they generally fail to improve appropriate reliance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4405714852:e3",
+      "claim_id": "openalex:W4405714852:c3",
+      "description": "Furthermore, people became more confident after making wrong reliance decisions in certain contexts...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4405714852:e4",
+      "claim_id": "openalex:W4405714852:c4",
+      "description": "...demonstrating poor calibration.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4405714852:m1",
+      "paper_id": "openalex:W4405714852",
+      "name": "Randomized online experiment",
+      "description": "A randomized online experiment with 400 participants completing tasks before and after receiving modified LLM advice under three reliance interventions.",
+      "datasets": [
+        "LSAT logical reasoning",
+        "Image-based numerical estimation"
+      ],
+      "conditions": [
+        "400 participants",
+        "Two-stage task workflow (independent answer followed by post-advice answer)",
+        "Three benchmarked reliance interventions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4405714852:l1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Tested reliance interventions generally fail to improve appropriate reliance.",
+      "normalized_category": "intervention-ineffectiveness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4405714852:l2",
+      "paper_id": "openalex:W4405714852",
+      "text": "Existing reliance interventions for LLM users lack rigorous evaluation for appropriate reliance.",
+      "normalized_category": "lack-of-evaluation-standards",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4405714852:f1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Designing effective reliance interventions for human-LLM collaboration informed by user calibration findings.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:19:40.852580Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,105 @@
+{
+  "paper_id": "openalex:W2033941910",
+  "claims": [
+    {
+      "id": "openalex:W2033941910:c1",
+      "paper_id": "openalex:W2033941910",
+      "text": "Increasing sugar-sweetened soft drink consumption from 1 or fewer drinks per week to 1 or more drinks per day is associated with greater weight gain over a 4-year period in women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2033941910:c2",
+      "paper_id": "openalex:W2033941910",
+      "text": "Decreasing sugar-sweetened soft drink consumption is associated with smaller weight gain over a 4-year period in women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2033941910:c3",
+      "paper_id": "openalex:W2033941910",
+      "text": "Increased consumption of fruit punch is associated with greater weight gain compared with decreased consumption in women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2033941910:c4",
+      "paper_id": "openalex:W2033941910",
+      "text": "Consuming 1 or more sugar-sweetened soft drinks per day is associated with an increased relative risk of type 2 diabetes compared with consuming less than 1 per month.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2033941910:c5",
+      "paper_id": "openalex:W2033941910",
+      "text": "Consuming 1 or more fruit punch drinks per day is associated with an increased risk of type 2 diabetes compared with consuming less than 1 per month.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2033941910:e1",
+      "claim_id": "openalex:W2033941910:c1",
+      "description": "Multivariate-adjusted mean weight gain was 4.69 kg for 1991 to 1995 and 4.20 kg for 1995 to 1999 among women increasing soft drink intake from <=1/week to >=1/day.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2033941910:e2",
+      "claim_id": "openalex:W2033941910:c2",
+      "description": "Multivariate-adjusted mean weight gain was 1.34 kg for 1991 to 1995 and 0.15 kg for 1995 to 1999 among women who decreased soft drink intake.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2033941910:e3",
+      "claim_id": "openalex:W2033941910:c3",
+      "description": "Increased consumption of fruit punch was associated with greater weight gain compared with decreased consumption after adjusting for lifestyle and dietary confounders.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2033941910:e4",
+      "claim_id": "openalex:W2033941910:c4",
+      "description": "Women consuming >=1 sugar-sweetened soft drink per day had a relative risk of type 2 diabetes of 1.83 (95% CI, 1.42-2.36; P<.001 for trend) compared with <1 drink per month.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2033941910:e5",
+      "claim_id": "openalex:W2033941910:c5",
+      "description": "Fruit punch consumption >=1 drink per day compared with <1 drink per month had an RR of 2.00 (95% CI, 1.33-3.03; P=.001) for type 2 diabetes.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2033941910:m1",
+      "paper_id": "openalex:W2033941910",
+      "name": "Prospective Cohort Study",
+      "description": "Prospective cohort analysis tracking dietary intake, body weight changes, and incident type 2 diabetes over eight years of follow-up.",
+      "datasets": [
+        "Nurses' Health Study II"
+      ],
+      "conditions": [
+        "Women free of diabetes and major chronic diseases at baseline in 1991",
+        "Follow-up from 1991 to 1999 (716,300 person-years)",
+        "Dietary information and weight ascertained in 1991, 1995, and 1999"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2033941910:l1",
+      "paper_id": "openalex:W2033941910",
+      "text": "Relationships between sugar-sweetened beverage consumption, weight gain, and type 2 diabetes risk had been minimally addressed in adults prior to this study.",
+      "normalized_category": "sparse-prior-literature",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:04:38.322816Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

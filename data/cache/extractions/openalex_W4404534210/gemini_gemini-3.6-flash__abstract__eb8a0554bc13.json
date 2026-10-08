@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W4404534210",
+  "claims": [
+    {
+      "id": "openalex:W4404534210:c1",
+      "paper_id": "openalex:W4404534210",
+      "text": "Large language models are prone to hallucination, generating plausible yet nonfactual content.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404534210:c2",
+      "paper_id": "openalex:W4404534210",
+      "text": "LLM hallucinations present distinct challenges that diverge from prior task-specific models due to open-ended general-purpose attributes inherent to LLMs.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404534210:c3",
+      "paper_id": "openalex:W4404534210",
+      "text": "Retrieval-augmented LLMs face limitations in combating hallucinations within information retrieval systems.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404534210:e1",
+      "claim_id": "openalex:W4404534210:c1",
+      "description": "LLMs are prone to hallucination, generating plausible yet nonfactual content.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404534210:e2",
+      "claim_id": "openalex:W4404534210:c2",
+      "description": "Given the open-ended general-purpose attributes inherent to LLMs, LLM hallucinations present distinct challenges that diverge from prior task-specific models.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404534210:e3",
+      "claim_id": "openalex:W4404534210:c3",
+      "description": "Additionally, we delve into the current limitations faced by retrieval-augmented LLMs in combating hallucinations, offering insights for developing more robust IR systems.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404534210:m1",
+      "paper_id": "openalex:W4404534210",
+      "name": "Literature Survey and Taxonomy Framework",
+      "description": "A structured review and taxonomy categorizing LLM hallucinations, contributing factors, detection methods, benchmarks, and mitigation strategies.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404534210:l1",
+      "paper_id": "openalex:W4404534210",
+      "text": "Retrieval-augmented LLMs face limitations in combating hallucinations when deployed in information retrieval systems.",
+      "normalized_category": "rag-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4404534210:f1",
+      "paper_id": "openalex:W4404534210",
+      "text": "Investigating hallucinations in large vision-language models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404534210:f2",
+      "paper_id": "openalex:W4404534210",
+      "text": "Understanding knowledge boundaries in LLM hallucinations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:16:08.611231Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

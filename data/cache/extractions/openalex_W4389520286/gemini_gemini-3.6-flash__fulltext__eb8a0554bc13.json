@@ -1,0 +1,182 @@
+{
+  "paper_id": "openalex:W4389520286",
+  "claims": [
+    {
+      "id": "openalex:W4389520286:c1",
+      "paper_id": "openalex:W4389520286",
+      "text": "SummIt achieves a G-Eval quality score of 4.33 on CNN/DM under zero-shot settings compared to 3.46 for standard ChatGPT.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520286:c2",
+      "paper_id": "openalex:W4389520286",
+      "text": "SummIt achieves a FactCC score of 36.00 and DAE score of 33.02 on XSum compared to FactCC 28.00 and DAE 10.34 for standard ChatGPT.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520286:c3",
+      "paper_id": "openalex:W4389520286",
+      "text": "Integrating OpenIE knowledge extraction into SummIt increases the summary DAE score on XSum to 90.36.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520286:c4",
+      "paper_id": "openalex:W4389520286",
+      "text": "Approximately 90% of summary revisions executed by the LLM summarizer adhere to feedback provided by the LLM evaluator.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520286:c5",
+      "paper_id": "openalex:W4389520286",
+      "text": "The proportion of human-judged beneficial summary refinements drops to 50-60% after two or more iterations.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520286:c6",
+      "paper_id": "openalex:W4389520286",
+      "text": "In human preference evaluations, SummIt summaries achieve a 0.52 preference rating on CNN/DM and 0.38 on XSum, outperforming standard ChatGPT.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389520286:e1",
+      "claim_id": "openalex:W4389520286:c1",
+      "description": "Table 2 shows G-Eval scores for CNN/DM in zero-shot setting: ChatGPT is 3.46 and SummIt is 4.33.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520286:e2",
+      "claim_id": "openalex:W4389520286:c2",
+      "description": "Table 4 reports FactCC and DAE metrics on XSum: ChatGPT achieves 28.00 FactCC and 10.34 DAE, while SummIt achieves 36.00 FactCC and 33.02 DAE.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520286:e3",
+      "claim_id": "openalex:W4389520286:c3",
+      "description": "Table 4 demonstrates SummIt-IE achieves DAE score of 90.36 compared to SummIt baseline's 33.02.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520286:e4",
+      "claim_id": "openalex:W4389520286:c4",
+      "description": "Figure 3 bottom plot shows that approximately 90% of edits made by the summarizer align with evaluator feedback across iterations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389520286:e5",
+      "claim_id": "openalex:W4389520286:c5",
+      "description": "Figure 3 top plot shows the ratio of edits improving the summary falls to around 50-60% after 2 or more iterations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520286:e6",
+      "claim_id": "openalex:W4389520286:c6",
+      "description": "Table 3 reports Human Preference test results: SummIt achieves 0.52 on CNN/DM and 0.38 on XSum vs ChatGPT's 0.34 and 0.24.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389520286:m1",
+      "paper_id": "openalex:W4389520286",
+      "name": "SummIt Iterative Refinement Framework",
+      "description": "A framework that uses separate LLMs as summarizer and evaluator to iteratively generate, evaluate, and edit summaries via pre-defined operation feedback (Add, Remove, Rephrase, Simplify, Keep).",
+      "datasets": [
+        "CNN/DailyMail",
+        "XSum",
+        "NEWTS"
+      ],
+      "conditions": [
+        "gpt-3.5-turbo backbone",
+        "zero-shot",
+        "few-shot in-context learning"
+      ]
+    },
+    {
+      "id": "openalex:W4389520286:m2",
+      "paper_id": "openalex:W4389520286",
+      "name": "SummIt with Knowledge Extractor (SummIt-IE)",
+      "description": "An extension of SummIt incorporating OpenIE to extract knowledge triplets from the source document to guide faithfulness in both summary refinement and self-evaluation.",
+      "datasets": [
+        "XSum"
+      ],
+      "conditions": [
+        "OpenIE triplet extraction",
+        "gpt-3.5-turbo backbone"
+      ]
+    },
+    {
+      "id": "openalex:W4389520286:m3",
+      "paper_id": "openalex:W4389520286",
+      "name": "SummIt with Topic Extractor (SummIt-Topic)",
+      "description": "An extension of SummIt for aspect-focused summarization that extracts topic-relevant snippets from source documents to control the focus of generated summaries based on user queries.",
+      "datasets": [
+        "NEWTS"
+      ],
+      "conditions": [
+        "aspect-oriented query context",
+        "gpt-3.5-turbo backbone"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389520286:l1",
+      "paper_id": "openalex:W4389520286",
+      "text": "One-shot end-to-end summarization systems frequently suffer from hallucinations and lack controllability.",
+      "normalized_category": "hallucination-and-lack-of-control",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389520286:l2",
+      "paper_id": "openalex:W4389520286",
+      "text": "Standard evaluation metrics like ROUGE rely on imperfect reference summaries and do not accurately reflect LLM summary quality.",
+      "normalized_category": "metric-imperfection",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389520286:l3",
+      "paper_id": "openalex:W4389520286",
+      "text": "The framework suffers from an over-correction issue where the LLM evaluator continuously requests revisions based on its internal evaluation criteria rather than human judgment criteria as iteration count increases.",
+      "normalized_category": "over-correction-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520286:l4",
+      "paper_id": "openalex:W4389520286",
+      "text": "Evaluation was limited to a sampled subset of 1000 test examples per dataset due to API budget constraints.",
+      "normalized_category": "sample-size-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520286:l5",
+      "paper_id": "openalex:W4389520286",
+      "text": "Experiments were instantiated solely using OpenAI's gpt-3.5-turbo model, without testing across diverse open-source or closed LLM backbones.",
+      "normalized_category": "model-diversity-constraint",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389520286:f1",
+      "paper_id": "openalex:W4389520286",
+      "text": "Develop better stopping criteria and integrate human-in-the-loop feedback to mitigate the over-correction problem in iterative summarization systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.970661Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

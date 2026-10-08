@@ -1,0 +1,166 @@
+{
+  "paper_id": "openalex:W2103825558",
+  "claims": [
+    {
+      "id": "openalex:W2103825558:c1",
+      "paper_id": "openalex:W2103825558",
+      "text": "Intraclass correlation coefficients for nutrient intakes estimated by one-week diet records ranged from 0.41 for total vitamin A without supplements to 0.79 for vitamin B6 with supplements.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c2",
+      "paper_id": "openalex:W2103825558",
+      "text": "Intraclass correlation coefficients for nutrient intakes estimated by the semiquantitative food frequency questionnaire ranged from 0.49 for total vitamin A without supplements to 0.71 for sucrose.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c3",
+      "paper_id": "openalex:W2103825558",
+      "text": "The semiquantitative food frequency questionnaire and one-week diet records were generally comparable with respect to reproducibility.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c4",
+      "paper_id": "openalex:W2103825558",
+      "text": "Nutrient intakes from diet records tended to correlate more strongly with questionnaire intakes after adjustment for total caloric intake, with the exception of sucrose and total carbohydrate.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c5",
+      "paper_id": "openalex:W2103825558",
+      "text": "Correlation coefficients between mean calorie-adjusted intakes from four one-week diet records and the subsequent questionnaire ranged from 0.36 for vitamin A without supplements to 0.75 for vitamin C with supplements.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c6",
+      "paper_id": "openalex:W2103825558",
+      "text": "48% of subjects in the lowest quintile of calorie-adjusted intake computed from diet records were in the lowest questionnaire quintile.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c7",
+      "paper_id": "openalex:W2103825558",
+      "text": "74% of subjects in the lowest quintile of calorie-adjusted intake computed from diet records were in the lowest two questionnaire quintiles.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c8",
+      "paper_id": "openalex:W2103825558",
+      "text": "49% of subjects in the highest diet record quintile were in the highest questionnaire quintile.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c9",
+      "paper_id": "openalex:W2103825558",
+      "text": "77% of subjects in the highest diet record quintile were in the highest two questionnaire quintiles.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103825558:c10",
+      "paper_id": "openalex:W2103825558",
+      "text": "A simple self-administered dietary questionnaire can provide useful information about individual nutrient intakes over a one-year period.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2103825558:e1",
+      "claim_id": "openalex:W2103825558:c1",
+      "description": "Intraclass correlation coefficients for nutrient intakes estimated by the one-week diet records ranged from 0.41 for total vitamin A without supplements to 0.79 for vitamin B6 with supplements.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2103825558:e2",
+      "claim_id": "openalex:W2103825558:c2",
+      "description": "Intraclass correlation coefficients computed from the questionnaire ranged from 0.49 for total vitamin A without supplements to 0.71 for sucrose.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2103825558:e3",
+      "claim_id": "openalex:W2103825558:c3",
+      "description": "Intraclass correlation coefficients from the diet records were similar to those computed from the questionnaire, indicating that these methods were generally comparable with respect to reproducibility.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2103825558:e4",
+      "claim_id": "openalex:W2103825558:c4",
+      "description": "With the exception of sucrose and total carbohydrate, nutrient intakes from the diet records tended to correlate more strongly with those computed from the questionnaire after adjustment for total caloric intake.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2103825558:e5",
+      "claim_id": "openalex:W2103825558:c5",
+      "description": "Correlation coefficients between the mean calorie-adjusted intakes from the four one-week diet records and those from the questionnaire completed after the diet records ranged from 0.36 for vitamin A without supplements to 0.75 for vitamin C with supplements.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2103825558:e6",
+      "claim_id": "openalex:W2103825558:c6",
+      "description": "Overall, 48% of subjects in the lowest quintile of calorie-adjusted intake computed from the diet records were also in the lowest questionnaire quintile.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2103825558:e7",
+      "claim_id": "openalex:W2103825558:c7",
+      "description": "74% were in the lowest one of two questionnaire quintiles.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2103825558:e8",
+      "claim_id": "openalex:W2103825558:c8",
+      "description": "Similarly, 49% of those in the highest diet record quintile were also in the highest questionnaire quintile.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2103825558:e9",
+      "claim_id": "openalex:W2103825558:c9",
+      "description": "77% were in the highest one or two questionnaire quintiles.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2103825558:e10",
+      "claim_id": "openalex:W2103825558:c10",
+      "description": "These data indicate that a simple self-administered dietary questionnaire can provide useful information about individual nutrient intakes over a one-year period.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2103825558:m1",
+      "paper_id": "openalex:W2103825558",
+      "name": "Food Frequency Questionnaire Reproducibility and Validity Study Protocol",
+      "description": "Evaluation of reproducibility and validity of a 61-item semiquantitative food frequency questionnaire administered twice one year apart compared against four one-week diet records collected over the same period.",
+      "datasets": [],
+      "conditions": [
+        "173 female participants",
+        "Questionnaire administered twice approximately one year apart (1980-1981)",
+        "Four one-week diet records per participant collected during the one-year period",
+        "Calorie-adjustment performed on nutrient intakes"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:41:45.293827Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,129 @@
+{
+  "paper_id": "openalex:W7131659145",
+  "claims": [
+    {
+      "id": "openalex:W7131659145:c1",
+      "paper_id": "openalex:W7131659145",
+      "text": "Geometric overflow is a boundary violation of an admissible manifold under preserved internal coherence.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c2",
+      "paper_id": "openalex:W7131659145",
+      "text": "Geometric overflow represents a failure regime where LLM outputs remain fluent, internally stable, and high-confidence while violating externally defined constraints.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c3",
+      "paper_id": "openalex:W7131659145",
+      "text": "Boundary tension measures proximity to admissibility boundaries.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c4",
+      "paper_id": "openalex:W7131659145",
+      "text": "Boundary tension enables the detection of limit-state behavior preceding overflow.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c5",
+      "paper_id": "openalex:W7131659145",
+      "text": "Geometric overflow is orthogonal to calibration.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c6",
+      "paper_id": "openalex:W7131659145",
+      "text": "Perfectly calibrated models may exhibit coherent boundary crossing.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c7",
+      "paper_id": "openalex:W7131659145",
+      "text": "Overflow and collapse demonstrate regime separability in a retrieval-augmented question answering setting.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7131659145:e1",
+      "claim_id": "openalex:W7131659145:c1",
+      "description": "We define an admissible manifold induced by a structured family of constraints grounded in an external environment and formalize geometric overflow as boundary violation under preserved internal coherence.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e2",
+      "claim_id": "openalex:W7131659145:c2",
+      "description": "This definition isolates a failure regime in which outputs remain fluent, internally stable, and high-confidence while violating externally defined constraints.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e3",
+      "claim_id": "openalex:W7131659145:c3",
+      "description": "We further introduce boundary tension, a geometric quantity measuring proximity to admissibility boundaries and enabling detection of limit-state behavior preceding overflow.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e4",
+      "claim_id": "openalex:W7131659145:c4",
+      "description": "We further introduce boundary tension, a geometric quantity measuring proximity to admissibility boundaries and enabling detection of limit-state behavior preceding overflow.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e5",
+      "claim_id": "openalex:W7131659145:c5",
+      "description": "We prove that overflow is orthogonal to calibration: even perfectly calibrated models may exhibit coherent boundary crossing.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e6",
+      "claim_id": "openalex:W7131659145:c6",
+      "description": "We prove that overflow is orthogonal to calibration: even perfectly calibrated models may exhibit coherent boundary crossing.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e7",
+      "claim_id": "openalex:W7131659145:c7",
+      "description": "A minimal empirical illustration in a retrieval-augmented question answering setting demonstrates regime separability between overflow and collapse.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7131659145:m1",
+      "paper_id": "openalex:W7131659145",
+      "name": "Geometric Overflow and Boundary Tension Formalism",
+      "description": "A geometric framework using admissible manifolds induced by external constraints to define overflow and boundary tension.",
+      "datasets": [],
+      "conditions": [
+        "retrieval-augmented question answering"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7131659145:l1",
+      "paper_id": "openalex:W7131659145",
+      "text": "Standard perspectives on hallucination (probabilistic miscalibration, distributional shift, generalization error) do not explicitly distinguish between internal representational instability and externally grounded boundary violations.",
+      "normalized_category": "lack-of-boundary-distinction",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:26:44.162135Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

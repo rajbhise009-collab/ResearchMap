@@ -1,0 +1,176 @@
+{
+  "paper_id": "openalex:W2946931470",
+  "claims": [
+    {
+      "id": "openalex:W2946931470:c1",
+      "paper_id": "openalex:W2946931470",
+      "text": "Higher intake of ultra-processed food is associated with a higher risk of overall cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2946931470:c2",
+      "paper_id": "openalex:W2946931470",
+      "text": "Higher intake of ultra-processed food is associated with a higher risk of coronary heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2946931470:c3",
+      "paper_id": "openalex:W2946931470",
+      "text": "Higher intake of ultra-processed food is associated with a higher risk of cerebrovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2946931470:c4",
+      "paper_id": "openalex:W2946931470",
+      "text": "Higher intake of unprocessed or minimally processed foods is associated with a lower risk of overall cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2946931470:c5",
+      "paper_id": "openalex:W2946931470",
+      "text": "Ultra-processed beverages are associated with an increased risk of overall cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2946931470:c6",
+      "paper_id": "openalex:W2946931470",
+      "text": "Non-ultra-processed forms of examined food groups show no strong evidence of association with overall cardiovascular disease risk.",
+      "type": "negative",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2946931470:e1",
+      "claim_id": "openalex:W2946931470:c1",
+      "description": "Multivariable Cox proportional hazard models showed a hazard ratio of 1.12 (95% CI 1.05 to 1.20; P<0.001) for an absolute increment of 10% in the percentage of ultra-processed foods in the diet across 1409 cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2946931470:e2",
+      "claim_id": "openalex:W2946931470:c2",
+      "description": "Hazard ratio for an absolute increment of 10% in ultra-processed food intake was 1.13 (95% CI 1.02 to 1.24; P=0.02) across 665 cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2946931470:e3",
+      "claim_id": "openalex:W2946931470:c3",
+      "description": "Hazard ratio for an absolute increment of 10% in ultra-processed food intake was 1.11 (95% CI 1.01 to 1.21; P=0.02) across 829 cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2946931470:e4",
+      "claim_id": "openalex:W2946931470:c4",
+      "description": "Multivariable Cox models showed a hazard ratio of 0.91 (95% CI 0.86 to 0.97; P<0.001) for an absolute increment of 10% in unprocessed or minimally processed foods.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2946931470:e5",
+      "claim_id": "openalex:W2946931470:c5",
+      "description": "Hazard ratio for a 100 g/day increase in ultra-processed beverages was 1.06 (95% CI 1.02 to 1.10; P<0.001) for overall cardiovascular disease.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2946931470:e6",
+      "claim_id": "openalex:W2946931470:c6",
+      "description": "Analysis of non-ultra-processed counterparts of specific food groups yielded no strong evidence of association with cardiovascular disease risk.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2946931470:m1",
+      "paper_id": "openalex:W2946931470",
+      "name": "NutriNet-Santé Cohort Prospective Study Analysis",
+      "description": "A population-based prospective cohort study analyzing dietary intakes from web-based 24-hour records categorized by NOVA classification to evaluate cardiovascular disease risk using multivariable Cox proportional hazard models.",
+      "datasets": [
+        "NutriNet-Santé cohort",
+        "SNIIRAM medico-administrative database",
+        "CépiDC national cause specific mortality registry"
+      ],
+      "conditions": [
+        "105,159 adult participants in France",
+        "median follow-up of 5.2 years",
+        "NOVA food classification",
+        "multivariable adjustment for diet quality, lifestyle, and sociodemographic factors"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2946931470:l1",
+      "paper_id": "openalex:W2946931470",
+      "text": "Residual confounding from unmeasured behavioral factors or imprecision in covariate measurement cannot be ruled out due to the observational design.",
+      "normalized_category": "residual-confounding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2946931470:l2",
+      "paper_id": "openalex:W2946931470",
+      "text": "Causality of the observed associations cannot be established from this observational cohort study.",
+      "normalized_category": "non-causal-design",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2946931470:l3",
+      "paper_id": "openalex:W2946931470",
+      "text": "Misclassification of food items within NOVA categories of ultra-processed food cannot be completely ruled out.",
+      "normalized_category": "exposure-misclassification",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2946931470:l4",
+      "paper_id": "openalex:W2946931470",
+      "text": "Statistical power was limited for specific sub-types of cardiovascular disease.",
+      "normalized_category": "limited-statistical-power",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2946931470:l5",
+      "paper_id": "openalex:W2946931470",
+      "text": "The length of follow-up was relatively limited (median 5.2 years), capturing primarily mid-term associations.",
+      "normalized_category": "short-follow-up-duration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2946931470:l6",
+      "paper_id": "openalex:W2946931470",
+      "text": "Participants in the volunteer cohort were younger, more educated, healthier, and predominantly female compared with the general population, which may lead to selection bias.",
+      "normalized_category": "selection-bias",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2946931470:f1",
+      "paper_id": "openalex:W2946931470",
+      "text": "Confirm the prospective associations between ultra-processed food intake and cardiovascular disease risk in other large-scale population-based studies and settings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2946931470:f2",
+      "paper_id": "openalex:W2946931470",
+      "text": "Investigate the relative impact and cocktail effects of food additives, contact materials, neoformed contaminants, and nutritional composition on cardiovascular disease risk.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2946931470:f3",
+      "paper_id": "openalex:W2946931470",
+      "text": "Reassess the associations between ultra-processed food intake and risk of cardiovascular disease over longer follow-up durations in the cohort.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:12:18.854409Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

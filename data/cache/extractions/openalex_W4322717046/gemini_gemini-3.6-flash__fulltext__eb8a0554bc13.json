@@ -1,0 +1,257 @@
+{
+  "paper_id": "openalex:W4322717046",
+  "claims": [
+    {
+      "id": "openalex:W4322717046:c1",
+      "paper_id": "openalex:W4322717046",
+      "text": "Language models are highly sensitive to epistemic markers in prompts, with question-answering accuracy varying by up to 80% depending on the marker used.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c2",
+      "paper_id": "openalex:W4322717046",
+      "text": "Expressions of high certainty in prompts lead to lower question-answering accuracy compared to expressions of low certainty.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c3",
+      "paper_id": "openalex:W4322717046",
+      "text": "Factive verbs in prompt templates consistently decrease language model accuracy across question-answering datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c4",
+      "paper_id": "openalex:W4322717046",
+      "text": "Evidential markers in prompt templates significantly improve language model generation accuracy across multiple datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c5",
+      "paper_id": "openalex:W4322717046",
+      "text": "In question-answering pretraining data, expressions of uncertainty occur roughly twice as often in answer posts as in question posts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c6",
+      "paper_id": "openalex:W4322717046",
+      "text": "In question-answering pretraining data, expressions of certainty occur more than twice as often in question posts as in answer posts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c7",
+      "paper_id": "openalex:W4322717046",
+      "text": "The perplexity of epistemic prompt templates does not correlate with generated accuracy (Pearson's ρ = -0.03).",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c8",
+      "paper_id": "openalex:W4322717046",
+      "text": "Prompting with weakeners leads to higher entropy across candidate non-top predictions compared to prompting with strengtheners.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c9",
+      "paper_id": "openalex:W4322717046",
+      "text": "Numerical uncertainty expressions in prompts show poor linguistic calibration with answer accuracy, yielding expected calibration error values between 0.30 and 0.50.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c10",
+      "paper_id": "openalex:W4322717046",
+      "text": "Injecting 100% numerical certainty into prompts results in lower accuracy compared to injecting 90% certainty.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c11",
+      "paper_id": "openalex:W4322717046",
+      "text": "Appending epistemic markers as prefixes before the answer results in significantly lower generation accuracy than placing them as suffixes after the answer.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4322717046:e1",
+      "claim_id": "openalex:W4322717046:c1",
+      "description": "Across tested datasets, accuracies changed by up to 80% on the exact same set of questions depending on the epistemic template used.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4322717046:e2",
+      "claim_id": "openalex:W4322717046:c2",
+      "description": "The average accuracy among weakeners across all four datasets was 47% compared to 40% among strengtheners.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4322717046:e3",
+      "claim_id": "openalex:W4322717046:c3",
+      "description": "Templates with factive verbs showed consistent and statistically significant accuracy drops across CountryQA, Jeopardy, NaturalQA, and TriviaQA datasets.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4322717046:e4",
+      "claim_id": "openalex:W4322717046:c4",
+      "description": "Evidential markers statistically significantly improved accuracy in three out of four evaluated datasets and across six model variants.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4322717046:e5",
+      "claim_id": "openalex:W4322717046:c5",
+      "description": "In the Stack Exchange portion of The Pile, low certainty expressions occurred 436 instances per million words in answers versus 222 instances per million words in questions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e6",
+      "claim_id": "openalex:W4322717046:c6",
+      "description": "In the Stack Exchange portion of The Pile, high certainty expressions occurred 280 instances per million words in questions versus 104 instances per million words in answers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e7",
+      "claim_id": "openalex:W4322717046:c7",
+      "description": "Calculated Pearson's ρ between prompt template perplexity and accuracy on TriviaQA was -0.03.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e8",
+      "claim_id": "openalex:W4322717046:c8",
+      "description": "Across all four datasets, average entropy of the alternative token distribution was higher for weakeners (2.980-3.170) than strengtheners (2.875-3.109).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e9",
+      "claim_id": "openalex:W4322717046:c9",
+      "description": "Expected calibration error (ECE) evaluated across numerical uncertainty prompts ranged from 0.30 to 0.50.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e10",
+      "claim_id": "openalex:W4322717046:c10",
+      "description": "21 out of 28 tested numerical templates using 100% value had lower probability-on-gold than templates using 90%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e11",
+      "claim_id": "openalex:W4322717046:c11",
+      "description": "When appending expressions of uncertainty as a prefix, accuracy was 63% compared to 80% when appended as a suffix.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4322717046:m1",
+      "paper_id": "openalex:W4322717046",
+      "name": "Zero-Shot Epistemic Marker Prompt Injection",
+      "description": "Injecting 50 typology-categorized verbal and numerical expressions of certainty and uncertainty into open-ended trivia questions to evaluate model generation performance.",
+      "datasets": [
+        "TriviaQA",
+        "NaturalQuestions",
+        "CountryQA",
+        "Jeopardy"
+      ],
+      "conditions": [
+        "Zero-shot prompting",
+        "10-token generation match evaluation",
+        "Tested across GPT-3 (davinci, Ada, Babbage, Curie), text-davinci-003, and GPT-4"
+      ]
+    },
+    {
+      "id": "openalex:W4322717046:m2",
+      "paper_id": "openalex:W4322717046",
+      "name": "Pretraining Corpus Analysis of Uncertainty Markers",
+      "description": "Measuring occurrence frequencies and performing qualitative open coding on certainty and uncertainty expressions within question and answer posts in pretraining data.",
+      "datasets": [
+        "The Pile (Stack Exchange section)"
+      ],
+      "conditions": [
+        "Quantitative string query frequency counting",
+        "Qualitative open coding on 100 sample instances"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4322717046:l1",
+      "paper_id": "openalex:W4322717046",
+      "text": "Prior work on model epistemology primarily focused on linguistic calibration to ordinal outputs, ignoring naturalistic dimensions such as information sources, speaker commitment, and presupposition.",
+      "normalized_category": "limited-prior-work-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4322717046:l2",
+      "paper_id": "openalex:W4322717046",
+      "text": "The evaluation filtered out multi-word and out-of-vocabulary answers to accurately measure token log probabilities, restricting analysis to single-word, high-frequency answers.",
+      "normalized_category": "dataset-filtering-constraints",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4322717046:l3",
+      "paper_id": "openalex:W4322717046",
+      "text": "The study was restricted to English language trivia question answering and did not evaluate long-form text, multi-turn dialogue, or non-English cultural contexts.",
+      "normalized_category": "narrow-task-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4322717046:l4",
+      "paper_id": "openalex:W4322717046",
+      "text": "Multi-shot prompting with epistemic markers was not comprehensively explored due to computational and time resource limitations.",
+      "normalized_category": "limited-prompting-settings",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4322717046:f1",
+      "paper_id": "openalex:W4322717046",
+      "text": "Explore multi-shot prompting to significantly expand the exploration space of epistemic markers in language model contexts.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4322717046:f2",
+      "paper_id": "openalex:W4322717046",
+      "text": "Investigate how models interpret expressions of uncertainty in long-form text generation and dialogue scenarios.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4322717046:f3",
+      "paper_id": "openalex:W4322717046",
+      "text": "Examine syntactic, idiomatic, and pragmatic variations in epistemic markers across diverse non-English languages and cultural contexts.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4322717046:f4",
+      "paper_id": "openalex:W4322717046",
+      "text": "Enable language models to accurately distinguish whether expressions of certainty are intended literally versus idiomatically.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4322717046:f5",
+      "paper_id": "openalex:W4322717046",
+      "text": "Develop verified attribution mechanisms to prevent language models from generating unverified or false source attributions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.641517Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

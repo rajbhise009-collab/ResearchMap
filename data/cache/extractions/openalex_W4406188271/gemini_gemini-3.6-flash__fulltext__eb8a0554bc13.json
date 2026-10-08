@@ -1,0 +1,109 @@
+{
+  "paper_id": "openalex:W4406188271",
+  "claims": [
+    {
+      "id": "openalex:W4406188271:c1",
+      "paper_id": "openalex:W4406188271",
+      "text": "Human-AI teams can outperform individual humans working alone.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406188271:c2",
+      "paper_id": "openalex:W4406188271",
+      "text": "Human-AI teams often do not exceed the performance of AI working alone.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406188271:c3",
+      "paper_id": "openalex:W4406188271",
+      "text": "Larger LLMs perform on par with or surpass humans in certain Theory of Mind task conditions.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406188271:c4",
+      "paper_id": "openalex:W4406188271",
+      "text": "Users increase their trust in LLM responses when explanations are present, even if those responses are deceptive.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406188271:e1",
+      "claim_id": "openalex:W4406188271:c1",
+      "description": "Prior empirical studies demonstrate that human-AI teams achieve higher accuracy than individual humans.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406188271:e2",
+      "claim_id": "openalex:W4406188271:c2",
+      "description": "Evaluations across collaborative benchmarks show human-AI team performance frequently fails to surpass standalone AI performance.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406188271:e3",
+      "claim_id": "openalex:W4406188271:c3",
+      "description": "Evaluations comparing GPT-4 and children/adults on advanced Theory of Mind tests showed GPT-4 meeting or exceeding human performance levels.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4406188271:e4",
+      "claim_id": "openalex:W4406188271:c4",
+      "description": "User trust studies report increased participant reliance when LLM responses include explanatory rationales, even in misleading scenarios.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W4406188271:l1",
+      "paper_id": "openalex:W4406188271",
+      "text": "The article is a perspective synthesis and does not conduct new empirical experiments or formal benchmark evaluations of the proposed interaction paradigms.",
+      "normalized_category": "lack-of-empirical-validation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4406188271:l2",
+      "paper_id": "openalex:W4406188271",
+      "text": "Existing Large Language Models suffer from hallucinations, prompt sensitivity, and sycophantic alignment.",
+      "normalized_category": "model-instability-and-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4406188271:l3",
+      "paper_id": "openalex:W4406188271",
+      "text": "Current learning-to-defer methods rely on a binary separation of responsibility, leaving humans unassisted when AI defers.",
+      "normalized_category": "rigid-task-allocation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4406188271:f1",
+      "paper_id": "openalex:W4406188271",
+      "text": "Develop cognitive-science-inspired metrics to evaluate human-LLM team interaction and reasoning quality.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4406188271:f2",
+      "paper_id": "openalex:W4406188271",
+      "text": "Adapt complementary team performance strategies to general-purpose, arbitrary user interaction contexts.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4406188271:f3",
+      "paper_id": "openalex:W4406188271",
+      "text": "Implement and empirically test confrontational or antagonistic AI strategies to mitigate human confirmation bias.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.018334Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

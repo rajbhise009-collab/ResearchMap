@@ -1,0 +1,207 @@
+{
+  "paper_id": "openalex:W4407570660",
+  "claims": [
+    {
+      "id": "openalex:W4407570660:c1",
+      "paper_id": "openalex:W4407570660",
+      "text": "The presence of explanations in LLM responses increases user reliance on correct LLM answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c2",
+      "paper_id": "openalex:W4407570660",
+      "text": "The presence of explanations in LLM responses increases user overreliance on incorrect LLM answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c3",
+      "paper_id": "openalex:W4407570660",
+      "text": "Providing clickable sources in LLM responses increases appropriate user reliance on correct LLM answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c4",
+      "paper_id": "openalex:W4407570660",
+      "text": "Providing clickable sources in LLM responses decreases user overreliance on incorrect LLM answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c5",
+      "paper_id": "openalex:W4407570660",
+      "text": "Inconsistencies within LLM explanations reduce user overreliance on incorrect LLM answers compared to consistent explanations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c6",
+      "paper_id": "openalex:W4407570660",
+      "text": "The presence of explanations or sources in LLM responses increases user self-reported confidence in their final answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c7",
+      "paper_id": "openalex:W4407570660",
+      "text": "The presence of explanations or sources in LLM responses decreases the likelihood of users writing follow-up questions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c8",
+      "paper_id": "openalex:W4407570660",
+      "text": "Actively clicking on provided source links increases task accuracy when the LLM answer is incorrect.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4407570660:e1",
+      "claim_id": "openalex:W4407570660:c1",
+      "description": "In the absence of sources, when the LLM answer was correct, participants' task accuracy was higher when an explanation was provided (78.2%) compared to when no explanation was provided (67.2%).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e2",
+      "claim_id": "openalex:W4407570660:c2",
+      "description": "In the absence of sources, when the LLM answer was incorrect, participant accuracy was lower when an explanation was provided (17.2%) compared to when no explanation was provided (21.8%).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e3",
+      "claim_id": "openalex:W4407570660:c3",
+      "description": "In the absence of an explanation, when the LLM answer was correct, agreement was higher when sources were provided (73.4%) than when not provided (67.2%).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4407570660:e4",
+      "claim_id": "openalex:W4407570660:c4",
+      "description": "In the absence of an explanation, when the LLM answer was incorrect, agreement was lower when sources were provided (68.2%) than when not provided (78.2%).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e5",
+      "claim_id": "openalex:W4407570660:c5",
+      "description": "When participants received an inconsistent explanation for an incorrect LLM answer, agreement with the LLM was significantly lower (69.7% vs 83.3%, p=.002) and accuracy was significantly higher (30.3% vs 16.7%, p=.002) compared to receiving a consistent explanation.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e6",
+      "claim_id": "openalex:W4407570660:c6",
+      "description": "Providing an explanation led to significantly higher confidence ratings (5.26 vs 4.55 on a 1-7 scale, p<.001), and providing sources similarly increased confidence ratings (5.50 vs 4.55, p<.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4407570660:e7",
+      "claim_id": "openalex:W4407570660:c7",
+      "description": "Participants were significantly less likely to write a follow-up question when explanations were present (28.2% vs 71.4%, p<.001) or when sources were present (34.4% vs 71.4%, p<.001).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e8",
+      "claim_id": "openalex:W4407570660:c8",
+      "description": "When provided with sources and an incorrect LLM answer, participants who clicked on sources achieved 37.0% accuracy compared to 24.2% accuracy for those who did not click.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4407570660:m1",
+      "paper_id": "openalex:W4407570660",
+      "name": "Think-Aloud Exploratory Study (Study 1)",
+      "description": "A preliminary qualitative think-aloud study observed 16 participants using ChatGPT (GPT-4o) across multi-turn interactions to answer objective questions and identify key response features shaping reliance.",
+      "datasets": [
+        "ChatGPT-4o multi-turn interaction logs"
+      ],
+      "conditions": [
+        "Part 1: Base question answering with free-form interactions",
+        "Part 2: Question answering with suggested follow-up prompting strategies"
+      ]
+    },
+    {
+      "id": "openalex:W4407570660:m2",
+      "paper_id": "openalex:W4407570660",
+      "name": "Controlled 2x2x2 Within-Subjects Experiment (Study 2)",
+      "description": "A pre-registered, controlled within-subjects experiment with 308 participants evaluating the effects of LLM answer accuracy, explanation presence, and source link presence on reliance, accuracy, and user perception.",
+      "datasets": [
+        "12 binary factual questions derived from National Geographic Kids Weird But True books"
+      ],
+      "conditions": [
+        "LLM Answer Accuracy: Correct vs Incorrect",
+        "Explanation Presence: Present vs Absent",
+        "Clickable Sources Presence: Present vs Absent"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4407570660:l1",
+      "paper_id": "openalex:W4407570660",
+      "text": "The studies were conducted solely in the context of objective question-answering and may not generalize to other LLM usage contexts such as writing, idea generation, or task automation.",
+      "normalized_category": "domain-generality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4407570660:l2",
+      "paper_id": "openalex:W4407570660",
+      "text": "The think-aloud setup in Study 1 may have caused participants to behave reactively, resulting in a substantially higher source-clicking rate (63.8%) than observed in the online experiment (25.8%).",
+      "normalized_category": "ecological-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4407570660:l3",
+      "paper_id": "openalex:W4407570660",
+      "text": "Study 2 presented single controlled LLM responses rather than allowing dynamic multi-turn interactions, which does not fully reflect real-world interactive LLM usage over time.",
+      "normalized_category": "ecological-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4407570660:l4",
+      "paper_id": "openalex:W4407570660",
+      "text": "The LLM's accuracy in Study 2 was fixed at 50% for experimental balance, which is significantly lower than current state-of-the-art model performance.",
+      "normalized_category": "experimental-setup",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4407570660:l5",
+      "paper_id": "openalex:W4407570660",
+      "text": "Task questions were intentionally selected to be difficult (human pilot accuracy <50%), so findings may not generalize to tasks where users possess sufficient domain knowledge.",
+      "normalized_category": "task-difficulty",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4407570660:f1",
+      "paper_id": "openalex:W4407570660",
+      "text": "Investigate how user reliance is shaped across other generative AI tasks beyond objective question-answering, such as creative writing, brainstorming, and task automation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4407570660:f2",
+      "paper_id": "openalex:W4407570660",
+      "text": "Develop and evaluate computational interventions that automatically detect and highlight inconsistencies and other unreliability cues in LLM explanations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4407570660:f3",
+      "paper_id": "openalex:W4407570660",
+      "text": "Explore different source design choices (such as source placement, preview amount, and handling of fake or conflicting sources) and their impact on user verification behaviors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.013187Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

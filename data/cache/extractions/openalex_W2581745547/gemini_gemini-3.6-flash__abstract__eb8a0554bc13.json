@@ -1,0 +1,116 @@
+{
+  "paper_id": "openalex:W2581745547",
+  "claims": [
+    {
+      "id": "openalex:W2581745547:c1",
+      "paper_id": "openalex:W2581745547",
+      "text": "Higher intakes of saturated fatty acids are not associated with higher risks of coronary heart disease.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2581745547:c2",
+      "paper_id": "openalex:W2581745547",
+      "text": "Higher intakes of saturated fatty acids are not associated with higher risks of ischemic stroke.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2581745547:c3",
+      "paper_id": "openalex:W2581745547",
+      "text": "Replacing saturated fatty acids with cis-polyunsaturated fatty acids is associated with significant coronary heart disease risk reduction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2581745547:c4",
+      "paper_id": "openalex:W2581745547",
+      "text": "Saturated fatty acid reduction has little direct effect on stroke risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2581745547:c5",
+      "paper_id": "openalex:W2581745547",
+      "text": "The food matrix of saturated fatty acids has important health effects.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2581745547:c6",
+      "paper_id": "openalex:W2581745547",
+      "text": "The source of saturated fatty acids has important health effects.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2581745547:e1",
+      "claim_id": "openalex:W2581745547:c1",
+      "description": "Higher intakes of SAFA were not associated with higher risks of CHD apparently.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2581745547:e2",
+      "claim_id": "openalex:W2581745547:c2",
+      "description": "Higher intakes of SAFA were not associated with higher risks of stroke apparently.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2581745547:e3",
+      "claim_id": "openalex:W2581745547:c3",
+      "description": "Replacing SAFA by cis-polyunsaturated fatty acids was associated with significant CHD risk reduction, which was confirmed by randomized controlled trials.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2581745547:e4",
+      "claim_id": "openalex:W2581745547:c4",
+      "description": "SAFA reduction had little direct effect on stroke risk.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2581745547:e5",
+      "claim_id": "openalex:W2581745547:c5",
+      "description": "Cohort studies suggest that the food matrix ... of SAFA have important health effects.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2581745547:e6",
+      "claim_id": "openalex:W2581745547:c6",
+      "description": "Cohort studies suggest that the ... source of SAFA have important health effects.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2581745547:m1",
+      "paper_id": "openalex:W2581745547",
+      "name": "Literature Review and Expert Workshop Synthesis",
+      "description": "A scientific update workshop reviewing data from epidemiological cohort studies and randomized controlled trials on saturated fatty acid intake and cardiovascular outcomes.",
+      "datasets": [],
+      "conditions": [
+        "macronutrient replacement",
+        "cis-polyunsaturated fatty acids replacement"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2581745547:l1",
+      "paper_id": "openalex:W2581745547",
+      "text": "Evaluated observational studies on saturated fatty acid intake did not take macronutrient replacement into account.",
+      "normalized_category": "uncontrolled-confounders",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:20:06.763859Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

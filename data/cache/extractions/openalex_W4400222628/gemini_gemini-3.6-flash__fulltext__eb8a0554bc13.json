@@ -1,0 +1,120 @@
+{
+  "paper_id": "openalex:W4400222628",
+  "claims": [
+    {
+      "id": "openalex:W4400222628:c1",
+      "paper_id": "openalex:W4400222628",
+      "text": "Uncertainty in LLM outputs increases as the generation temperature setting is increased.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c2",
+      "paper_id": "openalex:W4400222628",
+      "text": "Prompt complexity directly increases output uncertainty, with confusing prompts yielding higher convex hull areas than easy or moderate prompts across models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c3",
+      "paper_id": "openalex:W4400222628",
+      "text": "GPT-4o achieves lower response uncertainty metrics on confusing prompts at high temperatures compared to GPT-3.5-turbo and Gemini-Pro.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c4",
+      "paper_id": "openalex:W4400222628",
+      "text": "Convex hull area computed over clustered low-dimensional response embeddings quantifies the dispersion and uncertainty of LLM outputs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400222628:e1",
+      "claim_id": "openalex:W4400222628:c1",
+      "description": "For Gemini-Pro on easy prompts, the mean convex hull area increases from 0.3916 at temperature 0.25 to 2.5481 at temperature 1.0; similar monotonic increases are observed across all models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400222628:e2",
+      "claim_id": "openalex:W4400222628:c2",
+      "description": "At a temperature setting of 1.0, GPT-3.5-turbo shows a mean convex hull area of 8.9260 for confusing prompts compared to 2.6992 for easy prompts and 2.2830 for moderate prompts.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400222628:e3",
+      "claim_id": "openalex:W4400222628:c3",
+      "description": "At a temperature setting of 1.0 for confusing prompts, GPT-4o has a mean convex hull area of 3.1909, whereas Gemini-Pro reaches 7.7980 and GPT-3.5-turbo reaches 8.9260.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400222628:e4",
+      "claim_id": "openalex:W4400222628:c4",
+      "description": "Total convex hull area A(p,t) is defined as the summation of geometric areas of all DBSCAN clusters of 2D PCA-projected BERT response embeddings.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400222628:m1",
+      "paper_id": "openalex:W4400222628",
+      "name": "Convex Hull Geometric Uncertainty Quantification",
+      "description": "A geometric UQ method that converts multiple LLM outputs per prompt into high-dimensional BERT embeddings, projects them to 2D via PCA, clusters them via DBSCAN, and calculates the total convex hull area of the clusters as the uncertainty metric.",
+      "datasets": [
+        "Categorized prompt dataset (easy, moderate, confusing)"
+      ],
+      "conditions": [
+        "Temperature settings: 0.25, 0.5, 0.75, 1.0",
+        "LLM models: Gemini-Pro, GPT-3.5-turbo, GPT-4o",
+        "BERT embedding model",
+        "2D PCA dimensionality reduction",
+        "DBSCAN clustering with epsilon=0.25*t*4.0 and min_samples=3"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400222628:l1",
+      "paper_id": "openalex:W4400222628",
+      "text": "Traditional methods for uncertainty quantification, such as probabilistic models and ensemble techniques, face challenges when applied to complex and high-dimensional LLM-generated outputs.",
+      "normalized_category": "high-dimensionality-challenges",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4400222628:l2",
+      "paper_id": "openalex:W4400222628",
+      "text": "Most existing uncertainty quantification studies in NLP have limited capabilities and applications, primarily focusing on short text generation.",
+      "normalized_category": "short-text-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4400222628:l3",
+      "paper_id": "openalex:W4400222628",
+      "text": "The evaluation in this study is limited to BERT embeddings, PCA dimensionality reduction, and DBSCAN clustering.",
+      "normalized_category": "embedding-clustering-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4400222628:f1",
+      "paper_id": "openalex:W4400222628",
+      "text": "Extend the proposed geometric approach to other types of embedding models and clustering algorithms.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4400222628:f2",
+      "paper_id": "openalex:W4400222628",
+      "text": "Integrate the convex hull uncertainty metric with other evaluation criteria, such as accuracy and coherence, to provide a comprehensive LLM performance assessment.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.643585Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

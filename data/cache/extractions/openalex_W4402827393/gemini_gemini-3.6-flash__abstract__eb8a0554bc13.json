@@ -1,0 +1,137 @@
+{
+  "paper_id": "openalex:W4402827393",
+  "claims": [
+    {
+      "id": "openalex:W4402827393:c1",
+      "paper_id": "openalex:W4402827393",
+      "text": "Easy instances for human participants are also easy for language models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c2",
+      "paper_id": "openalex:W4402827393",
+      "text": "Scaled-up and shaped-up models do not secure areas of low difficulty in which either the model does not err or human supervision can spot the errors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c3",
+      "paper_id": "openalex:W4402827393",
+      "text": "Early language models frequently avoid user questions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c4",
+      "paper_id": "openalex:W4402827393",
+      "text": "Scaled-up and shaped-up models tend to give an apparently sensible yet wrong answer much more often, including errors on difficult questions that human supervisors frequently overlook.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c5",
+      "paper_id": "openalex:W4402827393",
+      "text": "Stability to different natural phrasings of the same question is improved by scaling-up and shaping-up interventions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c6",
+      "paper_id": "openalex:W4402827393",
+      "text": "Pockets of variability in response to natural question phrasings persist across difficulty levels in scaled-up and shaped-up models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402827393:e1",
+      "claim_id": "openalex:W4402827393:c1",
+      "description": "here we show that easy instances for human participants are also easy for the models",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402827393:e2",
+      "claim_id": "openalex:W4402827393:c2",
+      "description": "scaled-up, shaped-up models do not secure areas of low difficulty in which either the model does not err or human supervision can spot the errors.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402827393:e3",
+      "claim_id": "openalex:W4402827393:c3",
+      "description": "early models often avoid user questions",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402827393:e4",
+      "claim_id": "openalex:W4402827393:c4",
+      "description": "scaled-up, shaped-up models tend to give an apparently sensible yet wrong answer much more often, including errors on difficult questions that human supervisors frequently overlook.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402827393:e5",
+      "claim_id": "openalex:W4402827393:c5",
+      "description": "stability to different natural phrasings of the same question is improved by scaling-up and shaping-up interventions",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402827393:e6",
+      "claim_id": "openalex:W4402827393:c6",
+      "description": "pockets of variability persist across difficulty levels.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402827393:m1",
+      "paper_id": "openalex:W4402827393",
+      "name": "Cross-family language model reliability evaluation",
+      "description": "Studying the relationship between difficulty concordance, task avoidance, and prompting stability across several language model families.",
+      "datasets": [],
+      "conditions": [
+        "scaling-up (increasing size, data volume, and computational resources)",
+        "shaping-up (post-filtering, fine tuning, human feedback)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402827393:l1",
+      "paper_id": "openalex:W4402827393",
+      "text": "Scaled-up and shaped-up models fail to secure areas of low difficulty where the model does not err or human supervision can detect errors.",
+      "normalized_category": "unreliable-low-difficulty-performance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402827393:l2",
+      "paper_id": "openalex:W4402827393",
+      "text": "Scaled-up and shaped-up models produce plausible but wrong answers on difficult questions that human supervisors frequently overlook.",
+      "normalized_category": "deceptive-error-generation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402827393:l3",
+      "paper_id": "openalex:W4402827393",
+      "text": "Pockets of instability to natural phrasing variations persist across difficulty levels despite scaling and shaping interventions.",
+      "normalized_category": "prompt-instability",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402827393:f1",
+      "paper_id": "openalex:W4402827393",
+      "text": "A fundamental shift in the design and development of general-purpose artificial intelligence, particularly in high-stakes areas requiring a predictable distribution of errors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.115977Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

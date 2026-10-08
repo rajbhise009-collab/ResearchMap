@@ -1,0 +1,148 @@
+{
+  "paper_id": "openalex:W4404294187",
+  "claims": [
+    {
+      "id": "openalex:W4404294187:c1",
+      "paper_id": "openalex:W4404294187",
+      "text": "More than 200 ChatGPT-related healthcare studies were published in August 2023 alone.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404294187:c2",
+      "paper_id": "openalex:W4404294187",
+      "text": "AlphaFold2 achieved first place in the CASP14 competition for protein structure prediction in 2020.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404294187:c3",
+      "paper_id": "openalex:W4404294187",
+      "text": "More than half of the surveyed healthcare foundation model literature employs fine-tuning for model adaptation.",
+      "type": "finding",
+      "confidence": 0.92,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404294187:c4",
+      "paper_id": "openalex:W4404294187",
+      "text": "More than one-third of surveyed healthcare foundation model studies directly adapt existing pre-trained general models rather than pre-training on domain-specific healthcare data from scratch.",
+      "type": "finding",
+      "confidence": 0.92,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404294187:e1",
+      "claim_id": "openalex:W4404294187:c1",
+      "description": "In August 2023 alone, more than 200 ChatGPT-related studies on healthcare were published.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404294187:e2",
+      "claim_id": "openalex:W4404294187:c2",
+      "description": "In bioinformatics, the AlphaFold2 won the first place of CASP14 in protein structure prediction in 2020.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4404294187:e3",
+      "claim_id": "openalex:W4404294187:c3",
+      "description": "More than 1/2 of works utilized the fine-tuning paradigm, because fine-tuning can bring a stable learning process.",
+      "strength": 0.92
+    },
+    {
+      "id": "openalex:W4404294187:e4",
+      "claim_id": "openalex:W4404294187:c4",
+      "description": "More than 1/3 works directly adapted existing pre-trained models to their tasks in language, and multimodal fields, excepting the bioinformatics.",
+      "strength": 0.92
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404294187:m1",
+      "paper_id": "openalex:W4404294187",
+      "name": "Systematic Survey and Multi-Dimensional Taxonomy Analysis",
+      "description": "A comprehensive literature review categorizing 200 technical papers, 114 datasets, and 16 applications across four sub-fields of healthcare foundation models published between 2018 and February 2024.",
+      "datasets": [
+        "PubMed",
+        "MIMIC-III",
+        "MIMIC-IV",
+        "TotalSegmentator",
+        "CellxGene Corpus",
+        "MIMIC-CXR"
+      ],
+      "conditions": [
+        "Literature published between 2018 and Feb 2024",
+        "Coverage across Language, Vision, Bioinformatics, and Multimodal healthcare sub-fields"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404294187:l1",
+      "paper_id": "openalex:W4404294187",
+      "text": "Due to limited paper space and the exponential growth of literature, the survey cannot review all healthcare foundation model papers and focuses strictly on 200 key technical papers from 2018 to February 2024.",
+      "normalized_category": "scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4404294187:l2",
+      "paper_id": "openalex:W4404294187",
+      "text": "Ethical and privacy restrictions surrounding sensitive patient records limit the open collection, sharing, and governance of healthcare data for foundation model pre-training.",
+      "normalized_category": "data-privacy-and-ethics",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4404294187:l3",
+      "paper_id": "openalex:W4404294187",
+      "text": "Healthcare data exhibits high heterogeneity and long-tailed distributions across rare diseases, populations, and sensor protocols, leading to domain shifts.",
+      "normalized_category": "data-heterogeneity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4404294187:l4",
+      "paper_id": "openalex:W4404294187",
+      "text": "Foundation models suffer from reliability issues, including hallucinations, unexplainable 'black-box' reasoning, and outdated clinical knowledge.",
+      "normalized_category": "model-reliability-and-safety",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4404294187:l5",
+      "paper_id": "openalex:W4404294187",
+      "text": "Pre-training and adapting large foundation models on high-dimensional medical data incur massive computational resource demands, financial costs, and carbon emissions.",
+      "normalized_category": "computational-cost",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4404294187:f1",
+      "paper_id": "openalex:W4404294187",
+      "text": "Transition from fully autonomous AI paradigms to human-AI collaborative workflows that enhance decision-making and establish clinical accountability.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404294187:f2",
+      "paper_id": "openalex:W4404294187",
+      "text": "Develop dynamic foundation models capable of continuous learning, efficient parameter adaptation, and active model editing to keep pace with evolving clinical knowledge.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404294187:f3",
+      "paper_id": "openalex:W4404294187",
+      "text": "Expand foundation models from isolated single-modality tasks to open-world, cross-domain, multi-modal, and open-task clinical environments.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404294187:f4",
+      "paper_id": "openalex:W4404294187",
+      "text": "Investigate theoretical explainability, adversarial defense mechanisms, and green low-power architectures for sustainable and trustworthy healthcare foundation models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.134355Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

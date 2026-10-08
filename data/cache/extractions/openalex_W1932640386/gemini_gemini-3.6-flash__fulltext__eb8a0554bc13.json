@@ -1,0 +1,191 @@
+{
+  "paper_id": "openalex:W1932640386",
+  "claims": [
+    {
+      "id": "openalex:W1932640386:c1",
+      "paper_id": "openalex:W1932640386",
+      "text": "A history of diabetes alone is associated with an age- and sex-adjusted hazard ratio for all-cause mortality of 1.9 compared with individuals without diabetes, stroke, or MI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c2",
+      "paper_id": "openalex:W1932640386",
+      "text": "A history of stroke alone is associated with an age- and sex-adjusted hazard ratio for all-cause mortality of 2.1 compared with reference individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c3",
+      "paper_id": "openalex:W1932640386",
+      "text": "A history of myocardial infarction alone is associated with an age- and sex-adjusted hazard ratio for all-cause mortality of 2.0 compared with reference individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c4",
+      "paper_id": "openalex:W1932640386",
+      "text": "A history of both diabetes and myocardial infarction is associated with an age- and sex-adjusted hazard ratio for all-cause mortality of 3.7 compared with reference individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c5",
+      "paper_id": "openalex:W1932640386",
+      "text": "A history of both diabetes and stroke is associated with an age- and sex-adjusted hazard ratio for all-cause mortality of 3.8 compared with reference individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c6",
+      "paper_id": "openalex:W1932640386",
+      "text": "A history of both stroke and myocardial infarction is associated with an age- and sex-adjusted hazard ratio for all-cause mortality of 3.5 compared with reference individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c7",
+      "paper_id": "openalex:W1932640386",
+      "text": "A history of diabetes, stroke, and myocardial infarction is associated with an age- and sex-adjusted hazard ratio for all-cause mortality of 6.9 compared with reference individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c8",
+      "paper_id": "openalex:W1932640386",
+      "text": "At 60 years of age, a history of any two cardiometabolic conditions (diabetes, stroke, MI) is associated with 12 years of reduced life expectancy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1932640386:c9",
+      "paper_id": "openalex:W1932640386",
+      "text": "At 60 years of age, a history of all three cardiometabolic conditions (diabetes, stroke, MI) is associated with 15 years of reduced life expectancy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1932640386:e1",
+      "claim_id": "openalex:W1932640386:c1",
+      "description": "In the Emerging Risk Factors Collaboration, HR for all-cause mortality was 1.9 (95% CI, 1.8-2.0) in participants with a history of diabetes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1932640386:e2",
+      "claim_id": "openalex:W1932640386:c2",
+      "description": "In the Emerging Risk Factors Collaboration, HR for all-cause mortality was 2.1 (95% CI, 2.0-2.2) in participants with stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1932640386:e3",
+      "claim_id": "openalex:W1932640386:c3",
+      "description": "In the Emerging Risk Factors Collaboration, HR for all-cause mortality was 2.0 (95% CI, 1.9-2.2) in participants with MI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1932640386:e4",
+      "claim_id": "openalex:W1932640386:c4",
+      "description": "In the Emerging Risk Factors Collaboration, HR for all-cause mortality was 3.7 (95% CI, 3.3-4.1) in participants with both diabetes and MI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1932640386:e5",
+      "claim_id": "openalex:W1932640386:c5",
+      "description": "In the Emerging Risk Factors Collaboration, HR for all-cause mortality was 3.8 (95% CI, 3.5-4.2) in participants with both diabetes and stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1932640386:e6",
+      "claim_id": "openalex:W1932640386:c6",
+      "description": "In the Emerging Risk Factors Collaboration, HR for all-cause mortality was 3.5 (95% CI, 3.1-4.0) in participants with both stroke and MI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1932640386:e7",
+      "claim_id": "openalex:W1932640386:c7",
+      "description": "In the Emerging Risk Factors Collaboration, HR for all-cause mortality was 6.9 (95% CI, 5.7-8.3) in participants with diabetes, stroke, and MI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1932640386:e8",
+      "claim_id": "openalex:W1932640386:c8",
+      "description": "Survival modeling applying ERFC HRs to contemporary US death rates showed that at age 60 years, a history of any 2 conditions was associated with 12 years of reduced life expectancy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1932640386:e9",
+      "claim_id": "openalex:W1932640386:c9",
+      "description": "Survival modeling applying ERFC HRs to contemporary US death rates showed that at age 60 years, a history of all 3 conditions was associated with 15 years of reduced life expectancy.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1932640386:m1",
+      "paper_id": "openalex:W1932640386",
+      "name": "Pooled individual participant meta-analysis and life expectancy survival modeling",
+      "description": "Calculated age- and sex-adjusted hazard ratios for mortality across disease groups using Cox proportional hazards models and estimated reductions in life expectancy by applying age-specific HRs to contemporary US population death rates.",
+      "datasets": [
+        "Emerging Risk Factors Collaboration (ERFC)",
+        "UK Biobank",
+        "CDC WONDER database"
+      ],
+      "conditions": [
+        "Sex-stratified and age-adjusted Cox regression",
+        "2-level mixed-effects Poisson regression model",
+        "8 mutually exclusive baseline disease categories"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1932640386:l1",
+      "paper_id": "openalex:W1932640386",
+      "text": "Few population cohorts have had sufficient power, detail, and longevity to enable comparisons of participants with multimorbidity with participants within the same cohorts without baseline conditions.",
+      "normalized_category": "sample-size-and-statistical-power",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1932640386:l2",
+      "paper_id": "openalex:W1932640386",
+      "text": "The operational definition of cardiometabolic multimorbidity did not include a history of hypertension.",
+      "normalized_category": "definition-omission",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1932640386:l3",
+      "paper_id": "openalex:W1932640386",
+      "text": "The study lacked access to time-varying exposure information to update participant multimorbidity status during follow-up.",
+      "normalized_category": "lack-of-longitudinal-exposure-updates",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1932640386:l4",
+      "paper_id": "openalex:W1932640386",
+      "text": "Only subsets of participants had complete information on certain covariates, such as medication use and exact dates of baseline diagnoses.",
+      "normalized_category": "missing-covariate-data",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1932640386:f1",
+      "paper_id": "openalex:W1932640386",
+      "text": "Elucidate explanations for sex-based differences and interactions in the association between cardiometabolic multimorbidity and mortality.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:46:45.372648Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

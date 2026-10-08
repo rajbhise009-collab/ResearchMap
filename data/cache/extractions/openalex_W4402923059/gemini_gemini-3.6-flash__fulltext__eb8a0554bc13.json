@@ -1,0 +1,179 @@
+{
+  "paper_id": "openalex:W4402923059",
+  "claims": [
+    {
+      "id": "openalex:W4402923059:c1",
+      "paper_id": "openalex:W4402923059",
+      "text": "Empirical content analysis of 243 ChatGPT distorted information samples identified 8 first-level error types in AIGC.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402923059:c2",
+      "paper_id": "openalex:W4402923059",
+      "text": "The 8 first-level error types of distorted information in AIGC are Overfitting, Logic errors, Reasoning errors, Mathematical errors, Unfounded fabrication, Factual errors, Text output errors, and Other errors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402923059:c3",
+      "paper_id": "openalex:W4402923059",
+      "text": "The classification framework subdivides the 8 first-level error types into 31 second-level error types.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402923059:c4",
+      "paper_id": "openalex:W4402923059",
+      "text": "Inter-coder consistency using Holsti's method reached 89% in the second round of pre-coding across three coders.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402923059:c5",
+      "paper_id": "openalex:W4402923059",
+      "text": "Content analysis of the collected distorted information samples yielded 284 analysis units of error points.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402923059:c6",
+      "paper_id": "openalex:W4402923059",
+      "text": "The study establishes an empirical multi-stage content analysis method for categorizing AIGC distorted information based on pre-coding and test coding phases.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402923059:e1",
+      "claim_id": "openalex:W4402923059:c1",
+      "description": "Utilizing ChatGPT as a case study, we conducted empirical content analysis on 243 instances of distorted information collected... The findings identified 8 first-level error types.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402923059:e2",
+      "claim_id": "openalex:W4402923059:c2",
+      "description": "The findings identified 8 first-level error types: 'Overfitting'; 'Logic errors'; 'Reasoning errors'; 'Mathematical errors'; 'Unfounded fabrication'; 'Factual errors'; 'Text output errors'; and 'Other errors'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402923059:e3",
+      "claim_id": "openalex:W4402923059:c3",
+      "description": "The 8 first-level error types are further subdivided into 31 second-level error types.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402923059:e4",
+      "claim_id": "openalex:W4402923059:c4",
+      "description": "Ultimately, the consistency among the three coders increased to 89%, meeting the anticipated reliability criteria and concluding the pre-coding process.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402923059:e5",
+      "claim_id": "openalex:W4402923059:c5",
+      "description": "From the ChatGPT distorted information samples collected, 284 analysis units were extracted across the pre-coding and test coding phases.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402923059:e6",
+      "claim_id": "openalex:W4402923059:c6",
+      "description": "The coding process comprised two key phases: pre-coding on 70% of samples (202 analysis units) and test coding on 30% of samples (82 analysis units) using three independent coders.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402923059:m1",
+      "paper_id": "openalex:W4402923059",
+      "name": "Empirical Content Analysis with Multi-stage Coding Scheme Refinement",
+      "description": "A seven-step quantitative content analysis methodology using individual error points as analysis units, combining literature-derived taxonomies, pre-coding on 70% of samples, and test coding on 30% of samples by three independent coders to build an AIGC error taxonomy.",
+      "datasets": [
+        "Typeform.com ChatGPT/LLM error tracker dataset"
+      ],
+      "conditions": [
+        "243 conversation samples (218 GPT-3.5, 25 GPT-4) collected between Jan 1, 2023 and Dec 31, 2023",
+        "Three independent coders with standardized training and analysis memos",
+        "Inter-coder reliability evaluated using Holsti's method"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402923059:l1",
+      "paper_id": "openalex:W4402923059",
+      "text": "The distortion samples were exclusively generated from ChatGPT, meaning the category list may lack comprehensiveness across other AIGC tools.",
+      "normalized_category": "sample-source-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402923059:l2",
+      "paper_id": "openalex:W4402923059",
+      "text": "The sample collected from Typeform.com does not include all cases of distortion, which may cause some error categories to be missing.",
+      "normalized_category": "incomplete-dataset",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402923059:l3",
+      "paper_id": "openalex:W4402923059",
+      "text": "The study solely encompasses error types specific to early versions of ChatGPT, which may become outdated as model performance improves.",
+      "normalized_category": "temporal-and-version-constraints",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402923059:l4",
+      "paper_id": "openalex:W4402923059",
+      "text": "The study exclusively focuses on text-based AIGC tools, overlooking image, audio, video, and multi-modal AIGC tools.",
+      "normalized_category": "modality-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402923059:l5",
+      "paper_id": "openalex:W4402923059",
+      "text": "The inclusion of 'Discrimination' as a distorted information category involves subjective ideological considerations and remains controversial.",
+      "normalized_category": "category-subjectivity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402923059:l6",
+      "paper_id": "openalex:W4402923059",
+      "text": "Prior studies and websites classification efforts rely solely on distorted samples without rigorous scientific frameworks or standardized criteria.",
+      "normalized_category": "lack-of-rigorous-methodology",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402923059:f1",
+      "paper_id": "openalex:W4402923059",
+      "text": "Select a broader range of samples from various other artificial intelligence generation tools and gather distortion data from multiple sources.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402923059:f2",
+      "paper_id": "openalex:W4402923059",
+      "text": "Monitor and track ongoing technological improvements in LLMs to update and refine the distorted information category list.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402923059:f3",
+      "paper_id": "openalex:W4402923059",
+      "text": "Broaden the scope of research to investigate distorted information in image, audio, video, and multi-modal AIGC tools.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402923059:f4",
+      "paper_id": "openalex:W4402923059",
+      "text": "Explore additional perspectives on whether it is reasonable to categorize 'Discrimination' under AIGC distorted information.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.002998Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

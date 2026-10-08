@@ -1,0 +1,69 @@
+{
+  "paper_id": "openalex:W4385570984",
+  "claims": [
+    {
+      "id": "openalex:W4385570984:c1",
+      "paper_id": "openalex:W4385570984",
+      "text": "Prompting a language model with three seed instruction examples produces 64,000 instruction examples.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385570984:c2",
+      "paper_id": "openalex:W4385570984",
+      "text": "Prompting a language model to rephrase instructions expands the instruction dataset to approximately 240,000 total examples of instructions, inputs, and outputs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4385570984:e1",
+      "claim_id": "openalex:W4385570984:c1",
+      "description": "We collect 64,000 examples by prompting a language model with three seed examples of instructions and eliciting a fourth.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385570984:e2",
+      "claim_id": "openalex:W4385570984:c2",
+      "description": "This set is then expanded by prompting the model to rephrase each instruction, creating a total of approximately 240,000 examples of instructions, inputs, and outputs.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4385570984:m1",
+      "paper_id": "openalex:W4385570984",
+      "name": "Unnatural Instructions Generation Pipeline",
+      "description": "A dataset generation pipeline that prompts a language model with seed instructions to generate and subsequently rephrase instruction-input-output examples.",
+      "datasets": [
+        "Unnatural Instructions"
+      ],
+      "conditions": [
+        "3 seed examples per prompt",
+        "model-based rephrasing expansion"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4385570984:l1",
+      "paper_id": "openalex:W4385570984",
+      "text": "Instruction tuning approaches rely on vast amounts of human supervision in the form of crowdsourced datasets or user interactions.",
+      "normalized_category": "human-labor-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4385570984:l2",
+      "paper_id": "openalex:W4385570984",
+      "text": "The Unnatural Instructions dataset contains a fair amount of noise.",
+      "normalized_category": "dataset-noise",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.117462Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

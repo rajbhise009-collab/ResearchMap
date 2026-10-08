@@ -1,0 +1,54 @@
+{
+  "paper_id": "openalex:W4410202262",
+  "claims": [
+    {
+      "id": "openalex:W4410202262:c1",
+      "paper_id": "openalex:W4410202262",
+      "text": "Prompt engineering is the process of structuring inputs to large language models.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410202262:c2",
+      "paper_id": "openalex:W4410202262",
+      "text": "Self-consistency, chain of thought, and generated knowledge are advanced prompt engineering methodologies.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410202262:c3",
+      "paper_id": "openalex:W4410202262",
+      "text": "Prompt engineering strategies can defend against adversarial attacks that exploit vulnerabilities in large language models.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410202262:e1",
+      "claim_id": "openalex:W4410202262:c1",
+      "description": "The abstract defines prompt engineering as the process of structuring inputs to maximize the utility and accuracy of language models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410202262:e2",
+      "claim_id": "openalex:W4410202262:c2",
+      "description": "The authors list self-consistency, chain of thought, and generated knowledge as advanced prompt engineering methodologies.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410202262:e3",
+      "claim_id": "openalex:W4410202262:c3",
+      "description": "The paper highlights the role of prompt engineering in AI security, specifically for defending against adversarial attacks on LLMs.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.113410Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

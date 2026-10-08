@@ -1,0 +1,63 @@
+{
+  "paper_id": "openalex:W4309674289",
+  "claims": [
+    {
+      "id": "openalex:W4309674289:c1",
+      "paper_id": "openalex:W4309674289",
+      "text": "Deep learning-based generation models are prone to hallucinating unintended text.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4309674289:c2",
+      "paper_id": "openalex:W4309674289",
+      "text": "Hallucinated text degrades system performance in real-world Natural Language Generation scenarios.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4309674289:e1",
+      "claim_id": "openalex:W4309674289:c1",
+      "description": "The authors state that deep learning based generation is prone to hallucinate unintended text.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4309674289:e2",
+      "claim_id": "openalex:W4309674289:c2",
+      "description": "The authors state that unintended hallucinations degrade system performance and fail to meet user expectations.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4309674289:m1",
+      "paper_id": "openalex:W4309674289",
+      "name": "Literature Survey",
+      "description": "A comprehensive survey reviewing research progress, metrics, mitigation methods, and task-specific research on hallucinations in Natural Language Generation.",
+      "datasets": [],
+      "conditions": [
+        "abstractive summarization",
+        "dialogue generation",
+        "generative question answering",
+        "data-to-text generation",
+        "machine translation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4309674289:l1",
+      "paper_id": "openalex:W4309674289",
+      "text": "Studies on measuring and mitigating hallucinated texts in NLG had never been reviewed in a comprehensive manner prior to this survey.",
+      "normalized_category": "lack-of-comprehensive-review",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.081392Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

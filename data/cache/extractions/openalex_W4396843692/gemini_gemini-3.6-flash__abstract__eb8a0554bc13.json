@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W4396843692",
+  "claims": [
+    {
+      "id": "openalex:W4396843692:c1",
+      "paper_id": "openalex:W4396843692",
+      "text": "Sequential recommendation systems enable users to discover relevant items based on their past interactions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396843692:c2",
+      "paper_id": "openalex:W4396843692",
+      "text": "Directly extracting representations from an LLM based on textual features does not guarantee semantic information preservation when fed into a sequential model.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396843692:c3",
+      "paper_id": "openalex:W4396843692",
+      "text": "Concatenating textual descriptions of item sequences into a long text for LLM recommendation results in lengthy token sequences.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396843692:c4",
+      "paper_id": "openalex:W4396843692",
+      "text": "Feeding long item sequence text representations into an LLM diminishes practical efficiency.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4396843692:e1",
+      "claim_id": "openalex:W4396843692:c1",
+      "description": "Sequential recommendation systems (SRS) are crucial in various applications as they enable users to discover relevant items based on their past interactions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4396843692:e2",
+      "claim_id": "openalex:W4396843692:c2",
+      "description": "Specifically, directly extracting representations from an LLM based on items' textual features and feeding them into a sequential model hold no guarantee that the semantic information of texts could be preserved in these representations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4396843692:e3",
+      "claim_id": "openalex:W4396843692:c3",
+      "description": "Additionally, concatenating textual descriptions of all items in an item sequence into a long text and feeding it into an LLM for recommendation results in lengthy token sequences...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4396843692:e4",
+      "claim_id": "openalex:W4396843692:c4",
+      "description": "...which largely diminishes the practical efficiency.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W4396843692:l1",
+      "paper_id": "openalex:W4396843692",
+      "text": "Directly extracting representations from an LLM based on items' textual features and feeding them into a sequential model holds no guarantee that the semantic information of texts is preserved.",
+      "normalized_category": "semantic-preservation-loss",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4396843692:l2",
+      "paper_id": "openalex:W4396843692",
+      "text": "Concatenating textual descriptions of all items in an item sequence into a long text for LLM recommendation yields lengthy token sequences that diminish practical efficiency.",
+      "normalized_category": "computational-efficiency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.119474Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

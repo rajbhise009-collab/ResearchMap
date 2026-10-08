@@ -1,0 +1,142 @@
+{
+  "paper_id": "openalex:W2955331731",
+  "claims": [
+    {
+      "id": "openalex:W2955331731:c1",
+      "paper_id": "openalex:W2955331731",
+      "text": "Increased intake of whole grains is inversely associated with type 2 diabetes incidence.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2955331731:c2",
+      "paper_id": "openalex:W2955331731",
+      "text": "Increased intake of cereal fibre is inversely associated with type 2 diabetes incidence.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2955331731:c3",
+      "paper_id": "openalex:W2955331731",
+      "text": "Moderate intake of total alcohol (12-24 g/day) is inversely associated with type 2 diabetes incidence compared to no consumption.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2955331731:c4",
+      "paper_id": "openalex:W2955331731",
+      "text": "Higher intake of red meat is associated with increased incidence of type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2955331731:c5",
+      "paper_id": "openalex:W2955331731",
+      "text": "Higher intake of processed meat is associated with increased incidence of type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2955331731:c6",
+      "paper_id": "openalex:W2955331731",
+      "text": "Higher intake of bacon is associated with increased incidence of type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2955331731:c7",
+      "paper_id": "openalex:W2955331731",
+      "text": "Higher intake of sugar sweetened beverages is associated with increased incidence of type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2955331731:e1",
+      "claim_id": "openalex:W2955331731:c1",
+      "description": "For an increment of 30 g/day, adjusted summary hazard ratio was 0.87 (95% CI 0.82 to 0.93) with high quality of evidence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2955331731:e2",
+      "claim_id": "openalex:W2955331731:c2",
+      "description": "For an increment of 10 g/day, adjusted summary hazard ratio was 0.75 (95% CI 0.65 to 0.86) with high quality of evidence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2955331731:e3",
+      "claim_id": "openalex:W2955331731:c3",
+      "description": "For an intake of 12-24 g/day v no consumption, adjusted summary hazard ratio was 0.75 (95% CI 0.67 to 0.83) with high quality of evidence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2955331731:e4",
+      "claim_id": "openalex:W2955331731:c4",
+      "description": "For an increment of 100 g/day, adjusted summary hazard ratio was 1.17 (95% CI 1.08 to 1.26) with high quality of evidence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2955331731:e5",
+      "claim_id": "openalex:W2955331731:c5",
+      "description": "For an increment of 50 g/day, adjusted summary hazard ratio was 1.37 (95% CI 1.22 to 1.54) with high quality of evidence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2955331731:e6",
+      "claim_id": "openalex:W2955331731:c6",
+      "description": "Per two slices/day, adjusted summary hazard ratio was 2.07 (95% CI 1.40 to 3.05) with high quality of evidence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2955331731:e7",
+      "claim_id": "openalex:W2955331731:c7",
+      "description": "For an increase of one serving/day, adjusted summary hazard ratio was 1.26 (95% CI 1.11 to 1.43) with high quality of evidence.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2955331731:m1",
+      "paper_id": "openalex:W2955331731",
+      "name": "Umbrella review of systematic reviews with meta-analyses",
+      "description": "An umbrella review evaluating the strength and validity of summary risk estimates regarding associations between dietary factors and type 2 diabetes incidence.",
+      "datasets": [
+        "PubMed",
+        "Web of Science",
+        "Embase"
+      ],
+      "conditions": [
+        "Searched up to August 2018",
+        "53 publications included",
+        "153 adjusted summary hazard ratios evaluated"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2955331731:l1",
+      "paper_id": "openalex:W2955331731",
+      "text": "Few of the associations between dietary factors and type 2 diabetes incidence were graded as high quality of evidence.",
+      "normalized_category": "low-evidence-quality",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2955331731:f1",
+      "paper_id": "openalex:W2955331731",
+      "text": "More well conducted research, with more detailed assessment of diet, is needed in type 2 diabetes prevention.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:19:53.138639Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

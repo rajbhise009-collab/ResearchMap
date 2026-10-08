@@ -1,0 +1,173 @@
+{
+  "paper_id": "openalex:W4393065402",
+  "claims": [
+    {
+      "id": "openalex:W4393065402:c1",
+      "paper_id": "openalex:W4393065402",
+      "text": "The architecture of LLM-based autonomous agents can be unified into a framework consisting of a profiling module, a memory module, a planning module, and an action module.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c2",
+      "paper_id": "openalex:W4393065402",
+      "text": "Agent profile generation methods in existing literature are categorized into handcrafting, LLM-generation, and dataset alignment strategies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c3",
+      "paper_id": "openalex:W4393065402",
+      "text": "Memory structures in LLM-based autonomous agents are categorized into unified short-term memory systems and hybrid short-term and long-term memory systems.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c4",
+      "paper_id": "openalex:W4393065402",
+      "text": "Planning strategies for LLM-based agents are categorized into planning without feedback and planning with feedback from environments, humans, or internal models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c5",
+      "paper_id": "openalex:W4393065402",
+      "text": "Strategies for agent capability acquisition are categorized into methods with fine-tuning and methods without fine-tuning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c6",
+      "paper_id": "openalex:W4393065402",
+      "text": "Applications of LLM-based autonomous agents span social science, natural science, and engineering fields.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c7",
+      "paper_id": "openalex:W4393065402",
+      "text": "Evaluation strategies for LLM-based autonomous agents are categorized into subjective human-centric evaluations and objective quantitative metrics.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4393065402:e1",
+      "claim_id": "openalex:W4393065402:c1",
+      "description": "The authors propose a unified agent architecture framework composed of a profiling module, a memory module, a planning module, and an action module.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393065402:e2",
+      "claim_id": "openalex:W4393065402:c2",
+      "description": "Existing literature commonly employs three profile creation strategies: handcrafting method, LLM-generation method, and dataset alignment method.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393065402:e3",
+      "claim_id": "openalex:W4393065402:c3",
+      "description": "Memory structures are divided into unified memory (simulating short-term memory via in-context learning) and hybrid memory (explicitly modeling short-term and long-term memory).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393065402:e4",
+      "claim_id": "openalex:W4393065402:c4",
+      "description": "Existing planning modules are organized into planning without feedback and planning with feedback, where feedback is obtained from environments, humans, or models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393065402:e5",
+      "claim_id": "openalex:W4393065402:c5",
+      "description": "Agent capability acquisition strategies are categorized into capability acquisition with fine-tuning and capability acquisition without fine-tuning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393065402:e6",
+      "claim_id": "openalex:W4393065402:c6",
+      "description": "Applications are systematically reviewed across three distinct areas: social science, natural science, and engineering.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393065402:e7",
+      "claim_id": "openalex:W4393065402:c7",
+      "description": "Evaluation methodologies are reviewed focusing on subjective methods (human annotation, Turing test) and objective methods (metrics, protocols, benchmarks).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4393065402:m1",
+      "paper_id": "openalex:W4393065402",
+      "name": "Systematic Literature Survey and Taxonomy Analysis",
+      "description": "A holistic taxonomy and unified framework synthesizing existing research on the construction, application, and evaluation of large language model based autonomous agents.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4393065402:l1",
+      "paper_id": "openalex:W4393065402",
+      "text": "Previous non-LLM autonomous agent research relied on simple, heuristic policy functions learned in isolated environments, diverging from human learning processes.",
+      "normalized_category": "environment-isolation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4393065402:l2",
+      "paper_id": "openalex:W4393065402",
+      "text": "Existing LLM-based autonomous agents face prompt instability across interconnected modules where minor changes alter overall outcomes.",
+      "normalized_category": "prompt-instability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4393065402:l3",
+      "paper_id": "openalex:W4393065402",
+      "text": "LLM-based autonomous agents suffer from slow action execution efficiency due to the autoregressive architecture of LLMs requiring multiple inference steps per action.",
+      "normalized_category": "inference-latency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4393065402:l4",
+      "paper_id": "openalex:W4393065402",
+      "text": "LLM agents are subject to hallucination during task execution and code generation, leading to false information or unexecutable actions.",
+      "normalized_category": "hallucination",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4393065402:f1",
+      "paper_id": "openalex:W4393065402",
+      "text": "Enhancing role-playing capability by fine-tuning models on uncommon roles and designing architectures that model human cognitive psychology.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4393065402:f2",
+      "paper_id": "openalex:W4393065402",
+      "text": "Developing generalized human alignment mechanisms that permit agents to simulate diverse human values and negative traits for realistic social simulation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4393065402:f3",
+      "paper_id": "openalex:W4393065402",
+      "text": "Constructing unified and resilient prompt frameworks that maintain consistency across different LLMs and module components.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4393065402:f4",
+      "paper_id": "openalex:W4393065402",
+      "text": "Developing methods to constrain the pre-existing web knowledge of LLMs to accurately mirror human user knowledge boundaries in simulations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.991317Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

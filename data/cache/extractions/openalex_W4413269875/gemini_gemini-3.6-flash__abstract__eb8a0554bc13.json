@@ -1,0 +1,64 @@
+{
+  "paper_id": "openalex:W4413269875",
+  "claims": [
+    {
+      "id": "openalex:W4413269875:c1",
+      "paper_id": "openalex:W4413269875",
+      "text": "MultiLLM-Chatbot is a RAG-based benchmarking framework designed to evaluate LLMs across five specific domains: Agriculture, Biology, Economics, Internet of Things, and Medical.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413269875:c2",
+      "paper_id": "openalex:W4413269875",
+      "text": "LLAMA-3.3-70B is the overall best-performing model among the five tested LLMs across all five evaluated domains.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413269875:e1",
+      "claim_id": "openalex:W4413269875:c2",
+      "description": "Experimental results show LLAMA-3.3-70B as the overall best-performing model, leading in all 5 domains.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413269875:m1",
+      "paper_id": "openalex:W4413269875",
+      "name": "MultiLLM-Chatbot Evaluation Framework",
+      "description": "A modular RAG-based benchmarking framework evaluating LLM responses across four dimensions using document retrieval and automated scoring.",
+      "datasets": [
+        "50 peer-reviewed research papers"
+      ],
+      "conditions": [
+        "Evaluated 5 models: GPT-4-Turbo, CLAUDE-3.7-Sonnet, LLAMA-3.3-70B, DeepSeek-R1-Zero, Gemini-2.0-Flash",
+        "250 standardized queries generating 1,250 model responses",
+        "4 metric dimensions: cosine similarity, VADER sentiment analysis, TF-IDF scoring, and NER-based hallucination detection"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413269875:l1",
+      "paper_id": "openalex:W4413269875",
+      "text": "Challenges such as semantic similarity, bias/sentiment, and hallucinations persist in domain-specific applications.",
+      "normalized_category": "domain-specific-hallucinations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4413269875:l2",
+      "paper_id": "openalex:W4413269875",
+      "text": "Current LLM benchmarking procedures contain gaps in comprehensive cross-domain and multi-metric evaluation.",
+      "normalized_category": "benchmarking-gaps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T10:19:16.168841Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

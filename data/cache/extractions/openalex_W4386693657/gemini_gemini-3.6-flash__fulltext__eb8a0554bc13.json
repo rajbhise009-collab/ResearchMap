@@ -1,0 +1,127 @@
+{
+  "paper_id": "openalex:W4386693657",
+  "claims": [
+    {
+      "id": "openalex:W4386693657:c1",
+      "paper_id": "openalex:W4386693657",
+      "text": "Generative AI models use probabilistic machine learning architectures to infer data distributions and synthesize new data samples.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386693657:c2",
+      "paper_id": "openalex:W4386693657",
+      "text": "Large generative AI foundation models exhibit emergence, where capabilities are implicitly induced rather than explicitly constructed.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386693657:c3",
+      "paper_id": "openalex:W4386693657",
+      "text": "Large generative AI foundation models exhibit homogenization, enabling a single consolidated model to power diverse downstream systems.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386693657:c4",
+      "paper_id": "openalex:W4386693657",
+      "text": "Generative AI models are subject to hallucinations, generating syntactically or semantically plausible content that lacks factual backing.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386693657:c5",
+      "paper_id": "openalex:W4386693657",
+      "text": "Training large-scale generative AI models consumes substantial electricity, producing a high carbon footprint.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386693657:e1",
+      "claim_id": "openalex:W4386693657:c2",
+      "description": "GPT models can create calendar entries in the .ical format even though such models were not explicitly trained to do so.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4386693657:e2",
+      "claim_id": "openalex:W4386693657:c3",
+      "description": "Copilot can generate source code across a wide range of programming languages using a single consolidated model.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4386693657:e3",
+      "claim_id": "openalex:W4386693657:c5",
+      "description": "Training the GPT-3 generative AI model produced an estimated equivalent of 552 metric tons of CO2.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386693657:m1",
+      "paper_id": "openalex:W4386693657",
+      "name": "Socio-Technical Conceptualization Framework for Generative AI",
+      "description": "A three-tier conceptualization mapping generative AI across model-, system-, and application-level perspectives combined with socio-technical dimensions for Information Systems research.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386693657:l1",
+      "paper_id": "openalex:W4386693657",
+      "text": "The data modalities depicted in the article's conceptual framework are neither complete nor entirely distinctive.",
+      "normalized_category": "incomplete-framework-taxonomy",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386693657:l2",
+      "paper_id": "openalex:W4386693657",
+      "text": "Generative AI models rely on probabilistic algorithms that produce incorrect or non-verifiable outputs known as hallucinations.",
+      "normalized_category": "model-hallucination",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386693657:l3",
+      "paper_id": "openalex:W4386693657",
+      "text": "Training generative AI models on biased data amplifies societal stereotypes, toxic language, and demographic biases.",
+      "normalized_category": "algorithmic-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386693657:l4",
+      "paper_id": "openalex:W4386693657",
+      "text": "Large neural network architectures in generative AI consume large amounts of electricity during training and operation, causing negative environmental carbon footprint impacts.",
+      "normalized_category": "environmental-impact",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4386693657:f1",
+      "paper_id": "openalex:W4386693657",
+      "text": "Developing algorithmic and user-centered verification mechanisms to detect and mitigate hallucinations in generative AI outputs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4386693657:f2",
+      "paper_id": "openalex:W4386693657",
+      "text": "Conducting empirical field experiments to quantify the productivity, economic welfare, and labor market impacts of generative AI.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4386693657:f3",
+      "paper_id": "openalex:W4386693657",
+      "text": "Establishing socio-technical design principles for developing trustworthy, explainable, and energy-efficient generative AI systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.992065Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

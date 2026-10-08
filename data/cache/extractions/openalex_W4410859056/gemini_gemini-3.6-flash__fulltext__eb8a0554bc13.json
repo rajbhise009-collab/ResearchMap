@@ -1,0 +1,138 @@
+{
+  "paper_id": "openalex:W4410859056",
+  "claims": [
+    {
+      "id": "openalex:W4410859056:c1",
+      "paper_id": "openalex:W4410859056",
+      "text": "GPT-4 achieves the highest average response consistency score across character, word, and sentence-level perturbations compared to other foundation models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410859056:c2",
+      "paper_id": "openalex:W4410859056",
+      "text": "GPT-4-Turbo demonstrates a lower average consistency score under query perturbations than GPT-4.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410859056:c3",
+      "paper_id": "openalex:W4410859056",
+      "text": "Gemini-1.5-Flash achieves higher consistency scores under perturbation than Gemini-1.5-Pro.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410859056:c4",
+      "paper_id": "openalex:W4410859056",
+      "text": "Proprietary language models outperform open-source models (Gemma2-9B and Llama3-8B) on average response consistency under perturbation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410859056:c5",
+      "paper_id": "openalex:W4410859056",
+      "text": "Evaluating models using multi-level query perturbations alters relative robustness rankings compared to semantically similar query testing used in SelfCheckGPT.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410859056:c6",
+      "paper_id": "openalex:W4410859056",
+      "text": "GPT-4 under sentence-level perturbations achieves higher average consistency than other evaluated models under character-level perturbations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410859056:e1",
+      "claim_id": "openalex:W4410859056:c1",
+      "description": "Experiments aggregated across English datasets in LongBench show GPT-4 attaining top consistency scores across character, word, and sentence perturbations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410859056:e2",
+      "claim_id": "openalex:W4410859056:c2",
+      "description": "Empirical measurements show GPT-4-Turbo obtaining the lowest average consistency score among proprietary models evaluated.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410859056:e3",
+      "claim_id": "openalex:W4410859056:c3",
+      "description": "Performance plots demonstrate Gemini-1.5-Flash exceeding Gemini-1.5-Pro in consistency across evaluated perturbation types.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4410859056:e4",
+      "claim_id": "openalex:W4410859056:c4",
+      "description": "Gemma2-9B and Llama3-8B scored lower overall consistency scores than all tested proprietary models across all perturbation levels.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410859056:e5",
+      "claim_id": "openalex:W4410859056:c5",
+      "description": "GPT-3.5-Turbo placed second under SelfCheckGPT evaluation but dropped to fourth under the proposed perturbation framework, moving behind Gemini-1.5 models.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410859056:e6",
+      "claim_id": "openalex:W4410859056:c6",
+      "description": "Direct comparison shows GPT-4's average consistency score under sentence-level noise exceeds the character-level noise scores of all other evaluated models.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410859056:m1",
+      "paper_id": "openalex:W4410859056",
+      "name": "Perturbation-based hallucination evaluation framework",
+      "description": "Measures post-deployment hallucination by applying character, word, and sentence-level perturbations to user queries and computing pairwise consistency scores between original and perturbed responses.",
+      "datasets": [
+        "LongBench (TriviaQA)",
+        "LongBench (WikiQA)",
+        "LongBench (HotpotQA)",
+        "LongBench (Qasper)",
+        "LongBench (SAMSum)",
+        "LongBench (TREC)"
+      ],
+      "conditions": [
+        "Character-level perturbation",
+        "Word-level perturbation",
+        "Sentence-level perturbation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410859056:l1",
+      "paper_id": "openalex:W4410859056",
+      "text": "Detecting model hallucinations post-deployment is challenging due to the absence of context or reference standard responses.",
+      "normalized_category": "absence-of-ground-truth",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410859056:l2",
+      "paper_id": "openalex:W4410859056",
+      "text": "Existing RAG evaluation metrics depend on available context and cannot be directly applied to non-retrieval post-deployment settings.",
+      "normalized_category": "context-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410859056:l3",
+      "paper_id": "openalex:W4410859056",
+      "text": "Experimental evaluation was limited exclusively to English language tasks from the benchmark dataset.",
+      "normalized_category": "language-scope-limitation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:58:01.983602Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

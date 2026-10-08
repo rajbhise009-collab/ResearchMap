@@ -1,0 +1,138 @@
+{
+  "paper_id": "openalex:W2892038960",
+  "claims": [
+    {
+      "id": "openalex:W2892038960:c1",
+      "paper_id": "openalex:W2892038960",
+      "text": "FCVAE-2 achieves lower PEHE (2.78 ± 0.06) when estimating the causal effect A -> Y on the IHDP dataset (no features removed) compared to CVAE-A (3.04 ± 0.06) and CFMLP (3.28 ± 0.07).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2892038960:c2",
+      "paper_id": "openalex:W2892038960",
+      "text": "FCVAE-2 achieves lower policy regret (0.19 ± 0.01) on IHDP data with no features removed compared to CVAE-A (0.21 ± 0.01) and CFMLP (0.37 ± 0.02).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2892038960:c3",
+      "paper_id": "openalex:W2892038960",
+      "text": "FCVAE-2 achieves a lower treatment policy accuracy gap (0.030 ± 0.001 with 0 features removed, 0.027 ± 0.001 with 1 feature removed) than CVAE-A (0.033 ± 0.001, 0.028 ± 0.001) and CFMLP (0.042 ± 0.002, 0.033 ± 0.002).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2892038960:c4",
+      "paper_id": "openalex:W2892038960",
+      "text": "Explicitly modeling the sensitive attribute as a confounder allows the model to learn interventional distributions with respect to the sensitive attribute.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2892038960:e1",
+      "claim_id": "openalex:W2892038960:c1",
+      "description": "Table 1 shows A -> Y PEHE for FCVAE-2 as 2.78 ± 0.06 compared to 3.04 ± 0.06 for CVAE-A and 3.28 ± 0.07 for CFMLP.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2892038960:e2",
+      "claim_id": "openalex:W2892038960:c2",
+      "description": "Table 5 shows Regret for FCVAE-2 as 0.19 ± 0.01 on 0 features removed compared to 0.21 ± 0.01 for CVAE-A and 0.37 ± 0.02 for CFMLP.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2892038960:e3",
+      "claim_id": "openalex:W2892038960:c3",
+      "description": "Table 6 shows Accuracy Gap for FCVAE-2 as 0.030 ± 0.001 (0 removed) and 0.027 ± 0.001 (1 removed).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2892038960:e4",
+      "claim_id": "openalex:W2892038960:c4",
+      "description": "Section 6.3.1 notes: 'By making explicit the role of A as confounder, we hypothesize that FCVAE can learn the interventional distributions with respect to A... rather than the conditional distributions of CVAE.'",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2892038960:m1",
+      "paper_id": "openalex:W2892038960",
+      "name": "Fair Causal Variational Autoencoder (FCVAE)",
+      "description": "A deep latent-variable model combining structural causal modeling with amortized variational inference to model unobserved confounders and explicitly treat sensitive attributes as confounders affecting treatment and outcome.",
+      "datasets": [
+        "IHDP (Infant Health and Development Program)"
+      ],
+      "conditions": [
+        "semi-synthetic data generation",
+        "TARNet parameterization",
+        "variational inference with ELBO optimization",
+        "evaluations with 0, 1, or 2 informative proxies removed"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2892038960:l1",
+      "paper_id": "openalex:W2892038960",
+      "text": "Supervised classification paradigms applied to decision-making ignore counterfactual outcomes and replicate past dataset biases.",
+      "normalized_category": "supervised-classification-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2892038960:l2",
+      "paper_id": "openalex:W2892038960",
+      "text": "If there are unobserved confounding factors that cannot be inferred from the observed proxies, the joint distribution cannot be learned and causal effects become unidentifiable.",
+      "normalized_category": "unobserved-confounding-unidentifiability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2892038960:l3",
+      "paper_id": "openalex:W2892038960",
+      "text": "The framework assumes binary sensitive attributes and binary treatments, which may not represent optimal modeling choices in all practical applications.",
+      "normalized_category": "binary-variable-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2892038960:l4",
+      "paper_id": "openalex:W2892038960",
+      "text": "Testing for unconfoundedness is difficult and usually requires making further assumptions.",
+      "normalized_category": "unconfoundedness-verification-difficulty",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2892038960:f1",
+      "paper_id": "openalex:W2892038960",
+      "text": "Implementing counterfactual fairness policies by assigning treatments based on inferred outcome distributions under a fixed counterfactual value of sensitive attribute A.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2892038960:f2",
+      "paper_id": "openalex:W2892038960",
+      "text": "Decomposing A -> Y into direct and indirect effects via mediation analysis of T to support path-specific fairness.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2892038960:f3",
+      "paper_id": "openalex:W2892038960",
+      "text": "Utilizing causal effect estimations between A, T, and Y to establish bias auditing techniques for historical datasets.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2892038960:f4",
+      "paper_id": "openalex:W2892038960",
+      "text": "Applying counterfactual predictions of A and T for fair missing data imputation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.133625Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

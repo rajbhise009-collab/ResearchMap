@@ -1,0 +1,70 @@
+{
+  "paper_id": "openalex:W3159960173",
+  "claims": [
+    {
+      "id": "openalex:W3159960173:c1",
+      "paper_id": "openalex:W3159960173",
+      "text": "There is a scarcity of suitable educational materials on aspects of algorithmic fairness.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3159960173:c2",
+      "paper_id": "openalex:W3159960173",
+      "text": "Educational materials on FATE can be delivered through graduate seminar courses, summer schools, embedded software engineering lectures, and high school teacher workshops.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3159960173:e1",
+      "claim_id": "openalex:W3159960173:c1",
+      "description": "The authors surveyed existing materials and past experiences in FATE education, noting the scarcity of suitable material on fairness in particular.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3159960173:e2",
+      "claim_id": "openalex:W3159960173:c2",
+      "description": "The authors reported on initial steps taken within an academic graduate seminar course, a graduate summer school, an embedded lecture in a software engineering course, and a workshop for high school teachers.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3159960173:m1",
+      "paper_id": "openalex:W3159960173",
+      "name": "Literature Survey and Case Study Illustration",
+      "description": "Surveyed existing FATE educational materials and used a college admission platform as an illustrative example.",
+      "datasets": [],
+      "conditions": [
+        "college admission platform case study",
+        "academic graduate seminar course",
+        "graduate summer school",
+        "embedded software engineering lecture",
+        "high school teacher workshop"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3159960173:l1",
+      "paper_id": "openalex:W3159960173",
+      "text": "Existing educational materials specifically covering aspects of algorithmic fairness are scarce.",
+      "normalized_category": "resource-scarcity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3159960173:f1",
+      "paper_id": "openalex:W3159960173",
+      "text": "Develop further educational resources and methodologies for educating software and AI stakeholders about algorithmic FATE.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:55:46.761487Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

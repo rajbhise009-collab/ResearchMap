@@ -1,0 +1,138 @@
+{
+  "paper_id": "openalex:W4406603696",
+  "claims": [
+    {
+      "id": "openalex:W4406603696:c1",
+      "paper_id": "openalex:W4406603696",
+      "text": "Multiple Choice Question (MCQ) tests are among the most used methods for evaluating large language models (LLMs).",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c2",
+      "paper_id": "openalex:W4406603696",
+      "text": "Evaluations often consider the model's confidence through the probability assigned to its response.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c3",
+      "paper_id": "openalex:W4406603696",
+      "text": "LLM confidence is influenced by the answering approach when the model answers directly or reasons before responding.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c4",
+      "paper_id": "openalex:W4406603696",
+      "text": "Models are systematically more confident when providing reasoning before answering.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c5",
+      "paper_id": "openalex:W4406603696",
+      "text": "The confidence increase is larger when the selected answer is incorrect than when it is correct.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c6",
+      "paper_id": "openalex:W4406603696",
+      "text": "The reasoning process alters token probabilities, as the final answer prediction depends jointly on the question and the model's self-generated reasoning, leading to inflated confidence estimates.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c7",
+      "paper_id": "openalex:W4406603696",
+      "text": "Chain-of-Thought (CoT) prompting degrades calibration by increasing the proportion of high-confidence wrong answers.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c8",
+      "paper_id": "openalex:W4406603696",
+      "text": "In MCQ evaluation settings with CoT prompting, LLM-estimated probabilities should be used with caution as a basis for evaluation and metacognitive mechanisms.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406603696:e1",
+      "claim_id": "openalex:W4406603696:c1",
+      "description": "Multiple Choice Question (MCQ) tests are among the most used methods for evaluating large language models (LLMs).",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4406603696:e2",
+      "claim_id": "openalex:W4406603696:c2",
+      "description": "Besides checking the correctness of the selected answer, evaluations often consider the model's confidence through the probability assigned to its response.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4406603696:e3",
+      "claim_id": "openalex:W4406603696:c3",
+      "description": "In this work, we investigate how LLM confidence is influenced by the answering approach when the model answers directly or reasons before responding.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4406603696:e4",
+      "claim_id": "openalex:W4406603696:c4",
+      "description": "Experiments on a general knowledge benchmark, covering 57 subjects and seven LLMs, show that models are systematically more confident when providing reasoning before answering",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4406603696:e5",
+      "claim_id": "openalex:W4406603696:c5",
+      "description": "and that this confidence increase is larger when the selected answer is incorrect than when it is correct.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4406603696:e6",
+      "claim_id": "openalex:W4406603696:c6",
+      "description": "We hypothesize that the reasoning process alters token probabilities, as the final answer prediction depends jointly on the question and the model's self-generated reasoning, leading to inflated confidence estimates.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4406603696:e7",
+      "claim_id": "openalex:W4406603696:c7",
+      "description": "Using standard calibration metrics such as Expected Calibration Error and Brier score, we further show that Chain-of-Thought (CoT) prompting degrades calibration by increasing the proportion of high-confidence wrong answers.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4406603696:e8",
+      "claim_id": "openalex:W4406603696:c8",
+      "description": "These findings indicate that, in MCQ evaluation settings with CoT prompting, LLM-estimated probabilities should be used with caution as a basis for evaluation and metacognitive mechanisms.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406603696:m1",
+      "paper_id": "openalex:W4406603696",
+      "name": "Chain-of-Thought (CoT) prompting",
+      "description": "Answering approach where the model reasons before responding.",
+      "datasets": [
+        "general knowledge benchmark"
+      ],
+      "conditions": [
+        "answering directly",
+        "reasoning before responding"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-24T06:23:59.525112Z",
+  "extractor": "gemini:gemini-2.5-flash-lite"
+}

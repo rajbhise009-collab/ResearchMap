@@ -1,0 +1,251 @@
+{
+  "corpus_name": "llm-calibration-113",
+  "corpus_size": 113,
+  "Ns": [
+    40,
+    60,
+    80,
+    100,
+    113
+  ],
+  "draws_per_N": 5,
+  "curves": [
+    {
+      "scorer": "persistent_limitations",
+      "points": [
+        {
+          "N": 40,
+          "mean": 0.2,
+          "sd": 0.4,
+          "draws": 5
+        },
+        {
+          "N": 60,
+          "mean": 0.6,
+          "sd": 0.4899,
+          "draws": 5
+        },
+        {
+          "N": 80,
+          "mean": 0.6,
+          "sd": 0.4899,
+          "draws": 5
+        },
+        {
+          "N": 100,
+          "mean": 1,
+          "sd": 0.0,
+          "draws": 5
+        },
+        {
+          "N": 113,
+          "mean": 1,
+          "sd": 0.0,
+          "draws": 1
+        }
+      ],
+      "slope_p": 1.497,
+      "fit_confidence": "high",
+      "caveats": []
+    },
+    {
+      "scorer": "contra_confirmed",
+      "points": [
+        {
+          "N": 40,
+          "mean": 0,
+          "sd": 0.0,
+          "draws": 5
+        },
+        {
+          "N": 60,
+          "mean": 0,
+          "sd": 0.0,
+          "draws": 5
+        },
+        {
+          "N": 80,
+          "mean": 0,
+          "sd": 0.0,
+          "draws": 5
+        },
+        {
+          "N": 100,
+          "mean": 0,
+          "sd": 0.0,
+          "draws": 5
+        },
+        {
+          "N": 113,
+          "mean": 0,
+          "sd": 0.0,
+          "draws": 1
+        }
+      ],
+      "slope_p": null,
+      "fit_confidence": "unmeasurable",
+      "caveats": [
+        "all_zeros:bound_only \u2014 0 confirmed across 256 candidate pairs at N=113; per-candidate rate bounded ~<0.39%, not proven absent"
+      ]
+    },
+    {
+      "scorer": "contra_candidates",
+      "points": [
+        {
+          "N": 40,
+          "mean": 36,
+          "sd": 10.8995,
+          "draws": 5
+        },
+        {
+          "N": 60,
+          "mean": 98.2,
+          "sd": 15.2368,
+          "draws": 5
+        },
+        {
+          "N": 80,
+          "mean": 119.2,
+          "sd": 10.5717,
+          "draws": 5
+        },
+        {
+          "N": 100,
+          "mean": 187.2,
+          "sd": 12.5284,
+          "draws": 5
+        },
+        {
+          "N": 113,
+          "mean": 256,
+          "sd": 0.0,
+          "draws": 1
+        }
+      ],
+      "slope_p": 1.77,
+      "fit_confidence": "high",
+      "caveats": []
+    },
+    {
+      "scorer": "orphaned_future_work",
+      "points": [
+        {
+          "N": 40,
+          "mean": 19.8,
+          "sd": 5.2688,
+          "draws": 5
+        },
+        {
+          "N": 60,
+          "mean": 34.8,
+          "sd": 2.3152,
+          "draws": 5
+        },
+        {
+          "N": 80,
+          "mean": 45,
+          "sd": 4.6043,
+          "draws": 5
+        },
+        {
+          "N": 100,
+          "mean": 57.4,
+          "sd": 2.0591,
+          "draws": 5
+        },
+        {
+          "N": 113,
+          "mean": 63,
+          "sd": 0.0,
+          "draws": 1
+        }
+      ],
+      "slope_p": 1.106,
+      "fit_confidence": "high",
+      "caveats": []
+    },
+    {
+      "scorer": "structural_holes",
+      "points": [
+        {
+          "N": 40,
+          "mean": 5.2,
+          "sd": 1.1662,
+          "draws": 5
+        },
+        {
+          "N": 60,
+          "mean": 13.2,
+          "sd": 9.7036,
+          "draws": 5
+        },
+        {
+          "N": 80,
+          "mean": 16,
+          "sd": 9.3808,
+          "draws": 5
+        },
+        {
+          "N": 100,
+          "mean": 19.2,
+          "sd": 8.4238,
+          "draws": 5
+        },
+        {
+          "N": 113,
+          "mean": 11,
+          "sd": 0.0,
+          "draws": 1
+        }
+      ],
+      "slope_p": 0.89,
+      "fit_confidence": "medium",
+      "caveats": [
+        "parameter_scaled_with_N:['n_clusters'] \u2014 curve reflects yield under scaled parameter(s), not yield under the deployment default. Both are legitimate; read the finding carefully."
+      ]
+    }
+  ],
+  "cost_projection": [
+    {
+      "target_N": 200,
+      "extraction_usd": 4.881,
+      "embeddings_usd": 0.15,
+      "estimated_contradiction_pairs": 703,
+      "contradiction_classification_usd": 1.399,
+      "total_usd": 6.43,
+      "caveat": "Contradiction cost extrapolated from the measured candidate count at N=113 (256 pairs), scaled as N^1.77. Extraction is per-paper mix. Ingestion assumed free (OpenAlex under quota)."
+    },
+    {
+      "target_N": 300,
+      "extraction_usd": 7.311,
+      "embeddings_usd": 0.225,
+      "estimated_contradiction_pairs": 1441,
+      "contradiction_classification_usd": 2.868,
+      "total_usd": 10.4,
+      "caveat": "Contradiction cost extrapolated from the measured candidate count at N=113 (256 pairs), scaled as N^1.77. Extraction is per-paper mix. Ingestion assumed free (OpenAlex under quota)."
+    },
+    {
+      "target_N": 500,
+      "extraction_usd": 12.169,
+      "embeddings_usd": 0.375,
+      "estimated_contradiction_pairs": 3560,
+      "contradiction_classification_usd": 7.084,
+      "total_usd": 19.63,
+      "caveat": "Contradiction cost extrapolated from the measured candidate count at N=113 (256 pairs), scaled as N^1.77. Extraction is per-paper mix. Ingestion assumed free (OpenAlex under quota)."
+    },
+    {
+      "target_N": 800,
+      "extraction_usd": 19.48,
+      "embeddings_usd": 0.6,
+      "estimated_contradiction_pairs": 8179,
+      "contradiction_classification_usd": 16.276,
+      "total_usd": 36.36,
+      "caveat": "Contradiction cost extrapolated from the measured candidate count at N=113 (256 pairs), scaled as N^1.77. Extraction is per-paper mix. Ingestion assumed free (OpenAlex under quota)."
+    }
+  ],
+  "report_caveats": [
+    "Extrapolations sit on 5 data points; power-law shape assumed, not established.",
+    "Subsamples are internal to the source corpus (llm-calibration-113); cross-domain generalisation is not tested.",
+    "Flat/zero curves bound absence \u2014 they cannot prove it."
+  ]
+}

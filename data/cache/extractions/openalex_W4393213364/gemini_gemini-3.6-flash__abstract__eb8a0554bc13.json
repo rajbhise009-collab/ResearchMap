@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W4393213364",
+  "claims": [
+    {
+      "id": "openalex:W4393213364:c1",
+      "paper_id": "openalex:W4393213364",
+      "text": "Modular sub-components for decision-making, planning, and control perform poorly in out-of-distribution test-time scenarios.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393213364:c2",
+      "paper_id": "openalex:W4393213364",
+      "text": "Foundation models deployed to decision-making tasks are prone to hallucination.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393213364:c3",
+      "paper_id": "openalex:W4393213364",
+      "text": "Hallucinations in decision-making foundation models produce decisions that sound reasonable but are poor in practice.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393213364:c4",
+      "paper_id": "openalex:W4393213364",
+      "text": "A general definition for hallucinations in foundation models applied to decision-making tasks is provided alongside examples and mitigation guidelines.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4393213364:e1",
+      "claim_id": "openalex:W4393213364:c1",
+      "description": "Hand-engineered or learning-based decision-making sub-components perform well in designed situations but perform poorly in out-of-distribution test-time scenarios.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4393213364:e2",
+      "claim_id": "openalex:W4393213364:c2",
+      "description": "While foundation models show promising results in decision-making, they are known to hallucinate during execution.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393213364:e3",
+      "claim_id": "openalex:W4393213364:c3",
+      "description": "Foundation models generate decisions that may sound reasonable but are in fact poor.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393213364:e4",
+      "claim_id": "openalex:W4393213364:c4",
+      "description": "The work provides a general definition for hallucinations, reviews existing hallucination detection and mitigation techniques for decision problems, and presents guidelines.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4393213364:m1",
+      "paper_id": "openalex:W4393213364",
+      "name": "Literature Survey and Conceptual Framework Definition",
+      "description": "Systematic review and taxonomy definition of hallucination use cases, detection, and mitigation methods for foundation models in decision-making tasks.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4393213364:l1",
+      "paper_id": "openalex:W4393213364",
+      "text": "Hand-engineered and learning-based decision-making algorithms perform poorly in out-of-distribution scenarios at test-time.",
+      "normalized_category": "ood-generalization-failure",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4393213364:l2",
+      "paper_id": "openalex:W4393213364",
+      "text": "Foundation models used for decision-making hallucinate and generate decisions that sound plausible but are incorrect or unsafe.",
+      "normalized_category": "hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4393213364:f1",
+      "paper_id": "openalex:W4393213364",
+      "text": "Design systems that can simultaneously quantify the certainty of a model's decision and detect when it may be hallucinating in decision-making tasks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.121649Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

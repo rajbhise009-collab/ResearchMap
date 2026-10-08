@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W4394994587",
+  "claims": [
+    {
+      "id": "openalex:W4394994587:c1",
+      "paper_id": "openalex:W4394994587",
+      "text": "Large Language Models possess capabilities in fundamental responsibilities of language understanding and generation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394994587:c2",
+      "paper_id": "openalex:W4394994587",
+      "text": "Large Language Models possess generalization capabilities and reasoning skills.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394994587:c3",
+      "paper_id": "openalex:W4394994587",
+      "text": "Large Language Models can be used as feature encoders to learn representations of users and items in recommender systems.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4394994587:e1",
+      "claim_id": "openalex:W4394994587:c1",
+      "description": "The paper notes LLMs have revolutionized NLP/AI 'due to their remarkable abilities in fundamental responsibilities of language understanding and generation'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4394994587:e2",
+      "claim_id": "openalex:W4394994587:c2",
+      "description": "The paper highlights LLMs' 'impressive generalization capabilities and reasoning skills'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4394994587:e3",
+      "claim_id": "openalex:W4394994587:c3",
+      "description": "The paper surveys representative methods that 'harness the power of LLMs (as a feature encoder) for learning representations of users and items'.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4394994587:m1",
+      "paper_id": "openalex:W4394994587",
+      "name": "Literature Survey and Taxonomy of LLM-Empowered Recommender Systems",
+      "description": "A systematic review categorizing LLM-empowered recommender systems across pre-training, fine-tuning, and prompting paradigms.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4394994587:l1",
+      "paper_id": "openalex:W4394994587",
+      "text": "DNN-based recommender systems exhibit difficulties in effectively understanding users' interests.",
+      "normalized_category": "user-interest-understanding",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4394994587:l2",
+      "paper_id": "openalex:W4394994587",
+      "text": "DNN-based recommender systems struggle to capture textual side information effectively.",
+      "normalized_category": "textual-side-information",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4394994587:l3",
+      "paper_id": "openalex:W4394994587",
+      "text": "DNN-based recommender systems lack generalizability across various seen and unseen recommendation scenarios.",
+      "normalized_category": "generalizability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4394994587:l4",
+      "paper_id": "openalex:W4394994587",
+      "text": "DNN-based recommender systems are unable to reason on their recommendations.",
+      "normalized_category": "reasoning-and-explainability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4394994587:f1",
+      "paper_id": "openalex:W4394994587",
+      "text": "Exploring promising future directions in the emerging field of LLM-empowered recommender systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.111563Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

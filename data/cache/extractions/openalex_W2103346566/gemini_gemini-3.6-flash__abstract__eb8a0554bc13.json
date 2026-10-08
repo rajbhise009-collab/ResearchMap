@@ -1,0 +1,75 @@
+{
+  "paper_id": "openalex:W2103346566",
+  "claims": [
+    {
+      "id": "openalex:W2103346566:c1",
+      "paper_id": "openalex:W2103346566",
+      "text": "When the order of classifier aggregation in bagging is random, generalization error typically decreases as the number of classifiers in the ensemble increases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103346566:c2",
+      "paper_id": "openalex:W2103346566",
+      "text": "Devising an appropriate ordering for classifier aggregation causes generalization error to reach a minimum at intermediate numbers of classifiers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2103346566:c3",
+      "paper_id": "openalex:W2103346566",
+      "text": "The minimum generalization error achieved through ordered aggregation lies below the asymptotic error of standard bagging.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2103346566:e1",
+      "claim_id": "openalex:W2103346566:c1",
+      "description": "When this order is random, the generalization error typically decreases as the number of classifiers in the ensemble increases.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2103346566:e2",
+      "claim_id": "openalex:W2103346566:c2",
+      "description": "If an appropriate ordering for the aggregation process is devised, the generalization error reaches a minimum at intermediate numbers of classifiers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2103346566:e3",
+      "claim_id": "openalex:W2103346566:c3",
+      "description": "This minimum lies below the asymptotic error of bagging.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2103346566:m1",
+      "paper_id": "openalex:W2103346566",
+      "name": "Ordered Aggregation Ensemble Pruning",
+      "description": "Pruning bagging ensembles by modifying the order of classifier aggregation and retaining a fraction of the ordered classifiers.",
+      "datasets": [
+        "benchmark classification tasks"
+      ],
+      "conditions": [
+        "different training conditions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2103346566:l1",
+      "paper_id": "openalex:W2103346566",
+      "text": "In the original bagging algorithm, the order of aggregation is left unspecified.",
+      "normalized_category": "unspecified-aggregation-order",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.112483Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

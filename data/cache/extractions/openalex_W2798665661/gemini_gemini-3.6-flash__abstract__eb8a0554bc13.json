@@ -1,0 +1,69 @@
+{
+  "paper_id": "openalex:W2798665661",
+  "claims": [
+    {
+      "id": "openalex:W2798665661:c1",
+      "paper_id": "openalex:W2798665661",
+      "text": "A new NLI test set was created where test sentences differ by at most one word from training set sentences.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2798665661:c2",
+      "paper_id": "openalex:W2798665661",
+      "text": "NLI systems trained on SNLI perform substantially worse on the new simple lexical inference test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2798665661:c3",
+      "paper_id": "openalex:W2798665661",
+      "text": "State-of-the-art NLI systems fail to capture simple inferences requiring lexical and world knowledge.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2798665661:e1",
+      "claim_id": "openalex:W2798665661:c2",
+      "description": "Performance on the new test set is substantially worse across systems trained on SNLI.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2798665661:e2",
+      "claim_id": "openalex:W2798665661:c3",
+      "description": "State-of-the-art models demonstrate limited generalization ability on examples differing by at most one word from training data.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2798665661:m1",
+      "paper_id": "openalex:W2798665661",
+      "name": "Lexical Inference NLI Dataset Construction",
+      "description": "Constructed a targeted NLI test set containing minimal variation (at most one word difference) from SNLI training sentences.",
+      "datasets": [
+        "SNLI"
+      ],
+      "conditions": [
+        "Test sentences differ by at most one word from training set sentences"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2798665661:l1",
+      "paper_id": "openalex:W2798665661",
+      "text": "State-of-the-art NLI systems trained on SNLI are limited in their generalization ability and fail to capture simple lexical and world knowledge inferences.",
+      "normalized_category": "poor-generalization",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.111801Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

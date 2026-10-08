@@ -1,0 +1,174 @@
+{
+  "paper_id": "openalex:W4395021958",
+  "claims": [
+    {
+      "id": "openalex:W4395021958:c1",
+      "paper_id": "openalex:W4395021958",
+      "text": "Current large language models (LLMs) are insufficient for accurate probability estimations.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c2",
+      "paper_id": "openalex:W4395021958",
+      "text": "Large language models can generate relevant factors that may affect probabilities.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c3",
+      "paper_id": "openalex:W4395021958",
+      "text": "Large language models can produce coarse-grained probabilities when information is more complete.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c4",
+      "paper_id": "openalex:W4395021958",
+      "text": "Large language models can help determine which factors are relevant to specific downstream contexts.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c5",
+      "paper_id": "openalex:W4395021958",
+      "text": "BIRD aligns a Bayesian network with LLM abductions.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c6",
+      "paper_id": "openalex:W4395021958",
+      "text": "BIRD estimates more accurate probabilities in a deduction step.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c7",
+      "paper_id": "openalex:W4395021958",
+      "text": "BIRD provides reliable probability estimations.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c8",
+      "paper_id": "openalex:W4395021958",
+      "text": "BIRD's probability estimations are 30% better than those provided directly by LLM baselines.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c9",
+      "paper_id": "openalex:W4395021958",
+      "text": "BIRD's estimates contribute to better decision making.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4395021958:c10",
+      "paper_id": "openalex:W4395021958",
+      "text": "BIRD's estimates contribute to more trustworthy decision making.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4395021958:e1",
+      "claim_id": "openalex:W4395021958:c1",
+      "description": "Current large language models (LLMs) are insufficient for accurate estimations",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e2",
+      "claim_id": "openalex:W4395021958:c2",
+      "description": "they can generate relevant factors that may affect the probabilities",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e3",
+      "claim_id": "openalex:W4395021958:c3",
+      "description": "produce coarse-grained probabilities when the information is more complete",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e4",
+      "claim_id": "openalex:W4395021958:c4",
+      "description": "help determine which factors are relevant to specific downstream contexts",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e5",
+      "claim_id": "openalex:W4395021958:c5",
+      "description": "BIRD, a novel probabilistic inference framework that aligns a Bayesian network with LLM abductions",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e6",
+      "claim_id": "openalex:W4395021958:c6",
+      "description": "estimates more accurate probabilities in a deduction step",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e7",
+      "claim_id": "openalex:W4395021958:c7",
+      "description": "We show BIRD provides reliable probability estimations",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e8",
+      "claim_id": "openalex:W4395021958:c8",
+      "description": "estimations that are 30% better than those provided directly by LLM baselines",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e9",
+      "claim_id": "openalex:W4395021958:c9",
+      "description": "These estimates further contribute to better... decision making",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4395021958:e10",
+      "claim_id": "openalex:W4395021958:c10",
+      "description": "These estimates further contribute to... more trustworthy decision making",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4395021958:m1",
+      "paper_id": "openalex:W4395021958",
+      "name": "BIRD",
+      "description": "A probabilistic inference framework that aligns a Bayesian network with LLM abductions and estimates probabilities in a deduction step.",
+      "datasets": [],
+      "conditions": [
+        "incomplete information",
+        "real-world tasks",
+        "large-scale decision-making",
+        "planning tasks"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4395021958:l1",
+      "paper_id": "openalex:W4395021958",
+      "text": "Current large language models (LLMs) are insufficient for accurate estimations.",
+      "normalized_category": "insufficient-accuracy",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:21:57.998510Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

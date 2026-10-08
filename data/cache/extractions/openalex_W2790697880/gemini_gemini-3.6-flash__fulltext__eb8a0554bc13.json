@@ -1,0 +1,146 @@
+{
+  "paper_id": "openalex:W2790697880",
+  "claims": [
+    {
+      "id": "openalex:W2790697880:c1",
+      "paper_id": "openalex:W2790697880",
+      "text": "Static fairness criteria (demographic parity and equal opportunity) do not generally promote long-term improvement in group mean score and can cause active harm.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2790697880:c2",
+      "paper_id": "openalex:W2790697880",
+      "text": "Under the assumption that institution individual utility is more stringent than expected score changes, the optimal unconstrained utility policy (MaxUtil) never causes active harm.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2790697880:c3",
+      "paper_id": "openalex:W2790697880",
+      "text": "Demographic parity and equal opportunity cause active harm to a protected group when applied over-eagerly in settings where the protected group proportion is small.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2790697880:c4",
+      "paper_id": "openalex:W2790697880",
+      "text": "Equal opportunity can select at a lower rate than unconstrained utility maximization, causing relative harm to the protected group.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2790697880:c5",
+      "paper_id": "openalex:W2790697880",
+      "text": "Systematic underestimation measurement error widens the regime in which fairness criteria yield favorable outcomes relative to unconstrained selection.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2790697880:c6",
+      "paper_id": "openalex:W2790697880",
+      "text": "Directly maximizing expected group score change subject to institution utility loss constraints results in optimal threshold selection policies.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2790697880:e1",
+      "claim_id": "openalex:W2790697880:c1",
+      "description": "Mathematical characterization and empirical analysis on 2003 FICO score data show that fairness criteria can lead to score decline (active harm) depending on parameter regimes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2790697880:e2",
+      "claim_id": "openalex:W2790697880:c2",
+      "description": "Proposition 3.1 proves that under Assumption 1 (u(x) > 0 implies Delta(x) > 0), expected mean score change under MaxUtil satisfies Delta mu_MaxUtil >= 0.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2790697880:e3",
+      "claim_id": "openalex:W2790697880:c3",
+      "description": "Corollaries 3.3 and 3.4 show that for small enough group proportion gA, demographic parity and equal opportunity selection rates exceed the active harm threshold beta0.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2790697880:e4",
+      "claim_id": "openalex:W2790697880:c4",
+      "description": "Corollary 3.6 demonstrates that when true positive rate in group A exceeds group B under MaxUtil, EqOpt selection rate is lower than MaxUtil selection rate.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2790697880:e5",
+      "claim_id": "openalex:W2790697880:c5",
+      "description": "Proposition 4.1 shows score underestimation decreases selection rates across policies, expanding the region of relative improvement for fairness criteria.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2790697880:e6",
+      "claim_id": "openalex:W2790697880:c6",
+      "description": "Proposition 4.2 proves the optimal policy for outcome maximization under a utility budget is a threshold policy with rate beta = min(beta*, beta_max).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2790697880:m1",
+      "paper_id": "openalex:W2790697880",
+      "name": "One-step temporal feedback decision-making framework",
+      "description": "A mathematical framework modeling how static classification thresholds alter group score distributions over a single epoch through expected outcome functions.",
+      "datasets": [
+        "2003 TransUnion TransRisk FICO credit score sample"
+      ],
+      "conditions": [
+        "MaxUtil (unconstrained profit maximization)",
+        "Demographic Parity (equal selection rates)",
+        "Equal Opportunity (equal true positive rates)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2790697880:l1",
+      "paper_id": "openalex:W2790697880",
+      "text": "Prior study of fairness in machine learning focuses overwhelmingly on static classification without concern for temporal population impact.",
+      "normalized_category": "lack-of-temporal-modeling",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2790697880:l2",
+      "paper_id": "openalex:W2790697880",
+      "text": "The framework models decision impact over a single epoch and treats the effects on unselected individuals as zero-mean.",
+      "normalized_category": "single-epoch-assumption",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2790697880:l3",
+      "paper_id": "openalex:W2790697880",
+      "text": "Direct outcome optimization relies heavily on the accuracy and availability of a two-variable causal outcome model.",
+      "normalized_category": "model-dependency",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2790697880:f1",
+      "paper_id": "openalex:W2790697880",
+      "text": "Examine temporal impact characteristics beyond mean score changes, such as variance and individual-level outcomes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2790697880:f2",
+      "paper_id": "openalex:W2790697880",
+      "text": "Investigate outcome optimization strategies that are robust to modeling and measurement errors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:53:30.276634Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

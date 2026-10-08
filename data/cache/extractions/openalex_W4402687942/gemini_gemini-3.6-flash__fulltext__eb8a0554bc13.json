@@ -1,0 +1,120 @@
+{
+  "paper_id": "openalex:W4402687942",
+  "claims": [
+    {
+      "id": "openalex:W4402687942:c1",
+      "paper_id": "openalex:W4402687942",
+      "text": "Legal hallucinations in large language models occur between 69% of the time with ChatGPT 3.5 and 88% with Llama 2 when answering specific verifiable questions about federal court cases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402687942:c2",
+      "paper_id": "openalex:W4402687942",
+      "text": "Including irrelevant random documents in the context retrieval set improves performance on Natural Questions tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402687942:c3",
+      "paper_id": "openalex:W4402687942",
+      "text": "Retrieval-augmented generation models demonstrate greater robustness to document OCR errors compared to spaCy summarization pipelines.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402687942:c4",
+      "paper_id": "openalex:W4402687942",
+      "text": "When prompted to compare and contrast two papers, RAG outputs describe lexical item differences within a single paper rather than comparing concepts across the two papers.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402687942:e1",
+      "claim_id": "openalex:W4402687942:c1",
+      "description": "A study on legal hallucinations from Yale and Stanford (Dahl et al. 2024) reports that the problem occurs between 69% of the time with ChatGPT 3.5 and 88% with Llama 2 when asked specific, verifiable questions about random federal court cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402687942:e2",
+      "claim_id": "openalex:W4402687942:c2",
+      "description": "Cuconasu et al. (2024) tested four context conditions on NQ and found that irrelevant random documents surprisingly improved system performance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402687942:e3",
+      "claim_id": "openalex:W4402687942:c3",
+      "description": "Older technologies such as spaCy are less robust to OCR errors in older PDF files from the ACL Anthology compared to RAG, as illustrated in Table 2.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402687942:e4",
+      "claim_id": "openalex:W4402687942:c4",
+      "description": "In compare-and-contrast evaluations between Church & Hanks (1990) and Lin (1998), the bot's discussion of differences addressed differences within one of the papers among lexical items rather than differences between the two papers.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402687942:m1",
+      "paper_id": "openalex:W4402687942",
+      "name": "Retrieval-Augmented Generation (RAG) Standard Pipeline",
+      "description": "A six-step recipe where uploaded files are parsed into subword chunks, embedded as vectors, indexed with approximate nearest neighbors (ANN), retrieved relative to input prompts, and used to generate augmented LLM responses.",
+      "datasets": [
+        "ACL Anthology PDFs",
+        "World Series Wikipedia documents"
+      ],
+      "conditions": [
+        "Max chunk size 512 subword units",
+        "ANN vector indexing using ANNOY or FAISS",
+        "Cloud API implementations via OpenAI, LangChain, HuggingFace transformers, and VecML"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402687942:l1",
+      "paper_id": "openalex:W4402687942",
+      "text": "RAG compare-and-contrast responses can be long-winded and fail to accurately reflect comparative differences between input documents.",
+      "normalized_category": "generation-quality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402687942:l2",
+      "paper_id": "openalex:W4402687942",
+      "text": "RAG treats documents simply as sequences of 512-subword chunks, ignoring complex visual and structural elements like tables, figures, equations, headers, and footers.",
+      "normalized_category": "document-structure-processing",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402687942:l3",
+      "paper_id": "openalex:W4402687942",
+      "text": "Evaluation outputs across chatbot runs are difficult to replicate due to non-deterministic model behavior and temporal shifts in underlying proprietary models.",
+      "normalized_category": "reproducibility-and-nondeterminism",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402687942:l4",
+      "paper_id": "openalex:W4402687942",
+      "text": "Chatbot guard rails are fragile and easily bypassed by minor modifications to input prompts or adversarial formatting.",
+      "normalized_category": "guardrail-fragility",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402687942:f1",
+      "paper_id": "openalex:W4402687942",
+      "text": "Developing statistical calibration methods and confidence intervals for RAG systems to trigger guard rails automatically when evidence confidence fails to meet significance thresholds.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.015980Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

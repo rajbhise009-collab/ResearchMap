@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W4366998893",
+  "claims": [
+    {
+      "id": "openalex:W4366998893:c1",
+      "paper_id": "openalex:W4366998893",
+      "text": "Medical imaging AI can propagate or amplify biases introduced in steps from model inception to deployment.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4366998893:c2",
+      "paper_id": "openalex:W4366998893",
+      "text": "Biases introduced in medical imaging AI can result in systematic differences in the treatment of different demographic or clinical groups.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4366998893:c3",
+      "paper_id": "openalex:W4366998893",
+      "text": "The roadmap of medical imaging AI/ML contains five main steps: data collection, data preparation and annotation, model development, model evaluation, and model deployment.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4366998893:c4",
+      "paper_id": "openalex:W4366998893",
+      "text": "There are 29 sources of potential bias identified across the medical imaging AI/ML roadmap.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4366998893:e1",
+      "claim_id": "openalex:W4366998893:c1",
+      "description": "The authors state that medical imaging AI can propagate or amplify biases introduced in the many steps from model inception to deployment.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4366998893:e2",
+      "claim_id": "openalex:W4366998893:c2",
+      "description": "The paper notes that amplified biases result in a systematic difference in the treatment of different groups.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4366998893:e3",
+      "claim_id": "openalex:W4366998893:c3",
+      "description": "Five main steps along the roadmap of medical imaging AI/ML were identified: (1) data collection, (2) data preparation and annotation, (3) model development, (4) model evaluation, and (5) model deployment.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4366998893:e4",
+      "claim_id": "openalex:W4366998893:c4",
+      "description": "Within the roadmap steps, the multi-institutional panel identified 29 sources of potential bias.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4366998893:m1",
+      "paper_id": "openalex:W4366998893",
+      "name": "Multi-institutional interdisciplinary expert consensus framework",
+      "description": "A multi-institutional panel of medical physicists, AI/ML researchers, bias experts, statisticians, physicians, and regulatory scientists identified bias sources and mitigation strategies across the medical imaging AI roadmap.",
+      "datasets": [],
+      "conditions": [
+        "data collection",
+        "data preparation and annotation",
+        "model development",
+        "model evaluation",
+        "model deployment"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4366998893:l1",
+      "paper_id": "openalex:W4366998893",
+      "text": "Biases introduced in steps toward clinical deployment may impede the intended function of medical imaging AI tools and exacerbate inequities.",
+      "normalized_category": "algorithmic-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:55:36.128278Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

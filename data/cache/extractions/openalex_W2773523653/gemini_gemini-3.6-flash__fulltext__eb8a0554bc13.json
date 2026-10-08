@@ -1,0 +1,120 @@
+{
+  "paper_id": "openalex:W2773523653",
+  "claims": [
+    {
+      "id": "openalex:W2773523653:c1",
+      "paper_id": "openalex:W2773523653",
+      "text": "Certain mathematical measures of fairness in machine learning are impossible to satisfy simultaneously except in rare and contrived circumstances.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773523653:c2",
+      "paper_id": "openalex:W2773523653",
+      "text": "Mental state accounts of discrimination do not naturally transfer to algorithmic decision-making contexts because algorithms lack conscious intentions, animosity, or disrespect.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773523653:c3",
+      "paper_id": "openalex:W2773523653",
+      "text": "Statistical discrimination uses statistical generalizations about group characteristics to infer individual attributes or future behaviors.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773523653:c4",
+      "paper_id": "openalex:W2773523653",
+      "text": "The term fairness as used in machine learning is best understood as a placeholder for a variety of distinct normative egalitarian considerations.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773523653:c5",
+      "paper_id": "openalex:W2773523653",
+      "text": "Representational fairness focuses on equal representation of identity categories in digital cultural artifacts rather than the direct distribution of decision outcomes to individuals.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2773523653:e1",
+      "claim_id": "openalex:W2773523653:c1",
+      "description": "Kleinberg et al. (2016) proved mathematical trade-offs showing that key fairness metrics like accuracy equity and calibration across groups cannot simultaneously hold when base rates differ.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2773523653:e2",
+      "claim_id": "openalex:W2773523653:c2",
+      "description": "Mental state accounts require decision-makers to possess contempt, animosity, or bad intent, which current AI models do not possess.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2773523653:e3",
+      "claim_id": "openalex:W2773523653",
+      "description": "Phelps (1972) modeled statistical discrimination where employers use group-level statistical averages as risk-reduction proxies when individual data is absent.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2773523653:e4",
+      "claim_id": "openalex:W2773523653:c4",
+      "description": "Analysis of machine learning fairness definitions reveals underlying connections to philosophical principles such as luck egalitarianism, capability theory, and spheres of justice.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2773523653:e5",
+      "claim_id": "openalex:W2773523653:c5",
+      "description": "Word embedding debiasing studies (Bolukbasi et al., 2016) show algorithmic bias in textual representation rather than direct individual allocation of economic harms or benefits.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2773523653:m1",
+      "paper_id": "openalex:W2773523653",
+      "name": "Conceptual mapping of political philosophy to fair machine learning",
+      "description": "Theoretical review mapping concepts from moral and political philosophy—including mental state accounts, luck egalitarianism, spheres of justice, and deontic justice—onto formal machine learning fairness metrics.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2773523653:l1",
+      "paper_id": "openalex:W2773523653",
+      "text": "Demographic parity is a blunt fairness metric that fails to account for explainable differences grounded in legitimate factors.",
+      "normalized_category": "metric-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2773523653:l2",
+      "paper_id": "openalex:W2773523653",
+      "text": "Existing fair machine learning approaches focus on a narrow, static set of legally prescribed protected classes without context.",
+      "normalized_category": "context-blindness",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2773523653:l3",
+      "paper_id": "openalex:W2773523653",
+      "text": "Translating complex egalitarian theories into practical ML tasks is difficult because required contextual data regarding personal responsibility, life history, and socio-economic context is rarely captured in available datasets.",
+      "normalized_category": "data-availability-constraint",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2773523653:f1",
+      "paper_id": "openalex:W2773523653",
+      "text": "Develop contextually sensitive fairness approaches in machine learning that integrate historical and sociological factors beyond legally protected categories.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:15:53.617724Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

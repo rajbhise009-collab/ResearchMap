@@ -1,0 +1,154 @@
+{
+  "paper_id": "openalex:W4296186062",
+  "claims": [
+    {
+      "id": "openalex:W4296186062:c1",
+      "paper_id": "openalex:W4296186062",
+      "text": "The German Credit dataset does not allow reliable retrieval of applicants' sex due to joint variable encoding mistakes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4296186062:c2",
+      "paper_id": "openalex:W4296186062",
+      "text": "Model accuracy and fairness metrics on the Adult dataset are highly sensitive to the arbitrary $50,000 binary income threshold.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4296186062:c3",
+      "paper_id": "openalex:W4296186062",
+      "text": "The prediction target labels in the COMPAS dataset measure re-arrest rather than actual re-offense.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4296186062:c4",
+      "paper_id": "openalex:W4296186062",
+      "text": "Dataset utilization in algorithmic fairness research literature follows a long-tail distribution.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4296186062:c5",
+      "paper_id": "openalex:W4296186062",
+      "text": "Over 100 datasets surveyed in algorithmic fairness research were utilized in only a single scholarly article.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4296186062:e1",
+      "claim_id": "openalex:W4296186062:c1",
+      "description": "Existing documentation shows that retrieving the sex of loan applicants is not possible because one feature value was used to encode both married/separated/divorced women and single men.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4296186062:e2",
+      "claim_id": "openalex:W4296186062:c2",
+      "description": "The arbitrary $50,000 threshold for the binary prediction task is high, and model properties such as accuracy and fairness are very sensitive to it.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4296186062:e3",
+      "claim_id": "openalex:W4296186062:c3",
+      "description": "The prediction labels Y actually encode re-arrest, instead of re-offense, and are thus clearly influenced by spatially differentiated policing practices.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4296186062:e4",
+      "claim_id": "openalex:W4296186062:c4",
+      "description": "Dataset utilization in surveyed scholarly works follows a long tail distribution, complementing a short head of nine resources used in ten or more articles.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4296186062:e5",
+      "claim_id": "openalex:W4296186062:c5",
+      "description": "Over 100 datasets are only used once, also because some of these resources are not publicly available.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4296186062:m1",
+      "paper_id": "openalex:W4296186062",
+      "name": "Systematic literature survey and data brief creation",
+      "description": "Surveyed over 500 articles on fair ML across seven major conferences and over twenty workshops (2014–2021), generating standardized data briefs for 226 datasets.",
+      "datasets": [
+        "Adult",
+        "COMPAS",
+        "German Credit"
+      ],
+      "conditions": [
+        "Articles published between 2014 and June 2021",
+        "Title keyword screening for equity-based fairness terminology"
+      ]
+    },
+    {
+      "id": "openalex:W4296186062:m2",
+      "paper_id": "openalex:W4296186062",
+      "name": "Retrospective deep documentation via Datasheets and Dataset Nutrition Labels",
+      "description": "Compiled comprehensive qualitative datasheets and quantitative dataset nutrition labels for the three most frequently cited algorithmic fairness benchmark datasets.",
+      "datasets": [
+        "Adult",
+        "COMPAS",
+        "German Credit"
+      ],
+      "conditions": [
+        "Applied to the three most heavily cited datasets identified in the survey"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4296186062:l1",
+      "paper_id": "openalex:W4296186062",
+      "text": "The literature survey is restricted to articles published prior to June 2021.",
+      "normalized_category": "temporal-scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4296186062:l2",
+      "paper_id": "openalex:W4296186062",
+      "text": "Lightweight data briefs provide a compact overview rather than full multi-page datasheets for all 226 surveyed datasets.",
+      "normalized_category": "documentation-depth",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4296186062:l3",
+      "paper_id": "openalex:W4296186062",
+      "text": "The algorithmic fairness community suffers from collective documentation debt characterized by opacity of single resources and sparsity of distributed information.",
+      "normalized_category": "documentation-debt",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4296186062:l4",
+      "paper_id": "openalex:W4296186062",
+      "text": "Widely used general-purpose fairness benchmark datasets suffer from contrived prediction tasks, severe coding mistakes, data leakage, and outdated demographic categories.",
+      "normalized_category": "benchmark-flaws",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4296186062:f1",
+      "paper_id": "openalex:W4296186062",
+      "text": "Update the dataset survey to include literature published after June 2021, such as EAAMO conference proceedings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4296186062:f2",
+      "paper_id": "openalex:W4296186062",
+      "text": "Release and maintain a searchable web application for querying dataset data briefs.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.131968Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,110 @@
+{
+  "paper_id": "openalex:W4400647468",
+  "claims": [
+    {
+      "id": "openalex:W4400647468:c1",
+      "paper_id": "openalex:W4400647468",
+      "text": "4.3% of WebText training data contains toxic content from untrustworthy websites.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400647468:c2",
+      "paper_id": "openalex:W4400647468",
+      "text": "Certain LLMs exhibit gender biases by associating male names more frequently with career-related words and female names with family-related words.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400647468:c3",
+      "paper_id": "openalex:W4400647468",
+      "text": "Prompt injection is designated as the top security threat for LLMs by OWASP.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400647468:e1",
+      "claim_id": "openalex:W4400647468:c1",
+      "description": "The authors cite research indicating that 4.3% of WebText data contains toxic content from untrustworthy websites.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400647468:e2",
+      "claim_id": "openalex:W4400647468:c2",
+      "description": "Wan, et al. [35] demonstrated that certain LLMs associate male names more frequently with career words and female names with family words in generated reference letters.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400647468:e3",
+      "claim_id": "openalex:W4400647468:c3",
+      "description": "The survey notes prompt injection has recently been listed as the top security threat for LLMs by OWASP.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400647468:m1",
+      "paper_id": "openalex:W4400647468",
+      "name": "Literature Survey and Domain Taxonomy",
+      "description": "A comprehensive survey and categorization of existing literature addressing safety concerns in LLMs, specifically targeting ethics, hallucination, prompt injection, data privacy, and societal/legal impacts.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400647468:l1",
+      "paper_id": "openalex:W4400647468",
+      "text": "Previous research on recognition and classification of inappropriate content primarily focused on specific forms of malevolence or individual sentences rather than dialogue contexts.",
+      "normalized_category": "lack-of-dialogue-context",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4400647468:l2",
+      "paper_id": "openalex:W4400647468",
+      "text": "Existing hallucination benchmarks often resort to constrained generation techniques that do not align with unbounded text generation in real-world applications.",
+      "normalized_category": "unrealistic-evaluation-benchmark",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4400647468:l3",
+      "paper_id": "openalex:W4400647468",
+      "text": "LLMs exhibit relatively weak capabilities in distinguishing between system task instructions and user inputs.",
+      "normalized_category": "instruction-input-confusion",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4400647468:f1",
+      "paper_id": "openalex:W4400647468",
+      "text": "Developing stronger privacy-preserving techniques for LLMs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4400647468:f2",
+      "paper_id": "openalex:W4400647468",
+      "text": "Investigating the impact of different training data sources on privacy risks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4400647468:f3",
+      "paper_id": "openalex:W4400647468",
+      "text": "Exploring mechanisms for user control and consent in LLM deployments to enhance transparency.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4400647468:f4",
+      "paper_id": "openalex:W4400647468",
+      "text": "Developing legal frameworks that allocate liability and responsibility in LLM deployments.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.981439Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

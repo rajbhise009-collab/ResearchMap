@@ -1,0 +1,115 @@
+{
+  "paper_id": "openalex:W4403223051",
+  "claims": [
+    {
+      "id": "openalex:W4403223051:c1",
+      "paper_id": "openalex:W4403223051",
+      "text": "Drowzee uses a logic-programming-aided metamorphic testing technique to detect fact-conflicting hallucinations in large language models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403223051:c2",
+      "paper_id": "openalex:W4403223051",
+      "text": "Tested LLMs exhibit hallucination rates ranging from 24.7% to 59.8% across nine domains.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403223051:c3",
+      "paper_id": "openalex:W4403223051",
+      "text": "Large language models struggle with temporal concepts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403223051:c4",
+      "paper_id": "openalex:W4403223051",
+      "text": "Large language models struggle with out-of-distribution knowledge.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403223051:c5",
+      "paper_id": "openalex:W4403223051",
+      "text": "Large language models lack logical reasoning capabilities in hallucination detection contexts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403223051:c6",
+      "paper_id": "openalex:W4403223051",
+      "text": "Model editing techniques are effective for mitigating fact-conflicting hallucinations on a small scale of fewer than 1000 knowledge pieces.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403223051:e1",
+      "claim_id": "openalex:W4403223051:c2",
+      "description": "Evaluation of six LLMs across nine domains yielded measured hallucination rates between 24.7% and 59.8%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403223051:e2",
+      "claim_id": "openalex:W4403223051:c6",
+      "description": "Model editing techniques were evaluated and shown effective when applied to fewer than 1000 knowledge pieces.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403223051:m1",
+      "paper_id": "openalex:W4403223051",
+      "name": "Drowzee Metamorphic Testing Framework",
+      "description": "A logic-programming-aided metamorphic testing framework that constructs a factual knowledge base, transforms knowledge using logical reasoning rules into test cases, and evaluates LLM reasoning via semantic-aware oracles.",
+      "datasets": [
+        "Wikipedia"
+      ],
+      "conditions": [
+        "Evaluated on six LLMs",
+        "Evaluated across nine domains"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403223051:l1",
+      "paper_id": "openalex:W4403223051",
+      "text": "Existing FCH detection relies on manually curated static benchmarks that fail to cover evolving FCH cases.",
+      "normalized_category": "static-benchmark-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4403223051:l2",
+      "paper_id": "openalex:W4403223051",
+      "text": "Validating reasoning behind LLM outputs is inherently difficult, particularly for complex logical relations.",
+      "normalized_category": "reasoning-validation-complexity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4403223051:l3",
+      "paper_id": "openalex:W4403223051",
+      "text": "Model editing mitigation was only demonstrated to be effective on a small scale involving fewer than 1000 knowledge pieces.",
+      "normalized_category": "small-scale-mitigation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4403223051:f1",
+      "paper_id": "openalex:W4403223051",
+      "text": "Continued community efforts to detect and mitigate model hallucinations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.099779Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

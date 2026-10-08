@@ -1,0 +1,82 @@
+{
+  "paper_id": "openalex:W4391598857",
+  "claims": [
+    {
+      "id": "openalex:W4391598857:c1",
+      "paper_id": "openalex:W4391598857",
+      "text": "AI-driven curriculum vitae (CV) screening systems are vulnerable to algorithmic bias.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391598857:c2",
+      "paper_id": "openalex:W4391598857",
+      "text": "Vector space correction is an effective natural language processing and deep learning technique for mitigating algorithmic bias in job hiring.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391598857:c3",
+      "paper_id": "openalex:W4391598857",
+      "text": "Data augmentation is an effective natural language processing and deep learning technique for mitigating algorithmic bias in job hiring.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391598857:e1",
+      "claim_id": "openalex:W4391598857:c1",
+      "description": "More businesses are using AI in curriculum vitae (CV) screening. While the move improves efficiency in the recruitment process, it is vulnerable to biases, which have adverse effects on organizations and the broader society.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391598857:e2",
+      "claim_id": "openalex:W4391598857:c2",
+      "description": "The results demonstrate that the correction of the vector space and data augmentation are effective natural language processing (NLP) and deep learning techniques for mitigating algorithmic bias in hiring.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4391598857:e3",
+      "claim_id": "openalex:W4391598857:c3",
+      "description": "The results demonstrate that the correction of the vector space and data augmentation are effective natural language processing (NLP) and deep learning techniques for mitigating algorithmic bias in hiring.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391598857:m1",
+      "paper_id": "openalex:W4391598857",
+      "name": "Systematic Literature Review",
+      "description": "A systematic review of existing literature and case studies focusing on AI techniques and strategies employed to mitigate algorithmic bias in job hiring.",
+      "datasets": [],
+      "conditions": [
+        "job hiring",
+        "CV screening",
+        "algorithmic bias mitigation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391598857:l1",
+      "paper_id": "openalex:W4391598857",
+      "text": "AI applications in CV screening are vulnerable to biases that cause adverse effects on organizations and society.",
+      "normalized_category": "algorithmic-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4391598857:f1",
+      "paper_id": "openalex:W4391598857",
+      "text": "Develop collaboration mechanisms between machines and humans to enhance the fairness of the hiring process.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:56:05.764014Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,139 @@
+{
+  "paper_id": "openalex:W4391505381",
+  "claims": [
+    {
+      "id": "openalex:W4391505381:c1",
+      "paper_id": "openalex:W4391505381",
+      "text": "Step-by-step decision planning achieves a higher F1 score in smart home action generation compared to all-at-once action generation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c2",
+      "paper_id": "openalex:W4391505381",
+      "text": "Consistently selecting the action with the maximum estimated point-wise dependency yields higher mean precision than random action selection during step-by-step planning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c3",
+      "paper_id": "openalex:W4391505381",
+      "text": "Increasing the decision threshold for estimated point-wise dependency increases the mean precision of generated actions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c4",
+      "paper_id": "openalex:W4391505381",
+      "text": "Increasing the decision threshold for estimated point-wise dependency decreases the mean recall of generated actions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c5",
+      "paper_id": "openalex:W4391505381",
+      "text": "Point-wise dependency neural estimation quantifies uncertainty for black-box LLMs in a single inference without requiring access to token output logits.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391505381:e1",
+      "claim_id": "openalex:W4391505381:c1",
+      "description": "Step-by-step planning achieved F1 scores of 0.152 (random selection) and 0.164 (maximum selection), outperforming all-at-once generation which scored an F1 of 0.140 at a point-wise dependency threshold of 1.0.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391505381:e2",
+      "claim_id": "openalex:W4391505381:c2",
+      "description": "In step-by-step planning at a 1.0 threshold, selecting the maximum point-wise dependency action achieved a mean precision of 0.134 compared to 0.126 for random action selection.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391505381:e3",
+      "claim_id": "openalex:W4391505381:c3",
+      "description": "For maximum step-by-step planning, increasing threshold t from 0.0 to 1.0 to 1.627 raised mean precision from 0.123 to 0.134 to 0.139.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391505381:e4",
+      "claim_id": "openalex:W4391505381:c4",
+      "description": "For maximum step-by-step planning, increasing threshold t from 0.0 to 1.0 to 1.627 reduced mean recall from 0.232 to 0.212 to 0.209.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391505381:e5",
+      "claim_id": "openalex:W4391505381:c5",
+      "description": "The auxiliary neural network estimates pointwise dependency r_theta(a, x') using representations from Mistral-7B-Instruct-v0.1 with GRU and linear layers via relative predictive coding optimization without reading token logits.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391505381:m1",
+      "paper_id": "openalex:W4391505381",
+      "name": "Point-wise Dependency Neural Estimation with Conformal Prediction",
+      "description": "An auxiliary neural network trained via relative predictive coding estimates pointwise dependencies between prompt-history and action pairs to filter actions using thresholds derived from conformal prediction.",
+      "datasets": [
+        "Synthetic Smart Home Dataset (20k prompt-action pairs)"
+      ],
+      "conditions": [
+        "Black-box LLM inference",
+        "Mistral-7B-Instruct-v0.1 backbone",
+        "Conformal prediction thresholding at 80% coverage"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391505381:l1",
+      "paper_id": "openalex:W4391505381",
+      "text": "White-box uncertainty quantification methods require access to token logits, internal layer outputs, or model parameters.",
+      "normalized_category": "model-access-requirements",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4391505381:l2",
+      "paper_id": "openalex:W4391505381",
+      "text": "Existing black-box uncertainty quantification methods require generating multiple responses per input, making them computationally demanding.",
+      "normalized_category": "computational-cost",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4391505381:l3",
+      "paper_id": "openalex:W4391505381",
+      "text": "The evaluation relies on a strict exact match criterion between generated and ground-truth actions, which fails to account for semantic similarity.",
+      "normalized_category": "metric-strictness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4391505381:l4",
+      "paper_id": "openalex:W4391505381",
+      "text": "Neural network approximation in density-ratio fitting inevitably produces negative estimated point-wise dependency values for some inputs.",
+      "normalized_category": "estimator-approximation-error",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4391505381:f1",
+      "paper_id": "openalex:W4391505381",
+      "text": "Conducting a human study where actions are selected step-by-step by human users to evaluate decision planning strategies.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4391505381:f2",
+      "paper_id": "openalex:W4391505381",
+      "text": "Extending evaluation methodologies to include semantic similarity measures alongside exact match criteria.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.639304Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

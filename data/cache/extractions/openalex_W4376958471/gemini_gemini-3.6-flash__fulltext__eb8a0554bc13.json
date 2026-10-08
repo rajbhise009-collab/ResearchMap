@@ -1,0 +1,156 @@
+{
+  "paper_id": "openalex:W4376958471",
+  "claims": [
+    {
+      "id": "openalex:W4376958471:c1",
+      "paper_id": "openalex:W4376958471",
+      "text": "Research on algorithmic discrimination in credit is predominantly conducted from Computer Science and Economics domain perspectives.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4376958471:c2",
+      "paper_id": "openalex:W4376958471",
+      "text": "Credit domain discrimination research focuses mostly on direct discrimination, while indirect structural discrimination remains significantly under-studied.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4376958471:c3",
+      "paper_id": "openalex:W4376958471",
+      "text": "The mortgage approval gap between Black and White applicants in the US decreases from 7% to 3.5% towards the end of the month.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4376958471:c4",
+      "paper_id": "openalex:W4376958471",
+      "text": "Same-sex loan co-applicants in the US are 73% more likely to be denied or receive higher interest/fee rates compared to different-sex co-applicants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4376958471:c5",
+      "paper_id": "openalex:W4376958471",
+      "text": "Non-linear machine learning scoring models magnify existing disparities in credit data compared to traditional linear logit credit scoring models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4376958471:c6",
+      "paper_id": "openalex:W4376958471",
+      "text": "FinTech mortgage lenders process loan applications 20% faster than traditional commercial banks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4376958471:e1",
+      "claim_id": "openalex:W4376958471:c1",
+      "description": "Meta-analysis of 78 literature review papers showed primary concentration in Computer Science (CS) and Economics (ECO) domains.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4376958471:e2",
+      "claim_id": "openalex:W4376958471:c2",
+      "description": "Systematic review results state that researchers are still only dealing with direct discrimination, addressed by algorithmic fairness, while indirect discrimination (structural discrimination) has not received the same attention.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4376958471:e3",
+      "claim_id": "openalex:W4376958471:c3",
+      "description": "Analysis of 25 years of HMDA mortgage data (Yu 2022, Giacoletti et al. 2021) shows approval rates increase towards month-end and the Black-White approval gap drops from 7% to 3.5%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4376958471:e4",
+      "claim_id": "openalex:W4376958471:c4",
+      "description": "Empirical evidence from US mortgage data analyzed by Sun and Gao (2019) demonstrated same-sex co-applicants were 73% more likely to be denied or charged higher fees.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4376958471:e5",
+      "claim_id": "openalex:W4376958471:c5",
+      "description": "Bono et al. (2021) and Fuster et al. (2022) empirically and mathematically showed non-linear ML credit models boost slight data differences, expanding group outcome gaps compared to logit models.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4376958471:e6",
+      "claim_id": "openalex:W4376958471:c6",
+      "description": "Fuster et al. (2019) evaluated FHA mortgage data from 2010 to 2016, finding FinTech lenders offered 20% faster processing times than traditional banks.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4376958471:m1",
+      "paper_id": "openalex:W4376958471",
+      "name": "Systematic Literature Review Protocol",
+      "description": "A systematic literature review following Kitchenham's protocol exploring five digital databases to identify, screen, and synthesize 78 relevant studies on credit domain algorithmic discrimination published between 2017 and 2022.",
+      "datasets": [
+        "ACM Digital Library",
+        "Google Scholar",
+        "IEEE Digital Library",
+        "Springer Link",
+        "Scopus"
+      ],
+      "conditions": [
+        "Inclusion criteria I1-I4 applied",
+        "Exclusion criteria E1-E7 applied",
+        "Snowballing method applied"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4376958471:l1",
+      "paper_id": "openalex:W4376958471",
+      "text": "The identification of first author sex and race/ethnicity relied on visual perception of names and online facial images, representing an approximation rather than self-reported demographic data.",
+      "normalized_category": "demographic-data-approximation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4376958471:l2",
+      "paper_id": "openalex:W4376958471",
+      "text": "Multiple core group fairness metrics (calibration within groups, balance for negative class, balance for positive class) cannot be satisfied simultaneously except under perfect prediction conditions.",
+      "normalized_category": "fairness-metric-incompatibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4376958471:l3",
+      "paper_id": "openalex:W4376958471",
+      "text": "Credit scoring datasets suffer from intrinsic selection bias and missing labels because loan default is only observed for approved applicants.",
+      "normalized_category": "selection-bias-unobserved-defaults",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4376958471:f1",
+      "paper_id": "openalex:W4376958471",
+      "text": "Develop algorithmic fairness approaches that evaluate and mitigate bias across multiple sensitive attributes simultaneously using intersectionality theory.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4376958471:f2",
+      "paper_id": "openalex:W4376958471",
+      "text": "Investigate reverse redlining and skin-tone discrimination in Global South and developing countries using large-scale credit datasets.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4376958471:f3",
+      "paper_id": "openalex:W4376958471",
+      "text": "Establish societal consensus and regulatory frameworks regarding privacy trade-offs when expanding non-traditional data sources for unbanked applicants.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:31:26.388239Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,166 @@
+{
+  "paper_id": "openalex:W4389520749",
+  "claims": [
+    {
+      "id": "openalex:W4389520749:c1",
+      "paper_id": "openalex:W4389520749",
+      "text": "SelfCheckGPT with Prompt achieves an AUC-PR score of 93.42 in sentence-level non-factual hallucination detection on GPT-3 generated WikiBio passages.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520749:c2",
+      "paper_id": "openalex:W4389520749",
+      "text": "SelfCheckGPT with Prompt achieves an AUC-PR score of 53.19 in detecting major-inaccurate (non-factual*) sentences in non-total hallucination passages.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520749:c3",
+      "paper_id": "openalex:W4389520749",
+      "text": "SelfCheckGPT with Prompt achieves a Pearson correlation score of 78.32 with human judgments in passage-level factuality assessment.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520749:c4",
+      "paper_id": "openalex:W4389520749",
+      "text": "SelfCheckGPT with NLI achieves an AUC-PR score of 92.50 in sentence-level non-factual hallucination detection on GPT-3 generated WikiBio passages.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520749:c5",
+      "paper_id": "openalex:W4389520749",
+      "text": "SelfCheckGPT detects hallucinations in black-box generative large language models in a zero-resource manner without requiring external databases or output token probabilities.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520749:c6",
+      "paper_id": "openalex:W4389520749",
+      "text": "Output token average log probability from the generating LLM achieves an AUC-PR score of 83.21 in sentence-level non-factual hallucination detection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389520749:e1",
+      "claim_id": "openalex:W4389520749:c1",
+      "description": "Table 2 reports an AUC-PR of 93.42 for SelfCheckGPT w/ Prompt on NonFact sentence-level hallucination detection compared to the random baseline of 72.96.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520749:e2",
+      "claim_id": "openalex:W4389520749:c2",
+      "description": "Table 2 reports an AUC-PR of 53.19 for SelfCheckGPT w/ Prompt on NonFact* sentence-level detection compared to the random baseline of 29.72.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520749:e3",
+      "claim_id": "openalex:W4389520749:c3",
+      "description": "Table 2 lists a Pearson correlation of 78.32 and Spearman rank correlation of 78.30 for SelfCheckGPT w/ Prompt against human factuality annotations at the passage level.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520749:e4",
+      "claim_id": "openalex:W4389520749:c4",
+      "description": "Table 2 shows SelfCheckGPT w/ NLI obtaining an AUC-PR of 92.50 for sentence-level NonFact detection and 74.14 Pearson correlation at the passage level.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520749:e5",
+      "claim_id": "openalex:W4389520749:c5",
+      "description": "Section 5 describes SelfCheckGPT generating stochastically sampled responses using the same prompt to assess informational consistency without external database retrieval or probability distributions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389520749:e6",
+      "claim_id": "openalex:W4389520749:c6",
+      "description": "Table 2 lists GPT-3 Avg(-log p) achieving 83.21 AUC-PR on NonFact sentence-level hallucination detection.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389520749:m1",
+      "paper_id": "openalex:W4389520749",
+      "name": "SelfCheckGPT",
+      "description": "A sampling-based zero-resource hallucination detection framework that measures consistency between a target LLM output and multiple stochastically sampled outputs from the same prompt.",
+      "datasets": [
+        "WikiBio"
+      ],
+      "conditions": [
+        "GPT-3 (text-davinci-003) response generation",
+        "Stochastic response sampling temperature = 1.0 (N=20 samples)",
+        "Black-box model access"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389520749:l1",
+      "paper_id": "openalex:W4389520749",
+      "text": "Evaluation dataset was limited to 238 GPT-3 generated passages predominantly focusing on individuals from the WikiBio dataset.",
+      "normalized_category": "dataset-domain-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520749:l2",
+      "paper_id": "openalex:W4389520749",
+      "text": "Factuality evaluation is performed at sentence level, whereas a single sentence can contain a mixture of factual and non-factual atomic claims.",
+      "normalized_category": "coarse-evaluation-granularity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520749:l3",
+      "paper_id": "openalex:W4389520749",
+      "text": "SelfCheckGPT with Prompt incur high inference computational costs due to multiple LLM evaluation calls per sentence.",
+      "normalized_category": "high-computational-cost",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520749:l4",
+      "paper_id": "openalex:W4389520749",
+      "text": "Grey-box factuality assessment methods require token-level output probability distributions, which are often unavailable in commercial API-based LLMs like ChatGPT.",
+      "normalized_category": "probability-access-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389520749:l5",
+      "paper_id": "openalex:W4389520749",
+      "text": "Fact-verification approaches require external databases that can be complex to interface and are limited to knowledge present in the database.",
+      "normalized_category": "external-knowledge-dependency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389520749:f1",
+      "paper_id": "openalex:W4389520749",
+      "text": "Extend hallucination detection evaluations to broader domains beyond biography passages, such as locations and objects.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389520749:f2",
+      "paper_id": "openalex:W4389520749",
+      "text": "Decompose generated sentences into sub-sentence atomic facts for fine-grained factuality evaluation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389520749:f3",
+      "paper_id": "openalex:W4389520749",
+      "text": "Improve the efficiency and reduce computational costs of prompt-based SelfCheckGPT methods.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.086995Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

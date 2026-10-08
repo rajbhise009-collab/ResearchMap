@@ -1,0 +1,153 @@
+{
+  "paper_id": "openalex:W4411449748",
+  "claims": [
+    {
+      "id": "openalex:W4411449748:c1",
+      "paper_id": "openalex:W4411449748",
+      "text": "Large Language Models are prone to generating hallucinations in their responses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411449748:c2",
+      "paper_id": "openalex:W4411449748",
+      "text": "MetaQA is a self-contained hallucination detection approach that leverages metamorphic relations and prompt mutation.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411449748:c3",
+      "paper_id": "openalex:W4411449748",
+      "text": "MetaQA operates without any external resources.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411449748:c4",
+      "paper_id": "openalex:W4411449748",
+      "text": "MetaQA is compatible with both open-source and closed-source LLMs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411449748:c5",
+      "paper_id": "openalex:W4411449748",
+      "text": "MetaQA achieves a precision superiority margin ranging from 0.041 to 0.113 over SelfCheckGPT across four evaluated LLMs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411449748:c6",
+      "paper_id": "openalex:W4411449748",
+      "text": "MetaQA achieves a recall superiority margin ranging from 0.143 to 0.430 over SelfCheckGPT across four evaluated LLMs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411449748:c7",
+      "paper_id": "openalex:W4411449748",
+      "text": "MetaQA achieves an F1-score superiority margin ranging from 0.154 to 0.368 over SelfCheckGPT across four evaluated LLMs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411449748:c8",
+      "paper_id": "openalex:W4411449748",
+      "text": "MetaQA achieves an average F1-score of 0.435 on Mistral-7B compared to SelfCheckGPT's F1-score of 0.205.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4411449748:e1",
+      "claim_id": "openalex:W4411449748:c1",
+      "description": "Large Language Models (LLMs) are prone to hallucinations, e.g., factually incorrect information, in their responses.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4411449748:e2",
+      "claim_id": "openalex:W4411449748:c2",
+      "description": "This paper presents MetaQA, a self-contained hallucination detection approach that leverages metamorphic relation and prompt mutation.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4411449748:e3",
+      "claim_id": "openalex:W4411449748:c3",
+      "description": "Unlike existing methods, MetaQA operates without any external resources",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4411449748:e4",
+      "claim_id": "openalex:W4411449748:c4",
+      "description": "and is compatible with both open-source and closed-source LLMs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4411449748:e5",
+      "claim_id": "openalex:W4411449748:c5",
+      "description": "MetaQA outperforms SelfCheckGPT with a superiority margin ranging from 0.041 - 0.113 (for precision)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411449748:e6",
+      "claim_id": "openalex:W4411449748:c6",
+      "description": "MetaQA outperforms SelfCheckGPT with a superiority margin ranging from 0.143 - 0.430 (for recall)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411449748:e7",
+      "claim_id": "openalex:W4411449748:c7",
+      "description": "MetaQA outperforms SelfCheckGPT with a superiority margin ranging from 0.154 - 0.368 (for F1-score)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411449748:e8",
+      "claim_id": "openalex:W4411449748:c8",
+      "description": "For instance, with Mistral-7B, MetaQA achieves an average F1-score of 0.435, compared to SelfCheckGPT’s F1-score of 0.205, representing an improvement rate of 112.2%.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4411449748:m1",
+      "paper_id": "openalex:W4411449748",
+      "name": "MetaQA",
+      "description": "A self-contained hallucination detection approach that leverages metamorphic relation and prompt mutation without external resources.",
+      "datasets": [],
+      "conditions": [
+        "zero-resource hallucination detection",
+        "open-source LLMs",
+        "closed-source LLMs",
+        "Mistral-7B"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4411449748:l1",
+      "paper_id": "openalex:W4411449748",
+      "text": "Existing hallucination detection methods primarily depend on external resources, which can suffer from issues such as low availability, incomplete coverage, privacy concerns, high latency, low reliability, and poor scalability.",
+      "normalized_category": "external-resource-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4411449748:l2",
+      "paper_id": "openalex:W4411449748",
+      "text": "Existing hallucination detection methods depending on output probabilities are often inaccessible for closed-source LLMs like GPT models.",
+      "normalized_category": "output-probability-inaccessibility",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.100063Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

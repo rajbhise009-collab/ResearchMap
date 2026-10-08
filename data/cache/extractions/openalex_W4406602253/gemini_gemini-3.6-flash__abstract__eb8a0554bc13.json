@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W4406602253",
+  "claims": [
+    {
+      "id": "openalex:W4406602253:c1",
+      "paper_id": "openalex:W4406602253",
+      "text": "A paradigm shift is underway in healthcare AI, transitioning from Pretrained Language Models to Large Language Models.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406602253:c2",
+      "paper_id": "openalex:W4406602253",
+      "text": "The paradigm shift in healthcare AI encompasses a move from discriminative AI approaches to generative AI approaches.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406602253:c3",
+      "paper_id": "openalex:W4406602253",
+      "text": "The paradigm shift in healthcare AI encompasses a move from model-centered methodologies to data-centered methodologies.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406602253:c4",
+      "paper_id": "openalex:W4406602253",
+      "text": "Fairness, accountability, transparency, and ethics represent the primary obstacles to using Large Language Models in Healthcare.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406602253:e1",
+      "claim_id": "openalex:W4406602253:c1",
+      "description": "Summarily, we contend that a significant paradigm shift is underway, transitioning from PLMs to LLMs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406602253:e2",
+      "claim_id": "openalex:W4406602253:c2",
+      "description": "This shift encompasses a move from discriminative AI approaches to generative AI approaches...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406602253:e3",
+      "claim_id": "openalex:W4406602253:c3",
+      "description": "...as well as a move from model-centered methodologies to data-centered methodologies.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406602253:e4",
+      "claim_id": "openalex:W4406602253:c4",
+      "description": "We determine that the biggest obstacle of using LLMs in Healthcare are fairness, accountability, transparency and ethics.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406602253:m1",
+      "paper_id": "openalex:W4406602253",
+      "name": "Literature survey and comparative analysis",
+      "description": "A survey outlining healthcare LLM capabilities and explicating their development roadmap, data, methods, applications, and ethical concerns relative to prior PLMs.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406602253:l1",
+      "paper_id": "openalex:W4406602253",
+      "text": "Healthcare LLM deployment is obstructed by issues regarding fairness, accountability, transparency, and ethics.",
+      "normalized_category": "ethics-and-transparency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:56:20.745108Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,160 @@
+{
+  "paper_id": "openalex:W4393318216",
+  "claims": [
+    {
+      "id": "openalex:W4393318216:c1",
+      "paper_id": "openalex:W4393318216",
+      "text": "ChatGPT-4 exhibits normalized bias levels of 0.7 for gender, 0.8 for race, and 0.6 for ethnicity on BIG-Bench evaluation tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393318216:c2",
+      "paper_id": "openalex:W4393318216",
+      "text": "Google Gemini exhibits normalized bias levels of 0.5 for gender, 0.6 for race, and 0.5 for ethnicity on BIG-Bench evaluation tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393318216:c3",
+      "paper_id": "openalex:W4393318216",
+      "text": "Llama 2 exhibits normalized bias levels of 0.4 for gender, 0.5 for race, and 0.3 for ethnicity on BIG-Bench evaluation tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393318216:c4",
+      "paper_id": "openalex:W4393318216",
+      "text": "Llama 2 achieves fairness scores of 0.90 for gender, 0.88 for race, and 0.89 for ethnicity on BIG-Bench evaluation tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393318216:c5",
+      "paper_id": "openalex:W4393318216",
+      "text": "Google Gemini achieves an efficiency performance score of 0.82, higher than ChatGPT-4 (0.75) and Llama 2 (0.80).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393318216:c6",
+      "paper_id": "openalex:W4393318216",
+      "text": "No single evaluated large language model uniformly excels across all fairness, bias, accuracy, and efficiency metrics.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4393318216:e1",
+      "claim_id": "openalex:W4393318216:c1",
+      "description": "Figure 1 reports ChatGPT-4 normalized bias levels as 0.7 (Gender), 0.8 (Race), and 0.6 (Ethnicity).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393318216:e2",
+      "claim_id": "openalex:W4393318216:c2",
+      "description": "Figure 1 reports Google Gemini normalized bias levels as 0.5 (Gender), 0.6 (Race), and 0.5 (Ethnicity).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393318216:e3",
+      "claim_id": "openalex:W4393318216:c3",
+      "description": "Figure 1 reports Llama 2 normalized bias levels as 0.4 (Gender), 0.5 (Race), and 0.3 (Ethnicity).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393318216:e4",
+      "claim_id": "openalex:W4393318216:c4",
+      "description": "Figure 2 reports Llama 2 fairness evaluation scores as 0.90 (Gender), 0.88 (Race), and 0.89 (Ethnicity).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393318216:e5",
+      "claim_id": "openalex:W4393318216:c5",
+      "description": "Figure 3 reports efficiency scores of 0.82 for Google Gemini, 0.75 for ChatGPT-4, and 0.80 for Llama 2.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393318216:e6",
+      "claim_id": "openalex:W4393318216:c6",
+      "description": "ANOVA tests and comparative performance analysis show trade-offs across accuracy, fairness, and efficiency metrics among the three models.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4393318216:m1",
+      "paper_id": "openalex:W4393318216",
+      "name": "BIG-Bench LLM Bias and Fairness Evaluation Framework",
+      "description": "A comparative evaluation framework combining quantitative metrics (accuracy, fairness scores, bias amplification) and qualitative assessments (expert reviews, ethical considerations) across ChatGPT-4, Google Gemini, and Llama 2 using Google BIG-Bench.",
+      "datasets": [
+        "Google BIG-Bench"
+      ],
+      "conditions": [
+        "Evaluation of ChatGPT-4",
+        "Evaluation of Google Gemini",
+        "Evaluation of Llama 2",
+        "Assessment across Gender, Race, and Ethnicity dimensions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4393318216:l1",
+      "paper_id": "openalex:W4393318216",
+      "text": "The broad scope of Google BIG-Bench sometimes overlooks subtle, context-specific manifestations of bias in real-world contexts.",
+      "normalized_category": "benchmark-granularity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4393318216:l2",
+      "paper_id": "openalex:W4393318216",
+      "text": "The dependency on predefined benchmark tasks may not fully encompass dynamic and unpredictable ways in which bias surfaces in real-world applications.",
+      "normalized_category": "task-coverage",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4393318216:l3",
+      "paper_id": "openalex:W4393318216",
+      "text": "Existing methodologies for bias measurement fail to account for the sophisticated ways biases manifest across different contexts and cultures.",
+      "normalized_category": "methodological-gaps",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4393318216:l4",
+      "paper_id": "openalex:W4393318216",
+      "text": "Most existing research focuses on English-language models, ignoring global language diversity and cultural dimensions of bias.",
+      "normalized_category": "linguistic-and-cultural-scope",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4393318216:f1",
+      "paper_id": "openalex:W4393318216",
+      "text": "Developing adaptive, context-aware benchmarking tools incorporating underrepresented languages and cultures.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4393318216:f2",
+      "paper_id": "openalex:W4393318216",
+      "text": "Exploring alternative data sources and training methodologies that minimize the propagation of biases at the source.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4393318216:f3",
+      "paper_id": "openalex:W4393318216",
+      "text": "Developing real-time algorithms for detecting and correcting biases in language models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.017154Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

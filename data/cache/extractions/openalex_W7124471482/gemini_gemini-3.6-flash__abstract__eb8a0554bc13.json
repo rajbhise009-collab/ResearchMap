@@ -1,0 +1,131 @@
+{
+  "paper_id": "openalex:W7124471482",
+  "claims": [
+    {
+      "id": "openalex:W7124471482:c1",
+      "paper_id": "openalex:W7124471482",
+      "text": "System instruction significantly influences factual accuracy across open-source LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c2",
+      "paper_id": "openalex:W7124471482",
+      "text": "Temperature settings have a minor effect on LLM hallucination behavior compared to system instruction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c3",
+      "paper_id": "openalex:W7124471482",
+      "text": "Few-shot prompting achieves a mean F1 score of 0.1889 on the TruthfulQA benchmark.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c4",
+      "paper_id": "openalex:W7124471482",
+      "text": "'Say-I-don’t-know' prompts increase semantic alignment in model responses.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c5",
+      "paper_id": "openalex:W7124471482",
+      "text": "'Say-I-don’t-know' prompts reduce response precision.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c6",
+      "paper_id": "openalex:W7124471482",
+      "text": "Zero-shot responses exhibit higher semantic consistency under embedding-based similarity analyses.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7124471482:e1",
+      "claim_id": "openalex:W7124471482:c1",
+      "description": "Two-way ANOVA and Tukey post-hoc analyses revealed system instruction significantly influenced factual accuracy across all tested models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7124471482:e2",
+      "claim_id": "openalex:W7124471482:c2",
+      "description": "Two-way ANOVA and Tukey post-hoc analyses showed temperature effects were comparatively minor.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7124471482:e3",
+      "claim_id": "openalex:W7124471482:c3",
+      "description": "Evaluation on TruthfulQA yielded a mean F1 score of 0.1889 for few-shot prompting.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W7124471482:e4",
+      "claim_id": "openalex:W7124471482:c4",
+      "description": "'Say-I-don't-know' prompts increased semantic alignment metrics.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7124471482:e5",
+      "claim_id": "openalex:W7124471482:c5",
+      "description": "'Say-I-don't-know' prompts led to reduced precision via conservative refusal bias.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7124471482:e6",
+      "claim_id": "openalex:W7124471482:c6",
+      "description": "Embedding-based similarity analyses confirmed higher semantic consistency for zero-shot responses.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7124471482:m1",
+      "paper_id": "openalex:W7124471482",
+      "name": "Factorial Prompting and Temperature Sensitivity Evaluation",
+      "description": "Evaluates open-source LLMs across different temperatures and prompting paradigms using exact match, token F1, and semantic/embedding similarity metrics analyzed with ANOVA and Tukey tests.",
+      "datasets": [
+        "TruthfulQA"
+      ],
+      "conditions": [
+        "Zero-shot prompting",
+        "Few-shot prompting",
+        "Say-I-don't-know prompting",
+        "Temperature variation",
+        "Gemma 2B",
+        "Mistral 7B Instruct",
+        "Phi-3 Mini",
+        "Ollama framework"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7124471482:l1",
+      "paper_id": "openalex:W7124471482",
+      "text": "Large Language Models tend to produce factually incorrect or fabricated information.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7124471482:l2",
+      "paper_id": "openalex:W7124471482",
+      "text": "'Say-I-don't-know' prompts induce a conservative refusal bias, reducing response precision.",
+      "normalized_category": "refusal-bias-precision-tradeoff",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.105756Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

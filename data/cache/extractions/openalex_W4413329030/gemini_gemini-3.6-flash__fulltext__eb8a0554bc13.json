@@ -1,0 +1,174 @@
+{
+  "paper_id": "openalex:W4413329030",
+  "claims": [
+    {
+      "id": "openalex:W4413329030:c1",
+      "paper_id": "openalex:W4413329030",
+      "text": "The estimated prevalence of user reports indicative of LLM hallucinations is approximately 1.75% within mobile app reviews initially flagged as relevant to AI errors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c2",
+      "paper_id": "openalex:W4413329030",
+      "text": "Factual Incorrectness (H1) is the most frequently reported LLM hallucination type in AI mobile app reviews, accounting for 38% of confirmed instances.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c3",
+      "paper_id": "openalex:W4413329030",
+      "text": "Nonsensical or Irrelevant Output (H3) accounts for 25% of confirmed user-reported LLM hallucination instances in AI mobile app reviews.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c4",
+      "paper_id": "openalex:W4413329030",
+      "text": "Fabricated Information (H2) accounts for 15% of confirmed user-reported LLM hallucination instances in AI mobile app reviews.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c5",
+      "paper_id": "openalex:W4413329030",
+      "text": "Review snippets describing LLM hallucinations exhibited an average VADER compound sentiment score of -0.65 compared to -0.40 for full reviews and +0.15 for general AI reviews not reporting hallucinations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c6",
+      "paper_id": "openalex:W4413329030",
+      "text": "Reviews containing confirmed LLM hallucination reports had a lower average star rating of 1.8 stars compared to 3.5 stars for AI reviews without hallucination reports and 3.9 stars overall.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c7",
+      "paper_id": "openalex:W4413329030",
+      "text": "The heuristic candidate identification algorithm achieved a Precision of 0.65, Recall of 0.78, and F1-Score of 0.71 on the 1,000 manually annotated candidate review dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413329030:e1",
+      "claim_id": "openalex:W4413329030:c1",
+      "description": "350 reviews out of 1,000 manually annotated candidates from a candidate pool of 20,000 AI-error filtered reviews were confirmed as hallucination reports, yielding an estimated prevalence of ~1.75%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413329030:e2",
+      "claim_id": "openalex:W4413329030:c2",
+      "description": "Categorization of 350 confirmed hallucination reports showed Factual Incorrectness (H1) accounted for 38% of all identified reports.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413329030:e3",
+      "claim_id": "openalex:W4413329030:c3",
+      "description": "Taxonomy analysis of 350 confirmed reports showed Nonsensical/Irrelevant Output (H3) was the second most common category at 25%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413329030:e4",
+      "claim_id": "openalex:W4413329030:c4",
+      "description": "Taxonomy analysis of 350 confirmed reports showed Fabricated Information (H2) was the third most common category at 15%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413329030:e5",
+      "claim_id": "openalex:W4413329030:c5",
+      "description": "VADER sentiment analysis yielded average compound scores of -0.65 for hallucination snippets, -0.40 for full originating reviews, and +0.15 for general non-hallucination AI reviews.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413329030:e6",
+      "claim_id": "openalex:W4413329030:c6",
+      "description": "Quantitative analysis of star ratings showed confirmed hallucination reviews averaged 1.8 stars versus 3.5 stars for non-hallucination AI feature reviews and 3.9 stars overall app average.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413329030:e7",
+      "claim_id": "openalex:W4413329030:c7",
+      "description": "Algorithm 1 evaluation against 1,000 human-annotated reviews resulted in precision=0.65, recall=0.78, and F1=0.71.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413329030:m1",
+      "paper_id": "openalex:W4413329030",
+      "name": "Heuristic-based candidate prioritization and mixed-methods review annotation framework",
+      "description": "A multi-stage method combining AI-context keyword filtering, hallucination dictionary matching, NMF topic modeling, VADER sentiment scoring, and low rating amplification to prioritize reviews for manual qualitative coding and taxonomy construction.",
+      "datasets": [
+        "3 million user reviews from 90 AI-powered mobile apps across 10 categories (Google Play Store and Apple App Store)"
+      ],
+      "conditions": [
+        "Reviews posted between January 2022 and December 2024",
+        "Filtered to 350,000 reviews via AI context keywords",
+        "Filtered to 20,000 reviews via hallucination indicator dictionary",
+        "Stratified random sample of 1,000 top-ranked candidate reviews manually annotated by two researchers (Cohen's Kappa >= 0.75)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413329030:l1",
+      "paper_id": "openalex:W4413329030",
+      "text": "User review descriptions of AI errors can be ambiguous and do not typically use technical terminology, introducing potential subjective interpretation during annotation.",
+      "normalized_category": "ambiguous-user-feedback",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4413329030:l2",
+      "paper_id": "openalex:W4413329030",
+      "text": "Initial keyword filtering and candidate prioritization heuristics may miss hallucination reports expressed in unconventional phrasing or incorrectly flag non-hallucination reviews.",
+      "normalized_category": "heuristic-filtering-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4413329030:l3",
+      "paper_id": "openalex:W4413329030",
+      "text": "The focus on English-language reviews across 90 apps limits generalizability across other languages, cultures, platforms, or proprietary LLMs.",
+      "normalized_category": "limited-dataset-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4413329030:l4",
+      "paper_id": "openalex:W4413329030",
+      "text": "Evaluations conducted in controlled laboratory settings or synthetic benchmarks fail to capture the full spectrum of hallucination issues or their nuanced impact on everyday users of deployed mobile applications.",
+      "normalized_category": "synthetic-benchmark-gap",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4413329030:f1",
+      "paper_id": "openalex:W4413329030",
+      "text": "Develop and evaluate supervised machine learning models trained on annotated review data incorporating linguistic and sentiment features to automatically detect user-reported LLM hallucinations at scale.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4413329030:f2",
+      "paper_id": "openalex:W4413329030",
+      "text": "Conduct larger-scale, cross-platform, cross-lingual, and longitudinal studies to analyze how hallucination reporting evolves across LLM model generations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4413329030:f3",
+      "paper_id": "openalex:W4413329030",
+      "text": "Investigate specialized in-app feedback mechanisms that directly link user hallucination reports with the specific LLM interaction context for diagnosis.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.971691Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

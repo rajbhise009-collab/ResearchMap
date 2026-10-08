@@ -1,0 +1,76 @@
+{
+  "paper_id": "openalex:W4410859056",
+  "claims": [
+    {
+      "id": "openalex:W4410859056:c1",
+      "paper_id": "openalex:W4410859056",
+      "text": "Query perturbation combined with consistency score calculation can identify potential LLM hallucination scenarios without relying on context or ground truth.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410859056:c2",
+      "paper_id": "openalex:W4410859056",
+      "text": "GPT-4 hallucinates the least among evaluated foundation models when subjected to query perturbations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410859056:c3",
+      "paper_id": "openalex:W4410859056",
+      "text": "Non-GPT-4 foundation models begin hallucinating when exposed to minor character-level perturbations such as typos.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410859056:e1",
+      "claim_id": "openalex:W4410859056:c1",
+      "description": "The authors present a framework relying on query perturbation and consistency score calculation between original and perturbed query responses, operating without context or ground truth.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410859056:e2",
+      "claim_id": "openalex:W4410859056:c2",
+      "description": "Experimental evaluation demonstrates that GPT-4 hallucinates the least when faced with perturbations across tested foundation models.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4410859056:e3",
+      "claim_id": "openalex:W4410859056:c3",
+      "description": "Experimental evaluation shows that other LLMs start hallucinating even when presented with minor typos.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410859056:m1",
+      "paper_id": "openalex:W4410859056",
+      "name": "Query perturbation and consistency scoring framework",
+      "description": "A framework evaluating LLM response consistency across character-level, word-level, and sentence-level query perturbations to detect hallucination scenarios without reference context or ground truth.",
+      "datasets": [],
+      "conditions": [
+        "character-level perturbation",
+        "word-level perturbation",
+        "sentence-level perturbation",
+        "absence of context and ground truth"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410859056:l1",
+      "paper_id": "openalex:W4410859056",
+      "text": "Detecting hallucinations using context or golden responses becomes challenging post-deployment where both context and ground truth are typically absent.",
+      "normalized_category": "lack-of-reference-data",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.103417Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

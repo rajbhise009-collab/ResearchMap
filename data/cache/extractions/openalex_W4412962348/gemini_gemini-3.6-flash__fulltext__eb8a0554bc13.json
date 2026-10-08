@@ -1,0 +1,182 @@
+{
+  "paper_id": "openalex:W4412962348",
+  "claims": [
+    {
+      "id": "openalex:W4412962348:c1",
+      "paper_id": "openalex:W4412962348",
+      "text": "In a full-text Google Scholar search conducted on August 5, 2024 for 'LLM' and 'content moderation', 844 out of 1220 results contained the keyword 'accuracy'.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c2",
+      "paper_id": "openalex:W4412962348",
+      "text": "Content moderation is a constitutive part of platform governance whose primary purpose is to gain and enhance legitimacy.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c3",
+      "paper_id": "openalex:W4412962348",
+      "text": "Accuracy is an insufficient metric for content moderation because it fails to distinguish between easy cases and hard cases.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c4",
+      "paper_id": "openalex:W4412962348",
+      "text": "Evaluating the moderation of easy cases requires metrics of accuracy, speed, and transparency.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c5",
+      "paper_id": "openalex:W4412962348",
+      "text": "Evaluating the moderation of hard cases requires metrics of reasoned justification and user participation.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c6",
+      "paper_id": "openalex:W4412962348",
+      "text": "Prompting LLMs with multiple content moderation policies simultaneously decreases classification accuracy.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c7",
+      "paper_id": "openalex:W4412962348",
+      "text": "Prompting LLMs with multiple content moderation policies simultaneously increases computational costs.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4412962348:e1",
+      "claim_id": "openalex:W4412962348:c1",
+      "description": "The author conducted a full-text search on Google Scholar on Aug 5, 2024 using keywords 'LLM' and 'content moderation' and manually verified that roughly two-thirds (844 of 1220) contained 'accuracy'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412962348:e2",
+      "claim_id": "openalex:W4412962348:c2",
+      "description": "Platform moderation limits fundamental rights without democratic authorization or constitutional mandate, making normative legitimacy essential to justify private governance power.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4412962348:e3",
+      "claim_id": "openalex:W4412962348:c3",
+      "description": "In hard cases involving complex factual contexts, rule vagueness, rule plurality, or value conflicts, intercoder human disagreement shows there is no objective 'ground truth' standard for accuracy.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4412962348:e4",
+      "claim_id": "openalex:W4412962348:c6",
+      "description": "Cites Thomas et al. (2024, pp. 9-10) demonstrating that LLM classification accuracy decreases when prompted with multiple moderation policies.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4412962348:e5",
+      "claim_id": "openalex:W4412962348:c7",
+      "description": "Cites Thomas et al. (2024, pp. 9-10) demonstrating that processing long inputs containing tens of thousands of words of content rules increases LLM moderation costs.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4412962348:m1",
+      "paper_id": "openalex:W4412962348",
+      "name": "Legitimacy-based framework for evaluating LLM content moderation",
+      "description": "A socio-legal evaluation framework distinguishing easy and hard moderation cases and evaluating them against substantive (accuracy, speed, justification) and procedural (transparency, participation) legitimacy metrics.",
+      "datasets": [],
+      "conditions": [
+        "Easy cases vs. hard cases",
+        "Substantive legitimacy vs. procedural justice"
+      ]
+    },
+    {
+      "id": "openalex:W4412962348:m2",
+      "paper_id": "openalex:W4412962348",
+      "name": "Collaborative human-LLM content moderation workflow",
+      "description": "A multi-tiered operational workflow integrating traditional ML classifiers for routine screening, LLMs for hard case filtering and rationale generation, and human/expert reviewers for escalated appeals and value decisions.",
+      "datasets": [],
+      "conditions": [
+        "Multi-agent platform moderation system",
+        "Uncertainty-guided case escalation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4412962348:l1",
+      "paper_id": "openalex:W4412962348",
+      "text": "Traditional ML moderation relies heavily on manual annotation of training datasets, creating high labor costs and introducing human annotator bias.",
+      "normalized_category": "dataset-annotation-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4412962348:l2",
+      "paper_id": "openalex:W4412962348",
+      "text": "Traditional ML moderation models lack adaptability to changing contexts or policies across different languages and cultures.",
+      "normalized_category": "low-adaptability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4412962348:l3",
+      "paper_id": "openalex:W4412962348",
+      "text": "The existing literature on LLM content moderation focuses predominantly on single accuracy metrics while ignoring systematic platform governance legitimacy.",
+      "normalized_category": "narrow-evaluation-metrics",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4412962348:l4",
+      "paper_id": "openalex:W4412962348",
+      "text": "The proposed legitimacy-based framework and collaborative moderation workflow are conceptual and lack empirical testing in production platform environments.",
+      "normalized_category": "lack-of-empirical-validation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4412962348:l5",
+      "paper_id": "openalex:W4412962348",
+      "text": "LLM-generated moderation explanations remain susceptible to hallucinations, sycophancy, and geographical or political biases.",
+      "normalized_category": "model-bias-and-hallucination",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4412962348:f1",
+      "paper_id": "openalex:W4412962348",
+      "text": "Empirically test the proposed legitimacy-based framework and refine the collaborative moderation workflow in real-world platform settings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4412962348:f2",
+      "paper_id": "openalex:W4412962348",
+      "text": "Improve prompting strategies and uncertainty quantification methods to enhance LLM reliability in distinguishing hard cases from easy cases.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4412962348:f3",
+      "paper_id": "openalex:W4412962348",
+      "text": "Develop techniques to mitigate LLM hallucinations, sycophancy, and geographical/political biases in generated moderation explanations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4412962348:f4",
+      "paper_id": "openalex:W4412962348",
+      "text": "Design user-centric API interfaces and interactive affordances that facilitate user participation and contestation compliant with regulatory standards.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.989473Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

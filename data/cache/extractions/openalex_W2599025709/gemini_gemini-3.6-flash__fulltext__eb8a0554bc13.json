@@ -1,0 +1,132 @@
+{
+  "paper_id": "openalex:W2599025709",
+  "claims": [
+    {
+      "id": "openalex:W2599025709:c1",
+      "paper_id": "openalex:W2599025709",
+      "text": "There are at least six distinct formal definitions of algorithmic fairness in risk assessment contexts.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2599025709:c2",
+      "paper_id": "openalex:W2599025709",
+      "text": "When outcome base rates differ across protected groups and data separation is imperfect, conditional use accuracy equality and error rate equality (false positive and false negative rates) cannot be simultaneously satisfied.",
+      "type": "theoretical",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2599025709:c3",
+      "paper_id": "openalex:W2599025709",
+      "text": "Excluding or discounting protected group attributes from a fitting procedure reduces overall prediction accuracy when those attributes share non-redundant associations with the outcome.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2599025709:c4",
+      "paper_id": "openalex:W2599025709",
+      "text": "In an empirical arraignment dataset tuned for equal conditional use accuracy (.93 for Blacks, .94 for Whites), the false negative rate for White offenders was .93 compared to .49 for Black offenders.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2599025709:c5",
+      "paper_id": "openalex:W2599025709",
+      "text": "In an empirical arraignment dataset tuned for equal conditional use accuracy (.93 for Blacks, .94 for Whites), the false positive rate for Black offenders was .24 compared to .02 for White offenders.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2599025709:e1",
+      "claim_id": "openalex:W2599025709:c1",
+      "description": "The authors define overall accuracy equality, statistical parity, conditional procedure accuracy equality, conditional use accuracy equality, treatment equality, and total fairness.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2599025709:e2",
+      "claim_id": "openalex:W2599025709:c2",
+      "description": "Proof cited from Kleinberg et al. (2016) and Chouldechova (2016) showing that differing base rates without separation mathematically prevent simultaneous conditional use accuracy equality and equal error rates.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W2599025709:e3",
+      "claim_id": "openalex:W2599025709:c3",
+      "description": "If the goal of applying h(L,S) is to capitalize on non-redundant associations that L and S have with the outcome, excluding S will reduce accuracy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2599025709:e4",
+      "claim_id": "openalex:W2599025709:c4",
+      "description": "Table 15 shows a False Negative Rate of .49 for Black offenders and .93 for White offenders at arraignment when conditional use accuracy is equalized.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W2599025709:e5",
+      "claim_id": "openalex:W2599025709:c5",
+      "description": "Table 15 shows a False Positive Rate of .24 for Black offenders and .02 for White offenders at arraignment when conditional use accuracy is equalized.",
+      "strength": 0.98
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2599025709:m1",
+      "paper_id": "openalex:W2599025709",
+      "name": "Group-Stratified Random Forests In-Processing",
+      "description": "Random forest classification algorithms applied separately to Black and White offender data, using stratified sampling during tree generation to equalize conditional use accuracy across racial groups.",
+      "datasets": [
+        "Arraignment court record dataset (13,396 Black offenders, 6,604 White offenders)"
+      ],
+      "conditions": [
+        "21-month post-arraignment follow-up window",
+        "Binary outcome: absence of violent crime arrest vs arrest for violent crime",
+        "Excludes explicit indicators for race and residential zip code"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2599025709:l1",
+      "paper_id": "openalex:W2599025709",
+      "text": "Linear residualization pre-processing fails to remove unfairness from higher-order interaction effects between legitimate predictors and protected attributes unless all interaction terms are explicitly specified.",
+      "normalized_category": "preprocessing-interaction-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2599025709:l2",
+      "paper_id": "openalex:W2599025709",
+      "text": "Training data derived from historical criminal justice practices reflects past biases and may become compromised or invalidated as risk algorithms alter future decision-making.",
+      "normalized_category": "historical-training-data-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2599025709:l3",
+      "paper_id": "openalex:W2599025709",
+      "text": "The empirical illustration restricts analysis to a simplified binary outcome of violent crime re-arrest over 21 months rather than evaluating multi-class outcomes or failure to appear.",
+      "normalized_category": "simplified-empirical-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2599025709:f1",
+      "paper_id": "openalex:W2599025709",
+      "text": "Develop methods to dynamically update criminal justice algorithms using online learning or recency-weighted training data as decision practices change post-deployment.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2599025709:f2",
+      "paper_id": "openalex:W2599025709",
+      "text": "Incorporate fairness trade-offs directly as explicit tuning parameters within statistical learning procedures for stakeholder adjustment.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:07:37.354655Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

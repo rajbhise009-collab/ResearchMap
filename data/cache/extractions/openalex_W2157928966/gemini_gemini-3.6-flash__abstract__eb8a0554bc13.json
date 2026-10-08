@@ -1,0 +1,75 @@
+{
+  "paper_id": "openalex:W2157928966",
+  "claims": [
+    {
+      "id": "openalex:W2157928966:c1",
+      "paper_id": "openalex:W2157928966",
+      "text": "Standard classification models trained on biased data inherit and reproduce discriminatory behavior towards affected groups.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2157928966:c2",
+      "paper_id": "openalex:W2157928966",
+      "text": "Dataset massaging applies minimal intrusive modifications to a biased dataset to convert it into an unbiased training set.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2157928966:c3",
+      "paper_id": "openalex:W2157928966",
+      "text": "Training a standard classification model on a massaged, unbiased dataset yields a non-discriminating classifier.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2157928966:e1",
+      "claim_id": "openalex:W2157928966:c1",
+      "description": "If the training data is biased towards certain groups or classes of objects, e.g., there is racial discrimination towards black people, the learned model will also show discriminatory behavior towards that particular community.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2157928966:e2",
+      "claim_id": "openalex:W2157928966:c2",
+      "description": "Our method is based on massaging the dataset by making the least intrusive modifications which lead to an unbiased dataset.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2157928966:e3",
+      "claim_id": "openalex:W2157928966:c3",
+      "description": "On this modified dataset we then learn a non-discriminating classifier.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2157928966:m1",
+      "paper_id": "openalex:W2157928966",
+      "name": "Data Massaging for Non-Discrimination",
+      "description": "Modifies training data with minimal revisions to remove group bias prior to classifier training.",
+      "datasets": [
+        "credit approval dataset"
+      ],
+      "conditions": [
+        "biased training data"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2157928966:l1",
+      "paper_id": "openalex:W2157928966",
+      "text": "Standard classification algorithms produce biased predictions when trained on historical datasets containing societal discrimination.",
+      "normalized_category": "training-data-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:14:53.564802Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

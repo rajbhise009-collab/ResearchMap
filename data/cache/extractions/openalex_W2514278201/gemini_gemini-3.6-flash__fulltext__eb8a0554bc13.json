@@ -1,0 +1,217 @@
+{
+  "paper_id": "openalex:W2514278201",
+  "claims": [
+    {
+      "id": "openalex:W2514278201:c1",
+      "paper_id": "openalex:W2514278201",
+      "text": "Set-valued classifiers can guarantee user-defined total or class-specific coverage levels while minimizing expected output size.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c2",
+      "paper_id": "openalex:W2514278201",
+      "text": "Optimal set-valued classifiers under bounded error constraints correspond to level sets of conditional class probability functions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c3",
+      "paper_id": "openalex:W2514278201",
+      "text": "Minimizing set ambiguity under coverage constraints can result in empty prediction sets for certain feature space regions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c4",
+      "paper_id": "openalex:W2514278201",
+      "text": "Split-conformal inference enables plug-in set-valued classifiers to achieve distribution-free, finite-sample coverage guarantees.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c5",
+      "paper_id": "openalex:W2514278201",
+      "text": "Controlling total coverage rather than class-specific coverage leads to lower coverage on minority classes when class proportions are highly imbalanced.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c6",
+      "paper_id": "openalex:W2514278201",
+      "text": "Accretive completion eliminates empty prediction sets by iteratively lowering class conditional probability thresholds to minimize ambiguity increments.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c7",
+      "paper_id": "openalex:W2514278201",
+      "text": "On the Zip Code test dataset, the split-conformal LABEL classifier achieved a test coverage of 0.98 with an average ambiguity of 1.27.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c8",
+      "paper_id": "openalex:W2514278201",
+      "text": "Plug-in level set estimators maintain statistical consistency as long as the number of classes grows slower than sqrt(n)/log(n).",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2514278201:e1",
+      "claim_id": "openalex:W2514278201:c1",
+      "description": "Theorem 1 and Theorem 6 demonstrate optimization formulas that minimize average set size subject to total and class-specific error bounds.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2514278201:e2",
+      "claim_id": "openalex:W2514278201:c2",
+      "description": "Theorem 6 proves that classifiers induced by Cy = {x : p(y|x) >= ty} minimize incorrect label assignment probabilities and ambiguity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2514278201:e3",
+      "claim_id": "openalex:W2514278201:c3",
+      "description": "Section 2.2 and Example 7 demonstrate that when sum of ty > 1, the optimal prediction set H(x) is empty for points where p(y|x) < ty for all y.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2514278201:e4",
+      "claim_id": "openalex:W2514278201:c4",
+      "description": "Theorem 16 proves distribution-free finite sample validity for split-conformal set-valued classifiers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2514278201:e5",
+      "claim_id": "openalex:W2514278201:c5",
+      "description": "Example 3 shows that with class probabilities 0.95 and 0.05, total coverage optimization achieves near 1.0 coverage for class 1 but low coverage for class 2.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2514278201:e6",
+      "claim_id": "openalex:W2514278201:c6",
+      "description": "Algorithm 1 defines the greedy step-down procedure on class thresholds until sum of ty <= 1.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2514278201:e7",
+      "claim_id": "openalex:W2514278201:c7",
+      "description": "Section 5.5 reports that applying the LABEL classifier to 2007 test images yielded test-sample coverage of 0.98 and ambiguity of 1.27 compared to 2.09 for CWR.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2514278201:e8",
+      "claim_id": "openalex:W2514278201:c8",
+      "description": "Remark 15 notes that P(H_hat delta H*) converges to 0 as long as Kn = o(sqrt(n)/log n).",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2514278201:m1",
+      "paper_id": "openalex:W2514278201",
+      "name": "LABEL Set-Valued Classification Framework",
+      "description": "Constructs set-valued classifiers by thresholding class conditional probability estimates to minimize expected prediction set size subject to total or class-specific coverage constraints.",
+      "datasets": [
+        "Iris",
+        "Abalone",
+        "Zip code"
+      ],
+      "conditions": [
+        "Total coverage constraint",
+        "Class-specific coverage constraint",
+        "kNN estimator",
+        "Kernel density estimator",
+        "Multinomial logistic regression"
+      ]
+    },
+    {
+      "id": "openalex:W2514278201:m2",
+      "paper_id": "openalex:W2514278201",
+      "name": "Accretive Completion Algorithm",
+      "description": "Greedy threshold reduction algorithm that gradually expands level sets to eliminate empty prediction regions while minimizing ambiguity increase.",
+      "datasets": [
+        "Iris",
+        "Zip code"
+      ],
+      "conditions": [
+        "Presence of null region (sum of class thresholds > 1)"
+      ]
+    },
+    {
+      "id": "openalex:W2514278201:m3",
+      "paper_id": "openalex:W2514278201",
+      "name": "Split-Conformal LABEL Inference",
+      "description": "Data-splitting method where base probability estimates are computed on one split and empirical quantiles are computed on the second split to ensure distribution-free finite-sample coverage.",
+      "datasets": [
+        "Abalone",
+        "Zip code"
+      ],
+      "conditions": [
+        "Independent and identically distributed samples"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2514278201:l1",
+      "paper_id": "openalex:W2514278201",
+      "text": "The optimal set-valued classifier can output empty prediction sets when required coverage is low or classes are well separated.",
+      "normalized_category": "empty-prediction-set",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2514278201:l2",
+      "paper_id": "openalex:W2514278201",
+      "text": "Total coverage control can yield severely low coverage for low-prevalence minority classes.",
+      "normalized_category": "minority-class-undercoverage",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2514278201:l3",
+      "paper_id": "openalex:W2514278201",
+      "text": "Controlling pointwise conditional coverage P{Y in H(X)|X=x} >= 1-alpha for continuous variables leads to trivial classifiers that always output all classes.",
+      "normalized_category": "pointwise-validity-impossibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2514278201:l4",
+      "paper_id": "openalex:W2514278201",
+      "text": "Classification with reject option frameworks rely on arbitrary rejection loss parameters that lack direct practical meaning.",
+      "normalized_category": "uninterpretable-loss-parameter",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2514278201:f1",
+      "paper_id": "openalex:W2514278201",
+      "text": "Adapt statistical consistency proofs to set-valued classifiers modified by the accretive completion procedure.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2514278201:f2",
+      "paper_id": "openalex:W2514278201",
+      "text": "Extend the set-valued classification framework to handle large numbers of classes by organizing labels into tree structures.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2514278201:f3",
+      "paper_id": "openalex:W2514278201",
+      "text": "Utilize regions of high ambiguity or null predictions for novel class discovery in dataset clusters.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.007775Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

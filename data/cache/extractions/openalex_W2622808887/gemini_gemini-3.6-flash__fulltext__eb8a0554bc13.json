@@ -1,0 +1,125 @@
+{
+  "paper_id": "openalex:W2622808887",
+  "claims": [
+    {
+      "id": "openalex:W2622808887:c1",
+      "paper_id": "openalex:W2622808887",
+      "text": "The proposed family of fairness regularizers for linear and logistic regression is convex.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2622808887:c2",
+      "paper_id": "openalex:W2622808887",
+      "text": "Any constant regressor exactly minimizes all of the proposed fairness regularizers.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2622808887:c3",
+      "paper_id": "openalex:W2622808887",
+      "text": "Building separate regression models for each group does not substantially improve the accuracy-fairness trade-off on most evaluated datasets out-of-sample compared to single models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2622808887:c4",
+      "paper_id": "openalex:W2622808887",
+      "text": "Individual fairness is generally more costly in terms of accuracy loss than group fairness across most studied datasets.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2622808887:e1",
+      "claim_id": "openalex:W2622808887:c1",
+      "description": "Since these loss functions and our fairness regularizer are convex, the combined objective functions obtained from our framework are also convex, and thus permit efficient optimization.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2622808887:e2",
+      "claim_id": "openalex:W2622808887:c2",
+      "description": "We note that any constant regressor (any w such that w · x = c for all x in X and some c in R) exactly minimizes all of our fairness regularizers.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2622808887:e3",
+      "claim_id": "openalex:W2622808887:c3",
+      "description": "Perhaps surprisingly, building separate models for each population barely improves the trade-off (and in some cases, hurts the trade-off for some values of lambda) across almost all datasets and fairness regularizers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2622808887:e4",
+      "claim_id": "openalex:W2622808887:c4",
+      "description": "Individual fairness appears to be strictly more costly than group fairness for the entire regime between the extremes of lambda = 0 and lambda -> infinity for a majority of these datasets (with the exception of COMPAS and Default datasets).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2622808887:m1",
+      "paper_id": "openalex:W2622808887",
+      "name": "Convex Fairness Regularization Framework",
+      "description": "An optimization framework adding convex fairness regularizers (individual, group, or hybrid) to MSE or log-loss objectives for linear and logistic regression models.",
+      "datasets": [
+        "Adult",
+        "Communities and Crime",
+        "COMPAS",
+        "Default",
+        "Law School",
+        "Sentencing"
+      ],
+      "conditions": [
+        "10-fold cross validation",
+        "L2 regularization tuned via cross-validation",
+        "CVX optimization solver",
+        "Single model vs. separate group models comparison"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2622808887:l1",
+      "paper_id": "openalex:W2622808887",
+      "text": "Most prior work on machine learning fairness focuses on binary classification rather than regression settings with continuous targets.",
+      "normalized_category": "classification-focus-in-prior-work",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2622808887:l2",
+      "paper_id": "openalex:W2622808887",
+      "text": "Evaluating equality of odds empirically for regression models is difficult because true labels may appear only once in dataset samples.",
+      "normalized_category": "equality-of-odds-unsuitability-for-regression",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2622808887:l3",
+      "paper_id": "openalex:W2622808887",
+      "text": "Group fairness regularizers and separate models are more prone to overfitting than individual fairness and single models, requiring larger L2 regularization parameters.",
+      "normalized_category": "overfitting-in-group-and-separate-models",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2622808887:l4",
+      "paper_id": "openalex:W2622808887",
+      "text": "Linear models perform poorly on certain tasks like the Default dataset.",
+      "normalized_category": "linear-model-expressiveness-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2622808887:l5",
+      "paper_id": "openalex:W2622808887",
+      "text": "The detailed trade-off between accuracy and fairness is strongly domain-dependent and lacks prescriptive universal patterns across datasets.",
+      "normalized_category": "domain-dependency-of-fairness-tradeoffs",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:52:19.311854Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

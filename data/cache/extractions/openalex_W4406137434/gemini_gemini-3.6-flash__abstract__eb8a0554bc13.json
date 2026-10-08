@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W4406137434",
+  "claims": [
+    {
+      "id": "openalex:W4406137434:c1",
+      "paper_id": "openalex:W4406137434",
+      "text": "Large Language Models hold potential for network operations involving text data, fault data, and log files.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406137434:c2",
+      "paper_id": "openalex:W4406137434",
+      "text": "This paper introduces a framework leveraging Large Language Models for intelligent network operations and performance optimization.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406137434:c3",
+      "paper_id": "openalex:W4406137434",
+      "text": "Intelligent networks encounter key technical barriers in real-time network monitoring.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406137434:c4",
+      "paper_id": "openalex:W4406137434",
+      "text": "Intelligent networks encounter key technical barriers in providing timely alerts.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406137434:e1",
+      "claim_id": "openalex:W4406137434:c1",
+      "description": "Abstract states LLMs showcase emergent capabilities in natural language tasks and hold great potential for network operations that involve vast amounts of text data, fault data, and log files.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406137434:e2",
+      "claim_id": "openalex:W4406137434:c2",
+      "description": "Abstract states that the paper introduces a framework for intelligent network operations and performance optimization leveraging LLM.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406137434:e3",
+      "claim_id": "openalex:W4406137434:c3",
+      "description": "Abstract notes technical barriers faced by intelligent networks, specifically efficiently monitoring networks in real-time.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406137434:e4",
+      "claim_id": "openalex:W4406137434:c4",
+      "description": "Abstract notes technical barriers faced by intelligent networks, specifically providing timely alerts when necessary.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406137434:m1",
+      "paper_id": "openalex:W4406137434",
+      "name": "LLM-based Intelligent Network Operations and Performance Optimization Framework",
+      "description": "A conceptual framework leveraging large language models to enhance network robustness and deliver personalized network services.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406137434:l1",
+      "paper_id": "openalex:W4406137434",
+      "text": "Intelligent networks face technical barriers in efficiently monitoring networks in real-time and providing timely alerts.",
+      "normalized_category": "real-time-monitoring-barriers",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4406137434:l2",
+      "paper_id": "openalex:W4406137434",
+      "text": "LLM-based intelligent network operations face challenges hindering comprehensive deployment.",
+      "normalized_category": "deployment-challenges",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4406137434:f1",
+      "paper_id": "openalex:W4406137434",
+      "text": "Developing potential solutions to overcome deployment challenges in LLM-based intelligent network operations and performance optimization.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.118136Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

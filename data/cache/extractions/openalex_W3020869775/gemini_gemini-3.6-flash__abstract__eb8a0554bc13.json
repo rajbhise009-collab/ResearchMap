@@ -1,0 +1,76 @@
+{
+  "paper_id": "openalex:W3020869775",
+  "claims": [
+    {
+      "id": "openalex:W3020869775:c1",
+      "paper_id": "openalex:W3020869775",
+      "text": "One third of COVID-19 patients in the authors' autopsy study experienced a fatal pulmonary embolism.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3020869775:c2",
+      "paper_id": "openalex:W3020869775",
+      "text": "Optimal dosing for anticoagulant treatment in patients with severe COVID-19 remains unknown and requires further prospective investigation.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3020869775:c3",
+      "paper_id": "openalex:W3020869775",
+      "text": "Pulmonary embolism is a common but rarely fatal finding on computed tomography in mechanically ventilated critically ill patients.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3020869775:e1",
+      "claim_id": "openalex:W3020869775:c1",
+      "description": "In contrast, one third of our patients had a fatal PE.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3020869775:e2",
+      "claim_id": "openalex:W3020869775:c2",
+      "description": "As such, our study and that by Baldi and coworkers add substantial value to the consensus statement's claim that the 'optimal dosing [for anticoagulant treatment] in patients with severe COVID-19 remains unknown and warrants further prospective investigation.'",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3020869775:e3",
+      "claim_id": "openalex:W3020869775:c3",
+      "description": "It is correct that PE is a common (but rarely fatal) finding on computed tomography in critically ill patients (2)...",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W3020869775:l1",
+      "paper_id": "openalex:W3020869775",
+      "text": "Prior consensus guidance on empirical anticoagulant therapy was based mainly on a single retrospective study presenting only laboratory abnormalities without autopsy data.",
+      "normalized_category": "lack-of-autopsy-data",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3020869775:l2",
+      "paper_id": "openalex:W3020869775",
+      "text": "VTE risk factor algorithms derived from general patients without underlying medical conditions cannot be extrapolated to patients with COVID-19.",
+      "normalized_category": "limited-extrapolatability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3020869775:f1",
+      "paper_id": "openalex:W3020869775",
+      "text": "Further prospective studies to determine optimal dosing for anticoagulant treatment in patients with severe COVID-19.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:17:51.174086Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

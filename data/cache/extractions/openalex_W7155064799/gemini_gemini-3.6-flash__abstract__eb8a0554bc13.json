@@ -1,0 +1,76 @@
+{
+  "paper_id": "openalex:W7155064799",
+  "claims": [
+    {
+      "id": "openalex:W7155064799:c1",
+      "paper_id": "openalex:W7155064799",
+      "text": "Interstep attention can be incorporated into reasoning uncertainty quantification to analyze semantic correlations across steps.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7155064799:c2",
+      "paper_id": "openalex:W7155064799",
+      "text": "A hidden confidence mechanism can retain historical confidence information across steps in long-horizon LLM responses.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7155064799:c3",
+      "paper_id": "openalex:W7155064799",
+      "text": "Combining historical hidden confidence with stepwise confidence produces an overall uncertainty estimate for reasoning chains.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7155064799:e1",
+      "claim_id": "openalex:W7155064799:c1",
+      "description": "To address this issue, we propose a novel method that incorporates interstep attention to analyze semantic correlations across steps.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7155064799:e2",
+      "claim_id": "openalex:W7155064799:c2",
+      "description": "For handling long-horizon responses, we introduce a hidden confidence mechanism to retain historical confidence information...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7155064799:e3",
+      "claim_id": "openalex:W7155064799:c3",
+      "description": "...which is then combined with stepwise confidence to produce a more accurate overall estimate.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7155064799:m1",
+      "paper_id": "openalex:W7155064799",
+      "name": "Recurrent Confidence Chain",
+      "description": "A temporal-aware uncertainty quantification framework that uses interstep attention and a hidden confidence mechanism to track and integrate historical stepwise confidence in LLM reasoning sequences.",
+      "datasets": [
+        "GAOKAO math benchmark",
+        "CLadder causal reasoning dataset"
+      ],
+      "conditions": [
+        "mainstream open-source large language models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7155064799:l1",
+      "paper_id": "openalex:W7155064799",
+      "text": "Existing sequence reasoning uncertainty methods overlook the temporal spread of confidence, leading to inflated overall confidence estimates even when earlier reasoning steps exhibit very low confidence.",
+      "normalized_category": "temporal-confidence-oversight",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.106241Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

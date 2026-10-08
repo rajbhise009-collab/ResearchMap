@@ -1,0 +1,114 @@
+{
+  "paper_id": "openalex:W4401863475",
+  "claims": [
+    {
+      "id": "openalex:W4401863475:c1",
+      "paper_id": "openalex:W4401863475",
+      "text": "Fine-tuning large language models on new information not acquired during pre-training can encourage model hallucinations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401863475:c2",
+      "paper_id": "openalex:W4401863475",
+      "text": "Prefix-based universal adversarial perturbations can bypass LLM-based guardrail models even when the adversary has no access to the guardrail model.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401863475:c3",
+      "paper_id": "openalex:W4401863475",
+      "text": "Natural Language Inference models used for grounding verification struggle with checks that require reasoning over temporal statements, negation, or quantifiers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401863475:c4",
+      "paper_id": "openalex:W4401863475",
+      "text": "Adversaries can bypass safety filters by decomposing malicious tasks into subtasks and solving benign subtasks with aligned frontier models while solving malicious subtasks with non-aligned models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401863475:e1",
+      "claim_id": "openalex:W4401863475:c1",
+      "description": "The authors cite recent literature showing that fine-tuning LLMs on unfamiliar factual data outside their pre-training distribution promotes hallucinated outputs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401863475:e2",
+      "claim_id": "openalex:W4401863475:c2",
+      "description": "Studies demonstrate a two-step attack constructing universal adversarial prefixes that propagate to the response and effectively undermine LLM guardrails across zero-access threat models.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401863475:e3",
+      "claim_id": "openalex:W4401863475:c3",
+      "description": "NLI-based automated checks frequently fail on complex grounding validation tasks involving temporal context comparisons, explicit negation, and quantifier evaluation.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401863475:e4",
+      "claim_id": "openalex:W4401863475:c4",
+      "description": "Research shows multi-model attack combinations allow aligned frontier models to assist in malicious objectives undetected because individual subqueries sent to them appear benign.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401863475:m1",
+      "paper_id": "openalex:W4401863475",
+      "name": "Generative AI Risk Management Framework",
+      "description": "A lifecycle management framework for addressing generative AI harms comprising identification, measurement, mitigation across four system layers, and operationalization.",
+      "datasets": [],
+      "conditions": [
+        "enterprise LLM deployment",
+        "responsible AI monitoring"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401863475:l1",
+      "paper_id": "openalex:W4401863475",
+      "text": "NLI-based guardrail models for grounding checks struggle with performing reasoning that involves temporal statements, negation, or quantifiers.",
+      "normalized_category": "reasoning-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4401863475:l2",
+      "paper_id": "openalex:W4401863475",
+      "text": "Current alignment methodologies relying on human feedback become unfeasible for supervising AI systems that achieve superhuman performance.",
+      "normalized_category": "supervision-scalability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4401863475:f1",
+      "paper_id": "openalex:W4401863475",
+      "text": "Developing mechanisms to detect hallucinations in video, speech, and multimodal settings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4401863475:f2",
+      "paper_id": "openalex:W4401863475",
+      "text": "Designing scalable differentially private model training techniques applicable to models with billions or trillions of parameters.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4401863475:f3",
+      "paper_id": "openalex:W4401863475",
+      "text": "Extending Retrieval-Augmented Generation (RAG) frameworks to multimodal knowledge bases containing text, images, audio, and video.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.973446Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

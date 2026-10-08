@@ -1,0 +1,145 @@
+{
+  "paper_id": "openalex:W2773444500",
+  "claims": [
+    {
+      "id": "openalex:W2773444500:c1",
+      "paper_id": "openalex:W2773444500",
+      "text": "Group disparate outcomes in employment can persist even when hiring decisions strictly adhere to input-output metrics of individual fairness.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773444500:c2",
+      "paper_id": "openalex:W2773444500",
+      "text": "Imposing a statistical parity constraint on hiring in a Temporary Labor Market (TLM) induces a unique, stable, and symmetric steady-state equilibrium across groups.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773444500:c3",
+      "paper_id": "openalex:W2773444500",
+      "text": "The statistical parity constraint in the Temporary Labor Market (TLM) does not need to be permanent to maintain long-term group equality.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773444500:c4",
+      "paper_id": "openalex:W2773444500",
+      "text": "Under unsaturated demand for skilled workers, the symmetric steady-state equilibrium resulting from a TLM fairness constraint Pareto-dominates equilibria under group-blind hiring strategies.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773444500:c5",
+      "paper_id": "openalex:W2773444500",
+      "text": "Under unsaturated demand for skilled workers, the symmetric steady-state equilibrium resulting from a TLM fairness constraint Pareto-dominates equilibria under statistical discriminatory hiring strategies.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2773444500:c6",
+      "paper_id": "openalex:W2773444500",
+      "text": "Procedural fairness checks restricted strictly to the hiring decision are insufficient to resolve structural development bias and investment disparities.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2773444500:e1",
+      "claim_id": "openalex:W2773444500:c1",
+      "description": "Mathematical formulation demonstrating that cyclic equilibrium ensures local procedural fairness with respect to investment choices while preserving global disparate outcomes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2773444500:e2",
+      "claim_id": "openalex:W2773444500:c2",
+      "description": "Proof of Theorem 3.1 showing that under TLM statistical parity hiring, the dynamic mapping of group outcomes is a contraction map converging to a unique symmetric fixed point.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2773444500:e3",
+      "claim_id": "openalex:W2773444500:c3",
+      "description": "Derivation showing that once initial group equality is restored, statistical parity of hired workers naturally results from firms' optimal hiring strategies without active enforcement.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2773444500:e4",
+      "claim_id": "openalex:W2773444500:c4",
+      "description": "Proof of Theorem 3.2 showing that group-blind hiring creates inefficiently high effective ability thresholds for disadvantaged groups, whereas TLM constrained hiring increases disadvantaged group employment without harming the favored group.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2773444500:e5",
+      "claim_id": "openalex:W2773444500:c5",
+      "description": "Proof of Theorem 3.2 demonstrating that self-confirming asymmetric equilibria under statistical discrimination produce lost efficiency that is recovered under statistical parity hiring.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2773444500:e6",
+      "claim_id": "openalex:W2773444500:c6",
+      "description": "Theoretical analysis showing that worker investments are strategic choices driven by group reputational externalities, which static input-output fairness metrics treat as fixed inputs.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2773444500:m1",
+      "paper_id": "openalex:W2773444500",
+      "name": "Dynamic reputational dual labor market game model",
+      "description": "A dynamic game-theoretic model partitioning the labor market into a Temporary Labor Market (TLM) constrained by statistical parity and a Permanent Labor Market (PLM) governed by relational reputational contracts.",
+      "datasets": [],
+      "conditions": [
+        "Two demographic groups with identical underlying intrinsic ability distributions F(theta)",
+        "TLM firms constrained to enforce statistical parity among hired workers",
+        "PLM hiring based on individual performance histories (reputation metrics)",
+        "Unsaturated demand for skilled workers in PLM (wage w = w_bar)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2773444500:l1",
+      "paper_id": "openalex:W2773444500",
+      "text": "Employment outcomes along the transition path toward symmetric equilibrium are not guaranteed to satisfy individual or group fairness metrics.",
+      "normalized_category": "transitional-fairness-unbound",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2773444500:l2",
+      "paper_id": "openalex:W2773444500",
+      "text": "The model simplifies real-world labor pipelines into discrete pre-TLM, TLM, and PLM stages, omitting real-world structural heterogeneity and complex social dynamics.",
+      "normalized_category": "simplified-market-structure",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2773444500:l3",
+      "paper_id": "openalex:W2773444500",
+      "text": "Existing static algorithmic fairness definitions evaluate decision functions as domain-general input-output mappings, ignoring strategic agent incentives and dynamic feedback loops in labor markets.",
+      "normalized_category": "static-fairness-metrics",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2773444500:f1",
+      "paper_id": "openalex:W2773444500",
+      "text": "Determine how algorithmic systems sifting through historical worker data in PLM settings should incorporate group membership considerations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2773444500:f2",
+      "paper_id": "openalex:W2773444500",
+      "text": "Conduct theoretical and empirical cost and efficiency evaluations of alternative intervention types across different stages of the social and economic pipeline.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.126086Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

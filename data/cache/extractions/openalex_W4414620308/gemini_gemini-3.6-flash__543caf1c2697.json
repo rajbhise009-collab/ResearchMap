@@ -1,0 +1,136 @@
+{
+  "paper_id": "openalex:W4414620308",
+  "claims": [
+    {
+      "id": "openalex:W4414620308:c1",
+      "paper_id": "openalex:W4414620308",
+      "text": "Bayesian inference introduced during generation models uncertainty in the parameter space to avoid overconfident predictions.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c2",
+      "paper_id": "openalex:W4414620308",
+      "text": "Predictive distribution entropy measures the uncertainty level of generated content.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c3",
+      "paper_id": "openalex:W4414620308",
+      "text": "Joint optimization of entropy regularization and risk-aware loss ensures key information is preserved during information compression.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c4",
+      "paper_id": "openalex:W4414620308",
+      "text": "Joint optimization of entropy regularization and risk-aware loss ensures risk attributes are explicitly expressed during information compression.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c5",
+      "paper_id": "openalex:W4414620308",
+      "text": "Incorporating risk scoring and regulation modules allows summaries to cover core content accurately.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c6",
+      "paper_id": "openalex:W4414620308",
+      "text": "Explicit risk-level prompts enhance summarization trustworthiness.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c7",
+      "paper_id": "openalex:W4414620308",
+      "text": "The proposed method significantly improves the robustness of summarization in high-risk applications.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c8",
+      "paper_id": "openalex:W4414620308",
+      "text": "The proposed method significantly improves the reliability of summarization in high-risk applications.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4414620308:e1",
+      "claim_id": "openalex:W4414620308:c1",
+      "description": "Bayesian inference is introduced during generation to model uncertainty in the parameter space, which helps avoid overconfident predictions.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4414620308:e2",
+      "claim_id": "openalex:W4414620308:c2",
+      "description": "The uncertainty level of the generated content is measured using predictive distribution entropy.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4414620308:e3",
+      "claim_id": "openalex:W4414620308:c3",
+      "description": "a joint optimization of entropy regularization and risk-aware loss is applied to ensure that key information is preserved",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4414620308:e4",
+      "claim_id": "openalex:W4414620308:c4",
+      "description": "a joint optimization of entropy regularization and risk-aware loss is applied to ensure that... risk attributes are explicitly expressed during information compression.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4414620308:e5",
+      "claim_id": "openalex:W4414620308:c5",
+      "description": "allowing summaries to cover the core content accurately",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4414620308:e6",
+      "claim_id": "openalex:W4414620308:c6",
+      "description": "enhancing trustworthiness through explicit risk-level prompts.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4414620308:e7",
+      "claim_id": "openalex:W4414620308:c7",
+      "description": "Comparative experiments and sensitivity analyses verify that the proposed method significantly improves the robustness... of summarization in high-risk applications",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4414620308:e8",
+      "claim_id": "openalex:W4414620308:c8",
+      "description": "Comparative experiments and sensitivity analyses verify that the proposed method significantly improves the... reliability of summarization in high-risk applications",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4414620308:m1",
+      "paper_id": "openalex:W4414620308",
+      "name": "Trustworthy Summarization via Uncertainty Quantification and Risk Awareness",
+      "description": "A conditional generation-based summarization model incorporating Bayesian inference, predictive distribution entropy measurement, joint optimization of entropy regularization with risk-aware loss, and risk regulation modules.",
+      "datasets": [],
+      "conditions": [
+        "high-risk scenarios",
+        "information overload"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:01:45.669762Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

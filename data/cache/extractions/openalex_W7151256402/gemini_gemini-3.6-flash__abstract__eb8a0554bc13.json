@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W7151256402",
+  "claims": [
+    {
+      "id": "openalex:W7151256402:c1",
+      "paper_id": "openalex:W7151256402",
+      "text": "Artificial intelligence models face security and robustness challenges in practical applications.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7151256402:c2",
+      "paper_id": "openalex:W7151256402",
+      "text": "Most current AI models are designed with a black-box structure that lacks sufficient explainability.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7151256402:c3",
+      "paper_id": "openalex:W7151256402",
+      "text": "Generative large language models experience hallucinations and associated robustness issues.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7151256402:e1",
+      "claim_id": "openalex:W7151256402:c1",
+      "description": "Robustness remains a major barrier to widespread adoption and contributes significantly to perceived untrustworthiness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7151256402:e2",
+      "claim_id": "openalex:W7151256402:c2",
+      "description": "The invisible nature of black-box structures limits behavioral predictability and increases instability in complex environments.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7151256402:e3",
+      "claim_id": "openalex:W7151256402:c3",
+      "description": "Generative LLMs face unique robustness issues including hallucinations that require dedicated mitigation strategies.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7151256402:m1",
+      "paper_id": "openalex:W7151256402",
+      "name": "Systematic Literature Review",
+      "description": "Systematic review examining evaluation methods and lifecycle enhancement strategies for AI model robustness.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7151256402:l1",
+      "paper_id": "openalex:W7151256402",
+      "text": "Existing AI models lack explainability due to black-box architectures, causing instability in unknown environments.",
+      "normalized_category": "black-box-lack-of-explainability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7151256402:f1",
+      "paper_id": "openalex:W7151256402",
+      "text": "Addressing open questions in AI model robustness and developing enhanced mitigation strategies for LLM hallucinations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.105300Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

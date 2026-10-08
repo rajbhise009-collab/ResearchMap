@@ -1,0 +1,90 @@
+{
+  "paper_id": "openalex:W2963174898",
+  "claims": [
+    {
+      "id": "openalex:W2963174898:c1",
+      "paper_id": "openalex:W2963174898",
+      "text": "A probabilistic formulation of data pre-processing can be used to reduce discrimination in algorithmic decision making.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963174898:c2",
+      "paper_id": "openalex:W2963174898",
+      "text": "Convex optimization can learn a data transformation that simultaneously controls discrimination, limits sample distortion, and preserves utility.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963174898:c3",
+      "paper_id": "openalex:W2963174898",
+      "text": "Limited sample size impacts the ability of optimized pre-processing to prevent discrimination.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963174898:c4",
+      "paper_id": "openalex:W2963174898",
+      "text": "Data discrimination can be significantly reduced at a small cost in classification accuracy.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2963174898:e1",
+      "claim_id": "openalex:W2963174898:c1",
+      "description": "The authors introduce a novel probabilistic formulation of data pre-processing designed to reduce discrimination.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963174898:e2",
+      "claim_id": "openalex:W2963174898:c2",
+      "description": "The paper formulates a convex optimization problem targeting three specific goals: controlling discrimination, limiting sample distortion, and preserving utility.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963174898:e3",
+      "claim_id": "openalex:W2963174898:c3",
+      "description": "The study characterizes the analytical/theoretical impact of limited sample size on accomplishing discrimination reduction.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2963174898:e4",
+      "claim_id": "openalex:W2963174898:c4",
+      "description": "Application of two optimization instances on real-world datasets (including criminal recidivism) demonstrates substantial discrimination reduction with only small accuracy trade-offs.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2963174898:m1",
+      "paper_id": "openalex:W2963174898",
+      "name": "Probabilistic Convex Optimization Pre-Processing",
+      "description": "A convex optimization framework for learning probabilistic data transformations that balance discrimination control, sample distortion limits, and data utility.",
+      "datasets": [
+        "criminal recidivism dataset"
+      ],
+      "conditions": [
+        "pre-processing transformation",
+        "convex optimization formulation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2963174898:l1",
+      "paper_id": "openalex:W2963174898",
+      "text": "The efficacy of the discrimination prevention optimization is constrained by limited sample sizes.",
+      "normalized_category": "sample-size-sensitivity",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:15:18.750262Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

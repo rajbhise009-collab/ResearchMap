@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W2315875886",
+  "claims": [
+    {
+      "id": "openalex:W2315875886:c1",
+      "paper_id": "openalex:W2315875886",
+      "text": "Moderate alcohol intake of 5 to 14 g per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2315875886:c2",
+      "paper_id": "openalex:W2315875886",
+      "text": "Alcohol intake of 25 g or more per day is associated with a decreased risk of coronary heart disease in middle-aged women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2315875886:c3",
+      "paper_id": "openalex:W2315875886",
+      "text": "Moderate alcohol intake of 5 to 14 g per day is associated with a decreased risk of ischemic stroke in middle-aged women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2315875886:c4",
+      "paper_id": "openalex:W2315875886",
+      "text": "Alcohol intake of 5 to 14 g per day tends to be associated with an increased risk of subarachnoid hemorrhage in middle-aged women.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2315875886:e1",
+      "claim_id": "openalex:W2315875886:c1",
+      "description": "As compared with nondrinkers, women who consumed 5 to 14 g of alcohol per day had a relative risk of coronary disease of 0.6 (95 percent confidence interval, 0.4 to 0.9) after adjustment for risk factors.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2315875886:e2",
+      "claim_id": "openalex:W2315875886:c2",
+      "description": "For 25 g or more of alcohol per day the relative risk of coronary disease was 0.4 (95 percent confidence interval, 0.2 to 0.8) after adjustment for risk factors.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2315875886:e3",
+      "claim_id": "openalex:W2315875886:c3",
+      "description": "For 5 to 14 g of alcohol per day the relative risk of ischemic stroke was 0.3 (95 percent confidence interval, 0.1 to 0.7).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2315875886:e4",
+      "claim_id": "openalex:W2315875886:c4",
+      "description": "For 5 to 14 g of alcohol per day the relative risk of subarachnoid hemorrhage was 3.7 (95 percent confidence interval, 1.0 to 13.8).",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2315875886:m1",
+      "paper_id": "openalex:W2315875886",
+      "name": "Prospective cohort study with dietary questionnaire assessment",
+      "description": "A prospective study following a female cohort to evaluate alcohol intake via questionnaire and track incident coronary heart disease, ischemic stroke, and subarachnoid hemorrhage.",
+      "datasets": [
+        "Nurses' Health Study cohort"
+      ],
+      "conditions": [
+        "87,526 female nurses 34 to 59 years of age",
+        "334,382 person-years of follow-up (1980–1984)",
+        "Adjusted for coronary disease risk factors"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2315875886:l1",
+      "paper_id": "openalex:W2315875886",
+      "text": "The number of documented cases of subarachnoid hemorrhage was small (28 cases).",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:12:54.244398Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

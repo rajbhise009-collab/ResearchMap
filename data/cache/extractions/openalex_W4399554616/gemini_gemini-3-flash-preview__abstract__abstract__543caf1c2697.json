@@ -1,0 +1,105 @@
+{
+  "paper_id": "openalex:W4399554616",
+  "claims": [
+    {
+      "id": "openalex:W4399554616:c1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Uncertainty quantification in free-form LLM responses is challenging due to the difficulty of defining task-specific uncertainties such as semantics.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c2",
+      "paper_id": "openalex:W4399554616",
+      "text": "Bayesian decision theory can address uncertainty quantification by assuming utility is characterized by a similarity measure between generated and hypothetical true responses.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c3",
+      "paper_id": "openalex:W4399554616",
+      "text": "Similarity-based utility assumptions enable principled quantification of a model's subjective uncertainty.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c4",
+      "paper_id": "openalex:W4399554616",
+      "text": "Similarity-based utility assumptions enable principled calibration of a model's subjective uncertainty.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c5",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty can be derived based on a missing data perspective.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c6",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty can be characterized as an excess risk.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c7",
+      "paper_id": "openalex:W4399554616",
+      "text": "The proposed uncertainty quantification methods are applicable to black-box language models.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c8",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty offers a promising deferral strategy for efficient data acquisition in in-context learning.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399554616:e1",
+      "claim_id": "openalex:W4399554616:c8",
+      "description": "Experiments on question answering and machine translation tasks demonstrate that epistemic uncertainty is effective for data acquisition deferral.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399554616:m1",
+      "paper_id": "openalex:W4399554616",
+      "name": "Bayesian Decision Theory Uncertainty Framework",
+      "description": "A framework for quantifying subjective and epistemic uncertainty in NLG using similarity measures as utility functions.",
+      "datasets": [
+        "Question answering tasks",
+        "Machine translation tasks"
+      ],
+      "conditions": [
+        "Black-box language models",
+        "In-context learning"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399554616:l1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Identifying task-specific uncertainties (e.g., about semantics) appears difficult to define in general cases.",
+      "normalized_category": "definition-difficulty",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:14:33.762045Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

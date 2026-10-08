@@ -1,0 +1,90 @@
+{
+  "paper_id": "openalex:W4413167479",
+  "claims": [
+    {
+      "id": "openalex:W4413167479:c1",
+      "paper_id": "openalex:W4413167479",
+      "text": "In-context learning exhibits low accuracy in cross-lingual sentiment classification scenarios.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413167479:c2",
+      "paper_id": "openalex:W4413167479",
+      "text": "In-context learning presents high calibration errors in cross-lingual sentiment classification scenarios.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413167479:c3",
+      "paper_id": "openalex:W4413167479",
+      "text": "N2C2 employs a k-nearest neighbors augmented classifier leveraging cached few-shot instances for prediction confidence calibration.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413167479:c4",
+      "paper_id": "openalex:W4413167479",
+      "text": "N2C2 incorporates confidence-aware distribution, semantically consistent retrieval representation, and adaptive neighbor combination modules.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413167479:e1",
+      "claim_id": "openalex:W4413167479:c1",
+      "description": "Our findings suggest that ICL performs poorly in cross-lingual scenarios, exhibiting low accuracy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413167479:e2",
+      "claim_id": "openalex:W4413167479:c2",
+      "description": "Our findings suggest that ICL in cross-lingual scenarios presents high calibration errors.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413167479:e3",
+      "claim_id": "openalex:W4413167479:c3",
+      "description": "We propose a novel approach, N2C2, which employs a k-nearest neighbors augmented classifier for prediction confidence calibration, narrowing the prediction gap by leveraging a datastore of cached few-shot instances.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413167479:e4",
+      "claim_id": "openalex:W4413167479:c4",
+      "description": "N2C2 integrates the predictions from the datastore and incorporates confidence-aware distribution, semantically consistent retrieval representation, and adaptive neighbor combination modules.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413167479:m1",
+      "paper_id": "openalex:W4413167479",
+      "name": "N2C2",
+      "description": "A k-nearest neighbors augmented classifier that integrates predictions from a cached few-shot instance datastore with confidence-aware distribution, semantically consistent retrieval representation, and adaptive neighbor combination modules for confidence calibration.",
+      "datasets": [
+        "two multilingual sentiment classification datasets"
+      ],
+      "conditions": [
+        "cross-lingual sentiment classification",
+        "in-context learning"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413167479:l1",
+      "paper_id": "openalex:W4413167479",
+      "text": "Standard in-context learning performs poorly in cross-lingual scenarios, exhibiting low accuracy and high calibration errors.",
+      "normalized_category": "cross-lingual-icl-performance-degradation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.105519Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

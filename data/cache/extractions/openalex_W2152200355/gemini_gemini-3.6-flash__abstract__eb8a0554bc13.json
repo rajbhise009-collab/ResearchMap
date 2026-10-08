@@ -1,0 +1,212 @@
+{
+  "paper_id": "openalex:W2152200355",
+  "claims": [
+    {
+      "id": "openalex:W2152200355:c1",
+      "paper_id": "openalex:W2152200355",
+      "text": "The guild of butyrate-producing bacteria is polyphyletic.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c2",
+      "paper_id": "openalex:W2152200355",
+      "text": "Butyrate-producing bacteria cannot be accurately detected by 16S rRNA gene sequencing.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c3",
+      "paper_id": "openalex:W2152200355",
+      "text": "Screening 3,184 sequenced bacterial genomes identified 225 bacterial genomes with the potential to produce butyrate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c4",
+      "paper_id": "openalex:W2152200355",
+      "text": "The majority of potential butyrate-producing bacterial candidates belong to distinct families within Firmicutes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c5",
+      "paper_id": "openalex:W2152200355",
+      "text": "Members of nine phyla other than Firmicutes possess the potential to produce butyrate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c6",
+      "paper_id": "openalex:W2152200355",
+      "text": "In stool metagenomes of healthy individuals, a mean of 19.1% of total genomes exhibit a butyrate-producing pathway.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c7",
+      "paper_id": "openalex:W2152200355",
+      "text": "The acetyl-CoA pathway is the most prevalent butyrate synthesis pathway in healthy human stool metagenomes, accounting for a mean of 79.7% of all pathways.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c8",
+      "paper_id": "openalex:W2152200355",
+      "text": "The lysine pathway represents a mean of 11.2% of all detected butyrate synthesis pathways in healthy human stool metagenomes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c9",
+      "paper_id": "openalex:W2152200355",
+      "text": "The acetyl-CoA pathway in most individuals is dominated by a few firmicute groups associated with Lachnospiraceae and Ruminococcaceae.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2152200355:c10",
+      "paper_id": "openalex:W2152200355",
+      "text": "Non-acetyl-CoA butyrate synthesis pathways in human stool metagenomes are associated primarily with Bacteroidetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2152200355:e1",
+      "claim_id": "openalex:W2152200355:c1",
+      "description": "This guild is polyphyletic",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e2",
+      "claim_id": "openalex:W2152200355:c2",
+      "description": "and cannot be accurately detected by 16S rRNA gene sequencing.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e3",
+      "claim_id": "openalex:W2152200355:c3",
+      "description": "We undertook a broad analysis of butyrate-producing pathways and individual genes by screening 3,184 sequenced bacterial genomes from the Integrated Microbial Genome database. Genomes of 225 bacteria with a potential to produce butyrate were identified, including many previously unknown candidates.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e4",
+      "claim_id": "openalex:W2152200355:c4",
+      "description": "The majority of candidates belong to distinct families within the Firmicutes",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e5",
+      "claim_id": "openalex:W2152200355:c5",
+      "description": "members of nine other phyla, especially from Actinobacteria, Bacteroidetes, Fusobacteria, Proteobacteria, Spirochaetes, and Thermotogae, were also identified as potential butyrate producers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e6",
+      "claim_id": "openalex:W2152200355:c6",
+      "description": "A high percentage of total genomes exhibited a butyrate-producing pathway (mean, 19.1%; range, 3.2% to 39.4%)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e7",
+      "claim_id": "openalex:W2152200355:c7",
+      "description": "where the acetyl-coenzyme A (CoA) pathway was the most prevalent (mean, 79.7% of all pathways)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e8",
+      "claim_id": "openalex:W2152200355:c8",
+      "description": "followed by the lysine pathway (mean, 11.2%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e9",
+      "claim_id": "openalex:W2152200355:c9",
+      "description": "Diversity analysis for the acetyl-CoA pathway showed that the same few firmicute groups associated with several Lachnospiraceae and Ruminococcaceae were dominating in most individuals",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2152200355:e10",
+      "claim_id": "openalex:W2152200355:c10",
+      "description": "whereas the other pathways were associated primarily with Bacteroidetes.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2152200355:m1",
+      "paper_id": "openalex:W2152200355",
+      "name": "Genomic screening of bacterial genomes",
+      "description": "Screening 3,184 bacterial genomes from the Integrated Microbial Genome database for butyrate-producing pathways to establish a gene catalogue.",
+      "datasets": [
+        "Integrated Microbial Genome database"
+      ],
+      "conditions": [
+        "3,184 sequenced bacterial genomes"
+      ]
+    },
+    {
+      "id": "openalex:W2152200355:m2",
+      "paper_id": "openalex:W2152200355",
+      "name": "Metagenomic screening of stool samples",
+      "description": "Screening stool metagenomes from healthy individuals using a gene catalogue to assess the abundance and diversity of butyrate synthesis pathways.",
+      "datasets": [
+        "Human Microbiome Project (HMP) stool metagenomes"
+      ],
+      "conditions": [
+        "15 metagenomes from healthy individuals"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2152200355:l1",
+      "paper_id": "openalex:W2152200355",
+      "text": "16S rRNA gene sequencing cannot accurately detect polyphyletic butyrate-producing bacteria.",
+      "normalized_category": "taxonomic-marker-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2152200355:l2",
+      "paper_id": "openalex:W2152200355",
+      "text": "Previous investigations targeting terminal genes were incomplete due to unrecognized alternative enzymes and additional pathways.",
+      "normalized_category": "incomplete-pathway-coverage",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2152200355:l3",
+      "paper_id": "openalex:W2152200355",
+      "text": "Publicly available genomic databases are often incomplete or misannotated.",
+      "normalized_category": "database-misannotation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2152200355:f1",
+      "paper_id": "openalex:W2152200355",
+      "text": "Understanding the specific roles of butyrate producers in health and disease.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2152200355:f2",
+      "paper_id": "openalex:W2152200355",
+      "text": "Assisting in the development of treatments for functional dysbiosis.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:46:21.372659Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

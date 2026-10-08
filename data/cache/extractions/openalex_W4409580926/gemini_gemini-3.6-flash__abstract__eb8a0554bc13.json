@@ -1,0 +1,74 @@
+{
+  "paper_id": "openalex:W4409580926",
+  "claims": [
+    {
+      "id": "openalex:W4409580926:c1",
+      "paper_id": "openalex:W4409580926",
+      "text": "Extending LLM-based decision-making frameworks from single-agent to multi-agent settings requires addressing agent coordination.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409580926:c2",
+      "paper_id": "openalex:W4409580926",
+      "text": "Extending LLM-based decision-making frameworks from single-agent to multi-agent settings requires addressing agent communication.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4409580926:e1",
+      "claim_id": "openalex:W4409580926:c1",
+      "description": "the extension of LLM-based agents to Multi-Agent DM (MADM) is not trivial, as many aspects, such as coordination... are not considered in the DM frameworks of a single agent",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4409580926:e2",
+      "claim_id": "openalex:W4409580926:c2",
+      "description": "the extension of LLM-based agents to Multi-Agent DM (MADM) is not trivial, as many aspects, such as... communication between agents, are not considered in the DM frameworks of a single agent",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4409580926:m1",
+      "paper_id": "openalex:W4409580926",
+      "name": "Literature Survey on LLM-Based Decision-Making",
+      "description": "Surveys existing single-agent and multi-agent LLM-based decision-making frameworks and outlines future research directions.",
+      "datasets": [],
+      "conditions": [
+        "cooperative tasks of multiple agents with a common goal",
+        "inter-agent communication",
+        "human-in/on-the-loop scenarios"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4409580926:l1",
+      "paper_id": "openalex:W4409580926",
+      "text": "Single-agent LLM decision-making frameworks do not consider coordination and communication between agents.",
+      "normalized_category": "lack-of-multi-agent-coordination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4409580926:f1",
+      "paper_id": "openalex:W4409580926",
+      "text": "Research on LLM-based multi-agent decision-making for cooperative tasks with common goals and inter-agent communication.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4409580926:f2",
+      "paper_id": "openalex:W4409580926",
+      "text": "Research on human-in/on-the-loop decision-making scenarios enabled by language components in multi-agent frameworks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.121302Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

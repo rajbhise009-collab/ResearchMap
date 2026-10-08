@@ -1,0 +1,122 @@
+{
+  "paper_id": "openalex:W4414298237",
+  "claims": [
+    {
+      "id": "openalex:W4414298237:c1",
+      "paper_id": "openalex:W4414298237",
+      "text": "The global pharmaceutical drug delivery market is forecasted to grow to USD 2546.0 billion by 2029.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c2",
+      "paper_id": "openalex:W4414298237",
+      "text": "The Rule of Five (Ro5) principles for AI in formulation development require a formulation dataset containing at least 500 entries.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c3",
+      "paper_id": "openalex:W4414298237",
+      "text": "The Rule of Five (Ro5) principles require coverage of a minimum of 10 drugs and all significant excipients.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c4",
+      "paper_id": "openalex:W4414298237",
+      "text": "The Rule of Five (Ro5) principles require appropriate molecular representations for both drugs and excipients.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c5",
+      "paper_id": "openalex:W4414298237",
+      "text": "The Rule of Five (Ro5) principles require inclusion of all critical process parameters.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c6",
+      "paper_id": "openalex:W4414298237",
+      "text": "The Rule of Five (Ro5) principles require utilization of suitable algorithms and model interpretability.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4414298237:e1",
+      "claim_id": "openalex:W4414298237:c1",
+      "description": "The global pharmaceutical drug delivery market is forecasted to grow to USD 2546.0 billion by 2029.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e2",
+      "claim_id": "openalex:W4414298237:c2",
+      "description": "This 'Ro5' includes the following criteria: a formulation dataset containing at least 500 entries",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e3",
+      "claim_id": "openalex:W4414298237:c3",
+      "description": "This 'Ro5' includes the following criteria: coverage of a minimum of 10 drugs and all significant excipients",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e4",
+      "claim_id": "openalex:W4414298237:c4",
+      "description": "This 'Ro5' includes the following criteria: appropriate molecular representations for both drugs and excipients",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e5",
+      "claim_id": "openalex:W4414298237:c5",
+      "description": "This 'Ro5' includes the following criteria: inclusion of all critical process parameters",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e6",
+      "claim_id": "openalex:W4414298237:c6",
+      "description": "This 'Ro5' includes the following criteria: utilization of suitable algorithms and model interpretability",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4414298237:m1",
+      "paper_id": "openalex:W4414298237",
+      "name": "Rule of Five (Ro5) principles for AI formulation development",
+      "description": "A set of five criteria guiding dataset size, drug and excipient coverage, molecular representation, process parameters, and algorithm interpretability to enhance AI reliability in drug delivery.",
+      "datasets": [],
+      "conditions": [
+        "Dataset entries >= 500",
+        "Minimum 10 drugs",
+        "All significant excipients covered"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4414298237:f1",
+      "paper_id": "openalex:W4414298237",
+      "text": "Utilization of large language models in AI-driven drug formulation development.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414298237:f2",
+      "paper_id": "openalex:W4414298237",
+      "text": "Fostering multidisciplinary collaboration, talent development, and culture transformation in pharmaceutical AI adoption.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.125274Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

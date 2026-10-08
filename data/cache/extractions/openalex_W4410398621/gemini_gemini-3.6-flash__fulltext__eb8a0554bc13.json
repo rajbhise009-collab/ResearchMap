@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W4410398621",
+  "claims": [
+    {
+      "id": "openalex:W4410398621:c1",
+      "paper_id": "openalex:W4410398621",
+      "text": "Current state-of-the-art LLMs frequently violate basic principles of probabilistic reasoning such as complementarity and monotonicity.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410398621:c2",
+      "paper_id": "openalex:W4410398621",
+      "text": "Larger closed-source LLMs achieve higher accuracy on monotonicity evaluation tasks than smaller open-source models.",
+      "type": "finding",
+      "confidence": 0.92,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410398621:c3",
+      "paper_id": "openalex:W4410398621",
+      "text": "When larger LLMs produce incorrect monotonic probability estimations, the magnitude of their deviation from correct bounds is larger than that of smaller models like Gemma.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410398621:c4",
+      "paper_id": "openalex:W4410398621",
+      "text": "Chain-of-thought prompting provides performance gains on monotonicity tasks for smaller models but yields only marginal gains for larger models.",
+      "type": "finding",
+      "confidence": 0.88,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410398621:c5",
+      "paper_id": "openalex:W4410398621",
+      "text": "The Argumentative LLM (ArgLLM) technique achieves equal or higher accuracy than chain-of-thought prompting on monotonicity generalisation tasks for closed-source models.",
+      "type": "finding",
+      "confidence": 0.88,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410398621:c6",
+      "paper_id": "openalex:W4410398621",
+      "text": "Top-K logit sampling increases monotonicity specialisation accuracy for GPT-4o compared to direct prompting.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410398621:e1",
+      "claim_id": "openalex:W4410398621:c1",
+      "description": "Across evaluated models, 72.0% to 96.5% of predictions in the complementarity task deviated by more than 5% from ground truth probability axioms.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410398621:e2",
+      "claim_id": "openalex:W4410398621:c2",
+      "description": "Under direct prompting, GPT-4o-mini and GPT-4o achieved specialisation accuracies of 0.627 and 0.660, compared to Gemma's 0.452 and Mixtral's 0.548.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410398621:e3",
+      "claim_id": "openalex:W4410398621:c3",
+      "description": "Mean deviation on the generalisation task for GPT-4o and GPT-4o-mini was higher across all methods than that of Gemma.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4410398621:e4",
+      "claim_id": "openalex:W4410398621:c4",
+      "description": "Chain-of-thought increased Gemma's generalisation accuracy from 0.515 to 0.545 and Llama-3.1's specialisation accuracy from 0.590 to 0.615, whereas GPT-4o-mini's specialisation accuracy decreased from 0.627 to 0.610.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4410398621:e5",
+      "claim_id": "openalex:W4410398621:c5",
+      "description": "ArgLLM achieved 0.835 generalisation accuracy for GPT-4o-mini and 0.820 for GPT-4o, compared to 0.767 and 0.790 for chain-of-thought.",
+      "strength": 0.88
+    },
+    {
+      "id": "openalex:W4410398621:e6",
+      "claim_id": "openalex:W4410398621:c6",
+      "description": "Top-K logit sampling yielded a specialisation accuracy of 0.760 for GPT-4o, compared to 0.660 under direct prompting.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410398621:m1",
+      "paper_id": "openalex:W4410398621",
+      "name": "Rational Probabilistic Belief (RPB) evaluation framework",
+      "description": "Evaluation of LLM adherence to probabilistic axioms of complementarity and monotonicity across synthetically generated claim variations using multiple uncertainty quantification techniques.",
+      "datasets": [
+        "Rational Probabilistic Belief (RPB) dataset"
+      ],
+      "conditions": [
+        "Direct Prompting",
+        "Chain-of-Thought Prompting",
+        "Argumentative LLMs (ArgLLMs)",
+        "Top-K Logit Sampling",
+        "4-bit model quantization for open-source LLMs",
+        "Temperature 0.7"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410398621:l1",
+      "paper_id": "openalex:W4410398621",
+      "text": "Top-K Logit Sampling could not be applied to smaller open-source models because they failed to consistently adhere to numerical output formatting instructions.",
+      "normalized_category": "methodology-applicability-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410398621:l2",
+      "paper_id": "openalex:W4410398621",
+      "text": "The ArgLLM method is computationally expensive as it requires generating multiple layers of arguments and confidence assignments for every claim.",
+      "normalized_category": "high-computational-cost",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410398621:l3",
+      "paper_id": "openalex:W4410398621",
+      "text": "Evaluation of GPT-4o was restricted to a reduced sample size of 100 claim pairs due to API usage costs.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410398621:l4",
+      "paper_id": "openalex:W4410398621",
+      "text": "Direct prompting-based methods are insufficient to ascertain the internal uncertainty of LLM outputs.",
+      "normalized_category": "prompting-method-insufficiency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4410398621:f1",
+      "paper_id": "openalex:W4410398621",
+      "text": "Investigating neurosymbolic approaches that combine LLMs with symbolic probabilistic reasoning modules to enforce logical probabilistic constraints.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.985401Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

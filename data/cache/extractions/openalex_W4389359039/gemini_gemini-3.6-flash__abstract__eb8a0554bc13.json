@@ -1,0 +1,49 @@
+{
+  "paper_id": "openalex:W4389359039",
+  "claims": [
+    {
+      "id": "openalex:W4389359039:c1",
+      "paper_id": "openalex:W4389359039",
+      "text": "Recent developments in artificial intelligence have enabled machine processing to shift from discriminative AI tasks toward creative tasks through generative AI.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389359039:c2",
+      "paper_id": "openalex:W4389359039",
+      "text": "Generative AI is capable of producing novel and realistic content across broad spectrums based on basic user prompts.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389359039:e1",
+      "claim_id": "openalex:W4389359039:c1",
+      "description": "Recent developments in the field of artificial intelligence (AI) have enabled new paradigms of machine processing, shifting from data-driven, discriminative AI tasks toward sophisticated, creative tasks through generative AI.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389359039:e2",
+      "claim_id": "openalex:W4389359039:c2",
+      "description": "Leveraging deep generative models, generative AI is capable of producing novel and realistic content across a broad spectrum (e.g., texts, images, or programming code) for various domains based on basic user prompts.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389359039:m1",
+      "paper_id": "openalex:W4389359039",
+      "name": "Conceptual Overview and Synthesis",
+      "description": "Provides a comprehensive conceptual overview of generative AI fundamentals, underlying techniques, properties, potentials, and challenges.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.111344Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

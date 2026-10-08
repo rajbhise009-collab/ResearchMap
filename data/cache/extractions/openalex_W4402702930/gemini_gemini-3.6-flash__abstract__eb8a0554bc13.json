@@ -1,0 +1,116 @@
+{
+  "paper_id": "openalex:W4402702930",
+  "claims": [
+    {
+      "id": "openalex:W4402702930:c1",
+      "paper_id": "openalex:W4402702930",
+      "text": "Grasp-Anything++ is a language-driven grasp detection dataset featuring 1M samples, over 3M objects, and upwards of 10M grasping instructions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402702930:c2",
+      "paper_id": "openalex:W4402702930",
+      "text": "Language-driven grasp detection can be modeled as a conditional generation problem using diffusion models.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402702930:c3",
+      "paper_id": "openalex:W4402702930",
+      "text": "A contrastive training objective explicitly contributes to the denoising process to detect grasp poses given language instructions.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402702930:c4",
+      "paper_id": "openalex:W4402702930",
+      "text": "The proposed language-driven diffusion grasp detection framework is theoretically supportive.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402702930:c5",
+      "paper_id": "openalex:W4402702930",
+      "text": "The Grasp-Anything++ dataset enables zero-shot grasp detection.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402702930:e1",
+      "claim_id": "openalex:W4402702930:c1",
+      "description": "The authors introduce Grasp-Anything++, a new language-driven grasp detection dataset featuring 1M samples, over 3M objects, and upwards of 10M grasping instructions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402702930:e2",
+      "claim_id": "openalex:W4402702930:c2",
+      "description": "The paper approaches language-driven grasp detection as a conditional generation problem and proposes a method based on diffusion models.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402702930:e3",
+      "claim_id": "openalex:W4402702930:c3",
+      "description": "The key contribution highlighted is the contrastive training objective contributing to the denoising process to detect grasp poses from language instructions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402702930:e4",
+      "claim_id": "openalex:W4402702930:c4",
+      "description": "The authors state that their approach is theoretically supportive.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4402702930:e5",
+      "claim_id": "openalex:W4402702930:c5",
+      "description": "The paper demonstrates that the large-scale dataset enables zero-shot grasp detection.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402702930:m1",
+      "paper_id": "openalex:W4402702930",
+      "name": "Foundation Model Scene Corpus Generation",
+      "description": "Utilizing foundation models to generate a large-scale scene corpus containing images and corresponding grasp prompts.",
+      "datasets": [
+        "Grasp-Anything++"
+      ],
+      "conditions": [
+        "language-driven grasp prompts"
+      ]
+    },
+    {
+      "id": "openalex:W4402702930:m2",
+      "paper_id": "openalex:W4402702930",
+      "name": "Contrastive Diffusion-Based Grasp Detection",
+      "description": "A diffusion model for conditional generation of grasp poses using a contrastive training objective integrated into the denoising process.",
+      "datasets": [
+        "Grasp-Anything++"
+      ],
+      "conditions": [
+        "natural language instructions",
+        "real-world robotic grasping"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402702930:l1",
+      "paper_id": "openalex:W4402702930",
+      "text": "Most existing grasp detection methods do not consider using natural language as a condition to detect grasp poses.",
+      "normalized_category": "lack-of-language-conditioning",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.122465Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,126 @@
+{
+  "paper_id": "openalex:W1520609538",
+  "claims": [
+    {
+      "id": "openalex:W1520609538:c1",
+      "paper_id": "openalex:W1520609538",
+      "text": "Combining ezetimibe (10 mg) with simvastatin (40 mg) lowers median time-weighted average LDL cholesterol to 53.7 mg/dL compared to 69.5 mg/dL with simvastatin monotherapy (P < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1520609538:c2",
+      "paper_id": "openalex:W1520609538",
+      "text": "Simvastatin plus ezetimibe reduces the 7-year Kaplan-Meier primary composite outcome event rate to 32.7% compared with 34.7% for simvastatin monotherapy (hazard ratio 0.936, P=0.016).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1520609538:c3",
+      "paper_id": "openalex:W1520609538",
+      "text": "The addition of ezetimibe to simvastatin reduces the risk of myocardial infarction compared to simvastatin monotherapy (13.1% vs 14.8%, hazard ratio 0.87, P=0.002).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1520609538:c4",
+      "paper_id": "openalex:W1520609538",
+      "text": "The addition of ezetimibe to simvastatin reduces the risk of ischemic stroke compared to simvastatin monotherapy (3.4% vs 4.1%, hazard ratio 0.79, P=0.008).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1520609538:c5",
+      "paper_id": "openalex:W1520609538",
+      "text": "Incidence rates of prespecified muscle, gallbladder, and hepatic adverse effects as well as cancer were similar between simvastatin-ezetimibe and simvastatin monotherapy groups.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1520609538:e1",
+      "claim_id": "openalex:W1520609538:c1",
+      "description": "The median time-weighted average LDL cholesterol level during the study was 53.7 mg per deciliter (1.4 mmol per liter) in the simvastatin–ezetimibe group, as compared with 69.5 mg per deciliter (1.8 mmol per liter) in the simvastatin-monotherapy group (P<0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1520609538:e2",
+      "claim_id": "openalex:W1520609538:c2",
+      "description": "The Kaplan–Meier event rate for the primary end point at 7 years was 32.7% in the simvastatin–ezetimibe group, as compared with 34.7% in the simvastatin-monotherapy group (absolute risk difference, 2.0 percentage points; hazard ratio, 0.936; 95% confidence interval, 0.89 to 0.99; P = 0.016).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1520609538:e3",
+      "claim_id": "openalex:W1520609538:c3",
+      "description": "The risk of any myocardial infarction was significantly lower with simvastatin–ezetimibe than with simvastatin monotherapy (difference, 1.7 percentage points; hazard ratio, 0.87; P = 0.002).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1520609538:e4",
+      "claim_id": "openalex:W1520609538:c4",
+      "description": "Risk of ischemic stroke was significantly lower in the simvastatin-ezetimibe group than in the simvastatin-monotherapy group (difference, 0.7 percentage points; hazard ratio, 0.79; P = 0.008).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1520609538:e5",
+      "claim_id": "openalex:W1520609538:c5",
+      "description": "Rates of prespecified muscle, gallbladder, and hepatic adverse effects and cancer were similar in the two groups.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1520609538:m1",
+      "paper_id": "openalex:W1520609538",
+      "name": "IMPROVE-IT Double-Blind Randomized Controlled Trial",
+      "description": "A double-blind, randomized trial comparing simvastatin (40 mg) plus ezetimibe (10 mg) daily versus simvastatin (40 mg) plus placebo in patients hospitalized for acute coronary syndrome within the preceding 10 days.",
+      "datasets": [
+        "IMPROVE-IT trial patient cohort (N=18,144)"
+      ],
+      "conditions": [
+        "Age >= 50 years hospitalized for acute coronary syndrome within preceding 10 days",
+        "LDL cholesterol 50 to 100 mg/dL if on lipid-lowering therapy or 50 to 125 mg/dL if not receiving lipid-lowering therapy",
+        "Median follow-up of 6 years"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1520609538:l1",
+      "paper_id": "openalex:W1520609538",
+      "text": "The trial evaluated patients who had had an acute coronary syndrome, making results most relevant specifically to that population.",
+      "normalized_category": "population-generalizability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1520609538:l2",
+      "paper_id": "openalex:W1520609538",
+      "text": "Background statin therapy was limited to 40 mg and 80 mg of simvastatin specifically rather than testing across multiple distinct statin agents.",
+      "normalized_category": "single-statin-regimen",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1520609538:l3",
+      "paper_id": "openalex:W1520609538",
+      "text": "42% of patients discontinued the study medication prematurely for any reason during the long follow-up period.",
+      "normalized_category": "high-discontinuation-rate",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1520609538:l4",
+      "paper_id": "openalex:W1520609538",
+      "text": "High-dose statin therapy is associated with safety concerns and residual risk of recurrent cardiovascular events.",
+      "normalized_category": "high-dose-statin-safety",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:41:22.819733Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

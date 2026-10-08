@@ -1,0 +1,115 @@
+{
+  "paper_id": "openalex:W7118132038",
+  "claims": [
+    {
+      "id": "openalex:W7118132038:c1",
+      "paper_id": "openalex:W7118132038",
+      "text": "Large language models are trained on internet corpora that often include inaccurate or misleading content.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c2",
+      "paper_id": "openalex:W7118132038",
+      "text": "Large language models can generate misinformation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c3",
+      "paper_id": "openalex:W7118132038",
+      "text": "Current evaluation metrics for LLM factuality have limitations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c4",
+      "paper_id": "openalex:W7118132038",
+      "text": "Domain-specific customization improves the factual consistency of large language models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c5",
+      "paper_id": "openalex:W7118132038",
+      "text": "Validated external evidence is essential for evaluating and maintaining factual accuracy in LLMs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7118132038:e1",
+      "claim_id": "openalex:W7118132038:c1",
+      "description": "LLMs are trained on vast and diverse internet corpora that often include inaccurate or misleading content.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7118132038:e2",
+      "claim_id": "openalex:W7118132038:c2",
+      "description": "Consequently, LLMs can generate misinformation, making robust fact-checking essential.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7118132038:e3",
+      "claim_id": "openalex:W7118132038:c3",
+      "description": "The key findings demonstrate the limitations of current metrics in factuality evaluation.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7118132038:e4",
+      "claim_id": "openalex:W7118132038:c4",
+      "description": "The review demonstrates the improvement of factual consistency through domain-specific customization.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7118132038:e5",
+      "claim_id": "openalex:W7118132038:c5",
+      "description": "Key findings highlight the importance of validated external evidence for LLM factual accuracy.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7118132038:m1",
+      "paper_id": "openalex:W7118132038",
+      "name": "Systematic Literature Review",
+      "description": "Systematic analysis of recent literature from 2020 to 2025 guided by five research questions on LLM evaluation methods and mitigation techniques.",
+      "datasets": [],
+      "conditions": [
+        "Literature from 2020 to 2025"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7118132038:l1",
+      "paper_id": "openalex:W7118132038",
+      "text": "Current metrics for factual accuracy evaluation in LLMs have limitations.",
+      "normalized_category": "metric-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7118132038:l2",
+      "paper_id": "openalex:W7118132038",
+      "text": "Internet corpora used for training LLMs often contain inaccurate or misleading content.",
+      "normalized_category": "training-data-quality",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7118132038:f1",
+      "paper_id": "openalex:W7118132038",
+      "text": "Developing more accurate, understandable, and context-aware fact-checking frameworks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.100355Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

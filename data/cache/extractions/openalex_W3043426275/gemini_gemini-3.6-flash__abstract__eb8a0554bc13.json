@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W3043426275",
+  "claims": [
+    {
+      "id": "openalex:W3043426275:c1",
+      "paper_id": "openalex:W3043426275",
+      "text": "Deep learning methods operate as black boxes.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043426275:c2",
+      "paper_id": "openalex:W3043426275",
+      "text": "The uncertainty associated with deep learning predictions is often challenging to quantify.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043426275:c3",
+      "paper_id": "openalex:W3043426275",
+      "text": "Bayesian statistics offer a formalism to understand the uncertainty associated with deep neural network predictions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043426275:c4",
+      "paper_id": "openalex:W3043426275",
+      "text": "Bayesian statistics offer a formalism to quantify the uncertainty associated with deep neural network predictions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3043426275:e1",
+      "claim_id": "openalex:W3043426275:c1",
+      "description": "The authors state: 'since deep learning methods operate as black boxes'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043426275:e2",
+      "claim_id": "openalex:W3043426275:c2",
+      "description": "The authors state: 'the uncertainty associated with their predictions is often challenging to quantify'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043426275:e3",
+      "claim_id": "openalex:W3043426275:c3",
+      "description": "The abstract asserts that 'Bayesian statistics offer a formalism to understand ... the uncertainty associated with deep neural network predictions'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3043426275:e4",
+      "claim_id": "openalex:W3043426275:c4",
+      "description": "The abstract asserts that 'Bayesian statistics offer a formalism to ... quantify the uncertainty associated with deep neural network predictions'.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3043426275:m1",
+      "paper_id": "openalex:W3043426275",
+      "name": "Bayesian neural networks",
+      "description": "Stochastic artificial neural networks trained using Bayesian methods.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3043426275:l1",
+      "paper_id": "openalex:W3043426275",
+      "text": "Deep learning methods operate as black boxes, making the uncertainty associated with their predictions challenging to quantify.",
+      "normalized_category": "black-box-model-uncertainty",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.110857Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

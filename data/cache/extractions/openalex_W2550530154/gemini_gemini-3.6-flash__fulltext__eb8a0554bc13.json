@@ -1,0 +1,182 @@
+{
+  "paper_id": "openalex:W2550530154",
+  "claims": [
+    {
+      "id": "openalex:W2550530154:c1",
+      "paper_id": "openalex:W2550530154",
+      "text": "On the Adult dataset, the direct path-specific effect of sex on income (SE_πd) is measured as 0.025.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550530154:c2",
+      "paper_id": "openalex:W2550530154",
+      "text": "On the Adult dataset, the indirect path-specific effect of sex on income passing through marital status (SE_πi) is measured as 0.175.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550530154:c3",
+      "paper_id": "openalex:W2550530154",
+      "text": "On the Dutch Census 2001 dataset, the direct path-specific effect of sex on occupation (SE_πd) is measured as 0.220.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550530154:c4",
+      "paper_id": "openalex:W2550530154",
+      "text": "On the Dutch Census 2001 dataset, the indirect path-specific effect of sex on occupation through marital status (SE_πi) is measured as 0.001.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550530154:c5",
+      "paper_id": "openalex:W2550530154",
+      "text": "Applying PSE-DR to the Adult dataset reduces SE_πd to 0.013 and SE_πi to 0.049.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550530154:c6",
+      "paper_id": "openalex:W2550530154",
+      "text": "Applying PSE-DR to the Dutch Census dataset reduces SE_πd to 0.050 and SE_πi to 0.001.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550530154:c7",
+      "paper_id": "openalex:W2550530154",
+      "text": "Predictive models trained on PSE-DR modified Adult data maintain indirect discriminatory effects below 0.05 while achieving around 80.55% prediction accuracy.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550530154:c8",
+      "paper_id": "openalex:W2550530154",
+      "text": "Predictive models trained on data modified by Disparate Impact Removal retain significant indirect discrimination (0.167 for SVM and 0.168 for Decision Tree) in test set predictions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2550530154:e1",
+      "claim_id": "openalex:W2550530154:c1",
+      "description": "By computing the path-specific effects on the Adult dataset, the authors obtain SE_πd(c+, c-) = 0.025.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550530154:e2",
+      "claim_id": "openalex:W2550530154:c2",
+      "description": "By computing the path-specific effects on the Adult dataset, the authors obtain SE_πi(c+, c-) = 0.175.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550530154:e3",
+      "claim_id": "openalex:W2550530154:c3",
+      "description": "For the Dutch Census dataset, calculation yields SE_πd(c+, c-) = 0.220.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550530154:e4",
+      "claim_id": "openalex:W2550530154:c4",
+      "description": "For the Dutch Census dataset, calculation yields SE_πi(c+, c-) = 0.001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550530154:e5",
+      "claim_id": "openalex:W2550530154:e5",
+      "description": "For the modified Adult dataset after running PSE-DR, SE_πd(c+, c-) = 0.013 and SE_πi(c+, c-) = 0.049.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550530154:e6",
+      "claim_id": "openalex:W2550530154:c6",
+      "description": "For the modified Dutch dataset after running PSE-DR, SE_πd(c+, c-) = 0.050 and SE_πi(c+, c-) = 0.001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550530154:e7",
+      "claim_id": "openalex:W2550530154:c7",
+      "description": "In test predictions using PSE-DD, SVM achieved 80.54% accuracy with 0.023 direct and 0.041 indirect effect; Decision Tree achieved 80.55% accuracy with 0.023 direct and 0.042 indirect effect.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2550530154:e8",
+      "claim_id": "openalex:W2550530154:c8",
+      "description": "Predictions on test data using models trained with DI yield indirect discrimination of 0.167 for SVM and 0.168 for Decision Tree.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2550530154:m1",
+      "paper_id": "openalex:W2550530154",
+      "name": "Path-Specific based Discrimination Discovery (PSE-DD)",
+      "description": "An algorithm that constructs a causal network from observational data and evaluates direct and indirect discrimination using path-specific causal effects.",
+      "datasets": [
+        "Adult dataset",
+        "Dutch Census of 2001"
+      ],
+      "conditions": [
+        "discrimination threshold tau = 0.05",
+        "PC algorithm with significance threshold 0.01 for causal graph construction"
+      ]
+    },
+    {
+      "id": "openalex:W2550530154:m2",
+      "paper_id": "openalex:W2550530154",
+      "name": "Path-Specific Effect based Discrimination Removal (PSE-DR)",
+      "description": "A data preprocessing algorithm that modifies the conditional probability table of the decision attribute via quadratic programming to enforce discrimination bounds while preserving data utility.",
+      "datasets": [
+        "Adult dataset",
+        "Dutch Census of 2001"
+      ],
+      "conditions": [
+        "quadratic programming solved via CVXOPT",
+        "discrimination threshold tau = 0.05"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2550530154:l1",
+      "paper_id": "openalex:W2550530154",
+      "text": "Classic discrimination metrics like risk difference treat all difference in decisions as discrimination and fail to separate direct, indirect, and explainable effects.",
+      "normalized_category": "confounding-effects-unaccounted",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2550530154:l2",
+      "paper_id": "openalex:W2550530154",
+      "text": "Existing discrimination removal algorithms (such as DI, LMSG, and LPS) cannot ensure that predictive models built from modified data are free from discrimination.",
+      "normalized_category": "predictive-bias-retention",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2550530154:l3",
+      "paper_id": "openalex:W2550530154",
+      "text": "The computational complexity of the PC algorithm for constructing causal networks grows exponentially with the number of attributes and domain sizes, requiring domain binarization.",
+      "normalized_category": "exponential-computational-complexity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2550530154:l4",
+      "paper_id": "openalex:W2550530154",
+      "text": "When the recanting witness criterion is satisfied, indirect path-specific effects cannot be estimated directly from observational data alone.",
+      "normalized_category": "unidentifiable-path-specific-effects",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:55:19.100598Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

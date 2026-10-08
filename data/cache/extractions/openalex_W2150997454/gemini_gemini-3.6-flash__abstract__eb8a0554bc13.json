@@ -1,0 +1,71 @@
+{
+  "paper_id": "openalex:W2150997454",
+  "claims": [
+    {
+      "id": "openalex:W2150997454:c1",
+      "paper_id": "openalex:W2150997454",
+      "text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2150997454:c2",
+      "paper_id": "openalex:W2150997454",
+      "text": "A non-discrimination constraint can be incorporated into decision tree learning by modifying the splitting criterion.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2150997454:c3",
+      "paper_id": "openalex:W2150997454",
+      "text": "A non-discrimination constraint can be incorporated into decision tree learning by modifying the pruning strategy.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2150997454:e1",
+      "claim_id": "openalex:W2150997454:c1",
+      "description": "Using the standard learners on this data may lead to wrongfully biased classifiers, even if the attribute B is removed from training data.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2150997454:e2",
+      "claim_id": "openalex:W2150997454:c2",
+      "description": "In this paper we study an alternative approach in which the non-discrimination constraint is pushed deeply into a decision tree learner by changing its splitting criterion",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2150997454:e3",
+      "claim_id": "openalex:W2150997454:c3",
+      "description": "In this paper we study an alternative approach in which the non-discrimination constraint is pushed deeply into a decision tree learner by changing its... pruning strategy.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2150997454:m1",
+      "paper_id": "openalex:W2150997454",
+      "name": "Discrimination Aware Decision Tree Learning",
+      "description": "Modifies the splitting criterion and pruning strategy of a decision tree algorithm to directly enforce a non-discrimination constraint during model training.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2150997454:l1",
+      "paper_id": "openalex:W2150997454",
+      "text": "Existing solutions consist of cleaning away discrimination from datasets before a classifier is learned.",
+      "normalized_category": "preprocessing-dependency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:16:31.735312Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

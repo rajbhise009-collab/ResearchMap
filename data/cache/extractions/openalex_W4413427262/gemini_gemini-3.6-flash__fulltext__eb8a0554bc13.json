@@ -1,0 +1,180 @@
+{
+  "paper_id": "openalex:W4413427262",
+  "claims": [
+    {
+      "id": "openalex:W4413427262:c1",
+      "paper_id": "openalex:W4413427262",
+      "text": "AI Agents are modular, single-entity systems driven by LLMs and Large Image Models (LIMs) designed for task-specific automation within bounded environments.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c2",
+      "paper_id": "openalex:W4413427262",
+      "text": "Agentic AI systems represent a paradigm shift marked by multi-agent collaboration, dynamic task decomposition, persistent memory, and coordinated autonomy.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c3",
+      "paper_id": "openalex:W4413427262",
+      "text": "Tool augmentation with function calling enables LLM-based agents to access real-time information and execute multi-step external workflows.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c4",
+      "paper_id": "openalex:W4413427262",
+      "text": "ReAct loops integrate iterative reasoning, action execution, and observation steps to reduce logical errors and hallucinations in agent execution.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c5",
+      "paper_id": "openalex:W4413427262",
+      "text": "Retrieval-Augmented Generation grounds agent decisions in external vector databases to expand knowledge beyond static LLM pretraining cutoffs.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c6",
+      "paper_id": "openalex:W4413427262",
+      "text": "Multi-agent AI architectures are vulnerable to inter-agent error cascades where a single agent's false output corrupts downstream decisions.",
+      "type": "negative",
+      "confidence": 0.92,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413427262:e1",
+      "claim_id": "openalex:W4413427262:c1",
+      "description": "The authors define AI Agents as modular systems driven and enabled by LLMs and LIMs operating automatically within explicitly defined scopes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413427262:e2",
+      "claim_id": "openalex:W4413427262:c2",
+      "description": "Agentic AI systems are defined as orchestrated multi-agent ecosystems utilizing goal decomposition, persistent memory, and shared context channels.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413427262:e3",
+      "claim_id": "openalex:W4413427262:c3",
+      "description": "Function calling formats structured JSON/SQL requests routed through orchestration layers to execute external tool calls and feed results back into the LLM context window.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413427262:e4",
+      "claim_id": "openalex:W4413427262:c4",
+      "description": "The ReAct pattern introduces an iterative loop where agents reason about tasks, invoke tools, and observe outcomes before taking subsequent steps.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413427262:e5",
+      "claim_id": "openalex:W4413427262:c5",
+      "description": "RAG connects agents to vector stores such as FAISS and Pinecone, grounding outputs in retrieved domain knowledge to overcome static training data limits.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413427262:e6",
+      "claim_id": "openalex:W4413427262:c6",
+      "description": "An erroneous or hallucinated validation output from one agent propagates through the network, corrupting subsequent summarizers or decision-makers.",
+      "strength": 0.92
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413427262:m1",
+      "paper_id": "openalex:W4413427262",
+      "name": "Hybrid Literature Discovery and Literature Review Strategy",
+      "description": "A multi-stage review methodology querying twelve academic databases and AI tools using targeted Boolean keyword combinations.",
+      "datasets": [
+        "Google Scholar",
+        "IEEE Xplore",
+        "ACM Digital Library",
+        "Scopus",
+        "Web of Science",
+        "ScienceDirect",
+        "arXiv",
+        "Google Trends"
+      ],
+      "conditions": [
+        "Boolean query combinations of AI Agents, Agentic AI, LLM Agents, Tool-augmented LLMs, and Multi-Agent AI Systems"
+      ]
+    },
+    {
+      "id": "openalex:W4413427262:m2",
+      "paper_id": "openalex:W4413427262",
+      "name": "Multi-Dimensional Conceptual Taxonomy Framework",
+      "description": "A structural taxonomy comparing Generative AI, AI Agents, Agentic AI, and Generative Agents across architecture, operational mechanisms, complexity, interaction, and autonomy.",
+      "datasets": [],
+      "conditions": [
+        "Categorical comparison across core function, primary driver, memory usage, orchestration, and task scope"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413427262:l1",
+      "paper_id": "openalex:W4413427262",
+      "text": "This review adopts a sequential, layered architectural taxonomy rather than structuring the study around formal research questions typical of systematic literature reviews.",
+      "normalized_category": "non-systematic-review-structure",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4413427262:l2",
+      "paper_id": "openalex:W4413427262",
+      "text": "Existing survey literature frequently conflates AI Agents and Agentic AI under the generic term intelligent agents, causing conceptual ambiguity and misaligned system design.",
+      "normalized_category": "conceptual-ambiguity-in-literature",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4413427262:l3",
+      "paper_id": "openalex:W4413427262",
+      "text": "LLM-based single AI agents lack genuine causal reasoning, making them brittle under distributional shifts and prone to hallucinations and prompt sensitivity.",
+      "normalized_category": "causal-reasoning-deficit",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4413427262:l4",
+      "paper_id": "openalex:W4413427262",
+      "text": "Agentic AI systems suffer from high coordination overhead, communication bottlenecks, emergent instability, and a lack of formal verification methodologies.",
+      "normalized_category": "multi-agent-coordination-failure",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4413427262:f1",
+      "paper_id": "openalex:W4413427262",
+      "text": "Integration of causal inference models, Bayesian networks, or symbolic planning languages (e.g., PDDL) into agent architectures to enable counterfactual reasoning.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4413427262:f2",
+      "paper_id": "openalex:W4413427262",
+      "text": "Establishment of standardized inter-agent communication protocols and interoperability standards (such as the Agent-to-Agent A2A protocol) across vendors.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4413427262:f3",
+      "paper_id": "openalex:W4413427262",
+      "text": "Development of data-free, self-evolving reasoning frameworks operating through reinforced self-play without reliance on human-annotated datasets.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4413427262:f4",
+      "paper_id": "openalex:W4413427262",
+      "text": "Creation of governance-aware architectures incorporating role isolation, traceable decision logging, and formal auditing mechanisms for safety-critical domains.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.009101Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

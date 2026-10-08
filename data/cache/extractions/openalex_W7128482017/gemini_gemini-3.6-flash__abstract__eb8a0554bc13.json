@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W7128482017",
+  "claims": [
+    {
+      "id": "openalex:W7128482017:c1",
+      "paper_id": "openalex:W7128482017",
+      "text": "The proposed supervision framework integrates questioning generation, reflection modeling, semantic calibration, and renewed reasoning into an iterative loop.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7128482017:c2",
+      "paper_id": "openalex:W7128482017",
+      "text": "The questioning module produces structured queries on initial reasoning outputs to extract potential logical weaknesses.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7128482017:c3",
+      "paper_id": "openalex:W7128482017",
+      "text": "The reflection module interprets questioning content, locates errors, and generates internal feedback signals.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7128482017:c4",
+      "paper_id": "openalex:W7128482017",
+      "text": "The semantic calibration mechanism converts reflection outputs into intermediate states that influence the reasoning space.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7128482017:e1",
+      "claim_id": "openalex:W7128482017:c1",
+      "description": "The abstract states the framework includes four core components (questioning generation, reflection modeling, semantic calibration, and renewed reasoning) forming an iterative reasoning chain.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7128482017:e2",
+      "claim_id": "openalex:W7128482017:c2",
+      "description": "The abstract specifies that the questioning module produces structured queries about initial results and extracts logical weaknesses.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7128482017:e3",
+      "claim_id": "openalex:W7128482017:c3",
+      "description": "The text describes the reflection module as interpreting questioning content, locating errors, and generating internal feedback signals.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7128482017:e4",
+      "claim_id": "openalex:W7128482017:c4",
+      "description": "The text notes that semantic calibration converts reflection output into intermediate states that influence the reasoning space.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7128482017:m1",
+      "paper_id": "openalex:W7128482017",
+      "name": "Cyclic Self-Questioning Supervision Framework",
+      "description": "An iterative supervision pipeline integrating questioning generation, reflection modeling, semantic calibration, and renewed reasoning to stabilize language model reasoning chains.",
+      "datasets": [
+        "open reasoning datasets"
+      ],
+      "conditions": [
+        "varying learning rate",
+        "varying reflection length",
+        "varying reasoning temperature",
+        "varying parallelism"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T10:22:11.666194Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

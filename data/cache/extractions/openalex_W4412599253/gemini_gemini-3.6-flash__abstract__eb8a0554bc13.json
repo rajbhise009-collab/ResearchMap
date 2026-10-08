@@ -1,0 +1,103 @@
+{
+  "paper_id": "openalex:W4412599253",
+  "claims": [
+    {
+      "id": "openalex:W4412599253:c1",
+      "paper_id": "openalex:W4412599253",
+      "text": "Hallucinations in LLMs can be distinguished into factual inaccuracies and flawed logical derivations.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412599253:c2",
+      "paper_id": "openalex:W4412599253",
+      "text": "Hybrid reasoning techniques improve the accountability and transparency of language model behavior.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412599253:c3",
+      "paper_id": "openalex:W4412599253",
+      "text": "Transparent reasoning entails risks in high-stakes decision support system applications.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412599253:c4",
+      "paper_id": "openalex:W4412599253",
+      "text": "A comparative framework can evaluate common explainability techniques for detecting hallucinated outputs.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4412599253:e1",
+      "claim_id": "openalex:W4412599253:c1",
+      "description": "The authors distinguish between factual inaccuracies and flawed logical derivations when investigating hallucinations as reasoning failures.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412599253:e2",
+      "claim_id": "openalex:W4412599253:c2",
+      "description": "The paper argues that combining deterministic rule-based and stochastic data-driven approaches into hybrid techniques enhances transparency and accountability.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4412599253:e3",
+      "claim_id": "openalex:W4412599253:c3",
+      "description": "Demonstrated through a real-world use case in decision support systems in high-stakes domains.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4412599253:e4",
+      "claim_id": "openalex:W4412599253:c4",
+      "description": "The authors present a framework comparing common explainability techniques to detect and account for model hallucination.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4412599253:m1",
+      "paper_id": "openalex:W4412599253",
+      "name": "Dual-Paradigm Reasoning Analysis",
+      "description": "Analyzes LLM reasoning by combining deterministic rule-based and stochastic data-driven approaches.",
+      "datasets": [],
+      "conditions": [
+        "deterministic rule-based",
+        "stochastic data-driven"
+      ]
+    },
+    {
+      "id": "openalex:W4412599253:m2",
+      "paper_id": "openalex:W4412599253",
+      "name": "Explainability Evaluation Comparative Framework",
+      "description": "A comparative framework designed to evaluate explainability techniques on their ability to detect hallucinated model outputs.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4412599253:l1",
+      "paper_id": "openalex:W4412599253",
+      "text": "Current interpretability tools including RAG, attention mechanisms, SHAP, and LIME often fail to identify the root causes of hallucination errors.",
+      "normalized_category": "interpretability-tool-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4412599253:f1",
+      "paper_id": "openalex:W4412599253",
+      "text": "Utilize training data attribution, confidence calibration, and prompt-based abstention mechanisms to improve model trustworthiness.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.104337Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

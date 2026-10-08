@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W2956805085",
+  "claims": [
+    {
+      "id": "openalex:W2956805085:c1",
+      "paper_id": "openalex:W2956805085",
+      "text": "Combining Bayesian belief networks with Monte-Carlo sampling models both data uncertainty and model uncertainty for deep neural network predictions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c2",
+      "paper_id": "openalex:W2956805085",
+      "text": "Input sensor noise characteristics can be forward-propagated through neural network layers via Assumed Density Filtering to quantify prediction data uncertainty.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c3",
+      "paper_id": "openalex:W2956805085",
+      "text": "Optimal test-time dropout rates for estimating model uncertainty in an already trained network can be determined by minimizing negative log-likelihood on ground-truth labels without re-training.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c4",
+      "paper_id": "openalex:W2956805085",
+      "text": "On end-to-end steering angle prediction using the Udacity dataset, the framework achieves an RMSE of 0.09, EVA of 0.81, and NLL of -1.0 without model re-training.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c5",
+      "paper_id": "openalex:W2956805085",
+      "text": "On object future motion prediction using the DAVIS 2016 dataset, the proposed framework achieves an endpoint error (EPE) of 5.91, KL divergence of 45.1, and NLL of 4.07.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c6",
+      "paper_id": "openalex:W2956805085",
+      "text": "On CIFAR-10 object recognition, the proposed framework achieves 94.0% accuracy and an NLL of 2.65.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c7",
+      "paper_id": "openalex:W2956805085",
+      "text": "Applying MLP model error compensation in closed-loop quadrotor control only when prediction uncertainty is below a threshold reduces trajectory tracking RMSE to 0.084 on circular and 0.234 on lemniscate maneuvers.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2956805085:e1",
+      "claim_id": "openalex:W2956805085:c1",
+      "description": "By combining Bayesian belief networks with Monte-Carlo sampling, our framework captures prediction uncertainties better than state-of-the-art methodologies by incorporating prior data information and modeling the relationship between data and model uncertainty.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2956805085:e2",
+      "claim_id": "openalex:W2956805085:c2",
+      "description": "Assumed Density Filtering (ADF) modifies the forward pass of a neural network to propagate input uncertainty v(0) and generate output predictions along with data uncertainties v(l).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2956805085:e3",
+      "claim_id": "openalex:W2956805085:c3",
+      "description": "Lemma III.1 proves that finding test-time dropout rates by minimizing negative log-likelihood between predicted and ground-truth labels is equivalent to minimizing KL divergence to the real weight distribution.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2956805085:e4",
+      "claim_id": "openalex:W2956805085:c4",
+      "description": "Table I reports our method achieving RMSE 0.09, EVA 0.81, and NLL -1.0 on the end-to-end steering angle task without requiring re-training.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2956805085:e5",
+      "claim_id": "openalex:W2956805085:c5",
+      "description": "Table II reports EPE of 5.91, KL of 45.1, and NLL of 4.07 on DAVIS 2016 for object future motion prediction.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2956805085:e6",
+      "claim_id": "openalex:W2956805085:c6",
+      "description": "Table III shows accuracy of 94.0% and NLL of 2.65 for our method on CIFAR-10 classification.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2956805085:e7",
+      "claim_id": "openalex:W2956805085:c7",
+      "description": "Table IV demonstrates tracking RMSE of 0.084 for circular and 0.234 for lemniscate trajectories when using MLP with total uncertainty filtering.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2956805085:m1",
+      "paper_id": "openalex:W2956805085",
+      "name": "Stochastic Assumed Density Filtering with MC Dropout",
+      "description": "A general framework that combines Gaussian Assumed Density Filtering for sensor noise propagation with test-time Monte-Carlo dropout sampling to capture total prediction uncertainty.",
+      "datasets": [
+        "Udacity dataset",
+        "DAVIS 2016 dataset",
+        "CIFAR-10",
+        "Simulated Quadrotor Trajectories (RotorS Gazebo)"
+      ],
+      "conditions": [
+        "T=20 Monte Carlo samples",
+        "Assumed sensor noise variance v(0)=2 grayscale levels or pixels",
+        "Post-training dropout rate selection via NLL grid search"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2956805085:l1",
+      "paper_id": "openalex:W2956805085",
+      "text": "Current approaches for uncertainty estimation require architectural changes and re-training, disregard prior knowledge about data noise, or underestimate uncertainty by ignoring relationships between data and model uncertainty.",
+      "normalized_category": "prior-work-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2956805085:l2",
+      "paper_id": "openalex:W2956805085",
+      "text": "Generating total uncertainty requires multiple network forward passes per input sample, which creates computational latency and is particularly expensive for recurrent models that must unroll temporal sequences for every sample.",
+      "normalized_category": "computational-cost",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2956805085:f1",
+      "paper_id": "openalex:W2956805085",
+      "text": "Finding alternative non-sampling solutions to compute model uncertainty, such as using information theory.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.001737Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

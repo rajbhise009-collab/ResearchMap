@@ -1,0 +1,68 @@
+{
+  "paper_id": "openalex:W2034114152",
+  "claims": [
+    {
+      "id": "openalex:W2034114152:c1",
+      "paper_id": "openalex:W2034114152",
+      "text": "Higher weekly physical activity measured in MET-hours is associated with a reduced risk of type 2 diabetes mellitus in men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2034114152:c2",
+      "paper_id": "openalex:W2034114152",
+      "text": "Increased weekly time spent watching television is significantly associated with higher risk for type 2 diabetes mellitus in men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2034114152:c3",
+      "paper_id": "openalex:W2034114152",
+      "text": "The positive association between television watching time and type 2 diabetes risk persists after adjustment for body mass index.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2034114152:e1",
+      "claim_id": "openalex:W2034114152:c1",
+      "description": "Adjusted relative risks for type 2 diabetes across increasing quintiles of MET-hours per week were 1.00, 0.78, 0.65, 0.58, and 0.51 (P for trend < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2034114152:e2",
+      "claim_id": "openalex:W2034114152:c2",
+      "description": "Adjusted relative risks of diabetes across categories of average hours spent watching TV per week (0-1, 2-10, 11-20, 21-40, and >40) were 1.00, 1.66, 1.64, 2.16, and 2.87 (P for trend < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2034114152:e3",
+      "claim_id": "openalex:W2034114152:c3",
+      "description": "After adjustment for body mass index, the relative risk comparing extreme TV watching categories was 2.31 (P for trend = .01).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2034114152:m1",
+      "paper_id": "openalex:W2034114152",
+      "name": "Prospective cohort study using self-reported questionnaires",
+      "description": "A 10-year prospective follow-up study tracking 37,918 men using physical activity questionnaires and biennial TV watching questionnaires.",
+      "datasets": [
+        "37,918 male health professionals cohort (347,040 person-years of follow-up)"
+      ],
+      "conditions": [
+        "Men aged 40 to 75 years in 1986",
+        "Free of diabetes, cardiovascular disease, and cancer at baseline"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:48:46.523726Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

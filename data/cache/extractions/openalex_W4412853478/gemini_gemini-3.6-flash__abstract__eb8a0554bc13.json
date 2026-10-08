@@ -1,0 +1,121 @@
+{
+  "paper_id": "openalex:W4412853478",
+  "claims": [
+    {
+      "id": "openalex:W4412853478:c1",
+      "paper_id": "openalex:W4412853478",
+      "text": "Large language models presented with clinical vignettes containing planted errors hallucinate by elaborating on false details in 50% to 82% of cases across models and prompting methods.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c2",
+      "paper_id": "openalex:W4412853478",
+      "text": "Prompt-based mitigation reduces the mean hallucination rate across tested large language models from 66% to 44% (p < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c3",
+      "paper_id": "openalex:W4412853478",
+      "text": "Prompt-based mitigation reduces the hallucination rate of GPT-4o from 53% to 23% (p < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c4",
+      "paper_id": "openalex:W4412853478",
+      "text": "Temperature adjustments to 0 offer no significant improvement in reducing adversarial hallucination rates in large language models.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c5",
+      "paper_id": "openalex:W4412853478",
+      "text": "Short clinical vignettes show slightly higher odds of adversarial hallucination compared to long vignettes containing identical medical content.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c6",
+      "paper_id": "openalex:W4412853478",
+      "text": "Prompt engineering strategies reduce the frequency of adversarial hallucination errors but do not eliminate them.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4412853478:e1",
+      "claim_id": "openalex:W4412853478:c1",
+      "description": "Hallucination rates range from 50 % to 82 % across models and prompting methods in tests on 300 simulated clinical vignettes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e2",
+      "claim_id": "openalex:W4412853478:c2",
+      "description": "Prompt-based mitigation lowers the overall hallucination rate (mean across all models) from 66 % to 44 % (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e3",
+      "claim_id": "openalex:W4412853478:c3",
+      "description": "For the best-performing model, GPT-4o, rates decline from 53 % to 23 % (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e4",
+      "claim_id": "openalex:W4412853478:c4",
+      "description": "Temperature adjustments offer no significant improvement when testing six LLMs across 5,400 outputs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412853478:e5",
+      "claim_id": "openalex:W4412853478:c5",
+      "description": "Short vignettes show slightly higher odds of hallucination compared to long versions differing only in word count.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4412853478:e6",
+      "claim_id": "openalex:W4412853478:c6",
+      "description": "While prompt engineering reduces errors, it does not eliminate them, leaving residual error risk remaining in up to 23% or more of cases.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4412853478:m1",
+      "paper_id": "openalex:W4412853478",
+      "name": "Adversarial hallucination benchmark evaluation",
+      "description": "Evaluated six large language models using 300 physician-validated clinical vignettes with planted false details across standard, prompt mitigation, and deterministic temperature settings, generating 5,400 total outputs.",
+      "datasets": [
+        "300 physician-validated simulated clinical vignettes"
+      ],
+      "conditions": [
+        "default settings",
+        "mitigating prompt",
+        "temperature 0",
+        "short vignette length",
+        "long vignette length"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4412853478:l1",
+      "paper_id": "openalex:W4412853478",
+      "text": "Prompt-based mitigation and deterministic temperature settings reduce hallucination rates but fail to eliminate adversarial hallucination risks entirely in clinical decision support contexts.",
+      "normalized_category": "incomplete-error-mitigation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.093272Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

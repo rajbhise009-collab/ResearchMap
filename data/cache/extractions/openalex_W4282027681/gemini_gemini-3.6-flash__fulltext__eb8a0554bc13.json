@@ -1,0 +1,178 @@
+{
+  "paper_id": "openalex:W4282027681",
+  "claims": [
+    {
+      "id": "openalex:W4282027681:c1",
+      "paper_id": "openalex:W4282027681",
+      "text": "Recommender systems perform a resource allocation role in society by allocating information to users and exposure to items.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4282027681:c2",
+      "paper_id": "openalex:W4282027681",
+      "text": "Consistent fairness is the most common definition of fairness used in recommender systems literature.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4282027681:c3",
+      "paper_id": "openalex:W4282027681",
+      "text": "Current research on fairness in recommendation focuses primarily on group-level fairness rather than individual-level fairness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4282027681:c4",
+      "paper_id": "openalex:W4282027681",
+      "text": "Classification-focused machine learning fairness methods cannot be directly applied to recommender systems due to two-sided platform dynamics, feedback loops, personalization, and multi-metric trade-offs.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4282027681:c5",
+      "paper_id": "openalex:W4282027681",
+      "text": "Improving item fairness in recommender systems can cause user fairness to degrade or remain unchanged.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4282027681:e1",
+      "claim_id": "openalex:W4282027681:c1",
+      "description": "Recommender systems serve a resource allocation role in society by allocating information to users and exposure to items.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4282027681:e2",
+      "claim_id": "openalex:W4282027681:c2",
+      "description": "Table 1 and Section 3 analysis show that consistent fairness (CO) is the most common definition of fairness in reviewed recommendation literature.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4282027681:e3",
+      "claim_id": "openalex:W4282027681:c3",
+      "description": "Survey analysis of over 60 papers indicates current studies mainly focus on the group level.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4282027681:e4",
+      "claim_id": "openalex:W4282027681:c4",
+      "description": "Current fairness work in machine learning focusing on classification could hardly be leveraged in recommender systems directly due to two-sided platforms, dynamic feedback loops, personalization, and joint measurement requirements.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4282027681:e5",
+      "claim_id": "openalex:W4282027681:c5",
+      "description": "Existing work demonstrates that when item fairness is improved, user fairness must worsen or remain the same.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4282027681:m1",
+      "paper_id": "openalex:W4282027681",
+      "name": "Systematic Literature Survey and Taxonomy",
+      "description": "A systematic review and taxonomy categorization of over 60 fairness-related recommendation research papers published in top venues between 2017 and 2022.",
+      "datasets": [
+        "Movielens 100K",
+        "Movielens 1M",
+        "Movielens 20M",
+        "Amazon",
+        "Last.FM 1K",
+        "Last.FM 360K",
+        "Yelp",
+        "Xing",
+        "Flixter",
+        "Google Local",
+        "ModCloth",
+        "Sushi"
+      ],
+      "conditions": [
+        "Review of literature published in top conferences/journals including TOIS, SIGIR, WWW, KDD, WSDM, AAAI, RecSys, CIKM, UMAP"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4282027681:l1",
+      "paper_id": "openalex:W4282027681",
+      "text": "Research on fairness in recommendation is scattered due to multiple complex resource allocation processes and diverse fairness definitions.",
+      "normalized_category": "lack-of-standardization",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4282027681:l2",
+      "paper_id": "openalex:W4282027681",
+      "text": "Most user fairness studies in recommender systems evaluate only recommendation accuracy, neglecting non-accuracy measurements such as diversity, unexpectedness, and serendipity.",
+      "normalized_category": "narrow-evaluation-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4282027681:l3",
+      "paper_id": "openalex:W4282027681",
+      "text": "Existing recommendation datasets lack evaluations on emerging multimodal scenarios like short videos and lack sensitive demographic attributes like race.",
+      "normalized_category": "dataset-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4282027681:l4",
+      "paper_id": "openalex:W4282027681",
+      "text": "Existing fairness methods in recommender systems generally assume all sensitive attributes are fully available, failing when protected user or item attributes are missing.",
+      "normalized_category": "missing-data-vulnerability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4282027681:f1",
+      "paper_id": "openalex:W4282027681",
+      "text": "Establish a general consensus and priority hierarchy among conflicting fairness definitions across different recommendation scenarios.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4282027681:f2",
+      "paper_id": "openalex:W4282027681",
+      "text": "Develop standardized experimental benchmarks, dataset preprocessing standards, and hyperparameter tuning strategies for recommendation fairness evaluation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4282027681:f3",
+      "paper_id": "openalex:W4282027681",
+      "text": "Investigate fairness issues and collect datasets for emerging multi-modal recommendation scenarios such as short video recommendations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4282027681:f4",
+      "paper_id": "openalex:W4282027681",
+      "text": "Design algorithms that improve fairness while maintaining recommendation accuracy to avoid commercial utility loss.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4282027681:f5",
+      "paper_id": "openalex:W4282027681",
+      "text": "Develop learnable re-ranking algorithms and multi-objective optimization strategies to simultaneously satisfy user fairness and item fairness.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4282027681:f6",
+      "paper_id": "openalex:W4282027681",
+      "text": "Apply causal inference techniques to model complex feature relationships and eliminate unfairness under missing demographic attribute data.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4282027681:f7",
+      "paper_id": "openalex:W4282027681",
+      "text": "Develop theoretical and causal methods to explain why unfairness occurs in recommender systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:16:15.324567Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

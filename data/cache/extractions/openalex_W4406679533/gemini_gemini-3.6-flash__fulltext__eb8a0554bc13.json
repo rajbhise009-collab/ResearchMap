@@ -1,0 +1,171 @@
+{
+  "paper_id": "openalex:W4406679533",
+  "claims": [
+    {
+      "id": "openalex:W4406679533:c1",
+      "paper_id": "openalex:W4406679533",
+      "text": "Users tend to overestimate the accuracy of LLM responses when provided with default explanations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c2",
+      "paper_id": "openalex:W4406679533",
+      "text": "Longer LLM explanations increase user confidence without improving user discrimination between correct and incorrect answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c3",
+      "paper_id": "openalex:W4406679533",
+      "text": "Aligning uncertainty language in LLM explanations with internal model confidence narrows both the calibration gap and the discrimination gap.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c4",
+      "paper_id": "openalex:W4406679533",
+      "text": "LLM internal model confidence discriminates between correct and incorrect answers well above chance performance.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c5",
+      "paper_id": "openalex:W4406679533",
+      "text": "Human confidence based on default LLM explanations discriminates correct from incorrect answers only slightly better than random guessing.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406679533:c6",
+      "paper_id": "openalex:W4406679533",
+      "text": "Participants' self-assessed topic expertise does not significantly improve their ability to calibrate or discriminate LLM accuracy.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406679533:e1",
+      "claim_id": "openalex:W4406679533:c1",
+      "description": "For multiple-choice questions, human miscalibration in Experiment 1 was primarily due to overconfidence, with ECE values higher for human confidence (0.291 and 0.225) than model confidence (0.104 and 0.154).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406679533:e2",
+      "claim_id": "openalex:W4406679533:c2",
+      "description": "Long explanations led to significantly higher confidence than short explanations (BF = 25), while mean participant AUC was 0.54 for long explanations versus 0.57 for uncertainty-only explanations (BF = 0.23).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406679533:e3",
+      "claim_id": "openalex:W4406679533:c3",
+      "description": "Selecting explanations based on model confidence reduced human ECE from 0.291 to 0.150 for GPT-3.5 and 0.225 to 0.141 for PaLM2, while discrimination AUC significantly increased across experiments.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406679533:e4",
+      "claim_id": "openalex:W4406679533:c4",
+      "description": "Model confidence achieved AUCs of 0.751 (GPT-3.5) and 0.746 (PaLM2) for multiple-choice questions, and 0.781 (GPT-4o) for short-answer questions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406679533:e5",
+      "claim_id": "openalex:W4406679533:c5",
+      "description": "Participants viewing default explanations achieved AUCs of 0.589 for GPT-3.5, 0.602 for PaLM2, and 0.592 for GPT-4o.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406679533:e6",
+      "claim_id": "openalex:W4406679533:c6",
+      "description": "Comparing higher-expertise and lower-expertise groups yielded non-significant discrimination differences (AUC 0.600 vs 0.579, BF < 1) and comparable calibration error (ECE 0.289 vs 0.292).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406679533:m1",
+      "paper_id": "openalex:W4406679533",
+      "name": "Human behavioural assessment of LLM outputs",
+      "description": "A study evaluating human estimates of LLM correctness probability across default and prompt-modified explanations.",
+      "datasets": [
+        "MMLU",
+        "Trivia QA"
+      ],
+      "conditions": [
+        "default explanations",
+        "modified explanations varying in uncertainty level and length",
+        "multiple-choice task",
+        "short-answer task"
+      ]
+    },
+    {
+      "id": "openalex:W4406679533:m2",
+      "paper_id": "openalex:W4406679533",
+      "name": "Token likelihood model confidence readout",
+      "description": "Deriving internal LLM confidence via normalized token probabilities for multiple-choice answers and pTrue prompting for short answers.",
+      "datasets": [
+        "MMLU",
+        "Trivia QA"
+      ],
+      "conditions": [
+        "GPT-3.5",
+        "PaLM2",
+        "GPT-4o",
+        "zero-shot prompting",
+        "ten-shot prompting"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406679533:l1",
+      "paper_id": "openalex:W4406679533",
+      "text": "The evaluation focuses on specific question types involving small numbers of response choices (multiple choice) and short open-ended answers.",
+      "normalized_category": "task-scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4406679533:l2",
+      "paper_id": "openalex:W4406679533",
+      "text": "Modifying explanations based on internal uncertainty requires prompting the LLM twice rather than generating confidence-modified explanations in a single step.",
+      "normalized_category": "multi-step-prompting-requirement",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4406679533:l3",
+      "paper_id": "openalex:W4406679533",
+      "text": "Studies investigating how effectively LLMs convey uncertainty to human users and user confidence in LLM outputs are lacking.",
+      "normalized_category": "lack-of-prior-human-centered-evaluation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4406679533:f1",
+      "paper_id": "openalex:W4406679533",
+      "text": "Investigate the applicability of findings to longer open-ended questions across a broader range of scenarios.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4406679533:f2",
+      "paper_id": "openalex:W4406679533",
+      "text": "Develop approaches to produce confidence-modified explanations in a single prompting step.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4406679533:f3",
+      "paper_id": "openalex:W4406679533",
+      "text": "Investigate the fundamental causes of uncertainty miscommunication, such as RLHF preference biases or autoregressive choice-supportive biases.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.958033Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

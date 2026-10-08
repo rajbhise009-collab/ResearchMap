@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W4289751798",
+  "claims": [
+    {
+      "id": "openalex:W4289751798:c1",
+      "paper_id": "openalex:W4289751798",
+      "text": "Generalized entropy inequality indices from economics can quantify algorithmic unfairness by measuring the inequality of benefits received by individuals or groups from prediction outcomes.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289751798:c2",
+      "paper_id": "openalex:W4289751798",
+      "text": "Overall individual-level unfairness measured by generalized entropy indices can be additively decomposed into a between-group unfairness component and a within-group unfairness component.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289751798:c3",
+      "paper_id": "openalex:W4289751798",
+      "text": "Minimizing exclusively the between-group component of algorithmic unfairness can increase within-group unfairness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289751798:c4",
+      "paper_id": "openalex:W4289751798",
+      "text": "Minimizing exclusively the between-group component of algorithmic unfairness can increase overall individual unfairness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289751798:c5",
+      "paper_id": "openalex:W4289751798",
+      "text": "A classifier achieves zero individual unfairness under a zero-normalized inequality index if and only if a classifier achieves zero empirical prediction loss.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289751798:c6",
+      "paper_id": "openalex:W4289751798",
+      "text": "The proportional contribution of between-group unfairness to overall individual unfairness increases as sensitive feature groups are refined through intersectionality.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4289751798:e1",
+      "claim_id": "openalex:W4289751798:c1",
+      "description": "The authors define benefit functions bi = y_hat_i - y_i + 1 for individuals and plug them into generalized entropy indices E_alpha(b1, ..., bn) to quantify individual and group unfairness.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4289751798:e2",
+      "claim_id": "openalex:W4289751798:c2",
+      "description": "Generalized entropy E_alpha(b) is shown mathematically to decompose into E_alpha_omega(b) (within-group) and E_alpha_beta(b) (between-group) for any disjoint population partition G.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4289751798:e3",
+      "claim_id": "openalex:W4289751798:c3",
+      "description": "Proposition 3.3 proves that optimizing solely for between-group fairness increases within-group unfairness, and experiments on the COMPAS dataset show within-group unfairness for Whites increases as between-group constraints tighten.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4289751798:e4",
+      "claim_id": "openalex:W4289751798:c4",
+      "description": "On the COMPAS dataset, reducing between-group unfairness by tightening the covariance multiplicative factor from 0.8 to 0.6 increases the overall individual unfairness E2(b).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4289751798:e5",
+      "claim_id": "openalex:W4289751798:c5",
+      "description": "Proposition 3.1 proves that for zero-normalized I(.), there exists theta with ID(theta) = 0 if and only if there exists theta' with LD(theta') = 0.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4289751798:e6",
+      "claim_id": "openalex:W4289751798:c6",
+      "description": "Proposition 3.4 proves between-group inequality over Cartesian product partitions is monotonically non-decreasing, and COMPAS experiments show between-group contribution rises from under 1% for 2 groups to nearly 10% for 18 intersected groups.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4289751798:m1",
+      "paper_id": "openalex:W4289751798",
+      "name": "Generalized Entropy Unfairness Measurement Framework",
+      "description": "Quantifies algorithmic unfairness by mapping classifier predictions to individual non-negative benefit functions and evaluating benefit distributions using subgroup-decomposable Generalized Entropy indices.",
+      "datasets": [
+        "Adult income dataset",
+        "ProPublica COMPAS dataset"
+      ],
+      "conditions": [
+        "binary classification",
+        "Generalized Entropy index with alpha = 2",
+        "logistic regression",
+        "support vector machine with RBF kernel",
+        "random forest"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4289751798:l1",
+      "paper_id": "openalex:W4289751798",
+      "text": "Existing measures of inequality in benefits are limited to handling non-negative benefit values.",
+      "normalized_category": "non-negative-benefit-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4289751798:l2",
+      "paper_id": "openalex:W4289751798",
+      "text": "Determining exact numerical benefit values for different outcome types depends on context and task and may vary in difficulty in practice.",
+      "normalized_category": "context-dependent-benefit-specification",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4289751798:l3",
+      "paper_id": "openalex:W4289751798",
+      "text": "Prior group fairness definitions do not provide principled quantitative measures for the scalar degree of unfairness when an algorithm is unfair.",
+      "normalized_category": "binary-fairness-definitions",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4289751798:l4",
+      "paper_id": "openalex:W4289751798",
+      "text": "Existing group fairness measures fail to consider relative population sizes of different groups when estimating unfairness.",
+      "normalized_category": "ignores-relative-group-sizes",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4289751798:f1",
+      "paper_id": "openalex:W4289751798",
+      "text": "Extend the inequality index-based unfairness measurement framework to unsupervised learning tasks such as clustering and ranking.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:52:01.305479Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

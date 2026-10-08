@@ -1,0 +1,171 @@
+{
+  "paper_id": "openalex:W4288414189",
+  "claims": [
+    {
+      "id": "openalex:W4288414189:c1",
+      "paper_id": "openalex:W4288414189",
+      "text": "Predictions made on preprocessed (de-biased) data are rated as fairer than those made on raw data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288414189:c2",
+      "paper_id": "openalex:W4288414189",
+      "text": "Predictions on cases exhibiting disparate impact are rated as less fair than those on non-impacted cases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288414189:c3",
+      "paper_id": "openalex:W4288414189",
+      "text": "Local explanation styles (sensitivity-based and case-based) are more effective than global explanation styles in exposing case-specific fairness discrepancies.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288414189:c4",
+      "paper_id": "openalex:W4288414189",
+      "text": "Case-based explanations are rated as generally less fair overall compared to influence-based and demographic-based explanations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288414189:c5",
+      "paper_id": "openalex:W4288414189",
+      "text": "Sensitivity-based explanations significantly lower perceived fairness on disparately impacted cases specifically among individuals who consider using the race feature to be unfair.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288414189:c6",
+      "paper_id": "openalex:W4288414189",
+      "text": "An individual's prior trust in machine learning systems positively correlates with their overall perceived fairness ratings of model predictions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4288414189:c7",
+      "paper_id": "openalex:W4288414189",
+      "text": "Global explanations enhance perceived model fairness to a greater extent among users who already possess prior trust in machine learning systems.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4288414189:e1",
+      "claim_id": "openalex:W4288414189:c1",
+      "description": "Statistically significant main effect of data processing on fairness ratings, F(1, 152) = 4.65, p = 0.03.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4288414189:e2",
+      "claim_id": "openalex:W4288414189:c2",
+      "description": "Statistically significant main effect of disparate impact on fairness ratings, F(1, 152) = 103.25, p < 0.001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4288414189:e3",
+      "claim_id": "openalex:W4288414189:c3",
+      "description": "Pairwise comparisons showed sensitivity-based explanation differed significantly from influence-based explanation (p = 0.02) and case-based explanation differed marginally from influence-based explanation (p = 0.07) in rating discrepancy between disparately impacted and non-impacted cases.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4288414189:e4",
+      "claim_id": "openalex:W4288414189:c4",
+      "description": "Case-based explanation was rated marginally significantly less fair than influence-based (F(1, 153) = 3.51, p = 0.06) and demographic-based explanation (F(1, 148) = 3.20, p = 0.08).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4288414189:e5",
+      "claim_id": "openalex:W4288414189:c5",
+      "description": "Significant four-way interaction between race position, explanation style, data processing, and disparate impact: F(3, 144) = 2.59, p = 0.05.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4288414189:e6",
+      "claim_id": "openalex:W4288414189:c6",
+      "description": "Statistically significant main effect of prior ML position on fairness ratings, F(1, 137) = 17.31, p < 0.001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4288414189:e7",
+      "claim_id": "openalex:W4288414189:c7",
+      "description": "Interactive effect between ML position and explanation style was significant for influence-based (p = 0.01 or p = 0.05 depending on reference) and demographic-based explanation (p = 0.10).",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4288414189:m1",
+      "paper_id": "openalex:W4288414189",
+      "name": "Controlled User Experiment on ML Fairness Perception",
+      "description": "An online mixed-design user study with 160 Mechanical Turk workers evaluating fairness judgments across 4 programmatically generated explanation styles, 2 data processing treatments (raw vs. preprocessed), and cases with or without disparate impact.",
+      "datasets": [
+        "COMPAS recidivism dataset"
+      ],
+      "conditions": [
+        "raw COMPAS data model",
+        "preprocessed COMPAS data model",
+        "input influence-based explanation",
+        "demographic-based explanation",
+        "sensitivity-based explanation",
+        "case-based explanation",
+        "disparately impacted cases",
+        "non-disparately impacted cases"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4288414189:l1",
+      "paper_id": "openalex:W4288414189",
+      "text": "The study was conducted with crowdworkers rather than judges or domain experts who would be actual users of algorithmic recidivism prediction tools.",
+      "normalized_category": "crowdworker-sample-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4288414189:l2",
+      "paper_id": "openalex:W4288414189",
+      "text": "Model prediction confidence scores were not presented to participants in order to control for confounding variables.",
+      "normalized_category": "omitted-model-confidence",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4288414189:l3",
+      "paper_id": "openalex:W4288414189",
+      "text": "Prior work examined fairness perceptions using fictional scenarios with explanations not drawn from real ML model outputs or incommensurate data points across conditions.",
+      "normalized_category": "ecological-validity-gap",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4288414189:f1",
+      "paper_id": "openalex:W4288414189",
+      "text": "Providing personalized and adaptive explanations tailored to individual user profiles and prior fairness positions to support fairness judgments.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4288414189:f2",
+      "paper_id": "openalex:W4288414189",
+      "text": "Developing active-learning paradigms for fairness improvement, where systems query human fairness judgments on predictions and explanations to optimize underlying algorithms based on feedback.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4288414189:f3",
+      "paper_id": "openalex:W4288414189",
+      "text": "Designing hybrid explanation techniques that combine global overview with local case scrutiny tailored to specific feature space regions and fairness issues.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:18:51.486861Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

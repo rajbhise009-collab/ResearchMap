@@ -1,0 +1,139 @@
+{
+  "paper_id": "openalex:W7131427313",
+  "claims": [
+    {
+      "id": "openalex:W7131427313:c1",
+      "paper_id": "openalex:W7131427313",
+      "text": "Prompt engineering provides lightweight improvements for mitigating bias and hallucinations in healthcare LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131427313:c2",
+      "paper_id": "openalex:W7131427313",
+      "text": "The mitigation effectiveness of prompt engineering in healthcare LLMs is highly dependent on prompt design.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131427313:c3",
+      "paper_id": "openalex:W7131427313",
+      "text": "Retrieval-Augmented Generation consistently enhances factual grounding in healthcare LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131427313:c4",
+      "paper_id": "openalex:W7131427313",
+      "text": "Retrieval-Augmented Generation increases computational cost in healthcare LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131427313:c5",
+      "paper_id": "openalex:W7131427313",
+      "text": "Model Context Protocol enables dynamic knowledge integration in healthcare LLMs.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7131427313:e1",
+      "claim_id": "openalex:W7131427313:c1",
+      "description": "Results show that prompt engineering provides lightweight improvements",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7131427313:e2",
+      "claim_id": "openalex:W7131427313:c2",
+      "description": "Prompt engineering is highly dependent on prompt design",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7131427313:e3",
+      "claim_id": "openalex:W7131427313:c3",
+      "description": "RAG consistently enhances factual grounding",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7131427313:e4",
+      "claim_id": "openalex:W7131427313:c4",
+      "description": "RAG consistently enhances factual grounding though at increased computational cost",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7131427313:e5",
+      "claim_id": "openalex:W7131427313:c5",
+      "description": "MCP emerges as a promising but underexplored tool for dynamic knowledge integration",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7131427313:m1",
+      "paper_id": "openalex:W7131427313",
+      "name": "Systematic Literature Review and Thematic Analysis",
+      "description": "Synthesizes 34 eligible peer-reviewed studies published between 2021 and 2025 focused on mitigating bias and hallucinations in healthcare LLMs.",
+      "datasets": [
+        "34 eligible peer-reviewed studies (2021-2025)"
+      ],
+      "conditions": [
+        "prompt engineering",
+        "Retrieval-Augmented Generation",
+        "Model Context Protocol",
+        "healthcare clinical applications"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7131427313:l1",
+      "paper_id": "openalex:W7131427313",
+      "text": "Absence of unified frameworks for mitigating bias and hallucinations in healthcare LLMs.",
+      "normalized_category": "lack-of-unified-frameworks",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7131427313:l2",
+      "paper_id": "openalex:W7131427313",
+      "text": "Limited evidence on healthcare-specific prompt design.",
+      "normalized_category": "limited-prompt-design-evidence",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7131427313:l3",
+      "paper_id": "openalex:W7131427313",
+      "text": "Lack of practical deployment guidelines for LLMs in clinical settings.",
+      "normalized_category": "lack-of-clinical-deployment-guidelines",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7131427313:f1",
+      "paper_id": "openalex:W7131427313",
+      "text": "Development of unified mitigation frameworks for bias and hallucinations in healthcare LLMs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7131427313:f2",
+      "paper_id": "openalex:W7131427313",
+      "text": "Exploration and evidence gathering on healthcare-specific prompt design.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7131427313:f3",
+      "paper_id": "openalex:W7131427313",
+      "text": "Establishing practical deployment guidelines for healthcare LLMs in clinical settings.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.107319Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

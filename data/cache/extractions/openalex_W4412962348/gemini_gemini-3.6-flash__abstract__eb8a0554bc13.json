@@ -1,0 +1,155 @@
+{
+  "paper_id": "openalex:W4412962348",
+  "claims": [
+    {
+      "id": "openalex:W4412962348:c1",
+      "paper_id": "openalex:W4412962348",
+      "text": "Evaluating LLM content moderation solely based on accuracy is misleading because it fails to distinguish between easy cases and hard cases.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c2",
+      "paper_id": "openalex:W4412962348",
+      "text": "Evaluating LLM content moderation solely based on accuracy fails to capture the trade-offs involved in pursuing higher accuracy.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c3",
+      "paper_id": "openalex:W4412962348",
+      "text": "The key objective of LLM integration in platform governance and content moderation is to achieve decision legitimacy rather than accuracy alone.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c4",
+      "paper_id": "openalex:W4412962348",
+      "text": "Evaluating easy content moderation cases requires assessing accuracy, speed, and transparency.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c5",
+      "paper_id": "openalex:W4412962348",
+      "text": "Evaluating hard content moderation cases requires assessing reasoned justification and user participation.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c6",
+      "paper_id": "openalex:W4412962348",
+      "text": "LLMs can contribute to content moderation systems by screening hard cases from easy cases.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c7",
+      "paper_id": "openalex:W4412962348",
+      "text": "LLMs can contribute to content moderation systems by generating quality explanations for moderation decisions.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c8",
+      "paper_id": "openalex:W4412962348",
+      "text": "LLMs can contribute to content moderation systems by assisting human reviewers in acquiring contextual information.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412962348:c9",
+      "paper_id": "openalex:W4412962348",
+      "text": "LLMs can contribute to content moderation systems by facilitating interactive user participation.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4412962348:e1",
+      "claim_id": "openalex:W4412962348:c1",
+      "description": "This article argues that accuracy is insufficient and misleading because it fails to grasp the distinction between easy cases and hard cases...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412962348:e2",
+      "claim_id": "openalex:W4412962348:c2",
+      "description": "...as well as the inevitable trade-offs in achieving higher accuracy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412962348:e3",
+      "claim_id": "openalex:W4412962348:c3",
+      "description": "Closer examination reveals that content moderation is a constitutive part of platform governance, the key to which is to gain and enhance legitimacy. Instead of making moderation decisions correctly, the chief goal of LLMs is to make them legitimate.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412962348:e4",
+      "claim_id": "openalex:W4412962348:c4",
+      "description": "The framework suggests that for easy cases, the key is to ensure accuracy, speed, and transparency...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412962348:e5",
+      "claim_id": "openalex:W4412962348:c5",
+      "description": "...while for hard cases, what matters is reasoned justification and user participation.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412962348:e6",
+      "claim_id": "openalex:W4412962348:c6",
+      "description": "...LLMs can better contribute in four other aspects: to conduct screening of hard cases from easy cases...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412962348:e7",
+      "claim_id": "openalex:W4412962348:c7",
+      "description": "...to provide quality explanations for moderation decisions...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412962348:e8",
+      "claim_id": "openalex:W4412962348:c8",
+      "description": "...to assist human reviewers in getting more contextual information...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412962348:e9",
+      "claim_id": "openalex:W4412962348:c9",
+      "description": "...and to facilitate user participation in a more interactive way.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4412962348:m1",
+      "paper_id": "openalex:W4412962348",
+      "name": "Legitimacy-based framework and workflow for LLM moderation",
+      "description": "A conceptual framework and workflow grounded in normative legal and social science theories that evaluates LLM content moderators based on decision legitimacy and case complexity.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4412962348:l1",
+      "paper_id": "openalex:W4412962348",
+      "text": "Most current studies on LLMs in content moderation rely exclusively on accuracy as an evaluation metric.",
+      "normalized_category": "narrow-evaluation-metrics",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.108038Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

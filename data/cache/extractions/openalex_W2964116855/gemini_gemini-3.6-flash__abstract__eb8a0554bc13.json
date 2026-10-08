@@ -1,0 +1,104 @@
+{
+  "paper_id": "openalex:W2964116855",
+  "claims": [
+    {
+      "id": "openalex:W2964116855:c1",
+      "paper_id": "openalex:W2964116855",
+      "text": "The Unwarranted Associations (UA) framework provides a methodology for discovering unfair, discriminatory, or offensive user treatment in data-driven applications.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964116855:c2",
+      "paper_id": "openalex:W2964116855",
+      "text": "The UA framework unifies prior attempts at formalizing algorithmic fairness.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964116855:c3",
+      "paper_id": "openalex:W2964116855",
+      "text": "FairTest instantiates the Unwarranted Associations (UA) framework to check data-driven applications for unfair user treatment.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964116855:c4",
+      "paper_id": "openalex:W2964116855",
+      "text": "FairTest provides debugging capabilities that let programmers rule out potential confounders for observed unfair effects.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964116855:c5",
+      "paper_id": "openalex:W2964116855",
+      "text": "FairTest revealed subtle biases against older populations in the distribution of error in a predictive health application.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964116855:c6",
+      "paper_id": "openalex:W2964116855",
+      "text": "FairTest revealed offensive racial labeling in an image tagger application.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2964116855:e1",
+      "claim_id": "openalex:W2964116855:c5",
+      "description": "Application of FairTest to four data-driven applications revealed subtle biases against older populations in the distribution of error in a predictive health application.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2964116855:e2",
+      "claim_id": "openalex:W2964116855:c6",
+      "description": "Application of FairTest to four data-driven applications revealed offensive racial labeling in an image tagger.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2964116855:m1",
+      "paper_id": "openalex:W2964116855",
+      "name": "Unwarranted Associations (UA) framework",
+      "description": "A methodology for discovering unfair, discriminatory, or offensive user treatment by combining investigative primitives, fairness metrics, subgroup exploration, and utility considerations.",
+      "datasets": [],
+      "conditions": []
+    },
+    {
+      "id": "openalex:W2964116855:m2",
+      "paper_id": "openalex:W2964116855",
+      "name": "FairTest",
+      "description": "A software tool instantiating the UA framework that enables statistical investigation of associations between application outcomes and sensitive attributes along with confounder debugging.",
+      "datasets": [
+        "predictive health application data",
+        "image tagger data"
+      ],
+      "conditions": [
+        "disparate impact investigation",
+        "offensive labeling detection",
+        "error rate disparity evaluation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2964116855:l1",
+      "paper_id": "openalex:W2964116855",
+      "text": "A lack of appropriate methodologies and tools makes identifying unfair or discriminatory effects challenging in practice.",
+      "normalized_category": "lack-of-tooling",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:53:44.850048Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

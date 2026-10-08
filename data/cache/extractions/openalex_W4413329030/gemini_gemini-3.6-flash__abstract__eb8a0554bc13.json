@@ -1,0 +1,129 @@
+{
+  "paper_id": "openalex:W4413329030",
+  "claims": [
+    {
+      "id": "openalex:W4413329030:c1",
+      "paper_id": "openalex:W4413329030",
+      "text": "The prevalence of user reports indicative of LLM hallucinations is approximately 1.75% within mobile app reviews initially flagged as relevant to AI errors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c2",
+      "paper_id": "openalex:W4413329030",
+      "text": "User-perceived LLM hallucinations in mobile apps can be categorized into a taxonomy of seven distinct types.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c3",
+      "paper_id": "openalex:W4413329030",
+      "text": "Factual Incorrectness (H1) is the most frequently reported LLM hallucination type in mobile app reviews, accounting for 38% of instances.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c4",
+      "paper_id": "openalex:W4413329030",
+      "text": "Nonsensical/Irrelevant Output (H3) accounts for 25% of user-reported LLM hallucination instances in mobile app reviews.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c5",
+      "paper_id": "openalex:W4413329030",
+      "text": "Fabricated Information (H2) accounts for 15% of user-reported LLM hallucination instances in mobile app reviews.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413329030:c6",
+      "paper_id": "openalex:W4413329030",
+      "text": "Mobile app reviews reporting LLM hallucinations show significantly lower VADER sentiment scores.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413329030:e1",
+      "claim_id": "openalex:W4413329030:c1",
+      "description": "Analysis of candidate reviews estimated prevalence at approximately 1.75% within reviews flagged as relevant to AI errors.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413329030:e2",
+      "claim_id": "openalex:W4413329030:c2",
+      "description": "Manual annotation of 1,000 candidate reviews resulted in a data-driven taxonomy of seven hallucination types.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413329030:e3",
+      "claim_id": "openalex:W4413329030:c3",
+      "description": "Manual annotation data showed Factual Incorrectness (H1) emerged as the top reported type at 38%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413329030:e4",
+      "claim_id": "openalex:W4413329030:c4",
+      "description": "Manual annotation data showed Nonsensical/Irrelevant Output (H3) was the second most frequent type at 25%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413329030:e5",
+      "claim_id": "openalex:W4413329030:c5",
+      "description": "Manual annotation data showed Fabricated Information (H2) accounted for 15% of instances.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413329030:e6",
+      "claim_id": "openalex:W4413329030:c6",
+      "description": "Sentiment characteristics using VADER showed significantly lower scores for hallucination reports associated with these reviews.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413329030:m1",
+      "paper_id": "openalex:W4413329030",
+      "name": "Mixed-methods LLM hallucination analysis pipeline",
+      "description": "A mixed-methods pipeline applying a heuristic-based detection algorithm, manual annotation, N-gram generation, Non-Negative Matrix Factorization (NMF) topic modeling, and VADER sentiment analysis to user reviews.",
+      "datasets": [
+        "3 million user reviews from 90 AI-powered mobile apps",
+        "20,000 candidate reviews",
+        "1,000 manually annotated reviews"
+      ],
+      "conditions": [
+        "Heuristic filtering",
+        "Manual annotation",
+        "VADER sentiment scoring",
+        "NMF topic modeling"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413329030:l1",
+      "paper_id": "openalex:W4413329030",
+      "text": "There is limited empirical understanding of how users perceive, report, and are impacted by LLM hallucinations in real-world mobile app settings.",
+      "normalized_category": "limited-empirical-understanding",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4413329030:f1",
+      "paper_id": "openalex:W4413329030",
+      "text": "Development of targeted monitoring and mitigation strategies for AI mobile apps.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.097399Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

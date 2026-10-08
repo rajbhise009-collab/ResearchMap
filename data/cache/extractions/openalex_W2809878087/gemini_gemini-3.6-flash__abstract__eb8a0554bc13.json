@@ -1,0 +1,108 @@
+{
+  "paper_id": "openalex:W2809878087",
+  "claims": [
+    {
+      "id": "openalex:W2809878087:c1",
+      "paper_id": "openalex:W2809878087",
+      "text": "More than twenty different notions of algorithmic fairness have been proposed in recent years.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2809878087:c2",
+      "paper_id": "openalex:W2809878087",
+      "text": "There is no clear agreement on which fairness definition to apply in each situation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2809878087:c3",
+      "paper_id": "openalex:W2809878087",
+      "text": "The same classification case can be evaluated as fair according to some definitions and unfair according to others.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2809878087:c4",
+      "paper_id": "openalex:W2809878087",
+      "text": "The authors systematically collect and explain prominent definitions of fairness for algorithmic classification.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2809878087:c5",
+      "paper_id": "openalex:W2809878087",
+      "text": "The authors demonstrate each fairness definition on a single unifying case-study.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2809878087:e1",
+      "claim_id": "openalex:W2809878087:c1",
+      "description": "The authors state there are 'more than twenty different notions of fairness proposed in the last few years.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2809878087:e2",
+      "claim_id": "openalex:W2809878087:c2",
+      "description": "The paper notes that 'there is no clear agreement on which definition to apply in each situation.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2809878087:e3",
+      "claim_id": "openalex:W2809878087:c3",
+      "description": "The paper's analysis 'intuitively explains why the same case can be considered fair according to some definitions and unfair according to others.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2809878087:e4",
+      "claim_id": "openalex:W2809878087:c4",
+      "description": "The paper 'collects the most prominent definitions of fairness for the algorithmic classification problem, explains the rationale behind these definitions'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2809878087:e5",
+      "claim_id": "openalex:W2809878087:c5",
+      "description": "The paper 'demonstrates each of them on a single unifying case-study.'",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2809878087:m1",
+      "paper_id": "openalex:W2809878087",
+      "name": "Unifying Case Study Demonstration",
+      "description": "Application of multiple prominent algorithmic fairness definitions to a single unified case study for comparative analysis.",
+      "datasets": [],
+      "conditions": [
+        "algorithmic classification problem"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2809878087:l1",
+      "paper_id": "openalex:W2809878087",
+      "text": "There is no clear agreement on which definition of fairness to apply in each situation.",
+      "normalized_category": "lack-of-consensus",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2809878087:l2",
+      "paper_id": "openalex:W2809878087",
+      "text": "Detailed differences between multiple definitions of fairness are difficult to grasp.",
+      "normalized_category": "interpretability-gap",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:07:05.052224Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

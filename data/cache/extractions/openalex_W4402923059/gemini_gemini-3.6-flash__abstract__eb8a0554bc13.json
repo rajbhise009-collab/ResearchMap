@@ -1,0 +1,70 @@
+{
+  "paper_id": "openalex:W4402923059",
+  "claims": [
+    {
+      "id": "openalex:W4402923059:c1",
+      "paper_id": "openalex:W4402923059",
+      "text": "Distorted information in AIGC can be classified into 8 first-level error types: Overfitting, Logic errors, Reasoning errors, Mathematical errors, Unfounded fabrication, Factual errors, Text output errors, and Other errors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402923059:c2",
+      "paper_id": "openalex:W4402923059",
+      "text": "The first-level error types of distorted information in AIGC are further subdivided into 31 second-level error types.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402923059:c3",
+      "paper_id": "openalex:W4402923059",
+      "text": "Empirical content analysis on ChatGPT question-and-answer instances can refine and validate a categorization scheme for distorted information in AIGC.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402923059:e1",
+      "claim_id": "openalex:W4402923059:c1",
+      "description": "The findings identified 8 first-level error types: “Overfitting”; “Logic errors”; “Reasoning errors”; “Mathematical errors”; “Unfounded fabrication”; “Factual errors”; “Text output errors”; and “Other errors”.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402923059:e2",
+      "claim_id": "openalex:W4402923059:c2",
+      "description": "The first-level error types were further subdivided into 31 second-level error types.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402923059:e3",
+      "claim_id": "openalex:W4402923059:c3",
+      "description": "Utilizing ChatGPT as a case study, empirical content analysis was conducted on 243 instances of distorted information comprising both questions and answers to refine and validate the category list.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402923059:m1",
+      "paper_id": "openalex:W4402923059",
+      "name": "Empirical Content Analysis",
+      "description": "Three coders interpreted 243 instances of ChatGPT distorted information (questions and answers), encoding error points using a predefined coding scheme through multiple rounds of pre-coding and test coding.",
+      "datasets": [
+        "243 instances of distorted information collected from ChatGPT"
+      ],
+      "conditions": [
+        "ChatGPT as a case study",
+        "Three coders",
+        "Predefined coding scheme",
+        "Multiple rounds of pre-coding and test coding"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.114413Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

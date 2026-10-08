@@ -1,0 +1,107 @@
+{
+  "paper_id": "openalex:W4391505381",
+  "claims": [
+    {
+      "id": "openalex:W4391505381:c1",
+      "paper_id": "openalex:W4391505381",
+      "text": "The proposed non-parametric uncertainty quantification method efficiently estimates point-wise dependencies between input and decision on the fly with a single inference.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c2",
+      "paper_id": "openalex:W4391505381",
+      "text": "The uncertainty estimator does not require access to token logits.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c3",
+      "paper_id": "openalex:W4391505381",
+      "text": "The uncertainty estimator informs the statistical interpretation of decision trustworthiness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c4",
+      "paper_id": "openalex:W4391505381",
+      "text": "The decision-making agent design asks users for preferences when multiple actions have high estimated point-wise dependencies.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c5",
+      "paper_id": "openalex:W4391505381",
+      "text": "The proposed uncertainty estimation and decision-making agent design offer a cost-efficient approach for AI agent development.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391505381:e1",
+      "claim_id": "openalex:W4391505381:c1",
+      "description": "The paper introduces a non-parametric uncertainty quantification method that estimates point-wise dependencies with a single inference.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391505381:e2",
+      "claim_id": "openalex:W4391505381:c2",
+      "description": "The method is described as working 'without access to token logits'.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391505381:e3",
+      "claim_id": "openalex:W4391505381:c5",
+      "description": "The conclusion states that the uncertainty estimation and agent design offer a cost-efficient approach.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391505381:m1",
+      "paper_id": "openalex:W4391505381",
+      "name": "Non-parametric Uncertainty Quantification",
+      "description": "A method for estimating point-wise dependencies between input and decision using a single inference without logit access.",
+      "datasets": [],
+      "conditions": [
+        "Black-box Large Language Models",
+        "Single inference"
+      ]
+    },
+    {
+      "id": "openalex:W4391505381:m2",
+      "paper_id": "openalex:W4391505381",
+      "name": "Systematic Decision-Making Agent Design",
+      "description": "An agent architecture that generates actions based on prompts and requests user preferences during high-uncertainty scenarios.",
+      "datasets": [],
+      "conditions": [
+        "User preference feedback"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391505381:l1",
+      "paper_id": "openalex:W4391505381",
+      "text": "Existing approaches are either white-box or computationally demanding.",
+      "normalized_category": "computational-efficiency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4391505381:l2",
+      "paper_id": "openalex:W4391505381",
+      "text": "Existing approaches limit the use of black-box proprietary LLMs within budgets.",
+      "normalized_category": "cost-prohibitive",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:15:44.734830Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

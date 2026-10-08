@@ -1,0 +1,61 @@
+{
+  "paper_id": "openalex:W4405740130",
+  "claims": [
+    {
+      "id": "openalex:W4405740130:c1",
+      "paper_id": "openalex:W4405740130",
+      "text": "Large Language Models produce hallucinations, generating plausible-sounding but factually incorrect responses.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405740130:c2",
+      "paper_id": "openalex:W4405740130",
+      "text": "Knowledge Graphs represent structured collections of interconnected facts as entities and relationships.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4405740130:e1",
+      "claim_id": "openalex:W4405740130:c1",
+      "description": "LLMs face a significant challenge of hallucinations, where models produce plausible-sounding but factually incorrect responses.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4405740130:e2",
+      "claim_id": "openalex:W4405740130:c2",
+      "description": "Knowledge Graphs (KGs) provide a structured collection of interconnected facts represented as entities (nodes) and their relationships (edges).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W4405740130:l1",
+      "paper_id": "openalex:W4405740130",
+      "text": "Hallucinations in Large Language Models undermine trust and limit their applicability across different domains.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4405740130:f1",
+      "paper_id": "openalex:W4405740130",
+      "text": "Addressing unresolved open problems in knowledge integration methods for LLM systems.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4405740130:f2",
+      "paper_id": "openalex:W4405740130",
+      "text": "Developing advanced frameworks and benchmarks for evaluating hallucinations in KG-supported LLM systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.095085Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

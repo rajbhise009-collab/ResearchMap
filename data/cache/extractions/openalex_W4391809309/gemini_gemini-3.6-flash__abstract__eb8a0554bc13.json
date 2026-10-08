@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W4391809309",
+  "claims": [
+    {
+      "id": "openalex:W4391809309:c1",
+      "paper_id": "openalex:W4391809309",
+      "text": "The proposed modular LLM pipeline semantically extracts features from textual patient admission records.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c2",
+      "paper_id": "openalex:W4391809309",
+      "text": "Qwen-14B-Chat achieved an accuracy of 95.52% and a precision of 92.93% in clinical feature extraction.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c3",
+      "paper_id": "openalex:W4391809309",
+      "text": "Baichuan2-13B-Chat achieved an accuracy of 95.86% and a precision of 90.08% in clinical feature extraction.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391809309:c4",
+      "paper_id": "openalex:W4391809309",
+      "text": "An INT4-quantified version of Qwen-14B-Chat achieved 97.28% accuracy and a 0% null ratio on consumer-grade hardware.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391809309:e1",
+      "claim_id": "openalex:W4391809309:c1",
+      "description": "The pipeline processes a systematic succession of concept extraction, aggregation, question generation, corpus extraction, and question-and-answer scale extraction.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391809309:e2",
+      "claim_id": "openalex:W4391809309:c2",
+      "description": "Evaluation on 25,709 pregnancy cases yielded accuracy and precision results of 95.52% and 92.93% for Qwen-14B-Chat.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e3",
+      "claim_id": "openalex:W4391809309:c3",
+      "description": "Evaluation on 25,709 pregnancy cases yielded accuracy and precision results of 95.86% and 90.08% for Baichuan2-13B-Chat.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391809309:e4",
+      "claim_id": "openalex:W4391809309:c4",
+      "description": "An INT4-quantified version of QWEN evaluated on a consumer-grade GPU delivered 97.28% accuracy and a 0% null ratio.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391809309:m1",
+      "paper_id": "openalex:W4391809309",
+      "name": "Modular LLM Extraction Pipeline",
+      "description": "A pipeline processing concept extraction, aggregation, question generation, corpus extraction, and Q&A scale extraction to extract features from clinical records.",
+      "datasets": [
+        "25,709 pregnancy cases from the People's Hospital of Guangxi Zhuang Autonomous Region, China"
+      ],
+      "conditions": [
+        "Qwen-14B-Chat",
+        "Baichuan2-13B-Chat",
+        "INT4-quantified Qwen-14B-Chat on consumer-grade GPU"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391809309:l1",
+      "paper_id": "openalex:W4391809309",
+      "text": "Large language models present security and feature hallucination issues in clinical applications.",
+      "normalized_category": "security-and-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.097698Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

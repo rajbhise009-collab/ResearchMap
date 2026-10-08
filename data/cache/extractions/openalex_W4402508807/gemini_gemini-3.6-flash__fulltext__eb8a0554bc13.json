@@ -1,0 +1,192 @@
+{
+  "paper_id": "openalex:W4402508807",
+  "claims": [
+    {
+      "id": "openalex:W4402508807:c1",
+      "paper_id": "openalex:W4402508807",
+      "text": "Across 450 transcript-note pairs (12,999 clinical note sentences), an overall hallucination rate of 1.47% was observed.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c2",
+      "paper_id": "openalex:W4402508807",
+      "text": "44% of the identified hallucinations in LLM-generated clinical notes were classified as major clinical risk errors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c3",
+      "paper_id": "openalex:W4402508807",
+      "text": "Across 49,590 consultation transcript sentences, an overall information omission rate of 3.45% was observed.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c4",
+      "paper_id": "openalex:W4402508807",
+      "text": "16.7% of the identified omissions in LLM-generated clinical notes were classified as major errors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c5",
+      "paper_id": "openalex:W4402508807",
+      "text": "Incorporating an intermediate atomisation chain-of-thought step to extract facts before generating notes increased major hallucinations and omissions.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c6",
+      "paper_id": "openalex:W4402508807",
+      "text": "Iterative prompt and workflow modifications reduced major errors in LLM clinical note generation below previously reported human note-taking error rates.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c7",
+      "paper_id": "openalex:W4402508807",
+      "text": "Utilizing function call prompts with structured JSON output and enhanced style guidance reduced major omissions from 61 to 0.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c8",
+      "paper_id": "openalex:W4402508807",
+      "text": "Clinician-written notes contained slightly more major hallucinations but fewer omissions compared to LLM-generated notes in Experiment 8.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402508807:e1",
+      "claim_id": "openalex:W4402508807:c1",
+      "description": "Of 12,999 sentences in 450 clinical notes, 191 sentences had hallucinations (1.47%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e2",
+      "claim_id": "openalex:W4402508807:c2",
+      "description": "84 out of 191 hallucinated sentences (44%) were rated as major errors that could impact patient diagnosis and management if left uncorrected.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e3",
+      "claim_id": "openalex:W4402508807:c3",
+      "description": "Of 49,590 transcript sentences, 1,712 sentences were omitted in the summary notes (3.45%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e4",
+      "claim_id": "openalex:W4402508807:c4",
+      "description": "286 out of 1,712 omitted sentences (16.7%) were classified as major omissions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e5",
+      "claim_id": "openalex:W4402508807:c5",
+      "description": "Comparing experiment 5 (atomisation) to experiment 3 (structured prompts), major hallucinations increased from 4 to 25 and major omissions increased from 24 to 47.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402508807:e6",
+      "claim_id": "openalex:W4402508807:c6",
+      "description": "Experiment 8 achieved 1 major hallucination and 10 major omissions over 25 notes, and Experiment 11 achieved 2 major hallucinations and 0 major omissions, compared to 1 error and 4 omissions reported per human-written note in prior literature.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402508807:e7",
+      "claim_id": "openalex:W4402508807:c7",
+      "description": "Across function call iterations from experiment 6 to 11, major omissions decreased from 61 to 0, minor omissions dropped from 130 to 54, and total hallucinations dropped from 4 to 3.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402508807:e8",
+      "claim_id": "openalex:W4402508807:c8",
+      "description": "In Experiment 17, clinician-generated notes exhibited slightly more major hallucinations and fewer omissions when evaluated against transcripts compared to Experiment 8 LLM notes.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402508807:m1",
+      "paper_id": "openalex:W4402508807",
+      "name": "CREOLA Clinician-in-the-Loop Framework",
+      "description": "A clinician-in-the-loop clinical evaluation framework and graphical interface incorporating a clinical error taxonomy, experimental pipeline comparison structure, and medical device protocol-inspired clinical safety harm grading.",
+      "datasets": [
+        "PriMock dataset",
+        "ACI Bench dataset"
+      ],
+      "conditions": [
+        "GPT-4 (GPT-4-32k-0613)",
+        "Temperature 0",
+        "Top-p 0.95",
+        "Seed 210",
+        "18 experimental configurations",
+        "450 consultation transcript-note pairs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402508807:l1",
+      "paper_id": "openalex:W4402508807",
+      "text": "Automated metrics such as ROUGE, BLEU, and BERTScore fail to capture semantic nuances and contextual dependencies critical for evaluating clinical text quality.",
+      "normalized_category": "metric-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4402508807:l2",
+      "paper_id": "openalex:W4402508807",
+      "text": "Existing biomedical summarisation benchmarks over scientific literature or radiology reports fail to capture the nuances of direct patient-facing clinical consultation interactions.",
+      "normalized_category": "benchmark-gap",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4402508807:l3",
+      "paper_id": "openalex:W4402508807",
+      "text": "The sample size of medical transcripts evaluated per experiment was relatively small (25 transcripts) to balance human annotation workload.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402508807:l4",
+      "paper_id": "openalex:W4402508807",
+      "text": "The study evaluated only a single primary language model (GPT-4) with direct prompting structures.",
+      "normalized_category": "single-model-evaluated",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402508807:l5",
+      "paper_id": "openalex:W4402508807",
+      "text": "Relying purely on human clinician annotators to manually evaluate generated documentation is expensive and unsustainable at scale.",
+      "normalized_category": "annotation-cost",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402508807:f1",
+      "paper_id": "openalex:W4402508807",
+      "text": "Apply the CREOLA framework across open-source language models and alternative architectures such as Retrieval-Augmented Generation (RAG) or knowledge graphs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402508807:f2",
+      "paper_id": "openalex:W4402508807",
+      "text": "Implement scalable automated evaluation via a hybrid 'LLM-as-a-Judge' approach with clinician oversight on sub-samples.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.978289Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

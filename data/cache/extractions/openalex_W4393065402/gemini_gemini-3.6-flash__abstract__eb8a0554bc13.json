@@ -1,0 +1,92 @@
+{
+  "paper_id": "openalex:W4393065402",
+  "claims": [
+    {
+      "id": "openalex:W4393065402:c1",
+      "paper_id": "openalex:W4393065402",
+      "text": "Previous agent research primarily focuses on training agents with limited knowledge within isolated environments.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c2",
+      "paper_id": "openalex:W4393065402",
+      "text": "Training agents in isolated environments with limited knowledge diverges from human learning processes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c3",
+      "paper_id": "openalex:W4393065402",
+      "text": "Large language models acquire potential for human-level intelligence through the acquisition of vast Web knowledge.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393065402:c4",
+      "paper_id": "openalex:W4393065402",
+      "text": "The authors propose a unified framework for constructing LLM-based autonomous agents that encompasses prior work.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4393065402:e1",
+      "claim_id": "openalex:W4393065402:c1",
+      "description": "Previous research often focuses on training agents with limited knowledge within isolated environments",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393065402:e2",
+      "claim_id": "openalex:W4393065402:c2",
+      "description": "which diverges significantly from human learning processes, and makes the agents hard to achieve human-like decisions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393065402:e3",
+      "claim_id": "openalex:W4393065402:c3",
+      "description": "Recently, through the acquisition of vast amounts of Web knowledge, large language models (LLMs) have shown potential in human-level intelligence",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4393065402:e4",
+      "claim_id": "openalex:W4393065402:c4",
+      "description": "We first discuss the construction of LLM-based autonomous agents, proposing a unified framework that encompasses much of previous work.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4393065402:m1",
+      "paper_id": "openalex:W4393065402",
+      "name": "Unified Framework for LLM-based Autonomous Agents",
+      "description": "A unified conceptual framework for the construction and evaluation of LLM-based autonomous agents.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4393065402:l1",
+      "paper_id": "openalex:W4393065402",
+      "text": "Previous research focuses on training agents with limited knowledge within isolated environments, making human-like decisions difficult.",
+      "normalized_category": "isolated-environment-training",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4393065402:f1",
+      "paper_id": "openalex:W4393065402",
+      "text": "Addressing open challenges and exploring future research directions in LLM-based autonomous agents.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.109597Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

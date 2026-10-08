@@ -1,0 +1,111 @@
+{
+  "paper_id": "openalex:W1622799587",
+  "claims": [
+    {
+      "id": "openalex:W1622799587:c1",
+      "paper_id": "openalex:W1622799587",
+      "text": "Non-alcoholic fatty liver disease is the most common cause of elevated liver enzymes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1622799587:c2",
+      "paper_id": "openalex:W1622799587",
+      "text": "Within the non-alcoholic fatty liver disease (NAFLD) spectrum, only non-alcoholic steatohepatitis (NASH) progresses to cirrhosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1622799587:c3",
+      "paper_id": "openalex:W1622799587",
+      "text": "Within the non-alcoholic fatty liver disease (NAFLD) spectrum, only non-alcoholic steatohepatitis (NASH) progresses to hepatocellular carcinoma.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1622799587:c4",
+      "paper_id": "openalex:W1622799587",
+      "text": "The prevalence of non-alcoholic fatty liver disease is highest in populations with pre-existing metabolic conditions such as obesity and type II diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1622799587:c5",
+      "paper_id": "openalex:W1622799587",
+      "text": "Diagnosis of non-alcoholic fatty liver disease relies on assessment tools including liver biopsy, radiological tests, and blood testing.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1622799587:e1",
+      "claim_id": "openalex:W1622799587:c1",
+      "description": "Non-alcoholic fatty liver disease is the most common cause of elevated liver enzymes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1622799587:e2",
+      "claim_id": "openalex:W1622799587:c2",
+      "description": "Within the NAFLD spectrum, only NASH progresses to cirrhosis and hepatocellular carcinoma.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1622799587:e3",
+      "claim_id": "openalex:W1622799587:c3",
+      "description": "Within the NAFLD spectrum, only NASH progresses to cirrhosis and hepatocellular carcinoma.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1622799587:e4",
+      "claim_id": "openalex:W1622799587:c4",
+      "description": "The prevalence of NAFLD is highest in populations with pre-existing metabolic conditions such as obesity and type II diabetes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1622799587:e5",
+      "claim_id": "openalex:W1622799587:c5",
+      "description": "diagnosis is heterogeneous and relies on a variety of assessment tools, including liver biopsy, radiological tests such as ultrasonography, and blood testing such as liver enzymes.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1622799587:m1",
+      "paper_id": "openalex:W1622799587",
+      "name": "Systematic PubMed Literature Search",
+      "description": "Systematic review searching PubMed (1980-2010) using terms related to NAFLD, NASH, fatty liver, steatosis, incidence, prevalence, and natural history.",
+      "datasets": [
+        "PubMed (1980-2010)"
+      ],
+      "conditions": [
+        "Adult cohorts only",
+        "Excluded paediatric cohorts"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1622799587:l1",
+      "paper_id": "openalex:W1622799587",
+      "text": "Diagnosis of NAFLD across existing literature is heterogeneous and relies on a variety of distinct assessment tools.",
+      "normalized_category": "diagnostic-heterogeneity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1622799587:l2",
+      "paper_id": "openalex:W1622799587",
+      "text": "Pediatric cohorts were excluded from the scope of this review.",
+      "normalized_category": "population-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:42:04.619600Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

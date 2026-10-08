@@ -1,0 +1,73 @@
+{
+  "paper_id": "openalex:W4403687832",
+  "claims": [
+    {
+      "id": "openalex:W4403687832:c1",
+      "paper_id": "openalex:W4403687832",
+      "text": "Deep learning models for fake news detection on social networks are structured as either unimodal or multimodal framework modalities.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403687832:c2",
+      "paper_id": "openalex:W4403687832",
+      "text": "Fake news detection using deep learning models suffers from limitations due to low-resource language datasets.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403687832:e1",
+      "claim_id": "openalex:W4403687832:c1",
+      "description": "The systematic review focuses on unimodal (single model analysis) and multimodal (integration of multiple models) deep learning modalities for fake news detection.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4403687832:e2",
+      "claim_id": "openalex:W4403687832:c2",
+      "description": "Review findings highlight the limitations of datasets available for low-resource languages in fake news detection.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403687832:m1",
+      "paper_id": "openalex:W4403687832",
+      "name": "Systematic Literature Review",
+      "description": "A systematic review following predefined selection criteria to analyze unimodal and multimodal deep learning modalities for fake news detection in social networks.",
+      "datasets": [],
+      "conditions": [
+        "unimodal deep learning models",
+        "multimodal deep learning models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403687832:l1",
+      "paper_id": "openalex:W4403687832",
+      "text": "Datasets for low-resource languages are limited for training and evaluation of deep learning fake news detection models.",
+      "normalized_category": "low-resource-dataset-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4403687832:f1",
+      "paper_id": "openalex:W4403687832",
+      "text": "Explore future directions for deep learning models combined with different fact-checking techniques.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4403687832:f2",
+      "paper_id": "openalex:W4403687832",
+      "text": "Investigate fake news detection methodologies in the context of large language models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.107792Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

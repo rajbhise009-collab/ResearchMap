@@ -1,0 +1,149 @@
+{
+  "paper_id": "openalex:W2098824882",
+  "claims": [
+    {
+      "id": "openalex:W2098824882:c1",
+      "paper_id": "openalex:W2098824882",
+      "text": "Maximum margin methods such as boosted trees and boosted stumps push probability mass away from 0 and 1.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2098824882:c2",
+      "paper_id": "openalex:W2098824882",
+      "text": "Maximum margin methods produce a characteristic sigmoid-shaped distortion in predicted probabilities.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2098824882:c3",
+      "paper_id": "openalex:W2098824882",
+      "text": "Naive Bayes models push predicted probabilities toward 0 and 1.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2098824882:c4",
+      "paper_id": "openalex:W2098824882",
+      "text": "Neural networks predict well-calibrated probabilities without systematic probability mass distortion.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2098824882:c5",
+      "paper_id": "openalex:W2098824882",
+      "text": "Bagged trees predict well-calibrated probabilities without systematic probability mass distortion.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2098824882:c6",
+      "paper_id": "openalex:W2098824882",
+      "text": "After calibration, boosted trees predict the best probabilities among tested models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2098824882:c7",
+      "paper_id": "openalex:W2098824882",
+      "text": "After calibration, random forests predict the best probabilities among tested models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2098824882:c8",
+      "paper_id": "openalex:W2098824882",
+      "text": "After calibration, support vector machines predict the best probabilities among tested models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2098824882:e1",
+      "claim_id": "openalex:W2098824882:c1",
+      "description": "We show that maximum margin methods such as boosted trees and boosted stumps push probability mass away from 0 and 1...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2098824882:e2",
+      "claim_id": "openalex:W2098824882:c2",
+      "description": "...yielding a characteristic sigmoid shaped distortion in the predicted probabilities.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2098824882:e3",
+      "claim_id": "openalex:W2098824882:c3",
+      "description": "Models such as Naive Bayes, which make unrealistic independence assumptions, push probabilities toward 0 and 1.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2098824882:e4",
+      "claim_id": "openalex:W2098824882:c4",
+      "description": "Other models such as neural nets and bagged trees do not have these biases and predict well calibrated probabilities.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2098824882:e5",
+      "claim_id": "openalex:W2098824882:c5",
+      "description": "Other models such as neural nets and bagged trees do not have these biases and predict well calibrated probabilities.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2098824882:e6",
+      "claim_id": "openalex:W2098824882:c6",
+      "description": "The empirical results show that after calibration boosted trees, random forests, and SVMs predict the best probabilities.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2098824882:e7",
+      "claim_id": "openalex:W2098824882:c7",
+      "description": "The empirical results show that after calibration boosted trees, random forests, and SVMs predict the best probabilities.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2098824882:e8",
+      "claim_id": "openalex:W2098824882:c8",
+      "description": "The empirical results show that after calibration boosted trees, random forests, and SVMs predict the best probabilities.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2098824882:m1",
+      "paper_id": "openalex:W2098824882",
+      "name": "Platt Scaling",
+      "description": "A parametric transformation method used to calibrate predicted probabilities by fitting a logistic regression model on model outputs.",
+      "datasets": [],
+      "conditions": []
+    },
+    {
+      "id": "openalex:W2098824882:m2",
+      "paper_id": "openalex:W2098824882",
+      "name": "Isotonic Regression",
+      "description": "A non-parametric calibration method that fits a non-decreasing monotonic function to map predicted outputs to true posteriors.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2098824882:l1",
+      "paper_id": "openalex:W2098824882",
+      "text": "Naive Bayes relies on unrealistic attribute independence assumptions, causing systematic probability distortions.",
+      "normalized_category": "independence-assumption-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.109291Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

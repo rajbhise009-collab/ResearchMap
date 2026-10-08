@@ -1,0 +1,86 @@
+{
+  "paper_id": "openalex:W4393213364",
+  "claims": [
+    {
+      "id": "openalex:W4393213364:c1",
+      "paper_id": "openalex:W4393213364",
+      "text": "Existing surveys on hallucination detection in foundation models focus on question-answering, object detection, or image captioning, but ignore general decision-making deployments.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393213364:c2",
+      "paper_id": "openalex:W4393213364",
+      "text": "A hallucination is a generated output from a model that conflicts with constraints or deviates from desired behavior in actual deployment, or is completely irrelevant to the task at hand, but could be deemed syntactically plausible under the circumstances.",
+      "type": "theoretical",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4393213364:e1",
+      "claim_id": "openalex:W4393213364:c1",
+      "description": "Literature review indicates existing hallucination surveys focus on QA, dialogue generation, or image captioning while omitting broader decision-making and planning deployments.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393213364:e2",
+      "claim_id": "openalex:W4393213364:c2",
+      "description": "Definition 3.1 synthesizes core characteristics across QA, image captioning, planning, and control domains into four primary metrics: compliance, desirability, relevancy, and plausibility.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4393213364:m1",
+      "paper_id": "openalex:W4393213364",
+      "name": "Nine-Step Hallucination Intervention Design Framework",
+      "description": "A systematic design process for selecting, evaluating, and integrating hallucination detection and mitigation algorithms into foundation model systems across white-, grey-, and black-box modalities.",
+      "datasets": [],
+      "conditions": [
+        "foundation models for decision-making",
+        "autonomous systems"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4393213364:l1",
+      "paper_id": "openalex:W4393213364",
+      "text": "The initial sampling procedure in the proposed design workflow will not cover all possible remaining failure modes of a foundation model at inference time.",
+      "normalized_category": "incomplete-failure-coverage",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4393213364:l2",
+      "paper_id": "openalex:W4393213364",
+      "text": "Existing black-box hallucination detection methods are limited by simplistic sampling techniques, and proxy models may not accurately represent the true state of the model under test.",
+      "normalized_category": "black-box-sampling-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4393213364:f1",
+      "paper_id": "openalex:W4393213364",
+      "text": "Adapt and evaluate hallucination detection and mitigation approaches previously applied in QA settings onto complex planning and control decision-making tasks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4393213364:f2",
+      "paper_id": "openalex:W4393213364",
+      "text": "Develop more aggressive black-box adversarial generative models that explicitly optimize for producing inputs that expose the boundaries of a foundation model's knowledge.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4393213364:f3",
+      "paper_id": "openalex:W4393213364",
+      "text": "Evaluate multi-modal foundation models, including vision-language, audio, and 3D generative models, in online decision-making settings.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.014796Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

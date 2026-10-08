@@ -1,0 +1,117 @@
+{
+  "paper_id": "openalex:W2789495752",
+  "claims": [
+    {
+      "id": "openalex:W2789495752:c1",
+      "paper_id": "openalex:W2789495752",
+      "text": "Deficiency in short-chain fatty acid (SCFA) production is associated with type 2 diabetes mellitus.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789495752:c2",
+      "paper_id": "openalex:W2789495752",
+      "text": "A select group of SCFA-producing bacterial strains is promoted by dietary fibers in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789495752:c3",
+      "paper_id": "openalex:W2789495752",
+      "text": "Most non-promoted potential SCFA producers are either diminished or unchanged in patients with type 2 diabetes receiving dietary fiber intervention.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789495752:c4",
+      "paper_id": "openalex:W2789495752",
+      "text": "Greater diversity and abundance of fiber-promoted SCFA producers lead to improved hemoglobin A1c levels in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789495752:c5",
+      "paper_id": "openalex:W2789495752",
+      "text": "Fiber-promoted SCFA producers improve hemoglobin A1c levels partly via increased glucagon-like peptide-1 production.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789495752:c6",
+      "paper_id": "openalex:W2789495752",
+      "text": "Promotion of fiber-responsive SCFA-producing bacteria diminishes bacterial producers of metabolically detrimental compounds such as indole and hydrogen sulfide.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2789495752:e1",
+      "claim_id": "openalex:W2789495752:c1",
+      "description": "deficiency in SCFA production is associated with type 2 diabetes mellitus (T2DM).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2789495752:e2",
+      "claim_id": "openalex:W2789495752:c2",
+      "description": "a select group of SCFA-producing strains was promoted by dietary fibers ... in patients with T2DM.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789495752:e3",
+      "claim_id": "openalex:W2789495752:c3",
+      "description": "most other potential producers were either diminished or unchanged in patients with T2DM.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789495752:e4",
+      "claim_id": "openalex:W2789495752:c4",
+      "description": "When the fiber-promoted SCFA producers were present in greater diversity and abundance, participants had better improvement in hemoglobin A1c levels",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789495752:e5",
+      "claim_id": "openalex:W2789495752:c5",
+      "description": "partly via increased glucagon-like peptide-1 production.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2789495752:e6",
+      "claim_id": "openalex:W2789495752:c6",
+      "description": "Promotion of these positive responders diminished producers of metabolically detrimental compounds such as indole and hydrogen sulfide.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2789495752:m1",
+      "paper_id": "openalex:W2789495752",
+      "name": "Randomized clinical study with high-fiber dietary intervention and fecal shotgun metagenomics",
+      "description": "A randomized clinical study evaluating specifically designed isoenergetic diets combined with fecal shotgun metagenomic profiling in patients with T2DM.",
+      "datasets": [
+        "Fecal shotgun metagenomic sequencing dataset"
+      ],
+      "conditions": [
+        "Specifically designed isoenergetic dietary fiber intervention",
+        "Patients with Type 2 Diabetes Mellitus"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W2789495752:f1",
+      "paper_id": "openalex:W2789495752",
+      "text": "Targeted restoration of fiber-promoted SCFA-producing gut bacteria as a novel ecological approach for managing type 2 diabetes mellitus.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:03:54.357259Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

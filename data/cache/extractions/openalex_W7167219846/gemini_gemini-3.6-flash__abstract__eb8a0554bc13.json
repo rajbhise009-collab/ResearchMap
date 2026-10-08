@@ -1,0 +1,76 @@
+{
+  "paper_id": "openalex:W7167219846",
+  "claims": [
+    {
+      "id": "openalex:W7167219846:c1",
+      "paper_id": "openalex:W7167219846",
+      "text": "Multicalibration yields an improvement of +1.03 in brier skill score over uncalibrated token likelihoods.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7167219846:c2",
+      "paper_id": "openalex:W7167219846",
+      "text": "Multicalibration yields an improvement of +0.37 in brier skill score over baseline calibrations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7167219846:c3",
+      "paper_id": "openalex:W7167219846",
+      "text": "Multicalibration captures problem factors such as complexity, code length, and programming language used.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7167219846:e1",
+      "claim_id": "openalex:W7167219846:c1",
+      "description": "Our results demonstrate that multicalibration can yield distinct improvements over both uncalibrated token likelihoods (+ 1.03 in brier skill score).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7167219846:e2",
+      "claim_id": "openalex:W7167219846:c2",
+      "description": "Our results demonstrate that multicalibration can yield distinct improvements over baseline calibrations (+ 0.37 in brier skill score).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7167219846:e3",
+      "claim_id": "openalex:W7167219846:c3",
+      "description": "multicalibration, which can capture additional factors about a coding problem, such as complexity, code length, or programming language used.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7167219846:m1",
+      "paper_id": "openalex:W7167219846",
+      "name": "Multicalibration evaluation on function synthesis benchmarks",
+      "description": "Evaluation of four multicalibration approaches capturing problem complexity, code length, and programming language across three function synthesis benchmarks using latest-generation code LLMs.",
+      "datasets": [
+        "three function synthesis benchmarks"
+      ],
+      "conditions": [
+        "Qwen3-Coder",
+        "GPT-OSS",
+        "DeepSeek-R1-Distill"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W7167219846:f1",
+      "paper_id": "openalex:W7167219846",
+      "text": "Research on code LLM calibration using the released dataset consisting of code generations, likelihoods, and correctness labels.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.106890Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

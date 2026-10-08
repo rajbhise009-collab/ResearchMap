@@ -1,0 +1,128 @@
+{
+  "paper_id": "openalex:W4391901281",
+  "claims": [
+    {
+      "id": "openalex:W4391901281:c1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Class-balanced demonstration sampling yields higher AUPR and AUROC scores for misclassification detection compared to random demonstration sampling across NLU benchmark datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c2",
+      "paper_id": "openalex:W4391901281",
+      "text": "Epistemic uncertainty achieves an AUROC of 0.941 for out-of-domain demonstration detection on the EMOTION dataset using LLaMA-2-13B.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c3",
+      "paper_id": "openalex:W4391901281",
+      "text": "Epistemic uncertainty achieves an AUROC of 0.658 for semantic out-of-distribution detection on the EMOTION dataset using LLaMA-2-7B.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c4",
+      "paper_id": "openalex:W4391901281",
+      "text": "Predictive uncertainty in in-context learning can be decomposed into aleatoric uncertainty from demonstration variation and epistemic uncertainty from model parameters using mutual information.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391901281:e1",
+      "claim_id": "openalex:W4391901281:c1",
+      "description": "In Table 1, LLaMA-7B-CLASS achieves higher AUPR and ROC scores than LLaMA-7B-RANDOM across datasets such as EMOTION (0.745 vs 0.688 ROC for EU) and SST-2 (0.701 vs 0.683 ROC for EU).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391901281:e2",
+      "claim_id": "openalex:W4391901281:c2",
+      "description": "Table 3 shows EU reaching 0.941 ROC on out-of-domain demonstration detection using LLaMA-2-13B on the EMOTION dataset, outperforming Semantic Uncertainty (0.712) and Aleatoric Uncertainty (0.607).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391901281:e3",
+      "claim_id": "openalex:W4391901281:c3",
+      "description": "Table 4 reports an AUROC of 0.658 for EU on semantic out-of-distribution detection using LLaMA-2-7B on the EMOTION dataset compared to 0.532 for Semantic Uncertainty.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4391901281:e4",
+      "claim_id": "openalex:W4391901281:c4",
+      "description": "Equations (2) and (3) derive aleatoric uncertainty via mutual information between output and latent concept, separating it from expected conditional entropy representing epistemic uncertainty.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391901281:m1",
+      "paper_id": "openalex:W4391901281",
+      "name": "Entropy-based Uncertainty Decomposition",
+      "description": "Decomposes predictive uncertainty into epistemic and aleatoric components by calculating differential entropy and mutual information over normalized answer token probabilities obtained via beam search across sampled demonstration sets.",
+      "datasets": [
+        "EMOTION",
+        "Financial Phrasebank",
+        "SST2",
+        "COLA",
+        "AG_News"
+      ],
+      "conditions": [
+        "Beam search with width 10",
+        "Max new tokens set to 16",
+        "White-box LLMs (LLaMA-2 7B/13B/70B, OPT-13B)",
+        "Random and Class demonstration sampling"
+      ]
+    },
+    {
+      "id": "openalex:W4391901281:m2",
+      "paper_id": "openalex:W4391901281",
+      "name": "Variance-based Uncertainty Decomposition",
+      "description": "Decomposes predictive uncertainty using the law of total variance applied to expected output values across model configurations and demonstration sets without needing access to token probabilities.",
+      "datasets": [],
+      "conditions": [
+        "Black-box LLMs",
+        "Hyperparameter sampling (temperature, top_p)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391901281:l1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing uncertainty quantification works for LLMs overlook the reliance on provided in-context demonstrations and fail to provide insights into the underlying causes of uncertainty.",
+      "normalized_category": "prior-work-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4391901281:l2",
+      "paper_id": "openalex:W4391901281",
+      "text": "The proposed uncertainty estimation algorithm has limited usage in free-form generation tasks because identifying semantically important tokens in generated sequence parts is non-trivial.",
+      "normalized_category": "task-scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4391901281:l3",
+      "paper_id": "openalex:W4391901281",
+      "text": "The evaluation and framework are primarily restricted to deterministic natural language understanding tasks such as multiple-choice QA, text classification, and linguistic acceptability.",
+      "normalized_category": "evaluation-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4391901281:f1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Extend the uncertainty decomposition method to other data modalities and complex text generation tasks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.644529Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

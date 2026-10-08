@@ -1,0 +1,159 @@
+{
+  "paper_id": "openalex:W3043023066",
+  "claims": [
+    {
+      "id": "openalex:W3043023066:c1",
+      "paper_id": "openalex:W3043023066",
+      "text": "Penalizing differences between distributions of predictions across demographic groups induces nearly-universal degradation of within-group performance metrics.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043023066:c2",
+      "paper_id": "openalex:W3043023066",
+      "text": "Penalizing group fairness violations results in heterogeneous effects on measures of fairness in calibration and cross-group ranking across experimental conditions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043023066:c3",
+      "paper_id": "openalex:W3043023066",
+      "text": "Penalizing demographic parity violations increases the AUROC of the 30-day readmission model for the Black population at lambda = 3.6 from 0.66 to 0.69 compared to baseline.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043023066:c4",
+      "paper_id": "openalex:W3043023066",
+      "text": "Penalizing demographic parity violations increases the average precision of the 30-day readmission model for the Black population at lambda = 3.6 from 0.15 to 0.17 compared to baseline.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043023066:c5",
+      "paper_id": "openalex:W3043023066",
+      "text": "Applying conditional penalties in the outcome-positive strata to encourage equal opportunity for 30-day readmission prediction in STARR by sex increases equal opportunity violation at lambda = 10 (MEqOpp = 0.0069) relative to baseline (MEqOpp = 0.0056).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043023066:c6",
+      "paper_id": "openalex:W3043023066",
+      "text": "Unconstrained baseline clinical risk prediction models exhibit substantial variations in group-level performance metrics, conditional prediction parity, and cross-group ranking accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3043023066:e1",
+      "claim_id": "openalex:W3043023066:c1",
+      "description": "With few exceptions, the effect of increasing the weight on conditional regularization penalties targeting equalized odds or equal opportunity is a monotonic reduction in group-level model performance measures for all groups across datasets.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3043023066:e2",
+      "claim_id": "openalex:W3043023066:c2",
+      "description": "Both unconditional and conditional penalties can introduce relative calibration error across groups in a manner unrelated to absolute calibration changes, concentrating in relatively few demographic groups.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3043023066:e3",
+      "claim_id": "openalex:W3043023066:c3",
+      "description": "Penalizing the violation of demographic parity increases the performance of the model that predicts 30-day readmission for the Black population when lambda = 3.6 compared to baseline (AUROC: 0.69 vs. 0.66).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043023066:e4",
+      "claim_id": "openalex:W3043023066:c4",
+      "description": "Average precision for the Black population in the 30-day readmission model increased to 0.17 at lambda = 3.6 compared to 0.15 at baseline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043023066:e5",
+      "claim_id": "openalex:W3043023066:c5",
+      "description": "When using a conditional penalty in the outcome-positive strata for 30-day readmission in STARR by sex, equal opportunity violation was greater at lambda = 10 (MEqOpp = 0.0069) than at baseline (MEqOpp = 0.0056).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043023066:e6",
+      "claim_id": "openalex:W3043023066:c6",
+      "description": "In the unpenalized 30-day readmission model in STARR, baseline AUROC across race/ethnicity groups varied from 0.66 for the Black population to 0.80 for the Other population group.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3043023066:m1",
+      "paper_id": "openalex:W3043023066",
+      "name": "Fairness-regularized feedforward neural network risk prediction benchmark",
+      "description": "Fully-connected feedforward neural networks trained with six regularization strategies penalizing demographic parity, equalized odds, and equal opportunity violations across log-spaced regularization weights lambda.",
+      "datasets": [
+        "STARR",
+        "Optum CDM",
+        "MIMIC-III"
+      ],
+      "conditions": [
+        "Unconditional MMD penalty",
+        "Unconditional Mean penalty",
+        "Conditional MMD penalty",
+        "Conditional Mean penalty",
+        "Positive Conditional MMD penalty",
+        "Positive Conditional Mean penalty",
+        "Varying lambda from 10^-3 to 10"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3043023066:l1",
+      "paper_id": "openalex:W3043023066",
+      "text": "Metrics and regularizers were constructed using one-versus-marginal comparisons, which inherently make metrics for over-represented groups smaller because those groups comprise a larger fraction of the aggregate population.",
+      "normalized_category": "one-vs-marginal-metric-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3043023066:l2",
+      "paper_id": "openalex:W3043023066",
+      "text": "The use of soft penalized learning objectives rather than constrained optimization formulations may exaggerate the severity of performance-fairness trade-offs.",
+      "normalized_category": "soft-penalty-tradeoff-exaggeration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3043023066:l3",
+      "paper_id": "openalex:W3043023066",
+      "text": "The group fairness framework treats sensitive attributes as abstract discrete categories, reinforcing demographic taxonomies while failing to capture intersectional identities or causal mechanisms of structural racism.",
+      "normalized_category": "group-fairness-abstraction-limitations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3043023066:l4",
+      "paper_id": "openalex:W3043023066",
+      "text": "Typical algorithmic fairness formulations are unaware of systemic context and measurement error in retrospective data, making criteria misleading when observed outcomes are biased surrogates for constructs of interest.",
+      "normalized_category": "retrospective-data-bias-unawareness",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3043023066:f1",
+      "paper_id": "openalex:W3043023066",
+      "text": "Evaluate whether constrained non-convex optimization reformulations (such as proxy-Lagrangian formulations) satisfy group fairness criteria with fewer performance trade-offs than soft penalties.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3043023066:f2",
+      "paper_id": "openalex:W3043023066",
+      "text": "Incorporate participatory design practices with diverse stakeholders and decision-theoretic causal frameworks to evaluate algorithmic interventions within broader sociotechnical contexts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:53:14.590213Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,123 @@
+{
+  "paper_id": "openalex:W4392077003",
+  "claims": [
+    {
+      "id": "openalex:W4392077003:c1",
+      "paper_id": "openalex:W4392077003",
+      "text": "Large language models have the potential to contribute to every stage of qualitative research, from generating interview questions to structuring research publications.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392077003:c2",
+      "paper_id": "openalex:W4392077003",
+      "text": "Perceived human-like qualities in LLMs stem from human projections of communicative intent onto LLMs' capacity to predict human communication structures.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392077003:c3",
+      "paper_id": "openalex:W4392077003",
+      "text": "Large language models possess intrinsic tendencies toward hallucination.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392077003:c4",
+      "paper_id": "openalex:W4392077003",
+      "text": "Large language models possess intrinsic tendencies toward sycophancy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392077003:c5",
+      "paper_id": "openalex:W4392077003",
+      "text": "Large language models completely lack ethical sensibility and capacity for responsibility.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392077003:c6",
+      "paper_id": "openalex:W4392077003",
+      "text": "The widespread use of LLMs as mediators of human self-understanding and culture presents potential dangers.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4392077003:e1",
+      "claim_id": "openalex:W4392077003:c1",
+      "description": "The abstract states that LLMs like ChatGPT 'have the potential to change qualitative research by contributing to every stage of the research process from generating interview questions to structuring research publications.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392077003:e2",
+      "claim_id": "openalex:W4392077003:c2",
+      "description": "The authors trace human-like qualities to 'the human proclivity to project communicative intent into or onto LLMs’ purely imitative capacity to predict the structure of human communication.'",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392077003:e3",
+      "claim_id": "openalex:W4392077003:c3",
+      "description": "The paper details misleading aspects of LLM communication, explicitly noting 'their intrinsic tendencies to ‘hallucination’'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392077003:e4",
+      "claim_id": "openalex:W4392077003:c4",
+      "description": "The paper details misleading aspects of LLM communication, explicitly citing 'their intrinsic tendencies to... ‘sycophancy’'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392077003:e5",
+      "claim_id": "openalex:W4392077003:c5",
+      "description": "The abstract highlights 'LLMs’ complete lack of ethical sensibility or capacity for responsibility'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392077003:e6",
+      "claim_id": "openalex:W4392077003:c6",
+      "description": "The paper concludes by highlighting 'potential dangers of the widespread use of LLMs as ‘mediators’ of human self-understanding and culture.'",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4392077003:m1",
+      "paper_id": "openalex:W4392077003",
+      "name": "Comparative Conceptual Analysis",
+      "description": "Compares human learning and training with LLM training mechanisms to critically analyze the implications of LLM capabilities for qualitative research.",
+      "datasets": [],
+      "conditions": [
+        "Qualitative research workflows",
+        "LLM training vs. human training comparison"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4392077003:l1",
+      "paper_id": "openalex:W4392077003",
+      "text": "LLMs suffer from intrinsic hallucination, sycophancy, absolute false certainty, and a lack of ethical sensibility or responsibility.",
+      "normalized_category": "llm-reliability-and-ethics",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4392077003:f1",
+      "paper_id": "openalex:W4392077003",
+      "text": "Reflect on and examine the unique roles and capabilities that only human researchers can fulfill in qualitative research.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.094754Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

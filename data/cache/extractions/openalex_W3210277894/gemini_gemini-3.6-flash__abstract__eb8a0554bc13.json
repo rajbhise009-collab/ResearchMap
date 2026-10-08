@@ -1,0 +1,35 @@
+{
+  "paper_id": "openalex:W3210277894",
+  "claims": [
+    {
+      "id": "openalex:W3210277894:c1",
+      "paper_id": "openalex:W3210277894",
+      "text": "MetaICL meta-trains language models on a diverse set of tasks using in-context learning formats to facilitate learning to learn in context.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3210277894:e1",
+      "claim_id": "openalex:W3210277894:c1",
+      "description": "MetaICL: Learning to Learn In Context",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3210277894:m1",
+      "paper_id": "openalex:W3210277894",
+      "name": "MetaICL",
+      "description": "A meta-learning methodology that trains language models on varied cross-task in-context demonstrations.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.092968Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

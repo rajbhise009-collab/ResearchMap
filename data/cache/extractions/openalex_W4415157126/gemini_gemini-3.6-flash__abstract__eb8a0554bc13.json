@@ -1,0 +1,101 @@
+{
+  "paper_id": "openalex:W4415157126",
+  "claims": [
+    {
+      "id": "openalex:W4415157126:c1",
+      "paper_id": "openalex:W4415157126",
+      "text": "KDRAR uses function descriptions for candidate API retrieval in a dual matching strategy.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415157126:c2",
+      "paper_id": "openalex:W4415157126",
+      "text": "KDRAR uses keyword matching for candidate API retrieval in a dual matching strategy.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415157126:c3",
+      "paper_id": "openalex:W4415157126",
+      "text": "KDRAR translates compatibility information into descriptive knowledge integrated into the API recommendation process.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415157126:c4",
+      "paper_id": "openalex:W4415157126",
+      "text": "KDRAR trains a student LLM via distillation from a teacher LLM to perform step-by-step reasoning for API recommendation and explanation.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4415157126:e1",
+      "claim_id": "openalex:W4415157126:c1",
+      "description": "To fully utilize the factual knowledge, we introduce a dual matching strategy that leverages both function descriptions and keyword matching to retrieve candidate APIs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415157126:e2",
+      "claim_id": "openalex:W4415157126:c2",
+      "description": "To fully utilize the factual knowledge, we introduce a dual matching strategy that leverages both function descriptions and keyword matching to retrieve candidate APIs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415157126:e3",
+      "claim_id": "openalex:W4415157126:c3",
+      "description": "To handle compatibility, we translate compatibility information into descriptive knowledge, which is integrated into the recommendation process.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415157126:e4",
+      "claim_id": "openalex:W4415157126:c4",
+      "description": "Furthermore, we adopt a distilled fine-tuning strategy: a student LLM is trained via distillation from a teacher LLM to perform step-by-step reasoning for enhanced recommendation and explanation.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4415157126:m1",
+      "paper_id": "openalex:W4415157126",
+      "name": "KDRAR",
+      "description": "A fine-tuning methodology that combines candidate API retrieval via dual matching, translation of compatibility information into descriptive knowledge, and step-by-step reasoning distillation from a teacher LLM to a student LLM.",
+      "datasets": [],
+      "conditions": [
+        "multiple API domains"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4415157126:l1",
+      "paper_id": "openalex:W4415157126",
+      "text": "Existing LLM-based API recommendation methods overlook the compatibility between recommended APIs.",
+      "normalized_category": "api-compatibility-overlooked",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4415157126:l2",
+      "paper_id": "openalex:W4415157126",
+      "text": "Existing LLM-based API recommendation methods fail to fully utilize the factual knowledge of APIs.",
+      "normalized_category": "underutilized-factual-knowledge",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4415157126:l3",
+      "paper_id": "openalex:W4415157126",
+      "text": "Prompting-only LLM methods are limited by insufficient domain-specific knowledge.",
+      "normalized_category": "insufficient-domain-knowledge",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.125539Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,140 @@
+{
+  "paper_id": "openalex:W4407574904",
+  "claims": [
+    {
+      "id": "openalex:W4407574904:c1",
+      "paper_id": "openalex:W4407574904",
+      "text": "The fine-tuned legal embedding LLM achieves a 13% improvement in Hit Rate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407574904:c2",
+      "paper_id": "openalex:W4407574904",
+      "text": "The fine-tuned legal embedding LLM achieves a 15% improvement in Mean Reciprocal Rank (MRR).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407574904:c3",
+      "paper_id": "openalex:W4407574904",
+      "text": "The Hybrid Fine-Tuned Generative LLM (HFM) yields a 24% performance gain compared to general LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407574904:c4",
+      "paper_id": "openalex:W4407574904",
+      "text": "LQ-RAG achieves a 23% improvement in relevance score over naive configurations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407574904:c5",
+      "paper_id": "openalex:W4407574904",
+      "text": "LQ-RAG achieves a 14% improvement in relevance score over RAG with Fine-Tuned LLMs (FTM).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407574904:c6",
+      "paper_id": "openalex:W4407574904",
+      "text": "Legal Query RAG (LQ-RAG) incorporates a custom evaluation agent, specialized response generation model, prompt engineering agent, fine-tuned legal embedding LLM, and recursive feedback mechanism.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4407574904:e1",
+      "claim_id": "openalex:W4407574904:c1",
+      "description": "Experimental results demonstrate that the fine-tuned embedding LLM achieves a 13% improvement in Hit Rate.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407574904:e2",
+      "claim_id": "openalex:W4407574904:c2",
+      "description": "Experimental results demonstrate that the fine-tuned embedding LLM achieves a 15% improvement in Mean Reciprocal Rank (MRR).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407574904:e3",
+      "claim_id": "openalex:W4407574904:c3",
+      "description": "Comparisons with general LLMs reveal a 24% performance gain when using the Hybrid Fine-Tuned Generative LLM (HFM).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407574904:e4",
+      "claim_id": "openalex:W4407574904:c4",
+      "description": "LQ-RAG achieves a 23% improvement in relevance score over naive configurations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407574904:e5",
+      "claim_id": "openalex:W4407574904:c5",
+      "description": "LQ-RAG achieves a 14% improvement over RAG with Fine-Tuned LLMs (FTM).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407574904:e6",
+      "claim_id": "openalex:W4407574904:c6",
+      "description": "The proposed framework incorporates four key components: a custom evaluation agent, a specialized response generation model, a prompt engineering agent, and a fine-tuned legal embedding LLM.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4407574904:m1",
+      "paper_id": "openalex:W4407574904",
+      "name": "Legal Query RAG (LQ-RAG)",
+      "description": "A Retrieval-Augmented Generation framework with recursive feedback mechanism integrating an evaluation agent, fine-tuned generative LLM, prompt engineering agent, and fine-tuned embedding LLM.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4407574904:l1",
+      "paper_id": "openalex:W4407574904",
+      "text": "Standard RAG implementations struggle with understanding complex legal reasoning, managing biased data, ensuring transparency, and avoiding hallucinations.",
+      "normalized_category": "standard-rag-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4407574904:l2",
+      "paper_id": "openalex:W4407574904",
+      "text": "The study relies on a proprietary model as the evaluation agent.",
+      "normalized_category": "proprietary-evaluation-agent",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4407574904:l3",
+      "paper_id": "openalex:W4407574904",
+      "text": "The evaluation lacks feedback from human domain experts.",
+      "normalized_category": "lack-of-human-expert-feedback",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4407574904:f1",
+      "paper_id": "openalex:W4407574904",
+      "text": "Developing a specialized legal evaluation agent.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4407574904:f2",
+      "paper_id": "openalex:W4407574904",
+      "text": "Enhancing performance by incorporating feedback from domain experts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.100589Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

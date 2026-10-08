@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W4406603696",
+  "claims": [
+    {
+      "id": "openalex:W4406603696:c1",
+      "paper_id": "openalex:W4406603696",
+      "text": "Large language models are systematically more confident when providing reasoning before answering multiple-choice questions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c2",
+      "paper_id": "openalex:W4406603696",
+      "text": "The increase in confidence from reasoning before answering is larger when the selected answer is incorrect than when it is correct.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c3",
+      "paper_id": "openalex:W4406603696",
+      "text": "The reasoning process alters token probabilities because final answer prediction depends jointly on the question and self-generated reasoning.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c4",
+      "paper_id": "openalex:W4406603696",
+      "text": "Chain-of-Thought (CoT) prompting degrades calibration by increasing the proportion of high-confidence wrong answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406603696:e1",
+      "claim_id": "openalex:W4406603696:c1",
+      "description": "Experiments on a general knowledge benchmark covering 57 subjects and seven LLMs demonstrated systematically higher confidence when reasoning prior to answering.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406603696:e2",
+      "claim_id": "openalex:W4406603696:c2",
+      "description": "Experimental metrics showed a larger delta in confidence for incorrect responses compared to correct ones under reasoning conditions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406603696:e3",
+      "claim_id": "openalex:W4406603696:c3",
+      "description": "Hypothesized mechanism explaining inflated confidence estimates based on joint dependencies between question text and model-generated intermediate reasoning tokens.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W4406603696:e4",
+      "claim_id": "openalex:W4406603696:c4",
+      "description": "Evaluations using Expected Calibration Error and Brier score revealed degraded calibration performance under CoT prompting.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406603696:m1",
+      "paper_id": "openalex:W4406603696",
+      "name": "MCQ Confidence and Calibration Analysis under CoT",
+      "description": "Compared LLM confidence levels and calibration metrics across direct response and Chain-of-Thought reasoning approaches.",
+      "datasets": [
+        "General knowledge benchmark (57 subjects)"
+      ],
+      "conditions": [
+        "Direct answering",
+        "Reasoning before answering (Chain-of-Thought prompting)",
+        "Seven distinct LLMs"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-24T04:17:38.997064Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

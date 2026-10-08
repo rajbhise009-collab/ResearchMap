@@ -1,0 +1,184 @@
+{
+  "paper_id": "openalex:W4385570984",
+  "claims": [
+    {
+      "id": "openalex:W4385570984:c1",
+      "paper_id": "openalex:W4385570984",
+      "text": "Fine-tuning T5-11B on Unnatural Instructions outperforms T0++ and Tk-Instruct across multiple benchmarks including Super-Natural Instructions, BIG-bench Hard, and LMentry.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385570984:c2",
+      "paper_id": "openalex:W4385570984",
+      "text": "Controlling for dataset size at 64,000 examples, T5-LM trained on Unnatural Instructions yields an 18-point gain over the Super-Natural Instructions baseline on BIG-bench Hard original task formulation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385570984:c3",
+      "paper_id": "openalex:W4385570984",
+      "text": "Controlling for dataset size at 64,000 examples, T5-LM trained on Unnatural Instructions yields a 16-point gain over the Super-Natural Instructions baseline on LMentry.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385570984:c4",
+      "paper_id": "openalex:W4385570984",
+      "text": "Manual analysis of 200 sampled examples from the Unnatural Instructions core dataset shows that 56.5% are completely correct.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385570984:c5",
+      "paper_id": "openalex:W4385570984",
+      "text": "Expanding dataset format diversity via template rephrasing increases downstream performance on free-form benchmarks such as T0 Zero-Shot, BIG-bench Hard (Orig), and LMentry.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385570984:c6",
+      "paper_id": "openalex:W4385570984",
+      "text": "Downstream performance of models fine-tuned on Unnatural Instructions scales log-linearly with the number of generated training examples.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385570984:c7",
+      "paper_id": "openalex:W4385570984",
+      "text": "Using an untuned GPT-3 model to generate outputs results in severe performance degradation compared to using an instruction-tuned model like text-davinci-002.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4385570984:e1",
+      "claim_id": "openalex:W4385570984:c1",
+      "description": "Table 4 shows T5-LM fine-tuned on Unnatural Instructions (+ Instruction Paraphrases) achieving scores of 49.3 on Super-Natural Instructions, 49.0 on T0 Zero-Shot, 28.1 / 29.4 on BIG-bench Hard, and 50.7 on LMentry, outperforming T0++ and Tk-Instruct across these metrics.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385570984:e2",
+      "claim_id": "openalex:W4385570984:c2",
+      "description": "Table 4 reports BIG-bench Hard (Orig) performance of 16.0 for Unnatural Instructions vs 10.2 for Super-Natural Instructions baseline at 64,000 examples.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385570984:e3",
+      "claim_id": "openalex:W4385570984:c3",
+      "description": "Table 4 reports LMentry score of 42.0 for Unnatural Instructions core dataset vs 34.6 for Super-Natural Instructions baseline at 64,000 examples.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385570984:e4",
+      "claim_id": "openalex:W4385570984:c4",
+      "description": "In a manual evaluation of 200 core dataset examples, 113 (56.5%) were found to be fully correct, while 4.5% had incomprehensible instructions, 17.5% had input mismatches, and 21.5% had incorrect outputs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385570984:e5",
+      "claim_id": "openalex:W4385570984:c5",
+      "description": "Adding instruction paraphrases increases scores from 45.7 to 49.0 on T0 Zero-Shot, from 16.0 to 28.1 on BIG-bench Hard (Orig), and from 42.0 to 50.7 on LMentry.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385570984:e6",
+      "claim_id": "openalex:W4385570984:c6",
+      "description": "Figure 5 demonstrates a log-linear scaling curve for downstream evaluation scores across training dataset sizes ranging from 250 to 64,000 examples.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385570984:e7",
+      "claim_id": "openalex:W4385570984:c7",
+      "description": "Table 5 shows that using GPT-3 for output generation drops Super-Natural Instructions validation accuracy to 4.1 ± 0.1, compared to 48.7 ± 0.3 when using text-davinci-002.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4385570984:m1",
+      "paper_id": "openalex:W4385570984",
+      "name": "Unnatural Instructions Generation Pipeline",
+      "description": "A two-step automated dataset generation framework that uses language model prompting with 15 seed examples to generate structured instruction-input pairs via nucleus sampling, followed by deterministic output generation and automated rephrasing for template expansion.",
+      "datasets": [
+        "Super-Natural Instructions",
+        "BIG-bench Hard",
+        "LMentry",
+        "T0"
+      ],
+      "conditions": [
+        "nucleus sampling p=0.99 for input generation",
+        "greedy decoding for output generation",
+        "text-davinci-002 generator model",
+        "T5-11B model fine-tuning with batch size 16 over 3 epochs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4385570984:l1",
+      "paper_id": "openalex:W4385570984",
+      "text": "Unnatural Instructions contains noisy examples where instructions, inputs, or outputs are invalid (43.5% of analyzed instances contained errors).",
+      "normalized_category": "dataset-noise",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4385570984:l2",
+      "paper_id": "openalex:W4385570984",
+      "text": "Generating accurate target outputs automatically requires an instruction-tuned language model, as standard un-tuned language models fail to stop appropriately and degenerate.",
+      "normalized_category": "generator-model-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4385570984:l3",
+      "paper_id": "openalex:W4385570984",
+      "text": "Automatically generated training data may inherit and reflect undesirable social biases present in the generator language model's pretraining corpus.",
+      "normalized_category": "model-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4385570984:l4",
+      "paper_id": "openalex:W4385570984",
+      "text": "Human crowdworkers lack intrinsic motivation to create diverse, novel examples and frequently collapse into predictable heuristics that form annotation artifacts.",
+      "normalized_category": "crowdsourcing-artifacts",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4385570984:l5",
+      "paper_id": "openalex:W4385570984",
+      "text": "Existing instruction tuning approaches rely on extensive human annotation labor or are restricted to traditional academic benchmark distributions.",
+      "normalized_category": "data-collection-cost",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4385570984:f1",
+      "paper_id": "openalex:W4385570984",
+      "text": "Developing better automatic filtering mechanisms by training classifiers on small subsets of annotated data to filter out incorrect generated instances.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4385570984:f2",
+      "paper_id": "openalex:W4385570984",
+      "text": "Employing human-in-the-loop strategies to identify challenging patterns or collect hard adversarial failure cases to encourage the model to generate more complex task examples.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4385570984:f3",
+      "paper_id": "openalex:W4385570984",
+      "text": "Implementing safety and bias filtering mechanisms to lower the risk of retaining biased or harmful content in automatically generated training datasets.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.010343Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

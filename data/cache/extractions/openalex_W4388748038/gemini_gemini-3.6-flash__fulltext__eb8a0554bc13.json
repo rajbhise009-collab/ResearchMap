@@ -1,0 +1,165 @@
+{
+  "paper_id": "openalex:W4388748038",
+  "claims": [
+    {
+      "id": "openalex:W4388748038:c1",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling decomposes total predictive uncertainty of large language models into aleatoric and epistemic uncertainty terms by ensembling predictions over generated input clarifications.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c2",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling achieves an AUROC of 72.3 for mistake detection on the Natural Questions dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c3",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling achieves an AUROC of 89.7 for mistake detection on the GSM8K dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c4",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling achieves an AUROC of 71.7 for question ambiguity detection on the AmbigQA dataset when using GPT-4 for clarification generation.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c5",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling achieves an AUROC of 67.1 for question ambiguity detection on the AmbigQA dataset when using a fine-tuned LLaMA-3-8B model for clarification generation.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c6",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling achieves an AUROC of 81.3 for instruction ambiguity detection on the AmbigInst dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c7",
+      "paper_id": "openalex:W4388748038",
+      "text": "Measuring aleatoric uncertainty on clarified inputs yields significantly lower uncertainty values compared to measuring aleatoric uncertainty on the original ambiguous inputs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388748038:e1",
+      "claim_id": "openalex:W4388748038:c1",
+      "description": "The paper formulates input clarification ensembling by defining total uncertainty as the entropy of prediction across clarifications, where mutual information between outputs and clarifications estimates aleatoric uncertainty and average entropy across clarified inputs estimates epistemic uncertainty.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388748038:e2",
+      "claim_id": "openalex:W4388748038:c2",
+      "description": "Table 1 reports an AUROC of 72.3 and F1 score of 80.2 for mistake detection on Natural Questions using the proposed input clarification ensembling method with gpt-3.5-turbo-0613.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4388748038:e3",
+      "claim_id": "openalex:W4388748038:c3",
+      "description": "Table 1 reports an AUROC of 89.7 and F1 score of 94.7 for mistake detection on GSM8K using input clarification ensembling with gpt-3.5-turbo-0613.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4388748038:e4",
+      "claim_id": "openalex:W4388748038:c4",
+      "description": "Table 2 reports an AUROC of 71.7 and F1 score of 70.1 on AmbigQA ambiguity detection using OURS(GPT).",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4388748038:e5",
+      "claim_id": "openalex:W4388748038:c5",
+      "description": "Table 2 reports an AUROC of 67.1 and F1 score of 71.8 on AmbigQA ambiguity detection using OURS(LLaMA).",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4388748038:e6",
+      "claim_id": "openalex:W4388748038:c6",
+      "description": "Table 2 reports an AUROC of 81.3 and F1 score of 77.9 on AmbigInst ambiguity detection using OURS(GPT).",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4388748038:e7",
+      "claim_id": "openalex:W4388748038:c7",
+      "description": "Figure 4(a) shows that the average aleatoric uncertainty drops substantially from the original inputs to the clarified inputs on both AmbigQA and AmbigInst datasets.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388748038:m1",
+      "paper_id": "openalex:W4388748038",
+      "name": "Input Clarification Ensembling",
+      "description": "A post-hoc uncertainty quantification and decomposition framework that generates candidate input clarifications via a clarification model, feeds clarified inputs into a target language model, and computes predictive uncertainty components via output ensembling.",
+      "datasets": [
+        "Natural Questions",
+        "GSM8K",
+        "AmbigQA",
+        "AmbigInst"
+      ],
+      "conditions": [
+        "gpt-3.5-turbo-0613 target model",
+        "gpt-4 clarification model",
+        "fine-tuned LLaMA-3-8B-Instruct clarification model",
+        "10 sampled predictions at temperature 0.5"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388748038:l1",
+      "paper_id": "openalex:W4388748038",
+      "text": "The proposed uncertainty quantification relies on the target language model being well-calibrated on downstream tasks.",
+      "normalized_category": "model-calibration-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4388748038:l2",
+      "paper_id": "openalex:W4388748038",
+      "text": "The framework's performance depends on the ability of the clarification model to identify subtle input ambiguities and generate accurate disambiguations.",
+      "normalized_category": "clarification-generator-quality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4388748038:l3",
+      "paper_id": "openalex:W4388748038",
+      "text": "Bayesian Neural Networks and Deep Ensembles require training multiple model variants or altering training procedures, which is computationally prohibitive for large language models.",
+      "normalized_category": "computational-cost",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4388748038:l4",
+      "paper_id": "openalex:W4388748038",
+      "text": "Existing uncertainty quantification approaches for large language models only measure total predictive uncertainty without decomposing it into aleatoric and epistemic components.",
+      "normalized_category": "lack-of-uncertainty-decomposition",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4388748038:f1",
+      "paper_id": "openalex:W4388748038",
+      "text": "Explore strategies to build more effective clarification modules to boost the effectiveness and accuracy of the uncertainty decomposition framework.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.645635Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

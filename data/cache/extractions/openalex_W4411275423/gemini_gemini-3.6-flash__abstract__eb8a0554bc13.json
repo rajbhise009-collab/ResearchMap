@@ -1,0 +1,121 @@
+{
+  "paper_id": "openalex:W4411275423",
+  "claims": [
+    {
+      "id": "openalex:W4411275423:c1",
+      "paper_id": "openalex:W4411275423",
+      "text": "Privacy concerns negatively influence user attitudes toward generative AI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411275423:c2",
+      "paper_id": "openalex:W4411275423",
+      "text": "Privacy concerns positively predict personal protective behaviors in generative AI use.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411275423:c3",
+      "paper_id": "openalex:W4411275423",
+      "text": "Privacy concerns positively predict system-level protective behaviors in generative AI use.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411275423:c4",
+      "paper_id": "openalex:W4411275423",
+      "text": "Hallucination risk is negatively associated with user attitudes toward generative AI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411275423:c5",
+      "paper_id": "openalex:W4411275423",
+      "text": "Hallucination risk positively predicts user information verification behaviors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411275423:c6",
+      "paper_id": "openalex:W4411275423",
+      "text": "Information verification significantly moderates the relationship between user attitude and generative AI continuance intention.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411275423:c7",
+      "paper_id": "openalex:W4411275423",
+      "text": "Hallucination risk and system-level privacy-protective behaviors function as validated constructs for evaluating GenAI protective behaviors.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4411275423:e1",
+      "claim_id": "openalex:W4411275423:c1",
+      "description": "Privacy concerns negatively influence user attitudes",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411275423:e2",
+      "claim_id": "openalex:W4411275423:c2",
+      "description": "Privacy concerns positively predict personal protective behaviors based on structural equation modeling of survey data from 789 users.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411275423:e3",
+      "claim_id": "openalex:W4411275423:c3",
+      "description": "Privacy concerns positively predict system-level protective behaviors based on structural equation modeling.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411275423:e4",
+      "claim_id": "openalex:W4411275423:c4",
+      "description": "Hallucination risk is similarly associated with negative attitudes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411275423:e5",
+      "claim_id": "openalex:W4411275423:c5",
+      "description": "Hallucination risk positively predicts information verification.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411275423:e6",
+      "claim_id": "openalex:W4411275423:c6",
+      "description": "Notably, only information verification significantly moderates the link between attitude and continuance intention.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411275423:e7",
+      "claim_id": "openalex:W4411275423:c7",
+      "description": "developing and validating new constructs—hallucination risk and system-level privacy-protective behaviors.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4411275423:m1",
+      "paper_id": "openalex:W4411275423",
+      "name": "Structural Equation Modeling based on Protection Motivation Theory",
+      "description": "Analyzed survey data using structural equation modeling grounded in Protection Motivation Theory to examine direct and moderating risk-adaptive behaviors in GenAI adoption.",
+      "datasets": [
+        "Prolific panel survey dataset (N=789)"
+      ],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.124077Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

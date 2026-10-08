@@ -1,0 +1,143 @@
+{
+  "paper_id": "openalex:W4289438483",
+  "claims": [
+    {
+      "id": "openalex:W4289438483:c1",
+      "paper_id": "openalex:W4289438483",
+      "text": "AI Fairness 360 provides over 71 bias detection metrics, 9 bias mitigation algorithms, and a metric explanations facility in a Python package conforming to scikit-learn conventions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289438483:c2",
+      "paper_id": "openalex:W4289438483",
+      "text": "Reweighing and optimized pre-processing algorithms improve statistical parity difference and disparate impact metrics across Adult, German Credit, and COMPAS datasets.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289438483:c3",
+      "paper_id": "openalex:W4289438483",
+      "text": "Applying the Reweighing pre-processor on the Adult dataset test partition reduces the statistical parity difference from -0.2021 to -0.0119.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4289438483:c4",
+      "paper_id": "openalex:W4289438483",
+      "text": "Reject option classification substantially improves fairness metrics on the Adult dataset but causes a significant reduction in classification accuracy.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4289438483:e1",
+      "claim_id": "openalex:W4289438483:c1",
+      "description": "The initial AIF360 Python package implements techniques from 8 published papers... includes over 71 bias detection metrics, 9 bias mitigation algorithms, and a unique extensible metric explanations facility.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4289438483:e2",
+      "claim_id": "openalex:W4289438483:c2",
+      "description": "For all datasets, the Reweighing and Optimized pre-processing algorithms improve fairness in both metrics presented.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4289438483:e3",
+      "claim_id": "openalex:W4289438483:c3",
+      "description": "The metrics for the original and transformed testing data will show a significant reduction in statistical parity difference (-0.2021 to -0.0119 in this case).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4289438483:e4",
+      "claim_id": "openalex:W4289438483:c4",
+      "description": "The Reject option classification algorithm improves fairness quite a bit, but also suffers a significant reduction in accuracy.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4289438483:m1",
+      "paper_id": "openalex:W4289438483",
+      "name": "AI Fairness 360 (AIF360) Toolkit",
+      "description": "An extensible open-source Python library providing standard abstractions for datasets, fairness metrics, explainers, and pre-, in-, and post-processing bias mitigation algorithms.",
+      "datasets": [
+        "Adult Census Income",
+        "German Credit",
+        "ProPublica Recidivism (COMPAS)",
+        "Bank Marketing",
+        "Medical Expenditure Panel Survey (MEPS)"
+      ],
+      "conditions": [
+        "Logistic Regression",
+        "Random Forest",
+        "Neural Network",
+        "50% train / 20% validation / 30% test random splits"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4289438483:l1",
+      "paper_id": "openalex:W4289438483",
+      "text": "It is mathematically impossible to satisfy all definitions of fairness at the same time.",
+      "normalized_category": "fairness-metric-incompatibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4289438483:l2",
+      "paper_id": "openalex:W4289438483",
+      "text": "The least improvement in fairness metrics was observed on the German Credit dataset, likely due to its small size of 1,000 records.",
+      "normalized_category": "small-dataset-degradation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4289438483:l3",
+      "paper_id": "openalex:W4289438483",
+      "text": "Reject option classification post-processing is brittle and causes significant reductions in accuracy.",
+      "normalized_category": "accuracy-fairness-tradeoff",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4289438483:l4",
+      "paper_id": "openalex:W4289438483",
+      "text": "The current web service backend is limited to three built-in datasets and logistic regression classifiers.",
+      "normalized_category": "demo-scope-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4289438483:l5",
+      "paper_id": "openalex:W4289438483",
+      "text": "The toolkit's metrics and algorithms focus primarily on distributive justice and do not capture all aspects or full scope of fairness.",
+      "normalized_category": "incomplete-justice-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4289438483:f1",
+      "paper_id": "openalex:W4289438483",
+      "text": "Expand the toolkit to measure and mitigate other aspects of justice such as compensatory justice.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4289438483:f2",
+      "paper_id": "openalex:W4289438483",
+      "text": "Extend the variety of types of explanations offered and create guidance for practitioners on when specific explanation types are most appropriate.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4289438483:f3",
+      "paper_id": "openalex:W4289438483",
+      "text": "Expand the web application service to support user dataset uploads and additional classifier models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:18:08.064589Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

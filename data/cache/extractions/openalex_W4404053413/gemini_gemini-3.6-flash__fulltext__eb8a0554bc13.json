@@ -1,0 +1,152 @@
+{
+  "paper_id": "openalex:W4404053413",
+  "claims": [
+    {
+      "id": "openalex:W4404053413:c1",
+      "paper_id": "openalex:W4404053413",
+      "text": "33% of legal education institutions regularly use generative AI tools.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404053413:c2",
+      "paper_id": "openalex:W4404053413",
+      "text": "Generative AI technology affects approximately 11% of tasks within the legal profession.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404053413:c3",
+      "paper_id": "openalex:W4404053413",
+      "text": "95% of surveyed legal professionals in the UK foresee a discernible impact of generative AI on the legal field.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404053413:c4",
+      "paper_id": "openalex:W4404053413",
+      "text": "38% of surveyed UK legal professionals anticipate generative AI will have a significant impact on the legal field.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404053413:c5",
+      "paper_id": "openalex:W4404053413",
+      "text": "11% of surveyed UK legal professionals believe generative AI will be transformative for the legal field.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404053413:c6",
+      "paper_id": "openalex:W4404053413",
+      "text": "In 2023, in-house lawyers in large corporations led legal sector AI adoption with 17% usage.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404053413:c7",
+      "paper_id": "openalex:W4404053413",
+      "text": "64% of large law firms are actively exploring the implementation of generative AI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404053413:e1",
+      "claim_id": "openalex:W4404053413:c1",
+      "description": "Cited survey data from LexisNexis (2024a) indicating that 33% of legal education institutions regularly employ generative AI tools.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404053413:e2",
+      "claim_id": "openalex:W4404053413:c2",
+      "description": "Findings from the 2023 KPMG Generative AI Survey showing generative AI impacts around 11% of tasks across the legal profession.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404053413:e3",
+      "claim_id": "openalex:W4404053413:c3",
+      "description": "LexisNexis (2024c) survey of over 1,000 UK legal professionals where 95% reported foreseeing a discernible impact from generative AI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404053413:e4",
+      "claim_id": "openalex:W4404053413:c4",
+      "description": "LexisNexis (2024c) survey breakdown showing 38% of respondents expect a significant impact from generative AI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404053413:e5",
+      "claim_id": "openalex:W4404053413:c5",
+      "description": "LexisNexis (2024c) survey breakdown showing 11% of respondents believe generative AI impact will be transformative.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404053413:e6",
+      "claim_id": "openalex:W4404053413:c6",
+      "description": "LexisNexis survey data reporting 17% adoption rate among in-house lawyers in large corporations in 2023.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404053413:e7",
+      "claim_id": "openalex:W4404053413:c7",
+      "description": "LexisNexis industry report demonstrating 64% of large law firms actively investigating generative AI deployment.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404053413:m1",
+      "paper_id": "openalex:W4404053413",
+      "name": "Conceptual ethics and sustainability analysis",
+      "description": "A theoretical qualitative framework analysis synthesizing secondary literature and industry report statistics to examine AI ethics and sustainability in UK legal education.",
+      "datasets": [],
+      "conditions": [
+        "UK legal education context",
+        "Higher education sustainability ethics framework",
+        "AI integration in law school curricula"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404053413:l1",
+      "paper_id": "openalex:W4404053413",
+      "text": "The article focuses specifically on sustainability ethics within the UK legal education context, explicitly excluding general university data security concerns from its primary analytical scope.",
+      "normalized_category": "geographic-and-topical-scope-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4404053413:l2",
+      "paper_id": "openalex:W4404053413",
+      "text": "The proposed implementation strategies for ethical oversight and curriculum integration lack detailed operational specificity and do not fully address institutional resource constraints or conflicting organizational interests.",
+      "normalized_category": "lack-of-implementation-specificity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4404053413:l3",
+      "paper_id": "openalex:W4404053413",
+      "text": "Large language models suffer from continuing unreliability and legal hallucinations where output responses conflict with legal facts.",
+      "normalized_category": "ai-unreliability-and-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4404053413:f1",
+      "paper_id": "openalex:W4404053413",
+      "text": "Researching legal frameworks for AI-driven sustainable practices, the application of AI in climate change mitigation, and the legal implications of AI-powered green technologies.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.990235Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

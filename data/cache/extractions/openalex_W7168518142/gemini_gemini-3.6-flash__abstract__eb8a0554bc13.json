@@ -1,0 +1,43 @@
+{
+  "paper_id": "openalex:W7168518142",
+  "claims": [
+    {
+      "id": "openalex:W7168518142:c1",
+      "paper_id": "openalex:W7168518142",
+      "text": "Hallucinations across the LLM lifecycle can be categorized into three stages: data-related, training-related, and inference-related.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7168518142:e1",
+      "claim_id": "openalex:W7168518142:c1",
+      "description": "The authors propose a threefold categorization of hallucinations across the LLM lifecycle: data-related, training-related, and inference-related, aligned with LLM development.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7168518142:m1",
+      "paper_id": "openalex:W7168518142",
+      "name": "Lifecycle-based survey and taxonomy framework",
+      "description": "A systematic survey framework categorizing causes, detection, mitigation, and prevention of LLM hallucinations across data-related, training-related, and inference-related development stages.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7168518142:l1",
+      "paper_id": "openalex:W7168518142",
+      "text": "Previous surveys on LLM hallucinations have primarily focused isolatedly on detection or mitigation rather than taking a comprehensive lifecycle perspective.",
+      "normalized_category": "incomplete-lifecycle-coverage",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.081072Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,71 @@
+{
+  "paper_id": "openalex:W4406072399",
+  "claims": [
+    {
+      "id": "openalex:W4406072399:c1",
+      "paper_id": "openalex:W4406072399",
+      "text": "Large language models are widely used in decision-making tasks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c2",
+      "paper_id": "openalex:W4406072399",
+      "text": "Large language model reliability in critical tasks like healthcare is not well-established.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c3",
+      "paper_id": "openalex:W4406072399",
+      "text": "Large language models learn to infer latent concepts during pretraining.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c4",
+      "paper_id": "openalex:W4406072399",
+      "text": "Response uncertainty in large language models decreases as the prompt's informativeness increases.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406072399:e1",
+      "claim_id": "openalex:W4406072399:c4",
+      "description": "Detailed experimental results on real-world datasets validate the proposed prompt-response concept model.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406072399:m1",
+      "paper_id": "openalex:W4406072399",
+      "name": "Prompt-response concept model",
+      "description": "A model explaining how LLMs generate responses via latent concepts to analyze the relation between prompts and response uncertainty.",
+      "datasets": [
+        "real-world datasets"
+      ],
+      "conditions": [
+        "varying prompt informativeness"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406072399:l1",
+      "paper_id": "openalex:W4406072399",
+      "text": "The reliability of LLMs in critical tasks like healthcare is not well-established.",
+      "normalized_category": "unestablished-reliability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:27:53.934127Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

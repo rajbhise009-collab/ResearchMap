@@ -1,0 +1,192 @@
+{
+  "paper_id": "openalex:W2131745222",
+  "claims": [
+    {
+      "id": "openalex:W2131745222:c1",
+      "paper_id": "openalex:W2131745222",
+      "text": "In 2010, an estimated 184,000 deaths worldwide were attributable to sugar-sweetened beverage consumption.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c2",
+      "paper_id": "openalex:W2131745222",
+      "text": "In 2010, an estimated 133,000 deaths worldwide from diabetes mellitus were attributable to sugar-sweetened beverage consumption.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c3",
+      "paper_id": "openalex:W2131745222",
+      "text": "In 2010, an estimated 45,000 deaths worldwide from cardiovascular disease were attributable to sugar-sweetened beverage consumption.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c4",
+      "paper_id": "openalex:W2131745222",
+      "text": "In 2010, an estimated 6,450 deaths worldwide from cancers were attributable to sugar-sweetened beverage consumption.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c5",
+      "paper_id": "openalex:W2131745222",
+      "text": "Low-income countries accounted for 5.0% of global sugar-sweetened beverage-related deaths in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c6",
+      "paper_id": "openalex:W2131745222",
+      "text": "Middle-income countries accounted for 70.9% of global sugar-sweetened beverage-related deaths in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c7",
+      "paper_id": "openalex:W2131745222",
+      "text": "High-income countries accounted for 24.1% of global sugar-sweetened beverage-related deaths in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c8",
+      "paper_id": "openalex:W2131745222",
+      "text": "Proportional mortality attributable to sugar-sweetened beverages ranged from less than 1% in Japanese adults over 65 years to 30% in Mexican adults under 45 years.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c9",
+      "paper_id": "openalex:W2131745222",
+      "text": "Among the 20 most populous countries, Mexico had the highest absolute mortality attributable to sugar-sweetened beverages at 405 deaths per million adults.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c10",
+      "paper_id": "openalex:W2131745222",
+      "text": "Among the 20 most populous countries, Mexico had the highest proportional mortality attributable to sugar-sweetened beverages at 12.1%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2131745222:c11",
+      "paper_id": "openalex:W2131745222",
+      "text": "An estimated 8.5 million disability-adjusted life years worldwide were related to sugar-sweetened beverage intake in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2131745222:e1",
+      "claim_id": "openalex:W2131745222:c1",
+      "description": "Worldwide, the model estimated 184 000 (95% uncertainty interval, 161 000-208 000) deaths/y attributable to SSB consumption.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e2",
+      "claim_id": "openalex:W2131745222:c2",
+      "description": "Model estimated 133 000 (126 000-139 000) deaths from diabetes mellitus attributable to SSB consumption.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e3",
+      "claim_id": "openalex:W2131745222:c3",
+      "description": "Model estimated 45 000 (26 000-61 000) deaths from CVD attributable to SSB consumption.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e4",
+      "claim_id": "openalex:W2131745222:c4",
+      "description": "Model estimated 6450 (4300-8600) deaths from cancers attributable to SSB consumption.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e5",
+      "claim_id": "openalex:W2131745222:c5",
+      "description": "Five percent of SSB-related deaths occurred in low-income countries.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e6",
+      "claim_id": "openalex:W2131745222:c6",
+      "description": "70.9% of SSB-related deaths occurred in middle-income countries.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e7",
+      "claim_id": "openalex:W2131745222:c7",
+      "description": "24.1% of SSB-related deaths occurred in high-income countries.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e8",
+      "claim_id": "openalex:W2131745222:c8",
+      "description": "Proportional mortality attributable to SSBs ranged from <1% in Japanese >65 years of age to 30% in Mexicans <45 years of age.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e9",
+      "claim_id": "openalex:W2131745222:c9",
+      "description": "Among the 20 most populous countries, Mexico had largest absolute (405 deaths/million adults) deaths from SSBs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e10",
+      "claim_id": "openalex:W2131745222:c10",
+      "description": "Among the 20 most populous countries, Mexico had largest proportional (12.1%) deaths from SSBs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2131745222:e11",
+      "claim_id": "openalex:W2131745222:c11",
+      "description": "A total of 8.5 (2.8, 19.2) million disability-adjusted life years were related to SSB intake (4.5% of diabetes mellitus-related disability-adjusted life years).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2131745222:m1",
+      "paper_id": "openalex:W2131745222",
+      "name": "Global Burden of Disease Population-Attributable Fraction Modeling",
+      "description": "Modeled cause-specific population-attributable fractions for sugar-sweetened beverage consumption combined with global dietary surveys, prospective cohort studies, and disease mortality/morbidity data across age, sex, and country strata.",
+      "datasets": [
+        "National dietary surveys worldwide",
+        "Large prospective cohort pooling studies",
+        "Global Burden of Diseases, Injuries, and Risk Factors 2010 Study"
+      ],
+      "conditions": [
+        "Year 2010",
+        "Stratified by nation",
+        "Stratified by age",
+        "Stratified by sex"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2131745222:l1",
+      "paper_id": "openalex:W2131745222",
+      "text": "The worldwide impact of SSBs on burdens of adiposity-related CVDs, cancers, and diabetes mellitus had not previously been assessed by nation, age, and sex.",
+      "normalized_category": "lack-of-disaggregated-global-estimates",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:21:18.289149Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

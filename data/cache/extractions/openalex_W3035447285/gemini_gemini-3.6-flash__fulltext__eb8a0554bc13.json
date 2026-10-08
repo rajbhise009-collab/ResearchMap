@@ -1,0 +1,125 @@
+{
+  "paper_id": "openalex:W3035447285",
+  "claims": [
+    {
+      "id": "openalex:W3035447285:c1",
+      "paper_id": "openalex:W3035447285",
+      "text": "Without debiasing algorithms, deep learning models amplify biases present in training data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035447285:c2",
+      "paper_id": "openalex:W3035447285",
+      "text": "Most fairness mitigation algorithms compromise overall model accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035447285:c3",
+      "paper_id": "openalex:W3035447285",
+      "text": "Fairness mitigation methods that achieve demographic parity can result in unfairness with regard to equality of opportunity or odds.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035447285:c4",
+      "paper_id": "openalex:W3035447285",
+      "text": "Interpretability can serve as a diagnostic tool to identify reasons leading to algorithmic discrimination in deep neural networks.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3035447285:e1",
+      "claim_id": "openalex:W3035447285:c1",
+      "description": "Empirical comparison showed unmitigated DNN model demographic parity degraded to 0.347 on Adult dataset compared to 0.386 in raw dataset.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3035447285:e2",
+      "claim_id": "openalex:W3035447285:c2",
+      "description": "Evaluation of five mitigation algorithms on Adult Income dataset demonstrated drops in accuracy from 0.836 (original DNN) to as low as 0.778 (Optimized Pre-processing).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3035447285:e3",
+      "claim_id": "openalex:W3035447285:c3",
+      "description": "Prejudice Remover achieved a demographic parity of 0.961 on Adult dataset but shifted equality of opportunity to 0.005 and odds to 0.039, reversing directionality compared to baseline.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3035447285:e4",
+      "claim_id": "openalex:W3035447285:c4",
+      "description": "TCAV interpretation on a CNN doctorness classifier revealed that not-woman concepts significantly increased doctor prediction confidence.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3035447285:m1",
+      "paper_id": "openalex:W3035447285",
+      "name": "Empirical Comparison of Input Bias Mitigation Algorithms",
+      "description": "Evaluated five input discrimination mitigation methods against a baseline multilayer perceptron model across multiple fairness and accuracy metrics.",
+      "datasets": [
+        "Adult Census Income",
+        "COMPAS"
+      ],
+      "conditions": [
+        "50% training, 20% validation, 30% testing split",
+        "3-layer multilayer perceptron (MLP)",
+        "Metrics averaged over three runs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3035447285:l1",
+      "paper_id": "openalex:W3035447285",
+      "text": "Post-processing calibration methods require inference-time access to protected attributes, which are usually unavailable in real-world applications.",
+      "normalized_category": "inference-attribute-access",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3035447285:l2",
+      "paper_id": "openalex:W3035447285",
+      "text": "Adversarial training for representation debiasing can fail to retain full semantic data meaning and is difficult to stabilize.",
+      "normalized_category": "adversarial-instability-semantic-loss",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3035447285:l3",
+      "paper_id": "openalex:W3035447285",
+      "text": "Current practice of evaluating DNN fairness using hold-out test sets fails to uncover unfairness because test sets contain the same biases as training sets.",
+      "normalized_category": "biased-evaluation-datasets",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3035447285:f1",
+      "paper_id": "openalex:W3035447285",
+      "text": "Constructing benchmark datasets specifically designed and cleansed of biases to systematically evaluate DNN fairness.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3035447285:f2",
+      "paper_id": "openalex:W3035447285",
+      "text": "Developing methods for identifying and mitigating intersectional biases across combinations of multiple sensitive attributes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3035447285:f3",
+      "paper_id": "openalex:W3035447285",
+      "text": "Designing computationally efficient bias mitigation techniques for large-scale pre-trained language models like BERT and XLNet.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:20:55.618285Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

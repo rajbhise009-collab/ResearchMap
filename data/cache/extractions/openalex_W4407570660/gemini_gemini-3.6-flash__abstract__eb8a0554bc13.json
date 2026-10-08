@@ -1,0 +1,107 @@
+{
+  "paper_id": "openalex:W4407570660",
+  "claims": [
+    {
+      "id": "openalex:W4407570660:c1",
+      "paper_id": "openalex:W4407570660",
+      "text": "Explanations, inconsistencies in explanations, and sources shape users' reliance on LLM responses.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c2",
+      "paper_id": "openalex:W4407570660",
+      "text": "The presence of explanations increases user reliance on correct LLM responses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c3",
+      "paper_id": "openalex:W4407570660",
+      "text": "The presence of explanations increases user reliance on incorrect LLM responses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c4",
+      "paper_id": "openalex:W4407570660",
+      "text": "Providing sources reduces user reliance on incorrect LLM responses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407570660:c5",
+      "paper_id": "openalex:W4407570660",
+      "text": "Explanations exhibiting inconsistencies reduce user reliance on incorrect LLM responses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4407570660:e1",
+      "claim_id": "openalex:W4407570660:c1",
+      "description": "Through a think-aloud study in which participants use an LLM-infused application to answer objective questions, we identify several features of LLM responses that shape users' reliance: explanations (supporting details for answers), inconsistencies in explanations, and sources.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4407570660:e2",
+      "claim_id": "openalex:W4407570660:c2",
+      "description": "We find that the presence of explanations increases reliance on both correct and incorrect responses.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e3",
+      "claim_id": "openalex:W4407570660:c3",
+      "description": "We find that the presence of explanations increases reliance on both correct and incorrect responses.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e4",
+      "claim_id": "openalex:W4407570660:c4",
+      "description": "However, we observe less reliance on incorrect responses when sources are provided...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407570660:e5",
+      "claim_id": "openalex:W4407570660:c5",
+      "description": "However, we observe less reliance on incorrect responses [...] when explanations exhibit inconsistencies.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4407570660:m1",
+      "paper_id": "openalex:W4407570660",
+      "name": "Think-aloud study",
+      "description": "A qualitative study where participants use an LLM-infused application to answer objective questions to identify response features shaping reliance.",
+      "datasets": [],
+      "conditions": [
+        "LLM-infused application",
+        "objective questions"
+      ]
+    },
+    {
+      "id": "openalex:W4407570660:m2",
+      "paper_id": "openalex:W4407570660",
+      "name": "Pre-registered controlled experiment",
+      "description": "A large-scale controlled experiment isolating the effects of explanations, sources, and inconsistencies on user reliance and accuracy.",
+      "datasets": [],
+      "conditions": [
+        "N=308",
+        "presence/absence of explanations",
+        "presence/absence of sources",
+        "inconsistencies in explanations"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.120400Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

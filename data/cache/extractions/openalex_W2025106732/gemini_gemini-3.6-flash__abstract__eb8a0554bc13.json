@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W2025106732",
+  "claims": [
+    {
+      "id": "openalex:W2025106732:c1",
+      "paper_id": "openalex:W2025106732",
+      "text": "NAFLD is associated with increased overall mortality compared to general population controls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025106732:c2",
+      "paper_id": "openalex:W2025106732",
+      "text": "NAFLD is associated with a two-fold increased risk of diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025106732:c3",
+      "paper_id": "openalex:W2025106732",
+      "text": "NASH is associated with higher liver-related mortality compared to simple steatosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025106732:c4",
+      "paper_id": "openalex:W2025106732",
+      "text": "NASH with advanced fibrosis is associated with an odds ratio of 10.06 for liver-related mortality compared to simple steatosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025106732:c5",
+      "paper_id": "openalex:W2025106732",
+      "text": "NASH does not show a statistically significant increase in cardiovascular mortality compared to simple steatosis.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025106732:c6",
+      "paper_id": "openalex:W2025106732",
+      "text": "Cytokeratin-18 has a pooled AUROC of 0.82 for differentiating NASH from simple steatosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025106732:c7",
+      "paper_id": "openalex:W2025106732",
+      "text": "NAFLD fibrosis score achieves a pooled AUROC of 0.85 for identifying NASH with advanced fibrosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025106732:c8",
+      "paper_id": "openalex:W2025106732",
+      "text": "Fibroscan achieves a pooled AUROC of 0.94 for identifying NASH with advanced fibrosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2025106732:e1",
+      "claim_id": "openalex:W2025106732:c1",
+      "description": "NAFLD has an increased overall mortality (OR: 1.57, 95% CI: 1.18-2.10)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025106732:e2",
+      "claim_id": "openalex:W2025106732:c2",
+      "description": "and a 2-fold risk of diabetes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025106732:e3",
+      "claim_id": "openalex:W2025106732:c3",
+      "description": "Compared to SS, NASH has a higher liver-related (OR for NASH: 5.71, 2.31-14.13)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025106732:e4",
+      "claim_id": "openalex:W2025106732:c4",
+      "description": "OR for NASH with advanced fibrosis: 10.06, 4.35-23.25",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025106732:e5",
+      "claim_id": "openalex:W2025106732:c5",
+      "description": "but not cardiovascular mortality (OR: 0.91, 0.42-1.98).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025106732:e6",
+      "claim_id": "openalex:W2025106732:c6",
+      "description": "pooled AUROC, sensitivity and specificity of cytokeratin-18 for NASH are 0.82 (0.78-0.88), 0.78 (0.64-0.92), 0.87 (0.77-0.98).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2025106732:e7",
+      "claim_id": "openalex:W2025106732:c7",
+      "description": "For NASH with advanced fibrosis, pooled AUROC, sensitivity and specificity of NAFLD fibrosis score... are 0.85 (0.80-0.93), 0.90 (0.82-0.99), 0.97 (0.94-0.99)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2025106732:e8",
+      "claim_id": "openalex:W2025106732:c8",
+      "description": "pooled AUROC, sensitivity and specificity of... Fibroscan are 0.94 (0.90-0.99), 0.94 (0.88-0.99) and 0.95 (0.89-0.99).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2025106732:m1",
+      "paper_id": "openalex:W2025106732",
+      "name": "Systematic review and meta-analysis using random- or fixed-effects models",
+      "description": "Systematic literature search and meta-analysis of studies evaluating the natural history of NAFLD and the diagnostic accuracy of non-invasive tests compared against liver biopsy.",
+      "datasets": [
+        "MEDLINE",
+        "Cochrane Library",
+        "EMBASE",
+        "Pubmed"
+      ],
+      "conditions": [
+        "Studies published through July 2010",
+        "40 articles assessing natural history of NAFLD included",
+        "32 articles evaluating non-invasive tests against liver biopsy included"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2025106732:l1",
+      "paper_id": "openalex:W2025106732",
+      "text": "The natural history of NAFLD and the optimal strategy to identify subjects with progressive liver disease are unclear.",
+      "normalized_category": "unclear-disease-history-and-diagnostic-strategy",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:45:58.058940Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

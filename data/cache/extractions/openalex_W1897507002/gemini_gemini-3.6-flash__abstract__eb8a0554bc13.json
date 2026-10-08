@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W1897507002",
+  "claims": [
+    {
+      "id": "openalex:W1897507002:c1",
+      "paper_id": "openalex:W1897507002",
+      "text": "Detection of entailment and contradiction relations between texts is a minimal metric for evaluating text understanding systems.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1897507002:c2",
+      "paper_id": "openalex:W1897507002",
+      "text": "Intensionality is widespread in natural language.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1897507002:c3",
+      "paper_id": "openalex:W1897507002",
+      "text": "Intensionality raises detection issues for text understanding systems.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1897507002:c4",
+      "paper_id": "openalex:W1897507002",
+      "text": "A contexted clausal representation derived from formal semantics permits tractable detection of an extended range of intensional entailments and contradictions.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1897507002:e1",
+      "claim_id": "openalex:W1897507002:c1",
+      "description": "The authors argue that the detection of entailment and contradiction relations between texts is a minimal metric for the evaluation of text understanding systems.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1897507002:e2",
+      "claim_id": "openalex:W1897507002:c2",
+      "description": "The authors state that intensionality is widespread in natural language.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1897507002:e3",
+      "claim_id": "openalex:W1897507002:c3",
+      "description": "The authors state that intensionality raises a number of detection issues that cannot be brushed aside.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1897507002:e4",
+      "claim_id": "openalex:W1897507002:c4",
+      "description": "The paper describes a contexted clausal representation, derived from formal semantics, that permits an extended range of intensional entailments and contradictions to be tractably detected.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1897507002:m1",
+      "paper_id": "openalex:W1897507002",
+      "name": "Contexted clausal representation",
+      "description": "A representation derived from formal semantics that allows tractable detection of intensional entailments and contradictions.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1897507002:l1",
+      "paper_id": "openalex:W1897507002",
+      "text": "Intensionality in natural language raises detection issues that complicate text understanding evaluation.",
+      "normalized_category": "intensionality-detection-issues",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.117247Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

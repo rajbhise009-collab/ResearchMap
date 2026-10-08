@@ -1,0 +1,126 @@
+{
+  "paper_id": "openalex:W4399541205",
+  "claims": [
+    {
+      "id": "openalex:W4399541205:c1",
+      "paper_id": "openalex:W4399541205",
+      "text": "Existing multimodal sentiment analysis methods rely on Pre-trained Language Models to extract semantic information from textual data but lack an in-depth understanding of logical relationships within the text modality.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c2",
+      "paper_id": "openalex:W4399541205",
+      "text": "The PEAR CoT prompt induces Large Language Models to generate text-based reasoning processes and zero-shot sentiment prediction results.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c3",
+      "paper_id": "openalex:W4399541205",
+      "text": "Text-based Chain-of-Thought reasoning is not always reliable and can contain irrational steps due to LLM hallucinations.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c4",
+      "paper_id": "openalex:W4399541205",
+      "text": "The filtering submodule in the Cross-Modal Filtering and Fusion module utilizes audio and visual modalities to suppress irrational steps in Chain-of-Thought reasoning.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c5",
+      "paper_id": "openalex:W4399541205",
+      "text": "The fusion submodule integrates high-level reasoning information and cross-modal complementary information during semantic representation learning.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c6",
+      "paper_id": "openalex:W4399541205",
+      "text": "High-level reasoning information helps learn discriminative text representation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c7",
+      "paper_id": "openalex:W4399541205",
+      "text": "Cross-modal complementary information avoids misleading by unreasonable steps in Chain-of-Thought reasoning.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c8",
+      "paper_id": "openalex:W4399541205",
+      "text": "MM-PEAR-CoT achieves a 2.2% improvement in binary classification accuracy on the CMU-MOSI dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399541205:c9",
+      "paper_id": "openalex:W4399541205",
+      "text": "MM-PEAR-CoT achieves a 1.7% improvement in binary classification accuracy on the CMU-MOSEI dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399541205:e1",
+      "claim_id": "openalex:W4399541205:c8",
+      "description": "Experimental results show an improvement of 2.2% in binary classification accuracy on the CMU-MOSI dataset.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399541205:e2",
+      "claim_id": "openalex:W4399541205:c9",
+      "description": "Experimental results show an improvement of 1.7% in binary classification accuracy on the CMU-MOSEI dataset.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399541205:m1",
+      "paper_id": "openalex:W4399541205",
+      "name": "Multimodal PEAR Chain-of-Thought (MM-PEAR-CoT)",
+      "description": "A multimodal sentiment analysis framework incorporating PEAR CoT prompting for LLMs combined with a Cross-Modal Filtering and Fusion module to prune irrational steps using audio/visual signals.",
+      "datasets": [
+        "CMU-MOSI",
+        "CMU-MOSEI"
+      ],
+      "conditions": [
+        "zero-shot sentiment prediction via PEAR CoT",
+        "cross-modal filtering using audio and visual modalities"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399541205:l1",
+      "paper_id": "openalex:W4399541205",
+      "text": "Text-based CoT reasoning is not always reliable and might contain irrational steps due to the hallucinations of LLMs.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399541205:l2",
+      "paper_id": "openalex:W4399541205",
+      "text": "Existing PLM-based methods lack an in-depth understanding of logical relationships within the text modality.",
+      "normalized_category": "lack-of-logical-understanding",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.098733Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

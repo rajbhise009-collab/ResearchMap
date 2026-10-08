@@ -1,0 +1,173 @@
+{
+  "paper_id": "openalex:W4399554616",
+  "claims": [
+    {
+      "id": "openalex:W4399554616:c1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Subjective uncertainty in natural language generation can be quantified as the Bayes risk based on a similarity-characterized utility function.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c2",
+      "paper_id": "openalex:W4399554616",
+      "text": "Instruction tuning causes a much smaller deterioration in task-specific calibration than in token-level probability calibration across question answering benchmarks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c3",
+      "paper_id": "openalex:W4399554616",
+      "text": "Probabilistic uncertainty quantification achieves lower Expected Calibration Error than prompt-based confidence elicitation methods across question answering datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c4",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty-based deferral in many-shot in-context learning achieves statistically significant improvements in AUC-DF over random selection for low-resource machine translation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c5",
+      "paper_id": "openalex:W4399554616",
+      "text": "Selective prediction performance based on task-specific uncertainty is approximately unchanged or improved following instruction tuning.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c6",
+      "paper_id": "openalex:W4399554616",
+      "text": "Total uncertainty quantification does not consistently outperform random deferral when predictive uncertainty is irreducible.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399554616:e1",
+      "claim_id": "openalex:W4399554616:c1",
+      "description": "Subjective uncertainty is formally derived as $R_B(I) := \\min_{y' \\in \\mathcal{Y}'_I} \\mathbb{E}_{y \\sim p_M(\\cdot|I)} r(y', y; I)$ using loss function $r(y', y; I) = -S(y', y; I)$.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399554616:e2",
+      "claim_id": "openalex:W4399554616:c2",
+      "description": "Experiments comparing pre-RLHF and post-RLHF llama-3.1-70b across five QA datasets showed minimal task-specific ECE changes, contrasting with previously reported token-level ECE increases of 0.1 to 0.2.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399554616:e3",
+      "claim_id": "openalex:W4399554616:c3",
+      "description": "The probabilistic UQ method consistently yielded lower ECE than P(True) and verbalized confidence across TriviaQA, NQOpen, CoQA, and SciQ for gpt-4o, gpt-4o-mini, and llama-3.1-70b.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399554616:e4",
+      "claim_id": "openalex:W4399554616:c4",
+      "description": "On FLORES+ English-to-Kurdish and English-to-Tamil tasks, epistemic uncertainty deferral curves significantly outperformed random deferral with p-values of 0.042/0.046 for gpt-4o-mini and 0.000/0.007 for gpt-4o.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399554616:e5",
+      "claim_id": "openalex:W4399554616:c5",
+      "description": "AUARC metrics across five QA datasets demonstrated stable or higher selective prediction performance post-instruction tuning for llama-3.1-8b, llama-3.1-70b, and gemma2-27b.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399554616:e6",
+      "claim_id": "openalex:W4399554616:c6",
+      "description": "Total uncertainty deferral failed to achieve statistically significant improvement over random selection on machine translation tasks where lexical utility variance represents irreducible syntactic variation.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399554616:m1",
+      "paper_id": "openalex:W4399554616",
+      "name": "Minimum Bayes Risk Task-Specific Calibration Evaluation",
+      "description": "Measures task-specific expected calibration error by evaluating expected loss under an explicit utility measure using Monte Carlo sampling and histogram binning.",
+      "datasets": [
+        "CoQA",
+        "TriviaQA",
+        "NQOpen",
+        "SciQ",
+        "TruthfulQA"
+      ],
+      "conditions": [
+        "1000 subsampled queries per dataset",
+        "gpt-4o-mini used as judge model for semantic similarity utility",
+        "10 Monte Carlo generation samples per query"
+      ]
+    },
+    {
+      "id": "openalex:W4399554616:m2",
+      "paper_id": "openalex:W4399554616",
+      "name": "Missing-Data Epistemic Uncertainty Estimation in ICL",
+      "description": "Quantifies reducible epistemic uncertainty in in-context learning as the excess risk between predictions made with and without synthetic model-generated demonstration pairs.",
+      "datasets": [
+        "FLORES+ English-to-Kurdish",
+        "FLORES+ English-to-Tamil"
+      ],
+      "conditions": [
+        "500 subsampled queries per task",
+        "4 base in-context demonstrations vs 128 many-shot demonstrations",
+        "chrF lexical similarity utility metric",
+        "5 synthetic demonstration sequences with 8 output samples per sequence"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399554616:l1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Semantic equivalence estimation relies on machine learning classifiers that produce imprecise estimates failing to guarantee formal equivalence relations.",
+      "normalized_category": "imprecise-semantic-equivalence",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399554616:l2",
+      "paper_id": "openalex:W4399554616",
+      "text": "Standard token-level entropy conflates task-irrelevant variations, such as response style and fact selection, with actual task performance uncertainty.",
+      "normalized_category": "token-entropy-style-conflation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399554616:l3",
+      "paper_id": "openalex:W4399554616",
+      "text": "The proposed epistemic uncertainty deferral strategy shows reduced efficacy when applied to severely miscalibrated base language models such as gemini-1.5-pro.",
+      "normalized_category": "sensitivity-to-model-miscalibration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399554616:l4",
+      "paper_id": "openalex:W4399554616",
+      "text": "The epistemic uncertainty formula uses a finite number of missing observations N, which acts as a lower bound rather than exact quantification of total theoretical epistemic uncertainty.",
+      "normalized_category": "finite-sample-lower-bound-approximation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4399554616:f1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Extend the decision-theoretic epistemic uncertainty framework beyond in-context learning to interactive settings involving user clarifying questions or external datastore queries.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399554616:f2",
+      "paper_id": "openalex:W4399554616",
+      "text": "Develop instruction-tuning and fine-tuning methodologies specifically optimized for improving task-specific probabilistic calibration in language models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.637853Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

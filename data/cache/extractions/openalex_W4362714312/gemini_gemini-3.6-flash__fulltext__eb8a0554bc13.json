@@ -1,0 +1,161 @@
+{
+  "paper_id": "openalex:W4362714312",
+  "claims": [
+    {
+      "id": "openalex:W4362714312:c1",
+      "paper_id": "openalex:W4362714312",
+      "text": "Traditional algorithmic fairness notions designed for i.i.d. data cannot capture the bias exhibited by graph relational topology.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4362714312:c2",
+      "paper_id": "openalex:W4362714312",
+      "text": "Information propagation mechanisms in Graph Neural Networks induce bias in output node embeddings when performed on a biased graph topology.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4362714312:c3",
+      "paper_id": "openalex:W4362714312",
+      "text": "Fairness notions in graph mining can be categorized into group fairness, individual fairness, counterfactual fairness, degree-related fairness, and application-specific fairness.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4362714312:c4",
+      "paper_id": "openalex:W4362714312",
+      "text": "Techniques for promoting fairness in graph mining can be categorized into optimization with regularization, optimization with constraint(s), rebalancing, adversarial learning, edge rewiring, and orthogonal projection.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4362714312:e1",
+      "claim_id": "openalex:W4362714312:c1",
+      "description": "Although a vast amount of traditional algorithmic fairness notions have been proposed centered on i.i.d. data [42], [111], they are unable to reflect the bias exhibited by the relational information (i.e., the topology) in graph data.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4362714312:e2",
+      "claim_id": "openalex:W4362714312:c2",
+      "description": "when the information propagation is performed on a biased topology as in Fig. 1b, the information received by nodes in different subgroups could be biased [41], leading to a biased embedding distribution in the output space.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4362714312:e3",
+      "claim_id": "openalex:W4362714312:c3",
+      "description": "Such a taxonomy includes five groups of fairness notions: group fairness, individual fairness, counterfactual fairness, degree-related fairness, and application-specific fairness.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4362714312:e4",
+      "claim_id": "openalex:W4362714312:c4",
+      "description": "We provide a comprehensive and organized review of six groups of techniques that are commonly utilized to promote fairness in graph mining algorithms.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4362714312:m1",
+      "paper_id": "openalex:W4362714312",
+      "name": "Taxonomy and systematic review of fair graph mining",
+      "description": "A comprehensive survey categorizing fairness notions into five groups and fairness-improving techniques into six categories across graph analytical tasks.",
+      "datasets": [
+        "Facebook",
+        "Pokec",
+        "Twitter",
+        "Lastfm",
+        "Ok97",
+        "UNC28",
+        "Google+",
+        "Epinion",
+        "Filmtrust",
+        "Ciao",
+        "Amazon",
+        "Yelp",
+        "ML100K",
+        "ML1M",
+        "ML20M",
+        "Citeseer",
+        "Cora",
+        "Pubmed",
+        "DBLP",
+        "German",
+        "NBA",
+        "Recidivism",
+        "Credit"
+      ],
+      "conditions": [
+        "node classification",
+        "link prediction",
+        "graph clustering",
+        "influence maximization",
+        "recommender systems",
+        "knowledge graphs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4362714312:l1",
+      "paper_id": "openalex:W4362714312",
+      "text": "The surveyed fairness notions are by no means complete, as other types of biases could also exist depending on the needs of different real-world scenarios.",
+      "normalized_category": "incomplete-taxonomy-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4362714312:l2",
+      "paper_id": "openalex:W4362714312",
+      "text": "Most existing related survey papers are under the context of i.i.d. data or limited to either a certain application scenario or a certain type of graph mining algorithm.",
+      "normalized_category": "narrow-prior-survey-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4362714312:l3",
+      "paper_id": "openalex:W4362714312",
+      "text": "Orthogonal projection only guarantees that embeddings and sensitive features are uncorrelated, while excluding non-linear dependency remains under-explored.",
+      "normalized_category": "linear-correlation-assumption",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4362714312:f1",
+      "paper_id": "openalex:W4362714312",
+      "text": "Designing new fairness notions or choosing sets of non-conflicting fairness notions tailored for specific graph mining algorithms and downstream applications.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4362714312:f2",
+      "paper_id": "openalex:W4362714312",
+      "text": "Promoting multiple types of fairness simultaneously without causing conflicts or degrading overall model performance on graphs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4362714312:f3",
+      "paper_id": "openalex:W4362714312",
+      "text": "Achieving Pareto optimality in the trade-off between model utility and algorithmic fairness in graph mining.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4362714312:f4",
+      "paper_id": "openalex:W4362714312",
+      "text": "Systematically explaining how unfairness arises from the interaction between graph topology and specific graph mining algorithm mechanisms.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4362714312:f5",
+      "paper_id": "openalex:W4362714312",
+      "text": "Enhancing the robustness of algorithmic fairness in graph mining against biased supervision or adversarial manipulation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:56:42.326599Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

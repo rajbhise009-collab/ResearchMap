@@ -1,0 +1,219 @@
+{
+  "paper_id": "openalex:W4281690148",
+  "claims": [
+    {
+      "id": "openalex:W4281690148:c1",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language models demonstrate quantitative improvement with increasing scale.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c2",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language models demonstrate new qualitative capabilities with increasing scale.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c3",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model performance improves with model scale.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c4",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model calibration improves with model scale.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c5",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model performance and calibration are poor in absolute terms.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c6",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model performance and calibration are poor compared to human expert rater performance.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c7",
+      "paper_id": "openalex:W4281690148",
+      "text": "Performance is remarkably similar across different language model classes.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c8",
+      "paper_id": "openalex:W4281690148",
+      "text": "Sparse transformer architectures provide performance benefits over dense architectures.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c9",
+      "paper_id": "openalex:W4281690148",
+      "text": "Tasks that improve gradually and predictably with scale commonly involve a large knowledge or memorization component.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c10",
+      "paper_id": "openalex:W4281690148",
+      "text": "Tasks that exhibit breakthrough behavior at a critical scale often involve multiple steps, multiple components, or brittle metrics.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c11",
+      "paper_id": "openalex:W4281690148",
+      "text": "Social bias typically increases with scale in language model settings with ambiguous context.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c12",
+      "paper_id": "openalex:W4281690148",
+      "text": "Social bias increases in language models with scale can be improved with prompting.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4281690148:e1",
+      "claim_id": "openalex:W4281690148:c1",
+      "description": "Language models demonstrate both quantitative improvement and new qualitative capabilities with increasing scale.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e2",
+      "claim_id": "openalex:W4281690148:c2",
+      "description": "Language models demonstrate both quantitative improvement and new qualitative capabilities with increasing scale.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e3",
+      "claim_id": "openalex:W4281690148:c3",
+      "description": "Findings include: model performance and calibration both improve with scale...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e4",
+      "claim_id": "openalex:W4281690148:c4",
+      "description": "Findings include: model performance and calibration both improve with scale...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e5",
+      "claim_id": "openalex:W4281690148:c5",
+      "description": "...but are poor in absolute terms...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e6",
+      "claim_id": "openalex:W4281690148:c6",
+      "description": "...(and when compared with rater performance);",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e7",
+      "claim_id": "openalex:W4281690148:c7",
+      "description": "...performance is remarkably similar across model classes...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e8",
+      "claim_id": "openalex:W4281690148:c8",
+      "description": "...though with benefits from sparsity;",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e9",
+      "claim_id": "openalex:W4281690148:c9",
+      "description": "...tasks that improve gradually and predictably commonly involve a large knowledge or memorization component...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e10",
+      "claim_id": "openalex:W4281690148:c10",
+      "description": "...whereas tasks that exhibit 'breakthrough' behavior at a critical scale often involve multiple steps or components, or brittle metrics;",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e11",
+      "claim_id": "openalex:W4281690148:c11",
+      "description": "...social bias typically increases with scale in settings with ambiguous context...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4281690148:e12",
+      "claim_id": "openalex:W4281690148:c12",
+      "description": "...but this can be improved with prompting.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4281690148:m1",
+      "paper_id": "openalex:W4281690148",
+      "name": "BIG-bench Evaluation Framework",
+      "description": "Evaluated language model capabilities and behaviors across 204 diverse tasks spanning millions to hundreds of billions of parameters.",
+      "datasets": [
+        "BIG-bench"
+      ],
+      "conditions": [
+        "OpenAI's GPT models",
+        "Google-internal dense transformer architectures",
+        "Switch-style sparse transformers",
+        "Model sizes spanning millions to hundreds of billions of parameters",
+        "Human expert raters baseline"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4281690148:l1",
+      "paper_id": "openalex:W4281690148",
+      "text": "Present and near-future capabilities and limitations of language models are poorly characterized.",
+      "normalized_category": "poorly-characterized-capabilities",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4281690148:l2",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model performance and calibration are poor in absolute terms and when compared with human expert raters.",
+      "normalized_category": "poor-absolute-performance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4281690148:l3",
+      "paper_id": "openalex:W4281690148",
+      "text": "Social bias typically increases with scale in settings with ambiguous context.",
+      "normalized_category": "scaling-social-bias",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:24:07.279635Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

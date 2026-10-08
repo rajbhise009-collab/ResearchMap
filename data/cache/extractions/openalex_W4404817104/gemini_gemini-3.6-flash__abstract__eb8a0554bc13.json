@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W4404817104",
+  "claims": [
+    {
+      "id": "openalex:W4404817104:c1",
+      "paper_id": "openalex:W4404817104",
+      "text": "DeBERTa-based assessor models can match or exceed subject language models' confidence in refinement.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404817104:c2",
+      "paper_id": "openalex:W4404817104",
+      "text": "DeBERTa-based assessor models can match or exceed subject language models' confidence in calibration.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404817104:c3",
+      "paper_id": "openalex:W4404817104",
+      "text": "Performance prediction assessors anticipate subject language model failures at near perfect levels for some tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404817104:c4",
+      "paper_id": "openalex:W4404817104",
+      "text": "Learning from performance scores on multiple tasks can be beneficial for language model performance prediction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404817104:c5",
+      "paper_id": "openalex:W4404817104",
+      "text": "Learning from performance scores across multiple subject models can be beneficial for language model performance prediction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404817104:c6",
+      "paper_id": "openalex:W4404817104",
+      "text": "Large and small subject language model systems are equally predictable by performance assessors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404817104:e1",
+      "claim_id": "openalex:W4404817104:c1",
+      "description": "Assessors can match and even exceed the subjects’ confidence in refinement.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404817104:e2",
+      "claim_id": "openalex:W4404817104:c2",
+      "description": "Assessors can match and even exceed the subjects’ confidence in calibration.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404817104:e3",
+      "claim_id": "openalex:W4404817104:c3",
+      "description": "Assessors anticipate failures at near perfect levels for some tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404817104:e4",
+      "claim_id": "openalex:W4404817104:c4",
+      "description": "For performance prediction it can be beneficial to learn from the scores on multiple tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404817104:e5",
+      "claim_id": "openalex:W4404817104:c5",
+      "description": "For performance prediction it can be beneficial to learn from the scores of multiple subjects.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404817104:e6",
+      "claim_id": "openalex:W4404817104:c6",
+      "description": "Large and small subject systems are equally predictable, showing promise for scalability.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404817104:m1",
+      "paper_id": "openalex:W4404817104",
+      "name": "DeBERTa performance prediction assessors",
+      "description": "Fine-tuning DeBERTa models on evaluation results of generative language models to predict whether questions will be answered successfully.",
+      "datasets": [
+        "BIG-bench"
+      ],
+      "conditions": [
+        "Generative language model subject systems up to 128 billion parameters",
+        "Spans more than 100 BIG-bench tasks"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404817104:l1",
+      "paper_id": "openalex:W4404817104",
+      "text": "The performance prediction benefits derived from learning across multiple tasks or multiple subject systems depend on the specific task at hand.",
+      "normalized_category": "task-dependent-performance",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T14:12:15.264265Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

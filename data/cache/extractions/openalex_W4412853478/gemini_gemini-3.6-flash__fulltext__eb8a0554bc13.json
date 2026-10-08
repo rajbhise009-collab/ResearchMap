@@ -1,0 +1,174 @@
+{
+  "paper_id": "openalex:W4412853478",
+  "claims": [
+    {
+      "id": "openalex:W4412853478:c1",
+      "paper_id": "openalex:W4412853478",
+      "text": "Tested large language models repeat or elaborate on fabricated medical details in 50% to 82% of cases under default prompting.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c2",
+      "paper_id": "openalex:W4412853478",
+      "text": "Prompt-based mitigation lowers the mean hallucination rate across all tested models from 66% to 44% (p < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c3",
+      "paper_id": "openalex:W4412853478",
+      "text": "For GPT-4o, prompt-based mitigation reduces hallucination rates from 53% to 23% (p < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c4",
+      "paper_id": "openalex:W4412853478",
+      "text": "Setting decoding temperature to 0 does not produce a statistically significant reduction in LLM hallucination rates.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c5",
+      "paper_id": "openalex:W4412853478",
+      "text": "Short clinical vignettes show higher odds of hallucination compared to long clinical vignettes (OR = 1.22, p = 0.003).",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c6",
+      "paper_id": "openalex:W4412853478",
+      "text": "Distilled-DeepSeek exhibited the highest hallucination rates among tested models under default settings (80.0% in long cases and 82.7% in short cases).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412853478:c7",
+      "paper_id": "openalex:W4412853478",
+      "text": "GPT-4o exhibited the lowest hallucination rate among tested models under default settings (53.3% for long cases and 50.0% for short cases).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4412853478:e1",
+      "claim_id": "openalex:W4412853478:c1",
+      "description": "Hallucination rates range from 50 % to 82 % across models and prompting methods.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e2",
+      "claim_id": "openalex:W4412853478:c2",
+      "description": "Prompt-based mitigation lowers the overall hallucination rate (mean across all models) from 66 % to 44 % (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e3",
+      "claim_id": "openalex:W4412853478:c3",
+      "description": "For the best-performing model, GPT-4o, rates decline from 53 % to 23 % (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e4",
+      "claim_id": "openalex:W4412853478:c4",
+      "description": "Temperature adjustments offer no significant improvement (the zero-temperature condition had an OR of 1.05, 95% CI 0.89–1.23; p = 0.58).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e5",
+      "claim_id": "openalex:W4412853478:c5",
+      "description": "Short-format cases had an OR of 1.22 (1.07–1.39; p = 0.003) compared to long-format cases.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412853478:e6",
+      "claim_id": "openalex:W4412853478:c6",
+      "description": "Under default configuration settings, Distilled-DeepSeek had the highest hallucination rates (80.0% in long cases and 82.7% in short cases).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4412853478:e7",
+      "claim_id": "openalex:W4412853478:c7",
+      "description": "GPT4o had the lowest hallucination rates (53.3% for long cases and 50.0% for short cases).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4412853478:m1",
+      "paper_id": "openalex:W4412853478",
+      "name": "Adversarial clinical hallucination evaluation framework",
+      "description": "A systematic evaluation framework generating 5,400 outputs across six LLMs using 300 physician-validated clinical vignettes containing embedded fabricated details tested under default, mitigation prompt, and zero-temperature settings.",
+      "datasets": [
+        "300 physician-validated simulated clinical vignettes"
+      ],
+      "conditions": [
+        "default settings (temperature ~0.7)",
+        "mitigating prompt",
+        "temperature 0 (deterministic)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4412853478:l1",
+      "paper_id": "openalex:W4412853478",
+      "text": "The evaluation relied on simulated clinical vignettes rather than real-world clinical data, which may not fully capture authentic clinical practice.",
+      "normalized_category": "simulated-data-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4412853478:l2",
+      "paper_id": "openalex:W4412853478",
+      "text": "Only six LLMs under three specific experimental conditions were tested, excluding other available models and system configurations.",
+      "normalized_category": "limited-model-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4412853478:l3",
+      "paper_id": "openalex:W4412853478",
+      "text": "Each prompt sample was run only once per experimental condition, which may under-represent run-to-run stochastic variability.",
+      "normalized_category": "single-run-variability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4412853478:l4",
+      "paper_id": "openalex:W4412853478",
+      "text": "The study did not evaluate retrieval-augmented generation (RAG) or external search lookup mechanisms.",
+      "normalized_category": "lack-of-rag-evaluation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4412853478:l5",
+      "paper_id": "openalex:W4412853478",
+      "text": "Black-box reasoning processes make it difficult to determine how LLM outputs are produced, leading to fabricated references or facts.",
+      "normalized_category": "black-box-interpretability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4412853478:f1",
+      "paper_id": "openalex:W4412853478",
+      "text": "Repeat each sample prompt across multiple stochastic draws to tighten uncertainty bounds.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4412853478:f2",
+      "paper_id": "openalex:W4412853478",
+      "text": "Broaden model comparisons, test retrieval-augmented generation methods, and evaluate narrowly constructed domain-specific clinical LLMs.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.968656Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

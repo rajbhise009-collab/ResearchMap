@@ -1,0 +1,109 @@
+{
+  "paper_id": "openalex:W2902802452",
+  "claims": [
+    {
+      "id": "openalex:W2902802452:c1",
+      "paper_id": "openalex:W2902802452",
+      "text": "Machine-learning models trained on historical data can harm protected groups through incorrect predictions or withholding of resources.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2902802452:c2",
+      "paper_id": "openalex:W2902802452",
+      "text": "Principles of distributive justice must be incorporated into machine learning model design, deployment, and evaluation to advance health equity.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2902802452:c3",
+      "paper_id": "openalex:W2902802452",
+      "text": "Technical implementations of distributive justice in healthcare machine learning can target equality in patient outcomes.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2902802452:c4",
+      "paper_id": "openalex:W2902802452",
+      "text": "Technical implementations of distributive justice in healthcare machine learning can target equality in model performance.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2902802452:c5",
+      "paper_id": "openalex:W2902802452",
+      "text": "Technical implementations of distributive justice in healthcare machine learning can target equality in resource allocation.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2902802452:e1",
+      "claim_id": "openalex:W2902802452:c1",
+      "description": "Because machine-learning models learn from historically collected data, populations that have experienced human and structural biases in the past-called protected groups-are vulnerable to harm by incorrect predictions or withholding of resources.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2902802452:e2",
+      "claim_id": "openalex:W2902802452:c2",
+      "description": "For that goal to be achieved, principles of distributive justice must be incorporated into model design, deployment, and evaluation.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2902802452:e3",
+      "claim_id": "openalex:W2902802452:c3",
+      "description": "The article describes several technical implementations of distributive justice-specifically those that ensure equality in patient outcomes...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2902802452:e4",
+      "claim_id": "openalex:W2902802452:c4",
+      "description": "The article describes several technical implementations of distributive justice-specifically those that ensure equality in... performance...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2902802452:e5",
+      "claim_id": "openalex:W2902802452:c5",
+      "description": "The article describes several technical implementations of distributive justice-specifically those that ensure equality in... resource allocation...",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2902802452:m1",
+      "paper_id": "openalex:W2902802452",
+      "name": "Distributive Justice Framework for Clinical ML",
+      "description": "A framework mapping principles of distributive justice to clinical machine learning design, deployment, and evaluation criteria.",
+      "datasets": [],
+      "conditions": [
+        "clinical care",
+        "health equity"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2902802452:l1",
+      "paper_id": "openalex:W2902802452",
+      "text": "Machine-learning models learn from historically collected data that reflect past human and structural biases.",
+      "normalized_category": "data-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2902802452:f1",
+      "paper_id": "openalex:W2902802452",
+      "text": "Encode principles of justice into clinical decision support and population-level monitoring models to ensure they benefit all patients.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:06:16.078128Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

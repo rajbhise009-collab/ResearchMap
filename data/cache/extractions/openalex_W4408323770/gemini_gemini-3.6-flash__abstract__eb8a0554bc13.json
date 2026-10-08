@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W4408323770",
+  "claims": [
+    {
+      "id": "openalex:W4408323770:c1",
+      "paper_id": "openalex:W4408323770",
+      "text": "Retrieval-Augmented Generation enhances large language model capabilities in critical domains, including legal technology, by retrieving knowledge from external databases.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408323770:c2",
+      "paper_id": "openalex:W4408323770",
+      "text": "Robust Retrieval-Augmented Generation improves faithfulness and reduces hallucinations in generated responses.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408323770:c3",
+      "paper_id": "openalex:W4408323770",
+      "text": "A challenge scale for legal Retrieval-Augmented Generation can be established based on failure points and control over external knowledge.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4408323770:e1",
+      "claim_id": "openalex:W4408323770:c1",
+      "description": "Retrieval-Augmented Generation (RAG) is a promising solution that can enhance the capabilities of large language model (LLM) applications in critical domains, including legal technology, by retrieving knowledge from external databases.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4408323770:e2",
+      "claim_id": "openalex:W4408323770:c2",
+      "description": "robust RAG can enhance LLM generation with faithfulness and few hallucinations in responses.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4408323770:e3",
+      "claim_id": "openalex:W4408323770:c3",
+      "description": "propose a challenge scale based on RAG failure points and control over external knowledge.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4408323770:m1",
+      "paper_id": "openalex:W4408323770",
+      "name": "Legal RAG Challenge Scale Proposal",
+      "description": "A survey and proposed challenge scale categorizing legal RAG system complexity based on failure points and external knowledge control.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4408323770:l1",
+      "paper_id": "openalex:W4408323770",
+      "text": "Legal RAG systems face operational failure points, ethical concerns, and privacy constraints related to external knowledge control.",
+      "normalized_category": "privacy-and-ethics",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4408323770:f1",
+      "paper_id": "openalex:W4408323770",
+      "text": "Research into methods for leveraging Retrieval-Augmented Generation efficiently and effectively in the legal field.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.096704Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

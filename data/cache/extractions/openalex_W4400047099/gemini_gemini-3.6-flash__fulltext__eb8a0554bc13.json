@@ -1,0 +1,178 @@
+{
+  "paper_id": "openalex:W4400047099",
+  "claims": [
+    {
+      "id": "openalex:W4400047099:c1",
+      "paper_id": "openalex:W4400047099",
+      "text": "Publicly available large language models hallucinate at least 58% of the time when asked direct, verifiable questions about randomly selected federal court cases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400047099:c2",
+      "paper_id": "openalex:W4400047099",
+      "text": "ChatGPT 4 achieves the lowest mean hallucination rate among tested models at 58% across reference-based legal tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400047099:c3",
+      "paper_id": "openalex:W4400047099",
+      "text": "Llama 2 exhibits a mean hallucination rate of 88% across reference-based legal tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400047099:c4",
+      "paper_id": "openalex:W4400047099",
+      "text": "Large language model legal hallucination rates decrease as one ascends the judicial hierarchy from district courts to appellate courts to the Supreme Court.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400047099:c5",
+      "paper_id": "openalex:W4400047099",
+      "text": "Large language model legal hallucination rates decline sharply for cases exceeding the 90th percentile of legal prominence.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400047099:c6",
+      "paper_id": "openalex:W4400047099",
+      "text": "Large language models frequently generate answers that uncritically accept false legal premises embedded in user prompts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400047099:c7",
+      "paper_id": "openalex:W4400047099",
+      "text": "Tested off-the-shelf large language models systematically overestimate their confidence relative to their actual rate of accuracy on legal queries.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400047099:e1",
+      "claim_id": "openalex:W4400047099:c1",
+      "description": "Empirical evaluation across reference-based legal queries shows mean hallucination rates ranging from 58% to 88% across GPT-4, GPT-3.5, PaLM 2, and Llama 2.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400047099:e2",
+      "claim_id": "openalex:W4400047099:c2",
+      "description": "Pooled reference-based task evaluation yields a 0.58 mean hallucination rate for GPT-4.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400047099:e3",
+      "claim_id": "openalex:W4400047099:c3",
+      "description": "Pooled reference-based task evaluation yields a 0.88 mean hallucination rate for Llama 2.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400047099:e4",
+      "claim_id": "openalex:W4400047099:c4",
+      "description": "Across all models, hallucination rates are lowest for SCOTUS cases, higher for USCOA cases, and highest for USDC cases.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400047099:e5",
+      "claim_id": "openalex:W4400047099:c5",
+      "description": "Analysis of SCOTUS cases by PageRank percentile score demonstrates a sharp decrease in mean hallucination rate around the 90th percentile score for GPT-4, GPT-3.5, and PaLM 2.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400047099:e6",
+      "claim_id": "openalex:W4400047099:c6",
+      "description": "On contra-factual tasks, GPT-4, GPT-3.5, and PaLM 2 hallucinated answers to false dissenting and false overruling premises instead of rejecting the premise.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400047099:e7",
+      "claim_id": "openalex:W4400047099:c7",
+      "description": "Expected calibration error (ECE) measurements across reference-based tasks demonstrate positive calibration error, indicating models overestimate confidence relative to actual non-hallucination rates.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400047099:m1",
+      "paper_id": "openalex:W4400047099",
+      "name": "Reference-based Legal Question Answering Evaluation",
+      "description": "An evaluation framework comparing deterministic model responses against tabular ground-truth legal metadata for factual legal tasks.",
+      "datasets": [
+        "Caselaw Access Project",
+        "Supreme Court Database",
+        "Appeals Courts Database Project",
+        "Library of Congress Overruled Decisions Table",
+        "Shepard's Citations"
+      ],
+      "conditions": [
+        "Deterministic sampling (temperature tau = 0)",
+        "Zero-shot prompting",
+        "Three-shot prompting"
+      ]
+    },
+    {
+      "id": "openalex:W4400047099:m2",
+      "paper_id": "openalex:W4400047099",
+      "name": "Reference-free Contradiction-based Hallucination Detection",
+      "description": "A method to establish a lower bound on hallucination rates by querying an LLM twice at temperature tau = 1 and using GPT-4 to identify logical self-contradictions.",
+      "datasets": [
+        "Caselaw Access Project",
+        "Supreme Court Database"
+      ],
+      "conditions": [
+        "Stochastic sampling (temperature tau = 1)",
+        "GPT-4 contradiction classification"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400047099:l1",
+      "paper_id": "openalex:W4400047099",
+      "text": "The reference-free contradiction detection methodology provides only a lower bound on hallucination rates because two responses can be logically consistent yet still factually incorrect.",
+      "normalized_category": "lower-bound-estimation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4400047099:l2",
+      "paper_id": "openalex:W4400047099",
+      "text": "The contradiction evaluation approach cannot identify repeated, consistent false statements generated across stochastic calls as hallucinations.",
+      "normalized_category": "false-negative-detection",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4400047099:l3",
+      "paper_id": "openalex:W4400047099",
+      "text": "Prior research on legal LLM hallucinations focused on closed-domain tasks like summarizing judicial opinions or synthesizing provided text rather than open-domain legal retrieval.",
+      "normalized_category": "prior-work-scope-restriction",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4400047099:f1",
+      "paper_id": "openalex:W4400047099",
+      "text": "Developing legal hallucination benchmarks to evaluate open-domain legal factual consistency across evolving large language models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4400047099:f2",
+      "paper_id": "openalex:W4400047099",
+      "text": "Exploring technical and normative trade-offs when optimizing legal models between prompt fidelity, corpus fidelity, and real-world factuality.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.079383Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

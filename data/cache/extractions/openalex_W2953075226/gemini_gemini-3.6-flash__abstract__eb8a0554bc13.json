@@ -1,0 +1,53 @@
+{
+  "paper_id": "openalex:W2953075226",
+  "claims": [
+    {
+      "id": "openalex:W2953075226:c1",
+      "paper_id": "openalex:W2953075226",
+      "text": "A simplified neural text matching architecture can maintain effective inter-sequence alignment by combining original point-wise features, previous aligned features, and contextual features.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953075226:c2",
+      "paper_id": "openalex:W2953075226",
+      "text": "The proposed text matching approach achieves an inference speed at least 6 times faster than similarly performing models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2953075226:e1",
+      "claim_id": "openalex:W2953075226:c1",
+      "description": "The authors propose to keep three key features available for inter-sequence alignment: original point-wise features, previous aligned features, and contextual features while simplifying all the remaining components.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2953075226:e2",
+      "claim_id": "openalex:W2953075226:c2",
+      "description": "The inference speed is at least 6 times faster compared with similarly performed ones.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2953075226:m1",
+      "paper_id": "openalex:W2953075226",
+      "name": "Simplified Rich Alignment Neural Text Matching Model",
+      "description": "A fast neural text matching model that retains point-wise, previously aligned, and contextual features for sequence alignment while simplifying other architectural components.",
+      "datasets": [],
+      "conditions": [
+        "natural language inference",
+        "paraphrase identification",
+        "answer selection"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.115798Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

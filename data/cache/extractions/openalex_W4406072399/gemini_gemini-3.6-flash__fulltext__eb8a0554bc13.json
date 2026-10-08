@@ -1,0 +1,171 @@
+{
+  "paper_id": "openalex:W4406072399",
+  "claims": [
+    {
+      "id": "openalex:W4406072399:c1",
+      "paper_id": "openalex:W4406072399",
+      "text": "LLM response uncertainty decreases as prompt informativeness increases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c2",
+      "paper_id": "openalex:W4406072399",
+      "text": "Reducible response uncertainty in LLMs corresponds to epistemic uncertainty in latent concepts.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c3",
+      "paper_id": "openalex:W4406072399",
+      "text": "LLM response uncertainty decreases as model quality increases.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c4",
+      "paper_id": "openalex:W4406072399",
+      "text": "Prompt token corruption monotonically decreases multiple-choice response accuracy across tested LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c5",
+      "paper_id": "openalex:W4406072399",
+      "text": "Prompt token corruption increases empirical response conditional entropy across tested LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c6",
+      "paper_id": "openalex:W4406072399",
+      "text": "Prompts containing multiple concepts or sub-tasks produce higher response uncertainty than single-concept prompts of equal token length.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406072399:c7",
+      "paper_id": "openalex:W4406072399",
+      "text": "Inserting semantically meaningful but task-irrelevant sentences into a prompt increases response uncertainty.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406072399:e1",
+      "claim_id": "openalex:W4406072399:c1",
+      "description": "Experiments using increasingly informative system prompts and longer prompt contexts demonstrated consistent reductions in total standard deviation of embedding vectors and sequence-level predictive entropy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406072399:e2",
+      "claim_id": "openalex:W4406072399:c2",
+      "description": "Theorem 1 proves that entropy H(Zy|Xs) strictly decreases as Xs represents more informative prompts, leaving irreducible semantic redundancy H(Y|Zy) and model imperfection E.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406072399:e3",
+      "claim_id": "openalex:W4406072399:c3",
+      "description": "Empirical evaluation on MedQA, ARC, and OpenBookQA showed that higher accuracy models (such as GPT-4 and Llama 3) exhibit lower empirical entropy than less accurate models at identical corruption levels.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406072399:e4",
+      "claim_id": "openalex:W4406072399:c4",
+      "description": "Testing 100 MCQs from MedQA and ARC with up to 100 sampled responses per question showed monotonic accuracy decreases as the fraction of masked context tokens increased.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406072399:e5",
+      "claim_id": "openalex:W4406072399:c5",
+      "description": "Empirical conditional entropy H(Y|X) increased monotonically for open-source and black-box LLMs as prompt token corruption fraction increased.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406072399:e6",
+      "claim_id": "openalex:W4406072399:c6",
+      "description": "In physical therapy intervention prompts constrained to ~100 words, total standard deviation increased progressively as the number of included sub-tasks increased from 1 to 5.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406072399:e7",
+      "claim_id": "openalex:W4406072399:c7",
+      "description": "Inserting an increasing number of arbitrary sentences sampled from the SQuAD dataset into clean prompts caused response uncertainty (total standard deviation) to increase compared to the clean baseline.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406072399:m1",
+      "paper_id": "openalex:W4406072399",
+      "name": "Prompt-Response Concept (PRC) Model",
+      "description": "A theoretical model representing LLMs as compositions of prompt-to-prompt-concept, concept-to-concept, and concept-to-response mapping functions to quantify prompt informativeness and response entropy.",
+      "datasets": [
+        "Medical Meadow MedQA",
+        "ARC",
+        "OpenBookQA",
+        "RACE",
+        "SQuAD"
+      ],
+      "conditions": [
+        "Fixed LLM hyperparameters (e.g. fixed temperature T=1)",
+        "Prompt token corruption via masking/replacement",
+        "Reinforcement learning mHealth grid-world simulation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406072399:l1",
+      "paper_id": "openalex:W4406072399",
+      "text": "The PRC model assumes an idealized version of LLMs that perfectly learn concept mapping functions, whereas real LLMs deviate when encountering exemplar ordering sensitivity or adversarial inputs.",
+      "normalized_category": "idealized-model-assumption",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4406072399:l2",
+      "paper_id": "openalex:W4406072399",
+      "text": "The proposed framework does not capture sensitivity to the order of exemplars in in-context learning.",
+      "normalized_category": "in-context-order-sensitivity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4406072399:l3",
+      "paper_id": "openalex:W4406072399",
+      "text": "The paper does not evaluate the appropriateness of substituting human subjects with LLMs in behavioral simulations.",
+      "normalized_category": "human-simulation-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4406072399:l4",
+      "paper_id": "openalex:W4406072399",
+      "text": "Controlling response variability solely by adjusting decoding hyperparameters like temperature can be detrimental to tasks requiring reproducibility or obscure user preferences.",
+      "normalized_category": "hyperparameter-control-limits",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4406072399:f1",
+      "paper_id": "openalex:W4406072399",
+      "text": "Refining the Prompt-Response Concept (PRC) model to incorporate adversarial behaviors and real-world LLM imperfections.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4406072399:f2",
+      "paper_id": "openalex:W4406072399",
+      "text": "Exploring the application of the PRC model in additional high-stakes decision-making domains requiring reliable LLM responses.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.642156Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

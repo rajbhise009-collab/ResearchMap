@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W4386561859",
+  "claims": [
+    {
+      "id": "openalex:W4386561859:c1",
+      "paper_id": "openalex:W4386561859",
+      "text": "Existing hallucination detection techniques in language assistants rely on parameter-based or complex chain-of-thought methods that suffer from interpretability issues.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c2",
+      "paper_id": "openalex:W4386561859",
+      "text": "Post-generation hallucination identification methods cannot prevent hallucination occurrence.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c3",
+      "paper_id": "openalex:W4386561859",
+      "text": "Post-generation hallucination identification methods suffer from inconsistent performance due to instruction format and model style influences.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c4",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY evaluates a model's familiarity with concepts present in the input instruction prior to response generation.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c5",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY withholds response generation when unfamiliar concepts are detected in the input instruction.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c6",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY demonstrates consistently superior performance compared to existing hallucination prevention techniques across four different large language models.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386561859:e1",
+      "claim_id": "openalex:W4386561859:c6",
+      "description": "Validation of SELF-FAMILIARITY across four different large language models demonstrated consistently superior performance compared to existing techniques.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386561859:m1",
+      "paper_id": "openalex:W4386561859",
+      "name": "SELF-FAMILIARITY",
+      "description": "A pre-detection self-evaluation technique that evaluates an LLM's familiarity with concepts in an input instruction and withholds response generation upon detecting unfamiliar concepts.",
+      "datasets": [],
+      "conditions": [
+        "evaluated across four large language models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386561859:l1",
+      "paper_id": "openalex:W4386561859",
+      "text": "Existing techniques for hallucination detection rely on intricate fuzzy CoT or parameter-based methods that suffer from interpretability issues.",
+      "normalized_category": "lack-of-interpretability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386561859:l2",
+      "paper_id": "openalex:W4386561859",
+      "text": "Methods that identify hallucinations post-generation cannot prevent their occurrence.",
+      "normalized_category": "late-prevention-failure",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386561859:l3",
+      "paper_id": "openalex:W4386561859",
+      "text": "Post-generation methods suffer from inconsistent performance due to the influence of instruction format and model style.",
+      "normalized_category": "inconsistent-performance",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:26:24.346817Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

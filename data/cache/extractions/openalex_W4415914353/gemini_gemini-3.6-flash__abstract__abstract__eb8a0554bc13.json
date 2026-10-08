@@ -1,0 +1,151 @@
+{
+  "paper_id": "openalex:W4415914353",
+  "claims": [
+    {
+      "id": "openalex:W4415914353:c1",
+      "paper_id": "openalex:W4415914353",
+      "text": "Large language models are systematically overconfident when constructing confidence intervals around their answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c2",
+      "paper_id": "openalex:W4415914353",
+      "text": "Across several modern LLMs, nominal 99% confidence intervals cover the true answer only 65% of the time on average on Fermi-style estimation questions.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c3",
+      "paper_id": "openalex:W4415914353",
+      "text": "Adjusting LLM confidence intervals with a conformal prediction based approach yields accurate 99% observed coverage.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c4",
+      "paper_id": "openalex:W4415914353",
+      "text": "Adjusting LLM confidence intervals with a conformal prediction based approach decreases the Winkler interval score by 54%.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c5",
+      "paper_id": "openalex:W4415914353",
+      "text": "Direct log-probability elicitation reduces overconfidence at high confidence levels.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c6",
+      "paper_id": "openalex:W4415914353",
+      "text": "Quantile adjustment methods reduce overconfidence at high confidence levels.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c7",
+      "paper_id": "openalex:W4415914353",
+      "text": "Under perception-tunnel theory, LLMs exhibit overconfidence because they act as if sampling from a truncated region of their inferred distribution, neglecting its tails.",
+      "type": "theoretical",
+      "confidence": 0.92,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4415914353:e1",
+      "claim_id": "openalex:W4415914353:c1",
+      "description": "We study how well LLMs construct confidence intervals around their own answers and find that they are systematically overconfident.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4415914353:e2",
+      "claim_id": "openalex:W4415914353:c2",
+      "description": "Across several modern models, nominal 99% intervals cover the true answer only 65% of the time on average.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415914353:e3",
+      "claim_id": "openalex:W4415914353:c3",
+      "description": "With a conformal prediction based approach that adjusts the intervals, we obtain accurate 99% observed coverage.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415914353:e4",
+      "claim_id": "openalex:W4415914353:c4",
+      "description": "With a conformal prediction based approach that adjusts the intervals... the Winkler interval score decreases by 54%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415914353:e5",
+      "claim_id": "openalex:W4415914353:c5",
+      "description": "We also propose direct log-probability elicitation and quantile adjustment methods, which further reduce overconfidence at high confidence levels.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4415914353:e6",
+      "claim_id": "openalex:W4415914353:c6",
+      "description": "We also propose direct log-probability elicitation and quantile adjustment methods, which further reduce overconfidence at high confidence levels.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4415914353:e7",
+      "claim_id": "openalex:W4415914353:c7",
+      "description": "Finally, we develop a perception-tunnel theory explaining why LLMs exhibit overconfidence: when reasoning under uncertainty, they act as if sampling from a truncated region of their inferred distribution, neglecting its tails.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4415914353:m1",
+      "paper_id": "openalex:W4415914353",
+      "name": "FermiEval",
+      "description": "A benchmark of Fermi-style estimation questions with a scoring rule for confidence interval coverage and sharpness.",
+      "datasets": [
+        "FermiEval"
+      ],
+      "conditions": [
+        "nominal 99% confidence intervals"
+      ]
+    },
+    {
+      "id": "openalex:W4415914353:m2",
+      "paper_id": "openalex:W4415914353",
+      "name": "Conformal prediction interval adjustment",
+      "description": "A conformal prediction approach that adjusts confidence intervals to improve empirical coverage and lower Winkler interval scores.",
+      "datasets": [
+        "FermiEval"
+      ],
+      "conditions": []
+    },
+    {
+      "id": "openalex:W4415914353:m3",
+      "paper_id": "openalex:W4415914353",
+      "name": "Direct log-probability elicitation and quantile adjustment",
+      "description": "Elicitation and adjustment techniques designed to reduce LLM overconfidence at high confidence levels.",
+      "datasets": [
+        "FermiEval"
+      ],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4415914353:l1",
+      "paper_id": "openalex:W4415914353",
+      "text": "Large language models struggle to correctly quantify uncertainty and produce severely miscalibrated confidence intervals (nominal 99% intervals cover true answers only 65% of the time).",
+      "normalized_category": "model-miscalibration",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:30:01.375326Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

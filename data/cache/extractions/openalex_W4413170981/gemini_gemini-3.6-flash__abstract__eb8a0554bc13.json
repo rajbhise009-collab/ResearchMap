@@ -1,0 +1,62 @@
+{
+  "paper_id": "openalex:W4413170981",
+  "claims": [
+    {
+      "id": "openalex:W4413170981:c1",
+      "paper_id": "openalex:W4413170981",
+      "text": "Pre-trained language models can be leveraged as embedding models combined with machine learning models to predict supply chain relationships within knowledge graphs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413170981:c2",
+      "paper_id": "openalex:W4413170981",
+      "text": "Integrating Generative AI techniques into supply chain link prediction captures nuanced semantic relationships between entities.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413170981:e1",
+      "claim_id": "openalex:W4413170981:c1",
+      "description": "In this work, we develop a new Generative Artificial Intelligence (GenAI) enhanced machine learning framework that leverages pre-trained language models as embedding models combined with machine learning models to predict supply chain relationships within knowledge graphs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4413170981:e2",
+      "claim_id": "openalex:W4413170981:c2",
+      "description": "By integrating Generative AI techniques, our approach captures the nuanced semantic relationships between entities, thereby improving supply chain visibility and facilitating more precise risk management.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413170981:m1",
+      "paper_id": "openalex:W4413170981",
+      "name": "GenAI-enhanced link prediction framework",
+      "description": "A machine learning framework leveraging pre-trained language models as embedding models combined with machine learning classifiers to predict supply chain relationships in knowledge graphs.",
+      "datasets": [
+        "real case study data"
+      ],
+      "conditions": [
+        "supply chain relationship prediction",
+        "knowledge graph link prediction"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413170981:l1",
+      "paper_id": "openalex:W4413170981",
+      "text": "Existing relationship prediction methods struggle to extract the context in which relationships are embedded, such as products being supplied or locations they are supplied from.",
+      "normalized_category": "lack-of-context-extraction",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.120625Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

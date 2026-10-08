@@ -1,0 +1,154 @@
+{
+  "paper_id": "openalex:W2543774860",
+  "claims": [
+    {
+      "id": "openalex:W2543774860:c1",
+      "paper_id": "openalex:W2543774860",
+      "text": "When recidivism prevalence differs between two groups, a test-fair risk score cannot achieve equal false positive and false negative rates across those groups simultaneously.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2543774860:c2",
+      "paper_id": "openalex:W2543774860",
+      "text": "In the Broward County dataset, the 2-year recidivism rate is 51% for Black defendants compared to 39% for White defendants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2543774860:c3",
+      "paper_id": "openalex:W2543774860",
+      "text": "In the Broward County dataset, the COMPAS false positive rate is 45% for Black defendants compared to 23% for White defendants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2543774860:c4",
+      "paper_id": "openalex:W2543774860",
+      "text": "In the Broward County dataset, the COMPAS false negative rate is 28% for Black defendants compared to 48% for White defendants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2543774860:c5",
+      "paper_id": "openalex:W2543774860",
+      "text": "Racial differences in false positive rates for COMPAS persist across prior criminal record count subgroups among defendants charged with misdemeanor offenses.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2543774860:c6",
+      "paper_id": "openalex:W2543774860",
+      "text": "Under a binary MinMax penalty policy, the expected difference in penalty among non-recidivating individuals across groups equals the sentence differential multiplied by the difference in group false positive rates.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2543774860:c7",
+      "paper_id": "openalex:W2543774860",
+      "text": "Under a binary MinMax penalty policy, the expected difference in penalty between groups is upper bounded by the total variation distance between the group score distributions.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2543774860:e1",
+      "claim_id": "openalex:W2543774860:c1",
+      "description": "Mathematical derivation showing FPR = (p / (1 - p)) * ((1 - PPV) / PPV) * (1 - FNR), establishing that equal PPV across groups with unequal prevalence p requires unequal FPR or FNR.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2543774860:e2",
+      "claim_id": "openalex:W2543774860:c2",
+      "description": "Empirical analysis of Broward County data showing recidivism rates of 51% for Black defendants versus 39% for White defendants.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2543774860:e3",
+      "claim_id": "openalex:W2543774860:c3",
+      "description": "Tabulated error rates from the ProPublica COMPAS dataset showing Black FPR at 45% and White FPR at 23%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2543774860:e4",
+      "claim_id": "openalex:W2543774860:c4",
+      "description": "Tabulated error rates from the ProPublica COMPAS dataset showing Black FNR at 28% and White FNR at 48%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2543774860:e5",
+      "claim_id": "openalex:W2543774860:c5",
+      "description": "Figure 2 plots false positive rates across prior count categories (0, 1-3, 4-6, 7-10, >10) for misdemeanor offenses, demonstrating persistent higher FPR for Black defendants.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2543774860:e6",
+      "claim_id": "openalex:W2543774860:c6",
+      "description": "Formal proof of Corollary 3.1 showing Delta = (tH - tL)(FPR_b - FPR_w) for non-recidivators.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2543774860:e7",
+      "claim_id": "openalex:W2543774860:c7",
+      "description": "Formal proof of Proposition 3.2 showing Delta <= (tH - tL) d_TV(f_b,y, f_w,y).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2543774860:m1",
+      "paper_id": "openalex:W2543774860",
+      "name": "Mathematical Fairness Criterion & Error Rate Decomposition Analysis",
+      "description": "Derivation of exact algebraic relationships between predictive calibration (PPV), group base prevalence, and classification error rates (FPR/FNR), combined with decision-theoretic penalty mapping (MinMax policy).",
+      "datasets": [
+        "Broward County COMPAS dataset"
+      ],
+      "conditions": [
+        "Coarsened binary score threshold (decile > 4)",
+        "Stratification by race (Black, White)",
+        "Subgroup stratification by prior convictions and offense severity"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2543774860:l1",
+      "paper_id": "openalex:W2543774860",
+      "text": "The formal analytical model focuses on a simplified binary risk score and binary penalty framework.",
+      "normalized_category": "binary-simplification",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2543774860:l2",
+      "paper_id": "openalex:W2543774860",
+      "text": "Balancing error rates at an aggregate level does not guarantee error rate balance within finer sub-populations or prior record categories.",
+      "normalized_category": "subgroup-granularity-lack",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2543774860:l3",
+      "paper_id": "openalex:W2543774860",
+      "text": "Standard psychometric test-fairness criteria ignore trade-offs with false positive and false negative error rate disparities when base rates differ.",
+      "normalized_category": "incompatible-fairness-definitions",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2543774860:f1",
+      "paper_id": "openalex:W2543774860",
+      "text": "Develop criteria to determine the appropriate subgroup granularity at which error rate balance should be enforced in recidivism risk assessment tools.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:04:53.906199Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

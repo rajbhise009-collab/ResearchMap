@@ -1,0 +1,165 @@
+{
+  "paper_id": "openalex:W2568755678",
+  "claims": [
+    {
+      "id": "openalex:W2568755678:c1",
+      "paper_id": "openalex:W2568755678",
+      "text": "A 10% reduction in sodium consumption over 10 years within each country is projected to avert approximately 5.8 million DALYs per year related to cardiovascular diseases worldwide.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c2",
+      "paper_id": "openalex:W2568755678",
+      "text": "A 10% national sodium reduction policy has a population weighted mean cost of I$1.13 per capita over a 10-year intervention period.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c3",
+      "paper_id": "openalex:W2568755678",
+      "text": "The population weighted mean cost effectiveness ratio of a 10% sodium reduction policy over 10 years is approximately I$204 per DALY saved.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c4",
+      "paper_id": "openalex:W2568755678",
+      "text": "Among nine world regions, estimated cost effectiveness of sodium reduction is best in South Asia at I$116 per DALY.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c5",
+      "paper_id": "openalex:W2568755678",
+      "text": "Among the world's 30 most populous countries, the cost effectiveness of sodium reduction is best in Uzbekistan at I$26.08 per DALY.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c6",
+      "paper_id": "openalex:W2568755678",
+      "text": "Among the world's 30 most populous countries, the cost effectiveness of sodium reduction in Myanmar is I$33.30 per DALY.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c7",
+      "paper_id": "openalex:W2568755678",
+      "text": "Cost effectiveness of sodium reduction is lowest in Australia/New Zealand at I$880 per DALY, or 0.02 times GDP per capita.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c8",
+      "paper_id": "openalex:W2568755678",
+      "text": "96.0% of the world's adult population lives in countries where a soft regulation sodium reduction policy has a cost effectiveness ratio under 0.1 times GDP per capita.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568755678:c9",
+      "paper_id": "openalex:W2568755678",
+      "text": "99.6% of the world's adult population lives in countries where a soft regulation sodium reduction policy has a cost effectiveness ratio under 1.0 times GDP per capita.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2568755678:e1",
+      "claim_id": "openalex:W2568755678:c1",
+      "description": "Worldwide, a 10% reduction in sodium consumption over 10 years within each country was projected to avert approximately 5.8 million DALYs/year related to cardiovascular diseases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e2",
+      "claim_id": "openalex:W2568755678:c2",
+      "description": "At a population weighted mean cost of I$1.13 per capita over the 10 year intervention.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e3",
+      "claim_id": "openalex:W2568755678:c3",
+      "description": "The population weighted mean cost effectiveness ratio was approximately I$204/DALY.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e4",
+      "claim_id": "openalex:W2568755678:c4",
+      "description": "Across nine world regions, estimated cost effectiveness of sodium reduction was best in South Asia (I$116/DALY).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e5",
+      "claim_id": "openalex:W2568755678:c5",
+      "description": "Across the world's 30 most populous countries, best in Uzbekistan (I$26.08/DALY).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e6",
+      "claim_id": "openalex:W2568755678:c6",
+      "description": "Across the world's 30 most populous countries, best in Uzbekistan (I$26.08/DALY) and Myanmar (I$33.30/DALY).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e7",
+      "claim_id": "openalex:W2568755678:c7",
+      "description": "Cost effectiveness was lowest in Australia/New Zealand (I$880/DALY, or 0.02×gross domestic product (GDP) per capita).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e8",
+      "claim_id": "openalex:W2568755678:c8",
+      "description": "Most (96.0%) of the world's adult population lived in countries in which this intervention had a cost effectiveness ratio <0.1×GDP per capita.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568755678:e9",
+      "claim_id": "openalex:W2568755678:c9",
+      "description": "And 99.6% in countries with a cost effectiveness ratio <1.0×GDP per capita.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2568755678:m1",
+      "paper_id": "openalex:W2568755678",
+      "name": "Global comparative risk assessment and cost-effectiveness modeling",
+      "description": "Global modeling study evaluating country-specific costs using the WHO NCD Costing Tool and impact on mortality and DALYs via comparative risk assessment across 183 nations over 10 years.",
+      "datasets": [
+        "Global sodium intakes (2010)",
+        "Blood pressure levels (2010)",
+        "Cardiovascular disease rates (2010)",
+        "WHO Noncommunicable Disease Costing Tool"
+      ],
+      "conditions": [
+        "10% sodium reduction over 10 years",
+        "30% sodium reduction over 10 years",
+        "0.5 g/day sodium reduction over 10 years",
+        "1.5 g/day sodium reduction over 10 years"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2568755678:l1",
+      "paper_id": "openalex:W2568755678",
+      "text": "The evaluation only modeled program costs without incorporating potential healthcare savings from prevented cardiovascular events.",
+      "normalized_category": "exclusion-of-healthcare-savings",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:39:17.746101Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

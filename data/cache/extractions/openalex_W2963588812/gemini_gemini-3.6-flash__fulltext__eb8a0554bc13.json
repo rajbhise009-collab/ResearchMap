@@ -1,0 +1,134 @@
+{
+  "paper_id": "openalex:W2963588812",
+  "claims": [
+    {
+      "id": "openalex:W2963588812:c1",
+      "paper_id": "openalex:W2963588812",
+      "text": "Participants consistently rate dividing loan money in proportion to loan repayment rates as more fair than splitting the money equally across all treatments in Study 1.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963588812:c2",
+      "paper_id": "openalex:W2963588812",
+      "text": "Participants in Study 1 rate ratio-based loan allocation as more fair than giving all money to the candidate with the higher payback rate when repayment rate differences are small or moderate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963588812:c3",
+      "paper_id": "openalex:W2963588812",
+      "text": "When candidate repayment rate differences are very small (5%), participants rate equal resource allocation as more fair than giving all resources to the higher-performing candidate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963588812:c4",
+      "paper_id": "openalex:W2963588812",
+      "text": "When repayment rate differences are large, participants view allocating all loan money to the higher payback candidate as more fair than equal splitting only if the higher payback candidate is Black.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2963588812:e1",
+      "claim_id": "openalex:W2963588812:c1",
+      "description": "Across all treatments in Study 1, participants consistently rated dividing $50,000 in proportion to loan repayment rates (the 'Ratio' decision) as more fair than splitting $50,000 equally.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963588812:e2",
+      "claim_id": "openalex:W2963588812:c2",
+      "description": "In Study 1, participants rated the 'Ratio' decision as significantly more fair than the 'All A' decision in Treatment 1 (55% vs 50%) and Treatment 2 (70% vs 40%).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963588812:e3",
+      "claim_id": "openalex:W2963588812:c3",
+      "description": "In Treatment 1 of Study 1 (55% vs 50%), participants rated the 'Equal' decision as significantly more fair than the 'All A' decision.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963588812:e4",
+      "claim_id": "openalex:W2963588812:c4",
+      "description": "In Treatments 3 and 4 of Study 2, participants rated 'All A' as more fair than 'Equal' when the candidate with the higher repayment rate was Black, but did not rate the two decisions differently when that candidate was White.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2963588812:m1",
+      "paper_id": "openalex:W2963588812",
+      "name": "Crowdsourced Online Between-Subjects Experiment",
+      "description": "Two online experiments using Mechanical Turk present participants with loan allocation scenarios between two candidates under varied payback rates and racial backgrounds to evaluate perceptions of three formal fairness definitions.",
+      "datasets": [
+        "Amazon Mechanical Turk (Study 1, N=200)",
+        "Amazon Mechanical Turk (Study 2, N=1800)"
+      ],
+      "conditions": [
+        "Treatment 1 (55% vs 50% repayment rate)",
+        "Treatment 2 (70% vs 40% repayment rate)",
+        "Treatment 3 (90% vs 10% repayment rate)",
+        "Treatment 4 (100% vs 20% repayment rate)",
+        "No sensitive information (Study 1)",
+        "With sensitive information / candidate race randomized (Study 2)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2963588812:l1",
+      "paper_id": "openalex:W2963588812",
+      "text": "Prior mathematical literature proves impossibility results showing that certain formal definitions of algorithmic fairness cannot coexist simultaneously.",
+      "normalized_category": "theoretical-incompatibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2963588812:l2",
+      "paper_id": "openalex:W2963588812",
+      "text": "The experimental design mapped formal fairness definitions originally formalized for single selections or indivisible goods into a scenario with a divisible loan resource.",
+      "normalized_category": "operationalization-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2963588812:l3",
+      "paper_id": "openalex:W2963588812",
+      "text": "Study participants were limited to residents of the United States recruited via Amazon Mechanical Turk.",
+      "normalized_category": "demographic-sample-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2963588812:f1",
+      "paper_id": "openalex:W2963588812",
+      "text": "Specify whether decisions are made by a human or an algorithm to test if psychological theories of mind influence fairness judgments.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2963588812:f2",
+      "paper_id": "openalex:W2963588812",
+      "text": "Investigate public perceptions of fairness in non-divisible decision contexts such as university admissions or bail decisions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2963588812:f3",
+      "paper_id": "openalex:W2963588812",
+      "text": "Examine why the availability of sensitive personal attributes like race influences fairness ratings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2963588812:f4",
+      "paper_id": "openalex:W2963588812",
+      "text": "Investigate how moral reasoning interventions influence people's fairness judgments in algorithmic fairness.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:54:11.585149Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,313 @@
+{
+  "paper_id": "openalex:W4408354096",
+  "claims": [
+    {
+      "id": "openalex:W4408354096:c1",
+      "paper_id": "openalex:W4408354096",
+      "text": "30 original studies met the scoping review inclusion criteria for clinical text summarization using large language models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c2",
+      "paper_id": "openalex:W4408354096",
+      "text": "All 30 included studies used observational retrospective designs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c3",
+      "paper_id": "openalex:W4408354096",
+      "text": "93% of included studies (n=28) used real patient data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c4",
+      "paper_id": "openalex:W4408354096",
+      "text": "57% of included studies (n=17) focused on summarizing radiology reports.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c5",
+      "paper_id": "openalex:W4408354096",
+      "text": "50% of included studies (n=15) involved data from intensive care units.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c6",
+      "paper_id": "openalex:W4408354096",
+      "text": "73% of included studies (n=19) used data from US-based institutions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c7",
+      "paper_id": "openalex:W4408354096",
+      "text": "87% of included studies (n=26) evaluated English-language clinical text.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c8",
+      "paper_id": "openalex:W4408354096",
+      "text": "50% of included studies (n=15) relied on the open-source Medical Information Mart for Intensive Care dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c9",
+      "paper_id": "openalex:W4408354096",
+      "text": "57% of included studies (n=17) used abstractive summarization approaches.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c10",
+      "paper_id": "openalex:W4408354096",
+      "text": "87% of included studies (n=26) evaluated open-source models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c11",
+      "paper_id": "openalex:W4408354096",
+      "text": "23% of included studies (n=7) evaluated proprietary models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c12",
+      "paper_id": "openalex:W4408354096",
+      "text": "External validation was conducted in 7% of included studies (n=2).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c13",
+      "paper_id": "openalex:W4408354096",
+      "text": "Failure analysis was conducted in 20% of included studies (n=6).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c14",
+      "paper_id": "openalex:W4408354096",
+      "text": "Patient safety risks analysis was performed in 3% of included studies (n=1).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c15",
+      "paper_id": "openalex:W4408354096",
+      "text": "None of the reviewed studies reported bias assessment.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c16",
+      "paper_id": "openalex:W4408354096",
+      "text": "53% of included studies (n=16) used both automated metrics and human evaluation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c17",
+      "paper_id": "openalex:W4408354096",
+      "text": "33% of included studies (n=10) relied solely on automated metrics for evaluation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c18",
+      "paper_id": "openalex:W4408354096",
+      "text": "13% of included studies (n=4) relied solely on human evaluation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4408354096:e1",
+      "claim_id": "openalex:W4408354096:c1",
+      "description": "A total of 30 original studies were included in the analysis.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e2",
+      "claim_id": "openalex:W4408354096:c2",
+      "description": "All used observational retrospective designs",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e3",
+      "claim_id": "openalex:W4408354096:c3",
+      "description": "mainly using real patient data (n=28, 93%).",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e4",
+      "claim_id": "openalex:W4408354096:c4",
+      "description": "often centered on summarizing radiology reports (n=17, 57%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e5",
+      "claim_id": "openalex:W4408354096:c5",
+      "description": "primarily involving data from the intensive care unit (n=15, 50%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e6",
+      "claim_id": "openalex:W4408354096:c6",
+      "description": "of US-based institutions (n=19, 73%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e7",
+      "claim_id": "openalex:W4408354096:c7",
+      "description": "in English (n=26, 87%).",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e8",
+      "claim_id": "openalex:W4408354096:c8",
+      "description": "frequent reliance on the open-source Medical Information Mart for Intensive Care dataset (n=15, 50%).",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e9",
+      "claim_id": "openalex:W4408354096:c9",
+      "description": "Summarization methodologies predominantly involved abstractive approaches (n=17, 57%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e10",
+      "claim_id": "openalex:W4408354096:c10",
+      "description": "Model selection involved both open-source models (n=26, 87%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e11",
+      "claim_id": "openalex:W4408354096:c11",
+      "description": "and proprietary models (n=7, 23%).",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e12",
+      "claim_id": "openalex:W4408354096:c12",
+      "description": "external validation (n=2, 7%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e13",
+      "claim_id": "openalex:W4408354096:c13",
+      "description": "failure analysis (n=6, 20%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e14",
+      "claim_id": "openalex:W4408354096:c14",
+      "description": "and patient safety risks analysis (n=1, 3%) were infrequent",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e15",
+      "claim_id": "openalex:W4408354096:c15",
+      "description": "none reported bias assessment.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e16",
+      "claim_id": "openalex:W4408354096:c16",
+      "description": "Most studies used both automated metrics and human evaluation (n=16, 53%)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e17",
+      "claim_id": "openalex:W4408354096:c17",
+      "description": "10 (33%) used only automated metrics",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4408354096:e18",
+      "claim_id": "openalex:W4408354096:c18",
+      "description": "and 4 (13%) only human evaluation.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4408354096:m1",
+      "paper_id": "openalex:W4408354096",
+      "name": "PRISMA-ScR Scoping Review",
+      "description": "A systematic scoping review following PRISMA-ScR guidelines searching five electronic databases for peer-reviewed literature published between January 1, 2019, and June 18, 2024.",
+      "datasets": [
+        "PubMed",
+        "Embase",
+        "Web of Science",
+        "IEEE Xplore",
+        "ACM Digital Library"
+      ],
+      "conditions": [
+        "Literature published between January 1, 2019, and June 18, 2024",
+        "Focused on clinical text summarization using transformer-based models",
+        "Free-text data",
+        "Original peer-reviewed research in English, French, Spanish, or German"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4408354096:l1",
+      "paper_id": "openalex:W4408354096",
+      "text": "Reporting on methodological details remained inconsistent across existing clinical text summarization studies.",
+      "normalized_category": "reporting-inconsistency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4408354096:l2",
+      "paper_id": "openalex:W4408354096",
+      "text": "Existing literature exhibits narrow research scope, centered primarily on English-language radiology reports from US-based intensive care units.",
+      "normalized_category": "narrow-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4408354096:l3",
+      "paper_id": "openalex:W4408354096",
+      "text": "External validation, failure analysis, patient safety risk analysis, and bias assessment are rare or completely absent in current literature.",
+      "normalized_category": "evaluation-gaps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4408354096:f1",
+      "paper_id": "openalex:W4408354096",
+      "text": "Develop more robust evaluation frameworks, broaden research scope beyond ICU radiology reports, and increase focus on real-world clinical applicability.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.120031Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

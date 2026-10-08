@@ -1,0 +1,122 @@
+{
+  "paper_id": "openalex:W2510508396",
+  "claims": [
+    {
+      "id": "openalex:W2510508396:c1",
+      "paper_id": "openalex:W2510508396",
+      "text": "Quantitative Input Influence (QII) measures capture the degree of causal influence of inputs on outputs of decision-making systems.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2510508396:c2",
+      "paper_id": "openalex:W2510508396",
+      "text": "Causal QII measures account for correlated inputs while measuring influence.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2510508396:c3",
+      "paper_id": "openalex:W2510508396",
+      "text": "QII measures quantify the joint influence of a set of inputs on decision outcomes.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2510508396:c4",
+      "paper_id": "openalex:W2510508396",
+      "text": "The average marginal influence of an individual input within a set is computed using aggregation measures such as the Shapley value.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2510508396:c5",
+      "paper_id": "openalex:W2510508396",
+      "text": "A number of QII-based transparency reports can be made differentially private with minimal noise addition.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2510508396:c6",
+      "paper_id": "openalex:W2510508396",
+      "text": "QII is efficiently approximable in the evaluated scenarios.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2510508396:e1",
+      "claim_id": "openalex:W2510508396:c1",
+      "description": "The authors introduce a family of Quantitative Input Influence (QII) measures that capture the degree of influence of inputs on outputs of systems.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2510508396:e2",
+      "claim_id": "openalex:W2510508396:c2",
+      "description": "Distinctively, our causal QII measures carefully account for correlated inputs while measuring influence.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2510508396:e3",
+      "claim_id": "openalex:W2510508396:c3",
+      "description": "The QII measures also quantify the joint influence of a set of inputs (e.g., age and income) on outcomes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2510508396:e4",
+      "claim_id": "openalex:W2510508396:c4",
+      "description": "The average marginal influence of the input is computed using principled aggregation measures, such as the Shapley value.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2510508396:e5",
+      "claim_id": "openalex:W2510508396:c5",
+      "description": "The authors prove that a number of useful transparency reports can be made differentially private with very little addition of noise.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2510508396:e6",
+      "claim_id": "openalex:W2510508396:c6",
+      "description": "The authors show that in the situations considered, QII is efficiently approximable.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2510508396:m1",
+      "paper_id": "openalex:W2510508396",
+      "name": "Quantitative Input Influence (QII)",
+      "description": "A causal framework that quantifies input influence on machine learning outputs, handling joint influence, marginal influence via Shapley values, and differential privacy.",
+      "datasets": [],
+      "conditions": [
+        "black box access to the learning system"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2510508396:l1",
+      "paper_id": "openalex:W2510508396",
+      "text": "Decision-making processes of algorithmic learning systems are often opaque, making it difficult to explain why a specific decision was made.",
+      "normalized_category": "algorithmic-opacity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2510508396:l2",
+      "paper_id": "openalex:W2510508396",
+      "text": "QII measures require black box access to the learning system to serve as a transparency mechanism.",
+      "normalized_category": "requires-black-box-access",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:11:37.188006Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

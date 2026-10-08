@@ -1,0 +1,176 @@
+{
+  "paper_id": "openalex:W4414925442",
+  "claims": [
+    {
+      "id": "openalex:W4414925442:c1",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves an accuracy of 0.7913 on the HealthQuestDB benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c2",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves a precision of 0.7541 on the HealthQuestDB benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c3",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves a recall score of 0.8304 on the HealthQuestDB benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c4",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves an F1 score of 0.7904 on the HealthQuestDB benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c5",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves a reduction in hallucination rates by over 40% compared to baseline models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c6",
+      "paper_id": "openalex:W4414925442",
+      "text": "Inter-annotator agreement on a 20% validation subset of HealthQuestDB achieved a Cohen's kappa score of 1.0.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4414925442:e1",
+      "claim_id": "openalex:W4414925442:c1",
+      "description": "Table 2 shows MEGA-RAG achieves an accuracy of 0.7913 on HealthQuestDB.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e2",
+      "claim_id": "openalex:W4414925442:c2",
+      "description": "Table 2 shows MEGA-RAG achieves a precision of 0.7541 on HealthQuestDB.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e3",
+      "claim_id": "openalex:W4414925442:c3",
+      "description": "Table 2 shows MEGA-RAG achieves a recall score of 0.8304 on HealthQuestDB.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e4",
+      "claim_id": "openalex:W4414925442:c4",
+      "description": "Table 2 shows MEGA-RAG achieves an F1 score of 0.7904 on HealthQuestDB.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e5",
+      "claim_id": "openalex:W4414925442:c5",
+      "description": "Results section states: 'achieving a reduction in hallucination rates by over 40%'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4414925442:e6",
+      "claim_id": "openalex:W4414925442:c6",
+      "description": "Section 4.2 states: 'The Cohen’s κ score was 1.0, reflecting perfect agreement and confirming the reliability of the annotation process.'",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4414925442:m1",
+      "paper_id": "openalex:W4414925442",
+      "name": "MEGA-RAG Framework",
+      "description": "A multi-stage retrieval-augmented generation framework combining multi-source evidence retrieval (dense FAISS, sparse BM25, and biomedical knowledge graphs), cross-encoder re-ranking, semantic-evidential alignment evaluation, and discrepancy-identified self-clarification.",
+      "datasets": [
+        "HealthQuestDB",
+        "PubMed",
+        "WHO IRIS database",
+        "CPubMed-KG"
+      ],
+      "conditions": [
+        "LLaMA3-70B backbone",
+        "FAISS dense retrieval",
+        "BM25 sparse retrieval",
+        "Knowledge graph triple retrieval",
+        "Temperature range 0.6 to 1.0 for prompt sampling"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4414925442:l1",
+      "paper_id": "openalex:W4414925442",
+      "text": "The multi-stage design involving multiple retrieval and LLM calls introduces additional computational overhead and latency compared to vanilla RAG.",
+      "normalized_category": "computational-overhead",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4414925442:l2",
+      "paper_id": "openalex:W4414925442",
+      "text": "The paper does not provide a detailed efficiency benchmark for MEGA-RAG.",
+      "normalized_category": "lack-of-efficiency-benchmarks",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4414925442:l3",
+      "paper_id": "openalex:W4414925442",
+      "text": "The DPAG module is currently optimized for binary questions rather than complex multi-choice or conditional responses.",
+      "normalized_category": "binary-question-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4414925442:l4",
+      "paper_id": "openalex:W4414925442",
+      "text": "Existing strategies such as domain-specific fine-tuning, adversarial training, and standard retrieval-augmented generation offer only partial solutions for hallucination mitigation in public health.",
+      "normalized_category": "prior-work-incomplete-hallucination-mitigation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4414925442:f1",
+      "paper_id": "openalex:W4414925442",
+      "text": "Expand evaluations to large-scale benchmarks such as MedQA and PubMedQA to further assess generalizability.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414925442:f2",
+      "paper_id": "openalex:W4414925442",
+      "text": "Integrate dynamic guideline ingestion to automatically incorporate updates from national and international health agencies.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414925442:f3",
+      "paper_id": "openalex:W4414925442",
+      "text": "Extend the framework to support multilingual and cross-regional deployments for infoveillance in low-resource or underserved communities.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414925442:f4",
+      "paper_id": "openalex:W4414925442",
+      "text": "Enhance the self-clarification module by incorporating clinician-in-the-loop feedback and real-time epidemiological data streams.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414925442:f5",
+      "paper_id": "openalex:W4414925442",
+      "text": "Explore on-device retrieval compression and lightweight transformer variants to ensure efficient deployment in resource-constrained environments.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.974159Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,170 @@
+{
+  "paper_id": "openalex:W7133217615",
+  "claims": [
+    {
+      "id": "openalex:W7133217615:c1",
+      "paper_id": "openalex:W7133217615",
+      "text": "Only 7% of reviewed medical text summarization studies conducted external validation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c2",
+      "paper_id": "openalex:W7133217615",
+      "text": "Only 3% of reviewed medical text summarization studies performed patient safety assessments.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c3",
+      "paper_id": "openalex:W7133217615",
+      "text": "Hallucination rates in medical text summarization using LLMs range from 1.47% to 61.6%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c4",
+      "paper_id": "openalex:W7133217615",
+      "text": "Existing reporting guidelines do not adequately address the specific requirements of medical text summarization tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c5",
+      "paper_id": "openalex:W7133217615",
+      "text": "The final MEDAI-LLM-SUMM checklist comprises 24 items organized into six sections.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c6",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses hallucination assessment requirements compared to six existing reporting standards.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c7",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses reference summary creation methodology compared to six existing reporting standards.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c8",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses LLM-as-judge validation protocols compared to six existing reporting standards.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c9",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses detailed pilot testing specifications compared to six existing reporting standards.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7133217615:e1",
+      "claim_id": "openalex:W7133217615:c1",
+      "description": "A comprehensive review revealed that only 7% of studies conducted external validation",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7133217615:e2",
+      "claim_id": "openalex:W7133217615:c2",
+      "description": "and 3% performed patient safety assessments",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7133217615:e3",
+      "claim_id": "openalex:W7133217615:c3",
+      "description": "with hallucination rates ranging from 1.47% to 61.6%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7133217615:e4",
+      "claim_id": "openalex:W7133217615:c4",
+      "description": "Existing reporting guidelines, including CONSORT-AI, SPIRIT-AI, TRIPOD-LLM, and DEAL, do not adequately address the specific requirements of medical text summarization tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7133217615:e5",
+      "claim_id": "openalex:W7133217615:c5",
+      "description": "The final MEDAI-LLM-SUMM checklist comprises 24 items organized into six sections",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7133217615:e6",
+      "claim_id": "openalex:W7133217615:c6",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses hallucination assessment requirements",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7133217615:e7",
+      "claim_id": "openalex:W7133217615:c7",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses reference summary creation methodology",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7133217615:e8",
+      "claim_id": "openalex:W7133217615:c8",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses LLM-as-judge validation protocols",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7133217615:e9",
+      "claim_id": "openalex:W7133217615:c9",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses detailed pilot testing specifications.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7133217615:m1",
+      "paper_id": "openalex:W7133217615",
+      "name": "Modified iterative consensus approach",
+      "description": "A three-stage process involving systematic literature review, initial checklist development, and consensus discussions among a multidisciplinary expert panel.",
+      "datasets": [
+        "PubMed",
+        "eLibrary"
+      ],
+      "conditions": [
+        "216 publications reviewed (2023-2025)",
+        "PRISMA guidelines",
+        "11 multidisciplinary specialists",
+        "unanimous agreement consensus criterion"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7133217615:l1",
+      "paper_id": "openalex:W7133217615",
+      "text": "Existing reporting guidelines, including CONSORT-AI, SPIRIT-AI, TRIPOD-LLM, and DEAL, do not adequately address the specific requirements of medical text summarization tasks.",
+      "normalized_category": "reporting-standard-gaps",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7133217615:l2",
+      "paper_id": "openalex:W7133217615",
+      "text": "Critical gaps persist in safety validation, evaluation frameworks, and clinical deployment readiness, with only 7% conducting external validation and 3% performing patient safety assessments.",
+      "normalized_category": "lack-of-safety-and-external-validation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T10:21:37.944917Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

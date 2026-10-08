@@ -1,0 +1,112 @@
+{
+  "paper_id": "openalex:W4404534210",
+  "claims": [
+    {
+      "id": "openalex:W4404534210:c1",
+      "paper_id": "openalex:W4404534210",
+      "text": "Large language models (LLMs) are prone to hallucination.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404534210:c2",
+      "paper_id": "openalex:W4404534210",
+      "text": "LLM hallucinations involve generating plausible yet nonfactual content.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404534210:c3",
+      "paper_id": "openalex:W4404534210",
+      "text": "LLM hallucinations raise significant concerns over the reliability of LLMs in real-world information retrieval (IR) systems.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404534210:c4",
+      "paper_id": "openalex:W4404534210",
+      "text": "LLM hallucinations have attracted intensive research to detect and mitigate such hallucinations.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404534210:c5",
+      "paper_id": "openalex:W4404534210",
+      "text": "LLM hallucinations present distinct challenges that diverge from prior task-specific models.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404534210:e1",
+      "claim_id": "openalex:W4404534210:c1",
+      "description": "LLMs are prone to hallucination",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4404534210:e2",
+      "claim_id": "openalex:W4404534210:c2",
+      "description": "generating plausible yet nonfactual content",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4404534210:e3",
+      "claim_id": "openalex:W4404534210:c3",
+      "description": "This phenomenon raises significant concerns over the reliability of LLMs in real-world information retrieval (IR) systems",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4404534210:e4",
+      "claim_id": "openalex:W4404534210:c4",
+      "description": "has attracted intensive research to detect and mitigate such hallucinations",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4404534210:e5",
+      "claim_id": "openalex:W4404534210:c5",
+      "description": "LLM hallucinations present distinct challenges that diverge from prior task-specific models.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404534210:m1",
+      "paper_id": "openalex:W4404534210",
+      "name": "Literature Survey and Taxonomy Construction",
+      "description": "The paper provides an innovative taxonomy of LLM hallucinations and a comprehensive overview of detection methods, benchmarks, and mitigation strategies.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404534210:l1",
+      "paper_id": "openalex:W4404534210",
+      "text": "Retrieval-augmented LLMs face limitations in combating hallucinations.",
+      "normalized_category": "rag-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4404534210:f1",
+      "paper_id": "openalex:W4404534210",
+      "text": "Hallucination in large vision-language models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404534210:f2",
+      "paper_id": "openalex:W4404534210",
+      "text": "Understanding of knowledge boundaries in LLM hallucinations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-24T05:21:10.027623Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

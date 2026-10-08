@@ -1,0 +1,95 @@
+{
+  "paper_id": "openalex:W1503681091",
+  "claims": [
+    {
+      "id": "openalex:W1503681091:c1",
+      "paper_id": "openalex:W1503681091",
+      "text": "Alcohol consumption is inversely associated with fatty liver in Japanese men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1503681091:c2",
+      "paper_id": "openalex:W1503681091",
+      "text": "Forty percent of male nondrinkers had fatty liver compared to 28 percent of male drinkers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1503681091:c3",
+      "paper_id": "openalex:W1503681091",
+      "text": "There is a significant inverse correlation between alcohol drinking frequency and the prevalence of fatty liver in Japanese men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1503681091:c4",
+      "paper_id": "openalex:W1503681091",
+      "text": "Sixteen percent of female nondrinkers had fatty liver compared to 10 percent of female drinkers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1503681091:c5",
+      "paper_id": "openalex:W1503681091",
+      "text": "Drinking less than 20 grams of alcohol on 1 to 3 days per week is associated with a lower prevalence of fatty liver in Japanese women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1503681091:e1",
+      "claim_id": "openalex:W1503681091:c1",
+      "description": "Alcohol consumption was inversely associated with fatty liver in men with an adjusted odds ratio of 0.54 (95% CI, 0.46-0.63).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1503681091:e2",
+      "claim_id": "openalex:W1503681091:c2",
+      "description": "In men, 40% of nondrinkers and 28% of drinkers had fatty liver.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1503681091:e3",
+      "claim_id": "openalex:W1503681091:c3",
+      "description": "The prevalence of fatty liver in men was 38% for 1-3 days/week, 29% for 4-6 days/week, and 24% for daily drinking, showing a significant inverse correlation (P < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1503681091:e4",
+      "claim_id": "openalex:W1503681091:c4",
+      "description": "In women, 16% of nondrinkers and 10% of drinkers had fatty liver.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1503681091:e5",
+      "claim_id": "openalex:W1503681091:c5",
+      "description": "In women, drinking less than 20 g on 1-3 days/week was associated with low prevalence of fatty liver with an adjusted odds ratio of 0.47 (95% CI, 0.23-0.96).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1503681091:m1",
+      "paper_id": "openalex:W1503681091",
+      "name": "Cross-sectional ultrasonographic health checkup study",
+      "description": "A cross-sectional study evaluating the association between self-reported drinking pattern and ultrasonographically diagnosed fatty liver.",
+      "datasets": [
+        "Japanese health checkup dataset (4957 men, 2155 women)"
+      ],
+      "conditions": [
+        "Exclusion of individuals with reported liver diseases"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:39:35.580553Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

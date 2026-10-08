@@ -1,0 +1,90 @@
+{
+  "paper_id": "openalex:W4402687942",
+  "claims": [
+    {
+      "id": "openalex:W4402687942:c1",
+      "paper_id": "openalex:W4402687942",
+      "text": "Retrieval-augmented generation adds the ability to upload files just-in-time to chatbots.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402687942:c2",
+      "paper_id": "openalex:W4402687942",
+      "text": "Chatbots are trained on large quantities of public data.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402687942:c3",
+      "paper_id": "openalex:W4402687942",
+      "text": "Just-in-time file uploads fill gaps in chatbot knowledge bases beyond public training data, including private data and recent events.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402687942:c4",
+      "paper_id": "openalex:W4402687942",
+      "text": "Filling knowledge base gaps via retrieval-augmented generation reduces hallucinations in chatbots.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402687942:e1",
+      "claim_id": "openalex:W4402687942:c1",
+      "description": "Retrieval-augmented generation (RAG) adds a simple but powerful feature to chatbots, the ability to upload files just-in-time.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402687942:e2",
+      "claim_id": "openalex:W4402687942:c2",
+      "description": "Chatbots are trained on large quantities of public data.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402687942:e3",
+      "claim_id": "openalex:W4402687942:c3",
+      "description": "The ability to upload files just-in-time makes it possible to fill in gaps in the knowledge base that go beyond the public training data such as private data and recent events.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402687942:e4",
+      "claim_id": "openalex:W4402687942:c4",
+      "description": "The ability to upload files just-in-time makes it possible to reduce hallucinations by filling in gaps in the knowledge base.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402687942:m1",
+      "paper_id": "openalex:W4402687942",
+      "name": "RAG Tutorial Implementations",
+      "description": "Demonstrates how to upload files and generate prompt responses using tools from OpenAI, LangChain, HuggingFace transformers, and VecML.",
+      "datasets": [],
+      "conditions": [
+        "OpenAI",
+        "LangChain",
+        "HuggingFace transformers",
+        "VecML"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402687942:l1",
+      "paper_id": "openalex:W4402687942",
+      "text": "Standard chatbots rely on public training data, leaving gaps in knowledge regarding private data and recent events.",
+      "normalized_category": "out-of-domain-knowledge-gaps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.123522Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

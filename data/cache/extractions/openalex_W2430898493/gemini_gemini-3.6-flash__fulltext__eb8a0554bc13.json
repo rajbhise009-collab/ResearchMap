@@ -1,0 +1,191 @@
+{
+  "paper_id": "openalex:W2430898493",
+  "claims": [
+    {
+      "id": "openalex:W2430898493:c1",
+      "paper_id": "openalex:W2430898493",
+      "text": "Higher adherence to an overall plant-based diet index (PDI) is inversely associated with type 2 diabetes incidence after adjusting for BMI and multivariable risk factors (pooled HR for extreme deciles 0.80, 95% CI 0.74-0.87, p trend < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2430898493:c2",
+      "paper_id": "openalex:W2430898493",
+      "text": "Higher adherence to a healthful plant-based diet index (hPDI) is inversely associated with type 2 diabetes incidence after adjusting for BMI and multivariable risk factors (pooled HR for extreme deciles 0.66, 95% CI 0.61-0.72, p trend < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2430898493:c3",
+      "paper_id": "openalex:W2430898493",
+      "text": "Higher adherence to an unhealthful plant-based diet index (uPDI) is positively associated with type 2 diabetes incidence after adjusting for BMI and multivariable risk factors (pooled HR for extreme deciles 1.16, 95% CI 1.08-1.25, p trend < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2430898493:c4",
+      "paper_id": "openalex:W2430898493",
+      "text": "Healthy plant foods are independently inversely associated with type 2 diabetes incidence when mutually adjusted for animal foods and less healthy plant foods.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2430898493:c5",
+      "paper_id": "openalex:W2430898493",
+      "text": "Animal foods are independently positively associated with type 2 diabetes incidence when mutually adjusted for healthy plant foods and less healthy plant foods.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2430898493:c6",
+      "paper_id": "openalex:W2430898493",
+      "text": "Less healthy plant foods are not independently associated with type 2 diabetes risk when mutually adjusted for healthy plant foods and animal foods.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2430898493:c7",
+      "paper_id": "openalex:W2430898493",
+      "text": "Modifying the healthful plant-based diet index to score fish/seafood intake positively maintains an inverse association with type 2 diabetes (pooled HR for extreme deciles 0.73, 95% CI 0.68-0.79, p trend < 0.001).",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2430898493:c8",
+      "paper_id": "openalex:W2430898493",
+      "text": "Modifying the healthful plant-based diet index to score yogurt intake positively maintains an inverse association with type 2 diabetes (pooled HR for extreme deciles 0.65, 95% CI 0.60-0.71, p trend < 0.001).",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2430898493:e1",
+      "claim_id": "openalex:W2430898493:c1",
+      "description": "The association of T2D with PDI was considerably attenuated when we additionally adjusted for body mass index (BMI) categories (HR 0.80, 95% CI 0.74-0.87, p trend < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2430898493:e2",
+      "claim_id": "openalex:W2430898493:c2",
+      "description": "while that with hPDI remained largely unchanged (HR 0.66, 95% CI 0.61-0.72, p trend < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2430898493:e3",
+      "claim_id": "openalex:W2430898493:c3",
+      "description": "uPDI was positively associated with T2D even after BMI adjustment (HR for extreme deciles 1.16, 95% CI 1.08-1.25, p trend < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2430898493:e4",
+      "claim_id": "openalex:W2430898493:c4",
+      "description": "Healthy plant foods were inversely associated with T2D, while animal foods were positively associated, and less healthy plant foods were not associated, with risk (S3 Fig; p trend <0.001 for healthy plant foods).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2430898493:e5",
+      "claim_id": "openalex:W2430898493:c5",
+      "description": "animal foods were positively associated with T2D risk (S3 Fig; p trend <0.001 for animal foods).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2430898493:e6",
+      "claim_id": "openalex:W2430898493:c6",
+      "description": "less healthy plant foods were not associated with risk (S3 Fig; p trend = 0.49 for less healthy plant foods).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2430898493:e7",
+      "claim_id": "openalex:W2430898493:c7",
+      "description": "When we modified hPDI to score fish/seafood intake positively, the pooled HRs were slightly attenuated (HR for extreme deciles 0.73, 95% CI 0.68-0.79; HR per 10-unit increase 0.87, 95% CI 0.85-0.89, p trend < 0.001).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2430898493:e8",
+      "claim_id": "openalex:W2430898493:c8",
+      "description": "Results for a modified hPDI with yogurt scored positively were not substantially different (HR for extreme deciles 0.65, 95% CI 0.60-0.71; HR per 10-unit increase 0.83, 95% CI 0.81-0.85, p trend < 0.001).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2430898493:m1",
+      "paper_id": "openalex:W2430898493",
+      "name": "Prospective cohort analysis with plant-based diet indices scoring",
+      "description": "Evaluated long-term dietary data collected every 2-4 years using semi-quantitative food frequency questionnaires to construct plant-based diet indices (PDI, hPDI, uPDI) scored by quintiles across 18 food groups, analyzing incident T2D risk via Cox proportional-hazards regression.",
+      "datasets": [
+        "Nurses' Health Study",
+        "Nurses' Health Study 2",
+        "Health Professionals Follow-Up Study"
+      ],
+      "conditions": [
+        "PDI scoring",
+        "hPDI scoring",
+        "uPDI scoring",
+        "Cox proportional-hazards regression adjusted for multivariable factors and BMI categories"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2430898493:l1",
+      "paper_id": "openalex:W2430898493",
+      "text": "Dietary data were self-reported using semi-quantitative food frequency questionnaires, introducing the possibility of measurement error.",
+      "normalized_category": "self-reported-dietary-assessment",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2430898493:l2",
+      "paper_id": "openalex:W2430898493",
+      "text": "Potential for residual or unmeasured confounding given the observational nature of the study design.",
+      "normalized_category": "observational-residual-confounding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2430898493:l3",
+      "paper_id": "openalex:W2430898493",
+      "text": "Assumptions about the healthfulness of different plant foods involve an element of subjectivity.",
+      "normalized_category": "subjective-food-classification",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2430898493:l4",
+      "paper_id": "openalex:W2430898493",
+      "text": "Prior studies defined plant-based diets strictly as vegetarian diets, categorizing participants dichotomously rather than assessing incremental graded dietary changes.",
+      "normalized_category": "dichotomous-dietary-categorization",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2430898493:l5",
+      "paper_id": "openalex:W2430898493",
+      "text": "Existing vegetarian diet studies lacked differentiation among plant foods with divergent health effects, such as refined grains and sugar-sweetened beverages.",
+      "normalized_category": "lack-of-plant-food-differentiation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2430898493:f1",
+      "paper_id": "openalex:W2430898493",
+      "text": "Replicate findings in other populations representing diverse countries and occupational groups before translating findings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2430898493:f2",
+      "paper_id": "openalex:W2430898493",
+      "text": "Replicate plant food healthfulness categorization and index findings in future studies.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:11:40.099440Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

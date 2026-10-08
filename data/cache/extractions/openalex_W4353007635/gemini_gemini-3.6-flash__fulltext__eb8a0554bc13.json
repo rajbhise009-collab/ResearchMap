@@ -1,0 +1,155 @@
+{
+  "paper_id": "openalex:W4353007635",
+  "claims": [
+    {
+      "id": "openalex:W4353007635:c1",
+      "paper_id": "openalex:W4353007635",
+      "text": "Combining opinion-based prompts, instruction-based prompts, and counterfactual demonstrations reduces the memorization ratio of text-davinci-003 from 35.2% to 3.0% on Natural Questions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4353007635:c2",
+      "paper_id": "openalex:W4353007635",
+      "text": "Counterfactual demonstrations improve model faithfulness in knowledge conflict scenarios compared to using original factual demonstrations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4353007635:c3",
+      "paper_id": "openalex:W4353007635",
+      "text": "Opinion-based prompting reframes context as a narrator's statement and asks for the narrator's opinion on questions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4353007635:c4",
+      "paper_id": "openalex:W4353007635",
+      "text": "Larger LLMs exhibit lower memorization ratios than smaller LLMs on filtered evaluation sets in knowledge conflict scenarios.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4353007635:c5",
+      "paper_id": "openalex:W4353007635",
+      "text": "On RealTime QA, combining opinion-based prompts and instruction-based prompts increases text-davinci-003 zero-shot accuracy on unanswerable questions from 30.6% to 87.8%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4353007635:e1",
+      "claim_id": "openalex:W4353007635:c1",
+      "description": "reducing the memorization ratio of text-davinci-003 from 35.2% to 3.0% on natural questions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4353007635:e2",
+      "claim_id": "openalex:W4353007635:c2",
+      "description": "adding counterfactual demonstrations to prompts improves faithfulness in the aspect of knowledge conflict, while using the original (factual) demonstrations leads to limited or negative effects.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4353007635:e3",
+      "claim_id": "openalex:W4353007635:c3",
+      "description": "Opinion-based prompts reframe the context as a narrator's statement and inquire about the narrator's opinions",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4353007635:e4",
+      "claim_id": "openalex:W4353007635:c4",
+      "description": "We observe that MR generally decreases with increased model size, showing that larger LLMs are better at updating memorized answers based on given contexts in knowledge conflicts.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4353007635:e5",
+      "claim_id": "openalex:W4353007635:c5",
+      "description": "the OPIN + INSTR prompt outperforms all others on GPT-3.5, both in the zero-shot and few-shot settings, surpassing base prompts by 57.2% and 16.3% in NoAns subset accuracy",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4353007635:m1",
+      "paper_id": "openalex:W4353007635",
+      "name": "Opinion-based Prompting",
+      "description": "Context is reframed as a narrator's statement and questions ask for the narrator's opinion to encourage context reliance.",
+      "datasets": [
+        "Natural Questions",
+        "Re-TACRED",
+        "RealTime QA"
+      ],
+      "conditions": [
+        "zero-shot",
+        "few-shot",
+        "knowledge conflict context",
+        "unanswerable context"
+      ]
+    },
+    {
+      "id": "openalex:W4353007635:m2",
+      "paper_id": "openalex:W4353007635",
+      "name": "Counterfactual Demonstration Retrieval",
+      "description": "Retrieves counterfactual instances using RoBERTa embeddings and cosine similarity (KATE) as in-context demonstrations.",
+      "datasets": [
+        "Natural Questions",
+        "Re-TACRED"
+      ],
+      "conditions": [
+        "few-shot in-context learning"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4353007635:l1",
+      "paper_id": "openalex:W4353007635",
+      "text": "The method assumes the provided context is reliable and does not address situations with erroneous or conflicting retrieved contexts.",
+      "normalized_category": "context-reliability-assumption",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4353007635:l2",
+      "paper_id": "openalex:W4353007635",
+      "text": "The evaluation focuses on single-step answer extraction rather than tasks requiring multi-hop reasoning over updated knowledge.",
+      "normalized_category": "single-step-reasoning-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4353007635:l3",
+      "paper_id": "openalex:W4353007635",
+      "text": "Zero-shot opinion-based prompting does not consistently improve selective prediction on smaller LLMs (0.3B-6.7B parameters).",
+      "normalized_category": "model-scale-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4353007635:l4",
+      "paper_id": "openalex:W4353007635",
+      "text": "LLMs may persist with memorized parametric facts and ignore provided contexts in retrieval-augmented setups.",
+      "normalized_category": "parametric-memory-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4353007635:f1",
+      "paper_id": "openalex:W4353007635",
+      "text": "Evaluating proposed context-faithful prompting methods on a broader range of NLP tasks including open-domain QA and summarization.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4353007635:f2",
+      "paper_id": "openalex:W4353007635",
+      "text": "Extending context-faithful prompting techniques to multilingual datasets and non-English tasks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.647756Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

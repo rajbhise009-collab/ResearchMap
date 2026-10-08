@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W4400582230",
+  "claims": [
+    {
+      "id": "openalex:W4400582230:c1",
+      "paper_id": "openalex:W4400582230",
+      "text": "ClarifyGPT elevates the Pass@1 performance of GPT-4 from 70.96% to 80.80% on the MBPP-sanitized benchmark in user evaluation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400582230:c2",
+      "paper_id": "openalex:W4400582230",
+      "text": "ClarifyGPT improves the average performance of GPT-4 across five benchmarks from 62.43% to 69.60% using simulated user responses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400582230:c3",
+      "paper_id": "openalex:W4400582230",
+      "text": "ClarifyGPT improves the average performance of ChatGPT across five benchmarks from 54.32% to 62.37% using simulated user responses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400582230:c4",
+      "paper_id": "openalex:W4400582230",
+      "text": "ClarifyGPT detects requirement ambiguity through a code consistency check.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400582230:e1",
+      "claim_id": "openalex:W4400582230:c1",
+      "description": "Ten participants evaluated ClarifyGPT, showing Pass@1 for GPT-4 increased from 70.96% to 80.80% on MBPP-sanitized.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400582230:e2",
+      "claim_id": "openalex:W4400582230:c2",
+      "description": "Automated simulation across five benchmarks showed GPT-4 average performance increased from 62.43% to 69.60%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400582230:e3",
+      "claim_id": "openalex:W4400582230:c3",
+      "description": "Automated simulation across five benchmarks showed ChatGPT average performance increased from 54.32% to 62.37%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400582230:e4",
+      "claim_id": "openalex:W4400582230:c4",
+      "description": "ClarifyGPT first detects whether a given requirement is ambiguous by performing a code consistency check.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400582230:m1",
+      "paper_id": "openalex:W4400582230",
+      "name": "ClarifyGPT Framework",
+      "description": "A framework that detects ambiguous code requirements via code consistency checks, generates clarifying questions, and refines requirements before generating code solutions.",
+      "datasets": [
+        "MBPP-sanitized",
+        "MBPP-ET"
+      ],
+      "conditions": [
+        "User study with 10 participants",
+        "Automated evaluation using high-fidelity user response simulation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400582230:l1",
+      "paper_id": "openalex:W4400582230",
+      "text": "Current LLMs directly generate programs according to unclear or ambiguous requirements without performing interactive clarification.",
+      "normalized_category": "lack-of-interactive-clarification",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.119258Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

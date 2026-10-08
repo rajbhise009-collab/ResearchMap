@@ -1,0 +1,77 @@
+{
+  "paper_id": "openalex:W4403791709",
+  "claims": [
+    {
+      "id": "openalex:W4403791709:c1",
+      "paper_id": "openalex:W4403791709",
+      "text": "Panoptic Sentiment Sextuple Extraction recognizes holder, target, aspect, opinion, sentiment, and rationale from multi-turn multi-party multimodal dialogue.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403791709:c2",
+      "paper_id": "openalex:W4403791709",
+      "text": "Sentiment Flipping Analysis detects dynamic sentiment transformation throughout conversation along with causal reasons.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403791709:c3",
+      "paper_id": "openalex:W4403791709",
+      "text": "PanoSent is a multimodal conversational aspect-based sentiment analysis benchmark dataset created with manual and automatic annotations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403791709:e1",
+      "claim_id": "openalex:W4403791709:c1",
+      "description": "The authors propose Panoptic Sentiment Sextuple Extraction, panoramically recognizing holder, target, aspect, opinion, sentiment, rationale from multi-turn multi-party multimodal dialogue.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4403791709:e2",
+      "claim_id": "openalex:W4403791709:c2",
+      "description": "The authors propose Sentiment Flipping Analysis, detecting the dynamic sentiment transformation throughout the conversation with the causal reasons.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4403791709:e3",
+      "claim_id": "openalex:W4403791709:c3",
+      "description": "The authors construct PanoSent, a dataset annotated both manually and automatically, featuring high quality, large scale, multimodality, multilingualism, multi-scenarios, and covering both implicit and explicit sentiment elements.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403791709:m1",
+      "paper_id": "openalex:W4403791709",
+      "name": "Chain-of-Sentiment reasoning framework with Sentica and paraphrase verification",
+      "description": "A multimodal reasoning framework utilizing a multimodal large language model named Sentica alongside a paraphrase-based verification mechanism.",
+      "datasets": [
+        "PanoSent"
+      ],
+      "conditions": [
+        "multimodal dialogue",
+        "multilingual",
+        "multi-party conversation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403791709:l1",
+      "paper_id": "openalex:W4403791709",
+      "text": "Existing Aspect-based Sentiment Analysis lacks integration of multimodality, conversation context, fine-granularity, changing sentiment dynamics, and cognitive causal rationales.",
+      "normalized_category": "lacks-multimodal-contextual-coverage",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.125059Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

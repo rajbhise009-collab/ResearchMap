@@ -1,0 +1,196 @@
+{
+  "paper_id": "openalex:W2753845591",
+  "claims": [
+    {
+      "id": "openalex:W2753845591:c1",
+      "paper_id": "openalex:W2753845591",
+      "text": "A predictor is counterfactually fair if its distribution over possible predictions for an individual remains unchanged under a counterfactual intervention on protected attributes.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c2",
+      "paper_id": "openalex:W2753845591",
+      "text": "A predictor is counterfactually fair if it is constructed as a function of non-descendants of the protected attributes in the causal graph.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c3",
+      "paper_id": "openalex:W2753845591",
+      "text": "Omitting protected attributes while regressing on observable features (fairness through unawareness) fails to achieve counterfactual fairness in Scenario 1.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c4",
+      "paper_id": "openalex:W2753845591",
+      "text": "In a linear model under Scenario 1, regressing the outcome on both protected attributes and observable features produces a counterfactually fair predictor.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c5",
+      "paper_id": "openalex:W2753845591",
+      "text": "The Full model using all features achieved an RMSE of 0.873 on the law school success dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c6",
+      "paper_id": "openalex:W2753845591",
+      "text": "The Unaware model achieved an RMSE of 0.894 on the law school success dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c7",
+      "paper_id": "openalex:W2753845591",
+      "text": "The Level 2 counterfactually fair model (FairK) achieved an RMSE of 0.929 on the law school success dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c8",
+      "paper_id": "openalex:W2753845591",
+      "text": "The Level 3 counterfactually fair model (Fair Add) achieved an RMSE of 0.918 on the law school success dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2753845591:c9",
+      "paper_id": "openalex:W2753845591",
+      "text": "Full and Unaware baseline predictors exhibit counterfactual unfairness when evaluating counterfactual race modifications on the law school dataset.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2753845591:e1",
+      "claim_id": "openalex:W2753845591:c1",
+      "description": "Definition 5 states that P(Y_hat_{A<-a}(U) = y | X=x, A=a) = P(Y_hat_{A<-a'}(U) = y | X=x, A=a) for all y and any value a' attainable by A.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2753845591:e2",
+      "claim_id": "openalex:W2753845591:c2",
+      "description": "Lemma 1 proves that any function of non-descendants of A in causal graph G is invariant with respect to counterfactual values of A.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2753845591:e3",
+      "claim_id": "openalex:W2753845591:c3",
+      "description": "Lemma 3 shows that least-squares regression of Y on X alone yields Y_hat_a(U) = lambda*(alpha*a + beta*U), which depends on a and is not counterfactually fair.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2753845591:e4",
+      "claim_id": "openalex:W2753845591:c4",
+      "description": "Lemma 3 demonstrates that regressing Y on both X and A yields Y_hat(X, a) = gamma*U, which cancels out changes in X caused by A.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2753845591:e5",
+      "claim_id": "openalex:W2753845591:c5",
+      "description": "Table 1 reports RMSE = 0.873 for the Full model evaluated on the law school test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2753845591:e6",
+      "claim_id": "openalex:W2753845591:c6",
+      "description": "Table 1 reports RMSE = 0.894 for the Unaware model evaluated on the law school test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2753845591:e7",
+      "claim_id": "openalex:W2753845591:c7",
+      "description": "Table 1 reports RMSE = 0.929 for FairK evaluated on the law school test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2753845591:e8",
+      "claim_id": "openalex:W2753845591:c8",
+      "description": "Table 1 reports RMSE = 0.918 for Fair Add evaluated on the law school test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2753845591:e9",
+      "claim_id": "openalex:W2753845591:c9",
+      "description": "Figure 2 density plots show divergence between original and race-swapped counterfactual predictions for Full and Unaware models.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2753845591:m1",
+      "paper_id": "openalex:W2753845591",
+      "name": "FAIR LEARNING Algorithm",
+      "description": "An MCMC-based algorithm that samples latent background variables U given observed attributes and optimizes model parameters restricted to non-descendants of protected attributes.",
+      "datasets": [
+        "LSAC National Longitudinal Bar Passage Study dataset",
+        "NYC Stop-and-Frisk dataset 2014"
+      ],
+      "conditions": [
+        "Logistic regression predictor",
+        "Stan probabilistic programming for Level 2 posterior inference of latent knowledge",
+        "Additive error model for Level 3 residual estimation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2753845591:l1",
+      "paper_id": "openalex:W2753845591",
+      "text": "Counterfactual assumptions such as structural equations are in general unfalsifiable even when interventional data for all variables is available.",
+      "normalized_category": "unfalsifiable-assumptions",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2753845591:l2",
+      "paper_id": "openalex:W2753845591",
+      "text": "Ensuring counterfactual fairness requires sacrificing a small amount of prediction accuracy compared to models that utilize unfair features.",
+      "normalized_category": "accuracy-fairness-tradeoff",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2753845591:l3",
+      "paper_id": "openalex:W2753845591",
+      "text": "Existing observational definitions of fairness (such as Demographic Parity and Equality of Opportunity) can be mutually incompatible and may inadvertently increase discrimination depending on protected attribute relationships.",
+      "normalized_category": "criterion-incompatibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2753845591:l4",
+      "paper_id": "openalex:W2753845591",
+      "text": "Fairness through unawareness fails because unobserved or remaining observable attributes can carry discriminatory information correlated with protected attributes.",
+      "normalized_category": "unawareness-bias-leakage",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2753845591:f1",
+      "paper_id": "openalex:W2753845591",
+      "text": "Investigating sensitivity analysis and robustness extensions focusing on approximate versions of counterfactual fairness.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2753845591:f2",
+      "paper_id": "openalex:W2753845591",
+      "text": "Developing quantitative causal models to evaluate the long-run macroeconomic impacts and feedback mechanisms of localized fair decision-making on societal biases.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:08:33.492216Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

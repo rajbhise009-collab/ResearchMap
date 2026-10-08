@@ -1,0 +1,60 @@
+{
+  "paper_id": "openalex:W4415974391",
+  "claims": [
+    {
+      "id": "openalex:W4415974391:c1",
+      "paper_id": "openalex:W4415974391",
+      "text": "The proposed hallucination detection method combines Jaccard similarity for entity-level alignment, natural language inference for semantic consistency, and normalized perplexity for fluency via a weighted average.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415974391:c2",
+      "paper_id": "openalex:W4415974391",
+      "text": "In the proposed detection framework, a higher metric score corresponds to a higher likelihood of hallucination in generated text.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4415974391:e1",
+      "claim_id": "openalex:W4415974391:c1",
+      "description": "The method combines three complementary components: Jaccard similarity for entity-level alignment, natural language inference for semantic consistency, and a normalized perplexity measure for fluency through a weighted average.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415974391:e2",
+      "claim_id": "openalex:W4415974391:c2",
+      "description": "The integration of these components through a weighted average produces a hallucination metric where a high value indicates a potential occurrence of hallucination.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4415974391:m1",
+      "paper_id": "openalex:W4415974391",
+      "name": "Weighted Multi-Component Hallucination Metric",
+      "description": "A metric-based hallucination detection approach integrating Jaccard similarity, natural language inference, and normalized perplexity via a weighted average.",
+      "datasets": [
+        "BEGIN",
+        "FEVER"
+      ],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4415974391:l1",
+      "paper_id": "openalex:W4415974391",
+      "text": "Large language models frequently generate content that is fabricated and factually incorrect.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.107107Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

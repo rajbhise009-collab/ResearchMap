@@ -1,0 +1,63 @@
+{
+  "paper_id": "openalex:W4403203873",
+  "claims": [
+    {
+      "id": "openalex:W4403203873:c1",
+      "paper_id": "openalex:W4403203873",
+      "text": "LLM-based multi-agent systems can be structured into a unified workflow framework consisting of five key components: profile, perception, self-action, mutual interaction, and evolution.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403203873:c2",
+      "paper_id": "openalex:W4403203873",
+      "text": "Problem-solving is a principal application area of LLM-based multi-agent systems.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403203873:c3",
+      "paper_id": "openalex:W4403203873",
+      "text": "World simulation is a principal application area of LLM-based multi-agent systems.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403203873:e1",
+      "claim_id": "openalex:W4403203873:c1",
+      "description": "The authors synthesize a general structure encompassing five key components: profile, perception, self-action, mutual interaction, and evolution.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403203873:e2",
+      "claim_id": "openalex:W4403203873:c2",
+      "description": "The paper illuminates the applications of LLM-based MAS in the principal area of problem-solving.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4403203873:e3",
+      "claim_id": "openalex:W4403203873:c3",
+      "description": "The paper illuminates the applications of LLM-based MAS in the principal area of world simulation.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403203873:m1",
+      "paper_id": "openalex:W4403203873",
+      "name": "Five-component LLM-MAS workflow taxonomy",
+      "description": "A systematic survey framework categorizing LLM-based multi-agent system workflows into profile, perception, self-action, mutual interaction, and evolution.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.113043Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,265 @@
+{
+  "paper_id": "openalex:W2127264189",
+  "claims": [
+    {
+      "id": "openalex:W2127264189:c1",
+      "paper_id": "openalex:W2127264189",
+      "text": "The macrobiotic Ma-Pi 2 diet produced a significantly greater reduction in fasting blood glucose compared to the standard recommended control diet in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c2",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet produced a significantly greater reduction in post-prandial blood glucose compared to the control diet in patients with type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c3",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet resulted in a significantly greater reduction in HbA1c levels compared to the control diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c4",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet achieved a significantly greater reduction in insulin resistance (HOMA-IR) compared to the control diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c5",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet resulted in a significantly greater reduction in total cholesterol compared to the control diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c6",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet resulted in a significantly greater reduction in LDL cholesterol compared to the control diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c7",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet resulted in a significantly greater reduction in LDL/HDL cholesterol ratio compared to the control diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c8",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet achieved a significantly greater reduction in BMI compared to the control diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c9",
+      "paper_id": "openalex:W2127264189",
+      "text": "The Ma-Pi 2 diet achieved a significantly greater reduction in body weight compared to the control diet.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c10",
+      "paper_id": "openalex:W2127264189",
+      "text": "The control diet group showed a significantly greater reduction in triglyceride levels compared to the Ma-Pi 2 diet group.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c11",
+      "paper_id": "openalex:W2127264189",
+      "text": "Neither diet produced a statistically significant change in HDL cholesterol levels from baseline.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c12",
+      "paper_id": "openalex:W2127264189",
+      "text": "A significantly higher proportion of patients achieved the target fasting blood glucose level of <= 110 mg/dl in the Ma-Pi 2 diet group compared with the control group.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c13",
+      "paper_id": "openalex:W2127264189",
+      "text": "A significantly higher proportion of patients achieved the target post-prandial blood glucose level of <= 140 mg/dl in the Ma-Pi 2 diet group compared with the control group.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127264189:c14",
+      "paper_id": "openalex:W2127264189",
+      "text": "A significantly greater reduction in oral hypoglycemic drug therapy was achieved in the Ma-Pi 2 group compared to the control group.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2127264189:e1",
+      "claim_id": "openalex:W2127264189:c1",
+      "description": "Adjusted linear quantile regression showed a significantly greater reduction in fasting blood glucose in the Ma-Pi 2 group compared to controls (regression coefficient 6.82, 95% CI: 1.79 to 13.46).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e2",
+      "claim_id": "openalex:W2127264189:c2",
+      "description": "Adjusted linear quantile regression showed a significantly greater reduction in post-prandial blood glucose in the Ma-Pi 2 group compared to controls (regression coefficient 11.48, 95% CI: 5.39 to 31.44).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e3",
+      "claim_id": "openalex:W2127264189:c3",
+      "description": "HbA1c reduction was significantly higher in the Ma-Pi 2 group than in the control group (regression coefficient 3.46, 95% CI: 1.28 to 5.46; p = 0.002).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e4",
+      "claim_id": "openalex:W2127264189:c4",
+      "description": "HOMA-IR reduction adjusted for covariates including wrist circumference was significantly higher in the Ma-Pi 2 group (regression coefficient 15.14, 95% CI: 3.65 to 37.51).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2127264189:e5",
+      "claim_id": "openalex:W2127264189:c5",
+      "description": "Total cholesterol reduction had a regression coefficient of 18.61 (95% CI: 11.52 to 22.63) favoring the Ma-Pi 2 diet (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e6",
+      "claim_id": "openalex:W2127264189:c6",
+      "description": "LDL cholesterol reduction had a regression coefficient of 26.40 (95% CI: 21.37 to 34.50) favoring the Ma-Pi 2 diet (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e7",
+      "claim_id": "openalex:W2127264189:c7",
+      "description": "LDL/HDL ratio reduction had a regression coefficient of 31.54 (95% CI: 20.63 to 36.52) favoring the Ma-Pi 2 diet (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e8",
+      "claim_id": "openalex:W2127264189:c8",
+      "description": "BMI reduction regression coefficient was 2.99 (95% CI: 2.42 to 3.59) in favor of the Ma-Pi 2 diet (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e9",
+      "claim_id": "openalex:W2127264189:c9",
+      "description": "Weight reduction regression coefficient was 3.04 (95% CI: 2.39 to 3.58) favoring the Ma-Pi 2 diet (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e10",
+      "claim_id": "openalex:W2127264189:c10",
+      "description": "Triglycerides percentage change regression coefficient was -11.04 (95% CI: -24.41 to -2.92), indicating greater reduction in the control diet group.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e11",
+      "claim_id": "openalex:W2127264189:c11",
+      "description": "HDL cholesterol change regression coefficient was 4.82 with 95% CI: -5.69 to 10.22 (including zero) and Wilcoxon rank-sum p = 0.283.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2127264189:e12",
+      "claim_id": "openalex:W2127264189:c12",
+      "description": "100% (19/19) of patients in the Ma-Pi 2 group vs 45% (9/20) in the control group achieved FBG target levels <= 110 mg/dl (difference 55.00%, 95% CI: 33.20 to 76.80).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e13",
+      "claim_id": "openalex:W2127264189:c13",
+      "description": "100% (11/11) of patients in the Ma-Pi 2 group vs 53.33% (8/15) in the control group achieved PPBG target levels <= 140 mg/dl (difference 46.67%, 95% CI: 21.42 to 71.91).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127264189:e14",
+      "claim_id": "openalex:W2127264189:c14",
+      "description": "5 out of 7 patients on OAD therapy suspended medication in the Ma-Pi 2 group compared to 1 patient in the control group (p = 0.018).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2127264189:m1",
+      "paper_id": "openalex:W2127264189",
+      "name": "Randomized open-label 21-day residential trial (MADIAB)",
+      "description": "A 21-day randomized, controlled, open-label trial comparing the macrobiotic Ma-Pi 2 diet with a control diet based on standard dietary recommendations for type 2 diabetes in a supervised residential setting.",
+      "datasets": [],
+      "conditions": [
+        "21-day residential hotel setting",
+        "Overweight or obese adults (BMI 27-45 kg/m2)",
+        "Type 2 diabetes mellitus diagnosis >= 1 year",
+        "Isocaloric energy restriction (1900 kcal/day for males, 1700 kcal/day for females)",
+        "Daily pedometer physical activity monitoring"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2127264189:l1",
+      "paper_id": "openalex:W2127264189",
+      "text": "The intervention was of short duration (21 days), limiting assessment of long-term sustainability and outcomes.",
+      "normalized_category": "short-study-duration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2127264189:l2",
+      "paper_id": "openalex:W2127264189",
+      "text": "The trial lacked participant and attending medical staff blinding due to distinct differences in diet ingredients, taste, and appearance.",
+      "normalized_category": "lack-of-blinding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2127264189:l3",
+      "paper_id": "openalex:W2127264189",
+      "text": "The trial had a relatively small sample size (51 participants completed the trial and were analyzed).",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2127264189:l4",
+      "paper_id": "openalex:W2127264189",
+      "text": "Standard recommended diets for type 2 diabetes frequently suffer from low adherence in real-life practice.",
+      "normalized_category": "low-dietary-adherence",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2127264189:f1",
+      "paper_id": "openalex:W2127264189",
+      "text": "Conduct longer-term follow-up studies to confirm the results and investigate patient acceptance, compliance, and cost in real-life practice.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2127264189:f2",
+      "paper_id": "openalex:W2127264189",
+      "text": "Elucidate potential underlying mechanisms of the Ma-Pi 2 diet, including changes in systemic inflammation, oxidative stress, and gut microbiota composition.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:40:33.007381Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

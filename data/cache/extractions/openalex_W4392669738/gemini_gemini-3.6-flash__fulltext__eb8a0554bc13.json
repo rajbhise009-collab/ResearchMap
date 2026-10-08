@@ -1,0 +1,211 @@
+{
+  "paper_id": "openalex:W4392669738",
+  "claims": [
+    {
+      "id": "openalex:W4392669738:c1",
+      "paper_id": "openalex:W4392669738",
+      "text": "Factored Verification achieves 76.2% accuracy on the summarization task of the HaluEval benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c2",
+      "paper_id": "openalex:W4392669738",
+      "text": "Factored Verification exceeds the previous chain-of-thought method on HaluEval summarization by 10 absolute percentage points using the same language model.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c3",
+      "paper_id": "openalex:W4392669738",
+      "text": "ChatGPT (16k) produces an estimated average of 0.62 hallucinations per summary when summarizing scientific paper abstracts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c4",
+      "paper_id": "openalex:W4392669738",
+      "text": "GPT-4 produces an estimated average of 0.84 hallucinations per summary when summarizing scientific paper abstracts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c5",
+      "paper_id": "openalex:W4392669738",
+      "text": "Claude 2 produces an estimated average of 1.55 hallucinations per summary when summarizing scientific paper abstracts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c6",
+      "paper_id": "openalex:W4392669738",
+      "text": "Self-correction using factored critiques reduces the estimated average number of hallucinations in ChatGPT summaries to 0.49.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c7",
+      "paper_id": "openalex:W4392669738",
+      "text": "Self-correction using factored critiques reduces the estimated average number of hallucinations in GPT-4 summaries to 0.46.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c8",
+      "paper_id": "openalex:W4392669738",
+      "text": "Self-correction using factored critiques reduces the estimated average number of hallucinations in Claude 2 summaries to 0.95.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c9",
+      "paper_id": "openalex:W4392669738",
+      "text": "Asking GPT-4 to directly self-correct without factored critiques increases the average number of detected hallucinations from 1.55 to 2.13.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4392669738:e1",
+      "claim_id": "openalex:W4392669738:c1",
+      "description": "Factored Verification set a new SotA on hallucination detection in the summarization task of HaluEval, achieving 76.2% accuracy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392669738:e2",
+      "claim_id": "openalex:W4392669738:c2",
+      "description": "Exceeded the previous chain-of-thought-based method by 10 absolute percentage points on HaluEval using GPT-4 (76.2% vs 61.2%/75.5%).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392669738:e3",
+      "claim_id": "openalex:W4392669738:c3",
+      "description": "Table 2 reports ChatGPT (3.5, 16k) adjusted hallucinations per summary as 0.62 before critique.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392669738:e4",
+      "claim_id": "openalex:W4392669738:c4",
+      "description": "Table 2 reports GPT-4 adjusted hallucinations per summary as 0.84 before critique.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392669738:e5",
+      "claim_id": "openalex:W4392669738:e5",
+      "description": "Table 2 reports Claude 2 adjusted hallucinations per summary as 1.55 before critique.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392669738:e6",
+      "claim_id": "openalex:W4392669738:c6",
+      "description": "Table 2 shows ChatGPT adjusted hallucinations per summary decreasing from 0.62 to 0.49 after factored revision.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392669738:e7",
+      "claim_id": "openalex:W4392669738:c7",
+      "description": "Table 2 shows GPT-4 adjusted hallucinations per summary decreasing from 0.84 to 0.46 after factored revision.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392669738:e8",
+      "claim_id": "openalex:W4392669738:c8",
+      "description": "Table 2 shows Claude 2 adjusted hallucinations per summary decreasing from 1.55 to 0.95 after factored revision.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392669738:e9",
+      "claim_id": "openalex:W4392669738:c9",
+      "description": "Section 4.1 baseline self-correction increased average detected hallucinations from 1.55 to 2.13.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4392669738:m1",
+      "paper_id": "openalex:W4392669738",
+      "name": "Factored Verification",
+      "description": "An automated method that decomposes summaries into atomic sentence-level claims, evaluates each claim against source text using LLM critiques, concatenates negative critiques into feedback, and prompts the LLM to revise the summary.",
+      "datasets": [
+        "HaluEval summarization dataset",
+        "Elicit scientific summarization dataset"
+      ],
+      "conditions": [
+        "GPT-4 base",
+        "ChatGPT (GPT-3.5 16k)",
+        "Claude 2",
+        "Claude Instant"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4392669738:l1",
+      "paper_id": "openalex:W4392669738",
+      "text": "Hallucination remains a largely unsolved problem for LLMs when applied to tasks requiring high factual accuracy such as scientific summarization.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4392669738:l2",
+      "paper_id": "openalex:W4392669738",
+      "text": "Direct LLM self-correction without external structure struggles and can increase errors across reasoning datasets.",
+      "normalized_category": "naive-self-correction-failure",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4392669738:l3",
+      "paper_id": "openalex:W4392669738",
+      "text": "Automated evaluation via Factored Verification exhibits false positives and false negatives, agreeing with human judgments on unsupported claims only 66% of the time.",
+      "normalized_category": "imperfect-automated-judge",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4392669738:l4",
+      "paper_id": "openalex:W4392669738",
+      "text": "Significant hallucination rates persist in state-of-the-art LLM summaries even after self-correcting with factored critiques (0.46 to 1.24 estimated hallucinations per summary).",
+      "normalized_category": "residual-hallucinations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4392669738:l5",
+      "paper_id": "openalex:W4392669738",
+      "text": "HaluEval evaluation was constrained to a random 5% training sample and 20% test sample due to compute cost limitations.",
+      "normalized_category": "evaluation-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4392669738:l6",
+      "paper_id": "openalex:W4392669738",
+      "text": "Non-expert human contractors showed low inter-rater agreement (38%) when attempting to evaluate unsupported academic claims.",
+      "normalized_category": "low-human-inter-rater-agreement",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4392669738:f1",
+      "paper_id": "openalex:W4392669738",
+      "text": "Finetune language models on model-revised summaries to incrementally bootstrap more accurate summaries.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4392669738:f2",
+      "paper_id": "openalex:W4392669738",
+      "text": "Extend factored critique approaches beyond hallucination reduction to richer tasks for scalable oversight.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.981956Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

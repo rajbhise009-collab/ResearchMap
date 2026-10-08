@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W4399073783",
+  "claims": [
+    {
+      "id": "openalex:W4399073783:c1",
+      "paper_id": "openalex:W4399073783",
+      "text": "The paper provides a systematic analysis of multi-modal multi-task visual understanding foundation models (MM-VUFMs) designed specifically for road scenes.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399073783:c2",
+      "paper_id": "openalex:W4399073783",
+      "text": "MM-VUFMs process and fuse data from diverse modalities in driving contexts.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399073783:c3",
+      "paper_id": "openalex:W4399073783",
+      "text": "MM-VUFMs simultaneously handle various driving-related visual tasks.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399073783:e1",
+      "claim_id": "openalex:W4399073783:c1",
+      "description": "The authors survey task-specific models, unified multi-modal models, unified multi-task models, and prompting techniques across learning paradigms for road scene understanding.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399073783:e2",
+      "claim_id": "openalex:W4399073783:c2",
+      "description": "The survey documents model architectures that combine multi-modal inputs for visual scene perception in intelligent vehicles.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4399073783:e3",
+      "claim_id": "openalex:W4399073783:c3",
+      "description": "The paper categorizes multi-task foundation models capable of performing concurrent driving-related vision objectives.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399073783:m1",
+      "paper_id": "openalex:W4399073783",
+      "name": "Systematic Literature Survey and Taxonomy",
+      "description": "A comprehensive analysis and taxonomy of multi-modal multi-task visual understanding foundation models across architectures, learning paradigms, and application challenges in road scenes.",
+      "datasets": [],
+      "conditions": [
+        "road scene visual understanding",
+        "intelligent vehicles"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399073783:l1",
+      "paper_id": "openalex:W4399073783",
+      "text": "Existing MM-VUFMs struggle with interpretability, deployment under low-resource conditions, and integration into closed-loop driving systems.",
+      "normalized_category": "interpretability-and-resource-constraints",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4399073783:f1",
+      "paper_id": "openalex:W4399073783",
+      "text": "Development of closed-loop driving systems integrated with MM-VUFMs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399073783:f2",
+      "paper_id": "openalex:W4399073783",
+      "text": "Enhancing the interpretability of MM-VUFMs in autonomous driving applications.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399073783:f3",
+      "paper_id": "openalex:W4399073783",
+      "text": "Optimizing MM-VUFMs for operation under low-resource conditions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399073783:f4",
+      "paper_id": "openalex:W4399073783",
+      "text": "Investigating embodied driving agents and world models in conjunction with foundation models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.124496Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

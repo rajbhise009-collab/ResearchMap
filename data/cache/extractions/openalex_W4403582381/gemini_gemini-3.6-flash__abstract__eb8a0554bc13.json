@@ -1,0 +1,110 @@
+{
+  "paper_id": "openalex:W4403582381",
+  "claims": [
+    {
+      "id": "openalex:W4403582381:c1",
+      "paper_id": "openalex:W4403582381",
+      "text": "Retrieve-and-Discriminate Prompter (RD-P) synchronizes knowledge retrieval and discrimination in a unified model using knowledge graphs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403582381:c2",
+      "paper_id": "openalex:W4403582381",
+      "text": "RD-P trains a prompter based on a pre-trained language model with shared parameters.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403582381:c3",
+      "paper_id": "openalex:W4403582381",
+      "text": "The retriever module in RD-P identifies relevant reasoning paths in the knowledge graph.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403582381:c4",
+      "paper_id": "openalex:W4403582381",
+      "text": "The discriminator module in RD-P evaluates reasoning path credibility through logical coverage calculation to instruct retrieval.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403582381:c5",
+      "paper_id": "openalex:W4403582381",
+      "text": "RD-P constructs prompts to guide LLMs in reasoning and answering questions using both retrieved and implicit knowledge.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403582381:e1",
+      "claim_id": "openalex:W4403582381:c1",
+      "description": "we propose a novel method called Retrieve-and-Discriminate Prompter (RD-P), which leverages knowledge graphs (KGs) for trustworthy RAG by synchronizing knowledge retrieval and discrimination in a unified model.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403582381:e2",
+      "claim_id": "openalex:W4403582381:c2",
+      "description": "we train a prompter based on a pre-trained language model with shared parameters.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403582381:e3",
+      "claim_id": "openalex:W4403582381:c3",
+      "description": "The retriever identifies relevant reasoning paths in the KG",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403582381:e4",
+      "claim_id": "openalex:W4403582381:c4",
+      "description": "the discriminator evaluates their credibility through 'logical coverage calculation' and in turn instructs the retrieval process.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403582381:e5",
+      "claim_id": "openalex:W4403582381:c5",
+      "description": "Prompts are then constructed to guide LLMs in reasoning and answering questions using both retrieved and implicit knowledge.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403582381:m1",
+      "paper_id": "openalex:W4403582381",
+      "name": "Retrieve-and-Discriminate Prompter (RD-P)",
+      "description": "A RAG methodology that uses shared-parameter PLM prompters with integrated retriever and discriminator modules over Knowledge Graphs.",
+      "datasets": [
+        "knowledge-intensive question answering (QA) tasks"
+      ],
+      "conditions": [
+        "complex KGQA tasks"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403582381:l1",
+      "paper_id": "openalex:W4403582381",
+      "text": "Large Language Models face challenges due to hallucination issues.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4403582381:l2",
+      "paper_id": "openalex:W4403582381",
+      "text": "The misuse of irrelevant external knowledge in current RAG solutions can be misleading.",
+      "normalized_category": "irrelevant-knowledge-retrieval",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.102413Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

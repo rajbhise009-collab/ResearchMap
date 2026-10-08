@@ -1,0 +1,221 @@
+{
+  "paper_id": "openalex:W2885659818",
+  "claims": [
+    {
+      "id": "openalex:W2885659818:c1",
+      "paper_id": "openalex:W2885659818",
+      "text": "Formal mathematical definitions of algorithmic fairness can be categorized into two broad families: those constraining decision effects on disparities, and those constraining protected characteristic effects on decisions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c2",
+      "paper_id": "openalex:W2885659818",
+      "text": "Both primary families of formal fairness definitions typically yield strongly Pareto dominated decision policies analytically and empirically.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c3",
+      "paper_id": "openalex:W2885659818",
+      "text": "In college admissions, enforcing popular formal fairness criteria simultaneously reduces student-body diversity and class academic preparation relative to explicitly tailored policies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c4",
+      "paper_id": "openalex:W2885659818",
+      "text": "For almost every collection of group-specific risk distributions with densities on [0, 1], no utility-maximizing threshold decision policy with optimal threshold 0 < t < 1 satisfies demographic parity or equalized false positive rates.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c5",
+      "paper_id": "openalex:W2885659818",
+      "text": "Excluding protected characteristics from risk models reduces aggregate and individual utility whenever those attributes carry predictive information.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c6",
+      "paper_id": "openalex:W2885659818",
+      "text": "Under path-specific fairness with full covariate conditioning, decision policies must be constant across individuals sharing non-causally affected covariates under mild structural conditions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c7",
+      "paper_id": "openalex:W2885659818",
+      "text": "For almost every U-fine joint distribution, any feasible policy satisfying counterfactual equalized odds, conditional principal fairness, or path-specific fairness is strongly Pareto dominated.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c8",
+      "paper_id": "openalex:W2885659818",
+      "text": "Race-blind risk models systematically underestimate diabetes risk for Asian patients relative to White patients with identical age and BMI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c9",
+      "paper_id": "openalex:W2885659818",
+      "text": "Gender-blind COMPAS scores overstate recidivism risk for women compared to men with equivalent criminal histories.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885659818:c10",
+      "paper_id": "openalex:W2885659818",
+      "text": "Equalizing false negative rates across racial groups in a complex medical care allocation algorithm reduces the number of enrolled high-cost Black patients from 205 to 113 compared to an unconstrained policy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2885659818:e1",
+      "claim_id": "openalex:W2885659818:c1",
+      "description": "The authors categorize definitions into (1) those that constrain the effects of decisions on disparities, and (2) those that constrain the effects of legally protected characteristics on decisions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e2",
+      "claim_id": "openalex:W2885659818:c2",
+      "description": "Analytical proofs in Section 3 and 4 show that both families of fairness definitions result in strongly Pareto dominated decision policies.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e3",
+      "claim_id": "openalex:W2885659818:c3",
+      "description": "Simulation of 1,000,000 college applicants shows constrained policies lie strictly below the Pareto frontier for student-body diversity and academic preparation.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e4",
+      "claim_id": "openalex:W2885659818:c4",
+      "description": "Theorem 9 proves that no utility-maximizing decision policy satisfies demographic parity or equalized false positive rates for almost every collection of risk distributions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e5",
+      "claim_id": "openalex:W2885659818:c5",
+      "description": "Theorem 10 demonstrates that when conditional variance Var(r(X) | ρ(X)) > ϵ > 0, no blind policy is utility-maximizing.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e6",
+      "claim_id": "openalex:W2885659818:c6",
+      "description": "Theorem 11 shows that for finite X under stated connectivity conditions, any Π-fair policy with W = X is constant across individuals sharing the same value of Z.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e7",
+      "claim_id": "openalex:W2885659818:c7",
+      "description": "Theorem 17 proves using measure-theoretic prevalence that policies satisfying counterfactual equalized odds, conditional principal fairness, or path-specific fairness are strongly Pareto dominated.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e8",
+      "claim_id": "openalex:W2885659818:c8",
+      "description": "NHANES data analysis shows applying a nominal 1.5% screening threshold under a race-blind model corresponds to a 1% threshold for White patients and a 3% threshold for Asian patients.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e9",
+      "claim_id": "openalex:W2885659818:c9",
+      "description": "Broward County COMPAS data shows women with a COMPAS score of 7 recidivate at ~55% while men with a score of 7 recidivate at ~65%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885659818:e10",
+      "claim_id": "openalex:W2885659818:c10",
+      "description": "In the health care management dataset of ~50,000 patients, equalizing false negative rates yields 113 enrolled Black patients and 747 high-cost patients, whereas the unconstrained optimal rule yields 205 Black patients and 758 high-cost patients.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2885659818:m1",
+      "paper_id": "openalex:W2885659818",
+      "name": "Prevalence and Measure-Theoretic Analysis of Fairness Constraints",
+      "description": "Mathematical framework using infinite-dimensional topology and prevalence theory (shy sets) to analyze whether decision policies subject to formal fairness criteria are Pareto dominated.",
+      "datasets": [],
+      "conditions": [
+        "U-fine probability distributions",
+        "Continuous and finite covariate spaces",
+        "Multiple-threshold decision rules"
+      ]
+    },
+    {
+      "id": "openalex:W2885659818:m2",
+      "paper_id": "openalex:W2885659818",
+      "name": "Empirical Policy Simulation and Calibration Analysis",
+      "description": "Simulation of constrained optimization problems via linear programming and subgroup calibration analyses on real-world decision datasets.",
+      "datasets": [
+        "National Health and Nutrition Examination Survey (NHANES 2011-2018)",
+        "Broward County COMPAS recidivism dataset",
+        "Academic hospital complex care management dataset (Obermeyer et al., 2019)"
+      ],
+      "conditions": [
+        "Binary decision rules with budget constraints b < 1 or b = 1",
+        "Subgroup risk estimation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2885659818:l1",
+      "paper_id": "openalex:W2885659818",
+      "text": "Proving Theorem 17 in the setting where utility u depends on both covariates x and outcome y remains an open problem due to underlying geometric complexity.",
+      "normalized_category": "theoretical-scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2885659818:l2",
+      "paper_id": "openalex:W2885659818",
+      "text": "The structural conditions of Theorem 11 do not hold when counterfactual interventions induce deterministic constant shifts in covariates.",
+      "normalized_category": "boundary-conditions",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2885659818:l3",
+      "paper_id": "openalex:W2885659818",
+      "text": "Formal axiomatic fairness definitions do not directly engage with substantive context-specific trade-offs or real-world policy consequences.",
+      "normalized_category": "methodological-flaw-in-prior-work",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2885659818:f1",
+      "paper_id": "openalex:W2885659818",
+      "text": "Extend Theorem 17 to general settings where utility u depends jointly on covariates x and outcome y.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2885659818:f2",
+      "paper_id": "openalex:W2885659818",
+      "text": "Develop statistical and computational methods for mitigating measurement error, label bias, and sample bias when estimating causal counterfactual outcomes for algorithmic resource allocation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2885659818:f3",
+      "paper_id": "openalex:W2885659818",
+      "text": "Design preference elicitation and aggregation mechanisms to resolve policy trade-offs when arbitrating between competing decision algorithms.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:13:55.086647Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

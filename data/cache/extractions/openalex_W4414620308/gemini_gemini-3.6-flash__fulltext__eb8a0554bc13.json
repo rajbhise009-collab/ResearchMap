@@ -1,0 +1,160 @@
+{
+  "paper_id": "openalex:W4414620308",
+  "claims": [
+    {
+      "id": "openalex:W4414620308:c1",
+      "paper_id": "openalex:W4414620308",
+      "text": "The proposed summarization method achieves a BLEU score of 30.4 on the CNN/Daily Mail dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c2",
+      "paper_id": "openalex:W4414620308",
+      "text": "The proposed summarization method achieves a METEOR score of 24.2 on the CNN/Daily Mail dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c3",
+      "paper_id": "openalex:W4414620308",
+      "text": "The proposed summarization method achieves a ROUGE-1 score of 50.3 on the CNN/Daily Mail dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c4",
+      "paper_id": "openalex:W4414620308",
+      "text": "The proposed summarization method achieves a ROUGE-2 score of 24.9 on the CNN/Daily Mail dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c5",
+      "paper_id": "openalex:W4414620308",
+      "text": "Learning rates in the range of 3e-05 to 5e-05 achieve the optimal balance of stability and convergence speed.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c6",
+      "paper_id": "openalex:W4414620308",
+      "text": "Top-k sampling thresholds between k=30 and k=50 yield the highest BLEU scores for generated summaries.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414620308:c7",
+      "paper_id": "openalex:W4414620308",
+      "text": "Training data noise ratios exceeding 0.3 cause a significant decline in summarization performance measured by BLEU and ROUGE-1.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4414620308:e1",
+      "claim_id": "openalex:W4414620308:c1",
+      "description": "Table 1 reports a BLEU score of 30.4 for the proposed method on the CNN/Daily Mail benchmark.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414620308:e2",
+      "claim_id": "openalex:W4414620308:c2",
+      "description": "Table 1 reports a METEOR score of 24.2 for the proposed method on the CNN/Daily Mail benchmark.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414620308:e3",
+      "claim_id": "openalex:W4414620308:c3",
+      "description": "Table 1 reports a ROUGE-1 score of 50.3 for the proposed method on the CNN/Daily Mail benchmark.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414620308:e4",
+      "claim_id": "openalex:W4414620308:c4",
+      "description": "Table 1 reports a ROUGE-2 score of 24.9 for the proposed method on the CNN/Daily Mail benchmark.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414620308:e5",
+      "claim_id": "openalex:W4414620308:c5",
+      "description": "Learning rate sensitivity experiments shown in Figure 2 demonstrate optimal stability and speed at 3e-05 to 5e-05.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4414620308:e6",
+      "claim_id": "openalex:W4414620308:c6",
+      "description": "Top-k threshold sensitivity experiments shown in Figure 3 demonstrate peak BLEU performance when k is set from 30 to 50.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4414620308:e7",
+      "claim_id": "openalex:W4414620308:c7",
+      "description": "Training data noise ratio experiments shown in Figure 4 demonstrate a significant decline in BLEU and ROUGE-1 when noise exceeds 0.3.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4414620308:m1",
+      "paper_id": "openalex:W4414620308",
+      "name": "Uncertainty-Quantified and Risk-Aware Conditional Generation Framework",
+      "description": "A conditional text generation framework integrating Bayesian parameter perturbation, predictive distribution entropy regularization, and context-sensitive risk-aware loss joint optimization.",
+      "datasets": [
+        "CNN/Daily Mail"
+      ],
+      "conditions": [
+        "Learning rate 3e-05 to 5e-05",
+        "Top-k sampling threshold k=30 to k=50",
+        "Training data noise ratio under 0.3"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4414620308:l1",
+      "paper_id": "openalex:W4414620308",
+      "text": "Model summarization quality degrades significantly when training data noise levels exceed 30%.",
+      "normalized_category": "noise-sensitivity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4414620308:l2",
+      "paper_id": "openalex:W4414620308",
+      "text": "Setting Top-k sampling thresholds to k=60 or higher introduces low-confidence words that dilute risk-related information and reduce BLEU scores.",
+      "normalized_category": "sampling-degradation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4414620308:l3",
+      "paper_id": "openalex:W4414620308",
+      "text": "Traditional language models typically produce point predictions lacking confidence or risk descriptions.",
+      "normalized_category": "lack-of-uncertainty-quantification",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4414620308:f1",
+      "paper_id": "openalex:W4414620308",
+      "text": "Improve the refinement of risk modeling while maintaining computational efficiency.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414620308:f2",
+      "paper_id": "openalex:W4414620308",
+      "text": "Develop a unified risk-aware framework capable of adapting across cross-domain and cross-modal data sources.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.646167Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

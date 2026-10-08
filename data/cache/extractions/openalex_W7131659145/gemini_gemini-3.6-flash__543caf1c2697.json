@@ -1,0 +1,113 @@
+{
+  "paper_id": "openalex:W7131659145",
+  "claims": [
+    {
+      "id": "openalex:W7131659145:c1",
+      "paper_id": "openalex:W7131659145",
+      "text": "Geometric overflow is a boundary-based formulation of hallucination in large language models.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c2",
+      "paper_id": "openalex:W7131659145",
+      "text": "Geometric overflow is defined as boundary violation under preserved internal coherence.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c3",
+      "paper_id": "openalex:W7131659145",
+      "text": "Geometric overflow isolates a failure regime in which outputs remain fluent, internally stable, and high-confidence while violating externally defined constraints.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c4",
+      "paper_id": "openalex:W7131659145",
+      "text": "Boundary tension measures proximity to admissibility boundaries.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c5",
+      "paper_id": "openalex:W7131659145",
+      "text": "Boundary tension enables detection of limit-state behavior preceding overflow.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c6",
+      "paper_id": "openalex:W7131659145",
+      "text": "Geometric overflow is orthogonal to model calibration.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c7",
+      "paper_id": "openalex:W7131659145",
+      "text": "Even perfectly calibrated models may exhibit coherent boundary crossing.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7131659145:c8",
+      "paper_id": "openalex:W7131659145",
+      "text": "Regime separability exists between overflow and collapse in a retrieval-augmented question answering setting.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7131659145:e1",
+      "claim_id": "openalex:W7131659145:c6",
+      "description": "Mathematical proof showing that overflow is orthogonal to calibration.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e2",
+      "claim_id": "openalex:W7131659145:c7",
+      "description": "Mathematical proof establishing that perfectly calibrated models can exhibit coherent boundary crossing.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7131659145:e3",
+      "claim_id": "openalex:W7131659145:c8",
+      "description": "A minimal empirical illustration in a retrieval-augmented question answering setting.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7131659145:m1",
+      "paper_id": "openalex:W7131659145",
+      "name": "Geometric Overflow and Boundary Tension Diagnostics",
+      "description": "A theoretical framework defining an admissible manifold induced by external constraints and using boundary tension to measure proximity to admissibility boundaries.",
+      "datasets": [],
+      "conditions": [
+        "retrieval-augmented question answering"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7131659145:l1",
+      "paper_id": "openalex:W7131659145",
+      "text": "Existing hallucination analysis perspectives (probabilistic miscalibration, distributional shift, generalization error) do not explicitly distinguish between internal representational instability and externally grounded boundary violations.",
+      "normalized_category": "lack-of-internal-vs-external-boundary-distinction",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-22T17:49:56.510447Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,68 @@
+{
+  "paper_id": "openalex:W2026310866",
+  "claims": [
+    {
+      "id": "openalex:W2026310866:c1",
+      "paper_id": "openalex:W2026310866",
+      "text": "Low-dose supplementation with EPA-DHA does not significantly reduce the rate of major cardiovascular events among post-myocardial infarction patients receiving state-of-the-art medical therapy.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2026310866:c2",
+      "paper_id": "openalex:W2026310866",
+      "text": "Low-dose supplementation with ALA does not significantly reduce the rate of major cardiovascular events among post-myocardial infarction patients receiving state-of-the-art medical therapy.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2026310866:c3",
+      "paper_id": "openalex:W2026310866",
+      "text": "In a prespecified subgroup of women, ALA supplementation was associated with a reduction in major cardiovascular events that approached statistical significance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2026310866:e1",
+      "claim_id": "openalex:W2026310866:c1",
+      "description": "Hazard ratio for major cardiovascular events with EPA-DHA was 1.01 (95% CI, 0.87 to 1.17; P=0.93).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2026310866:e2",
+      "claim_id": "openalex:W2026310866:c2",
+      "description": "Hazard ratio for major cardiovascular events with ALA was 0.91 (95% CI, 0.78 to 1.05; P=0.20).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2026310866:e3",
+      "claim_id": "openalex:W2026310866:c3",
+      "description": "In the prespecified subgroup of women, ALA compared with placebo and EPA-DHA alone yielded a hazard ratio of 0.73 (95% CI, 0.51 to 1.03; P=0.07).",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2026310866:m1",
+      "paper_id": "openalex:W2026310866",
+      "name": "Multicenter, double-blind, placebo-controlled randomized trial",
+      "description": "A 40-month randomized controlled trial testing the effect of trial margarines supplemented with EPA-DHA, ALA, both, or placebo on primary cardiovascular events.",
+      "datasets": [],
+      "conditions": [
+        "4837 patients aged 60 through 80 years with prior myocardial infarction",
+        "Concomitant state-of-the-art antihypertensive, antithrombotic, and lipid-modifying therapy",
+        "40 months duration of supplementation via daily margarine intake",
+        "Targeted daily intake: 400 mg EPA-DHA, 2 g ALA, or placebo"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:47:57.637803Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

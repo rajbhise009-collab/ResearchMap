@@ -1,0 +1,76 @@
+{
+  "paper_id": "openalex:W7152489278",
+  "claims": [
+    {
+      "id": "openalex:W7152489278:c1",
+      "paper_id": "openalex:W7152489278",
+      "text": "Knowledge Graph Retrieval-Augmented Generation incorporates structured knowledge from knowledge graphs to enable LLMs to perform reasoning.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7152489278:c2",
+      "paper_id": "openalex:W7152489278",
+      "text": "Ca2KG integrates counterfactual prompting to expose retrieval-dependent uncertainties in knowledge quality and reasoning reliability.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7152489278:c3",
+      "paper_id": "openalex:W7152489278",
+      "text": "Ca2KG uses a panel-based re-scoring mechanism to stabilise predictions across interventions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7152489278:e1",
+      "claim_id": "openalex:W7152489278:c1",
+      "description": "Knowledge Graph Retrieval-Augmented Generation (KG-RAG) extends the RAG paradigm by incorporating structured knowledge from knowledge graphs, enabling Large Language Models (LLMs) to perform more precise and explainable reasoning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7152489278:e2",
+      "claim_id": "openalex:W7152489278:c2",
+      "description": "Ca2KG integrates counterfactual prompting, which exposes retrieval-dependent uncertainties in knowledge quality and reasoning reliability...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7152489278:e3",
+      "claim_id": "openalex:W7152489278:c3",
+      "description": "...with a panel-based re-scoring mechanism that stabilises predictions across interventions.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7152489278:m1",
+      "paper_id": "openalex:W7152489278",
+      "name": "Ca2KG",
+      "description": "A causality-aware calibration framework for KG-RAG that combines counterfactual prompting with a panel-based re-scoring mechanism.",
+      "datasets": [
+        "complex QA datasets"
+      ],
+      "conditions": [
+        "counterfactual prompting",
+        "panel-based re-scoring mechanism"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7152489278:l1",
+      "paper_id": "openalex:W7152489278",
+      "text": "Existing KG-RAG models are often severely overconfident, producing high-confidence predictions even when retrieved sub-graphs are incomplete or unreliable.",
+      "normalized_category": "overconfidence-under-incomplete-retrieval",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.106029Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

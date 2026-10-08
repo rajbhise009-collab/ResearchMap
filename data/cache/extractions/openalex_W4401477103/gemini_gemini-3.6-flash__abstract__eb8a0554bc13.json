@@ -1,0 +1,111 @@
+{
+  "paper_id": "openalex:W4401477103",
+  "claims": [
+    {
+      "id": "openalex:W4401477103:c1",
+      "paper_id": "openalex:W4401477103",
+      "text": "Open-source LLMs achieved up to 40% higher accuracy for explicitly mentioned SDoH compared to a baseline pattern-matching model.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c2",
+      "paper_id": "openalex:W4401477103",
+      "text": "openchat_3.5 surpassed the baseline pattern-matching model in overall accuracy across all nine evaluated SDoH aspects.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c3",
+      "paper_id": "openalex:W4401477103",
+      "text": "Prompt engineering in the refined LLM extraction pipeline reduced hallucinations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c4",
+      "paper_id": "openalex:W4401477103",
+      "text": "Prompt engineering in the refined LLM extraction pipeline improved extraction accuracy.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c5",
+      "paper_id": "openalex:W4401477103",
+      "text": "Two human reviewers achieved 93% inter-annotator agreement on manual SDoH labels.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401477103:e1",
+      "claim_id": "openalex:W4401477103:c1",
+      "description": "LLMs outperformed the baseline pattern-matching approach, particularly for explicitly mentioned SDoH, achieving up to 40% higher Accuracy mentioned.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401477103:e2",
+      "claim_id": "openalex:W4401477103:c2",
+      "description": "openchat_3.5 was the best-performing model, surpassing the baseline in overall accuracy across all nine SDoH aspects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401477103:e3",
+      "claim_id": "openalex:W4401477103:c3",
+      "description": "The refined pipeline with prompt engineering reduced hallucinations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401477103:e4",
+      "claim_id": "openalex:W4401477103:c4",
+      "description": "The refined pipeline with prompt engineering improved accuracy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401477103:e5",
+      "claim_id": "openalex:W4401477103:c5",
+      "description": "Two human reviewers provided the manual labels, achieving 93% inter-annotator agreement.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401477103:m1",
+      "paper_id": "openalex:W4401477103",
+      "name": "Zero-shot open-source LLM extraction with prompt engineering",
+      "description": "Evaluation of eight open-source LLMs without fine-tuning against a baseline pattern-matching model to extract nine SDoH aspects from clinical EHR notes.",
+      "datasets": [
+        "Mass General Brigham (MGB) EHR dataset"
+      ],
+      "conditions": [
+        "out-of-the-box LLM deployment without fine-tuning",
+        "prompt engineering"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401477103:l1",
+      "paper_id": "openalex:W4401477103",
+      "text": "Information recorded as free-text notes in EHRs is difficult to reliably extract at scale, limiting utility in research.",
+      "normalized_category": "extraction-scalability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4401477103:f1",
+      "paper_id": "openalex:W4401477103",
+      "text": "Further refinement and domain-specific training of open-source LLMs to enhance utility in clinical research and predictive analytics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.103873Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

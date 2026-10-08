@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W4407757890",
+  "claims": [
+    {
+      "id": "openalex:W4407757890:c1",
+      "paper_id": "openalex:W4407757890",
+      "text": "The LLAMA3 model achieved an accuracy of 0.84 for binary classification of coded interview segments.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407757890:c2",
+      "paper_id": "openalex:W4407757890",
+      "text": "The LLAMA3 model achieved an accuracy of 0.67 for independent classification using a sliding window approach.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407757890:c3",
+      "paper_id": "openalex:W4407757890",
+      "text": "LLM performance in coding interview data demonstrated large variability across different qualitative codes.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4407757890:c4",
+      "paper_id": "openalex:W4407757890",
+      "text": "Around 80% of LLM-generated summaries were rated as 'adequate' or 'good' by two independent researchers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4407757890:e1",
+      "claim_id": "openalex:W4407757890:c1",
+      "description": "the LLM achieved substantial agreement with the researchers for the binary classification (accuracy: 0.84)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4407757890:e2",
+      "claim_id": "openalex:W4407757890:c2",
+      "description": "and the sliding window task (accuracy: 0.67)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4407757890:e3",
+      "claim_id": "openalex:W4407757890:c3",
+      "description": "The performance had large variability across codes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4407757890:e4",
+      "claim_id": "openalex:W4407757890:c4",
+      "description": "around 80% of the summaries being rated independently by two researchers as 'adequate' or 'good.'",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4407757890:m1",
+      "paper_id": "openalex:W4407757890",
+      "name": "LLM-based Deductive Coding and Summarization",
+      "description": "Evaluation of a server-installed LLAMA3 model performing binary classification, sliding window classification, and summarization on psychosocial autopsy interview data using Cohen's Kappa and the Constant Comparative Method.",
+      "datasets": [
+        "38 semi-structured interviews with individuals bereaved by suicide"
+      ],
+      "conditions": [
+        "binary classification of coded segments",
+        "independent classification using a sliding window approach",
+        "summarization of coded data"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4407757890:l1",
+      "paper_id": "openalex:W4407757890",
+      "text": "Qualitative research is often prone to bias and is time- and cost-intensive.",
+      "normalized_category": "qualitative-research-bias-and-cost",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4407757890:l2",
+      "paper_id": "openalex:W4407757890",
+      "text": "Model performance had large variability across different codes.",
+      "normalized_category": "performance-variability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4407757890:l3",
+      "paper_id": "openalex:W4407757890",
+      "text": "LLM summaries exhibited issues with unsolicited elaboration and hallucination.",
+      "normalized_category": "llm-hallucination-and-elaboration",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4407757890:f1",
+      "paper_id": "openalex:W4407757890",
+      "text": "Replicate the findings across different qualitative contexts.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4407757890:f2",
+      "paper_id": "openalex:W4407757890",
+      "text": "Evaluate language models with a larger context size.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.101931Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W4401499957",
+  "claims": [
+    {
+      "id": "openalex:W4401499957:c1",
+      "paper_id": "openalex:W4401499957",
+      "text": "Important elements of prompt engineering for applied linguistics include persona, audience, contexts, instruction, and output specification.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401499957:c2",
+      "paper_id": "openalex:W4401499957",
+      "text": "Iterative prompting and few-shot prompting are strategies to handle complex tasks in applied linguistics.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401499957:c3",
+      "paper_id": "openalex:W4401499957",
+      "text": "Prompt engineering practical tips can mitigate LLM shortcomings such as data privacy issues, potential bias, lack of explainability, and hallucinations.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401499957:e1",
+      "claim_id": "openalex:W4401499957:c1",
+      "description": "This study aims to elaborate on the important elements of prompt engineering, including persona, audience, contexts, instruction, and output specification.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401499957:e2",
+      "claim_id": "openalex:W4401499957:c2",
+      "description": "Besides, this study also delineates several important prompting strategies to handle more complex tasks, such as iterative prompting and few-shot prompting.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401499957:e3",
+      "claim_id": "openalex:W4401499957:c3",
+      "description": "Most importantly, it provides some practical tips to mitigate the potential shortcomings of LLMs, including data privacy, potential bias, explainability, and hallucinations, from the perspective of prompt engineering.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401499957:m1",
+      "paper_id": "openalex:W4401499957",
+      "name": "Applied Linguistics Prompt Engineering Framework",
+      "description": "A structured framework detailing prompt components, complex strategies like iterative and few-shot prompting, and practical mitigation techniques for LLM limitations in language learning and testing contexts.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401499957:l1",
+      "paper_id": "openalex:W4401499957",
+      "text": "How to write an effective prompt remains underexplored in applied linguistics.",
+      "normalized_category": "underexplored-domain-application",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4401499957:l2",
+      "paper_id": "openalex:W4401499957",
+      "text": "Large language models exhibit potential shortcomings including data privacy risks, potential bias, lack of explainability, and hallucinations.",
+      "normalized_category": "llm-shortcomings",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.102195Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

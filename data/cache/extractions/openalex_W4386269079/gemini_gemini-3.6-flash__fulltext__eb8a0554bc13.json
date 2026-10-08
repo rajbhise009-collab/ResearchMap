@@ -1,0 +1,144 @@
+{
+  "paper_id": "openalex:W4386269079",
+  "claims": [
+    {
+      "id": "openalex:W4386269079:c1",
+      "paper_id": "openalex:W4386269079",
+      "text": "Laplace-LoRA reduces Expected Calibration Error (ECE) on LLaMA2-7B fine-tuned on Winogrande-small at 5000 gradient steps from 31.2% to 2.1%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386269079:c2",
+      "paper_id": "openalex:W4386269079",
+      "text": "Laplace-LoRA reduces Negative Log-Likelihood (NLL) on LLaMA2-7B fine-tuned on Winogrande-small at 5000 gradient steps from 3.15 to 0.60.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386269079:c3",
+      "paper_id": "openalex:W4386269079",
+      "text": "Laplace-LoRA incurs an additional memory overhead of 1% to 5% relative to standard LoRA fine-tuning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386269079:c4",
+      "paper_id": "openalex:W4386269079",
+      "text": "Diagonal Fisher approximations in Laplace-LoRA fail to provide consistent calibration improvements compared to Kronecker-factored approximations.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386269079:c5",
+      "paper_id": "openalex:W4386269079",
+      "text": "Most of the logit uncertainty in full Laplace-LoRA originates from lower-layer LoRA parameters rather than the output layer.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386269079:c6",
+      "paper_id": "openalex:W4386269079",
+      "text": "Laplace-LoRA performs post-hoc Bayesian inference over LoRA parameters without modifying the underlying fine-tuned weight values.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386269079:e1",
+      "claim_id": "openalex:W4386269079:c1",
+      "description": "Table 1 shows MAP fine-tuning achieves an ECE of 31.2% on Winogrande-small, whereas full Laplace-LoRA (LA) achieves an ECE of 2.1%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386269079:e2",
+      "claim_id": "openalex:W4386269079:c2",
+      "description": "Table 1 shows MAP fine-tuning achieves an NLL of 3.15 on Winogrande-small, whereas full Laplace-LoRA (LA) achieves an NLL of 0.60.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386269079:e3",
+      "claim_id": "openalex:W4386269079:c3",
+      "description": "Table 4 and Section 5.3 demonstrate that implementing Laplace-LoRA adds only around 1-5% memory overhead over standard LoRA.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4386269079:e4",
+      "claim_id": "openalex:W4386269079:c4",
+      "description": "Section 5.2 and Appendix G.6 report that diagonal Laplace approximations do not offer consistent improvements in ECE and NLL.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4386269079:e5",
+      "claim_id": "openalex:W4386269079:c5",
+      "description": "Figure 12 and Appendix H analysis indicate that for full Laplace-LoRA, almost all logit variance stems from lower-layer parameters rather than the output layer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4386269079:e6",
+      "claim_id": "openalex:W4386269079:c6",
+      "description": "Section 2 notes that Laplace-LoRA does not change fine-tuned weights and uses a Laplace approximation post-hoc to estimate uncertainty around weight MAP estimates.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386269079:m1",
+      "paper_id": "openalex:W4386269079",
+      "name": "Laplace-LoRA",
+      "description": "Post-hoc Bayesian framework applying Kronecker-factored Laplace approximations over low-rank adaptation (LoRA) parameters in fine-tuned large language models.",
+      "datasets": [
+        "Winogrande",
+        "ARC-Challenge",
+        "ARC-Easy",
+        "OpenBookQA",
+        "BoolQ",
+        "MMLU",
+        "GLUE",
+        "SuperGLUE"
+      ],
+      "conditions": [
+        "LLaMA2-7B",
+        "Mistral-7B",
+        "RoBERTa-base",
+        "RoBERTa-large",
+        "LoRA rank r=8",
+        "KFAC Kronecker factorization",
+        "Linearized Laplace approximation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386269079:l1",
+      "paper_id": "openalex:W4386269079",
+      "text": "Full-rank representation of the large Kronecker factor for LoRA layers is memory prohibitive, requiring a low-rank approximation.",
+      "normalized_category": "memory-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386269079:l2",
+      "paper_id": "openalex:W4386269079",
+      "text": "Standard post-hoc calibration methods like temperature scaling rely on a separate validation set, which is problematic when data is scarce.",
+      "normalized_category": "data-requirement",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386269079:l3",
+      "paper_id": "openalex:W4386269079",
+      "text": "Applying Laplace approximation exclusively to the output layer (LLLA) provides inconsistent calibration performance across benchmark tasks.",
+      "normalized_category": "expressiveness-limitation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T14:12:15.256367Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

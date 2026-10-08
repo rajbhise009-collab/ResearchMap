@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W2524301210",
+  "claims": [
+    {
+      "id": "openalex:W2524301210:c1",
+      "paper_id": "openalex:W2524301210",
+      "text": "Under the What You See Is What You Get (WYSIWYG) worldview with error parameter delta, an individual fairness mechanism IFM_delta' guarantees (epsilon, epsilon')-fairness for a function f where epsilon' = f(delta, delta').",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2524301210:c2",
+      "paper_id": "openalex:W2524301210",
+      "text": "A discrete decision space disallows an individually fair mechanism and precludes (delta - epsilon, delta')-fairness under the WYSIWYG worldview with parameter epsilon for any delta, delta' < 1 and rich mechanism f.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2524301210:c3",
+      "paper_id": "openalex:W2524301210",
+      "text": "Under the We're All Equal (WAE) worldview, a valid group fairness mechanism with parameter epsilon' guarantees (max(epsilon, epsilon')/delta)-nondiscrimination.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2524301210:c4",
+      "paper_id": "openalex:W2524301210",
+      "text": "If structural bias exists in the mapping from construct space to observed space, applying an individual fairness mechanism results in discriminatory outcomes in the decision space.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2524301210:c5",
+      "paper_id": "openalex:W2524301210",
+      "text": "Fairness mechanisms and non-discrimination mechanisms are tied to fundamentally conflicting worldviews (WYSIWYG versus Structural Bias/WAE) and cannot simultaneously guarantee fairness and non-discrimination without explicit axiomatic assumptions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2524301210:e1",
+      "claim_id": "openalex:W2524301210:c1",
+      "description": "Theorem 4.1 mathematically proves that applying an IFM_delta' under WYSIWYG bounds decision element distance between d - delta - delta' and d + delta + delta', guaranteeing (epsilon, epsilon')-fairness.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2524301210:e2",
+      "claim_id": "openalex:W2524301210:c2",
+      "description": "Theorem 4.2 proves that for any discrete decision space DS = {0, 1, ..., k}, non-monochromatic balls contain points within distance delta - epsilon in construct space that map to discrete outcomes at distance 1 > delta' in DS.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2524301210:e3",
+      "claim_id": "openalex:W2524301210:c3",
+      "description": "Theorem 4.3 shows that WAE bounds inter-group distance in construct space by epsilon, and GFM bounds inter-group distance in decision space by epsilon', limiting overall group skew sigma by max(epsilon, epsilon')/delta.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2524301210:e4",
+      "claim_id": "openalex:W2524301210:c4",
+      "description": "Section 4.2 constructs a counterexample demonstrating that when structural bias separates groups further in observed space than in construct space, an individual fairness mechanism preserves this separation in decision space, causing high between-group distortion.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2524301210:e5",
+      "claim_id": "openalex:W2524301210:c5",
+      "description": "Section 4.2 proves that individual fairness mechanisms are unfair under structural bias worldviews, and group fairness mechanisms are unfair under WYSIWYG worldviews.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2524301210:m1",
+      "paper_id": "openalex:W2524301210",
+      "name": "Construct-Observed-Decision Space Mapping Framework",
+      "description": "A mathematical framework modeling decision pipelines as metric-space transformations using additive distortion, Wasserstein distance, and Gromov-Wasserstein distance to formalize individual fairness, group skew, and structural bias.",
+      "datasets": [],
+      "conditions": [
+        "Construct Space CS = (P, dP)",
+        "Observed Space OS = (P_hat, d_hat)",
+        "Decision Space DS = (O, dO)",
+        "Axiomatic assumptions: WYSIWYG vs. WAE"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2524301210:l1",
+      "paper_id": "openalex:W2524301210",
+      "text": "The construct space is inherently unobservable in real-world settings, making direct measurement of construct space features and distances impossible without adopting explicit worldview axioms.",
+      "normalized_category": "unobservable-construct-space",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2524301210:l2",
+      "paper_id": "openalex:W2524301210",
+      "text": "Prior algorithmic fairness definitions rest on unstated assumptions about societal fairness that are mutually incompatible, rendering direct comparison of fair algorithms difficult.",
+      "normalized_category": "unstated-prior-assumptions",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2524301210:f1",
+      "paper_id": "openalex:W2524301210",
+      "text": "Future treatments of algorithmic fairness should explicitly state assumptions about the relationship between construct space and observed space.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:18:27.908929Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

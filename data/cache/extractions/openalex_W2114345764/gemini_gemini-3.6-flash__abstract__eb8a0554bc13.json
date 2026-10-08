@@ -1,0 +1,24 @@
+{
+  "paper_id": "openalex:W2114345764",
+  "claims": [],
+  "evidence": [],
+  "methodologies": [
+    {
+      "id": "openalex:W2114345764:m1",
+      "paper_id": "openalex:W2114345764",
+      "name": "Randomized controlled trial",
+      "description": "A 74-week randomized controlled clinical trial comparing a low-fat vegan diet with a conventional diabetes diet in the treatment of type 2 diabetes.",
+      "datasets": [],
+      "conditions": [
+        "type 2 diabetes",
+        "74-week intervention duration",
+        "low-fat vegan diet",
+        "conventional diabetes diet"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:20:38.189761Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

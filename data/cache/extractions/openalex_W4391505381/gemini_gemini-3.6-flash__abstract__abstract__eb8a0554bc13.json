@@ -1,0 +1,100 @@
+{
+  "paper_id": "openalex:W4391505381",
+  "claims": [
+    {
+      "id": "openalex:W4391505381:c1",
+      "paper_id": "openalex:W4391505381",
+      "text": "Point-wise dependencies between input and decision can be estimated on the fly with a single inference without access to token logits using a non-parametric uncertainty quantification method.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c2",
+      "paper_id": "openalex:W4391505381",
+      "text": "The proposed non-parametric uncertainty estimator informs the statistical interpretation of decision trustworthiness.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c3",
+      "paper_id": "openalex:W4391505381",
+      "text": "A decision-making agent design can generate actions based on user prompts.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c4",
+      "paper_id": "openalex:W4391505381",
+      "text": "The decision-making agent solicits user preferences when more than one action exhibits high estimated point-wise dependencies.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391505381:e1",
+      "claim_id": "openalex:W4391505381:c1",
+      "description": "The authors introduce a non-parametric uncertainty quantification method that efficiently estimates input-decision point-wise dependencies in a single inference with no token logit access.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391505381:e2",
+      "claim_id": "openalex:W4391505381:c2",
+      "description": "The paper states that the point-wise dependency estimator informs statistical interpretations regarding how trustworthy a decision is.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4391505381:e3",
+      "claim_id": "openalex:W4391505381:c3",
+      "description": "The paper describes an agent design capable of mapping user prompts like 'take a bath' to specific actions like 'turn on the bathroom light'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391505381:e4",
+      "claim_id": "openalex:W4391505381:c4",
+      "description": "The agent design prompts users to clarify preferences whenever multiple potential actions yield high point-wise dependencies.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391505381:m1",
+      "paper_id": "openalex:W4391505381",
+      "name": "Non-parametric Uncertainty Quantification Estimator",
+      "description": "Estimates point-wise dependencies between input and decision on the fly using a single inference pass without relying on token logits.",
+      "datasets": [],
+      "conditions": [
+        "black-box LLMs",
+        "single inference pass",
+        "no access to token logits"
+      ]
+    },
+    {
+      "id": "openalex:W4391505381:m2",
+      "paper_id": "openalex:W4391505381",
+      "name": "Preference-Guided Decision-Making Agent Architecture",
+      "description": "Generates step-by-step plan actions from user prompts and requests user intervention/preferences when uncertainty/point-wise dependency is ambiguous across multiple actions.",
+      "datasets": [],
+      "conditions": [
+        "user prompt inputs",
+        "multiple high-dependency candidate actions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391505381:l1",
+      "paper_id": "openalex:W4391505381",
+      "text": "Existing approaches for uncertainty estimation in LLMs are either white-box or computationally demanding, limiting their deployment with black-box proprietary LLMs within strict budgets.",
+      "normalized_category": "computational-cost-and-access-restrictions",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:30:46.540576Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

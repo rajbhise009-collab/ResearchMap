@@ -1,0 +1,220 @@
+{
+  "paper_id": "openalex:W4389520670",
+  "claims": [
+    {
+      "id": "openalex:W4389520670:c1",
+      "paper_id": "openalex:W4389520670",
+      "text": "ALCE is an automatic benchmark for evaluating large language models' text generation with citations across three datasets: ASQA, QAMPARI, and ELI5.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c2",
+      "paper_id": "openalex:W4389520670",
+      "text": "On the ELI5 dataset, ChatGPT and GPT-4 baselines lack complete citation support approximately 50% of the time.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c3",
+      "paper_id": "openalex:W4389520670",
+      "text": "A closed-book LLM with post-hoc citation matching achieves competitive correctness but significantly lower citation recall compared to open-book retrieval models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c4",
+      "paper_id": "openalex:W4389520670",
+      "text": "Summarizing retrieved passages into shorter summaries or snippets before prompting improves answer correctness across ALCE datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c5",
+      "paper_id": "openalex:W4389520670",
+      "text": "Reranking multiple sampled generations based on automatic citation recall scores improves citation quality across ASQA and ELI5.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c6",
+      "paper_id": "openalex:W4389520670",
+      "text": "Increasing the number of in-context retrieved passages improves answer correctness and citation quality for GPT-4, but does not improve performance for ChatGPT.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c7",
+      "paper_id": "openalex:W4389520670",
+      "text": "Dense retrieval using GTR yields higher correctness and citation quality for LLM generation compared to DPR.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389520670:c8",
+      "paper_id": "openalex:W4389520670",
+      "text": "Instruction-tuned open-source models achieve higher correctness and citation quality compared to non-instruction-tuned base models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389520670:e1",
+      "claim_id": "openalex:W4389520670:c1",
+      "description": "We propose ALCE, the first benchmark for Automatic LLMs’ Citation Evaluation. ALCE collects a diverse set of questions and retrieval corpora... We compile three datasets that cover different types of questions and corpora— ASQA, QAMPARI, and ELI5.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4389520670:e2",
+      "claim_id": "openalex:W4389520670:c2",
+      "description": "For example, on the ELI5 dataset, around 50% generations of our ChatGPT and GPT-4 baselines are not fully supported by the cited passages.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520670:e3",
+      "claim_id": "openalex:W4389520670:c3",
+      "description": "CLOSED BOOK outperforms VANILLA in correctness on ELI5 and QAMPARI... However, citation recall of CLOSED BOOK+POST CITE is lower than VANILLA by 47% on ASQA.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520670:e4",
+      "claim_id": "openalex:W4389520670:c4",
+      "description": "We see a universal trend that SUMM or SNIPPET improves correctness, though on ASQA and ELI5, such an improvement comes at a cost of citation quality due to the lossy compression.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389520670:e5",
+      "claim_id": "openalex:W4389520670:c5",
+      "description": "We observe that RERANK leads to consistent improvement in citation quality (on ASQA and ELI5)... On ASQA, citation recall improves from 73.6 to 84.8 for ChatGPT VANILLA.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520670:e6",
+      "claim_id": "openalex:W4389520670:c6",
+      "description": "GPT-4 (20-psg) achieves 44.4 EM Rec on ASQA compared to 41.3 for GPT-4 (5-psg), whereas including more passages with ChatGPT-16K does not improve results (36.1 EM Rec at 5-psg vs 36.1 at 20-psg).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520670:e7",
+      "claim_id": "openalex:W4389520670:c7",
+      "description": "Figure 4 (right) shows that GTR outperforms DPR in both correctness (40.4 vs 36.1 EM Rec) and citation quality (73.6 vs 65.0 citation recall) on ASQA.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389520670:e8",
+      "claim_id": "openalex:W4389520670:c8",
+      "description": "Instruction-tuned models (Vicuna-13B and LLaMA-2-Chat) outperform the original LLaMA models in correctness (e.g. 31.9 EM Rec for Vicuna-13B vs 26.9 for LLaMA-13B) and considerably enhance citation quality (51.1 citation recall vs 10.6).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389520670:m1",
+      "paper_id": "openalex:W4389520670",
+      "name": "ALCE Benchmark Framework",
+      "description": "An automated evaluation benchmark for evaluating end-to-end citation-augmented LLM outputs across fluency, factual correctness, and citation quality.",
+      "datasets": [
+        "ASQA",
+        "QAMPARI",
+        "ELI5"
+      ],
+      "conditions": [
+        "VANILLA (in-context top-k retrieval)",
+        "SUMM/SNIPPET (passage summarization/span extraction)",
+        "INTERACT (interactive document verification)",
+        "INLINE SEARCH (search-on-the-fly execution)",
+        "CLOSED BOOK + POST CITE",
+        "RERANK (citation recall best-of-N reranking)"
+      ]
+    },
+    {
+      "id": "openalex:W4389520670:m2",
+      "paper_id": "openalex:W4389520670",
+      "name": "NLI-based Citation Quality Evaluation",
+      "description": "Evaluates citation recall and precision by checking statement entailment against concatenated cited passages using the TRUE T5-11B NLI model.",
+      "datasets": [
+        "ASQA",
+        "QAMPARI",
+        "ELI5"
+      ],
+      "conditions": [
+        "Statement-level citation recall check",
+        "Irrelevant citation precision filtering"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389520670:l1",
+      "paper_id": "openalex:W4389520670",
+      "text": "Existing work mainly relies on commercial search engines and human evaluation, making it challenging to reproduce and compare different modeling approaches.",
+      "normalized_category": "lack-of-reproducibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389520670:l2",
+      "paper_id": "openalex:W4389520670",
+      "text": "MAUVE metric is sensitive to output length and can provide unstable evaluation results.",
+      "normalized_category": "metric-instability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520670:l3",
+      "paper_id": "openalex:W4389520670",
+      "text": "Automatically generated claims for ELI5 correctness evaluation may not cover all possible answers due to the open-ended nature of the questions.",
+      "normalized_category": "incomplete-evaluation-coverage",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520670:l4",
+      "paper_id": "openalex:W4389520670",
+      "text": "The NLI model used for citation precision evaluation cannot detect cases of partial support, leading to lower automated precision scores than human evaluation.",
+      "normalized_category": "nli-partial-support-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389520670:l5",
+      "paper_id": "openalex:W4389520670",
+      "text": "Curated benchmark datasets do not cover more challenging scenarios such as multi-hop reasoning, math reasoning, and code completion.",
+      "normalized_category": "limited-benchmark-domain-coverage",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389520670:f1",
+      "paper_id": "openalex:W4389520670",
+      "text": "Developing better retrieval algorithms tailored for knowledge-intensive language tasks and LLM generation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389520670:f2",
+      "paper_id": "openalex:W4389520670",
+      "text": "Advancing long-context LLMs capable of synthesizing information from multiple context documents without distraction.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389520670:f3",
+      "paper_id": "openalex:W4389520670",
+      "text": "Exploring direct supervised training and fine-tuning of LLMs to generate text with citations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389520670:f4",
+      "paper_id": "openalex:W4389520670",
+      "text": "Training improved NLI models capable of recognizing partial citation support for more accurate automatic precision evaluation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.966476Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

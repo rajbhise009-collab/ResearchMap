@@ -1,0 +1,196 @@
+{
+  "paper_id": "openalex:W2530395818",
+  "claims": [
+    {
+      "id": "openalex:W2530395818:c1",
+      "paper_id": "openalex:W2530395818",
+      "text": "Equalized odds requires a predictor and protected attribute to be independent conditional on the true outcome variable.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c2",
+      "paper_id": "openalex:W2530395818",
+      "text": "Equal opportunity requires equal true positive rates across protected attribute groups for the advantaged outcome.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c3",
+      "paper_id": "openalex:W2530395818",
+      "text": "Optimal equalized odds derived predictors can be constructed from learned binary predictors using linear programming post-processing.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c4",
+      "paper_id": "openalex:W2530395818",
+      "text": "An optimal equalized odds predictor can be derived directly from the Bayes optimal regressor and the protected attribute.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c5",
+      "paper_id": "openalex:W2530395818",
+      "text": "The expected loss of an equalized odds classifier derived from an approximate regressor is bounded by twice the square root of two times the conditional Kolmogorov distance to the Bayes optimal regressor.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c6",
+      "paper_id": "openalex:W2530395818",
+      "text": "Oblivious fairness tests cannot distinguish between different causal dependency structures that share identical joint distributions over outcome, protected attribute, and score.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c7",
+      "paper_id": "openalex:W2530395818",
+      "text": "On FICO credit data at an 82% non-default profitability threshold, a race-blind threshold gets 99.3% of maximal profit.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c8",
+      "paper_id": "openalex:W2530395818",
+      "text": "On FICO credit data at an 82% non-default profitability threshold, equal opportunity gets 92.8% of maximal profit.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c9",
+      "paper_id": "openalex:W2530395818",
+      "text": "On FICO credit data at an 82% non-default profitability threshold, equalized odds gets 80.2% of maximal profit.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2530395818:c10",
+      "paper_id": "openalex:W2530395818",
+      "text": "On FICO credit data at an 82% non-default profitability threshold, demographic parity gets 69.8% of maximal profit.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2530395818:e1",
+      "claim_id": "openalex:W2530395818:c1",
+      "description": "Definition 2.1 states: We say that a predictor \\hat{Y} satisfies equalized odds with respect to protected attribute A and outcome Y, if \\hat{Y} and A are independent conditional on Y.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e2",
+      "claim_id": "openalex:W2530395818:c2",
+      "description": "Definition 2.2 states: We say that a binary predictor \\hat{Y} satisfies equal opportunity with respect to A and Y if Pr{\\hat{Y} = 1|A = 0, Y = 1} = Pr{\\hat{Y} = 1|A = 1, Y = 1}.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e3",
+      "claim_id": "openalex:W2530395818:c3",
+      "description": "Proposition 4.4 proves that optimizing loss for derived equalized odds predictors is a linear program in four variables with coefficients computed from joint statistics.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e4",
+      "claim_id": "openalex:W2530395818:c4",
+      "description": "Corollary 5.3 states: An optimal equalized odds predictor can be derived from the Bayes optimal regressor R and the protected attribute A.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e5",
+      "claim_id": "openalex:W2530395818:c5",
+      "description": "Theorem 5.6 proves E\\ell(\\hat{Y}, Y) \\le E\\ell(Y^*, Y) + 2\\sqrt{2} \\cdot d_K(\\hat{R}, R^*).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e6",
+      "claim_id": "openalex:W2530395818:c6",
+      "description": "Proposition 6.1 shows two distinct dependency scenarios yield identical joint distributions of (Y, A, R*, \\tilde{R}).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e7",
+      "claim_id": "openalex:W2530395818:c7",
+      "description": "Section 7 reports: At 82%, we find that a race blind threshold gets 99.3% of the maximal profit.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e8",
+      "claim_id": "openalex:W2530395818:c8",
+      "description": "Section 7 reports: equal opportunity gets 92.8%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e9",
+      "claim_id": "openalex:W2530395818:c9",
+      "description": "Section 7 reports: equalized odds gets 80.2%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2530395818:e10",
+      "claim_id": "openalex:W2530395818:c10",
+      "description": "Section 7 reports: and demographic parity gets 69.8%.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2530395818:m1",
+      "paper_id": "openalex:W2530395818",
+      "name": "Post-processing non-discrimination derivation",
+      "description": "Minimizes expected classification loss subject to equalized odds or equal opportunity constraints by solving a linear program or conducting ternary search over threshold ROC curves.",
+      "datasets": [
+        "TransUnion TransRisk FICO dataset (2003)"
+      ],
+      "conditions": [
+        "Binary or real-valued predictive score",
+        "Binary or discrete protected attribute",
+        "Known joint distribution of score, protected attribute, and target variable"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2530395818:l1",
+      "paper_id": "openalex:W2530395818",
+      "text": "Demographic parity permits accepting qualified applicants in one group and unqualified individuals in another, and severely reduces utility when the target variable is correlated with the protected attribute.",
+      "normalized_category": "demographic-parity-flaws",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2530395818:l2",
+      "paper_id": "openalex:W2530395818",
+      "text": "Oblivious tests cannot distinguish between underlying causal dependency structures that have identical joint distributions over target, protected attribute, and score.",
+      "normalized_category": "causal-unidentifiability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2530395818:l3",
+      "paper_id": "openalex:W2530395818",
+      "text": "Equalized odds forces the classifier performance to be bounded by the pointwise minimum ROC curve among protected groups, requiring all groups to be classified as poorly as the hardest group.",
+      "normalized_category": "utility-tradeoff",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2530395818:l4",
+      "paper_id": "openalex:W2530395818",
+      "text": "The framework relies on access to reliable labeled target data, which may be difficult to obtain, unobserved, or inherently biased in practice.",
+      "normalized_category": "label-bias-dependence",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:04:26.211243Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

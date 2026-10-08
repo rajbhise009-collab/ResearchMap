@@ -1,0 +1,124 @@
+{
+  "paper_id": "openalex:W4387559042",
+  "claims": [
+    {
+      "id": "openalex:W4387559042:c1",
+      "paper_id": "openalex:W4387559042",
+      "text": "CoNLI-GPT4 achieves macro F1 scores of 0.677 on HaluSum2130 and 0.849 on HaluQA4170 for synthetic hallucination detection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387559042:c2",
+      "paper_id": "openalex:W4387559042",
+      "text": "CoNLI-GPT4 achieves macro F1 scores of 0.876 on FactCC503, 0.784 on SummEval, 0.799 on QAGS-CNNDM, and 0.812 on QAGS-XSUM for annotated hallucination detection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387559042:c3",
+      "paper_id": "openalex:W4387559042",
+      "text": "Combining sentence-level and entity-level detection hierarchically achieves higher hallucination detection F1 scores than using sentence-level or entity-level detection alone.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387559042:c4",
+      "paper_id": "openalex:W4387559042",
+      "text": "Post-editing raw responses with CoNLI mitigation improves groundedness scores across synthetic and annotated benchmarks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4387559042:e1",
+      "claim_id": "openalex:W4387559042:c1",
+      "description": "Table 2 reports CoNLI-GPT4 reaching 0.677 F1-macro on HaluSum2130 and 0.849 F1-macro on HaluQA4170.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4387559042:e2",
+      "claim_id": "openalex:W4387559042:c2",
+      "description": "Table 3 shows CoNLI-GPT4 attaining F1-macro scores of 0.876 on FactCC503, 0.784 on SummEval, 0.799 on QAGS-CNNDM, and 0.812 on QAGS-XSUM.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4387559042:e3",
+      "claim_id": "openalex:W4387559042:c3",
+      "description": "Ablation results in Table 4 show sentence-level plus entity-level detection yields higher F1 scores across HaluSum2130, HaluQA4170, and FactCC503 compared to sent-only or ent-only variants.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4387559042:e4",
+      "claim_id": "openalex:W4387559042:c4",
+      "description": "Table 5 shows refined responses obtain higher FactCC, AlignScore-L, and CoNLI-4 metrics than raw responses on HaluSum2130, HaluQA4170, and FactCC503.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4387559042:m1",
+      "paper_id": "openalex:W4387559042",
+      "name": "Chain of Natural Language Inference (CoNLI)",
+      "description": "A post-editing framework that detects ungrounded hallucinations using hierarchical sentence-level and entity-level NLI reasoning and mitigates them via instruction-guided rewriting.",
+      "datasets": [
+        "HaluSum2130",
+        "HaluQA4170",
+        "FactCC503",
+        "SummEval",
+        "QAGS-CNNDM",
+        "QAGS-XSUM"
+      ],
+      "conditions": [
+        "GPT-3.5-TURBO-16K",
+        "GPT-4-32K",
+        "temperature 0.0",
+        "Azure Text Analytics NER"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4387559042:l1",
+      "paper_id": "openalex:W4387559042",
+      "text": "When doing NLI reasoning at the sentence level, LLMs may overlook details in the hypothesis and focus on surface-level semantic features, resulting in false negatives.",
+      "normalized_category": "llm-reasoning-false-negatives",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4387559042:l2",
+      "paper_id": "openalex:W4387559042",
+      "text": "The framework currently relies on a simple sentence splitting method without an advanced automated hypothesis selector.",
+      "normalized_category": "simplistic-hypothesis-selection",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4387559042:l3",
+      "paper_id": "openalex:W4387559042",
+      "text": "Existing score-based factual consistency classification models rely on classification thresholds that vary widely across different datasets.",
+      "normalized_category": "threshold-instability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4387559042:f1",
+      "paper_id": "openalex:W4387559042",
+      "text": "Building advanced hypothesis selectors for response sentence purging and selection.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4387559042:f2",
+      "paper_id": "openalex:W4387559042",
+      "text": "Exploring automatic threshold selection per task without fine-tuning for score-based hallucination detection methods.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T14:12:15.257978Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

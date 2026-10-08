@@ -1,0 +1,81 @@
+{
+  "paper_id": "openalex:W2788496822",
+  "claims": [
+    {
+      "id": "openalex:W2788496822:c1",
+      "paper_id": "openalex:W2788496822",
+      "text": "SciTail is a textual entailment dataset created from natural sentences that exist independently rather than sentences authored specifically for an entailment task.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788496822:c2",
+      "paper_id": "openalex:W2788496822",
+      "text": "Existing state-of-the-art textual entailment systems achieve mediocre performance on SciTail relative to a simple majority class baseline.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788496822:c3",
+      "paper_id": "openalex:W2788496822",
+      "text": "A neural model that exploits linguistic structure improves accuracy on SciTail by 5%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2788496822:e1",
+      "claim_id": "openalex:W2788496822:c2",
+      "description": "State-of-the-art textual entailment systems achieve mediocre performance on SciTail, especially in comparison to a simple majority class baseline.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2788496822:e2",
+      "claim_id": "openalex:W2788496822:c3",
+      "description": "Demonstration that accuracy on SciTail improves by 5% using a new neural model exploiting linguistic structure.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2788496822:m1",
+      "paper_id": "openalex:W2788496822",
+      "name": "SciTail Dataset Construction",
+      "description": "Hypotheses are derived from science questions and answer candidates, while premises are retrieved from web sentences.",
+      "datasets": [
+        "SciTail"
+      ],
+      "conditions": [
+        "multiple-choice science question-answering converted to entailment"
+      ]
+    },
+    {
+      "id": "openalex:W2788496822:m2",
+      "paper_id": "openalex:W2788496822",
+      "name": "Linguistically Structured Neural Model",
+      "description": "A neural entailment model designed to exploit linguistic structure in premise-hypothesis pairs.",
+      "datasets": [
+        "SciTail"
+      ],
+      "conditions": [
+        "textual entailment evaluation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2788496822:l1",
+      "paper_id": "openalex:W2788496822",
+      "text": "Premise and hypothesis pairs exhibit high lexical similarity for both entailed and non-entailed instances, making the dataset particularly challenging.",
+      "normalized_category": "lexical-overlap-challenge",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.083327Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

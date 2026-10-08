@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W4400484903",
+  "claims": [
+    {
+      "id": "openalex:W4400484903:c1",
+      "paper_id": "openalex:W4400484903",
+      "text": "LLMs face five major challenges when applied to fuzzing.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400484903:c2",
+      "paper_id": "openalex:W4400484903",
+      "text": "The five major challenges of LLM-assisted fuzzing are widespread across recent literature in top-tier conferences.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400484903:c3",
+      "paper_id": "openalex:W4400484903",
+      "text": "Actionable recommendations can address identified challenges in LLM-assisted fuzzing.",
+      "type": "method",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400484903:e1",
+      "claim_id": "openalex:W4400484903:c2",
+      "description": "A literature survey of recent papers from top-tier conferences confirmed that the five identified challenges are widespread in LLM-assisted fuzzing.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400484903:m1",
+      "paper_id": "openalex:W4400484903",
+      "name": "Literature review of top-tier conference papers",
+      "description": "Revisited recent publications from top-tier conferences to analyze and confirm widespread challenges in LLM-assisted fuzzing.",
+      "datasets": [],
+      "conditions": [
+        "top-tier conference papers"
+      ]
+    },
+    {
+      "id": "openalex:W4400484903:m2",
+      "paper_id": "openalex:W4400484903",
+      "name": "Preliminary evaluation on DBMS fuzzing",
+      "description": "Applied actionable recommendations to LLM-assisted fuzzing in the domain of Database Management Systems (DBMS).",
+      "datasets": [],
+      "conditions": [
+        "DBMS fuzzing"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400484903:l1",
+      "paper_id": "openalex:W4400484903",
+      "text": "LLMs encounter fundamental challenges when integrated into fuzzing workflows.",
+      "normalized_category": "llm-fuzzing-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4400484903:l2",
+      "paper_id": "openalex:W4400484903",
+      "text": "Evaluation of the proposed actionable recommendations was preliminary and focused on DBMS fuzzing.",
+      "normalized_category": "preliminary-evaluation-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.122693Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

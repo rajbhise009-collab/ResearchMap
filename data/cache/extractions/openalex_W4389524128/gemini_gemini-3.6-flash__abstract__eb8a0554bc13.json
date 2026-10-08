@@ -1,0 +1,105 @@
+{
+  "paper_id": "openalex:W4389524128",
+  "claims": [
+    {
+      "id": "openalex:W4389524128:c1",
+      "paper_id": "openalex:W4389524128",
+      "text": "Hallucinations in data-to-text generation can be mitigated by combining the probabilistic output of a generator language model with a text critic classifier.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389524128:c2",
+      "paper_id": "openalex:W4389524128",
+      "text": "The text critic classifier guides text generation by assessing the match between the input data and the text generated so far.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389524128:c3",
+      "paper_id": "openalex:W4389524128",
+      "text": "Critic-driven decoding requires no changes to the underlying language model architecture or training procedure.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389524128:c4",
+      "paper_id": "openalex:W4389524128",
+      "text": "Critic-driven decoding can be combined with any model and decoding scheme that operates on word probabilities.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389524128:c5",
+      "paper_id": "openalex:W4389524128",
+      "text": "The text critic classifier trains using the base language model's training data and synthetic negative examples without additional training data.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389524128:e1",
+      "claim_id": "openalex:W4389524128:c1",
+      "description": "The authors explore combining the probabilistic output of a generator language model with the output of a special text critic classifier to mitigate hallucinations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389524128:e2",
+      "claim_id": "openalex:W4389524128:c2",
+      "description": "The critic classifier guides generation by assessing the match between the input data and the text generated so far.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389524128:e3",
+      "claim_id": "openalex:W4389524128:c3",
+      "description": "The method does not need any changes to the underlying LM's architecture or training procedure.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389524128:e4",
+      "claim_id": "openalex:W4389524128:c4",
+      "description": "The proposed method can be combined with any model and decoding operating on word probabilities.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389524128:e5",
+      "claim_id": "openalex:W4389524128:c5",
+      "description": "The critic does not need any additional training data, using the base LM's training data and synthetic negative examples.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389524128:m1",
+      "paper_id": "openalex:W4389524128",
+      "name": "Critic-Driven Decoding",
+      "description": "A decoding technique combining generator LM output probabilities with a text critic classifier trained on base LM data and synthetic negative examples to evaluate data-text matching.",
+      "datasets": [
+        "WebNLG",
+        "OpenDialKG"
+      ],
+      "conditions": [
+        "Data-to-text generation",
+        "Decoding operating on word probabilities"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389524128:l1",
+      "paper_id": "openalex:W4389524128",
+      "text": "Existing hallucination mitigation methods typically require altering model architecture or collecting additional data, making them hard to apply to existing models.",
+      "normalized_category": "prior-work-architectural-data-requirements",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.103177Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

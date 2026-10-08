@@ -1,0 +1,134 @@
+{
+  "paper_id": "openalex:W2593977293",
+  "claims": [
+    {
+      "id": "openalex:W2593977293:c1",
+      "paper_id": "openalex:W2593977293",
+      "text": "In 2012, suboptimal intake of 10 dietary factors was associated with an estimated 318,656 cardiometabolic deaths (45.4% of total) among US adults.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593977293:c2",
+      "paper_id": "openalex:W2593977293",
+      "text": "High sodium intake was associated with the highest number of estimated diet-related cardiometabolic deaths in 2012, accounting for 66,508 deaths (9.5%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593977293:c3",
+      "paper_id": "openalex:W2593977293",
+      "text": "Low intake of nuts and seeds was associated with 59,374 cardiometabolic deaths (8.5%) in 2012.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593977293:c4",
+      "paper_id": "openalex:W2593977293",
+      "text": "High intake of processed meats was associated with 57,766 cardiometabolic deaths (8.2%) in 2012.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593977293:c5",
+      "paper_id": "openalex:W2593977293",
+      "text": "Between 2002 and 2012, population-adjusted US cardiometabolic deaths per year decreased by 26.5%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593977293:c6",
+      "paper_id": "openalex:W2593977293",
+      "text": "Between 2002 and 2012, the greatest decline in diet-related cardiometabolic deaths was associated with insufficient polyunsaturated fats (-20.8% relative change).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593977293:c7",
+      "paper_id": "openalex:W2593977293",
+      "text": "Between 2002 and 2012, the greatest increase in diet-related cardiometabolic deaths was associated with unprocessed red meats (+14.4% relative change).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2593977293:e1",
+      "claim_id": "openalex:W2593977293:c1",
+      "description": "Of these, an estimated 318 656 (95% uncertainty interval [UI], 306 064-329 755; 45.4%) cardiometabolic deaths per year were associated with suboptimal intakes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2593977293:e2",
+      "claim_id": "openalex:W2593977293:c2",
+      "description": "The largest numbers of estimated diet-related cardiometabolic deaths were related to high sodium (66 508 deaths in 2012; 9.5% of all cardiometabolic deaths).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2593977293:e3",
+      "claim_id": "openalex:W2593977293:c3",
+      "description": "Second largest number of estimated diet-related cardiometabolic deaths was related to low nuts/seeds (59 374; 8.5%).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2593977293:e4",
+      "claim_id": "openalex:W2593977293:c4",
+      "description": "Third largest number of estimated diet-related cardiometabolic deaths was related to high processed meats (57 766; 8.2%).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2593977293:e5",
+      "claim_id": "openalex:W2593977293:c5",
+      "description": "Between 2002 and 2012, population-adjusted US cardiometabolic deaths per year decreased by 26.5%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2593977293:e6",
+      "claim_id": "openalex:W2593977293:c6",
+      "description": "The greatest decline was associated with insufficient polyunsaturated fats (-20.8% relative change [95% UI, -18.5% to -22.8%]).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2593977293:e7",
+      "claim_id": "openalex:W2593977293:c7",
+      "description": "The greatest increase was associated with unprocessed red meats (+14.4% [95% UI, 9.1%-19.5%]).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2593977293:m1",
+      "paper_id": "openalex:W2593977293",
+      "name": "Comparative Risk Assessment Model",
+      "description": "A comparative risk assessment model combining NHANES dietary survey data, meta-analyses of prospective studies and clinical trials, and national mortality data to estimate disease-specific cardiometabolic deaths attributable to dietary factors.",
+      "datasets": [
+        "National Health and Nutrition Examination Surveys (NHANES 1999-2002, 2009-2012)",
+        "National Center for Health Statistics mortality data"
+      ],
+      "conditions": [
+        "US adult population",
+        "Assessment across 10 specific food and nutrient groups",
+        "Evaluation of trends between 2002 and 2012"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2593977293:l1",
+      "paper_id": "openalex:W2593977293",
+      "text": "National associations of individual dietary factors with specific cardiometabolic diseases are not well established.",
+      "normalized_category": "lack-of-established-national-associations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:07:20.937333Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

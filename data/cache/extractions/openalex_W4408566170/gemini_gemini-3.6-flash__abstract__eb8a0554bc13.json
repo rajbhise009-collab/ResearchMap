@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W4408566170",
+  "claims": [
+    {
+      "id": "openalex:W4408566170:c1",
+      "paper_id": "openalex:W4408566170",
+      "text": "Decoder-only LLM predictions for cyberattack tactics suffer from low precision while achieving high recall.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408566170:c2",
+      "paper_id": "openalex:W4408566170",
+      "text": "Hallucinations in decoder-only LLMs during TTP analysis typically occur during the decoding phase.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408566170:c3",
+      "paper_id": "openalex:W4408566170",
+      "text": "Generic prompts tend to yield better predictions of cyberattack tactics than specifically tailored prompts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4408566170:e1",
+      "claim_id": "openalex:W4408566170:c1",
+      "description": "The decoder-only results could suffer low ‘Precision’ while achieving high ‘Recall’",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408566170:e2",
+      "claim_id": "openalex:W4408566170:c2",
+      "description": "indicating the hallucinations typically occur during decoding phase.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4408566170:e3",
+      "claim_id": "openalex:W4408566170:c3",
+      "description": "Our findings further highlight a counter-intuitive observation that more generic prompts tend to yield better predictions of cyberattack tactics than those that are more specifically tailored.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4408566170:m1",
+      "paper_id": "openalex:W4408566170",
+      "name": "Comparison of SFT Encoder-Only vs RAG Decoder-Only LLMs",
+      "description": "Evaluates small-scale encoder-only LLMs using Supervised Fine-Tuning against large-scale decoder-only LLMs using Retrieval Augmented Generation for summarizing and comprehending attack procedures and tactics.",
+      "datasets": [
+        "MITRE ATT&CK"
+      ],
+      "conditions": [
+        "Supervised Fine-Tuning (RoBERTa)",
+        "Retrieval Augmented Generation (GPT-3.5)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4408566170:l1",
+      "paper_id": "openalex:W4408566170",
+      "text": "Interpretation of TTPs in the MITRE ATT&CK framework can be challenging due to presumed expertise and complex dependencies.",
+      "normalized_category": "domain-complexity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4408566170:l2",
+      "paper_id": "openalex:W4408566170",
+      "text": "Decoder-only LLMs with RAG suffer from low precision and hallucinations during the decoding phase.",
+      "normalized_category": "low-precision-hallucinations",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.124306Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

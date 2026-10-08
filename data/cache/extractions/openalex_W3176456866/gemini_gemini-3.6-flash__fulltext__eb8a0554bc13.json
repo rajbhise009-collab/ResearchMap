@@ -1,0 +1,152 @@
+{
+  "paper_id": "openalex:W3176456866",
+  "claims": [
+    {
+      "id": "openalex:W3176456866:c1",
+      "paper_id": "openalex:W3176456866",
+      "text": "BARTScore outperforms existing top-scoring metrics in 16 of 22 test settings across 16 datasets and 7 evaluation perspectives.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3176456866:c2",
+      "paper_id": "openalex:W3176456866",
+      "text": "Adding the prompt 'such as' to translated text when using BARTScore leads to a 3 percentage point absolute improvement in Kendall's Tau correlation on German-English machine translation evaluation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3176456866:c3",
+      "paper_id": "openalex:W3176456866",
+      "text": "BARTScore conceptualizes generated text evaluation as a sequence-to-sequence text generation problem modeled using pre-trained language models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3176456866:c4",
+      "paper_id": "openalex:W3176456866",
+      "text": "Fine-tuning BART on summarization and paraphrase datasets increases BARTScore's average Kendall's Tau correlation across WMT19 machine translation language pairs to 0.331.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3176456866:c5",
+      "paper_id": "openalex:W3176456866",
+      "text": "BARTScore fine-tuned on CNNDM achieves an accuracy of 0.836 on the Rank19 factuality benchmark and a Pearson correlation of 0.735 on QAGS-CNN.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3176456866:e1",
+      "claim_id": "openalex:W3176456866:c1",
+      "description": "It can outperform existing top-scoring metrics in 16 of 22 test settings, covering evaluation of 16 datasets (e.g., machine translation, text summarization) and 7 different perspectives (e.g., informativeness, factuality).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3176456866:e2",
+      "claim_id": "openalex:W3176456866:c2",
+      "description": "For example, simply adding the phrase 'such as ' to the translated text when using BARTScore can lead to a 3% point absolute improvement in correlation on 'German-English' machine translation (MT) evaluation.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3176456866:e3",
+      "claim_id": "openalex:W3176456866:c3",
+      "description": "In this work, we conceptualize the evaluation of generated text as a text generation problem, modeled using pre-trained sequence-to-sequence models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3176456866:e4",
+      "claim_id": "openalex:W3176456866:c4",
+      "description": "+ CNN + Para achieves 0.331 average Kendall's Tau correlation across all language pairs on WMT19.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3176456866:e5",
+      "claim_id": "openalex:W3176456866:c5",
+      "description": "BARTScore + CNN achieves 0.836 Accuracy on Rank19 and 0.735 Pearson correlation on QAGS-CNN.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3176456866:m1",
+      "paper_id": "openalex:W3176456866",
+      "name": "BARTScore",
+      "description": "An unsupervised evaluation metric that formulates text generation evaluation as conditional generation log probability under pre-trained encoder-decoder sequence-to-sequence models like BART.",
+      "datasets": [
+        "WMT19",
+        "REALSumm",
+        "SummEval",
+        "NeR18",
+        "Rank19",
+        "QAGS",
+        "BAGEL",
+        "SFHOT",
+        "SFRES"
+      ],
+      "conditions": [
+        "Vanilla BART",
+        "BART fine-tuned on CNNDM (CNN)",
+        "BART fine-tuned on CNNDM + ParaBank2 (Para)",
+        "Prompt augmentation (Prompt)",
+        "Faithfulness direction (s->h)",
+        "Precision direction (r->h)",
+        "Recall direction (h->r)",
+        "F-score direction (r<->h)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3176456866:l1",
+      "paper_id": "openalex:W3176456866",
+      "text": "BARTScore is less effective at distinguishing the quality of extractive summarization systems compared to abstractive summarization systems.",
+      "normalized_category": "extractive-system-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3176456866:l2",
+      "paper_id": "openalex:W3176456866",
+      "text": "Combining prompt ensembling with BARTScore does not produce consistent evaluation performance improvements for factuality and linguistic quality perspectives.",
+      "normalized_category": "prompting-inconsistency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3176456866:l3",
+      "paper_id": "openalex:W3176456866",
+      "text": "Existing feature-extraction metrics like BERTScore and MoverScore do not utilize the output prediction layer of pre-trained models, leading to potential under-utilization of parameters.",
+      "normalized_category": "parameter-underutilization",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3176456866:l4",
+      "paper_id": "openalex:W3176456866",
+      "text": "PRISM formulates evaluation strictly as a paraphrasing task requiring identical semantic meaning, limiting its application to scenarios like summarization factuality evaluation where source and summary differ in semantic space.",
+      "normalized_category": "task-formulation-restriction",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3176456866:f1",
+      "paper_id": "openalex:W3176456866",
+      "text": "Explore how to better design and utilize prompts for factuality and linguistic quality evaluation scenarios.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3176456866:f2",
+      "paper_id": "openalex:W3176456866",
+      "text": "Develop co-evolving evaluation metrics and generation systems where improved generation systems directly serve as automated evaluation metrics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.088373Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

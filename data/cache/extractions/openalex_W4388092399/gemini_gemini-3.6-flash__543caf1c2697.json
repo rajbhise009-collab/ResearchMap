@@ -1,0 +1,145 @@
+{
+  "paper_id": "openalex:W4388092399",
+  "claims": [
+    {
+      "id": "openalex:W4388092399:c1",
+      "paper_id": "openalex:W4388092399",
+      "text": "ChainPoll is an innovative hallucination detection method for LLMs.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c2",
+      "paper_id": "openalex:W4388092399",
+      "text": "RealHall is a refined collection of benchmark datasets for assessing hallucination detection metrics.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c3",
+      "paper_id": "openalex:W4388092399",
+      "text": "Many tasks and datasets from previous hallucination detection studies are not suitable for modern LLMs.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c4",
+      "paper_id": "openalex:W4388092399",
+      "text": "ChainPoll outperforms numerous hallucination metrics from recent studies across all RealHall benchmarks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c5",
+      "paper_id": "openalex:W4388092399",
+      "text": "ChainPoll achieves an overall AUROC of 0.781 on RealHall benchmarks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c6",
+      "paper_id": "openalex:W4388092399",
+      "text": "ChainPoll surpasses the next best theoretical method by 11% in AUROC.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c7",
+      "paper_id": "openalex:W4388092399",
+      "text": "ChainPoll exceeds industry standards by over 23% in performance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c8",
+      "paper_id": "openalex:W4388092399",
+      "text": "ChainPoll is cost-effective compared to other metrics.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c9",
+      "paper_id": "openalex:W4388092399",
+      "text": "ChainPoll offers greater transparency than other hallucination detection metrics.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c10",
+      "paper_id": "openalex:W4388092399",
+      "text": "Adherence evaluates an LLM's analytical capabilities within given documents and contexts in Retrieval Augmented Generation workflows.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388092399:c11",
+      "paper_id": "openalex:W4388092399",
+      "text": "Correctness identifies logical and reasoning errors in LLM outputs.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388092399:e1",
+      "claim_id": "openalex:W4388092399:c5",
+      "description": "Our findings indicate that ChainPoll outperforms in all RealHall benchmarks, achieving an overall AUROC of 0.781.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4388092399:e2",
+      "claim_id": "openalex:W4388092399:c6",
+      "description": "This surpasses the next best theoretical method by 11%.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4388092399:e3",
+      "claim_id": "openalex:W4388092399:c7",
+      "description": "exceeds industry standards by over 23%.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388092399:m1",
+      "paper_id": "openalex:W4388092399",
+      "name": "ChainPoll",
+      "description": "A high efficacy, cost-effective, and transparent method for detecting hallucinations in LLM outputs.",
+      "datasets": [
+        "RealHall"
+      ],
+      "conditions": []
+    },
+    {
+      "id": "openalex:W4388092399:m2",
+      "paper_id": "openalex:W4388092399",
+      "name": "RealHall",
+      "description": "A refined collection of four benchmark datasets challenging for modern LLMs and pertinent to real-world scenarios.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388092399:l1",
+      "paper_id": "openalex:W4388092399",
+      "text": "Tasks and datasets from previous hallucination detection studies are not suitable for potent modern LLMs.",
+      "normalized_category": "outdated-benchmarks",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-22T17:47:56.629331Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

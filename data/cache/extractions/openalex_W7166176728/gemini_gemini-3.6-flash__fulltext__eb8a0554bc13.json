@@ -1,0 +1,168 @@
+{
+  "paper_id": "openalex:W7166176728",
+  "claims": [
+    {
+      "id": "openalex:W7166176728:c1",
+      "paper_id": "openalex:W7166176728",
+      "text": "Mean Expected Calibration Error (ECE) across medical specialties ranged from 0.041 for 'Skin' to 0.141 for 'Social & Preventive Medicine'.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c2",
+      "paper_id": "openalex:W7166176728",
+      "text": "Claude Sonnet 4.5 achieved the lowest overall mean ECE of 0.06 among the six evaluated LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c3",
+      "paper_id": "openalex:W7166176728",
+      "text": "GPT-4o exhibited the highest overall mean ECE of 0.127 among the six evaluated LLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c4",
+      "paper_id": "openalex:W7166176728",
+      "text": "GPT-5 achieved the highest mean accuracy of 91.1% across the evaluated medical specialties.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c5",
+      "paper_id": "openalex:W7166176728",
+      "text": "Gemini 2.5 achieved the second-highest accuracy (90.4%) but ranked fifth in calibration (mean ECE 0.094) due to systematic overconfidence.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c6",
+      "paper_id": "openalex:W7166176728",
+      "text": "Increasing model parameter size within the GPT-5 model series improved calibration performance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c7",
+      "paper_id": "openalex:W7166176728",
+      "text": "High accuracy in large language models does not guarantee reliable uncertainty estimation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7166176728:e1",
+      "claim_id": "openalex:W7166176728:c1",
+      "description": "Across all models, mean ECE by specialty ranged from 0.041 ('Skin') to 0.141 ('Social & Preventive Medicine'), representing an approximately threefold difference.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e2",
+      "claim_id": "openalex:W7166176728:c2",
+      "description": "Table 1 reports Claude Sonnet 4.5 mean ECE as 0.06 (SD 0.019), ranking 1st in ECE among evaluated models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e3",
+      "claim_id": "openalex:W7166176728:c3",
+      "description": "Table 1 reports GPT-4o mean ECE as 0.127 (SD 0.063), ranking 6th (worst) in ECE.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e4",
+      "claim_id": "openalex:W7166176728:c4",
+      "description": "Table 1 lists GPT-5 accuracy as 91.1% (SD 4.3), ranking 1st in accuracy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e5",
+      "claim_id": "openalex:W7166176728:c5",
+      "description": "Table 1 lists Gemini 2.5 accuracy as 90.4% (rank 2) and ECE as 0.094 (rank 5), with text noting overconfidence in calibration points falling below the diagonal.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e6",
+      "claim_id": "openalex:W7166176728:c6",
+      "description": "An intra-vendor comparison of the GPT-5 series showed GPT-5 (ECE 0.063) outperformed GPT-5-mini (ECE 0.091) and GPT-5-nano (ECE 0.092).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7166176728:e7",
+      "claim_id": "openalex:W7166176728:c7",
+      "description": "Gemini 2.5 achieved the second-highest accuracy but ranked fifth in calibration, whereas Claude Sonnet 4.5 had the best calibration despite ranking third in accuracy.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7166176728:m1",
+      "paper_id": "openalex:W7166176728",
+      "name": "Self-reported confidence elicitation and Expected Calibration Error (ECE) analysis",
+      "description": "Evaluated accuracy and ECE across 20 medical specialties on 2,000 sampled MedMCQA questions per model using a two-step standardized prompt eliciting numerical confidence scores (0-100).",
+      "datasets": [
+        "MedMCQA"
+      ],
+      "conditions": [
+        "2,000 questions sampled across 20 medical specialties (100 per specialty)",
+        "Models evaluated: GPT-5, GPT-5-mini, GPT-5-nano, GPT-4o, Gemini 2.5, Claude Sonnet 4.5",
+        "Two-step prompting: answer generation followed by 0-100 confidence score elicitation",
+        "Default API parameter settings"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7166176728:l1",
+      "paper_id": "openalex:W7166176728",
+      "text": "Reliance on multiple-choice questions from MedMCQA may not capture LLM performance in open-ended clinical reasoning or real-world diagnostic scenarios.",
+      "normalized_category": "benchmark-representativeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7166176728:l2",
+      "paper_id": "openalex:W7166176728",
+      "text": "Question difficulty and question style (e.g., fact recall vs. opinion-based) were not controlled or assessed in the dataset sample.",
+      "normalized_category": "uncontrolled-confounding-variables",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7166176728:l3",
+      "paper_id": "openalex:W7166176728",
+      "text": "Only proprietary LLMs were evaluated; open-weights models were not tested.",
+      "normalized_category": "model-selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7166176728:l4",
+      "paper_id": "openalex:W7166176728",
+      "text": "Most prior work reports pooled calibration across domains, which obscures potentially large specialty-specific calibration differences.",
+      "normalized_category": "aggregated-metrics-masking",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7166176728:f1",
+      "paper_id": "openalex:W7166176728",
+      "text": "Conduct formal hypothesis testing in future experiments to complement the descriptive analysis.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7166176728:f2",
+      "paper_id": "openalex:W7166176728",
+      "text": "Incorporate domain- and specialty-specific calibration reporting into future LLM medical benchmarks alongside standard accuracy metrics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.988368Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

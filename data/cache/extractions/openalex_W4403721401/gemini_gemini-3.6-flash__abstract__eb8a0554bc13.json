@@ -1,0 +1,94 @@
+{
+  "paper_id": "openalex:W4403721401",
+  "claims": [
+    {
+      "id": "openalex:W4403721401:c1",
+      "paper_id": "openalex:W4403721401",
+      "text": "ChatTf is a knowledge graph-enhanced intelligent Q&A system for Chinese traditional folklore.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403721401:c2",
+      "paper_id": "openalex:W4403721401",
+      "text": "The Traditional Folklore Ontology (TFOnto) was constructed to domain-model Chinese traditional folklore.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403721401:c3",
+      "paper_id": "openalex:W4403721401",
+      "text": "The Zero-shot Traditional Folklore Triplet Extraction (ZFTE) framework constructs a Traditional Folklore Knowledge Graph (TFKG) driven by TFOnto.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403721401:c4",
+      "paper_id": "openalex:W4403721401",
+      "text": "The TFKG-RAG dual-stage Retrieval-Augmented Generation framework provides traditional folklore knowledge to large language models to reduce factuality hallucinations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403721401:c5",
+      "paper_id": "openalex:W4403721401",
+      "text": "ChatTf achieved an accuracy of 96.7% on a self-built TFCQD test set.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403721401:c6",
+      "paper_id": "openalex:W4403721401",
+      "text": "ChatTf outperforms several state-of-the-art baseline methods on folklore domain question answering.",
+      "type": "finding",
+      "confidence": 0.92,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403721401:e1",
+      "claim_id": "openalex:W4403721401:c5",
+      "description": "In the experimental phase, ChatTf achieved an accuracy of 96.7% on a self-built TFCQD test set.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4403721401:e2",
+      "claim_id": "openalex:W4403721401:c6",
+      "description": "ChatTf achieved an accuracy of 96.7% on a self-built TFCQD test set, outperforming several state-of-the-art baseline methods.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403721401:m1",
+      "paper_id": "openalex:W4403721401",
+      "name": "ChatTf / TFKG-RAG Framework",
+      "description": "A dual-stage Retrieval-Augmented Generation framework integrating a knowledge graph built via zero-shot triplet extraction and ontology modeling to answer folklore domain questions.",
+      "datasets": [
+        "TFCQD test set"
+      ],
+      "conditions": [
+        "Zero-shot triplet extraction (ZFTE)",
+        "TFOnto ontology modeling"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403721401:l1",
+      "paper_id": "openalex:W4403721401",
+      "text": "Large language models suffer from factuality hallucinations in knowledge-intensive domains due to insufficient domain knowledge.",
+      "normalized_category": "domain-knowledge-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.100877Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

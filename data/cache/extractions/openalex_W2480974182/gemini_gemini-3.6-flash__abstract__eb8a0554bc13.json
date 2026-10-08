@@ -1,0 +1,96 @@
+{
+  "paper_id": "openalex:W2480974182",
+  "claims": [
+    {
+      "id": "openalex:W2480974182:c1",
+      "paper_id": "openalex:W2480974182",
+      "text": "Weight gain is an important risk factor for type 2 diabetes, cardiovascular diseases, certain types of cancers, and premature death.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2480974182:c2",
+      "paper_id": "openalex:W2480974182",
+      "text": "Being overweight or obese is an important risk factor for type 2 diabetes, cardiovascular diseases, certain types of cancers, and premature death.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2480974182:c3",
+      "paper_id": "openalex:W2480974182",
+      "text": "Dietary and lifestyle factors, including sugar-sweetened beverages, poor diet quality, physical inactivity, prolonged screen time, short sleep duration or shift work, and built environment characteristics, play a role in obesity.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2480974182:c4",
+      "paper_id": "openalex:W2480974182",
+      "text": "Genetic factors predispose individuals to obesity.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2480974182:c5",
+      "paper_id": "openalex:W2480974182",
+      "text": "Genetic susceptibility to obesity can be attenuated by healthy lifestyle choices.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2480974182:e1",
+      "claim_id": "openalex:W2480974182:c1",
+      "description": "Long-term NHS research has shown that weight gain and being overweight or obese are important risk factors for type 2 diabetes, cardiovascular diseases, certain types of cancers, and premature death.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2480974182:e2",
+      "claim_id": "openalex:W2480974182:c2",
+      "description": "Long-term NHS research has shown that weight gain and being overweight or obese are important risk factors for type 2 diabetes, cardiovascular diseases, certain types of cancers, and premature death.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2480974182:e3",
+      "claim_id": "openalex:W2480974182:c3",
+      "description": "The cohorts have elucidated the role of dietary and lifestyle factors in obesity, especially sugar-sweetened beverages, poor diet quality, physical inactivity, prolonged screen time, short sleep duration or shift work, and built environment characteristics.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2480974182:e4",
+      "claim_id": "openalex:W2480974182:c4",
+      "description": "Genome-wide association and gene-lifestyle interaction studies have shown that genetic factors predispose individuals to obesity...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2480974182:e5",
+      "claim_id": "openalex:W2480974182:c5",
+      "description": "...such susceptibility can be attenuated by healthy lifestyle choices.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2480974182:m1",
+      "paper_id": "openalex:W2480974182",
+      "name": "Narrative Review",
+      "description": "Narrative review of publications from the Nurses' Health Studies (NHS and NHS II) published between 1976 and 2016.",
+      "datasets": [
+        "Nurses' Health Study (NHS)",
+        "Nurses' Health Study II (NHS II)"
+      ],
+      "conditions": [
+        "Publications between 1976 and 2016"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:15:42.180207Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

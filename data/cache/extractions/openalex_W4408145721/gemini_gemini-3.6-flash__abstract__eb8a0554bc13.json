@@ -1,0 +1,92 @@
+{
+  "paper_id": "openalex:W4408145721",
+  "claims": [
+    {
+      "id": "openalex:W4408145721:c1",
+      "paper_id": "openalex:W4408145721",
+      "text": "Retrieval-augmented generation leverages information retrieval and generative models to handle real-time and domain-specific knowledge.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408145721:c2",
+      "paper_id": "openalex:W4408145721",
+      "text": "Limitations within retrieval-augmented generation components cause hallucinations in generated outputs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408145721:c3",
+      "paper_id": "openalex:W4408145721",
+      "text": "Causes of hallucinations in retrieval-augmented large language models stem from sub-tasks in both the retrieval and generation phases.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408145721:c4",
+      "paper_id": "openalex:W4408145721",
+      "text": "Detection and correction methods reduce the impact of hallucinations in retrieval-augmented large language models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4408145721:e1",
+      "claim_id": "openalex:W4408145721:c1",
+      "description": "Retrieval-augmented generation (RAG) leverages the strengths of information retrieval and generative models to enhance the handling of real-time and domain-specific knowledge.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408145721:e2",
+      "claim_id": "openalex:W4408145721:c2",
+      "description": "limitations within RAG components may cause hallucinations, or more precisely termed confabulations in generated outputs",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408145721:e3",
+      "claim_id": "openalex:W4408145721:c3",
+      "description": "examine the causes of hallucinations from different sub-tasks in the retrieval and generation phases",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4408145721:e4",
+      "claim_id": "openalex:W4408145721:c4",
+      "description": "investigate methods to reduce the impact of hallucination through detection and correction",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4408145721:m1",
+      "paper_id": "openalex:W4408145721",
+      "name": "Literature Review and Categorization Framework",
+      "description": "A systematic review categorizing causes of hallucinations across retrieval and generation sub-tasks, along with mitigation, detection, and correction techniques.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4408145721:l1",
+      "paper_id": "openalex:W4408145721",
+      "text": "Limitations within RAG components cause hallucinations or confabulations in generated outputs.",
+      "normalized_category": "rag-component-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4408145721:f1",
+      "paper_id": "openalex:W4408145721",
+      "text": "Future research directions for mitigating hallucinations in retrieval-augmented LLMs.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.093607Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

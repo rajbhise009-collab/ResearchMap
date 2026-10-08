@@ -1,0 +1,131 @@
+{
+  "paper_id": "openalex:W4406458045",
+  "claims": [
+    {
+      "id": "openalex:W4406458045:c1",
+      "paper_id": "openalex:W4406458045",
+      "text": "LLM-IoT integration facilitates advanced decision making in IoT scenarios.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406458045:c2",
+      "paper_id": "openalex:W4406458045",
+      "text": "LLM-IoT integration facilitates contextual understanding in IoT scenarios.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406458045:c3",
+      "paper_id": "openalex:W4406458045",
+      "text": "Integrating LLMs with edge, fog, and cloud computing paradigms optimizes resource utilization in complex IoT applications.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406458045:c4",
+      "paper_id": "openalex:W4406458045",
+      "text": "Integrating LLMs with edge, fog, and cloud computing paradigms enhances real-time processing in complex IoT applications.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406458045:c5",
+      "paper_id": "openalex:W4406458045",
+      "text": "Integrating LLMs with edge, fog, and cloud computing paradigms provides scalable solutions for complex IoT applications.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406458045:c6",
+      "paper_id": "openalex:W4406458045",
+      "text": "An LLM-based collective intelligence system model enables predictive maintenance in industrial IoT applications.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406458045:c7",
+      "paper_id": "openalex:W4406458045",
+      "text": "An LLM-based collective intelligence system model enables condition monitoring in industrial IoT applications.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406458045:e1",
+      "claim_id": "openalex:W4406458045:c1",
+      "description": "We show how LLM-IoT integration can facilitate advanced decision making and contextual understanding in a variety of IoT scenarios.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406458045:e2",
+      "claim_id": "openalex:W4406458045:c2",
+      "description": "We show how LLM-IoT integration can facilitate advanced decision making and contextual understanding in a variety of IoT scenarios.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406458045:e3",
+      "claim_id": "openalex:W4406458045:c3",
+      "description": "Furthermore, we explore the integration of LLMs with edge, fog, and cloud computing paradigms, and show how this synergy can optimize resource utilization, enhance real-time processing, and provide scalable solutions for complex IoT applications.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406458045:e4",
+      "claim_id": "openalex:W4406458045:c4",
+      "description": "Furthermore, we explore the integration of LLMs with edge, fog, and cloud computing paradigms, and show how this synergy can optimize resource utilization, enhance real-time processing, and provide scalable solutions for complex IoT applications.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406458045:e5",
+      "claim_id": "openalex:W4406458045:c5",
+      "description": "Furthermore, we explore the integration of LLMs with edge, fog, and cloud computing paradigms, and show how this synergy can optimize resource utilization, enhance real-time processing, and provide scalable solutions for complex IoT applications.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406458045:e6",
+      "claim_id": "openalex:W4406458045:c6",
+      "description": "Additionally, we propose a novel system model for industrial IoT applications that leverages LLM-based collective intelligence to enable predictive maintenance and condition monitoring.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4406458045:e7",
+      "claim_id": "openalex:W4406458045:c7",
+      "description": "Additionally, we propose a novel system model for industrial IoT applications that leverages LLM-based collective intelligence to enable predictive maintenance and condition monitoring.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406458045:m1",
+      "paper_id": "openalex:W4406458045",
+      "name": "LLM-based collective intelligence system model for Industrial IoT",
+      "description": "A framework leveraging LLM-based collective intelligence combined with edge, fog, and cloud computing paradigms for predictive maintenance and condition monitoring in Industrial IoT.",
+      "datasets": [],
+      "conditions": [
+        "Edge computing",
+        "Fog computing",
+        "Cloud computing",
+        "Industrial IoT applications"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4406458045:f1",
+      "paper_id": "openalex:W4406458045",
+      "text": "Address key challenges and open issues in LLM-IoT integration.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.122021Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

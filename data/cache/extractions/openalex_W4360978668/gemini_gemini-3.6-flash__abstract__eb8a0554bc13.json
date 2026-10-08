@@ -1,0 +1,62 @@
+{
+  "paper_id": "openalex:W4360978668",
+  "claims": [
+    {
+      "id": "openalex:W4360978668:c1",
+      "paper_id": "openalex:W4360978668",
+      "text": "Combining GPT-3 with expert-drafted codebooks achieves fair to substantial agreement with expert-coded results in deductive coding tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4360978668:e1",
+      "claim_id": "openalex:W4360978668:c1",
+      "description": "Using a curiosity-driven questions coding task as a case study, combining GPT-3 with expert-drafted codebooks achieved fair to substantial agreements with expert-coded results.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4360978668:m1",
+      "paper_id": "openalex:W4360978668",
+      "name": "LLM-assisted deductive coding via prompt learning",
+      "description": "Utilizing pre-trained GPT-3 directly with expert-drafted codebooks to perform deductive qualitative coding without fine-tuning.",
+      "datasets": [
+        "curiosity-driven questions dataset"
+      ],
+      "conditions": [
+        "prompt learning without fine-tuning",
+        "expert-drafted codebook guidance"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4360978668:l1",
+      "paper_id": "openalex:W4360978668",
+      "text": "Traditional qualitative analysis of textual contents is labor-intensive, particularly when working with large datasets.",
+      "normalized_category": "high-labor-cost",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4360978668:l2",
+      "paper_id": "openalex:W4360978668",
+      "text": "Existing task-specific AI tools for qualitative analysis suffer from limited generalizability and require specialized AI resources and expertise.",
+      "normalized_category": "limited-generalizability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4360978668:f1",
+      "paper_id": "openalex:W4360978668",
+      "text": "Addressing key challenges and exploring opportunities in applying LLMs to support qualitative coding and broader qualitative analysis tasks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.115395Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

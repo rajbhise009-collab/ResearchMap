@@ -1,0 +1,142 @@
+{
+  "paper_id": "openalex:W3136620301",
+  "claims": [
+    {
+      "id": "openalex:W3136620301:c1",
+      "paper_id": "openalex:W3136620301",
+      "text": "Demographic parity best matches the fairness choices made by the majority of individuals in group fairness scenarios.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3136620301:c2",
+      "paper_id": "openalex:W3136620301",
+      "text": "Explanations for decisions made by algorithmic decision-making systems increase user perceptions of fairness in news recommender systems.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3136620301:c3",
+      "paper_id": "openalex:W3136620301",
+      "text": "Conservative users perceive the inclusion of sensitive features like gender and race in algorithmic decision-making systems as fairer than liberal users do.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3136620301:c4",
+      "paper_id": "openalex:W3136620301",
+      "text": "Individuals tend to perceive algorithms as fairer when the algorithmic decision yields a outcome that directly benefits them.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3136620301:c5",
+      "paper_id": "openalex:W3136620301",
+      "text": "Perceived fairness of algorithms has a significant positive impact on satisfaction with algorithmic systems.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3136620301:e1",
+      "claim_id": "openalex:W3136620301:c1",
+      "description": "Srivastava et al. (2019) matched participant fairness choices with group fairness definitions across criminal and skin cancer risk scenarios, showing demographic parity best matched participant choices.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3136620301:e2",
+      "claim_id": "openalex:W3136620301:c2",
+      "description": "Shin (2021) demonstrated that decision explanations in AI-based news recommender systems significantly increased respondents' perceptions of fairness.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3136620301:e3",
+      "claim_id": "openalex:W3136620301:c3",
+      "description": "Grgić-Hlača et al. (2020; 2018) found conservative users evaluated the inclusion of sensitive features such as race and gender in ADM as fairer compared to liberal users.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3136620301:e4",
+      "claim_id": "openalex:W3136620301:c4",
+      "description": "Grgić-Hlača et al. (2020) and R. Wang et al. (2020) observed that self-interest influences perceptions, making outcomes that personally benefit users seem fairer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3136620301:e5",
+      "claim_id": "openalex:W3136620301:c5",
+      "description": "Shin and Park (2019) found that perceived fairness positively impacts user satisfaction with algorithms to a degree exceeding perceived transparency.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3136620301:m1",
+      "paper_id": "openalex:W3136620301",
+      "name": "Systematic Literature Review",
+      "description": "Synthesized empirical research on fairness perceptions of algorithmic decision-making across 39 empirical studies using PICOC and PRISMA framework guidelines.",
+      "datasets": [
+        "Web of Science",
+        "PsycINFO",
+        "IEEE Xplore",
+        "Scopus",
+        "Google Scholar"
+      ],
+      "conditions": [
+        "English language publications",
+        "Published between January 2010 and March 2021",
+        "Two-stage screening process with inter-rater reliability calculation (Cohen's Kappa)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3136620301:l1",
+      "paper_id": "openalex:W3136620301",
+      "text": "The review cannot make assertions about studies on perceived algorithmic fairness published in languages other than English due to the choice of search strings and databases.",
+      "normalized_category": "language-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3136620301:l2",
+      "paper_id": "openalex:W3136620301",
+      "text": "Data on citizens' perceptions of algorithmic fairness in existing empirical literature is almost exclusively collected in Western-democratic contexts.",
+      "normalized_category": "geographic-sampling-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3136620301:l3",
+      "paper_id": "openalex:W3136620301",
+      "text": "The existing empirical literature lacks a coherent, multi-dimensional theoretical concept and validated measurement scale for perceived algorithmic fairness.",
+      "normalized_category": "measurement-unstandardized",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3136620301:f1",
+      "paper_id": "openalex:W3136620301",
+      "text": "Diversify study populations by investigating fairness perceptions in non-Western contexts where ADM systems are widely implemented.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3136620301:f2",
+      "paper_id": "openalex:W3136620301",
+      "text": "Develop and validate multi-dimensional measurement scales specifically designed for measuring fairness perceptions of ADM systems.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3136620301:f3",
+      "paper_id": "openalex:W3136620301",
+      "text": "Adopt a society-in-the-loop framework to examine broader institutional implementations and trade-offs in algorithmic decision-making.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:16:55.897231Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

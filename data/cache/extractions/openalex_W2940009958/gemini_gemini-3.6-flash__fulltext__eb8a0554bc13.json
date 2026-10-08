@@ -1,0 +1,146 @@
+{
+  "paper_id": "openalex:W2940009958",
+  "claims": [
+    {
+      "id": "openalex:W2940009958:c1",
+      "paper_id": "openalex:W2940009958",
+      "text": "Deep neural networks in natural language processing are vulnerable to adversarial examples.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2940009958:c2",
+      "paper_id": "openalex:W2940009958",
+      "text": "Adversarial perturbation methods designed for images cannot be directly applied to text because textual data is discrete.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2940009958:c3",
+      "paper_id": "openalex:W2940009958",
+      "text": "Small textual perturbations are easily perceptible to humans compared to small image perturbations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2940009958:c4",
+      "paper_id": "openalex:W2940009958",
+      "text": "Character or word level perturbations can drastically alter sentence semantics.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2940009958:c5",
+      "paper_id": "openalex:W2940009958",
+      "text": "Adversarial training is more effective than defensive distillation against adversarial attacks on models handling discrete data.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2940009958:e1",
+      "claim_id": "openalex:W2940009958:c1",
+      "description": "Previous efforts have shown that DNNs were vulnerable to strategically modified samples, named adversarial examples, which fool DNNs to give false predictions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2940009958:e2",
+      "claim_id": "openalex:W2940009958:c2",
+      "description": "Existing perturbation methods for images cannot be directly applied to texts as text data is discrete in nature.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2940009958:e3",
+      "claim_id": "openalex:W2940009958:c3",
+      "description": "For adversarial attack on texts, small perturbations are easily perceptible, generating invalid words or syntactically incorrect sentences.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2940009958:e4",
+      "claim_id": "openalex:W2940009958:c4",
+      "description": "Replacement of characters or words would alter the semantics of the sentence drastically, e.g., deleting a negation word changes sentence sentiment.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2940009958:e5",
+      "claim_id": "openalex:W2940009958:c5",
+      "description": "Evaluations in reviewed literature showed that adversarial training is more effective than distillation for models operating on discrete data.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2940009958:m1",
+      "paper_id": "openalex:W2940009958",
+      "name": "Literature Survey and Taxonomy Construction",
+      "description": "Systematic collection, selection, and categorization of adversarial attack and defense literature in natural language processing across threat models, attack granularity, and applications.",
+      "datasets": [
+        "SQuAD",
+        "SST",
+        "IMDB Review",
+        "AG's news",
+        "DBpedia",
+        "SNLI",
+        "DREBIN"
+      ],
+      "conditions": [
+        "White-box attack settings",
+        "Black-box attack settings",
+        "Character-level perturbations",
+        "Word-level perturbations",
+        "Sentence-level perturbations"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2940009958:l1",
+      "paper_id": "openalex:W2940009958",
+      "text": "Detailed evaluation metrics for specific NLP tasks are declared out of scope and omitted from detailed coverage in this survey.",
+      "normalized_category": "out-of-scope-coverage",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2940009958:l2",
+      "paper_id": "openalex:W2940009958",
+      "text": "Existing textual adversarial attack methods exhibit poor generalization and significant performance drops when transferred across different target architectures or datasets.",
+      "normalized_category": "poor-transferability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2940009958:l3",
+      "paper_id": "openalex:W2940009958",
+      "text": "Many black-box textual adversarial generation techniques rely on manual construction rather than automated end-to-end execution.",
+      "normalized_category": "lack-of-automation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2940009958:f1",
+      "paper_id": "openalex:W2940009958",
+      "text": "Develop practical textual attack methods that make perturbations unperceivable while strictly preserving correct grammar and sentence semantics.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2940009958:f2",
+      "paper_id": "openalex:W2940009958",
+      "text": "Investigate adversarial attacks targeting deep generative textual models such as Generative Adversarial Networks (GANs) and Variational Auto-Encoders (VAEs).",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2940009958:f3",
+      "paper_id": "openalex:W2940009958",
+      "text": "Improve cross-model and cross-dataset transferability and generalization capabilities of textual adversarial attacks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.089205Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

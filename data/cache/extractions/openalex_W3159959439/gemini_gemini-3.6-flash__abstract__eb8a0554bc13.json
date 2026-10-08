@@ -1,0 +1,80 @@
+{
+  "paper_id": "openalex:W3159959439",
+  "claims": [
+    {
+      "id": "openalex:W3159959439:c1",
+      "paper_id": "openalex:W3159959439",
+      "text": "StrategyQA is a question answering benchmark where required reasoning steps are implicit in the question.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3159959439:c2",
+      "paper_id": "openalex:W3159959439",
+      "text": "StrategyQA contains 2,780 examples, each consisting of a strategy question, its decomposition, and evidence paragraphs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3159959439:c3",
+      "paper_id": "openalex:W3159959439",
+      "text": "Humans achieve an accuracy of 87% on the StrategyQA benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3159959439:c4",
+      "paper_id": "openalex:W3159959439",
+      "text": "The best baseline model achieves an accuracy of approximately 66% on the StrategyQA benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3159959439:e1",
+      "claim_id": "openalex:W3159959439:c3",
+      "description": "Empirically, humans perform well (87%) on the StrategyQA task.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3159959439:e2",
+      "claim_id": "openalex:W3159959439:c4",
+      "description": "The best baseline model reaches an accuracy of ~ 66% on StrategyQA.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3159959439:m1",
+      "paper_id": "openalex:W3159959439",
+      "name": "StrategyQA Data Collection and Annotation Pipeline",
+      "description": "A crowd-sourcing procedure combining term-based priming, annotator population control, and adversarial filtering with question decomposition and Wikipedia paragraph retrieval annotations.",
+      "datasets": [
+        "StrategyQA",
+        "Wikipedia"
+      ],
+      "conditions": [
+        "term-based priming",
+        "annotator control",
+        "adversarial filtering"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3159959439:l1",
+      "paper_id": "openalex:W3159959439",
+      "text": "Current datasets for multi-hop reasoning explicitly mention the required answering steps in the question.",
+      "normalized_category": "explicit-reasoning-steps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.089871Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

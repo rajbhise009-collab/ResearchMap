@@ -1,0 +1,139 @@
+{
+  "paper_id": "openalex:W2335592377",
+  "claims": [
+    {
+      "id": "openalex:W2335592377:c1",
+      "paper_id": "openalex:W2335592377",
+      "text": "Alcohol consumption is associated with specific causes of death including cirrhosis, alcoholism, cancers of the mouth, esophagus, pharynx, larynx, liver, breast cancer in women, and external causes in men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2335592377:c2",
+      "paper_id": "openalex:W2335592377",
+      "text": "Breast cancer mortality was 30 percent higher among women reporting at least one drink daily compared with nondrinkers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2335592377:c3",
+      "paper_id": "openalex:W2335592377",
+      "text": "Cardiovascular disease death rates were 30 to 40 percent lower among men reporting at least one drink daily compared with nondrinkers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2335592377:c4",
+      "paper_id": "openalex:W2335592377",
+      "text": "Cardiovascular disease death rates were 30 to 40 percent lower among women reporting at least one drink daily compared with nondrinkers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2335592377:c5",
+      "paper_id": "openalex:W2335592377",
+      "text": "Overall death rates were lowest among men and women reporting about one drink daily.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2335592377:c6",
+      "paper_id": "openalex:W2335592377",
+      "text": "All-cause mortality increased with heavier drinking, particularly among adults under age 60 with lower risk of cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2335592377:c7",
+      "paper_id": "openalex:W2335592377",
+      "text": "Alcohol consumption was associated with a small reduction in the overall risk of death in middle age (ages 35 to 69).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2335592377:c8",
+      "paper_id": "openalex:W2335592377",
+      "text": "Smoking approximately doubled the overall risk of death in middle age.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2335592377:e1",
+      "claim_id": "openalex:W2335592377:c1",
+      "description": "Causes of death associated with drinking were cirrhosis and alcoholism; cancers of the mouth, esophagus, pharynx, larynx, and liver combined; breast cancer in women; and injuries and other external causes in men.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2335592377:e2",
+      "claim_id": "openalex:W2335592377:c2",
+      "description": "The mortality from breast cancer was 30 percent higher among women reporting at least one drink daily than among nondrinkers (relative risk, 1.3; 95 percent confidence interval, 1.1 to 1.6).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2335592377:e3",
+      "claim_id": "openalex:W2335592377:c3",
+      "description": "The rates of death from all cardiovascular diseases were 30 to 40 percent lower among men (relative risk, 0.7; 95 percent confidence interval, 0.7 to 0.8) reporting at least one drink daily than among nondrinkers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2335592377:e4",
+      "claim_id": "openalex:W2335592377:c4",
+      "description": "The rates of death from all cardiovascular diseases were 30 to 40 percent lower among women (relative risk, 0.6; 95 percent confidence interval, 0.6 to 0.7) reporting at least one drink daily than among nondrinkers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2335592377:e5",
+      "claim_id": "openalex:W2335592377:c5",
+      "description": "The overall death rates were lowest among men and women reporting about one drink daily.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2335592377:e6",
+      "claim_id": "openalex:W2335592377:c6",
+      "description": "Mortality from all causes increased with heavier drinking, particularly among adults under age 60 with lower risk of cardiovascular disease.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2335592377:e7",
+      "claim_id": "openalex:W2335592377:c7",
+      "description": "Alcohol consumption was associated with a small reduction in the overall risk of death in middle age (ages 35 to 69).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2335592377:e8",
+      "claim_id": "openalex:W2335592377:c8",
+      "description": "smoking approximately doubled this risk [of death in middle age].",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2335592377:m1",
+      "paper_id": "openalex:W2335592377",
+      "name": "Prospective Cohort Study of Alcohol Consumption and Mortality",
+      "description": "A 9-year prospective follow-up study comparing cause-specific and all-cause mortality across baseline alcohol consumption levels after adjusting for risk factors.",
+      "datasets": [
+        "U.S. Adults Cohort (490,000 men and women)"
+      ],
+      "conditions": [
+        "9 years of follow-up",
+        "baseline age 30 to 104 (mean age 56)",
+        "adjusted for risk factors including smoking habits"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:06:29.552622Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

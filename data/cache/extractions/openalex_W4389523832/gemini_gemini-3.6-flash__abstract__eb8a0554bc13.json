@@ -1,0 +1,82 @@
+{
+  "paper_id": "openalex:W4389523832",
+  "claims": [
+    {
+      "id": "openalex:W4389523832:c1",
+      "paper_id": "openalex:W4389523832",
+      "text": "Representative large vision-language models suffer from severe object hallucination issues.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c2",
+      "paper_id": "openalex:W4389523832",
+      "text": "Objects that frequently appear in visual instructions are prone to be hallucinated by large vision-language models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c3",
+      "paper_id": "openalex:W4389523832",
+      "text": "Objects that co-occur with image objects are prone to be hallucinated by large vision-language models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c4",
+      "paper_id": "openalex:W4389523832",
+      "text": "POPE evaluates object hallucination via a polling-based query method.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389523832:e1",
+      "claim_id": "openalex:W4389523832:c1",
+      "description": "Evaluation experiments conducted on several representative LVLMs showed widespread object hallucination.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389523832:e2",
+      "claim_id": "openalex:W4389523832:c2",
+      "description": "Analysis of visual instructions indicated a correlation between high object frequency in instructions and hallucination rate.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4389523832:e3",
+      "claim_id": "openalex:W4389523832:c3",
+      "description": "Analysis showed objects co-occurring with target image objects were significantly more prone to hallucination.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389523832:m1",
+      "paper_id": "openalex:W4389523832",
+      "name": "POPE (Polling-based Object Probe Evaluation)",
+      "description": "A polling-based query method designed to evaluate object hallucination in large vision-language models.",
+      "datasets": [],
+      "conditions": [
+        "visual instruction tuning",
+        "zero-shot object polling"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389523832:l1",
+      "paper_id": "openalex:W4389523832",
+      "text": "Large vision-language models tend to generate objects inconsistent with target images in descriptions.",
+      "normalized_category": "object-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.087411Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

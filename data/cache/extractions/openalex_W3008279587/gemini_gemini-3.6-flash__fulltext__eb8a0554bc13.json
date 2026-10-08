@@ -1,0 +1,237 @@
+{
+  "paper_id": "openalex:W3008279587",
+  "claims": [
+    {
+      "id": "openalex:W3008279587:c1",
+      "paper_id": "openalex:W3008279587",
+      "text": "Over 60% of the United States population is classified as overweight or obese based on body mass index thresholds.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c2",
+      "paper_id": "openalex:W3008279587",
+      "text": "Approximately 85% of adults with type 2 diabetes mellitus are also classified as obese.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c3",
+      "paper_id": "openalex:W3008279587",
+      "text": "Obesity and type 2 diabetes mellitus independently increase cardiovascular disease morbidity and mortality by greater than 2-fold.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c4",
+      "paper_id": "openalex:W3008279587",
+      "text": "Subcutaneous white adipose tissue constitutes approximately 80% of all adipose tissue in lean, healthy individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c5",
+      "paper_id": "openalex:W3008279587",
+      "text": "Omental white adipose tissue produces 2-fold to 3-fold higher levels of interleukin-6 than subcutaneous white adipose tissue.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c6",
+      "paper_id": "openalex:W3008279587",
+      "text": "Macrophages represent approximately 5% to 10% of total cells within lean adipose tissue.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c7",
+      "paper_id": "openalex:W3008279587",
+      "text": "Macrophages represent up to 60% of all cells present within obese adipose tissue.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c8",
+      "paper_id": "openalex:W3008279587",
+      "text": "Human resistin protein shares 59% sequence homology with mouse resistin protein.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c9",
+      "paper_id": "openalex:W3008279587",
+      "text": "Approximately 60% of ectopic hepatic triglycerides in obese non-alcoholic fatty liver disease patients originate from adipose tissue free fatty acid release.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c10",
+      "paper_id": "openalex:W3008279587",
+      "text": "Approximately two-thirds of the obese human population exhibits excessive pancreatic fat deposition.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3008279587:c11",
+      "paper_id": "openalex:W3008279587",
+      "text": "Bariatric surgery yields an estimated 48% reduction in macrovascular events in patients with obesity after more than 5 years.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3008279587:e1",
+      "claim_id": "openalex:W3008279587:c1",
+      "description": "\"Obesity has now reached epidemic proportions, with over 60% of the US population classified as overweight or obese (defined by a body mass index ≥ 25 or 30 kg/m 2, respectively)\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e2",
+      "claim_id": "openalex:W3008279587:c2",
+      "description": "\"Recent epidemiological evidence has shown that 85% of type 2 diabetic adults are also obese\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e3",
+      "claim_id": "openalex:W3008279587:c3",
+      "description": "\"both obesity and T2DM increase the risk of cardiovascular disease (CVD), increasing morbidity and mortality by greater than 2-fold\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e4",
+      "claim_id": "openalex:W3008279587:c4",
+      "description": "\"subcutaneous WAT is the most prominent WAT depot in lean, healthy subjects, making up ∼ 80% of all adipose tissue\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e5",
+      "claim_id": "openalex:W3008279587:c5",
+      "description": "\"Omental fat produces 2 to 3-fold higher levels of IL-6 than subcutaneous fat\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e6",
+      "claim_id": "openalex:W3008279587:c6",
+      "description": "\"Reported to represent ∼ 5–10% of total cells within lean adipose tissue, macrophages in obese adipose tissue represent up to 60% of all cells present\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e7",
+      "claim_id": "openalex:W3008279587:c7",
+      "description": "\"macrophages in obese adipose tissue represent up to 60% of all cells present\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e8",
+      "claim_id": "openalex:W3008279587:c8",
+      "description": "\"Human resistin is only 59% homologous to mouse resistin ( 106), which has raised some controversy over the pathogenic role of resistin\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e9",
+      "claim_id": "openalex:W3008279587:c9",
+      "description": "\"It has been estimated that nearly 60% of ectopic hepatic triglycerides in obese NAFLD patients derive from FFA released from adipose tissue\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e10",
+      "claim_id": "openalex:W3008279587:c10",
+      "description": "\"reports that nearly 2/3 of the obese population has excessive pancreatic fat\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3008279587:e11",
+      "claim_id": "openalex:W3008279587:c11",
+      "description": "\"A recent meta-analysis has estimated that on average, patients exhibit a 48% reduction in macrovascular events with a 79% reduction in mortality more than 5 years following bariatric surgery\"",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3008279587:m1",
+      "paper_id": "openalex:W3008279587",
+      "name": "Dual-Energy X-ray Absorptiometry (DEXA) and Computed Tomography (CT)",
+      "description": "Imaging modalities used to assess body fat distribution, lean mass composition, and regional ectopic adipose tissue accumulation.",
+      "datasets": [],
+      "conditions": [
+        "Obesity evaluation",
+        "Cardiometabolic risk assessment"
+      ]
+    },
+    {
+      "id": "openalex:W3008279587:m2",
+      "paper_id": "openalex:W3008279587",
+      "name": "18F-FDG PET/CT Imaging",
+      "description": "Positron emission tomography using 2-[18F]fluoro-2-deoxyglucose to identify and quantify functional, metabolically active brown adipose tissue in humans.",
+      "datasets": [],
+      "conditions": [
+        "Cold exposure activation",
+        "Sympathetic nervous system stimulation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3008279587:l1",
+      "paper_id": "openalex:W3008279587",
+      "text": "Standard clinical measures like BMI, waist circumference, or body weight fail to accurately depict anatomical fat distribution or distinguish metabolically healthy from metabolically unhealthy obesity phenotypes.",
+      "normalized_category": "measurement-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3008279587:l2",
+      "paper_id": "openalex:W3008279587",
+      "text": "Human resistin shares only 59% sequence homology with mouse resistin, limiting direct translational comparisons between animal models and human metabolic disease.",
+      "normalized_category": "species-homology-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3008279587:l3",
+      "paper_id": "openalex:W3008279587",
+      "text": "Surgical weight loss studies primarily sample subcutaneous adipose tissue due to sampling feasibility, leaving the precise impact of bariatric surgery on visceral adipose tissue inflammation insufficiently evaluated in humans.",
+      "normalized_category": "tissue-sampling-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3008279587:l4",
+      "paper_id": "openalex:W3008279587",
+      "text": "Methods of inducing white adipose tissue browning via cold exposure or beta-3 adrenergic receptor agonists are clinically impractical due to rapid reversibility, high time demands, and adverse cardiometabolic effects.",
+      "normalized_category": "therapeutic-translation-limitation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3008279587:f1",
+      "paper_id": "openalex:W3008279587",
+      "text": "Elucidate mechanisms of white adipose tissue browning that are long-lasting and operate independently from the sympathetic nervous system.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3008279587:f2",
+      "paper_id": "openalex:W3008279587",
+      "text": "Investigate whether individuals possessing inherently low brown adipose tissue activity are predisposed to metabolic syndrome or if metabolic pathology actively suppresses BAT function.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3008279587:f3",
+      "paper_id": "openalex:W3008279587",
+      "text": "Determine the exact physiological role of adipocyte-derived FGF21 and whether it predominantly acts locally or contributes to circulating hormone pools across varied nutritional states.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:44:51.951800Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,140 @@
+{
+  "paper_id": "openalex:W4322717046",
+  "claims": [
+    {
+      "id": "openalex:W4322717046:c1",
+      "paper_id": "openalex:W4322717046",
+      "text": "Language models are highly sensitive to epistemic markers in prompts.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c2",
+      "paper_id": "openalex:W4322717046",
+      "text": "Language model accuracies vary by more than 80% depending on epistemic markers in prompts.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c3",
+      "paper_id": "openalex:W4322717046",
+      "text": "Expressions of high certainty result in a 7% decrease in accuracy compared to low certainty expressions.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c4",
+      "paper_id": "openalex:W4322717046",
+      "text": "Factive verbs hurt language model performance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c5",
+      "paper_id": "openalex:W4322717046",
+      "text": "Evidentials benefit language model performance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c6",
+      "paper_id": "openalex:W4322717046",
+      "text": "Markers of uncertainty in pretraining data are associated with answers on question-answering websites.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c7",
+      "paper_id": "openalex:W4322717046",
+      "text": "Markers of certainty in pretraining data are associated with questions on question-answering websites.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4322717046:e1",
+      "claim_id": "openalex:W4322717046:c1",
+      "description": "We find that LMs are highly sensitive to epistemic markers in prompts, with accuracies varying more than 80%.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e2",
+      "claim_id": "openalex:W4322717046:c2",
+      "description": "accuracies varying more than 80%",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e3",
+      "claim_id": "openalex:W4322717046:c3",
+      "description": "expressions of high certainty result in a 7% decrease in accuracy as compared to low certainty expressions",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e4",
+      "claim_id": "openalex:W4322717046:c4",
+      "description": "factive verbs hurt performance",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e5",
+      "claim_id": "openalex:W4322717046:c5",
+      "description": "while evidentials benefit performance",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e6",
+      "claim_id": "openalex:W4322717046:c6",
+      "description": "these markers of uncertainty are associated with answers on question-answering websites",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e7",
+      "claim_id": "openalex:W4322717046:c7",
+      "description": "while markers of certainty are associated with questions",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4322717046:m1",
+      "paper_id": "openalex:W4322717046",
+      "name": "Epistemic marker prompt injection",
+      "description": "Developed a typology of epistemic markers and injected 50 markers into prompts for question answering.",
+      "datasets": [],
+      "conditions": [
+        "high certainty vs low certainty expressions",
+        "factive verbs vs evidentials"
+      ]
+    },
+    {
+      "id": "openalex:W4322717046:m2",
+      "paper_id": "openalex:W4322717046",
+      "name": "Pretraining dataset analysis",
+      "description": "Analyzed associations between epistemic markers and question-answering website content in a popular pretraining dataset.",
+      "datasets": [
+        "popular pretraining dataset"
+      ],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4322717046:l1",
+      "paper_id": "openalex:W4322717046",
+      "text": "Behavior of LMs may be based on mimicking observed language use, rather than truly reflecting epistemic uncertainty.",
+      "normalized_category": "mimicking-behavior-over-true-epistemics",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-22T17:50:12.688021Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

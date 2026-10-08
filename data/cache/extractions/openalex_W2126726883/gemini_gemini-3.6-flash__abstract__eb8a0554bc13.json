@@ -1,0 +1,119 @@
+{
+  "paper_id": "openalex:W2126726883",
+  "claims": [
+    {
+      "id": "openalex:W2126726883:c1",
+      "paper_id": "openalex:W2126726883",
+      "text": "Men who consumed alcohol three to four days per week had a decreased risk of myocardial infarction compared with men who consumed alcohol less than once per week.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2126726883:c2",
+      "paper_id": "openalex:W2126726883",
+      "text": "Men who consumed alcohol five to seven days per week had a decreased risk of myocardial infarction compared with men who consumed alcohol less than once per week.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2126726883:c3",
+      "paper_id": "openalex:W2126726883",
+      "text": "The decreased risk of myocardial infarction was similar between men consuming less than 10 g of alcohol per drinking day and those consuming 30 g or more.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2126726883:c4",
+      "paper_id": "openalex:W2126726883",
+      "text": "No single type of alcoholic beverage conferred an additional risk reduction for myocardial infarction beyond drinking frequency.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2126726883:c5",
+      "paper_id": "openalex:W2126726883",
+      "text": "Consumption of alcohol with meals did not substantially alter the inverse association with myocardial infarction risk.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2126726883:c6",
+      "paper_id": "openalex:W2126726883",
+      "text": "A 12.5-g increase in daily alcohol consumption over a four-year follow-up period was associated with a decreased risk of myocardial infarction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2126726883:e1",
+      "claim_id": "openalex:W2126726883:c1",
+      "description": "Multivariate relative risk of 0.68 (95% CI, 0.55 to 0.84) for men consuming alcohol 3 to 4 days per week vs. less than once per week.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2126726883:e2",
+      "claim_id": "openalex:W2126726883:c2",
+      "description": "Multivariate relative risk of 0.63 (95% CI, 0.54 to 0.74) for men consuming alcohol 5 to 7 days per week vs. less than once per week.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2126726883:e3",
+      "claim_id": "openalex:W2126726883:c3",
+      "description": "Risk of myocardial infarction was similar among men who consumed less than 10 g of alcohol per drinking day and those who consumed 30 g or more.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2126726883:e4",
+      "claim_id": "openalex:W2126726883:c4",
+      "description": "No single type of beverage conferred additional benefit among beer, red wine, white wine, and liquor.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2126726883:e5",
+      "claim_id": "openalex:W2126726883:c5",
+      "description": "Consumption with meals did not confer additional benefit or substantially alter the inverse association.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2126726883:e6",
+      "claim_id": "openalex:W2126726883:c6",
+      "description": "A 12.5-g increase in daily alcohol consumption over a four-year period was associated with a relative risk of myocardial infarction of 0.78 (95% CI, 0.62 to 0.99).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2126726883:m1",
+      "paper_id": "openalex:W2126726883",
+      "name": "Prospective cohort study using repeated food-frequency questionnaires",
+      "description": "Prospective evaluation of 38,077 male health professionals assessing individual beverage intake every four years to track nonfatal myocardial infarction and fatal coronary heart disease events over 12 years.",
+      "datasets": [
+        "Health Professionals Follow-up Study"
+      ],
+      "conditions": [
+        "Male health professionals",
+        "Free of cardiovascular disease and cancer at baseline",
+        "Followed from 1986 to 1998 (12-year follow-up)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2126726883:l1",
+      "paper_id": "openalex:W2126726883",
+      "text": "The roles of drinking pattern and type of alcoholic beverage in coronary heart disease risk reduction remain unclear in prior research.",
+      "normalized_category": "unclear-mechanism-or-pattern-effect",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:14:56.493022Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

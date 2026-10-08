@@ -1,0 +1,116 @@
+{
+  "paper_id": "openalex:W4401533174",
+  "claims": [
+    {
+      "id": "openalex:W4401533174:c1",
+      "paper_id": "openalex:W4401533174",
+      "text": "Human crowd solutions exhibit higher average novelty compared to human-AI solutions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401533174:c2",
+      "paper_id": "openalex:W4401533174",
+      "text": "Human crowd solutions exhibit higher novelty for highly novel outcomes compared to human-AI solutions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401533174:c3",
+      "paper_id": "openalex:W4401533174",
+      "text": "Human-AI solutions demonstrate superior strategic viability compared to human crowd solutions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401533174:c4",
+      "paper_id": "openalex:W4401533174",
+      "text": "Human-AI solutions demonstrate superior financial and environmental value compared to human crowd solutions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401533174:c5",
+      "paper_id": "openalex:W4401533174",
+      "text": "Human-AI solutions demonstrate superior overall quality compared to human crowd solutions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401533174:c6",
+      "paper_id": "openalex:W4401533174",
+      "text": "Human-AI solutions cocreated through differentiated search outperform solutions generated through independent search.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401533174:e1",
+      "claim_id": "openalex:W4401533174:c1",
+      "description": "Evaluations by 300 external human evaluators showed human crowd solutions exhibited higher average novelty.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401533174:e2",
+      "claim_id": "openalex:W4401533174:c2",
+      "description": "Evaluations across 3,900 evaluator-solution pairs showed human crowd solutions achieved higher novelty for highly novel outcomes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401533174:e3",
+      "claim_id": "openalex:W4401533174:c3",
+      "description": "Human-AI solutions scored higher on strategic viability across evaluator-solution pairings.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401533174:e4",
+      "claim_id": "openalex:W4401533174:c4",
+      "description": "Human-AI solutions scored higher on financial and environmental value in external evaluations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401533174:e5",
+      "claim_id": "openalex:W4401533174:c5",
+      "description": "Human-AI solutions demonstrated superior overall quality ratings across 3,900 evaluation pairs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401533174:e6",
+      "claim_id": "openalex:W4401533174:c6",
+      "description": "Differentiated search, instructing LLMs sequentially to generate outputs distinct from prior iterations, yielded better solutions than independent search.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401533174:m1",
+      "paper_id": "openalex:W4401533174",
+      "name": "Crowdsourcing evaluation with human-AI prompt engineering and randomized evaluator pairing",
+      "description": "A crowdsourcing challenge engaging 125 global solvers to generate circular economy business ideas using human crowd generation, independent human-AI search, and differentiated human-AI search, evaluated by 300 external human evaluators across 3,900 pairings.",
+      "datasets": [],
+      "conditions": [
+        "human crowd solutions",
+        "human-AI independent search",
+        "human-AI differentiated search"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4401533174:f1",
+      "paper_id": "openalex:W4401533174",
+      "text": "Investigating how integrating human-AI solution search processes can drive more impactful innovations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.114800Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

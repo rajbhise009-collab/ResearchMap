@@ -1,0 +1,279 @@
+{
+  "paper_id": "openalex:W4281690148",
+  "claims": [
+    {
+      "id": "openalex:W4281690148:c1",
+      "paper_id": "openalex:W4281690148",
+      "text": "The Beyond the Imitation Game benchmark (BIG-bench) contains 204 tasks contributed across diverse topics.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c2",
+      "paper_id": "openalex:W4281690148",
+      "text": "Average language model performance on BIG-bench improves with compute scale and shot count, but best models achieve a normalized aggregate score below 20 compared to expert human raters.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c3",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model probability calibration improves consistently with increased scale on multiple-choice tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c4",
+      "paper_id": "openalex:W4281690148",
+      "text": "BIG-G sparse models achieve a roughly twofold improvement in inference compute cost compared to dense models for equivalent BIG-bench aggregate performance.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c5",
+      "paper_id": "openalex:W4281690148",
+      "text": "BIG-G sparse models achieve approximately a tenfold improvement in FLOP-matched parameter count needed to reach a given calibration score compared to dense models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c6",
+      "paper_id": "openalex:W4281690148",
+      "text": "Tasks with high performance linearity across model scales rely predominantly on knowledge memorization or simple text manipulations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c7",
+      "paper_id": "openalex:W4281690148",
+      "text": "Tasks exhibiting sudden breakthrough behavior at critical scales are composite tasks requiring multiple discrete steps or distinct skills.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c8",
+      "paper_id": "openalex:W4281690148",
+      "text": "Including answer choices in the input query prompt reduces multiple-choice task performance across model scales compared to omitting choices from the prompt.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c9",
+      "paper_id": "openalex:W4281690148",
+      "text": "Model social bias increases with scale in task settings presenting broad or ambiguous contexts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c10",
+      "paper_id": "openalex:W4281690148",
+      "text": "Model social bias decreases with scale in task settings with narrow, unambiguous contexts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c11",
+      "paper_id": "openalex:W4281690148",
+      "text": "Few-shot prompting demonstrating neutrality significantly reduces model social bias on ambiguous tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c12",
+      "paper_id": "openalex:W4281690148",
+      "text": "Evaluated language models perform substantially worse on non-English tasks than on English tasks, especially on low-resource languages.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c13",
+      "paper_id": "openalex:W4281690148",
+      "text": "In the checkmate-in-one chess task, the capability to propose legal chess moves improves smoothly with scale even though checkmate accuracy remains low.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4281690148:e1",
+      "claim_id": "openalex:W4281690148:c1",
+      "description": "BIG-bench currently consists of 204 tasks, contributed by 450 authors across 132 institutions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e2",
+      "claim_id": "openalex:W4281690148:c2",
+      "description": "In plots of aggregate performance, this normalized preferred metric is averaged over all tasks. The best performing language models achieved a score of less than 20, well below expert human baseline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e3",
+      "claim_id": "openalex:W4281690148:c3",
+      "description": "Figure 5 shows expected calibration error and Brier score across 109 multiple choice tasks, showing consistent calibration improvement with model scale.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e4",
+      "claim_id": "openalex:W4281690148:c4",
+      "description": "BIG-G sparse models perform better on BIG-bench tasks than BIG-G dense models, achieving a roughly twofold improvement in inference cost for the same model performance.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e5",
+      "claim_id": "openalex:W4281690148:c5",
+      "description": "Sparse models achieve about a tenfold improvement in the FLOP-matched parameter count needed to reach a given calibration score.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e6",
+      "claim_id": "openalex:W4281690148:c6",
+      "description": "Tasks with highest linearity rely mostly on memorization of information that exists in training data, such as qa_wikidata, linguistic_mappings, and mult_data_wrangling.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4281690148:e7",
+      "claim_id": "openalex:W4281690148:c7",
+      "description": "Tasks that see strong breakthrough behavior include modified_arithmetic, repeat_copy_logic, and figure_of_speech_detection, which require applying several distinct skills or discrete steps.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4281690148:e8",
+      "claim_id": "openalex:W4281690148:c8",
+      "description": "Figure 10 demonstrates that including multiple choice options in input queries hurts performance across all shot counts compared to evaluation without appended choices.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e9",
+      "claim_id": "openalex:W4281690148:c9",
+      "description": "Across six social bias tasks with broad/ambiguous contexts, aggregate bias scores decrease with scale; e.g., the 128B model finds it 22x more likely that a white boy will grow up to be a good doctor than a Native American girl.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e10",
+      "claim_id": "openalex:W4281690148:c10",
+      "description": "Figure 13a shows bias decreasing with model size in unambiguously prompted bbq_lite_json subtasks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e11",
+      "claim_id": "openalex:W4281690148:c11",
+      "description": "Figure 13b shows that few-shot prompting indicating neutrality as the desired response significantly reduces model bias in ambiguous contexts.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e12",
+      "claim_id": "openalex:W4281690148:c12",
+      "description": "While English entailed_polarity accuracy reaches 90% with scale, Hindi entailed_polarity shows no scaling trend and stays below 70% accuracy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4281690148:e13",
+      "claim_id": "openalex:W4281690148:c13",
+      "description": "The 128B parameter model finds only 6 checkmates out of 1024 zero-shot examples, but its rate of outputting legal moves improves smoothly from near 0 to over 50%.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4281690148:m1",
+      "paper_id": "openalex:W4281690148",
+      "name": "BIG-bench Benchmark Suite",
+      "description": "A collaborative benchmark of 204+ JSON and programmatic Python tasks evaluated across transformer model classes and parameter scales.",
+      "datasets": [
+        "BIG-bench",
+        "BIG-bench Lite"
+      ],
+      "conditions": [
+        "zero-shot",
+        "few-shot (1-shot, 2-shot, 3-shot)",
+        "greedy decoding (temperature 0)",
+        "temperature sampling (temperature 1, top-k 40)"
+      ]
+    },
+    {
+      "id": "openalex:W4281690148:m2",
+      "paper_id": "openalex:W4281690148",
+      "name": "Human Expert Rater Baseline Evaluation",
+      "description": "Evaluation of benchmark tasks by human raters with access to external resources under timed daily evaluation sessions.",
+      "datasets": [
+        "BIG-bench"
+      ],
+      "conditions": [
+        "30 to 120 minutes per day time constraint",
+        "internet search permitted"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4281690148:l1",
+      "paper_id": "openalex:W4281690148",
+      "text": "Prior language modeling benchmarks suffer from narrow task scope, rapid performance saturation within 18 months, and noisy data labeling by non-experts.",
+      "normalized_category": "benchmark-scope-and-saturation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4281690148:l2",
+      "paper_id": "openalex:W4281690148",
+      "text": "Full evaluation on BIG-bench is computationally expensive, particularly for programmatic tasks that require multiple sequential model queries.",
+      "normalized_category": "computational-cost",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4281690148:l3",
+      "paper_id": "openalex:W4281690148",
+      "text": "BIG-bench evaluates pure text language models and does not cover multi-modal capabilities.",
+      "normalized_category": "multimodal-coverage",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4281690148:l4",
+      "paper_id": "openalex:W4281690148",
+      "text": "Current language model architectures cannot integrate long context windows, lack episodic memory, cannot perform recurrent computation before token output, and cannot ground knowledge across physical modalities.",
+      "normalized_category": "architectural-constraints",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4281690148:l5",
+      "paper_id": "openalex:W4281690148",
+      "text": "Human rater baselines are subject to variance from rater background, demographic representation, subsampling, and strict session time limits.",
+      "normalized_category": "human-baseline-variance",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4281690148:f1",
+      "paper_id": "openalex:W4281690148",
+      "text": "Extend language model benchmarking to cover multi-modal capabilities.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4281690148:f2",
+      "paper_id": "openalex:W4281690148",
+      "text": "Investigate qualitative differences in capabilities and scaling behavior between sparse expert models and dense models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4281690148:f3",
+      "paper_id": "openalex:W4281690148",
+      "text": "Develop architectural and training interventions to resolve long-context integration, recurrent token-level computation, and multi-sensory grounding.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.636400Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

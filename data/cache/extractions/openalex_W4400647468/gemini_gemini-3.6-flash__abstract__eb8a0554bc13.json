@@ -1,0 +1,77 @@
+{
+  "paper_id": "openalex:W4400647468",
+  "claims": [
+    {
+      "id": "openalex:W4400647468:c1",
+      "paper_id": "openalex:W4400647468",
+      "text": "Large Language Models are widely adopted in NLP applications including machine translation, chatbots, and text summarization.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400647468:c2",
+      "paper_id": "openalex:W4400647468",
+      "text": "Large Language Models pose safety and security risks concerning ethical considerations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400647468:c3",
+      "paper_id": "openalex:W4400647468",
+      "text": "Large Language Models pose safety and security risks concerning hallucination.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400647468:c4",
+      "paper_id": "openalex:W4400647468",
+      "text": "Large Language Models pose safety and security risks concerning prompt injection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400647468:e1",
+      "claim_id": "openalex:W4400647468:c1",
+      "description": "Large Language Models (LLMs) have been widely adopted in various applications such as machine translation, chatbots, text summarization, and so on.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400647468:e2",
+      "claim_id": "openalex:W4400647468:c2",
+      "description": "The authors explore the safety implications of LLMs, including ethical considerations, hallucination, and prompt injection.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4400647468:e3",
+      "claim_id": "openalex:W4400647468:c3",
+      "description": "The authors explore the safety implications of LLMs, including ethical considerations, hallucination, and prompt injection.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4400647468:e4",
+      "claim_id": "openalex:W4400647468:c4",
+      "description": "The authors explore the safety implications of LLMs, including ethical considerations, hallucination, and prompt injection.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400647468:m1",
+      "paper_id": "openalex:W4400647468",
+      "name": "Literature Survey",
+      "description": "A structured review examining safety implications of LLMs and current risk mitigation efforts.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.102680Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

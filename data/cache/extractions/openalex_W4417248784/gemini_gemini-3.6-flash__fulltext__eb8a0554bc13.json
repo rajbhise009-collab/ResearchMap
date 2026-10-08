@@ -1,0 +1,164 @@
+{
+  "paper_id": "openalex:W4417248784",
+  "claims": [
+    {
+      "id": "openalex:W4417248784:c1",
+      "paper_id": "openalex:W4417248784",
+      "text": "HDM-2 achieves an overall F1 score of 85.03 on the RagTruth dataset for response-level context-based hallucination detection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4417248784:c2",
+      "paper_id": "openalex:W4417248784",
+      "text": "HDM-2 achieves an F1 score of 83.7 on the TruthfulQA dataset for common knowledge hallucination detection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4417248784:c3",
+      "paper_id": "openalex:W4417248784",
+      "text": "HDM-2 achieves an F1 score of 73.6 on the HDMBench dataset for common knowledge hallucination detection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4417248784:c4",
+      "paper_id": "openalex:W4417248784",
+      "text": "Common knowledge hallucination detection accuracy using Qwen-2.5-3B-Instruct internal representations peaks at intermediate layer 25.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4417248784:c5",
+      "paper_id": "openalex:W4417248784",
+      "text": "HDM-2 uses Qwen-2.5-3B-Instruct as its pre-trained backbone model.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4417248784:c6",
+      "paper_id": "openalex:W4417248784",
+      "text": "HDM-2 combines context-based verification and common knowledge detection into a single modular architecture.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4417248784:e1",
+      "claim_id": "openalex:W4417248784:c1",
+      "description": "Table 2 reports overall response-level hallucination detection results on RagTruth: Precision 87.01, Recall 83.14, and F1 85.03 for HDM-2.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4417248784:e2",
+      "claim_id": "openalex:W4417248784:c2",
+      "description": "Table 3 shows common knowledge hallucination detection performance on TruthfulQA with HDM-2 obtaining Precision 78.8, Recall 91.1, Balanced Accuracy 80.4, Accuracy 82.4, and F1 83.7.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4417248784:e3",
+      "claim_id": "openalex:W4417248784:c3",
+      "description": "Table 3 shows common knowledge hallucination detection performance on HDMBench with HDM-2 obtaining Precision 74.8, Recall 74.4, Balanced Accuracy 71.7, Accuracy 74.4, and F1 73.6.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4417248784:e4",
+      "claim_id": "openalex:W4417248784:c4",
+      "description": "Figure 4 plots balanced accuracy across layers of Qwen-2.5-3B-Instruct, showing a peak at layer 25.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4417248784:e5",
+      "claim_id": "openalex:W4417248784:c5",
+      "description": "Section 4.1 states: 'we chose Qwen-2.5-3B-Instruct (Yang et al., 2024) as the backbone for these tasks based on the performance on our validation sets.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4417248784:e6",
+      "claim_id": "openalex:W4417248784:c6",
+      "description": "Section 4 describes HDM-2 as a multi-task architecture with specialized components for contextual and common-knowledge hallucination detection.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4417248784:m1",
+      "paper_id": "openalex:W4417248784",
+      "name": "HDM-2 Hallucination Detection Model",
+      "description": "A multi-task detection framework utilizing a fine-tuned backbone language model (Qwen-2.5-3B-Instruct) with token/sequence classification loss for context consistency and shallow classifiers on intermediate layer activations for common knowledge verification.",
+      "datasets": [
+        "RagTruth",
+        "TruthfulQA",
+        "HDMBench",
+        "True-False"
+      ],
+      "conditions": [
+        "Qwen-2.5-3B-Instruct backbone",
+        "LoRA adaptation",
+        "Probing intermediate layer 25"
+      ]
+    },
+    {
+      "id": "openalex:W4417248784:m2",
+      "paper_id": "openalex:W4417248784",
+      "name": "HDMBench Dataset Generation Pipeline",
+      "description": "A multi-stage pipeline creating a benchmark dataset covering context-based, common knowledge, enterprise-specific, and innocuous statements using diverse generator LLMs and phrase-level annotations with DeepSeek R1.",
+      "datasets": [
+        "HDMBench"
+      ],
+      "conditions": [
+        "50,000 contextual documents",
+        "gemma-2-9b-it question generation",
+        "Multi-model response generation",
+        "DeepSeek R1 span labeling"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4417248784:l1",
+      "paper_id": "openalex:W4417248784",
+      "text": "Existing self-consistency methods require multiple model invocations or decoding-stage modifications, leading to high computational overhead and latency in production environments.",
+      "normalized_category": "high-computational-cost",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4417248784:l2",
+      "paper_id": "openalex:W4417248784",
+      "text": "Representation-based detection techniques require direct access to internal activations, probability distributions, or internal states of the generating model, limiting applicability to black-box models.",
+      "normalized_category": "black-box-incompatibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4417248784:l3",
+      "paper_id": "openalex:W4417248784",
+      "text": "The evaluation and model capability in this work are currently focused primarily on context-based and common knowledge hallucinations, leaving full integration of enterprise-specific knowledge, multilingual support, and adversarial robustness to future work.",
+      "normalized_category": "limited-scope-and-domain",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4417248784:f1",
+      "paper_id": "openalex:W4417248784",
+      "text": "Extend hallucination detection to cover other taxonomy categories, including proprietary enterprise-specific knowledge verification.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4417248784:f2",
+      "paper_id": "openalex:W4417248784",
+      "text": "Improve computational efficiency, multilingual support, and adversarial robustness for the hallucination detection pipeline.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T14:12:15.265604Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

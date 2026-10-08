@@ -1,0 +1,113 @@
+{
+  "paper_id": "openalex:W4386561859",
+  "claims": [
+    {
+      "id": "openalex:W4386561859:c1",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY is a zero-resource, pre-detection self-evaluation method that assesses a language model's familiarity with concepts in an input instruction to withhold responses for unfamiliar concepts.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c2",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY achieves an AUC of 0.927, an accuracy of 0.868, and an F1 score of 0.854 on Vicuna-13b-v1.3 for hallucinatory instruction classification on the Concept-7 dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c3",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY achieves an AUC of 0.926, an accuracy of 0.882, and an F1 score of 0.822 on Falcon-7b-instruct for hallucinatory instruction classification on the Concept-7 dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c4",
+      "paper_id": "openalex:W4386561859",
+      "text": "Removing concept grouping from SELF-FAMILIARITY decreases its classification AUC on Vicuna-13b-v1.3 from 0.927 to 0.918.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386561859:e1",
+      "claim_id": "openalex:W4386561859:c1",
+      "description": "The authors define SELF-FAMILIARITY as a pre-detection self-evaluation technique evaluating model familiarity with input concepts and withholding generation for unfamiliar concepts under a zero-resource setting.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386561859:e2",
+      "claim_id": "openalex:W4386561859:c2",
+      "description": "Table 2 reports an AUC of 0.927, ACC of 0.868, and F1 of 0.854 for SELF-FAMILIARITY on Vicuna-13b-v1.3.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386561859:e3",
+      "claim_id": "openalex:W4386561859:c3",
+      "description": "Table 2 reports an AUC of 0.926, ACC of 0.882, and F1 of 0.822 for SELF-FAMILIARITY on Falcon-7b-instruct.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386561859:e4",
+      "claim_id": "openalex:W4386561859:c4",
+      "description": "Table 4 shows that removing concept grouping (W/O Grouping) drops the Vicuna-13b-v1.3 AUC score from 0.927 to 0.918.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386561859:m1",
+      "paper_id": "openalex:W4386561859",
+      "name": "SELF-FAMILIARITY",
+      "description": "A zero-resource pre-detection framework consisting of concept extraction, concept guessing via prompt engineering and constrained beam search, and frequency-weighted score aggregation.",
+      "datasets": [
+        "Concept-7"
+      ],
+      "conditions": [
+        "zero-resource",
+        "pre-detection",
+        "constrained beam search",
+        "greedy search"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386561859:l1",
+      "paper_id": "openalex:W4386561859",
+      "text": "Existing post-detection methods identify hallucinations after generation, failing to prevent hallucinated content from occurring initially.",
+      "normalized_category": "post-generation-detection",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386561859:l2",
+      "paper_id": "openalex:W4386561859",
+      "text": "Parameter-based hallucination detection methods suffer from reduced model interpretability compared to chain-of-thought methods.",
+      "normalized_category": "low-interpretability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386561859:l3",
+      "paper_id": "openalex:W4386561859",
+      "text": "Models offering API access exclusively cannot be evaluated with SELF-FAMILIARITY due to the requirement for constrained beam search generation control.",
+      "normalized_category": "api-access-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4386561859:f1",
+      "paper_id": "openalex:W4386561859",
+      "text": "Investigate methods to evaluate the language model's understanding of more granular sub-concepts to improve algorithm precision.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.640934Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

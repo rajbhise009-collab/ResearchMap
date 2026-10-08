@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W4413269875",
+  "claims": [
+    {
+      "id": "openalex:W4413269875:c1",
+      "paper_id": "openalex:W4413269875",
+      "text": "MultiLLM-Chatbot is a scalable RAG-based benchmarking framework designed to evaluate language models across multiple domain-specific applications.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413269875:c2",
+      "paper_id": "openalex:W4413269875",
+      "text": "LLAMA-3.3-70B was the overall best-performing model among the evaluated language models.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413269875:c3",
+      "paper_id": "openalex:W4413269875",
+      "text": "LLAMA-3.3-70B led performance across all five evaluated domains.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413269875:e1",
+      "claim_id": "openalex:W4413269875:c1",
+      "description": "This paper introduces MultiLLM-Chatbot, a scalable RAG-based benchmarking framework designed to evaluate five popular LLMs across five domains.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4413269875:e2",
+      "claim_id": "openalex:W4413269875:c2",
+      "description": "Experimental results show LLAMA-3.3-70B as the overall best-performing model.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4413269875:e3",
+      "claim_id": "openalex:W4413269875:c3",
+      "description": "Experimental results show LLAMA-3.3-70B leading in all 5 domains.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413269875:m1",
+      "paper_id": "openalex:W4413269875",
+      "name": "MultiLLM-Chatbot Framework",
+      "description": "A scalable RAG-based benchmarking framework that evaluates LLMs using Elasticsearch retrieval, sentence-transformer embeddings, and multi-metric analysis (cosine similarity, VADER sentiment, TF-IDF, NER).",
+      "datasets": [
+        "50 peer-reviewed research papers across 5 domains (250 standardized queries, 1250 model responses)"
+      ],
+      "conditions": [
+        "GPT-4-Turbo",
+        "CLAUDE-3.7-Sonnet",
+        "LLAMA-3.3-70B",
+        "DeepSeek-R1-Zero",
+        "Gemini-2.0-Flash",
+        "Agriculture domain",
+        "Biology domain",
+        "Economics domain",
+        "Internet of Things (IoT) domain",
+        "Medical domain"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413269875:l1",
+      "paper_id": "openalex:W4413269875",
+      "text": "Challenges such as semantic similarity, bias/sentiment, and hallucinations persist, especially in domain-specific applications.",
+      "normalized_category": "hallucinations-and-bias-in-domain-llms",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:01:56.710287Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

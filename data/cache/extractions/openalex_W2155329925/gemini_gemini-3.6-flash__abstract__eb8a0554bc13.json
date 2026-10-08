@@ -1,0 +1,154 @@
+{
+  "paper_id": "openalex:W2155329925",
+  "claims": [
+    {
+      "id": "openalex:W2155329925:c1",
+      "paper_id": "openalex:W2155329925",
+      "text": "Tobacco smoking was responsible for an estimated 467,000 deaths in US adults in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c2",
+      "paper_id": "openalex:W2155329925",
+      "text": "High blood pressure was responsible for an estimated 395,000 deaths in US adults in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c3",
+      "paper_id": "openalex:W2155329925",
+      "text": "Overweight-obesity was responsible for an estimated 216,000 deaths in the US in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c4",
+      "paper_id": "openalex:W2155329925",
+      "text": "Physical inactivity was responsible for an estimated 191,000 deaths in the US in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c5",
+      "paper_id": "openalex:W2155329925",
+      "text": "High dietary salt was responsible for an estimated 102,000 deaths in the US in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c6",
+      "paper_id": "openalex:W2155329925",
+      "text": "Low dietary omega-3 fatty acids were responsible for an estimated 84,000 deaths in the US in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c7",
+      "paper_id": "openalex:W2155329925",
+      "text": "High dietary trans fatty acids were responsible for an estimated 82,000 deaths in the US in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c8",
+      "paper_id": "openalex:W2155329925",
+      "text": "Current alcohol use averted an estimated 26,000 deaths from ischemic heart disease, ischemic stroke, and diabetes in the US in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155329925:c9",
+      "paper_id": "openalex:W2155329925",
+      "text": "Current alcohol use caused an estimated 90,000 deaths from non-protective cardiovascular diseases, cancers, liver cirrhosis, pancreatitis, alcohol use disorders, injuries, and violence in the US in 2005.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2155329925:e1",
+      "claim_id": "openalex:W2155329925:c1",
+      "description": "In 2005, tobacco smoking was responsible for an estimated 467,000 (95% CI 436,000-500,000) deaths, accounting for about one in five or six deaths in US adults.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e2",
+      "claim_id": "openalex:W2155329925:c2",
+      "description": "High blood pressure was responsible for an estimated 395,000 (95% CI 372,000-414,000) deaths, accounting for about one in five or six deaths in US adults.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e3",
+      "claim_id": "openalex:W2155329925:c3",
+      "description": "Overweight-obesity (216,000; 188,000-237,000) was responsible for nearly 1 in 10 deaths.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e4",
+      "claim_id": "openalex:W2155329925:c4",
+      "description": "Physical inactivity (191,000; 164,000-222,000) was responsible for nearly 1 in 10 deaths.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e5",
+      "claim_id": "openalex:W2155329925:c5",
+      "description": "High dietary salt (102,000; 97,000-107,000) was among the dietary risks with the largest mortality effects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e6",
+      "claim_id": "openalex:W2155329925:c6",
+      "description": "Low dietary omega-3 fatty acids (84,000; 72,000-96,000) was among the dietary risks with the largest mortality effects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e7",
+      "claim_id": "openalex:W2155329925:c7",
+      "description": "High dietary trans fatty acids (82,000; 63,000-97,000) was among the dietary risks with the largest mortality effects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e8",
+      "claim_id": "openalex:W2155329925:c8",
+      "description": "26,000 (95% CI 23,000-40,000) deaths from ischemic heart disease, ischemic stroke, and diabetes were averted by current alcohol use.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2155329925:e9",
+      "claim_id": "openalex:W2155329925:c9",
+      "description": "Averted deaths from alcohol use were outweighed by 90,000 (95% CI 88,000-94,000) deaths from other cardiovascular diseases, cancers, liver cirrhosis, pancreatitis, alcohol use disorders, road traffic and other injuries, and violence.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2155329925:m1",
+      "paper_id": "openalex:W2155329925",
+      "name": "Comparative risk assessment modeling",
+      "description": "Estimated disease-specific deaths attributable to non-optimal exposure levels of 12 dietary, lifestyle, and metabolic risk factors using national exposure surveys and mortality statistics combined with relative risk estimates from epidemiological meta-analyses.",
+      "datasets": [
+        "Nationally representative health surveys",
+        "National Center for Health Statistics mortality statistics"
+      ],
+      "conditions": [
+        "US population",
+        "2005 mortality data",
+        "Etiological risk estimates adjusted for major potential confounders and regression dilution bias"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:03:32.528460Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

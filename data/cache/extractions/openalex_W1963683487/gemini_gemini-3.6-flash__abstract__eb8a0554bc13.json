@@ -1,0 +1,172 @@
+{
+  "paper_id": "openalex:W1963683487",
+  "claims": [
+    {
+      "id": "openalex:W1963683487:c1",
+      "paper_id": "openalex:W1963683487",
+      "text": "Estimates of worldwide prevalence of NAFLD range from 6.3% to 33% with a median of 20% in the general population.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1963683487:c2",
+      "paper_id": "openalex:W1963683487",
+      "text": "The estimated prevalence of NASH in the general population ranges from 3% to 5%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1963683487:c3",
+      "paper_id": "openalex:W1963683487",
+      "text": "In patients with severe obesity undergoing bariatric surgery, the prevalence of NAFLD can exceed 90%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1963683487:c4",
+      "paper_id": "openalex:W1963683487",
+      "text": "The NAFLD Fibrosis Score achieves an AUROC of 0.85 for predicting advanced fibrosis in patients with NAFLD.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1963683487:c5",
+      "paper_id": "openalex:W1963683487",
+      "text": "The Enhanced Liver Fibrosis (ELF) panel achieves an AUROC of 0.90 for detecting advanced fibrosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1963683487:c6",
+      "paper_id": "openalex:W1963683487",
+      "text": "Plasma CK18 fragment levels predict steatohepatitis in NAFLD with a sensitivity of 78% and specificity of 87%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1963683487:c7",
+      "paper_id": "openalex:W1963683487",
+      "text": "Ursodeoxycholic acid (UDCA) has no significant effect on liver histology in patients with NAFLD.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1963683487:e1",
+      "claim_id": "openalex:W1963683487:c1",
+      "description": "Estimates of the worldwide prevalence of NAFLD ranges from 6.3% to 33% with a median of 20% in the general population, based on a variety of assessment methods.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1963683487:e2",
+      "claim_id": "openalex:W1963683487:c2",
+      "description": "The estimated prevalence of NASH is lower, ranging from 3 to 5%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1963683487:e3",
+      "claim_id": "openalex:W1963683487:c3",
+      "description": "In patients with severe obesity undergoing bariatric surgery, the prevalence of NAFLD can exceed 90% and up to 5% of patients may have unsuspected cirrhosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1963683487:e4",
+      "claim_id": "openalex:W1963683487:c4",
+      "description": "In a meta-analysis of 13 studies consisting of 3,064 patients, NAFLD Fibrosis Score has an AUROC of 0.85 for predicting advanced fibrosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1963683487:e5",
+      "claim_id": "openalex:W1963683487:c5",
+      "description": "The ELF panel consists of plasma levels of three matrix turnover proteins ... had an AUROC of 0.90 with 80% sensitivity and 90% specificity for detecting advanced fibrosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1963683487:e6",
+      "claim_id": "openalex:W1963683487:c6",
+      "description": "A recent meta-analysis estimated that plasma CK18 levels have a sensitivity of 78%, specificity of 87%, and an area under the receiver operating curve (AUROC) of 0.82 for steatohepatitis in patients with NAFLD.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1963683487:e7",
+      "claim_id": "openalex:W1963683487:c7",
+      "description": "Ursodeoxycholic acid (UDCA) has no significant effect on liver histology and is not recommended as a treatment for liver disease in adults with NAFLD.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1963683487:m1",
+      "paper_id": "openalex:W1963683487",
+      "name": "Practice Guideline Synthesis and Evidence Evaluation Framework",
+      "description": "Formal literature synthesis using ACP Manual and GRADE workgroup classification for strength of recommendations and quality of evidence.",
+      "datasets": [
+        "Medline search up to June 2011"
+      ],
+      "conditions": [
+        "Systematic review of published world literature on NAFLD diagnosis, natural history, and therapy"
+      ]
+    },
+    {
+      "id": "openalex:W1963683487:m2",
+      "paper_id": "openalex:W1963683487",
+      "name": "NAFLD Fibrosis Score Evaluation",
+      "description": "Calculation of advanced liver fibrosis risk using six clinical variables: age, BMI, hyperglycemia, platelet count, albumin, and AST/ALT ratio.",
+      "datasets": [
+        "13 cross-sectional studies (3,064 total patients)"
+      ],
+      "conditions": [
+        "Cutoff score < -1.455 to exclude advanced fibrosis",
+        "Cutoff score > 0.676 to identify advanced fibrosis"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1963683487:l1",
+      "paper_id": "openalex:W1963683487",
+      "text": "Screening for NAFLD in primary care, diabetes, or obesity clinics is currently not recommended due to diagnostic uncertainties and lack of long-term cost-effectiveness data.",
+      "normalized_category": "lack-of-screening-evidence",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1963683487:l2",
+      "paper_id": "openalex:W1963683487",
+      "text": "Prediction models and biomarkers for NAFLD have largely been investigated in cross-sectional studies, leaving their utility in monitoring disease natural history or treatment response unknown.",
+      "normalized_category": "cross-sectional-study-design",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1963683487:l3",
+      "paper_id": "openalex:W1963683487",
+      "text": "Transient elastography has a high failure rate in individuals with higher body mass index (BMI).",
+      "normalized_category": "bmi-dependent-measurement-failure",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1963683487:l4",
+      "paper_id": "openalex:W1963683487",
+      "text": "CK18 fragment assay for steatohepatitis is not commercially available and lacks an established, unified cutoff value across studies.",
+      "normalized_category": "lack-of-standardized-assay",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1963683487:f1",
+      "paper_id": "openalex:W1963683487",
+      "text": "Conduct more epidemiological studies to clarify the incidence of NAFLD across different age, ethnic, and geographic groups.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:03:14.483900Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

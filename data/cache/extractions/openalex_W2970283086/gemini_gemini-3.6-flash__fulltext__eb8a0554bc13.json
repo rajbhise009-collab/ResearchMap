@@ -1,0 +1,163 @@
+{
+  "paper_id": "openalex:W2970283086",
+  "claims": [
+    {
+      "id": "openalex:W2970283086:c1",
+      "paper_id": "openalex:W2970283086",
+      "text": "Test-set performance scores alone are insufficient for drawing accurate conclusions about which machine learning model performs best.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970283086:c2",
+      "paper_id": "openalex:W2970283086",
+      "text": "Under uniform random hyperparameter search, the expected maximum validation performance given a budget of n trials can be calculated in closed form using empirical cumulative distribution functions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970283086:c3",
+      "paper_id": "openalex:W2970283086",
+      "text": "Calculating expected maximum validation performance in closed form has strictly less error than bootstrap estimation because it eliminates resampling error.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970283086:c4",
+      "paper_id": "openalex:W2970283086",
+      "text": "For hyperparameter search budgets under 10 assignments on 5-way Stanford Sentiment Treebank classification, logistic regression achieves higher expected validation accuracy than a CNN.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970283086:c5",
+      "paper_id": "openalex:W2970283086",
+      "text": "For hyperparameter search budgets exceeding 10 assignments on 5-way Stanford Sentiment Treebank classification, a CNN achieves higher expected validation accuracy than logistic regression.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970283086:c6",
+      "paper_id": "openalex:W2970283086",
+      "text": "Matching the reported development exact match score for BiDAF on SQuAD using random hyperparameter search requires an estimated budget of 18 GPU days (55 hyperparameter trials).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970283086:c7",
+      "paper_id": "openalex:W2970283086",
+      "text": "None of 50 randomly selected EMNLP 2018 papers with experimental results reported all items in the proposed experimental reporting checklist.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2970283086:e1",
+      "claim_id": "openalex:W2970283086:c1",
+      "description": "Model comparisons across SST, SciTail, and SQuAD demonstrate that changing the hyperparameter evaluation budget alters which model family achieves superior performance.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970283086:e2",
+      "claim_id": "openalex:W2970283086:c2",
+      "description": "Equation 8 presents the plug-in estimator for E[V*_n|n] based on empirical cumulative probabilities P(Vi <= v) and P(Vi < v) derived from n i.i.d. random hyperparameter draws.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970283086:e3",
+      "claim_id": "openalex:W2970283086:c3",
+      "description": "Bootstrap estimation incurs both finite sample error and resampling error from K repeated resamples, whereas the proposed closed-form calculation retains only finite sample error.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970283086:e4",
+      "claim_id": "openalex:W2970283086:c4",
+      "description": "Figure 1 shows expected validation accuracy curves where logistic regression outperforms CNN when evaluating x <= 10 hyperparameter assignments.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970283086:e5",
+      "claim_id": "openalex:W2970283086:c5",
+      "description": "Figure 1 shows the CNN expected validation accuracy curve surpassing logistic regression when evaluating x > 10 hyperparameter assignments.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970283086:e6",
+      "claim_id": "openalex:W2970283086:c6",
+      "description": "Figure 4 shows that the expected validation exact match curve for BiDAF reaches the original paper's reported score at 55 hyperparameter trials, equivalent to 18 GPU days of training duration.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970283086:e7",
+      "claim_id": "openalex:W2970283086:c7",
+      "description": "An empirical audit of 50 randomly sampled EMNLP 2018 papers found 0% coverage for the full 10-item experimental checklist, with 10% or fewer papers reporting hyperparameter search bounds or number of search trials.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2970283086:m1",
+      "paper_id": "openalex:W2970283086",
+      "name": "Expected Validation Performance Curves",
+      "description": "A diagnostic method computing the expected maximum validation performance as a function of computational budget n using empirical cumulative distribution functions from random hyperparameter trials.",
+      "datasets": [
+        "Stanford Sentiment Treebank (SST)",
+        "SciTail",
+        "SQuAD"
+      ],
+      "conditions": [
+        "Uniform random sampling of hyperparameter values",
+        "i.i.d. validation performance evaluations",
+        "Closed-form estimation without additional model training beyond hyperparameter search"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2970283086:l1",
+      "paper_id": "openalex:W2970283086",
+      "text": "Current reporting practices in machine learning rely on single point-estimates of test performance without reporting computational budgets or hyperparameter search details.",
+      "normalized_category": "unreported-hyperparameter-budget",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2970283086:l2",
+      "paper_id": "openalex:W2970283086",
+      "text": "Using the bootstrap to estimate mean and variance of best validation performance introduces resampling error.",
+      "normalized_category": "bootstrap-resampling-error",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2970283086:l3",
+      "paper_id": "openalex:W2970283086",
+      "text": "The proposed analytical estimation requires hyperparameter trials to be drawn i.i.d. (e.g., via random search), making it inapplicable to adaptive search strategies like Bayesian optimization or manual tuning.",
+      "normalized_category": "non-iid-search-inapplicability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2970283086:l4",
+      "paper_id": "openalex:W2970283086",
+      "text": "The method does not extrapolate performance to computational budgets larger than the actual number of evaluated trials N.",
+      "normalized_category": "no-budget-extrapolation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2970283086:f1",
+      "paper_id": "openalex:W2970283086",
+      "text": "Forecasting model validation performance for larger computational budgets n > N beyond the observed hyperparameter evaluations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.003625Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

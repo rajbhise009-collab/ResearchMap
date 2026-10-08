@@ -1,0 +1,117 @@
+{
+  "paper_id": "openalex:W4391901281",
+  "claims": [
+    {
+      "id": "openalex:W4391901281:c1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing works on quantifying uncertainty in LLM responses often overlook the complex nature of LLMs.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c2",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing works on quantifying uncertainty in LLM responses often overlook the uniqueness of in-context learning.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c3",
+      "paper_id": "openalex:W4391901281",
+      "text": "Predictive uncertainty in in-context learning stems from provided demonstrations as aleatoric uncertainty.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c4",
+      "paper_id": "openalex:W4391901281",
+      "text": "Predictive uncertainty in in-context learning stems from ambiguities tied to model configurations as epistemic uncertainty.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c5",
+      "paper_id": "openalex:W4391901281",
+      "text": "The proposed method offers an unsupervised way to quantify in-context learning prediction uncertainty in a plug-and-play fashion.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c6",
+      "paper_id": "openalex:W4391901281",
+      "text": "Experiments demonstrate the effectiveness of decomposing in-context learning uncertainty into aleatoric and epistemic components.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391901281:e1",
+      "claim_id": "openalex:W4391901281:c1",
+      "description": "Existing works have been devoted to quantifying the uncertainty in LLM's response, but they often overlook the complex nature of LLMs",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e2",
+      "claim_id": "openalex:W4391901281:c2",
+      "description": "...and the uniqueness of in-context learning.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e3",
+      "claim_id": "openalex:W4391901281:c3",
+      "description": "such uncertainties may stem from both the provided demonstrations (aleatoric uncertainty)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e4",
+      "claim_id": "openalex:W4391901281:c4",
+      "description": "...and ambiguities tied to the model's configurations (epistemic uncertainty).",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e5",
+      "claim_id": "openalex:W4391901281:c5",
+      "description": "The proposed method offers an unsupervised way to understand the prediction of in-context learning in a plug-and-play fashion.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e6",
+      "claim_id": "openalex:W4391901281:c6",
+      "description": "Extensive experiments are conducted to demonstrate the effectiveness of the decomposition.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391901281:m1",
+      "paper_id": "openalex:W4391901281",
+      "name": "Unsupervised Uncertainty Decomposition for In-Context Learning",
+      "description": "An unsupervised, plug-and-play estimation framework that quantifies and decomposes predictive uncertainty in in-context learning into aleatoric uncertainty from demonstrations and epistemic uncertainty from model configurations.",
+      "datasets": [],
+      "conditions": [
+        "In-Context Learning",
+        "Unsupervised",
+        "Plug-and-play"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391901281:l1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing uncertainty quantification works overlook the complex nature of LLMs and the uniqueness of in-context learning.",
+      "normalized_category": "prior-work-scope-oversight",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:29:11.047948Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

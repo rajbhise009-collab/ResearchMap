@@ -1,0 +1,132 @@
+{
+  "paper_id": "openalex:W2225912682",
+  "claims": [
+    {
+      "id": "openalex:W2225912682:c1",
+      "paper_id": "openalex:W2225912682",
+      "text": "Purchases of taxed beverages decreased by an average of 6% (-12 mL/capita/day) in 2014 relative to the counterfactual.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2225912682:c2",
+      "paper_id": "openalex:W2225912682",
+      "text": "Purchases of taxed beverages decreased at an increasing rate up to a 12% decline by December 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2225912682:c3",
+      "paper_id": "openalex:W2225912682",
+      "text": "All three socioeconomic groups reduced purchases of taxed beverages following the tax implementation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2225912682:c4",
+      "paper_id": "openalex:W2225912682",
+      "text": "Reductions in purchases of taxed beverages were higher among low socioeconomic status households, averaging a 9% decline during 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2225912682:c5",
+      "paper_id": "openalex:W2225912682",
+      "text": "Purchases of taxed beverages among low socioeconomic status households decreased up to 17% by December 2014 compared with pretax trends.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2225912682:c6",
+      "paper_id": "openalex:W2225912682",
+      "text": "Purchases of untaxed beverages were 4% (36 mL/capita/day) higher than the counterfactual in 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2225912682:c7",
+      "paper_id": "openalex:W2225912682",
+      "text": "The increase in untaxed beverage purchases was mainly driven by an increase in purchases of bottled plain water.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2225912682:e1",
+      "claim_id": "openalex:W2225912682:c1",
+      "description": "Relative to the counterfactual in 2014, purchases of taxed beverages decreased by an average of 6% (-12 mL/capita/day)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2225912682:e2",
+      "claim_id": "openalex:W2225912682:c2",
+      "description": "and decreased at an increasing rate up to a 12% decline by December 2014.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2225912682:e3",
+      "claim_id": "openalex:W2225912682:c3",
+      "description": "All three socioeconomic groups reduced purchases of taxed beverages",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2225912682:e4",
+      "claim_id": "openalex:W2225912682:c4",
+      "description": "reductions were higher among the households of low socioeconomic status, averaging a 9% decline during 2014",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2225912682:e5",
+      "claim_id": "openalex:W2225912682:c5",
+      "description": "and up to a 17% decrease by December 2014 compared with pretax trends.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2225912682:e6",
+      "claim_id": "openalex:W2225912682:c6",
+      "description": "Purchases of untaxed beverages were 4% (36 mL/capita/day) higher than the counterfactual",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2225912682:e7",
+      "claim_id": "openalex:W2225912682:c7",
+      "description": "mainly driven by an increase in purchases of bottled plain water.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2225912682:m1",
+      "paper_id": "openalex:W2225912682",
+      "name": "Difference in difference fixed effects model",
+      "description": "Used a difference in difference fixed effects model adjusting for macroeconomic variables and pre-existing trends to compare observed 2014 beverage purchase volumes against a counterfactual based on pretax trends.",
+      "datasets": [
+        "Unbalanced panel of 6253 households providing 205 112 observations in 53 Mexican cities"
+      ],
+      "conditions": [
+        "Pre-tax period (January 2012 to December 2013)",
+        "Post-tax period (January 2014 to December 2014)",
+        "Excise tax on sugar sweetened beverages"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W2225912682:f1",
+      "paper_id": "openalex:W2225912682",
+      "text": "Continued monitoring to understand longer-term beverage purchases, potential substitutions, and health implications.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:48:31.467570Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

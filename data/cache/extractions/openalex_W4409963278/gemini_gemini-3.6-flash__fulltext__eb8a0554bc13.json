@@ -1,0 +1,161 @@
+{
+  "paper_id": "openalex:W4409963278",
+  "claims": [
+    {
+      "id": "openalex:W4409963278:c1",
+      "paper_id": "openalex:W4409963278",
+      "text": "LLM-generated summaries of scientific abstracts are twice as likely to contain generalized conclusions compared to the original abstracts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c2",
+      "paper_id": "openalex:W4409963278",
+      "text": "Newer LLM models overgeneralized scientific conclusions in 26% to 73% of tested cases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c3",
+      "paper_id": "openalex:W4409963278",
+      "text": "LLM-generated article summaries were nearly five times more likely to contain broad generalizations than human-authored NEJM Journal Watch summaries.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c4",
+      "paper_id": "openalex:W4409963278",
+      "text": "Generating summaries at an LLM temperature setting of 0 reduces the likelihood of generalized conclusions by 76% compared to a temperature of 0.7.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c5",
+      "paper_id": "openalex:W4409963278",
+      "text": "Prompts explicitly instructing LLMs to avoid inaccuracies roughly doubled the likelihood of generating overgeneralized conclusions compared to simple prompts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c6",
+      "paper_id": "openalex:W4409963278",
+      "text": "Claude models (Claude 2, Claude 3.5 Sonnet, and Claude 3.7 Sonnet) did not produce a statistically significant increase in generalized conclusions compared to original scientific texts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4409963278:e1",
+      "claim_id": "openalex:W4409963278:c1",
+      "description": "GLMM regression showed all combined LLM summaries were significantly more likely to contain generalized conclusions than original scientific abstracts (B = 0.693, SE = 0.1926, p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409963278:e2",
+      "claim_id": "openalex:W4409963278:c2",
+      "description": "DeepSeek, ChatGPT-4o, and LLaMA 3.3 70B exhibited overall algorithmic overgeneralization rates ranging between 26% and 73% across different prompts on scientific abstracts.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409963278:e3",
+      "claim_id": "openalex:W4409963278:c3",
+      "description": "In direct comparison to NEJM Journal Watch summaries of 100 medical articles, LLM summaries had an odds ratio of 4.85 (95% CI [3.06, 7.70], p < 0.001) for containing generalized conclusions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409963278:e4",
+      "claim_id": "openalex:W4409963278:c4",
+      "description": "GLMM temperature comparison demonstrated that temperature 0.0 vs temperature 0.7 yielded B = -1.432 (SE = 0.3726, p < 0.001), indicating a 76% lower likelihood of generalized conclusions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409963278:e5",
+      "claim_id": "openalex:W4409963278:c5",
+      "description": "GLMM regression showed the accuracy prompt increased the likelihood of generalized conclusions compared to the simple prompt with an odds ratio of 1.90 (95% CI [1.11, 3.26], p = 0.020).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409963278:e6",
+      "claim_id": "openalex:W4409963278:c6",
+      "description": "Statistical comparison against original abstracts yielded p = 0.685 for Claude 2, p = 0.587 for Claude 3.5 Sonnet, and p = 0.064 for Claude 3.7 Sonnet.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4409963278:m1",
+      "paper_id": "openalex:W4409963278",
+      "name": "LLM generalization benchmarking framework",
+      "description": "A comparative content-analysis framework evaluating scientific summaries by coding result claims into generic, present-tense, or action-guiding generalizations and analyzing scope transitions using generalized linear mixed models.",
+      "datasets": [
+        "200 scientific abstracts (100 general medical, 100 multidisciplinary science)",
+        "100 full-length clinical research articles",
+        "100 NEJM Journal Watch expert human summaries"
+      ],
+      "conditions": [
+        "10 LLM models (GPT-3.5 Turbo, GPT-4 Turbo, ChatGPT-4o, ChatGPT-4.5, LLaMA 2 70B, LLaMA 3.3 70B, Claude 2, Claude 3.5 Sonnet, Claude 3.7 Sonnet, DeepSeek)",
+        "Temperature settings (0.0, 0.7, UI default)",
+        "Prompt types (simple, systematic step-by-step, accuracy-focused)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4409963278:l1",
+      "paper_id": "openalex:W4409963278",
+      "text": "The study evaluated only three specific prompt variations.",
+      "normalized_category": "prompt-engineering-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4409963278:l2",
+      "paper_id": "openalex:W4409963278",
+      "text": "Full-length article summary comparisons were limited to a subset of models (GPT-4 Turbo, ChatGPT-4o, DeepSeek) evaluated against a single expert human source (NEJM Journal Watch), which may not reflect all human science communicators.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4409963278:l3",
+      "paper_id": "openalex:W4409963278",
+      "text": "The evaluation focused predominantly on medical and general multidisciplinary science texts, so results may not generalize to other specific scientific disciplines.",
+      "normalized_category": "domain-generality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4409963278:l4",
+      "paper_id": "openalex:W4409963278",
+      "text": "Prior research had not systematically examined whether LLMs accurately preserve the generalization scope of scientific research.",
+      "normalized_category": "unexamined-llm-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4409963278:f1",
+      "paper_id": "openalex:W4409963278",
+      "text": "Examine how LLM overgeneralization tendencies differ across diverse scientific text domains such as foundational versus applied research.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4409963278:f2",
+      "paper_id": "openalex:W4409963278",
+      "text": "Investigate prompt transformation ('shadow prompting') to enforce past-tense summarization of scientific results as a mitigation strategy.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4409963278:f3",
+      "paper_id": "openalex:W4409963278",
+      "text": "Test LLMs instructed to adopt specific user personas, such as university press officers or marketing writers, to determine variation in overgeneralization rates.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.011123Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

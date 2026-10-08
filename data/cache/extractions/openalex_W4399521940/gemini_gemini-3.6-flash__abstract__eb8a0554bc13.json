@@ -1,0 +1,137 @@
+{
+  "paper_id": "openalex:W4399521940",
+  "claims": [
+    {
+      "id": "openalex:W4399521940:c1",
+      "paper_id": "openalex:W4399521940",
+      "text": "There is an inherent statistical lower-bound on the rate at which pretrained language models hallucinate certain types of facts, independent of transformer architecture or data quality.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399521940:c2",
+      "paper_id": "openalex:W4399521940",
+      "text": "For arbitrary facts whose veracity cannot be determined from training data, hallucinations must occur at a specific rate for language models satisfying a statistical calibration condition.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399521940:c3",
+      "paper_id": "openalex:W4399521940",
+      "text": "If the maximum probability of any fact is bounded, the probability of generating a hallucination is close to the fraction of facts that occur exactly once in the training data.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399521940:c4",
+      "paper_id": "openalex:W4399521940",
+      "text": "Language models pretrained to be calibrated predictors require post-training to mitigate hallucinations on arbitrary facts that appear once in the training set.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399521940:c5",
+      "paper_id": "openalex:W4399521940",
+      "text": "Pretraining does not statistically necessitate hallucinations on facts that appear more than once in the training data.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399521940:c6",
+      "paper_id": "openalex:W4399521940",
+      "text": "Pretraining does not statistically necessitate hallucinations on systematic facts such as arithmetic calculations.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399521940:e1",
+      "claim_id": "openalex:W4399521940:c1",
+      "description": "This work shows that there is an inherent statistical lower-bound on the rate that pretrained language models hallucinate certain types of facts, having nothing to do with the transformer LM architecture or data quality.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399521940:e2",
+      "claim_id": "openalex:W4399521940:c2",
+      "description": "For 'arbitrary' facts whose veracity cannot be determined from the training data, we show that hallucinations must occur at a certain rate for language models that satisfy a statistical calibration condition appropriate for generative language models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399521940:e3",
+      "claim_id": "openalex:W4399521940:c3",
+      "description": "Specifically, if the maximum probability of any fact is bounded, we show that the probability of generating a hallucination is close to the fraction of facts that occur exactly once in the training data (a 'Good-Turing' estimate), even assuming ideal training data without errors.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399521940:e4",
+      "claim_id": "openalex:W4399521940:c4",
+      "description": "One conclusion is that models pretrained to be sufficiently good predictors (i.e., calibrated) may require post-training to mitigate hallucinations on the type of arbitrary facts that tend to appear once in the training set.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399521940:e5",
+      "claim_id": "openalex:W4399521940:c5",
+      "description": "However, our analysis also suggests that there is no statistical reason that pretraining will lead to hallucination on facts that tend to appear more than once in the training data (like references to publications such as articles and books, whose hallucinations have been particularly notable and problematic)...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399521940:e6",
+      "claim_id": "openalex:W4399521940:c6",
+      "description": "...or on systematic facts (like arithmetic calculations).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399521940:m1",
+      "paper_id": "openalex:W4399521940",
+      "name": "Good-Turing Statistical Calibration Analysis",
+      "description": "Theoretical mathematical analysis connecting statistical calibration bounds in generative language models with Good-Turing frequency estimation of single-occurrence facts in training data.",
+      "datasets": [],
+      "conditions": [
+        "generative language models satisfying statistical calibration",
+        "bounded maximum probability of facts",
+        "arbitrary facts with veracity underdetermined by training data"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399521940:l1",
+      "paper_id": "openalex:W4399521940",
+      "text": "Language models generate false but plausible-sounding text with surprising frequency, impeding usability and potentially harming users.",
+      "normalized_category": "llm-hallucination-frequency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399521940:l2",
+      "paper_id": "openalex:W4399521940",
+      "text": "The analysis does not provide statistical reasons for hallucinations on facts appearing more than once in training data or on systematic facts.",
+      "normalized_category": "scope-limited-to-singletons",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4399521940:f1",
+      "paper_id": "openalex:W4399521940",
+      "text": "Investigating post-training techniques to mitigate hallucinations on arbitrary facts appearing once in the training set.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399521940:f2",
+      "paper_id": "openalex:W4399521940",
+      "text": "Developing different architectures and learning algorithms to mitigate hallucinations on repeated facts and systematic facts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.095349Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

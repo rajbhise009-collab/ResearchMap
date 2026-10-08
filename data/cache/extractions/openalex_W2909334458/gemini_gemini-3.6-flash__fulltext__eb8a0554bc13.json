@@ -1,0 +1,133 @@
+{
+  "paper_id": "openalex:W2909334458",
+  "claims": [
+    {
+      "id": "openalex:W2909334458:c1",
+      "paper_id": "openalex:W2909334458",
+      "text": "Training a classifier on examples with biased labels weighted by w(x,y) proportional to exp(sum_k lambda_k c_k(x,y)) is mathematically equivalent to training on unbiased labels under a modified feature distribution.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2909334458:c2",
+      "paper_id": "openalex:W2909334458",
+      "text": "Under Lipschitz continuity and compact support assumptions, weighted loss estimation achieves a consistency rate of O(n^(-1/(4+2D))) relative to the true unbiased labels.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2909334458:c3",
+      "paper_id": "openalex:W2909334458",
+      "text": "For data lying on a d-dimensional Riemannian submanifold in R^D, the weighted estimator achieves an intrinsic consistency rate of O(n^(-1/(4+2d))) independent of ambient dimension D.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2909334458:c4",
+      "paper_id": "openalex:W2909334458",
+      "text": "On the MNIST dataset with 20% introduced label bias, the proposed sample re-weighting method achieves 96.16% test accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2909334458:c5",
+      "paper_id": "openalex:W2909334458",
+      "text": "On the Adult dataset under demographic parity constraints, the re-weighting method achieves a test fairness violation of 0.0037 with 16.51% test error.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2909334458:e1",
+      "claim_id": "openalex:W2909334458:c1",
+      "description": "Theorem 1 proves that E_{x~P, y~ybias}[w(x,y) l(h(x),y)] = C * E_{x~P_tilde, y~ytrue}[l(h(x),y)] where P_tilde(x) is proportional to phi(x)P(x).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2909334458:e2",
+      "claim_id": "openalex:W2909334458:c2",
+      "description": "Theorem 2 establishes that ||h* - ytrue||_2 <= C0 * log(2/delta)^(1/(2+D)) * n^(-1/(4+2D)) with probability at least 1-delta.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2909334458:e3",
+      "claim_id": "openalex:W2909334458:c3",
+      "description": "Theorem 3 proves ||h* - ytrue||_2 <= C0 * log(2/delta)^(1/(2+d)) * n^(-1/(4+2d)) for a d-dimensional Riemannian submanifold with finite volume and finite condition number.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2909334458:e4",
+      "claim_id": "openalex:W2909334458:c4",
+      "description": "Table 2 reports 96.16% test set accuracy for Our Method on MNIST with label bias, outperforming unconstrained (88.18%), calibration (89.79%), and Lagrangian (94.05%) baselines.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2909334458:e5",
+      "claim_id": "openalex:W2909334458:c5",
+      "description": "Table 1 shows test violation of 0.0037 and test error of 16.51% for Our Method on Adult under Dem. Par., compared to 0.0198 violation and 20.47% error for the Lagrangian method.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2909334458:m1",
+      "paper_id": "openalex:W2909334458",
+      "name": "Iterative Sample Re-weighting for Label Bias Correction",
+      "description": "An iterative procedure that learns constraint multipliers lambda_k via gradient steps on constraint violations and retrains off-the-shelf classifiers using sample weights w_i proportional to exp(sum_k lambda_k c_k(x_i, y_i)) without modifying features or labels.",
+      "datasets": [
+        "Bank Marketing",
+        "Communities and Crime",
+        "ProPublica COMPAS",
+        "German Statlog Credit",
+        "Adult",
+        "MNIST"
+      ],
+      "conditions": [
+        "Demographic Parity",
+        "Disparate Impact",
+        "Equal Opportunity",
+        "Equalized Odds",
+        "20% artificial label bias on MNIST"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2909334458:l1",
+      "paper_id": "openalex:W2909334458",
+      "text": "Re-weighting training examples trades off training on unbiased labels for training under a modified feature distribution P_tilde rather than the original data distribution P.",
+      "normalized_category": "distribution-shift",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2909334458:l2",
+      "paper_id": "openalex:W2909334458",
+      "text": "The finite-sample estimation rate bound degrades exponentially with high ambient feature dimension D unless the data lies on a lower-dimensional submanifold.",
+      "normalized_category": "curse-of-dimensionality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2909334458:l3",
+      "paper_id": "openalex:W2909334458",
+      "text": "Prior data pre-processing approaches that alter observed features or labels may be legally prohibited as training on falsified data.",
+      "normalized_category": "legal-and-regulatory-constraints",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2909334458:l4",
+      "paper_id": "openalex:W2909334458",
+      "text": "Lagrangian constrained optimization approaches require non-differentiable constraint relaxations and can suffer from non-convergence or unstable training.",
+      "normalized_category": "optimization-instability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:23:31.809224Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

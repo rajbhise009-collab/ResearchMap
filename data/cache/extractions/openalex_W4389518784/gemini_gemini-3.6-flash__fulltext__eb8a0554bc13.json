@@ -1,0 +1,163 @@
+{
+  "paper_id": "openalex:W4389518784",
+  "claims": [
+    {
+      "id": "openalex:W4389518784:c1",
+      "paper_id": "openalex:W4389518784",
+      "text": "ChatGPT generates hallucinated content in approximately 19.5% of responses to general user queries.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c2",
+      "paper_id": "openalex:W4389518784",
+      "text": "ChatGPT achieves 62.59% accuracy in recognizing hallucinations in question answering tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c3",
+      "paper_id": "openalex:W4389518784",
+      "text": "ChatGPT achieves 58.53% accuracy in recognizing hallucinations in text summarization tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c4",
+      "paper_id": "openalex:W4389518784",
+      "text": "Providing external knowledge improves ChatGPT's hallucination recognition accuracy in question answering from 62.59% to 76.83%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c5",
+      "paper_id": "openalex:W4389518784",
+      "text": "Adding chain-of-thought reasoning steps improves ChatGPT's hallucination recognition accuracy in text summarization from 58.53% to 61.21%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c6",
+      "paper_id": "openalex:W4389518784",
+      "text": "HaluEval benchmark consists of 35,000 total samples comprising 5,000 human-annotated user queries and 30,000 automatically generated task-specific examples.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389518784:e1",
+      "claim_id": "openalex:W4389518784:c1",
+      "description": "Human annotation of 5,000 ChatGPT responses to user queries revealed 977 responses (19.5%) containing hallucinations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389518784:e2",
+      "claim_id": "openalex:W4389518784:c2",
+      "description": "In hallucination recognition evaluation on QA task in HaluEval, ChatGPT scored 62.59% accuracy as listed in Table 5.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389518784:e3",
+      "claim_id": "openalex:W4389518784:c3",
+      "description": "Evaluation of ChatGPT on text summarization hallucination classification yielded an accuracy of 58.53% as listed in Table 5.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389518784:e4",
+      "claim_id": "openalex:W4389518784:c4",
+      "description": "Supplying external knowledge facts retrieved from Wikipedia increased ChatGPT recognition accuracy in QA from 62.59% to 76.83% in Table 8.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389518784:e5",
+      "claim_id": "openalex:W4389518784:c5",
+      "description": "Requiring ChatGPT to generate chain-of-thought intermediate reasoning steps increased summarization accuracy from 58.53% to 61.21% in Table 8.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389518784:e6",
+      "claim_id": "openalex:W4389518784:c6",
+      "description": "HaluEval dataset breakdown contains 5,000 general user queries with ChatGPT responses and 10,000 generated samples each for QA, dialogue, and summarization.",
+      "strength": 0.98
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389518784:m1",
+      "paper_id": "openalex:W4389518784",
+      "name": "Sampling-then-filtering automated hallucination generation",
+      "description": "A two-stage automated generation framework leveraging ChatGPT with one-pass and conversational prompting schemes to sample diverse hallucinated answers followed by ground-truth enhanced filtering to pick hard evaluation candidates.",
+      "datasets": [
+        "HotpotQA",
+        "OpenDialKG",
+        "CNN/Daily Mail"
+      ],
+      "conditions": [
+        "One-pass hallucination sampling instruction schema",
+        "Conversational hallucination sampling instruction schema",
+        "Ground-truth enhanced filtering instruction schema"
+      ]
+    },
+    {
+      "id": "openalex:W4389518784:m2",
+      "paper_id": "openalex:W4389518784",
+      "name": "User query pre-selection and human annotation",
+      "description": "Selection of 5,000 user queries from Alpaca based on lowest BERTScore similarity across multiple ChatGPT responses, followed by max-voting human annotation for span-level hallucination labeling.",
+      "datasets": [
+        "Alpaca 52K instruction tuning dataset"
+      ],
+      "conditions": [
+        "BERTScore semantic similarity filtering",
+        "Max-voting among 3 trained human annotators per sample",
+        "Inter-annotator agreement Fleiss's Kappa = 0.811"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389518784:l1",
+      "paper_id": "openalex:W4389518784",
+      "text": "The quality of generated hallucinated samples is constrained by ChatGPT's capacity to follow complex hallucination sampling instructions.",
+      "normalized_category": "generator-model-capacity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389518784:l2",
+      "paper_id": "openalex:W4389518784",
+      "text": "The benchmark focuses on evaluating LLM hallucination recognition performance but does not investigate underlying causes of hallucination.",
+      "normalized_category": "scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389518784:l3",
+      "paper_id": "openalex:W4389518784",
+      "text": "Because generated hallucinated samples closely resemble ground-truth text, there is potential risk for misuse.",
+      "normalized_category": "misuse-risk",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389518784:l4",
+      "paper_id": "openalex:W4389518784",
+      "text": "Prior hallucination work primarily focused on small language models and specific isolated tasks.",
+      "normalized_category": "prior-work-scope",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389518784:f1",
+      "paper_id": "openalex:W4389518784",
+      "text": "Monitor and regulate the spread and usage of the HaluEval benchmark to prevent unexpected misuse.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.962686Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

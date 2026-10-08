@@ -1,0 +1,87 @@
+{
+  "paper_id": "openalex:W4387635169",
+  "claims": [
+    {
+      "id": "openalex:W4387635169:c1",
+      "paper_id": "openalex:W4387635169",
+      "text": "Indiscriminately using world knowledge from LLMs causes significant damage to OOD detection due to LLM hallucinations.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c2",
+      "paper_id": "openalex:W4387635169",
+      "text": "Selective generation from LLMs enables the effective application of world knowledge to enhance multi-modal OOD detection.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c3",
+      "paper_id": "openalex:W4387635169",
+      "text": "A consistency-based uncertainty calibration method can estimate the confidence score of each LLM generation.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c4",
+      "paper_id": "openalex:W4387635169",
+      "text": "Extracting visual objects from images allows better utilization of LLM world knowledge in multi-modal OOD detection.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4387635169:e1",
+      "claim_id": "openalex:W4387635169:c1",
+      "description": "Analysis by the authors observed catastrophic damage to OOD detection when indiscriminately using world knowledge due to LLM hallucinations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4387635169:e2",
+      "claim_id": "openalex:W4387635169:c2",
+      "description": "Proposed selective generation framework to apply LLM world knowledge safely for OOD detection.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4387635169:e3",
+      "claim_id": "openalex:W4387635169:c3",
+      "description": "Introduction of consistency-based uncertainty calibration specifically designed to estimate confidence scores for generations.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4387635169:e4",
+      "claim_id": "openalex:W4387635169:c4",
+      "description": "Extraction of visual objects from each image to complement and capitalize on contextual world knowledge.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4387635169:m1",
+      "paper_id": "openalex:W4387635169",
+      "name": "Selective LLM Generation with Consistency-Based Uncertainty Calibration",
+      "description": "A multi-modal OOD detection framework using selective generation from LLMs, consistency-based uncertainty calibration, and image object extraction.",
+      "datasets": [],
+      "conditions": [
+        "multi-modal out-of-distribution detection"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4387635169:l1",
+      "paper_id": "openalex:W4387635169",
+      "text": "Indiscriminate use of LLM world knowledge degrades OOD detection performance due to hallucinations.",
+      "normalized_category": "llm-hallucinations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T10:20:28.624249Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

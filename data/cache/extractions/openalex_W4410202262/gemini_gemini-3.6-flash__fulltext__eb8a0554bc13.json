@@ -1,0 +1,175 @@
+{
+  "paper_id": "openalex:W4410202262",
+  "claims": [
+    {
+      "id": "openalex:W4410202262:c1",
+      "paper_id": "openalex:W4410202262",
+      "text": "The golden CoT method increases the solution rate on a benchmark of detection puzzles with GPT-4 from 38% using standard CoT to 83%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410202262:c2",
+      "paper_id": "openalex:W4410202262",
+      "text": "In few-shot evaluation settings on InstructEval, omitting prompts or using generic task-agnostic prompts outperforms complex instruction selection methods.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410202262:c3",
+      "paper_id": "openalex:W4410202262",
+      "text": "In zero-shot settings, expert-written task-specific prompts significantly boost language model performance compared to automated prompt generation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410202262:c4",
+      "paper_id": "openalex:W4410202262",
+      "text": "The skeleton-of-thought prompting method achieves generation speedups close to twice the original evaluation speed.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410202262:c5",
+      "paper_id": "openalex:W4410202262",
+      "text": "Decomposed prompting (DECOMP) achieves better length generalization than Chain-of-Thought prompting on list reversal tasks by recursively decomposing input sequences into smaller sublists.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410202262:e1",
+      "claim_id": "openalex:W4410202262:c1",
+      "description": "According to a benchmark composed of a set of detection puzzles, the 38% solution rate of the standard CoT approach with GPT-4 can be improved to an 83% solution rate when the golden CoT method is used.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410202262:e2",
+      "claim_id": "openalex:W4410202262:c2",
+      "description": "InstructEval benchmark evaluation concluded that in few-shot settings, omitting prompts or using generic task-agnostic prompts tends to outperform the other methods, with prompts having little impact on performance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410202262:e3",
+      "claim_id": "openalex:W4410202262:c3",
+      "description": "InstructEval results showed that in zero-shot settings, expert-written task-specific prompts could significantly boost the achieved performance, whereas automated prompts failed to outperform simple baselines.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410202262:e4",
+      "claim_id": "openalex:W4410202262:c4",
+      "description": "Ning et al. reported that their skeleton of thought method achieved a significant speedup, often close to twice the original evaluation speed, depending on the model.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410202262:e5",
+      "claim_id": "openalex:W4410202262:c5",
+      "description": "In list reversal, DECOMP exhibits better length generalization than CoT prompting by recursively decomposing the task into the reversal of smaller sublists, achieving higher accuracy for longer input sequences.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410202262:m1",
+      "paper_id": "openalex:W4410202262",
+      "name": "Chain-of-Thought Prompting",
+      "description": "A technique that prompts large language models to generate intermediate logical reasoning steps prior to giving a final answer.",
+      "datasets": [
+        "GSM8K",
+        "MultiArith",
+        "SVAMP"
+      ],
+      "conditions": [
+        "Zero-shot setting with explicit step-by-step instructions",
+        "Few-shot setting with manual exemplars containing questions and rationale chains"
+      ]
+    },
+    {
+      "id": "openalex:W4410202262:m2",
+      "paper_id": "openalex:W4410202262",
+      "name": "Decomposed Prompting (DECOMP)",
+      "description": "A modular framework that decomposes complex queries into structured prompting programs handled by specialized subtask handlers.",
+      "datasets": [
+        "GSM8K",
+        "HotpotQA"
+      ],
+      "conditions": [
+        "Nonlinear and recursive task decomposition",
+        "Hierarchical subtask controller"
+      ]
+    },
+    {
+      "id": "openalex:W4410202262:m3",
+      "paper_id": "openalex:W4410202262",
+      "name": "Multimodal Prompt Learning (MaPLe)",
+      "description": "A technique that explicitly couples and jointly optimizes vision and language prompt vectors hierarchically across transformer layers in vision-language models.",
+      "datasets": [
+        "RefCOCO",
+        "RefCOCO+",
+        "RefCOCOg"
+      ],
+      "conditions": [
+        "Multimodal input processing",
+        "Frozen CLIP base architecture with learned prompt vectors"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410202262:l1",
+      "paper_id": "openalex:W4410202262",
+      "text": "The scope of the survey is primarily focused on text and vision modalities because the majority of accessible model APIs remain limited to these domains.",
+      "normalized_category": "modality-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410202262:l2",
+      "paper_id": "openalex:W4410202262",
+      "text": "Golden CoT requires ground-truth reasoning chains directly inside the prompt, which severely restricts its practical utility for novel problem solving.",
+      "normalized_category": "oracle-data-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410202262:l3",
+      "paper_id": "openalex:W4410202262",
+      "text": "Static role prompting suffers from catastrophic forgetting and inter-domain confusion when applied to multi-domain tasks.",
+      "normalized_category": "multi-domain-degradation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410202262:l4",
+      "paper_id": "openalex:W4410202262",
+      "text": "Current prompting methods rely heavily on surface pattern recognition and distributional correlations rather than genuine semantic comprehension.",
+      "normalized_category": "lack-of-semantic-grounding",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4410202262:f1",
+      "paper_id": "openalex:W4410202262",
+      "text": "Investigate internal neural architecture mechanisms and parameter distributions using interpretability techniques like activation patching to design structurally informed prompts.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410202262:f2",
+      "paper_id": "openalex:W4410202262",
+      "text": "Develop evaluation frameworks and benchmarks that test for genuine semantic understanding and logical consistency rather than surface pattern matching.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410202262:f3",
+      "paper_id": "openalex:W4410202262",
+      "text": "Establish standardized benchmarks and community-driven security frameworks to evaluate LLM resilience against evolving inference-phase and training-phase adversarial attacks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.000925Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,96 @@
+{
+  "paper_id": "openalex:W4410465211",
+  "claims": [
+    {
+      "id": "openalex:W4410465211:c1",
+      "paper_id": "openalex:W4410465211",
+      "text": "Large Language Models are prone to hallucinations where the model generates incorrect information.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410465211:c2",
+      "paper_id": "openalex:W4410465211",
+      "text": "Data noise, incompleteness, and bias affect the frequency of hallucinations in LLM architectures.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410465211:c3",
+      "paper_id": "openalex:W4410465211",
+      "text": "Improving data quality decreases the occurrence of LLM hallucinations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410465211:c4",
+      "paper_id": "openalex:W4410465211",
+      "text": "Improving data quality enhances LLM reliability for practical applications in domains such as healthcare, finance, and law.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410465211:e1",
+      "claim_id": "openalex:W4410465211:c1",
+      "description": "Large Language Models (LLMs) have shown surprising efficacy in natural language understanding and generation, but they are prone to hallucinations-where the model writes things that are simply wrong.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410465211:e2",
+      "claim_id": "openalex:W4410465211:c2",
+      "description": "Empirical evaluation examined how various levels of data noise, incompleteness and bias affect the frequency of hallucinations in state-of-the-art LLM architectures.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410465211:e3",
+      "claim_id": "openalex:W4410465211:c3",
+      "description": "Results show that by improving the data quality we are able to decrease the occurrence of hallucinations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410465211:e4",
+      "claim_id": "openalex:W4410465211:c4",
+      "description": "Results show that improving data quality improves the reliability of the LLMs for practical application in various areas including healthcare, finance, and law.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410465211:m1",
+      "paper_id": "openalex:W4410465211",
+      "name": "Empirical evaluation of data quality factors",
+      "description": "Empirical evaluation measuring the impact of varying levels of data noise, incompleteness, and bias on hallucination rates across LLM architectures.",
+      "datasets": [],
+      "conditions": [
+        "data noise",
+        "data incompleteness",
+        "data bias"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410465211:l1",
+      "paper_id": "openalex:W4410465211",
+      "text": "Large Language Models are prone to hallucinations and generating factually wrong statements.",
+      "normalized_category": "llm-hallucinations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4410465211:f1",
+      "paper_id": "openalex:W4410465211",
+      "text": "Implementation of improved dataset construction, data augmentation, and Reinforcement Learning from Human Feedback (RLHF) to increase model factuality.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.104100Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

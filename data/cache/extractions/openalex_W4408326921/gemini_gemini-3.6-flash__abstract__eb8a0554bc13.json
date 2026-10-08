@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W4408326921",
+  "claims": [
+    {
+      "id": "openalex:W4408326921:c1",
+      "paper_id": "openalex:W4408326921",
+      "text": "Current research in Generative Information Retrieval (GenIR) can be categorized into Generative Retrieval (GR) and Reliable Response Generation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408326921:c2",
+      "paper_id": "openalex:W4408326921",
+      "text": "Generative Retrieval leverages generative model parameters to memorize documents and enables retrieval by generating document identifiers directly without explicit indexing.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408326921:c3",
+      "paper_id": "openalex:W4408326921",
+      "text": "Reliable Response Generation employs language models to directly generate user-sought information without relying on traditional relevance matching constraints.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408326921:c4",
+      "paper_id": "openalex:W4408326921",
+      "text": "Traditional Information Retrieval methods rely on similarity matching.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4408326921:e1",
+      "claim_id": "openalex:W4408326921:c1",
+      "description": "Based on the form of information provided to users, current research in GenIR can be categorized into two aspects: (1) Generative Retrieval ( GR )... (2) Reliable Response Generation...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408326921:e2",
+      "claim_id": "openalex:W4408326921:c2",
+      "description": "Generative Retrieval ( GR ) leverages the generative model’s parameters for memorizing documents, enabling retrieval by directly generating relevant document identifiers without explicit indexing.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408326921:e3",
+      "claim_id": "openalex:W4408326921:c3",
+      "description": "Reliable Response Generation employs language models to directly generate information users seek, breaking the limitations of traditional IR in terms of document granularity and relevance matching...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408326921:e4",
+      "claim_id": "openalex:W4408326921:c4",
+      "description": "Information Retrieval (IR) systems... have long been dominated by traditional methods relying on similarity matching.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4408326921:m1",
+      "paper_id": "openalex:W4408326921",
+      "name": "Systematic Literature Survey",
+      "description": "A systematic survey reviewing research progress, taxonomy, model structure, document identifiers, evaluation, and challenges in Generative Information Retrieval (GenIR).",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4408326921:l1",
+      "paper_id": "openalex:W4408326921",
+      "text": "Traditional Information Retrieval methods face limitations in document granularity and relevance matching.",
+      "normalized_category": "document-granularity-relevance-matching-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.118580Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

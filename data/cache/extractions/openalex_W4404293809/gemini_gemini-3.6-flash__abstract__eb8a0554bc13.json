@@ -1,0 +1,71 @@
+{
+  "paper_id": "openalex:W4404293809",
+  "claims": [
+    {
+      "id": "openalex:W4404293809:c1",
+      "paper_id": "openalex:W4404293809",
+      "text": "Comprehensive exploration of the intricate relationship between AIGC and communication networks is relatively limited in existing literature.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404293809:c2",
+      "paper_id": "openalex:W4404293809",
+      "text": "LLMs and AIGC technologies can be integrated within the domain of communication networks.",
+      "type": "method",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404293809:c3",
+      "paper_id": "openalex:W4404293809",
+      "text": "Communication networks can bolster the capabilities of LLMs and AIGC technologies.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404293809:e1",
+      "claim_id": "openalex:W4404293809:c1",
+      "description": "The authors note that although noteworthy advancements have been made, a comprehensive exploration of the relationship between AIGC and communication networks remains relatively limited.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4404293809:e2",
+      "claim_id": "openalex:W4404293809:c2",
+      "description": "The article scrutinizes the integration of LLMs and AIGC technologies within the domain of communication networks.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4404293809:e3",
+      "claim_id": "openalex:W4404293809:c3",
+      "description": "The survey investigates how communication networks can further bolster the capabilities of LLMs and AIGC.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404293809:m1",
+      "paper_id": "openalex:W4404293809",
+      "name": "Dual-standpoint literature survey",
+      "description": "A comprehensive survey analyzing both the integration of AIGC/LLMs into communication networks and how communication networks enhance AIGC/LLMs.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404293809:l1",
+      "paper_id": "openalex:W4404293809",
+      "text": "A comprehensive exploration of the intricate relationship between AIGC and communication networks remains relatively limited.",
+      "normalized_category": "limited-prior-research",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.121475Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

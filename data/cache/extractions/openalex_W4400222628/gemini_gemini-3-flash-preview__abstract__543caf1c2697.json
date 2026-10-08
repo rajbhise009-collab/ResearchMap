@@ -1,0 +1,101 @@
+{
+  "paper_id": "openalex:W4400222628",
+  "claims": [
+    {
+      "id": "openalex:W4400222628:c1",
+      "paper_id": "openalex:W4400222628",
+      "text": "Traditional methods for uncertainty quantification, such as probabilistic models and ensemble techniques, face challenges when applied to the complex and high-dimensional nature of LLM-generated outputs.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c2",
+      "paper_id": "openalex:W4400222628",
+      "text": "A novel geometric approach to uncertainty quantification using convex hull analysis is proposed.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c3",
+      "paper_id": "openalex:W4400222628",
+      "text": "The proposed method leverages the spatial properties of response embeddings to measure the dispersion and variability of model outputs.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c4",
+      "paper_id": "openalex:W4400222628",
+      "text": "The uncertainty of the model for LLMs depends on the prompt complexity.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c5",
+      "paper_id": "openalex:W4400222628",
+      "text": "The uncertainty of the model for LLMs depends on the model.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c6",
+      "paper_id": "openalex:W4400222628",
+      "text": "The uncertainty of the model for LLMs depends on the temperature setting.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400222628:e1",
+      "claim_id": "openalex:W4400222628:c4",
+      "description": "The experimental results indicate that the uncertainty of the model for LLMs depends on the prompt complexity.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4400222628:e2",
+      "claim_id": "openalex:W4400222628:c5",
+      "description": "The experimental results indicate that the uncertainty of the model for LLMs depends on... the model.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4400222628:e3",
+      "claim_id": "openalex:W4400222628:c6",
+      "description": "The experimental results indicate that the uncertainty of the model for LLMs depends on... the temperature setting.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400222628:m1",
+      "paper_id": "openalex:W4400222628",
+      "name": "Convex Hull Analysis",
+      "description": "A geometric approach using BERT embeddings, PCA for dimensionality reduction, and DBSCAN clustering to compute convex hulls for uncertainty measurement.",
+      "datasets": [],
+      "conditions": [
+        "easy prompts",
+        "moderate prompts",
+        "confusing prompts",
+        "varying temperature settings",
+        "multiple LLMs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400222628:l1",
+      "paper_id": "openalex:W4400222628",
+      "text": "Traditional methods for uncertainty quantification, such as probabilistic models and ensemble techniques, face challenges when applied to the complex and high-dimensional nature of LLM-generated outputs.",
+      "normalized_category": "high-dimensional-complexity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:21:32.149351Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

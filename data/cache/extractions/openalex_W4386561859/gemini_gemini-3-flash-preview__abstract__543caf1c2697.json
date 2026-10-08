@@ -1,0 +1,132 @@
+{
+  "paper_id": "openalex:W4386561859",
+  "claims": [
+    {
+      "id": "openalex:W4386561859:c1",
+      "paper_id": "openalex:W4386561859",
+      "text": "Existing techniques for hallucination detection rely on intricate fuzzy, specific free-language-based chain of thought (CoT) techniques.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c2",
+      "paper_id": "openalex:W4386561859",
+      "text": "Parameter-based hallucination detection methods suffer from interpretability issues.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c3",
+      "paper_id": "openalex:W4386561859",
+      "text": "Methods that identify hallucinations post-generation cannot prevent their occurrence.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c4",
+      "paper_id": "openalex:W4386561859",
+      "text": "Post-generation hallucination detection methods suffer from inconsistent performance due to the influence of the instruction format.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c5",
+      "paper_id": "openalex:W4386561859",
+      "text": "Post-generation hallucination detection methods suffer from inconsistent performance due to the influence of model style.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c6",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY evaluates the model's familiarity with the concepts present in the input instruction.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c7",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY withholds the generation of responses in the case of unfamiliar concepts.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c8",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY reduces hallucinations by emulating the human ability to refrain from responding to unfamiliar topics.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386561859:c9",
+      "paper_id": "openalex:W4386561859",
+      "text": "SELF-FAMILIARITY demonstrates consistently superior performance compared to existing techniques across four different large language models.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386561859:e1",
+      "claim_id": "openalex:W4386561859:c9",
+      "description": "The authors validate SELF-FAMILIARITY across four different large language models, demonstrating consistently superior performance compared to existing techniques.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386561859:m1",
+      "paper_id": "openalex:W4386561859",
+      "name": "SELF-FAMILIARITY",
+      "description": "A pre-detection self-evaluation technique that evaluates model familiarity with input concepts and withholds responses for unfamiliar ones.",
+      "datasets": [],
+      "conditions": [
+        "four different large language models",
+        "zero-resource",
+        "pre-detection"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386561859:l1",
+      "paper_id": "openalex:W4386561859",
+      "text": "Existing techniques rely on intricate fuzzy, specific free-language-based chain of thought (CoT) techniques.",
+      "normalized_category": "complexity-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386561859:l2",
+      "paper_id": "openalex:W4386561859",
+      "text": "Parameter-based methods suffer from interpretability issues.",
+      "normalized_category": "interpretability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386561859:l3",
+      "paper_id": "openalex:W4386561859",
+      "text": "Methods that identify hallucinations post-generation could not prevent their occurrence.",
+      "normalized_category": "prevention-failure",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4386561859:l4",
+      "paper_id": "openalex:W4386561859",
+      "text": "Post-generation methods suffer from inconsistent performance due to the influence of the instruction format and model style.",
+      "normalized_category": "performance-inconsistency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:16:53.265432Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

@@ -1,0 +1,152 @@
+{
+  "paper_id": "openalex:W2794325560",
+  "claims": [
+    {
+      "id": "openalex:W2794325560:c1",
+      "paper_id": "openalex:W2794325560",
+      "text": "The ARC dataset contains 7,787 grade-school science questions, split into a Challenge Set of 2,590 questions and an Easy Set of 5,197 questions.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2794325560:c2",
+      "paper_id": "openalex:W2794325560",
+      "text": "Leading neural baseline QA models do not score significantly higher than a random baseline (25.02%) on the ARC Challenge Set.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2794325560:c3",
+      "paper_id": "openalex:W2794325560",
+      "text": "The ARC Corpus contains 14 million science-related sentences relevant to approximately 95% of the ARC Challenge Set questions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2794325560:c4",
+      "paper_id": "openalex:W2794325560",
+      "text": "The DGEM model achieved a test score of 27.11% on the ARC Challenge Set and 58.97% on the Easy Set.",
+      "type": "finding",
+      "confidence": 0.99,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2794325560:c5",
+      "paper_id": "openalex:W2794325560",
+      "text": "The BiDAF model achieved a test score of 26.54% on the ARC Challenge Set and 50.11% on the Easy Set.",
+      "type": "finding",
+      "confidence": 0.99,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2794325560:e1",
+      "claim_id": "openalex:W2794325560:c1",
+      "description": "The ARC Dataset consists of a collection of 7787 natural science questions... partitioned into a Challenge Set (2590 questions)... and an Easy Set (5197 questions).",
+      "strength": 0.99
+    },
+    {
+      "id": "openalex:W2794325560:e2",
+      "claim_id": "openalex:W2794325560:c2",
+      "description": "none of the algorithms score significantly higher than the random baseline on the Challenge set, where the 95% confidence interval is ±2.5%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2794325560:e3",
+      "claim_id": "openalex:W2794325560:c3",
+      "description": "The ARC Corpus, in fact, appears to mention knowledge relevant to approximately 95% of the ARC Challenge questions (from an analysis of a random sample of questions).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2794325560:e4",
+      "claim_id": "openalex:W2794325560:c4",
+      "description": "DGEM scored 27.11% on the Challenge Set test partition and 58.97% on the Easy Set test partition.",
+      "strength": 0.99
+    },
+    {
+      "id": "openalex:W2794325560:e5",
+      "claim_id": "openalex:W2794325560:c5",
+      "description": "BiDAF scored 26.54% on the Challenge Set test partition and 50.11% on the Easy Set test partition.",
+      "strength": 0.99
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2794325560:m1",
+      "paper_id": "openalex:W2794325560",
+      "name": "ARC Question Set Filtering and Partitioning",
+      "description": "Filtering multiple-choice science questions into a Challenge Set and Easy Set using an Information Retrieval solver and a Pointwise Mutual Information solver.",
+      "datasets": [
+        "ARC Dataset"
+      ],
+      "conditions": [
+        "Incorrectly answered by both IR and PMI solvers using Waterloo corpus"
+      ]
+    },
+    {
+      "id": "openalex:W2794325560:m2",
+      "paper_id": "openalex:W2794325560",
+      "name": "Multiple-Choice QA Adaptation via Entailment",
+      "description": "Converting multiple-choice questions into hypothesis assertions, retrieving premise sentences, and evaluating answer options using neural textual entailment models.",
+      "datasets": [
+        "ARC Dataset",
+        "ARC Corpus",
+        "SciTail"
+      ],
+      "conditions": [
+        "Fill-in-the-blank question conversion",
+        "Top-8 ElasticSearch retrieved sentences"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2794325560:l1",
+      "paper_id": "openalex:W2794325560",
+      "text": "Earlier reading comprehension datasets (SQuAD, MCTest) contained questions solvable via surface-level cues alone.",
+      "normalized_category": "prior-work-surface-cues",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2794325560:l2",
+      "paper_id": "openalex:W2794325560",
+      "text": "Synthetic datasets like bAbI risk allowing models to reverse-engineer generation idiosyncrasies without advancing reasoning.",
+      "normalized_category": "prior-work-synthetic-artifacts",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2794325560:l3",
+      "paper_id": "openalex:W2794325560",
+      "text": "Standard IR retrieval methods bias toward sentences that match the whole question, failing to retrieve sentences that individually match partially but combine to answer the question.",
+      "normalized_category": "retrieval-bias-multi-fact-failure",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2794325560:l4",
+      "paper_id": "openalex:W2794325560",
+      "text": "Converting questions to hypothesis statements using simple fill-in-the-blank rules can yield non-grammatical sentences.",
+      "normalized_category": "ungrammatical-hypothesis-generation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2794325560:f1",
+      "paper_id": "openalex:W2794325560",
+      "text": "Develop more sophisticated rule-based or learned methods to convert question-answer pairs into grammatical assertions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2794325560:f2",
+      "paper_id": "openalex:W2794325560",
+      "text": "Develop advanced retrieval strategies and reasoning methods capable of combining multiple partial facts from separate sentences.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.082737Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,66 @@
+{
+  "paper_id": "openalex:W4389911350",
+  "claims": [
+    {
+      "id": "openalex:W4389911350:c1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Large language models exhibit strong calibration at the token level when evaluating true/false statements or selecting answers in multiple-choice questions.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c2",
+      "paper_id": "openalex:W4389911350",
+      "text": "Open-ended generation tasks can be reformulated into token-level prediction tasks to leverage token-level calibration for self-evaluation.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389911350:e1",
+      "claim_id": "openalex:W4389911350:c1",
+      "description": "LLMs have demonstrated strong calibration at the token level, particularly when choosing correct answers in multiple-choice questions or evaluating true/false statements.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389911350:e2",
+      "claim_id": "openalex:W4389911350:c2",
+      "description": "We reformulate open-ended generation tasks into token-level prediction tasks, and leverage LLMs' superior calibration at the token level.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389911350:m1",
+      "paper_id": "openalex:W4389911350",
+      "name": "Token-level Self-Evaluation for Selective Generation",
+      "description": "Reformulates open-ended generation into token-level prediction tasks using multi-way comparison or point-wise evaluation to score uncertainty and perform selective generation.",
+      "datasets": [
+        "TruthfulQA",
+        "TL;DR"
+      ],
+      "conditions": [
+        "PaLM-2",
+        "GPT-3",
+        "multi-way comparison",
+        "point-wise evaluation",
+        "None of the above option"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389911350:l1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Sequence-level probability estimates given by LLMs, such as perplexity, are unreliable indicators of generation quality.",
+      "normalized_category": "unreliable-sequence-level-probability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:30:58.398036Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

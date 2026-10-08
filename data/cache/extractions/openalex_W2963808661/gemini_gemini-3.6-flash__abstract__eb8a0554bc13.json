@@ -1,0 +1,81 @@
+{
+  "paper_id": "openalex:W2963808661",
+  "claims": [
+    {
+      "id": "openalex:W2963808661:c1",
+      "paper_id": "openalex:W2963808661",
+      "text": "Comprehensive evaluation of AI-related risks requires assessing both model-specific bottom-up risks and organizational governance top-down risks.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963808661:c2",
+      "paper_id": "openalex:W2963808661",
+      "text": "An end-to-end AI risk management kernel can be structured into five implementation steps: Identify, Collect, Assess, Comply, and Monitor.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963808661:c3",
+      "paper_id": "openalex:W2963808661",
+      "text": "Scaling an AI risk auditing tool requires a role-based approach covering different roles involved in complex AI system development.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963808661:c4",
+      "paper_id": "openalex:W2963808661",
+      "text": "Integrating an AI auditing tool within existing governance infrastructure reduces compliance barriers for regulatory standards like the EU AI Act and ISO 42001:2023.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2963808661:e1",
+      "claim_id": "openalex:W2963808661:c1",
+      "description": "To attain a comprehensive understanding of all AI-related risks, it is essential to evaluate both model-specific risks and those associated with the organizational and governance setups.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963808661:e2",
+      "claim_id": "openalex:W2963808661:c2",
+      "description": "Our end-to-end (from identification to monitoring) risk management kernel follows these implementation steps: - Identify - Collect - Assess - Comply - Monitor.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2963808661:e3",
+      "claim_id": "openalex:W2963808661:c3",
+      "description": "We demonstrate that scaling of such a risk auditing tool requires fundamental aspects. Those aspects include for instance a role-based approach, covering different roles in the development of complex AI systems.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2963808661:e4",
+      "claim_id": "openalex:W2963808661:c4",
+      "description": "This integration is essential to reduce the barriers for companies to comply with current regulatory requirements, such as the EU AI Act [European Parliament and the Council of the EU, 2024], and established standards like ISO 42001:2023.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2963808661:m1",
+      "paper_id": "openalex:W2963808661",
+      "name": "AI Governance Risk Management Kernel",
+      "description": "A five-step end-to-end auditing framework (Identify, Collect, Assess, Comply, Monitor) that maps traditional risk management practices to AI systems and existing enterprise governance infrastructure.",
+      "datasets": [],
+      "conditions": [
+        "EU AI Act alignment",
+        "ISO 42001:2023 compliance",
+        "Role-based governance access"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:15:05.390494Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

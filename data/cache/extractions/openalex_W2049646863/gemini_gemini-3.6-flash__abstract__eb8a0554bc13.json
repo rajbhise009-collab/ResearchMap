@@ -1,0 +1,90 @@
+{
+  "paper_id": "openalex:W2049646863",
+  "claims": [
+    {
+      "id": "openalex:W2049646863:c1",
+      "paper_id": "openalex:W2049646863",
+      "text": "The use of a serum-cholesterol-lowering diet lowers serum cholesterol levels in hospitalized middle-aged men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2049646863:c2",
+      "paper_id": "openalex:W2049646863",
+      "text": "The incidence of coronary heart disease during serum-cholesterol-lowering diet periods was about half that during normal-diet periods.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2049646863:c3",
+      "paper_id": "openalex:W2049646863",
+      "text": "Changes in potential confounding variables were small and failed to account for the reduction in coronary heart disease incidence.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2049646863:c4",
+      "paper_id": "openalex:W2049646863",
+      "text": "A serum-cholesterol-lowering diet exerts a substantial preventive effect on coronary heart disease.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2049646863:e1",
+      "claim_id": "openalex:W2049646863:c1",
+      "description": "The use of the SCL diet was associated with markedly lowered serum-cholesterol-values.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2049646863:e2",
+      "claim_id": "openalex:W2049646863:c2",
+      "description": "The incidence of CHD, as measured by the appearance of certain electrocardiographic patterns and by the occurrence of coronary deaths, was in both hospitals during the SCL-diet periods about half that during the normal-diet periods.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2049646863:e3",
+      "claim_id": "openalex:W2049646863:c3",
+      "description": "An examination of a number of potential confounding variables indicated that the changes in them were small and failed to account for the considerable reduction in the incidence of CHD.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2049646863:e4",
+      "claim_id": "openalex:W2049646863:c4",
+      "description": "It is concluded that the use of the serum-cholesterol-lowering diet exerted a substantial preventive effect on CHD.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2049646863:m1",
+      "paper_id": "openalex:W2049646863",
+      "name": "Crossover Controlled Intervention Trial",
+      "description": "A 12-year controlled trial in two mental hospitals with a diet reversal (crossover) after six years comparing a serum-cholesterol-lowering diet to a normal hospital diet.",
+      "datasets": [],
+      "conditions": [
+        "hospitalized middle-aged men",
+        "SCL diet low in saturated fats and cholesterol and relatively high in polyunsaturated fats",
+        "control normal hospital diet",
+        "6-year diet reversal crossover (1959-1971)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2049646863:l1",
+      "paper_id": "openalex:W2049646863",
+      "text": "The study population was restricted to hospitalized middle-aged men.",
+      "normalized_category": "restricted-demographic",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:21:50.486363Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,231 @@
+{
+  "paper_id": "openalex:W4409147844",
+  "claims": [
+    {
+      "id": "openalex:W4409147844:c1",
+      "paper_id": "openalex:W4409147844",
+      "text": "Applying machine learning models to HIV lateral flow assay image interpretation increased diagnostic specificity by 11% compared to visual interpretation by healthcare workers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c2",
+      "paper_id": "openalex:W4409147844",
+      "text": "Applying machine learning models to HIV lateral flow assay image interpretation increased diagnostic sensitivity by 2.8% compared to visual interpretation by healthcare workers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c3",
+      "paper_id": "openalex:W4409147844",
+      "text": "The SMARTAI-LFA platform achieved 98% sensitivity and 100% specificity for COVID-19 antigen detection.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c4",
+      "paper_id": "openalex:W4409147844",
+      "text": "The TIMESAVER deep learning system reduced lateral flow assay time to 1–2 minutes compared to the traditional 15 minutes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c5",
+      "paper_id": "openalex:W4409147844",
+      "text": "An SVM classifier for magnetic nanoparticle-labeled lateral flow assays achieved 100% accuracy at an hCG concentration of 0.25 mIU/mL compared to 7% accuracy for visual reading.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c6",
+      "paper_id": "openalex:W4409147844",
+      "text": "Gold-ion amplified high-sensitivity vertical flow assays (hs-VFA) combined with neural network processing achieved a limit of detection of 0.2 pg/mL for cardiac troponin I.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c7",
+      "paper_id": "openalex:W4409147844",
+      "text": "A peptide-panel multiplexed vertical flow assay (xVFA) for Lyme disease achieved 95.5% sensitivity and 100% specificity.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c8",
+      "paper_id": "openalex:W4409147844",
+      "text": "Real-time fluorescent signal analysis with recurrent neural networks reduced the assay time of nucleic acid amplification tests by 45%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409147844:c9",
+      "paper_id": "openalex:W4409147844",
+      "text": "Time-lapse coherent holographic imaging combined with deep learning detected live bacteria colonies within 9 hours, shortening detection time by over 12 hours compared to standard EPA-approved methods.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4409147844:e1",
+      "claim_id": "openalex:W4409147844:c1",
+      "description": "This improvement was measured at 11% (from 89% to 100%) for specificity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e2",
+      "claim_id": "openalex:W4409147844:c2",
+      "description": "This improvement was measured at 2.8% (from 95.6% to 97.8%) for sensitivity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e3",
+      "claim_id": "openalex:W4409147844:c3",
+      "description": "The SMARTAI-LFA platform achieved Sensitivity: 98%, Specificity: 100%, Accuracy: 99% for COVID-19 antigen testing.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e4",
+      "claim_id": "openalex:W4409147844:c4",
+      "description": "TIMESAVER reduced the assay time to 1–2 min compared to the traditional methods of 15 min, powered by a time-series deep learning algorithm.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e5",
+      "claim_id": "openalex:W4409147844:c5",
+      "description": "At hCG concentrations of 0.25 mIU/mL, the accuracy of the SVM classifier was 100%, while that of visual reading was 7%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e6",
+      "claim_id": "openalex:W4409147844:c6",
+      "description": "The hs-VFA showed a LoD of 0.2 pg/mL, which is >10 times lower than the clinical cutoff concentration in hs-cTnI testing.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e7",
+      "claim_id": "openalex:W4409147844:c7",
+      "description": "Further improvement of xVFA performance for Lyme disease was achieved by transitioning to a peptide panel assay, resulting in 95.5% sensitivity and 100% specificity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e8",
+      "claim_id": "openalex:W4409147844:c8",
+      "description": "This device transfers real-time data from fluorescent signals of amplified viral sequences to RNN, LSTM, and GRU models, enabling early predictive analysis and reducing assay time by 45%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409147844:e9",
+      "claim_id": "openalex:W4409147844:c9",
+      "description": "The device detected three bacteria species... achieving >95% sensitivity in identifying bacteria colonies and shortening the detection time by >12 h compared to standard Environmental Protection Agency (EPA)-approved methods... showing a LoD of approximately 1 CFU/L within only 9 h.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4409147844:m1",
+      "paper_id": "openalex:W4409147844",
+      "name": "SMARTAI-LFA Platform",
+      "description": "A deep learning-assisted smartphone lateral flow assay system that uses YOLOv3 for automated object detection of test regions and ResNet-18 for result classification.",
+      "datasets": [
+        "COVID-19 swab and saliva clinical samples"
+      ],
+      "conditions": [
+        "Smartphone image capture",
+        "Cloud-based processing"
+      ]
+    },
+    {
+      "id": "openalex:W4409147844:m2",
+      "paper_id": "openalex:W4409147844",
+      "name": "TIMESAVER-LFA Framework",
+      "description": "An immunoassay verification methodology using a combination of convolutional neural networks and time-series deep learning models to predict test results in 1–2 minutes.",
+      "datasets": [
+        "COVID-19 antigen dataset",
+        "Influenza A/B dataset",
+        "cTnI dataset",
+        "hCG dataset"
+      ],
+      "conditions": [
+        "Custom CCD camera setup",
+        "Time-series image acquisition"
+      ]
+    },
+    {
+      "id": "openalex:W4409147844:m3",
+      "paper_id": "openalex:W4409147844",
+      "name": "Multiplexed Vertical Flow Assay (xVFA) with Deep Learning",
+      "description": "A paper platform featuring vertical liquid flow across stacked layers with multi-spot reaction membranes, combined with fully connected neural networks for multiplexed biomarker quantification.",
+      "datasets": [
+        "Lyme disease serum samples",
+        "Cardiac biomarker serum samples",
+        "COVID-19 serology serum samples"
+      ],
+      "conditions": [
+        "Smartphone reader attachment",
+        "Colorimetric or fluorescent readout"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4409147844:l1",
+      "paper_id": "openalex:W4409147844",
+      "text": "For cTnI in magnetic nanoparticle-labeled LFA, the quantification cut-off was limited to 0.5 ng/mL, falling short of the ~0.01 ng/mL sensitivity required for clinical use.",
+      "normalized_category": "insufficient-analytical-sensitivity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4409147844:l2",
+      "paper_id": "openalex:W4409147844",
+      "text": "The performance of several microfluidic paper-based analytical device (µPAD) platforms was primarily demonstrated on synthetic and spiked samples, requiring further validation on biological specimens.",
+      "normalized_category": "synthetic-sample-validation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4409147844:l3",
+      "paper_id": "openalex:W4409147844",
+      "text": "Subjective interpretation of POCT results by untrained users, such as reading faint test lines on rapid tests, causes significant diagnostic variability.",
+      "normalized_category": "user-interpretation-error",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4409147844:l4",
+      "paper_id": "openalex:W4409147844",
+      "text": "Traditional centralized laboratory testing faces limitations including lengthy turnaround times, high operational costs, and limited geographical accessibility.",
+      "normalized_category": "turnaround-time-and-cost",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4409147844:f1",
+      "paper_id": "openalex:W4409147844",
+      "text": "Conduct systematic benchmarking and meta-analyses comparing machine learning algorithm performance across standardized multi-platform POCT datasets.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4409147844:f2",
+      "paper_id": "openalex:W4409147844",
+      "text": "Develop explainable AI (XAI) frameworks tailored for point-of-care diagnostics to provide transparent feature attributions to clinicians.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4409147844:f3",
+      "paper_id": "openalex:W4409147844",
+      "text": "Establish adaptive regulatory pathways (such as Software as a Medical Device pre-specifications and algorithm change protocols) integrated with real-world evidence for continuous AI postmarket oversight.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:19:44.226737Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

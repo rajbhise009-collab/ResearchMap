@@ -1,0 +1,188 @@
+{
+  "paper_id": "openalex:W3167179910",
+  "claims": [
+    {
+      "id": "openalex:W3167179910:c1",
+      "paper_id": "openalex:W3167179910",
+      "text": "The scoping review identified 82 relevant studies on the application of machine learning to social determinants of health published before May 1, 2020.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3167179910:c2",
+      "paper_id": "openalex:W3167179910",
+      "text": "More than half (56%, n = 46) of the reviewed studies on machine learning and social determinants of health used data from the United States.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3167179910:c3",
+      "paper_id": "openalex:W3167179910",
+      "text": "Eighty percent (n = 66) of the reviewed studies utilized survey data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3167179910:c4",
+      "paper_id": "openalex:W3167179910",
+      "text": "Seventy percent (n = 57) of the reviewed studies employed machine learning for pure prediction tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3167179910:c5",
+      "paper_id": "openalex:W3167179910",
+      "text": "Only 10% (n = 8) of reviewed studies used machine learning for causal inference.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3167179910:c6",
+      "paper_id": "openalex:W3167179910",
+      "text": "Only 18% (n = 15) of reviewed studies used machine learning for data curation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3167179910:c7",
+      "paper_id": "openalex:W3167179910",
+      "text": "Only 2% (n = 2) of reviewed studies used machine learning for algorithmic fairness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3167179910:c8",
+      "paper_id": "openalex:W3167179910",
+      "text": "Cross-sectional study designs were employed by 65% (n = 53) of the included studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3167179910:e1",
+      "claim_id": "openalex:W3167179910:c1",
+      "description": "Of the initial 8097 hits, we identified 82 relevant studies published before May 1, 2020.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3167179910:e2",
+      "claim_id": "openalex:W3167179910:c2",
+      "description": "More than half of the studies (n = 46, 56%) used US data.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3167179910:e3",
+      "claim_id": "openalex:W3167179910:c3",
+      "description": "Of the 82 studies, 80% used survey data (n = 66).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3167179910:e4",
+      "claim_id": "openalex:W3167179910:c4",
+      "description": "The majority of the studies employed ML for pure prediction (n = 57, 70%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3167179910:e5",
+      "claim_id": "openalex:W3167179910:c5",
+      "description": "10% of studies used ML for causal inference (n = 8).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3167179910:e6",
+      "claim_id": "openalex:W3167179910:c6",
+      "description": "18% used ML for data curation (n = 15).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3167179910:e7",
+      "claim_id": "openalex:W3167179910:c7",
+      "description": "2% used ML for algorithmic fairness (n = 2).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3167179910:e8",
+      "claim_id": "openalex:W3167179910:c8",
+      "description": "53 studies (65%) employed a cross-sectional study design.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3167179910:m1",
+      "paper_id": "openalex:W3167179910",
+      "name": "PRISMA-ScR Scoping Review Framework",
+      "description": "A systematic scoping review mapping literature on machine learning applications to social determinants of health across four electronic databases and manual searching.",
+      "datasets": [
+        "Medline/PubMed",
+        "EMBASE",
+        "Web of Science"
+      ],
+      "conditions": [
+        "Studies published before May 1, 2020",
+        "Peer-reviewed publications only",
+        "Dual independent reviewer screening"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3167179910:l1",
+      "paper_id": "openalex:W3167179910",
+      "text": "The bibliometric search required terms to appear in title, abstract, or keywords, which may have excluded relevant studies mentioning terms only in the full text.",
+      "normalized_category": "search-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3167179910:l2",
+      "paper_id": "openalex:W3167179910",
+      "text": "The review included only peer-reviewed papers, excluding conference abstracts, letters, and notes.",
+      "normalized_category": "publication-type-exclusion",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3167179910:l3",
+      "paper_id": "openalex:W3167179910",
+      "text": "Many machine learning algorithms function as black boxes with low degrees of interpretability compared to traditional linear models.",
+      "normalized_category": "model-opacity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3167179910:f1",
+      "paper_id": "openalex:W3167179910",
+      "text": "Apply machine learning to study social determinants of health in non-US regions and utilize transfer learning to compare predictions across diverse populations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3167179910:f2",
+      "paper_id": "openalex:W3167179910",
+      "text": "Leverage non-conventional unstructured data formats such as text, audio, and image data for data curation in social determinants of health research.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3167179910:f3",
+      "paper_id": "openalex:W3167179910",
+      "text": "Utilize longitudinal datasets with machine learning to evaluate the causal impact of public health interventions over time.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3167179910:f4",
+      "paper_id": "openalex:W3167179910",
+      "text": "Expand research using machine learning for algorithmic fairness and estimation of heterogeneous treatment effects in social epidemiology.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.136539Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

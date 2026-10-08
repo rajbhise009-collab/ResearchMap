@@ -1,0 +1,63 @@
+{
+  "paper_id": "openalex:W2788241675",
+  "claims": [
+    {
+      "id": "openalex:W2788241675:c1",
+      "paper_id": "openalex:W2788241675",
+      "text": "Iteratively adapting training sample weights with a theoretically grounded model addresses different types of algorithmic bias.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788241675:c2",
+      "paper_id": "openalex:W2788241675",
+      "text": "Data repairing approaches that weight training samples of sensitive groups based on misclassification error exhibit limited success in mitigating bias.",
+      "type": "negative",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2788241675:e1",
+      "claim_id": "openalex:W2788241675:c1",
+      "description": "The authors present a process that iteratively adapts training sample weights to achieve trade-offs between accuracy and fairness objectives like disparate impact or disparate mistreatment elimination.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2788241675:e2",
+      "claim_id": "openalex:W2788241675:c2",
+      "description": "Previous attempts to repair training data by weighting sensitive group samples based on misclassification error lead to shortcomings and limited success.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2788241675:m1",
+      "paper_id": "openalex:W2788241675",
+      "name": "Adaptive Sensitive Reweighting",
+      "description": "An iterative process that adapts training sample weights using a theoretically grounded model to optimize trade-offs between accuracy and fairness objectives.",
+      "datasets": [
+        "real-world datasets",
+        "synthetic datasets"
+      ],
+      "conditions": [
+        "disparate impact elimination",
+        "disparate mistreatment elimination"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2788241675:l1",
+      "paper_id": "openalex:W2788241675",
+      "text": "Previous data repairing approaches suffer from shortcomings when weighting training samples of sensitive groups based on misclassification error.",
+      "normalized_category": "prior-work-data-repairing",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:21:17.128086Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

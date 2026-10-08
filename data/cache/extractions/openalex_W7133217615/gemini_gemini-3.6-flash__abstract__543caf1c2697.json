@@ -1,0 +1,200 @@
+{
+  "paper_id": "openalex:W7133217615",
+  "claims": [
+    {
+      "id": "openalex:W7133217615:c1",
+      "paper_id": "openalex:W7133217615",
+      "text": "Adapted large language models demonstrate capability to match or exceed human expert performance in specific medical text summarization tasks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c2",
+      "paper_id": "openalex:W7133217615",
+      "text": "Only 7% of medical text summarization studies conducted external validation.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c3",
+      "paper_id": "openalex:W7133217615",
+      "text": "Only 3% of medical text summarization studies performed patient safety assessments.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c4",
+      "paper_id": "openalex:W7133217615",
+      "text": "Hallucination rates in medical text summarization using LLMs range from 1.47% to 61.6%.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c5",
+      "paper_id": "openalex:W7133217615",
+      "text": "Existing reporting guidelines do not adequately address the specific requirements of medical text summarization tasks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c6",
+      "paper_id": "openalex:W7133217615",
+      "text": "The final MEDAI-LLM-SUMM checklist comprises 24 items organized into six sections.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c7",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses hallucination assessment requirements compared to existing reporting standards.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c8",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses reference summary creation methodology compared to existing reporting standards.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c9",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses LLM-as-judge validation protocols compared to existing reporting standards.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7133217615:c10",
+      "paper_id": "openalex:W7133217615",
+      "text": "MEDAI-LLM-SUMM uniquely addresses detailed pilot testing specifications compared to existing reporting standards.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7133217615:e1",
+      "claim_id": "openalex:W7133217615:c1",
+      "description": "adapted models demonstrating capability to match or exceed human expert performance in specific tasks",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e2",
+      "claim_id": "openalex:W7133217615:c2",
+      "description": "A comprehensive review revealed that only 7% of studies conducted external validation",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e3",
+      "claim_id": "openalex:W7133217615:c3",
+      "description": "and 3% performed patient safety assessments",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e4",
+      "claim_id": "openalex:W7133217615:c4",
+      "description": "with hallucination rates ranging from 1.47% to 61.6%",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e5",
+      "claim_id": "openalex:W7133217615:c5",
+      "description": "Existing reporting guidelines, including CONSORT-AI, SPIRIT-AI, TRIPOD-LLM, and DEAL, do not adequately address the specific requirements of medical text summarization tasks.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e6",
+      "claim_id": "openalex:W7133217615:c6",
+      "description": "The final MEDAI-LLM-SUMM checklist comprises 24 items organized into six sections",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e7",
+      "claim_id": "openalex:W7133217615:c7",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses hallucination assessment requirements",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e8",
+      "claim_id": "openalex:W7133217615:c8",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses reference summary creation methodology",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e9",
+      "claim_id": "openalex:W7133217615:c9",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses LLM-as-judge validation protocols",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7133217615:e10",
+      "claim_id": "openalex:W7133217615:c10",
+      "description": "Comparative analysis with six existing reporting standards demonstrated that MEDAI-LLM-SUMM uniquely addresses detailed pilot testing specifications",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7133217615:m1",
+      "paper_id": "openalex:W7133217615",
+      "name": "Modified iterative consensus approach",
+      "description": "A three-stage consensus development methodology comprising systematic review, initial drafting by a supervisory group, and expert panel consensus rounds.",
+      "datasets": [
+        "PubMed",
+        "eLibrary"
+      ],
+      "conditions": [
+        "216 publications reviewed (2023-2025)",
+        "PRISMA guidelines",
+        "Initial 44-item, 7-section checklist",
+        "Three rounds of face-to-face consensus discussions",
+        "11 multidisciplinary experts panel",
+        "Unanimous agreement consensus criterion"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7133217615:l1",
+      "paper_id": "openalex:W7133217615",
+      "text": "Only 7% of studies conducted external validation",
+      "normalized_category": "lack-of-external-validation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7133217615:l2",
+      "paper_id": "openalex:W7133217615",
+      "text": "Only 3% performed patient safety assessments",
+      "normalized_category": "insufficient-safety-assessment",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7133217615:l3",
+      "paper_id": "openalex:W7133217615",
+      "text": "Hallucination rates ranging from 1.47% to 61.6%",
+      "normalized_category": "high-hallucination-rate",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7133217615:l4",
+      "paper_id": "openalex:W7133217615",
+      "text": "Existing reporting guidelines do not adequately address the specific requirements of medical text summarization tasks",
+      "normalized_category": "inadequate-reporting-standards",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:03:47.182948Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

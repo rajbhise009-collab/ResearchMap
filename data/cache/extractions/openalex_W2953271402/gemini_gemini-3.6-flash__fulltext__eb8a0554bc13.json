@@ -1,0 +1,169 @@
+{
+  "paper_id": "openalex:W2953271402",
+  "claims": [
+    {
+      "id": "openalex:W2953271402:c1",
+      "paper_id": "openalex:W2953271402",
+      "text": "Transferring from entailment data is more effective for natural yes/no question answering than transferring from paraphrase or extractive QA data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953271402:c2",
+      "paper_id": "openalex:W2953271402",
+      "text": "Transferring from entailment data continues to improve performance even when starting from pre-trained language models such as BERT.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953271402:c3",
+      "paper_id": "openalex:W2953271402",
+      "text": "Training BERT on MultiNLI and then fine-tuning on the BoolQ dataset achieves 80.43% test accuracy.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953271402:c4",
+      "paper_id": "openalex:W2953271402",
+      "text": "Human annotators achieve 90% accuracy on the BoolQ dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953271402:c5",
+      "paper_id": "openalex:W2953271402",
+      "text": "Asking human annotators directly to write NLI candidate statements results in examples that typically only require surface-level reasoning.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2953271402:c6",
+      "paper_id": "openalex:W2953271402",
+      "text": "Training a recurrent model on the BoolQ train set alone yields 69.60% dev accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2953271402:e1",
+      "claim_id": "openalex:W2953271402:c1",
+      "description": "MultiNLI transfer reached 75.57% dev accuracy compared to 71.36% for QNLI (extractive QA) and 71.30% for QQP (paraphrasing) using the same recurrent architecture.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2953271402:e2",
+      "claim_id": "openalex:W2953271402:c2",
+      "description": "Pre-trained BERT-Large with MultiNLI fine-tuning achieves 80.43% test accuracy compared to 76.70% for pre-trained BERT-Large without MultiNLI pre-training.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953271402:e3",
+      "claim_id": "openalex:W2953271402:c3",
+      "description": "Our best method trains BERT on MultiNLI and then re-trains it on our train set. It achieves 80.4% accuracy compared to 90% accuracy of human annotators.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W2953271402:e4",
+      "claim_id": "openalex:W2953271402:c4",
+      "description": "On the 110 selected gold-standard examples, the answer annotations reached 90% accuracy compared to the gold-standard labels.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2953271402:e5",
+      "claim_id": "openalex:W2953271402:c5",
+      "description": "Evidence cited from Gururangan et al. (2018), Jia and Liang (2017), and McCoy et al. (2019) showing crowd workers introduce surface-level artifacts when prompted to generate statements.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2953271402:e6",
+      "claim_id": "openalex:W2953271402:c6",
+      "description": "Table 3 reports Recurrent model accuracy on BoolQ dev set with no transfer data as 69.60%.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2953271402:m1",
+      "paper_id": "openalex:W2953271402",
+      "name": "BoolQ Dataset Construction",
+      "description": "Collection of 16,000 naturally occurring yes/no questions from unprompted Google search queries, paired with Wikipedia passages and human-annotated yes/no answers.",
+      "datasets": [
+        "Google Search Queries",
+        "Wikipedia",
+        "Natural Questions"
+      ],
+      "conditions": [
+        "unprompted search queries starting with yes/no indicator words",
+        "human annotation for answerability and yes/no label"
+      ]
+    },
+    {
+      "id": "openalex:W2953271402:m2",
+      "paper_id": "openalex:W2953271402",
+      "name": "Two-Step Transfer Learning with BERT",
+      "description": "Fine-tuning a pre-trained BERT-Large model on MultiNLI entailment data prior to fine-tuning on the BoolQ target task.",
+      "datasets": [
+        "MultiNLI",
+        "BoolQ"
+      ],
+      "conditions": [
+        "BERT-Large backbone",
+        "intermediate fine-tuning on MultiNLI",
+        "final fine-tuning on BoolQ"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2953271402:l1",
+      "paper_id": "openalex:W2953271402",
+      "text": "Direct crowd-worker statement generation in prior NLI datasets results in artifacts that require only surface-level reasoning.",
+      "normalized_category": "annotation-artifacts",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2953271402:l2",
+      "paper_id": "openalex:W2953271402",
+      "text": "Existing yes/no QA subsets in datasets like QuAC heavily prompt users and feature class imbalance (e.g., 80% 'yes' answers).",
+      "normalized_category": "class-imbalance",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2953271402:l3",
+      "paper_id": "openalex:W2953271402",
+      "text": "Training neural models on the BoolQ dataset without pre-training or transfer learning yields accuracy only slightly above the majority baseline.",
+      "normalized_category": "high-data-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2953271402:l4",
+      "paper_id": "openalex:W2953271402",
+      "text": "Gathering naturally occurring questions paired with document passages requires annotators to read entire Wikipedia articles, making annotation expensive.",
+      "normalized_category": "high-annotation-cost",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2953271402:f1",
+      "paper_id": "openalex:W2953271402",
+      "text": "Building a document-level version of the yes/no question answering task to increase difficulty and realism for real-world application.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2953271402:f2",
+      "paper_id": "openalex:W2953271402",
+      "text": "Exploring pre-training on several intermediate tasks in succession or via multi-task learning before fine-tuning on yes/no QA.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.091159Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

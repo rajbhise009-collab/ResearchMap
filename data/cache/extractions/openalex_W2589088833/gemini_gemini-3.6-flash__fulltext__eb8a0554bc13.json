@@ -1,0 +1,238 @@
+{
+  "paper_id": "openalex:W2589088833",
+  "claims": [
+    {
+      "id": "openalex:W2589088833:c1",
+      "paper_id": "openalex:W2589088833",
+      "text": "Lower extrinsic epigenetic age acceleration (EEAA) is significantly associated with greater intake of fish.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c2",
+      "paper_id": "openalex:W2589088833",
+      "text": "Lower EEAA is significantly associated with higher educational attainment.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c3",
+      "paper_id": "openalex:W2589088833",
+      "text": "Lower EEAA is significantly associated with lower body mass index (BMI).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c4",
+      "paper_id": "openalex:W2589088833",
+      "text": "Lower EEAA is significantly associated with current alcohol drinker status.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c5",
+      "paper_id": "openalex:W2589088833",
+      "text": "Lower intrinsic epigenetic age acceleration (IEAA) is significantly associated with greater poultry intake.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c6",
+      "paper_id": "openalex:W2589088833",
+      "text": "Lower IEAA is significantly associated with lower BMI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c7",
+      "paper_id": "openalex:W2589088833",
+      "text": "Longitudinal increase in BMI is significantly associated with an increase in EEAA.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c8",
+      "paper_id": "openalex:W2589088833",
+      "text": "Longitudinal increase in BMI is significantly associated with an increase in IEAA.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c9",
+      "paper_id": "openalex:W2589088833",
+      "text": "Metformin use does not delay epigenetic aging rates in blood in this observational cohort study.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c10",
+      "paper_id": "openalex:W2589088833",
+      "text": "EEAA is positively associated with plasma levels of C-reactive protein (CRP).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c11",
+      "paper_id": "openalex:W2589088833",
+      "text": "EEAA is positively associated with the number of metabolic syndrome symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2589088833:c12",
+      "paper_id": "openalex:W2589088833",
+      "text": "IEAA is positively associated with the number of metabolic syndrome symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2589088833:e1",
+      "claim_id": "openalex:W2589088833:c1",
+      "description": "Meta-analysis of ethnically-stratified linear models showed lower EEAA was significantly associated with greater intake of fish (t_meta = -2.92, p_meta = 0.003).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2589088833:e2",
+      "claim_id": "openalex:W2589088833:c2",
+      "description": "Stouffer's meta-analysis showed lower EEAA was significantly associated with higher education (t_meta = -4.14, p_meta = 3x10^-5).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2589088833:e3",
+      "claim_id": "openalex:W2589088833:c3",
+      "description": "Meta-analysis showed lower EEAA was significantly associated with lower BMI (t_meta = 4.86, p_meta = 1x10^-6).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2589088833:e4",
+      "claim_id": "openalex:W2589088833:c4",
+      "description": "Meta-analysis confirmed lower EEAA was significantly associated with current drinker status (t_meta = -3.23, p_meta = 0.001).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2589088833:e5",
+      "claim_id": "openalex:W2589088833:c5",
+      "description": "Ethnically-stratified linear models demonstrated lower IEAA was significantly associated with poultry intake (t_meta = -3.30, p_meta = 0.001).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2589088833:e6",
+      "claim_id": "openalex:W2589088833:c6",
+      "description": "Meta-analysis showed lower IEAA was significantly associated with lower BMI (t_meta = 4.14, p_meta = 4x10^-5).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2589088833:e7",
+      "claim_id": "openalex:W2589088833:c7",
+      "description": "In participants with measurements at two time points, increase in BMI was significantly associated with increased EEAA (beta = 0.40, p = 0.002).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2589088833:e8",
+      "claim_id": "openalex:W2589088833:c8",
+      "description": "In repeat blood draw participants, increase in BMI was significantly associated with increased IEAA (beta = 0.22, p = 0.03).",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2589088833:e9",
+      "claim_id": "openalex:W2589088833:c9",
+      "description": "No strata showed women in the current metformin group with significantly lower IEAA or EEAA than women in non-user or future-user groups, and timing of metformin prescription was not associated with IEAA or EEAA.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2589088833:e10",
+      "claim_id": "openalex:W2589088833:c10",
+      "description": "Multivariate linear regression showed EEAA positively relates to log2-transformed CRP (beta = 0.31, p = 3x10^-4).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2589088833:e11",
+      "claim_id": "openalex:W2589088833:c11",
+      "description": "Multivariate linear models showed higher EEAA is positively associated with the number of metabolic syndrome symptoms (beta = 0.29, p = 0.002).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2589088833:e12",
+      "claim_id": "openalex:W2589088833:c12",
+      "description": "Number of metabolic syndrome symptoms was significantly associated with IEAA in multivariate models (beta = 0.27, p = 4x10^-4).",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2589088833:m1",
+      "paper_id": "openalex:W2589088833",
+      "name": "Intrinsic and Extrinsic Epigenetic Age Acceleration Analysis",
+      "description": "Calculation of DNA methylation age and residual age acceleration measures (IEAA and EEAA) using Illumina Infinium 450K methylation arrays combined with blood cell count estimations and multivariable linear meta-analyses.",
+      "datasets": [
+        "Women's Health Initiative (WHI)",
+        "Invecchiare nel Chianti (InCHIANTI)"
+      ],
+      "conditions": [
+        "4,173 postmenopausal women in WHI",
+        "402 European participants in InCHIANTI",
+        "Adjusted for dataset, sex, chronological age, and ethnicity"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2589088833:l1",
+      "paper_id": "openalex:W2589088833",
+      "text": "Self-reported lifestyle and dietary habits from food frequency questionnaires are subject to reporting bias and inaccuracy, potentially causing false negative results.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2589088833:l2",
+      "paper_id": "openalex:W2589088833",
+      "text": "Small sample sizes in specific sub-analyses, such as the 11 longitudinal participants who initiated metformin, limit statistical power to detect modest anti-aging effects.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2589088833:l3",
+      "paper_id": "openalex:W2589088833",
+      "text": "The observational design assumes non-confounding from unmeasured variables such as pre-existing comorbidities and cannot definitively establish direct causality.",
+      "normalized_category": "observational-confounding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2589088833:l4",
+      "paper_id": "openalex:W2589088833",
+      "text": "Findings from WHI did not fully validate in the InCHIANTI cohort due to demographic, cultural, dietary assessment, and sample size differences.",
+      "normalized_category": "cohort-inconsistency",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2589088833:f1",
+      "paper_id": "openalex:W2589088833",
+      "text": "Revisit whether metformin affects epigenetic aging rates in blood or other tissues using randomized controlled trials or larger prospective sample sizes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2589088833:f2",
+      "paper_id": "openalex:W2589088833",
+      "text": "Conduct larger longitudinal studies to dissect causal relationships between epigenetic aging rates, dietary measures, education, exercise, and lifestyle factors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:13:19.743321Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

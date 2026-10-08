@@ -1,0 +1,114 @@
+{
+  "paper_id": "openalex:W2798665661",
+  "claims": [
+    {
+      "id": "openalex:W2798665661:c1",
+      "paper_id": "openalex:W2798665661",
+      "text": "State-of-the-art NLI systems trained on SNLI show substantial performance drops on a test set requiring simple lexical and world knowledge.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2798665661:c2",
+      "paper_id": "openalex:W2798665661",
+      "text": "Incorporating external lexical knowledge from WordNet via KIM substantially outperforms standard neural models on the lexical inference test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2798665661:c3",
+      "paper_id": "openalex:W2798665661",
+      "text": "ESIM prediction accuracy on test pairs increases as the frequency of those replacement word pairs in training contradiction examples increases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2798665661:c4",
+      "paper_id": "openalex:W2798665661",
+      "text": "Decomposable Attention accuracy decreases on contradicting word pairs as the cosine similarity of their pre-trained embeddings increases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2798665661:e1",
+      "claim_id": "openalex:W2798665661:c1",
+      "description": "Accuracy on the new test set dropped by 32.8 points for Decomposable Attention, 22.3 points for ESIM, and 23.8 points for Residual-Stacked-Encoder when trained on SNLI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2798665661:e2",
+      "claim_id": "openalex:W2798665661:c2",
+      "description": "KIM achieves 83.5% accuracy on the new test set compared to 65.6% for ESIM when trained on SNLI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2798665661:e3",
+      "claim_id": "openalex:W2798665661:c3",
+      "description": "ESIM accuracy rises from 40.2% for replacement pairs with 0 training occurrences to 98.5% for pairs with 100+ occurrences.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2798665661:e4",
+      "claim_id": "openalex:W2798665661:c4",
+      "description": "Decomposable Attention accuracy declines monotonically from 46.2% for embedding similarity 0.5-0.6 down to 20.2% for similarity 0.9-1.0.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2798665661:m1",
+      "paper_id": "openalex:W2798665661",
+      "name": "Adversarial Lexical NLI Test Set Construction",
+      "description": "Automatic generation of sentence pairs by replacing single words in SNLI training premises with known vocabulary, followed by crowdsourced manual verification.",
+      "datasets": [
+        "SNLI",
+        "MultiNLI",
+        "SciTail"
+      ],
+      "conditions": [
+        "Single-word replacement",
+        "Words present in SNLI training set and GloVe vocabulary",
+        "3-annotator Amazon Mechanical Turk verification"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2798665661:l1",
+      "paper_id": "openalex:W2798665661",
+      "text": "Due to its heavy bias towards contradiction, the constructed test set cannot be used for training or serve as a primary evaluation set for NLI.",
+      "normalized_category": "dataset-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2798665661:l2",
+      "paper_id": "openalex:W2798665661",
+      "text": "WordNet-informed models leave room for improvement due to limited WordNet coverage and challenges applying lexical inferences in context.",
+      "normalized_category": "coverage-limitations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2798665661:l3",
+      "paper_id": "openalex:W2798665661",
+      "text": "Existing neural NLI systems relying solely on pre-trained word embeddings are limited in generalization ability and fail to capture simple lexical inferences.",
+      "normalized_category": "generalization-failure",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2798665661:f1",
+      "paper_id": "openalex:W2798665661",
+      "text": "Develop NLI methods and models that capture simple lexical and world knowledge inferences more effectively.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.997922Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

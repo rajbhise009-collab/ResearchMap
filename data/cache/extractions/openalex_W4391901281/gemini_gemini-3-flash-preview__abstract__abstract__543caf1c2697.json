@@ -1,0 +1,143 @@
+{
+  "paper_id": "openalex:W4391901281",
+  "claims": [
+    {
+      "id": "openalex:W4391901281:c1",
+      "paper_id": "openalex:W4391901281",
+      "text": "In-context learning has emerged as a groundbreaking ability of Large Language Models (LLMs).",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c2",
+      "paper_id": "openalex:W4391901281",
+      "text": "In-context learning has revolutionized various fields.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c3",
+      "paper_id": "openalex:W4391901281",
+      "text": "In-context learning provides a few task-relevant demonstrations in the prompt.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c4",
+      "paper_id": "openalex:W4391901281",
+      "text": "Large Language Model responses face trustworthy issues such as hallucination.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c5",
+      "paper_id": "openalex:W4391901281",
+      "text": "Predictive uncertainty in in-context learning stems from provided demonstrations (aleatoric uncertainty).",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c6",
+      "paper_id": "openalex:W4391901281",
+      "text": "Predictive uncertainty in in-context learning stems from ambiguities tied to the model's configurations (epistemic uncertainty).",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c7",
+      "paper_id": "openalex:W4391901281",
+      "text": "The authors propose a novel formulation to quantify aleatoric and epistemic uncertainties in in-context learning.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c8",
+      "paper_id": "openalex:W4391901281",
+      "text": "The authors propose an estimation method to quantify aleatoric and epistemic uncertainties in in-context learning.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c9",
+      "paper_id": "openalex:W4391901281",
+      "text": "The proposed method offers an unsupervised way to understand the prediction of in-context learning.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c10",
+      "paper_id": "openalex:W4391901281",
+      "text": "The proposed method operates in a plug-and-play fashion.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391901281:e1",
+      "claim_id": "openalex:W4391901281:c7",
+      "description": "Extensive experiments are conducted to demonstrate the effectiveness of the decomposition.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391901281:e2",
+      "claim_id": "openalex:W4391901281:c8",
+      "description": "Extensive experiments are conducted to demonstrate the effectiveness of the decomposition.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391901281:e3",
+      "claim_id": "openalex:W4391901281:c9",
+      "description": "Extensive experiments are conducted to demonstrate the effectiveness of the decomposition.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4391901281:e4",
+      "claim_id": "openalex:W4391901281:c10",
+      "description": "Extensive experiments are conducted to demonstrate the effectiveness of the decomposition.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391901281:m1",
+      "paper_id": "openalex:W4391901281",
+      "name": "Unsupervised Uncertainty Decomposition for ICL",
+      "description": "A novel formulation and estimation method to quantify and decompose predictive uncertainty into aleatoric and epistemic components in an unsupervised, plug-and-play fashion.",
+      "datasets": [],
+      "conditions": [
+        "In-context learning",
+        "Large Language Models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391901281:l1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing works often overlook the complex nature of LLMs in uncertainty quantification.",
+      "normalized_category": "model-complexity-oversight",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4391901281:l2",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing works often overlook the uniqueness of in-context learning in uncertainty quantification.",
+      "normalized_category": "icl-uniqueness-oversight",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:22:21.207975Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

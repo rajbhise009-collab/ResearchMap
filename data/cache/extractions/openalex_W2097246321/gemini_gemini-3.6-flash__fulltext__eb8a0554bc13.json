@@ -1,0 +1,180 @@
+{
+  "paper_id": "openalex:W2097246321",
+  "claims": [
+    {
+      "id": "openalex:W2097246321:c1",
+      "paper_id": "openalex:W2097246321",
+      "text": "Removing the sensitive attribute from training data fails to prevent indirect discrimination due to correlations with other attributes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2097246321:c2",
+      "paper_id": "openalex:W2097246321",
+      "text": "The 2 naive Bayes models approach achieves zero discrimination while maintaining high classification accuracy on the census income dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2097246321:c3",
+      "paper_id": "openalex:W2097246321",
+      "text": "The 2 naive Bayes models approach exhibits lower dependency on the sensitive attribute than the modified naive Bayes method when marginalizing over the sensitive attribute.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2097246321:c4",
+      "paper_id": "openalex:W2097246321",
+      "text": "Expectation Maximization on the latent variable model converges on average to a non-zero discrimination assignment on synthetic data.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2097246321:c5",
+      "paper_id": "openalex:W2097246321",
+      "text": "Stopping EM early when discrimination drops below 0.01 yields higher classification accuracy than allowing EM to converge to a local likelihood optimum.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2097246321:e1",
+      "claim_id": "openalex:W2097246321:c1",
+      "description": "On the census income dataset, removing the sex attribute still resulted in naive Bayes predicting 38% high-income for males versus 10% for females (discrimination score 0.28).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2097246321:e2",
+      "claim_id": "openalex:W2097246321:c2",
+      "description": "In 10-fold cross-validation on census income data, the 2 NB models method achieved a discrimination score of -0.003 with 0.812 accuracy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2097246321:e3",
+      "claim_id": "openalex:W2097246321:c3",
+      "description": "When marginalizing over S on census income, 2 NB models achieved 0.047 discrimination compared to 0.286 discrimination for the modified naive Bayes model.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2097246321:e4",
+      "claim_id": "openalex:W2097246321:c4",
+      "description": "EM optimization on artificial datasets generated from the latent variable model converged on average to approx. -0.025 discrimination, assigning 2.5% higher positive label probability to the discriminated class.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2097246321:e5",
+      "claim_id": "openalex:W2097246321:c5",
+      "description": "On census income data, early-stopped EM achieved 0.797 accuracy (-0.006 discrimination) compared to 0.773 accuracy (0.000 discrimination) for fully converged EM.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2097246321:m1",
+      "paper_id": "openalex:W2097246321",
+      "name": "Modified Naive Bayes (Algorithm 1)",
+      "description": "Modifies conditional probability P(C|S) in a post-processing loop to eliminate discrimination while attempting to preserve the total number of assigned positive class labels.",
+      "datasets": [
+        "Census Income",
+        "Artificial Synthetic Data"
+      ],
+      "conditions": [
+        "Binary class attribute",
+        "Binary sensitive attribute"
+      ]
+    },
+    {
+      "id": "openalex:W2097246321:m2",
+      "paper_id": "openalex:W2097246321",
+      "name": "2 Naive Bayes Models",
+      "description": "Splits the training dataset by sensitive attribute values into two separate naive Bayes models and balances predictions by adjusting P(C|S).",
+      "datasets": [
+        "Census Income",
+        "Artificial Synthetic Data"
+      ],
+      "conditions": [
+        "Binary class attribute",
+        "Binary sensitive attribute"
+      ]
+    },
+    {
+      "id": "openalex:W2097246321:m3",
+      "paper_id": "openalex:W2097246321",
+      "name": "Latent Variable Model with Expectation Maximization",
+      "description": "Introduces an unobserved binary latent variable representing discrimination-free true labels and estimates parameters via Expectation Maximization, optionally leveraging pre-computed prior distributions.",
+      "datasets": [
+        "Census Income",
+        "Artificial Synthetic Data"
+      ],
+      "conditions": [
+        "Binary class attribute",
+        "Binary sensitive attribute",
+        "Latent label independent of sensitive attribute"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2097246321:l1",
+      "paper_id": "openalex:W2097246321",
+      "text": "The proposed naive Bayes approaches do not natively support continuous numerical attributes and require discretization and bin pooling prior to training.",
+      "normalized_category": "numerical-attribute-handling",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2097246321:l2",
+      "paper_id": "openalex:W2097246321",
+      "text": "Expectation Maximization on the latent variable model converges to local likelihood optima that do not correspond to zero discrimination and exhibits high variance across runs.",
+      "normalized_category": "em-convergence-failure",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2097246321:l3",
+      "paper_id": "openalex:W2097246321",
+      "text": "The latent variable model assumes uniform random discrimination and complete independence between latent true labels and sensitive attributes, which may simplify actual discrimination mechanisms.",
+      "normalized_category": "simplifying-model-assumptions",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2097246321:l4",
+      "paper_id": "openalex:W2097246321",
+      "text": "Simply removing the sensitive attribute from training datasets fails to eliminate indirect discrimination caused by correlated features.",
+      "normalized_category": "attribute-suppression-failure",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2097246321:f1",
+      "paper_id": "openalex:W2097246321",
+      "text": "Extend the discrimination notion to conditional discrimination, permitting dependency when explained by valid non-sensitive attributes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2097246321:f2",
+      "paper_id": "openalex:W2097246321",
+      "text": "Extend discrimination-free Bayesian classification algorithms to handle numerical sensitive attributes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2097246321:f3",
+      "paper_id": "openalex:W2097246321",
+      "text": "Explore alternative graphical model structures, including inserting decision trees or reversing dependency direction relative to the sensitive attribute.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2097246321:f4",
+      "paper_id": "openalex:W2097246321",
+      "text": "Investigate the mathematical reasons behind the poor convergence behavior of Expectation Maximization on synthetic datasets.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:09:13.177073Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

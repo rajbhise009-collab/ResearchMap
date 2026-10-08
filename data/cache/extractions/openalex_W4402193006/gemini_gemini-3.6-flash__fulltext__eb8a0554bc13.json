@@ -1,0 +1,255 @@
+{
+  "paper_id": "openalex:W4402193006",
+  "claims": [
+    {
+      "id": "openalex:W4402193006:c1",
+      "paper_id": "openalex:W4402193006",
+      "text": "GPT-3.5 achieved an F1-score of 0.78 for depression detection on the Distress Analysis Interview Corpus-Wizard of Oz dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c2",
+      "paper_id": "openalex:W4402193006",
+      "text": "Emotion-aware BERT Tiny achieved 93.14% accuracy in sentiment analysis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c3",
+      "paper_id": "openalex:W4402193006",
+      "text": "Emotion-aware BERT Tiny achieved 85.46% accuracy in emotion analysis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c4",
+      "paper_id": "openalex:W4402193006",
+      "text": "PsychBERT achieved an F1-score of 0.63 in classifying mental health syndromes across social media and academic literature datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c5",
+      "paper_id": "openalex:W4402193006",
+      "text": "BERTimbau large achieved an accuracy of 0.955 in detecting suicidal ideation in Portuguese text.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c6",
+      "paper_id": "openalex:W4402193006",
+      "text": "ChatGPT achieved a higher mean empathy rating (3.64) than physicians (3.13) when responding to autism-specific questions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c7",
+      "paper_id": "openalex:W4402193006",
+      "text": "Translating personal conversation databases from English into Polish decreased emotion categorization task accuracy from 90% to 80%.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c8",
+      "paper_id": "openalex:W4402193006",
+      "text": "GPT-4 Turbo suggested medication options that were contraindicated or considered less efficient choices by experts in 12% of evaluated clinical cases.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c9",
+      "paper_id": "openalex:W4402193006",
+      "text": "In a review of 40 articles on LLMs in mental health, 38% focused on text-based detection of conditions and suicidal ideation, 18% on conversational agents, and 45% on other clinical applications and evaluations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c10",
+      "paper_id": "openalex:W4402193006",
+      "text": "98% of the evaluated studies on LLMs in mental health investigated BERT or GPT model variants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402193006:e1",
+      "claim_id": "openalex:W4402193006:c1",
+      "description": "Danner et al achieved F1-scores of 0.53 and 0.59 using a CNN on the DAIC-WOZ dataset, whereas GPT-3.5 achieved an F1-score of 0.78.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e2",
+      "claim_id": "openalex:W4402193006:c2",
+      "description": "Emotion-aware BERT Tiny achieved an accuracy of 93.14% in sentiment analysis, outperforming baseline models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e3",
+      "claim_id": "openalex:W4402193006:c3",
+      "description": "Emotion-aware BERT Tiny achieved an accuracy of 85.46% in emotion analysis tasks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e4",
+      "claim_id": "openalex:W4402193006:c4",
+      "description": "PsychBERT achieved an F1-score of 0.63, outperforming traditional CNN (0.57) and LSTM (0.51) networks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e5",
+      "claim_id": "openalex:W4402193006:c5",
+      "description": "Diniz et al showed that BERTimbau large reached 0.955 accuracy, 0.961 precision, and 0.954 F1-score in detecting Portuguese suicidal ideation text.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e6",
+      "claim_id": "openalex:W4402193006:c6",
+      "description": "In 717 evaluations across 239 questions, ChatGPT achieved a mean empathy score of 3.64 compared to 3.13 for physicians.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e7",
+      "claim_id": "openalex:W4402193006:c7",
+      "description": "Zygadlo et al noted that machine translating personal conversation databases from English to Polish caused performance to drop from 90% accuracy in English to 80% in Polish.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e8",
+      "claim_id": "openalex:W4402193006:c8",
+      "description": "Perlis et al demonstrated that GPT-4 Turbo recommended medications deemed less efficient or contraindicated by expert clinicians in 12% of cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e9",
+      "claim_id": "openalex:W4402193006:c9",
+      "description": "40 papers were classified into 15 (38%) on text analysis screening/detection, 7 (18%) on conversational agents, and 18 (45%) on other applications and evaluations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e10",
+      "claim_id": "openalex:W4402193006:c10",
+      "description": "39 out of 40 reviewed papers (98%) focused on BERT and its variants or GPT models as primary models studied.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402193006:m1",
+      "paper_id": "openalex:W4402193006",
+      "name": "PRISMA Systematic Literature Search and Selection",
+      "description": "Systematic review following PRISMA guidelines querying 5 open-access databases for peer-reviewed studies published between 2017 and 2024 on LLMs in mental health.",
+      "datasets": [
+        "MEDLINE",
+        "IEEE Xplore",
+        "Scopus",
+        "JMIR",
+        "ACM Digital Library"
+      ],
+      "conditions": [
+        "English language publication",
+        "Published between Jan 1, 2017 and Apr 30, 2024",
+        "Peer-reviewed status",
+        "Keyword query: (mental health OR mental illness OR mental disorder OR psychiatry) AND (large language models)"
+      ]
+    },
+    {
+      "id": "openalex:W4402193006:m2",
+      "paper_id": "openalex:W4402193006",
+      "name": "Interrater Reliability Assessment and Risk of Bias Evaluation",
+      "description": "Dual independent reviewer screening evaluated via Cohen kappa statistics combined with quality and bias evaluation using the Risk of Bias 2 tool.",
+      "datasets": [
+        "14265 retrieved paper citations"
+      ],
+      "conditions": [
+        "Two independent reviewers",
+        "Third reviewer consensus resolution",
+        "Cohen kappa threshold assessment",
+        "Risk of Bias 2 framework"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402193006:l1",
+      "paper_id": "openalex:W4402193006",
+      "text": "The systematic review search was limited strictly to English-language publications.",
+      "normalized_category": "language-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402193006:l2",
+      "paper_id": "openalex:W4402193006",
+      "text": "The evaluation covers a limited diversity of LLMs, with 98% of reviewed literature focusing on BERT variants and GPT models.",
+      "normalized_category": "limited-model-diversity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402193006:l3",
+      "paper_id": "openalex:W4402193006",
+      "text": "The review period ends in April 2024 and cannot capture subsequent rapid developments in LLM technologies.",
+      "normalized_category": "temporal-scope-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402193006:l4",
+      "paper_id": "openalex:W4402193006",
+      "text": "Social media datasets used for text-based mental health screening contain demographic age bias towards younger populations.",
+      "normalized_category": "demographic-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4402193006:l5",
+      "paper_id": "openalex:W4402193006",
+      "text": "Scarcity of annotated mental health datasets in non-English languages degrades model performance when relying on machine translation.",
+      "normalized_category": "dataset-scarcity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4402193006:l6",
+      "paper_id": "openalex:W4402193006",
+      "text": "LLMs lack interpretability due to their black-box nature, generate hallucinatory or inconsistent text, and lack a benchmarked clinical ethical framework.",
+      "normalized_category": "hallucination-and-unexplainability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402193006:f1",
+      "paper_id": "openalex:W4402193006",
+      "text": "Train specialized LLMs for mental health using expert-annotated, diverse demographic datasets and specialized clinical lexicons.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402193006:f2",
+      "paper_id": "openalex:W4402193006",
+      "text": "Integrate Retrieval-Augmented Generation (RAG) to supply up-to-date evidence-based facts and mitigate hallucinations in clinical dialogs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402193006:f3",
+      "paper_id": "openalex:W4402193006",
+      "text": "Incorporate privacy-enhancing technologies such as differential privacy, zero-knowledge proofs, federated learning, and token masking to protect patient data.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402193006:f4",
+      "paper_id": "openalex:W4402193006",
+      "text": "Collaborate with regulators, AI researchers, clinicians, and policy makers to build benchmarked ethical frameworks and accountability standards for healthcare AI.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.964024Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

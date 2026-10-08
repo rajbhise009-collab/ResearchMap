@@ -1,0 +1,187 @@
+{
+  "paper_id": "openalex:W4388787841",
+  "claims": [
+    {
+      "id": "openalex:W4388787841:c1",
+      "paper_id": "openalex:W4388787841",
+      "text": "Traditional instruction tuning forces language models to answer questions beyond their parametric knowledge, which contributes to factual hallucinations.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388787841:c2",
+      "paper_id": "openalex:W4388787841",
+      "text": "Refusal-Aware Instruction Tuning (R-Tuning) measures the knowledge gap between a pre-trained model and instruction tuning data to construct datasets appended with certainty expressions.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388787841:c3",
+      "paper_id": "openalex:W4388787841",
+      "text": "In a multi-task setting across five in-domain datasets, R-Tuning with LLaMA-13B achieves an average Average Precision (AP) score of 76.03%, compared to 71.71% for vanilla instruction tuning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388787841:c4",
+      "paper_id": "openalex:W4388787841",
+      "text": "R-Tuning generalizes refusal capabilities to out-of-domain tasks, achieving an AP score of 80.36% on HaluEval-QA using LLaMA-13B compared to 75.73% for vanilla instruction tuning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388787841:c5",
+      "paper_id": "openalex:W4388787841",
+      "text": "Learning data uncertainty during instruction training yields lower Expected Calibration Error (ECE) than applying uncertainty filtering post-hoc on test data.",
+      "type": "finding",
+      "confidence": 0.92,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388787841:c6",
+      "paper_id": "openalex:W4388787841",
+      "text": "R-Tuning achieves refusal rates of 95.90% on FalseQA and 98.17% on NEC with LLaMA-13B, whereas vanilla instruction tuning refusal rates on these benchmarks are 6.00% and 2.36% respectively.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388787841:c7",
+      "paper_id": "openalex:W4388787841",
+      "text": "R-Tuning-U uses response entropy across multiple sampled model outputs to measure parametric knowledge gaps without requiring ground-truth labels for uncertain questions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388787841:e1",
+      "claim_id": "openalex:W4388787841:c1",
+      "description": "Previous instruction tuning methods force the model to complete a sentence regardless of whether it knows the knowledge, causing it to guess and hallucinate when faced with questions beyond its parametric boundary.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4388787841:e2",
+      "claim_id": "openalex:W4388787841:c2",
+      "description": "R-Tuning identifies uncertain data instances by comparing predictions against labels, constructs datasets D0 and D1 using 'I am unsure' and 'I am sure' expressions, and fine-tunes the LLM using cross-entropy loss.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388787841:e3",
+      "claim_id": "openalex:W4388787841:c3",
+      "description": "Multi-task evaluation results in Table 13 show average AP scores across five datasets for OpenLLaMA-3B (61.09% vs 58.24%), LLaMA-7B (69.11% vs 68.94%), and LLaMA-13B (76.03% vs 71.71%) favoring R-Tuning over Vanilla.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388787841:e4",
+      "claim_id": "openalex:W4388787841:c4",
+      "description": "Table 13 demonstrates that on the unseen HaluEval-QA dataset, R-Tuning obtains higher AP scores across all model sizes (OpenLLaMA-3B: 73.85%, LLaMA-7B: 77.17%, LLaMA-13B: 80.36%) compared to Vanilla (72.11%, 76.22%, 75.73%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388787841:e5",
+      "claim_id": "openalex:W4388787841:c5",
+      "description": "Table 16 demonstrates that R-Tuning-U achieves substantially lower ECE values across ParaRel and MMLU (e.g., LLaMA-13B ParaRel ID ECE of 0.064 for R-Tuning-U versus 0.228 for Vanilla-C).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4388787841:e6",
+      "claim_id": "openalex:W4388787841:c6",
+      "description": "Table 3 reports refusal rates on unanswerable question datasets FalseQA, NEC, and SA, showing R-Tuning reaches 87.32%-99.18% refusal rates while Vanilla remains between 0.96% and 34.79%.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4388787841:e7",
+      "claim_id": "openalex:W4388787841:c7",
+      "description": "Section 5.1 describes R-Tuning-U querying the model k=10 times at temperature 0.7, computing entropy over predictions to rank questions, and assigning the 50% most uncertain to set D0.",
+      "strength": 0.92
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388787841:m1",
+      "paper_id": "openalex:W4388787841",
+      "name": "Refusal-Aware Instruction Tuning (R-Tuning)",
+      "description": "A framework that splits instruction tuning data into certain and uncertain sets based on pre-trained model knowledge, appends uncertainty prompts, and fine-tunes models to output confidence expressions alongside answers.",
+      "datasets": [
+        "ParaRel",
+        "MMLU",
+        "WiCE",
+        "HotpotQA",
+        "FEVER",
+        "HaluEval-QA",
+        "FalseQA",
+        "NEC",
+        "SelfAware"
+      ],
+      "conditions": [
+        "OpenLLaMA-3B",
+        "LLaMA-7B",
+        "LLaMA-13B",
+        "1 epoch",
+        "learning rate 2e-5",
+        "batch size 4",
+        "Nvidia A100 GPUs"
+      ]
+    },
+    {
+      "id": "openalex:W4388787841:m2",
+      "paper_id": "openalex:W4388787841",
+      "name": "R-Tuning-U",
+      "description": "An unsupervised variant of R-Tuning that measures parametric knowledge boundaries by computing prediction entropy across multiple generations per question.",
+      "datasets": [
+        "ParaRel",
+        "MMLU"
+      ],
+      "conditions": [
+        "k=10 samples",
+        "temperature 0.7",
+        "top 50% entropy split"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388787841:l1",
+      "paper_id": "openalex:W4388787841",
+      "text": "Standard instruction tuning methods force models to generate full answers regardless of parametric knowledge, causing hallucinations on out-of-knowledge questions.",
+      "normalized_category": "forced-completion-hallucination",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4388787841:l2",
+      "paper_id": "openalex:W4388787841",
+      "text": "R-Tuning only produces binary confidence expressions ('I am sure' and 'I am unsure') rather than continuous quantitative verbalized confidence scores.",
+      "normalized_category": "binary-confidence-expression",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4388787841:l3",
+      "paper_id": "openalex:W4388787841",
+      "text": "Knowledge gap estimation relies on answer checking and uncertainty quantification rather than directly linking instruction tuning datasets to pre-training corpora.",
+      "normalized_category": "approximate-knowledge-gap-evaluation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4388787841:f1",
+      "paper_id": "openalex:W4388787841",
+      "text": "Generating quantitative values to verbally express model confidence for questions rather than binary expressions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4388787841:f2",
+      "paper_id": "openalex:W4388787841",
+      "text": "Exploring optimization methods for entity linking instruction tuning datasets with pre-training datasets to identify relevant parametric knowledge efficiently.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T14:12:15.263259Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

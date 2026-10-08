@@ -1,0 +1,147 @@
+{
+  "paper_id": "openalex:W4414925442",
+  "claims": [
+    {
+      "id": "openalex:W4414925442:c1",
+      "paper_id": "openalex:W4414925442",
+      "text": "The MEGA-RAG framework integrates multi-source evidence retrieval combining dense retrieval via FAISS, keyword-based retrieval via BM25, and biomedical knowledge graphs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c2",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG employs a cross-encoder reranker to ensure semantic relevance of retrieved evidence.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c3",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG incorporates a discrepancy-aware refinement module to enhance factual accuracy.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c4",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG reduces hallucination rates by over 40% compared to PubMedBERT, PubMedGPT, standalone LLMs, and standard RAG baselines.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c5",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves an accuracy of 0.7913 in public health application evaluations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c6",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves a precision of 0.7541 in public health application evaluations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c7",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves a recall of 0.8304 in public health application evaluations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414925442:c8",
+      "paper_id": "openalex:W4414925442",
+      "text": "MEGA-RAG achieves an F1 score of 0.7904 in public health application evaluations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4414925442:e1",
+      "claim_id": "openalex:W4414925442:c1",
+      "description": "The framework integrates multi-source evidence retrieval (dense retrieval via FAISS, keyword-based retrieval via BM25, and biomedical knowledge graphs)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e2",
+      "claim_id": "openalex:W4414925442:c2",
+      "description": "employs a cross-encoder reranker to ensure semantic relevance",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e3",
+      "claim_id": "openalex:W4414925442:c3",
+      "description": "and incorporates a discrepancy-aware refinement module to further enhance factual accuracy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e4",
+      "claim_id": "openalex:W4414925442:c4",
+      "description": "Experimental evaluation demonstrates that MEGA-RAG outperforms four baseline models [PubMedBERT, PubMedGPT, standalone LLM, and LLM with standard retrieval-augmented generation (RAG)], achieving a reduction in hallucination rates by over 40%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e5",
+      "claim_id": "openalex:W4414925442:c5",
+      "description": "It also achieves the highest accuracy (0.7913)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e6",
+      "claim_id": "openalex:W4414925442:c6",
+      "description": "precision (0.7541)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e7",
+      "claim_id": "openalex:W4414925442:c7",
+      "description": "recall (0.8304)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414925442:e8",
+      "claim_id": "openalex:W4414925442:c8",
+      "description": "and F1 score (0.7904).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4414925442:m1",
+      "paper_id": "openalex:W4414925442",
+      "name": "MEGA-RAG",
+      "description": "A retrieval-augmented generation framework integrating multi-source evidence retrieval, cross-encoder reranking, and discrepancy-aware answer refinement to mitigate hallucinations.",
+      "datasets": [],
+      "conditions": [
+        "dense retrieval via FAISS",
+        "keyword retrieval via BM25",
+        "biomedical knowledge graphs",
+        "cross-encoder reranking",
+        "discrepancy-aware refinement"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4414925442:l1",
+      "paper_id": "openalex:W4414925442",
+      "text": "Large language models in public health generate hallucinations—factually inaccurate or misleading outputs that can compromise clinical communication and policy decisions.",
+      "normalized_category": "llm-hallucinations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.098418Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

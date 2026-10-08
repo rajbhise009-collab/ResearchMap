@@ -1,0 +1,136 @@
+{
+  "paper_id": "openalex:W4401390644",
+  "claims": [
+    {
+      "id": "openalex:W4401390644:c1",
+      "paper_id": "openalex:W4401390644",
+      "text": "Careless speech from large language models creates cumulative, long-term risks to science, education, and shared social truth.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401390644:c2",
+      "paper_id": "openalex:W4401390644",
+      "text": "Current EU legal frameworks contain only limited and sector-specific obligations to tell the truth.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401390644:c3",
+      "paper_id": "openalex:W4401390644",
+      "text": "Technical fine-tuning and reinforcement learning from human feedback prioritize rhetoric and sycophancy over factual accuracy.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401390644:c4",
+      "paper_id": "openalex:W4401390644",
+      "text": "The German Federal Court of Justice Google autocomplete ruling provides a legal pathway to hold providers liable for defamatory or inaccurate automated outputs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401390644:c5",
+      "paper_id": "openalex:W4401390644",
+      "text": "Providers of general-purpose and narrow-purpose large language models should be subject to a legal duty to minimize careless speech.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401390644:e1",
+      "claim_id": "openalex:W4401390644:c1",
+      "description": "The authors conceptualize careless speech as text containing subtle factual inaccuracies, non-representative sources, or missing signifiers of uncertainty presented in an authoritative tone, which degrades public knowledge over time.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401390644:e2",
+      "claim_id": "openalex:W4401390644:c2",
+      "description": "Analysis of the EU Charter of Fundamental Rights, AI Act, Digital Services Act, Product Liability Directive, and AI Liability Directive reveals a lack of general horizontal truth duties applicable to private AI providers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401390644:e3",
+      "claim_id": "openalex:W4401390644:c3",
+      "description": "Studies on RLHF show that annotator ranking introduces latent preferences for assertive-sounding outputs and content that aligns with user prior beliefs rather than objective ground truth.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4401390644:e4",
+      "claim_id": "openalex:W4401390644:c4",
+      "description": "The court held Google liable for autocomplete suggestions linking an individual to 'fraud' and 'Scientology', establishing that user expectations of factual relevance apply to automated text prediction functions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401390644:e5",
+      "claim_id": "openalex:W4401390644:c5",
+      "description": "The paper outlines a procedural duty requiring LLM providers to align models with ground truth, optimize for source plurality, and engage in public, transparent stakeholder governance for fine-tuning.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401390644:m1",
+      "paper_id": "openalex:W4401390644",
+      "name": "Doctrinal Legal and Philosophical Conceptual Analysis",
+      "description": "Evaluates existing EU human rights law, platform liability regulations, and judicial jurisprudence alongside philosophical models of truth and 'bullshit' to assess legal obligations for LLMs.",
+      "datasets": [
+        "Charter of Fundamental Rights of the European Union",
+        "European Convention on Human Rights",
+        "EU Artificial Intelligence Act",
+        "Digital Services Act",
+        "Product Liability Directive",
+        "Artificial Intelligence Liability Directive"
+      ],
+      "conditions": [
+        "EU legal jurisdiction",
+        "Evaluation of general-purpose and narrow-purpose large language models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401390644:l1",
+      "paper_id": "openalex:W4401390644",
+      "text": "A full accounting of the communal harms of careless speech is impossible at the current stage of LLM deployment.",
+      "normalized_category": "unmeasurable-communal-harms",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4401390644:l2",
+      "paper_id": "openalex:W4401390644",
+      "text": "The analysis focuses predominantly on European legal frameworks and human rights law, limiting direct applicability to other legal jurisdictions.",
+      "normalized_category": "geographic-legal-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4401390644:l3",
+      "paper_id": "openalex:W4401390644",
+      "text": "Existing product and platform liability frameworks (such as the PLD and AILD) do not cover intangible, cumulative, and immaterial harms like careless speech.",
+      "normalized_category": "liability-framework-scope-deficiency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4401390644:f1",
+      "paper_id": "openalex:W4401390644",
+      "text": "Investigate secondary EU legislation and Member State level regulations governing specific professions and institutions to locate transferable sector-specific truth duties.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4401390644:f2",
+      "paper_id": "openalex:W4401390644",
+      "text": "Design and evaluate open, public stakeholder governance processes for fine-tuning models and establishing LLM guardrails.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.969718Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

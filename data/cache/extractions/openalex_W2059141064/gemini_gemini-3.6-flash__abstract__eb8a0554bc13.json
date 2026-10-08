@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W2059141064",
+  "claims": [
+    {
+      "id": "openalex:W2059141064:c1",
+      "paper_id": "openalex:W2059141064",
+      "text": "A variant of k-NN classification can implement the methodology of situation testing for discrimination discovery and prevention in historical decision datasets.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2059141064:c2",
+      "paper_id": "openalex:W2059141064",
+      "text": "A tuple is labeled as discriminated if a significant difference of treatment is observed between its neighbors belonging to a protected group and those not belonging to it.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2059141064:c3",
+      "paper_id": "openalex:W2059141064",
+      "text": "Discrimination discovery is performed by extracting a classification model from tuples labeled as discriminated.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2059141064:c4",
+      "paper_id": "openalex:W2059141064",
+      "text": "Discrimination prevention is performed by changing the decision value for tuples labeled as discriminated prior to classifier training.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2059141064:e1",
+      "claim_id": "openalex:W2059141064:c1",
+      "description": "With the support of the legally-grounded methodology of situation testing, we tackle the problems of discrimination discovery and prevention from a dataset of historical decisions by adopting a variant of k-NN classification.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2059141064:e2",
+      "claim_id": "openalex:W2059141064:c2",
+      "description": "A tuple is labeled as discriminated if we can observe a significant difference of treatment among its neighbors belonging to a protected-by-law group and its neighbors not belonging to it.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2059141064:e3",
+      "claim_id": "openalex:W2059141064:c3",
+      "description": "Discrimination discovery boils down to extracting a classification model from the labeled tuples.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2059141064:e4",
+      "claim_id": "openalex:W2059141064:c4",
+      "description": "Discrimination prevention is tackled by changing the decision value for tuples labeled as discriminated before training a classifier.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2059141064:m1",
+      "paper_id": "openalex:W2059141064",
+      "name": "k-NN situation testing variant",
+      "description": "A classification methodology that identifies discrimination by comparing treatment differences among k-NN neighbors in protected versus unprotected groups, and prevents discrimination by altering labels prior to classifier training.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2059141064:l1",
+      "paper_id": "openalex:W2059141064",
+      "text": "Existing proposals for discrimination discovery and prevention suffer from legal weaknesses and technical limitations.",
+      "normalized_category": "legal-and-technical-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:17:51.532828Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,129 @@
+{
+  "paper_id": "openalex:W4285059900",
+  "claims": [
+    {
+      "id": "openalex:W4285059900:c1",
+      "paper_id": "openalex:W4285059900",
+      "text": "Fair information access differs from standard classification because retrieval outputs are rank-based and involve rivalrous position allocations.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4285059900:c2",
+      "paper_id": "openalex:W4285059900",
+      "text": "Completely ignoring protected group attributes, known as fairness through unawareness, fails to prevent discriminatory outcomes due to correlation with proxy variables.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4285059900:c3",
+      "paper_id": "openalex:W4285059900",
+      "text": "Simultaneously equalizing multiple error-based parity metrics across groups is mathematically impossible when base rates are unequal and models are imperfect.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4285059900:c4",
+      "paper_id": "openalex:W4285059900",
+      "text": "Presentation and popularity biases in interactive information access systems create positive feedback loops that amplify initial disparities over time.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4285059900:e1",
+      "claim_id": "openalex:W4285059900:c1",
+      "description": "Information access systems resolve utility estimates into single or multi-dimensional rankings where high-attention positions are subtractible resources allocated among candidate items.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4285059900:e2",
+      "claim_id": "openalex:W4285059900:c2",
+      "description": "Group identity correlates with non-sensitive variables like income or education, allowing models to learn discriminatory patterns indirectly despite attribute suppression.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4285059900:e3",
+      "claim_id": "openalex:W4285059900:c3",
+      "description": "The Chouldechova-Kleinberg theorem demonstrates that false positive rate parity, false negative rate parity, and positive predictive value parity cannot be simultaneously satisfied without equal group base rates or perfect prediction.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4285059900:e4",
+      "claim_id": "openalex:W4285059900:c4",
+      "description": "Items recommended at top positions accumulate more user interactions, which reinforces their perceived popularity and leads to increased future recommendations at the expense of non-recommended items.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4285059900:m1",
+      "paper_id": "openalex:W4285059900",
+      "name": "Multifaceted Fair Information Access Taxonomy",
+      "description": "A taxonomy categorizing fairness in information access across stakeholder groups (consumers, providers, subjects, side stakeholders), types of harms (distributional, representational), vantage points, system pipeline stages, and time scales.",
+      "datasets": [],
+      "conditions": [
+        "Multistakeholder recommendation",
+        "Rank-based presentation",
+        "Personalized information retrieval",
+        "Dynamic feedback loops"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4285059900:l1",
+      "paper_id": "openalex:W4285059900",
+      "text": "The monograph relies primarily on legal and moral frameworks rooted in Western, particularly United States, concepts of anti-discrimination and societal bias.",
+      "normalized_category": "western-centric-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4285059900:l2",
+      "paper_id": "openalex:W4285059900",
+      "text": "Existing machine learning fairness constructs assume separate, simultaneous, and symmetric decisions, which fail to capture ranking, personalization, and interaction dynamics inherent to information access.",
+      "normalized_category": "classification-assumption-mismatch",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4285059900:l3",
+      "paper_id": "openalex:W4285059900",
+      "text": "Fairness evaluations in the literature predominantly simplify demographic traits into single-dimensional binary attributes, failing to address complex intersectional identities.",
+      "normalized_category": "simplified-demographic-attributes",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4285059900:f1",
+      "paper_id": "openalex:W4285059900",
+      "text": "Extend fair information access metrics and interventions to additional domain settings, application types, and multidimensional or intersectional axes of demographic attributes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4285059900:f2",
+      "paper_id": "openalex:W4285059900",
+      "text": "Develop methodologies to evaluate and mitigate the evolution of algorithmic bias over time in dynamic interactive feedback loops.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4285059900:f3",
+      "paper_id": "openalex:W4285059900",
+      "text": "Investigate fairness concerns for additional stakeholder groups beyond consumers and providers, including information subjects and side stakeholders.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4285059900:f4",
+      "paper_id": "openalex:W4285059900",
+      "text": "Study user and provider perceptions, expectations, and behavioral responses regarding fairness interventions in information access systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.129210Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

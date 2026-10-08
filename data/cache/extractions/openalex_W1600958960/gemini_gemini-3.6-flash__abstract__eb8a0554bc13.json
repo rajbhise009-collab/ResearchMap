@@ -1,0 +1,131 @@
+{
+  "paper_id": "openalex:W1600958960",
+  "claims": [
+    {
+      "id": "openalex:W1600958960:c1",
+      "paper_id": "openalex:W1600958960",
+      "text": "Reducing dietary saturated fat for at least 24 months reduces the risk of combined cardiovascular events by 17%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1600958960:c2",
+      "paper_id": "openalex:W1600958960",
+      "text": "Greater reductions in dietary saturated fat intake result in greater reductions in cardiovascular disease event risk.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1600958960:c3",
+      "paper_id": "openalex:W1600958960",
+      "text": "Reducing saturated fat intake has little or no effect on all-cause mortality.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1600958960:c4",
+      "paper_id": "openalex:W1600958960",
+      "text": "Reducing saturated fat intake has little or no effect on cardiovascular mortality.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1600958960:c5",
+      "paper_id": "openalex:W1600958960",
+      "text": "Reducing saturated fat intake has little or no effect on non-fatal myocardial infarction.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1600958960:c6",
+      "paper_id": "openalex:W1600958960",
+      "text": "Subgroup analyses show no significant differences in cardiovascular event reduction between replacing saturated fat with polyunsaturated fat versus carbohydrate.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1600958960:e1",
+      "claim_id": "openalex:W1600958960:c1",
+      "description": "RR 0.83; 95% CI 0.70 to 0.98 across 12 trials with 53,758 participants.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1600958960:e2",
+      "claim_id": "openalex:W1600958960:c2",
+      "description": "Meta-regression suggested that greater reductions in saturated fat (reflected in greater reductions in serum cholesterol) resulted in greater reductions in risk of CVD events.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1600958960:e3",
+      "claim_id": "openalex:W1600958960:c3",
+      "description": "RR 0.96; 95% CI 0.90 to 1.03 across 11 trials with 55,858 participants.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1600958960:e4",
+      "claim_id": "openalex:W1600958960:c4",
+      "description": "RR 0.95; 95% CI 0.80 to 1.12 across 10 trials with 53,421 participants.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1600958960:e5",
+      "claim_id": "openalex:W1600958960:c5",
+      "description": "RR 0.97, 95% CI 0.87 to 1.07.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1600958960:e6",
+      "claim_id": "openalex:W1600958960:c6",
+      "description": "Subgrouping did not suggest significant differences between replacement of saturated fat calories with polyunsaturated fat or carbohydrate.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1600958960:m1",
+      "paper_id": "openalex:W1600958960",
+      "name": "Random-effects meta-analysis and meta-regression of RCTs",
+      "description": "Systematic review and meta-analysis of randomized controlled trials evaluating the effect of reducing and replacing saturated fat on mortality and cardiovascular morbidity over at least 24 months.",
+      "datasets": [
+        "CENTRAL",
+        "MEDLINE",
+        "Embase",
+        "Clinicaltrials.gov",
+        "WHO ICTRP"
+      ],
+      "conditions": [
+        "Intervention duration at least 24 months",
+        "Adult humans with or without cardiovascular disease",
+        "Intention to reduce saturated fat intake or alter dietary fats",
+        "Not multifactorial interventions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1600958960:l1",
+      "paper_id": "openalex:W1600958960",
+      "text": "Data on replacement of saturated fat with monounsaturated fat and protein were very limited.",
+      "normalized_category": "limited-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1600958960:l2",
+      "paper_id": "openalex:W1600958960",
+      "text": "Effects on total myocardial infarction, stroke, and CHD events were unclear due to very low-quality evidence.",
+      "normalized_category": "low-evidence-quality",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:17:06.768714Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,128 @@
+{
+  "paper_id": "openalex:W4402508807",
+  "claims": [
+    {
+      "id": "openalex:W4402508807:c1",
+      "paper_id": "openalex:W4402508807",
+      "text": "We introduce a clinician-in-the-loop framework featuring a clinically and technically-informed error taxonomy to classify LLM outputs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c2",
+      "paper_id": "openalex:W4402508807",
+      "text": "We introduce an experimental structure to comprehensively and iteratively compare outputs within an LLM document generation pipeline.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c3",
+      "paper_id": "openalex:W4402508807",
+      "text": "We introduce a clinical safety framework to assess potential harms of errors in LLM outputs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c4",
+      "paper_id": "openalex:W4402508807",
+      "text": "We introduce CREOLA, a graphical user interface (GUI) designed to perform and assess clinical error taxonomy classification, output comparison, and clinical safety assessment.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c5",
+      "paper_id": "openalex:W4402508807",
+      "text": "The evaluation of LLMs for clinical note generation observed an overall hallucination rate of 1.47%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c6",
+      "paper_id": "openalex:W4402508807",
+      "text": "Among the observed hallucinations in clinical note generation, 44% were rated as major.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c7",
+      "paper_id": "openalex:W4402508807",
+      "text": "The evaluation of LLMs for clinical note generation observed an overall omission rate of 3.45%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c8",
+      "paper_id": "openalex:W4402508807",
+      "text": "Among the observed omissions in clinical note generation, 17% were rated as major.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402508807:c9",
+      "paper_id": "openalex:W4402508807",
+      "text": "Iterative prompts and workflow refinements reduced major errors below previously reported human note-taking error rates.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402508807:e1",
+      "claim_id": "openalex:W4402508807:c5",
+      "description": "Overall, we observed a 1.47% hallucination rate across 18 experimental configurations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e2",
+      "claim_id": "openalex:W4402508807:c6",
+      "description": "Out of the 1.47% hallucination rate, 44% were rated 'major'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e3",
+      "claim_id": "openalex:W4402508807:c7",
+      "description": "Overall, we observed a 3.45% omission rate across 18 experimental configurations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e4",
+      "claim_id": "openalex:W4402508807:c8",
+      "description": "Out of the 3.45% omission rate, 17% were rated 'major'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402508807:e5",
+      "claim_id": "openalex:W4402508807:c9",
+      "description": "Through iterative prompts and workflow refinements, we reduced major errors below previously reported human note-taking error rates.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402508807:m1",
+      "paper_id": "openalex:W4402508807",
+      "name": "Clinician-in-the-loop CREOLA framework",
+      "description": "A framework combining an error taxonomy, an iterative comparison experimental structure, a clinical safety harm assessment, and a GUI (CREOLA) to assess clinical safety and hallucination rates in LLM-generated clinical notes.",
+      "datasets": [
+        "49,590 transcript sentences",
+        "12,999 clinical note sentences"
+      ],
+      "conditions": [
+        "18 experimental configurations involving LLMs for clinical note generation"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.101331Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

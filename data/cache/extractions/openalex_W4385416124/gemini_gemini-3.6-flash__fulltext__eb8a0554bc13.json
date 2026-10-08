@@ -1,0 +1,157 @@
+{
+  "paper_id": "openalex:W4385416124",
+  "claims": [
+    {
+      "id": "openalex:W4385416124:c1",
+      "paper_id": "openalex:W4385416124",
+      "text": "The proposed reinforcement learning framework with specialized reward function achieves equalized odds for ethnicity debiasing in COVID-19 screening across external hospital cohorts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385416124:c2",
+      "paper_id": "openalex:W4385416124",
+      "text": "In COVID-19 status prediction with ethnicity debiasing, the RL model achieved AUROC scores of 0.834 on PUH, 0.849 on UHB, and 0.923 on BH test sets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385416124:c3",
+      "paper_id": "openalex:W4385416124",
+      "text": "For ICU patient discharge status prediction with ethnicity debiasing, the RL model achieved equalized odds standard deviations of 0.032 for true positives and 0.022 for false positives.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385416124:c4",
+      "paper_id": "openalex:W4385416124",
+      "text": "For mitigating hospital-site bias in COVID-19 status prediction, the weighted RL model achieved equalized odds standard deviations of 0.010 for true positives and 0.040 for false positives on a held-out multi-site test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385416124:c5",
+      "paper_id": "openalex:W4385416124",
+      "text": "The difference in accuracy between the RL model and comparator models across classification tasks was statistically significant (P < 0.0001 by Wilcoxon signed rank test).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4385416124:c6",
+      "paper_id": "openalex:W4385416124",
+      "text": "A duelling double-deep Q-network framing classification with rewards inversely proportional to sensitive feature frequencies mitigates algorithmic bias without standard cross-entropy loss gradient descent.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4385416124:e1",
+      "claim_id": "openalex:W4385416124:c1",
+      "description": "The RL model achieved the best overall outcome fairness across external test sets, achieving EO(TP) of 0.047 on PUH, 0.057 on UHB, and 0.030 on BH when optimized to 0.9 sensitivity.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4385416124:e2",
+      "claim_id": "openalex:W4385416124:c2",
+      "description": "Table 1 reports RL model AUROC values of 0.834 (±0.013) for PUH, 0.849 (±0.025) for UHB, and 0.923 (±0.031) for BH.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385416124:e3",
+      "claim_id": "openalex:W4385416124:c3",
+      "description": "Table 2 shows the RL model achieving equalized odds TP s.d. of 0.032 and FP s.d. of 0.022 on the eICU patient discharge status prediction test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385416124:e4",
+      "claim_id": "openalex:W4385416124:c4",
+      "description": "Table 3 reports weighted RL achieving EO(TP) s.d. of 0.010 and EO(FP) s.d. of 0.040 on the multi-hospital test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4385416124:e5",
+      "claim_id": "openalex:W4385416124:c5",
+      "description": "Statistical significance test results comparing accuracy of the RL model to comparator models yielded P < 0.0001 using the Wilcoxon signed rank test across test settings.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4385416124:e6",
+      "claim_id": "openalex:W4385416124:c6",
+      "description": "Methodology section describes DDQN architecture formulation paired with reward weights inversely proportional to relative class presence N_k and N_m for main and sensitive labels.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4385416124:m1",
+      "paper_id": "openalex:W4385416124",
+      "name": "Duelling Double-Deep Q-Network (DDQN) Bias Mitigation Framework",
+      "description": "A deep reinforcement learning framework using duelling Q-network architecture and a non-differentiable reward function inversely weighted by sensitive attribute frequency to train fair classifiers.",
+      "datasets": [
+        "Oxford University Hospitals NHS Foundation Trust (OUH)",
+        "Portsmouth Hospitals University NHS Trust (PUH)",
+        "University Hospitals Birmingham NHS Trust (UHB)",
+        "Bedfordshire Hospitals NHS Foundation Trust (BH)",
+        "eICU Collaborative Research Database (eICU-CRD)"
+      ],
+      "conditions": [
+        "Sensitivity optimization threshold set to 0.9",
+        "Imbalanced sensitive attribute training data",
+        "Multi-class sensitive feature evaluation",
+        "5-fold cross-validation hyperparameter tuning"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4385416124:l1",
+      "paper_id": "openalex:W4385416124",
+      "text": "The RL models did not completely fulfill equalized odds requirements, partly because the training datasets were imbalanced with respect to sensitive attributes.",
+      "normalized_category": "incomplete-debiasing-from-imbalanced-training-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4385416124:l2",
+      "paper_id": "openalex:W4385416124",
+      "text": "Optimizing thresholds for high sensitivity (0.9) resulted in lower specificity for the RL models compared to some standard supervised baseline models.",
+      "normalized_category": "sensitivity-specificity-tradeoff",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4385416124:l3",
+      "paper_id": "openalex:W4385416124",
+      "text": "Machine learning models trained on real-world clinical data often fail to generalize to new hospital settings due to site-specific measurement and collection biases.",
+      "normalized_category": "lack-of-cross-site-generalizability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4385416124:f1",
+      "paper_id": "openalex:W4385416124",
+      "text": "Train future reinforcement learning debiasing models on demographically balanced datasets when sufficient data volume is available.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4385416124:f2",
+      "paper_id": "openalex:W4385416124",
+      "text": "Explore site-specific decision thresholds tailored during calibration at each hospital deployment site to standardize predictive performance across settings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4385416124:f3",
+      "paper_id": "openalex:W4385416124",
+      "text": "Investigate model transferability to entirely new domains and assess potential residual bias transfer when deploying to different population distributions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:57:03.202579Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

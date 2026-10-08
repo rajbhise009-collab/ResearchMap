@@ -1,0 +1,26 @@
+{
+  "claims": 1022,
+  "candidate_pairs": 437,
+  "relationships_by_type": {
+    "supports": 148,
+    "contradicts": 2
+  },
+  "contradiction_stats": {
+    "candidates": 437,
+    "classified": 437,
+    "none": 287,
+    "supports": 148,
+    "contradicts": 2,
+    "persisted": 150,
+    "prompt_hash": "6b56829cf05b"
+  },
+  "citation_edges": 343,
+  "future_work": {
+    "indeterminate_small_corpus": 117,
+    "unaddressed": 113,
+    "addressed": 82
+  },
+  "future_work_total": 312,
+  "future_work_guard": "near-later>=5 @ topical>=0.65 (corpus-relative)",
+  "future_work_match_threshold": 0.74
+}

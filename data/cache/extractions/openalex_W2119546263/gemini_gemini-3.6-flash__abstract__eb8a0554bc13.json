@@ -1,0 +1,162 @@
+{
+  "paper_id": "openalex:W2119546263",
+  "claims": [
+    {
+      "id": "openalex:W2119546263:c1",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of dietary fiber is inversely related to obesity.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c2",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of dietary fiber is inversely related to type two diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c3",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of dietary fiber is inversely related to cancer.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c4",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of dietary fiber is inversely related to cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c5",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of whole grain is inversely related to obesity.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c6",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of whole grain is inversely related to type two diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c7",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of whole grain is inversely related to cancer.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c8",
+      "paper_id": "openalex:W2119546263",
+      "text": "Intake of whole grain is inversely related to cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2119546263:c9",
+      "paper_id": "openalex:W2119546263",
+      "text": "The mechanisms behind the reported effects of dietary fiber on metabolic health are not well established.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2119546263:e1",
+      "claim_id": "openalex:W2119546263:c1",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e2",
+      "claim_id": "openalex:W2119546263:c2",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e3",
+      "claim_id": "openalex:W2119546263:c3",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e4",
+      "claim_id": "openalex:W2119546263:c4",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e5",
+      "claim_id": "openalex:W2119546263:c5",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e6",
+      "claim_id": "openalex:W2119546263:c6",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e7",
+      "claim_id": "openalex:W2119546263:c7",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e8",
+      "claim_id": "openalex:W2119546263:c8",
+      "description": "Epidemiological and clinical studies demonstrate that intake of dietary fiber and whole grain is inversely related to obesity, type two diabetes, cancer and cardiovascular disease (CVD).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2119546263:e9",
+      "claim_id": "openalex:W2119546263:c9",
+      "description": "The mechanisms behind the reported effects of dietary fiber on metabolic health are not well established.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2119546263:m1",
+      "paper_id": "openalex:W2119546263",
+      "name": "Literature Review",
+      "description": "A review examining data concerning dietary fiber, its components, and their effects on metabolic health.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2119546263:l1",
+      "paper_id": "openalex:W2119546263",
+      "text": "The mechanisms behind the reported effects of dietary fiber on metabolic health are not well established.",
+      "normalized_category": "unclear-mechanisms",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2119546263:l2",
+      "paper_id": "openalex:W2119546263",
+      "text": "Inconsistencies exist between studies reporting on dietary fiber and its effects on metabolic health.",
+      "normalized_category": "inconsistent-literature",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:05:37.466655Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

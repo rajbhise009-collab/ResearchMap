@@ -1,0 +1,165 @@
+{
+  "paper_id": "openalex:W7166176728",
+  "claims": [
+    {
+      "id": "openalex:W7166176728:c1",
+      "paper_id": "openalex:W7166176728",
+      "text": "Claude Sonnet 4.5 achieved an Expected Calibration Error of 0.06 on MedMCQA.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c2",
+      "paper_id": "openalex:W7166176728",
+      "text": "GPT-4o achieved an Expected Calibration Error of 0.127 on MedMCQA.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c3",
+      "paper_id": "openalex:W7166176728",
+      "text": "Expected Calibration Error across medical specialties was lowest in 'Skin' at 0.041.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c4",
+      "paper_id": "openalex:W7166176728",
+      "text": "Expected Calibration Error across medical specialties was highest in 'Social & Preventive Medicine' at 0.141.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c5",
+      "paper_id": "openalex:W7166176728",
+      "text": "Accuracy of evaluated LLMs varies across medical specialties.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c6",
+      "paper_id": "openalex:W7166176728",
+      "text": "High accuracy in LLMs does not guarantee reliable uncertainty estimation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c7",
+      "paper_id": "openalex:W7166176728",
+      "text": "Pooled metrics mask a threefold Expected Calibration Error increase between best- and worst-performing medical domains.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c8",
+      "paper_id": "openalex:W7166176728",
+      "text": "Larger LLMs exhibit improved self-knowledge.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7166176728:c9",
+      "paper_id": "openalex:W7166176728",
+      "text": "Uneven overconfidence persists in LLMs across medical question answering tasks.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7166176728:e1",
+      "claim_id": "openalex:W7166176728:c1",
+      "description": "Claude Sonnet 4.5 best: 0.06",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e2",
+      "claim_id": "openalex:W7166176728:c2",
+      "description": "Gpt-4o worst: 0.127",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e3",
+      "claim_id": "openalex:W7166176728:c3",
+      "description": "'Skin' best: 0.041",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e4",
+      "claim_id": "openalex:W7166176728:c4",
+      "description": "'Social & Preventive Medicine' worst: 0.141",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7166176728:e5",
+      "claim_id": "openalex:W7166176728:c5",
+      "description": "Accuracy of examined LLMs showed analogous variation between specialties.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7166176728:e6",
+      "claim_id": "openalex:W7166176728:c6",
+      "description": "Our results demonstrate that high accuracy does not guarantee reliable uncertainty estimation.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7166176728:e7",
+      "claim_id": "openalex:W7166176728:c7",
+      "description": "pooled metrics masked a threefold ECE increase between best- and worst-performing domains.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7166176728:e8",
+      "claim_id": "openalex:W7166176728:c8",
+      "description": "as larger models exhibit improved 'self-knowledge'",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7166176728:e9",
+      "claim_id": "openalex:W7166176728:c9",
+      "description": "uneven overconfidence persists.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7166176728:m1",
+      "paper_id": "openalex:W7166176728",
+      "name": "Expected Calibration Error Evaluation on MedMCQA",
+      "description": "Prompting six LLMs to answer medical multiple-choice questions and report confidence scores, calculating Expected Calibration Error (ECE) by averaging absolute differences between observed accuracy and predicted confidence over 12,000 responses.",
+      "datasets": [
+        "MedMCQA"
+      ],
+      "conditions": [
+        "GPT-5",
+        "GPT-5-mini",
+        "GPT-5-nano",
+        "GPT-4o",
+        "Claude Sonnet 4.5",
+        "Gemini 2.5",
+        "12,000 LLM responses"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7166176728:l1",
+      "paper_id": "openalex:W7166176728",
+      "text": "Pooled metrics mask domain-specific heterogeneity, obscuring up to a threefold ECE increase between best- and worst-performing medical domains.",
+      "normalized_category": "aggregate-metric-masking",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.106595Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

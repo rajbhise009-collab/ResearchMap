@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W4409716856",
+  "claims": [
+    {
+      "id": "openalex:W4409716856:c1",
+      "paper_id": "openalex:W4409716856",
+      "text": "AI legal research tools reduce hallucinations relative to general-purpose chatbots such as GPT-4.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409716856:c2",
+      "paper_id": "openalex:W4409716856",
+      "text": "AI legal research tools from LexisNexis and Thomson Reuters hallucinate between 17% and 33% of the time.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409716856:c3",
+      "paper_id": "openalex:W4409716856",
+      "text": "Proprietary AI legal research tools exhibit substantial differences in responsiveness across systems.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409716856:c4",
+      "paper_id": "openalex:W4409716856",
+      "text": "Proprietary AI legal research tools exhibit substantial differences in accuracy across systems.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4409716856:e1",
+      "claim_id": "openalex:W4409716856:c1",
+      "description": "While hallucinations are reduced relative to general-purpose chatbots (GPT-4)...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4409716856:e2",
+      "claim_id": "openalex:W4409716856:c2",
+      "description": "...we find that the AI research tools made by LexisNexis (Lexis+ AI) and Thomson Reuters (Westlaw AI-Assisted Research and Ask Practical Law AI) each hallucinate between 17% and 33% of the time.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409716856:e3",
+      "claim_id": "openalex:W4409716856:c3",
+      "description": "We also document substantial differences between systems in responsiveness...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4409716856:e4",
+      "claim_id": "openalex:W4409716856:c4",
+      "description": "...and accuracy.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4409716856:m1",
+      "paper_id": "openalex:W4409716856",
+      "name": "Preregistered empirical evaluation of legal AI tools",
+      "description": "A preregistered empirical evaluation assessing the reliability, responsiveness, and accuracy of RAG-based proprietary legal AI research tools.",
+      "datasets": [
+        "Preregistered legal AI query dataset"
+      ],
+      "conditions": [
+        "Lexis+ AI evaluation",
+        "Westlaw AI-Assisted Research evaluation",
+        "Ask Practical Law AI evaluation",
+        "GPT-4 baseline comparison"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4409716856:l1",
+      "paper_id": "openalex:W4409716856",
+      "text": "Large language models used in legal research tools are prone to hallucinate or make up false information.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4409716856:l2",
+      "paper_id": "openalex:W4409716856",
+      "text": "Systematically assessing legal AI research tools is challenging due to the closed nature of proprietary systems.",
+      "normalized_category": "closed-source-opacity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.117036Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

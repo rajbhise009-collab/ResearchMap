@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W2963854351",
+  "claims": [
+    {
+      "id": "openalex:W2963854351:c1",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN incorporates multi-task deep neural network learning to learn representations across multiple natural language understanding tasks.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c2",
+      "paper_id": "openalex:W2963854351",
+      "text": "Multi-task representation learning provides a regularization effect that yields general representations adaptable to new tasks and domains.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c3",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN achieves a score of 82.7% on the GLUE benchmark, representing a 2.2% absolute improvement.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c4",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN learned representations enable domain adaptation with substantially fewer in-domain labels compared to pre-trained BERT representations on SNLI and SciTail datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2963854351:e1",
+      "claim_id": "openalex:W2963854351:c1",
+      "description": "In this paper, we present a Multi-Task Deep Neural Network (MT-DNN) for learning representations across multiple natural language understanding (NLU) tasks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2963854351:e2",
+      "claim_id": "openalex:W2963854351:c2",
+      "description": "...benefits from a regularization effect that leads to more general representations to help adapt to new tasks and domains.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963854351:e3",
+      "claim_id": "openalex:W2963854351:c3",
+      "description": "...pushing the GLUE benchmark to 82.7% (2.2% absolute improvement).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2963854351:e4",
+      "claim_id": "openalex:W2963854351:c4",
+      "description": "We also demonstrate using the SNLI and Sc-iTail datasets that the representations learned by MT-DNN allow domain adaptation with substantially fewer in-domain labels than the pre-trained BERT representations.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2963854351:m1",
+      "paper_id": "openalex:W2963854351",
+      "name": "Multi-Task Deep Neural Network (MT-DNN)",
+      "description": "A multi-task deep neural network framework for learning representations across multiple natural language understanding tasks and adapting to new domains.",
+      "datasets": [
+        "GLUE",
+        "SNLI",
+        "SciTail"
+      ],
+      "conditions": [
+        "cross-task multi-task learning",
+        "domain adaptation with few in-domain labels"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.110294Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

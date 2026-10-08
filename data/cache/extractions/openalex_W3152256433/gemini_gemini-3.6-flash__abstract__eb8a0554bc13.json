@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W3152256433",
+  "claims": [
+    {
+      "id": "openalex:W3152256433:c1",
+      "paper_id": "openalex:W3152256433",
+      "text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3152256433:c2",
+      "paper_id": "openalex:W3152256433",
+      "text": "Statistical criteria of algorithmic fairness, except calibration, are not necessary conditions for fairness.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3152256433:c3",
+      "paper_id": "openalex:W3152256433",
+      "text": "Purported statistical fairness criteria (except calibration) can be simultaneously violated by a manifestly fair and uniquely optimal predictive algorithm.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3152256433:c4",
+      "paper_id": "openalex:W3152256433",
+      "text": "A manifestly fair and uniquely optimal predictive algorithm can violate statistical fairness criteria even when base rates are equal across groups.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3152256433:e1",
+      "claim_id": "openalex:W3152256433:c1",
+      "description": "a series of impossibility results shows that this is impossible, unless base rates are equal across the relevant groups.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3152256433:e2",
+      "claim_id": "openalex:W3152256433:c2",
+      "description": "I argue that none of the purported criteria, except for a calibration criterion, are necessary conditions for fairness",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3152256433:e3",
+      "claim_id": "openalex:W3152256433:c3",
+      "description": "they can all be simultaneously violated by a manifestly fair and uniquely optimal predictive algorithm",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3152256433:e4",
+      "claim_id": "openalex:W3152256433:c4",
+      "description": "even when base rates are equal.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3152256433:m1",
+      "paper_id": "openalex:W3152256433",
+      "name": "Philosophical and theoretical analysis",
+      "description": "Conceptual argument and counterexample analysis showing that optimal fair predictive algorithms violate statistical criteria of fairness.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3152256433:l1",
+      "paper_id": "openalex:W3152256433",
+      "text": "Statistical criteria of fairness cannot all be satisfied simultaneously when base rates differ across groups.",
+      "normalized_category": "impossibility-result",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:57:18.923417Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

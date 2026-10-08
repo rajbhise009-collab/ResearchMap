@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W4387635169",
+  "claims": [
+    {
+      "id": "openalex:W4387635169:c1",
+      "paper_id": "openalex:W4387635169",
+      "text": "Out-of-distribution (OOD) detection is essential for reliable and trustworthy machine learning.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c2",
+      "paper_id": "openalex:W4387635169",
+      "text": "Recent multi-modal OOD detection neglects the rich contextual information of ID classes.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c3",
+      "paper_id": "openalex:W4387635169",
+      "text": "Indiscriminately using LLM world knowledge causes catastrophic damage to OOD detection due to LLM hallucinations.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c4",
+      "paper_id": "openalex:W4387635169",
+      "text": "Selective generation from LLMs enhances OOD detection performance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c5",
+      "paper_id": "openalex:W4387635169",
+      "text": "The proposed method consistently outperforms state-of-the-art multi-modal OOD detection baselines.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4387635169:e1",
+      "claim_id": "openalex:W4387635169:c3",
+      "description": "Indiscriminately using such knowledge causes catastrophic damage to OOD detection due to LLMs' hallucinations, as is observed by our analysis.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4387635169:e2",
+      "claim_id": "openalex:W4387635169:c5",
+      "description": "Extensive experiments demonstrate that our method consistently outperforms the state-of-the-art.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4387635169:m1",
+      "paper_id": "openalex:W4387635169",
+      "name": "Selective Generation OOD Detection with LLMs",
+      "description": "A framework that applies world knowledge to enhance OOD detection via selective generation using consistency-based uncertainty calibration and visual object extraction from images.",
+      "datasets": [],
+      "conditions": [
+        "consistency-based uncertainty calibration",
+        "visual object extraction"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4387635169:l1",
+      "paper_id": "openalex:W4387635169",
+      "text": "Recent multi-modal OOD detection leverages textual information from ID class names but neglects rich contextual information.",
+      "normalized_category": "lacks-contextual-information",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4387635169:l2",
+      "paper_id": "openalex:W4387635169",
+      "text": "Indiscriminate use of LLM knowledge degrades OOD detection performance due to hallucinations.",
+      "normalized_category": "llm-hallucination-vulnerability",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:03:00.086709Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

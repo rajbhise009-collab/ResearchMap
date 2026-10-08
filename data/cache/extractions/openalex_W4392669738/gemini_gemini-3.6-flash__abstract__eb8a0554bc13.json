@@ -1,0 +1,135 @@
+{
+  "paper_id": "openalex:W4392669738",
+  "claims": [
+    {
+      "id": "openalex:W4392669738:c1",
+      "paper_id": "openalex:W4392669738",
+      "text": "Factored Verification achieves 76.2% accuracy on hallucination detection in the summarization task of the HaluEval benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c2",
+      "paper_id": "openalex:W4392669738",
+      "text": "ChatGPT (16k) averages 0.62 hallucinations per summary when summarizing across multiple academic papers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c3",
+      "paper_id": "openalex:W4392669738",
+      "text": "GPT-4 averages 0.84 hallucinations per summary when summarizing across multiple academic papers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c4",
+      "paper_id": "openalex:W4392669738",
+      "text": "Claude 2 averages 1.55 hallucinations per summary when summarizing across multiple academic papers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c5",
+      "paper_id": "openalex:W4392669738",
+      "text": "Self-correction using factored critiques reduces average hallucinations per summary to 0.49 for ChatGPT.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c6",
+      "paper_id": "openalex:W4392669738",
+      "text": "Self-correction using factored critiques reduces average hallucinations per summary to 0.46 for GPT-4.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392669738:c7",
+      "paper_id": "openalex:W4392669738",
+      "text": "Self-correction using factored critiques reduces average hallucinations per summary to 0.95 for Claude 2.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4392669738:e1",
+      "claim_id": "openalex:W4392669738:c1",
+      "description": "Factored Verification sets a new SotA on hallucination detection in the summarization task of the HaluEval benchmark, achieving 76.2% accuracy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392669738:e2",
+      "claim_id": "openalex:W4392669738:c2",
+      "description": "Measured 0.62 hallucinations in the average ChatGPT (16k) summary when summarizing across multiple academic papers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392669738:e3",
+      "claim_id": "openalex:W4392669738:c3",
+      "description": "Measured 0.84 hallucinations in the average GPT-4 summary when summarizing across multiple academic papers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392669738:e4",
+      "claim_id": "openalex:W4392669738:c4",
+      "description": "Measured 1.55 hallucinations in the average Claude 2 summary when summarizing across multiple academic papers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392669738:e5",
+      "claim_id": "openalex:W4392669738:c5",
+      "description": "Asking models to self-correct using factored critiques lowers the number of hallucinations to 0.49 for ChatGPT.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392669738:e6",
+      "claim_id": "openalex:W4392669738:c6",
+      "description": "Asking models to self-correct using factored critiques lowers the number of hallucinations to 0.46 for GPT-4.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4392669738:e7",
+      "claim_id": "openalex:W4392669738:c7",
+      "description": "Asking models to self-correct using factored critiques lowers the number of hallucinations to 0.95 for Claude 2.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4392669738:m1",
+      "paper_id": "openalex:W4392669738",
+      "name": "Factored Verification",
+      "description": "An automated method for detecting hallucinations in abstractive summaries and leveraging factored critiques for model self-correction.",
+      "datasets": [
+        "HaluEval"
+      ],
+      "conditions": [
+        "ChatGPT (16k)",
+        "GPT-4",
+        "Claude 2",
+        "uncorrected generation",
+        "self-correction with factored critiques"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4392669738:l1",
+      "paper_id": "openalex:W4392669738",
+      "text": "Hallucinations produced when summarizing academic papers are often subtle and difficult to detect.",
+      "normalized_category": "subtle-hallucinations",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.102898Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

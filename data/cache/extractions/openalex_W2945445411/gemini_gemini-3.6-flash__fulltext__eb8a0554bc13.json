@@ -1,0 +1,143 @@
+{
+  "paper_id": "openalex:W2945445411",
+  "claims": [
+    {
+      "id": "openalex:W2945445411:c1",
+      "paper_id": "openalex:W2945445411",
+      "text": "FFVAE partitions the latent space into non-sensitive latent dimensions and explicit sensitive latent dimensions aligned with sensitive attributes.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2945445411:c2",
+      "paper_id": "openalex:W2945445411",
+      "text": "FFVAE does not require sensitive attribute labels during test-time inference.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2945445411:c3",
+      "paper_id": "openalex:W2945445411",
+      "text": "On the DSpritesUnfair dataset with correlated target y=XPosition and sensitive attribute a=Shape, FFVAE achieves near-zero demographic parity distance with minimal loss in classification accuracy.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2945445411:c4",
+      "paper_id": "openalex:W2945445411",
+      "text": "Increasing the predictiveness hyperparameter alpha in FFVAE improves sensitive attribute disentanglement performance beyond FactorVAE on DSpritesUnfair.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2945445411:c5",
+      "paper_id": "openalex:W2945445411",
+      "text": "On Communities & Crime, FFVAE achieves higher downstream prediction accuracy than baseline VAE representation models across evaluated subgroups.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2945445411:c6",
+      "paper_id": "openalex:W2945445411",
+      "text": "On Celeb-A, training downstream MLP classifiers on encoder mean vectors rather than stochastic latent samples increases accuracy but severely increases demographic parity distance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2945445411:e1",
+      "claim_id": "openalex:W2945445411:c3",
+      "description": "When a correlates with y by design in DSpritesUnfair, FFVAE demonstrates an almost complete reduction in demographic parity distance delta_DP with very little accuracy loss.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2945445411:e2",
+      "claim_id": "openalex:W2945445411:c4",
+      "description": "Disentanglement audit log loss increases as alpha increases, showing that alpha > 0 increases disentanglement benefits beyond FactorVAE (alpha = 0).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2945445411:e3",
+      "claim_id": "openalex:W2945445411:c5",
+      "description": "In Communities & Crime evaluations, FFVAE achieved higher accuracy than baselines across most subgroup settings.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2945445411:e4",
+      "claim_id": "openalex:W2945445411:c6",
+      "description": "Training downstream MLPs on encoder means rather than samples increased accuracy but at the cost of very unfavorable delta_DP on Celeb-A.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2945445411:m1",
+      "paper_id": "openalex:W2945445411",
+      "name": "Flexibly Fair Variational Autoencoder (FFVAE)",
+      "description": "A variational generative model that structures latent space into non-sensitive and sensitive sub-vectors using a predictive decoder loss and total correlation penalty to allow test-time attribute masking.",
+      "datasets": [
+        "DSpritesUnfair",
+        "Communities & Crime",
+        "Celeb-A"
+      ],
+      "conditions": [
+        "binary sensitive attributes",
+        "post-hoc MLP audit evaluation",
+        "test-time dimension removal"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2945445411:l1",
+      "paper_id": "openalex:W2945445411",
+      "text": "Prior fair representation learning methods require sensitive attributes to be fixed at train time and cannot adapt to multi-attribute conjunctions or test-time attribute variations.",
+      "normalized_category": "single-attribute-rigidity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2945445411:l2",
+      "paper_id": "openalex:W2945445411",
+      "text": "Adversarial estimation of total correlation in FFVAE failed to scale to high-dimensional datasets like Celeb-A, requiring a biased estimator substitute.",
+      "normalized_category": "adversarial-scalability-failure",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2945445411:l3",
+      "paper_id": "openalex:W2945445411",
+      "text": "When alpha is small, high values of gamma lead to training instability and reduced Mutual Information Gap.",
+      "normalized_category": "hyperparameter-instability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2945445411:l4",
+      "paper_id": "openalex:W2945445411",
+      "text": "None of the evaluated representation models performed robustly across all subgroup definitions on real-world datasets with rich attribute correlation structures.",
+      "normalized_category": "subgroup-fairness-inconsistency",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2945445411:f1",
+      "paper_id": "openalex:W2945445411",
+      "text": "Extend flexibly fair representation learning to fairness metrics beyond demographic parity, such as equalized odds or calibration.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2945445411:f2",
+      "paper_id": "openalex:W2945445411",
+      "text": "Develop fair representation algorithms robust to dataset distributional shift, historical bias, and undersampled data distributions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.127723Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

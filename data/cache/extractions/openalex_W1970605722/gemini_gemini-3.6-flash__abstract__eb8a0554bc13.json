@@ -1,0 +1,113 @@
+{
+  "paper_id": "openalex:W1970605722",
+  "claims": [
+    {
+      "id": "openalex:W1970605722:c1",
+      "paper_id": "openalex:W1970605722",
+      "text": "Alcohol consumption increases high density lipoprotein cholesterol levels.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1970605722:c2",
+      "paper_id": "openalex:W1970605722",
+      "text": "Alcohol consumption increases apolipoprotein A1 levels.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1970605722:c3",
+      "paper_id": "openalex:W1970605722",
+      "text": "Alcohol consumption increases adiponectin levels.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1970605722:c4",
+      "paper_id": "openalex:W1970605722",
+      "text": "Alcohol consumption shows a dose-response relation with high density lipoprotein cholesterol levels.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1970605722:c5",
+      "paper_id": "openalex:W1970605722",
+      "text": "Alcohol consumption decreases fibrinogen levels.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1970605722:c6",
+      "paper_id": "openalex:W1970605722",
+      "text": "Alcohol consumption does not affect triglyceride levels.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1970605722:e1",
+      "claim_id": "openalex:W1970605722:c1",
+      "description": "Pooled mean difference for high density lipoprotein cholesterol was 0.094 mmol/L (95% CI 0.064 to 0.123).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1970605722:e2",
+      "claim_id": "openalex:W1970605722:c2",
+      "description": "Pooled mean difference for apolipoprotein A1 was 0.101 g/L (95% CI 0.073 to 0.129).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1970605722:e3",
+      "claim_id": "openalex:W1970605722:c3",
+      "description": "Pooled mean difference for adiponectin was 0.56 mg/L (95% CI 0.39 to 0.72).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1970605722:e4",
+      "claim_id": "openalex:W1970605722:c4",
+      "description": "Test for trend P = 0.013 for high density lipoprotein cholesterol.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1970605722:e5",
+      "claim_id": "openalex:W1970605722:c5",
+      "description": "Fibrinogen levels decreased by -0.20 g/L (95% CI -0.29 to -0.11).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1970605722:e6",
+      "claim_id": "openalex:W1970605722:c6",
+      "description": "Alcohol did not affect triglyceride levels in meta-analysis.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1970605722:m1",
+      "paper_id": "openalex:W1970605722",
+      "name": "Systematic review and meta-analysis of interventional studies",
+      "description": "Systematic search of Medline and Embase to review and meta-analyse fixed or random effects models evaluating the effects of alcohol consumption on biological markers of coronary heart disease.",
+      "datasets": [
+        "Medline (1950 to October 2009)",
+        "Embase (1980 to October 2009)"
+      ],
+      "conditions": [
+        "Adults without known cardiovascular disease",
+        "Comparison of fasting levels of biological markers after alcohol use vs after a period of no alcohol use (controls)",
+        "Stratification by beverage type (wine, beer, spirits)",
+        "Sensitivity analysis grouped by study design"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:15:11.737823Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

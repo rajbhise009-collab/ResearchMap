@@ -1,0 +1,102 @@
+{
+  "paper_id": "openalex:W2514278201",
+  "claims": [
+    {
+      "id": "openalex:W2514278201:c1",
+      "paper_id": "openalex:W2514278201",
+      "text": "Multiclass set-valued classifiers can guarantee user-defined levels of coverage while minimizing ambiguity.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c2",
+      "paper_id": "openalex:W2514278201",
+      "text": "Oracle set-valued classifiers are obtained from level sets of the conditional probability functions of each class.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c3",
+      "paper_id": "openalex:W2514278201",
+      "text": "Set-valued classification estimators can be built on existing single-label classifiers.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c4",
+      "paper_id": "openalex:W2514278201",
+      "text": "The optimal set-valued classifier can sometimes output the empty set.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2514278201:c5",
+      "paper_id": "openalex:W2514278201",
+      "text": "Two solutions are provided to prevent the optimal set-valued classifier from outputting the empty set.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2514278201:e1",
+      "claim_id": "openalex:W2514278201:c1",
+      "description": "We introduce a framework for multiclass set-valued classification, where the classifiers guarantee user-defined levels of coverage or confidence (the probability that the true label is contained in the set) while minimizing the ambiguity (the expected size of the output).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2514278201:e2",
+      "claim_id": "openalex:W2514278201:c2",
+      "description": "We show that the oracle classifiers are obtained from level sets of the functions that define the conditional probability of each class.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2514278201:e3",
+      "claim_id": "openalex:W2514278201:c3",
+      "description": "The proposed estimators build on existing single-label classifiers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2514278201:e4",
+      "claim_id": "openalex:W2514278201:c4",
+      "description": "The optimal classifier can sometimes output the empty set",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2514278201:e5",
+      "claim_id": "openalex:W2514278201:c5",
+      "description": "we provide two solutions to fix this issue that are suitable for various practical needs.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2514278201:m1",
+      "paper_id": "openalex:W2514278201",
+      "name": "Multiclass set-valued classification framework",
+      "description": "A framework for set-valued classification that constructs estimators from existing single-label classifiers to guarantee coverage levels while minimizing set size.",
+      "datasets": [],
+      "conditions": [
+        "multiclass classification",
+        "bounded error levels"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2514278201:l1",
+      "paper_id": "openalex:W2514278201",
+      "text": "The optimal classifier can sometimes output the empty set.",
+      "normalized_category": "empty-set-prediction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.116362Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

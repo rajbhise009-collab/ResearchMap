@@ -1,0 +1,67 @@
+{
+  "paper_id": "openalex:W4399803256",
+  "claims": [
+    {
+      "id": "openalex:W4399803256:c1",
+      "paper_id": "openalex:W4399803256",
+      "text": "Uncertainty in large language models can be estimated at the level of semantic meaning rather than specific sequence of words.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399803256:c2",
+      "paper_id": "openalex:W4399803256",
+      "text": "Semantic entropy uncertainty estimators detect confabulations in large language models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399803256:e1",
+      "claim_id": "openalex:W4399803256:c1",
+      "description": "Our method addresses the fact that one idea can be expressed in many ways by computing uncertainty at the level of meaning rather than specific sequences of words.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399803256:e2",
+      "claim_id": "openalex:W4399803256:c2",
+      "description": "proposing entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations—confabulations—which are arbitrary and incorrect generations.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399803256:m1",
+      "paper_id": "openalex:W4399803256",
+      "name": "Semantic Entropy Uncertainty Estimation",
+      "description": "A statistical method calculating uncertainty at the semantic meaning level rather than over raw token sequences to identify arbitrary, incorrect generations in LLMs.",
+      "datasets": [],
+      "conditions": [
+        "no task-specific data required",
+        "without a priori knowledge of the task"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399803256:l1",
+      "paper_id": "openalex:W4399803256",
+      "text": "Encouraging truthfulness through supervision or reinforcement has been only partially successful.",
+      "normalized_category": "supervision-reinforcement-limited-effectiveness",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399803256:l2",
+      "paper_id": "openalex:W4399803256",
+      "text": "The proposed method detects only a specific subset of hallucinations (confabulations).",
+      "normalized_category": "detects-subset-of-hallucinations",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.081780Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,255 @@
+{
+  "paper_id": "openalex:W4408354096",
+  "claims": [
+    {
+      "id": "openalex:W4408354096:c1",
+      "paper_id": "openalex:W4408354096",
+      "text": "Out of 30 included studies on clinical text summarization, 17 (57%) focused on summarizing radiology reports.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c2",
+      "paper_id": "openalex:W4408354096",
+      "text": "15 of the 30 included studies (50%) involved data from intensive care units.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c3",
+      "paper_id": "openalex:W4408354096",
+      "text": "19 of the 30 included studies (73%) relied on data from US-based institutions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c4",
+      "paper_id": "openalex:W4408354096",
+      "text": "26 of the 30 included studies (87%) evaluated models on English-language clinical texts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c5",
+      "paper_id": "openalex:W4408354096",
+      "text": "15 of the 30 included studies (50%) relied on the Medical Information Mart for Intensive Care (MIMIC) dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c6",
+      "paper_id": "openalex:W4408354096",
+      "text": "Abstractive summarization approaches were used in 17 of the 30 included studies (57%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c7",
+      "paper_id": "openalex:W4408354096",
+      "text": "External validation was conducted in only 2 of the 30 included studies (7%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c8",
+      "paper_id": "openalex:W4408354096",
+      "text": "Failure analysis was performed in 6 of the 30 included studies (20%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c9",
+      "paper_id": "openalex:W4408354096",
+      "text": "Patient safety risks analysis was reported in only 1 of the 30 included studies (3%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c10",
+      "paper_id": "openalex:W4408354096",
+      "text": "None of the 30 included studies reported structured bias assessment.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408354096:c11",
+      "paper_id": "openalex:W4408354096",
+      "text": "16 of the 30 included studies (53%) used both automated metrics and human evaluation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4408354096:e1",
+      "claim_id": "openalex:W4408354096:c1",
+      "description": "The research landscape demonstrated a narrow research focus, often centered on summarizing radiology reports (n=17, 57%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e2",
+      "claim_id": "openalex:W4408354096:c2",
+      "description": "Studies primarily involved data from the intensive care unit (n=15, 50%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e3",
+      "claim_id": "openalex:W4408354096:c3",
+      "description": "Studies primarily involved data of US-based institutions (n=19, 73%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e4",
+      "claim_id": "openalex:W4408354096:c4",
+      "description": "Language coverage was predominantly English (n=26, 87%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e5",
+      "claim_id": "openalex:W4408354096:c5",
+      "description": "This focus aligned with the frequent reliance on the open-source Medical Information Mart for Intensive Care dataset (n=15, 50%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e6",
+      "claim_id": "openalex:W4408354096:c6",
+      "description": "Summarization methodologies predominantly involved abstractive approaches (n=17, 57%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e7",
+      "claim_id": "openalex:W4408354096:c7",
+      "description": "All studies conducted internal validation, but external validation (n=2, 7%) was infrequent.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e8",
+      "claim_id": "openalex:W4408354096:c8",
+      "description": "Failure analysis was conducted through error categorization in 6 (20%) studies.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e9",
+      "claim_id": "openalex:W4408354096:c9",
+      "description": "Patient safety risks analysis was assessed by Van Veen et al (n=1, 3%) using a Healthcare Adapted Risk Management Scale.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e10",
+      "claim_id": "openalex:W4408354096:c10",
+      "description": "Bias analysis remained unexplored, as no studies explicitly report structured bias assessments.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4408354096:e11",
+      "claim_id": "openalex:W4408354096:c11",
+      "description": "Most studies used both automated metrics and human evaluation (n=16, 53%).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4408354096:m1",
+      "paper_id": "openalex:W4408354096",
+      "name": "PRISMA-ScR Systematic Scoping Review",
+      "description": "A scoping review following PRISMA-ScR guidelines searching PubMed, Embase, Web of Science, IEEE Xplore, and ACM Digital Library for literature published between January 1, 2019, and June 18, 2024 on clinical text summarization using LLMs.",
+      "datasets": [
+        "PubMed",
+        "Embase",
+        "Web of Science",
+        "IEEE Xplore",
+        "ACM Digital Library"
+      ],
+      "conditions": [
+        "Transformer-based models",
+        "Clinical text summarization focus",
+        "Free-text EHR data",
+        "Original peer-reviewed research",
+        "Published 2019-2024 in English, French, Spanish, or German"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4408354096:l1",
+      "paper_id": "openalex:W4408354096",
+      "text": "Randomly extracting data from 3 sample studies to refine the data extraction table may have introduced bias in defining extracted variables.",
+      "normalized_category": "extraction-methodology-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4408354096:l2",
+      "paper_id": "openalex:W4408354096",
+      "text": "Certain aspects such as detailed model architectures and specific numeric performance values were not fully analyzed across all primary studies.",
+      "normalized_category": "narrow-analytical-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4408354096:l3",
+      "paper_id": "openalex:W4408354096",
+      "text": "Authors of primary studies were not contacted for missing or unclear details, relying solely on published text which may introduce reporting bias.",
+      "normalized_category": "reporting-bias-reliance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4408354096:l4",
+      "paper_id": "openalex:W4408354096",
+      "text": "Existing literature relies heavily on a narrow scope of open-source ICU datasets (e.g., MIMIC) and radiology reports in English, limiting generalizability to wider clinical workflows.",
+      "normalized_category": "dataset-generalizability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4408354096:l5",
+      "paper_id": "openalex:W4408354096",
+      "text": "Automated evaluation metrics (such as ROUGE and BLEU) lack contextual understanding and fail to capture clinical usability or validity.",
+      "normalized_category": "evaluation-metric-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4408354096:l6",
+      "paper_id": "openalex:W4408354096",
+      "text": "Human evaluations in existing literature use small sample sizes (mostly 2 to 50 documents) and lack blinded analysis, external validation, or structured bias assessment.",
+      "normalized_category": "small-sample-size-and-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4408354096:f1",
+      "paper_id": "openalex:W4408354096",
+      "text": "Expand the scope of clinical LLM summarization research by diversifying use cases, medical specialties, patient populations, and language coverage beyond English radiology reports.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4408354096:f2",
+      "paper_id": "openalex:W4408354096",
+      "text": "Evaluate model capabilities on complex real-world clinical tasks, including multi-document summarization and longitudinal record processing.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4408354096:f3",
+      "paper_id": "openalex:W4408354096",
+      "text": "Implement structured evaluation frameworks incorporating generalizability assessment (external validation and subcategory testing), systematic failure analysis, patient safety risk matrices, and bias detection.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4408354096:f4",
+      "paper_id": "openalex:W4408354096",
+      "text": "Conduct prospective clinical impact evaluations to assess the utility, clinician time savings, and real-world adoption feasibility of LLM-based summarization systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.012171Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

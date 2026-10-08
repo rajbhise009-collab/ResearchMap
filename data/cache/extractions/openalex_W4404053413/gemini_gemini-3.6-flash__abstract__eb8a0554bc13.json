@@ -1,0 +1,48 @@
+{
+  "paper_id": "openalex:W4404053413",
+  "claims": [
+    {
+      "id": "openalex:W4404053413:c1",
+      "paper_id": "openalex:W4404053413",
+      "text": "The integration of AI into legal education is accompanied by ethical and sustainability challenges.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404053413:c2",
+      "paper_id": "openalex:W4404053413",
+      "text": "Navigating ethical dilemmas in legal education AI adoption requires the conscientious integration of sustainability principles.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404053413:e1",
+      "claim_id": "openalex:W4404053413:c1",
+      "description": "The article states that the transformative shift of integrating AI into legal education is accompanied by ethical and sustainability challenges.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404053413:e2",
+      "claim_id": "openalex:W4404053413:c2",
+      "description": "The author asserts that the intersection of AI adoption, sustainability ethics, and legal education necessitates a conscientious integration of sustainability principles to navigate ethical dilemmas responsibly.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W4404053413:l1",
+      "paper_id": "openalex:W4404053413",
+      "text": "AI adoption in legal education faces regulatory compliance challenges within a rapidly evolving AI landscape.",
+      "normalized_category": "regulatory-compliance",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.108353Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

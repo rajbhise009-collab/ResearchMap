@@ -1,0 +1,113 @@
+{
+  "paper_id": "openalex:W4389911350",
+  "claims": [
+    {
+      "id": "openalex:W4389911350:c1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Sequence-level probability estimates in large language models do not reliably rank-order open-ended generations by quality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c2",
+      "paper_id": "openalex:W4389911350",
+      "text": "Reformulating open-ended generation into token-level prediction tasks allows leveraging token-level calibration to improve confidence scoring.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c3",
+      "paper_id": "openalex:W4389911350",
+      "text": "Self-evaluation based hybrid scoring with a NONE OF THE ABOVE option achieves 75.34% Calibration-AUC on TruthfulQA using PaLM-2 Large.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c4",
+      "paper_id": "openalex:W4389911350",
+      "text": "Self-evaluation based hybrid scoring with a NONE OF THE ABOVE option achieves 58.10% Selective-AUC on TruthfulQA using PaLM-2 Large.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389911350:e1",
+      "claim_id": "openalex:W4389911350:c1",
+      "description": "Studies show that language models' sequence probabilities on open-ended generations do not reliably rank-order outputs by quality, yielding Calibration-AUC below 50% on TruthfulQA.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389911350:e2",
+      "claim_id": "openalex:W4389911350:c2",
+      "description": "The authors propose reducing free-form generation scoring to multiple-choice and true/false evaluation tasks using prompt formats that extract token-level logits or probabilities.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389911350:e3",
+      "claim_id": "openalex:W4389911350:c3",
+      "description": "Table 1 reports a Calibration-AUC of 75.34% for 'Hybrid w/ nota' on TruthfulQA with PaLM-2 Large, compared to 39.80% for sequence likelihood.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4389911350:e4",
+      "claim_id": "openalex:W4389911350:c4",
+      "description": "Table 1 reports a Selective-AUC of 58.10% for 'Hybrid w/ nota' on TruthfulQA with PaLM-2 Large, compared to 33.63% for sequence likelihood.",
+      "strength": 0.98
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389911350:m1",
+      "paper_id": "openalex:W4389911350",
+      "name": "Sample and Select and Eval (Hybrid)",
+      "description": "A hybrid zero-shot self-evaluation protocol that selects candidate answers via multi-choice selection prompt and assigns a confidence score using pointwise true/false evaluation penalized by a 'None of the above' option probability.",
+      "datasets": [
+        "TRUTHFUL QA",
+        "TL;DR"
+      ],
+      "conditions": [
+        "PaLM-2 Large",
+        "GPT-3 (text-davinci-003)",
+        "Temperature 1.0 sampling"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389911350:l1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Sequence-level likelihood is inherently biased toward sequence length, underestimating probabilities for longer sentences.",
+      "normalized_category": "length-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389911350:l2",
+      "paper_id": "openalex:W4389911350",
+      "text": "Self-evaluation increases inference time by 1 to 2 additional forward passes per sample.",
+      "normalized_category": "inference-latency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389911350:l3",
+      "paper_id": "openalex:W4389911350",
+      "text": "API limitations restricting output log-probabilities to only the top 5 candidates prevented full evaluation of multi-choice methods on certain models such as GPT-3.",
+      "normalized_category": "api-constraints",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389911350:f1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Improving the quality calibration of sequence-level scores directly during model training and fine-tuning.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.639952Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,169 @@
+{
+  "paper_id": "openalex:W4401616827",
+  "claims": [
+    {
+      "id": "openalex:W4401616827:c1",
+      "paper_id": "openalex:W4401616827",
+      "text": "WikiChat achieves 97.3% factual accuracy in output generation by grounding on Wikipedia.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c2",
+      "paper_id": "openalex:W4401616827",
+      "text": "The language understanding and self-training approach proposed by Nie et al. reduces hallucination noise by over 50%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c3",
+      "paper_id": "openalex:W4401616827",
+      "text": "In ChatGPT-generated research proposals, 69 out of 178 examined references lacked a Digital Object Identifier.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c4",
+      "paper_id": "openalex:W4401616827",
+      "text": "In ChatGPT-generated research proposals, 28 out of 178 examined references did not appear in Google searches or have an existing DOI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c5",
+      "paper_id": "openalex:W4401616827",
+      "text": "Combining grammar-aware prompt engineering and formal methods mitigates LLM hallucinations by reducing prompt context ambiguity.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c6",
+      "paper_id": "openalex:W4401616827",
+      "text": "Grammar-aware prompt engineering incorporates linguistic rules and structures into AI prompting.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c7",
+      "paper_id": "openalex:W4401616827",
+      "text": "Formal methods provide a rule-based mathematical framework for systematic error detection and verification in LLM outputs.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401616827:e1",
+      "claim_id": "openalex:W4401616827:c1",
+      "description": "WikiChat, which is grounded in Wikipedia, achieves 97.3% factual accuracy, outperforming fine-tuned models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401616827:e2",
+      "claim_id": "openalex:W4401616827:c2",
+      "description": "Nie et al. offered a strategy combining a language understanding module for data refinement with self-training iterations, reducing hallucination by over 50% of original unaligned noise.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401616827:e3",
+      "claim_id": "openalex:W4401616827:c3",
+      "description": "In a study examining 178 references in ChatGPT-written research proposals, 69 did not have a Digital Object Identifier (DOI).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401616827:e4",
+      "claim_id": "openalex:W4401616827:c4",
+      "description": "In the same evaluation of 178 ChatGPT references, 28 references did not appear in a Google search or have an existing DOI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401616827:e5",
+      "claim_id": "openalex:W4401616827:c5",
+      "description": "A combined integration of GAPE and FMs in LLMs provides an approach to address hallucinations by improving contextual understanding, improving language parsing, and resolving ambiguities.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4401616827:e6",
+      "claim_id": "openalex:W4401616827:c6",
+      "description": "GAPE is defined as a method of imbuing AI models with linguistic rules and structures to construct prompts with deliberate grammatical awareness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401616827:e7",
+      "claim_id": "openalex:W4401616827:c7",
+      "description": "Formal methods offer mathematical techniques for specifying and verifying software, giving AI developers a systematic framework for error detection and repair.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401616827:m1",
+      "paper_id": "openalex:W4401616827",
+      "name": "Literature Review and Conceptual Framework Synthesis",
+      "description": "Qualitative synthesis and evaluation of scholarly literature, peer-reviewed articles, and industry reports across academic databases to examine LLM hallucination causes and propose a combined GAPE and FM conceptual framework.",
+      "datasets": [],
+      "conditions": [
+        "Keyword searching across academic databases using terms like 'Grammar-aware prompting', 'LLM hallucinations', and 'Formal Methods'",
+        "Qualitative analysis of peer-reviewed journals, conference papers, and industry reports"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401616827:l1",
+      "paper_id": "openalex:W4401616827",
+      "text": "Prior hallucination mitigation measures do not address the technical causes of hallucination arising from user prompt language ambiguities.",
+      "normalized_category": "unaddressed-prompt-ambiguity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4401616827:l2",
+      "paper_id": "openalex:W4401616827",
+      "text": "Adhering to strict grammar rules and formal methods can increase computational complexity and processing time during user prompt output generation.",
+      "normalized_category": "computational-complexity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4401616827:l3",
+      "paper_id": "openalex:W4401616827",
+      "text": "The proposed combined integration of GAPE and formal methods is presented as a position paper argument based on literature synthesis rather than empirical benchmark experimentation.",
+      "normalized_category": "lack-of-empirical-validation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4401616827:f1",
+      "paper_id": "openalex:W4401616827",
+      "text": "Foster interdisciplinary collaboration among AI developers, ethicists, and linguists during LLM development.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4401616827:f2",
+      "paper_id": "openalex:W4401616827",
+      "text": "Construct open-source, linguistically rigorous datasets incorporating ethics and linguistic principles for training LLMs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4401616827:f3",
+      "paper_id": "openalex:W4401616827",
+      "text": "Develop standardized evaluation frameworks and benchmarks for testing LLM language quality, parsing accuracy, and hallucination reduction efficacy.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4401616827:f4",
+      "paper_id": "openalex:W4401616827",
+      "text": "Establish AI policy and legislative frameworks that advocate for formal language principles and grammar-aware prompt engineering in AI systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.959210Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

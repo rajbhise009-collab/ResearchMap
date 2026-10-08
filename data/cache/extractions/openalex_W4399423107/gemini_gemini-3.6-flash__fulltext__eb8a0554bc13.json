@@ -1,0 +1,203 @@
+{
+  "paper_id": "openalex:W4399423107",
+  "claims": [
+    {
+      "id": "openalex:W4399423107:c1",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency methods outperform Token Level Probability and Confidence Elicitation methods for quantifying LLM uncertainty in medical clinical reasoning tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c2",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by Sentence Embedding achieves discrimination ROC AUC performance between 0.68 and 0.79.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c3",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by Sentence Embedding exhibits poor calibration due to value clustering between 0.8 and 1.0.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c4",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by GPT Annotation achieves discrimination ROC AUC performance between 0.66 and 0.74.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c5",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by GPT Annotation yields lower Expected Calibration Error and Brier scores compared to Sentence Embedding methods.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c6",
+      "paper_id": "openalex:W4399423107",
+      "text": "Uncertainty metrics exhibit higher discriminative performance on diagnostic reasoning tasks than on treatment selection tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c7",
+      "paper_id": "openalex:W4399423107",
+      "text": "Confidence Elicitation methods consistently overestimate LLM model confidence when answering medical questions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399423107:e1",
+      "claim_id": "openalex:W4399423107:c1",
+      "description": "Sample Consistency methods generally outperformed Token Level Probability and Confidence Elicitation methods for both diagnosis and treatment selection tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399423107:e2",
+      "claim_id": "openalex:W4399423107:c2",
+      "description": "Sample Consistency by Sentence Embedding achieved the highest discrimination performance (ROC AUC 0.68–0.79).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399423107:e3",
+      "claim_id": "openalex:W4399423107:c3",
+      "description": "Sample Consistency methods that used Sentence Embeddings demonstrated poor calibration due to their limited range of values, clustering composite cosine similarity between 0.8 and 1.0.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399423107:e4",
+      "claim_id": "openalex:W4399423107:c4",
+      "description": "Sample Consistency by GPT Annotation achieved the second-best discrimination (ROC AUC 0.66-0.74).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399423107:e5",
+      "claim_id": "openalex:W4399423107:c5",
+      "description": "GPT Annotation yielded lower (better) Expected Calibration Error and Brier scores compared to Sentence Embedding methods.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399423107:e6",
+      "claim_id": "openalex:W4399423107:c6",
+      "description": "Nearly all uncertainty metrics had better discriminative performance with diagnosis rather than treatment selection questions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399423107:e7",
+      "claim_id": "openalex:W4399423107:c7",
+      "description": "Calibration plots show Confidence Elicitation methods are nearly universally overconfident across evaluated settings and models.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399423107:m1",
+      "paper_id": "openalex:W4399423107",
+      "name": "Two-step Confidence Elicitation",
+      "description": "The LLM generates a response to a medical question, and then the entire question-response pair is resubmitted to the LLM to rate uncertainty on a score from 0 to 100.",
+      "datasets": [
+        "MedQA",
+        "New England Journal of Medicine Case Report Series",
+        "Stanford dataset"
+      ],
+      "conditions": [
+        "GPT-3.5",
+        "GPT-4",
+        "Llama2-70B",
+        "Llama3-70B",
+        "Temperature 0",
+        "Temperature 0.5",
+        "Temperature 1.0"
+      ]
+    },
+    {
+      "id": "openalex:W4399423107:m2",
+      "paper_id": "openalex:W4399423107",
+      "name": "Token Level Probabilities",
+      "description": "Uncertainty metrics are calculated using either the average token probabilities or the minimum token probability across tokens in the LLM answer.",
+      "datasets": [
+        "MedQA",
+        "New England Journal of Medicine Case Report Series",
+        "Stanford dataset"
+      ],
+      "conditions": [
+        "GPT-3.5",
+        "GPT-4",
+        "Llama2-70B",
+        "Llama3-70B"
+      ]
+    },
+    {
+      "id": "openalex:W4399423107:m3",
+      "paper_id": "openalex:W4399423107",
+      "name": "Sample Consistency",
+      "description": "Inter-response agreement is measured across 15 forward passes per question using either GPT-4 Annotation or Sentence Embedding distance (e5-small-v2 and S-PubMedBERT).",
+      "datasets": [
+        "MedQA",
+        "New England Journal of Medicine Case Report Series",
+        "Stanford dataset"
+      ],
+      "conditions": [
+        "15 forward passes",
+        "Temperature 0.5",
+        "Temperature 1.0",
+        "GPT-4 Annotation",
+        "e5-small-v2 Sentence Embedding",
+        "S-PubMedBERT Sentence Embedding"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399423107:l1",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency methods require multiple times more compute because the model must be run many times to calculate inter-response agreement, making them computationally costly and slow.",
+      "normalized_category": "computational-efficiency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399423107:l2",
+      "paper_id": "openalex:W4399423107",
+      "text": "The evaluation was limited to US-centric question sets and the English language, preventing generalization to non-English languages and non-US clinical contexts.",
+      "normalized_category": "limited-dataset-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399423107:l3",
+      "paper_id": "openalex:W4399423107",
+      "text": "Findings cannot be generalized to models that are fine-tuned specifically on medical text.",
+      "normalized_category": "model-generalizability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399423107:l4",
+      "paper_id": "openalex:W4399423107",
+      "text": "Ensemble uncertainty estimation methods are computationally expensive and impractical for clinical use requiring HIPAA-level security.",
+      "normalized_category": "computational-feasibility",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4399423107:f1",
+      "paper_id": "openalex:W4399423107",
+      "text": "Iterate on proposed uncertainty metrics and utilize the open dataset as a benchmark for further evaluation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.979271Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

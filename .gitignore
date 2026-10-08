@@ -23,7 +23,12 @@ dist/
 venv/
 
 # Cache (per-paper extractions and cached API responses — regenerable)
-data/cache/
+# Extraction cache: the structured claims/limitations/future work (the same
+# content the site publishes per paper) is committed so a fresh checkout —
+# including the weekly-grow workflow — can rebuild everything. Full text of
+# papers is NEVER committed.
+data/cache/*
+!data/cache/extractions/
 
 # Phase 4 corpus dumps — large, regeneratable from the manifest
 data/corpora/
@@ -54,16 +59,16 @@ scratch/
 node_modules/
 .next/
 
-# Generated reasoning/relationship artifacts (regenerable — the shipped
-# snapshot at frontend/public/data/ IS committed, so public deploys build
-# from source without needing to regenerate reasoning first).
-data/reasoning/
-data/relationships/
+# data/reasoning/ and data/relationships/ (LLM-calibration's reasoning and
+# relationship outputs, ~3 MB) ARE committed: they are the inputs of the
+# frozen baseline (tag llm-cal-baseline-v1) and regenerating them would cost
+# money. The weekly-grow workflow rebuilds the site from a fresh checkout.
 
 # Multi-domain snowball raw records — large (18MB diet + 15MB fairness),
 # regeneratable via `python -m backend.app.corpus.multi_domain --domain
 # <slug> --stage snowball`. Everything downstream (prelabelled.json,
-# audit_sample.md, reasoning/) IS committed.
+# audit_sample.md, reasoning/) IS committed, and so is records.slim.json,
+# the subset the pipeline reads (backend/app/corpus/records.py).
 data/domains/*/snowball.json
 
 # Frontend build outputs (regenerable). The snapshot at
@@ -79,5 +84,5 @@ frontend/next-env.d.ts
 resources/icon/*.iconset/
 resources/icon/wrap.html
 
-# Per-library claim-embedding cache (regenerable; not read by the UI)
-data/domains/*/reasoning/claim_embeddings.json
+# Per-library claim-embedding caches ARE committed (~8 MB): the scorers
+# need every claim's vector and re-embedding would cost money.

@@ -1,0 +1,77 @@
+{
+  "paper_id": "openalex:W3124687886",
+  "claims": [
+    {
+      "id": "openalex:W3124687886:c1",
+      "paper_id": "openalex:W3124687886",
+      "text": "Pre-finetuning is an additional large-scale multi-task learning stage conducted between language model pre-training and fine-tuning.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3124687886:c2",
+      "paper_id": "openalex:W3124687886",
+      "text": "Pre-finetuning can hurt performance when a small number of tasks below a critical threshold (usually under 15) are used.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3124687886:c3",
+      "paper_id": "openalex:W3124687886",
+      "text": "Model performance improves linearly in the number of tasks after exceeding a critical threshold of tasks (usually above 15).",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3124687886:e1",
+      "claim_id": "openalex:W3124687886:c1",
+      "description": "We propose pre-finetuning, an additional largescale learning stage between language model pre-training and fine-tuning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3124687886:e2",
+      "claim_id": "openalex:W3124687886:c2",
+      "description": "pre-finetuning can hurt performance when few tasks are used up until a critical point (usually above 15)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3124687886:e3",
+      "claim_id": "openalex:W3124687886:c3",
+      "description": "after which performance improves linearly in the number of tasks.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3124687886:m1",
+      "paper_id": "openalex:W3124687886",
+      "name": "Pre-finetuning",
+      "description": "Massively multi-task learning across around 50 datasets applied between pre-training and downstream fine-tuning.",
+      "datasets": [
+        "around 50 datasets"
+      ],
+      "conditions": [
+        "pretrained discriminators (e.g. RoBERTa)",
+        "generation models (e.g. BART)",
+        "over 4.8 million total labeled examples"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3124687886:l1",
+      "paper_id": "openalex:W3124687886",
+      "text": "Pre-finetuning degrades model performance when applied with few tasks prior to reaching a critical threshold of usually above 15 tasks.",
+      "normalized_category": "task-scaling-threshold",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.092197Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

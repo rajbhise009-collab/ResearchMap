@@ -1,0 +1,148 @@
+{
+  "paper_id": "openalex:W2807745201",
+  "claims": [
+    {
+      "id": "openalex:W2807745201:c1",
+      "paper_id": "openalex:W2807745201",
+      "text": "In a UK Biobank cohort aged 37-73 years, 3% of participants (16,538 / 493,737) were classified as frail.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2807745201:c2",
+      "paper_id": "openalex:W2807745201",
+      "text": "In a UK Biobank cohort aged 37-73 years, 38% of participants (185,360 / 493,737) were classified as pre-frail.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2807745201:c3",
+      "paper_id": "openalex:W2807745201",
+      "text": "In a UK Biobank cohort aged 37-73 years, 59% of participants (291,839 / 493,737) were classified as not frail.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2807745201:c4",
+      "paper_id": "openalex:W2807745201",
+      "text": "Frailty is significantly associated with multimorbidity, with an odds ratio of 27.1 for individuals with four or more long-term conditions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2807745201:c5",
+      "paper_id": "openalex:W2807745201",
+      "text": "Multiple sclerosis is the long-term condition most strongly associated with frailty (OR 15.3, 99.75% CI 12.8-18.2).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2807745201:c6",
+      "paper_id": "openalex:W2807745201",
+      "text": "Chronic fatigue syndrome is significantly associated with frailty (OR 12.9, 99.75% CI 11.1-15.0).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2807745201:c7",
+      "paper_id": "openalex:W2807745201",
+      "text": "Pre-frailty and frailty are significantly associated with all-cause mortality across all age strata in men and women, except in women aged 37-45 years.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2807745201:e1",
+      "claim_id": "openalex:W2807745201:c1",
+      "description": "493 737 participants aged 37-73 years were included in the study, of whom 16 538 (3%) were considered frail",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2807745201:e2",
+      "claim_id": "openalex:W2807745201:c2",
+      "description": "185 360 (38%) pre-frail",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2807745201:e3",
+      "claim_id": "openalex:W2807745201:c3",
+      "description": "291 839 (59%) not frail",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2807745201:e4",
+      "claim_id": "openalex:W2807745201:c4",
+      "description": "Frailty was significantly associated with multimorbidity (prevalence 18% [4435/25 338] in those with four or more long-term conditions; odds ratio [OR] 27·1, 95% CI 25·3-29·1)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2807745201:e5",
+      "claim_id": "openalex:W2807745201:c5",
+      "description": "The top five long-term conditions associated with frailty were multiple sclerosis (OR 15·3; 99·75% CI 12·8-18·2)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2807745201:e6",
+      "claim_id": "openalex:W2807745201:c6",
+      "description": "chronic fatigue syndrome (12·9; 11·1-15·0)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2807745201:e7",
+      "claim_id": "openalex:W2807745201:c7",
+      "description": "Pre-frailty and frailty were significantly associated with mortality for all age strata in men and women (except in women aged 37-45 years) after adjustment for confounders.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2807745201:m1",
+      "paper_id": "openalex:W2807745201",
+      "name": "Prospective cohort analysis using multinomial logistic regression and Cox proportional hazards modeling",
+      "description": "Frailty phenotype based on five Fried criteria was evaluated against multimorbidity, specific conditions, and all-cause mortality over a median 7-year follow-up.",
+      "datasets": [
+        "UK Biobank"
+      ],
+      "conditions": [
+        "493,737 participants aged 37-73 years",
+        "Median 7 years follow-up",
+        "Stratified by age (37-45, 45-55, 55-65, 65-73 years) and sex",
+        "Adjusted for multimorbidity count, socioeconomic status, BMI, smoking status, and alcohol use"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2807745201:l1",
+      "paper_id": "openalex:W2807745201",
+      "text": "Little was known about the prevalence or effects of frailty on mortality in younger populations prior to this study.",
+      "normalized_category": "unstudied-population",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2807745201:l2",
+      "paper_id": "openalex:W2807745201",
+      "text": "Pre-frailty and frailty were not significantly associated with mortality in women aged 37-45 years after adjustment for confounders.",
+      "normalized_category": "subgroup-non-significance",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2807745201:f1",
+      "paper_id": "openalex:W2807745201",
+      "text": "Research, clinical guidelines, and healthcare services must shift focus from single conditions to the requirements of complex patient populations with multimorbidity and frailty.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:06:47.909951Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

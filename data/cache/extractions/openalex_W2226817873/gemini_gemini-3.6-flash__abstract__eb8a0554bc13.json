@@ -1,0 +1,110 @@
+{
+  "paper_id": "openalex:W2226817873",
+  "claims": [
+    {
+      "id": "openalex:W2226817873:c1",
+      "paper_id": "openalex:W2226817873",
+      "text": "Suboptimal nutrition is a leading cause of poor health.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2226817873:c2",
+      "paper_id": "openalex:W2226817873",
+      "text": "Evidence supports increased dietary consumption of fruits, nonstarchy vegetables, nuts, legumes, fish, vegetable oils, yogurt, and minimally processed whole grains for cardiometabolic health.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2226817873:c3",
+      "paper_id": "openalex:W2226817873",
+      "text": "Evidence supports reduced dietary intake of red meats, processed meats, and foods rich in refined grains, starch, added sugars, salt, and trans fat for cardiometabolic health.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2226817873:c4",
+      "paper_id": "openalex:W2226817873",
+      "text": "There is little evidence supporting the cardiometabolic relevance of popular food choices such as local, organic, grass-fed, farmed/wild, or non-genetically modified foods.",
+      "type": "negative",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2226817873:c5",
+      "paper_id": "openalex:W2226817873",
+      "text": "Personalized nutrition efficacy depends more on non-genetic characteristics than on genetic factors.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2226817873:e1",
+      "claim_id": "openalex:W2226817873:c1",
+      "description": "The authors state that suboptimal nutrition is a leading cause of poor health.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2226817873:e2",
+      "claim_id": "openalex:W2226817873:c2",
+      "description": "Evidence-informed dietary priorities include increased fruits, nonstarchy vegetables, nuts, legumes, fish, vegetable oils, yogurt, and minimally processed whole grains.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2226817873:e3",
+      "claim_id": "openalex:W2226817873:c3",
+      "description": "Evidence-informed dietary priorities include fewer red meats, processed meats, and foods rich in refined grains, starch, added sugars, salt, and trans fat.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2226817873:e4",
+      "claim_id": "openalex:W2226817873:c4",
+      "description": "Little evidence to date supports the cardiometabolic relevance of other popular priorities: eg, local, organic, grass-fed, farmed/wild, or non-genetically modified.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2226817873:e5",
+      "claim_id": "openalex:W2226817873:c5",
+      "description": "Evidence-based personalized nutrition appears to depend more on nongenetic characteristics (eg, physical activity, abdominal adiposity, gender, socioeconomic status, culture) than genetic factors.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2226817873:m1",
+      "paper_id": "openalex:W2226817873",
+      "name": "Narrative Literature and Policy Review",
+      "description": "A comprehensive review examining history, scientific evidence, controversies, and policy priorities related to diet, cardiovascular disease, obesity, and diabetes.",
+      "datasets": [],
+      "conditions": [
+        "cardiometabolic diseases",
+        "dietary priorities",
+        "policy interventions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2226817873:l1",
+      "paper_id": "openalex:W2226817873",
+      "text": "Evaluating dietary risk solely based on single isolated nutrients, blood lipids, or calorie counting rather than whole food patterns and diverse risk pathways is insufficient.",
+      "normalized_category": "reductionist-dietary-assessment",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2226817873:f1",
+      "paper_id": "openalex:W2226817873",
+      "text": "Further investigation is needed on the cardiometabolic effects of phenolics, dairy fat, probiotics, fermentation, coffee, tea, cocoa, eggs, specific vegetable and tropical oils, vitamin D, individual fatty acids, and diet-microbiome interactions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:04:10.642648Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,211 @@
+{
+  "paper_id": "openalex:W3034255912",
+  "claims": [
+    {
+      "id": "openalex:W3034255912:c1",
+      "paper_id": "openalex:W3034255912",
+      "text": "Intermediate tasks requiring high-level inference and reasoning abilities tend to yield the best transfer performance on target tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c2",
+      "paper_id": "openalex:W3034255912",
+      "text": "Fine-tuning first on MNLI or CosmosQA results in performance gains across all evaluated probing task skills.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c3",
+      "paper_id": "openalex:W3034255912",
+      "text": "Using SocialIQA, CCG, or QQP as intermediate tasks leads to negative transfer on all target tasks.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c4",
+      "paper_id": "openalex:W3034255912",
+      "text": "Probing task performance on high-level semantic tasks like coreference resolution correlates strongly with target task performance.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c5",
+      "paper_id": "openalex:W3034255912",
+      "text": "Low-level syntactic and surface probing task performance is generally uncorrelated with target task performance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c6",
+      "paper_id": "openalex:W3034255912",
+      "text": "Performance on input-noising probing tasks correlates strongly with downstream target task performance.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c7",
+      "paper_id": "openalex:W3034255912",
+      "text": "Variations in intermediate-task dataset size do not have a substantial consistent impact on downstream target task performance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c8",
+      "paper_id": "openalex:W3034255912",
+      "text": "Smaller target tasks benefit the most from intermediate-task training.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034255912:c9",
+      "paper_id": "openalex:W3034255912",
+      "text": "Intermediate-task training reduces the frequency of degenerate training runs on small downstream datasets.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3034255912:e1",
+      "claim_id": "openalex:W3034255912:c1",
+      "description": "We observe that tasks that require complex reasoning and inference tend to make good intermediate tasks. These include MNLI and commonsense-oriented tasks such as CommonsenseQA, HellaSWAG, and Cosmos QA.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3034255912:e2",
+      "claim_id": "openalex:W3034255912:c2",
+      "description": "finetuning first on MNLI and CosmosQA result in an increase in all skills.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3034255912:e3",
+      "claim_id": "openalex:W3034255912:c3",
+      "description": "SocialIQA, CCG, and QQP as intermediate tasks lead to negative transfer on all target tasks and the majority of probing tasks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3034255912:e4",
+      "claim_id": "openalex:W3034255912:c4",
+      "description": "Among the edge-probing tasks, the more semantic tasks such as coreference (EP-Coref and EP-DPR), semantic proto-role labeling (EP-SPR1 and EP-SPR2), and dependency labeling (EP-Rel) show the highest correlations with our target tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034255912:e5",
+      "claim_id": "openalex:W3034255912:c5",
+      "description": "We find that acceptability judgment probing task performance is generally uncorrelated with the target task performance, except for AJ-CoLA. Similarly, many of the SentEval tasks do not correlate with the target tasks...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034255912:e6",
+      "claim_id": "openalex:W3034255912:c6",
+      "description": "Bigram Shift (SE-BShift), Odd-Man-Out (SE-SOMO) and Coordination Inversion (SE-CoordInv)... are input noising tasks... which are, by far, the most similar tasks we study to the masked language modeling task... This may explain the strong correlation with the performance of the target tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034255912:e7",
+      "claim_id": "openalex:W3034255912:c7",
+      "description": "We do not find differences in intermediate-task dataset size to have any substantial consistent impact on downstream target task performance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034255912:e8",
+      "claim_id": "openalex:W3034255912:c8",
+      "description": "In addition, we find that smaller target tasks such as RTE, BoolQ, MultiRC, WiC, WSC benefit the most from intermediate-task training.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034255912:e9",
+      "claim_id": "openalex:W3034255912:c9",
+      "description": "Consistent with Phang et al. (2018), we find that intermediate-task training reduces the likelihood of degenerate runs, leading to ostensibly positive transfer results on those four acceptability judgment tasks across most intermediate tasks.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3034255912:m1",
+      "paper_id": "openalex:W3034255912",
+      "name": "STILTs / Intermediate-Task Transfer Evaluation Pipeline",
+      "description": "A two-step transfer learning pipeline fine-tuning RoBERTa-Large first on an intermediate task, then separately on target and probing tasks to measure transfer performance and skill acquisition.",
+      "datasets": [
+        "CommonsenseQA",
+        "SciTail",
+        "Cosmos QA",
+        "SocialIQA",
+        "CCG",
+        "HellaSwag",
+        "QA-SRL",
+        "SST-2",
+        "QAMR",
+        "QQP",
+        "MNLI",
+        "CB",
+        "COPA",
+        "WSC",
+        "RTE",
+        "MultiRC",
+        "WiC",
+        "BoolQ",
+        "ReCoRD",
+        "SentEval",
+        "Edge-Probing"
+      ],
+      "conditions": [
+        "Base model: RoBERTa-Large",
+        "Peak learning rates: 2e-5, 1e-5, 5e-6, 3e-6",
+        "Dropout rates: 0.2, 0.1",
+        "Max sequence length: 256",
+        "Adam optimizer with linear decay",
+        "3 random restarts per pipeline"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3034255912:l1",
+      "paper_id": "openalex:W3034255912",
+      "text": "The evaluation failed to observe granular correlations between probing and target task performance due to limitations in the coverage and depth of existing probing benchmarks.",
+      "normalized_category": "benchmark-coverage-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3034255912:l2",
+      "paper_id": "openalex:W3034255912",
+      "text": "Analysis and transfer learning performance are constrained by catastrophic forgetting of knowledge acquired during pretraining (such as masked language modeling abilities).",
+      "normalized_category": "catastrophic-forgetting",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3034255912:l3",
+      "paper_id": "openalex:W3034255912",
+      "text": "Intermediate-task transfer learning does not always improve target task performance, and the conditions under which it succeeds were poorly understood.",
+      "normalized_category": "unpredictable-transfer-performance",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3034255912:f1",
+      "paper_id": "openalex:W3034255912",
+      "text": "Develop broad-coverage probing benchmarks with greater breadth and depth to better evaluate skill transfer.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3034255912:f2",
+      "paper_id": "openalex:W3034255912",
+      "text": "Integrate masked language modeling objectives into intermediate-task training or bound network parameter changes to reduce catastrophic forgetting during transfer.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.006965Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

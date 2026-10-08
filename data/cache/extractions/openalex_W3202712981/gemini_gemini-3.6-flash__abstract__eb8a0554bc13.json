@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W3202712981",
+  "claims": [
+    {
+      "id": "openalex:W3202712981:c1",
+      "paper_id": "openalex:W3202712981",
+      "text": "The consistency of pretrained language models with respect to factual knowledge is poor under meaning-preserving input alternations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3202712981:c2",
+      "paper_id": "openalex:W3202712981",
+      "text": "Consistency in pretrained language models exhibits high variance between different relations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3202712981:c3",
+      "paper_id": "openalex:W3202712981",
+      "text": "Representational spaces of pretrained language models have poor structure for representing knowledge robustly.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3202712981:c4",
+      "paper_id": "openalex:W3202712981",
+      "text": "A method is proposed for improving model consistency in pretrained language models.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3202712981:e1",
+      "claim_id": "openalex:W3202712981:c1",
+      "description": "Evaluation on the ParaRel resource demonstrates poor consistency across all tested pretrained language models.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3202712981:e2",
+      "claim_id": "openalex:W3202712981:c2",
+      "description": "Evaluation across 38 relations shows high variance in consistency scores depending on the relation.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3202712981:e3",
+      "claim_id": "openalex:W3202712981:c3",
+      "description": "Analysis of the representational spaces of pretrained language models suggests structural deficiencies for robust knowledge representation.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3202712981:m1",
+      "paper_id": "openalex:W3202712981",
+      "name": "ParaRel evaluation framework",
+      "description": "A benchmark dataset and evaluation process using 328 cloze-style English paraphrase queries across 38 relations to measure PLM consistency.",
+      "datasets": [
+        "ParaRel"
+      ],
+      "conditions": [
+        "328 paraphrases",
+        "38 relations",
+        "cloze-style English queries"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3202712981:l1",
+      "paper_id": "openalex:W3202712981",
+      "text": "Pretrained language models have poor representational structure and are currently not suitable for representing knowledge robustly.",
+      "normalized_category": "lack-of-robust-representation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.091914Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

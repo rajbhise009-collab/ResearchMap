@@ -1,0 +1,89 @@
+{
+  "paper_id": "openalex:W4400412195",
+  "claims": [
+    {
+      "id": "openalex:W4400412195:c1",
+      "paper_id": "openalex:W4400412195",
+      "text": "Guided Evolution (GE) utilizes Large Language Models to directly modify code during evolutionary model development.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400412195:c2",
+      "paper_id": "openalex:W4400412195",
+      "text": "The Evolution of Thought (EoT) technique enables LLMs to reflect on and learn from the outcomes of previous mutations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400412195:c3",
+      "paper_id": "openalex:W4400412195",
+      "text": "Guided Evolution maintains genetic diversity by modulating LLM model temperature and utilizing crafted prompts.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400412195:c4",
+      "paper_id": "openalex:W4400412195",
+      "text": "Applying Guided Evolution to ExquisiteNetV2 increased model accuracy from 92.52% to 93.34% without compromising model compactness.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400412195:e1",
+      "claim_id": "openalex:W4400412195:c1",
+      "description": "Guided Evolution (GE) diverges from traditional methods by utilizing Large Language Models (LLMs) to directly modify code.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400412195:e2",
+      "claim_id": "openalex:W4400412195:c2",
+      "description": "Evolution of Thought (EoT) technique enables LLMs to reflect on and learn from the outcomes of previous mutations, resulting in a self-sustaining feedback loop.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400412195:e3",
+      "claim_id": "openalex:W4400412195:c3",
+      "description": "GE maintains genetic diversity by leveraging LLMs' capability to generate diverse responses from expertly crafted prompts and modulate model temperature.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4400412195:e4",
+      "claim_id": "openalex:W4400412195:c4",
+      "description": "The LLM-driven GE autonomously produced ExquisiteNetV2 variants with improved accuracy from 92.52% to 93.34%, without compromising model compactness.",
+      "strength": 0.98
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400412195:m1",
+      "paper_id": "openalex:W4400412195",
+      "name": "Guided Evolution (GE)",
+      "description": "An evolutionary framework that leverages LLMs and reflective reasoning (Evolution of Thought) to directly modify code, guide mutations, and maintain genetic diversity.",
+      "datasets": [],
+      "conditions": [
+        "Evolution of ExquisiteNetV2 architecture",
+        "LLM temperature modulation",
+        "Prompt-guided code generation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400412195:l1",
+      "paper_id": "openalex:W4400412195",
+      "text": "Traditional AutoML approaches rely on abstraction layers such as tree-based or Cartesian genetic programming.",
+      "normalized_category": "abstraction-layer-dependency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.123144Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

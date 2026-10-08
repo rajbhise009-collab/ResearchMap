@@ -1,0 +1,148 @@
+{
+  "paper_id": "openalex:W2734661169",
+  "claims": [
+    {
+      "id": "openalex:W2734661169:c1",
+      "paper_id": "openalex:W2734661169",
+      "text": "Greatest improvement in diet quality over a 12-year period is associated with lower all-cause mortality according to the Alternate Healthy Eating Index-2010 score (pooled HR 0.91, 95% CI 0.85-0.97).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734661169:c2",
+      "paper_id": "openalex:W2734661169",
+      "text": "Greatest improvement in diet quality over a 12-year period is associated with lower all-cause mortality according to the Alternate Mediterranean Diet score (pooled HR 0.84, 95% CI 0.78-0.91).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734661169:c3",
+      "paper_id": "openalex:W2734661169",
+      "text": "Greatest improvement in diet quality over a 12-year period is associated with lower all-cause mortality according to the DASH diet score (pooled HR 0.89, 95% CI 0.84-0.95).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734661169:c4",
+      "paper_id": "openalex:W2734661169",
+      "text": "A 20-percentile increase in diet scores across three diet indexes is significantly associated with an 8 to 17% reduction in total mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734661169:c5",
+      "paper_id": "openalex:W2734661169",
+      "text": "A 20-percentile increase in diet scores measured by Alternate Healthy Eating Index and Alternate Mediterranean Diet is associated with a 7 to 15% reduction in cardiovascular disease mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734661169:c6",
+      "paper_id": "openalex:W2734661169",
+      "text": "Consistently maintaining a high-quality diet over a 12-year period reduces all-cause mortality by 14% when assessed with the Alternate Healthy Eating Index score.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734661169:c7",
+      "paper_id": "openalex:W2734661169",
+      "text": "Consistently maintaining a high-quality diet over a 12-year period reduces all-cause mortality by 11% when assessed with the Alternate Mediterranean Diet score.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734661169:c8",
+      "paper_id": "openalex:W2734661169",
+      "text": "Consistently maintaining a high-quality diet over a 12-year period reduces all-cause mortality by 9% when assessed with the DASH diet score.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2734661169:e1",
+      "claim_id": "openalex:W2734661169:c1",
+      "description": "Pooled hazard ratio for all-cause mortality comparing 13-33% improvement vs 0-3% improvement was 0.91 (95% CI, 0.85 to 0.97) using the Alternate Healthy Eating Index score.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734661169:e2",
+      "claim_id": "openalex:W2734661169:c2",
+      "description": "Pooled hazard ratio for all-cause mortality comparing 13-33% improvement vs 0-3% improvement was 0.84 (95% CI, 0.78 to 0.91) using the Alternate Mediterranean Diet score.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734661169:e3",
+      "claim_id": "openalex:W2734661169:c3",
+      "description": "Pooled hazard ratio for all-cause mortality comparing 13-33% improvement vs 0-3% improvement was 0.89 (95% CI, 0.84 to 0.95) using the DASH score.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734661169:e4",
+      "claim_id": "openalex:W2734661169:c4",
+      "description": "A 20-percentile increase in diet scores was significantly associated with a reduction in total mortality of 8 to 17% with the use of the three diet indexes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734661169:e5",
+      "claim_id": "openalex:W2734661169:c5",
+      "description": "A 20-percentile increase in diet scores was associated with a 7 to 15% reduction in the risk of death from cardiovascular disease with Alternate Healthy Eating Index and Alternate Mediterranean Diet scores.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734661169:e6",
+      "claim_id": "openalex:W2734661169:c6",
+      "description": "Among participants maintaining high-quality diet over 12 years, all-cause mortality risk was lower by 14% (95% CI, 8 to 19) when assessed with Alternate Healthy Eating Index score compared to consistently low scores.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734661169:e7",
+      "claim_id": "openalex:W2734661169:c7",
+      "description": "Among participants maintaining high-quality diet over 12 years, all-cause mortality risk was lower by 11% (95% CI, 5 to 18) when assessed with Alternate Mediterranean Diet score compared to consistently low scores.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734661169:e8",
+      "claim_id": "openalex:W2734661169:c8",
+      "description": "Among participants maintaining high-quality diet over 12 years, all-cause mortality risk was lower by 9% (95% CI, 2 to 15) when assessed with DASH score compared to consistently low scores.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2734661169:m1",
+      "paper_id": "openalex:W2734661169",
+      "name": "Cox proportional-hazards modeling of diet quality change",
+      "description": "Cox proportional-hazards models were used to calculate adjusted hazard ratios for total and cause-specific mortality based on 12-year changes in diet quality scores (Alternate Healthy Eating Index-2010, Alternate Mediterranean Diet, DASH).",
+      "datasets": [
+        "Nurses' Health Study",
+        "Health Professionals Follow-up Study"
+      ],
+      "conditions": [
+        "47,994 women and 25,745 men",
+        "Dietary assessment over preceding 12 years (1986-1998)",
+        "Mortality follow-up from 1998 through 2010"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2734661169:l1",
+      "paper_id": "openalex:W2734661169",
+      "text": "Few studies have evaluated the relationship between changes in diet quality over time and the risk of death.",
+      "normalized_category": "sparse-prior-literature",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:20:30.950578Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

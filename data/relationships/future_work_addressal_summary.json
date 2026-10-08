@@ -1,0 +1,18 @@
+{
+  "future_work_items": 312,
+  "candidate_pairs": 491,
+  "verdict_counts": {
+    "classified": 491,
+    "not_addressed": 389,
+    "addressed": 36,
+    "partial": 66
+  },
+  "item_distribution": {
+    "indeterminate_small_corpus": 118,
+    "unaddressed": 134,
+    "addressed": 26,
+    "partial": 34
+  },
+  "citation_prior_candidates": 50,
+  "matcher": "two-stage (cosine 0.70 shortlist -> LLM classify) + citation prior"
+}

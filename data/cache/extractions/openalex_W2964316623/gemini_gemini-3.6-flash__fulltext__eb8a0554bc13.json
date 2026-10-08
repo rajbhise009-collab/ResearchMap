@@ -1,0 +1,157 @@
+{
+  "paper_id": "openalex:W2964316623",
+  "claims": [
+    {
+      "id": "openalex:W2964316623:c1",
+      "paper_id": "openalex:W2964316623",
+      "text": "A person's assessment of eight latent properties of a feature accurately predicts whether they will judge the feature's use in algorithmic decision making as fair with over 85% accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964316623:c2",
+      "paper_id": "openalex:W2964316623",
+      "text": "A majority of survey respondents judged five of the ten evaluated COMPAS features as unfair to use for predicting criminal recidivism risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964316623:c3",
+      "paper_id": "openalex:W2964316623",
+      "text": "Less than 3% of surveyed respondents reported using a feature consideration outside of the proposed eight latent properties when judging fairness.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964316623:c4",
+      "paper_id": "openalex:W2964316623",
+      "text": "Each of the eight proposed latent properties was relied upon by at least 15% of surveyed respondents as a consideration in their fairness judgments.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964316623:c5",
+      "paper_id": "openalex:W2964316623",
+      "text": "Disagreements in people's fairness judgments stem primarily from differences in how they estimate latent properties rather than differences in their moral reasoning mapping latent properties to fairness.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2964316623:c6",
+      "paper_id": "openalex:W2964316623",
+      "text": "Evaluations of latent properties related to causality exhibit lower consensus among respondents than non-causal latent properties.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2964316623:e1",
+      "claim_id": "openalex:W2964316623:c1",
+      "description": "A regularized binary logistic regression model predicting binarized fairness judgments from latent property ratings achieved 88% accuracy on Mechanical Turk responses and 87% accuracy on census-representative SSI responses.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2964316623:e2",
+      "claim_id": "openalex:W2964316623:c2",
+      "description": "More than 50% of survey respondents gave fairness ratings between 1 and 3 (unfair) for Personality, Criminal Attitudes, Neighborhood Safety, Family/Friends Criminal History, Quality of Social Life, and Education/School Behavior.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2964316623:e3",
+      "claim_id": "openalex:W2964316623:c3",
+      "description": "In Pilot Survey 1, fewer than 3% of respondents selected the 'Other' option to explain why they rated a feature scenario as fair or unfair.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2964316623:e4",
+      "claim_id": "openalex:W2964316623:c4",
+      "description": "Across responses in Pilot Survey 1, every proposed latent property was selected as a justification for fairness or unfairness by at least 15% of participants.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2964316623:e5",
+      "claim_id": "openalex:W2964316623:c5",
+      "description": "A single binary classifier trained across respondents accurately predicted fairness judgments from latent property assessments for over 85% of respondents, showing that consensus tracking is preserved when generating fairness predictions solely from latent property inputs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2964316623:e6",
+      "claim_id": "openalex:W2964316623:c6",
+      "description": "Consensus scores (1 - Normalized Shannon Entropy) for causality-related properties were below 0.5 across all features, whereas non-causal properties like relevance, reliability, and privacy achieved consensus scores above 0.5 on multiple features.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2964316623:m1",
+      "paper_id": "openalex:W2964316623",
+      "name": "Scenario-Based Survey and Latent Property Predictive Modeling",
+      "description": "Evaluated user fairness perceptions and latent feature property ratings across 10 COMPAS risk assessment features using online surveys, followed by binary logistic regression modeling to map latent property ratings to fairness judgments.",
+      "datasets": [
+        "COMPAS Sample Risk Assessment Questionnaire",
+        "Amazon Mechanical Turk (AMT)",
+        "Survey Sampling International (SSI)"
+      ],
+      "conditions": [
+        "Scenario context: Broward County bail release risk estimation",
+        "10 COMPAS input features",
+        "7-point Likert scale ratings",
+        "Randomized feature and property presentation orders",
+        "50/50 train-test split cross-validation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2964316623:l1",
+      "paper_id": "openalex:W2964316623",
+      "text": "Prior works on algorithmic fairness largely focus on normative prescriptive definitions, assuming an unverified societal consensus on what constitutes fair decision making.",
+      "normalized_category": "normative-prescriptive-assumption",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2964316623:l2",
+      "paper_id": "openalex:W2964316623",
+      "text": "Survey responses rely on self-reported ratings which may introduce self-report biases.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2964316623:l3",
+      "paper_id": "openalex:W2964316623",
+      "text": "Empirical evaluation was conducted within a single specific decision-making scenario (COMPAS criminal recidivism risk prediction for bail).",
+      "normalized_category": "single-scenario-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2964316623:l4",
+      "paper_id": "openalex:W2964316623",
+      "text": "Amazon Mechanical Turk workers suffer from selection bias and are not demographically representative of the U.S. population.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2964316623:f1",
+      "paper_id": "openalex:W2964316623",
+      "text": "Validate whether fairness prediction models based on self-reported inputs align with human fairness perceptions when people are placed in ecologically valid real-world interactions with decision-making algorithms.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2964316623:f2",
+      "paper_id": "openalex:W2964316623",
+      "text": "Explore the extent to which the identified latent property fairness heuristic varies across different cultures and decision-making contexts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:21:41.470019Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

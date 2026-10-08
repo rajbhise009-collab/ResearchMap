@@ -1,0 +1,151 @@
+{
+  "paper_id": "openalex:W2890894339",
+  "claims": [
+    {
+      "id": "openalex:W2890894339:c1",
+      "paper_id": "openalex:W2890894339",
+      "text": "Human accuracy on the OpenBookQA test set reaches 91.7%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2890894339:c2",
+      "paper_id": "openalex:W2890894339",
+      "text": "Pre-trained science QA baselines without retraining perform near or below the 25% random guessing baseline on OpenBookQA.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2890894339:c3",
+      "paper_id": "openalex:W2890894339",
+      "text": "Trained knowledge-free neural baselines achieve around 49% to 50% test accuracy on OpenBookQA by exploiting dataset biases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2890894339:c4",
+      "paper_id": "openalex:W2890894339",
+      "text": "Providing both the oracle open book science fact and author-interpreted secondary fact to a knowledge-aware neural reader increases test accuracy to 76.9%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2890894339:c5",
+      "paper_id": "openalex:W2890894339",
+      "text": "Incorporating retrieved ConceptNet facts alongside the core science fact decreases test accuracy compared to using the core science fact alone.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2890894339:e1",
+      "claim_id": "openalex:W2890894339:c1",
+      "description": "Human solver evaluation yields 89.3% on Dev and 91.7% on Test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2890894339:e2",
+      "claim_id": "openalex:W2890894339:c2",
+      "description": "TupleInference scored 17.9%, PMI scored 21.2%, TableILP scored 23.4%, and DGEM scored 24.4% on the OpenBookQA Test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2890894339:e3",
+      "claim_id": "openalex:W2890894339:c3",
+      "description": "Plausible Answer Detector scored 49.6%, Odd-one-out Solver scored 50.2%, and Question Match scored 50.2% on the Test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2890894339:e4",
+      "claim_id": "openalex:W2890894339:c4",
+      "description": "In oracle evaluation, the model using core fact f + secondary fact k achieves 80.2% on Dev and 76.9% on Test.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2890894339:e5",
+      "claim_id": "openalex:W2890894339:c5",
+      "description": "Oracle model performance dropped from 55.8% test accuracy (using core fact f alone) to 53.7% (using f + ConceptNet).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2890894339:m1",
+      "paper_id": "openalex:W2890894339",
+      "name": "OpenBookQA Dataset Construction Pipeline",
+      "description": "A multi-stage question generation and filtering process that pairs core science facts with crowdsourced common knowledge, filtered via IR/word-association solvers and crowd/expert verification.",
+      "datasets": [
+        "WorldTree corpus"
+      ],
+      "conditions": [
+        "4-way multiple-choice questions",
+        "Filtered against IR solver",
+        "Filtered against word association solver",
+        "5-worker crowd verification",
+        "Expert filtering for Dev/Test sets"
+      ]
+    },
+    {
+      "id": "openalex:W2890894339:m2",
+      "paper_id": "openalex:W2890894339",
+      "name": "Knowledge-Enhanced BiLSTM Max-Out Reader",
+      "description": "A neural model that encodes question/choice sequences with BiLSTMs and integrates external retrieved knowledge vectors using a memory matrix attention mechanism.",
+      "datasets": [
+        "OpenBookQA",
+        "ConceptNet",
+        "WordNet"
+      ],
+      "conditions": [
+        "GloVe 300d embeddings",
+        "BiLSTM context encoder",
+        "Max-pooling token aggregation",
+        "Dynamic knowledge memory matrix"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2890894339:l1",
+      "paper_id": "openalex:W2890894339",
+      "text": "Existing reading comprehension and QA datasets are designed to be self-contained and focus primarily on linguistic understanding rather than broad common knowledge.",
+      "normalized_category": "prior-work-self-containedness",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2890894339:l2",
+      "paper_id": "openalex:W2890894339",
+      "text": "The secondary facts (K) crowdsourced alongside questions were often incomplete, over-complete, or only distantly related to the question.",
+      "normalized_category": "dataset-noise",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2890894339:l3",
+      "paper_id": "openalex:W2890894339",
+      "text": "Retrieving external knowledge from sources like ConceptNet introduced noise and distraction that degraded model performance.",
+      "normalized_category": "knowledge-retrieval-noise",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2890894339:f1",
+      "paper_id": "openalex:W2890894339",
+      "text": "Solve the knowledge retrieval bottleneck in the multi-hop open book question answering setting.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2890894339:f2",
+      "paper_id": "openalex:W2890894339",
+      "text": "Close the remaining gap between automated multi-hop reasoning systems and human-level performance on OpenBookQA.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.996550Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

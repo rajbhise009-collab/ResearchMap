@@ -1,0 +1,127 @@
+{
+  "paper_id": "openalex:W4405714852",
+  "claims": [
+    {
+      "id": "openalex:W4405714852:c1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Reliance Disclaimer significantly increased the Appropriate Reliance Ratio on the LSAT task from 1.17 in Control to 1.62 (p=0.04).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c2",
+      "paper_id": "openalex:W4405714852",
+      "text": "Implicit Answer significantly increased Relative Self-Reliance on the LSAT task from 0.44 in Control to 0.63 (p=0.002).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c3",
+      "paper_id": "openalex:W4405714852",
+      "text": "Implicit Answer significantly decreased Relative LLM Reliance on the Numerical Estimation task at the WoA > 0.01 threshold from 0.91 in Control to 0.67 (p<0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c4",
+      "paper_id": "openalex:W4405714852",
+      "text": "Participants demonstrated higher gains in confidence when making incorrect reliance decisions than when making correct reliance decisions on the LSAT task (p=0.02).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4405714852:e1",
+      "claim_id": "openalex:W4405714852:c1",
+      "description": "Reliance Disclaimer yielded an ARR of 1.62 compared to 1.17 in Control on the LSAT task, with permutation testing showing p=.04.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4405714852:e2",
+      "claim_id": "openalex:W4405714852:c2",
+      "description": "Implicit Answer achieved an RSR of 0.63 compared to 0.44 in Control on the LSAT task, with permutation testing showing p=.002.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4405714852:e3",
+      "claim_id": "openalex:W4405714852:c3",
+      "description": "At WoA > 0.01, Implicit Answer reduced RLR to 0.67 from 0.91 in Control on the Numerical Estimation task (p<.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4405714852:e4",
+      "claim_id": "openalex:W4405714852:c4",
+      "description": "Across all conditions on the LSAT task, participants showed greater positive changes in confidence for wrong reliance decisions than appropriate reliance decisions (p=.02).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4405714852:m1",
+      "paper_id": "openalex:W4405714852",
+      "name": "Two-Stage Randomized Online Experiment",
+      "description": "A pre-registered randomized experiment with 400 participants measuring task performance, reliance metrics (RLR, RSR, ARR), confidence calibration, and engagement time across two stage decision-making.",
+      "datasets": [
+        "LSAT Logical Reasoning",
+        "Image-based Numerical Estimation"
+      ],
+      "conditions": [
+        "Control",
+        "Reliance Disclaimer",
+        "Uncertainty Highlighting",
+        "Implicit Answer"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4405714852:l1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Existing LLM reliance interventions lack comprehensive evaluations of appropriate reliance in real users.",
+      "normalized_category": "lack-of-evaluation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4405714852:l2",
+      "paper_id": "openalex:W4405714852",
+      "text": "The experiment evaluated crowdworkers on Prolific in a controlled lab setting, which may cause participants to act more cautiously or hedge decisions compared to real-world deployment.",
+      "normalized_category": "lab-environment-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4405714852:l3",
+      "paper_id": "openalex:W4405714852",
+      "text": "The study evaluated a single model (GPT-4o) and did not test interactive follow-up capabilities or other LLM conversational styles.",
+      "normalized_category": "single-model-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4405714852:l4",
+      "paper_id": "openalex:W4405714852",
+      "text": "The chosen tasks relied on multiple-choice and numerical estimation formats rather than naturalistic open-ended generative tasks like writing or coding.",
+      "normalized_category": "task-scope-limitation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4405714852:f1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Evaluate LLM reliance interventions in naturalistic, open-ended, and long-term deployment settings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4405714852:f2",
+      "paper_id": "openalex:W4405714852",
+      "text": "Quantify the comprehension difficulty of reliance interventions and tasks to analyze their relationship to reliance behaviors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.646750Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,223 @@
+{
+  "paper_id": "openalex:W4394647506",
+  "claims": [
+    {
+      "id": "openalex:W4394647506:c1",
+      "paper_id": "openalex:W4394647506",
+      "text": "GPT-4 achieves 98% accuracy in Experiment 1A and 96% accuracy in Experiment 1B when selecting human-preferred scope readings.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c2",
+      "paper_id": "openalex:W4394647506",
+      "text": "Llama 2 70B achieves 88% accuracy in Experiment 1A and 89% accuracy in Experiment 1B when selecting human-preferred scope readings.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c3",
+      "paper_id": "openalex:W4394647506",
+      "text": "GPT-3.5-text-davinci-003 achieves 91% accuracy in Experiment 1A and 87% accuracy in Experiment 1B on selecting human-preferred scope readings.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c4",
+      "paper_id": "openalex:W4394647506",
+      "text": "Smaller language models such as Llama 2 7B and GPT-3 davinci perform near chance level (58% accuracy) on scope disambiguation Q&A tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c5",
+      "paper_id": "openalex:W4394647506",
+      "text": "Removing the ambiguous sentence from the prompt in the control setting causes accuracy to drop significantly for advanced models like GPT-4 (from 98% to 75% in Experiment 1A).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c6",
+      "paper_id": "openalex:W4394647506",
+      "text": "Language models generally exhibit lower accuracy on sentences with a preferred inverse scope reading than on those with a preferred surface scope reading.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c7",
+      "paper_id": "openalex:W4394647506",
+      "text": "Larger autoregressive language models assign log-probability ratios to follow-ups that indicate sensitivity to scope ambiguity in sentences.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c8",
+      "paper_id": "openalex:W4394647506",
+      "text": "Model ambiguity recognition scores (alpha-scores) correlate positively with human naturalness judgments, reaching a Pearson correlation of R=0.62 for text-davinci-003 in Experiment 2A.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394647506:c9",
+      "paper_id": "openalex:W4394647506",
+      "text": "Large language models perform poorly when evaluated on scope ambiguity via explicit True/False meta-linguistic prompts, achieving 64% accuracy or lower.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4394647506:e1",
+      "claim_id": "openalex:W4394647506:c1",
+      "description": "GPT-4 achieved 0.98 accuracy in Experiment 1A test setting (Table 3) and 0.96 accuracy in Experiment 1B test setting (Table 5).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394647506:e2",
+      "claim_id": "openalex:W4394647506:c2",
+      "description": "Llama2-70b achieved 0.88 accuracy in Experiment 1A (Table 3) and 0.89 accuracy in Experiment 1B (Table 5).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394647506:e3",
+      "claim_id": "openalex:W4394647506:c3",
+      "description": "GPT-3.5-td003 achieved 0.91 accuracy in Experiment 1A (Table 3) and 0.87 accuracy in Experiment 1B (Table 5).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394647506:e4",
+      "claim_id": "openalex:W4394647506:c4",
+      "description": "Llama2-7b got 0.58 accuracy in Exp 1A test and 0.67 in control; GPT-3-davinci scored 0.58 accuracy in both test and control settings (Table 3).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394647506:e5",
+      "claim_id": "openalex:W4394647506:c5",
+      "description": "In Table 3, GPT-4 test accuracy was 0.98 vs 0.75 in control; in Table 5, GPT-4 test accuracy was 0.96 vs 0.72 in control.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394647506:e6",
+      "claim_id": "openalex:W4394647506:c6",
+      "description": "In Exp 1A, Llama2-70b-chat achieved 0.88 surface accuracy vs 0.78 inverse accuracy; GPT-3.5-turbo scored 0.81 surface vs 0.77 inverse accuracy (Table 3).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4394647506:e7",
+      "claim_id": "openalex:W4394647506:c7",
+      "description": "All models except GPT-2-small produced statistically significant positive mean alpha-scores in Exp 2A (Table 4) and Exp 2B (Table 6).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4394647506:e8",
+      "claim_id": "openalex:W4394647506:c8",
+      "description": "text-davinci-003 obtained a Pearson correlation R=0.62 (p=2.93e-04) with human proxy scores in Exp 2A (Table 4) and R=0.48 (p=1.09e-07) in Exp 2B (Table 6).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394647506:e9",
+      "claim_id": "openalex:W4394647506:c9",
+      "description": "When adapting the dataset to Liu et al. (2023)'s True/False format, GPT-4 and GPT-3.5-turbo achieved 0.64 accuracy, while Llama 2 models ranged between 0.44 and 0.59 (Table 7).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4394647506:m1",
+      "paper_id": "openalex:W4394647506",
+      "name": "Quantifier Scope Disambiguation Q&A Method",
+      "description": "Presents models with scope-ambiguous sentences alongside Option A and Option B choices corresponding to surface and inverse scope interpretations, evaluating selection accuracy against human majority preferences in test and prompt-omitted control settings.",
+      "datasets": [
+        "LSAT quantifier scope dataset (AnderBois et al., 2012)",
+        "Original Scope Ambiguity Dataset 1A (153 unique sentences)",
+        "Expanded Scope Ambiguity Dataset 1B (837 unique sentences)"
+      ],
+      "conditions": [
+        "test setting with ambiguous sentence",
+        "control setting with sentence removed",
+        "chat vs next-token prediction"
+      ]
+    },
+    {
+      "id": "openalex:W4394647506:m2",
+      "paper_id": "openalex:W4394647506",
+      "name": "Continuation Log-Probability Ambiguity Recognition (Alpha-Score)",
+      "description": "Measures model log-probabilities of surface-compatible and inverse-compatible follow-up sentences following an ambiguous sentence S versus an unambiguous control sentence Sc, calculating an alpha-score to quantify sensitivity to meaning ambiguity.",
+      "datasets": [
+        "Handcrafted Scope Ambiguity Dataset 2A (29 unique datapoints)",
+        "Expanded Scope Ambiguity Dataset 2B (110 unique datapoints)"
+      ],
+      "conditions": [
+        "ambiguous sentence S vs unambiguous control Sc",
+        "inverse follow-up F1 vs surface follow-up F2"
+      ]
+    },
+    {
+      "id": "openalex:W4394647506:m3",
+      "paper_id": "openalex:W4394647506",
+      "name": "Meta-linguistic True/False Prompting Evaluation",
+      "description": "Prompts models to explicitly evaluate True/False statements regarding whether an ambiguous sentence can or cannot mean a specified disambiguation.",
+      "datasets": [
+        "Subset of Expanded Scope Ambiguity Dataset 2B"
+      ],
+      "conditions": [
+        "True/False prompt format from Liu et al. (2023)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4394647506:l1",
+      "paper_id": "openalex:W4394647506",
+      "text": "The study focuses exclusively on English scope ambiguities.",
+      "normalized_category": "english-only",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4394647506:l2",
+      "paper_id": "openalex:W4394647506",
+      "text": "The experiments do not assess how explicit background discourse contexts affect scope reading preferences.",
+      "normalized_category": "lack-of-discourse-context",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4394647506:l3",
+      "paper_id": "openalex:W4394647506",
+      "text": "The behavioral evaluation does not reveal how or where internal model weights represent scope structures.",
+      "normalized_category": "unexplored-internal-mechanisms",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4394647506:l4",
+      "paper_id": "openalex:W4394647506",
+      "text": "Prior datasets evaluating LLM scope ambiguity were limited in scale, lacked stimulus diversity, or contained very few scope ambiguity instances.",
+      "normalized_category": "prior-dataset-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4394647506:f1",
+      "paper_id": "openalex:W4394647506",
+      "text": "Investigating how background discourse contexts influence LLM scope reading preferences.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4394647506:f2",
+      "paper_id": "openalex:W4394647506",
+      "text": "Applying parallel model interpretability methods, such as causal mediation analysis, to determine where and how LLMs internally represent scope.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.975887Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,98 @@
+{
+  "paper_id": "openalex:W2890894339",
+  "claims": [
+    {
+      "id": "openalex:W2890894339:c1",
+      "paper_id": "openalex:W2890894339",
+      "text": "OpenBookQA is a question answering dataset modeled after open book exams, combining core science facts with broad common knowledge.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2890894339:c2",
+      "paper_id": "openalex:W2890894339",
+      "text": "Human performance on the OpenBookQA dataset reaches approximately 92%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2890894339:c3",
+      "paper_id": "openalex:W2890894339",
+      "text": "Multiple state-of-the-art pre-trained QA methods perform worse on OpenBookQA than basic neural baselines.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2890894339:c4",
+      "paper_id": "openalex:W2890894339",
+      "text": "Oracle experiments bypassing knowledge retrieval demonstrate that both open book science facts and additional external facts are valuable for performance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2890894339:e1",
+      "claim_id": "openalex:W2890894339:c1",
+      "description": "The authors present OpenBookQA with 1,326 science facts and ~6,000 questions probing core facts and common knowledge.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2890894339:e2",
+      "claim_id": "openalex:W2890894339:c2",
+      "description": "Human performance on OpenBookQA is reported to be close to 92%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2890894339:e3",
+      "claim_id": "openalex:W2890894339:c3",
+      "description": "Existing pre-trained QA methods performed worse than several simple neural baselines developed in the paper.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2890894339:e4",
+      "claim_id": "openalex:W2890894339:c4",
+      "description": "Oracle experiments designed to circumvent retrieval bottlenecks showed performance gains from open book and extra facts.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2890894339:m1",
+      "paper_id": "openalex:W2890894339",
+      "name": "OpenBookQA Dataset and Neural Baselines",
+      "description": "A dataset of ~6,000 elementary science questions paired with 1,326 facts, evaluated using simple neural baselines and pre-trained QA models.",
+      "datasets": [
+        "OpenBookQA"
+      ],
+      "conditions": [
+        "open book facts retrieval",
+        "common knowledge integration",
+        "oracle retrieval setting"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2890894339:l1",
+      "paper_id": "openalex:W2890894339",
+      "text": "State-of-the-art QA models suffer from a knowledge retrieval bottleneck in the multi-hop reasoning setting presented by OpenBookQA.",
+      "normalized_category": "retrieval-bottleneck",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2890894339:f1",
+      "paper_id": "openalex:W2890894339",
+      "text": "Solving the knowledge retrieval problem in a multi-hop setting to close the gap to human performance.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.111097Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

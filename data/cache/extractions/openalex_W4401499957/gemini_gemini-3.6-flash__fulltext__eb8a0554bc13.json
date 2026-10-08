@@ -1,0 +1,123 @@
+{
+  "paper_id": "openalex:W4401499957",
+  "claims": [
+    {
+      "id": "openalex:W4401499957:c1",
+      "paper_id": "openalex:W4401499957",
+      "text": "Prompt engineering for applied linguistics involves five core elements: persona, audience, contexts, specific instruction, and output specifications.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401499957:c2",
+      "paper_id": "openalex:W4401499957",
+      "text": "Specific instruction is usually required in prompt engineering because it defines what the LLM should do in practice.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401499957:c3",
+      "paper_id": "openalex:W4401499957",
+      "text": "Iterative prompting operates through four steps: writing an initial prompt, output analysis, modifications, and evaluations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401499957:c4",
+      "paper_id": "openalex:W4401499957",
+      "text": "Negative prompting explicitly instructs LLMs to avoid generating specific unwanted, wrong, or irrelevant information.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401499957:c5",
+      "paper_id": "openalex:W4401499957",
+      "text": "Chain-of-thought prompting enhances LLM reasoning capabilities by segmenting complex questions into sequential steps.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401499957:e1",
+      "claim_id": "openalex:W4401499957:c1",
+      "description": "The most important elements during prompt engineering usually include five elements, as shown in Figure 1, including persona, audience, contexts, specific instruction, and output specifications.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401499957:e2",
+      "claim_id": "openalex:W4401499957:c2",
+      "description": "However, specific instruction is usually required since it is about what LLMs should do in practice.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401499957:e3",
+      "claim_id": "openalex:W4401499957:c3",
+      "description": "Iterative prompting is commonly achieved in four steps, i.e., (1) writing an initial prompt, (2) analysis of output, (3) modifications, and (4) evaluations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401499957:e4",
+      "claim_id": "openalex:W4401499957:c4",
+      "description": "Specifically, negative prompting aims to inform the LLMs not to generate unexpected information, including wrong information, irrelevant information, etc.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4401499957:e5",
+      "claim_id": "openalex:W4401499957:c5",
+      "description": "This technique involves segmenting a complex question into a series of steps, which allows the model to generate a more coherent and accurate response by reasoning through each step sequentially.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401499957:m1",
+      "paper_id": "openalex:W4401499957",
+      "name": "Five-Element Applied Linguistics Prompting Framework",
+      "description": "A pedagogical framework organizing prompts by persona, audience, context, specific instruction, and output specifications alongside prompting techniques like iterative, negative, and few-shot prompting.",
+      "datasets": [],
+      "conditions": [
+        "Applied linguistics task domains (language learning, language teaching, research)",
+        "Generative language models (e.g. GPT-4)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401499957:l1",
+      "paper_id": "openalex:W4401499957",
+      "text": "Prior prompt engineering research related to applied linguistics failed to provide a transparent framework for iterative prompt improvement and solutions for drawbacks like hallucinations.",
+      "normalized_category": "lack-of-systematic-framework",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4401499957:l2",
+      "paper_id": "openalex:W4401499957",
+      "text": "Prompt engineering cannot solve all potential LLM pitfalls and requires human review in high-stakes circumstances.",
+      "normalized_category": "incomplete-pitfall-mitigation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4401499957:l3",
+      "paper_id": "openalex:W4401499957",
+      "text": "Effective prompt engineering relies on domain knowledge that cannot be exhaustively listed or discussed in this study.",
+      "normalized_category": "domain-knowledge-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4401499957:l4",
+      "paper_id": "openalex:W4401499957",
+      "text": "The study focuses primarily on prompt engineering strategies to handle LLM pitfalls, leaving non-prompting technical AI strategies unaddressed.",
+      "normalized_category": "scope-limited-to-prompting",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:58:01.980700Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

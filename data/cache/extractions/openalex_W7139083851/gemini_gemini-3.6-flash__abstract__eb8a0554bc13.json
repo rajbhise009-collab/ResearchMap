@@ -1,0 +1,104 @@
+{
+  "paper_id": "openalex:W7139083851",
+  "claims": [
+    {
+      "id": "openalex:W7139083851:c1",
+      "paper_id": "openalex:W7139083851",
+      "text": "Large language models are inherently statistical models due to their profound data dependency and stochastic generation processes.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7139083851:c2",
+      "paper_id": "openalex:W7139083851",
+      "text": "Statistical insights are essential for handling variability and uncertainty in large language models.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7139083851:c3",
+      "paper_id": "openalex:W7139083851",
+      "text": "The persistent black-box nature of large language models renders closed-form or purely mechanistic analyses generally intractable.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7139083851:c4",
+      "paper_id": "openalex:W7139083851",
+      "text": "Statistical approaches are necessitated for large language model analysis due to their flexibility and effectiveness.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7139083851:c5",
+      "paper_id": "openalex:W7139083851",
+      "text": "Statistical research concerning large language models will likely form a diverse mosaic of specialized topics rather than deriving from a single unifying theory.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7139083851:e1",
+      "claim_id": "openalex:W7139083851:c1",
+      "description": "The authors state that LLMs are inherently statistical models due to their profound data dependency and stochastic generation processes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7139083851:e2",
+      "claim_id": "openalex:W7139083851:c2",
+      "description": "The paper notes statistical insights are naturally essential for handling variability and uncertainty in stochastic generation processes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7139083851:e3",
+      "claim_id": "openalex:W7139083851:c3",
+      "description": "The paper argues that immense scale, architectural complexity, and empirical performance focus render closed-form or purely mechanistic analyses generally intractable.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7139083851:e4",
+      "claim_id": "openalex:W7139083851:c4",
+      "description": "The persistent black-box nature necessitates statistical approaches due to their flexibility and often demonstrated effectiveness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7139083851:e5",
+      "claim_id": "openalex:W7139083851:c5",
+      "description": "The discussion suggests statistical research concerning LLMs will form a diverse mosaic of specialized topics rather than deriving from a single unifying theory.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W7139083851:l1",
+      "paper_id": "openalex:W7139083851",
+      "text": "Closed-form or purely mechanistic analyses of LLMs are generally intractable due to scale, architectural complexity, and empirical prioritization.",
+      "normalized_category": "mechanistic-analysis-intractability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7139083851:l2",
+      "paper_id": "openalex:W7139083851",
+      "text": "Statistical research on LLMs is unlikely to yield a single unifying theory.",
+      "normalized_category": "lack-of-unifying-theory",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7139083851:f1",
+      "paper_id": "openalex:W7139083851",
+      "text": "Statistical research and timely engagement by the statistics community across areas including alignment, watermarking, uncertainty quantification, evaluation, and data mixture optimization.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:21:10.348522Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,156 @@
+{
+  "paper_id": "openalex:W4388585881",
+  "claims": [
+    {
+      "id": "openalex:W4388585881:c1",
+      "paper_id": "openalex:W4388585881",
+      "text": "Large language models are prone to hallucination, generating plausible yet nonfactual content.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388585881:c2",
+      "paper_id": "openalex:W4388585881",
+      "text": "LLM hallucinations can be categorized into two primary types: factuality hallucination and faithfulness hallucination.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388585881:c3",
+      "paper_id": "openalex:W4388585881",
+      "text": "Factuality hallucination comprises factual contradiction and factual fabrication.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388585881:c4",
+      "paper_id": "openalex:W4388585881",
+      "text": "Faithfulness hallucination comprises instruction inconsistency, context inconsistency, and logical inconsistency.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388585881:c5",
+      "paper_id": "openalex:W4388585881",
+      "text": "Contributors to LLM hallucinations span data, training, and inference stages.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388585881:c6",
+      "paper_id": "openalex:W4388585881",
+      "text": "Elevating the sampling temperature in stochastic sampling decoding strategies increases the risk of hallucinations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388585881:c7",
+      "paper_id": "openalex:W4388585881",
+      "text": "Incorporating new factual knowledge during supervised fine-tuning correlates with increased hallucinations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388585881:e1",
+      "claim_id": "openalex:W4388585881:c1",
+      "description": "Nevertheless, LLMs are prone to hallucination, generating plausible yet nonfactual content.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388585881:e2",
+      "claim_id": "openalex:W4388585881:c2",
+      "description": "We categorize hallucination into two primary types: factuality hallucination and faithfulness hallucination.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388585881:e3",
+      "claim_id": "openalex:W4388585881:c3",
+      "description": "In this context, we categorize these factuality hallucinations into two primary types: Factual Contradiction... Factual Fabrication",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388585881:e4",
+      "claim_id": "openalex:W4388585881:c4",
+      "description": "From this perspective, we categorize three subtypes of faithfulness hallucinations: Instruction inconsistency, Context inconsistency, and Logical inconsistency.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388585881:e5",
+      "claim_id": "openalex:W4388585881:c5",
+      "description": "our survey identifies potential contributors into three main aspects: data, training, and inference stages.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388585881:e6",
+      "claim_id": "openalex:W4388585881:c6",
+      "description": "An elevation in the sampling temperature results in a more uniform token probability distribution... exacerbates the risk of hallucinations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4388585881:e7",
+      "claim_id": "openalex:W4388585881:c7",
+      "description": "they discovered a correlation between the acquisition of new knowledge through SFT and increased hallucinations, suggesting that introducing new factual knowledge encourages LLMs to hallucinate.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388585881:m1",
+      "paper_id": "openalex:W4388585881",
+      "name": "Literature Survey and Taxonomy Framework Formulation",
+      "description": "A systematic survey methodology that categorizes LLM hallucination phenomena, causes, detection techniques, and mitigation approaches across data, training, and inference dimensions.",
+      "datasets": [
+        "TruthfulQA",
+        "HalluQA",
+        "HaluEval",
+        "FELM",
+        "FreshQA"
+      ],
+      "conditions": [
+        "General domain LLMs",
+        "Retrieval-Augmented Generation systems"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388585881:l1",
+      "paper_id": "openalex:W4388585881",
+      "text": "Locate-then-edit model editing techniques lack non-trivial generalization capabilities across architectures and empirically only perform well on decoder-only LLMs.",
+      "normalized_category": "model-editing-generalization-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4388585881:l2",
+      "paper_id": "openalex:W4388585881",
+      "text": "Retrieval-Augmented Generation systems remain susceptible to retrieval failure and generation bottlenecks, such as the lost-in-the-middle context utilization curse.",
+      "normalized_category": "rag-pipeline-bottlenecks",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4388585881:f1",
+      "paper_id": "openalex:W4388585881",
+      "text": "Investigating and mitigating multi-modal hallucinations in Large Vision-Language Models (LVLMs).",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4388585881:f2",
+      "paper_id": "openalex:W4388585881",
+      "text": "Understanding and reliably probing the internal knowledge boundaries and latent beliefs of LLMs to prevent overconfidence.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T14:12:15.261615Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

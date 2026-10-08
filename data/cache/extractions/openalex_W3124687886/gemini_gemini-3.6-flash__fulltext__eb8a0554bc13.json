@@ -1,0 +1,143 @@
+{
+  "paper_id": "openalex:W3124687886",
+  "claims": [
+    {
+      "id": "openalex:W3124687886:c1",
+      "paper_id": "openalex:W3124687886",
+      "text": "Pre-finetuning across massively multi-task supervised datasets consistently improves downstream performance for both pretrained discriminators (e.g., RoBERTa) and generation models (e.g., BART).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3124687886:c2",
+      "paper_id": "openalex:W3124687886",
+      "text": "Pre-finetuned language models significantly improve sample efficiency during task-specific fine-tuning, requiring less data to achieve high accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3124687886:c3",
+      "paper_id": "openalex:W3124687886",
+      "text": "Multi-task pre-finetuning exhibits a critical point in task scale (usually above 15 tasks), below which performance degrades compared to standard pre-training and above which performance improves linearly with the number of tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3124687886:c4",
+      "paper_id": "openalex:W3124687886",
+      "text": "Using task-heterogeneous batches combined with inverse-log uniform loss scaling significantly improves multi-task training stability and downstream evaluation performance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3124687886:c5",
+      "paper_id": "openalex:W3124687886",
+      "text": "RoBERTa-Large with pre-finetuning achieves an accuracy of 92.8 on RTE.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3124687886:c6",
+      "paper_id": "openalex:W3124687886",
+      "text": "RoBERTa-Large with pre-finetuning achieves an accuracy of 86.4 on HellaSwag.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3124687886:e1",
+      "claim_id": "openalex:W3124687886:c1",
+      "description": "Pre-finetuned RoBERTa-Base improves RTE accuracy from 78.7 to 87.8 and SQuAD performance from 82.6 to 86.6, while pre-finetuned BART-Large improves RTE accuracy from 87.0 to 92.4.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3124687886:e2",
+      "claim_id": "openalex:W3124687886:c2",
+      "description": "In low-resource fine-tuning experiments on QNLI and CoLA, models pre-finetuned on 34-40 tasks reached target evaluation accuracies with substantially smaller subsets of fine-tuning data (10%-40%) than standard RoBERTa.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3124687886:e3",
+      "claim_id": "openalex:W3124687886:c3",
+      "description": "Ablation over 10 to 40 datasets demonstrates that evaluation performance on RTE, BoolQ, RACE, SQuAD, and MNLI initially degrades when fewer than 15 datasets are used, but steadily increases once past 15-25 datasets.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3124687886:e4",
+      "claim_id": "openalex:W3124687886:c4",
+      "description": "Batch heterogeneous optimization outperformed dataset homogeneous and batch homogeneous methods on downstream evaluation across RTE, BoolQ, RACE, SQuAD, and MNLI.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3124687886:e5",
+      "claim_id": "openalex:W3124687886:c5",
+      "description": "Table 3 reports RoBERTa-L + MUPPET obtaining an RTE accuracy score of 92.8.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W3124687886:e6",
+      "claim_id": "openalex:W3124687886:c6",
+      "description": "Table 4 reports RoBERTa-L + MUPPET obtaining a HellaSwag accuracy score of 86.4.",
+      "strength": 0.98
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3124687886:m1",
+      "paper_id": "openalex:W3124687886",
+      "name": "MUPPET Pre-Finetuning",
+      "description": "A massive multi-task intermediate training stage operating between self-supervised pre-training and downstream fine-tuning, utilizing static loss scaling and task-heterogeneous minibatches across diverse tasks.",
+      "datasets": [
+        "GLUE",
+        "SQuAD",
+        "ReCoRD",
+        "BoolQ",
+        "HellaSwag",
+        "CNN/DailyMail",
+        "Gigaword",
+        "Reddit TIFU",
+        "ANLI",
+        "Penn Treebank"
+      ],
+      "conditions": [
+        "64 GPU distributed training",
+        "Batch heterogeneous gradient accumulation",
+        "Static loss scaling by log(n_predictions)",
+        "R3F/R4F representation stability regularization for BART"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3124687886:l1",
+      "paper_id": "openalex:W3124687886",
+      "text": "Standard multi-task learning schemes over pre-trained models can be unstable and fail to learn high-quality representations when operating with diverse datasets.",
+      "normalized_category": "training-instability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3124687886:l2",
+      "paper_id": "openalex:W3124687886",
+      "text": "Pre-finetuning with fewer than approximately 15 tasks degrades model representations and leads to worse downstream fine-tuning performance than standard pre-trained baselines.",
+      "normalized_category": "task-scale-threshold",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3124687886:l3",
+      "paper_id": "openalex:W3124687886",
+      "text": "Using a separate task head for each individual Commonsense and MRC dataset led to severe overfitting during pre-finetuning.",
+      "normalized_category": "overfitting-task-heads",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:58:01.965320Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

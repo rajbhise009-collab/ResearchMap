@@ -1,0 +1,113 @@
+{
+  "paper_id": "openalex:W4388444554",
+  "claims": [
+    {
+      "id": "openalex:W4388444554:c1",
+      "paper_id": "openalex:W4388444554",
+      "text": "Self-consistency checking alone cannot effectively identify question-level hallucinations.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c2",
+      "paper_id": "openalex:W4388444554",
+      "text": "Self-consistency checking alone cannot effectively identify model-level hallucinations.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c3",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3 incorporates semantically equivalent question perturbation to detect question-level hallucinations.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c4",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3 incorporates cross-model response consistency checking to detect model-level hallucinations.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c5",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3 outperforms the state of the art in detecting non-factual statements across multiple benchmarks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c6",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3 outperforms the state of the art in detecting factual statements across multiple benchmarks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388444554:e1",
+      "claim_id": "openalex:W4388444554:c1",
+      "description": "Text states two types of hallucinations resulting from 1) question-level and 2) model-level 'cannot be effectively identified through self-consistency check alone.'",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4388444554:e2",
+      "claim_id": "openalex:W4388444554:c2",
+      "description": "Text states two types of hallucinations resulting from 1) question-level and 2) model-level 'cannot be effectively identified through self-consistency check alone.'",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4388444554:e3",
+      "claim_id": "openalex:W4388444554:c3",
+      "description": "SAC3 incorporates mechanisms leverage 'semantically equivalent question perturbation'.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4388444554:e4",
+      "claim_id": "openalex:W4388444554:c4",
+      "description": "SAC3 incorporates mechanisms leverage 'cross-model response consistency checking'.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4388444554:e5",
+      "claim_id": "openalex:W4388444554:c5",
+      "description": "Empirical analysis demonstrates SAC3 outperforms state of the art in detecting non-factual statements across benchmarks.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4388444554:e6",
+      "claim_id": "openalex:W4388444554:c6",
+      "description": "Empirical analysis demonstrates SAC3 outperforms state of the art in detecting factual statements across benchmarks.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388444554:m1",
+      "paper_id": "openalex:W4388444554",
+      "name": "Semantic-aware cross-check consistency (SAC3)",
+      "description": "A sampling-based method for hallucination detection that expands on self-consistency by using semantically equivalent question perturbation and cross-model response consistency checking.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388444554:l1",
+      "paper_id": "openalex:W4388444554",
+      "text": "Existing self-consistency check approaches cannot effectively identify question-level and model-level hallucinations.",
+      "normalized_category": "detection-scope-limitation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-22T17:49:29.862057Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

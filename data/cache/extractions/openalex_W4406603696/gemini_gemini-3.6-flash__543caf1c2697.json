@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W4406603696",
+  "claims": [
+    {
+      "id": "openalex:W4406603696:c1",
+      "paper_id": "openalex:W4406603696",
+      "text": "LLMs are systematically more confident when providing reasoning before answering multiple choice questions.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c2",
+      "paper_id": "openalex:W4406603696",
+      "text": "The increase in confidence due to reasoning is larger when the LLM's selected answer is incorrect than when it is correct.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c3",
+      "paper_id": "openalex:W4406603696",
+      "text": "Chain-of-Thought prompting degrades LLM calibration by increasing the proportion of high-confidence wrong answers.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406603696:c4",
+      "paper_id": "openalex:W4406603696",
+      "text": "Reasoning inflates confidence estimates because answer prediction depends jointly on the question and self-generated reasoning tokens.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406603696:e1",
+      "claim_id": "openalex:W4406603696:c1",
+      "description": "Experiments on a general knowledge benchmark covering 57 subjects across seven LLMs demonstrated a systematic increase in response confidence under reasoning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406603696:e2",
+      "claim_id": "openalex:W4406603696:c2",
+      "description": "Comparative measurements of token probability increases on incorrect vs correct responses across 57 subjects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4406603696:e3",
+      "claim_id": "openalex:W4406603696:c3",
+      "description": "Evaluation using standard metrics including Expected Calibration Error (ECE) and Brier score.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4406603696:m1",
+      "paper_id": "openalex:W4406603696",
+      "name": "CoT vs. Direct Answering MCQ Calibration Evaluation",
+      "description": "Evaluating confidence and probability calibration across direct and Chain-of-Thought answering modes using standard metrics.",
+      "datasets": [
+        "general knowledge benchmark (57 subjects)"
+      ],
+      "conditions": [
+        "direct answering",
+        "reasoning before responding (Chain-of-Thought)",
+        "seven LLMs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4406603696:l1",
+      "paper_id": "openalex:W4406603696",
+      "text": "LLM-estimated probabilities with CoT prompting are prone to inflated confidence and degraded calibration, making them unsafe for evaluation or metacognitive mechanisms.",
+      "normalized_category": "miscalibration-under-cot",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-22T17:48:41.009561Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

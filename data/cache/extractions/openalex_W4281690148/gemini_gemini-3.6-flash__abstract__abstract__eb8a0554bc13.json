@@ -1,0 +1,169 @@
+{
+  "paper_id": "openalex:W4281690148",
+  "claims": [
+    {
+      "id": "openalex:W4281690148:c1",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model performance improves with increasing model scale.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c2",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model calibration improves with increasing model scale.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c3",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model performance and calibration across BIG-bench tasks are poor in absolute terms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c4",
+      "paper_id": "openalex:W4281690148",
+      "text": "Language model performance and calibration are poor when compared with human expert rater performance.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c5",
+      "paper_id": "openalex:W4281690148",
+      "text": "Performance across different model classes is remarkably similar, with sparse architectures providing additional benefits.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c6",
+      "paper_id": "openalex:W4281690148",
+      "text": "Tasks that show gradual and predictable performance improvements commonly involve a large knowledge or memorization component.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c7",
+      "paper_id": "openalex:W4281690148",
+      "text": "Tasks that exhibit breakthrough behavior at a critical scale often involve multiple steps, multiple components, or brittle metrics.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c8",
+      "paper_id": "openalex:W4281690148",
+      "text": "Social bias in language models typically increases with scale in settings with ambiguous context.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4281690148:c9",
+      "paper_id": "openalex:W4281690148",
+      "text": "Prompting can improve or mitigate the scale-dependent increase in social bias in ambiguous contexts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4281690148:e1",
+      "claim_id": "openalex:W4281690148:c1",
+      "description": "Evaluations of OpenAI GPT models, Google dense transformers, and Switch transformers across scale parameters show performance improves with scale.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4281690148:e2",
+      "claim_id": "openalex:W4281690148:c2",
+      "description": "Evaluation across scaling tiers demonstrates calibration gains alongside scale increases on BIG-bench tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4281690148:e3",
+      "claim_id": "openalex:W4281690148:c3",
+      "description": "Across 204 BIG-bench tasks, models demonstrated low overall performance and calibration in absolute terms.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4281690148:e4",
+      "claim_id": "openalex:W4281690148:c4",
+      "description": "Human expert raters completed all tasks to establish a baseline, significantly outperforming all evaluated model scale tiers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4281690148:e5",
+      "claim_id": "openalex:W4281690148:c5",
+      "description": "Comparison between OpenAI GPT, Google-internal dense transformers, and Switch-style sparse transformers showed similar trajectories with sparse benefits.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4281690148:e6",
+      "claim_id": "openalex:W4281690148:c6",
+      "description": "Analysis of task performance curves revealed that tasks relying heavily on memorization or knowledge showed linear/predictable scaling.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4281690148:e7",
+      "claim_id": "openalex:W4281690148:c7",
+      "description": "Analysis showed tasks exhibiting non-linear performance jumps at critical scale thresholds were characterized by multi-step reasoning, composite sub-tasks, or brittle evaluation metrics.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4281690148:e8",
+      "claim_id": "openalex:W4281690148:c8",
+      "description": "Evaluations on social bias tasks demonstrated higher measured bias at larger model parameters when context was ambiguous.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4281690148:e9",
+      "claim_id": "openalex:W4281690148:c9",
+      "description": "Experiments with task prompting demonstrated reductions in measured social bias growth at higher scale limits.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4281690148:m1",
+      "paper_id": "openalex:W4281690148",
+      "name": "BIG-bench Evaluation Framework",
+      "description": "Extensive empirical benchmarking across 204 diverse tasks evaluating OpenAI GPT, Google dense transformers, and Switch-style sparse transformers from millions to hundreds of billions of parameters, alongside human expert baselines.",
+      "datasets": [
+        "BIG-bench (204 tasks)"
+      ],
+      "conditions": [
+        "Model scale spanning millions to hundreds of billions of parameters",
+        "Dense vs sparse architectural comparisons",
+        "Human expert baseline comparison",
+        "Prompting interventions on social bias tasks"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4281690148:l1",
+      "paper_id": "openalex:W4281690148",
+      "text": "Model performance and calibration on BIG-bench remain poor in absolute terms and fall far short of human expert raters.",
+      "normalized_category": "poor-absolute-performance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4281690148:l2",
+      "paper_id": "openalex:W4281690148",
+      "text": "Social bias in language models increases as model scale grows when evaluating in ambiguous context settings.",
+      "normalized_category": "scale-dependent-bias",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:29:45.690094Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

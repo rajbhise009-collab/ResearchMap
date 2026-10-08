@@ -1,0 +1,158 @@
+{
+  "paper_id": "openalex:W4388444554",
+  "claims": [
+    {
+      "id": "openalex:W4388444554:c1",
+      "paper_id": "openalex:W4388444554",
+      "text": "Self-consistency checking alone is insufficient to identify question-level and model-level hallucinations in language models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c2",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3-Q achieves an AUROC of 99.4% on the Prime number classification QA dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c3",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3-Q achieves an AUROC of 97.0% on the Senator search classification QA dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c4",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3-QM with Guanaco-33b achieves an AUROC score of 88.0% on the HotpotQA-halu generation QA dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c5",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3-Q achieves an AUROC score of 77.2% on the NQ-open-halu open-domain generation QA task.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c6",
+      "paper_id": "openalex:W4388444554",
+      "text": "The performance gains of SAC3 plateau after using more than 5 perturbed question samples.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388444554:e1",
+      "claim_id": "openalex:W4388444554:c1",
+      "description": "When prompted with 'Is pi smaller than 3.2?', ChatGPT consistently generates incorrect answers, demonstrating that consistent responses can still be non-factual and evade self-consistency checks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388444554:e2",
+      "claim_id": "openalex:W4388444554:c2",
+      "description": "In balanced classification QA tasks, SAC3-Q achieves an AUROC of 99.4% on Prime number compared to 65.9% for the SC2 self-consistency baseline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388444554:e3",
+      "claim_id": "openalex:W4388444554:c3",
+      "description": "In balanced classification QA tasks, SAC3-Q achieves an AUROC of 97.0% on Senator search compared to 56.1% for the SC2 self-consistency baseline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388444554:e4",
+      "claim_id": "openalex:W4388444554:c4",
+      "description": "In open-domain generation QA tasks, SAC3-QM using Guanaco-33b achieves 88.0% AUROC on HotpotQA-halu, an improvement over SC2's 74.2% AUROC.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388444554:e5",
+      "claim_id": "openalex:W4388444554:c5",
+      "description": "In open-domain generation QA tasks, SAC3-Q achieves 77.2% AUROC on NQ-open-halu, improving upon SC2's 70.5% AUROC.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4388444554:e6",
+      "claim_id": "openalex:W4388444554:c6",
+      "description": "Varying the number of perturbed questions k from 2 to 10 shows that performance increases up to k=5 and then diminishes in marginal returns.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388444554:m1",
+      "paper_id": "openalex:W4388444554",
+      "name": "Semantic-aware Cross-check Consistency (SAC3)",
+      "description": "A sampling-based hallucination detection framework for black-box language models that expands on self-consistency by incorporating semantically equivalent question perturbations and cross-model verifier response checking.",
+      "datasets": [
+        "Prime number",
+        "Senator search",
+        "HotpotQA-halu",
+        "NQ-open-halu"
+      ],
+      "conditions": [
+        "GPT-3.5-turbo as target LM",
+        "Falcon-7b-instruct as verifier LM",
+        "Guanaco-33b as verifier LM",
+        "Temperature 0.0 for question perturbation and consistency check",
+        "k=10 semantically equivalent question perturbations by default"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388444554:l1",
+      "paper_id": "openalex:W4388444554",
+      "text": "Uncertainty metrics based on token-level log probabilities require full white-box internal model access, which is unavailable in black-box commercial LMs offering only API access.",
+      "normalized_category": "black-box-access-restriction",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4388444554:l2",
+      "paper_id": "openalex:W4388444554",
+      "text": "Evaluation is restricted to question-answering settings and does not assess generalizability to complex conversational or dialogue-based tasks.",
+      "normalized_category": "limited-task-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4388444554:l3",
+      "paper_id": "openalex:W4388444554",
+      "text": "Increasing sample sizes to improve detection accuracy introduces additional computational cost and inference latency.",
+      "normalized_category": "computational-cost-and-latency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4388444554:l4",
+      "paper_id": "openalex:W4388444554",
+      "text": "Model-level cross-checking fails to accurately detect hallucinations when verifier LMs refuse to answer questions due to lack of information.",
+      "normalized_category": "verifier-model-refusal",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4388444554:f1",
+      "paper_id": "openalex:W4388444554",
+      "text": "Assess the generalizability of the SAC3 framework and semantic equivalence checks on complex tasks such as conversational or dialogue-based prompting.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4388444554:f2",
+      "paper_id": "openalex:W4388444554",
+      "text": "Investigate optimization and parallelization strategies to speed up implementation and balance the efficiency-utility trade-off.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.640358Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

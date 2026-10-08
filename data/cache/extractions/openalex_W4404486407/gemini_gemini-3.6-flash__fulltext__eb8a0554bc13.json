@@ -1,0 +1,210 @@
+{
+  "paper_id": "openalex:W4404486407",
+  "claims": [
+    {
+      "id": "openalex:W4404486407:c1",
+      "paper_id": "openalex:W4404486407",
+      "text": "GPT-4-based TrialGPT-Retrieval achieves an average recall of 86.2% at top 500 retrieved clinical trials across three patient cohorts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c2",
+      "paper_id": "openalex:W4404486407",
+      "text": "GPT-4-based TrialGPT-Retrieval selects 5.5% of the initial document collection on average to recall at least 90% of relevant clinical trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c3",
+      "paper_id": "openalex:W4404486407",
+      "text": "TrialGPT-Matching achieves a criterion-level eligibility prediction accuracy of 87.3% on manual evaluation of 1015 patient-criterion pairs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c4",
+      "paper_id": "openalex:W4404486407",
+      "text": "TrialGPT-Matching generates correct relevance explanations in 87.8% of evaluated patient-criterion pairs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c5",
+      "paper_id": "openalex:W4404486407",
+      "text": "TrialGPT-Matching sentence location predictions achieve 90.1% precision, 87.9% recall, and an F1 score of 88.6%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c6",
+      "paper_id": "openalex:W4404486407",
+      "text": "GPT-4-based TrialGPT-Ranking using feature combination achieves an NDCG@10 of 0.7275 for ranking candidate clinical trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c7",
+      "paper_id": "openalex:W4404486407",
+      "text": "GPT-4-based TrialGPT-Ranking using feature combination achieves an AUROC of 0.7979 for excluding ineligible clinical trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c8",
+      "paper_id": "openalex:W4404486407",
+      "text": "TrialGPT reduces screening time by 42.6% overall in a clinical trial patient recruitment user study.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404486407:c9",
+      "paper_id": "openalex:W4404486407",
+      "text": "Prior dense retrieval neural models for patient-trial matching require large datasets that are often infeasible to acquire due to missing paired annotations.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404486407:e1",
+      "claim_id": "openalex:W4404486407:c1",
+      "description": "Overall, the average recall at the top 500 retrieved clinical trials is 50.0%, 83.4%, 86.2% for the raw note, TrialGPT-Retrieval with GPT-3.5, and TrialGPT-Retrieval with GPT-4, respectively.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e2",
+      "claim_id": "openalex:W4404486407:c2",
+      "description": "On average, to recall at least 90% of the relevant clinical trials, GPT-4-based TrialGPT-Retrieval only needs to select 5.5% of the initial document collection, and GPT-3.5-based TrialGPT-Retrieval needs 7.0%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e3",
+      "claim_id": "openalex:W4404486407:c3",
+      "description": "Manual evaluations on 1015 patient-criterion pairs show that TrialGPT-Matching achieves an accuracy of 87.3% with faithful explanations, close to the expert performance.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e4",
+      "claim_id": "openalex:W4404486407:c4",
+      "description": "Overall, most explanations are 'correct' (87.8%) by manual evaluations, while less than 10% of explanations are 'partially correct' (9.66%), and only a small proportion are 'incorrect' (2.56%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e5",
+      "claim_id": "openalex:W4404486407:c5",
+      "description": "The TrialGPT-predicted sentence locations are 90.1% correct (precision) and cover 87.9% of the ground-truth relevant sentence IDs (recall), leading to an F1 score of 88.6%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e6",
+      "claim_id": "openalex:W4404486407:c6",
+      "description": "Combining both linear and LLM aggregations yields the highest NDCG@10 performance of 0.7275 and the P@10 of 0.6699 for GPT-4-based TrialGPT-Ranking.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e7",
+      "claim_id": "openalex:W4404486407:c7",
+      "description": "Both GPT-3.5-based and GPT-4-based TrialGPT-Ranking outperforms all baselines, and the combination of the features achieves an AUROC of 0.6582 and 0.7979, respectively.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e8",
+      "claim_id": "openalex:W4404486407:c8",
+      "description": "The overall time saving for all patient-trial pairs is about 42.6%, which shows its great potential to enhance the efficiency of the clinical trial matching process.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404486407:e9",
+      "claim_id": "openalex:W4404486407:c9",
+      "description": "Nonetheless, training neural networks with the language understanding capability of criteria texts and patient records requires large datasets. This is often infeasible due to the lack of paired patient-criterion matching annotations.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404486407:m1",
+      "paper_id": "openalex:W4404486407",
+      "name": "TrialGPT",
+      "description": "An end-to-end LLM-driven patient-to-trial matching framework consisting of keyword-based hybrid-fusion candidate retrieval (TrialGPT-Retrieval), criterion-level patient eligibility prediction and explanation generation (TrialGPT-Matching), and trial-level eligibility score aggregation and candidate ranking (TrialGPT-Ranking).",
+      "datasets": [
+        "SIGIR 2016 cohort",
+        "TREC 2021 Clinical Trials Track",
+        "TREC 2022 Clinical Trials Track"
+      ],
+      "conditions": [
+        "Zero-shot patient-to-trial matching",
+        "GPT-4 (0613) backbone",
+        "GPT-3.5 (0613) backbone",
+        "Inference temperature set to 0"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404486407:l1",
+      "paper_id": "openalex:W4404486407",
+      "text": "Prior neural dense retrieval models for patient-trial matching rely on large paired datasets that are often unavailable and produce non-explainable outputs.",
+      "normalized_category": "lack-of-labeled-data",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4404486407:l2",
+      "paper_id": "openalex:W4404486407",
+      "text": "TrialGPT relies on OpenAI's GPT series LLMs, which are closed-source and accessible only through commercial APIs.",
+      "normalized_category": "closed-source-model-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4404486407:l3",
+      "paper_id": "openalex:W4404486407",
+      "text": "The evaluation did not test long longitudinal clinical notes, structured EHR data, lab values, imaging, or administrative criteria such as geolocation and trial recruitment status.",
+      "normalized_category": "evaluation-scope-limitations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4404486407:l4",
+      "paper_id": "openalex:W4404486407",
+      "text": "The pilot user study evaluating screening time reduction had a limited sample size.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4404486407:f1",
+      "paper_id": "openalex:W4404486407",
+      "text": "Explore using and fine-tuning open-source LLMs as alternatives to closed-source commercial LLMs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404486407:f2",
+      "paper_id": "openalex:W4404486407",
+      "text": "Explore alternative prompting strategies for each component of the TrialGPT framework.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404486407:f3",
+      "paper_id": "openalex:W4404486407",
+      "text": "Investigate how TrialGPT performs when integrating longitudinal clinical notes, structured data, and multi-modal inputs from electronic health records (EHRs).",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4404486407:f4",
+      "paper_id": "openalex:W4404486407",
+      "text": "Conduct larger-scale prospective evaluations regarding the impact of LLM-assisted clinical workflows in prospective trial matching settings.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.004701Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

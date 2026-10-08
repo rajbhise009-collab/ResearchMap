@@ -1,0 +1,174 @@
+{
+  "paper_id": "openalex:W3013532257",
+  "claims": [
+    {
+      "id": "openalex:W3013532257:c1",
+      "paper_id": "openalex:W3013532257",
+      "text": "Moving from Naïve Bayes to Random Forest reduces the loan denial rate for black applicants by 10.7 percentage points.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3013532257:c2",
+      "paper_id": "openalex:W3013532257",
+      "text": "Moving from Naïve Bayes to Random Forest yields 368 additional median-value loans totaling $55.27 million in expected value.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3013532257:c3",
+      "paper_id": "openalex:W3013532257",
+      "text": "CART achieves $15.6 million more expected loan value compared to Logistic Regression.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3013532257:c4",
+      "paper_id": "openalex:W3013532257",
+      "text": "CART results in a 3.8 percentage points higher denial rate for black loan applicants compared to Logistic Regression.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3013532257:c5",
+      "paper_id": "openalex:W3013532257",
+      "text": "Including applicant race in feature sets produces a statistically significant accuracy increase for Random Forest (t = 4.04, p = 0.0029).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3013532257:c6",
+      "paper_id": "openalex:W3013532257",
+      "text": "Including applicant race in feature sets produces a statistically significant accuracy decrease for Naïve Bayes (t = -6.22, p = 0.00015).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3013532257:c7",
+      "paper_id": "openalex:W3013532257",
+      "text": "Including applicant race in feature sets produces a statistically significant accuracy increase for CART (t = 2.41, p = 0.040).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3013532257:c8",
+      "paper_id": "openalex:W3013532257",
+      "text": "Applicants holding an FHA-insured loan type have a 36.16% probability of being black, compared to 19.38% for non-FHA-insured loan types.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3013532257:e1",
+      "claim_id": "openalex:W3013532257:c1",
+      "description": "Random Forest has 10.7 lower percentage points in denial rates for black applicants compared to Naïve Bayes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3013532257:e2",
+      "claim_id": "openalex:W3013532257:c2",
+      "description": "Moving from NB to RF results in 368 new median-value loans ($150,000 median) totalling $55.27 million.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3013532257:e3",
+      "claim_id": "openalex:W3013532257:c3",
+      "description": "CART is more accurate and results in greater financial inclusion equivalent to $15.6 million of loans (or 103 median-value loans) over Logistic Regression.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3013532257:e4",
+      "claim_id": "openalex:W3013532257:c4",
+      "description": "CART results in a 3.8 percentage points increase in denial rates for black loan applicants compared to LR.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3013532257:e5",
+      "claim_id": "openalex:W3013532257:c5",
+      "description": "Two-sample paired t-test on RF accuracy before and after inclusion of race showed t-statistic = 4.04, p-value = 0.0029.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3013532257:e6",
+      "claim_id": "openalex:W3013532257:c6",
+      "description": "Two-sample paired t-test on NB accuracy before and after inclusion of race showed t-statistic = -6.22, p-value = 0.00015.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3013532257:e7",
+      "claim_id": "openalex:W3013532257:c7",
+      "description": "Two-sample paired t-test on CART accuracy before and after inclusion of race showed t-statistic = 2.41, p-value = 0.040.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3013532257:e8",
+      "claim_id": "openalex:W3013532257:c8",
+      "description": "Logistic regression predicting race indicates probability of applicant being black with FHA-insured loan is 36.16% vs 19.38% otherwise, a 16.78 percentage point difference.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3013532257:m1",
+      "paper_id": "openalex:W3013532257",
+      "name": "Relational Algorithmic Trade-off Analysis",
+      "description": "Evaluates predictive algorithms by quantifying trade-offs between domain-specific objective measures (such as financial inclusion expected value versus minority denial rate) across competing models rather than applying absolute pass/fail mathematical fairness thresholds.",
+      "datasets": [
+        "HMDA 2011 US Mortgage Dataset"
+      ],
+      "conditions": [
+        "100,000 balanced sample (50,000 approved, 50,000 denied)",
+        "Tenfold cross-validation",
+        "$1 billion single-lender capital limit"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3013532257:l1",
+      "paper_id": "openalex:W3013532257",
+      "text": "The public HMDA dataset lacks actual default outcomes, credit scores, and full interest rate terms, limiting the internal validity of empirical loan approval analysis.",
+      "normalized_category": "dataset-completeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3013532257:l2",
+      "paper_id": "openalex:W3013532257",
+      "text": "The framework assumes a simplified single-lender model with a static $1B capital limit, ignoring competitive market-level dynamics across multiple lenders.",
+      "normalized_category": "model-simplification",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3013532257:l3",
+      "paper_id": "openalex:W3013532257",
+      "text": "Existing mathematical fairness definitions impose generalisable absolute thresholds that fail to account for pre-existing structural bias embedded in historical training data.",
+      "normalized_category": "unaddressed-structural-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3013532257:f1",
+      "paper_id": "openalex:W3013532257",
+      "text": "Expand the trade-off framework to market-level multi-player models incorporating regulators and aggregated lender decisions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3013532257:f2",
+      "paper_id": "openalex:W3013532257",
+      "text": "Generalise the relational trade-off methodology to other domains such as hiring, insurance pricing, and criminal recidivism.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.135610Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

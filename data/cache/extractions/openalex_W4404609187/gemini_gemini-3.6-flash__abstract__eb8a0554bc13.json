@@ -1,0 +1,95 @@
+{
+  "paper_id": "openalex:W4404609187",
+  "claims": [
+    {
+      "id": "openalex:W4404609187:c1",
+      "paper_id": "openalex:W4404609187",
+      "text": "Conformal prediction is a model-agnostic framework.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404609187:c2",
+      "paper_id": "openalex:W4404609187",
+      "text": "Conformal prediction is a distribution-free framework.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404609187:c3",
+      "paper_id": "openalex:W4404609187",
+      "text": "Conformal prediction combines flexibility with strong statistical guarantees.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404609187:c4",
+      "paper_id": "openalex:W4404609187",
+      "text": "Conformal prediction provides uncertainty quantification to mitigate risks such as hallucinations in NLP systems.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404609187:e1",
+      "claim_id": "openalex:W4404609187:c1",
+      "description": "The authors state that conformal prediction has a model-agnostic and distribution-free nature.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404609187:e2",
+      "claim_id": "openalex:W4404609187:c2",
+      "description": "The paper identifies conformal prediction as being distribution-free.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404609187:e3",
+      "claim_id": "openalex:W4404609187:c3",
+      "description": "The authors describe conformal prediction as combining flexibility with strong statistical guarantees.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4404609187:e4",
+      "claim_id": "openalex:W4404609187:c4",
+      "description": "Uncertainty quantification via conformal prediction is highlighted as a mechanism to mitigate risks like hallucinations and enhance reliability.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4404609187:m1",
+      "paper_id": "openalex:W4404609187",
+      "name": "Literature Survey of Conformal Prediction in NLP",
+      "description": "A comprehensive survey reviewing conformal prediction techniques, statistical guarantees, and existing NLP applications.",
+      "datasets": [],
+      "conditions": [
+        "NLP applications",
+        "Large language models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4404609187:l1",
+      "paper_id": "openalex:W4404609187",
+      "text": "Current NLP systems suffer from shortcomings due to the absence of uncertainty quantification, creating risks like hallucinations.",
+      "normalized_category": "lack-of-uncertainty-quantification",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4404609187:f1",
+      "paper_id": "openalex:W4404609187",
+      "text": "Addressing open challenges and future research directions for conformal prediction techniques in NLP.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.099313Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

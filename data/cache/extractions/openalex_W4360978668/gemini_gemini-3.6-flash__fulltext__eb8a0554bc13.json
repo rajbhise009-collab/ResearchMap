@@ -1,0 +1,155 @@
+{
+  "paper_id": "openalex:W4360978668",
+  "claims": [
+    {
+      "id": "openalex:W4360978668:c1",
+      "paper_id": "openalex:W4360978668",
+      "text": "Combining GPT-3 with expert-drafted codebooks achieved substantial agreement with expert coding on question complexity (Cohen's kappa = 0.61).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4360978668:c2",
+      "paper_id": "openalex:W4360978668",
+      "text": "Combining GPT-3 with expert-drafted codebooks achieved fair agreement with expert coding on syntactic structure (Cohen's kappa = 0.38).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4360978668:c3",
+      "paper_id": "openalex:W4360978668",
+      "text": "Codebook-centered prompt design achieved higher agreement with experts than example-centered prompt design in deductive coding.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4360978668:c4",
+      "paper_id": "openalex:W4360978668",
+      "text": "Shifting from a zero-shot to a one-shot prompt setting yielded the largest performance gain in agreement with human expert coders.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4360978668:c5",
+      "paper_id": "openalex:W4360978668",
+      "text": "Performance in expert agreement did not differ substantially between one-shot and few-shot (five-shot) prompt settings.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4360978668:e1",
+      "claim_id": "openalex:W4360978668:c1",
+      "description": "Our proposed approach achieved fair to substantial agreements with expert-coded results (Question complexity: Cohen's kappa = 0.61).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4360978668:e2",
+      "claim_id": "openalex:W4360978668:c2",
+      "description": "Our proposed approach achieved fair to substantial agreements with expert-coded results (Syntactic Structure: Cohen's kappa = 0.38).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4360978668:e3",
+      "claim_id": "openalex:W4360978668:c3",
+      "description": "We found the codebook-centered design performs better than the example-centered designs, see Fig. 1.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4360978668:e4",
+      "claim_id": "openalex:W4360978668:c4",
+      "description": "We observed the largest performance gain when shifting from a zero-shot to a one-shot setting.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4360978668:e5",
+      "claim_id": "openalex:W4360978668:c5",
+      "description": "However, the performance between one-shot and few-shot settings did not differ much.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4360978668:m1",
+      "paper_id": "openalex:W4360978668",
+      "name": "GPT-3 In-Context Prompting for Deductive Coding",
+      "description": "Combining expert-drafted codebooks with GPT-3 using zero-shot, one-shot, and few-shot prompting across codebook-centered and example-centered prompt designs to label qualitative data.",
+      "datasets": [
+        "Children's curiosity-driven questions dataset"
+      ],
+      "conditions": [
+        "GPT-3 text-davinci-002",
+        "Temperature 0.0",
+        "Codebook-centered prompt",
+        "Example-centered prompt",
+        "Zero-shot setting",
+        "One-shot setting",
+        "Few-shot setting (5 examples)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4360978668:l1",
+      "paper_id": "openalex:W4360978668",
+      "text": "Unsupervised models are difficult to steer for complex or nuanced research questions.",
+      "normalized_category": "unsupervised-model-steering",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4360978668:l2",
+      "paper_id": "openalex:W4360978668",
+      "text": "Supervised models require high-quality large datasets or computing resources to achieve reasonable performance.",
+      "normalized_category": "supervised-model-resource-demands",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4360978668:l3",
+      "paper_id": "openalex:W4360978668",
+      "text": "There remains a performance gap between human expert-to-expert agreement and LLM-to-expert agreement, with the model producing incorrect labels.",
+      "normalized_category": "model-performance-gap",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4360978668:l4",
+      "paper_id": "openalex:W4360978668",
+      "text": "The evaluation was limited to a single case study of curiosity-driven questions and did not test generalization across varied domain contexts or nuanced coding schemes.",
+      "normalized_category": "limited-evaluation-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4360978668:f1",
+      "paper_id": "openalex:W4360978668",
+      "text": "Conduct detailed error analyses on disagreed items and test LLM capability across different contexts and nuanced coding schemes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4360978668:f2",
+      "paper_id": "openalex:W4360978668",
+      "text": "Design interface controls and explainable AI mechanisms to calibrate user trust and prevent over-reliance on imperfect model outputs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4360978668:f3",
+      "paper_id": "openalex:W4360978668",
+      "text": "Investigate how to structure and write codebooks specifically optimized for LLM task performance and model comprehension.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4360978668:f4",
+      "paper_id": "openalex:W4360978668",
+      "text": "Develop interaction techniques and Human-AI collaboration workflows to support inductive, bottom-up qualitative analysis using LLMs.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.004148Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

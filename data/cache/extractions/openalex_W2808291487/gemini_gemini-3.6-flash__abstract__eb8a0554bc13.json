@@ -1,0 +1,50 @@
+{
+  "paper_id": "openalex:W2808291487",
+  "claims": [
+    {
+      "id": "openalex:W2808291487:c1",
+      "paper_id": "openalex:W2808291487",
+      "text": "Dietary patterns are associated with cancer, coronary heart disease, stroke, and type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2808291487:e1",
+      "claim_id": "openalex:W2808291487:c1",
+      "description": "The authors discuss current knowledge on the associations between dietary patterns and cancer, coronary heart disease, stroke, and type 2 diabetes.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2808291487:m1",
+      "paper_id": "openalex:W2808291487",
+      "name": "Literature Review and Synthesis",
+      "description": "Review and discussion of current knowledge, areas of uncertainty, and future research directions regarding dietary patterns and chronic disease risk.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2808291487:l1",
+      "paper_id": "openalex:W2808291487",
+      "text": "There are areas of uncertainty in current knowledge regarding the associations between dietary patterns and chronic disease prevention.",
+      "normalized_category": "knowledge-gaps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2808291487:f1",
+      "paper_id": "openalex:W2808291487",
+      "text": "Address areas of uncertainty regarding food-based dietary patterns and chronic disease outcomes.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:18:37.862588Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

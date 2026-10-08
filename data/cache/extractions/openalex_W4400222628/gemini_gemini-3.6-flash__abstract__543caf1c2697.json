@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W4400222628",
+  "claims": [
+    {
+      "id": "openalex:W4400222628:c1",
+      "paper_id": "openalex:W4400222628",
+      "text": "Convex hull analysis of response embeddings can measure the dispersion and variability of LLM outputs for uncertainty quantification.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c2",
+      "paper_id": "openalex:W4400222628",
+      "text": "The uncertainty of LLMs depends on prompt complexity.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c3",
+      "paper_id": "openalex:W4400222628",
+      "text": "The uncertainty of LLMs depends on the specific model used.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400222628:c4",
+      "paper_id": "openalex:W4400222628",
+      "text": "The uncertainty of LLMs depends on the temperature setting.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400222628:e1",
+      "claim_id": "openalex:W4400222628:c1",
+      "description": "The proposed method leverages the spatial properties of response embeddings to measure the dispersion and variability of model outputs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400222628:e2",
+      "claim_id": "openalex:W4400222628:c2",
+      "description": "The experimental results indicate that the uncertainty of the model for LLMs depends on the prompt complexity.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4400222628:e3",
+      "claim_id": "openalex:W4400222628:c3",
+      "description": "The experimental results indicate that the uncertainty of the model for LLMs depends on the model.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4400222628:e4",
+      "claim_id": "openalex:W4400222628:c4",
+      "description": "The experimental results indicate that the uncertainty of the model for LLMs depends on the temperature setting.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400222628:m1",
+      "paper_id": "openalex:W4400222628",
+      "name": "Convex Hull Analysis of Response Embeddings",
+      "description": "Transforms LLM responses into BERT embeddings, projects them to 2D via PCA, clusters them with DBSCAN, and computes convex hulls to measure output dispersion.",
+      "datasets": [],
+      "conditions": [
+        "easy prompts",
+        "moderate prompts",
+        "confusing prompts",
+        "varying temperature settings",
+        "different LLMs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4400222628:l1",
+      "paper_id": "openalex:W4400222628",
+      "text": "Traditional methods for uncertainty quantification, such as probabilistic models and ensemble techniques, face challenges when applied to the complex and high-dimensional nature of LLM-generated outputs.",
+      "normalized_category": "traditional-uq-high-dimensionality-challenges",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:28:32.183332Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

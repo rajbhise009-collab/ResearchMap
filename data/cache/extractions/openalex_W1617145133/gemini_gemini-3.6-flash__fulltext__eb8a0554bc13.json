@@ -1,0 +1,176 @@
+{
+  "paper_id": "openalex:W1617145133",
+  "claims": [
+    {
+      "id": "openalex:W1617145133:c1",
+      "paper_id": "openalex:W1617145133",
+      "text": "All evaluated risk factors jointly accounted for 57.8% of global deaths in 2015.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1617145133:c2",
+      "paper_id": "openalex:W1617145133",
+      "text": "All evaluated risk factors jointly accounted for 41.2% of global DALYs in 2015.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1617145133:c3",
+      "paper_id": "openalex:W1617145133",
+      "text": "Global exposure to unsafe sanitation decreased by more than 25% between 1990 and 2015.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1617145133:c4",
+      "paper_id": "openalex:W1617145133",
+      "text": "Global exposure to high body-mass index increased by more than 25% between 1990 and 2015.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1617145133:c5",
+      "paper_id": "openalex:W1617145133",
+      "text": "High systolic blood pressure was the largest contributor to global DALYs among Level 3 risks in 2015, accounting for 211.8 million DALYs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1617145133:c6",
+      "paper_id": "openalex:W1617145133",
+      "text": "Smoking was the second largest Level 3 risk factor contributor to global DALYs in 2015, accounting for 148.6 million DALYs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1617145133:e1",
+      "claim_id": "openalex:W1617145133:c1",
+      "description": "All risks jointly evaluated in 2015 accounted for 57·8% (95% CI 56·6–58·8) of global deaths.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1617145133:e2",
+      "claim_id": "openalex:W1617145133:c2",
+      "description": "All risks jointly evaluated in 2015 accounted for 41·2% (39·8–42·8) of DALYs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1617145133:e3",
+      "claim_id": "openalex:W1617145133:c3",
+      "description": "Between 1990 and 2015, global exposure to unsafe sanitation, household air pollution, childhood underweight, childhood stunting, and smoking each decreased by more than 25%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1617145133:e4",
+      "claim_id": "openalex:W1617145133:c4",
+      "description": "Global exposure for several occupational risks, high body-mass index (BMI), and drug use increased by more than 25% over the same period.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1617145133:e5",
+      "claim_id": "openalex:W1617145133:c5",
+      "description": "In 2015, the ten largest contributors to global DALYs among Level 3 risks were high systolic blood pressure (211·8 million [192·7 million to 231·1 million] global DALYs).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1617145133:e6",
+      "claim_id": "openalex:W1617145133:c6",
+      "description": "smoking (148·6 million [134·2 million to 163·1 million]) contributed to global DALYs in 2015.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1617145133:m1",
+      "paper_id": "openalex:W1617145133",
+      "name": "Comparative Risk Assessment (CRA) Framework",
+      "description": "A standardized framework to estimate attributable deaths, DALYs, and trends in risk factor exposure across time and geographies relative to theoretical minimum risk exposure levels.",
+      "datasets": [
+        "Randomised controlled trials",
+        "Cohort studies",
+        "Household surveys",
+        "Census data",
+        "Satellite data"
+      ],
+      "conditions": [
+        "79 risk factors",
+        "388 risk-outcome pairs",
+        "1990 to 2015 time period",
+        "195 countries and territories"
+      ]
+    },
+    {
+      "id": "openalex:W1617145133:m2",
+      "paper_id": "openalex:W1617145133",
+      "name": "Summary Exposure Value (SEV)",
+      "description": "A metric calculated as the relative risk-weighted prevalence of exposure to enable comparison of exposure levels across dichotomous, polytomous, and continuous risk factors.",
+      "datasets": [
+        "GBD 2015 exposure data"
+      ],
+      "conditions": [
+        "Scaled from 0% to 100%"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1617145133:l1",
+      "paper_id": "openalex:W1617145133",
+      "text": "Relative risks were not systematically corrected for publication bias due to a lack of suﬃcient studies across all risk-outcome pairs.",
+      "normalized_category": "publication-bias-correction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1617145133:l2",
+      "paper_id": "openalex:W1617145133",
+      "text": "Relative risks were generally assumed to be uniform across countries for a given age-sex group due to insuﬃcient evidence of geographic variation.",
+      "normalized_category": "geographic-uniformity-assumption",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1617145133:l3",
+      "paper_id": "openalex:W1617145133",
+      "text": "Proxies for exposure to some risk factors (such as zinc deficiency and occupational carcinogens) are coarse.",
+      "normalized_category": "coarse-exposure-proxies",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1617145133:l4",
+      "paper_id": "openalex:W1617145133",
+      "text": "In previous GBD studies, comparable exposure metrics were not reported across all risk factors due to the complexity of quantifying polytomous and continuous risks.",
+      "normalized_category": "lack-of-comparable-exposure-metrics",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1617145133:f1",
+      "paper_id": "openalex:W1617145133",
+      "text": "Incorporate new risks including distal socioeconomic factors (such as educational attainment) and the absence of effective health interventions (such as vaccination or seat belts) in future iterations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1617145133:f2",
+      "paper_id": "openalex:W1617145133",
+      "text": "Develop avoidable burden estimates within the GBD framework by resolving issues around risk reversibility and appropriate counterfactual exposure distributions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1617145133:f3",
+      "paper_id": "openalex:W1617145133",
+      "text": "Evaluate new risk-outcome pairs for existing risk factors using expanded evidence bases.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:41:04.705172Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

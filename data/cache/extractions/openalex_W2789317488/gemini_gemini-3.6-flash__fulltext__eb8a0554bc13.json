@@ -1,0 +1,259 @@
+{
+  "paper_id": "openalex:W2789317488",
+  "claims": [
+    {
+      "id": "openalex:W2789317488:c1",
+      "paper_id": "openalex:W2789317488",
+      "text": "Low whole grains consumption is associated with an increased risk of type 2 diabetes mellitus with convincing epidemiological evidence.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c2",
+      "paper_id": "openalex:W2789317488",
+      "text": "Metabolically healthy obesity is associated with an increased risk of type 2 diabetes mellitus with convincing epidemiological evidence (RR 4.40).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c3",
+      "paper_id": "openalex:W2789317488",
+      "text": "Increased sedentary time is associated with an increased risk of type 2 diabetes mellitus with convincing epidemiological evidence (HR 1.91).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c4",
+      "paper_id": "openalex:W2789317488",
+      "text": "Low adherence to a healthy dietary pattern is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 0.80 for highest vs lowest category).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c5",
+      "paper_id": "openalex:W2789317488",
+      "text": "High level of serum uric acid is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 1.60).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c6",
+      "paper_id": "openalex:W2789317488",
+      "text": "Low level of serum vitamin D is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 0.62).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c7",
+      "paper_id": "openalex:W2789317488",
+      "text": "Decreased conscientiousness is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (OR 0.86 per 1 SD increase).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c8",
+      "paper_id": "openalex:W2789317488",
+      "text": "Preterm birth is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 1.51).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c9",
+      "paper_id": "openalex:W2789317488",
+      "text": "High consumption of sugar-sweetened beverages is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 1.30).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c10",
+      "paper_id": "openalex:W2789317488",
+      "text": "High level of serum alanine aminotransferase (ALT) is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (HR 1.85 per 1 log unit increase).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c11",
+      "paper_id": "openalex:W2789317488",
+      "text": "Exposure to high level of PM10 air pollution is associated with an increased risk of type 2 diabetes mellitus with convincing evidence (RR 1.34 per 10 ug/m3 increase).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c12",
+      "paper_id": "openalex:W2789317488",
+      "text": "Mendelian randomization studies support a causal association between body mass index (BMI) and risk of type 2 diabetes mellitus.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2789317488:c13",
+      "paper_id": "openalex:W2789317488",
+      "text": "Mendelian randomization studies do not support a causal relationship between serum C-reactive protein, serum uric acid, or serum vitamin D levels and risk of type 2 diabetes mellitus.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2789317488:e1",
+      "claim_id": "openalex:W2789317488:c1",
+      "description": "Meta-analysis of whole grains highest vs. lowest category included 19,107 cases across 9 datasets, yielding RR 0.74 (95% CI: 0.70-0.78, P = 5.45x10^-30) with 0% heterogeneity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e2",
+      "claim_id": "openalex:W2789317488:c2",
+      "description": "Meta-analysis of metabolically healthy obese vs. metabolically healthy non-obese included 1,285 cases across 10 datasets, yielding RR 4.40 (95% CI: 2.83-6.84, P = 4.97x10^-11).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e3",
+      "claim_id": "openalex:W2789317488",
+      "description": "Meta-analysis of sedentary time highest vs. lowest category included 6,712 cases across 5 datasets, yielding HR 1.91 (95% CI: 1.66-2.19, P = 9.30x10^-20).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e4",
+      "claim_id": "openalex:W2789317488:c4",
+      "description": "Meta-analysis of healthy dietary pattern highest vs. lowest category included 15,574 cases across 18 datasets, yielding RR 0.80 (95% CI: 0.76-0.84, P = 4.86x10^-17).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e5",
+      "claim_id": "openalex:W2789317488:c5",
+      "description": "Meta-analysis of serum uric acid highest vs. lowest category included 5,115 cases across 11 datasets, yielding RR 1.60 (95% CI: 1.44-1.78, P = 4.60x10^-18).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e6",
+      "claim_id": "openalex:W2789317488:c6",
+      "description": "Meta-analysis of serum vitamin D highest vs. lowest category included 5,142 cases across 21 datasets, yielding RR 0.62 (95% CI: 0.54-0.70, P = 1.44x10^-13).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e7",
+      "claim_id": "openalex:W2789317488:c7",
+      "description": "Meta-analysis of conscientiousness per 1 SD increase included 1,845 cases across 5 datasets, yielding OR 0.86 (95% CI: 0.82-0.91, P = 9.94x10^-8).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e8",
+      "claim_id": "openalex:W2789317488:c8",
+      "description": "Meta-analysis of preterm birth vs. normal term included 1,898 cases across 5 datasets, yielding RR 1.51 (95% CI: 1.33-1.72, P = 4.54x10^-10).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e9",
+      "claim_id": "openalex:W2789317488:c9",
+      "description": "Meta-analysis of sugar-sweetened beverages highest vs. lowest category included 30,005 cases across 9 datasets, yielding RR 1.30 (95% CI: 1.21-1.41, P = 2.31x10^-12).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e10",
+      "claim_id": "openalex:W2789317488:c10",
+      "description": "Meta-analysis of serum ALT per 1 log unit increase included 2,009 cases across 14 datasets, yielding HR 1.85 (95% CI: 1.57-2.18, P = 2.85x10^-13).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e11",
+      "claim_id": "openalex:W2789317488:c11",
+      "description": "Meta-analysis of PM10 per 10 ug/m3 increase included 4,974 cases across 4 datasets, yielding RR 1.34 (95% CI: 1.22-1.47, P = 4.26x10^-10).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2789317488:e12",
+      "claim_id": "openalex:W2789317488:c12",
+      "description": "Multiple Mendelian randomization studies found significant causal odds ratios for BMI on T2DM risk (e.g., OR 1.39, P=0.002; OR 1.27, P=2.0x10^-11).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2789317488:e13",
+      "claim_id": "openalex:W2789317488:c13",
+      "description": "Mendelian randomization studies for serum CRP (P=0.210-0.230), serum uric acid (P=0.360-0.620), and serum vitamin D (P=0.240-0.940) failed to show statistically significant causal effects.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2789317488:m1",
+      "paper_id": "openalex:W2789317488",
+      "name": "Exposure-wide umbrella review and Mendelian randomization evaluation",
+      "description": "Systematic collection and evaluation of existing meta-analyses of observational studies alongside Mendelian randomization studies to evaluate the epidemiological credibility and potential causality of non-genetic risk factors for type 2 diabetes mellitus.",
+      "datasets": [
+        "PubMed"
+      ],
+      "conditions": [
+        "fixed-effect model",
+        "random-effects model",
+        "Egger's regression asymmetry test",
+        "excess statistical significance test",
+        "95% prediction interval"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2789317488:l1",
+      "paper_id": "openalex:W2789317488",
+      "text": "The statistical test for small-study effects should be interpreted with caution in case of large between-study heterogeneity.",
+      "normalized_category": "statistical-power-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2789317488:l2",
+      "paper_id": "openalex:W2789317488",
+      "text": "Observational component studies did not consistently report sample sizes, making power calculations and excess significance bias estimates potentially conservative.",
+      "normalized_category": "reporting-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2789317488:l3",
+      "paper_id": "openalex:W2789317488",
+      "text": "Genetic instruments of the reviewed Mendelian randomization studies were not directly assessed and power calculations for MR studies could not be performed due to unstated percentage of variance explained.",
+      "normalized_category": "methodological-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2789317488:l4",
+      "paper_id": "openalex:W2789317488",
+      "text": "Observational studies evaluating risk factor associations may suffer from residual confounding or reverse causation.",
+      "normalized_category": "confounding-factors",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2789317488:f1",
+      "paper_id": "openalex:W2789317488",
+      "text": "Conduct randomized clinical trials focusing on strategies to modify harmful daily habits and dietary patterns.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2789317488:f2",
+      "paper_id": "openalex:W2789317488",
+      "text": "Perform additional well-designed Mendelian randomization studies to clarify causality for observed risk factor associations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2789317488:f3",
+      "paper_id": "openalex:W2789317488",
+      "text": "Replicate findings in large-scale environment-wide association studies across diverse ethnic groups.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:16:47.782803Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

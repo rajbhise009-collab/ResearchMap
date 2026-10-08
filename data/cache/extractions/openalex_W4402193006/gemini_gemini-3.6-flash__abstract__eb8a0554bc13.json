@@ -1,0 +1,157 @@
+{
+  "paper_id": "openalex:W4402193006",
+  "claims": [
+    {
+      "id": "openalex:W4402193006:c1",
+      "paper_id": "openalex:W4402193006",
+      "text": "The systematic review evaluated 40 articles on LLM applications in mental health published between January 2017 and April 2024.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c2",
+      "paper_id": "openalex:W4402193006",
+      "text": "15 evaluated articles (38%) focused on mental health conditions and suicidal ideation detection through text analysis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c3",
+      "paper_id": "openalex:W4402193006",
+      "text": "7 evaluated articles (18%) focused on the use of LLMs as mental health conversational agents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c4",
+      "paper_id": "openalex:W4402193006",
+      "text": "18 evaluated articles (45%) focused on other applications and evaluations of LLMs in mental health.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c5",
+      "paper_id": "openalex:W4402193006",
+      "text": "Clinical use of LLMs in mental health presents risks of inconsistencies in generated text.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c6",
+      "paper_id": "openalex:W4402193006",
+      "text": "Clinical use of LLMs in mental health presents risks of hallucination production.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402193006:c7",
+      "paper_id": "openalex:W4402193006",
+      "text": "Clinical use of LLMs in mental health lacks a comprehensive, benchmarked ethical framework.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402193006:e1",
+      "claim_id": "openalex:W4402193006:c1",
+      "description": "In total, 40 articles were evaluated, published between January 1, 2017, and April 30, 2024.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e2",
+      "claim_id": "openalex:W4402193006:c2",
+      "description": "including 15 (38%) articles on mental health conditions and suicidal ideation detection through text analysis",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e3",
+      "claim_id": "openalex:W4402193006:c3",
+      "description": "7 (18%) on the use of LLMs as mental health conversational agents",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e4",
+      "claim_id": "openalex:W4402193006:c4",
+      "description": "18 (45%) on other applications and evaluations of LLMs in mental health",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402193006:e5",
+      "claim_id": "openalex:W4402193006:c5",
+      "description": "These risks include inconsistencies in generated text",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402193006:e6",
+      "claim_id": "openalex:W4402193006:c6",
+      "description": "the production of hallucinations",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402193006:e7",
+      "claim_id": "openalex:W4402193006:c7",
+      "description": "and the absence of a comprehensive, benchmarked ethical framework",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402193006:m1",
+      "paper_id": "openalex:W4402193006",
+      "name": "PRISMA Systematic Review",
+      "description": "A systematic review adhering to PRISMA guidelines searching 5 databases for publications on LLMs in mental health between 2017 and 2024.",
+      "datasets": [
+        "MEDLINE",
+        "IEEE Xplore",
+        "Scopus",
+        "JMIR",
+        "ACM Digital Library"
+      ],
+      "conditions": [
+        "Articles published between January 1, 2017, and April 30, 2024",
+        "English language publications only"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402193006:l1",
+      "paper_id": "openalex:W4402193006",
+      "text": "The study excluded articles published in languages other than English.",
+      "normalized_category": "language-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402193006:l2",
+      "paper_id": "openalex:W4402193006",
+      "text": "Lack of multilingual datasets annotated by experts.",
+      "normalized_category": "dataset-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4402193006:l3",
+      "paper_id": "openalex:W4402193006",
+      "text": "Challenges in interpretability due to the 'black box' nature of LLMs.",
+      "normalized_category": "model-interpretability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402193006:f1",
+      "paper_id": "openalex:W4402193006",
+      "text": "Continued research and development regarding LLMs as valuable clinical aids in mental health.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.091544Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

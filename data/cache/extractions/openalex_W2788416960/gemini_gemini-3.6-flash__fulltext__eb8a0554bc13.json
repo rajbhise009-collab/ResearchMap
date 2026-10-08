@@ -1,0 +1,154 @@
+{
+  "paper_id": "openalex:W2788416960",
+  "claims": [
+    {
+      "id": "openalex:W2788416960:c1",
+      "paper_id": "openalex:W2788416960",
+      "text": "The optimal objective value of the demographic parity adversary upper-bounds the demographic parity distance of any classifier learned from the representation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788416960:c2",
+      "paper_id": "openalex:W2788416960",
+      "text": "The optimal objective value of the equalized odds adversary upper-bounds the equalized odds distance of any classifier learned from the representation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788416960:c3",
+      "paper_id": "openalex:W2788416960",
+      "text": "Cross-entropy adversarial loss biases the adversary toward predicting the majority class when the sensitive attribute is imbalanced, failing to maximize test discrepancy.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788416960:c4",
+      "paper_id": "openalex:W2788416960",
+      "text": "LAFTR representations reduce equalized odds unfairness (Delta EO) by an average of approximately 20% relative to a baseline unfair model across 10 transfer tasks on the Heritage Health dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788416960:c5",
+      "paper_id": "openalex:W2788416960",
+      "text": "LAFTR achieves the lowest equalized odds unfairness on 7 out of 10 transfer tasks on the Heritage Health dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788416960:c6",
+      "paper_id": "openalex:W2788416960",
+      "text": "LAFTR achieves a lower Maximum Mean Discrepancy (2.7e-5) and lower adversarial sensitive-attribute prediction accuracy (0.761) compared to transfer baselines on the Heritage Health dataset.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2788416960:e1",
+      "claim_id": "openalex:W2788416960:c1",
+      "description": "Theorem 5.1 proof demonstrates L_Adv^DP(h*) >= Delta_DP(g) where h* is the optimal adversary and g is any classifier operating on representation Z.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2788416960:e2",
+      "claim_id": "openalex:W2788416960:c2",
+      "description": "Theorem 5.2 proof demonstrates L_Adv^EO(h*) >= Delta_EO(g) where h* is the optimal adversary taking both Z and label Y as inputs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2788416960:e3",
+      "claim_id": "openalex:W2788416960:c3",
+      "description": "Appendix A presents a synthetic binary example where cross-entropy loss assigns every sample to the majority group (A=0), yielding zero test discrepancy, whereas group-normalized L1 yields test discrepancy 0.368.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2788416960:e4",
+      "claim_id": "openalex:W2788416960:c4",
+      "description": "Figure 3 shows an average relative reduction of ~20% in Delta EO across 10 transfer tasks compared to the Target-Unfair baseline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2788416960:e5",
+      "claim_id": "openalex:W2788416960:c5",
+      "description": "Table 1 shows LAFTR achieves the lowest Delta EO on tasks MSC2, ARTHSPIN, NEUMENT, RESPR4, MISCHRT, SKNAUT, and GIBLEED out of 10 primary condition group transfer tasks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2788416960:e6",
+      "claim_id": "openalex:W2788416960:c6",
+      "description": "Table 2 reports LAFTR MMD as 2.7e-5 compared to 1.1e-2 for Transfer-Unfair and 1.4e-3 for Transfer-Fair, with adversarial accuracy of 0.761 compared to 0.784-0.787 for baselines.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2788416960:m1",
+      "paper_id": "openalex:W2788416960",
+      "name": "Learned Adversarially Fair and Transferable Representations (LAFTR)",
+      "description": "An adversarial representation learning framework optimizing an encoder, classifier, decoder, and adversary using group-normalized L1 losses tied to specific group fairness metrics.",
+      "datasets": [
+        "UCI Adult dataset",
+        "Heritage Health dataset"
+      ],
+      "conditions": [
+        "Demographic parity objective",
+        "Equalized odds objective",
+        "Equal opportunity objective",
+        "Fair transfer learning setting"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2788416960:l1",
+      "paper_id": "openalex:W2788416960",
+      "text": "Optimizing group-normalized L1 loss with gradients in adversarial training can be difficult and exhibits training instability.",
+      "normalized_category": "training-instability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2788416960:l2",
+      "paper_id": "openalex:W2788416960",
+      "text": "Satisfying group fairness constraints conflicts with learning well-calibrated classifiers.",
+      "normalized_category": "fairness-calibration-tradeoff",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2788416960:l3",
+      "paper_id": "openalex:W2788416960",
+      "text": "Demographic parity has limited usefulness when the base rates between groups differ in the ground truth labels.",
+      "normalized_category": "base-rate-disparity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2788416960:f1",
+      "paper_id": "openalex:W2788416960",
+      "text": "Perform an in-depth comparison between adversarial and non-adversarial fair representation learning methods such as MMD.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2788416960:f2",
+      "paper_id": "openalex:W2788416960",
+      "text": "Investigate optimal continuous relaxation adversarial loss functions to stabilize adversarial training of fair representations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2788416960:f3",
+      "paper_id": "openalex:W2788416960",
+      "text": "Understand between what tasks and in what conditions transfer fairness is possible and most likely to succeed.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:52:38.366063Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

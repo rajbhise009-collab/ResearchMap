@@ -1,0 +1,137 @@
+{
+  "paper_id": "openalex:W1922087192",
+  "claims": [
+    {
+      "id": "openalex:W1922087192:c1",
+      "paper_id": "openalex:W1922087192",
+      "text": "Experimental models and observational studies suggest that vitamin E supplementation may prevent cardiovascular disease and cancer.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1922087192:c2",
+      "paper_id": "openalex:W1922087192",
+      "text": "Nine of 11 trials testing high-dosage vitamin E (>=400 IU/d) showed increased risk for all-cause mortality in comparisons of vitamin E versus control.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1922087192:c3",
+      "paper_id": "openalex:W1922087192",
+      "text": "The pooled all-cause mortality risk difference in high-dosage vitamin E trials was 39 per 10,000 persons (95% CI, 3 to 74 per 10,000 persons; P = 0.035).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1922087192:c4",
+      "paper_id": "openalex:W1922087192",
+      "text": "In low-dosage vitamin E trials, the all-cause mortality risk difference was -16 per 10,000 persons (95% CI, -41 to 10 per 10,000 persons; P > 0.2).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1922087192:c5",
+      "paper_id": "openalex:W1922087192",
+      "text": "Dose-response analysis demonstrates a statistically significant relationship between vitamin E dosage and all-cause mortality, with increased risk at dosages greater than 150 IU/d.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1922087192:c6",
+      "paper_id": "openalex:W1922087192",
+      "text": "High-dosage (>=400 IU/d) vitamin E supplements may increase all-cause mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1922087192:e1",
+      "claim_id": "openalex:W1922087192:c1",
+      "description": "Experimental models and observational studies suggest that vitamin E supplementation may prevent cardiovascular disease and cancer.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W1922087192:e2",
+      "claim_id": "openalex:W1922087192:c2",
+      "description": "9 of 11 trials testing high-dosage vitamin E (> or =400 IU/d) showed increased risk (risk difference > 0) for all-cause mortality in comparisons of vitamin E versus control.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1922087192:e3",
+      "claim_id": "openalex:W1922087192:c3",
+      "description": "The pooled all-cause mortality risk difference in high-dosage vitamin E trials was 39 per 10,000 persons (95% CI, 3 to 74 per 10,000 persons; P = 0.035).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1922087192:e4",
+      "claim_id": "openalex:W1922087192:c4",
+      "description": "For low-dosage vitamin E trials, the risk difference was -16 per 10,000 persons (CI, -41 to 10 per 10,000 persons; P > 0.2).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1922087192:e5",
+      "claim_id": "openalex:W1922087192:c5",
+      "description": "A dose-response analysis showed a statistically significant relationship between vitamin E dosage and all-cause mortality, with increased risk of dosages greater than 150 IU/d.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1922087192:e6",
+      "claim_id": "openalex:W1922087192:c6",
+      "description": "The pooled all-cause mortality risk difference in high-dosage vitamin E trials was 39 per 10,000 persons (95% CI, 3 to 74 per 10,000 persons; P = 0.035).",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1922087192:m1",
+      "paper_id": "openalex:W1922087192",
+      "name": "Dose-response meta-analysis of randomized controlled trials",
+      "description": "A meta-analysis synthesizing data across 19 randomized controlled trials to evaluate the dose-response relationship between vitamin E supplementation and all-cause mortality.",
+      "datasets": [
+        "PubMed",
+        "Cochrane Clinical Trials Database"
+      ],
+      "conditions": [
+        "135,967 participants across 19 clinical trials",
+        "Vitamin E alone (9 trials)",
+        "Vitamin E combined with other vitamins or minerals (10 trials)",
+        "Vitamin E dosage ranging from 16.5 to 2000 IU/d (median 400 IU/d)",
+        "High-dosage vitamin E (>=400 IU/d)",
+        "Low-dosage vitamin E (<400 IU/d)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1922087192:l1",
+      "paper_id": "openalex:W1922087192",
+      "text": "High-dosage (>=400 IU/d) trials were often small and were performed in patients with chronic diseases.",
+      "normalized_category": "small-sample-size-and-population-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1922087192:l2",
+      "paper_id": "openalex:W1922087192",
+      "text": "The generalizability of the findings to healthy adults is uncertain.",
+      "normalized_category": "limited-generalizability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1922087192:l3",
+      "paper_id": "openalex:W1922087192",
+      "text": "Precise estimation of the threshold at which risk increases is difficult.",
+      "normalized_category": "imprecise-threshold-estimation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:42:40.135459Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

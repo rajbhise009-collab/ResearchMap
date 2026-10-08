@@ -1,0 +1,100 @@
+{
+  "paper_id": "openalex:W2956805085",
+  "claims": [
+    {
+      "id": "openalex:W2956805085:c1",
+      "paper_id": "openalex:W2956805085",
+      "text": "The framework for uncertainty estimation is based on Bayesian belief networks and Monte-Carlo sampling.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c2",
+      "paper_id": "openalex:W2956805085",
+      "text": "The framework incorporates prior data information such as sensor noise.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c3",
+      "paper_id": "openalex:W2956805085",
+      "text": "The framework is agnostic to the network architecture and task.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c4",
+      "paper_id": "openalex:W2956805085",
+      "text": "The framework does not require changes in the optimization process.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c5",
+      "paper_id": "openalex:W2956805085",
+      "text": "The framework can be applied to already trained architectures.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2956805085:c6",
+      "paper_id": "openalex:W2956805085",
+      "text": "The proposed framework outperforms previous methods by up to 23% in accuracy on computer vision and control tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2956805085:e1",
+      "claim_id": "openalex:W2956805085:c6",
+      "description": "We thoroughly validate the proposed framework through extensive experiments on both computer vision and control tasks, where we outperform previous methods by up to 23% in accuracy.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2956805085:m1",
+      "paper_id": "openalex:W2956805085",
+      "name": "Bayesian belief network and Monte-Carlo sampling uncertainty framework",
+      "description": "A general architecture-agnostic framework for uncertainty estimation modeling different prediction uncertainty sources and integrating prior data information.",
+      "datasets": [],
+      "conditions": [
+        "computer vision tasks",
+        "control tasks"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2956805085:l1",
+      "paper_id": "openalex:W2956805085",
+      "text": "Current approaches for uncertainty estimation of neural networks require changes to the network and optimization process.",
+      "normalized_category": "requires-optimization-changes",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2956805085:l2",
+      "paper_id": "openalex:W2956805085",
+      "text": "Current approaches typically ignore prior knowledge about the data.",
+      "normalized_category": "ignores-prior-data",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2956805085:l3",
+      "paper_id": "openalex:W2956805085",
+      "text": "Current approaches tend to make over-simplifying assumptions which underestimate uncertainty.",
+      "normalized_category": "underestimates-uncertainty",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.113601Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,73 @@
+{
+  "paper_id": "openalex:W4399026321",
+  "claims": [
+    {
+      "id": "openalex:W4399026321:c1",
+      "paper_id": "openalex:W4399026321",
+      "text": "Existing LLMs do not have an inherent functionality to provide users with an uncertainty/confidence metric for generated responses.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c2",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density extracts uncertainty/confidence information for each response from a probability distribution perspective in semantic space.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c3",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density has no restriction on task types and is off-the-shelf for new models and tasks.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c4",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density demonstrates superior performance and robustness compared to prior uncertainty quantification approaches.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399026321:e1",
+      "claim_id": "openalex:W4399026321:c4",
+      "description": "Experiments on seven state-of-the-art LLMs, including Llama 3 and Mixtral-8x22B, on four free-form question-answering benchmarks.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399026321:m1",
+      "paper_id": "openalex:W4399026321",
+      "name": "Semantic Density",
+      "description": "Extracts uncertainty/confidence information for LLM responses from a probability distribution perspective in semantic space.",
+      "datasets": [
+        "four free-form question-answering benchmarks"
+      ],
+      "conditions": [
+        "seven state-of-the-art LLMs",
+        "Llama 3",
+        "Mixtral-8x22B"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399026321:l1",
+      "paper_id": "openalex:W4399026321",
+      "text": "Prior uncertainty quantification methods are restricted to classification tasks, require additional training and data, consider only lexical information, and are prompt-wise rather than response-wise.",
+      "normalized_category": "task-and-data-constraints",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-22T17:49:02.720895Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

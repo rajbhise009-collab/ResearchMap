@@ -1,0 +1,160 @@
+{
+  "paper_id": "openalex:W3034199299",
+  "claims": [
+    {
+      "id": "openalex:W3034199299:c1",
+      "paper_id": "openalex:W3034199299",
+      "text": "Catastrophic forgetting does not cause BERT fine-tuning instability.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034199299:c2",
+      "paper_id": "openalex:W3034199299",
+      "text": "Small fine-tuning dataset size inherently does not cause BERT fine-tuning instability.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034199299:c3",
+      "paper_id": "openalex:W3034199299",
+      "text": "Fine-tuning instability in transformer models like BERT, RoBERTa, and ALBERT is caused by optimization difficulties early in training that lead to vanishing gradients.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034199299:c4",
+      "paper_id": "openalex:W3034199299",
+      "text": "Performance variance across successful fine-tuning runs late in training is driven by differences in generalization performance despite near-equivalent training loss.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034199299:c5",
+      "paper_id": "openalex:W3034199299",
+      "text": "Catastrophic forgetting during failed fine-tuning runs is concentrated primarily in the top layers of the pre-trained transformer model.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034199299:c6",
+      "paper_id": "openalex:W3034199299",
+      "text": "Training on small datasets for the same number of total iterations as on full datasets recovers the original fine-tuning stability variance.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3034199299:c7",
+      "paper_id": "openalex:W3034199299",
+      "text": "Fine-tuning BERT with Adam using bias correction and 20 training epochs achieves a performance standard deviation of 2.7 on RTE, 0.8 on MRPC, and 1.8 on CoLA across 25 random seeds.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3034199299:e1",
+      "claim_id": "openalex:W3034199299:c1",
+      "description": "Failed fine-tuning runs exhibit trivial training loss close to -ln(1/2) and accuracy matching majority baseline, indicating optimization failure rather than catastrophic forgetting learning.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034199299:e2",
+      "claim_id": "openalex:W3034199299:c2",
+      "description": "Fine-tuning BERT on 1,000 sampled points from MRPC, CoLA, and QNLI for as many iterations as the full dataset almost completely recovers original fine-tuning accuracy variance and eliminates failed runs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3034199299:e3",
+      "claim_id": "openalex:W3034199299:c3",
+      "description": "L2 gradient norm analysis shows failed runs suffer from vanishing gradients in bottom transformer layers throughout training, whereas successful runs exhibit growing gradients across all layers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3034199299:e4",
+      "claim_id": "openalex:W3034199299:c4",
+      "description": "Across 450 fine-tuned BERT models on RTE, models achieving training loss as low as 10^-5 display significant spread in development set accuracy ranging from ~60% to over 75%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034199299:e5",
+      "claim_id": "openalex:W3034199299:c5",
+      "description": "Substituting pre-trained weights for the top 10 out of 24 layers in failed BERT runs recovers masked language modeling perplexity on WikiText-2 to pre-trained baseline levels.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3034199299:e6",
+      "claim_id": "openalex:W3034199299:c6",
+      "description": "Downsampled training for 1k points over 26 epochs on CoLA and 312 epochs on QNLI reduced run failures to match full dataset levels.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3034199299:e7",
+      "claim_id": "openalex:W3034199299:c7",
+      "description": "Table 1 shows proposed fine-tuning strategy reduces RTE std from 4.5 (Devlin) and 7.9 (Lee) to 2.7, MRPC std to 0.8, and CoLA std to 1.8 across 25 random seeds (p < 0.001 on Levene's test).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3034199299:m1",
+      "paper_id": "openalex:W3034199299",
+      "name": "Bias-corrected extended fine-tuning baseline",
+      "description": "Fine-tuning pre-trained transformer language models using AdamW with bias correction enabled, learning rate of 2e-5, and 20 training epochs with 10% linear warmup and decay.",
+      "datasets": [
+        "RTE",
+        "MRPC",
+        "CoLA",
+        "QNLI",
+        "SciTail"
+      ],
+      "conditions": [
+        "20 epochs",
+        "learning rate 2e-5",
+        "AdamW with bias correction",
+        "batch size 16",
+        "25 random seeds"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3034199299:l1",
+      "paper_id": "openalex:W3034199299",
+      "text": "Default fine-tuning practices omit Adam bias correction and use a fixed small epoch count (3 epochs), leading to early vanishing gradients and unstable training on small datasets.",
+      "normalized_category": "optimizer-misconfiguration",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3034199299:l2",
+      "paper_id": "openalex:W3034199299",
+      "text": "Increasing the number of fine-tuning epochs increases the per-run computational cost, although it is recommended only for small datasets.",
+      "normalized_category": "computational-cost",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3034199299:l3",
+      "paper_id": "openalex:W3034199299",
+      "text": "The analysis and recommendation to increase training epochs is primarily targeted at small datasets where iteration count is low.",
+      "normalized_category": "dataset-size-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3034199299:f1",
+      "paper_id": "openalex:W3034199299",
+      "text": "Investigating fine-tuning instability and catastrophic forgetting in settings where supervised fine-tuning serves as an intermediate task training step for domain adaptation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.090479Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

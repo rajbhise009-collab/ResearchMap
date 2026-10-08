@@ -1,0 +1,119 @@
+{
+  "paper_id": "openalex:W4393147129",
+  "claims": [
+    {
+      "id": "openalex:W4393147129:c1",
+      "paper_id": "openalex:W4393147129",
+      "text": "Retrieval-Augmented Generation Benchmark (RGB) is a benchmark corpus for evaluating RAG in English and Chinese.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393147129:c2",
+      "paper_id": "openalex:W4393147129",
+      "text": "RGB divides evaluation instances into four separate testbeds for noise robustness, negative rejection, information integration, and counterfactual robustness.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393147129:c3",
+      "paper_id": "openalex:W4393147129",
+      "text": "Large language models exhibit a certain degree of noise robustness when applying RAG.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393147129:c4",
+      "paper_id": "openalex:W4393147129",
+      "text": "Large language models struggle significantly in terms of negative rejection in RAG contexts.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393147129:c5",
+      "paper_id": "openalex:W4393147129",
+      "text": "Large language models struggle significantly in terms of information integration in RAG contexts.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4393147129:c6",
+      "paper_id": "openalex:W4393147129",
+      "text": "Large language models struggle significantly with dealing with false information in RAG contexts.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4393147129:e1",
+      "claim_id": "openalex:W4393147129:c1",
+      "description": "To this end, we establish Retrieval-Augmented Generation Benchmark (RGB), a new corpus for RAG evaluation in both English and Chinese.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393147129:e2",
+      "claim_id": "openalex:W4393147129:c2",
+      "description": "RGB divides the instances within the benchmark into 4 separate testbeds based on the aforementioned fundamental abilities required to resolve the case.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4393147129:e3",
+      "claim_id": "openalex:W4393147129:c3",
+      "description": "Evaluation reveals that while LLMs exhibit a certain degree of noise robustness...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393147129:e4",
+      "claim_id": "openalex:W4393147129:c4",
+      "description": "...they still struggle significantly in terms of negative rejection...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393147129:e5",
+      "claim_id": "openalex:W4393147129:c5",
+      "description": "...they still struggle significantly in terms of... information integration...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4393147129:e6",
+      "claim_id": "openalex:W4393147129:c6",
+      "description": "...they still struggle significantly in terms of... dealing with false information.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4393147129:m1",
+      "paper_id": "openalex:W4393147129",
+      "name": "Retrieval-Augmented Generation Benchmark (RGB) Evaluation",
+      "description": "Evaluation of 6 representative LLMs across four RAG capability testbeds: noise robustness, negative rejection, information integration, and counterfactual robustness.",
+      "datasets": [
+        "RGB"
+      ],
+      "conditions": [
+        "English",
+        "Chinese",
+        "Evaluation of 6 representative LLMs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4393147129:l1",
+      "paper_id": "openalex:W4393147129",
+      "text": "Existing research lacks rigorous evaluation of the impact of retrieval-augmented generation on different large language models, making it challenging to identify potential capability bottlenecks.",
+      "normalized_category": "lack-of-rigorous-rag-evaluation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.087709Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W2746156504",
+  "claims": [
+    {
+      "id": "openalex:W2746156504:c1",
+      "paper_id": "openalex:W2746156504",
+      "text": "For adults with low levels of frailty (frailty index score ≤ 0.1), sedentary time is not predictive of mortality regardless of physical activity level.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2746156504:c2",
+      "paper_id": "openalex:W2746156504",
+      "text": "Among vulnerable adults (0.1 < frailty index score ≤ 0.2) who are physically inactive, sedentary time is associated with higher mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2746156504:c3",
+      "paper_id": "openalex:W2746156504",
+      "text": "Among frail adults (frailty index score > 0.2) who are physically inactive, sedentary time is associated with higher mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2746156504:c4",
+      "paper_id": "openalex:W2746156504",
+      "text": "The effect of sedentary behaviors on mortality varies by the degree of frailty.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2746156504:e1",
+      "claim_id": "openalex:W2746156504:c1",
+      "description": "Adjusted HR of 0.90 (95% CI 0.70-1.15) for sedentary time in adults with frailty index score ≤ 0.1.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2746156504:e2",
+      "claim_id": "openalex:W2746156504:c2",
+      "description": "HR of 1.16 (95% CI 1.02-1.33) for sedentary time among physically inactive individuals in the 0.1 < frailty index score ≤ 0.2 group.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2746156504:e3",
+      "claim_id": "openalex:W2746156504:c3",
+      "description": "HR of 1.27 (95% CI 1.11-1.46) for frailty index score 0.2-0.3 and HR 1.34 (95% CI 1.19-1.50) for frailty index score > 0.3 among physically inactive adults.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2746156504:e4",
+      "claim_id": "openalex:W2746156504:c4",
+      "description": "Cox proportional hazard models demonstrated varying hazard ratios of mortality across frailty score strata, with the highest frailty level showing the greatest adverse impact.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2746156504:m1",
+      "paper_id": "openalex:W2746156504",
+      "name": "Prospective cohort analysis with Cox proportional hazard models",
+      "description": "Evaluated the interaction between accelerometer-measured sedentary time, a 46-item frailty index, physical activity level, and all-cause mortality.",
+      "datasets": [
+        "2003/04 and 2005/06 cohorts of the US National Health and Nutrition Examination Survey (NHANES)"
+      ],
+      "conditions": [
+        "3141 community-dwelling adults aged 50 years or older",
+        "Sedentary time measured via uniaxial accelerometers",
+        "Frailty categorized via a 46-item frailty index",
+        "Mortality data linked up to 2011"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:39:44.886353Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

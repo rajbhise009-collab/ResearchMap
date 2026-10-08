@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W4388748038",
+  "claims": [
+    {
+      "id": "openalex:W4388748038:c1",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling is an uncertainty decomposition framework for LLMs that can be applied to any pre-trained LLM.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c2",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling generates a set of clarifications for the input, feeds them into an LLM, and ensembles the corresponding predictions.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c3",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling allows factoring an LLM's predictions into separate aleatoric and epistemic terms when aleatoric uncertainty arises from input ambiguity.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c4",
+      "paper_id": "openalex:W4388748038",
+      "text": "Input clarification ensembling provides accurate and reliable uncertainty quantification on several language processing tasks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388748038:c5",
+      "paper_id": "openalex:W4388748038",
+      "text": "Identifying sources of uncertainty in LLMs remains an important open research question.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388748038:e1",
+      "claim_id": "openalex:W4388748038:c3",
+      "description": "The approach uses a decomposition similar to the one employed by Bayesian neural networks to factor predictions into aleatoric and epistemic terms.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4388748038:e2",
+      "claim_id": "openalex:W4388748038:c4",
+      "description": "Empirical evaluations demonstrate accurate and reliable uncertainty quantification on several language processing tasks.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388748038:m1",
+      "paper_id": "openalex:W4388748038",
+      "name": "Input Clarification Ensembling",
+      "description": "A framework that generates multiple clarifications for a given input, processes them through an LLM, and ensembles the results to decompose uncertainty.",
+      "datasets": [],
+      "conditions": [
+        "pre-trained LLMs",
+        "ambiguous or under-specified inputs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388748038:l1",
+      "paper_id": "openalex:W4388748038",
+      "text": "Identifying sources of uncertainty in LLMs remains an important open research question.",
+      "normalized_category": "open-research-problem",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:24:55.830203Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

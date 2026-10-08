@@ -1,0 +1,187 @@
+{
+  "paper_id": "openalex:W4415740074",
+  "claims": [
+    {
+      "id": "openalex:W4415740074:c1",
+      "paper_id": "openalex:W4415740074",
+      "text": "The two-phase LLM framework achieved an F1-score of 0.983 with semantic matching and 0.968 with binary overlap on the full dataset of 700 patient notes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c2",
+      "paper_id": "openalex:W4415740074",
+      "text": "The two-phase LLM framework achieved an F1-score of 0.973 with semantic matching and 0.952 with binary overlap using a few-shot subset of 100 patient notes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c3",
+      "paper_id": "openalex:W4415740074",
+      "text": "The framework reduced hallucinated features by 89.9% from 3081 to 311 features on the private dataset compared to the vanilla LLM baseline.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c4",
+      "paper_id": "openalex:W4415740074",
+      "text": "The framework reduced missing features by 88.9% from 6376 to 708 features on the private dataset compared to the vanilla LLM baseline.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c5",
+      "paper_id": "openalex:W4415740074",
+      "text": "Expected calibration error increased from 0.060 to 0.147 across five training epochs during few-shot training.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c6",
+      "paper_id": "openalex:W4415740074",
+      "text": "The Brier score improved from 0.087 to 0.036 across training epochs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415740074:c7",
+      "paper_id": "openalex:W4415740074",
+      "text": "The framework combines instructing fine-tuning with confidence-regularization fine-tuning using bidirectional semantic mapping penalties.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4415740074:e1",
+      "claim_id": "openalex:W4415740074:c1",
+      "description": "Our framework achieved state-of-the-art performance with F1=0.983 (semantic matching) and F1=0.968 (binary overlap) on the entire dataset.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e2",
+      "claim_id": "openalex:W4415740074:c2",
+      "description": "Maintained high performance with F1=0.973 (semantic matching) and F1=0.952 (binary overlap) while using only 100 of 700 patient notes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e3",
+      "claim_id": "openalex:W4415740074:c3",
+      "description": "It reduced hallucinations by 89.9% (from 3081 to 311 features)... on the private dataset compared with the baseline LLM with few-shot in-context learning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e4",
+      "claim_id": "openalex:W4415740074:c4",
+      "description": "And missing features by 88.9% (from 6376 to 708) on the private dataset compared with the baseline LLM with few-shot in-context learning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4415740074:e5",
+      "claim_id": "openalex:W4415740074:c5",
+      "description": "Calibration evaluation on few-shot training (100 patient notes) showed that the expected calibration error increased from 0.060 to 0.147.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4415740074:e6",
+      "claim_id": "openalex:W4415740074:c6",
+      "description": "Whereas the Brier score improved from 0.087 to 0.036.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4415740074:e7",
+      "claim_id": "openalex:W4415740074:c7",
+      "description": "Our two-phase training approach: instructing fine-tuning and confidence-regularization fine-tuning with loss functions penalizing overconfident incorrect predictions captured using bidirectional matching targeting hallucination and missing features.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4415740074:m1",
+      "paper_id": "openalex:W4415740074",
+      "name": "Two-Phase LLM Fine-Tuning Framework",
+      "description": "A two-phase framework combining instructing fine-tuning for extraction guidance with confidence-regularization fine-tuning using bidirectional semantic matching penalties to reduce hallucinated and missing clinical features.",
+      "datasets": [
+        "United States Medical Licensing Examination (USMLE) Step-2 Clinical Skills dataset"
+      ],
+      "conditions": [
+        "Mistral Nemo backbone model",
+        "Few-shot training (100 patient notes)",
+        "Full dataset training (700 patient notes)",
+        "Inference matching gate with regex, TF-IDF, and sentence embedding similarity"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4415740074:l1",
+      "paper_id": "openalex:W4415740074",
+      "text": "The framework exhibits an increased expected calibration error (ECE from 0.060 to 0.147), producing stable conservative confidence estimates that become underconfident as accuracy increases.",
+      "normalized_category": "model-miscalibration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4415740074:l2",
+      "paper_id": "openalex:W4415740074",
+      "text": "The framework was evaluated on USMLE Step-2 Clinical Skills examination notes but lacks evaluation on unstructured or multilingual clinical records.",
+      "normalized_category": "limited-evaluation-domain",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4415740074:l3",
+      "paper_id": "openalex:W4415740074",
+      "text": "The validation pipeline requires predefined target feature lists to perform matching gate and cosine similarity checks, limiting direct applicability to open-ended extraction tasks.",
+      "normalized_category": "predetermined-feature-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4415740074:l4",
+      "paper_id": "openalex:W4415740074",
+      "text": "The evaluation did not systematically test performance across alternative open-source model backbones such as Llama-3-Instruct or Mistral-7B-Instruct.",
+      "normalized_category": "lack-of-cross-backbone-evaluation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4415740074:l5",
+      "paper_id": "openalex:W4415740074",
+      "text": "Prior BERT-based and statistical NLP approaches require extensive span-level annotation and exhibit limited ability to capture contextual semantic variability in complex clinical language.",
+      "normalized_category": "prior-method-semantic-limitation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4415740074:f1",
+      "paper_id": "openalex:W4415740074",
+      "text": "Investigate bidirectional generation, encoder-decoder architectures, and matching-based retrieval models to improve token-level positional grounding in span-sensitive tasks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4415740074:f2",
+      "paper_id": "openalex:W4415740074",
+      "text": "Perform domain-specific continual pretraining on clinical corpora such as MIMIC-III to enhance understanding of medical terminologies.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4415740074:f3",
+      "paper_id": "openalex:W4415740074",
+      "text": "Evaluate the framework on unstructured electronic health records, radiology reports, and multilingual patient records.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4415740074:f4",
+      "paper_id": "openalex:W4415740074",
+      "text": "Systematically investigate parameter sensitivity for confidence regularization across different clinical NLP domains and LLM backbones.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.986942Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

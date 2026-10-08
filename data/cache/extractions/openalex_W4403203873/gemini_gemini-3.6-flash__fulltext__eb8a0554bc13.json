@@ -1,0 +1,155 @@
+{
+  "paper_id": "openalex:W4403203873",
+  "claims": [
+    {
+      "id": "openalex:W4403203873:c1",
+      "paper_id": "openalex:W4403203873",
+      "text": "The workflow of LLM-based multi-agent systems can be synthesized into a general structure encompassing five key components: profile, perception, self-action, mutual interaction, and evolution.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403203873:c2",
+      "paper_id": "openalex:W4403203873",
+      "text": "Applications of LLM-based multi-agent systems can be broadly categorized into problem-solving and world simulation.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403203873:c3",
+      "paper_id": "openalex:W4403203873",
+      "text": "Agent profile generation in multi-agent systems relies on contextualized generation, pre-defined methods, or learning-based methods.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403203873:c4",
+      "paper_id": "openalex:W4403203873",
+      "text": "Sources of perceptual information for LLM agents consist of entire environment messages, interaction messages, and self-reflection messages.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403203873:c5",
+      "paper_id": "openalex:W4403203873",
+      "text": "Inter-agent interaction structures can be categorized into hierarchical, decentralized, centralized, and shared message pool architectures.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403203873:c6",
+      "paper_id": "openalex:W4403203873",
+      "text": "Agent evolution sources comprise environment feedback, agent interaction feedback, and human feedback.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403203873:e1",
+      "claim_id": "openalex:W4403203873:c1",
+      "description": "The paper presents a unified agent framework comprising profile, perception, self-action, mutual interaction, and evolution as five essential workflow modules.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403203873:e2",
+      "claim_id": "openalex:W4403203873:c2",
+      "description": "The authors systematically review and map existing literature onto problem-solving and world simulation domains.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403203873:e3",
+      "claim_id": "openalex:W4403203873:c3",
+      "description": "Section 3.1.2 categorizes agent profile creation into contextualized generation, pre-defined methods, and learning-based methods.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4403203873:e4",
+      "claim_id": "openalex:W4403203873:c4",
+      "description": "Section 3.2.1 categorizes perceptual message sources into entire environment message, interaction message, and self-reflection message.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4403203873:e5",
+      "claim_id": "openalex:W4403203873:c5",
+      "description": "Section 3.4.2 classifies communication frameworks into hierarchy, decentralized, centralized, and shared message pool structures.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4403203873:e6",
+      "claim_id": "openalex:W4403203873:c6",
+      "description": "Section 3.5.1 details three distinct sources of feedback guiding self-reflection: environment, agent interaction, and human feedback.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403203873:m1",
+      "paper_id": "openalex:W4403203873",
+      "name": "Unified Five-Module LLM-MAS Taxonomy Framework",
+      "description": "A systematic survey framework organizing LLM multi-agent literature along five workflow modules: profile, perception, self-action, mutual interaction, and evolution.",
+      "datasets": [],
+      "conditions": [
+        "Systematic review and taxonomy synthesis"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403203873:l1",
+      "paper_id": "openalex:W4403203873",
+      "text": "Previous works in LLM-based multi-agent systems were independently executed and lacked a systematic and comprehensive synthesis of framework structure.",
+      "normalized_category": "lack-of-systematic-synthesis",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4403203873:l2",
+      "paper_id": "openalex:W4403203873",
+      "text": "Reinforcement learning-based intelligent systems have inherent limitations in terms of adaptability and complexity.",
+      "normalized_category": "adaptability-and-complexity-limits",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4403203873:l3",
+      "paper_id": "openalex:W4403203873",
+      "text": "LLMs operate as black-box systems, rendering their decision-making processes opaque and hard to evaluate in high-stakes applications.",
+      "normalized_category": "black-box-opacity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4403203873:l4",
+      "paper_id": "openalex:W4403203873",
+      "text": "LLMs tend to produce hallucinations, generating text that deviates from reality or contains unverified information.",
+      "normalized_category": "llm-hallucination",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4403203873:f1",
+      "paper_id": "openalex:W4403203873",
+      "text": "Developing effective coordination mechanisms for collective intelligence in AI agents to avoid groupthink and cognitive biases.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4403203873:f2",
+      "paper_id": "openalex:W4403203873",
+      "text": "Deploying LLM-based multi-agent systems as a service (AaaS) via cloud platforms while ensuring decision transparency and system stability.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4403203873:f3",
+      "paper_id": "openalex:W4403203873",
+      "text": "Exploring efficient data fusion frameworks and algorithms for multi-agent systems operating in multi-modal, dynamic environments like healthcare and traffic management.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.999480Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,117 @@
+{
+  "paper_id": "openalex:W2982915530",
+  "claims": [
+    {
+      "id": "openalex:W2982915530:c1",
+      "paper_id": "openalex:W2982915530",
+      "text": "WeBuildAI is a collective participatory framework where stakeholders construct computational models representing their views to vote on algorithmic policy on their behalf.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2982915530:c2",
+      "paper_id": "openalex:W2982915530",
+      "text": "The WeBuildAI framework enabled participants to construct computational models that they felt confident represented their own beliefs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2982915530:c3",
+      "paper_id": "openalex:W2982915530",
+      "text": "Participatory algorithm design improved procedural fairness of the food donation matching algorithm.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2982915530:c4",
+      "paper_id": "openalex:W2982915530",
+      "text": "Participatory algorithm design improved the distributive outcomes of the food donation matching algorithm.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2982915530:c5",
+      "paper_id": "openalex:W2982915530",
+      "text": "Participatory algorithm design raised participants' algorithmic awareness.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2982915530:c6",
+      "paper_id": "openalex:W2982915530",
+      "text": "Participatory algorithm design identified inconsistencies in human decision-making in the governing organization.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2982915530:e1",
+      "claim_id": "openalex:W2982915530:c1",
+      "description": "we present WeBuildAI, a collective participatory framework that enables people to build algorithmic policy for their communities. The key idea of the framework is to enable stakeholders to construct a computational model that represents their views and to have those models vote on their behalf to create algorithmic policy.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2982915530:e2",
+      "claim_id": "openalex:W2982915530:c2",
+      "description": "Our findings suggest that the framework successfully enabled participants to build models that they felt confident represented their own beliefs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2982915530:e3",
+      "claim_id": "openalex:W2982915530:c3",
+      "description": "Participatory algorithm design also improved both procedural fairness and the distributive outcomes of the algorithm...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2982915530:e4",
+      "claim_id": "openalex:W2982915530:c4",
+      "description": "Participatory algorithm design also improved both procedural fairness and the distributive outcomes of the algorithm...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2982915530:e5",
+      "claim_id": "openalex:W2982915530:c5",
+      "description": "...raised participants' algorithmic awareness...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2982915530:e6",
+      "claim_id": "openalex:W2982915530:c6",
+      "description": "...and helped identify inconsistencies in human decision-making in the governing organization.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2982915530:m1",
+      "paper_id": "openalex:W2982915530",
+      "name": "WeBuildAI Framework Case Study",
+      "description": "A participatory framework where stakeholders build computational proxy models to vote on algorithmic policy, evaluated through a case study on an on-demand food donation matching service.",
+      "datasets": [],
+      "conditions": [
+        "on-demand food donation transportation service",
+        "adjudicating equity and efficiency trade-offs",
+        "involvement of donors, volunteers, recipient organizations, and nonprofit employees"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2982915530:l1",
+      "paper_id": "openalex:W2982915530",
+      "text": "Community involvement in algorithm design introduces specific operational and procedural challenges.",
+      "normalized_category": "implementation-challenges",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:51:23.059779Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

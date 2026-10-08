@@ -1,0 +1,132 @@
+{
+  "paper_id": "openalex:W2109401990",
+  "claims": [
+    {
+      "id": "openalex:W2109401990:c1",
+      "paper_id": "openalex:W2109401990",
+      "text": "Unprocessed red meat intake is not associated with incident coronary heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109401990:c2",
+      "paper_id": "openalex:W2109401990",
+      "text": "Unprocessed red meat intake is not associated with incident diabetes mellitus.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109401990:c3",
+      "paper_id": "openalex:W2109401990",
+      "text": "Processed meat intake is associated with a 42% higher risk of incident coronary heart disease per 50-g serving per day.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109401990:c4",
+      "paper_id": "openalex:W2109401990",
+      "text": "Processed meat intake is associated with a 19% higher risk of incident diabetes mellitus per 50-g serving per day.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109401990:c5",
+      "paper_id": "openalex:W2109401990",
+      "text": "Unprocessed red meat consumption is not associated with incident stroke.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109401990:c6",
+      "paper_id": "openalex:W2109401990",
+      "text": "Processed meat consumption is not associated with incident stroke.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2109401990:e1",
+      "claim_id": "openalex:W2109401990:c1",
+      "description": "Red meat intake was not associated with CHD (n=4 studies; relative risk per 100-g serving per day=1.00; 95% confidence interval, 0.81 to 1.23; P for heterogeneity=0.36).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109401990:e2",
+      "claim_id": "openalex:W2109401990:c2",
+      "description": "Red meat intake was not associated with diabetes mellitus (n=5; relative risk=1.16; 95% confidence interval, 0.92 to 1.46; P=0.25).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109401990:e3",
+      "claim_id": "openalex:W2109401990:c3",
+      "description": "Processed meat intake was associated with 42% higher risk of CHD (n=5; relative risk per 50-g serving per day=1.42; 95% confidence interval, 1.07 to 1.89; P=0.04).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109401990:e4",
+      "claim_id": "openalex:W2109401990:c4",
+      "description": "Processed meat intake was associated with 19% higher risk of diabetes mellitus (n=7; relative risk=1.19; 95% confidence interval, 1.11 to 1.27; P<0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109401990:e5",
+      "claim_id": "openalex:W2109401990:c5",
+      "description": "Consumption of red and processed meat were not associated with stroke, but only 3 studies evaluated these relationships.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2109401990:e6",
+      "claim_id": "openalex:W2109401990:c6",
+      "description": "Consumption of red and processed meat were not associated with stroke, but only 3 studies evaluated these relationships.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2109401990:m1",
+      "paper_id": "openalex:W2109401990",
+      "name": "Systematic review and dose-response meta-analysis",
+      "description": "Systematic review and meta-analysis using random-effects generalized least squares models to derive pooled dose-response estimates across prospective cohort and case-control studies.",
+      "datasets": [
+        "17 prospective cohorts",
+        "3 case-control studies"
+      ],
+      "conditions": [
+        "generally healthy adults"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2109401990:l1",
+      "paper_id": "openalex:W2109401990",
+      "text": "Meat consumption is inconsistently associated with development of CHD, stroke, and diabetes mellitus in prior literature, limiting quantitative recommendations for consumption levels.",
+      "normalized_category": "inconsistent-prior-literature",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2109401990:l2",
+      "paper_id": "openalex:W2109401990",
+      "text": "Only 3 identified studies evaluated the relationships of red and processed meat consumption with incident stroke.",
+      "normalized_category": "limited-number-of-studies",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2109401990:f1",
+      "paper_id": "openalex:W2109401990",
+      "text": "Better understanding of potential mechanisms of effects of processed versus red meats on health outcomes.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:07:02.204700Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

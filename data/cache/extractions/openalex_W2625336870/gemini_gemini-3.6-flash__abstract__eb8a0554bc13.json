@@ -1,0 +1,137 @@
+{
+  "paper_id": "openalex:W2625336870",
+  "claims": [
+    {
+      "id": "openalex:W2625336870:c1",
+      "paper_id": "openalex:W2625336870",
+      "text": "Cardiovascular disease is the leading global cause of death, accounting for 17.3 million deaths per year.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625336870:c2",
+      "paper_id": "openalex:W2625336870",
+      "text": "Randomized controlled trials that lowered intake of dietary saturated fat and replaced it with polyunsaturated vegetable oil reduced CVD by approximately 30%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625336870:c3",
+      "paper_id": "openalex:W2625336870",
+      "text": "Lower intake of saturated fat coupled with higher intake of polyunsaturated and monounsaturated fat is associated with lower rates of CVD in prospective observational studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625336870:c4",
+      "paper_id": "openalex:W2625336870",
+      "text": "Lower intake of saturated fat coupled with higher intake of polyunsaturated and monounsaturated fat is associated with lower rates of all-cause mortality and other major causes of death.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625336870:c5",
+      "paper_id": "openalex:W2625336870",
+      "text": "Replacement of saturated fat with mostly refined carbohydrates and sugars is not associated with lower rates of CVD in prospective observational studies.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625336870:c6",
+      "paper_id": "openalex:W2625336870",
+      "text": "Replacement of saturated fat with mostly refined carbohydrates and sugars did not reduce CVD in clinical trials.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625336870:c7",
+      "paper_id": "openalex:W2625336870",
+      "text": "Replacement of saturated fat with unsaturated fats lowers low-density lipoprotein cholesterol.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625336870:c8",
+      "paper_id": "openalex:W2625336870",
+      "text": "Lowering intake of saturated fat and replacing it with unsaturated fats, especially polyunsaturated fats, will lower the incidence of CVD.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2625336870:e1",
+      "claim_id": "openalex:W2625336870:c1",
+      "description": "Cardiovascular disease (CVD) is the leading global cause of death, accounting for 17.3 million deaths per year.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2625336870:e2",
+      "claim_id": "openalex:W2625336870:c2",
+      "description": "Randomized controlled trials that lowered intake of dietary saturated fat and replaced it with polyunsaturated vegetable oil reduced CVD by ≈30%, similar to the reduction achieved by statin treatment.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2625336870:e3",
+      "claim_id": "openalex:W2625336870:c3",
+      "description": "Prospective observational studies in many populations showed that lower intake of saturated fat coupled with higher intake of polyunsaturated and monounsaturated fat is associated with lower rates of CVD.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2625336870:e4",
+      "claim_id": "openalex:W2625336870:c4",
+      "description": "Prospective observational studies in many populations showed that lower intake of saturated fat coupled with higher intake of polyunsaturated and monounsaturated fat is associated with lower rates of other major causes of death and all-cause mortality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2625336870:e5",
+      "claim_id": "openalex:W2625336870:c5",
+      "description": "Replacement of saturated fat with mostly refined carbohydrates and sugars is not associated with lower rates of CVD.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2625336870:e6",
+      "claim_id": "openalex:W2625336870:c6",
+      "description": "Replacement of saturated fat with mostly refined carbohydrates and sugars did not reduce CVD in clinical trials.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2625336870:e7",
+      "claim_id": "openalex:W2625336870:c7",
+      "description": "Replacement of saturated with unsaturated fats lowers low-density lipoprotein cholesterol, a cause of atherosclerosis, linking biological evidence with incidence of CVD in populations and in clinical trials.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2625336870:e8",
+      "claim_id": "openalex:W2625336870:c8",
+      "description": "Taking into consideration the totality of the scientific evidence, satisfying rigorous criteria for causality, we conclude strongly that lowering intake of saturated fat and replacing it with unsaturated fats, especially polyunsaturated fats, will lower the incidence of CVD.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2625336870:m1",
+      "paper_id": "openalex:W2625336870",
+      "name": "Systematic review and presidential advisory synthesis",
+      "description": "Review and synthesis of randomized controlled trials and prospective observational studies evaluating dietary saturated fat intake and macronutrient replacement strategies on CVD outcomes.",
+      "datasets": [],
+      "conditions": [
+        "Replacement of saturated fat with polyunsaturated vegetable oil",
+        "Replacement of saturated fat with polyunsaturated and monounsaturated fat",
+        "Replacement of saturated fat with refined carbohydrates and sugars"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:05:18.566568Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

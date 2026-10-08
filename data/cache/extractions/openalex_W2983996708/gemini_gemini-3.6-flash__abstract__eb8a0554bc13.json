@@ -1,0 +1,109 @@
+{
+  "paper_id": "openalex:W2983996708",
+  "claims": [
+    {
+      "id": "openalex:W2983996708:c1",
+      "paper_id": "openalex:W2983996708",
+      "text": "A procedural justice framework in algorithmic decision-making can be established using procedural justice theory.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2983996708:c2",
+      "paper_id": "openalex:W2983996708",
+      "text": "Standards clarity alone does not increase perceived fairness in algorithmic allocations.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2983996708:c3",
+      "paper_id": "openalex:W2983996708",
+      "text": "Outcome explanation produces mixed effects on perceived fairness, increasing it in some contexts and decreasing it in others.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2983996708:c4",
+      "paper_id": "openalex:W2983996708",
+      "text": "Outcome explanation reduces perceived algorithmic accountability.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2983996708:c5",
+      "paper_id": "openalex:W2983996708",
+      "text": "Outcome control consistently improves perceived fairness in algorithmic goods division.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2983996708:c6",
+      "paper_id": "openalex:W2983996708",
+      "text": "Outcome control improves perceived fairness by enabling users to recognize algorithmic limitations and reallocate goods to fit their specific contexts.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2983996708:e1",
+      "claim_id": "openalex:W2983996708:c1",
+      "description": "The paper proposes a procedural justice framework drawing from procedural justice theory to identify elements that promote fairness perceptions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2983996708:e2",
+      "claim_id": "openalex:W2983996708:c2",
+      "description": "Findings from the within-subjects laboratory study suggested that standards clarity alone did not increase perceived fairness.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2983996708:e3",
+      "claim_id": "openalex:W2983996708:c3",
+      "description": "Outcome explanation had mixed effects, increasing or decreasing perceived fairness.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2983996708:e4",
+      "claim_id": "openalex:W2983996708:c4",
+      "description": "Outcome explanation reduced algorithmic accountability in the laboratory study.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2983996708:e5",
+      "claim_id": "openalex:W2983996708:c5",
+      "description": "Outcome control universally improved perceived fairness across participants.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2983996708:e6",
+      "claim_id": "openalex:W2983996708:c6",
+      "description": "Outcome control improved fairness by allowing people to realize the inherent limitations of decisions and redistribute goods to better fit their contexts.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2983996708:m1",
+      "paper_id": "openalex:W2983996708",
+      "name": "Within-subjects laboratory evaluation of procedural justice interface",
+      "description": "Built an interactive interface implementing standards clarity, outcome explanation, and group outcome control, and evaluated user perceptions in a goods division domain.",
+      "datasets": [],
+      "conditions": [
+        "standards clarity",
+        "outcome explanation",
+        "interactive group outcome control"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:20:08.126406Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

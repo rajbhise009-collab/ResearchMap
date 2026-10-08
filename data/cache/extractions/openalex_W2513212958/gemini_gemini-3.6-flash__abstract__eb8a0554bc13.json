@@ -1,0 +1,152 @@
+{
+  "paper_id": "openalex:W2513212958",
+  "claims": [
+    {
+      "id": "openalex:W2513212958:c1",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 100 g/day of unprocessed red meat is associated with an 11% increased risk of stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c2",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 100 g/day of unprocessed red meat is associated with an 11% increased risk of breast cancer.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c3",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 100 g/day of unprocessed red meat is associated with a 15% increased risk of cardiovascular mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c4",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 100 g/day of unprocessed red meat is associated with a 17% increased risk of colorectal cancer.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c5",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 100 g/day of unprocessed red meat is associated with a 19% increased risk of advanced prostate cancer.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c6",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 50 g/day of processed meat is associated with a 32% increased risk of diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c7",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 50 g/day of processed meat is associated with a 24% increased risk of cardiovascular mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c8",
+      "paper_id": "openalex:W2513212958",
+      "text": "Consumption of 50 g/day of processed meat is associated with an 18% increased risk of colorectal cancer.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513212958:c9",
+      "paper_id": "openalex:W2513212958",
+      "text": "Production of red meat involves an environmental burden.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2513212958:e1",
+      "claim_id": "openalex:W2513212958:c1",
+      "description": "Based on pooled analyses and meta-analyses of at least six cohorts, 100 g day−1 of unprocessed red meat showed a statistically significantly increased risk of 11% for stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e2",
+      "claim_id": "openalex:W2513212958:c2",
+      "description": "Based on pooled analyses and meta-analyses of at least six cohorts, 100 g day−1 of unprocessed red meat showed a statistically significantly increased risk of 11% for breast cancer.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e3",
+      "claim_id": "openalex:W2513212958:c3",
+      "description": "Based on pooled analyses and meta-analyses of at least six cohorts, 100 g day−1 of unprocessed red meat showed a 15% increased risk for cardiovascular mortality.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e4",
+      "claim_id": "openalex:W2513212958:c4",
+      "description": "Based on pooled analyses and meta-analyses of at least six cohorts, 100 g day−1 of unprocessed red meat showed a 17% increased risk for colorectal cancer.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e5",
+      "claim_id": "openalex:W2513212958:c5",
+      "description": "Based on pooled analyses and meta-analyses of at least six cohorts, 100 g day−1 of unprocessed red meat showed a 19% increased risk for advanced prostate cancer.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e6",
+      "claim_id": "openalex:W2513212958:c6",
+      "description": "For 50 g day−1 of processed meat, statistically significantly increased risks were observed, including 32% for diabetes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e7",
+      "claim_id": "openalex:W2513212958:c7",
+      "description": "For 50 g day−1 of processed meat, statistically significantly increased risks were observed, including 24% for cardiovascular mortality.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e8",
+      "claim_id": "openalex:W2513212958:c8",
+      "description": "For 50 g day−1 of processed meat, statistically significantly increased risks were observed, including 18% for colorectal cancer.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513212958:e9",
+      "claim_id": "openalex:W2513212958:c9",
+      "description": "The authors discuss environmental impact and state that production of red meat involves an environmental burden.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2513212958:m1",
+      "paper_id": "openalex:W2513212958",
+      "name": "Comprehensive Literature Review and Meta-Analysis Synthesis",
+      "description": "Summarizes accumulated evidence and risk estimates from pooled analyses and meta-analyses based on prospective cohort studies regarding red meat consumption and chronic diseases.",
+      "datasets": [
+        "Prospective cohort studies"
+      ],
+      "conditions": [
+        "100 g/day unprocessed red meat consumption",
+        "50 g/day processed red meat consumption"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:19:38.052135Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

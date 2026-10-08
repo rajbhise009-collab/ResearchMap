@@ -1,0 +1,120 @@
+{
+  "paper_id": "openalex:W4322717046",
+  "claims": [
+    {
+      "id": "openalex:W4322717046:c1",
+      "paper_id": "openalex:W4322717046",
+      "text": "Language models are highly sensitive to epistemic markers in prompts, with accuracies varying more than 80%.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c2",
+      "paper_id": "openalex:W4322717046",
+      "text": "Expressions of high certainty in prompts result in a 7% decrease in accuracy compared to low certainty expressions.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c3",
+      "paper_id": "openalex:W4322717046",
+      "text": "Factive verbs hurt language model performance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c4",
+      "paper_id": "openalex:W4322717046",
+      "text": "Evidentials benefit language model performance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c5",
+      "paper_id": "openalex:W4322717046",
+      "text": "Markers of uncertainty are associated with answers on question-answering websites in a popular pretraining dataset.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4322717046:c6",
+      "paper_id": "openalex:W4322717046",
+      "text": "Markers of certainty are associated with questions on question-answering websites in a popular pretraining dataset.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4322717046:e1",
+      "claim_id": "openalex:W4322717046:c1",
+      "description": "Accuracies varying more than 80% when injecting epistemic markers into QA prompts.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e2",
+      "claim_id": "openalex:W4322717046:c2",
+      "description": "High certainty expressions led to a 7% decrease in accuracy compared to low certainty expressions.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4322717046:e3",
+      "claim_id": "openalex:W4322717046:c3",
+      "description": "Evaluation shows factive verbs consistently hurt performance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e4",
+      "claim_id": "openalex:W4322717046:c4",
+      "description": "Evaluation shows evidentials consistently benefit performance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e5",
+      "claim_id": "openalex:W4322717046:c5",
+      "description": "Pretraining dataset analysis links uncertainty markers to answers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4322717046:e6",
+      "claim_id": "openalex:W4322717046:c6",
+      "description": "Pretraining dataset analysis links certainty markers to questions.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4322717046:m1",
+      "paper_id": "openalex:W4322717046",
+      "name": "Epistemic Marker Prompt Injection Analysis",
+      "description": "Injecting 50 typology-derived epistemic markers into question-answering prompts and measuring impact on language model accuracy alongside pretraining corpus association analysis.",
+      "datasets": [
+        "Unspecified popular pretraining dataset"
+      ],
+      "conditions": [
+        "High certainty expressions",
+        "Low certainty expressions",
+        "Factive verbs",
+        "Evidentials"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4322717046:l1",
+      "paper_id": "openalex:W4322717046",
+      "text": "LM behavior may reflect mimicking observed language use rather than truly reflecting epistemic uncertainty.",
+      "normalized_category": "mimicry-versus-true-epistemics",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:27:00.796971Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

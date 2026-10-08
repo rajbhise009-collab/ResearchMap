@@ -1,0 +1,122 @@
+{
+  "opp:hole:W4415974391->W4389520749": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's multi-component hallucination metric is a detection methodology and does not address Paper B's limitation concerning the scope and size of its evaluation dataset.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4415974391",
+    "b_pid": "openalex:W4389520749",
+    "method": "Weighted Multi-Component Hallucination Metric",
+    "limitation": "Evaluation dataset was limited to 238 GPT-3 generated passages predominantly focusing on individuals from the WikiBio dataset."
+  },
+  "opp:hole:W4403296573->W4411121371": {
+    "verdict": "not_addressing",
+    "reason": "Paper A proposes an evaluation benchmark for measuring confidence calibration in code LLMs, which does not provide or develop the uncertainty calibration techniques noted as briefly discussed in Paper B's survey.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4403296573",
+    "b_pid": "openalex:W4411121371",
+    "method": "L2CEval",
+    "limitation": "This paper focuses primarily on an extensive review of uncertainty quantification methods and provides only a brief discussion on calibration techniques for uncertainty estimates."
+  },
+  "opp:hole:W4415974391->W4399803256": {
+    "verdict": "substantive",
+    "reason": "Paper A's multi-component metric incorporates NLI and entity alignment to ground factuality against source material, directly addressing semantic entropy's blind spot regarding systematically biased or confidently incorrect model outputs.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4415974391",
+    "b_pid": "openalex:W4399803256",
+    "method": "Weighted Multi-Component Hallucination Metric",
+    "limitation": "Semantic entropy does not guarantee factuality when LLM outputs are systematically incorrect or biased by erroneous training data."
+  },
+  "opp:hole:W4415974391->W4417248784": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's weighted combination of Jaccard similarity, NLI, and perplexity provides a general hallucination metric but does not directly address Paper B's specific limitations regarding enterprise knowledge, multilingual support, or adversarial robustness.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4415974391",
+    "b_pid": "openalex:W4417248784",
+    "method": "Weighted Multi-Component Hallucination Metric",
+    "limitation": "The evaluation and model capability in this work are currently focused primarily on context-based and common knowledge hallucinations, leaving full integration of enterprise-specific knowledge, multilingual support, and adversarial robustness to future work."
+  },
+  "opp:hole:W4387848774->W4417248784": {
+    "verdict": "trivial",
+    "reason": "While Paper A's bilingual RelD discriminator directly addresses Paper B's limitation regarding multilingual support, transferring this method reduces to applying an existing pretrained bilingual model to another hallucination detection framework.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4387848774",
+    "b_pid": "openalex:W4417248784",
+    "method": "RelD Discriminator",
+    "limitation": "The evaluation and model capability in this work are currently focused primarily on context-based and common knowledge hallucinations, leaving full integration of enterprise-specific knowledge, multilingual support, and adversarial robustness to future work."
+  },
+  "opp:hole:W4403296573->W4404817104": {
+    "verdict": "not_addressing",
+    "reason": "L2CEval is an evaluation benchmark for language-to-code LLMs and does not offer a methodology to model or resolve the task-dependent nature of language model performance prediction.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4403296573",
+    "b_pid": "openalex:W4404817104",
+    "method": "L2CEval",
+    "limitation": "The performance prediction benefits derived from learning across multiple tasks or multiple subject systems depend on the specific task at hand."
+  },
+  "opp:hole:W4389520749->W4417248784": {
+    "verdict": "trivial",
+    "reason": "While SelfCheckGPT's zero-resource approach can apply to enterprise or multilingual domains, transferring it to address HalluciNot's limitations reduces to applying an existing hallucination detection method to another domain or dataset.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4389520749",
+    "b_pid": "openalex:W4417248784",
+    "method": "SelfCheckGPT",
+    "limitation": "The evaluation and model capability in this work are currently focused primarily on context-based and common knowledge hallucinations, leaving full integration of enterprise-specific knowledge, multilingual support, and adversarial robustness to future work."
+  },
+  "opp:hole:W4411449748->W4417248784": {
+    "verdict": "not_addressing",
+    "reason": "MetaQA relies on self-contained prompt mutations and metamorphic relations for hallucination detection, which does not provide mechanisms for integrating enterprise-specific knowledge, supporting multilingual contexts, or ensuring adversarial robustness.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4411449748",
+    "b_pid": "openalex:W4417248784",
+    "method": "MetaQA",
+    "limitation": "The evaluation and model capability in this work are currently focused primarily on context-based and common knowledge hallucinations, leaving full integration of enterprise-specific knowledge, multilingual support, and adversarial robustness to future work."
+  },
+  "opp:hole:W4403296573->W4400047099": {
+    "verdict": "not_addressing",
+    "reason": "L2CEval is designed for language-to-code generation evaluation and confidence calibration, which does not provide a mechanism to detect factually incorrect yet logically consistent hallucinations in natural language legal text.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4403296573",
+    "b_pid": "openalex:W4400047099",
+    "method": "L2CEval",
+    "limitation": "The reference-free contradiction detection methodology provides only a lower bound on hallucination rates because two responses can be logically consistent yet still factually incorrect."
+  },
+  "opp:hole:W2963895422->W2788496822": {
+    "verdict": "trivial",
+    "reason": "Applying external knowledge integration methods to the SciTail dataset directly reduces to applying an existing method to another standard NLI benchmark in the science domain.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W2963895422",
+    "b_pid": "openalex:W2788496822",
+    "method": "External knowledge integration for NLI",
+    "limitation": "Premise and hypothesis pairs exhibit high lexical similarity for both entailed and non-entailed instances, making the dataset particularly challenging."
+  },
+  "opp:hole:W4389520749->W4386561859": {
+    "verdict": "substantive",
+    "reason": "SelfCheckGPT provides a zero-resource hallucination detection method operating purely on black-box API outputs, directly bypassing the need for internal model access like constrained beam search required by SELF-FAMILIARITY.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4389520749",
+    "b_pid": "openalex:W4386561859",
+    "method": "SelfCheckGPT",
+    "limitation": "Models offering API access exclusively cannot be evaluated with SELF-FAMILIARITY due to the requirement for constrained beam search generation control."
+  },
+  "opp:hole:W4386561859->W4389520749": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's self-evaluation method for hallucination prevention does not address Paper B's limitation, which is strictly about the narrow scope and small size of its evaluation dataset.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-3.6-flash",
+    "a_pid": "openalex:W4386561859",
+    "b_pid": "openalex:W4389520749",
+    "method": "SELF-FAMILIARITY",
+    "limitation": "Evaluation dataset was limited to 238 GPT-3 generated passages predominantly focusing on individuals from the WikiBio dataset."
+  }
+}

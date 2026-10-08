@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W2162670686",
+  "claims": [
+    {
+      "id": "openalex:W2162670686:c1",
+      "paper_id": "openalex:W2162670686",
+      "text": "The proposed learning algorithm achieves group fairness by ensuring the proportion of protected group members receiving positive classification equals that of the overall population.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2162670686:c2",
+      "paper_id": "openalex:W2162670686",
+      "text": "The proposed learning algorithm achieves individual fairness by treating similar individuals similarly.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2162670686:c3",
+      "paper_id": "openalex:W2162670686",
+      "text": "Fairness can be formulated as an optimization problem of finding a data representation that balances data encoding quality with protected group membership obfuscation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2162670686:c4",
+      "paper_id": "openalex:W2162670686",
+      "text": "Intermediate representations learned for fair classification can be transferred to other classification tasks.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2162670686:c5",
+      "paper_id": "openalex:W2162670686",
+      "text": "The fair representation formulation enables learning a distance metric to identify important data dimensions for classification.",
+      "type": "method",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2162670686:e1",
+      "claim_id": "openalex:W2162670686:c1",
+      "description": "We propose a learning algorithm for fair classification that achieves both group fairness (the proportion of members in a protected group receiving positive classification is identical to the proportion in the population as a whole)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2162670686:e2",
+      "claim_id": "openalex:W2162670686:c2",
+      "description": "achieves... individual fairness (similar individuals should be treated similarly)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2162670686:e3",
+      "claim_id": "openalex:W2162670686:c3",
+      "description": "We formulate fairness as an optimization problem of finding a good representation of the data with two competing goals: to encode the data as well as possible, while simultaneously obfuscating any information about membership in the protected group.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2162670686:e4",
+      "claim_id": "openalex:W2162670686:c4",
+      "description": "our intermediate representation can be used for other classification tasks (i.e., transfer learning is possible)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2162670686:e5",
+      "claim_id": "openalex:W2162670686:c5",
+      "description": "we take a step toward learning a distance metric which can find important dimensions of the data for classification",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2162670686:m1",
+      "paper_id": "openalex:W2162670686",
+      "name": "Learning Fair Representations",
+      "description": "An optimization-based learning algorithm that constructs data representations to maximize reconstruction quality while obfuscating protected group membership.",
+      "datasets": [
+        "unspecified dataset 1",
+        "unspecified dataset 2",
+        "unspecified dataset 3"
+      ],
+      "conditions": [
+        "group fairness constraint",
+        "individual fairness constraint",
+        "protected group membership obfuscation"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:07:53.818352Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

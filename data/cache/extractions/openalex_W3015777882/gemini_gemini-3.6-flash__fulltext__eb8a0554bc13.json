@@ -1,0 +1,166 @@
+{
+  "paper_id": "openalex:W3015777882",
+  "claims": [
+    {
+      "id": "openalex:W3015777882:c1",
+      "paper_id": "openalex:W3015777882",
+      "text": "Deep learning models achieved an approximate 78% relative reduction in classification error on the SST-2 benchmark compared to earlier baseline models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3015777882:c2",
+      "paper_id": "openalex:W3015777882",
+      "text": "Squeezed Very Deep Convolutional Neural Networks achieve model size compression of 10x to 20x with an accuracy loss between 0.4% and 1.3%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3015777882:c3",
+      "paper_id": "openalex:W3015777882",
+      "text": "FastText incorporates a bag of n-grams as additional features into feed-forward neural networks to capture local word order information.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3015777882:c4",
+      "paper_id": "openalex:W3015777882",
+      "text": "Early neural word embedding models underperformed classical machine learning models relying on hand-crafted features.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3015777882:c5",
+      "paper_id": "openalex:W3015777882",
+      "text": "Deep Average Networks outperform syntactic models on text datasets with high syntactic variance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3015777882:e1",
+      "claim_id": "openalex:W3015777882:c1",
+      "description": "Section 5.2 notes significant accuracy gains since early deep learning models, citing around 78% relative reduction in classification error on SST-2.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3015777882:e2",
+      "claim_id": "openalex:W3015777882:c2",
+      "description": "Duque et al. modified VDCNN for mobile platform constraints and compressed model size by 10x to 20x with accuracy loss between 0.4% to 1.3%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3015777882:e3",
+      "claim_id": "openalex:W3015777882:c3",
+      "description": "Section 2.1 notes fastText uses a bag of n-grams as additional features to capture local word order efficiently.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3015777882:e4",
+      "claim_id": "openalex:W3015777882:c4",
+      "description": "Section 1 states early embedding models underperform classical models using hand-crafted features, leading to low initial adoption.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3015777882:e5",
+      "claim_id": "openalex:W3015777882:c5",
+      "description": "Section 2.1 states DAN outperforms syntactic models on datasets characterized by high syntactic variance.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3015777882:m1",
+      "paper_id": "openalex:W3015777882",
+      "name": "Comprehensive Literature Survey and Comparative Performance Benchmarking",
+      "description": "A systematic survey categorizing over 150 deep learning text classification architectures and quantitatively analyzing accuracy across 16 benchmark datasets.",
+      "datasets": [
+        "SST-2",
+        "IMDb",
+        "Yelp-2",
+        "Yelp-5",
+        "Amazon-2",
+        "Amazon-5",
+        "AG News",
+        "20 Newsgroups",
+        "Sogou News",
+        "DBpedia",
+        "Ohsumed",
+        "SQuAD1.1",
+        "SQuAD2.0",
+        "WikiQA",
+        "SNLI",
+        "MultiNLI"
+      ],
+      "conditions": [
+        "Supervised text classification",
+        "Extractive question answering",
+        "Natural language inference",
+        "Pre-trained language model fine-tuning"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3015777882:l1",
+      "paper_id": "openalex:W3015777882",
+      "text": "Classical machine learning methods depend heavily on hand-crafted features, requiring domain knowledge and feature engineering while failing to generalize or scale with larger training data.",
+      "normalized_category": "feature-engineering-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3015777882:l2",
+      "paper_id": "openalex:W3015777882",
+      "text": "Large neural language models lack grounding, symbolic reasoning capabilities, and interpretability required for mission-critical applications.",
+      "normalized_category": "lack-of-interpretability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3015777882:l3",
+      "paper_id": "openalex:W3015777882",
+      "text": "The survey explicitly excludes neuro-symbolic hybrid models from its detailed review scope.",
+      "normalized_category": "out-of-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3015777882:f1",
+      "paper_id": "openalex:W3015777882",
+      "text": "Develop new benchmark datasets for complex tasks like multi-step reasoning question answering, multi-lingual text classification, and classification of extremely long documents.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3015777882:f2",
+      "paper_id": "openalex:W3015777882",
+      "text": "Incorporate commonsense knowledge bases into deep learning models to improve reasoning under incomplete information.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3015777882:f3",
+      "paper_id": "openalex:W3015777882",
+      "text": "Conduct theoretical and empirical studies to create interpretable deep learning architectures with minimal parameter sizes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3015777882:f4",
+      "paper_id": "openalex:W3015777882",
+      "text": "Develop task-agnostic model compression techniques and knowledge distillation frameworks for edge deployment.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3015777882:f5",
+      "paper_id": "openalex:W3015777882",
+      "text": "Explore zero-shot and few-shot learning techniques leveraging pre-trained language models to minimize target domain labeling requirements.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.086280Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

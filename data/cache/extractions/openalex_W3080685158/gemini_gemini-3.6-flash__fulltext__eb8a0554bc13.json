@@ -1,0 +1,125 @@
+{
+  "paper_id": "openalex:W3080685158",
+  "claims": [
+    {
+      "id": "openalex:W3080685158:c1",
+      "paper_id": "openalex:W3080685158",
+      "text": "Targeted colonic delivery of propionate via inulin-propionate ester (10 g/day for 24 weeks) significantly reduced weight gain compared to control in overweight adults.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3080685158:c2",
+      "paper_id": "openalex:W3080685158",
+      "text": "Oral sodium butyrate administration (4 g daily for 4 weeks) improved peripheral and hepatic insulin sensitivity in healthy lean men, but not in men with metabolic syndrome.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3080685158:c3",
+      "paper_id": "openalex:W3080685158",
+      "text": "Rectal infusion of 180 mmol acetate increased serum glucagon levels by approximately 26% and decreased free fatty acid levels by 22% in healthy human adults.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3080685158:c4",
+      "paper_id": "openalex:W3080685158",
+      "text": "Resistant starch supplementation (30 g/day for 4 weeks) improved whole-body insulin sensitivity by approximately 13% in healthy adults.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3080685158:e1",
+      "claim_id": "openalex:W3080685158:c1",
+      "description": "In a 24-week trial by Chambers et al. (2015), only 4% of participants receiving 10 g/day inulin-propionate ester gained 3% or more body weight, compared to 25% in the control group.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3080685158:e2",
+      "claim_id": "openalex:W3080685158:c2",
+      "description": "Hyperinsulinaemic-euglycaemic clamp measurements by Bouter et al. (2018) showed significant improvement in peripheral and hepatic insulin sensitivity in lean participants following 4 weeks of 4 g/day oral sodium butyrate.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3080685158:e3",
+      "claim_id": "openalex:W3080685158:c3",
+      "description": "Wolever et al. (1991) measured a ~26% increase in serum glucagon and a ~22% decrease in free fatty acid levels after acute 180 mmol rectal acetate infusion.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3080685158:e4",
+      "claim_id": "openalex:W3080685158:c4",
+      "description": "Robertson et al. (2005) observed a ~13% increase in whole-body insulin sensitivity via euglycemic-hyperinsulinemic clamp after 4 weeks of 30 g/day resistant starch supplementation.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3080685158:m1",
+      "paper_id": "openalex:W3080685158",
+      "name": "Systematic narrative literature review",
+      "description": "Literature search executed in PubMed and SCOPUS using specific SCFA search strings combined with topic keywords to synthesize human, animal, and in vitro evidence on SCFA and health.",
+      "datasets": [
+        "PubMed",
+        "SCOPUS"
+      ],
+      "conditions": [
+        "Human clinical intervention studies",
+        "Animal model studies",
+        "In vitro and ex vivo colonic models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3080685158:l1",
+      "paper_id": "openalex:W3080685158",
+      "text": "Human intervention studies examining the effects of SCFA on gut permeability, mucosal immunity, and metabolic parameters are limited in number, duration, and sample size.",
+      "normalized_category": "limited-human-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3080685158:l2",
+      "paper_id": "openalex:W3080685158",
+      "text": "Faecal SCFA concentrations reflect only distal colonic excretion and fail to accurately represent in vivo production or absorption kinetics across proximal colonic sites.",
+      "normalized_category": "measurement-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3080685158:l3",
+      "paper_id": "openalex:W3080685158",
+      "text": "Mechanistic findings from animal studies frequently rely on administration routes (e.g., intragastric or colonic infusions) that do not directly translate to oral dietary intakes in human physiology.",
+      "normalized_category": "animal-model-translation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3080685158:f1",
+      "paper_id": "openalex:W3080685158",
+      "text": "Conduct well-controlled, longer-term human SCFA intervention studies measuring SCFA fluxes and kinetics using stable isotope techniques.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3080685158:f2",
+      "paper_id": "openalex:W3080685158",
+      "text": "Investigate heterogeneity in metabolic response to SCFA interventions based on baseline metabolic phenotype, dietary fibre type, and colonic fermentation site.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3080685158:f3",
+      "paper_id": "openalex:W3080685158",
+      "text": "Control for confounding variables in human microbiome interventions, including diet, physical activity, medication use, and gut transit time.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:47:36.323706Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

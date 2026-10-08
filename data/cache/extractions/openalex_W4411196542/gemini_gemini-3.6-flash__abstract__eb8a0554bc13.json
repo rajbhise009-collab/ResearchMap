@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W4411196542",
+  "claims": [
+    {
+      "id": "openalex:W4411196542:c1",
+      "paper_id": "openalex:W4411196542",
+      "text": "The framework decomposes complex structural design tasks into subtasks handled by coordinated LLM agents with specialized expertise.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411196542:c2",
+      "paper_id": "openalex:W4411196542",
+      "text": "The multi-agent LLM framework achieves 97% accuracy compared against commercial engineering software SAP2000 in case studies on 30 beams.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411196542:c3",
+      "paper_id": "openalex:W4411196542",
+      "text": "The multi-agent LLM framework achieves a 90% time-saving in structural analysis and design.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411196542:c4",
+      "paper_id": "openalex:W4411196542",
+      "text": "A Graphical User Interface supporting natural language queries was developed to facilitate practical human-robot interaction.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4411196542:e1",
+      "claim_id": "openalex:W4411196542:c2",
+      "description": "Tested using case studies on the design and evaluation of 30 beams and compared against commercial engineering software SAP2000, demonstrating high accuracy (97 %).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411196542:e2",
+      "claim_id": "openalex:W4411196542:c3",
+      "description": "Case studies demonstrated 90 % time-saving in structural analysis and design.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4411196542:m1",
+      "paper_id": "openalex:W4411196542",
+      "name": "Multi-agent LLM framework for code-compliant structural design",
+      "description": "Decomposes complex design tasks into specialized subtasks executed by coordinated LLM agents alongside a natural language GUI.",
+      "datasets": [
+        "30 reinforced concrete beam case studies"
+      ],
+      "conditions": [
+        "Comparison against SAP2000 commercial engineering software",
+        "Code-compliant reinforced concrete design"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4411196542:l1",
+      "paper_id": "openalex:W4411196542",
+      "text": "The current manual approach for designing reinforced concrete, guided by structural design codes, is inefficient and susceptible to human error.",
+      "normalized_category": "manual-design-inefficiency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.121833Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

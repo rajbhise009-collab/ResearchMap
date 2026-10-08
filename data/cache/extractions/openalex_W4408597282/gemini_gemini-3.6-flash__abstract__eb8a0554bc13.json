@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W4408597282",
+  "claims": [
+    {
+      "id": "openalex:W4408597282:c1",
+      "paper_id": "openalex:W4408597282",
+      "text": "Using ChatGPT enhances the frequency and flexibility of creative output in creative writing tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c2",
+      "paper_id": "openalex:W4408597282",
+      "text": "Using ChatGPT reduces inaccuracy and unclarity in written creative outputs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c3",
+      "paper_id": "openalex:W4408597282",
+      "text": "Using ChatGPT reduces the time required to complete creative writing tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c4",
+      "paper_id": "openalex:W4408597282",
+      "text": "Using ChatGPT reduces the perceived effort and intellectual demand of creative writing tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c5",
+      "paper_id": "openalex:W4408597282",
+      "text": "Using ChatGPT reduces the perceived enjoyment and value of creative writing tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c6",
+      "paper_id": "openalex:W4408597282",
+      "text": "Non-native English speakers obtain greater performance benefits in creative writing tasks from ChatGPT compared to native speakers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c7",
+      "paper_id": "openalex:W4408597282",
+      "text": "Non-native English speakers experience greater changes in task perception regarding effort and enjoyment when using ChatGPT.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c8",
+      "paper_id": "openalex:W4408597282",
+      "text": "Participants report low moral acceptability and trust regarding unregulated AI in creative writing tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4408597282:c9",
+      "paper_id": "openalex:W4408597282",
+      "text": "Transparency in AI usage mitigates ethical concerns among participants in creative writing tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4408597282:e1",
+      "claim_id": "openalex:W4408597282:c1",
+      "description": "Participants who used ChatGPT were more likely to perform better, showing higher frequency and flexibility of creativity in writing.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e2",
+      "claim_id": "openalex:W4408597282:c2",
+      "description": "ChatGPT-assisted participants showed less inaccuracy and unclarity in their writing output.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e3",
+      "claim_id": "openalex:W4408597282:c3",
+      "description": "ChatGPT-assisted participants required less time to complete the creative writing task.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e4",
+      "claim_id": "openalex:W4408597282:e4",
+      "description": "Participants using ChatGPT found the creative writing task to be less effortful and intellectually demanding in post-task surveys.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e5",
+      "claim_id": "openalex:W4408597282:c5",
+      "description": "Participants using ChatGPT reported that the creative writing task was less enjoyable and valued.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e6",
+      "claim_id": "openalex:W4408597282:c6",
+      "description": "Non-native English speakers benefited most from ChatGPT in task performance in the experimental writing study.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e7",
+      "claim_id": "openalex:W4408597282:c7",
+      "description": "Non-native English speakers were most affected by perception changes regarding task enjoyment and effort.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e8",
+      "claim_id": "openalex:W4408597282:c8",
+      "description": "Participants reported low moral acceptability and trust in unregulated AI in pre- and post-task surveys.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4408597282:e9",
+      "claim_id": "openalex:W4408597282:c9",
+      "description": "Survey responses indicated that transparency mitigates some ethical concerns regarding AI integration.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4408597282:m1",
+      "paper_id": "openalex:W4408597282",
+      "name": "Controlled user experiment with pre- and post-task surveys",
+      "description": "Evaluated task performance and perceptions of 225 university students completing a creative writing task with or without ChatGPT assistance.",
+      "datasets": [],
+      "conditions": [
+        "ChatGPT assistance",
+        "Control (no ChatGPT)"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.121064Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

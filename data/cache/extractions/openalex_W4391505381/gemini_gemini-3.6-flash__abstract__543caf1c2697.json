@@ -1,0 +1,88 @@
+{
+  "paper_id": "openalex:W4391505381",
+  "claims": [
+    {
+      "id": "openalex:W4391505381:c1",
+      "paper_id": "openalex:W4391505381",
+      "text": "Existing uncertainty estimation approaches for LLMs are either white-box or computationally demanding.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c2",
+      "paper_id": "openalex:W4391505381",
+      "text": "The proposed non-parametric uncertainty quantification method efficiently estimates point-wise dependencies between input and decision on the fly with a single inference without access to token logits.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c3",
+      "paper_id": "openalex:W4391505381",
+      "text": "The proposed estimator informs the statistical interpretation of decision trustworthiness.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c4",
+      "paper_id": "openalex:W4391505381",
+      "text": "The decision-making agent prompts users for preferences when more than one action has high estimated point-wise dependencies.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391505381:c5",
+      "paper_id": "openalex:W4391505381",
+      "text": "The proposed uncertainty estimation and decision-making agent design offer a cost-efficient approach for AI agent development.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391505381:e1",
+      "claim_id": "openalex:W4391505381:c1",
+      "description": "Existing approaches are either white-box or computationally demanding, limiting use of black-box proprietary LLMs within budgets.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391505381:m1",
+      "paper_id": "openalex:W4391505381",
+      "name": "Non-Parametric Uncertainty Quantification for Black-Box LLMs",
+      "description": "Estimates point-wise dependencies between input and decision on the fly using a single inference without token logits.",
+      "datasets": [],
+      "conditions": [
+        "black-box LLMs",
+        "single inference"
+      ]
+    },
+    {
+      "id": "openalex:W4391505381:m2",
+      "paper_id": "openalex:W4391505381",
+      "name": "Uncertainty-Aware Decision-Making Agent",
+      "description": "Generates actions based on user prompts and requests user preferences when multiple actions have high estimated point-wise dependencies.",
+      "datasets": [],
+      "conditions": [
+        "user preference clarification"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391505381:l1",
+      "paper_id": "openalex:W4391505381",
+      "text": "Existing approaches are either white-box or computationally demanding, limiting use of black-box proprietary LLMs within budgets.",
+      "normalized_category": "high-computational-cost",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:25:37.709554Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

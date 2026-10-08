@@ -1,0 +1,155 @@
+{
+  "paper_id": "openalex:W4401477103",
+  "claims": [
+    {
+      "id": "openalex:W4401477103:c1",
+      "paper_id": "openalex:W4401477103",
+      "text": "The pattern-matching baseline model achieved a 77.33% average overall accuracy across nine SDoH aspects.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c2",
+      "paper_id": "openalex:W4401477103",
+      "text": "openchat_3.5 achieved over 40% higher average Accuracy_mentioned than the pattern-matching baseline model.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c3",
+      "paper_id": "openalex:W4401477103",
+      "text": "Llama-2-13b-chat was the only evaluated LLM with a significantly lower average Accuracy_mentioned compared to the baseline.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c4",
+      "paper_id": "openalex:W4401477103",
+      "text": "Two human reviewers achieved 93% inter-annotator agreement on manual labeling of 9 SDoH aspects across 200 patient records.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c5",
+      "paper_id": "openalex:W4401477103",
+      "text": "The pattern-matching baseline model achieved an average Accuracy_non-mentioned of 96.66%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401477103:c6",
+      "paper_id": "openalex:W4401477103",
+      "text": "Model quantization did not substantially compromise LLM performance on SDoH extraction tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401477103:e1",
+      "claim_id": "openalex:W4401477103:c1",
+      "description": "The baseline model achieved a 77.33% average Accuracyoverall, which was mainly attributable to its high average Accuracynon-mentioned.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401477103:e2",
+      "claim_id": "openalex:W4401477103:c2",
+      "description": "Openchat_3.5 achieved over 40% higher of the average Accuracy mentioned than the baseline, which shows its superior capability in extracting information when it is contained in free text.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401477103:e3",
+      "claim_id": "openalex:W4401477103:c3",
+      "description": "On the other hand, Llama-2-13b-chat was the only LLM that had a significantly worse average Accuracymentioned compared to the baseline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401477103:e4",
+      "claim_id": "openalex:W4401477103:c4",
+      "description": "The inter-annotator agreement was calculated based on the total number of the 1800 questions (9 SdoH questions * 200 patients) that the two annotators agreed before discussion among all the 1800 questions, which was 93%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401477103:e5",
+      "claim_id": "openalex:W4401477103:c5",
+      "description": "We found that the baseline achieved an average Accuracy non-mentioned of 96.66%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401477103:e6",
+      "claim_id": "openalex:W4401477103:c6",
+      "description": "We also observed that quantization, which could make these models more applicable in resource limited settings, did not substantially compromise the performance on extraction tasks.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401477103:m1",
+      "paper_id": "openalex:W4401477103",
+      "name": "Zero-shot open-source LLM extraction pipeline with prompt engineering",
+      "description": "A question-answering framework using eight open-source LLMs with prompt engineering, AWQ quantization, and post-processing pattern matching to extract nine SDoH categories from unstructured clinical notes.",
+      "datasets": [
+        "Mass General Brigham (MGB) EHR system"
+      ],
+      "conditions": [
+        "Eight open-source LLMs evaluated",
+        "Activation-aware Weight Quantization (AWQ)",
+        "Zero-shot prompting with default vs. refined prompt engineering",
+        "Evaluated on 100 validation and 100 test patient clinical notes against manual annotations"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401477103:l1",
+      "paper_id": "openalex:W4401477103",
+      "text": "Traditional rule-based NLP approaches are constrained by their lack of generalizability across different datasets and settings.",
+      "normalized_category": "rule-based-nlp-generalizability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4401477103:l2",
+      "paper_id": "openalex:W4401477103",
+      "text": "Machine learning-based NLP models rely heavily on the costly step of manual data annotation for model training, making them harder to scale.",
+      "normalized_category": "annotation-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4401477103:l3",
+      "paper_id": "openalex:W4401477103",
+      "text": "The prompt engineering and LLM response postprocessing steps involve complexity and subjectivity.",
+      "normalized_category": "prompt-engineering-complexity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4401477103:l4",
+      "paper_id": "openalex:W4401477103",
+      "text": "Observations regarding model performance based on general SDoH concepts may not extrapolate to other, more complex clinical feature extraction tasks.",
+      "normalized_category": "domain-extrapolation-risk",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4401477103:l5",
+      "paper_id": "openalex:W4401477103",
+      "text": "Premise prompts designed to reduce hallucination in the refined pipeline reduced sensitivity to SDoH features mentioned in the text.",
+      "normalized_category": "hallucination-sensitivity-tradeoff",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4401477103:f1",
+      "paper_id": "openalex:W4401477103",
+      "text": "Conduct specific training or fine-tuning of open-source LLMs on free-text EHRs for extracting more complex clinical concepts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.984223Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

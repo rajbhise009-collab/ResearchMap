@@ -1,0 +1,77 @@
+{
+  "paper_id": "openalex:W4389359039",
+  "claims": [
+    {
+      "id": "openalex:W4389359039:c1",
+      "paper_id": "openalex:W4389359039",
+      "text": "Generative AI models produce probabilistic and non-replicable outputs across repeated identical input prompts.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389359039:c2",
+      "paper_id": "openalex:W4389359039",
+      "text": "The architecture of generative AI systems within an information systems context consists of three core layers: model layer, connection layer, and application layer.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389359039:e1",
+      "claim_id": "openalex:W4389359039:c1",
+      "description": "The authors explain that prompting a generative AI model with an identical prompt yields varying valid outputs due to inherent output variance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389359039:e2",
+      "claim_id": "openalex:W4389359039:c2",
+      "description": "The paper presents a conceptual framework mapping the model layer, connection layer, and application layer within an organizational environment.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389359039:m1",
+      "paper_id": "openalex:W4389359039",
+      "name": "Explorative Literature Synthesis",
+      "description": "Synthesizes technical literature on deep generative models alongside empirical application examples to conceptualize core properties and challenges of generative AI.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389359039:l1",
+      "paper_id": "openalex:W4389359039",
+      "text": "The provided framework is based on qualitative literature synthesis and lacks empirical quantitative evaluation of generative AI adoption.",
+      "normalized_category": "lack-of-empirical-validation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389359039:l2",
+      "paper_id": "openalex:W4389359039",
+      "text": "Automatic evaluation methods for detecting model hallucinations remain prone to errors and inferior to manual human assessment.",
+      "normalized_category": "evaluation-metric-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389359039:f1",
+      "paper_id": "openalex:W4389359039",
+      "text": "Developing measures and mechanisms to ensure technological transparency and enhance public trust in generative AI.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389359039:f2",
+      "paper_id": "openalex:W4389359039",
+      "text": "Formulating structured process models for deploying generative AI-based systems safely in enterprise environments.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.997435Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

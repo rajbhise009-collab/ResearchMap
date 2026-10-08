@@ -1,0 +1,98 @@
+{
+  "paper_id": "openalex:W4401616827",
+  "claims": [
+    {
+      "id": "openalex:W4401616827:c1",
+      "paper_id": "openalex:W4401616827",
+      "text": "Large Language Models are susceptible to hallucinations where they generate plausible-looking but factually incorrect outputs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c2",
+      "paper_id": "openalex:W4401616827",
+      "text": "Combining grammar-aware prompt engineering and formal methods decreases ambiguity in LLM prompts.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c3",
+      "paper_id": "openalex:W4401616827",
+      "text": "Combining grammar-aware prompt engineering and formal methods improves consistency in LLM outputs.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401616827:c4",
+      "paper_id": "openalex:W4401616827",
+      "text": "Combining grammar-aware prompt engineering and formal methods diminishes LLM hallucinations.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401616827:e1",
+      "claim_id": "openalex:W4401616827:c1",
+      "description": "a critical challenge hindering their real-world deployment is their susceptibility to hallucinations, where they generate plausible looking but factually incorrect outputs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401616827:e2",
+      "claim_id": "openalex:W4401616827:c2",
+      "description": "by combining linguistic principles using GAPE and constructing a basis of formal structures using FMs, we could improve the LLM's ability to analyse language, decrease ambiguity in prompts",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4401616827:e3",
+      "claim_id": "openalex:W4401616827:c3",
+      "description": "by combining linguistic principles using GAPE and constructing a basis of formal structures using FMs, we could... improve consistency in output",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4401616827:e4",
+      "claim_id": "openalex:W4401616827:c4",
+      "description": "by combining linguistic principles using GAPE and constructing a basis of formal structures using FMs, we could... eventually, greatly diminish LLM hallucinations.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401616827:m1",
+      "paper_id": "openalex:W4401616827",
+      "name": "Grammar-Aware Prompt Engineering and Formal Methods Synergy (GAPE-FM)",
+      "description": "A framework combining linguistic principles in prompt engineering with formal method structures to refine prompt logic and reduce hallucinations in LLMs.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401616827:l1",
+      "paper_id": "openalex:W4401616827",
+      "text": "LLMs are susceptible to hallucinations, producing plausible-looking but factually incorrect outputs that propagate misinformation and reduce user trust.",
+      "normalized_category": "hallucination-vulnerability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4401616827:f1",
+      "paper_id": "openalex:W4401616827",
+      "text": "Foster interdisciplinary collaboration between linguists and AI experts to provide specialized LLM training emphasizing linguistic precision.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4401616827:f2",
+      "paper_id": "openalex:W4401616827",
+      "text": "Implement iterative design and development procedures utilizing GAPE and FM principles to continuously enhance LLM performance.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.080704Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,164 @@
+{
+  "paper_id": "openalex:W2900885930",
+  "claims": [
+    {
+      "id": "openalex:W2900885930:c1",
+      "paper_id": "openalex:W2900885930",
+      "text": "Under separation and sufficiency, either the outcome and score are jointly independent of the sensitive attribute, or an event in the joint distribution has probability zero.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2900885930:c2",
+      "paper_id": "openalex:W2900885930",
+      "text": "Achieving balance for both negative and positive classes alongside within-group calibration requires either equal base rates across protected groups or perfect prediction accuracy.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2900885930:c3",
+      "paper_id": "openalex:W2900885930",
+      "text": "A scoring function exhibiting both separation and demographic parity implies either equal base rates across groups or zero predictive utility.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2900885930:c4",
+      "paper_id": "openalex:W2900885930",
+      "text": "A scoring function exhibiting both sufficiency and demographic parity implies equal base rates across protected groups.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2900885930:c5",
+      "paper_id": "openalex:W2900885930",
+      "text": "Decision rules that maximize utility under a demographic parity constraint generally require using sensitive attributes during both probability estimation and threshold selection.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2900885930:c6",
+      "paper_id": "openalex:W2900885930",
+      "text": "Single-threshold decision rules maximize expected utility when scores accurately estimate outcome probabilities and utilities satisfy separate, symmetric, and simultaneous evaluation assumptions.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2900885930:c7",
+      "paper_id": "openalex:W2900885930",
+      "text": "Mathematical definitions of algorithmic fairness evaluated solely on decision-subject populations fail to account for bias in the mechanisms that govern population entry.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2900885930:e1",
+      "claim_id": "openalex:W2900885930:c1",
+      "description": "The authors state that Barocas et al. and Wasserman show that under separation (S ⊥ A | Y) and sufficiency (Y ⊥ A | S), either (Y,S) ⊥ A or an event in the joint distribution has probability zero.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2900885930:e2",
+      "claim_id": "openalex:W2900885930:c2",
+      "description": "Kleinberg et al. showed that satisfying balance for the negative class, balance for the positive class, and calibration within groups requires either equal base rates (Y ⊥ A) or perfect prediction.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2900885930:e3",
+      "claim_id": "openalex:W2900885930:c3",
+      "description": "Barocas et al. showed that when Y is binary and the scoring function exhibits separation and demographic parity, there must be either equal base rates or a useless predictor (Y ⊥ S).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2900885930:e4",
+      "claim_id": "openalex:W2900885930:c4",
+      "description": "Barocas et al. showed that if a model satisfies sufficiency and demographic parity, then there must be equal base rates: Y ⊥ A.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2900885930:e5",
+      "claim_id": "openalex:W2900885930:c5",
+      "description": "Corbett-Davies et al. and Lipton et al. note that a decision rule maximizing utility under a demographic parity constraint generally uses sensitive variables both in estimating conditional probabilities and determining thresholds.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2900885930:e6",
+      "claim_id": "openalex:W2900885930:c6",
+      "description": "The paper references utility maximization results showing single-threshold optimality when scores approximate conditional probabilities and utility functions satisfy separate, symmetric, and simultaneous assumptions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2900885930:e7",
+      "claim_id": "openalex:W2900885930:c7",
+      "description": "The paper notes that a model satisfying fairness criteria evaluated only on the population to which it is applied may overlook unfairness in the selection mechanism that brought individuals into that population.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2900885930:m1",
+      "paper_id": "openalex:W2900885930",
+      "name": "Systematic Literature Taxonomy and Survey of Algorithmic Fairness Definitions",
+      "description": "Categorizes choices, assumptions, and mathematical definitions of fairness in machine learning, contrasting oblivious metrics with metric-based and causal frameworks.",
+      "datasets": [],
+      "conditions": [
+        "Binary decision-making settings based on binary outcome predictions",
+        "Application to pretrial risk assessment and loan default prediction scenarios"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2900885930:l1",
+      "paper_id": "openalex:W2900885930",
+      "text": "Oblivious fairness metrics evaluate distributions of observed features, outcomes, scores, and decisions without referencing external social context or structural inequalities.",
+      "normalized_category": "oblivious-fairness-context-omission",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2900885930:l2",
+      "paper_id": "openalex:W2900885930",
+      "text": "Implementing metric fairness in practice is difficult due to the challenge of explicitly defining distance metrics over high-dimensional feature spaces.",
+      "normalized_category": "metric-fairness-specification-difficulty",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2900885930:l3",
+      "paper_id": "openalex:W2900885930",
+      "text": "Causal fairness definitions require making unverifiable assumptions about counterfactuals or requiring direct access to internal model mechanisms.",
+      "normalized_category": "causal-fairness-unverifiable-assumptions",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2900885930:l4",
+      "paper_id": "openalex:W2900885930",
+      "text": "The paper focuses primarily on summarizing and cataloguing existing formal definitions without advancing new axiomatic mathematical definitions of fairness.",
+      "normalized_category": "scope-limitation-no-new-axioms",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2900885930:f1",
+      "paper_id": "openalex:W2900885930",
+      "text": "Develop causal reasoning frameworks to design earlier structural interventions prior to decision-making rather than solely defining fairness constraints at decision time.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2900885930:f2",
+      "paper_id": "openalex:W2900885930",
+      "text": "Construct expanded decision models and utility functions that account for interference, heterogeneous treatment effects, and serial or temporal dynamic impacts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.134966Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

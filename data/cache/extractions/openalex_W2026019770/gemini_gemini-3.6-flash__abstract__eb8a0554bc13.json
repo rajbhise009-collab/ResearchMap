@@ -1,0 +1,73 @@
+{
+  "paper_id": "openalex:W2026019770",
+  "claims": [
+    {
+      "id": "openalex:W2026019770:c1",
+      "paper_id": "openalex:W2026019770",
+      "text": "Rules extracted from databases by data mining techniques can be discriminatory when used for decision tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2026019770:c2",
+      "paper_id": "openalex:W2026019770",
+      "text": "Removing discriminatory attributes from a dataset is insufficient to guarantee non-discrimination when background knowledge is available.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2026019770:c3",
+      "paper_id": "openalex:W2026019770",
+      "text": "Discriminatory rules can be formally related to apparently safe rules using background knowledge to characterize redlining.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2026019770:e1",
+      "claim_id": "openalex:W2026019770:c1",
+      "description": "Rules extracted from databases by data mining techniques, such as classification or association rules, when used for decision tasks such as benefit or credit approval, can be discriminatory.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2026019770:e2",
+      "claim_id": "openalex:W2026019770:c2",
+      "description": "A naive approach, like taking away all discriminatory attributes, is shown to be not enough when other background knowledge is available.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2026019770:e3",
+      "claim_id": "openalex:W2026019770:c3",
+      "description": "Our approach leads to a precise formulation of the redlining problem along with a formal result relating discriminatory rules with apparently safe ones by means of background knowledge.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2026019770:m1",
+      "paper_id": "openalex:W2026019770",
+      "name": "Discrimination-aware data mining",
+      "description": "A framework for defining, formalizing, and identifying discriminatory classification rules and redlining through background knowledge.",
+      "datasets": [
+        "German credit dataset"
+      ],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2026019770:l1",
+      "paper_id": "openalex:W2026019770",
+      "text": "Naive approaches that simply remove discriminatory attributes fail to guarantee non-discrimination when background knowledge is available.",
+      "normalized_category": "naive-attribute-suppression-ineffective",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:11:50.338109Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

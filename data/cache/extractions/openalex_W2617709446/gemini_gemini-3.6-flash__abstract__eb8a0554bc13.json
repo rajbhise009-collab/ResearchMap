@@ -1,0 +1,82 @@
+{
+  "paper_id": "openalex:W2617709446",
+  "claims": [
+    {
+      "id": "openalex:W2617709446:c1",
+      "paper_id": "openalex:W2617709446",
+      "text": "Process fairness can be measured by estimating the degree to which people consider various features to be fair to use when making an important legal decision.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2617709446:c2",
+      "paper_id": "openalex:W2617709446",
+      "text": "Process fairness can be achieved with little cost to outcome fairness.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2617709446:c3",
+      "paper_id": "openalex:W2617709446",
+      "text": "Removing features that cause public discomfort leads to an unavoidable loss of prediction accuracy.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2617709446:e1",
+      "claim_id": "openalex:W2617709446:c1",
+      "description": "Process fairness can be measured by estimating the degree to which people consider various features to be fair to use when making an important legal decision.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2617709446:e2",
+      "claim_id": "openalex:W2617709446:c2",
+      "description": "Our empirical analysis suggests that process fairness may be achieved with little cost to outcome fairness.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2617709446:e3",
+      "claim_id": "openalex:W2617709446:c3",
+      "description": "Our empirical analysis suggests that ... some loss of accuracy is unavoidable.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2617709446:m1",
+      "paper_id": "openalex:W2617709446",
+      "name": "Process fairness estimation via feature selection",
+      "description": "Estimating public discomfort with decision-making features and evaluating the impact of removing uncomfortable features on model accuracy and outcome fairness.",
+      "datasets": [
+        "ProPublica COMPAS dataset"
+      ],
+      "conditions": [
+        "Recidivism prediction for released prisoners"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2617709446:l1",
+      "paper_id": "openalex:W2617709446",
+      "text": "Achieving process fairness through feature removal incurs an unavoidable loss of prediction accuracy.",
+      "normalized_category": "accuracy-tradeoff",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2617709446:l2",
+      "paper_id": "openalex:W2617709446",
+      "text": "Prior works focus on outcome fairness of decisions rather than considering the fairness of the decision-making process itself.",
+      "normalized_category": "narrow-focus",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:21:17.127208Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

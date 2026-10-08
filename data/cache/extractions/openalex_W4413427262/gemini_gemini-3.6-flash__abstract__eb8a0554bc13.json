@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W4413427262",
+  "claims": [
+    {
+      "id": "openalex:W4413427262:c1",
+      "paper_id": "openalex:W4413427262",
+      "text": "AI Agents are modular systems driven and enabled by LLMs and LIMs for task-specific automation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c2",
+      "paper_id": "openalex:W4413427262",
+      "text": "Agentic AI systems represent a paradigm shift marked by multi-agent collaboration, dynamic task decomposition, persistent memory, and coordinated autonomy.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c3",
+      "paper_id": "openalex:W4413427262",
+      "text": "AI Agents enable applications in customer support, scheduling, and data summarization.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413427262:c4",
+      "paper_id": "openalex:W4413427262",
+      "text": "Agentic AI enables deployments in research automation, robotic coordination, and medical decision support.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413427262:e1",
+      "claim_id": "openalex:W4413427262:c1",
+      "description": "Abstract characterizes AI Agents as modular systems driven and enabled by LLMs and LIMs for task-specific automation.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413427262:e2",
+      "claim_id": "openalex:W4413427262:c2",
+      "description": "Abstract contrasts Agentic AI with AI Agents as a paradigm shift defined by multi-agent collaboration, dynamic task decomposition, persistent memory, and coordinated autonomy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413427262:e3",
+      "claim_id": "openalex:W4413427262:c3",
+      "description": "Abstract outlines application domains enabled by AI Agents including customer support, scheduling, and data summarization.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4413427262:e4",
+      "claim_id": "openalex:W4413427262:c4",
+      "description": "Abstract lists Agentic AI deployments in research automation, robotic coordination, and medical decision support.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413427262:m1",
+      "paper_id": "openalex:W4413427262",
+      "name": "Taxonomic Review and Chronological Comparative Analysis",
+      "description": "A systematic review evaluating architectural evolution, operational mechanisms, interaction styles, and autonomy levels across AI agents and agentic AI.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413427262:l1",
+      "paper_id": "openalex:W4413427262",
+      "text": "AI agent and Agentic AI paradigms suffer from challenges including hallucination, brittleness, emergent behavior, and coordination failure.",
+      "normalized_category": "system-robustness-and-reliability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.116576Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

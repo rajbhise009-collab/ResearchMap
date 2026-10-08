@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W4394877201",
+  "claims": [
+    {
+      "id": "openalex:W4394877201:c1",
+      "paper_id": "openalex:W4394877201",
+      "text": "CGKPN performs self-view node embedding on constructed logical and semantic graphs to update graph representations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394877201:c2",
+      "paper_id": "openalex:W4394877201",
+      "text": "CGKPN introduces a node relevance matrix to adaptively adjust node connections against graph sparsity.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394877201:c3",
+      "paper_id": "openalex:W4394877201",
+      "text": "CGKPN conducts cross-graph knowledge propagation on identical nodes across logical and semantic graphs to resolve node conflicts across views and integrate logical and semantic relationships.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4394877201:e1",
+      "claim_id": "openalex:W4394877201:c1",
+      "description": "The model first performs self-view node embedding on the constructed logical graph and semantic graph to update the representations of the graphs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4394877201:e2",
+      "claim_id": "openalex:W4394877201:c2",
+      "description": "Specifically, a relevance matrix between nodes is introduced to adaptively adjust node connections in response to the challenge posed by sparse graph.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4394877201:e3",
+      "claim_id": "openalex:W4394877201:c3",
+      "description": "Subsequently, CGKPN conducts cross-graph knowledge propagation on nodes that are identical in both graphs, effectively resolving conflicts arising from identical nodes in different views, and enabling the model to better integrate the logical and semantic relationships of the text through efficient interaction.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4394877201:m1",
+      "paper_id": "openalex:W4394877201",
+      "name": "Cross-Graph Knowledge Propagation Network (CGKPN)",
+      "description": "A framework performing self-view node embedding on semantic and logical graphs, adaptive connection adjustments via a node relevance matrix, and cross-graph knowledge propagation across identical nodes.",
+      "datasets": [
+        "ReClor",
+        "LogiQA"
+      ],
+      "conditions": [
+        "Reasoning-Based Machine Reading Comprehension"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4394877201:l1",
+      "paper_id": "openalex:W4394877201",
+      "text": "Previous methods consider only the logical structure or only the semantic structure of the text and cannot simultaneously balance semantic understanding and logical reasoning.",
+      "normalized_category": "single-view-reasoning",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4394877201:l2",
+      "paper_id": "openalex:W4394877201",
+      "text": "Sparsity in composition presents a significant challenge for graph-based reasoning models.",
+      "normalized_category": "graph-sparsity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.123341Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,206 @@
+{
+  "paper_id": "openalex:W4389523832",
+  "claims": [
+    {
+      "id": "openalex:W4389523832:c1",
+      "paper_id": "openalex:W4389523832",
+      "text": "Most instruction-tuned Large Vision-Language Models (LVLMs) severely suffer from object hallucination issues.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c2",
+      "paper_id": "openalex:W4389523832",
+      "text": "Objects that frequently appear in visual instruction datasets are prone to be hallucinated by LVLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c3",
+      "paper_id": "openalex:W4389523832",
+      "text": "Objects that frequently co-occur with ground-truth image objects are prone to be hallucinated by LVLMs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c4",
+      "paper_id": "openalex:W4389523832",
+      "text": "POPE formulates the evaluation of object hallucination as a binary Yes/No classification task.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c5",
+      "paper_id": "openalex:W4389523832",
+      "text": "InstructBLIP achieves an F1 score of 89.29 under the POPE Random sampling setting on the MSCOCO validation dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c6",
+      "paper_id": "openalex:W4389523832",
+      "text": "LLaVA achieves an F1 score of 68.65 under the POPE Random sampling setting on the MSCOCO validation dataset.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c7",
+      "paper_id": "openalex:W4389523832",
+      "text": "LVLM evaluation performance consistently drops across all tested models when transitioning from Random to Popular and Adversarial sampling settings in POPE.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c8",
+      "paper_id": "openalex:W4389523832",
+      "text": "POPE metrics exhibit lower standard deviation across prompt template variations compared to the CHAIR metric.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389523832:c9",
+      "paper_id": "openalex:W4389523832",
+      "text": "The degree of object hallucination in an LVLM is not always consistent with its Visual Question Answering (VQA) task performance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389523832:e1",
+      "claim_id": "openalex:W4389523832:c1",
+      "description": "Table 1 shows CHAIR_S scores on MSCOCO with Instruction 1, where LLaVA scores 32.7, mPLUG-Owl scores 25.4, and MultiModal-GPT scores 15.0, compared to smaller models like OSCAR_Base at 13.0.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389523832:e2",
+      "claim_id": "openalex:W4389523832:c2",
+      "description": "Table 2 demonstrates HRA@10 scores near 0.5 across mPLUG-Owl (0.5455), LLaVA (0.4620), MultiModal-GPT (0.4152), and MiniGPT-4 (0.4610), indicating approximately half of all hallucinated objects are in the top 10 most frequent MSCOCO objects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389523832:e3",
+      "claim_id": "openalex:W4389523832:c3",
+      "description": "Table 2 shows HRC@10(dining table) scores above 0.55 across tested models, indicating over half of hallucinated objects in images containing 'dining table' belong to its top 10 co-occurring objects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389523832:e4",
+      "claim_id": "openalex:W4389523832:c4",
+      "description": "POPE queries LVLMs with closed-ended probing question templates such as 'Is there a/an <object> in the image?' with standard ground-truth binary answers.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4389523832:e5",
+      "claim_id": "openalex:W4389523832:c5",
+      "description": "Table 3 reports InstructBLIP achieving 88.73% Accuracy, 85.08% Precision, 93.93% Recall, and an F1 score of 89.29 under POPE Random on MSCOCO.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4389523832:e6",
+      "claim_id": "openalex:W4389523832:c6",
+      "description": "Table 3 reports LLaVA achieving 54.43% Accuracy, 52.32% Precision, 99.80% Recall, and an F1 score of 68.65 under POPE Random on MSCOCO.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W4389523832:e7",
+      "claim_id": "openalex:W4389523832:c7",
+      "description": "Table 3 shows F1 scores drop from Random to Popular to Adversarial for InstructBLIP (89.29 -> 83.45 -> 78.45) and MiniGPT-4 (78.86 -> 72.21 -> 71.37).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389523832:e8",
+      "claim_id": "openalex:W4389523832:c8",
+      "description": "Table 4 shows LLaVA's POPE F1 score yields 67.43 ± 0.78 across four distinct prompt templates, while CHAIR_I yields 13.88 ± 3.22.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389523832:e9",
+      "claim_id": "openalex:W4389523832:c9",
+      "description": "Table 6 shows MiniGPT-4 achieves higher POPE F1 score than LLaVA on A-OKVQA (72.47 vs 66.64) but lower VQA score (38.69 vs 50.51).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389523832:m1",
+      "paper_id": "openalex:W4389523832",
+      "name": "Polling-based Object Probing Evaluation (POPE)",
+      "description": "A polling method that converts object hallucination evaluation into a binary classification task probing target images with Yes/No questions using Random, Popular, and Adversarial negative sampling strategies.",
+      "datasets": [
+        "MSCOCO",
+        "A-OKVQA",
+        "GQA"
+      ],
+      "conditions": [
+        "Random Negative Sampling",
+        "Popular Negative Sampling",
+        "Adversarial Negative Sampling",
+        "Human Annotations",
+        "SEEM Automatic Segmentation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389523832:l1",
+      "paper_id": "openalex:W4389523832",
+      "text": "The CHAIR metric is unstable across different prompt instructions and relies on complex human-crafted exact-matching parsing rules that misclassify generated text styles.",
+      "normalized_category": "metric-instability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4389523832:l2",
+      "paper_id": "openalex:W4389523832",
+      "text": "The evaluation focuses only on coarse object-level hallucinations and does not consider fine-grained attributes, positions, or quantities of objects.",
+      "normalized_category": "evaluation-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389523832:l3",
+      "paper_id": "openalex:W4389523832",
+      "text": "Evaluation was conducted on a subset of the validation split due to computational resource constraints.",
+      "normalized_category": "evaluation-scale",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389523832:l4",
+      "paper_id": "openalex:W4389523832",
+      "text": "Matching-based answer parsing in POPE can fail when LVLMs occasionally produce responses that do not explicitly contain 'Yes' or 'No'.",
+      "normalized_category": "parsing-failure",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4389523832:l5",
+      "paper_id": "openalex:W4389523832",
+      "text": "When combined with automatic segmentation tools like SEEM, object label sets may diverge from human ground-truth annotations, leading to evaluation result differences.",
+      "normalized_category": "annotation-mismatch",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4389523832:f1",
+      "paper_id": "openalex:W4389523832",
+      "text": "Evaluating fine-grained object hallucinations, including object numbers, attributes, and spatial positions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4389523832:f2",
+      "paper_id": "openalex:W4389523832",
+      "text": "Extending POPE evaluation to a larger selection of recent open-source and closed-source LVLMs.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.961256Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

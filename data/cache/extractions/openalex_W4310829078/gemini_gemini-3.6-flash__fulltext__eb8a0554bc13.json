@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W4310829078",
+  "claims": [
+    {
+      "id": "openalex:W4310829078:c1",
+      "paper_id": "openalex:W4310829078",
+      "text": "In-context learning produces incorrect predictions when inferring the labels of few-shot training support instances themselves.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4310829078:c2",
+      "paper_id": "openalex:W4310829078",
+      "text": "Nearest neighbor calibration (KNN-C) achieves a 12.8% absolute average accuracy improvement over standard in-context learning on single-sentence NLP tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4310829078:c3",
+      "paper_id": "openalex:W4310829078",
+      "text": "KNN-C achieves a 6.2% absolute average accuracy improvement over standard in-context learning on sentence-pair NLP tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4310829078:c4",
+      "paper_id": "openalex:W4310829078",
+      "text": "Combining Adaptive Neighbor Selection and Feature Regularization modules reduces retrieval noise in kNN-augmented in-context learning.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4310829078:c5",
+      "paper_id": "openalex:W4310829078",
+      "text": "Standard in-context learning yields significantly smaller improvements on sentence-pair tasks compared to single-sentence tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4310829078:e1",
+      "claim_id": "openalex:W4310829078:c1",
+      "description": "In-context learning produces contradicting predictions when inferring support instances, with error rates on training data closely tracking test error rates across datasets.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4310829078:e2",
+      "claim_id": "openalex:W4310829078:c2",
+      "description": "KNN-C increases average accuracy across six single-sentence benchmarks from 68.6% (ICL) to 81.4%, representing a 12.8% absolute gain.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4310829078:e3",
+      "claim_id": "openalex:W4310829078:c3",
+      "description": "KNN-C increases average accuracy across six sentence-pair benchmarks from 55.9% (ICL) to 62.1%, representing a 6.2% absolute gain.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4310829078:e4",
+      "claim_id": "openalex:W4310829078:c4",
+      "description": "Ablation experiments show that removing ANS drops average single-sentence accuracy from 81.4% to 80.7%, removing FR drops it to 80.0%, and removing both drops it to 79.3%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4310829078:e5",
+      "claim_id": "openalex:W4310829078:c5",
+      "description": "In-context learning improves average accuracy over PV-Zero by 18.1% on single-sentence tasks, but only by 1.4% on pairwise tasks.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4310829078:m1",
+      "paper_id": "openalex:W4310829078",
+      "name": "Nearest Neighbor Calibration (KNN-C)",
+      "description": "An in-context learning framework that interpolates language model predictions with kNN retrieval over cached few-shot support instance hidden representations, enhanced with lightweight adaptive neighbor selection and feature regularization modules.",
+      "datasets": [
+        "SST-2",
+        "SST-5",
+        "CR",
+        "MR",
+        "SUBJ",
+        "TREC",
+        "CB",
+        "RTE",
+        "QNLI",
+        "MRPC",
+        "QQP",
+        "WiC"
+      ],
+      "conditions": [
+        "RoBERTa-large backbone",
+        "BERT-large backbone",
+        "K=16 training examples per class",
+        "16 development examples per class"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4310829078:l1",
+      "paper_id": "openalex:W4310829078",
+      "text": "In-context learning performance is highly sensitive to the choice of prompting templates, verbalizers, training examples, and example ordering.",
+      "normalized_category": "prompt-sensitivity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4310829078:l2",
+      "paper_id": "openalex:W4310829078",
+      "text": "A substantial performance gap remains between KNN-C and fine-tuning based methods on sentence-pair tasks like text entailment and paraphrasing.",
+      "normalized_category": "task-performance-gap",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4310829078:l3",
+      "paper_id": "openalex:W4310829078",
+      "text": "Optimizing the Adaptive Neighbor Selection and Feature Regularization modules on small datasets can result in instability and fail to find optimal solutions.",
+      "normalized_category": "optimization-instability-small-data",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4310829078:f1",
+      "paper_id": "openalex:W4310829078",
+      "text": "Combine the nearest neighbor calibration framework with larger pre-trained language models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4310829078:f2",
+      "paper_id": "openalex:W4310829078",
+      "text": "Investigate the potential reasons for the performance gap between nearest neighbor calibration and fine-tuning methods on sentence-pair tasks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4310829078:f3",
+      "paper_id": "openalex:W4310829078",
+      "text": "Explore nearest neighbor calibration on larger training datasets beyond the few-shot adaptation setting.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T14:12:15.252612Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

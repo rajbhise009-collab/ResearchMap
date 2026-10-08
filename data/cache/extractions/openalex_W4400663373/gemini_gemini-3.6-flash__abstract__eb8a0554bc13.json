@@ -1,0 +1,82 @@
+{
+  "paper_id": "openalex:W4400663373",
+  "claims": [
+    {
+      "id": "openalex:W4400663373:c1",
+      "paper_id": "openalex:W4400663373",
+      "text": "Human-AI interaction research themes include collaboration, competition, conflict, and symbiosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400663373:c2",
+      "paper_id": "openalex:W4400663373",
+      "text": "Human-AI interaction studies draw theoretical foundations from communication, psychology, and sociology.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4400663373:c3",
+      "paper_id": "openalex:W4400663373",
+      "text": "Human-AI interaction research commonly employs self-reporting and observational approaches in user studies.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4400663373:e1",
+      "claim_id": "openalex:W4400663373:c1",
+      "description": "HAII research themes include human-AI collaboration, competition, conflict, and symbiosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400663373:e2",
+      "claim_id": "openalex:W4400663373:c2",
+      "description": "Theories drawn from communication, psychology, and sociology support these studies",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4400663373:e3",
+      "claim_id": "openalex:W4400663373:c3",
+      "description": "the employed methods include both self-reporting and observational approaches commonly utilized in user studies.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4400663373:m1",
+      "paper_id": "openalex:W4400663373",
+      "name": "Literature Review",
+      "description": "A review of the research themes, theoretical foundations, and methodological frameworks within the Human-AI Interaction field.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4400663373:f1",
+      "paper_id": "openalex:W4400663373",
+      "text": "Broaden research focus to encompass diverse user groups, AI roles, and tasks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4400663373:f2",
+      "paper_id": "openalex:W4400663373",
+      "text": "Develop multi-disciplinary theories to support human-AI interaction research.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4400663373:f3",
+      "paper_id": "openalex:W4400663373",
+      "text": "Integrate multi-level research methods for human-AI interaction studies.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.132446Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

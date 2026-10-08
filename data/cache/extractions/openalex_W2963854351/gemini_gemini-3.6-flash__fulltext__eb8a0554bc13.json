@@ -1,0 +1,154 @@
+{
+  "paper_id": "openalex:W2963854351",
+  "claims": [
+    {
+      "id": "openalex:W2963854351:c1",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN achieves a score of 82.7% on the GLUE benchmark, representing a 2.2% absolute improvement over BERT.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c2",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN achieves an accuracy of 91.6% on the SNLI dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c3",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN achieves an accuracy of 95.0% on the SciTail dataset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c4",
+      "paper_id": "openalex:W2963854351",
+      "text": "Formulating QNLI as a pairwise ranking task instead of binary classification improves performance.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c5",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN combines multi-task learning across natural language understanding tasks with a pre-trained Transformer language model as shared lower layers.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2963854351:c6",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN incorporates the Stochastic Answer Network (SAN) answer module for pairwise text classification output layers.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2963854351:e1",
+      "claim_id": "openalex:W2963854351:c1",
+      "description": "MT-DNN pushes the GLUE benchmark to 82.7% (2.2% absolute improvement) over BERTLARGE on the GLUE test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2963854351:e2",
+      "claim_id": "openalex:W2963854351:c2",
+      "description": "Adapted MT-DNNLARGE model achieves a test accuracy of 91.6% on SNLI, outperforming previous state-of-the-art results.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2963854351:e3",
+      "claim_id": "openalex:W2963854351:c3",
+      "description": "Adapted MT-DNNLARGE model achieves a test accuracy of 95.0% on SciTail, outperforming previous state-of-the-art results.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2963854351:e4",
+      "claim_id": "openalex:W2963854351:c4",
+      "description": "ST-DNN fine-tuned on QNLI using pairwise ranking loss achieves 96.1% dev accuracy compared to BERT fine-tuned using cross-entropy achieving 90.5%.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2963854351:e5",
+      "claim_id": "openalex:W2963854351:c5",
+      "description": "The lower layers are shared across all tasks using a multi-layer bidirectional Transformer encoder, while top layers represent task-specific outputs.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2963854351:e6",
+      "claim_id": "openalex:W2963854351:c6",
+      "description": "The design of the pairwise text classification output module follows the answer module of the stochastic answer network (SAN) using multi-step reasoning.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2963854351:m1",
+      "paper_id": "openalex:W2963854351",
+      "name": "Multi-Task Deep Neural Network (MT-DNN)",
+      "description": "A representation learning framework combining BERT-based pre-trained Transformer text encodings with multi-task objective fine-tuning across distinct task types.",
+      "datasets": [
+        "GLUE",
+        "SNLI",
+        "SciTail"
+      ],
+      "conditions": [
+        "Adamax optimizer with learning rate 5e-5",
+        "Batch size 32",
+        "Maximum epochs set to 5",
+        "Dropout rate 0.1 for task-specific layers (0.3 for MNLI, 0.05 for CoLA)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2963854351:l1",
+      "paper_id": "openalex:W2963854351",
+      "text": "Supervised deep neural network learning requires large amounts of task-specific labeled data, which is not always available.",
+      "normalized_category": "data-scarcity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2963854351:l2",
+      "paper_id": "openalex:W2963854351",
+      "text": "MT-DNN tends to underfit small, unique datasets like CoLA during multi-task learning prior to task-specific fine-tuning.",
+      "normalized_category": "underfitting-small-datasets",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2963854351:f1",
+      "paper_id": "openalex:W2963854351",
+      "text": "Gaining a deeper understanding of model structure sharing in multi-task learning.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2963854351:f2",
+      "paper_id": "openalex:W2963854351",
+      "text": "Developing more effective training methods that leverage relatedness among multiple tasks for fine-tuning and pre-training.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2963854351:f3",
+      "paper_id": "openalex:W2963854351",
+      "text": "Exploring ways of incorporating text linguistic structure in an explicit and controllable manner.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2963854351:f4",
+      "paper_id": "openalex:W2963854351",
+      "text": "Verifying whether MT-DNN is resilient against adversarial attacks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.992733Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

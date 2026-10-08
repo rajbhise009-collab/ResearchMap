@@ -1,0 +1,100 @@
+{
+  "paper_id": "openalex:W3010960270",
+  "claims": [
+    {
+      "id": "openalex:W3010960270:c1",
+      "paper_id": "openalex:W3010960270",
+      "text": "Deception attacks on position and relative distance information in platoon-based connected vehicle systems can lead to vehicle collisions.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3010960270:c2",
+      "paper_id": "openalex:W3010960270",
+      "text": "A distributed Kalman filter can estimate platoon vehicle states using only local output information.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3010960270:c3",
+      "paper_id": "openalex:W3010960270",
+      "text": "A modified generalized likelihood ratio algorithm operating on distributed Kalman filter residuals detects sensor deception attacks.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3010960270:c4",
+      "paper_id": "openalex:W3010960270",
+      "text": "A modified generalized likelihood ratio algorithm operating on distributed Kalman filter residuals estimates sensor deception attacks.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3010960270:e1",
+      "claim_id": "openalex:W3010960270:c1",
+      "description": "When getting deception attacks on such important information, it will result in severe consequences including collision.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W3010960270:e2",
+      "claim_id": "openalex:W3010960270:c2",
+      "description": "With the consideration of the practical issue that a local vehicle is not able to access to global information, a distributed Kalman filter is proposed to estimate the state information using local output information.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3010960270:e3",
+      "claim_id": "openalex:W3010960270:c3",
+      "description": "Based on the residuals obtained by the distributed Kalman filter, a modified generalized likelihood ratio (GLR) algorithm is proposed to detect and estimate the sensor deception attacks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3010960270:e4",
+      "claim_id": "openalex:W3010960270:c4",
+      "description": "Based on the residuals obtained by the distributed Kalman filter, a modified generalized likelihood ratio (GLR) algorithm is proposed to detect and estimate the sensor deception attacks.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3010960270:m1",
+      "paper_id": "openalex:W3010960270",
+      "name": "Distributed Kalman Filter and Modified Generalized Likelihood Ratio (GLR)",
+      "description": "A distributed detection and estimation framework using local Kalman filtering residuals and a modified GLR algorithm to identify piece-wise constant sensor deception attacks.",
+      "datasets": [
+        "Carsim simulation environment"
+      ],
+      "conditions": [
+        "Longitudinal dynamic vehicle platoon model",
+        "Modelling uncertainties",
+        "Measurement noises",
+        "Piece-wise constant sensor deception attacks",
+        "Local vehicle output information only"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3010960270:l1",
+      "paper_id": "openalex:W3010960270",
+      "text": "The framework models sensor deception attacks specifically as piece-wise constant functions.",
+      "normalized_category": "attack-model-simplification",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3010960270:l2",
+      "paper_id": "openalex:W3010960270",
+      "text": "Local vehicles are unable to access global system information in practical vehicle platoon systems.",
+      "normalized_category": "lack-of-global-information",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:21:17.126501Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

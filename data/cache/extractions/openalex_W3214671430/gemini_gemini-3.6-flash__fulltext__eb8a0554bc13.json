@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W3214671430",
+  "claims": [
+    {
+      "id": "openalex:W3214671430:c1",
+      "paper_id": "openalex:W3214671430",
+      "text": "GradNorm detects out-of-distribution inputs using the vector norm of gradients backpropagated from the KL divergence between softmax output and a uniform probability distribution.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3214671430:c2",
+      "paper_id": "openalex:W3214671430",
+      "text": "Gradient magnitude derived from KL divergence with a uniform target is higher for in-distribution data than for out-of-distribution data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3214671430:c3",
+      "paper_id": "openalex:W3214671430",
+      "text": "GradNorm reduces average FPR95 by 16.33% compared to Energy score on the ImageNet OOD detection benchmark using ResNetv2-101.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3214671430:c4",
+      "paper_id": "openalex:W3214671430",
+      "text": "The L1-norm of gradients in the weight matrix mathematically decomposes into the product of the feature vector norm and an output space term.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3214671430:c5",
+      "paper_id": "openalex:W3214671430",
+      "text": "Extracting gradients from the last fully connected layer yields lower average FPR95 than extracting gradients from shallower network blocks or all parameters.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3214671430:c6",
+      "paper_id": "openalex:W3214671430",
+      "text": "L1-norm achieves lower average FPR95 for GradNorm compared to higher-order Lp-norms and fraction norms.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3214671430:e1",
+      "claim_id": "openalex:W3214671430:c1",
+      "description": "GradNorm directly employs the vector norm of gradients, backpropagated from the KL divergence between the softmax output and a uniform probability distribution.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3214671430:e2",
+      "claim_id": "openalex:W3214671430:c2",
+      "description": "using uniform target (ours), gradients of ID data indeed have larger magnitudes than those of OOD data, as the softmax prediction tends to be less uniformly distributed",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3214671430:e3",
+      "claim_id": "openalex:W3214671430:c3",
+      "description": "GradNorm outperforms the best output-based baseline, Energy score [28], by 16.33% in FPR95.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3214671430:e4",
+      "claim_id": "openalex:W3214671430:c4",
+      "description": "S(x) = 1/(C*T) * U * V, where the first multiplicative term U is the L1-norm of the feature vector x, and the second term V characterizes information in the output space.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3214671430:e5",
+      "claim_id": "openalex:W3214671430:c5",
+      "description": "Last layer params achieve an average FPR95 of 54.70% compared to 69.35% for all params and 65.07% for block 4.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3214671430:e6",
+      "claim_id": "openalex:W3214671430:c6",
+      "description": "Compared with higher-order norms, L1-norm achieves the best OOD detection performance on all four datasets, reaching an average FPR95 of 54.70.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3214671430:m1",
+      "paper_id": "openalex:W3214671430",
+      "name": "GradNorm",
+      "description": "An OOD detection scoring function based on the vector norm of backpropagated gradients from the KL divergence between softmax output and a uniform distribution.",
+      "datasets": [
+        "ImageNet-1k",
+        "iNaturalist",
+        "SUN",
+        "Places",
+        "Textures",
+        "CIFAR-10",
+        "CIFAR-100",
+        "SVHN",
+        "LSUN"
+      ],
+      "conditions": [
+        "post-hoc detection",
+        "label-agnostic inference",
+        "OOD-agnostic setting",
+        "ResNetv2-101 backbone",
+        "DenseNet-121 backbone"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3214671430:l1",
+      "paper_id": "openalex:W3214671430",
+      "text": "Increasing model capacity and overparameterization degrades GradNorm performance by making gradients less distinguishable between ID and OOD data.",
+      "normalized_category": "capacity-sensitivity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3214671430:l2",
+      "paper_id": "openalex:W3214671430",
+      "text": "Existing OOD detection approaches primarily rely on output or feature space, leaving the gradient space underexplored.",
+      "normalized_category": "underexplored-gradient-space",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3214671430:l3",
+      "paper_id": "openalex:W3214671430",
+      "text": "Feature-based methods like Mahalanobis distance require collecting representations over the entire training set, introducing significant computational overhead on large-scale datasets.",
+      "normalized_category": "computational-overhead",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3214671430:f1",
+      "paper_id": "openalex:W3214671430",
+      "text": "Combining information obtainable from the gradient space and the output space to build a stronger OOD detection method.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.094399Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W4409963278",
+  "claims": [
+    {
+      "id": "openalex:W4409963278:c1",
+      "paper_id": "openalex:W4409963278",
+      "text": "When summarizing scientific texts, large language models omit details that limit the scope of research conclusions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c2",
+      "paper_id": "openalex:W4409963278",
+      "text": "Even when explicitly prompted for accuracy, most large language models produce broader generalizations of scientific results than those present in the original texts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c3",
+      "paper_id": "openalex:W4409963278",
+      "text": "DeepSeek, ChatGPT-4o, and LLaMA 3.3 70B overgeneralize scientific results in 26% to 73% of cases.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c4",
+      "paper_id": "openalex:W4409963278",
+      "text": "Large language model-generated science summaries are nearly five times more likely to contain broad generalizations compared to human-authored summaries.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4409963278:c5",
+      "paper_id": "openalex:W4409963278",
+      "text": "Newer large language models tend to perform worse in generalization accuracy than earlier models when summarizing scientific research.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4409963278:e1",
+      "claim_id": "openalex:W4409963278:c3",
+      "description": "Evaluation of 4900 LLM-generated summaries showed DeepSeek, ChatGPT-4o, and LLaMA 3.3 70B overgeneralizing in 26–73% of cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409963278:e2",
+      "claim_id": "openalex:W4409963278:c4",
+      "description": "Direct comparison between LLM-generated and human-authored science summaries yielded an odds ratio of 4.85 (95% CI [3.06, 7.70], p < 0.001) for broad generalizations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4409963278:e3",
+      "claim_id": "openalex:W4409963278:c5",
+      "description": "Testing across 10 prominent LLMs demonstrated that newer models tended to perform worse in generalization accuracy than earlier ones.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4409963278:m1",
+      "paper_id": "openalex:W4409963278",
+      "name": "LLM Scientific Summarization Evaluation",
+      "description": "Evaluation comparing 4,900 LLM-generated summaries from 10 prominent LLMs against original scientific texts and human-authored summaries for generalization bias.",
+      "datasets": [
+        "4900 LLM-generated summaries",
+        "original scientific texts",
+        "human-authored science summaries"
+      ],
+      "conditions": [
+        "explicitly prompted for accuracy",
+        "tested across 10 LLMs including ChatGPT-4o, ChatGPT-4.5, DeepSeek, LLaMA 3.3 70B, and Claude 3.7 Sonnet"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4409963278:f1",
+      "paper_id": "openalex:W4409963278",
+      "text": "Lowering LLM temperature settings as a potential mitigation strategy for generalization bias.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4409963278:f2",
+      "paper_id": "openalex:W4409963278",
+      "text": "Benchmarking LLMs for generalization accuracy.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.117676Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

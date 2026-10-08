@@ -1,0 +1,164 @@
+{
+  "paper_id": "openalex:W4410343193",
+  "claims": [
+    {
+      "id": "openalex:W4410343193:c1",
+      "paper_id": "openalex:W4410343193",
+      "text": "LLMs evaluated for clinical note generation demonstrated an overall sentence-level hallucination rate of 1.47%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c2",
+      "paper_id": "openalex:W4410343193",
+      "text": "LLMs evaluated for clinical note generation demonstrated an overall sentence-level omission rate of 3.45%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c3",
+      "paper_id": "openalex:W4410343193",
+      "text": "44% of sentences containing hallucinations in LLM-generated clinical notes were classified as major errors capable of impacting patient diagnosis or management.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c4",
+      "paper_id": "openalex:W4410343193",
+      "text": "Refining prompts from Experiment 3 to Experiment 8 reduced the incidence of major hallucinations by 75%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c5",
+      "paper_id": "openalex:W4410343193",
+      "text": "Incorporating chain-of-thought fact atomisation prior to note generation increased major hallucinations from 4 to 25 compared to structured prompts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c6",
+      "paper_id": "openalex:W4410343193",
+      "text": "Iteratively refining prompts with function calling completely eliminated major omissions, reducing them from 61 to 0 across iterations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410343193:e1",
+      "claim_id": "openalex:W4410343193:c1",
+      "description": "Of 12,999 sentences in 450 clinical notes, 191 sentences had hallucinations (1.47%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410343193:e2",
+      "claim_id": "openalex:W4410343193:c2",
+      "description": "Of the 49,590 sentences from consultation transcripts, 1712 sentences were omitted (3.45%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410343193:e3",
+      "claim_id": "openalex:W4410343193:c3",
+      "description": "Of 191 hallucination sentences, 84 sentences (44%) were major (could impact patient diagnosis and management if left uncorrected).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410343193:e4",
+      "claim_id": "openalex:W4410343193:c4",
+      "description": "The change in the prompt from Experiments 3 to 8 reduced the incidence of major hallucinations by 75% (from 4 to 1).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410343193:e5",
+      "claim_id": "openalex:W4410343193:c5",
+      "description": "Comparing Experiment 5 to Experiment 3, major hallucinations increased from 4 to 25.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410343193:e6",
+      "claim_id": "openalex:W4410343193:c6",
+      "description": "From Experiments 6 to 11, major omissions decreased from 61 to 0.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410343193:m1",
+      "paper_id": "openalex:W4410343193",
+      "name": "CREOLA Clinical Evaluation Framework and Platform",
+      "description": "A multi-component evaluation methodology combining a clinical error taxonomy, iterative prompting experiments, medical device-inspired safety risk assessment, and a clinician-in-the-loop web interface.",
+      "datasets": [
+        "PriMock dataset",
+        "ACI Bench dataset"
+      ],
+      "conditions": [
+        "OpenAI GPT-4 (GPT-4-32k-0613)",
+        "temperature=0",
+        "seed=210",
+        "top_p=0.95",
+        "18 experimental configurations",
+        "Clinician double-review with senior clinician consolidation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410343193:l1",
+      "paper_id": "openalex:W4410343193",
+      "text": "Automated metrics such as ROUGE, BLEU, and BERT-score fail to capture semantic nuances and clinical accuracy required for healthcare content.",
+      "normalized_category": "nlp-metric-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410343193:l2",
+      "paper_id": "openalex:W4410343193",
+      "text": "Existing QA benchmarks do not assess clinical summarisation or medical document generation capabilities.",
+      "normalized_category": "benchmark-scope-limitations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410343193:l3",
+      "paper_id": "openalex:W4410343193",
+      "text": "The sample size of medical transcripts used across experiments was relatively small due to annotation volume trade-offs.",
+      "normalized_category": "sample-size-limitations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410343193:l4",
+      "paper_id": "openalex:W4410343193",
+      "text": "Evaluation was restricted to a single model architecture (GPT-4).",
+      "normalized_category": "single-model-evaluation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410343193:l5",
+      "paper_id": "openalex:W4410343193",
+      "text": "The study only evaluated direct prompting strategies rather than advanced retrieval or knowledge graph methods.",
+      "normalized_category": "prompting-methodology-constraints",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4410343193:f1",
+      "paper_id": "openalex:W4410343193",
+      "text": "Applying the clinical safety evaluation framework across different LLM architectures (e.g., open-source models) and advanced techniques like RAG, Chain-of-Thought, or Knowledge Graphs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410343193:f2",
+      "paper_id": "openalex:W4410343193",
+      "text": "Developing automated LLM-as-a-Judge evaluation models for scalable screening, supervised by human clinicians reviewing output sub-samples.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.954501Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

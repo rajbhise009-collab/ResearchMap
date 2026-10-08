@@ -1,0 +1,119 @@
+{
+  "paper_id": "openalex:W3043426275",
+  "claims": [
+    {
+      "id": "openalex:W3043426275:c1",
+      "paper_id": "openalex:W3043426275",
+      "text": "Bayesian neural network formalisms distinguish between aleatoric uncertainty in likelihood models and epistemic uncertainty in parameter posteriors.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043426275:c2",
+      "paper_id": "openalex:W3043426275",
+      "text": "Monte Carlo Dropout during inference corresponds to variational inference with a Bernoulli variational distribution defined over network weights.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043426275:c3",
+      "paper_id": "openalex:W3043426275",
+      "text": "In the sparse measure experiment, the last-layer Bayesian neural network achieved a root mean square error of approximately 0.4.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043426275:c4",
+      "paper_id": "openalex:W3043426275",
+      "text": "Combining ensembling with variational inference approximates multimodal posterior shapes while retaining low inference computational overhead per sample.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3043426275:e1",
+      "claim_id": "openalex:W3043426275:c1",
+      "description": "The Bayesian posterior formulations isolate P(D|H) for aleatoric noise and P(H|D) for epistemic parameter uncertainty due to data limitations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043426275:e2",
+      "claim_id": "openalex:W3043426275:c2",
+      "description": "Evaluating networks with active dropout layers yields prediction samples derived from weight matrices defined as W_i = M_i * diag(z_i) with z_i following a Bernoulli distribution.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043426275:e3",
+      "claim_id": "openalex:W3043426275:c3",
+      "description": "The sparse measures practical experiment using a last-layer stochastic model with hierarchical noise and graph Laplacian consistency conditions reached a prediction error RMSE of around 0.4.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3043426275:e4",
+      "claim_id": "openalex:W3043426275:c4",
+      "description": "In the Paperfold experiment, an ensemble of variational inference models generated marginal predictive distributions matching the exact NUTS MCMC sampler while keeping evaluation time low.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3043426275:m1",
+      "paper_id": "openalex:W3043426275",
+      "name": "Bayes-by-backprop with Reparameterization",
+      "description": "Stochastic variational inference framework that uses a deterministic reparameterization trick to enable backpropagation through variational parameters.",
+      "datasets": [
+        "MNIST",
+        "Sparse Measure synthetic dataset",
+        "Paperfold synthetic dataset"
+      ],
+      "conditions": [
+        "Gaussian variational distribution with diagonal covariance",
+        "Mini-batch stochastic gradient descent"
+      ]
+    },
+    {
+      "id": "openalex:W3043426275:m2",
+      "paper_id": "openalex:W3043426275",
+      "name": "Monte Carlo Dropout (MC-Dropout)",
+      "description": "Approximate variational inference method leaving dropout active at evaluation time to obtain Monte Carlo predictions.",
+      "datasets": [
+        "Sparse Measure synthetic dataset"
+      ],
+      "conditions": [
+        "Bernoulli multiplicative noise",
+        "L2 weight regularization prior"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3043426275:l1",
+      "paper_id": "openalex:W3043426275",
+      "text": "Standard MCMC algorithms require storing large parameter collections and scale poorly to high-dimensional deep neural networks.",
+      "normalized_category": "scalability-constraint",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3043426275:l2",
+      "paper_id": "openalex:W3043426275",
+      "text": "Unimodal Gaussian variational distributions fail to capture complex multimodal posterior distributions caused by weight-space and scaling symmetries.",
+      "normalized_category": "expressiveness-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3043426275:l3",
+      "paper_id": "openalex:W3043426275",
+      "text": "Monte Carlo Dropout lacks expressive power compared to full posterior sampling and may underestimate predictive uncertainty.",
+      "normalized_category": "expressiveness-limitation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:58:01.994515Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

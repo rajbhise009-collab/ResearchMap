@@ -1,0 +1,226 @@
+{
+  "paper_id": "openalex:W2121393149",
+  "claims": [
+    {
+      "id": "openalex:W2121393149:c1",
+      "paper_id": "openalex:W2121393149",
+      "text": "US life expectancy for both sexes combined increased from 75.2 years in 1990 to 78.2 years in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c2",
+      "paper_id": "openalex:W2121393149",
+      "text": "US healthy life expectancy (HALE) increased from 65.8 years in 1990 to 68.1 years in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c3",
+      "paper_id": "openalex:W2121393149",
+      "text": "Ischemic heart disease, lung cancer, stroke, chronic obstructive pulmonary disease, and road injury were the leading causes of YLLs in the US in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c4",
+      "paper_id": "openalex:W2121393149",
+      "text": "Age-standardized YLL rates increased from 1990 to 2010 for Alzheimer disease, drug use disorders, chronic kidney disease, kidney cancer, and falls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c5",
+      "paper_id": "openalex:W2121393149",
+      "text": "Low back pain, major depressive disorder, other musculoskeletal disorders, neck pain, and anxiety disorders were the leading causes of YLDs in the US in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c6",
+      "paper_id": "openalex:W2121393149",
+      "text": "As the US population has aged, YLDs have comprised a larger share of DALYs than have YLLs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c7",
+      "paper_id": "openalex:W2121393149",
+      "text": "Dietary risks, tobacco smoking, high body mass index, high blood pressure, high fasting plasma glucose, physical inactivity, and alcohol use were the leading risk factors related to DALYs in the US in 2010.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c8",
+      "paper_id": "openalex:W2121393149",
+      "text": "Among 34 OECD countries between 1990 and 2010, the US rank for age-standardized death rate changed from 18th to 27th.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c9",
+      "paper_id": "openalex:W2121393149",
+      "text": "Among 34 OECD countries between 1990 and 2010, the US rank for age-standardized YLL rate changed from 23rd to 28th.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c10",
+      "paper_id": "openalex:W2121393149",
+      "text": "Among 34 OECD countries between 1990 and 2010, the US rank for age-standardized YLD rate changed from 5th to 6th.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c11",
+      "paper_id": "openalex:W2121393149",
+      "text": "Among 34 OECD countries between 1990 and 2010, the US rank for life expectancy at birth changed from 20th to 27th.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c12",
+      "paper_id": "openalex:W2121393149",
+      "text": "Among 34 OECD countries between 1990 and 2010, the US rank for HALE changed from 14th to 26th.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c13",
+      "paper_id": "openalex:W2121393149",
+      "text": "Morbidity and chronic disability account for nearly half of the US health burden.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121393149:c14",
+      "paper_id": "openalex:W2121393149",
+      "text": "Improvements in population health in the United States have not kept pace with advances in population health in other OECD nations from 1990 to 2010.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2121393149:e1",
+      "claim_id": "openalex:W2121393149:c1",
+      "description": "US life expectancy for both sexes combined increased from 75.2 years in 1990 to 78.2 years in 2010.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e2",
+      "claim_id": "openalex:W2121393149:c2",
+      "description": "during the same period, HALE increased from 65.8 years to 68.1 years.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e3",
+      "claim_id": "openalex:W2121393149:c3",
+      "description": "The diseases and injuries with the largest number of YLLs in 2010 were ischemic heart disease, lung cancer, stroke, chronic obstructive pulmonary disease, and road injury.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e4",
+      "claim_id": "openalex:W2121393149:c4",
+      "description": "Age-standardized YLL rates increased for Alzheimer disease, drug use disorders, chronic kidney disease, kidney cancer, and falls.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e5",
+      "claim_id": "openalex:W2121393149:c5",
+      "description": "The diseases with the largest number of YLDs in 2010 were low back pain, major depressive disorder, other musculoskeletal disorders, neck pain, and anxiety disorders.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e6",
+      "claim_id": "openalex:W2121393149:c6",
+      "description": "As the US population has aged, YLDs have comprised a larger share of DALYs than have YLLs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121393149:e7",
+      "claim_id": "openalex:W2121393149:c7",
+      "description": "The leading risk factors related to DALYs were dietary risks, tobacco smoking, high body mass index, high blood pressure, high fasting plasma glucose, physical inactivity, and alcohol use.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e8",
+      "claim_id": "openalex:W2121393149:c8",
+      "description": "Among 34 OECD countries between 1990 and 2010, the US rank for the age-standardized death rate changed from 18th to 27th",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e9",
+      "claim_id": "openalex:W2121393149:c9",
+      "description": "for the age-standardized YLL rate from 23rd to 28th",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e10",
+      "claim_id": "openalex:W2121393149:c10",
+      "description": "for the age-standardized YLD rate from 5th to 6th",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e11",
+      "claim_id": "openalex:W2121393149:c11",
+      "description": "for life expectancy at birth from 20th to 27th",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e12",
+      "claim_id": "openalex:W2121393149:c12",
+      "description": "and for HALE from 14th to 26th.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121393149:e13",
+      "claim_id": "openalex:W2121393149:c13",
+      "description": "morbidity and chronic disability now account for nearly half of the US health burden",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121393149:e14",
+      "claim_id": "openalex:W2121393149:c14",
+      "description": "improvements in population health in the United States have not kept pace with advances in population health in other wealthy nations.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2121393149:m1",
+      "paper_id": "openalex:W2121393149",
+      "name": "Global Burden of Disease 2010 Study (GBD 2010) Framework",
+      "description": "Systematic analysis of descriptive epidemiology evaluating burden of disease using YLLs, YLDs, DALYs, and HALE metrics.",
+      "datasets": [
+        "Global Burden of Disease 2010 Study dataset"
+      ],
+      "conditions": [
+        "187 countries evaluated",
+        "34 OECD countries compared",
+        "1990 to 2010 time period",
+        "291 diseases and injuries",
+        "1160 sequelae",
+        "67 risk factors or clusters"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:43:28.566144Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

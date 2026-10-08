@@ -1,0 +1,74 @@
+{
+  "paper_id": "openalex:W2040825624",
+  "claims": [
+    {
+      "id": "openalex:W2040825624:c1",
+      "paper_id": "openalex:W2040825624",
+      "text": "Simply avoiding the use of sensitive features is insufficient for eliminating biases in algorithmic determinations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2040825624:c2",
+      "paper_id": "openalex:W2040825624",
+      "text": "Biases persist in determinations when sensitive features are excluded due to the indirect influence of sensitive information.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2040825624:c3",
+      "paper_id": "openalex:W2040825624",
+      "text": "Fairness-aware learning can be achieved via a regularization approach applicable to any prediction algorithm with probabilistic discriminative models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2040825624:e1",
+      "claim_id": "openalex:W2040825624:c1",
+      "description": "They have shown that simply avoiding the use of sensitive features is insufficient for eliminating biases in determinations...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2040825624:e2",
+      "claim_id": "openalex:W2040825624:c2",
+      "description": "...due to the indirect influence of sensitive information.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2040825624:e3",
+      "claim_id": "openalex:W2040825624:c3",
+      "description": "We then propose a regularization approach that is applicable to any prediction algorithm with probabilistic discriminative models.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2040825624:m1",
+      "paper_id": "openalex:W2040825624",
+      "name": "Fairness-aware Regularization for Probabilistic Discriminative Models",
+      "description": "A regularization approach designed to enforce social fairness by hiding sensitive information influence, applicable to probabilistic discriminative algorithms such as logistic regression.",
+      "datasets": [],
+      "conditions": [
+        "probabilistic discriminative models",
+        "logistic regression"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2040825624:l1",
+      "paper_id": "openalex:W2040825624",
+      "text": "Simply avoiding the use of sensitive features is insufficient for eliminating biases due to the indirect influence of sensitive information.",
+      "normalized_category": "indirect-bias-unaddressed",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:15:35.510595Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

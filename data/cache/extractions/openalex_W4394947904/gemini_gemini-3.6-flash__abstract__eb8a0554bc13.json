@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W4394947904",
+  "claims": [
+    {
+      "id": "openalex:W4394947904:c1",
+      "paper_id": "openalex:W4394947904",
+      "text": "Integrating LLMs into information retrieval systems introduces emerging challenges regarding bias and unfairness.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394947904:c2",
+      "paper_id": "openalex:W4394947904",
+      "text": "Bias and unfairness issues in LLM-integrated information retrieval systems can be unified as distribution mismatch problems.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394947904:c3",
+      "paper_id": "openalex:W4394947904",
+      "text": "Mitigation strategies for bias and unfairness in LLM-integrated information retrieval systems can be categorized through distribution alignment.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394947904:c4",
+      "paper_id": "openalex:W4394947904",
+      "text": "Bias and unfairness issues arise across three distinct stages of LLM integration into information retrieval systems: data collection, model development, and result evaluation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4394947904:e1",
+      "claim_id": "openalex:W4394947904:c1",
+      "description": "This evolution, while heralding new opportunities, introduces emerging challenges, particularly in terms of biases and unfairness, which may threaten the information ecosystem.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394947904:e2",
+      "claim_id": "openalex:W4394947904:c2",
+      "description": "We first unify bias and unfairness issues as distribution mismatch problems...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394947904:e3",
+      "claim_id": "openalex:W4394947904:c3",
+      "description": "...providing a groundwork for categorizing various mitigation strategies through distribution alignment.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4394947904:e4",
+      "claim_id": "openalex:W4394947904:c4",
+      "description": "Subsequently, we systematically delve into the specific bias and unfairness issues arising from three critical stages of LLMs integration into IR systems: data collection, model development, and result evaluation.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4394947904:m1",
+      "paper_id": "openalex:W4394947904",
+      "name": "Distribution Mismatch Survey and Taxonomy Framework",
+      "description": "A systematic literature review and taxonomy organizing bias, unfairness, and mitigation techniques in LLM-integrated IR systems through the lens of distribution mismatch and alignment across three system stages.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4394947904:f1",
+      "paper_id": "openalex:W4394947904",
+      "text": "Address open problems and challenges to better understand and mitigate bias and unfairness issues in information retrieval systems in the LLM era.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.116802Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

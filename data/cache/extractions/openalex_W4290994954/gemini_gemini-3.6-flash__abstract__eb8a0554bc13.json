@@ -1,0 +1,71 @@
+{
+  "paper_id": "openalex:W4290994954",
+  "claims": [
+    {
+      "id": "openalex:W4290994954:c1",
+      "paper_id": "openalex:W4290994954",
+      "text": "State-of-the-art chit-chat models are poorly linguistically calibrated regarding their verbalized expressions of confidence versus factual accuracy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4290994954:c2",
+      "paper_id": "openalex:W4290994954",
+      "text": "The likelihood of correctness of chit-chat model responses can accurately be predicted using metacognitive features.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4290994954:c3",
+      "paper_id": "openalex:W4290994954",
+      "text": "Incorporating metacognitive features into controllable generation model training improves the linguistic calibration of dialogue agents.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4290994954:e1",
+      "claim_id": "openalex:W4290994954:c1",
+      "description": "Analysis of state-of-the-art chit-chat models showed that their verbalized expression of doubt or confidence does not match the likelihood of factual correctness.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4290994954:e2",
+      "claim_id": "openalex:W4290994954:c2",
+      "description": "The authors show that the likelihood of response correctness can accurately be predicted.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4290994954:e3",
+      "claim_id": "openalex:W4290994954:c3",
+      "description": "By incorporating metacognitive features into controllable generation training, the authors obtained a dialogue agent with greatly improved linguistic calibration.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4290994954:m1",
+      "paper_id": "openalex:W4290994954",
+      "name": "Metacognitive Controllable Generation Training",
+      "description": "Incorporates metacognitive accuracy-prediction features into the training of a controllable generation model to align verbalized confidence with factual likelihood.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4290994954:l1",
+      "paper_id": "openalex:W4290994954",
+      "text": "Transparency about ignorance and linguistic calibration in neural dialogue agents are less studied in existing research compared to factual accuracy.",
+      "normalized_category": "understudied-area",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.095688Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

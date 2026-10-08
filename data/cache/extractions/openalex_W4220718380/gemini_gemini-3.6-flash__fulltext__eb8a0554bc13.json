@@ -1,0 +1,170 @@
+{
+  "paper_id": "openalex:W4220718380",
+  "claims": [
+    {
+      "id": "openalex:W4220718380:c1",
+      "paper_id": "openalex:W4220718380",
+      "text": "8 out of 12 reviewed studies concluded that racial bias was present in clinical machine learning models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4220718380:c2",
+      "paper_id": "openalex:W4220718380",
+      "text": "2 out of 12 reviewed studies concluded that racial bias was not present in the evaluated clinical machine learning models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4220718380:c3",
+      "paper_id": "openalex:W4220718380",
+      "text": "All 8 reviewed studies that implemented mitigation methods successfully increased algorithmic fairness based on their chosen metrics.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4220718380:c4",
+      "paper_id": "openalex:W4220718380",
+      "text": "Preprocessing was the most commonly used bias mitigation strategy among the reviewed clinical machine learning studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4220718380:c5",
+      "paper_id": "openalex:W4220718380",
+      "text": "Convolutional neural networks were the most frequent machine learning modeling technique used across the reviewed studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4220718380:c6",
+      "paper_id": "openalex:W4220718380",
+      "text": "Equal opportunity difference was the most commonly observed fairness metric used to evaluate racial bias in the reviewed literature.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4220718380:c7",
+      "paper_id": "openalex:W4220718380",
+      "text": "In-processing bias mitigation methods were ineffective in reducing bias and were outperformed by other mitigation strategies in the reviewed studies.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4220718380:e1",
+      "claim_id": "openalex:W4220718380:c1",
+      "description": "In addition, 8 (67%) studies concluded that racial bias was present, 2 (17%) concluded that it was not.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4220718380:e2",
+      "claim_id": "openalex:W4220718380:c2",
+      "description": "2 (17%) concluded that it was not.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4220718380:e3",
+      "claim_id": "openalex:W4220718380:c3",
+      "description": "All 8 (67%) studies that implemented methods for mitigation of racial bias successfully increased fairness, as measured by the authors' chosen metrics.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4220718380:e4",
+      "claim_id": "openalex:W4220718380:c4",
+      "description": "Preprocessing bias mitigation was the most commonly used strategy (7/13, 54%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4220718380:e5",
+      "claim_id": "openalex:W4220718380:c5",
+      "description": "Convolutional neural networks (CNNs) were the predominant ML modeling technique used (5/12, 42%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4220718380:e6",
+      "claim_id": "openalex:W4220718380:c6",
+      "description": "The most commonly observed metrics were equal opportunity difference (5/12, 42%), accuracy (4/12, 25%), and disparate impact (2/12, 17%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4220718380:e7",
+      "claim_id": "openalex:W4220718380:c7",
+      "description": "However, in both studies, in-processing was ineffective in reducing bias and was outperformed by other bias mitigation methods.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4220718380:m1",
+      "paper_id": "openalex:W4220718380",
+      "name": "PRISMA-guided Scoping Review",
+      "description": "A scoping review conducted following PRISMA guidelines to systematically screen and synthesize literature on racial bias assessment and mitigation in clinical machine learning models.",
+      "datasets": [
+        "PubMed",
+        "Scopus",
+        "Embase",
+        "Google Scholar"
+      ],
+      "conditions": [
+        "Peer-reviewed original research in English",
+        "Development or evaluation of a clinically relevant ML model",
+        "Evaluation of model bias regarding racial or ethnic groups"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4220718380:l1",
+      "paper_id": "openalex:W4220718380",
+      "text": "The search strategy may have overlooked relevant publications due to the heterogeneity of terminology used to describe machine learning and racial bias.",
+      "normalized_category": "search-strategy-limitations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4220718380:l2",
+      "paper_id": "openalex:W4220718380",
+      "text": "The review was limited by publication bias as non-full-length manuscripts were excluded and studies finding no racial bias may be less likely to be published.",
+      "normalized_category": "publication-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4220718380:l3",
+      "paper_id": "openalex:W4220718380",
+      "text": "The paucity of literature and lack of standardized methods to evaluate and mitigate bias precluded performing a meta-analysis or systematic review.",
+      "normalized_category": "paucity-of-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4220718380:l4",
+      "paper_id": "openalex:W4220718380",
+      "text": "Adoption of algorithmic fairness principles in medicine remains limited by poor data availability and inconsistent machine learning model reporting.",
+      "normalized_category": "data-availability-and-reporting",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4220718380:f1",
+      "paper_id": "openalex:W4220718380",
+      "text": "Further research is needed to establish standardized best practices for fairness evaluation and bias mitigation in clinical machine learning.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4220718380:f2",
+      "paper_id": "openalex:W4220718380",
+      "text": "Researchers and journal editors should emphasize standardized reporting guidelines and data availability in medical ML studies to improve transparency.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:51:39.359793Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

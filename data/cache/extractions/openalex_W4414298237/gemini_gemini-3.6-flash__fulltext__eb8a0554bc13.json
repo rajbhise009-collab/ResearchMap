@@ -1,0 +1,190 @@
+{
+  "paper_id": "openalex:W4414298237",
+  "claims": [
+    {
+      "id": "openalex:W4414298237:c1",
+      "paper_id": "openalex:W4414298237",
+      "text": "Reducing the drug/cyclodextrin training dataset size from 3000 to 500 samples increased the mean absolute error from 1.38 to 2.28 kJ/mol.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c2",
+      "paper_id": "openalex:W4414298237",
+      "text": "Reducing the drug/cyclodextrin training dataset size from 3000 to 500 samples decreased the R2 value from 0.86 to 0.58.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c3",
+      "paper_id": "openalex:W4414298237",
+      "text": "A random forest model trained on 646 solid dispersion formulations achieved a prediction accuracy of 82.5% for stability prediction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c4",
+      "paper_id": "openalex:W4414298237",
+      "text": "A LightGBM model trained on 3000 drug/cyclodextrin formulations achieved an R2 value of 0.86 on the test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c5",
+      "paper_id": "openalex:W4414298237",
+      "text": "Deep learning models achieved over 80% accuracy in predicting the disintegration time of orally fast-disintegrating films.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c6",
+      "paper_id": "openalex:W4414298237",
+      "text": "The FormulationDT machine learning framework achieved an average ROC_AUC score above 0.90 across 12 classification models for drug formulation strategy design.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c7",
+      "paper_id": "openalex:W4414298237",
+      "text": "Partial least squares regression using molecular surface descriptors predicted intrinsic aqueous drug solubility with an R2 of 0.91.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4414298237:c8",
+      "paper_id": "openalex:W4414298237",
+      "text": "The Rule of Five (Ro5) principles define essential technical criteria for building reliable artificial intelligence formulation prediction models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4414298237:e1",
+      "claim_id": "openalex:W4414298237:c1",
+      "description": "Reducing the dataset from 3000 to 500 samples led to substantial performance degradation, with mean absolute error (MAE) increasing from 1.38 to 2.28 kJ/mol.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e2",
+      "claim_id": "openalex:W4414298237:c2",
+      "description": "Reducing the dataset from 3000 to 500 samples resulted in R2 decreasing from 0.86 to 0.58.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e3",
+      "claim_id": "openalex:W4414298237:c3",
+      "description": "Comparative evaluation of eight machine learning algorithms revealed that the random forest model achieved the highest prediction accuracy of 82.5% on the test set for a dataset of 646 formulations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e4",
+      "claim_id": "openalex:W4414298237:c4",
+      "description": "Among three algorithms evaluated on a dataset of 3000 formulations, the LightGBM model performed best, achieving an R2 value of 0.86 on the test set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e5",
+      "claim_id": "openalex:W4414298237:c5",
+      "description": "Deep learning achieved over 80% accuracy in predicting the disintegration time of orally fast-disintegrating films.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4414298237:e6",
+      "claim_id": "openalex:W4414298237:c6",
+      "description": "FormulationDT covers multiple decision-making steps with a total of 12 machine learning classification models, achieving an average ROC_AUC score above 0.90.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e7",
+      "claim_id": "openalex:W4414298237:c7",
+      "description": "PLS analysis establishing correlations between molecular descriptors and intrinsic solubility of 17 compounds yielded a predictive model with an R2 of 0.91.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4414298237:e8",
+      "claim_id": "openalex:W4414298237:c8",
+      "description": "The Ro5 includes criteria: formulation dataset containing at least 500 entries, coverage of minimum 10 drugs and all significant excipients, appropriate molecular representations, inclusion of critical process parameters, and suitable algorithms with model interpretability.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4414298237:m1",
+      "paper_id": "openalex:W4414298237",
+      "name": "Rule of Five (Ro5) Guidelines for Formulation Prediction",
+      "description": "A set of five standardization guidelines established to direct researchers in building reliable AI models for drug formulation prediction.",
+      "datasets": [
+        "Drug/cyclodextrin dataset (3000 entries)",
+        "Solid dispersion stability dataset (646 entries)"
+      ],
+      "conditions": [
+        "Dataset size >= 500 entries",
+        "Coverage of >= 10 drugs and critical excipients",
+        "Inclusion of critical process parameters",
+        "Proper molecular representations (descriptors/fingerprints)",
+        "Model interpretability and algorithm suitability"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4414298237:l1",
+      "paper_id": "openalex:W4414298237",
+      "text": "Early AI models relied on small datasets (<100 samples) and basic molecular descriptors, leading to poor generalization and inability to capture complex drug-excipient interactions.",
+      "normalized_category": "data-scarcity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4414298237:l2",
+      "paper_id": "openalex:W4414298237",
+      "text": "Deep learning models act as black boxes, making their automatically learned representations challenging to interpret.",
+      "normalized_category": "model-interpretability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4414298237:l3",
+      "paper_id": "openalex:W4414298237",
+      "text": "Large language models are prone to hallucinations, generating plausible but factually incorrect information that poses risks in pharmaceutical R&D.",
+      "normalized_category": "model-hallucination",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4414298237:l4",
+      "paper_id": "openalex:W4414298237",
+      "text": "Quantum mechanics and molecular dynamics simulations are computationally demanding and restricted to short time scales.",
+      "normalized_category": "computational-cost",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4414298237:f1",
+      "paper_id": "openalex:W4414298237",
+      "text": "Expanding large language model applications across the drug delivery pipeline from literature extraction and formulation design to regulatory review.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414298237:f2",
+      "paper_id": "openalex:W4414298237",
+      "text": "Deeply integrating AI with multiscale physical and biological modeling techniques, including AI-PBPK and AI-QM/MD hybrid frameworks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4414298237:f3",
+      "paper_id": "openalex:W4414298237",
+      "text": "Developing self-driving AI laboratories (AI-SDLs) to autonomously design, execute, and optimize formulation experiments.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.017700Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,134 @@
+{
+  "paper_id": "openalex:W3035463546",
+  "claims": [
+    {
+      "id": "openalex:W3035463546:c1",
+      "paper_id": "openalex:W3035463546",
+      "text": "Comparing the highest with the lowest quintile of HEI-2015 score, the pooled multivariable-adjusted hazard ratio for CVD was 0.83 (95% CI, 0.79-0.86).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035463546:c2",
+      "paper_id": "openalex:W3035463546",
+      "text": "Comparing the highest with the lowest quintile of AMED score, the pooled multivariable-adjusted hazard ratio for CVD was 0.83 (95% CI, 0.79-0.86).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035463546:c3",
+      "paper_id": "openalex:W3035463546",
+      "text": "Comparing the highest with the lowest quintile of HPDI score, the pooled multivariable-adjusted hazard ratio for CVD was 0.86 (95% CI, 0.82-0.89).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035463546:c4",
+      "paper_id": "openalex:W3035463546",
+      "text": "Comparing the highest with the lowest quintile of AHEI score, the pooled multivariable-adjusted hazard ratio for CVD was 0.79 (95% CI, 0.75-0.82).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035463546:c5",
+      "paper_id": "openalex:W3035463546",
+      "text": "Higher dietary scores for HEI-2015, AMED, HPDI, and AHEI were statistically significantly associated with a lower risk of coronary heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035463546:c6",
+      "paper_id": "openalex:W3035463546",
+      "text": "Higher dietary scores for HEI-2015, AMED, HPDI, and AHEI were statistically significantly associated with a lower risk of stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3035463546:c7",
+      "paper_id": "openalex:W3035463546",
+      "text": "The inverse associations between healthy eating scores and CVD risk were consistent across most subgroups stratified by race/ethnicity and other potential risk factors.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3035463546:e1",
+      "claim_id": "openalex:W3035463546:c1",
+      "description": "Comparing the highest with the lowest quintiles, the pooled multivariable-adjusted hazard ratios (HRs) of CVD were 0.83 (95% CI, 0.79-0.86) for the HEI-2015 (P for trend <.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3035463546:e2",
+      "claim_id": "openalex:W3035463546:c2",
+      "description": "Comparing the highest with the lowest quintiles, the pooled multivariable-adjusted hazard ratios (HRs) of CVD were 0.83 (95% CI, 0.79-0.86) for the AMED (P for trend <.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3035463546:e3",
+      "claim_id": "openalex:W3035463546:c3",
+      "description": "Comparing the highest with the lowest quintiles, the pooled multivariable-adjusted hazard ratios (HRs) of CVD were 0.86 (95% CI, 0.82-0.89) for the HPDI (P for trend <.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3035463546:e4",
+      "claim_id": "openalex:W3035463546:c4",
+      "description": "Comparing the highest with the lowest quintiles, the pooled multivariable-adjusted hazard ratios (HRs) of CVD were 0.79 (95% CI, 0.75-0.82) for the AHEI (P for trend <.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3035463546:e5",
+      "claim_id": "openalex:W3035463546:c5",
+      "description": "These dietary scores were statistically significantly associated with lower risk of both CHD and stroke.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3035463546:e6",
+      "claim_id": "openalex:W3035463546:c6",
+      "description": "These dietary scores were statistically significantly associated with lower risk of both CHD and stroke.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3035463546:e7",
+      "claim_id": "openalex:W3035463546:c7",
+      "description": "In analyses stratified by race/ethnicity and other potential risk factors for CVD, the inverse associations between these scores and risk of CVD were consistent in most subgroups.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3035463546:m1",
+      "paper_id": "openalex:W3035463546",
+      "name": "Prospective cohort analysis of dietary pattern scores and CVD risk",
+      "description": "Evaluated adherence to 4 dietary pattern scores (HEI-2015, AMED, HPDI, AHEI) and calculated pooled multivariable-adjusted hazard ratios for incident cardiovascular disease events.",
+      "datasets": [
+        "Nurses' Health Study (NHS)",
+        "Nurses' Health Study II (NHS II)",
+        "Health Professionals Follow-up Study (HPFS)"
+      ],
+      "conditions": [
+        "5,257,190 person-years of follow-up",
+        "Up to 32 years of follow-up"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3035463546:l1",
+      "paper_id": "openalex:W3035463546",
+      "text": "Few studies have examined the associations of adherence to different dietary patterns with long-term risk of cardiovascular disease.",
+      "normalized_category": "lack-of-prior-longterm-studies",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:21:00.284020Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

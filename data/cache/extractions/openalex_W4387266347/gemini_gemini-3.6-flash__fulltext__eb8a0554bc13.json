@@ -1,0 +1,160 @@
+{
+  "paper_id": "openalex:W4387266347",
+  "claims": [
+    {
+      "id": "openalex:W4387266347:c1",
+      "paper_id": "openalex:W4387266347",
+      "text": "Machine learning-based logistic regression predicts new-onset diabetes within 5 years for hospitalized patients with an AUC of 0.78.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387266347:c2",
+      "paper_id": "openalex:W4387266347",
+      "text": "Machine learning models using administrative health data predict diabetes onset within 5 years with an AUC of 0.80.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387266347:c3",
+      "paper_id": "openalex:W4387266347",
+      "text": "Support vector machine classifiers utilizing facial texture features achieve 99.02% accuracy in detecting diabetes mellitus.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387266347:c4",
+      "paper_id": "openalex:W4387266347",
+      "text": "Deep learning models detect type 2 diabetes from fundus images alone or combined with clinical metadata with AUROCs ranging from 0.85 to 0.93.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387266347:c5",
+      "paper_id": "openalex:W4387266347",
+      "text": "The Guardian Connect System predicts hypoglycemic attacks 30 minutes in advance with an alert accuracy of 98.5%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4387266347:e1",
+      "claim_id": "openalex:W4387266347:c1",
+      "description": "Choi et al. reported that the area under the curve (AUC) of predicting new-onset diabetes within 5 years for hospitalized patients was 0.78, derived from ML-based logistic regression.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4387266347:e2",
+      "claim_id": "openalex:W4387266347:c2",
+      "description": "Ravaut et al. recently reported that an ML model using administrative health data could predict diabetes onset within 5 years with an AUC of 0.80.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4387266347:e3",
+      "claim_id": "openalex:W4387266347:c3",
+      "description": "Shu et al. demonstrated that the best texture feature extractor for diabetes mellitus detection could achieve an accuracy of 99.02% using support vector machine.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4387266347:e4",
+      "claim_id": "openalex:W4387266347:c4",
+      "description": "Zhang et al. demonstrated that DL models could be used to detect T2D solely from fundus images or in combination with clinical metadata with AUROCs of 0.85–0.93.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4387266347:e5",
+      "claim_id": "openalex:W4387266347:c5",
+      "description": "According to product data for the Guardian Connect System, the accuracy of the alert was 98.5% 30 minutes before the onset of hypoglycemia.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4387266347:m1",
+      "paper_id": "openalex:W4387266347",
+      "name": "AI-assisted digital health-care ecosystem framework",
+      "description": "A comprehensive conceptual framework integrating AI algorithms with patient-reported outcomes, electronic health records, and clinical workflows across four stages: risk prediction, screening, basic management, and complication monitoring.",
+      "datasets": [
+        "Electronic Health Records (EHR)",
+        "ePROs",
+        "Continuous Glucose Monitoring (CGM)"
+      ],
+      "conditions": [
+        "Diabetes risk prediction",
+        "Diabetes screening",
+        "Glycemic management",
+        "Complication monitoring"
+      ]
+    },
+    {
+      "id": "openalex:W4387266347:m2",
+      "paper_id": "openalex:W4387266347",
+      "name": "Narrative review and synthesis",
+      "description": "A systematic overview and evaluation of artificial intelligence and machine learning applications in clinical diabetes research and management.",
+      "datasets": [],
+      "conditions": [
+        "Type 1 diabetes",
+        "Type 2 diabetes",
+        "Gestational diabetes"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4387266347:l1",
+      "paper_id": "openalex:W4387266347",
+      "text": "Rule-based clinical decision-support systems are expensive to build, brittle, and constrained by the comprehensiveness of pre-existing medical knowledge.",
+      "normalized_category": "rule-based-system-brittleness",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4387266347:l2",
+      "paper_id": "openalex:W4387266347",
+      "text": "Self-reporting of food intake by patients in dietary monitoring is inaccurate and often impractical.",
+      "normalized_category": "self-report-inaccuracy",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4387266347:l3",
+      "paper_id": "openalex:W4387266347",
+      "text": "AI models trained on unbalanced or unrepresentative health data can amplify implicit bias and healthcare disparities.",
+      "normalized_category": "algorithmic-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4387266347:l4",
+      "paper_id": "openalex:W4387266347",
+      "text": "Large language models in healthcare carry inherent risks of output inconsistency and generating misleading information.",
+      "normalized_category": "llm-hallucination-risk",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4387266347:f1",
+      "paper_id": "openalex:W4387266347",
+      "text": "Train AI algorithms on fair datasets that represent social, environmental, and economic factors to ensure algorithmic fairness.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4387266347:f2",
+      "paper_id": "openalex:W4387266347",
+      "text": "Conduct prospective clinical trials to evaluate the real-world performance, safety, and workflow integration of AI systems in clinical practice.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4387266347:f3",
+      "paper_id": "openalex:W4387266347",
+      "text": "Implement privacy-preserving decentralized learning architectures, such as swarm learning or federated learning, to protect sensitive medical data.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.002385Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

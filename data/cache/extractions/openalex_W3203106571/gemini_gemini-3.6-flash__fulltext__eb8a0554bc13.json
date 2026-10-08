@@ -1,0 +1,174 @@
+{
+  "paper_id": "openalex:W3203106571",
+  "claims": [
+    {
+      "id": "openalex:W3203106571:c1",
+      "paper_id": "openalex:W3203106571",
+      "text": "Algorithmic fairness is an inherently social concept and should be approached through a sociotechnical lens.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3203106571:c2",
+      "paper_id": "openalex:W3203106571",
+      "text": "The existing literature on algorithmic fairness is dominated by technical perspectives that reduce fairness to a mathematical construct.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3203106571:c3",
+      "paper_id": "openalex:W3203106571",
+      "text": "It is mathematically impossible to simultaneously fulfill all group-level mathematical definitions of fairness.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3203106571:c4",
+      "paper_id": "openalex:W3203106571",
+      "text": "Technical approaches to algorithmic fairness predominantly rely on context-independence, time-independence, and component-independence assumptions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3203106571:c5",
+      "paper_id": "openalex:W3203106571",
+      "text": "Social perspectives on algorithmic fairness frequently treat technical fairness approaches as a black box without analyzing specific technical operationalizations or trade-offs.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3203106571:c6",
+      "paper_id": "openalex:W3203106571",
+      "text": "A complex decision system composed of individual fair technical components does not guarantee fair overall sociotechnical outcomes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3203106571:e1",
+      "claim_id": "openalex:W3203106571:c1",
+      "description": "The authors elaborate on how outcomes of decision-making systems using algorithmic fairness depend on reciprocal influences between technical and social structures.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3203106571:e2",
+      "claim_id": "openalex:W3203106571:c2",
+      "description": "Out of 280 reviewed articles across key ML conferences and multidisciplinary journals, 210 articles were categorized as following a technical perspective.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3203106571:e3",
+      "claim_id": "openalex:W3203106571:c3",
+      "description": "Prior literature (e.g. Chouldechova 2017, Kleinberg et al. 2017) proves mathematical trade-offs preventing simultaneous satisfaction of metrics like statistical parity, equalized odds, and predictive parity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3203106571:e4",
+      "claim_id": "openalex:W3203106571:c4",
+      "description": "Review of technical studies showed widespread testing of algorithms on static, public benchmark datasets in isolation without accounting for environmental dynamic changes or component interactions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3203106571:e5",
+      "claim_id": "openalex:W3203106571:c5",
+      "description": "Analysis of 70 social perspective papers showed that technical debiasing methods (such as counterfactual reasoning or data repair) were rarely examined for their technical mechanisms or social trade-offs.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3203106571:e6",
+      "claim_id": "openalex:W3203106571:c6",
+      "description": "General systems theory demonstrates that system properties emerge from component interactions, meaning fair individual classifiers can still yield unfair outcomes when integrated into multi-part systems.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3203106571:m1",
+      "paper_id": "openalex:W3203106571",
+      "name": "Multidisciplinary problematization literature review",
+      "description": "A systematic multidisciplinary literature review and problematization analysis of 280 articles (166 conference papers and 114 multidisciplinary journal papers) to explicate and challenge core assumptions in algorithmic fairness research.",
+      "datasets": [
+        "ACM FAccT proceedings (2017-2020)",
+        "ACM KDD proceedings (2017-2020)",
+        "ICML proceedings (2017-2020)",
+        "NeurIPS proceedings (2017-2020)",
+        "Scopus Q1 multidisciplinary journal database (2017-2020)"
+      ],
+      "conditions": [
+        "Peer-reviewed articles published between January 2017 and December 2020",
+        "Top 25% (Q1) journal/conference ranking according to Scimago Journal & Country Rank"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3203106571:l1",
+      "paper_id": "openalex:W3203106571",
+      "text": "Collecting sensitive demographic attributes required by group and individual mathematical fairness notions may be prohibited by legal regulations.",
+      "normalized_category": "legal-data-collection-restriction",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3203106571:l2",
+      "paper_id": "openalex:W3203106571",
+      "text": "Explainable machine learning techniques frequently generate explanations that are not perceived as useful or practical by human decision-makers.",
+      "normalized_category": "explainability-utility-gap",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3203106571:l3",
+      "paper_id": "openalex:W3203106571",
+      "text": "The literature search process is constrained by the choice of target databases, keyword queries, and inclusion filtering rules.",
+      "normalized_category": "literature-search-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3203106571:l4",
+      "paper_id": "openalex:W3203106571",
+      "text": "The summary and synthesis of individual articles in the literature review are necessarily selective and condensed.",
+      "normalized_category": "condensed-literature-synthesis",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3203106571:f1",
+      "paper_id": "openalex:W3203106571",
+      "text": "Develop frameworks for evaluating and auditing algorithmic fairness solutions in real-world, dynamic organizational contexts rather than relying on synthetic or decontextualized benchmark datasets.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3203106571:f2",
+      "paper_id": "openalex:W3203106571",
+      "text": "Identify context-dependent requirements for explainable machine learning tailored to specific high-stakes stakeholders such as policy decision-makers, medical auditors, and judicial officers.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3203106571:f3",
+      "paper_id": "openalex:W3203106571",
+      "text": "Formulate data governance and management practices that ensure fairness while maintaining data consistency, integrity, and security.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3203106571:f4",
+      "paper_id": "openalex:W3203106571",
+      "text": "Investigate optimal division of labor, joint agency, and interaction patterns within human-algorithm decision-making teams to prevent uncritical automation bias.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3203106571:f5",
+      "paper_id": "openalex:W3203106571",
+      "text": "Develop system-theoretic approaches to detect, formalize, and mitigate self-reinforcing feedback loops that propagate bias after deployment.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:54:43.105854Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,251 @@
+{
+  "paper_id": "openalex:W2160517070",
+  "claims": [
+    {
+      "id": "openalex:W2160517070:c1",
+      "paper_id": "openalex:W2160517070",
+      "text": "Within each 4-year period, participants gained an average of 3.35 lb.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c2",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of potato chips is associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c3",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of potatoes is associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c4",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of sugar-sweetened beverages is associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c5",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of unprocessed red meats is associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c6",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of processed meats is associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c7",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of vegetables is inversely associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c8",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of whole grains is inversely associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c9",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of fruits is inversely associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c10",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of nuts is inversely associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c11",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased daily intake of yogurt is inversely associated with 4-year weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c12",
+      "paper_id": "openalex:W2160517070",
+      "text": "Increased physical activity is inversely associated with weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c13",
+      "paper_id": "openalex:W2160517070",
+      "text": "Alcohol consumption is associated with weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c14",
+      "paper_id": "openalex:W2160517070",
+      "text": "New quitters of smoking experience weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c15",
+      "paper_id": "openalex:W2160517070",
+      "text": "Sleeping less than 6 hours or more than 8 hours is associated with increased weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2160517070:c16",
+      "paper_id": "openalex:W2160517070",
+      "text": "Television watching is associated with weight gain.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2160517070:e1",
+      "claim_id": "openalex:W2160517070:c1",
+      "description": "Within each 4-year period, participants gained an average of 3.35 lb (5th to 95th percentile, -4.1 to 12.4).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e2",
+      "claim_id": "openalex:W2160517070:c2",
+      "description": "4-year weight change was most strongly associated with the intake of potato chips (1.69 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e3",
+      "claim_id": "openalex:W2160517070:c3",
+      "description": "4-year weight change was associated with the intake of potatoes (1.28 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e4",
+      "claim_id": "openalex:W2160517070:c4",
+      "description": "4-year weight change was associated with the intake of sugar-sweetened beverages (1.00 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e5",
+      "claim_id": "openalex:W2160517070:c5",
+      "description": "4-year weight change was associated with the intake of unprocessed red meats (0.95 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e6",
+      "claim_id": "openalex:W2160517070:c6",
+      "description": "4-year weight change was associated with the intake of processed meats (0.93 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e7",
+      "claim_id": "openalex:W2160517070:c7",
+      "description": "4-year weight change was inversely associated with the intake of vegetables (-0.22 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e8",
+      "claim_id": "openalex:W2160517070:c8",
+      "description": "4-year weight change was inversely associated with the intake of whole grains (-0.37 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e9",
+      "claim_id": "openalex:W2160517070:c9",
+      "description": "4-year weight change was inversely associated with the intake of fruits (-0.49 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e10",
+      "claim_id": "openalex:W2160517070:c10",
+      "description": "4-year weight change was inversely associated with the intake of nuts (-0.57 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e11",
+      "claim_id": "openalex:W2160517070:c11",
+      "description": "4-year weight change was inversely associated with the intake of yogurt (-0.82 lb per increased daily serving, P<=0.005).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e12",
+      "claim_id": "openalex:W2160517070:c12",
+      "description": "Physical activity was independently associated with weight change (-1.76 lb across quintiles, P<0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e13",
+      "claim_id": "openalex:W2160517070:c13",
+      "description": "Alcohol use was independently associated with weight change (0.41 lb per drink per day, P<0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e14",
+      "claim_id": "openalex:W2160517070:c14",
+      "description": "New quitters gained 5.17 lb and former smokers gained 0.14 lb (P<0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e15",
+      "claim_id": "openalex:W2160517070:c15",
+      "description": "More weight gain was observed with <6 or >8 hours of sleep (P<0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2160517070:e16",
+      "claim_id": "openalex:W2160517070:c16",
+      "description": "Television watching was independently associated with weight change (0.31 lb per hour per day, P<0.001).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2160517070:m1",
+      "paper_id": "openalex:W2160517070",
+      "name": "Prospective cohort analysis with pooled inverse-variance-weighted meta-analysis",
+      "description": "Evaluated relationships between changes in lifestyle factors and weight change at 4-year intervals with multivariable adjustments across three prospective cohorts, pooling results via inverse-variance-weighted meta-analysis.",
+      "datasets": [
+        "Three prospective U.S. cohorts (120,877 participants)"
+      ],
+      "conditions": [
+        "Participants free of chronic diseases and not obese at baseline",
+        "4-year interval evaluations",
+        "Multivariable adjustments for age, baseline BMI, and lifestyle factors simultaneously"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:43:03.855877Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

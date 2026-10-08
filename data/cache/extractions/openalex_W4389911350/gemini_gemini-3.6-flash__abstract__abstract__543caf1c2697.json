@@ -1,0 +1,81 @@
+{
+  "paper_id": "openalex:W4389911350",
+  "claims": [
+    {
+      "id": "openalex:W4389911350:c1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Sequence-level probability estimates given by LLMs have limitations as reliable indicators of generation quality.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c2",
+      "paper_id": "openalex:W4389911350",
+      "text": "LLMs demonstrate strong calibration at the token level when choosing correct answers in multiple-choice questions or evaluating true/false statements.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c3",
+      "paper_id": "openalex:W4389911350",
+      "text": "Self-evaluation based scoring methods improve selective generation accuracy in LLMs.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c4",
+      "paper_id": "openalex:W4389911350",
+      "text": "Self-evaluation based scores correlate better with the overall quality of generated content than probability-based metrics.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389911350:e1",
+      "claim_id": "openalex:W4389911350:c3",
+      "description": "Experiments using PaLM-2 and GPT-3 on TruthfulQA and TL;DR benchmarks show accuracy improvements in selective generation when using self-evaluation.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389911350:e2",
+      "claim_id": "openalex:W4389911350:c4",
+      "description": "Empirical evaluation on TruthfulQA and TL;DR using PaLM-2 and GPT-3 demonstrated higher correlation between self-evaluation scores and overall quality.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389911350:m1",
+      "paper_id": "openalex:W4389911350",
+      "name": "Token-level Self-Evaluation for Selective Generation",
+      "description": "Open-ended generation tasks are reformulated into token-level prediction tasks where an LLM self-evaluates its answers using multi-way comparison or point-wise evaluation.",
+      "datasets": [
+        "TruthfulQA",
+        "TL;DR"
+      ],
+      "conditions": [
+        "PaLM-2",
+        "GPT-3",
+        "multi-way comparison",
+        "point-wise evaluation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4389911350:l1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Sequence-level probability estimates (such as perplexity) are limited as reliable indicators of generation quality.",
+      "normalized_category": "metric-reliability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:25:50.959238Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

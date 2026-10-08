@@ -1,0 +1,200 @@
+{
+  "paper_id": "openalex:W2100960835",
+  "claims": [
+    {
+      "id": "openalex:W2100960835:c1",
+      "paper_id": "openalex:W2100960835",
+      "text": "Fairness in classification can be formalized as a Lipschitz condition on a randomized classifier requiring that similar individuals map to similar probability distributions over outcomes.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2100960835:c2",
+      "paper_id": "openalex:W2100960835",
+      "text": "Minimizing expected utility loss subject to the Lipschitz fairness constraint can be formulated as a linear program and solved efficiently.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2100960835:c3",
+      "paper_id": "openalex:W2100960835",
+      "text": "Statistical parity alone is insufficient as a notion of fairness because it can allow individual-level unfairness, reduced utility, and self-fulfilling prophecies.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2100960835:c4",
+      "paper_id": "openalex:W2100960835",
+      "text": "Under the total variation metric, the Lipschitz condition implies statistical parity between two groups if and only if the Earthmover distance between their distributions is small.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2100960835:c5",
+      "paper_id": "openalex:W2100960835",
+      "text": "Differential privacy is a special case of individual fairness where databases correspond to individuals and distance corresponds to symmetric database difference.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2100960835:c6",
+      "paper_id": "openalex:W2100960835",
+      "text": "The exponential mechanism achieves an expected classification loss of O(1) for well-separated metric spaces with bounded doubling dimension.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2100960835:c7",
+      "paper_id": "openalex:W2100960835",
+      "text": "Any (D_infinity, d)-Lipschitz mapping on an n-point metric space of doubling dimension O(k) must incur an average loss scaling at least linearly with k.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2100960835:e1",
+      "claim_id": "openalex:W2100960835:c1",
+      "description": "We formalize this guiding principle as a Lipschitz condition on the classifier. The Lipschitz condition requires that any two individuals x,y that are at distance d(x,y) map to distributions M(x) and M(y) such that the statistical distance between M(x) and M(y) is at most d(x,y).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2100960835:e2",
+      "claim_id": "openalex:W2100960835:c2",
+      "description": "We observe that this optimization problem can be expressed as a linear program and hence solved efficiently.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2100960835:e3",
+      "claim_id": "openalex:W2100960835:c3",
+      "description": "we demonstrate its inadequacy as a notion of fairness through several examples in which statistical parity is maintained, but from the point of view of an individual, the outcome is blatantly unfair.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2100960835:e4",
+      "claim_id": "openalex:W2100960835:c4",
+      "description": "Theorem 3.3 proves that bias_Dtv,d(S, T) = d_EM(S, T) when d(x,y) <= 1, establishing that the Lipschitz condition implies statistical parity between two groups if and only if the Earthmover distance between the two groups is small.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2100960835:e5",
+      "claim_id": "openalex:W2100960835:c5",
+      "description": "A mapping M satisfies epsilon-differential privacy if and only if M satisfies the (D_infinity, d)-Lipschitz property where d(x,y) = epsilon|x delta y|.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2100960835:e6",
+      "claim_id": "openalex:W2100960835:c6",
+      "description": "Theorem 5.2 proves that for a well separated metric space of bounded doubling dimension k = O(1), the expected loss under the exponential mechanism satisfies sum_{x in V} sum_{y ~ E(x)} d(x,y) = O(1).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2100960835:e7",
+      "claim_id": "openalex:W2100960835:c7",
+      "description": "Theorem 5.3 proves that for every k >= 2 and large enough n, there exists an n-point metric space of doubling dimension O(k) such that any (D_infinity, d)-Lipschitz mapping must satisfy expected loss Omega(k).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2100960835:m1",
+      "paper_id": "openalex:W2100960835",
+      "name": "Fairness Linear Program (Fairness LP)",
+      "description": "An optimization problem that minimizes an arbitrary loss function subject to individual Lipschitz fairness constraints relative to a distance metric.",
+      "datasets": [],
+      "conditions": [
+        "Task-specific similarity distance metric d",
+        "Vendor loss function L",
+        "Probability distance metric D (D_tv or D_infinity)"
+      ]
+    },
+    {
+      "id": "openalex:W2100960835:m2",
+      "paper_id": "openalex:W2100960835",
+      "name": "Fair Affirmative Action via Earthmover Transport",
+      "description": "A two-step optimization procedure that enforces statistical parity by relaxing cross-group Lipschitz constraints while transporting protected group distributions to non-protected group distributions via Earthmover distance.",
+      "datasets": [],
+      "conditions": [
+        "Disjoint protected group S and non-protected group T",
+        "Relaxation of S x T Lipschitz constraints",
+        "Preservation of S x S and T x T Lipschitz constraints"
+      ]
+    },
+    {
+      "id": "openalex:W2100960835:m3",
+      "paper_id": "openalex:W2100960835",
+      "name": "Fair Exponential Mechanism",
+      "description": "An adaptation of the differential privacy exponential mechanism that defines randomized outcome distributions proportional to negative metric distance.",
+      "datasets": [],
+      "conditions": [
+        "Well-separated metric space",
+        "Bounded doubling dimension"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2100960835:l1",
+      "paper_id": "openalex:W2100960835",
+      "text": "Statistical parity fails to protect individuals against local unfairness, reverse tokenism, subset targeting, and intentional selection of unqualified individuals.",
+      "normalized_category": "statistical-parity-inadequacy",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2100960835:l2",
+      "paper_id": "openalex:W2100960835",
+      "text": "The framework relies on the availability of an externally imposed or agreed-upon task-specific similarity metric, which is challenging to define or access in practice.",
+      "normalized_category": "metric-availability-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2100960835:l3",
+      "paper_id": "openalex:W2100960835",
+      "text": "The upper bound error proof for the fair exponential mechanism exhibits an exponential dependence on the doubling dimension of the metric space.",
+      "normalized_category": "dimension-scaling-loss",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2100960835:l4",
+      "paper_id": "openalex:W2100960835",
+      "text": "The paper does not establish a tight characterization of when the relative infinity-distance Lipschitz condition (D_infinity) implies statistical parity.",
+      "normalized_category": "open-theoretical-gap",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2100960835:f1",
+      "paper_id": "openalex:W2100960835",
+      "text": "Achieve a tight characterization of conditions under which (D_infinity, d)-Lipschitz continuity implies statistical parity.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2100960835:f2",
+      "paper_id": "openalex:W2100960835",
+      "text": "Extend fair affirmative action methods to handle preferential treatment for multiple protected subsets that are not mutually disjoint.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2100960835:f3",
+      "paper_id": "openalex:W2100960835",
+      "text": "Improve the exponential dependence on doubling dimension in the upper bound loss for individual fairness mechanisms.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2100960835:f4",
+      "paper_id": "openalex:W2100960835",
+      "text": "Investigate how a suitable fairness metric can be extracted from practical clinical systems such as the AALIM cardiology decision support system.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:03:56.551075Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

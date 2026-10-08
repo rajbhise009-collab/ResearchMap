@@ -1,0 +1,128 @@
+{
+  "paper_id": "openalex:W2917793655",
+  "claims": [
+    {
+      "id": "openalex:W2917793655:c1",
+      "paper_id": "openalex:W2917793655",
+      "text": "Departures from individual randomization in a subsample of the PREDIMED trial did not cause clinically meaningful attenuation in the strength of its findings.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2917793655:c2",
+      "paper_id": "openalex:W2917793655",
+      "text": "The results of the PREDIMED trial were robust across a wide range of sensitivity analyses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2917793655:c3",
+      "paper_id": "openalex:W2917793655",
+      "text": "The criteria for causality between the Mediterranean diet and cardiovascular health outcomes were met.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2917793655:c4",
+      "paper_id": "openalex:W2917793655",
+      "text": "Better conformity with the traditional Mediterranean diet is associated with reductions in rates of coronary heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2917793655:c5",
+      "paper_id": "openalex:W2917793655",
+      "text": "Better conformity with the traditional Mediterranean diet is associated with reductions in rates of ischemic stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2917793655:c6",
+      "paper_id": "openalex:W2917793655",
+      "text": "Better conformity with the traditional Mediterranean diet is associated with reductions in rates of total cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2917793655:e1",
+      "claim_id": "openalex:W2917793655:c1",
+      "description": "Some departures from individual randomization in a subsample of the landmark Spanish trial (PREDIMED [Prevención con Dieta Mediterránea]) did not represent any clinically meaningful attenuation in the strength of its findings.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2917793655:e2",
+      "claim_id": "openalex:W2917793655:c2",
+      "description": "The results of PREDIMED were robust in a wide range of sensitivity analyses.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2917793655:e3",
+      "claim_id": "openalex:W2917793655:c3",
+      "description": "The criteria for causality were met and potential sources of controversies did not represent any reason to compromise the main findings of the available observational studies and randomized controlled trials.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2917793655:e4",
+      "claim_id": "openalex:W2917793655:c4",
+      "description": "Better conformity with the traditional MedDiet is associated with better cardiovascular health outcomes, including clinically meaningful reductions in rates of coronary heart disease.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2917793655:e5",
+      "claim_id": "openalex:W2917793655:c5",
+      "description": "Better conformity with the traditional MedDiet is associated with better cardiovascular health outcomes, including clinically meaningful reductions in rates of ischemic stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2917793655:e6",
+      "claim_id": "openalex:W2917793655:c6",
+      "description": "Better conformity with the traditional MedDiet is associated with better cardiovascular health outcomes, including clinically meaningful reductions in rates of total cardiovascular disease.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2917793655:m1",
+      "paper_id": "openalex:W2917793655",
+      "name": "Systematic Critical Review and Re-analysis",
+      "description": "Systematic review and critical assessment of prospective cohorts and randomized controlled trials included in 5 major meta-analyses published between 2014 and 2018 plus additional prospective studies evaluating MedDiet effects on hard cardiovascular end points.",
+      "datasets": [
+        "45 reports of prospective studies",
+        "PREDIMED trial dataset",
+        "32 independent observational cohorts",
+        "4 randomized controlled trials"
+      ],
+      "conditions": [
+        "Explicit reporting on MedDiet effect on hard cardiovascular end points",
+        "Prospective study design"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2917793655:l1",
+      "paper_id": "openalex:W2917793655",
+      "text": "Methodological aspects of Mediterranean intervention trials and limitations in the quality of some meta-analyses raised recent controversies.",
+      "normalized_category": "methodological-flaws-in-prior-work",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2917793655:l2",
+      "paper_id": "openalex:W2917793655",
+      "text": "Departures from individual randomization occurred in a subsample of the PREDIMED trial.",
+      "normalized_category": "randomization-protocol-deviations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:13:36.921645Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

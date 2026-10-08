@@ -1,0 +1,89 @@
+{
+  "paper_id": "openalex:W4388444554",
+  "claims": [
+    {
+      "id": "openalex:W4388444554:c1",
+      "paper_id": "openalex:W4388444554",
+      "text": "Question-level hallucinations cannot be effectively identified through self-consistency checking alone.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c2",
+      "paper_id": "openalex:W4388444554",
+      "text": "Model-level hallucinations cannot be effectively identified through self-consistency checking alone.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c3",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3 leverages semantically equivalent question perturbation to detect question-level hallucinations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4388444554:c4",
+      "paper_id": "openalex:W4388444554",
+      "text": "SAC3 leverages cross-model response consistency checking to detect model-level hallucinations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4388444554:e1",
+      "claim_id": "openalex:W4388444554:c1",
+      "description": "Re-examination of existing detection approaches based on LM self-consistency uncovers question-level hallucinations that self-consistency alone cannot identify.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4388444554:e2",
+      "claim_id": "openalex:W4388444554:c2",
+      "description": "Re-examination of existing detection approaches based on LM self-consistency uncovers model-level hallucinations that self-consistency alone cannot identify.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4388444554:e3",
+      "claim_id": "openalex:W4388444554:c3",
+      "description": "The proposed SAC3 framework incorporates semantically equivalent question perturbation mechanisms to detect question-level hallucinations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4388444554:e4",
+      "claim_id": "openalex:W4388444554:c4",
+      "description": "The proposed SAC3 framework incorporates cross-model response consistency checking mechanisms to detect model-level hallucinations.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4388444554:m1",
+      "paper_id": "openalex:W4388444554",
+      "name": "Semantic-aware Cross-check Consistency (SAC3)",
+      "description": "A sampling-based hallucination detection method expanding on self-consistency by integrating semantically equivalent question perturbation and cross-model response consistency checking.",
+      "datasets": [],
+      "conditions": [
+        "black-box language models",
+        "question-answering",
+        "open-domain generation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4388444554:l1",
+      "paper_id": "openalex:W4388444554",
+      "text": "Existing hallucination detection approaches relying solely on LM self-consistency fail to effectively identify question-level and model-level hallucinations.",
+      "normalized_category": "self-consistency-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:31:13.913896Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

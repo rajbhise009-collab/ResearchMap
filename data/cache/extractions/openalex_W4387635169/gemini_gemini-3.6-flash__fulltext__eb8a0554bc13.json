@@ -1,0 +1,114 @@
+{
+  "paper_id": "openalex:W4387635169",
+  "claims": [
+    {
+      "id": "openalex:W4387635169:c1",
+      "paper_id": "openalex:W4387635169",
+      "text": "Indiscriminately employing generated class descriptors from LLMs degenerates multi-modal OOD detection performance across four out of five tested in-distribution datasets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c2",
+      "paper_id": "openalex:W4387635169",
+      "text": "The proposed selective descriptor generation method with CLIP-B/16 achieves an average FPR95 of 37.71% on ImageNet-1k OOD detection, outperforming MCM's 42.74%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c3",
+      "paper_id": "openalex:W4387635169",
+      "text": "Incorporating world knowledge from LLMs via calibrated selective generation improves OOD detection performance by 4.42% in average FPR95 compared to using class names without descriptors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387635169:c4",
+      "paper_id": "openalex:W4387635169",
+      "text": "Consistency-based uncertainty calibration calculates descriptor confidence based on retrieval overlap from an unlabeled image set.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4387635169:e1",
+      "claim_id": "openalex:W4387635169:c1",
+      "description": "Table 1 shows that adding descriptors degenerates FPR95 from 7.09 to 4.72 on CUB-200, 0.08 to 0.10 on Stanford-Cars, 1.86 to 3.86 on Food-101, and 1.70 to 3.52 on Oxford-Pet.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4387635169:e2",
+      "claim_id": "openalex:W4387635169:c2",
+      "description": "Table 2 reports Ours (CLIP-B) achieving 37.71% average FPR95 across iNaturalist, SUN, Places, and Texture datasets compared to 42.74% for MCM (CLIP-B).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4387635169:e3",
+      "claim_id": "openalex:W4387635169:c3",
+      "description": "Table 2 shows Ours (CLIP-B) achieves 37.71% FPR95 compared to 42.13% for w/o Know. (CLIP-B), an improvement of 4.42 percentage points.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4387635169:e4",
+      "claim_id": "openalex:W4387635169:c4",
+      "description": "Section 4.3 outlines querying descriptor sets against an unlabeled image set M and calculating consistency via cosine similarity between top-k retrieved binary vectors.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4387635169:m1",
+      "paper_id": "openalex:W4387635169",
+      "name": "Selective Generation and Visual Concept Object Detection for OOD Detection",
+      "description": "Generates class descriptors via LLMs, calibrates confidence using image-retrieval consistency over unlabeled images, extracts object class names from test images, and evaluates maximum class matching scores combining visual-textual and object-textual similarities.",
+      "datasets": [
+        "ImageNet-1k",
+        "CUB-200",
+        "Stanford-Cars",
+        "Food-101",
+        "Oxford-Pet",
+        "iNaturalist",
+        "SUN",
+        "Places",
+        "Texture"
+      ],
+      "conditions": [
+        "Zero-shot setting",
+        "CLIP-B/16 and CLIP-L/14 backbone models",
+        "text-davinci-003 for descriptor generation",
+        "CBNetV2-Swin-Base object detector with 600 object categories"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4387635169:l1",
+      "paper_id": "openalex:W4387635169",
+      "text": "Existing multi-modal OOD detection methods neglect the rich contextual information of ID classes.",
+      "normalized_category": "neglect-of-contextual-info",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4387635169:l2",
+      "paper_id": "openalex:W4387635169",
+      "text": "The method is limited to detecting visual OOD inputs and ignores inputs in other modalities such as textual, audio, EEG, and robotic features.",
+      "normalized_category": "visual-modality-limitation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4387635169:f1",
+      "paper_id": "openalex:W4387635169",
+      "text": "Extend OOD detection to non-visual modalities like textual, audio, EEG, and robotic features using multi-modal pre-training models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T10:27:51.647259Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

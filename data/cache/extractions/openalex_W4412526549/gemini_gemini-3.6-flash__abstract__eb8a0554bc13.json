@@ -1,0 +1,119 @@
+{
+  "paper_id": "openalex:W4412526549",
+  "claims": [
+    {
+      "id": "openalex:W4412526549:c1",
+      "paper_id": "openalex:W4412526549",
+      "text": "Widespread adoption of large language models is hindered by technical, social, ethical, and legal challenges.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412526549:c2",
+      "paper_id": "openalex:W4412526549",
+      "text": "Large language models exhibit significant limitations in interpretability.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412526549:c3",
+      "paper_id": "openalex:W4412526549",
+      "text": "Large language models suffer from biases in data and model outcomes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4412526549:c4",
+      "paper_id": "openalex:W4412526549",
+      "text": "Large language models require high computational resources for operation and deployment.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4412526549:e1",
+      "claim_id": "openalex:W4412526549:c1",
+      "description": "Attempts to achieve widespread use of LLMs have met numerous challenges encompassing technical, social, ethical, and legal aspects.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4412526549:e2",
+      "claim_id": "openalex:W4412526549:c2",
+      "description": "The review identifies model interpretability among the key challenges associated with LLMs.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4412526549:e3",
+      "claim_id": "openalex:W4412526549:c3",
+      "description": "The paper highlights biases in data and model outcomes as critical key issues.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4412526549:e4",
+      "claim_id": "openalex:W4412526549:c4",
+      "description": "The authors list high computational requirements as a major challenge facing LLMs.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4412526549:m1",
+      "paper_id": "openalex:W4412526549",
+      "name": "Structured Taxonomy and Literature Review",
+      "description": "A comprehensive review and taxonomy analyzing challenges, limitations, domain impacts, solutions, and future directions for large language models.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4412526549:l1",
+      "paper_id": "openalex:W4412526549",
+      "text": "Lack of interpretability in model decision-making.",
+      "normalized_category": "interpretability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4412526549:l2",
+      "paper_id": "openalex:W4412526549",
+      "text": "Presence of systemic biases in training data and generated model outputs.",
+      "normalized_category": "algorithmic-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4412526549:l3",
+      "paper_id": "openalex:W4412526549",
+      "text": "Ethical concerns regarding data privacy and security during training and deployment.",
+      "normalized_category": "privacy-and-security",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4412526549:l4",
+      "paper_id": "openalex:W4412526549",
+      "text": "High computational resource demands for training and running large language models.",
+      "normalized_category": "resource-efficiency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4412526549:f1",
+      "paper_id": "openalex:W4412526549",
+      "text": "Developing techniques to improve the robustness and control of LLMs against biases and quality issues.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4412526549:f2",
+      "paper_id": "openalex:W4412526549",
+      "text": "Addressing key challenges for the responsible and effective deployment of LLMs in domain-specific applications such as healthcare, law, media, and education.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.120838Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,142 @@
+{
+  "paper_id": "openalex:W4308902180",
+  "claims": [
+    {
+      "id": "openalex:W4308902180:c1",
+      "paper_id": "openalex:W4308902180",
+      "text": "ACGS-2 uses a 26-service microservices architecture to enforce constitutional principles across distributed AI systems.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4308902180:c2",
+      "paper_id": "openalex:W4308902180",
+      "text": "The ACGS-2 system achieved complete compliance across 847 constitutional test cases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4308902180:c3",
+      "paper_id": "openalex:W4308902180",
+      "text": "The ACGS-2 system sustained production loads exceeding 1,250 requests per second.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4308902180:c4",
+      "paper_id": "openalex:W4308902180",
+      "text": "The ACGS-2 system maintained 99.99% uptime during chaos engineering experiments.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4308902180:c5",
+      "paper_id": "openalex:W4308902180",
+      "text": "The ACGS-2 system achieves a P99 latency of 3.2 milliseconds for end-to-end request processing.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4308902180:c6",
+      "paper_id": "openalex:W4308902180",
+      "text": "ACGS-2 incorporates a cryptographically-verified constitutional hash mechanism to ensure policy consistency across distributed services.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4308902180:e1",
+      "claim_id": "openalex:W4308902180:c1",
+      "description": "This comprehensive research introduces a novel 26-service microservices architecture specifically designed to enforce constitutional principles across distributed AI systems.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4308902180:e2",
+      "claim_id": "openalex:W4308902180:c2",
+      "description": "Through rigorous empirical validation, the system achieved complete compliance across 847 constitutional test cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4308902180:e3",
+      "claim_id": "openalex:W4308902180:c3",
+      "description": "Sustaining production loads exceeding 1,250 requests per second with sub-millisecond latency response times.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4308902180:e4",
+      "claim_id": "openalex:W4308902180:c4",
+      "description": "The system maintained 99.99% uptime during comprehensive chaos engineering experiments while processing sustained production workloads.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4308902180:e5",
+      "claim_id": "openalex:W4308902180:c5",
+      "description": "Performance benchmarking confirmed that constitutional governance overhead remains minimal, with P99 latency measurements of 3.2 milliseconds for end-to-end request processing.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4308902180:e6",
+      "claim_id": "openalex:W4308902180:c6",
+      "description": "The system implements a cryptographically-verified constitutional hash mechanism that ensures policy consistency across all distributed services.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4308902180:m1",
+      "paper_id": "openalex:W4308902180",
+      "name": "ACGS-2 Microservices Governance Architecture",
+      "description": "A 26-service microservices architecture combining cryptographically-verified constitutional hashing, formal verification, and AI-assisted policy synthesis for constitutional AI governance.",
+      "datasets": [],
+      "conditions": [
+        "Sustained production loads exceeding 1,250 requests per second",
+        "Chaos engineering experiments"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4308902180:l1",
+      "paper_id": "openalex:W4308902180",
+      "text": "Authentic democratic governance requires addressing sociotechnical challenges beyond technical infrastructure alone.",
+      "normalized_category": "sociotechnical-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4308902180:l2",
+      "paper_id": "openalex:W4308902180",
+      "text": "Fundamental challenges and a lack of practical implementation blueprints have limited the adoption of constitutional AI in enterprise environments.",
+      "normalized_category": "enterprise-adoption-barriers",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4308902180:f1",
+      "paper_id": "openalex:W4308902180",
+      "text": "Developing methodologies for authentic democratic constitution creation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4308902180:f2",
+      "paper_id": "openalex:W4308902180",
+      "text": "Advancing semantic constitutional interpretation capabilities.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4308902180:f3",
+      "paper_id": "openalex:W4308902180",
+      "text": "Addressing the complex sociotechnical challenges of implementing legitimate democratic governance processes within technical systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.130126Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

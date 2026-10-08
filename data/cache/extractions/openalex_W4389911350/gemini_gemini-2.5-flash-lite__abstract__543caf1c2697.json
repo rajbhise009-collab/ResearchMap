@@ -1,0 +1,126 @@
+{
+  "paper_id": "openalex:W4389911350",
+  "claims": [
+    {
+      "id": "openalex:W4389911350:c1",
+      "paper_id": "openalex:W4389911350",
+      "text": "Likelihood-based metrics such as perplexity have limitations as reliable indicators of generation quality in large language models.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c2",
+      "paper_id": "openalex:W4389911350",
+      "text": "Large language models demonstrate strong calibration at the token level.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c3",
+      "paper_id": "openalex:W4389911350",
+      "text": "Open-ended generation tasks can be reformulated into token-level prediction tasks.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c4",
+      "paper_id": "openalex:W4389911350",
+      "text": "LLMs can be instructed to self-evaluate their answers using either a multi-way comparison or a point-wise evaluation approach.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c5",
+      "paper_id": "openalex:W4389911350",
+      "text": "A 'None of the above' option can be included in self-evaluation to explicitly express model uncertainty.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c6",
+      "paper_id": "openalex:W4389911350",
+      "text": "Self-evaluation based scores improve accuracy in selective generation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389911350:c7",
+      "paper_id": "openalex:W4389911350",
+      "text": "Self-evaluation based scores correlate better with the overall quality of generated content.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389911350:e1",
+      "claim_id": "openalex:W4389911350:c1",
+      "description": "While likelihood-based metrics such as perplexity are widely employed, recent research has demonstrated the limitations of using sequence-level probability estimates given by LLMs as reliable indicators of generation quality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389911350:e2",
+      "claim_id": "openalex:W4389911350:c2",
+      "description": "Conversely, LLMs have demonstrated strong calibration at the token level, particularly when it comes to choosing correct answers in multiple-choice questions or evaluating true/false statements.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389911350:e3",
+      "claim_id": "openalex:W4389911350:c3",
+      "description": "In this work, we reformulate open-ended generation tasks into token-level prediction tasks, and leverage LLMs' superior calibration at the token level.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389911350:e4",
+      "claim_id": "openalex:W4389911350:c4",
+      "description": "We instruct an LLM to self-evaluate its answers, employing either a multi-way comparison or a point-wise evaluation approach",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389911350:e5",
+      "claim_id": "openalex:W4389911350:c5",
+      "description": "with the option to include a ``None of the above'' option to express the model's uncertainty explicitly.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389911350:e6",
+      "claim_id": "openalex:W4389911350:c6",
+      "description": "Through experiments with PaLM-2 and GPT-3, we demonstrate that self-evaluation based scores not only improve accuracy",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389911350:e7",
+      "claim_id": "openalex:W4389911350:c7",
+      "description": "but also correlate better with the overall quality of generated content.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389911350:m1",
+      "paper_id": "openalex:W4389911350",
+      "name": "Self-evaluation for selective generation",
+      "description": "Reformulating open-ended generation tasks into token-level prediction tasks and leveraging LLMs' token-level calibration for self-evaluation.",
+      "datasets": [
+        "TruthfulQA",
+        "TL;DR"
+      ],
+      "conditions": [
+        "multi-way comparison",
+        "point-wise evaluation",
+        "inclusion of 'None of the above' option"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-24T06:25:36.573222Z",
+  "extractor": "gemini:gemini-2.5-flash-lite"
+}

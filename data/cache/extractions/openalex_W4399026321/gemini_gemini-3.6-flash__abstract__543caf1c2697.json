@@ -1,0 +1,108 @@
+{
+  "paper_id": "openalex:W4399026321",
+  "claims": [
+    {
+      "id": "openalex:W4399026321:c1",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density extracts uncertainty/confidence information for each response from a probability distribution perspective in semantic space.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c2",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density has no restriction on task types.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c3",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density is off-the-shelf for new models and tasks.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c4",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density demonstrates superior performance compared to prior approaches on four free-form question-answering benchmarks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399026321:c5",
+      "paper_id": "openalex:W4399026321",
+      "text": "Semantic density demonstrates robustness compared to prior approaches on four free-form question-answering benchmarks.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399026321:e1",
+      "claim_id": "openalex:W4399026321:c4",
+      "description": "Experiments on seven state-of-the-art LLMs, including the latest Llama 3 and Mixtral-8x22B models, on four free-form question-answering benchmarks demonstrate the superior performance and robustness of semantic density compared to prior approaches.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4399026321:e2",
+      "claim_id": "openalex:W4399026321:c5",
+      "description": "Experiments on seven state-of-the-art LLMs, including the latest Llama 3 and Mixtral-8x22B models, on four free-form question-answering benchmarks demonstrate the superior performance and robustness of semantic density compared to prior approaches.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399026321:m1",
+      "paper_id": "openalex:W4399026321",
+      "name": "Semantic density",
+      "description": "Extracts uncertainty and confidence information for each LLM response from a probability distribution perspective in semantic space.",
+      "datasets": [
+        "four free-form question-answering benchmarks"
+      ],
+      "conditions": [
+        "seven state-of-the-art LLMs",
+        "Llama 3",
+        "Mixtral-8x22B"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399026321:l1",
+      "paper_id": "openalex:W4399026321",
+      "text": "Prior uncertainty quantification methods are restricted to classification tasks.",
+      "normalized_category": "task-type-restriction",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399026321:l2",
+      "paper_id": "openalex:W4399026321",
+      "text": "Prior uncertainty quantification methods require additional training and data.",
+      "normalized_category": "training-data-overhead",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399026321:l3",
+      "paper_id": "openalex:W4399026321",
+      "text": "Prior uncertainty quantification methods consider only lexical instead of semantic information.",
+      "normalized_category": "lexical-only-analysis",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399026321:l4",
+      "paper_id": "openalex:W4399026321",
+      "text": "Prior uncertainty quantification methods are prompt-wise but not response-wise.",
+      "normalized_category": "prompt-wise-granularity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:25:22.676170Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

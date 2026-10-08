@@ -1,0 +1,139 @@
+{
+  "paper_id": "openalex:W2786242872",
+  "claims": [
+    {
+      "id": "openalex:W2786242872:c1",
+      "paper_id": "openalex:W2786242872",
+      "text": "There is a disconnect between public sector organizational realities and current machine learning research on usable, transparent, and discrimination-aware tools.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786242872:c2",
+      "paper_id": "openalex:W2786242872",
+      "text": "Public sector practitioners choose simpler models like logistic regression or random forests over complex models to gain organizational buy-in from internal clients.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786242872:c3",
+      "paper_id": "openalex:W2786242872",
+      "text": "Upstream changes in data collection and investigative focus distort downstream public sector machine learning predictions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786242872:c4",
+      "paper_id": "openalex:W2786242872",
+      "text": "Deploying predictive algorithms in public sector decision-making creates operational feedback loops that alter future training data collection.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786242872:c5",
+      "paper_id": "openalex:W2786242872",
+      "text": "Public sector modellers actively omit legally permissible variables like age or location due to concerns that they act as proxies for social deprivation.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2786242872:e1",
+      "claim_id": "openalex:W2786242872:c1",
+      "description": "The results suggest a disconnect between organisational and institutional realities, constraints and needs, and those addressed by current research into usable, transparent and 'discrimination-aware' machine learning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2786242872:e2",
+      "claim_id": "openalex:W2786242872:c2",
+      "description": "Both these individuals and modellers around them emphasised they had in-house capability for more complex machine learning systems, such as support vector machines or neural networks, but often chose against them for these reasons. Instead, many of the systems that ended up being deployed were logistic regression or random forest based.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2786242872:e3",
+      "claim_id": "openalex:W2786242872:c3",
+      "description": "Because of increased intel we've essentially produced models that tell us where car washes are. This kind of loop is hard to explain to those higher up.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2786242872:e4",
+      "claim_id": "openalex:W2786242872:c4",
+      "description": "Where models allocate the same resources that collect data then they are directly inﬂuencing the future sampling of their training data.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2786242872:e5",
+      "claim_id": "openalex:W2786242872:c5",
+      "description": "Informant [X4], a lead modeller in a tax agency, noted that they have an informal list 'of variables that [they] don't feed into models', which included age and location... home location was avoided as it was a 'proxy for social deprivation'.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2786242872:m1",
+      "paper_id": "openalex:W2786242872",
+      "name": "Qualitative Semi-Structured Interviews",
+      "description": "Conducted open-ended, semi-structured interviews with 27 public sector machine learning practitioners across five OECD countries to identify practical challenges in designing fair and accountable algorithmic decision-support systems.",
+      "datasets": [
+        "Public sector administrative data across taxation, justice, child protection, policing, emergency response, and interior security"
+      ],
+      "conditions": [
+        "27 interviewees",
+        "5 OECD countries",
+        "ad hoc non-representative sampling",
+        "conducted in late 2016"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2786242872:l1",
+      "paper_id": "openalex:W2786242872",
+      "text": "The study utilized an ad hoc sampling strategy across diverse sectors rather than aiming for representative data.",
+      "normalized_category": "non-representative-sampling",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2786242872:l2",
+      "paper_id": "openalex:W2786242872",
+      "text": "Interviews could not be audio recorded due to sensitivity and institutional rules regarding public sector work, requiring reliance on typed notes.",
+      "normalized_category": "no-audio-recording",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2786242872:l3",
+      "paper_id": "openalex:W2786242872",
+      "text": "Fairness and transparency tools in current machine learning research are primarily built in isolation from specific users and deployment contexts.",
+      "normalized_category": "contextual-isolation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2786242872:f1",
+      "paper_id": "openalex:W2786242872",
+      "text": "Integrating domain knowledge into concept drift detection to track and adapt to shifting public sector data distributions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2786242872:f2",
+      "paper_id": "openalex:W2786242872",
+      "text": "Developing knowledge elicitation techniques and interfaces to augment algorithmic outputs with frontline human discretion and qualitative intelligence.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2786242872:f3",
+      "paper_id": "openalex:W2786242872",
+      "text": "Investigating how discretionary trust, reliance, and automation bias vary across different public sector tasks, stakes, and user demographics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:14:17.888027Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

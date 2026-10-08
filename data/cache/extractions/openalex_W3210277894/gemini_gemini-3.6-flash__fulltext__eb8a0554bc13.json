@@ -1,0 +1,197 @@
+{
+  "paper_id": "openalex:W3210277894",
+  "claims": [
+    {
+      "id": "openalex:W3210277894:c1",
+      "paper_id": "openalex:W3210277894",
+      "text": "MetaICL tunes a pretrained language model on a large collection of meta-training tasks using an in-context learning objective to improve few-shot performance on unseen target tasks without parameter updates at test time.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3210277894:c2",
+      "paper_id": "openalex:W3210277894",
+      "text": "Channel MetaICL consistently outperforms standard MetaICL, multi-task zero-shot transfer, and raw language model in-context learning baselines across multiple task evaluation splits.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3210277894:c3",
+      "paper_id": "openalex:W3210277894",
+      "text": "Performance gains of MetaICL over multi-task zero-shot baselines are particularly significant when target tasks involve domain or task format shifts relative to meta-training tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3210277894:c4",
+      "paper_id": "openalex:W3210277894",
+      "text": "Meta-training on a diverse set of task formats and capabilities yields higher target task performance compared to meta-training on a non-diverse task set.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3210277894:c5",
+      "paper_id": "openalex:W3210277894",
+      "text": "MetaICL applied to GPT-2 Large (770M parameters) matches or outperforms raw language model in-context learning using GPT-J (6B parameters).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3210277894:c6",
+      "paper_id": "openalex:W3210277894",
+      "text": "MetaICL and human-written instructions are complementary, with the best performance achieved by combining both methods.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3210277894:c7",
+      "paper_id": "openalex:W3210277894",
+      "text": "Multi-task zero-shot transfer without in-context training does not outperform raw language model in-context baselines when using a 770M parameter model.",
+      "type": "negative",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3210277894:e1",
+      "claim_id": "openalex:W3210277894:c2",
+      "description": "Channel MetaICL achieves 49.1/46.8 average/worst-case score on HR->LR compared to 43.1/38.5 for Channel In-context and 35.6 for Multi-task 0-shot.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3210277894:e2",
+      "claim_id": "openalex:W3210277894:c3",
+      "description": "On non-NLI to NLI target tasks, Channel MetaICL achieves 54.6% average score compared to 39.9% for Channel In-context and 40.7% for Multi-task 0-shot.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3210277894:e3",
+      "claim_id": "openalex:W3210277894:c4",
+      "description": "MetaICL trained on 13 diverse meta-training tasks obtains 45.6/43.4 performance on HR->LR targets versus 38.8/35.4 when trained on 13 non-diverse tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3210277894:e4",
+      "claim_id": "openalex:W3210277894:c5",
+      "description": "GPT-2 Large Channel MetaICL achieves 49.1/46.8 on HR->LR across all target tasks, outperforming 6B parameter GPT-J Channel In-context which achieves 48.6/44.4.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3210277894:e5",
+      "claim_id": "openalex:W3210277894:c6",
+      "description": "MetaICL accuracy increases from 40.4/37.7 without instructions to 43.2/41.0 with 8.3 instructions per task, and Channel MetaICL increases from 42.2/40.0 to 46.9/44.2.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3210277894:e6",
+      "claim_id": "openalex:W3210277894:c7",
+      "description": "Multi-task 0-shot achieves 35.6 on HR->LR, failing to beat the raw GPT-2 Large Channel In-context baseline score of 43.1.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3210277894:m1",
+      "paper_id": "openalex:W3210277894",
+      "name": "MetaICL (Meta-training for In-Context Learning)",
+      "description": "Tunes a language model by sampling k+1 training examples from a meta-training task, conditioning on the first k examples, and training the model using cross-entropy loss to predict the output of the (k+1)-th example.",
+      "datasets": [
+        "CROSSFIT",
+        "UNIFIEDQA"
+      ],
+      "conditions": [
+        "GPT-2 Large (770M parameters)",
+        "k=16 few-shot training examples",
+        "Sequence length 1024",
+        "30,000 optimization steps",
+        "8-bit Adam optimizer"
+      ]
+    },
+    {
+      "id": "openalex:W3210277894:m2",
+      "paper_id": "openalex:W3210277894",
+      "name": "Channel MetaICL",
+      "description": "A noisy channel variant of MetaICL that flips input and label pairs in the prompt sequence to model conditional probabilities P(x|y).",
+      "datasets": [
+        "CROSSFIT",
+        "UNIFIEDQA"
+      ],
+      "conditions": [
+        "GPT-2 Large (770M parameters)",
+        "k=16 few-shot training examples"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3210277894:l1",
+      "paper_id": "openalex:W3210277894",
+      "text": "In-context learning approaches require longer sequence contexts during training and inference due to concatenating multiple training examples, making inference less computationally efficient than zero-shot baselines.",
+      "normalized_category": "computational-efficiency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3210277894:l2",
+      "paper_id": "openalex:W3210277894",
+      "text": "Experiments are evaluated primarily on classification and multiple-choice tasks with predefined candidate label sets rather than free-form text generation.",
+      "normalized_category": "task-scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3210277894:l3",
+      "paper_id": "openalex:W3210277894",
+      "text": "When semantic information in label words is removed by replacing labels with random English words, overall MetaICL task performance drops significantly.",
+      "normalized_category": "label-semantics-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3210277894:l4",
+      "paper_id": "openalex:W3210277894",
+      "text": "Standard in-context learning on raw language models suffers from high output variance and sensitivity to prompt ordering or template engineering.",
+      "normalized_category": "prompt-sensitivity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3210277894:l5",
+      "paper_id": "openalex:W3210277894",
+      "text": "Multi-task zero-shot learning methods rely heavily on human-written task templates that require significant manual prompt engineering.",
+      "normalized_category": "manual-prompt-engineering",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3210277894:f1",
+      "paper_id": "openalex:W3210277894",
+      "text": "Extend MetaICL meta-training to masked language models and larger parameter scale models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3210277894:f2",
+      "paper_id": "openalex:W3210277894",
+      "text": "Apply MetaICL to broader NLP task formats including free-form text generation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3210277894:f3",
+      "paper_id": "openalex:W3210277894",
+      "text": "Develop systematic selection frameworks to identify which meta-training tasks are most helpful for specific downstream target tasks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3210277894:f4",
+      "paper_id": "openalex:W3210277894",
+      "text": "Improve in-context meta-learning methods to outperform meta-trained fully supervised fine-tuned models.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.967671Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

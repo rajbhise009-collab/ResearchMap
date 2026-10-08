@@ -1,0 +1,133 @@
+{
+  "paper_id": "openalex:W2311763102",
+  "claims": [
+    {
+      "id": "openalex:W2311763102:c1",
+      "paper_id": "openalex:W2311763102",
+      "text": "Unadjusted meta-analysis shows low-volume drinkers (1.3-24.9 g ethanol per day) have a reduced all-cause mortality risk compared to abstainers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2311763102:c2",
+      "paper_id": "openalex:W2311763102",
+      "text": "Unadjusted meta-analysis shows occasional drinkers (<1.3 g ethanol per day) have a reduced mortality risk compared to abstainers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2311763102:c3",
+      "paper_id": "openalex:W2311763102",
+      "text": "Unadjusted meta-analysis shows former drinkers have an elevated mortality risk compared to abstainers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2311763102:c4",
+      "paper_id": "openalex:W2311763102",
+      "text": "After adjusting for abstainer biases and study quality characteristics, low-volume alcohol consumption shows no significant reduction in mortality risk.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2311763102:c5",
+      "paper_id": "openalex:W2311763102",
+      "text": "Analyses of higher-quality, bias-free studies fail to find a reduced mortality risk for low-volume alcohol drinkers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2311763102:c6",
+      "paper_id": "openalex:W2311763102",
+      "text": "Estimates of all-cause mortality risk from alcohol consumption are significantly altered by study design and quality characteristics.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2311763102:e1",
+      "claim_id": "openalex:W2311763102:c1",
+      "description": "Without adjustment, meta-analysis of all 87 included studies replicated the classic J-shaped curve, with low-volume drinkers (1.3-24.9 g ethanol per day) having reduced mortality risk (RR = 0.86, 95% CI [0.83, 0.90]).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2311763102:e2",
+      "claim_id": "openalex:W2311763102:c2",
+      "description": "Occasional drinkers (<1.3 g per day) had similar mortality risk (RR = 0.84, 95% CI [0.79, 0.89]).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2311763102:e3",
+      "claim_id": "openalex:W2311763102:c3",
+      "description": "former drinkers had elevated risk (RR = 1.22, 95% CI [1.14, 1.31]).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2311763102:e4",
+      "claim_id": "openalex:W2311763102:c4",
+      "description": "After adjustment for abstainer biases and quality-related study characteristics, no significant reduction in mortality risk was observed for low-volume drinkers (RR = 0.97, 95% CI [0.88, 1.07]).",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W2311763102:e5",
+      "claim_id": "openalex:W2311763102:c5",
+      "description": "Analyses of higher-quality bias-free studies also failed to find reduced mortality risk for low-volume alcohol drinkers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2311763102:e6",
+      "claim_id": "openalex:W2311763102:c6",
+      "description": "Estimates of mortality risk from alcohol are significantly altered by study design and characteristics.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2311763102:m1",
+      "paper_id": "openalex:W2311763102",
+      "name": "Systematic review and meta-regression analysis",
+      "description": "Meta-regression analysis evaluating alcohol consumption and all-cause mortality while controlling for abstainer biases and quality-related study design characteristics.",
+      "datasets": [
+        "87 cohort studies"
+      ],
+      "conditions": [
+        "Unadjusted meta-analysis",
+        "Adjusted for abstainer biases",
+        "Adjusted for quality-related study characteristics",
+        "Subgroup analysis of high-quality bias-free studies"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2311763102:l1",
+      "paper_id": "openalex:W2311763102",
+      "text": "Prior prospective studies misclassify former and occasional drinkers as abstainers, biasing the reference group toward ill health.",
+      "normalized_category": "abstainer-misclassification-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2311763102:f1",
+      "paper_id": "openalex:W2311763102",
+      "text": "Incorporating bias-adjusted estimates into public policy and the formulation of low-risk drinking guidelines.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2311763102:f2",
+      "paper_id": "openalex:W2311763102",
+      "text": "Future research on alcohol and health accounting for study design and abstainer biases.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:18:07.924034Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

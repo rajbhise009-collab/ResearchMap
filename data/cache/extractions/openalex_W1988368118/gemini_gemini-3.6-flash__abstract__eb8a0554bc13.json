@@ -1,0 +1,74 @@
+{
+  "paper_id": "openalex:W1988368118",
+  "claims": [
+    {
+      "id": "openalex:W1988368118:c1",
+      "paper_id": "openalex:W1988368118",
+      "text": "Decision differences across sensitive groups can be explainable by non-sensitive explanatory attributes.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1988368118:c2",
+      "paper_id": "openalex:W1988368118",
+      "text": "Existing discrimination-aware techniques introduce reverse discrimination when decision differences across sensitive groups are explainable by other attributes.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1988368118:c3",
+      "paper_id": "openalex:W1988368118",
+      "text": "Local techniques can be developed to handle conditional discrimination when an attribute is considered explanatory.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1988368118:e1",
+      "claim_id": "openalex:W1988368118:c1",
+      "description": "Analysis of conditional non-discrimination showing that part of decision differences across sensitive groups can be explainable by attributes like education level.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1988368118:e2",
+      "claim_id": "openalex:W1988368118:c2",
+      "description": "Observation during classifier design analysis that existing discrimination-aware methods remove explainable differences, thereby introducing reverse discrimination.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1988368118:e3",
+      "claim_id": "openalex:W1988368118:c3",
+      "description": "Development and experimental evaluation of local techniques for conditional discrimination removal.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1988368118:m1",
+      "paper_id": "openalex:W1988368118",
+      "name": "Local techniques for conditional discrimination",
+      "description": "A classifier training approach designed to remove unexplainable discrimination while allowing decision differences that are explainable by a designated explanatory attribute.",
+      "datasets": [],
+      "conditions": [
+        "Presence of a sensitive attribute in historical training data",
+        "Availability of an attribute designated as explanatory"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1988368118:l1",
+      "paper_id": "openalex:W1988368118",
+      "text": "Existing discrimination-aware techniques aim at removing all discrimination and fail to account for explainable discrimination attributable to other attributes.",
+      "normalized_category": "unconditional-fairness-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:21:17.129434Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

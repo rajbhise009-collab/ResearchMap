@@ -1,0 +1,152 @@
+{
+  "paper_id": "openalex:W7124471482",
+  "claims": [
+    {
+      "id": "openalex:W7124471482:c1",
+      "paper_id": "openalex:W7124471482",
+      "text": "Few-shot prompting achieved the highest mean F1 score of 0.1889 among the evaluated system instruction strategies on TruthfulQA.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c2",
+      "paper_id": "openalex:W7124471482",
+      "text": "Zero-shot prompting achieved a higher Sentence Transformer embedding similarity score (mean 0.673) than few-shot (0.646) and say-IDK (0.645) strategies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c3",
+      "paper_id": "openalex:W7124471482",
+      "text": "System instruction strategy had a statistically significant main effect on factual accuracy and semantic similarity metrics across all evaluated models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c4",
+      "paper_id": "openalex:W7124471482",
+      "text": "Decoding temperature had a smaller effect size on model accuracy and semantic metrics compared to system instruction strategy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c5",
+      "paper_id": "openalex:W7124471482",
+      "text": "Increasing decoding temperature from 0.0 to 0.7 resulted in slight performance declines across factual and semantic alignment metrics.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7124471482:c6",
+      "paper_id": "openalex:W7124471482",
+      "text": "There was no statistically significant interaction effect between decoding temperature and system instruction strategy.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7124471482:e1",
+      "claim_id": "openalex:W7124471482:c1",
+      "description": "Few-shot prompting achieved the highest mean F1 score (0.1889), indicating that example conditioning effectively constrained hallucinations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7124471482:e2",
+      "claim_id": "openalex:W7124471482:c2",
+      "description": "For st-similarity, zero-shot exhibited the highest mean (M = 0.673), compared to M = 0.646 for few-shot and M = 0.645 for say-IDK.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7124471482:e3",
+      "claim_id": "openalex:W7124471482:c3",
+      "description": "Two-way ANOVA revealed system instruction significantly influenced factual accuracy across all models (F1-score F=13.154, p<0.001, η²=0.00195).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7124471482:e4",
+      "claim_id": "openalex:W7124471482:c4",
+      "description": "System instruction exhibited statistically significant main effects with larger effect sizes (η² ≈ 0.002–0.004) than those observed for temperature (η² < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7124471482:e5",
+      "claim_id": "openalex:W7124471482:c5",
+      "description": "As temperature increased from 0.0 to 0.7, mean F1-score dropped from 0.190 to 0.184 in few-shot and 0.176 to 0.165 in zero-shot.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7124471482:e6",
+      "claim_id": "openalex:W7124471482:c6",
+      "description": "The interaction between temperature and system instruction was consistently nonsignificant across F1 (p=0.955), Semantic Similarity (p=0.957), and ST Similarity (p=0.990).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7124471482:m1",
+      "paper_id": "openalex:W7124471482",
+      "name": "Ollama-based Multi-Factor Hallucination Evaluation Protocol",
+      "description": "A experimental pipeline that evaluates open-source LLMs on TruthfulQA across combinations of decoding temperatures and instruction strategies using lexical and sentence-embedding similarity metrics.",
+      "datasets": [
+        "TruthfulQA"
+      ],
+      "conditions": [
+        "Gemma 2B",
+        "Mistral 7B Instruct",
+        "Phi-3 Mini",
+        "Temperature 0.0",
+        "Temperature 0.2",
+        "Temperature 0.7",
+        "Zero-shot prompting",
+        "Few-shot (3 exemplars) prompting",
+        "Say-I-don't-know prompting"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7124471482:l1",
+      "paper_id": "openalex:W7124471482",
+      "text": "The evaluation was restricted to lightweight open-source models (Gemma 2B, Mistral 7B Instruct, Phi-3 Mini) evaluated on a single benchmark (TruthfulQA).",
+      "normalized_category": "limited-model-and-benchmark-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7124471482:l2",
+      "paper_id": "openalex:W7124471482",
+      "text": "The study intentionally excluded temperature settings above 0.7, focusing only on a low-to-moderate decoding regime.",
+      "normalized_category": "restricted-hyperparameter-range",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7124471482:l3",
+      "paper_id": "openalex:W7124471482",
+      "text": "Knowledge overshadowing causes dominant knowledge representations to suppress less frequent knowledge during generation, resulting in factual hallucinations.",
+      "normalized_category": "knowledge-overshadowing",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7124471482:f1",
+      "paper_id": "openalex:W7124471482",
+      "text": "Assess the generalizability of temperature and instruction strategy effects across larger models, alternative benchmarks, and real-world deployment settings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7124471482:f2",
+      "paper_id": "openalex:W7124471482",
+      "text": "Extend evaluation to multimodal tasks, domain-specific applications, and adaptive decoding or instruction strategies.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.987693Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,230 @@
+{
+  "paper_id": "openalex:W2122520859",
+  "claims": [
+    {
+      "id": "openalex:W2122520859:c1",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 10 mmHg higher SBP is 2.16 for hypertensive heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c2",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 10 mmHg higher SBP is 1.66 for hemorrhagic stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c3",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 10 mmHg higher SBP is 1.63 for ischemic stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c4",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 1 mmol/L higher total cholesterol is 1.44 for ischemic heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c5",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 1 mmol/L higher total cholesterol is 1.20 for ischemic stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c6",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 5 kg/m² higher BMI is 2.32 for diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c7",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 5 kg/m² higher BMI is 1.44 for ischemic heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c8",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 1 mmol/L higher fasting plasma glucose is 1.18 for ischemic heart disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c9",
+      "paper_id": "openalex:W2122520859",
+      "text": "At baseline age 55-64 years, the relative risk per 1 mmol/L higher fasting plasma glucose is 1.14 for total stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c10",
+      "paper_id": "openalex:W2122520859",
+      "text": "Proportional risk effects of metabolic risk factors on cardiovascular disease and diabetes decline with increasing age.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2122520859:c11",
+      "paper_id": "openalex:W2122520859",
+      "text": "Proportional risk effects of metabolic risk factors on cardiovascular disease and diabetes are generally consistent by sex.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2122520859:e1",
+      "claim_id": "openalex:W2122520859:c1",
+      "description": "At the baseline age of 55–64 years, the RR for 10 mmHg higher SBP was largest for HHD (2.16; 95% CI 2.09–2.24).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e2",
+      "claim_id": "openalex:W2122520859:c2",
+      "description": "At the baseline age of 55–64 years, RR for 10 mmHg higher SBP was 1.66 (95% CI 1.39–1.98) for hemorrhagic stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e3",
+      "claim_id": "openalex:W2122520859:c3",
+      "description": "At the baseline age of 55–64 years, RR for 10 mmHg higher SBP was 1.63 (95% CI 1.57–1.69) for ischemic stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e4",
+      "claim_id": "openalex:W2122520859:c4",
+      "description": "In the 55–64 age group, RRs for 1 mmol/L higher TC were 1.44 (1.29–1.61) for IHD.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e5",
+      "claim_id": "openalex:W2122520859:c5",
+      "description": "In the 55–64 age group, RRs for 1 mmol/L higher TC were 1.20 (1.15–1.25) for ischemic stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e6",
+      "claim_id": "openalex:W2122520859:c6",
+      "description": "The RRs for 5 kg/m2 higher BMI for ages 55–64 ranged from 2.32 (2.04–2.63) for diabetes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e7",
+      "claim_id": "openalex:W2122520859:c7",
+      "description": "The RRs for 5 kg/m2 higher BMI for ages 55–64 was 1.44 (1.40–1.48) for IHD.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e8",
+      "claim_id": "openalex:W2122520859:c8",
+      "description": "For 1 mmol/L higher FPG, RRs in the 55–64 age group were 1.18 (1.08–1.29) for IHD.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e9",
+      "claim_id": "openalex:W2122520859:c9",
+      "description": "For 1 mmol/L higher FPG, RRs in the 55–64 age group were 1.14 (1.01–1.29) for total stroke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2122520859:e10",
+      "claim_id": "openalex:W2122520859:c10",
+      "description": "For all risk factors, proportional effects declined with age.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2122520859:e11",
+      "claim_id": "openalex:W2122520859:c11",
+      "description": "Proportional effects were generally consistent by sex.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2122520859:m1",
+      "paper_id": "openalex:W2122520859",
+      "name": "Random-effects pooled cohort meta-analysis",
+      "description": "Pooled participant-level and cohort-level data across major prospective cohort collaborations using random-effects models and statistical simulations to derive age-stratified relative risks for metabolic risk factors.",
+      "datasets": [
+        "Asia Pacific Cohort Studies Collaboration (APCSC)",
+        "Diabetes Epidemiology: Collaborative analysis of Diagnostic criteria in Europe (DECODE)",
+        "Emerging Risk Factor Collaboration (ERFC)",
+        "Prospective Studies Collaboration (PSC)"
+      ],
+      "conditions": [
+        "systolic blood pressure",
+        "serum total cholesterol",
+        "fasting plasma glucose",
+        "body mass index",
+        "age-stratified risk modeling",
+        "random-effects meta-analysis"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2122520859:l1",
+      "paper_id": "openalex:W2122520859",
+      "text": "The pooling studies used in the analysis only covered prospective cohorts from North America, Western Europe, and the Asia-Pacific region.",
+      "normalized_category": "limited-geographic-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2122520859:l2",
+      "paper_id": "openalex:W2122520859",
+      "text": "Some individual cohorts were included in more than one pooling project.",
+      "normalized_category": "cohort-overlap",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2122520859:l3",
+      "paper_id": "openalex:W2122520859",
+      "text": "Differences remained in disease outcome definitions, such as evaluating diabetes mortality in PSC versus diabetes incidence in APCSC.",
+      "normalized_category": "outcome-definition-heterogeneity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2122520859:l4",
+      "paper_id": "openalex:W2122520859",
+      "text": "Because evidence was pooled from observational prospective cohort studies, unmeasured and residual confounding cannot be ruled out.",
+      "normalized_category": "residual-confounding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2122520859:l5",
+      "paper_id": "openalex:W2122520859",
+      "text": "Prior global comparative risk assessment analyses lacked consistent effect size measurements by age, sex, and region.",
+      "normalized_category": "lack-of-stratified-estimates",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2122520859:f1",
+      "paper_id": "openalex:W2122520859",
+      "text": "Conduct periodic and consistent monitoring of population trends and metabolic risk factor effect sizes to prioritize disease prevention programs.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T10:50:07.546034Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

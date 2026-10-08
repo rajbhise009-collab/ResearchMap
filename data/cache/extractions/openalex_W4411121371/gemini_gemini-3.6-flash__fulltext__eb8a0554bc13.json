@@ -1,0 +1,155 @@
+{
+  "paper_id": "openalex:W4411121371",
+  "claims": [
+    {
+      "id": "openalex:W4411121371:c1",
+      "paper_id": "openalex:W4411121371",
+      "text": "Token-based uncertainty quantification methods generally yield better-calibrated uncertainty estimates compared to self-verbalized uncertainty quantification methods.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411121371:c2",
+      "paper_id": "openalex:W4411121371",
+      "text": "Reinforcement learning with human feedback generally reduces the calibration of an LLM's confidence estimates.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411121371:c3",
+      "paper_id": "openalex:W4411121371",
+      "text": "Semantic consistency across multiple generated responses does not necessarily guarantee factual correctness.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411121371:c4",
+      "paper_id": "openalex:W4411121371",
+      "text": "Token-level uncertainty quantification metrics perform poorly on long-form responses because the product of token probabilities decreases with sequence length.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4411121371:c5",
+      "paper_id": "openalex:W4411121371",
+      "text": "Uncertainty quantification methods for large language models can be systematically categorized into token-level, self-verbalized, semantic-similarity, and mechanistic interpretability approaches.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4411121371:e1",
+      "claim_id": "openalex:W4411121371:c1",
+      "description": "The authors state that existing empirical studies suggest token-based UQ methods generally yield better-calibrated uncertainty estimates compared to their self-verbalized UQ counterparts.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411121371:e2",
+      "claim_id": "openalex:W4411121371:c2",
+      "description": "The paper notes that reinforcement learning with human feedback (RLHF), which is utilized in fine-tuning LLMs, generally reduces the calibration of the LLM's confidence estimates.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411121371:e3",
+      "claim_id": "openalex:W4411121371:c3",
+      "description": "The paper demonstrates that multiple queries to GPT-4 can generate the exact same incorrect response, showing that response consistency across samples does not imply factual accuracy.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4411121371:e4",
+      "claim_id": "openalex:W4411121371:c4",
+      "description": "The text explains that token-based UQ methods perform poorly with long-form responses because the product of token probabilities decreases with longer responses, even when semantically equivalent to shorter ones.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4411121371:e5",
+      "claim_id": "openalex:W4411121371:c5",
+      "description": "The survey proposes a four-part taxonomy categorizing existing methods into token-level UQ, self-verbalized UQ, semantic-similarity UQ, and mechanistic interpretability methods.",
+      "strength": 0.98
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4411121371:m1",
+      "paper_id": "openalex:W4411121371",
+      "name": "Four-Category LLM UQ Taxonomy",
+      "description": "A taxonomy organizing large language model uncertainty quantification literature into token-level, self-verbalized, semantic-similarity, and mechanistic interpretability categories.",
+      "datasets": [
+        "TriviaQA",
+        "CoQA",
+        "WikiBio",
+        "TruthfulQA",
+        "HotpotQA",
+        "GSM8K"
+      ],
+      "conditions": [
+        "white-box model access",
+        "black-box model access"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4411121371:l1",
+      "paper_id": "openalex:W4411121371",
+      "text": "This paper focuses primarily on an extensive review of uncertainty quantification methods and provides only a brief discussion on calibration techniques for uncertainty estimates.",
+      "normalized_category": "limited-scope-calibration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4411121371:l2",
+      "paper_id": "openalex:W4411121371",
+      "text": "Token-based UQ methods suffer from sequence-length bias where raw joint token probabilities decrease systematically for longer texts.",
+      "normalized_category": "sequence-length-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4411121371:l3",
+      "paper_id": "openalex:W4411121371",
+      "text": "Black-box semantic similarity methods fail when an LLM consistently generates identical non-factual or hallucinated responses across multiple runs.",
+      "normalized_category": "consistency-factuality-disconnect",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4411121371:l4",
+      "paper_id": "openalex:W4411121371",
+      "text": "Self-verbalized UQ methods exhibit systematic overconfidence, providing numeric probabilities clustered heavily between 80% and 100%.",
+      "normalized_category": "verbalized-overconfidence",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4411121371:f1",
+      "paper_id": "openalex:W4411121371",
+      "text": "Align token-level entropy and probability metrics with claim-level factuality while accounting for the model's training distribution.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4411121371:f2",
+      "paper_id": "openalex:W4411121371",
+      "text": "Develop uncertainty quantification methods for interactive LLM-enabled agents that explicitly account for multi-episode interaction history.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4411121371:f3",
+      "paper_id": "openalex:W4411121371",
+      "text": "Apply mechanistic interpretability techniques to identify intermediate neural activations and internal features that signal model uncertainty.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4411121371:f4",
+      "paper_id": "openalex:W4411121371",
+      "text": "Establish standardized benchmarks and multi-episode interaction datasets to evaluate calibration, tightness, and interpretability of UQ methods.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.075782Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

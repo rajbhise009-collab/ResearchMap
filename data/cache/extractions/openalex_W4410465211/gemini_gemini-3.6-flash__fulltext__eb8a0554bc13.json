@@ -1,0 +1,152 @@
+{
+  "paper_id": "openalex:W4410465211",
+  "claims": [
+    {
+      "id": "openalex:W4410465211:c1",
+      "paper_id": "openalex:W4410465211",
+      "text": "GPT-3.5 achieves a hallucination rate of 3.2% when trained on curated data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410465211:c2",
+      "paper_id": "openalex:W4410465211",
+      "text": "GPT-3.5 exhibits a hallucination rate of 19.4% when trained on noisy data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410465211:c3",
+      "paper_id": "openalex:W4410465211",
+      "text": "Intrinsic hallucinations occur when a model misinterprets or misrepresents the input text.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410465211:c4",
+      "paper_id": "openalex:W4410465211",
+      "text": "Extrinsic hallucinations occur when a model fabricates information that has no basis in fact.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410465211:e1",
+      "claim_id": "openalex:W4410465211:c1",
+      "description": "GPT-3.5 had a hallucination rate of only 3.2% [14] when trained on curated data",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410465211:e2",
+      "claim_id": "openalex:W4410465211:c2",
+      "description": "compared to 19.4% on noisy data.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410465211:e3",
+      "claim_id": "openalex:W4410465211:c3",
+      "description": "Intrinsic hallucinations take place when the model makes a wrong interpretation or a wrong representation of the input, resulting in the output that includes details or claims not supported by the input text.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4410465211:e4",
+      "claim_id": "openalex:W4410465211:c4",
+      "description": "Extrinsic hallucinations, however, are the fabrication of information that has no basis in fact.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410465211:m1",
+      "paper_id": "openalex:W4410465211",
+      "name": "Controlled Data Quality Empirical Evaluation",
+      "description": "Empirical analysis measuring LLM hallucination rates and factual consistency scores across varying levels of training data noise and curation.",
+      "datasets": [
+        "Wikipedia",
+        "Research articles",
+        "Legal databases",
+        "TruthfulQA"
+      ],
+      "conditions": [
+        "Curated high-quality data",
+        "Noisy data",
+        "User-generated content"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410465211:l1",
+      "paper_id": "openalex:W4410465211",
+      "text": "Maintaining high data quality requires substantial financial, computational, and human investments in labeling, fact-checking, and bias removal.",
+      "normalized_category": "high-maintenance-cost",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410465211:l2",
+      "paper_id": "openalex:W4410465211",
+      "text": "Data scarcity in emerging scientific fields or rare medical conditions creates unavoidable knowledge gaps in LLM training corpora.",
+      "normalized_category": "data-scarcity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410465211:l3",
+      "paper_id": "openalex:W4410465211",
+      "text": "Strict reliance on structured, highly curated data can restrict model generalization and adaptability for open-ended or cross-disciplinary reasoning.",
+      "normalized_category": "reduced-generalization",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4410465211:l4",
+      "paper_id": "openalex:W4410465211",
+      "text": "Knowledge cutoff dates in pretrained LLMs prevent them from accurately answering queries requiring real-time or recent information.",
+      "normalized_category": "knowledge-cutoff",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4410465211:f1",
+      "paper_id": "openalex:W4410465211",
+      "text": "Develop scalable, AI-powered frameworks that automatically assess and score training datasets based on accuracy, consistency, and bias.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410465211:f2",
+      "paper_id": "openalex:W4410465211",
+      "text": "Implement adaptive data pipelines that continuously pull verified, domain-specific information from trusted sources.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410465211:f3",
+      "paper_id": "openalex:W4410465211",
+      "text": "Build robust, model-agnostic hallucination detection tools to flag ungrounded or speculative outputs in real time.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410465211:f4",
+      "paper_id": "openalex:W4410465211",
+      "text": "Establish standardized evaluation benchmarks across industries for systematic comparison of hallucination rates under different data regimes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410465211:f5",
+      "paper_id": "openalex:W4410465211",
+      "text": "Apply federated and privacy-preserving learning frameworks to enable high-quality data usage in privacy-sensitive domains like healthcare and law.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4410465211:f6",
+      "paper_id": "openalex:W4410465211",
+      "text": "Explore socio-ethical governance models covering data ethics, sourcing transparency, and model behavior explainability.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.984865Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

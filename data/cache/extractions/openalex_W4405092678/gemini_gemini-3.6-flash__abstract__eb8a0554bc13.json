@@ -1,0 +1,79 @@
+{
+  "paper_id": "openalex:W4405092678",
+  "claims": [
+    {
+      "id": "openalex:W4405092678:c1",
+      "paper_id": "openalex:W4405092678",
+      "text": "DD-Aug is a data augmentation pipeline that integrates Cinema 4-D and Stable Diffusion to generate synthetic images.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405092678:c2",
+      "paper_id": "openalex:W4405092678",
+      "text": "Cinema 4-D is used within DD-Aug to model key semantic features including contours, textures, and lighting conditions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405092678:c3",
+      "paper_id": "openalex:W4405092678",
+      "text": "Stable Diffusion performs style transfer within DD-Aug to increase image realism and reduce domain gap.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405092678:c4",
+      "paper_id": "openalex:W4405092678",
+      "text": "DD-Aug yields a 2.5% to 10% improvement in detection accuracy across multiple advanced object detectors compared to models without data augmentation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4405092678:e1",
+      "claim_id": "openalex:W4405092678:c4",
+      "description": "Evaluations on the deformable defect bearing dataset (NBBD) demonstrate that DD-Aug yields a 2.5%–10% improvement in detection accuracy across multiple advanced object detectors compared to models without augmentation.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4405092678:m1",
+      "paper_id": "openalex:W4405092678",
+      "name": "DD-Aug",
+      "description": "A synthetic data augmentation pipeline combining 3D modeling via Cinema 4-D with style transfer via Stable Diffusion.",
+      "datasets": [
+        "deformable defect bearing dataset (NBBD)"
+      ],
+      "conditions": [
+        "industrial defect detection",
+        "industrial imaging conditions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4405092678:l1",
+      "paper_id": "openalex:W4405092678",
+      "text": "Collecting high-quality and diverse datasets for supervised learning in industrial defect detection remains challenging.",
+      "normalized_category": "data-scarcity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4405092678:l2",
+      "paper_id": "openalex:W4405092678",
+      "text": "Traditional synthetic data generation methods struggle with controlling key semantic features, leading to domain gaps that impair downstream performance.",
+      "normalized_category": "domain-gap",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.123706Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,181 @@
+{
+  "paper_id": "openalex:W2774826291",
+  "claims": [
+    {
+      "id": "openalex:W2774826291:c1",
+      "paper_id": "openalex:W2774826291",
+      "text": "Consuming a Mediterranean diet rich in minimally processed plant foods is associated with a reduced risk of developing multiple chronic diseases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c2",
+      "paper_id": "openalex:W2774826291",
+      "text": "Consuming a Mediterranean diet rich in minimally processed plant foods is associated with increased life expectancy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c3",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean diet shows a beneficial effect in the primary and secondary prevention of cardiovascular disease.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c4",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean diet shows a beneficial effect in the primary and secondary prevention of type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c5",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean diet shows a beneficial effect in the primary and secondary prevention of atrial fibrillation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c6",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean diet shows a beneficial effect in the primary and secondary prevention of breast cancer.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c7",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean dietary pattern induces a lipid-lowering effect.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c8",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean dietary pattern provides protection against oxidative stress, inflammation, and platelet aggregation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c9",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean dietary pattern induces modification of hormones and growth factors involved in the pathogenesis of cancer.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c10",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean dietary pattern induces inhibition of nutrient sensing pathways by specific amino acid restriction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2774826291:c11",
+      "paper_id": "openalex:W2774826291",
+      "text": "The Mediterranean dietary pattern induces gut microbiota-mediated production of metabolites influencing metabolic health.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2774826291:e1",
+      "claim_id": "openalex:W2774826291:c1",
+      "description": "Consuming a Mediterranean diet rich in minimally processed plant foods has been associated with a reduced risk of developing multiple chronic diseases",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2774826291:e2",
+      "claim_id": "openalex:W2774826291:c2",
+      "description": "Consuming a Mediterranean diet rich in minimally processed plant foods has been associated with increased life expectancy.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2774826291:e3",
+      "claim_id": "openalex:W2774826291:c3",
+      "description": "Data from several randomized clinic trials have demonstrated a beneficial effect in the primary and secondary prevention of cardiovascular disease",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2774826291:e4",
+      "claim_id": "openalex:W2774826291:c4",
+      "description": "Data from several randomized clinic trials have demonstrated a beneficial effect in the primary and secondary prevention of type 2 diabetes",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2774826291:e5",
+      "claim_id": "openalex:W2774826291:c5",
+      "description": "Data from several randomized clinic trials have demonstrated a beneficial effect in the primary and secondary prevention of atrial fibrillation",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2774826291:e6",
+      "claim_id": "openalex:W2774826291:c6",
+      "description": "Data from several randomized clinic trials have demonstrated a beneficial effect in the primary and secondary prevention of breast cancer.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2774826291:e7",
+      "claim_id": "openalex:W2774826291:c7",
+      "description": "Accumulating evidence indicates adaptation (a): lipid-lowering effect",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2774826291:e8",
+      "claim_id": "openalex:W2774826291:c8",
+      "description": "Accumulating evidence indicates adaptation (b): protection against oxidative stress, inflammation and platelet aggregation",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2774826291:e9",
+      "claim_id": "openalex:W2774826291:c9",
+      "description": "Accumulating evidence indicates adaptation (c): modification of hormones and growth factors involved in the pathogenesis of cancer",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2774826291:e10",
+      "claim_id": "openalex:W2774826291:c10",
+      "description": "Accumulating evidence indicates adaptation (d): inhibition of nutrient sensing pathways by specific amino acid restriction",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2774826291:e11",
+      "claim_id": "openalex:W2774826291:c11",
+      "description": "Accumulating evidence indicates adaptation (e): gut microbiota-mediated production of metabolites influencing metabolic health.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W2774826291:l1",
+      "paper_id": "openalex:W2774826291",
+      "text": "The exact mechanism by which an increased adherence to the traditional Mediterranean diet exerts its favorable effects is not known.",
+      "normalized_category": "unknown-mechanism",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2774826291:f1",
+      "paper_id": "openalex:W2774826291",
+      "text": "More studies are needed to understand how single modifications of nutrients typical of the Mediterranean diet interact with energy intake, energy expenditure, and the microbiome in modulating the key mechanisms that promote cellular, tissue, and organ health during aging.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:16:05.338887Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

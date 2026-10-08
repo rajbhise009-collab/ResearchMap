@@ -1,0 +1,186 @@
+{
+  "paper_id": "openalex:W2550925836",
+  "claims": [
+    {
+      "id": "openalex:W2550925836:c1",
+      "paper_id": "openalex:W2550925836",
+      "text": "In a field test across 191 countries, an explicitly gender-neutral STEM career ad was displayed to over 20% more men than women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550925836:c2",
+      "paper_id": "openalex:W2550925836",
+      "text": "Conditional on seeing the STEM career ad, women were significantly more likely to click on the ad than men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550925836:c3",
+      "paper_id": "openalex:W2550925836",
+      "text": "Country-level measures of female labor market participation, female education, and general gender equality are not significantly related to the gender disparity in STEM ad delivery.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550925836:c4",
+      "paper_id": "openalex:W2550925836",
+      "text": "Female demographic groups, particularly women aged 25–44, have higher suggested bidding prices on social media ad auctions than male demographic groups.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550925836:c5",
+      "paper_id": "openalex:W2550925836",
+      "text": "Conditional on clicking an ad, women are more likely to convert by adding products to their shopping cart than men in an e-commerce context.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2550925836:c6",
+      "paper_id": "openalex:W2550925836",
+      "text": "The pattern of delivering more STEM ad impressions to men than women generalizes across Google Display Network, Instagram, and Twitter.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2550925836:e1",
+      "claim_id": "openalex:W2550925836:c1",
+      "description": "Empirically, across 191 countries on Facebook, the STEM career ad was shown to over 20% more men than women, with the disparity most pronounced in the 25-54 age range.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550925836:e2",
+      "claim_id": "openalex:W2550925836:c2",
+      "description": "Across all campaigns, the aggregate average click-rate for men was 0.131% compared to 0.167% for women (p < 0.001), and logit regression confirms positive coefficients for Female on click propensity.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550925836:e3",
+      "claim_id": "openalex:W2550925836:c3",
+      "description": "Interactions between female indicator and World Bank high-equality metrics (labor participation, primary/secondary education, CPIA gender equality index) yielded statistically insignificant coefficients in regression models of ad reach.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2550925836:e4",
+      "claim_id": "openalex:W2550925836:c4",
+      "description": "On average, the ad platform suggested bidding about 5 cents more to advertise to women (p < 0.05), with women aged 25-34 being 17.4 cents higher (p < 0.1) and women aged 35-44 being 15.0 cents higher (p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2550925836:e5",
+      "claim_id": "openalex:W2550925836:c5",
+      "description": "In campaign data from an online fashion/household retailer, women were consistently more likely than men to add products to their shopping cart after clicking on an ad across age groups.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2550925836:e6",
+      "claim_id": "openalex:W2550925836:c6",
+      "description": "Google Display Network showed 38,000 male vs 26,817 female impressions (51% vs 36%); Instagram showed 9,595 male vs 1,560 female impressions; Twitter spent $46.84 on men (66,243 impressions) vs $31 on women (52,363 impressions).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2550925836:m1",
+      "paper_id": "openalex:W2550925836",
+      "name": "Cross-national Field Test on Facebook",
+      "description": "Executed identical ad campaigns promoting STEM career opportunities across 191 countries targeted at all adults aged 18+ to observe algorithmically determined impression distribution, reach, and clickthrough rates across age and gender.",
+      "datasets": [
+        "Facebook Advertising Platform Campaign Data"
+      ],
+      "conditions": [
+        "Targeting all adults aged 18+",
+        "191 countries",
+        "Gender-neutral ad creative and text",
+        "Initial max bid $0.20/click (raised up to $0.60 in 29 countries)"
+      ]
+    },
+    {
+      "id": "openalex:W2550925836:m2",
+      "paper_id": "openalex:W2550925836",
+      "name": "Cross-Platform US Replication Field Tests",
+      "description": "Deployed gender-neutral STEM career advertisements on Google Display Network, Instagram, and Twitter in the US market without gender targeting restrictions to analyze impression and cost metrics across platforms.",
+      "datasets": [
+        "Google AdWords Display Network Data",
+        "Instagram Ads Campaign Data",
+        "Twitter Promoted Tweet Data"
+      ],
+      "conditions": [
+        "US market",
+        "Adults aged 18+",
+        "Gender-neutral targeting settings"
+      ]
+    },
+    {
+      "id": "openalex:W2550925836:m3",
+      "paper_id": "openalex:W2550925836",
+      "name": "Retail Conversion and Pricing Analysis",
+      "description": "Analyzed demographic-specific ad pricing suggestions from Facebook and e-commerce conversion data from an online fashion/household goods retailer to assess economic valuations of male vs female demographics.",
+      "datasets": [
+        "Facebook Suggested Bids Dataset",
+        "Online Retailer Campaign Conversion Dataset",
+        "World Bank Gender Data Portal"
+      ],
+      "conditions": [
+        "Demographic-level suggested auction prices",
+        "Identical retail campaigns targeted separately by age and gender in US"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2550925836:l1",
+      "paper_id": "openalex:W2550925836",
+      "text": "The primary field test consists of a single ad design for STEM careers shown across multiple countries.",
+      "normalized_category": "single-ad-stimulus",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2550925836:l2",
+      "paper_id": "openalex:W2550925836",
+      "text": "Because the internal mechanics of the ad delivery algorithm are unobserved, results regarding the precise role of bidding decisions by other advertisers remain suggestive rather than conclusive.",
+      "normalized_category": "unobserved-algorithm-mechanics",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2550925836:l3",
+      "paper_id": "openalex:W2550925836",
+      "text": "The study cannot directly test the extent to which ad algorithms themselves may contain intrinsic non-economic biases.",
+      "normalized_category": "unmeasured-algorithmic-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2550925836:l4",
+      "paper_id": "openalex:W2550925836",
+      "text": "The study's results are descriptive and explain an empirical regularity without empirically testing policy intervention measures that could prevent discriminatory ad delivery outcomes.",
+      "normalized_category": "descriptive-nature-no-policy-trials",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2550925836:l5",
+      "paper_id": "openalex:W2550925836",
+      "text": "Prior literature on algorithmic bias in advertising documents discriminatory empirical patterns without empirically examining the underlying causal mechanisms within the ad ecosystem.",
+      "normalized_category": "lack-of-causal-mechanism-in-prior-work",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2550925836:f1",
+      "paper_id": "openalex:W2550925836",
+      "text": "Testing specific policy prescriptions and platform feature mechanisms (such as allowing advertisers to automatically equalize impression distribution across demographic groups) to prevent cost-optimization algorithms from generating demographic imbalances.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:08:53.846616Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

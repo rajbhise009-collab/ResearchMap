@@ -1,0 +1,205 @@
+{
+  "paper_id": "openalex:W2786122898",
+  "claims": [
+    {
+      "id": "openalex:W2786122898:c1",
+      "paper_id": "openalex:W2786122898",
+      "text": "Data preprocessing choices impact the reported accuracy measures of fairness-aware machine learning algorithms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c2",
+      "paper_id": "openalex:W2786122898",
+      "text": "Data preprocessing choices impact the reported fairness measures of fairness-aware machine learning algorithms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c3",
+      "paper_id": "openalex:W2786122898",
+      "text": "A large number of fairness measures tend to strongly correlate with one another.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c4",
+      "paper_id": "openalex:W2786122898",
+      "text": "Techniques optimizing for one fairness measure often perform well on different fairness measures.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c5",
+      "paper_id": "openalex:W2786122898",
+      "text": "Actual predictions made by different fairness-enhancing algorithms vary significantly from one another.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c6",
+      "paper_id": "openalex:W2786122898",
+      "text": "No single fairness-aware algorithm consistently dominates across both accuracy and fairness measures.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c7",
+      "paper_id": "openalex:W2786122898",
+      "text": "Fairness-preserving algorithms exhibit significant variability in fairness measures arising from variations in training-test splits.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c8",
+      "paper_id": "openalex:W2786122898",
+      "text": "Accuracy of SVM classifiers paired with Feldman et al.'s preprocessing is consistently higher when using numerical plus binary sensitive attribute representation compared to purely numerical representation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2786122898:c9",
+      "paper_id": "openalex:W2786122898",
+      "text": "There is an empirical trade-off between negative outcome group calibration (s-calibration-) and true positive rate (s-TPR) across fairness algorithms.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2786122898:e1",
+      "claim_id": "openalex:W2786122898:c1",
+      "description": "The authors find that input attribute encoding and transformation requirements impact accuracy measures reported in fairness literature.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2786122898:e2",
+      "claim_id": "openalex:W2786122898:c2",
+      "description": "Benchmark comparisons demonstrate sensitivity of fairness measures to differences in preprocessed data representations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2786122898:e3",
+      "claim_id": "openalex:W2786122898:c3",
+      "description": "Stahel-Donoho correlation analysis across dataset-algorithm pairs shows high correlation among group-conditioned fairness measures and base-rate measures.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2786122898:e4",
+      "claim_id": "openalex:W2786122898:c4",
+      "description": "Empirical evaluation demonstrates that algorithms tuned for one measure routinely score high on closely correlated metrics.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2786122898:e5",
+      "claim_id": "openalex:W2786122898:c5",
+      "description": "Comparative results across five datasets show varied model predictions across different algorithm mechanisms.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2786122898:e6",
+      "claim_id": "openalex:W2786122898:c6",
+      "description": "Benchmark performance plots across all datasets show no algorithm achieving superior results in both accuracy and fairness simultaneously.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2786122898:e7",
+      "claim_id": "openalex:W2786122898:c7",
+      "description": "Evaluations over ten randomized train-test splits show large standard deviations in disparate impact (DI) and other fairness measures.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2786122898:e8",
+      "claim_id": "openalex:W2786122898:c8",
+      "description": "In all three SVM variants of Feldman et al.'s algorithm, accuracy is higher under numerical+binary representation across test splits.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2786122898:e9",
+      "claim_id": "openalex:W2786122898:c9",
+      "description": "Scatter plots of s-calibration- versus s-TPR on the Adult dataset reveal a clear trade-off line across evaluated algorithms.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2786122898:m1",
+      "paper_id": "openalex:W2786122898",
+      "name": "Open-source Modular Fairness Benchmark Pipeline",
+      "description": "A standardized benchmarking architecture that evaluates multiple fairness-aware algorithms under consistent data preprocessing, randomized train-test splits, and multiple fairness/accuracy measures.",
+      "datasets": [
+        "Ricci",
+        "Adult Income",
+        "German Credit",
+        "ProPublica recidivism",
+        "ProPublica violent recidivism"
+      ],
+      "conditions": [
+        "Ten random 2/3 to 1/3 train-test splits",
+        "Multiple data encodings (original, numerical, numerical+binary)",
+        "Automated parameter grid searches for fairness-accuracy trade-offs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2786122898:l1",
+      "paper_id": "openalex:W2786122898",
+      "text": "The study does not evaluate algorithms that seek to optimize individual fairness due to a lack of available implementations.",
+      "normalized_category": "lacks-individual-fairness-evaluation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2786122898:l2",
+      "paper_id": "openalex:W2786122898",
+      "text": "The scope of fairness interventions evaluated is limited to batch learning and excludes sequential or reinforcement learning paradigms.",
+      "normalized_category": "limited-to-batch-learning",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2786122898:l3",
+      "paper_id": "openalex:W2786122898",
+      "text": "Prior work lacks standardized data preprocessing pipelines and consistent testing methodologies across comparative evaluations.",
+      "normalized_category": "inconsistent-evaluation-methodologies",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2786122898:l4",
+      "paper_id": "openalex:W2786122898",
+      "text": "Prior work often evaluates algorithms on a single dataset split and limited fairness measures, masking algorithmic instability.",
+      "normalized_category": "single-split-evaluation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2786122898:f1",
+      "paper_id": "openalex:W2786122898",
+      "text": "Report algorithm performance metrics under multiple plausible preprocessing choices when evaluating fairness-aware models.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2786122898:f2",
+      "paper_id": "openalex:W2786122898",
+      "text": "Report algorithm success and stability using a moderate number of randomized train-test splits to account for training instability.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2786122898:f3",
+      "paper_id": "openalex:W2786122898",
+      "text": "Avoid introducing new fairness measures unless they behave fundamentally differently from existing metrics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:12:22.340269Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

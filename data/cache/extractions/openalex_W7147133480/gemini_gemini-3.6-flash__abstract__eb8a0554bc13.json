@@ -1,0 +1,106 @@
+{
+  "paper_id": "openalex:W7147133480",
+  "claims": [
+    {
+      "id": "openalex:W7147133480:c1",
+      "paper_id": "openalex:W7147133480",
+      "text": "The proposed mitigation framework integrates prompt engineering with Retrieval Augmented Generation (RAG) and the Model Context Protocol (MCP) without modifying model parameters.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7147133480:c2",
+      "paper_id": "openalex:W7147133480",
+      "text": "MCP achieves higher F1 scores than conventional RAG on MedQuAD subsets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7147133480:c3",
+      "paper_id": "openalex:W7147133480",
+      "text": "MCP achieves higher ROUGE-L scores than conventional RAG on MedQuAD subsets.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7147133480:c4",
+      "paper_id": "openalex:W7147133480",
+      "text": "MCP demonstrates lower abstention rates compared to conventional RAG.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7147133480:c5",
+      "paper_id": "openalex:W7147133480",
+      "text": "Expert review confirmed reduced unsupported claims in model outputs using the proposed framework.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7147133480:e1",
+      "claim_id": "openalex:W7147133480:c1",
+      "description": "proposes an integrated mitigation framework that combines advanced prompt engineering with knowledge-grounded approaches, specifically Retrieval Augmented Generation (RAG) and the Model Context Protocol (MCP), without modifying underlying model parameters.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7147133480:e2",
+      "claim_id": "openalex:W7147133480:c2",
+      "description": "MCP consistently outperforms or matches conventional RAG, achieving higher F1 and ROUGE-L scores",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7147133480:e3",
+      "claim_id": "openalex:W7147133480:c3",
+      "description": "MCP consistently outperforms or matches conventional RAG, achieving higher F1 and ROUGE-L scores",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7147133480:e4",
+      "claim_id": "openalex:W7147133480:c4",
+      "description": "achieving higher F1 and ROUGE-L scores, stronger evidence grounding, and lower abstention",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7147133480:e5",
+      "claim_id": "openalex:W7147133480:c5",
+      "description": "Expert review further confirmed improved clinical relevance and reduced unsupported claims.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7147133480:m1",
+      "paper_id": "openalex:W7147133480",
+      "name": "Knowledge-Grounded Prompting Framework Evaluation",
+      "description": "Mixed-methods design implementing parallel RAG and MCP pipelines with shared retrieval and structured prompting strategies evaluated on medical QA datasets.",
+      "datasets": [
+        "CancerQA",
+        "NIDDKQA"
+      ],
+      "conditions": [
+        "role-based prompts",
+        "chain-of-thought",
+        "chain-of-verification"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7147133480:l1",
+      "paper_id": "openalex:W7147133480",
+      "text": "LLM deployment in healthcare is constrained by risks of hallucinated content and embedded bias.",
+      "normalized_category": "hallucination-and-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.107578Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

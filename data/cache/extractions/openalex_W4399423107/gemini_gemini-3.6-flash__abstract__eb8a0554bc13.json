@@ -1,0 +1,150 @@
+{
+  "paper_id": "openalex:W4399423107",
+  "claims": [
+    {
+      "id": "openalex:W4399423107:c1",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency methods outperformed Token Level Probability and Confidence Elicitation methods for estimating LLM uncertainty in medical tasks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c2",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by Sentence Embedding achieved discrimination performance of ROC AUC 0.68–0.79.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c3",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by Sentence Embedding exhibited poor calibration.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c4",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by GPT Annotation achieved discrimination performance of ROC AUC 0.66–0.74.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c5",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by GPT Annotation achieved more accurate calibration than Sample Consistency by Sentence Embedding.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c6",
+      "paper_id": "openalex:W4399423107",
+      "text": "Nearly all evaluated uncertainty metrics had better discriminative performance with diagnosis questions than with treatment selection questions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399423107:c7",
+      "paper_id": "openalex:W4399423107",
+      "text": "Verbalized confidence through Confidence Elicitation consistently over-estimates LLM confidence.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399423107:e1",
+      "claim_id": "openalex:W4399423107:c1",
+      "description": "Sample Consistency methods outperformed Token Level Probability and Confidence Elicitation methods across evaluated patient scenario datasets.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399423107:e2",
+      "claim_id": "openalex:W4399423107:c2",
+      "description": "Sample Consistency by Sentence Embedding achieved the highest discrimination performance with ROC AUC 0.68–0.79.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399423107:e3",
+      "claim_id": "openalex:W4399423107:c3",
+      "description": "Sample Consistency by Sentence Embedding achieved high discrimination with poor raw calibration.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399423107:e4",
+      "claim_id": "openalex:W4399423107:c4",
+      "description": "Sample Consistency by GPT Annotation achieved second-best discrimination with ROC AUC 0.66–0.74.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399423107:e5",
+      "claim_id": "openalex:W4399423107:c5",
+      "description": "Sample Consistency by GPT Annotation achieved second-best discrimination with more accurate calibration.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4399423107:e6",
+      "claim_id": "openalex:W4399423107:c6",
+      "description": "Nearly all uncertainty metrics had better discriminative performance with diagnosis rather than treatment selection questions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4399423107:e7",
+      "claim_id": "openalex:W4399423107:c7",
+      "description": "Verbalized confidence (Confidence Elicitation) was found to consistently over-estimate model confidence.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399423107:m1",
+      "paper_id": "openalex:W4399423107",
+      "name": "LLM Uncertainty Metric Comparative Evaluation",
+      "description": "Evaluated Confidence Elicitation, Token Level Probability, and Sample Consistency metrics on discrimination and calibration properties across multiple LLMs for medical diagnosis and treatment selection.",
+      "datasets": [
+        "Three datasets of open-ended patient scenarios"
+      ],
+      "conditions": [
+        "GPT3.5",
+        "GPT4",
+        "Llama2",
+        "Llama3",
+        "Diagnosis questions",
+        "Treatment selection questions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399423107:l1",
+      "paper_id": "openalex:W4399423107",
+      "text": "Sample Consistency by Sentence Embedding suffers from poor calibration, requiring reference cases to re-calibrate results.",
+      "normalized_category": "poor-calibration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399423107:l2",
+      "paper_id": "openalex:W4399423107",
+      "text": "Uncertainty metrics demonstrate lower discriminative performance when applied to treatment selection questions compared to diagnosis questions.",
+      "normalized_category": "task-dependent-performance-degradation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399423107:l3",
+      "paper_id": "openalex:W4399423107",
+      "text": "Confidence Elicitation consistently over-estimates LLM confidence when verbalizing uncertainty.",
+      "normalized_category": "model-overconfidence",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.101628Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

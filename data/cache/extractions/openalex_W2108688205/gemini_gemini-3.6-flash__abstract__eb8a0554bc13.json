@@ -1,0 +1,131 @@
+{
+  "paper_id": "openalex:W2108688205",
+  "claims": [
+    {
+      "id": "openalex:W2108688205:c1",
+      "paper_id": "openalex:W2108688205",
+      "text": "The frailty phenotype definition and the frailty index correlated moderately well with each other (R = 0.65).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2108688205:c2",
+      "paper_id": "openalex:W2108688205",
+      "text": "The phenotypic definition of frailty correlated with functional measures (R = 0.66).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2108688205:c3",
+      "paper_id": "openalex:W2108688205",
+      "text": "The frailty index correlated with functional measures (R = 0.73).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2108688205:c4",
+      "paper_id": "openalex:W2108688205",
+      "text": "The phenotypic definition of frailty correlated with cognitive measures (R = -0.35).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2108688205:c5",
+      "paper_id": "openalex:W2108688205",
+      "text": "The frailty index correlated with cognitive measures (R = -0.58).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2108688205:c6",
+      "paper_id": "openalex:W2108688205",
+      "text": "Median frailty index scores increased from 0.12 for robust individuals to 0.30 for pre-frail and 0.44 for frail individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2108688205:c7",
+      "paper_id": "openalex:W2108688205",
+      "text": "Among people categorized as robust by phenotypic definition, median 5-year survival was 85% for those with lower frailty index values compared to 55% for those with higher frailty index values.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2108688205:e1",
+      "claim_id": "openalex:W2108688205:c1",
+      "description": "The measures correlated moderately well with each other (R=0.65)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2108688205:e2",
+      "claim_id": "openalex:W2108688205:c2",
+      "description": "correlated... with measures of function (phenotypic definition R=0.66)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2108688205:e3",
+      "claim_id": "openalex:W2108688205:c3",
+      "description": "correlated... with measures of function (... FI R=0.73)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2108688205:e4",
+      "claim_id": "openalex:W2108688205:c4",
+      "description": "less well with cognition (phenotypic definition R=-0.35)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2108688205:e5",
+      "claim_id": "openalex:W2108688205:c5",
+      "description": "less well with cognition (... FI R=-0.58)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2108688205:e6",
+      "claim_id": "openalex:W2108688205:c6",
+      "description": "The median FI scores increased from 0.12 for the robust to 0.30 for the pre-frail and 0.44 for the frail.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2108688205:e7",
+      "claim_id": "openalex:W2108688205:c7",
+      "description": "among robust people, the median 5-year survival for those with lower FI values was 85%, compared with 55% for those with higher FI values.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2108688205:m1",
+      "paper_id": "openalex:W2108688205",
+      "name": "Validation and comparison of frailty phenotype vs deficit accumulation index",
+      "description": "Comparison of convergent validity and criterion validity ( survival and institutionalization ) between a phenotype-based frailty measure and a deficit accumulation frailty index.",
+      "datasets": [
+        "Canadian Study of Health and Aging (CSHA) Wave 2 clinical examination cohort"
+      ],
+      "conditions": [
+        "2305 individuals aged 70 years and older"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2108688205:l1",
+      "paper_id": "openalex:W2108688205",
+      "text": "The Frailty Index requires additional clinical translation before it can be readily operationalized in clinical practice.",
+      "normalized_category": "clinical-translation-required",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:45:36.267361Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

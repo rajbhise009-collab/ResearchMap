@@ -1,0 +1,148 @@
+{
+  "paper_id": "openalex:W4402747641",
+  "claims": [
+    {
+      "id": "openalex:W4402747641:c1",
+      "paper_id": "openalex:W4402747641",
+      "text": "Rule-based scraping is moderately effective in reducing True Positive Rate Difference (TPRD) in job classification from short biographies.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402747641:c2",
+      "paper_id": "openalex:W4402747641",
+      "text": "Subspace projection is ineffective in reducing the amount of gender information contained in resumes as measured by sAUC.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402747641:c3",
+      "paper_id": "openalex:W4402747641",
+      "text": "SHAP-based feature scraping achieves a sizeable drop in sensitive attribute AUC (sAUC) with limited negative impact on task performance in resume screening.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402747641:c4",
+      "paper_id": "openalex:W4402747641",
+      "text": "Hiring screening systems trained on video signals yield larger disparities and disadvantages for protected groups than systems based on language or audio modalities.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402747641:c5",
+      "paper_id": "openalex:W4402747641",
+      "text": "DetGreedy re-ranking improves ranking fairness metrics without significant impact on utility during online A/B testing in web-scale candidate search.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402747641:e1",
+      "claim_id": "openalex:W4402747641:c1",
+      "description": "De-Arteaga et al. (2019) evaluated rule-based text scraping on biographies from Common Crawl and found moderate reductions in TPRD across gender groups.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402747641:e2",
+      "claim_id": "openalex:W4402747641:c2",
+      "description": "Parasurama and Sedoc (2021) demonstrated that orthogonal subspace projection failed to reduce gender sAUC in resume screening embeddings.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402747641:e3",
+      "claim_id": "openalex:W4402747641:c3",
+      "description": "Parasurama and Sedoc (2021) showed that SHAP-based feature importance scraping yielded sAUC reductions while preserving downstream resume screening performance.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402747641:e4",
+      "claim_id": "openalex:W4402747641:c4",
+      "description": "Studies by Booth et al. (2021), Hemamou et al. (2021), and Yan et al. (2020) consistently showed visual features from video interviews produce larger group disparities compared to audio and text modalities.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402747641:e5",
+      "claim_id": "openalex:W4402747641:c5",
+      "description": "Geyik et al. (2019) conducted online A/B testing of DetGreedy on LinkedIn Talent Search and observed improved gender representation metrics with no statistically significant drop in utility.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402747641:m1",
+      "paper_id": "openalex:W4402747641",
+      "name": "Systematic Multidisciplinary Literature Review",
+      "description": "A systematic review querying IEEE Xplore, ACM Digital Library, and Google Scholar for quantitative fairness research in algorithmic hiring, augmented by forward/backward snowballing.",
+      "datasets": [
+        "Bias in Bios",
+        "Student Interviews",
+        "SHL Interviews",
+        "DPG Resumes",
+        "Pymetrics Bias Group",
+        "Facebook Ads Audiences"
+      ],
+      "conditions": [
+        "Inclusion restricted to articles treating fairness in algorithmic hiring from a quantitative perspective",
+        "Screening top 100 search results per database query plus forward/backward snowballing"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402747641:l1",
+      "paper_id": "openalex:W4402747641",
+      "text": "Prior literature on algorithmic hiring predominantly offers partial treatment constrained by binary polarized narratives of replacing biased human recruiters versus automating discrimination.",
+      "normalized_category": "literature-polarization",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4402747641:l2",
+      "paper_id": "openalex:W4402747641",
+      "text": "Existing algorithmic hiring datasets suffer from narrow geographic and linguistic coverage focused heavily on English/US contexts, and lack sensitive attributes such as disability, religion, and sexual orientation.",
+      "normalized_category": "dataset-demographic-gap",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4402747641:l3",
+      "paper_id": "openalex:W4402747641",
+      "text": "The systematic review methodology primarily centered on a computer science perspective and evaluated the top 100 search engine results per query combination.",
+      "normalized_category": "search-scope-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402747641:f1",
+      "paper_id": "openalex:W4402747641",
+      "text": "Curate datasets with greater geographic, linguistic, and demographic diversity, including currently missing sensitive attributes such as disability status and sexual orientation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402747641:f2",
+      "paper_id": "openalex:W4402747641",
+      "text": "Study individual fairness definitions and exploratory stochastic decision policies to better handle non-standard candidate profiles in hiring pipelines.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402747641:f3",
+      "paper_id": "openalex:W4402747641",
+      "text": "Conduct contextualized evaluations covering the full multi-stage recruitment pipeline rather than evaluating isolated algorithms at single decision points.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402747641:f4",
+      "paper_id": "openalex:W4402747641",
+      "text": "Investigate recruiter-algorithm interaction dynamics and human screening workflows to inform more granular fairness metrics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.137745Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

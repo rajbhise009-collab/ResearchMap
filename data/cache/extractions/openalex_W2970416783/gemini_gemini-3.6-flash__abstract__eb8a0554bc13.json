@@ -1,0 +1,69 @@
+{
+  "paper_id": "openalex:W2970416783",
+  "claims": [
+    {
+      "id": "openalex:W2970416783:c1",
+      "paper_id": "openalex:W2970416783",
+      "text": "An epsilon-first order stationary point of a non-convex min-max game can be computed when one player's objective can be optimized to global optimality efficiently.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970416783:c2",
+      "paper_id": "openalex:W2970416783",
+      "text": "A multi-step gradient descent-ascent algorithm finds an epsilon-first order stationary point in O~(epsilon^-2) iterations when the objective of one player satisfies the Polyak-Lojasiewicz (PL) condition.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2970416783:c3",
+      "paper_id": "openalex:W2970416783",
+      "text": "A multi-step gradient descent-ascent algorithm finds an epsilon-first order stationary point in O~(epsilon^-3.5) iterations when the objective of the max-player is concave.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2970416783:e1",
+      "claim_id": "openalex:W2970416783:c1",
+      "description": "we study the problem in the non-convex regime and show that an \\varepsilon--first order stationary point of the game can be computed when one of the player’s objective can be optimized to global optimality efficiently.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970416783:e2",
+      "claim_id": "openalex:W2970416783:c2",
+      "description": "For such a game, we show that a simple multi-step gradient descent-ascent algorithm finds an \\varepsilon--first order stationary point of the problem in \\widetilde{\\mathcal{O}}(\\varepsilon^{-2}) iterations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2970416783:e3",
+      "claim_id": "openalex:W2970416783:c3",
+      "description": "In this case, we propose a multi-step gradient descent-ascent algorithm that finds an \\varepsilon--first order stationary point of the game in \\widetilde{\\cal O}(\\varepsilon^{-3.5}) iterations",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2970416783:m1",
+      "paper_id": "openalex:W2970416783",
+      "name": "Multi-step gradient descent-ascent algorithm",
+      "description": "An iterative first-order algorithm for solving non-convex min-max saddle point games when one player's objective satisfies the PL condition or is concave.",
+      "datasets": [
+        "Fashion-MNIST"
+      ],
+      "conditions": [
+        "Polyak-Lojasiewicz (PL) condition",
+        "concave max-player objective",
+        "fair classification"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T17:21:17.130365Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

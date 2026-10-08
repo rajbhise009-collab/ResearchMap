@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W4387266347",
+  "claims": [
+    {
+      "id": "openalex:W4387266347:c1",
+      "paper_id": "openalex:W4387266347",
+      "text": "A shortage of diabetes specialists contributes to poor glycemic control in patients with diabetes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387266347:c2",
+      "paper_id": "openalex:W4387266347",
+      "text": "Uneven distribution of medical resources contributes to poor glycemic control in patients with diabetes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387266347:c3",
+      "paper_id": "openalex:W4387266347",
+      "text": "Low adherence to medications contributes to poor glycemic control in patients with diabetes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4387266347:c4",
+      "paper_id": "openalex:W4387266347",
+      "text": "Improper self-management contributes to poor glycemic control in patients with diabetes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4387266347:e1",
+      "claim_id": "openalex:W4387266347:c1",
+      "description": "Abstract states that a shortage of diabetes specialists contributes to poor glycemic control in patients with diabetes.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4387266347:e2",
+      "claim_id": "openalex:W4387266347:c2",
+      "description": "Abstract states that uneven distribution of medical resources contributes to poor glycemic control in patients with diabetes.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4387266347:e3",
+      "claim_id": "openalex:W4387266347:c3",
+      "description": "Abstract states that low adherence to medications contributes to poor glycemic control in patients with diabetes.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4387266347:e4",
+      "claim_id": "openalex:W4387266347:c4",
+      "description": "Abstract states that improper self-management contributes to poor glycemic control in patients with diabetes.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4387266347:m1",
+      "paper_id": "openalex:W4387266347",
+      "name": "Literature Review",
+      "description": "Reviews recent progress, opportunities, and challenges in the application of AI in diabetes management and clinical practice.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W4387266347:f1",
+      "paper_id": "openalex:W4387266347",
+      "text": "Combining and expanding upon existing digital health technologies to develop an AI-assisted digital health-care ecosystem for diabetes prevention and management.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.113806Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

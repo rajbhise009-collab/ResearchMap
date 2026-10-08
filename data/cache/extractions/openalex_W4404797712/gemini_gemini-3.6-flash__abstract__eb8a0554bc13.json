@@ -1,0 +1,111 @@
+{
+  "paper_id": "openalex:W4404797712",
+  "claims": [
+    {
+      "id": "openalex:W4404797712:c1",
+      "paper_id": "openalex:W4404797712",
+      "text": "Generative AI can produce diverse outputs including text, audio, images, video, and synthetic data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404797712:c2",
+      "paper_id": "openalex:W4404797712",
+      "text": "LLMs use transformer models to detect relationships between sequence elements to provide context support.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404797712:c3",
+      "paper_id": "openalex:W4404797712",
+      "text": "Generative AI models can perform effectively in accuracy in specificity.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404797712:c4",
+      "paper_id": "openalex:W4404797712",
+      "text": "Generative AI models can perform effectively in user personalization.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404797712:c5",
+      "paper_id": "openalex:W4404797712",
+      "text": "Generative AI models can perform effectively in human-computer communication.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4404797712:c6",
+      "paper_id": "openalex:W4404797712",
+      "text": "Generative AI models and LLMs can produce hallucinations, incorrect information, and unreliable results.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4404797712:e1",
+      "claim_id": "openalex:W4404797712:c1",
+      "description": "It can generate different outputs ranging from texts, audio, objects, pictures, and paintings to videos, but also synthetic data.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404797712:e2",
+      "claim_id": "openalex:W4404797712:c2",
+      "description": "They use transformer models to detect how elements in sequences relate to each other. This provides context support.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4404797712:e3",
+      "claim_id": "openalex:W4404797712:c3",
+      "description": "Results from applying these models have shown that they can work well for accuracy in specificity...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4404797712:e4",
+      "claim_id": "openalex:W4404797712:c4",
+      "description": "Results from applying these models have shown that they can work well for ... user personalization ...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4404797712:e5",
+      "claim_id": "openalex:W4404797712:c5",
+      "description": "Results from applying these models have shown that they can work well for ... human-computer communication...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4404797712:e6",
+      "claim_id": "openalex:W4404797712:c6",
+      "description": "...they may not provide acceptable, reliable and truthful results. For example, ethics, hallucinations and incorrect information, or misjudgments, are some major problems.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W4404797712:l1",
+      "paper_id": "openalex:W4404797712",
+      "text": "LLMs and Gen AI models may fail to provide acceptable, reliable, and truthful results due to hallucinations, misjudgments, and ethical concerns.",
+      "normalized_category": "hallucination-and-unreliability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4404797712:f1",
+      "paper_id": "openalex:W4404797712",
+      "text": "Investigation of research questions and future directions regarding LLM deployment, limitations, and recommendations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.080297Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

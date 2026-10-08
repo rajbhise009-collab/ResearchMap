@@ -1,0 +1,134 @@
+{
+  "paper_id": "openalex:W2064137374",
+  "claims": [
+    {
+      "id": "openalex:W2064137374:c1",
+      "paper_id": "openalex:W2064137374",
+      "text": "Heavy alcohol consumption monotonically increases the relative risk of hemorrhagic stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2064137374:c2",
+      "paper_id": "openalex:W2064137374",
+      "text": "Alcohol consumption exhibits a curvilinear J-shaped dose-response relationship with the relative risk of ischemic stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2064137374:c3",
+      "paper_id": "openalex:W2064137374",
+      "text": "Low to moderate alcohol consumption is associated with a protective effect against ischemic stroke.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2064137374:c4",
+      "paper_id": "openalex:W2064137374",
+      "text": "For women, the relative risk of alcohol consumption on stroke differs significantly when comparing mortality endpoints to morbidity endpoints.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2064137374:e1",
+      "claim_id": "openalex:W2064137374:c1",
+      "description": "At 96 g/day of pure alcohol (8 US standard drinks), relative risks for hemorrhagic stroke mortality were 1.94 (95% CI: 1.56-2.40) for men and 4.50 (95% CI: 2.47-8.20) for women compared to lifetime abstainers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2064137374:e2",
+      "claim_id": "openalex:W2064137374:c2",
+      "description": "Ischemic stroke risk showed a J-shaped curve for both mortality and morbidity across sexes, with decreased risk at low doses and increased risk at high doses.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2064137374:e3",
+      "claim_id": "openalex:W2064137374:c3",
+      "description": "For men, alcohol consumption of 12 g/day (1 drink/day) achieved a global minimum relative risk of 0.86 (95% CI: 0.81-0.93) for ischemic stroke mortality relative to lifetime abstainers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2064137374:e4",
+      "claim_id": "openalex:W2064137374:c4",
+      "description": "The interaction term between endpoint type (mortality vs morbidity) and alcohol dose was statistically significant for women in both hemorrhagic stroke (p = 0.0138) and ischemic stroke (p = 0.0141).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2064137374:m1",
+      "paper_id": "openalex:W2064137374",
+      "name": "Systematic review and random-effects meta-regression with fractional polynomials",
+      "description": "A systematic literature search across 8 databases followed by random-effects meta-regression using fractional polynomials to model dose-response curves for stroke risk stratified by stroke type, sex, and outcome.",
+      "datasets": [
+        "MEDLINE",
+        "EMBASE",
+        "CINAHL",
+        "CABS",
+        "WHOlist",
+        "SIGLE",
+        "ETOH",
+        "Web of Science",
+        "26 observational studies (17 cohort, 9 case-control)"
+      ],
+      "conditions": [
+        "Stratification by stroke subtype (ischemic vs hemorrhagic)",
+        "Stratification by endpoint outcome (morbidity vs mortality)",
+        "Stratification by sex",
+        "Lifetime abstention reference group alignment"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2064137374:l1",
+      "paper_id": "openalex:W2064137374",
+      "text": "Previous meta-analyses on alcohol and stroke focused primarily on stroke mortality and failed to explicitly differentiate between morbidity and mortality outcomes.",
+      "normalized_category": "prior-work-outcome-aggregation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2064137374:l2",
+      "paper_id": "openalex:W2064137374",
+      "text": "Some primary studies lacked CT scans or imaging diagnostic techniques, relying instead on death certificates, registry data, or autopsy reports to classify stroke subtypes.",
+      "normalized_category": "diagnostic-imprecision",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2064137374:l3",
+      "paper_id": "openalex:W2064137374",
+      "text": "Primary data relied on self-reported alcohol consumption, which is subject to recall bias and underreporting by heavy drinkers.",
+      "normalized_category": "self-report-measurement-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2064137374:l4",
+      "paper_id": "openalex:W2064137374",
+      "text": "Adjusting current abstention reference groups to lifetime abstention required pooling former-drinker ratios across fatal and non-fatal outcomes combined, which may introduce minor bias.",
+      "normalized_category": "reference-group-adjustment-bias",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2064137374:f1",
+      "paper_id": "openalex:W2064137374",
+      "text": "Initiate public health alcohol control measures to mitigate projected global increases in alcohol-attributable stroke burden.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2064137374:f2",
+      "paper_id": "openalex:W2064137374",
+      "text": "Evaluate public health guidelines recommending limiting alcohol consumption to 2 or fewer drinks per day to maintain potential cardio-protective benefits while minimizing stroke risk.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:21:36.265341Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

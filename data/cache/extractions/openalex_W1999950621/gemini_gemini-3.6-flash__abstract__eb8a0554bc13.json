@@ -1,0 +1,113 @@
+{
+  "paper_id": "openalex:W1999950621",
+  "claims": [
+    {
+      "id": "openalex:W1999950621:c1",
+      "paper_id": "openalex:W1999950621",
+      "text": "Subjects with NAFLD exhibit a 69% increased mortality compared to the general Swedish population.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1999950621:c2",
+      "paper_id": "openalex:W1999950621",
+      "text": "Subjects with NASH exhibit an 86% increased mortality compared to the general Swedish population.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1999950621:c3",
+      "paper_id": "openalex:W1999950621",
+      "text": "Subjects with nonalcoholic bland steatosis exhibit a 55% increased mortality compared to the general population, which was not statistically significant.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1999950621:c4",
+      "paper_id": "openalex:W1999950621",
+      "text": "Liver disease is the third most common cause of death among patients with NAFLD.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1999950621:c5",
+      "paper_id": "openalex:W1999950621",
+      "text": "Cardiovascular disease was the most frequent cause of death in the cohort, accounting for 37 of 113 deaths.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1999950621:e1",
+      "claim_id": "openalex:W1999950621:c1",
+      "description": "Compared with the total Swedish population, adjusted for sex, age, and calendar period, subjects with NAFLD exhibited a 69% increased mortality (SMR = 1.69; 95% CI, 1.24-2.25).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1999950621:e2",
+      "claim_id": "openalex:W1999950621:c2",
+      "description": "Subjects with NASH exhibited an 86% increased mortality (SMR, 1.86; 95% CI, 1.19-2.76; P = 0.007).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1999950621:e3",
+      "claim_id": "openalex:W1999950621:c3",
+      "description": "Subjects with bland steatosis exhibited a 55% increase (SMR, 1.55; 95% CI, 0.98-2.32; P = 0.062).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1999950621:e4",
+      "claim_id": "openalex:W1999950621:c4",
+      "description": "Liver disease is the third most common cause of death among patients with NAFLD.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1999950621:e5",
+      "claim_id": "openalex:W1999950621:c5",
+      "description": "Of the 113 deaths, 37 were of cardiovascular disease and 16 of liver diseases.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1999950621:m1",
+      "paper_id": "openalex:W1999950621",
+      "name": "Longitudinal cohort mortality study",
+      "description": "A 28-year follow-up study of 256 subjects who underwent liver biopsy due to elevated liver enzymes, using registry-matched mortality data.",
+      "datasets": [
+        "National Swedish Cause of Death Registry",
+        "Swedish liver biopsy cohort (1980-1984)"
+      ],
+      "conditions": [
+        "28-year follow-up period",
+        "Blind histological scoring for NAFLD and NASH",
+        "Adjustment for sex, age, and calendar period"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1999950621:l1",
+      "paper_id": "openalex:W1999950621",
+      "text": "Long-term survival of subjects with nonalcoholic fatty liver disease (NAFLD) in comparison with both individuals with elevated transaminases attributable to other causes and the general population was poorly characterized.",
+      "normalized_category": "insufficient-prior-data",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1999950621:l2",
+      "paper_id": "openalex:W1999950621",
+      "text": "The 55% increased mortality observed in subjects with bland steatosis did not reach statistical significance (P = 0.062).",
+      "normalized_category": "lack-of-statistical-significance",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:50:23.444343Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,193 @@
+{
+  "paper_id": "openalex:W4402827393",
+  "claims": [
+    {
+      "id": "openalex:W4402827393:c1",
+      "paper_id": "openalex:W4402827393",
+      "text": "Proxies of human difficulty are negatively correlated with LLM response correctness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c2",
+      "paper_id": "openalex:W4402827393",
+      "text": "Scaled-up and shaped-up language models do not secure low-difficulty operating areas where errors are eliminated.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c3",
+      "paper_id": "openalex:W4402827393",
+      "text": "Scaling and shaping interventions replace task avoidance with a higher proportion of incorrect answers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c4",
+      "paper_id": "openalex:W4402827393",
+      "text": "LLM task avoidance rates do not increase as instance difficulty increases.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c5",
+      "paper_id": "openalex:W4402827393",
+      "text": "Human oversight and supervision fail to compensate for increased LLM errors on high-difficulty questions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c6",
+      "paper_id": "openalex:W4402827393",
+      "text": "Scaling-up and shaping-up LLMs increase stability across different natural phrasings of the same question.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4402827393:c7",
+      "paper_id": "openalex:W4402827393",
+      "text": "Pockets of prompt sensitivity variability persist across difficulty levels despite scaling and shaping interventions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4402827393:e1",
+      "claim_id": "openalex:W4402827393:c1",
+      "description": "Except for BLOOM on addition, high correlations were observed across all model families between correctness and proxies for human difficulty (Supplementary Table 8).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402827393:e2",
+      "claim_id": "openalex:W4402827393:c2",
+      "description": "For the LLaMA family, no model achieves 60% correctness at the simplest difficulty level (discounting 25% random guess for science), and GPT-4 primarily increases performance on medium/high difficulty tasks without clear improvement for easy tasks.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402827393:e3",
+      "claim_id": "openalex:W4402827393:c3",
+      "description": "Scaling analysis shows avoidance is significantly lower for shaped-up models compared to raw models, while incorrectness and the ratio of incorrectness over non-correct answers (i/(a+i)) increase substantially.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4402827393:e4",
+      "claim_id": "openalex:W4402827393:c4",
+      "description": "The percentage of avoidant answers rarely rises quicker than the percentage of incorrect ones across difficulty bins, showing weak or absent correlation between avoidance and difficulty.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4402827393:e5",
+      "claim_id": "openalex:W4402827393:c5",
+      "description": "Human survey S2 shows high proportions of incorrect-to-correct supervision errors, where human participants mistake incorrect model outputs for correct answers on difficult instances.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402827393:e6",
+      "claim_id": "openalex:W4402827393:c6",
+      "description": "Shaped-up models (the last six GPT models and chat LLaMA models) exhibit higher prompting stability across 15 natural prompt variations relative to raw base models.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4402827393:e7",
+      "claim_id": "openalex:W4402827393:c7",
+      "description": "Disaggregated prompting analysis shows non-monotonic prompt performance across difficulty levels, with certain prompts yielding higher accuracy on hard items but failing on easy items.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4402827393:m1",
+      "paper_id": "openalex:W4402827393",
+      "name": "Multi-family LLM reliability evaluation framework",
+      "description": "Evaluated 32 language models across 3 model families (GPT, LLaMA, BLOOM) using 5 benchmarks categorized into 30 difficulty bins and 15 natural prompt variations per benchmark, scoring outputs into three categories (correct, incorrect, avoidant).",
+      "datasets": [
+        "Addition (1-100 digits)",
+        "Anagram (3-20 letters)",
+        "Locality (World Cities Database)",
+        "Science (OpenBookQA & GPQA)",
+        "Transforms (data wrangling and natural instructions)"
+      ],
+      "conditions": [
+        "Zero-temperature generation",
+        "No system prompt",
+        "15 natural prompt variations per benchmark",
+        "Logistic calibration to human failure probability"
+      ]
+    },
+    {
+      "id": "openalex:W4402827393:m2",
+      "paper_id": "openalex:W4402827393",
+      "name": "Human perceptual and supervision studies (S1 and S2)",
+      "description": "Conducted two human subject studies to calibrate instance difficulty proxies against human performance expectations (S1) and measure human capability to supervise/verify model outputs across difficulty levels (S2).",
+      "datasets": [
+        "Human study S1 survey dataset",
+        "Human study S2 survey dataset"
+      ],
+      "conditions": [
+        "Prolific platform recruitment",
+        "Compensation at £9 per hour",
+        "Three-valued confusion matrix evaluating correct, incorrect, and avoidant outputs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4402827393:l1",
+      "paper_id": "openalex:W4402827393",
+      "text": "Recruitment of participants for the human studies consisted mostly of non-experts, leading to high calibrated difficulty values for general population capability.",
+      "normalized_category": "non-expert-human-evaluators",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402827393:l2",
+      "paper_id": "openalex:W4402827393",
+      "text": "The sample of natural prompts lacked frequency data corresponding to real-world prompt occurrence distributions.",
+      "normalized_category": "unweighted-prompt-distribution",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402827393:l3",
+      "paper_id": "openalex:W4402827393",
+      "text": "The study evaluated specific model trajectories, excluding LLMs that delegate tasks to external tools or employ external reasoning techniques.",
+      "normalized_category": "model-scope-exclusion",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4402827393:l4",
+      "paper_id": "openalex:W4402827393",
+      "text": "RLHF alignment techniques weaken model calibration and self-confidence estimation.",
+      "normalized_category": "rlhf-miscalibration",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4402827393:f1",
+      "paper_id": "openalex:W4402827393",
+      "text": "Incorporate difficulty concordance optimization and human verification error reduction explicitly into the loss function during LLM training and shaping.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402827393:f2",
+      "paper_id": "openalex:W4402827393",
+      "text": "Construct larger, higher-quality datasets capturing human difficulty expectations and output supervision for training AI supervisors.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4402827393:f3",
+      "paper_id": "openalex:W4402827393",
+      "text": "Design specialized domain LLMs with explicit reject options or couple them with external AI supervisors to promote task avoidance when uncertain.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:02.006251Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

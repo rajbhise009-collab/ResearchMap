@@ -1,0 +1,213 @@
+{
+  "paper_id": "openalex:W2520937487",
+  "claims": [
+    {
+      "id": "openalex:W2520937487:c1",
+      "paper_id": "openalex:W2520937487",
+      "text": "The overall response rate to UK Biobank recruitment was 5.5%.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c2",
+      "paper_id": "openalex:W2520937487",
+      "text": "The response rate to UK Biobank recruitment was higher in women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c3",
+      "paper_id": "openalex:W2520937487",
+      "text": "The response rate to UK Biobank recruitment was higher in older age groups.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c4",
+      "paper_id": "openalex:W2520937487",
+      "text": "The response rate to UK Biobank recruitment was higher in individuals from less socioeconomically deprived areas.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c5",
+      "paper_id": "openalex:W2520937487",
+      "text": "UK Biobank participants were less likely to be obese compared with the general population.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c6",
+      "paper_id": "openalex:W2520937487",
+      "text": "UK Biobank participants were less likely to smoke compared with the general population.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c7",
+      "paper_id": "openalex:W2520937487",
+      "text": "UK Biobank participants were less likely to drink alcohol on a daily basis compared with the general population.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c8",
+      "paper_id": "openalex:W2520937487",
+      "text": "UK Biobank participants reported fewer self-reported diseases compared with the general population.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c9",
+      "paper_id": "openalex:W2520937487",
+      "text": "Total cancer incidence rates at ages 65–69 were 31% lower in men in UK Biobank compared with the national population.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c10",
+      "paper_id": "openalex:W2520937487",
+      "text": "Total cancer incidence rates at ages 65–69 were 42% lower in women in UK Biobank compared with the national population.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c11",
+      "paper_id": "openalex:W2520937487",
+      "text": "All-cause mortality at ages 65–69 in UK Biobank was 56.0% lower in men compared to national death rates.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2520937487:c12",
+      "paper_id": "openalex:W2520937487",
+      "text": "All-cause mortality at ages 65–69 in UK Biobank was 67.6% lower in women compared to national death rates.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2520937487:e1",
+      "claim_id": "openalex:W2520937487:c1",
+      "description": "The overall response rate to UKB was 5.5%.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2520937487:e2",
+      "claim_id": "openalex:W2520937487:c2",
+      "description": "Response rate was higher in women.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2520937487:e3",
+      "claim_id": "openalex:W2520937487:c3",
+      "description": "Response rate was higher in older age groups.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2520937487:e4",
+      "claim_id": "openalex:W2520937487:c4",
+      "description": "Response rate was higher in those from less socioeconomically deprived areas.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2520937487:e5",
+      "claim_id": "openalex:W2520937487:c5",
+      "description": "Compared with the general population, UKB participants were less likely to be obese.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2520937487:e6",
+      "claim_id": "openalex:W2520937487:c6",
+      "description": "Compared with the general population, UKB participants were less likely to smoke.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2520937487:e7",
+      "claim_id": "openalex:W2520937487:c7",
+      "description": "Compared with the general population, UKB participants were less likely to drink on a daily basis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2520937487:e8",
+      "claim_id": "openalex:W2520937487:c8",
+      "description": "UKB participants have fewer self-reported diseases compared with the general population.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2520937487:e9",
+      "claim_id": "openalex:W2520937487:c9",
+      "description": "Total cancer incidence rates were 31% lower in men at ages 65–69 compared with the national population.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2520937487:e10",
+      "claim_id": "openalex:W2520937487:c10",
+      "description": "Total cancer incidence rates were 42% lower in women at ages 65–69 compared with the national population.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2520937487:e11",
+      "claim_id": "openalex:W2520937487:c11",
+      "description": "All-cause mortality in UKB at ages 65–69 was 56.0% lower in men compared to national death rates.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2520937487:e12",
+      "claim_id": "openalex:W2520937487:c12",
+      "description": "All-cause mortality in UKB at ages 65–69 was 67.6% lower in women compared to national death rates.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2520937487:m1",
+      "paper_id": "openalex:W2520937487",
+      "name": "Cross-sectional comparison with representative population surveys",
+      "description": "Comparison of sociodemographic, physical, lifestyle, and health-related characteristics of 503,310 UK Biobank participants against 8,761,869 invitees and nationally representative data sources matched by age, sex, geography, and period of collection.",
+      "datasets": [
+        "UK Biobank",
+        "2001 UK Census",
+        "2011 UK Census",
+        "Health Survey for England",
+        "Office for National Statistics cancer incidence and mortality data"
+      ],
+      "conditions": [
+        "Participants aged 40–69 recruited between 2006 and 2010 in England, Wales, and Scotland",
+        "Matched period of data collection (2006–2010)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2520937487:l1",
+      "paper_id": "openalex:W2520937487",
+      "text": "UK Biobank is not representative of the general population on a variety of sociodemographic, physical, lifestyle and health-related characteristics, with evidence of a 'healthy volunteer' selection bias.",
+      "normalized_category": "selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2520937487:l2",
+      "paper_id": "openalex:W2520937487",
+      "text": "UK Biobank is not suitable for deriving generalizable disease prevalence and incidence rates.",
+      "normalized_category": "generalizability-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:40:06.106696Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

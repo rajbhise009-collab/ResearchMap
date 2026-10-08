@@ -1,0 +1,151 @@
+{
+  "paper_id": "openalex:W4399803256",
+  "claims": [
+    {
+      "id": "openalex:W4399803256:c1",
+      "paper_id": "openalex:W4399803256",
+      "text": "Semantic entropy achieves an average AUROC of 0.790 across 30 task and model combinations for detecting confabulations in sentence-length text generations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399803256:c2",
+      "paper_id": "openalex:W4399803256",
+      "text": "Naive token-level entropy achieves an average AUROC of 0.691 across 30 task and model combinations for detecting confabulations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399803256:c3",
+      "paper_id": "openalex:W4399803256",
+      "text": "Semantic entropy maintains performance between 0.78 and 0.81 AUROC across LLaMA, Falcon, and Mistral model families ranging from 7B to 70B parameters.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399803256:c4",
+      "paper_id": "openalex:W4399803256",
+      "text": "Semantic entropy calculates uncertainty over meanings rather than sequences of words by clustering generated answers using bidirectional entailment.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399803256:c5",
+      "paper_id": "openalex:W4399803256",
+      "text": "Discrete semantic entropy computes semantic uncertainty using an empirical discrete distribution over clusters when internal LLM token probabilities are unavailable.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399803256:e1",
+      "claim_id": "openalex:W4399803256:c1",
+      "description": "Averaged across the 30 combinations of tasks and models we study, semantic entropy achieves the best AUROC value of 0.790 whereas naive entropy (0.691), P(True) (0.698) and the embedding regression baseline (0.687) lag behind it.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399803256:e2",
+      "claim_id": "openalex:W4399803256:c2",
+      "description": "Averaged across the 30 combinations of tasks and models we study, semantic entropy achieves the best AUROC value of 0.790 whereas naive entropy (0.691), P(True) (0.698) and the embedding regression baseline (0.687) lag behind it.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399803256:e3",
+      "claim_id": "openalex:W4399803256:c3",
+      "description": "Semantic entropy performs well consistently, with stable performance (between 0.78 and 0.81 AUROC) across the different model families (LLaMA, Falcon and Mistral) and scales (from 7B to 70B parameters) which we study.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399803256:e4",
+      "claim_id": "openalex:W4399803256:c4",
+      "description": "To detect confabulations, we use probabilistic tools to define and then measure the 'semantic' entropy of the generations of an LLM... clustering them algorithmically into answers that have similar meanings, which we determine on the basis of whether answers in the same cluster entail each other bidirectionally.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399803256:e5",
+      "claim_id": "openalex:W4399803256:c5",
+      "description": "For scenarios in which the sequence probabilities are not available, we propose a variant of semantic entropy which we call 'discrete' semantic entropy. Discrete semantic entropy approximates P(Ci|x) directly from the number of generations in each cluster, disregarding the token probabilities.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399803256:m1",
+      "paper_id": "openalex:W4399803256",
+      "name": "Semantic Entropy Estimation",
+      "description": "Samples multiple generations from an LLM, clusters them into semantic equivalence classes using bidirectional entailment, and calculates predictive entropy across the meaning classes.",
+      "datasets": [
+        "BioASQ",
+        "SQuAD 1.1",
+        "TriviaQA",
+        "SVAMP",
+        "NQ-Open",
+        "FactualBio"
+      ],
+      "conditions": [
+        "sentence-length generations",
+        "paragraph-length generations",
+        "context-free evaluation",
+        "black-box discrete approximation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399803256:l1",
+      "paper_id": "openalex:W4399803256",
+      "text": "Semantic entropy does not guarantee factuality when LLM outputs are systematically incorrect or biased by erroneous training data.",
+      "normalized_category": "systematic-error-unaware",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399803256:l2",
+      "paper_id": "openalex:W4399803256",
+      "text": "Semantic entropy can produce erroneously high uncertainty scores due to overly sensitive semantic clustering relative to reference answers.",
+      "normalized_category": "overly-sensitive-clustering",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4399803256:l3",
+      "paper_id": "openalex:W4399803256",
+      "text": "Naive entropy and lexical variation scores produce misleadingly high uncertainty when the same correct answer can be written using multiple syntactically different phrasings.",
+      "normalized_category": "lexical-variation-sensitivity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4399803256:l4",
+      "paper_id": "openalex:W4399803256",
+      "text": "Supervised confabulation detection approaches, such as embedding regression, experience severe performance deterioration under out-of-distribution shifts between training and deployment data.",
+      "normalized_category": "out-of-distribution-degradation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4399803256:f1",
+      "paper_id": "openalex:W4399803256",
+      "text": "Adapting semantic entropy algorithms to additional generative natural language tasks, such as abstractive summarization.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399803256:f2",
+      "paper_id": "openalex:W4399803256",
+      "text": "Extending semantic uncertainty estimation to input variations like rephrasing or counterfactual scenarios for cross-examination in debate-based scalable oversight.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4399803256:f3",
+      "paper_id": "openalex:W4399803256",
+      "text": "Developing uncertainty estimation methods for language models that explicitly separate aleatoric uncertainty from epistemic uncertainty.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.960315Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

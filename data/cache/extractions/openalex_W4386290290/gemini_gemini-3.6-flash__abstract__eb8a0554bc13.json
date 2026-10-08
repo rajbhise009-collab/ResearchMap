@@ -1,0 +1,64 @@
+{
+  "paper_id": "openalex:W4386290290",
+  "claims": [
+    {
+      "id": "openalex:W4386290290:c1",
+      "paper_id": "openalex:W4386290290",
+      "text": "Deep neural networks used in controllable text generation suffer from limited interpretability.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386290290:c2",
+      "paper_id": "openalex:W4386290290",
+      "text": "Transformer-based pre-trained language models enable controllable text generation across diverse constraints and tasks.",
+      "type": "method",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386290290:e1",
+      "claim_id": "openalex:W4386290290:c1",
+      "description": "The authors state that due to the limited level of interpretability of deep neural networks, the controllability of text generation methods needs to be guaranteed.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4386290290:e2",
+      "claim_id": "openalex:W4386290290:c2",
+      "description": "The paper notes a diverse range of approaches targeting different CTG tasks that require different types of controlled constraints using Transformer-based PLMs.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386290290:m1",
+      "paper_id": "openalex:W4386290290",
+      "name": "Systematic Literature Review",
+      "description": "A systematic critical review analyzing common tasks, main approaches, and evaluation methods in controllable text generation using Transformer-based pre-trained language models.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386290290:l1",
+      "paper_id": "openalex:W4386290290",
+      "text": "Deep neural networks have a limited level of interpretability, complicating guarantees on text generation controllability.",
+      "normalized_category": "limited-interpretability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4386290290:f1",
+      "paper_id": "openalex:W4386290290",
+      "text": "Investigate unresolved challenges and open research directions in Transformer-based controllable text generation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.113230Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,213 @@
+{
+  "paper_id": "openalex:W2787107952",
+  "claims": [
+    {
+      "id": "openalex:W2787107952:c1",
+      "paper_id": "openalex:W2787107952",
+      "text": "The threshold for lowest risk of all-cause mortality in current drinkers is approximately 100 g of alcohol per week.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c2",
+      "paper_id": "openalex:W2787107952",
+      "text": "Higher alcohol consumption is roughly linearly associated with a higher risk of stroke (HR 1.14 per 100 g/week higher consumption).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c3",
+      "paper_id": "openalex:W2787107952",
+      "text": "Higher alcohol consumption is roughly linearly associated with a higher risk of coronary disease excluding myocardial infarction (HR 1.06 per 100 g/week higher consumption).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c4",
+      "paper_id": "openalex:W2787107952",
+      "text": "Higher alcohol consumption is roughly linearly associated with a higher risk of heart failure (HR 1.09 per 100 g/week higher consumption).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c5",
+      "paper_id": "openalex:W2787107952",
+      "text": "Higher alcohol consumption is roughly linearly associated with a higher risk of fatal hypertensive disease (HR 1.24 per 100 g/week higher consumption).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c6",
+      "paper_id": "openalex:W2787107952",
+      "text": "Higher alcohol consumption is roughly linearly associated with a higher risk of fatal aortic aneurysm (HR 1.15 per 100 g/week higher consumption).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c7",
+      "paper_id": "openalex:W2787107952",
+      "text": "Increased alcohol consumption is log-linearly associated with a lower risk of myocardial infarction (HR 0.94 per 100 g/week higher consumption).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c8",
+      "paper_id": "openalex:W2787107952",
+      "text": "Drinking >100 to <=200 g/week of alcohol is associated with approximately 6 months shorter life expectancy at age 40 compared to drinking >0 to <=100 g/week.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c9",
+      "paper_id": "openalex:W2787107952",
+      "text": "Drinking >200 to <=350 g/week of alcohol is associated with 1 to 2 years shorter life expectancy at age 40 compared to drinking >0 to <=100 g/week.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2787107952:c10",
+      "paper_id": "openalex:W2787107952",
+      "text": "Drinking >350 g/week of alcohol is associated with 4 to 5 years shorter life expectancy at age 40 compared to drinking >0 to <=100 g/week.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2787107952:e1",
+      "claim_id": "openalex:W2787107952:c1",
+      "description": "For all-cause mortality, we recorded a positive and curvilinear association with the level of alcohol consumption, with the minimum mortality risk around or below 100 g per week.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e2",
+      "claim_id": "openalex:W2787107952:c2",
+      "description": "Alcohol consumption was roughly linearly associated with a higher risk of stroke (HR per 100 g per week higher consumption 1·14, 95% CI, 1·10–1·17).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e3",
+      "claim_id": "openalex:W2787107952:c3",
+      "description": "Alcohol consumption was roughly linearly associated with a higher risk of coronary disease excluding myocardial infarction (1·06, 1·00–1·11).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e4",
+      "claim_id": "openalex:W2787107952:c4",
+      "description": "Alcohol consumption was roughly linearly associated with a higher risk of heart failure (1·09, 1·03–1·15).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e5",
+      "claim_id": "openalex:W2787107952:c5",
+      "description": "Alcohol consumption was roughly linearly associated with a higher risk of fatal hypertensive disease (1·24, 1·15–1·33).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e6",
+      "claim_id": "openalex:W2787107952:c6",
+      "description": "Alcohol consumption was roughly linearly associated with a higher risk of fatal aortic aneurysm (1·15, 1·03–1·28).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e7",
+      "claim_id": "openalex:W2787107952:c7",
+      "description": "By contrast, increased alcohol consumption was log-linearly associated with a lower risk of myocardial infarction (HR 0·94, 0·91–0·97).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e8",
+      "claim_id": "openalex:W2787107952:c8",
+      "description": "In comparison to those who reported drinking >0–≤100 g per week, those who reported drinking >100–≤200 g per week... had lower life expectancy at age 40 years of approximately 6 months.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e9",
+      "claim_id": "openalex:W2787107952:c9",
+      "description": "In comparison to those who reported drinking >0–≤100 g per week, those who reported drinking... >200–≤350 g per week... had lower life expectancy at age 40 years of approximately... 1–2 years.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2787107952:e10",
+      "claim_id": "openalex:W2787107952:c10",
+      "description": "In comparison to those who reported drinking >0–≤100 g per week, those who reported drinking... >350 g per week had lower life expectancy at age 40 years of approximately... 4–5 years.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2787107952:m1",
+      "paper_id": "openalex:W2787107952",
+      "name": "Combined Individual-Participant Data Meta-Analysis",
+      "description": "Individual-participant data from 83 prospective studies were harmonised and analyzed using Cox proportional hazards regression stratified by sex and centre, adjusting for age, smoking, and diabetes, with regression calibration for serial assessments.",
+      "datasets": [
+        "Emerging Risk Factors Collaboration (ERFC)",
+        "EPIC-CVD",
+        "UK Biobank",
+        "US CDC WONDER database"
+      ],
+      "conditions": [
+        "Current alcohol drinkers",
+        "No baseline history of cardiovascular disease",
+        "At least 1 year of follow-up after baseline"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2787107952:l1",
+      "paper_id": "openalex:W2787107952",
+      "text": "Self-reported alcohol consumption data are prone to bias and challenging to harmonise across studies using varying instruments.",
+      "normalized_category": "self-reported-data-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2787107952:l2",
+      "paper_id": "openalex:W2787107952",
+      "text": "The study could not investigate alcohol consumption dynamics across the entire life course.",
+      "normalized_category": "lack-of-lifecourse-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2787107952:l3",
+      "paper_id": "openalex:W2787107952",
+      "text": "Lack of access to additional alcohol-related adverse outcomes like non-fatal liver disease, injuries, or psychiatric comorbidities likely caused an underestimation of the benefits of lowering alcohol consumption.",
+      "normalized_category": "unmeasured-outcomes",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2787107952:l4",
+      "paper_id": "openalex:W2787107952",
+      "text": "Residual reverse causation cannot be excluded because some individuals who reduced alcohol consumption due to health complications might have been included in the current drinker cohort.",
+      "normalized_category": "residual-reverse-causation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2787107952:l5",
+      "paper_id": "openalex:W2787107952",
+      "text": "Prior prospective epidemiological studies lacked individual-participant data, quantitative assessment of alcohol consumption using validated instruments, re-surveys, large numbers of deaths (>20 000), or detailed disaggregation of cardiovascular disease subtypes.",
+      "normalized_category": "prior-work-methodological-gaps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2787107952:f1",
+      "paper_id": "openalex:W2787107952",
+      "text": "Alternative study designs, including randomised clinical trials, are needed to control more completely for residual biases in observational alcohol studies.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:08:54.938469Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

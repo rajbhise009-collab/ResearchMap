@@ -1,0 +1,60 @@
+{
+  "paper_id": "openalex:W4390298466",
+  "claims": [
+    {
+      "id": "openalex:W4390298466:c1",
+      "paper_id": "openalex:W4390298466",
+      "text": "Dynamic real-time information injection automatically collects current data from credible sources and integrates it into model prompts for LLMs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4390298466:e1",
+      "claim_id": "openalex:W4390298466:c1",
+      "description": "The method addresses content hallucination and data relevancy by automatically collecting and integrating current data from credible sources into model prompts.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4390298466:m1",
+      "paper_id": "openalex:W4390298466",
+      "name": "Dynamic Real-Time Information Injection",
+      "description": "A framework that dynamically fetches and inserts current information from credible sources into LLM prompts at query time.",
+      "datasets": [],
+      "conditions": [
+        "Alpaca LLM",
+        "Real-time data sources"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4390298466:l1",
+      "paper_id": "openalex:W4390298466",
+      "text": "Standard LLMs suffer from content hallucination and out-of-date information.",
+      "normalized_category": "hallucination-and-staleness",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4390298466:l2",
+      "paper_id": "openalex:W4390298466",
+      "text": "Dynamic real-time information injection results in an increased response time.",
+      "normalized_category": "latency-overhead",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4390298466:f1",
+      "paper_id": "openalex:W4390298466",
+      "text": "Advancements in dynamic data processing in AI.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.097171Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

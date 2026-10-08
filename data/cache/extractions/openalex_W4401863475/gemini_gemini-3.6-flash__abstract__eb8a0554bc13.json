@@ -1,0 +1,57 @@
+{
+  "paper_id": "openalex:W4401863475",
+  "claims": [
+    {
+      "id": "openalex:W4401863475:c1",
+      "paper_id": "openalex:W4401863475",
+      "text": "Generative AI models present specific challenges including hallucinations, harmful and manipulative content, and copyright infringement.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4401863475:c2",
+      "paper_id": "openalex:W4401863475",
+      "text": "AI system evaluation and monitoring must include responsible AI dimensions such as robustness, bias, security, and interpretability beyond accuracy.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4401863475:e1",
+      "claim_id": "openalex:W4401863475:c1",
+      "description": "Generative AI models present additional challenges such as hallucinations, harmful and manipulative content, and copyright infringement.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4401863475:e2",
+      "claim_id": "openalex:W4401863475:c2",
+      "description": "It is essential to evaluate and monitor AI systems not only for accuracy and quality-related metrics but also for robustness, bias, security, interpretability, and other responsible AI dimensions.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4401863475:m1",
+      "paper_id": "openalex:W4401863475",
+      "name": "Literature Survey",
+      "description": "Surveys state-of-the-art approaches and open challenges in grounding and evaluating generative AI systems.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4401863475:l1",
+      "paper_id": "openalex:W4401863475",
+      "text": "Open challenges remain in addressing harms associated with generative AI systems.",
+      "normalized_category": "open-challenges",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.097932Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

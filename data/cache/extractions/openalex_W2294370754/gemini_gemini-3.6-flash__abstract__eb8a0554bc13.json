@@ -1,0 +1,57 @@
+{
+  "paper_id": "openalex:W2294370754",
+  "claims": [
+    {
+      "id": "openalex:W2294370754:c1",
+      "paper_id": "openalex:W2294370754",
+      "text": "Ensembles of hundreds or thousands of base-level classifiers are often the best performing supervised learning models.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2294370754:c2",
+      "paper_id": "openalex:W2294370754",
+      "text": "Large, complex ensembles can be compressed into smaller and faster models.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2294370754:e1",
+      "claim_id": "openalex:W2294370754:c1",
+      "description": "Often the best performing supervised learning models are ensembles of hundreds or thousands of base-level classifiers.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2294370754:e2",
+      "claim_id": "openalex:W2294370754:c2",
+      "description": "We present a method for 'compressing' large, complex ensembles into smaller, faster models, usually without significant loss in performance.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2294370754:m1",
+      "paper_id": "openalex:W2294370754",
+      "name": "Model compression",
+      "description": "A method for compressing large, complex ensemble models into smaller, faster models without significant performance loss.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2294370754:l1",
+      "paper_id": "openalex:W2294370754",
+      "text": "The storage space and run-time execution time required for large ensemble classifiers prohibits their use in applications with large test sets, limited storage, or limited computational power.",
+      "normalized_category": "computational-efficiency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.109063Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

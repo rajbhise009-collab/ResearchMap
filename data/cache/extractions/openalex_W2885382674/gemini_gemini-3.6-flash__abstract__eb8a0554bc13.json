@@ -1,0 +1,113 @@
+{
+  "paper_id": "openalex:W2885382674",
+  "claims": [
+    {
+      "id": "openalex:W2885382674:c1",
+      "paper_id": "openalex:W2885382674",
+      "text": "There is a U-shaped association between the percentage of energy consumed from carbohydrate and overall mortality in the ARIC cohort.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885382674:c2",
+      "paper_id": "openalex:W2885382674",
+      "text": "Consuming 50-55% of energy from carbohydrates is associated with the lowest risk of mortality in the ARIC cohort.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885382674:c3",
+      "paper_id": "openalex:W2885382674",
+      "text": "Low carbohydrate consumption (<40% of energy) confers greater mortality risk than moderate intake across multinational cohorts (pooled hazard ratio 1.20, 95% CI 1.09-1.32).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885382674:c4",
+      "paper_id": "openalex:W2885382674",
+      "text": "High carbohydrate consumption (>70% of energy) confers greater mortality risk than moderate intake across multinational cohorts (pooled hazard ratio 1.23, 95% CI 1.11-1.36).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885382674:c5",
+      "paper_id": "openalex:W2885382674",
+      "text": "Substituting animal-derived fat or protein for carbohydrate is associated with an increased risk of overall mortality (pooled hazard ratio 1.18, 95% CI 1.08-1.29).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2885382674:c6",
+      "paper_id": "openalex:W2885382674",
+      "text": "Substituting plant-derived fat or protein for carbohydrate is associated with a decreased risk of overall mortality (pooled hazard ratio 0.82, 95% CI 0.78-0.87).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2885382674:e1",
+      "claim_id": "openalex:W2885382674:c1",
+      "description": "In the ARIC cohort, after multivariable adjustment, there was a U-shaped association between the percentage of energy consumed from carbohydrate (mean 48.9%, SD 9.4) and mortality.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885382674:e2",
+      "claim_id": "openalex:W2885382674:c2",
+      "description": "A percentage of 50-55% energy from carbohydrate was associated with the lowest risk of mortality in the ARIC cohort.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885382674:e3",
+      "claim_id": "openalex:W2885382674:c3",
+      "description": "In the meta-analysis of all cohorts (432,179 participants), low carbohydrate consumption (<40%) conferred greater mortality risk than did moderate intake (pooled hazard ratio 1.20, 95% CI 1.09-1.32).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885382674:e4",
+      "claim_id": "openalex:W2885382674:c4",
+      "description": "In the meta-analysis of all cohorts, high carbohydrate consumption (>70%) conferred greater mortality risk than did moderate intake (pooled hazard ratio 1.23, 95% CI 1.11-1.36).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885382674:e5",
+      "claim_id": "openalex:W2885382674:c5",
+      "description": "Mortality increased when carbohydrates were exchanged for animal-derived fat or protein (hazard ratio 1.18, 95% CI 1.08-1.29).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2885382674:e6",
+      "claim_id": "openalex:W2885382674:c6",
+      "description": "Mortality decreased when carbohydrate substitutions were plant-based (hazard ratio 0.82, 95% CI 0.78-0.87).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2885382674:m1",
+      "paper_id": "openalex:W2885382674",
+      "name": "Prospective cohort study and meta-analysis",
+      "description": "Prospective evaluation of dietary carbohydrate intake and all-cause mortality in the ARIC cohort combined with a meta-analysis of seven multinational prospective studies.",
+      "datasets": [
+        "Atherosclerosis Risk in Communities (ARIC) study",
+        "Seven multinational prospective cohort studies"
+      ],
+      "conditions": [
+        "15,428 adults aged 45-64 years at enrolment",
+        "Exclusion of extreme caloric intake (<600 or >4200 kcal/day for men, <500 or >3600 kcal/day for women)",
+        "Median follow-up of 25 years in ARIC cohort",
+        "Total meta-analysis sample of 432,179 participants"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:15:26.893978Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

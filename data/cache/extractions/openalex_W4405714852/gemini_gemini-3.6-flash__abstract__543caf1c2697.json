@@ -1,0 +1,120 @@
+{
+  "paper_id": "openalex:W4405714852",
+  "claims": [
+    {
+      "id": "openalex:W4405714852:c1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Reliance interventions for LLM users lack rigorous evaluation for appropriate reliance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c2",
+      "paper_id": "openalex:W4405714852",
+      "text": "Interventions for LLM reliance reduce over-reliance.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c3",
+      "paper_id": "openalex:W4405714852",
+      "text": "Interventions for LLM reliance generally fail to improve appropriate reliance.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c4",
+      "paper_id": "openalex:W4405714852",
+      "text": "People become more confident after making wrong reliance decisions in certain contexts.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4405714852:c5",
+      "paper_id": "openalex:W4405714852",
+      "text": "People demonstrate poor calibration when making reliance decisions in human-LLM collaboration.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4405714852:e1",
+      "claim_id": "openalex:W4405714852:c1",
+      "description": "Reliance interventions have been developed to help users of LLMs, but they lack rigorous evaluation for appropriate reliance.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4405714852:e2",
+      "claim_id": "openalex:W4405714852:c2",
+      "description": "Our findings indicate that while interventions reduce over-reliance...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4405714852:e3",
+      "claim_id": "openalex:W4405714852:c3",
+      "description": "...they generally fail to improve appropriate reliance.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4405714852:e4",
+      "claim_id": "openalex:W4405714852:c4",
+      "description": "Furthermore, people became more confident after making wrong reliance decisions in certain contexts...",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4405714852:e5",
+      "claim_id": "openalex:W4405714852:c5",
+      "description": "...demonstrating poor calibration.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4405714852:m1",
+      "paper_id": "openalex:W4405714852",
+      "name": "Randomized online user experiment",
+      "description": "A randomized online experiment with 400 participants using a two-step question answering process before and after receiving modified LLM advice.",
+      "datasets": [
+        "LSAT logical reasoning",
+        "Image-based numerical estimation"
+      ],
+      "conditions": [
+        "Independent answer first",
+        "LLM advice modified by one of three reliance interventions",
+        "Second answer submission post-advice"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4405714852:l1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Existing reliance interventions lack rigorous evaluation for appropriate reliance.",
+      "normalized_category": "lack-of-rigorous-evaluation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4405714852:l2",
+      "paper_id": "openalex:W4405714852",
+      "text": "Tested interventions generally fail to improve appropriate reliance and lead to poor user calibration after wrong decisions.",
+      "normalized_category": "ineffective-intervention-calibration",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4405714852:f1",
+      "paper_id": "openalex:W4405714852",
+      "text": "Designing effective reliance interventions in human-LLM collaboration based on study findings.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-23T16:02:10.814553Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,49 @@
+{
+  "paper_id": "openalex:W2963895422",
+  "claims": [
+    {
+      "id": "openalex:W2963895422:c1",
+      "paper_id": "openalex:W2963895422",
+      "text": "External knowledge can be harnessed through text, graph, and text-and-graph based models to address the natural language inference problem in the science questions domain.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2963895422:e1",
+      "claim_id": "openalex:W2963895422:c1",
+      "description": "The authors present techniques combining external knowledge across text, graph, and text-and-graph based models evaluated on the SciTail dataset.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2963895422:m1",
+      "paper_id": "openalex:W2963895422",
+      "name": "External knowledge integration for NLI",
+      "description": "Techniques harnessing external structured knowledge from open knowledge bases across text, graph, and hybrid text-and-graph models.",
+      "datasets": [
+        "SciTail"
+      ],
+      "conditions": [
+        "text-based models",
+        "graph-based models",
+        "text-and-graph-based models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2963895422:l1",
+      "paper_id": "openalex:W2963895422",
+      "text": "Existing approaches to NLI focus largely on learning-based methods using only textual information and do not well explore structured external knowledge bases.",
+      "normalized_category": "lack-of-external-knowledge-use",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.092734Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

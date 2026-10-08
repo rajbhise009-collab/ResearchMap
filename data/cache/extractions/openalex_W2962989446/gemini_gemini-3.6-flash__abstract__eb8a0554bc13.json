@@ -1,0 +1,64 @@
+{
+  "paper_id": "openalex:W2962989446",
+  "claims": [
+    {
+      "id": "openalex:W2962989446:c1",
+      "paper_id": "openalex:W2962989446",
+      "text": "Consistency of dialogue agents can be framed as natural language inference (NLI).",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962989446:c2",
+      "paper_id": "openalex:W2962989446",
+      "text": "Dialogue NLI is a new natural language inference dataset designed for dialogue consistency.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2962989446:c3",
+      "paper_id": "openalex:W2962989446",
+      "text": "A model trained on Dialogue NLI can be used to improve the consistency of a dialogue model.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2962989446:e1",
+      "claim_id": "openalex:W2962989446:c3",
+      "description": "Evaluated using human evaluation and automatic metrics on a suite of evaluation sets designed to measure a dialogue model's consistency.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2962989446:m1",
+      "paper_id": "openalex:W2962989446",
+      "name": "Dialogue NLI Consistency Enhancement Framework",
+      "description": "Framing dialogue consistency as an NLI task, training models on the Dialogue NLI dataset, and assessing consistency improvements.",
+      "datasets": [
+        "Dialogue NLI"
+      ],
+      "conditions": [
+        "Human evaluation",
+        "Automatic metrics on dedicated consistency evaluation suite"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2962989446:l1",
+      "paper_id": "openalex:W2962989446",
+      "text": "Consistency is a long standing issue faced by dialogue models.",
+      "normalized_category": "dialogue-consistency",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.114611Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

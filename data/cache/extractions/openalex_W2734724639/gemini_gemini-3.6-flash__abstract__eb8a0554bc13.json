@@ -1,0 +1,201 @@
+{
+  "paper_id": "openalex:W2734724639",
+  "claims": [
+    {
+      "id": "openalex:W2734724639:c1",
+      "paper_id": "openalex:W2734724639",
+      "text": "NAFL is defined as the presence of at least 5% hepatic steatosis without evidence of hepatocellular injury in the form of hepatocyte ballooning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c2",
+      "paper_id": "openalex:W2734724639",
+      "text": "NASH is defined as the presence of at least 5% hepatic steatosis with inflammation and hepatocyte injury, with or without fibrosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c3",
+      "paper_id": "openalex:W2734724639",
+      "text": "Advanced fibrosis in NAFLD refers specifically to stage 3 bridging fibrosis or stage 4 cirrhosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c4",
+      "paper_id": "openalex:W2734724639",
+      "text": "Weight loss of 7% to 10% is required to improve key histological parameters of NASH including liver fibrosis.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c5",
+      "paper_id": "openalex:W2734724639",
+      "text": "Pioglitazone improves liver histology in patients with biopsy-proven NASH both with and without type 2 diabetes.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c6",
+      "paper_id": "openalex:W2734724639",
+      "text": "Vitamin E administered at a daily dose of 800 IU/day improves liver histology in non-diabetic adults with biopsy-proven NASH.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c7",
+      "paper_id": "openalex:W2734724639",
+      "text": "Statins can be safely used to treat dyslipidemia in patients with NAFLD or NASH.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c8",
+      "paper_id": "openalex:W2734724639",
+      "text": "Metformin is not recommended as a specific treatment for liver disease in patients with NASH.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c9",
+      "paper_id": "openalex:W2734724639",
+      "text": "Omega-3 fatty acids are not recommended as a specific treatment for NAFLD or NASH.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2734724639:c10",
+      "paper_id": "openalex:W2734724639",
+      "text": "Bariatric surgery is not recommended as a primary treatment for NASH.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2734724639:e1",
+      "claim_id": "openalex:W2734724639:c1",
+      "description": "NAFL is defined as the presence of >=5% HS without evidence of hepatocellular injury in the form of ballooning of the hepatocytes or evidence of fibrosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734724639:e2",
+      "claim_id": "openalex:W2734724639:c2",
+      "description": "NASH is defined as the presence of >=5% HS and inflammation with hepatocyte injury (e.g., ballooning), with or without any fibrosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734724639:e3",
+      "claim_id": "openalex:W2734724639:c3",
+      "description": "For defining 'advanced' fibrosis, this guidance document will be referring specifically to stages 3 or 4, that is, bridging fibrosis or cirrhosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734724639:e4",
+      "claim_id": "openalex:W2734724639:c4",
+      "description": "Weight loss of >=7% to 10% was associated with improvement in all parameters of liver histology, including fibrosis, in patients with NASH.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2734724639:e5",
+      "claim_id": "openalex:W2734724639:c5",
+      "description": "Pioglitazone improves liver histology in patients with NASH with and without type 2 diabetes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2734724639:e6",
+      "claim_id": "openalex:W2734724639:c6",
+      "description": "Vitamin E (alpha-tocopherol) administered at a daily dose of 800 IU/d improves liver histology in non-diabetic adults with biopsy-proven NASH.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2734724639:e7",
+      "claim_id": "openalex:W2734724639:c7",
+      "description": "Statins can be used to treat dyslipidemia in patients with NAFLD and NASH without an increased risk of serious liver injury.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2734724639:e8",
+      "claim_id": "openalex:W2734724639:c8",
+      "description": "Metformin is not recommended for treating NASH in adult patients.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734724639:e9",
+      "claim_id": "openalex:W2734724639:c9",
+      "description": "Omega-3 fatty acids are not recommended for the specific treatment of NAFLD or NASH.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2734724639:e10",
+      "claim_id": "openalex:W2734724639:c10",
+      "description": "Bariatric surgery is not recommended as a primary treatment for NASH.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2734724639:m1",
+      "paper_id": "openalex:W2734724639",
+      "name": "AASLD Practice Guidance Narrative Review",
+      "description": "A systematic synthesis of Medline literature through August 2016 combined with ACP manual guidelines and expert author consensus to formulate clinical guidance statements for NAFLD care.",
+      "datasets": [
+        "Medline search through August 2016"
+      ],
+      "conditions": [
+        "Patients with nonalcoholic fatty liver disease (NAFLD)",
+        "Patients with nonalcoholic steatohepatitis (NASH)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2734724639:l1",
+      "paper_id": "openalex:W2734724639",
+      "text": "Where high-level clinical trial evidence is lacking or inconsistent, guidance statements rely on author consensus opinion.",
+      "normalized_category": "consensus-based-guidance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2734724639:l2",
+      "paper_id": "openalex:W2734724639",
+      "text": "Long-term clinical efficacy and safety of pioglitazone and vitamin E in patients with NASH remain unproven.",
+      "normalized_category": "unproven-long-term-efficacy",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2734724639:l3",
+      "paper_id": "openalex:W2734724639",
+      "text": "Noninvasive tools like transient elastography have higher failure rates in severely obese patients and cannot reliably distinguish NAFL from NASH.",
+      "normalized_category": "diagnostic-tool-limitation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2734724639:f1",
+      "paper_id": "openalex:W2734724639",
+      "text": "Long-term randomized clinical trials evaluating pharmacologic agents specifically targeting hepatic fibrosis and NASH resolution.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2734724639:f2",
+      "paper_id": "openalex:W2734724639",
+      "text": "Validation of noninvasive diagnostic tools and biomarkers capable of differentiating NAFL from NASH.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:02:38.239324Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

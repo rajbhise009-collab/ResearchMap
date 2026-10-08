@@ -1,0 +1,103 @@
+{
+  "paper_id": "openalex:W2702919331",
+  "claims": [
+    {
+      "id": "openalex:W2702919331:c1",
+      "paper_id": "openalex:W2702919331",
+      "text": "Comprehensive, intensive behavioral interventions (≥26 contact hours) in children and adolescents 6 years and older who have obesity can result in improvements in weight status for up to 12 months.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2702919331:c2",
+      "paper_id": "openalex:W2702919331",
+      "text": "There is inadequate evidence regarding the effectiveness of weight management interventions with less than 26 contact hours in children and adolescents.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2702919331:c3",
+      "paper_id": "openalex:W2702919331",
+      "text": "The harms of behavioral interventions for obesity in children and adolescents can be bounded as small to none.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2702919331:c4",
+      "paper_id": "openalex:W2702919331",
+      "text": "The harms of screening for obesity in children and adolescents are minimal.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2702919331:c5",
+      "paper_id": "openalex:W2702919331",
+      "text": "Screening for obesity in children and adolescents 6 years and older is of moderate net benefit.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2702919331:e1",
+      "claim_id": "openalex:W2702919331:c1",
+      "description": "Comprehensive, intensive behavioral interventions (≥26 contact hours) in children and adolescents 6 years and older who have obesity can result in improvements in weight status for up to 12 months",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2702919331:e2",
+      "claim_id": "openalex:W2702919331:c2",
+      "description": "there is inadequate evidence regarding the effectiveness of less intensive interventions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2702919331:e3",
+      "claim_id": "openalex:W2702919331:c3",
+      "description": "The harms of behavioral interventions can be bounded as small to none",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2702919331:e4",
+      "claim_id": "openalex:W2702919331:c4",
+      "description": "the harms of screening are minimal.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2702919331:e5",
+      "claim_id": "openalex:W2702919331:c5",
+      "description": "Therefore, the USPSTF concluded with moderate certainty that screening for obesity in children and adolescents 6 years and older is of moderate net benefit.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2702919331:m1",
+      "paper_id": "openalex:W2702919331",
+      "name": "USPSTF Systematic Evidence Review",
+      "description": "Systematic review of evidence on screening for obesity in children and adolescents and the benefits and harms of weight management interventions.",
+      "datasets": [],
+      "conditions": [
+        "children and adolescents aged 6 years and older",
+        "intensive behavioral interventions (≥26 contact hours)",
+        "obesity screening"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2702919331:l1",
+      "paper_id": "openalex:W2702919331",
+      "text": "There is inadequate evidence regarding the effectiveness of less intensive behavioral interventions (<26 contact hours).",
+      "normalized_category": "lack-of-evidence",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:14:38.085798Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,81 @@
+{
+  "paper_id": "openalex:W4394929444",
+  "claims": [
+    {
+      "id": "openalex:W4394929444:c1",
+      "paper_id": "openalex:W4394929444",
+      "text": "Higher-quality prompt engineering skills predict higher quality LLM output.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394929444:c2",
+      "paper_id": "openalex:W4394929444",
+      "text": "Certain aspects of AI literacy play a role in achieving higher quality prompt engineering.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4394929444:c3",
+      "paper_id": "openalex:W4394929444",
+      "text": "A skill-based approach to prompt engineering can be used to evaluate non-experts' AI literacy and prompt engineering skills.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4394929444:e1",
+      "claim_id": "openalex:W4394929444:c1",
+      "description": "Results show that higher-quality prompt engineering skills predict the quality of LLM output.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4394929444:e2",
+      "claim_id": "openalex:W4394929444:c2",
+      "description": "Results show that certain aspects of AI literacy play a role in higher quality prompt engineering and targeted adaptation of LLMs within education.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4394929444:e3",
+      "claim_id": "openalex:W4394929444:c3",
+      "description": "The authors introduce a skill-based approach to prompt engineering, explicitly considering non-experts' AI literacy in higher education.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4394929444:m1",
+      "paper_id": "openalex:W4394929444",
+      "name": "Skill-based prompt engineering assessment and qualitative behavioral analysis",
+      "description": "A skill-based approach examining non-experts' (students) AI literacy, prompt engineering skills, and qualitative intuitive behaviors towards LLM-based AI systems.",
+      "datasets": [],
+      "conditions": [
+        "higher education context",
+        "student non-experts interacting with LLMs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4394929444:l1",
+      "paper_id": "openalex:W4394929444",
+      "text": "Research on non-experts' perspectives when using LLM-based AI systems via prompt engineering and how AI literacy affects prompting behavior is lacking.",
+      "normalized_category": "lack-of-prior-research",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4394929444:f1",
+      "paper_id": "openalex:W4394929444",
+      "text": "Integration of AI educational content into current educational curricula to enable students to effectively use generative AI tools like ChatGPT.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.112850Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

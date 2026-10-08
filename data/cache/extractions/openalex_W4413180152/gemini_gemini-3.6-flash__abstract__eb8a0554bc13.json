@@ -1,0 +1,89 @@
+{
+  "paper_id": "openalex:W4413180152",
+  "claims": [
+    {
+      "id": "openalex:W4413180152:c1",
+      "paper_id": "openalex:W4413180152",
+      "text": "Agent systems can be categorized into software-based, physical, and adaptive hybrid systems.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4413180152:c2",
+      "paper_id": "openalex:W4413180152",
+      "text": "Integration of multi-modal LLMs enables agent systems to process text, images, audio, and structured tabular data.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4413180152:e1",
+      "claim_id": "openalex:W4413180152:c1",
+      "description": "We categorize agent systems into software-based, physical, and adaptive hybrid systems, highlighting applications across customer service, software development, manufacturing automation, personalized education, financial trading, and healthcare.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4413180152:e2",
+      "claim_id": "openalex:W4413180152:c2",
+      "description": "With the integration of multi-modal LLMs, current agent systems are highly capable of processing diverse data modalities, including text, images, audio, and structured tabular data.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4413180152:m1",
+      "paper_id": "openalex:W4413180152",
+      "name": "Taxonomy and Systemic Review Framework",
+      "description": "A comprehensive classification framework categorizing agent architectures across software, physical, and hybrid domains.",
+      "datasets": [],
+      "conditions": [
+        "software-based systems",
+        "physical systems",
+        "adaptive hybrid systems"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4413180152:l1",
+      "paper_id": "openalex:W4413180152",
+      "text": "LLM-powered agents suffer from high inference latency.",
+      "normalized_category": "inference-latency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4413180152:l2",
+      "paper_id": "openalex:W4413180152",
+      "text": "LLM-powered agents exhibit output uncertainty.",
+      "normalized_category": "output-uncertainty",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4413180152:l3",
+      "paper_id": "openalex:W4413180152",
+      "text": "LLM-powered agents lack standardized evaluation metrics.",
+      "normalized_category": "lack-of-evaluation-metrics",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4413180152:l4",
+      "paper_id": "openalex:W4413180152",
+      "text": "LLM-powered agents present security vulnerabilities.",
+      "normalized_category": "security-vulnerabilities",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4413180152:f1",
+      "paper_id": "openalex:W4413180152",
+      "text": "Propose solutions to mitigate high inference latency, output uncertainty, lack of evaluation metrics, and security vulnerabilities in LLM-powered agent systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.108581Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

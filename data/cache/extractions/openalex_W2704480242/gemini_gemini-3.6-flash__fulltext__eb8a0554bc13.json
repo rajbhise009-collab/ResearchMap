@@ -1,0 +1,127 @@
+{
+  "paper_id": "openalex:W2704480242",
+  "claims": [
+    {
+      "id": "openalex:W2704480242:c1",
+      "paper_id": "openalex:W2704480242",
+      "text": "The FA*IR algorithm produces a top-k fair ranking from n candidates in O(n + k log k) time complexity.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2704480242:c2",
+      "paper_id": "openalex:W2704480242",
+      "text": "FA*IR achieves higher or equal ordering utility compared to the baseline method by Feldman et al. across all evaluated dataset conditions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2704480242:c3",
+      "paper_id": "openalex:W2704480242",
+      "text": "On the COMPAS recidivism dataset with African-American candidates as the protected group at p=0.5, FA*IR achieves an NDCG of 0.9858 and an ordering utility loss of 0.2026.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2704480242:c4",
+      "paper_id": "openalex:W2704480242",
+      "text": "Algorithm 1 iteratively computes the significance level adjustment to account for multiple prefix hypothesis tests in O(k^2) time.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2704480242:e1",
+      "claim_id": "openalex:W2704480242:c1",
+      "description": "FA*IR has running time O(n + k log k); which includes building the two O(k) size priority queues from n items and processing them to obtain the ranking.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2704480242:e2",
+      "claim_id": "openalex:W2704480242:c2",
+      "description": "Third, FA*IR achieves higher or equal ordering utility in all conditions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2704480242:e3",
+      "claim_id": "openalex:W2704480242:c3",
+      "description": "Table 6 reports NDCG 0.9858 and ordering utility loss 0.2026 for FA*IR on dataset D1 (COMPAS, race=Afr.-Am., p=0.5), compared to NDCG 0.9779 and ordering utility loss 0.2281 for Feldman et al.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2704480242:e4",
+      "claim_id": "openalex:W2704480242:c4",
+      "description": "Algorithm 1 maintains vector S across iterations to yield the rejection probability of a fair ranking in O(k^2) running time.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2704480242:m1",
+      "paper_id": "openalex:W2704480242",
+      "name": "FA*IR",
+      "description": "A post-processing fair top-k ranking algorithm that greedily selects candidates from priority queues to maximize utility while guaranteeing statistical ranked group fairness across all list prefixes.",
+      "datasets": [
+        "COMPAS",
+        "Statlog German Credit",
+        "SAT 2014",
+        "XING"
+      ],
+      "conditions": [
+        "p in [0.1, 0.8]",
+        "alpha = 0.1",
+        "k in [40, 1500]"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2704480242:l1",
+      "paper_id": "openalex:W2704480242",
+      "text": "The model makes the simplifying assumption that there is a single dominant legally-protected attribute of interest.",
+      "normalized_category": "single-protected-attribute-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2704480242:l2",
+      "paper_id": "openalex:W2704480242",
+      "text": "If there are fewer than k protected candidates available in the input pool, the tail of the output ranking may fail to satisfy the ranked group fairness constraint.",
+      "normalized_category": "candidate-pool-size-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2704480242:l3",
+      "paper_id": "openalex:W2704480242",
+      "text": "Machine learning ranking models trained on datasets incorporating preexisting bias will embody and reinforce that bias in their outputs.",
+      "normalized_category": "training-data-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2704480242:f1",
+      "paper_id": "openalex:W2704480242",
+      "text": "Extending the ranked group fairness framework to deal with multiple protected attributes simultaneously.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2704480242:f2",
+      "paper_id": "openalex:W2704480242",
+      "text": "Developing in-processing fair ranking algorithms rather than post-processing methods.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2704480242:f3",
+      "paper_id": "openalex:W2704480242",
+      "text": "Measuring algorithm robustness to noise in qualification scores and evaluating real-world application impact.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:13:23.050388Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

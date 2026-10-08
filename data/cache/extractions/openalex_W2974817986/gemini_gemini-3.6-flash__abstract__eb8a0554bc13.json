@@ -1,0 +1,105 @@
+{
+  "paper_id": "openalex:W2974817986",
+  "claims": [
+    {
+      "id": "openalex:W2974817986:c1",
+      "paper_id": "openalex:W2974817986",
+      "text": "AI Fairness 360 (AIF360) is an open-source Python toolkit for algorithmic fairness released under an Apache v2.0 license.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2974817986:c2",
+      "paper_id": "openalex:W2974817986",
+      "text": "AIF360 provides fairness metrics for datasets and machine learning models.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2974817986:c3",
+      "paper_id": "openalex:W2974817986",
+      "text": "AIF360 provides explanations for fairness metrics.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2974817986:c4",
+      "paper_id": "openalex:W2974817986",
+      "text": "AIF360 provides algorithms to mitigate algorithmic bias in datasets and models.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2974817986:c5",
+      "paper_id": "openalex:W2974817986",
+      "text": "AIF360 includes an interactive Web experience to introduce concepts and capabilities to users.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2974817986:c6",
+      "paper_id": "openalex:W2974817986",
+      "text": "AIF360 includes a built-in testing infrastructure to maintain code quality.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2974817986:e1",
+      "claim_id": "openalex:W2974817986:c1",
+      "description": "This article introduces a new open-source Python toolkit for algorithmic fairness, AI Fairness 360 (AIF360), released under an Apache v2.0 license",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2974817986:e2",
+      "claim_id": "openalex:W2974817986:c2",
+      "description": "The package includes a comprehensive set of fairness metrics for datasets and models",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2974817986:e3",
+      "claim_id": "openalex:W2974817986:c3",
+      "description": "The package includes... explanations for these metrics",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2974817986:e4",
+      "claim_id": "openalex:W2974817986:c4",
+      "description": "The package includes... algorithms to mitigate bias in datasets and models.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2974817986:e5",
+      "claim_id": "openalex:W2974817986:c5",
+      "description": "It also includes an interactive Web experience that provides a gentle introduction to the concepts and capabilities for line-of-business users, researchers, and developers",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W2974817986:e6",
+      "claim_id": "openalex:W2974817986:c6",
+      "description": "A built-in testing infrastructure maintains code quality.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2974817986:m1",
+      "paper_id": "openalex:W2974817986",
+      "name": "AI Fairness 360 (AIF360)",
+      "description": "An open-source Python toolkit for detecting, explaining, and mitigating algorithmic bias in datasets and machine learning models.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:08:07.179070Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

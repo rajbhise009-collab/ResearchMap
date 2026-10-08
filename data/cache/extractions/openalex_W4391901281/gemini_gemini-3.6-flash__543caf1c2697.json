@@ -1,0 +1,103 @@
+{
+  "paper_id": "openalex:W4391901281",
+  "claims": [
+    {
+      "id": "openalex:W4391901281:c1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing uncertainty quantification methods for LLM responses often overlook the complex nature of LLMs and the uniqueness of in-context learning.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c2",
+      "paper_id": "openalex:W4391901281",
+      "text": "Predictive uncertainty in in-context learning stems in part from the provided demonstrations, which corresponds to aleatoric uncertainty.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c3",
+      "paper_id": "openalex:W4391901281",
+      "text": "Predictive uncertainty in in-context learning stems in part from ambiguities tied to model configurations, which corresponds to epistemic uncertainty.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c4",
+      "paper_id": "openalex:W4391901281",
+      "text": "The proposed uncertainty estimation method operates in an unsupervised, plug-and-play fashion for in-context learning predictions.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4391901281:c5",
+      "paper_id": "openalex:W4391901281",
+      "text": "Extensive experiments demonstrate the effectiveness of decomposing uncertainty into aleatoric and epistemic components in in-context learning.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4391901281:e1",
+      "claim_id": "openalex:W4391901281:c1",
+      "description": "Existing works have been devoted to quantifying the uncertainty in LLM's response, but they often overlook the complex nature of LLMs and the uniqueness of in-context learning.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e2",
+      "claim_id": "openalex:W4391901281:c2",
+      "description": "such uncertainties may stem from both the provided demonstrations (aleatoric uncertainty)",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e3",
+      "claim_id": "openalex:W4391901281:c3",
+      "description": "and ambiguities tied to the model's configurations (epistemic uncertainty).",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e4",
+      "claim_id": "openalex:W4391901281:c4",
+      "description": "The proposed method offers an unsupervised way to understand the prediction of in-context learning in a plug-and-play fashion.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4391901281:e5",
+      "claim_id": "openalex:W4391901281:c5",
+      "description": "Extensive experiments are conducted to demonstrate the effectiveness of the decomposition.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4391901281:m1",
+      "paper_id": "openalex:W4391901281",
+      "name": "Uncertainty Decomposition for In-Context Learning (UQ_ICL)",
+      "description": "An unsupervised, plug-and-play method that quantifies and decomposes predictive uncertainty into demonstration-level aleatoric uncertainty and model-configuration epistemic uncertainty.",
+      "datasets": [],
+      "conditions": [
+        "in-context learning",
+        "unsupervised setting",
+        "plug-and-play estimation"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4391901281:l1",
+      "paper_id": "openalex:W4391901281",
+      "text": "Existing works quantifying uncertainty in LLM responses often overlook the complex nature of LLMs and the uniqueness of in-context learning.",
+      "normalized_category": "overlooks-icl-uniqueness",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-23T16:00:39.047991Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,104 @@
+{
+  "paper_id": "openalex:W4399554616",
+  "claims": [
+    {
+      "id": "openalex:W4399554616:c1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Uncertainty quantification in free-form responses from large language models is challenging due to difficulty defining task-specific uncertainties.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c2",
+      "paper_id": "openalex:W4399554616",
+      "text": "Characterizing utility as a similarity measure comparing generated and hypothetical true responses enables principled quantification of subjective uncertainty and calibration.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c3",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty in language models can be derived from a missing data perspective and characterized as excess risk.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c4",
+      "paper_id": "openalex:W4399554616",
+      "text": "The proposed uncertainty quantification methods are applicable to black-box language models.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c5",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty provides a promising deferral strategy for efficient data acquisition in in-context learning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399554616:e1",
+      "claim_id": "openalex:W4399554616:c1",
+      "description": "Applications of large language models often involve the generation of free-form responses, in which case uncertainty quantification becomes challenging. This is due to the need to identify task-specific uncertainties (e.g., about the semantics) which appears difficult to define in general cases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399554616:e2",
+      "claim_id": "openalex:W4399554616:c2",
+      "description": "This work addresses these challenges from a perspective of Bayesian decision theory, starting from the assumption that our utility is characterized by a similarity measure that compares a generated response with a hypothetical true response. We discuss how this assumption enables principled quantification of the model's subjective uncertainty and its calibration.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399554616:e3",
+      "claim_id": "openalex:W4399554616:c3",
+      "description": "We further derive a measure for epistemic uncertainty, based on a missing data perspective and its characterization as an excess risk.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4399554616:e4",
+      "claim_id": "openalex:W4399554616:c4",
+      "description": "The proposed methods can be applied to black-box language models.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4399554616:e5",
+      "claim_id": "openalex:W4399554616:c5",
+      "description": "Our experiments ... demonstrate that epistemic uncertainty offers a promising deferral strategy for efficient data acquisition in in-context learning.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399554616:m1",
+      "paper_id": "openalex:W4399554616",
+      "name": "Bayesian Decision Theory Framework for NLG Uncertainty Quantification",
+      "description": "A framework that quantifies subjective and epistemic uncertainty in language generation by defining utility via a similarity measure comparing generated and hypothetical true responses.",
+      "datasets": [],
+      "conditions": [
+        "black-box language models",
+        "question answering",
+        "machine translation",
+        "in-context learning"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399554616:l1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Uncertainty quantification in natural language generation with free-form responses is challenging due to the difficulty of identifying task-specific uncertainties.",
+      "normalized_category": "task-specific-uncertainty-definition",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-22T17:48:54.824335Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

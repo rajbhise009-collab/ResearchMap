@@ -1,0 +1,63 @@
+{
+  "paper_id": "openalex:W4384930908",
+  "claims": [
+    {
+      "id": "openalex:W4384930908:c1",
+      "paper_id": "openalex:W4384930908",
+      "text": "Large Language Models can be integrated into qualitative research methodologies to support traditional deductive coding.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4384930908:c2",
+      "paper_id": "openalex:W4384930908",
+      "text": "Running recursive LLM analyses across 160 iterations allows researchers to record variation in model output analogous to evaluation by multiple human coders.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4384930908:e1",
+      "claim_id": "openalex:W4384930908:c1",
+      "description": "The authors proposed a methodology putting sample interview text and a codebook into an LLM to request evidence and code presence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4384930908:e2",
+      "claim_id": "openalex:W4384930908:c2",
+      "description": "Sample texts were inputted 160 times to record output variation across iterations, with each iteration representing a distinct deductive coder.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4384930908:m1",
+      "paper_id": "openalex:W4384930908",
+      "name": "Recursive LLM-assisted Deductive Qualitative Coding",
+      "description": "Inputting sample interview texts and qualitative codebooks into an LLM across 160 iterations to evaluate coding consistency and compare outputs with traditional human coders.",
+      "datasets": [
+        "Sample interview transcripts"
+      ],
+      "conditions": [
+        "160 iteration runs",
+        "Deductive codebook evaluation",
+        "Comparison against human qualitative coders"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4384930908:l1",
+      "paper_id": "openalex:W4384930908",
+      "text": "There are current operational limitations when applying LLMs directly to qualitative research praxis.",
+      "normalized_category": "llm-praxis-limitations",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.123897Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

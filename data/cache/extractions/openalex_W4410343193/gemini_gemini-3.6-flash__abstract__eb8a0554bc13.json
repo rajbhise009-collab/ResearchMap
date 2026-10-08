@@ -1,0 +1,98 @@
+{
+  "paper_id": "openalex:W4410343193",
+  "claims": [
+    {
+      "id": "openalex:W4410343193:c1",
+      "paper_id": "openalex:W4410343193",
+      "text": "The proposed framework includes an error taxonomy for classifying LLM outputs.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c2",
+      "paper_id": "openalex:W4410343193",
+      "text": "The proposed framework includes an experimental structure for iterative comparisons in an LLM document generation pipeline.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c3",
+      "paper_id": "openalex:W4410343193",
+      "text": "The proposed framework includes a clinical safety framework to evaluate the harms of errors.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c4",
+      "paper_id": "openalex:W4410343193",
+      "text": "The proposed framework includes a graphical user interface, CREOLA, to facilitate evaluation processes.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c5",
+      "paper_id": "openalex:W4410343193",
+      "text": "Evaluating LLMs for clinical note generation yielded a 1.47% hallucination rate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c6",
+      "paper_id": "openalex:W4410343193",
+      "text": "Evaluating LLMs for clinical note generation yielded a 3.45% omission rate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410343193:c7",
+      "paper_id": "openalex:W4410343193",
+      "text": "Refining prompts and workflows reduced major errors in LLM clinical note generation below previously reported human note-taking rates.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410343193:e1",
+      "claim_id": "openalex:W4410343193:c5",
+      "description": "We observed a 1.47% hallucination rate...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410343193:e2",
+      "claim_id": "openalex:W4410343193:c6",
+      "description": "...and a 3.45% omission rate.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4410343193:e3",
+      "claim_id": "openalex:W4410343193:c7",
+      "description": "By refining prompts and workflows, we successfully reduced major errors below previously reported human note-taking rates",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410343193:m1",
+      "paper_id": "openalex:W4410343193",
+      "name": "CREOLA Clinical Assessment Framework",
+      "description": "A framework comprising an error taxonomy, an iterative experimental comparison structure, a clinical safety framework, and a graphical user interface (CREOLA) to assess clinical LLM documentation.",
+      "datasets": [],
+      "conditions": [
+        "18 experimental configurations",
+        "12,999 clinician-annotated sentences"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.078252Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

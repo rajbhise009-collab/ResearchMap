@@ -1,0 +1,180 @@
+{
+  "paper_id": "openalex:W4415914353",
+  "claims": [
+    {
+      "id": "openalex:W4415914353:c1",
+      "paper_id": "openalex:W4415914353",
+      "text": "Large language models (LLMs) excel at numerical estimation.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c2",
+      "paper_id": "openalex:W4415914353",
+      "text": "Large language models (LLMs) struggle to correctly quantify uncertainty.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c3",
+      "paper_id": "openalex:W4415914353",
+      "text": "Large language models (LLMs) are systematically overconfident when constructing confidence intervals around their own answers.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c4",
+      "paper_id": "openalex:W4415914353",
+      "text": "FermiEval is a benchmark of Fermi-style estimation questions with a rigorous scoring rule for confidence interval coverage and sharpness.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c5",
+      "paper_id": "openalex:W4415914353",
+      "text": "Across several modern models, nominal 99% intervals cover the true answer only 65% of the time on average.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c6",
+      "paper_id": "openalex:W4415914353",
+      "text": "A conformal prediction based approach that adjusts the intervals obtains accurate 99% observed coverage.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c7",
+      "paper_id": "openalex:W4415914353",
+      "text": "A conformal prediction based approach reduces the Winkler interval score by 54%.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c8",
+      "paper_id": "openalex:W4415914353",
+      "text": "Direct log-probability elicitation methods reduce overconfidence at high confidence levels.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c9",
+      "paper_id": "openalex:W4415914353",
+      "text": "Quantile adjustment methods reduce overconfidence at high confidence levels.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c10",
+      "paper_id": "openalex:W4415914353",
+      "text": "The perception-tunnel theory explains why LLMs exhibit overconfidence.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4415914353:c11",
+      "paper_id": "openalex:W4415914353",
+      "text": "When reasoning under uncertainty, LLMs act as if sampling from a truncated region of their inferred distribution, neglecting its tails.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4415914353:e1",
+      "claim_id": "openalex:W4415914353:c5",
+      "description": "Across several modern models, nominal 99% intervals cover the true answer only 65% of the time on average.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4415914353:e2",
+      "claim_id": "openalex:W4415914353:c7",
+      "description": "the Winkler interval score decreases by 54% using a conformal prediction based approach.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W4415914353:e3",
+      "claim_id": "openalex:W4415914353:c11",
+      "description": "when reasoning under uncertainty, they act as if sampling from a truncated region of their inferred distribution, neglecting its tails.",
+      "strength": 1.0
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4415914353:m1",
+      "paper_id": "openalex:W4415914353",
+      "name": "FermiEval",
+      "description": "A benchmark of Fermi-style estimation questions with a rigorous scoring rule for confidence interval coverage and sharpness.",
+      "datasets": [
+        "Fermi-style estimation questions"
+      ],
+      "conditions": [
+        "confidence interval coverage",
+        "sharpness"
+      ]
+    },
+    {
+      "id": "openalex:W4415914353:m2",
+      "paper_id": "openalex:W4415914353",
+      "name": "Conformal prediction based approach",
+      "description": "An approach that adjusts confidence intervals to obtain accurate observed coverage.",
+      "datasets": [],
+      "conditions": [
+        "conformal prediction"
+      ]
+    },
+    {
+      "id": "openalex:W4415914353:m3",
+      "paper_id": "openalex:W4415914353",
+      "name": "Direct log-probability elicitation",
+      "description": "A method to reduce overconfidence by eliciting log-probabilities directly from the model.",
+      "datasets": [],
+      "conditions": []
+    },
+    {
+      "id": "openalex:W4415914353:m4",
+      "paper_id": "openalex:W4415914353",
+      "name": "Quantile adjustment methods",
+      "description": "Methods used to adjust model outputs to reduce overconfidence at high confidence levels.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4415914353:l1",
+      "paper_id": "openalex:W4415914353",
+      "text": "LLMs struggle to correctly quantify uncertainty.",
+      "normalized_category": "uncertainty-quantification-failure",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4415914353:l2",
+      "paper_id": "openalex:W4415914353",
+      "text": "LLMs are systematically overconfident.",
+      "normalized_category": "overconfidence",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4415914353:l3",
+      "paper_id": "openalex:W4415914353",
+      "text": "Nominal 99% intervals cover the true answer only 65% of the time on average.",
+      "normalized_category": "poor-calibration",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T05:14:08.633167Z",
+  "extractor": "gemini:gemini-3-flash-preview"
+}

@@ -1,0 +1,79 @@
+{
+  "paper_id": "openalex:W2012942264",
+  "claims": [
+    {
+      "id": "openalex:W2012942264:c1",
+      "paper_id": "openalex:W2012942264",
+      "text": "Accurate probability estimates for multiclass problems can be obtained by combining calibrated binary probability estimates.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2012942264:c2",
+      "paper_id": "openalex:W2012942264",
+      "text": "Calibrated two-class probability estimates can be produced for any classifier that generates a ranking of examples.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2012942264:e1",
+      "claim_id": "openalex:W2012942264:c1",
+      "description": "Experimental evaluation using naive Bayes and support vector machine classifiers across direct marketing, text categorization, and digit recognition domains.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2012942264:e2",
+      "claim_id": "openalex:W2012942264:c2",
+      "description": "Experimental evaluation using naive Bayes and support vector machine classifiers on various two-class domains.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2012942264:m1",
+      "paper_id": "openalex:W2012942264",
+      "name": "Multiclass Calibration via Binary Combination",
+      "description": "A method that transforms classifier outputs into multiclass probability estimates by combining calibrated binary probability estimates.",
+      "datasets": [
+        "direct marketing",
+        "text categorization",
+        "digit recognition"
+      ],
+      "conditions": [
+        "naive Bayes classifier",
+        "support vector machine classifier"
+      ]
+    },
+    {
+      "id": "openalex:W2012942264:m2",
+      "paper_id": "openalex:W2012942264",
+      "name": "Ranking-based Two-Class Calibration",
+      "description": "A method that converts scores from ranking classifiers into calibrated binary probability estimates.",
+      "datasets": [
+        "direct marketing",
+        "text categorization",
+        "digit recognition"
+      ],
+      "conditions": [
+        "naive Bayes classifier",
+        "support vector machine classifier"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2012942264:l1",
+      "paper_id": "openalex:W2012942264",
+      "text": "Previous calibration methods apply only to two-class problems.",
+      "normalized_category": "binary-only-scope",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.110059Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,75 @@
+{
+  "paper_id": "openalex:W2785011159",
+  "claims": [
+    {
+      "id": "openalex:W2785011159:c1",
+      "paper_id": "openalex:W2785011159",
+      "text": "The COMPAS recidivism risk assessment software is no more accurate at predicting recidivism than predictions made by people with little or no criminal justice expertise.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2785011159:c2",
+      "paper_id": "openalex:W2785011159",
+      "text": "The COMPAS recidivism risk assessment software is no more fair in its predictions than predictions made by people with little or no criminal justice expertise.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2785011159:c3",
+      "paper_id": "openalex:W2785011159",
+      "text": "A simple linear predictor using only two features performs nearly equivalently to COMPAS with its 137 features.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2785011159:e1",
+      "claim_id": "openalex:W2785011159:c1",
+      "description": "We show, however, that the widely used commercial risk assessment software COMPAS is no more accurate or fair than predictions made by people with little or no criminal justice expertise.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2785011159:e2",
+      "claim_id": "openalex:W2785011159:c2",
+      "description": "We show, however, that the widely used commercial risk assessment software COMPAS is no more accurate or fair than predictions made by people with little or no criminal justice expertise.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2785011159:e3",
+      "claim_id": "openalex:W2785011159:c3",
+      "description": "We further show that a simple linear predictor provided with only two features is nearly equivalent to COMPAS with its 137 features.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2785011159:m1",
+      "paper_id": "openalex:W2785011159",
+      "name": "Recidivism Prediction Model Comparison",
+      "description": "Compared the accuracy and fairness of COMPAS risk assessment software against non-expert human predictions and a two-feature linear model.",
+      "datasets": [],
+      "conditions": [
+        "COMPAS software with 137 features",
+        "Linear predictor with 2 features",
+        "Predictions by people with little or no criminal justice expertise"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2785011159:l1",
+      "paper_id": "openalex:W2785011159",
+      "text": "Existing commercial software like COMPAS uses 137 features without achieving better accuracy or lower bias than human non-experts or simple linear models.",
+      "normalized_category": "algorithmic-complexity-without-gain",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:07:20.199090Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

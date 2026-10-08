@@ -1,0 +1,96 @@
+{
+  "paper_id": "openalex:W2120021843",
+  "claims": [
+    {
+      "id": "openalex:W2120021843:c1",
+      "paper_id": "openalex:W2120021843",
+      "text": "Intraclass correlation coefficients for nutrient intakes assessed by questionnaires one year apart ranged from 0.47 for vitamin E without supplements to 0.80 for vitamin C with supplements.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120021843:c2",
+      "paper_id": "openalex:W2120021843",
+      "text": "Correlation coefficients between energy-adjusted nutrient intakes measured by diet records and the second questionnaire ranged from 0.28 for iron without supplements to 0.86 for vitamin C with supplements, with a mean r of 0.59.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120021843:c3",
+      "paper_id": "openalex:W2120021843",
+      "text": "Adjusting for week-to-week variation in diet record intakes increased the mean correlation coefficient between energy-adjusted nutrient intakes from diet records and the questionnaire to r = 0.65.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120021843:c4",
+      "paper_id": "openalex:W2120021843",
+      "text": "The expanded 131-item semiquantitative food frequency questionnaire is reproducible over a one-year period.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120021843:c5",
+      "paper_id": "openalex:W2120021843",
+      "text": "The expanded 131-item semiquantitative food frequency questionnaire provides a useful measure of intake for many nutrients over a one-year period.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2120021843:e1",
+      "claim_id": "openalex:W2120021843:c1",
+      "description": "Intraclass correlation coefficients for nutrient intakes assessed by questionnaires one year apart ranged from 0.47 for vitamin E without supplements to 0.80 for vitamin C with supplements.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2120021843:e2",
+      "claim_id": "openalex:W2120021843:c2",
+      "description": "Correlation coefficients between the energy-adjusted nutrient intakes measured by diet records and the second questionnaire ranged from 0.28 for iron without supplements to 0.86 for vitamin C with supplements (mean r = 0.59).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2120021843:e3",
+      "claim_id": "openalex:W2120021843:c3",
+      "description": "These correlations were higher after adjusting for week-to-week variation in diet record intakes (mean r = 0.65).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2120021843:e4",
+      "claim_id": "openalex:W2120021843:c4",
+      "description": "These data indicate that the expanded semiquantitative food frequency questionnaire is reproducible... over a one-year period.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2120021843:e5",
+      "claim_id": "openalex:W2120021843:c5",
+      "description": "These data indicate that the expanded semiquantitative food frequency questionnaire... provides a useful measure of intake for many nutrients over a one-year period.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2120021843:m1",
+      "paper_id": "openalex:W2120021843",
+      "name": "Semiquantitative Food Frequency Questionnaire Validation",
+      "description": "Assessment of reproducibility and validity of a mail-administered 131-item semiquantitative food frequency questionnaire administered twice at a one-year interval against two one-week diet records spaced six months apart.",
+      "datasets": [
+        "127 male health professional participants from a prospective study of 51,529 men"
+      ],
+      "conditions": [
+        "Questionnaire administered by mail twice at a 1-year interval",
+        "Two 1-week diet records completed ~6 months apart"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:43:47.225653Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

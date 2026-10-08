@@ -1,0 +1,79 @@
+{
+  "paper_id": "openalex:W4399554616",
+  "claims": [
+    {
+      "id": "openalex:W4399554616:c1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Uncertainty quantification is challenging in free-form response generation with large language models.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c2",
+      "paper_id": "openalex:W4399554616",
+      "text": "Assuming utility is characterized by a similarity measure comparing a generated response with a hypothetical true response enables principled quantification of a language model's subjective uncertainty and calibration.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c3",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty can be derived from a missing data perspective and characterized as an excess risk.",
+      "type": "theoretical",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c4",
+      "paper_id": "openalex:W4399554616",
+      "text": "The proposed Bayesian decision theory methods for uncertainty quantification can be applied to black-box language models.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4399554616:c5",
+      "paper_id": "openalex:W4399554616",
+      "text": "Epistemic uncertainty offers a promising deferral strategy for efficient data acquisition in in-context learning.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4399554616:e1",
+      "claim_id": "openalex:W4399554616:c5",
+      "description": "Experiments on question answering and machine translation tasks demonstrate that epistemic uncertainty provides an effective deferral strategy for data acquisition in in-context learning.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4399554616:m1",
+      "paper_id": "openalex:W4399554616",
+      "name": "Bayesian Decision Theory UQ Framework",
+      "description": "A framework mapping utility to a response-similarity measure to quantify subjective and epistemic uncertainty in natural language generation.",
+      "datasets": [],
+      "conditions": [
+        "black-box language models",
+        "question answering tasks",
+        "machine translation tasks"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4399554616:l1",
+      "paper_id": "openalex:W4399554616",
+      "text": "Task-specific uncertainties in free-form responses, such as semantic uncertainties, are difficult to define in general cases.",
+      "normalized_category": "task-specific-uncertainty-definition",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-24T19:25:01.758138Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

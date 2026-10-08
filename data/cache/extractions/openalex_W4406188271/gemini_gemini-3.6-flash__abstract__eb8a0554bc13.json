@@ -1,0 +1,95 @@
+{
+  "paper_id": "openalex:W4406188271",
+  "claims": [
+    {
+      "id": "openalex:W4406188271:c1",
+      "paper_id": "openalex:W4406188271",
+      "text": "Enhancing the focus on human-LLM interaction should be a primary target for future LLM research.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406188271:c2",
+      "paper_id": "openalex:W4406188271",
+      "text": "Human-machine collaboration can be hindered by cognitive and systemic biases.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406188271:c3",
+      "paper_id": "openalex:W4406188271",
+      "text": "Addressing mutual understanding between humans and LLMs is necessary to enhance hybrid reasoning and decision-making.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4406188271:c4",
+      "paper_id": "openalex:W4406188271",
+      "text": "Addressing complementary team performance is necessary to enhance human-LLM reasoning and decision-making.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4406188271:e1",
+      "claim_id": "openalex:W4406188271:c1",
+      "description": "The authors state that while model limitations are heavily studied, the potentials and risks of human-LLM collaboration remain largely underexplored.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4406188271:e2",
+      "claim_id": "openalex:W4406188271:c2",
+      "description": "The paper outlines biases that hinder effective collaboration between humans and machines.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4406188271:e3",
+      "claim_id": "openalex:W4406188271:c3",
+      "description": "The perspective discusses mutual understanding as a key target to improve effective hybrid reasoning and decision-making.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W4406188271:e4",
+      "claim_id": "openalex:W4406188271:c4",
+      "description": "The perspective highlights complementary team performance as a crucial goal to enhance human-LLM decision-making.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W4406188271:l1",
+      "paper_id": "openalex:W4406188271",
+      "text": "The potentials and risks of human-LLM collaboration remain largely underexplored in existing literature.",
+      "normalized_category": "underexplored-human-llm-collaboration",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4406188271:f1",
+      "paper_id": "openalex:W4406188271",
+      "text": "Examine biases that hinder effective collaboration between humans and machines and explore potential solutions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4406188271:f2",
+      "paper_id": "openalex:W4406188271",
+      "text": "Investigate methods to achieve mutual understanding in human-LLM collaboration.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4406188271:f3",
+      "paper_id": "openalex:W4406188271",
+      "text": "Develop frameworks for complementary team performance between humans and LLMs in reasoning and decision-making.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.125759Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

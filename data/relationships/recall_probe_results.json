@@ -1,0 +1,154 @@
+{
+  "contradiction_recall": "10/10",
+  "contradiction_recall_pct": 100.0,
+  "support_accuracy": "7/7",
+  "unrelated_accuracy": "7/7",
+  "false_positive_contradictions": "0/14",
+  "false_positive_rate_pct": 0.0,
+  "rows": [
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "GPT-4 achieves 98% accuracy in Experiment 1A when selecting human-preferred scope readings.",
+      "b": "GPT-4 achieves only about 62% accuracy in Experiment 1A when selecting human-preferred scope readings."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "Larger LLMs exhibit lower memorization ratios than smaller LLMs on filtered evaluation sets in knowledge conflict scenarios.",
+      "b": "Larger LLMs exhibit higher memorization ratios than smaller LLMs on filtered evaluation sets in knowledge conflict scenarios."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "The RE2 model achieves an accuracy of 89.2% on the Quora Question Pairs test set.",
+      "b": "The RE2 model reaches only 71.0% accuracy on the Quora Question Pairs test set."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "MT-DNN achieves an accuracy of 91.6% on the SNLI dataset.",
+      "b": "MT-DNN fails to exceed 85% accuracy on the SNLI dataset."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "Large language models are systematically more confident when providing reasoning before answering multiple-choice questions.",
+      "b": "Large language models are systematically less confident when reasoning precedes their multiple-choice answers."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "GPT-4 achieves significantly higher pair-wise consistency when provided with five WEP choices compared to three WEP choices.",
+      "b": "GPT-4 shows no significant difference in pair-wise consistency between five and three WEP choices."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "Training BERT on MultiNLI and then fine-tuning on the BoolQ dataset achieves 80.43% test accuracy.",
+      "b": "Fine-tuning BERT from MultiNLI on BoolQ yields at most 68% test accuracy."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "Technical fine-tuning and reinforcement learning from human feedback prioritize rhetoric and sycophancy over factual accuracy.",
+      "b": "Reinforcement learning from human feedback improves factual accuracy and reduces sycophancy in language models."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "MM-PEAR-CoT achieves a 1.7% improvement in binary classification accuracy on the CMU-MOSEI dataset.",
+      "b": "MM-PEAR-CoT degrades binary classification accuracy on the CMU-MOSEI dataset."
+    },
+    {
+      "gold": "contradicts",
+      "pred": "contradicts",
+      "a": "Task Routing Layers allow a multi-task network to scale up to 312 tasks simultaneously.",
+      "b": "Task Routing Layers fail to scale a multi-task network beyond a few dozen simultaneous tasks."
+    },
+    {
+      "gold": "supports",
+      "pred": "supports",
+      "a": "Larger LLMs exhibit lower memorization ratios than smaller LLMs on filtered evaluation sets in knowledge conflict scenarios.",
+      "b": "Memorization decreases as model scale increases under knowledge-conflict evaluation."
+    },
+    {
+      "gold": "supports",
+      "pred": "supports",
+      "a": "MT-DNN achieves an accuracy of 91.6% on the SNLI dataset.",
+      "b": "MT-DNN attains roughly 91-92% accuracy on the SNLI natural language inference benchmark."
+    },
+    {
+      "gold": "supports",
+      "pred": "supports",
+      "a": "Large language models are systematically more confident when providing reasoning before answering multiple-choice questions.",
+      "b": "Producing a rationale before answering increases LLMs' stated confidence on multiple-choice questions."
+    },
+    {
+      "gold": "supports",
+      "pred": "supports",
+      "a": "Technical fine-tuning and reinforcement learning from human feedback prioritize rhetoric and sycophancy over factual accuracy.",
+      "b": "RLHF-tuned models tend to favor persuasive, sycophantic responses at the expense of factuality."
+    },
+    {
+      "gold": "supports",
+      "pred": "supports",
+      "a": "The RE2 model achieves an accuracy of 89.2% on the Quora Question Pairs test set.",
+      "b": "RE2 reaches about 89% accuracy on the QQP paraphrase-identification benchmark."
+    },
+    {
+      "gold": "supports",
+      "pred": "supports",
+      "a": "GPT-4 achieves significantly higher pair-wise consistency when provided with five WEP choices compared to three WEP choices.",
+      "b": "Offering five WEP options improves GPT-4's pairwise consistency relative to three options."
+    },
+    {
+      "gold": "supports",
+      "pred": "supports",
+      "a": "Training BERT on MultiNLI and then fine-tuning on the BoolQ dataset achieves 80.43% test accuracy.",
+      "b": "A MultiNLI-pretrained BERT fine-tuned on BoolQ reaches roughly 80% test accuracy."
+    },
+    {
+      "gold": "none",
+      "pred": "none",
+      "a": "MT-DNN achieves an accuracy of 91.6% on the SNLI dataset.",
+      "b": "Conformal prediction provides distribution-free coverage guarantees for set-valued classifiers."
+    },
+    {
+      "gold": "none",
+      "pred": "none",
+      "a": "Large language models are systematically more confident when providing reasoning before answering multiple-choice questions.",
+      "b": "Retrieval-augmented generation reduces hallucination in clinical note generation."
+    },
+    {
+      "gold": "none",
+      "pred": "none",
+      "a": "The RE2 model achieves an accuracy of 89.2% on the Quora Question Pairs test set.",
+      "b": "Temperature scaling is a widely used post-hoc calibration method for neural networks."
+    },
+    {
+      "gold": "none",
+      "pred": "none",
+      "a": "Task Routing Layers allow a multi-task network to scale up to 312 tasks simultaneously.",
+      "b": "Semantic entropy estimates predictive uncertainty over clusters of meaning-equivalent generations."
+    },
+    {
+      "gold": "none",
+      "pred": "none",
+      "a": "MM-PEAR-CoT achieves a 1.7% improvement in binary classification accuracy on the CMU-MOSEI dataset.",
+      "b": "Larger language models memorize less training data under knowledge-conflict conditions."
+    },
+    {
+      "gold": "none",
+      "pred": "none",
+      "a": "Technical fine-tuning and reinforcement learning from human feedback prioritize rhetoric and sycophancy over factual accuracy.",
+      "b": "Split-conformal inference yields plug-in set-valued classifiers with finite-sample validity."
+    },
+    {
+      "gold": "none",
+      "pred": "none",
+      "a": "Training BERT on MultiNLI and then fine-tuning on the BoolQ dataset achieves 80.43% test accuracy.",
+      "b": "GPT-4 selects human-preferred scope readings with near-ceiling accuracy."
+    }
+  ]
+}

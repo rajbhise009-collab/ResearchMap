@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W4410492435",
+  "claims": [
+    {
+      "id": "openalex:W4410492435:c1",
+      "paper_id": "openalex:W4410492435",
+      "text": "Vector databases store, retrieve, and manage high-dimensional vector representations intrinsic to LLM operations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4410492435:c2",
+      "paper_id": "openalex:W4410492435",
+      "text": "Integrating vector databases with LLMs addresses core LLM operational challenges to enhance functionalities.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4410492435:e1",
+      "claim_id": "openalex:W4410492435:c1",
+      "description": "VecDBs offer a means to store, retrieve, and manage the high-dimensional vector representations intrinsic to LLM operations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4410492435:e2",
+      "claim_id": "openalex:W4410492435:c2",
+      "description": "VecDBs emerge as a solution to LLM challenges by enhancing LLM functionalities through integration.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4410492435:m1",
+      "paper_id": "openalex:W4410492435",
+      "name": "Literature Survey and System Analysis",
+      "description": "A comprehensive review delineating foundational principles and analyzing the integration of LLMs and Vector Databases.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4410492435:l1",
+      "paper_id": "openalex:W4410492435",
+      "text": "LLMs suffer from hallucinations.",
+      "normalized_category": "hallucinations",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410492435:l2",
+      "paper_id": "openalex:W4410492435",
+      "text": "LLMs suffer from outdated knowledge.",
+      "normalized_category": "outdated-knowledge",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410492435:l3",
+      "paper_id": "openalex:W4410492435",
+      "text": "LLMs incur prohibitive commercial application costs.",
+      "normalized_category": "high-cost",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4410492435:l4",
+      "paper_id": "openalex:W4410492435",
+      "text": "LLMs experience memory issues.",
+      "normalized_category": "memory-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4410492435:f1",
+      "paper_id": "openalex:W4410492435",
+      "text": "Optimizing the confluence of LLMs and VecDBs for advanced data handling and knowledge extraction capabilities.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.096943Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

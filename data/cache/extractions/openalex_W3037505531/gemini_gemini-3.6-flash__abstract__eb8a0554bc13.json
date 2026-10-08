@@ -1,0 +1,135 @@
+{
+  "paper_id": "openalex:W3037505531",
+  "claims": [
+    {
+      "id": "openalex:W3037505531:c1",
+      "paper_id": "openalex:W3037505531",
+      "text": "Within 10 days of the COVID-19 global pandemic declaration, worldwide mean daily step counts decreased by 5.5% (287 steps).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3037505531:c2",
+      "paper_id": "openalex:W3037505531",
+      "text": "Within 30 days of the COVID-19 global pandemic declaration, worldwide mean daily step counts decreased by 27.3% (1432 steps).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3037505531:c3",
+      "paper_id": "openalex:W3037505531",
+      "text": "Italy exhibited a 48.7% maximal decrease in daily step count following its nationwide lockdown.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3037505531:c4",
+      "paper_id": "openalex:W3037505531",
+      "text": "Sweden exhibited a 6.9% maximal decrease in daily step count while advocating for social distancing without a national lockdown.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3037505531:c5",
+      "paper_id": "openalex:W3037505531",
+      "text": "Countries with low COVID-19 infection rates that did not institute lockdowns still exhibited decreases in overall step count.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3037505531:e1",
+      "claim_id": "openalex:W3037505531:c1",
+      "description": "Worldwide, within 10 days of the pandemic declaration, there was a 5.5% decrease in mean steps (287 steps)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3037505531:e2",
+      "claim_id": "openalex:W3037505531:c2",
+      "description": "and within 30 days, there was a 27.3% decrease in mean steps (1432 steps).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3037505531:e3",
+      "claim_id": "openalex:W3037505531:c3",
+      "description": "Italy declared a nationwide lockdown on 9 March 2020 and exhibited a 48.7% maximal decrease",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3037505531:e4",
+      "claim_id": "openalex:W3037505531:c4",
+      "description": "whereas Sweden, to date, has primarily advocated for social distancing and limitations on gatherings and showed a 6.9% maximal decrease.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3037505531:e5",
+      "claim_id": "openalex:W3037505531:c5",
+      "description": "Countries that, to date, have had relatively low COVID-19 infection rates and have therefore not instituted lockdowns, such as South Korea, Taiwan, and Japan, have still exhibited decreases in overall step count.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3037505531:m1",
+      "paper_id": "openalex:W3037505531",
+      "name": "Deidentified smartphone accelerometry step count analysis",
+      "description": "Descriptive study collecting and analyzing deidentified daily step counts via smartphone accelerometers using Apple and Android algorithms among global users of the Argus app.",
+      "datasets": [
+        "Argus smartphone health app user dataset"
+      ],
+      "conditions": [
+        "Data collected from 19 January to 1 June 2020",
+        "455,404 unique users across 187 unique countries",
+        "19,144,639 daily step count measurements",
+        "92% Apple smartphones and 8% Android smartphones",
+        "Prepandemic baseline defined as regional mean daily steps from 19 January to 11 March 2020"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3037505531:l1",
+      "paper_id": "openalex:W3037505531",
+      "text": "Sampling bias due to reliance on smartphone and app ownership.",
+      "normalized_category": "sampling-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3037505531:l2",
+      "paper_id": "openalex:W3037505531",
+      "text": "Measurement error from smartphone-measured step counts and variability in smartphone carry and use habits.",
+      "normalized_category": "measurement-error",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3037505531:l3",
+      "paper_id": "openalex:W3037505531",
+      "text": "Lack of assessment of activity intensity and inability to capture nonstepping exercise.",
+      "normalized_category": "missing-metrics",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3037505531:l4",
+      "paper_id": "openalex:W3037505531",
+      "text": "Dataset is a nonrepresentative convenience sample with a variable number of contributing daily users and lacks participant characteristics beyond IP address.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3037505531:f1",
+      "paper_id": "openalex:W3037505531",
+      "text": "Conduct more formal analytic studies to assess step count trends and social distancing adherence.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:14:00.774948Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

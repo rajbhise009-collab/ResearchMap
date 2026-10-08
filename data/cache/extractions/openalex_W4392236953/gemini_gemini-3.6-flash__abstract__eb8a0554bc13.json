@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W4392236953",
+  "claims": [
+    {
+      "id": "openalex:W4392236953:c1",
+      "paper_id": "openalex:W4392236953",
+      "text": "The paper synthesizes a definition of the metaverse from existing literature.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392236953:c2",
+      "paper_id": "openalex:W4392236953",
+      "text": "The paper delineates key affordances of the metaverse.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4392236953:c3",
+      "paper_id": "openalex:W4392236953",
+      "text": "The paper introduces a framework encompassing the metaverse's nature, infrastructure technologies, and input/output technologies facilitating multi-sensory HCI.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4392236953:e1",
+      "claim_id": "openalex:W4392236953:c1",
+      "description": "We first synthesize a definition of the metaverse from existing literature and delineate key affordances.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392236953:e2",
+      "claim_id": "openalex:W4392236953:c2",
+      "description": "We first synthesize a definition of the metaverse from existing literature and delineate key affordances.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4392236953:e3",
+      "claim_id": "openalex:W4392236953:c3",
+      "description": "We then introduce a detailed framework encompassing the metaverse’s nature, infrastructure technologies, and input/output technologies that facilitate multi-sensory HCI, alongside applications across diverse domains.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4392236953:m1",
+      "paper_id": "openalex:W4392236953",
+      "name": "Human-centric metaverse survey and framework synthesis",
+      "description": "A comprehensive review synthesizing existing literature to construct a framework detailing metaverse nature, infrastructure, and multi-sensory HCI input/output technologies.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4392236953:l1",
+      "paper_id": "openalex:W4392236953",
+      "text": "There is a lack of surveys in existing literature that review the nature of the metaverse and its building blocks from a human-centric perspective.",
+      "normalized_category": "lack-of-human-centric-surveys",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4392236953:f1",
+      "paper_id": "openalex:W4392236953",
+      "text": "Further exploration and investigation into major open challenges regarding metaverse infrastructure, input/output technologies, and human-centered multi-sensory interaction.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-02T17:21:17.122813Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

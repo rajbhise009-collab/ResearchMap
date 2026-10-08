@@ -1,0 +1,61 @@
+{
+  "paper_id": "openalex:W2113024584",
+  "claims": [
+    {
+      "id": "openalex:W2113024584:c1",
+      "paper_id": "openalex:W2113024584",
+      "text": "Individuals in the highest quantile of sugar-sweetened beverage intake have a 26% greater risk of developing type 2 diabetes compared to those in the lowest quantile.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2113024584:c2",
+      "paper_id": "openalex:W2113024584",
+      "text": "Higher consumption of sugar-sweetened beverages is associated with an increased risk of metabolic syndrome.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2113024584:e1",
+      "claim_id": "openalex:W2113024584:c1",
+      "description": "Meta-analysis of 8 studies including 310,819 participants and 15,043 cases showed a relative risk of 1.26 (95% CI 1.12-1.41) comparing highest to lowest intake quantiles.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2113024584:e2",
+      "claim_id": "openalex:W2113024584:c2",
+      "description": "Meta-analysis of 3 studies including 19,431 participants and 5,803 cases yielded a pooled relative risk of 1.20 (95% CI 1.02-1.42).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2113024584:m1",
+      "paper_id": "openalex:W2113024584",
+      "name": "Random-effects meta-analysis",
+      "description": "A random-effects meta-analysis of prospective cohort studies from MEDLINE database up to May 2010 evaluating SSB intake and risk of metabolic syndrome and type 2 diabetes.",
+      "datasets": [
+        "MEDLINE database"
+      ],
+      "conditions": [
+        "Highest quantile of SSB intake (1-2 servings/day) versus lowest quantile (none or <1 serving/month)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2113024584:l1",
+      "paper_id": "openalex:W2113024584",
+      "text": "The role of SSBs in the development of chronic metabolic diseases had not been quantitatively reviewed previously.",
+      "normalized_category": "lack-of-prior-quantitative-synthesis",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:04:22.464943Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,68 @@
+{
+  "paper_id": "openalex:W4403714226",
+  "claims": [
+    {
+      "id": "openalex:W4403714226:c1",
+      "paper_id": "openalex:W4403714226",
+      "text": "The complexity and emergent autonomy of Generative AI systems introduce challenges in predictability and legal compliance.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4403714226:c2",
+      "paper_id": "openalex:W4403714226",
+      "text": "The existing and proposed EU legislative framework contains potential gaps and shortcomings regarding Generative AI.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4403714226:e1",
+      "claim_id": "openalex:W4403714226:c1",
+      "description": "The paper states that complexity and emergent autonomy of Generative AI systems introduce challenges in predictability and legal compliance.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4403714226:e2",
+      "claim_id": "openalex:W4403714226:c2",
+      "description": "The paper identifies potential gaps and shortcomings in the EU legislative framework, including the Artificial Intelligence Act (AIA).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4403714226:m1",
+      "paper_id": "openalex:W4403714226",
+      "name": "EU Regulatory Analysis",
+      "description": "Legal analysis evaluating existing and proposed EU legislation across liability, privacy, intellectual property, and cybersecurity regarding Generative AI and LLMs.",
+      "datasets": [],
+      "conditions": [
+        "European Union context",
+        "Artificial Intelligence Act (AIA)",
+        "Generative AI and Large Language Models"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4403714226:l1",
+      "paper_id": "openalex:W4403714226",
+      "text": "The analysis is constrained specifically to the European Union legal and regulatory context.",
+      "normalized_category": "jurisdictional-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4403714226:l2",
+      "paper_id": "openalex:W4403714226",
+      "text": "Existing and proposed EU legislation, including the Artificial Intelligence Act (AIA), contains potential gaps and shortcomings in addressing Generative AI challenges.",
+      "normalized_category": "regulatory-gaps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.118365Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

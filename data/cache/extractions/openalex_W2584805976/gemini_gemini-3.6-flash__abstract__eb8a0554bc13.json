@@ -1,0 +1,111 @@
+{
+  "paper_id": "openalex:W2584805976",
+  "claims": [
+    {
+      "id": "openalex:W2584805976:c1",
+      "paper_id": "openalex:W2584805976",
+      "text": "Algorithmic fairness can be reformulated as a constrained optimization problem where the objective is to maximize public safety while satisfying formal fairness constraints.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2584805976:c2",
+      "paper_id": "openalex:W2584805976",
+      "text": "For several past definitions of fairness, optimal constrained algorithms require detaining defendants above race-specific risk thresholds.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2584805976:c3",
+      "paper_id": "openalex:W2584805976",
+      "text": "The optimal unconstrained decision algorithm requires applying a single, uniform risk threshold to all defendants regardless of race.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2584805976:c4",
+      "paper_id": "openalex:W2584805976",
+      "text": "There is an inherent tension between improving public safety and satisfying prevailing notions of algorithmic fairness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2584805976:c5",
+      "paper_id": "openalex:W2584805976",
+      "text": "In empirical evaluation on Broward County, Florida pretrial data, the trade-off between public safety and algorithmic fairness constraints is large in practice.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2584805976:e1",
+      "claim_id": "openalex:W2584805976:c1",
+      "description": "Here we reformulate algorithmic fairness as constrained optimization: the objective is to maximize public safety while satisfying formal fairness constraints designed to reduce racial disparities.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2584805976:e2",
+      "claim_id": "openalex:W2584805976:c2",
+      "description": "We show that for several past definitions of fairness, the optimal algorithms that result require detaining defendants above race-specific risk thresholds.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2584805976:e3",
+      "claim_id": "openalex:W2584805976:c3",
+      "description": "We further show that the optimal unconstrained algorithm requires applying a single, uniform threshold to all defendants.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2584805976:e4",
+      "claim_id": "openalex:W2584805976:c4",
+      "description": "Because the optimal constrained and unconstrained algorithms generally differ, there is tension between improving public safety and satisfying prevailing notions of algorithmic fairness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2584805976:e5",
+      "claim_id": "openalex:W2584805976:c5",
+      "description": "By examining data from Broward County, Florida, we show that this trade-off can be large in practice.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2584805976:m1",
+      "paper_id": "openalex:W2584805976",
+      "name": "Constrained Optimization Framework for Fairness",
+      "description": "Formulates algorithmic decision-making as public safety maximization subject to algorithmic fairness constraints, comparing constrained and unconstrained decision thresholds.",
+      "datasets": [
+        "Broward County, Florida pretrial dataset"
+      ],
+      "conditions": [
+        "Pretrial release risk assessment",
+        "Comparison of race-specific vs uniform thresholds"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2584805976:l1",
+      "paper_id": "openalex:W2584805976",
+      "text": "Black defendants are substantially more likely than white defendants to be incorrectly classified as high risk in existing decision algorithms.",
+      "normalized_category": "disparate-error-rates",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2584805976:l2",
+      "paper_id": "openalex:W2584805976",
+      "text": "The empirical demonstration is focused on pretrial release decisions within a single jurisdiction dataset (Broward County, Florida).",
+      "normalized_category": "domain-and-geographic-scope",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:06:50.924536Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

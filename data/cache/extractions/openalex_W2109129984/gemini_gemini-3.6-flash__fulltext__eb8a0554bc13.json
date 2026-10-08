@@ -1,0 +1,182 @@
+{
+  "paper_id": "openalex:W2109129984",
+  "claims": [
+    {
+      "id": "openalex:W2109129984:c1",
+      "paper_id": "openalex:W2109129984",
+      "text": "Alcohol consumption is associated with a lower risk of cardiovascular disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.70 to 0.80).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109129984:c2",
+      "paper_id": "openalex:W2109129984",
+      "text": "Alcohol consumption is associated with a lower risk of incident coronary heart disease compared with non-drinking (pooled adjusted RR 0.71, 95% CI 0.66 to 0.77).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109129984:c3",
+      "paper_id": "openalex:W2109129984",
+      "text": "Alcohol consumption is associated with a lower risk of coronary heart disease mortality compared with non-drinking (pooled adjusted RR 0.75, 95% CI 0.68 to 0.81).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109129984:c4",
+      "paper_id": "openalex:W2109129984",
+      "text": "Alcohol consumption is not significantly associated with overall incident stroke compared with non-drinking (pooled adjusted RR 0.98, 95% CI 0.91 to 1.06).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109129984:c5",
+      "paper_id": "openalex:W2109129984",
+      "text": "Alcohol consumption is associated with a lower risk of all-cause mortality compared with non-drinking (pooled adjusted RR 0.87, 95% CI 0.83 to 0.92).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109129984:c6",
+      "paper_id": "openalex:W2109129984",
+      "text": "Heavy alcohol consumption (>60 g/day) is associated with an increased risk of incident stroke compared with abstainers (RR 1.62, 95% CI 1.32 to 1.98).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109129984:c7",
+      "paper_id": "openalex:W2109129984",
+      "text": "Alcohol consumption shows differing risk associations by stroke subtype, with a lower risk for incident ischaemic stroke (RR 0.92, 95% CI 0.85 to 1.00) and an elevated risk for incident haemorrhagic stroke (RR 1.14, 95% CI 0.97 to 1.34).",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2109129984:e1",
+      "claim_id": "openalex:W2109129984:c1",
+      "description": "Random-effects pooled relative risk for alcohol drinkers relative to non-drinkers for cardiovascular disease mortality was 0.75 (95% CI 0.70 to 0.80) across 21 studies.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109129984:e2",
+      "claim_id": "openalex:W2109129984:c2",
+      "description": "Random-effects pooled relative risk for alcohol drinkers relative to non-drinkers for incident coronary heart disease was 0.71 (95% CI 0.66 to 0.77) across 29 studies.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109129984:e3",
+      "claim_id": "openalex:W2109129984:c3",
+      "description": "Random-effects pooled relative risk for alcohol drinkers relative to non-drinkers for coronary heart disease mortality was 0.75 (95% CI 0.68 to 0.81) across 31 studies.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109129984:e4",
+      "claim_id": "openalex:W2109129984:c4",
+      "description": "Random-effects pooled relative risk for alcohol drinkers relative to non-drinkers for incident stroke was 0.98 (95% CI 0.91 to 1.06) across 17 studies.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109129984:e5",
+      "claim_id": "openalex:W2109129984:c5",
+      "description": "Secondary analysis of 31 studies examining mortality from all causes showed a pooled relative risk of 0.87 (95% CI 0.83 to 0.92) for drinkers compared with non-drinkers.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109129984:e6",
+      "claim_id": "openalex:W2109129984:c6",
+      "description": "Dose-response analysis showed those consuming >60 g/day of alcohol were at significantly increased risk of incident stroke compared with abstainers (RR 1.62 (1.32 to 1.98)).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109129984:e7",
+      "claim_id": "openalex:W2109129984:c7",
+      "description": "12 studies on incident haemorrhagic stroke showed a pooled RR of 1.14 (0.97 to 1.34), whereas 8 studies on ischaemic stroke showed a pooled RR of 0.92 (0.85 to 1.00).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2109129984:m1",
+      "paper_id": "openalex:W2109129984",
+      "name": "Systematic review and random-effects meta-analysis",
+      "description": "Systematic search of Medline and Embase databases combined with manual searches, followed by DerSimonian and Laird random-effects meta-analysis of prospective cohort studies examining alcohol intake and cardiovascular outcomes.",
+      "datasets": [
+        "Medline (1950–September 2009)",
+        "Embase (1980–September 2009)",
+        "84 prospective cohort studies"
+      ],
+      "conditions": [
+        "Adult population >= 18 years without pre-existing cardiovascular disease",
+        "Active alcohol consumption exposure vs non-drinkers or lifetime abstainers",
+        "Evaluated outcomes: CVD mortality, incident CHD, CHD mortality, incident stroke, stroke mortality, all-cause mortality"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2109129984:l1",
+      "paper_id": "openalex:W2109129984",
+      "text": "Prior systematic reviews were out of date and did not uniformly address associations between alcohol use and mortality from cardiovascular disease, as well as incidence and mortality from coronary heart disease and stroke.",
+      "normalized_category": "outdated-prior-literature",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2109129984:l2",
+      "paper_id": "openalex:W2109129984",
+      "text": "The quality of individual included studies varied, with some having limited follow-up duration (15% had <=5 years) and limited adjustment for potential confounding variables.",
+      "normalized_category": "variable-study-quality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2109129984:l3",
+      "paper_id": "openalex:W2109129984",
+      "text": "Only a limited subset of included studies provided specific risk estimates for different beverage types (beer, wine, spirits).",
+      "normalized_category": "lack-of-beverage-specific-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2109129984:l4",
+      "paper_id": "openalex:W2109129984",
+      "text": "Limited information was available in the included literature regarding the relation between alcohol intake and mortality from specific stroke subtypes.",
+      "normalized_category": "sparse-stroke-subtype-mortality-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2109129984:l5",
+      "paper_id": "openalex:W2109129984",
+      "text": "Significant statistical heterogeneity was observed across studies for several pooled analyses, likely driven by large sample sizes.",
+      "normalized_category": "statistical-heterogeneity",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2109129984:f1",
+      "paper_id": "openalex:W2109129984",
+      "text": "Evaluate clinical counselling strategies for moderate alcohol consumption in pragmatic clinical trials focusing on optimal patient selection, compliance, risks, and benefits.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2109129984:f2",
+      "paper_id": "openalex:W2109129984",
+      "text": "Undertake public health messaging pilot studies in well-defined target populations to evaluate effects on knowledge, attitudes, drinking behaviors, and health outcomes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2109129984:f3",
+      "paper_id": "openalex:W2109129984",
+      "text": "Conduct robust studies examining multiple health outcomes simultaneously to identify population subsets where reduced cardiovascular risk dominates against risks of medical and social problems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:05:02.216882Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

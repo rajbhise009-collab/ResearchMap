@@ -1,0 +1,146 @@
+{
+  "paper_id": "openalex:W1996559225",
+  "claims": [
+    {
+      "id": "openalex:W1996559225:c1",
+      "paper_id": "openalex:W1996559225",
+      "text": "Older age is a significant independent predictor of severe liver fibrosis in patients with nonalcoholic steatohepatitis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1996559225:c2",
+      "paper_id": "openalex:W1996559225",
+      "text": "Obesity is a significant independent predictor of severe liver fibrosis in patients with nonalcoholic steatohepatitis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1996559225:c3",
+      "paper_id": "openalex:W1996559225",
+      "text": "Diabetes mellitus is a significant independent predictor of severe liver fibrosis in patients with nonalcoholic steatohepatitis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1996559225:c4",
+      "paper_id": "openalex:W1996559225",
+      "text": "An AST/ALT ratio greater than 1 is a significant independent predictor of severe liver fibrosis in patients with nonalcoholic steatohepatitis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1996559225:c5",
+      "paper_id": "openalex:W1996559225",
+      "text": "Body mass index is the only independent predictor of the degree of fat infiltration in patients with nonalcoholic steatohepatitis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1996559225:c6",
+      "paper_id": "openalex:W1996559225",
+      "text": "Increased transferrin saturation correlates positively with the severity of hepatic fibrosis in univariate analysis.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1996559225:c7",
+      "paper_id": "openalex:W1996559225",
+      "text": "Iron studies are not significant predictors of severe liver fibrosis when controlled for age, obesity, diabetes, and AST/ALT ratio.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1996559225:c8",
+      "paper_id": "openalex:W1996559225",
+      "text": "Gender is not a significant predictor of severe liver fibrosis when controlled for age, obesity, diabetes, and AST/ALT ratio.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1996559225:e1",
+      "claim_id": "openalex:W1996559225:c1",
+      "description": "In multivariate analysis, older age (P = .001) was a significant predictor of severe liver fibrosis (bridging/cirrhosis).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1996559225:e2",
+      "claim_id": "openalex:W1996559225:c2",
+      "description": "In multivariate analysis, obesity (P = .002) was a significant predictor of severe liver fibrosis (bridging/cirrhosis).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1996559225:e3",
+      "claim_id": "openalex:W1996559225:c3",
+      "description": "In multivariate analysis, diabetes mellitus (P = .009) was a significant predictor of severe liver fibrosis (bridging/cirrhosis).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1996559225:e4",
+      "claim_id": "openalex:W1996559225:c4",
+      "description": "In multivariate analysis, aspartate transaminase/alanine transaminase (AST/ALT) ratio greater than 1 (P = .03) was a significant predictor of severe liver fibrosis.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1996559225:e5",
+      "claim_id": "openalex:W1996559225:c5",
+      "description": "Body mass index (P = .003) was the only independent predictor of the degree of fat infiltration.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1996559225:e6",
+      "claim_id": "openalex:W1996559225:c6",
+      "description": "Increased transferrin saturation correlated positively with the severity of fibrosis (P = .02) in univariate analysis.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1996559225:e7",
+      "claim_id": "openalex:W1996559225:c7",
+      "description": "Iron studies were not significant when controlled for age, obesity, diabetes, and AST/ALT ratio.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1996559225:e8",
+      "claim_id": "openalex:W1996559225:c8",
+      "description": "Gender was not significant when controlled for age, obesity, diabetes, and AST/ALT ratio.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1996559225:m1",
+      "paper_id": "openalex:W1996559225",
+      "name": "Univariate and multivariate analysis of clinical and biochemical variables",
+      "description": "Clinical and biochemical variables were evaluated using univariate and multivariate regression analysis in patients who underwent liver biopsy to identify predictors of severe liver fibrosis.",
+      "datasets": [
+        "NASH patient liver biopsy cohort (N=144)"
+      ],
+      "conditions": [
+        "diagnosis of nonalcoholic steatohepatitis (NASH)",
+        "liver biopsy performed on all patients"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1996559225:l1",
+      "paper_id": "openalex:W1996559225",
+      "text": "No recognized factors determining increasing fibrosis and histologically advanced disease in NASH prior to this study.",
+      "normalized_category": "lack-of-prior-risk-factor-recognition",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:44:24.291829Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

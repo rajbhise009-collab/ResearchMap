@@ -1,0 +1,144 @@
+{
+  "paper_id": "openalex:W3087549734",
+  "claims": [
+    {
+      "id": "openalex:W3087549734:c1",
+      "paper_id": "openalex:W3087549734",
+      "text": "Multi-task learning is a training paradigm in which multiple tasks are simultaneously learned by a shared model.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3087549734:c2",
+      "paper_id": "openalex:W3087549734",
+      "text": "Deep multi-task learning methods can be partitioned into three main groups: architectures, optimization methods, and task relationship learning.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3087549734:c3",
+      "paper_id": "openalex:W3087549734",
+      "text": "Inclusion of task-specific channel-wise projection modules decreases the frequency of conflicting gradient update directions across tasks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3087549734:c4",
+      "paper_id": "openalex:W3087549734",
+      "text": "Task Routing Layers allow a multi-task network to scale up to 312 tasks simultaneously.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3087549734:c5",
+      "paper_id": "openalex:W3087549734",
+      "text": "Soft Modularization combined with Soft Actor-Critic achieves a 60% success rate on the MT50 Meta-World benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3087549734:c6",
+      "paper_id": "openalex:W3087549734",
+      "text": "PCGrad combined with Soft Actor-Critic successfully completes 70% of tasks on the MT50 Meta-World benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3087549734:e1",
+      "claim_id": "openalex:W3087549734:c1",
+      "description": "Multi-task learning (MTL) is a subfield of machine learning in which multiple tasks are simultaneously learned by a shared model.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3087549734:e2",
+      "claim_id": "openalex:W3087549734:c2",
+      "description": "Our discussion is structured according to a partition of the existing deep MTL techniques into three groups: architectures, optimization methods, and task relationship learning.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3087549734:e3",
+      "claim_id": "openalex:W3087549734:c3",
+      "description": "it is empirically shown that the inclusion of these task-specific projection modules decreases the chance that gradient update directions for different tasks point in opposite directions",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3087549734:e4",
+      "claim_id": "openalex:W3087549734:c4",
+      "description": "the Task Routing Layer allows for the network to scale up to handle up to 312 tasks simultaneously while maintaining decent performance.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3087549734:e5",
+      "claim_id": "openalex:W3087549734:c5",
+      "description": "When combined with Soft Actor-Critic (Haarnoja et al., 2018), the Soft Modularization agent reaches 60% success rate on MT50 from the Meta-World benchmark.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3087549734:e6",
+      "claim_id": "openalex:W3087549734:c6",
+      "description": "When combined with Soft Actor-Critic (Haarnoja et al., 2018), PCGrad is able to successfully complete 70% of the tasks in the MT50 benchmark of the Meta-World environment.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3087549734:m1",
+      "paper_id": "openalex:W3087549734",
+      "name": "Taxonomic Literature Review and Survey",
+      "description": "A comprehensive survey categorizing deep multi-task learning into architectures, optimization methods, and task relationship learning.",
+      "datasets": [
+        "NYU-v2",
+        "Taskonomy",
+        "Meta-World",
+        "GLUE",
+        "CelebA",
+        "CityScapes"
+      ],
+      "conditions": [
+        "Deep neural network multi-task learning literature up to 2020",
+        "Fixed task sets learned simultaneously with equal weighting"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3087549734:l1",
+      "paper_id": "openalex:W3087549734",
+      "text": "The survey excludes classical non-neural multi-task learning methods, single main-task auxiliary settings, and settings where the set of tasks changes over time.",
+      "normalized_category": "scope-exclusion",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3087549734:l2",
+      "paper_id": "openalex:W3087549734",
+      "text": "Simultaneous learning of multiple tasks can lead to negative transfer or destructive interference when tasks have conflicting requirements.",
+      "normalized_category": "negative-transfer",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3087549734:l3",
+      "paper_id": "openalex:W3087549734",
+      "text": "Conditional computation routing models frequently suffer from module collapse where only a small fraction of available modules are used.",
+      "normalized_category": "module-collapse",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3087549734:f1",
+      "paper_id": "openalex:W3087549734",
+      "text": "Development of theoretical frameworks and mathematical foundation to understand optimization dynamics and generalization in deep multi-task learning.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.084361Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

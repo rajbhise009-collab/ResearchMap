@@ -1,0 +1,71 @@
+{
+  "paper_id": "openalex:W3101206394",
+  "claims": [
+    {
+      "id": "openalex:W3101206394:c1",
+      "paper_id": "openalex:W3101206394",
+      "text": "The rapid growth of algorithmic fairness research has led to inconsistent motivations, terminology, and notation across the literature.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101206394:c2",
+      "paper_id": "openalex:W3101206394",
+      "text": "Implicit choices and assumptions made to justify prediction-based decision-making can give rise to fairness concerns.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101206394:c3",
+      "paper_id": "openalex:W3101206394",
+      "text": "Fairness definitions across existing literature can be organized into a notationally consistent catalog.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3101206394:e1",
+      "claim_id": "openalex:W3101206394:c1",
+      "description": "The authors state that the rapid growth of this new field has led to wildly inconsistent motivations, terminology, and notation, presenting a serious challenge for cataloging and comparing definitions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3101206394:e2",
+      "claim_id": "openalex:W3101206394:c2",
+      "description": "The authors explicate the choices and assumptions made to justify prediction-based decision-making and show how they can raise fairness concerns.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101206394:e3",
+      "claim_id": "openalex:W3101206394:c3",
+      "description": "The paper presents a notationally consistent catalog of fairness definitions from the literature.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3101206394:m1",
+      "paper_id": "openalex:W3101206394",
+      "name": "Taxonomic Conceptual Synthesis",
+      "description": "Explicates implicit choices and assumptions in prediction-based decision-making and systematizes existing fairness definitions using standardized mathematical notation.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3101206394:l1",
+      "paper_id": "openalex:W3101206394",
+      "text": "Inconsistent motivations, terminology, and notation across prior algorithmic fairness literature present a serious challenge for cataloging and comparing fairness definitions.",
+      "normalized_category": "inconsistent-terminology-and-notation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:12:31.578222Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

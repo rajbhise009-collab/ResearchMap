@@ -1,0 +1,122 @@
+{
+  "paper_id": "openalex:W1979769549",
+  "claims": [
+    {
+      "id": "openalex:W1979769549:c1",
+      "paper_id": "openalex:W1979769549",
+      "text": "Discrimination-aware classification can be achieved without requiring data modification.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1979769549:c2",
+      "paper_id": "openalex:W1979769549",
+      "text": "Discrimination-aware classification can be achieved without requiring classifier tweaking.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1979769549:c3",
+      "paper_id": "openalex:W1979769549",
+      "text": "The reject option of probabilistic classifiers can be exploited to reduce discrimination in classification.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1979769549:c4",
+      "paper_id": "openalex:W1979769549",
+      "text": "The disagreement region of general classifier ensembles can be exploited to reduce discrimination in classification.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1979769549:c5",
+      "paper_id": "openalex:W1979769549",
+      "text": "Discrimination reduction solutions using reject options and ensemble disagreement regions can be framed within decision theory.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1979769549:e1",
+      "claim_id": "openalex:W1979769549:c1",
+      "description": "In this paper, we present two solutions for discrimination-aware classification that neither require data modification nor classifier tweaking.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1979769549:e2",
+      "claim_id": "openalex:W1979769549:c2",
+      "description": "In this paper, we present two solutions for discrimination-aware classification that neither require data modification nor classifier tweaking.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1979769549:e3",
+      "claim_id": "openalex:W1979769549:c3",
+      "description": "Our first and second solutions exploit, respectively, the reject option of probabilistic classifier(s) and the disagreement region of general classifier ensembles to reduce discrimination.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1979769549:e4",
+      "claim_id": "openalex:W1979769549:c4",
+      "description": "Our first and second solutions exploit, respectively, the reject option of probabilistic classifier(s) and the disagreement region of general classifier ensembles to reduce discrimination.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1979769549:e5",
+      "claim_id": "openalex:W1979769549:c5",
+      "description": "We relate both solutions with decision theory for better understanding of the process.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1979769549:m1",
+      "paper_id": "openalex:W1979769549",
+      "name": "Reject option probabilistic classification for discrimination reduction",
+      "description": "A method exploiting the reject option of probabilistic classifiers to reduce social discrimination without modifying training data or tweaking algorithms.",
+      "datasets": [
+        "real-world datasets"
+      ],
+      "conditions": [
+        "probabilistic classifiers"
+      ]
+    },
+    {
+      "id": "openalex:W1979769549:m2",
+      "paper_id": "openalex:W1979769549",
+      "name": "Ensemble disagreement region classification for discrimination reduction",
+      "description": "A method exploiting the disagreement region of general classifier ensembles to achieve discrimination-aware classification.",
+      "datasets": [
+        "real-world datasets"
+      ],
+      "conditions": [
+        "classifier ensembles"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1979769549:l1",
+      "paper_id": "openalex:W1979769549",
+      "text": "Prior methods for discrimination-aware classification require either modifying discriminatory data or tweaking a specific classification algorithm.",
+      "normalized_category": "algorithm-inflexibility",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1979769549:l2",
+      "paper_id": "openalex:W1979769549",
+      "text": "Prior methods for discrimination-aware classification are not flexible with respect to discrimination control and handling multiple sensitive attributes.",
+      "normalized_category": "limited-attribute-handling",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:17:37.455556Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

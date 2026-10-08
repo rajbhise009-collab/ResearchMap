@@ -1,0 +1,231 @@
+{
+  "paper_id": "openalex:W2109003937",
+  "claims": [
+    {
+      "id": "openalex:W2109003937:c1",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele consumed 17.2% fewer units of alcohol per week compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c2",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had lower odds of binge drinking compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c3",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had higher odds of alcohol abstention compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c4",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had lower systolic blood pressure compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c5",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had lower interleukin-6 levels compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c6",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had lower waist circumference compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c7",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had lower body mass index compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c8",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had lower odds of coronary heart disease compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c9",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele had lower odds of ischaemic stroke compared to non-carriers.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c10",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele showed no association with combined subtypes of stroke.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c11",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele showed no overall association with type 2 diabetes.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2109003937:c12",
+      "paper_id": "openalex:W2109003937",
+      "text": "Carriers of the ADH1B rs1229984 A-allele showed no overall difference in HDL cholesterol concentration compared to non-carriers.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2109003937:e1",
+      "claim_id": "openalex:W2109003937:c1",
+      "description": "Carriers of the A-allele of ADH1B rs1229984 consumed 17.2% fewer units of alcohol per week (95% CI 15.6% to 18.9%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e2",
+      "claim_id": "openalex:W2109003937:c2",
+      "description": "Lower prevalence of binge drinking in A-allele carriers with odds ratio 0.78 (95% CI 0.73 to 0.84).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e3",
+      "claim_id": "openalex:W2109003937:c3",
+      "description": "Higher abstention in A-allele carriers with odds ratio 1.27 (95% CI 1.21 to 1.34).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e4",
+      "claim_id": "openalex:W2109003937:c4",
+      "description": "Rs1229984 A-allele carriers had lower systolic blood pressure (-0.88 (-1.19 to -0.56) mm Hg).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e5",
+      "claim_id": "openalex:W2109003937:c5",
+      "description": "Rs1229984 A-allele carriers had lower interleukin-6 levels (-5.2% (-7.8 to -2.4%)).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e6",
+      "claim_id": "openalex:W2109003937:c6",
+      "description": "Rs1229984 A-allele carriers had lower waist circumference (-0.34 (-0.58 to -0.10) cm).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e7",
+      "claim_id": "openalex:W2109003937:c7",
+      "description": "Rs1229984 A-allele carriers had lower body mass index (-0.17 (-0.24 to -0.10) kg/m2).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e8",
+      "claim_id": "openalex:W2109003937:c8",
+      "description": "Rs1229984 A-allele carriers had lower odds of coronary heart disease (odds ratio 0.90 (95% CI 0.84 to 0.96)).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e9",
+      "claim_id": "openalex:W2109003937:c9",
+      "description": "Carriers of the A-allele had lower odds of ischaemic stroke (odds ratio 0.83 (95% CI 0.72 to 0.95)).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2109003937:e10",
+      "claim_id": "openalex:W2109003937:c10",
+      "description": "No association of rs1229984 was identified with the combined subtypes of stroke (odds ratio 0.98 (95% CI 0.90 to 1.07)).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e11",
+      "claim_id": "openalex:W2109003937:c11",
+      "description": "No association between rs1229984 A-allele with type 2 diabetes was observed (odds ratio 1.02 (95% CI 0.95 to 1.09)).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2109003937:e12",
+      "claim_id": "openalex:W2109003937:c12",
+      "description": "There was no overall difference between rs1229984 A-allele carriers and non-carriers in HDL cholesterol concentration (-0.004 (-0.012 to 0.003) mmol/L).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2109003937:m1",
+      "paper_id": "openalex:W2109003937",
+      "name": "Mendelian randomisation meta-analysis",
+      "description": "Used the ADH1B rs1229984 genetic variant as an instrumental variable to examine causal associations between alcohol intake, cardiovascular biomarkers, and cardiovascular outcomes using pooled individual participant data.",
+      "datasets": [
+        "261 991 individuals of European descent from 56 studies"
+      ],
+      "conditions": [
+        "European ancestry",
+        "Dominant genetic model (rs1229984 A-allele carriers vs non-carriers)",
+        "Stratification by alcohol consumption categories"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2109003937:l1",
+      "paper_id": "openalex:W2109003937",
+      "text": "Existing experimental studies on the HDL cholesterol raising effect of alcohol may be prone to bias due to small sample size and short follow-up.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2109003937:l2",
+      "paper_id": "openalex:W2109003937",
+      "text": "Self-reported questionnaires make it difficult to correctly classify long-term non-drinkers in observational studies.",
+      "normalized_category": "measurement-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2109003937:l3",
+      "paper_id": "openalex:W2109003937",
+      "text": "Reduced statistical power to detect a stronger protective association of coronary heart disease in heavy drinkers due to the low number of events in the heavy drinking stratum.",
+      "normalized_category": "statistical-power",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2109003937:l4",
+      "paper_id": "openalex:W2109003937",
+      "text": "Relatively small number of stroke events and the use of combined stroke subtypes, which could have obscured differential associations by pathological or aetiological subtype.",
+      "normalized_category": "sample-size",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2109003937:f1",
+      "paper_id": "openalex:W2109003937",
+      "text": "Access large-scale population studies such as UK Biobank and China Kadoorie Biobank Study to minimize measurement error in alcohol exposure, provide sufficient coronary heart disease events, and enable detailed examination of stroke subtypes.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-09-29T03:17:34.443503Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

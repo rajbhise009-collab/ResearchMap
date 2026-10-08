@@ -1,0 +1,82 @@
+{
+  "paper_id": "openalex:W4389518784",
+  "claims": [
+    {
+      "id": "openalex:W4389518784:c1",
+      "paper_id": "openalex:W4389518784",
+      "text": "ChatGPT generates hallucinated content by fabricating unverifiable information in approximately 19.5% of user queries.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c2",
+      "paper_id": "openalex:W4389518784",
+      "text": "Existing large language models face significant challenges in recognizing hallucinations in text.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c3",
+      "paper_id": "openalex:W4389518784",
+      "text": "Hallucination recognition in large language models can be improved by providing external knowledge.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4389518784:c4",
+      "paper_id": "openalex:W4389518784",
+      "text": "Hallucination recognition in large language models can be improved by adding reasoning steps.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4389518784:e1",
+      "claim_id": "openalex:W4389518784:c1",
+      "description": "Empirical results suggest ChatGPT generates hallucinated content in specific topics by fabricating unverifiable information in about 19.5% of user queries.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4389518784:e2",
+      "claim_id": "openalex:W4389518784:c2",
+      "description": "Experiments show that existing LLMs face great challenges in recognizing the hallucinations in texts.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4389518784:e3",
+      "claim_id": "openalex:W4389518784:c3",
+      "description": "Experiments prove that hallucination recognition can be improved by providing external knowledge.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4389518784:e4",
+      "claim_id": "openalex:W4389518784:c4",
+      "description": "Experiments prove that hallucination recognition can be improved by adding reasoning steps.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4389518784:m1",
+      "paper_id": "openalex:W4389518784",
+      "name": "ChatGPT-based sampling-then-filtering framework with human annotation",
+      "description": "A two-step generation framework combined with human labeling to generate and annotate hallucinated samples for evaluating LLM performance.",
+      "datasets": [
+        "HaluEval"
+      ],
+      "conditions": [
+        "Sampling-then-filtering framework",
+        "Human annotation of ChatGPT responses"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-07-25T16:19:42.089574Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

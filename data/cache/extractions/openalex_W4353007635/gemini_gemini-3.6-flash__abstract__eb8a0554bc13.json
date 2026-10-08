@@ -1,0 +1,76 @@
+{
+  "paper_id": "openalex:W4353007635",
+  "claims": [
+    {
+      "id": "openalex:W4353007635:c1",
+      "paper_id": "openalex:W4353007635",
+      "text": "Opinion-based prompts reframe the context as a narrator's statement and inquire about the narrator's opinions.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4353007635:c2",
+      "paper_id": "openalex:W4353007635",
+      "text": "Counterfactual demonstrations use instances containing false facts to improve faithfulness in knowledge conflict situations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4353007635:c3",
+      "paper_id": "openalex:W4353007635",
+      "text": "Neither opinion-based prompts nor counterfactual demonstrations require additional training.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4353007635:e1",
+      "claim_id": "openalex:W4353007635:c1",
+      "description": "Opinion-based prompts reframe the context as a narrator's statement and inquire about the narrator's opinions",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4353007635:e2",
+      "claim_id": "openalex:W4353007635:c2",
+      "description": "counterfactual demonstrations use instances containing false facts to improve faithfulness in knowledge conflict situations",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4353007635:e3",
+      "claim_id": "openalex:W4353007635:c3",
+      "description": "Neither technique requires additional training.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4353007635:m1",
+      "paper_id": "openalex:W4353007635",
+      "name": "Context-faithful Prompting",
+      "description": "A set of prompting techniques including opinion-based prompts and counterfactual demonstrations to enhance LLMs' contextual faithfulness without training.",
+      "datasets": [],
+      "conditions": [
+        "knowledge conflict",
+        "prediction with abstention",
+        "machine reading comprehension",
+        "relation extraction"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4353007635:l1",
+      "paper_id": "openalex:W4353007635",
+      "text": "Reliance on parametric knowledge may cause LLMs to overlook contextual cues, leading to incorrect predictions in context-sensitive NLP tasks.",
+      "normalized_category": "parametric-knowledge-reliance",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-07-25T10:20:49.740825Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

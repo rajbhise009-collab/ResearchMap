@@ -1,0 +1,155 @@
+{
+  "paper_id": "openalex:W2492799977",
+  "claims": [
+    {
+      "id": "openalex:W2492799977:c1",
+      "paper_id": "openalex:W2492799977",
+      "text": "Animal protein intake was not associated with all-cause mortality after adjusting for major lifestyle and dietary risk factors.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2492799977:c2",
+      "paper_id": "openalex:W2492799977",
+      "text": "Animal protein intake was associated with higher cardiovascular mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2492799977:c3",
+      "paper_id": "openalex:W2492799977",
+      "text": "Plant protein intake was associated with lower all-cause mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2492799977:c4",
+      "paper_id": "openalex:W2492799977",
+      "text": "Plant protein intake was associated with lower cardiovascular mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2492799977:c5",
+      "paper_id": "openalex:W2492799977",
+      "text": "The mortality associations of animal and plant protein intake were confined to participants with at least one unhealthy lifestyle factor.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2492799977:c6",
+      "paper_id": "openalex:W2492799977",
+      "text": "Substituting 3% of energy from plant protein for protein from processed red meat was associated with lower all-cause mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2492799977:c7",
+      "paper_id": "openalex:W2492799977",
+      "text": "Substituting 3% of energy from plant protein for protein from unprocessed red meat was associated with lower all-cause mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2492799977:c8",
+      "paper_id": "openalex:W2492799977",
+      "text": "Substituting 3% of energy from plant protein for protein from egg was associated with lower all-cause mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2492799977:e1",
+      "claim_id": "openalex:W2492799977:c1",
+      "description": "HR of 1.02 per 10% energy increment (95% CI, 0.98-1.05; P for trend = .33) for animal protein intake and all-cause mortality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2492799977:e2",
+      "claim_id": "openalex:W2492799977:c2",
+      "description": "HR of 1.08 per 10% energy increment (95% CI, 1.01-1.16; P for trend = .04) for animal protein intake and cardiovascular mortality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2492799977:e3",
+      "claim_id": "openalex:W2492799977:c3",
+      "description": "HR of 0.90 per 3% energy increment (95% CI, 0.86-0.95; P for trend < .001) for plant protein intake and all-cause mortality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2492799977:e4",
+      "claim_id": "openalex:W2492799977:c4",
+      "description": "HR of 0.88 per 3% energy increment (95% CI, 0.80-0.97; P for trend = .007) for plant protein intake and cardiovascular mortality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2492799977:e5",
+      "claim_id": "openalex:W2492799977:c5",
+      "description": "Associations were confined to participants with at least 1 unhealthy lifestyle factor (smoking, heavy alcohol intake, overweight/obesity, physical inactivity) and not evident among those without any risk factors.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2492799977:e6",
+      "claim_id": "openalex:W2492799977:c6",
+      "description": "HR for all-cause mortality was 0.66 (95% CI, 0.59-0.75) when 3% energy from plant protein was substituted for processed red meat protein.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2492799977:e7",
+      "claim_id": "openalex:W2492799977:c7",
+      "description": "HR for all-cause mortality was 0.88 (95% CI, 0.84-0.92) when 3% energy from plant protein was substituted for unprocessed red meat protein.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2492799977:e8",
+      "claim_id": "openalex:W2492799977:c8",
+      "description": "HR for all-cause mortality was 0.81 (95% CI, 0.75-0.88) when 3% energy from plant protein was substituted for egg protein.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2492799977:m1",
+      "paper_id": "openalex:W2492799977",
+      "name": "Prospective cohort analysis with repeated dietary assessment",
+      "description": "Prospective cohort analysis evaluating animal and plant protein intake via regularly updated validated food frequency questionnaires.",
+      "datasets": [
+        "Nurses' Health Study",
+        "Health Professionals Follow-up Study"
+      ],
+      "conditions": [
+        "131,342 participants",
+        "Nurses' Health Study follow-up: 1980 to June 1, 2012",
+        "Health Professionals Follow-up Study follow-up: 1986 to January 31, 2012"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2492799977:l1",
+      "paper_id": "openalex:W2492799977",
+      "text": "Defining what represents a macronutritionally balanced diet remains an open question in nutrition research.",
+      "normalized_category": "knowledge-gap",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2492799977:l2",
+      "paper_id": "openalex:W2492799977",
+      "text": "Observed mortality associations were not evident among individuals without any unhealthy lifestyle risk factors.",
+      "normalized_category": "subgroup-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-09-29T03:16:23.417680Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

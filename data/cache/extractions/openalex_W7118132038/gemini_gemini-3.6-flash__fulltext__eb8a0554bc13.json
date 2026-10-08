@@ -1,0 +1,174 @@
+{
+  "paper_id": "openalex:W7118132038",
+  "claims": [
+    {
+      "id": "openalex:W7118132038:c1",
+      "paper_id": "openalex:W7118132038",
+      "text": "A fine-tuned BERT model achieved a 76.5% F1-score on the GossipCop dataset, outperforming GPT-3.5-turbo which scored 70.2%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c2",
+      "paper_id": "openalex:W7118132038",
+      "text": "A supervised RoBERTa-Base classifier achieved a 52.9% F1-macro score on the FA-KES dataset, outperforming zero-shot GPT-3.5-turbo at 43.3%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c3",
+      "paper_id": "openalex:W7118132038",
+      "text": "A fine-tuned BioBERT model achieved 80.2% accuracy on the CliniFact dataset, outperforming Llama3-70B which achieved 53.6% accuracy when fine-tuned.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c4",
+      "paper_id": "openalex:W7118132038",
+      "text": "The MiniCheck-FT5 model fine-tuned on synthetic data achieved a 74.7% Balanced Accuracy on the LLM-AGGREFACT benchmark.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c5",
+      "paper_id": "openalex:W7118132038",
+      "text": "The Hierarchical Step-by-Step (HiSS) prompting method achieved an F1-score of 53.9% on the RAWFC dataset, compared to 44.4% for vanilla Chain-of-Thought.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c6",
+      "paper_id": "openalex:W7118132038",
+      "text": "Integrating Retrieval-Augmented Generation (RAG) with GPT-4 increased accuracy on non-ambiguous PolitiFact claims from 75% to 89%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7118132038:c7",
+      "paper_id": "openalex:W7118132038",
+      "text": "The Fact-Check-Then-RAG method improved Llama 3 70B accuracy on the PubMedQA dataset from 60.60% to 73.60%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7118132038:e1",
+      "claim_id": "openalex:W7118132038:c1",
+      "description": "A fine-tuned BERT model achieved a +9.0% relative improvement in F1-score over the best-performing GPT-3.5-turbo configuration (76.5% vs. 70.2%) on the GossipCop dataset.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7118132038:e2",
+      "claim_id": "openalex:W7118132038:c2",
+      "description": "A supervised RoBERTa-Base classifier outperformed zero-shot GPT-3.5-turbo by +9.6 absolute points in F1-macro on the FA-KES dataset (52.9% vs. 43.3%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7118132038:e3",
+      "claim_id": "openalex:W7118132038:c3",
+      "description": "A fine-tuned BioBERT for clinical claims achieved 80.2% accuracy on CliniFact, significantly outperforming both zero-shot (34.3%) and fine-tuned (53.6%) Llama3-70B.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7118132038:e4",
+      "claim_id": "openalex:W7118132038:c4",
+      "description": "MiniCheck-FT5 model (770M parameters), fine-tuned on specially generated synthetic data, achieved an average Balanced Accuracy of 74.7% on the LLM-AGGREFACT benchmark.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7118132038:e5",
+      "claim_id": "openalex:W7118132038:c5",
+      "description": "The HiSS (Hierarchical Step-by-Step) method surpassed vanilla CoT by +9.5 absolute points in F1-score on the RAWFC dataset (53.9% vs. 44.4%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7118132038:e6",
+      "claim_id": "openalex:W7118132038:c6",
+      "description": "Providing external context (RAG) to GPT-4 on the PolitiFact dataset increased its accuracy on non-ambiguous verdicts from 75% to 89%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7118132038:e7",
+      "claim_id": "openalex:W7118132038:c7",
+      "description": "The Fact-Check-Then-RAG method improved Llama 3 70B's accuracy on the PubMedQA dataset from 60.60% to 73.60% (+13.0 absolute points) by using fact-checking results to guide retrieval.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7118132038:m1",
+      "paper_id": "openalex:W7118132038",
+      "name": "Systematic Literature Review Protocol",
+      "description": "A multi-phase review methodology comprising planning, multi-database search across Web of Science, arXiv, Scopus, and OpenReview, title/abstract screening, full-text evaluation, and categorization across five target research questions.",
+      "datasets": [
+        "Web of Science",
+        "arXiv",
+        "Scopus",
+        "OpenReview"
+      ],
+      "conditions": [
+        "Publication window from January 1, 2021 to September 15, 2025",
+        "Multi-stage screening yielding 64 selected core articles published between September 2022 and August 2025"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7118132038:l1",
+      "paper_id": "openalex:W7118132038",
+      "text": "The scope of the review is inherently constrained by the rapid velocity of technological innovation within the LLM domain, meaning emerging preprint findings and proprietary model advancements may not be fully encapsulated.",
+      "normalized_category": "literature-scope-constraints",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7118132038:l2",
+      "paper_id": "openalex:W7118132038",
+      "text": "Currently used lexical and semantic overlap evaluation metrics quantify surface-level similarity rather than factual consistency, rendering them less effective at detecting nuanced errors.",
+      "normalized_category": "evaluation-metric-inadequacy",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7118132038:l3",
+      "paper_id": "openalex:W7118132038",
+      "text": "The majority of existing fact-checking benchmark datasets either lack the realistic complexity of real-world claims and are domain-independent or are too narrow to be generalized.",
+      "normalized_category": "dataset-realism-and-generalizability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7118132038:f1",
+      "paper_id": "openalex:W7118132038",
+      "text": "Development of multi-dimensional evaluation frameworks with standardized metrics for explainability and interpretability that correlate with human cognitive trust.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7118132038:f2",
+      "paper_id": "openalex:W7118132038",
+      "text": "Proactive prevention of factual hallucinations by optimizing RAG systems for complex information environments and enabling dynamic knowledge updates within LLM architectures.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7118132038:f3",
+      "paper_id": "openalex:W7118132038",
+      "text": "Integration of formal verification methods and symbolic reasoning to enhance the logical consistency of LLMs on multi-hop and complex inferential claims.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7118132038:f4",
+      "paper_id": "openalex:W7118132038",
+      "text": "Expansion of LLM fact-checking to robust multimodal verification and low-resource multilingual contexts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:58:01.977285Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,139 @@
+{
+  "paper_id": "openalex:W2127427274",
+  "claims": [
+    {
+      "id": "openalex:W2127427274:c1",
+      "paper_id": "openalex:W2127427274",
+      "text": "Higher HDL-C is associated with lower coronary heart disease risk (HR 0.78 per 1-SD higher value).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127427274:c2",
+      "paper_id": "openalex:W2127427274",
+      "text": "Higher non-HDL-C is associated with higher coronary heart disease risk (HR 1.50 per 1-SD higher value).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127427274:c3",
+      "paper_id": "openalex:W2127427274",
+      "text": "Triglyceride level is not significantly associated with coronary heart disease risk after adjustment for conventional risk factors (HR 0.99 per 1-SD higher value).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127427274:c4",
+      "paper_id": "openalex:W2127427274",
+      "text": "Hazard ratios for coronary heart disease are at least as strong in participants who did not fast as in those who did.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127427274:c5",
+      "paper_id": "openalex:W2127427274",
+      "text": "A combination of 80 mg/dL lower non-HDL-C and 15 mg/dL higher HDL-C is associated with a coronary heart disease HR of 0.35.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127427274:c6",
+      "paper_id": "openalex:W2127427274",
+      "text": "The apo B/apo AI ratio shows a coronary heart disease hazard ratio (1.49) similar to the non-HDL-C/HDL-C ratio (1.50).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2127427274:c7",
+      "paper_id": "openalex:W2127427274",
+      "text": "Higher non-HDL-C is associated with an increased risk of ischemic stroke (HR 1.12 per 1-SD higher value).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2127427274:e1",
+      "claim_id": "openalex:W2127427274:c1",
+      "description": "Adjusted HRs for CHD were 0.78 (95% CI, 0.74-0.82) with HDL-C.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127427274:e2",
+      "claim_id": "openalex:W2127427274:c2",
+      "description": "Adjusted HRs for CHD were 1.50 (95% CI, 1.39-1.61) with non-HDL-C.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127427274:e3",
+      "claim_id": "openalex:W2127427274:c3",
+      "description": "Adjusted HRs for CHD were 0.99 (95% CI, 0.94-1.05) with triglyceride.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127427274:e4",
+      "claim_id": "openalex:W2127427274:c4",
+      "description": "Hazard ratios were at least as strong in participants who did not fast as in those who did.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2127427274:e5",
+      "claim_id": "openalex:W2127427274:c5",
+      "description": "The HR for CHD was 0.35 (95% CI, 0.30-0.42) with a combination of 80 mg/dL lower non-HDL-C and 15 mg/dL higher HDL-C.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127427274:e6",
+      "claim_id": "openalex:W2127427274:c6",
+      "description": "HRs were 1.50 (95% CI, 1.38-1.62) with the ratio non-HDL-C/HDL-C and 1.49 (95% CI, 1.39-1.60) with the ratio apo B/apo AI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2127427274:e7",
+      "claim_id": "openalex:W2127427274:c7",
+      "description": "Hazard ratios for ischemic stroke were 1.12 (95% CI, 1.04-1.20) with non-HDL-C.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2127427274:m1",
+      "paper_id": "openalex:W2127427274",
+      "name": "Meta-analysis of individual participant data",
+      "description": "Individual participant data meta-analysis combining within-study Cox regression analyses adjusted for conventional risk factors and within-person variation.",
+      "datasets": [
+        "68 long-term prospective studies"
+      ],
+      "conditions": [
+        "302,430 individuals without initial vascular disease",
+        "2.79 million person-years of follow-up"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2127427274:l1",
+      "paper_id": "openalex:W2127427274",
+      "text": "Associations of major lipids and apolipoproteins with the risk of vascular disease had not been reliably quantified previously.",
+      "normalized_category": "unquantified-baseline-risk",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2127427274:l2",
+      "paper_id": "openalex:W2127427274",
+      "text": "Participants were mostly from Europe and North America, potentially limiting demographic generalizability.",
+      "normalized_category": "demographic-sampling-bias",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-02T10:42:21.129569Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

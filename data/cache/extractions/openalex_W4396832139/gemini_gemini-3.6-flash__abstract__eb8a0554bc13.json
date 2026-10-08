@@ -1,0 +1,98 @@
+{
+  "paper_id": "openalex:W4396832139",
+  "claims": [
+    {
+      "id": "openalex:W4396832139:c1",
+      "paper_id": "openalex:W4396832139",
+      "text": "Metacognition provides a coherent framework to understand and design for usability challenges in Generative AI systems.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396832139:c2",
+      "paper_id": "openalex:W4396832139",
+      "text": "Generative AI systems impose metacognitive demands on users that require high levels of metacognitive monitoring and control.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396832139:c3",
+      "paper_id": "openalex:W4396832139",
+      "text": "Integrating metacognitive support strategies into Generative AI systems addresses user metacognitive demands.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4396832139:c4",
+      "paper_id": "openalex:W4396832139",
+      "text": "Designing Generative AI systems to target explainability and customizability reduces user metacognitive demand.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4396832139:e1",
+      "claim_id": "openalex:W4396832139:c1",
+      "description": "Metacognition offers a coherent framework for understanding the usability challenges posed by GenAI, and provides novel research and design directions to advance human-AI interaction.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4396832139:e2",
+      "claim_id": "openalex:W4396832139:c2",
+      "description": "Drawing on research in psychology and cognitive science, and recent GenAI user studies, we illustrate how GenAI systems impose metacognitive demands on users, requiring a high degree of metacognitive monitoring and control.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4396832139:e3",
+      "claim_id": "openalex:W4396832139:c3",
+      "description": "We propose these demands could be addressed by integrating metacognitive support strategies into GenAI systems...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4396832139:e4",
+      "claim_id": "openalex:W4396832139:c4",
+      "description": "...and by designing GenAI systems to reduce their metacognitive demand by targeting explainability and customizability.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4396832139:m1",
+      "paper_id": "openalex:W4396832139",
+      "name": "Literature Synthesis and Conceptual Framing",
+      "description": "Conceptual mapping based on research from psychology, cognitive science, and user studies to analyze interaction demands in GenAI systems.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4396832139:l1",
+      "paper_id": "openalex:W4396832139",
+      "text": "Generative AI systems present usability challenges around prompting, evaluating, relying on outputs, and optimizing workflows.",
+      "normalized_category": "usability-and-workflow-challenges",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4396832139:f1",
+      "paper_id": "openalex:W4396832139",
+      "text": "Integrating metacognitive support strategies into Generative AI system designs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4396832139:f2",
+      "paper_id": "openalex:W4396832139",
+      "text": "Designing Generative AI systems that target explainability and customizability to lower metacognitive friction.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-07-25T16:19:42.115202Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
