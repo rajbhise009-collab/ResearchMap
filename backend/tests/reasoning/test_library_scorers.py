@@ -76,8 +76,9 @@ class _FakeBatch:
         self.keys = list(prompts)
         return "batches/fake"
 
-    def wait(self, bid, poll_interval_s=0):
+    def wait(self, bid, poll_interval_s=0, timeout_s=0):
         class J:
+            done = True
             succeeded = True
         return J()
 

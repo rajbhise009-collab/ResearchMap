@@ -44,6 +44,8 @@ def export(outdir: Path = DEFAULT_OUT) -> int:
     # Developer mode shows the raw side; the consumer view never touches it.
     cards = []
     for c in data.cards():
+        if c.scorer == "structural_holes" and not c.confirm_status:
+            continue   # unconfirmed leads are not shown (see library_cards)
         card = {**c.model_dump(), "slug": slug(c.id)}
         card["consumer"] = language.consumer_card(card)
         if card["consumer"].get("verdict"):

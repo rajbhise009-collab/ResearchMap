@@ -1,5 +1,12 @@
 # Weekly refresh
 
+> **Superseded (2026-10-08).** The issue-only `weekly-refresh.yml` workflow
+> was replaced by `weekly-grow.yml` (adds papers, two-phase batch, publish
+> gates) and `daily-health.yml`. Runbook: [OPERATIONS.md](OPERATIONS.md).
+> The same two query shapes (cites-both, recent citers) are now run by
+> `backend/app/grow/core.py`, alongside a library snowball. This page is
+> kept as the record of how they were verified.
+
 A free, LLM-free GitHub Actions workflow that scans OpenAlex each week
 for newly-published works that might be relevant to this repository's
 libraries. The results land as a single GitHub Issue per run. **The

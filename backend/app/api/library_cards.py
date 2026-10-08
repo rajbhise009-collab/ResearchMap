@@ -73,6 +73,10 @@ def scorer_cards(slug: str) -> tuple[list[dict], dict, dict[str, str]]:
                                             "top": 15}})
     out = []
     for c in cards:
+        # A method-transfer lead is shown only after the confirmation step
+        # has looked at it (new leads wait for the next weekly run).
+        if c.scorer == "structural_holes" and not c.confirm_status:
+            continue
         d = c.model_dump(mode="json")
         d["slug"] = f"opp-{slug}-{_slugify(c.id.removeprefix('opp:'))}"
         d["consumer"] = language.consumer_card(d)

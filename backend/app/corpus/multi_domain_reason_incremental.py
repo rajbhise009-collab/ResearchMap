@@ -71,12 +71,14 @@ from backend.app.corpus.multi_domain_reason import (  # noqa: E402
 def run(slug: str, *, threshold: float = LIBRARY_THRESHOLD,
         max_per_claim: int = LIBRARY_MAX_PER_CLAIM,
         max_inr: float | None = None, projected_inr_per_call: float | None = None,
-        priority_papers: set[str] | None = None, dry_run: bool = False) -> dict:
+        priority_papers: set[str] | None = None, dry_run: bool = False,
+        embed_client=None, llm=None) -> dict:
     slug = DOMAINS[slug].slug
     exts = load_extractions(slug)
     pairs = compute_shortlist(exts, threshold=threshold,
                               max_per_claim=max_per_claim,
-                              use_real_embeddings=True, slug=slug)
+                              use_real_embeddings=True, slug=slug,
+                              embed_client=embed_client)
     embed_stats = dict(LAST_EMBED_STATS)
     done = load_classified_keys(slug)
     unseen = [p for p in pairs if (p.from_claim_id, p.to_claim_id) not in done]
@@ -94,7 +96,7 @@ def run(slug: str, *, threshold: float = LIBRARY_THRESHOLD,
                                              max_per_claim=max_per_claim)
         return summary
     res = classify_pairs(slug, exts, unseen, max_inr=max_inr,
-                         projected_inr_per_call=projected_inr_per_call)
+                         projected_inr_per_call=projected_inr_per_call, llm=llm)
     summary["classify"] = res
     summary["coverage"] = write_coverage(slug, exts, pairs, threshold=threshold,
                                          max_per_claim=max_per_claim)

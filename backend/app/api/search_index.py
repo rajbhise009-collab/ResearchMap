@@ -318,7 +318,9 @@ def build_index(opportunities: list[dict[str, Any]],
             return c >= PHRASE_MIN_DOC_FREQ
         return c >= 2
     vocab = {t: c for t, c in df.items() if _keep(t, c)}
-    idf = {t: math.log((n_docs + 1) / (c + 0.5)) for t, c in vocab.items()}
+    # Sorted so the shipped index is byte-identical run to run (vocab is
+    # built from sets; hash order would otherwise change every export).
+    idf = {t: math.log((n_docs + 1) / (c + 0.5)) for t, c in sorted(vocab.items())}
     max_idf = max(idf.values()) if idf else 1.0
 
     out_docs = []

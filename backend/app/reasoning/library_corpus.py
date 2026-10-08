@@ -5,7 +5,8 @@ run on it. Nothing here calls an LLM.
 Built from local files only:
   papers           data/domains/<slug>/prelabelled.json (merges applied)
   extractions      the shared extraction cache (merged losers unioned)
-  first authors    raw OpenAlex records in snowball.json (authorships)
+  first authors    raw OpenAlex records (corpus/records.py: snowball.json
+                   locally, else the committed records.slim.json)
   citation edges   snowball.json `referenced_works`, kept when both ends are
                    in the library (a merged loser's id maps to its survivor)
   claim vectors    reasoning/claim_embeddings.json (cache from the
@@ -40,6 +41,27 @@ def _dir(slug: str) -> Path:
 
 def fw_cache_path(slug: str) -> Path:
     return _dir(slug) / "fw_embeddings.json"
+
+
+def fw_checked_path(slug: str) -> Path:
+    return _dir(slug) / "fw_checked.json"
+
+
+def load_fw_checked(slug: str) -> set[str]:
+    """Future-work items the two-stage matcher has looked at (with or without
+    candidates). Only these may become 'open questions': an unchecked item
+    has simply not been looked for yet."""
+    p = fw_checked_path(slug)
+    ids = set(json.loads(p.read_text())["ids"]) if p.exists() else set()
+    return ids | {a.future_work_id for a in load_addressals(slug)}
+
+
+def mark_fw_checked(slug: str, ids) -> int:
+    p = fw_checked_path(slug)
+    cur = set(json.loads(p.read_text())["ids"]) if p.exists() else set()
+    new = cur | set(ids)
+    p.write_text(json.dumps({"ids": sorted(new)}, indent=1) + "\n")
+    return len(new) - len(cur)
 
 
 def addressals_path(slug: str) -> Path:
@@ -81,7 +103,8 @@ def _authors_and_edges(slug: str, lc: LoadedCorpus):
         alias[e["wid"]] = e["wid"]
         for m in e.get("merged_from", []):
             alias[_wid(m)] = e["wid"]
-    snow = json.loads((DOMAINS / slug / "snowball.json").read_text())
+    from backend.app.corpus import records
+    snow = records.load(slug)
     first: dict[str, str | None] = {}
     edges: set[tuple[str, str]] = set()
     for r in snow["records"] + snow.get("rejected_records", []):
@@ -197,8 +220,10 @@ def load_library_corpus(slug: str) -> ReasoningCorpus:
     own = [(l, pid) for pid, ext in lc.extractions.items()
            for l in ext.limitations if l.source_scope == "this_work"]
     fids, fvecs = fw_vectors(slug, lc)
+    checked = load_fw_checked(slug)
     return ReasoningCorpus(
-        papers=papers, own_limitations=own, future_work=lc.future_work(),
+        papers=papers, own_limitations=own,
+        future_work=[(fw, m) for fw, m in lc.future_work() if fw.id in checked],
         addressals=load_addressals(slug), contradictions=[], citation_edges=edges,
         claim_ids=cids, claim_vectors=cvecs, paper_vectors=paper_vecs,
         fw_ids=fids, fw_vectors=fvecs, claim_paper=lc.claim_paper, _loaded=lc)

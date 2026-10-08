@@ -120,8 +120,14 @@ def _project(prompts: dict[str, str]) -> float:
     return pricing.cost(tin, tout, batch=True) * FX
 
 
+class BatchPending(RuntimeError):
+    """The batch was submitted (state saved) but has not finished within the
+    wait limit. Re-running the same stage resumes it; nothing is re-paid."""
+
+
 def _run_batch(slug: str, stage: str, prompts: dict[str, str], *, client=None,
-               poll_s: float = 20.0) -> tuple[dict[str, str], dict]:
+               poll_s: float = 20.0,
+               wait_timeout_s: float = 26 * 3600) -> tuple[dict[str, str], dict]:
     """Submit (once) and collect; bill once; return raw results + money."""
     from backend.app.extraction.batch_client import record_batch_usage
     sp = _state(slug, stage)
@@ -138,7 +144,9 @@ def _run_batch(slug: str, stage: str, prompts: dict[str, str], *, client=None,
         st = {"batch_id": bid, "n": len(prompts), "projected_inr": proj,
               "ledger_recorded": False, "submitted_at": time.time()}
         sp.write_text(json.dumps(st, indent=2))
-    job = client.wait(st["batch_id"], poll_interval_s=poll_s)
+    job = client.wait(st["batch_id"], poll_interval_s=poll_s, timeout_s=wait_timeout_s)
+    if not job.done:
+        raise BatchPending(f"batch {st['batch_id']} still {job.state}; state kept in {sp.name}")
     if not job.succeeded:
         raise RuntimeError(f"batch {st['batch_id']} ended {job.state}")
     with_usage = client.results_with_usage(job)
@@ -155,7 +163,8 @@ def _run_batch(slug: str, stage: str, prompts: dict[str, str], *, client=None,
     return {k: v[0] for k, v in with_usage.items()}, money
 
 
-def confirm(slug: str, *, dry_run: bool, client=None) -> dict:
+def confirm(slug: str, *, dry_run: bool, client=None,
+            wait_timeout_s: float = 26 * 3600) -> dict:
     rows = hole_leads(slug)
     out_p = confirmations_path(slug)
     done = json.loads(out_p.read_text()) if out_p.exists() else {}
@@ -165,7 +174,8 @@ def confirm(slug: str, *, dry_run: bool, client=None) -> dict:
            "to_confirm": len(todo), "projected_inr": round(_project(prompts), 4) if prompts else 0.0}
     if dry_run or not prompts:
         return res
-    raw, money = _run_batch(slug, "hole_confirm", prompts, client=client)
+    raw, money = _run_batch(slug, "hole_confirm", prompts, client=client,
+                            wait_timeout_s=wait_timeout_s)
     by_id = {r["id"]: r for r in todo}
     from backend.app.reasoning.run_structural_confirm import _prompt_hash
     for oid, text in raw.items():
@@ -182,7 +192,8 @@ def confirm(slug: str, *, dry_run: bool, client=None) -> dict:
     return res
 
 
-def fwmatch(slug: str, *, dry_run: bool, client=None) -> dict:
+def fwmatch(slug: str, *, dry_run: bool, client=None,
+            wait_timeout_s: float = 26 * 3600) -> dict:
     rc, cands = fw_candidates(slug)
     ap = addressals_path(slug)
     done = {json.loads(l)["id"] for l in ap.read_text().splitlines() if l.strip()} if ap.exists() else set()
@@ -194,7 +205,8 @@ def fwmatch(slug: str, *, dry_run: bool, client=None) -> dict:
            "projected_inr": round(_project(prompts), 4) if prompts else 0.0}
     if dry_run or not prompts:
         return res
-    raw, money = _run_batch(slug, "fw_match", prompts, client=client)
+    raw, money = _run_batch(slug, "fw_match", prompts, client=client,
+                            wait_timeout_s=wait_timeout_s)
     by_key = {f"{c.fw_id}||{c.to_paper_id}": c for c in todo}
     counts = Counter()
     model = f"gemini:{get_settings().gemini_model}"
@@ -210,6 +222,8 @@ def fwmatch(slug: str, *, dry_run: bool, client=None) -> dict:
             f.write(a.model_dump_json() + "\n")
             f.flush()
     _state(slug, "fw_match").unlink(missing_ok=True)
+    from backend.app.reasoning.library_corpus import mark_fw_checked
+    mark_fw_checked(slug, rc.fw_ids)    # every item this run looked at
     res.update(money)
     res["verdicts"] = dict(counts)
     return res

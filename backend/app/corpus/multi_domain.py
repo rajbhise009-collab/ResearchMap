@@ -900,6 +900,36 @@ def _arxiv_id_from_semantic_scholar(doi: str, *, client: httpx.Client) -> Option
         return None
 
 
+def retrieve_fulltext_one(e: dict, rec: dict, *, client: httpx.Client,
+                          email: Optional[str] = None) -> Optional[str]:
+    """Full text for one entry, stored in the shared cache. Returns the
+    source tag, or None when only the abstract is available. Free."""
+    email = email or UNPAYWALL_EMAIL
+    paper = _paper_for_fulltext(e)
+    if load_cached_fulltext(paper.id):
+        return "cache"
+    # DOI-based arXiv id via OpenAlex locations (no API call)
+    aid = _arxiv_id_from_openalex_record(rec)
+    src_tag = "arxiv-openalex"
+    if not aid and e.get("doi"):
+        aid = _arxiv_id_from_semantic_scholar(e["doi"], client=client)
+        src_tag = "arxiv-s2"
+    if aid:
+        text = fetch_pdf_text(aid, client=client)
+        if text and len(text) >= 3000:
+            store_fulltext(paper.id, text)
+            return src_tag
+    # Fall back to existing arXiv-title-search + OA path
+    r1 = retrieve_fulltext(paper, client=client, use_cache=False)
+    if not r1.abstract_only:
+        return "arxiv-title"
+    if e.get("doi"):
+        r2 = retrieve_oa_fulltext(paper, email=email, client=client, use_cache=False)
+        if not r2.abstract_only:
+            return r2.source or "unpaywall"
+    return None
+
+
 def retrieve_fulltext_all(config: DomainConfig, *, email: Optional[str] = None,
                             sample: Optional[int] = None) -> dict:
     """Attempt DOI-based arXiv id → arXiv PDF → Unpaywall → Europe PMC
@@ -928,36 +958,10 @@ def retrieve_fulltext_all(config: DomainConfig, *, email: Optional[str] = None,
     with httpx.Client(timeout=25.0, follow_redirects=True,
                        headers={"User-Agent": "ResearchMap/0.2 multi-domain"}) as client:
         for i, e in enumerate(target, 1):
-            paper = _paper_for_fulltext(e)
             source = None
             try:
-                # Cache first (both existing arXiv cache and prior OA runs)
-                cached = load_cached_fulltext(paper.id)
-                if cached:
-                    source = "cache"
-                else:
-                    # DOI-based arXiv id via OpenAlex locations (no API call)
-                    rec = by_wid.get(e["wid"], {})
-                    aid = _arxiv_id_from_openalex_record(rec)
-                    src_tag = "arxiv-openalex"
-                    if not aid and e.get("doi"):
-                        aid = _arxiv_id_from_semantic_scholar(e["doi"], client=client)
-                        src_tag = "arxiv-s2"
-                    if aid:
-                        text = fetch_pdf_text(aid, client=client)
-                        if text and len(text) >= 3000:
-                            store_fulltext(paper.id, text)
-                            source = src_tag
-                    # Fall back to existing arXiv-title-search + OA path
-                    if not source:
-                        r1 = retrieve_fulltext(paper, client=client, use_cache=False)
-                        if not r1.abstract_only:
-                            source = "arxiv-title"
-                        elif e.get("doi"):
-                            r2 = retrieve_oa_fulltext(paper, email=email,
-                                                       client=client, use_cache=False)
-                            if not r2.abstract_only:
-                                source = r2.source or "unpaywall"
+                source = retrieve_fulltext_one(e, by_wid.get(e["wid"], {}),
+                                               client=client, email=email)
             except Exception as ex:
                 # Never let a per-paper failure kill the batch, but do log
                 # it so the run report shows how many rows we lost this way.

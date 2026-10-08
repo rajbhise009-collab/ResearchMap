@@ -9,13 +9,14 @@ Sections: inject url dev medical offensive races env keyboard network
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
-BASE = "http://127.0.0.1:8765"
+BASE = os.environ.get("HUNT_BASE", "http://127.0.0.1:8765")
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "frontend" / "public" / "data"
 QA = Path.home() / "ResearchMap-private" / "launch-qa"
@@ -425,7 +426,10 @@ def network(br):
 def main() -> int:
     secs = sys.argv[1:] or ["inject", "url", "dev", "medical", "offensive", "races", "env", "keyboard", "network"]
     with sync_playwright() as p:
-        br = p.chromium.launch(channel="chrome", headless=True)
+        try:
+            br = p.chromium.launch(headless=True)
+        except Exception:
+            br = p.chromium.launch(channel="chrome", headless=True)   # installed Chrome
         for s in secs:
             env(p, br) if s == "env" else globals()[s](br)
         br.close()
