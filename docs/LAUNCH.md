@@ -82,20 +82,47 @@ example the LinkedIn Post Inspector or a Slack/Discord message to yourself).
 Each should show the title, description and the 1200×630 image for its
 library. Diet previews end "not dietary or medical advice".
 
-## 9. The weekly-refresh GitHub workflow
+## 9. The weekly growth and daily health workflows
 
-`.github/workflows/weekly-refresh.yml` opens a GitHub issue listing candidate
-new papers each Monday. It does **not** update the site. It needs a repository
-secret, otherwise it fails every week. Choose one:
+`.github/workflows/weekly-grow.yml` adds papers every Monday and publishes
+only when every check passes. `.github/workflows/daily-health.yml` checks the
+live site every day. Runbook: [OPERATIONS.md](OPERATIONS.md). Neither does
+anything useful until you:
 
-- **Keep it:** GitHub → repo **Settings → Secrets and variables → Actions →
-  New repository secret** `OPENALEX_API_KEY`, then **Actions → weekly-refresh
-  → Run workflow** once to confirm it succeeds.
-- **Disable it:** **Actions → weekly-refresh → ⋯ → Disable workflow**.
+1. GitHub → repo **Settings → Secrets and variables → Actions → New
+   repository secret**:
+   - `GEMINI_API_KEY`: create a **new** key in Google AI Studio / Cloud
+     console, restricted to the **Generative Language API**, used only here;
+   - `OPENALEX_API_KEY`: your OpenAlex key.
+2. Optional, under **Variables**: `NEXT_PUBLIC_SITE_URL` (once you have a
+   domain) and `WEEKLY_BUDGET_INR` (default 25).
+3. **Actions → Weekly grow → Run workflow** once. The first run only submits
+   a batch (nothing to collect yet), so it publishes little; the second run,
+   a week later, adds the papers. Read the Issue each run opens.
+4. **Actions → Daily health → Run workflow** once to confirm it passes.
 
-The public site makes no claim about refreshes either way.
+To pause growth: **Actions → Weekly grow → ⋯ → Disable workflow**.
 
 ## 10. Before advertising
 
 Read `REPORT_launch.md`, in particular the repository-audit section about the
 old answer key that GitHub still serves by commit identifier.
+
+## 11. Your remaining manual steps (as of 2026-10-08)
+
+Things only you can do, in a sensible order:
+
+1. **Secrets, then one run:** add `GEMINI_API_KEY` (a NEW key restricted to
+   the Generative Language API) and `OPENALEX_API_KEY` as repository secrets,
+   then run **Weekly grow** once from the Actions tab (section 9).
+2. **Google Cloud budget alert:** Cloud console → Billing → Budgets & alerts
+   → create a budget alert on the project that owns the Gemini key, so you
+   get an email well before any limit.
+3. **Vercel Web Analytics:** enable it (section 6).
+4. **Name, domain, site URL and contact email:** decide the name; buy and
+   connect the domain (sections 2–5); set `NEXT_PUBLIC_SITE_URL` in Vercel
+   and as a GitHub Actions variable; fill `contactEmail` in
+   `frontend/site.config.json` (section 1).
+5. **Legal review** of `/terms` and `/privacy` by someone qualified.
+6. **The expert review** of the libraries' results.
+
