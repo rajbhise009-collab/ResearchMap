@@ -132,9 +132,12 @@ def main() -> int:
         check(1, all(pend.values()), "a batch is pending for each library", pend)
         check(1, it and it["state"] == "open" and "published to main" in it["body"], "one Issue, status published")
         check(1, (WORK / "docs" / "releases" / f"{d1}.json").exists(), "release fingerprint written")
-        fp = json.loads((WORK / "docs" / "releases" / f"{d1}.json").read_text())
+        fpp = WORK / "docs" / "releases" / f"{d1}.json"
+        fp = json.loads(fpp.read_text()) if fpp.exists() else {"gates": None}
         check(1, fp["gates"] and all(g["ok"] for g in fp["gates"]), "fingerprint records every gate passing",
               [g for g in fp["gates"] or [] if not g["ok"]])
+        if r.returncode != 0:
+            raise SystemExit("week 1 failed; see " + str(OUT / f"run-{d1}.log"))
         # 2 ---------------------------------------------------------------
         d2 = "2026-10-19"
         before = {s: papers(s) for s in ("diet-and-mortality", "ml-fairness")}

@@ -221,7 +221,8 @@ def select(slug: str, cands: list[dict], records: dict[str, dict], *,
     """Rubric, then dedupe; ranked. Returns ([(entry, raw)], drop counts)."""
     from collections import Counter
 
-    from backend.app.corpus.multi_domain import DOMAINS, _abstract_of, classify
+    from backend.app.corpus.multi_domain import _abstract_of, classify
+    from backend.app.corpus.multi_domain_reason import DOMAINS   # short and full slugs
     from backend.app.ingestion.normalizer import deduplicate, from_openalex, normalize_title
     from backend.app.refresh.weekly_candidates import Candidate, _dedupe_candidates
     cfg = DOMAINS[slug]
