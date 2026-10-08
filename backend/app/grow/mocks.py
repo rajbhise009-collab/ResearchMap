@@ -41,14 +41,20 @@ class MockOpenAlex:
         self.requests_made = 0
         self.pool: dict[str, list[dict]] = {}
         self.owner: dict[str, str] = {}
+        # A new pool each week (ids and test titles carry the run's week), as
+        # real OpenAlex results would be.
+        import datetime as dt
+        day = dt.date.fromisoformat(os.environ.get("GROW_DATE") or dt.date.today().isoformat())
+        wk = day.toordinal() // 7
+        self.week = wk
         for n, slug in enumerate(GROW_SLUGS):
-            self.pool[slug] = self._build_pool(slug, 9_900_000_000 + n * 1000)
+            self.pool[slug] = self._build_pool(slug, 9_000_000_000 + n * 100_000 + (wk % 900) * 100, wk)
             for r in records.load(slug)["records"]:
                 self.owner[_wid(r["id"])] = slug
         self.by_wid = {_wid(r["id"]): r for rs in self.pool.values() for r in rs}
 
     @staticmethod
-    def _build_pool(slug: str, base: int) -> list[dict]:
+    def _build_pool(slug: str, base: int, wk: int) -> list[dict]:
         pre = json.loads((domains_dir() / slug / "prelabelled.json").read_text())
         snow = records.load(slug)
         recs = {_wid(r["id"]): r for r in snow["records"]}
@@ -68,11 +74,11 @@ class MockOpenAlex:
             return r
 
         for i in range(4):
-            out.append(mk(core[i], i, f"{core[i]['title']} — weekly growth test record {i}"))
-        out.append(mk(core[4], 4, "Weekly growth test record: DOI duplicate", doi=core[5].get("doi")))
+            out.append(mk(core[i], i, f"{core[i]['title']} — weekly growth test record {wk}-{i}"))
+        out.append(mk(core[4], 4, f"Weekly growth test record {wk}: DOI duplicate", doi=core[5].get("doi")))
         out.append(mk(core[6], 5, core[6]["title"]))                       # title duplicate
-        out.append(mk(core[7], 6, "Weekly growth test record: twin candidate"))
-        twin = mk(core[7], 7, "Weekly growth test record: twin candidate")
+        out.append(mk(core[7], 6, f"Weekly growth test record {wk}: twin candidate"))
+        twin = mk(core[7], 7, f"Weekly growth test record {wk}: twin candidate")
         out.append(twin)                                                    # duplicate among candidates
         off = snow.get("rejected_records") or []
         if off:
