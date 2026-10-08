@@ -27,7 +27,8 @@ def run(cmd: list[str]) -> tuple[bool, str]:
 
 
 def main() -> int:
-    checks = [("live check", [sys.executable, "tools/live-check.py", SITE]),
+    checks = [("live check", [sys.executable, "tools/live-check.py", SITE, "--vercel-host",
+                              os.environ.get("GROW_VERCEL_HOST", "researchmap-one.vercel.app")]),
               ("smoke checks", [sys.executable, "tools/qa/smoke.py", SITE, "--quick"])]
     res = [(name, *run(cmd)) for name, cmd in checks]
     for name, ok, out in res:

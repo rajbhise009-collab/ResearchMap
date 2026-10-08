@@ -70,6 +70,7 @@ def env(date, **extra):
          if k not in ("OPENALEX_API_KEY", "GEMINI_API_KEY", "GH_TOKEN", "GITHUB_TOKEN")}
     e.update(GROW_MOCK="1", GROW_MOCK_STATE=str(MOCKST), GROW_ISSUE_DIR=str(ISSUES), GROW_DATE=date,
              GROW_LIVE_WAIT_S="0", NEXT_PUBLIC_SITE_URL=SITE, WEEKLY_BUDGET_INR="25",
+             GROW_VERCEL_HOST="",
              PYTHONHASHSEED="0")
     e.update(extra)
     return {k: v for k, v in e.items() if v is not None}
@@ -119,6 +120,8 @@ def main() -> int:
     real_ledger_before = (ROOT / "data" / "spend_ledger.json").read_bytes()
     try:
         gates = {"GROW_GATES": "skip"} if QUICK else {}
+        if QUICK:   # the live check needs a built site to look at
+            sh(["npm", "run", "build"], cwd=WORK / "frontend", env={**os.environ, "NEXT_PUBLIC_SITE_URL": SITE})
         # 1 ---------------------------------------------------------------
         d1 = "2026-10-12"
         m0 = remote_head()
@@ -141,15 +144,19 @@ def main() -> int:
         # 2 ---------------------------------------------------------------
         d2 = "2026-10-19"
         before = {s: papers(s) for s in ("diet-and-mortality", "ml-fairness")}
+        submitted = {s: len(json.loads((WORK / "data/domains" / s / "grow/pending.json").read_text())["entries"])
+                     for s in before}
         l_before = ledger_inr()
         r = run_weekly(d2, **gates)
         it = issue(d2)
         after = {s: papers(s) for s in ("diet-and-mortality", "ml-fairness")}
         check(2, r.returncode == 0, "week 2 exits 0", r.stdout[-800:])
         check(2, all(after[s] > before[s] for s in after), "papers added to both libraries", (before, after))
-        check(2, all(after[s] - before[s] == 4 for s in after),
-              "exactly the 4 clean candidates per library were added (DOI dup, title dup, twin, off-topic rejected)",
-              (before, after))
+        check(2, all(after[s] - before[s] == submitted[s] for s in after),
+              "every submitted paper that extracted cleanly was added, nothing else", (before, after, submitted))
+        w1 = issue(d1)["body"]
+        check(2, all(k in w1 for k in ("duplicate among candidates", "already in library", "rubric: off-domain")),
+              "week 1 dropped the planted duplicates and the off-topic record")
         batch_rows = [e for e in ledger()["entries"] if e["stage"].startswith("grow_extract_") and e.get("batch")]
         check(2, batch_rows and ledger_inr() > l_before, "last week's batch billed to the ledger at the batch rate",
               len(batch_rows))

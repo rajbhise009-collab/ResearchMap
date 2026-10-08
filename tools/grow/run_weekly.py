@@ -371,7 +371,8 @@ def main() -> int:
         wait = int(os.environ.get("GROW_LIVE_WAIT_S", "300"))
         say(f"waiting {wait}s for the deployment")
         time.sleep(wait)
-        r = sh([PY, "tools/live-check.py", SITE], check=False, timeout=600)
+        r = sh([PY, "tools/live-check.py", SITE, "--vercel-host",
+                os.environ.get("GROW_VERCEL_HOST", "researchmap-one.vercel.app")], check=False, timeout=600)
         live = (r.returncode == 0, redact(r.stdout + r.stderr))
         if not live[0]:
             status += " — LIVE CHECK FAILED"
