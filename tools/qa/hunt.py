@@ -418,7 +418,7 @@ def network(br):
     if b.count():
         b.first.click()
         pg.wait_for_timeout(1500)
-    rec(S, hosts == {"127.0.0.1:8765"}, "every runtime request goes to the site itself (no paid or rate-limited API)",
+    rec(S, hosts == {BASE.split("/")[2]}, "every runtime request goes to the site itself (no paid or rate-limited API)",
         str(sorted(hosts)))
     c.close()
 
@@ -426,9 +426,12 @@ def network(br):
 def main() -> int:
     secs = sys.argv[1:] or ["inject", "url", "dev", "medical", "offensive", "races", "env", "keyboard", "network"]
     with sync_playwright() as p:
+        engine = os.environ.get("HUNT_ENGINE", "chromium")
         try:
-            br = p.chromium.launch(headless=True)
+            br = getattr(p, engine).launch(headless=True)
         except Exception:
+            if engine != "chromium":
+                raise
             br = p.chromium.launch(channel="chrome", headless=True)   # installed Chrome
         for s in secs:
             env(p, br) if s == "env" else globals()[s](br)

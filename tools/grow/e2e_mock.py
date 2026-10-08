@@ -113,6 +113,21 @@ def setup():
         f.write("frontend/node_modules\ntools/qa/node_modules\n")
 
 
+def write_marker(results: list[dict]) -> None:
+    """Public copy may describe weekly growth only after a full pass
+    (backend/tests/api/test_hardening.py checks this marker)."""
+    head = git("rev-parse", "HEAD", cwd=ROOT)
+    m = ROOT / "docs" / "releases" / "growth-e2e-passed.json"
+    m.parent.mkdir(parents=True, exist_ok=True)
+    m.write_text(json.dumps({
+        "what": "tools/grow/e2e_mock.py full run (every publish gate), mocked OpenAlex and Gemini, "
+                "temporary ledger, local stand-in for GitHub",
+        "date": time.strftime("%Y-%m-%d"), "tested_commit": head, "full": True,
+        "passed": sum(r["ok"] for r in results), "failed": sum(not r["ok"] for r in results),
+        "scenarios": sorted({str(r["scenario"]) for r in results}),
+    }, indent=1) + "\n")
+
+
 def main() -> int:
     setup()
     srv = subprocess.Popen([PY, "tools/qa/serve.py", PORT], cwd=WORK,
@@ -249,6 +264,8 @@ def main() -> int:
     rep.write_text(json.dumps({"dir": str(OUT), "quick": QUICK, "results": R}, indent=1))
     n_fail = sum(not x["ok"] for x in R)
     print(f"\ne2e: PASS={len(R) - n_fail} FAIL={n_fail} (logs in {OUT})")
+    if not QUICK and n_fail == 0:
+        write_marker(R)
     return 1 if n_fail else 0
 
 
