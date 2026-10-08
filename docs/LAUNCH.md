@@ -108,21 +108,32 @@ To pause growth: **Actions → Weekly grow → ⋯ → Disable workflow**.
 Read `REPORT_launch.md`, in particular the repository-audit section about the
 old answer key that GitHub still serves by commit identifier.
 
-## 11. Your remaining manual steps (as of 2026-10-08)
+## 11. Your remaining manual steps (as of 2026-10-09)
 
 Things only you can do, in a sensible order:
 
 1. **Secrets, then one run:** add `GEMINI_API_KEY` (a NEW key restricted to
    the Generative Language API) and `OPENALEX_API_KEY` as repository secrets,
-   then run **Weekly grow** once from the Actions tab (section 9).
-2. **Google Cloud budget alert:** Cloud console → Billing → Budgets & alerts
-   → create a budget alert on the project that owns the Gemini key, so you
-   get an email well before any limit.
-3. **Vercel Web Analytics:** enable it (section 6).
-4. **Name, domain, site URL and contact email:** decide the name; buy and
-   connect the domain (sections 2–5); set `NEXT_PUBLIC_SITE_URL` in Vercel
-   and as a GitHub Actions variable; fill `contactEmail` in
-   `frontend/site.config.json` (section 1).
-5. **Legal review** of `/terms` and `/privacy` by someone qualified.
-6. **The expert review** of the libraries' results.
-
+   then run **Weekly grow** once from the Actions tab (section 9). Until then
+   every Monday run stops cleanly with an Issue saying so.
+2. **Money (optional, frees money):** after checking the Google Cloud billing
+   page, put the real spend in `config/money.json` as `console_spent_inr`
+   with `console_spent_date` (YYYY-MM-DD). The ledger rounds up, so this
+   usually leaves more to spend. To add money, raise `account_total_inr`.
+3. **Audit flagged disagreements** listed in each weekly Issue (checklist in
+   docs/OPERATIONS.md). Until you do, they show as "Flagged by the system,
+   not yet checked" and count nowhere.
+4. **Three domains need a rubric decision** (`data/library_registry.json`,
+   status `not-ready`): minimum wage, deep-RL evaluation, microplastics.
+   Each failed its blind audit after the one allowed fix
+   (docs/findings/domain-selection-2026-10-09.md). Revise the rubric
+   (backend/app/corpus/domains_2026_10.py), re-run
+   `python -m backend.app.corpus.new_domain --domain <key> --stage all`, audit
+   15 papers blind, and set the status to `queued` if it passes; or leave
+   them.
+5. **Vercel Web Analytics:** enable it (section 6).
+6. **Name, domain, site URL and contact email** (sections 1–5); set
+   `NEXT_PUBLIC_SITE_URL` in Vercel and as a GitHub Actions variable.
+7. **Legal review** of `/terms` and `/privacy`.
+8. **The expert review** of the libraries' results. Every hand audit so far,
+   including the new social-media library's, is the builder's own.

@@ -79,3 +79,12 @@ def _isolated_ledger(tmp_path, monkeypatch):
 @pytest.fixture
 def seed_dir() -> Path:
     return REPO_ROOT / "data" / "seed"
+
+
+@pytest.fixture(autouse=True)
+def _no_inherited_money_config(monkeypatch):
+    """Tests are hermetic: a MONEY_CONFIG_PATH inherited from the caller (the
+    weekly workflow's own end-to-end test sets one) must not apply the money
+    rule to the temporary ledgers the spend tests create. A test that needs
+    it sets it itself."""
+    monkeypatch.delenv("MONEY_CONFIG_PATH", raising=False)

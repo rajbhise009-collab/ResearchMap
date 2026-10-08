@@ -1,5 +1,20 @@
 # PROGRESS
 
+## Scheduled expansion — more domains, unattended growth (2026-10-09) ✅
+
+- Money: config/money.json is the only limit (₹1450 ceiling on the ledger; console figure optional);
+  enforced at call time in SpendLedger. Ledger ₹1135.54, remaining ₹314.46, ₹26.21/week over 12 weeks.
+- Domain selection (docs/findings/domain-selection-2026-10-09.md): 12 candidates; built
+  **social media & adolescent mental health** (₹176.99; 100 papers, 32 results, 2 hand-audited
+  genuine disagreements); **nudges** prepared and queued (did not fit the run's ₹320 completely);
+  ego depletion and growth mindset queued; minimum wage, deep-RL evaluation, microplastics
+  not-ready (blind audit < 80% after one fix).
+- Growth: every non-frozen library, round-robin budget from the money rule, queued libraries built
+  two-phase by the workflow, bookkeeping-only commits on stops, pause/resume (config/growth.json).
+- UI scales to any number of libraries (tools/qa/synthetic_libs.py, 8 libraries).
+- Still owed: **Phase 6 validation**. Unchanged.
+- Details: REPORT_expansion.md.
+
 ## Final run — publish-ready, unsupervised-safe, weekly growth (2026-10-08) ✅
 
 - Part 1: ML fairness future-work matching (₹32.22, batch). Ledger ₹958.55 / ₹1200.
