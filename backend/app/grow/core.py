@@ -16,8 +16,9 @@ Phase 2 (submit):   pick candidates from free OpenAlex queries, keep the
                     projection x1.5 fits the week's remaining budget and the
                     lifetime ledger ceiling.
 
-LLM-calibration is not grown: its corpus is the frozen validation baseline
-(tag llm-cal-baseline-v1).
+Libraries grown: every built, non-frozen library in data/library_registry.json.
+LLM-calibration is frozen: its corpus is the validation baseline (tag
+llm-cal-baseline-v1).
 
 Clients come in through `Clients` (real or mocked), never imported here
 directly, so the whole flow runs offline in tests.
@@ -34,7 +35,11 @@ from typing import Any, Callable
 
 from backend.app.config import REPO_ROOT
 
-GROW_SLUGS = ("diet-and-mortality", "ml-fairness")
+def grow_slugs() -> tuple[str, ...]:
+    """Every built, non-frozen library (data/library_registry.json).
+    LLM calibration is frozen: the validation baseline."""
+    from backend.app.api import registry
+    return tuple(registry.growable())
 MAX_NEW_PER_LIBRARY = 15
 LOOKBACK_DAYS = 10
 EXTRACTION_MULT = 1.5        # projection padding for extraction (brief: x1.5)
@@ -122,8 +127,8 @@ def _window(ref: dt.date, days: int) -> str:
 
 
 def _query(oa, flt: str, n: int) -> list[dict]:
-    body = oa.get("/works", {"filter": flt, "per-page": str(n),
-                             "sort": "cited_by_count:desc", "select": _SELECT})
+    body = with_retry(lambda: oa.get("/works", {"filter": flt, "per-page": str(n),
+                                                "sort": "cited_by_count:desc", "select": _SELECT}))
     return body.get("results") or []
 
 
@@ -195,8 +200,8 @@ def find_candidates(slug: str, oa, *, ref: dt.date, lookback: int = LOOKBACK_DAY
 def fetch_records(oa, wids: list[str]) -> dict[str, dict]:
     out: dict[str, dict] = {}
     for k in range(0, len(wids), 50):
-        body = oa.get("/works", {"filter": "openalex_id:" + "|".join(wids[k:k + 50]),
-                                 "per-page": "50"})
+        body = with_retry(lambda: oa.get("/works", {"filter": "openalex_id:" + "|".join(wids[k:k + 50]),
+                                                    "per-page": "50"}))
         for r in body.get("results") or []:
             out[_wid(r.get("id", ""))] = r
     return out
@@ -295,13 +300,16 @@ def _prompt_for(entry: dict) -> tuple[str, str, float]:
     return prompt, src, cost(estimate_tokens(prompt), out_t, batch=True) * 84.0
 
 
-def submit(slug: str, cl: Clients, budget: Budget, *, ref: dt.date,
-           errors: list[str]) -> dict:
+def prepare(slug: str, cl: Clients, *, ref: dt.date, errors: list[str]) -> dict:
+    """Free: candidates -> rubric -> dedupe -> full text -> rendered prompts
+    with per-paper projections, best first. Nothing is submitted here."""
     if pending_path(slug).exists():
-        return {"slug": slug, "submitted": 0, "note": "last batch not collected yet"}
+        return {"slug": slug, "items": [], "candidates": 0, "dropped": {},
+                "note": "last batch not collected yet"}
     cands = find_candidates(slug, cl.openalex, ref=ref, errors=errors)
     records = fetch_records(cl.openalex, [c["wid"] for c in cands]) if cands else {}
     chosen, drops = select(slug, cands, records, ref=ref)
+    items = []
     for e, r in chosen:
         try:
             src = cl.fulltext(e, r)
@@ -311,35 +319,69 @@ def submit(slug: str, cl: Clients, budget: Budget, *, ref: dt.date,
         e["input_source"] = "fulltext" if src else "abstract_only"
         e["fulltext_source"] = src
         e["abstract_only"] = not src
-    prompts, sources, entries, raws, proj = {}, {}, [], [], 0.0
-    for e, r in chosen:
-        p, src, inr = _prompt_for(e)
-        if not budget.fits((proj + inr) * EXTRACTION_MULT):
-            drops["over weekly budget"] = drops.get("over weekly budget", 0) + 1
-            continue
-        pid = f"openalex:{e['wid']}"
-        prompts[pid], sources[pid] = p, src
-        entries.append(e)
-        raws.append(r)
-        proj += inr
-    res = {"slug": slug, "candidates": len(cands), "dropped": drops, "submitted": len(prompts),
-           "projected_inr": round(proj, 4)}
-    if not prompts:
+        prompt, src2, inr = _prompt_for(e)
+        items.append({"entry": e, "record": r, "prompt": prompt, "src": src2, "inr": inr})
+    return {"slug": slug, "items": items, "candidates": len(cands), "dropped": drops}
+
+
+def allocate(prepared: dict[str, dict], budget: Budget, papers: dict[str, int]) -> dict[str, list[dict]]:
+    """Round-robin across libraries, one paper per library per round, until
+    the week's budget (padded x1.5) is spent. Library order each round:
+    most open candidates first, then fewest papers (lowest coverage)."""
+    order = sorted(prepared, key=lambda s: (-len(prepared[s]["items"]), papers.get(s, 0), s))
+    picked: dict[str, list[dict]] = {s: [] for s in prepared}
+    total = 0.0
+    for rnd in range(max((len(p["items"]) for p in prepared.values()), default=0)):
+        for s in order:
+            items = prepared[s]["items"]
+            if rnd >= len(items):
+                continue
+            it = items[rnd]
+            if budget.fits((total + it["inr"]) * EXTRACTION_MULT):
+                picked[s].append(it)
+                total += it["inr"]
+            else:
+                d = prepared[s]["dropped"]
+                d["over weekly budget"] = d.get("over weekly budget", 0) + 1
+    return picked
+
+
+def submit(slug: str, cl: Clients, budget: Budget, items: list[dict], *, ref: dt.date) -> dict:
+    """Submit ONE extraction batch for the allocated papers (paid)."""
+    proj = sum(it["inr"] for it in items)
+    res = {"slug": slug, "submitted": len(items), "projected_inr": round(proj, 4)}
+    if not items:
         return res
     from backend.app.extraction.spend_gate import preflight
-    from backend.app.extraction.spend_ledger import SpendLedger
-    preflight(stage=f"grow_extract_{slug}", projected_inr=proj, n_calls=len(prompts),
-              multiplier=EXTRACTION_MULT)               # lifetime ceiling, recorded
-    SpendLedger.load()                                  # ledger readable before paying
-    bid = cl.batch.submit(prompts, display_name=f"researchmap-grow-{slug}")
+    preflight(stage=f"grow_extract_{slug}", projected_inr=proj, n_calls=len(items),
+              multiplier=EXTRACTION_MULT)               # money rule, recorded
+    prompts = {f"openalex:{it['entry']['wid']}": it["prompt"] for it in items}
+    bid = with_retry(lambda: cl.batch.submit(prompts, display_name=f"researchmap-grow-{slug}"))
     budget.commit(f"extract_{slug}", proj, EXTRACTION_MULT)
     _write(pending_path(slug), {
         "batch_id": bid, "slug": slug, "submitted_on": ref.isoformat(),
         "submitted_at": time.time(), "projected_inr": proj, "ledger_recorded": False,
-        "input_source": sources, "entries": entries, "records": raws})
+        "input_source": {f"openalex:{it['entry']['wid']}": it["src"] for it in items},
+        "entries": [it["entry"] for it in items], "records": [it["record"] for it in items]})
     res["batch_id"] = bid
-    res["titles"] = [e["title"] for e in entries]
+    res["titles"] = [it["entry"]["title"] for it in items]
     return res
+
+
+def with_retry(fn, *, tries: int = 4, base_s: float | None = None):
+    """Self-heal transient API errors (timeouts, 429, 5xx) with backoff."""
+    import os
+    base = float(os.environ.get("GROW_RETRY_BASE_S", "20")) if base_s is None else base_s
+    for k in range(tries):
+        try:
+            return fn()
+        except Exception as e:  # noqa: BLE001
+            transient = any(t in f"{type(e).__name__} {e}" for t in
+                            ("Timeout", "ConnectError", "429", " 50", "503", "502", "500", "Unavailable",
+                             "RemoteProtocolError", "ReadError"))
+            if not transient or k == tries - 1:
+                raise
+            time.sleep(base * (2 ** k))
 
 
 # ---------------------------------------------------------------------------
@@ -355,7 +397,7 @@ def collect(slug: str, cl: Clients, *, ref: dt.date) -> dict:
     if not sp.exists():
         return {"slug": slug, "status": "nothing pending", "added": []}
     st = _read(sp)
-    job = cl.batch.poll(st["batch_id"])
+    job = with_retry(lambda: cl.batch.poll(st["batch_id"]))
     if not job.done:
         return {"slug": slug, "status": "pending", "state": job.state, "added": []}
     hist = grow_dir(slug) / "history" / f"{st['submitted_on']}-{st['batch_id'].rsplit('/', 1)[-1]}.json"
@@ -364,7 +406,7 @@ def collect(slug: str, cl: Clients, *, ref: dt.date) -> dict:
         _write(hist, st)
         sp.unlink()
         return {"slug": slug, "status": "failed", "state": job.state, "added": []}
-    with_usage = cl.batch.results_with_usage(job)
+    with_usage = with_retry(lambda: cl.batch.results_with_usage(job))
     if not st.get("ledger_recorded"):
         st["recorded_inr"] = record_batch_usage(
             with_usage, stage=f"grow_extract_{slug}_batch", model=MODEL_ID.split(":", 1)[1])
@@ -413,6 +455,18 @@ def collect(slug: str, cl: Clients, *, ref: dt.date) -> dict:
 # ---------------------------------------------------------------------------
 
 def followon(slug: str, cl: Clients, budget: Budget) -> dict:
+    """Each paid step is gated by the week's budget; if the money rule itself
+    refuses (the money ran out mid-run), the step is skipped and reported as
+    `money_refused` — never an error."""
+    from backend.app.extraction.spend_gate import SpendGateRefused
+    from backend.app.extraction.spend_ledger import SpendCapExceededError
+    try:
+        return _followon(slug, cl, budget)
+    except (SpendGateRefused, SpendCapExceededError) as e:
+        return {"slug": slug, "money_refused": str(e)[:200]}
+
+
+def _followon(slug: str, cl: Clients, budget: Budget) -> dict:
     from backend.app.corpus import multi_domain_reason as R
     from backend.app.corpus.multi_domain_reason_incremental import write_coverage
     from backend.app.reasoning import run_library_scorers as S

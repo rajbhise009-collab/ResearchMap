@@ -1,0 +1,133 @@
+{
+  "paper_id": "openalex:W1892688171",
+  "claims": [
+    {
+      "id": "openalex:W1892688171:c1",
+      "paper_id": "openalex:W1892688171",
+      "text": "The median reported prevalence of cyberbullying among children and adolescents on social media is 23.0%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1892688171:c2",
+      "paper_id": "openalex:W1892688171",
+      "text": "Correlations between cyberbullying and anxiety among children and adolescents are inconsistent or weak.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1892688171:c3",
+      "paper_id": "openalex:W1892688171",
+      "text": "Cyberbullying via social media is significantly associated with depression in children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1892688171:c4",
+      "paper_id": "openalex:W1892688171",
+      "text": "Results regarding the association between cyberbullying and self-harm or suicidality are conflicting.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1892688171:c5",
+      "paper_id": "openalex:W1892688171",
+      "text": "Relationship issues are the most common reason for cyberbullying.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1892688171:c6",
+      "paper_id": "openalex:W1892688171",
+      "text": "Girls are most often the recipients of cyberbullying.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1892688171:c7",
+      "paper_id": "openalex:W1892688171",
+      "text": "Responses to cyberbullying among children and adolescents are most often passive.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1892688171:e1",
+      "claim_id": "openalex:W1892688171:c1",
+      "description": "The median reported prevalence of cyberbullying was 23.0% (interquartile range, 11.0%-42.6%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1892688171:e2",
+      "claim_id": "openalex:W1892688171:c2",
+      "description": "Five studies reported inconsistent and/or weak correlations between cyberbullying and anxiety.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1892688171:e3",
+      "claim_id": "openalex:W1892688171:c3",
+      "description": "Ten studies found a statistically significant association between cyberbullying and report of depression.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1892688171:e4",
+      "claim_id": "openalex:W1892688171:c4",
+      "description": "Five studies investigated self-harm or suicidality, with conflicting results.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1892688171:e5",
+      "claim_id": "openalex:W1892688171:c5",
+      "description": "Results indicate that the most common reason for cyberbullying is relationship issues.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1892688171:e6",
+      "claim_id": "openalex:W1892688171:c6",
+      "description": "Results indicate that girls are most often being the recipients of cyberbullying.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1892688171:e7",
+      "claim_id": "openalex:W1892688171:c7",
+      "description": "Responses to cyberbullying are most often passive, with a pervasive lack of awareness or confidence that anything can be done.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1892688171:m1",
+      "paper_id": "openalex:W1892688171",
+      "name": "Systematic review and narrative synthesis",
+      "description": "Systematic literature search across 11 electronic databases with dual reviewer screening, data extraction verification, and study quality assessment using the Mixed Methods Appraisal Tool.",
+      "datasets": [
+        "11 electronic databases (2000 to 2014)"
+      ],
+      "conditions": [
+        "Primary research studies",
+        "Context of social media and cyberbullying",
+        "Target population of children and adolescents aged 12 to 18"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1892688171:l1",
+      "paper_id": "openalex:W1892688171",
+      "text": "Quantitative meta-analysis pooling of results was not possible due to heterogeneity in study objectives and outcomes.",
+      "normalized_category": "study-heterogeneity",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.074479Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

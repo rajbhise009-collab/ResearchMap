@@ -1,0 +1,162 @@
+{
+  "paper_id": "openalex:W2944221730",
+  "claims": [
+    {
+      "id": "openalex:W2944221730:c1",
+      "paper_id": "openalex:W2944221730",
+      "text": "The median cross-sectional correlation between adolescent social media use and life satisfaction across all operationalizations was small and negative (psi = -0.13).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2944221730:c2",
+      "paper_id": "openalex:W2944221730",
+      "text": "The median longitudinal within-person effect of social media use on life satisfaction was trivial in size (beta = -0.05).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2944221730:c3",
+      "paper_id": "openalex:W2944221730",
+      "text": "The median longitudinal within-person effect of life satisfaction on social media use was trivial in size (beta = -0.02).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2944221730:c4",
+      "paper_id": "openalex:W2944221730",
+      "text": "Only 16% of significant specification curve models examining social media use and life satisfaction arose from male participant data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2944221730:c5",
+      "paper_id": "openalex:W2944221730",
+      "text": "In focused best-practice models for males, social media use predicted tenuous decreases only in satisfaction with life and in mean satisfaction (beta = -0.07 to -0.05).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2944221730:c6",
+      "paper_id": "openalex:W2944221730",
+      "text": "In focused best-practice models for females, social media use predicted slightly decreased life satisfaction across all domains except satisfaction with appearance (beta = -0.09 to -0.04).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2944221730:c7",
+      "paper_id": "openalex:W2944221730",
+      "text": "In focused best-practice models for females, all domains of life satisfaction except satisfaction with friends predicted slightly reduced social media use (beta = -0.11 to -0.07).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2944221730:e1",
+      "claim_id": "openalex:W2944221730:c1",
+      "description": "Across all operationalizations, the median cross-sectional correlation was negative (ψ = −0.13), an effect judged as small by behavioral scientists.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2944221730:e2",
+      "claim_id": "openalex:W2944221730:c2",
+      "description": "Both median longitudinal effects were trivial in size (social media predicting life satisfaction, β = −0.05).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2944221730:e3",
+      "claim_id": "openalex:W2944221730:c3",
+      "description": "Both median longitudinal effects were trivial in size (life satisfaction predicting social media use, β = −0.02).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2944221730:e4",
+      "claim_id": "openalex:W2944221730:c4",
+      "description": "When examining the range of possible specifications, the importance of gender was apparent: Only 16% of significant models arose from male data.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2944221730:e5",
+      "claim_id": "openalex:W2944221730:c5",
+      "description": "males showed only two longitudinal within-person effects: Social media predicted tenuous decreases in satisfaction with life and in mean satisfaction ( b = −0.08 to −0.04 or β = −0.07 to −0.05; Fig. 2 , Center ).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2944221730:e6",
+      "claim_id": "openalex:W2944221730:c6",
+      "description": "For females, however, social media was a predictor of slightly decreased life satisfaction across all domains, except satisfaction with appearance ( b = −0.13 to −0.05 or β = −0.09 to −0.04; Fig. 2 , Center ).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2944221730:e7",
+      "claim_id": "openalex:W2944221730:c7",
+      "description": "Furthermore, all domains of life satisfaction, except satisfaction with friends, predicted slightly reduced social media use ( b = −0.17 to −0.05 or β = −0.11 to −0.07; Fig. 2 , Right ).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2944221730:m1",
+      "paper_id": "openalex:W2944221730",
+      "name": "Random-intercept cross-lagged panel model specification curve analysis",
+      "description": "Combines random-intercept cross-lagged panel modeling with a specification curve analysis framework to evaluate between-person associations and within-person longitudinal effects across 2,268 distinct analysis options.",
+      "datasets": [
+        "Understanding Society, the UK Household Longitudinal Study (2009–2016)"
+      ],
+      "conditions": [
+        "Eight-wave panel dataset",
+        "Adolescents aged 10-15 years (n = 539 to 5,492 depending on analysis)",
+        "Weighted least squares mean and variance adjusted estimators",
+        "Predictive mean matching for missing data imputation",
+        "Four-wave completion threshold for participant inclusion"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2944221730:l1",
+      "paper_id": "openalex:W2944221730",
+      "text": "The yearly interval between measurements in the dataset might not be optimal for understanding reciprocal social media effects over time.",
+      "normalized_category": "suboptimal-measurement-interval",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2944221730:l2",
+      "paper_id": "openalex:W2944221730",
+      "text": "Self-report measures only partially reflect the objective time adolescents spend engaging with social media.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2944221730:l3",
+      "paper_id": "openalex:W2944221730",
+      "text": "Prior research predominantly relies on cross-sectional associations between social media use and youth outcomes, making it impossible to separate longitudinal within-person effects from statistical artifacts.",
+      "normalized_category": "cross-sectional-design-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2944221730:f1",
+      "paper_id": "openalex:W2944221730",
+      "text": "Further exploration and replication of small reciprocal within-person effects in female adolescents.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2944221730:f2",
+      "paper_id": "openalex:W2944221730",
+      "text": "Social media companies sharing granular user engagement data and participating in large-scale team-based open science to support independent research.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.070979Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,230 @@
+{
+  "paper_id": "openalex:W3006120578",
+  "claims": [
+    {
+      "id": "openalex:W3006120578:c1",
+      "paper_id": "openalex:W3006120578",
+      "text": "Across all 29 countries, problematic social media users reported lower life satisfaction than non-problematic users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c2",
+      "paper_id": "openalex:W3006120578",
+      "text": "Across all 29 countries, problematic social media users reported more psychological complaints than non-problematic users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c3",
+      "paper_id": "openalex:W3006120578",
+      "text": "Across all 29 countries, problematic social media users reported lower school satisfaction than non-problematic users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c4",
+      "paper_id": "openalex:W3006120578",
+      "text": "Across all 29 countries, problematic social media users reported higher perceived school pressure than non-problematic users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c5",
+      "paper_id": "openalex:W3006120578",
+      "text": "Across all 29 countries, problematic social media users reported lower family support than non-problematic users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c6",
+      "paper_id": "openalex:W3006120578",
+      "text": "Across all 29 countries, problematic social media users reported lower friend support than non-problematic users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c7",
+      "paper_id": "openalex:W3006120578",
+      "text": "In countries with a higher prevalence of intense social media use, intense users reported higher life satisfaction and family support than non-intense users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c8",
+      "paper_id": "openalex:W3006120578",
+      "text": "In countries with a lower prevalence of intense social media use, intense users reported lower life satisfaction, lower family support, and more psychological complaints than non-intense users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c9",
+      "paper_id": "openalex:W3006120578",
+      "text": "In all 29 countries, intense social media users reported higher levels of friend support than non-intense users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3006120578:c10",
+      "paper_id": "openalex:W3006120578",
+      "text": "Country-level prevalence rates of intense and problematic social media use were not significantly associated with mobile broadband costs or internet speed.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3006120578:e1",
+      "claim_id": "openalex:W3006120578:c1",
+      "description": "Problematic SMU was negatively associated with life satisfaction across countries (B = -0.823, p < .001; 95% PI = -1.179 to -0.467).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3006120578:e2",
+      "claim_id": "openalex:W3006120578:c2",
+      "description": "Problematic SMU was positively associated with psychological complaints across countries (B = 0.619, p < .001; 95% PI = 0.396 to 0.842).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3006120578:e3",
+      "claim_id": "openalex:W3006120578:c3",
+      "description": "Problematic users reported lower school satisfaction (B = -0.316, p < .001; 95% PI = -0.480 to -0.152).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3006120578:e4",
+      "claim_id": "openalex:W3006120578:c4",
+      "description": "Problematic users reported higher school pressure (B = 0.292, p < .001; 95% PI = 0.077 to 0.507).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3006120578:e5",
+      "claim_id": "openalex:W3006120578:c5",
+      "description": "Problematic users reported less family support than nonproblematic users across all countries (B = -0.619, p < .001; 95% PI = -0.826 to -0.396).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3006120578:e6",
+      "claim_id": "openalex:W3006120578:c6",
+      "description": "Problematic users reported lower levels of friend support across all countries (B = -0.343, p < .001; 95% PI = -0.516 to -0.144).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3006120578:e7",
+      "claim_id": "openalex:W3006120578:c7",
+      "description": "Cross-level interaction between intense SMU and country-level intense SMU prevalence was positive for life satisfaction (B = 1.229, p < .001) and family support (B = 0.816, p < .001).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3006120578:e8",
+      "claim_id": "openalex:W3006120578:c8",
+      "description": "Cross-level interaction showed intense users reported lower life satisfaction and family support and more psychological complaints (B = -0.533, p = .002) in countries with lower intense SMU prevalence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3006120578:e9",
+      "claim_id": "openalex:W3006120578:c9",
+      "description": "In all countries, intense users reported higher levels of friend support than nonintense users (B = 0.327, p < .001; 95% PI = 0.115 to 0.545).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3006120578:e10",
+      "claim_id": "openalex:W3006120578:c10",
+      "description": "Mobile broadband costs and internet speed did not explain differences in country-level prevalence of intense SMU (B = 0.000, p = .628; B = -0.005, p = .254) or problematic SMU (B = 0.000, p = .568; B = -0.001, p = .338).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3006120578:m1",
+      "paper_id": "openalex:W3006120578",
+      "name": "Two-level hierarchical regression modeling",
+      "description": "Conducted two-level regression analyses on cross-national survey data with individual-level measures at level 1 and country-level measures at level 2, testing random slopes and cross-level interactions.",
+      "datasets": [
+        "2017/2018 Health Behaviour in School-aged Children (HBSC) survey",
+        "OECD broadband statistics (2017)"
+      ],
+      "conditions": [
+        "Multiple imputation for missing data",
+        "Clustering of individuals within 29 countries",
+        "Control for gender, age, and family affluence"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3006120578:l1",
+      "paper_id": "openalex:W3006120578",
+      "text": "Mental, school, and social well-being were measured using either single or a few items, which may have limited the representation of well-being constructs.",
+      "normalized_category": "construct-measurement",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3006120578:l2",
+      "paper_id": "openalex:W3006120578",
+      "text": "The cross-sectional design of the study does not allow for causal inferences regarding the relationship between social media use and well-being.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3006120578:l3",
+      "paper_id": "openalex:W3006120578",
+      "text": "All measures were based on self-reports, which may deviate from actual time spent on social media.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3006120578:l4",
+      "paper_id": "openalex:W3006120578",
+      "text": "The measure of intense social media use captured active communicative use rather than passive scrolling.",
+      "normalized_category": "measurement-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3006120578:l5",
+      "paper_id": "openalex:W3006120578",
+      "text": "Existing research on intense and problematic social media use typically relies on single-country data, limiting cross-national generalizability.",
+      "normalized_category": "geographic-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3006120578:l6",
+      "paper_id": "openalex:W3006120578",
+      "text": "Prior studies typically failed to examine intense and problematic social media use simultaneously in a single analytical model.",
+      "normalized_category": "model-specification",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3006120578:f1",
+      "paper_id": "openalex:W3006120578",
+      "text": "Replicate findings using more detailed and multi-item measures of well-being.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3006120578:f2",
+      "paper_id": "openalex:W3006120578",
+      "text": "Conduct longitudinal research to establish the direction of causality between social media use and well-being.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3006120578:f3",
+      "paper_id": "openalex:W3006120578",
+      "text": "Use objective measures of social media use, such as smartphone application tracking apps.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.075441Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

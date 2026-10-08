@@ -1,0 +1,167 @@
+{
+  "paper_id": "openalex:W2118360093",
+  "claims": [
+    {
+      "id": "openalex:W2118360093:c1",
+      "paper_id": "openalex:W2118360093",
+      "text": "Negative social well-being is positively associated with levels of interpersonal media use such as phone and online communication among young girls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c2",
+      "paper_id": "openalex:W2118360093",
+      "text": "Negative social well-being is positively associated with non-interpersonal media use such as video, music, and reading among young girls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c3",
+      "paper_id": "openalex:W2118360093",
+      "text": "Video use is strongly associated with negative social well-being indicators in young girls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c4",
+      "paper_id": "openalex:W2118360093",
+      "text": "Media multitasking is associated with negative social indicators in young girls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c5",
+      "paper_id": "openalex:W2118360093",
+      "text": "Face-to-face communication is strongly associated with positive social well-being in young girls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c6",
+      "paper_id": "openalex:W2118360093",
+      "text": "Cell phone ownership has little direct association with children's socioemotional well-being.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c7",
+      "paper_id": "openalex:W2118360093",
+      "text": "Having a television or computer in one's room has little direct association with children's socioemotional well-being.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c8",
+      "paper_id": "openalex:W2118360093",
+      "text": "A granular measure of media multitasking was developed for assessing media use in young girls.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2118360093:c9",
+      "paper_id": "openalex:W2118360093",
+      "text": "A comparative measure of media use versus time spent in face-to-face communication was introduced.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2118360093:e1",
+      "claim_id": "openalex:W2118360093:c1",
+      "description": "Regression analyses indicated that negative social well-being was positively associated with levels of uses of media that are centrally about interpersonal interaction (e.g., phone, online communication).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2118360093:e2",
+      "claim_id": "openalex:W2118360093:c2",
+      "description": "Regression analyses indicated that negative social well-being was positively associated with uses of media that are not centrally about interpersonal interaction (e.g., video, music, and reading).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2118360093:e3",
+      "claim_id": "openalex:W2118360093:c3",
+      "description": "Video use was particularly strongly associated with negative social well-being indicators.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2118360093:e4",
+      "claim_id": "openalex:W2118360093:c4",
+      "description": "Media multitasking was also associated with negative social indicators.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2118360093:e5",
+      "claim_id": "openalex:W2118360093:c5",
+      "description": "Conversely, face-to-face communication was strongly associated with positive social well-being.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2118360093:e6",
+      "claim_id": "openalex:W2118360093:c6",
+      "description": "Cell phone ownership and having a television or computer in one's room had little direct association with children's socioemotional well-being.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2118360093:e7",
+      "claim_id": "openalex:W2118360093:c7",
+      "description": "Cell phone ownership and having a television or computer in one's room had little direct association with children's socioemotional well-being.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2118360093:e8",
+      "claim_id": "openalex:W2118360093:c8",
+      "description": "This study introduced both a more granular measure of media multitasking and a new comparative measure of media use versus time spent in face-to-face communication.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2118360093:e9",
+      "claim_id": "openalex:W2118360093:c9",
+      "description": "This study introduced both a more granular measure of media multitasking and a new comparative measure of media use versus time spent in face-to-face communication.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2118360093:m1",
+      "paper_id": "openalex:W2118360093",
+      "name": "Online survey and regression analysis",
+      "description": "An online survey measuring media use, media multitasking, face-to-face communication, and socioemotional well-being analyzed using regression models.",
+      "datasets": [
+        "Discovery Girls magazine online survey dataset (N=3,461)"
+      ],
+      "conditions": [
+        "North American girls ages 8-12",
+        "Conducted in summer 2010"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2118360093:l1",
+      "paper_id": "openalex:W2118360093",
+      "text": "The study design does not address or establish causality between media use patterns and social well-being.",
+      "normalized_category": "lack-of-causality",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2118360093:f1",
+      "paper_id": "openalex:W2118360093",
+      "text": "Develop research designs specifically capable of addressing causal relationships between media use, face-to-face interaction, and socioemotional well-being.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.076599Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,104 @@
+{
+  "paper_id": "openalex:W2972459530",
+  "claims": [
+    {
+      "id": "openalex:W2972459530:c1",
+      "paper_id": "openalex:W2972459530",
+      "text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with internalizing problems alone among adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2972459530:c2",
+      "paper_id": "openalex:W2972459530",
+      "text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with comorbid internalizing and externalizing problems among adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2972459530:c3",
+      "paper_id": "openalex:W2972459530",
+      "text": "In adjusted analyses, social media use is not significantly associated with externalizing problems alone among adolescents.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2972459530:e1",
+      "claim_id": "openalex:W2972459530:c1",
+      "description": "Adjusted RRR for >3 to ≤6 hours was 1.60 (95% CI, 1.11-2.31) and for >6 hours was 1.78 (95% CI, 1.15-2.77) for internalizing problems alone.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2972459530:e2",
+      "claim_id": "openalex:W2972459530:c2",
+      "description": "Adjusted RRR for >3 to ≤6 hours was 2.01 (95% CI, 1.51-2.66) and for >6 hours was 2.44 (95% CI, 1.73-3.43) for comorbid internalizing and externalizing problems.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2972459530:e3",
+      "claim_id": "openalex:W2972459530:c3",
+      "description": "Adjusted analyses showed no significant association between social media use and externalizing problems alone.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2972459530:m1",
+      "paper_id": "openalex:W2972459530",
+      "name": "Longitudinal cohort analysis of PATH study data",
+      "description": "A longitudinal study of 6,595 US adolescents using waves 1-3 of the PATH study to examine daily social media use and subsequent mental health problems.",
+      "datasets": [
+        "Population Assessment of Tobacco and Health (PATH) study"
+      ],
+      "conditions": [
+        "US adolescents aged 12-15 years at wave 1",
+        "Household audio computer-assisted self-interviewing",
+        "Social media exposure measured at wave 2",
+        "Internalizing and externalizing problems measured at wave 3 using Global Appraisal of Individual Needs-Short Screener"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2972459530:l1",
+      "paper_id": "openalex:W2972459530",
+      "text": "Few longitudinal studies have investigated the prospective association between social media use and adolescent mental health problems.",
+      "normalized_category": "lack-of-prior-longitudinal-evidence",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2972459530:l2",
+      "paper_id": "openalex:W2972459530",
+      "text": "No prior studies have quantified the proportion of mental health problems among adolescents attributable to social media use.",
+      "normalized_category": "unquantified-attributable-risk",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2972459530:f1",
+      "paper_id": "openalex:W2972459530",
+      "text": "Determine whether setting limits on daily social media use is an effective means of reducing mental health problems in adolescents.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2972459530:f2",
+      "paper_id": "openalex:W2972459530",
+      "text": "Determine whether increasing media literacy effectively reduces the burden of mental health problems in adolescents.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2972459530:f3",
+      "paper_id": "openalex:W2972459530",
+      "text": "Determine whether redesigning social media platforms effectively reduces adolescent mental health problems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.069937Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

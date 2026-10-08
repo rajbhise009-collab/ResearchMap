@@ -1,0 +1,158 @@
+{
+  "paper_id": "openalex:W2593771132",
+  "claims": [
+    {
+      "id": "openalex:W2593771132:c1",
+      "paper_id": "openalex:W2593771132",
+      "text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593771132:c2",
+      "paper_id": "openalex:W2593771132",
+      "text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across cross-sectional studies is r = 0.12.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593771132:c3",
+      "paper_id": "openalex:W2593771132",
+      "text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across longitudinal studies is r = 0.12.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2593771132:c4",
+      "paper_id": "openalex:W2593771132",
+      "text": "Trimming and filling outlying studies reduces the random-effects pooled correlation estimate between social media use and depressive symptoms to r = 0.09.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2593771132:e1",
+      "claim_id": "openalex:W2593771132:c1",
+      "description": "The overall random effects pooled estimate was 0.13 (0.05, 0.2), p = 0.001; Q = 131.47, df = 10, p = < 0.0001, I2 = 92.4%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2593771132:e2",
+      "claim_id": "openalex:W2593771132:c2",
+      "description": "The pooled estimate for cross-sectional studies (n = 6) was r = 0.12, (95% CI 0.02, 0.22), Q = 81.01, I2 = 93.8%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2593771132:e3",
+      "claim_id": "openalex:W2593771132:c3",
+      "description": "The pooled estimate for longitudinal studies (n = 5) was r = 0.12, (95% -0.01, 0.25), Q = 38.98, I2 = 89.7%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2593771132:e4",
+      "claim_id": "openalex:W2593771132:c4",
+      "description": "Trim and fill analysis showed two outlying studies, trimming and filling of which resulted in a random effects estimate of r = 0.09 (95% CI 0.01, 0.16), p = 0.03; Q = 180.67, df = 12, p < 0.0001, I2 = 93.4%.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2593771132:m1",
+      "paper_id": "openalex:W2593771132",
+      "name": "Systematic Review and Random-Effects Meta-Analysis",
+      "description": "Systematic search of Medline, PsycInfo, and Embase databases yielding 11 eligible studies (N=12,646), followed by meta-analysis using Fisher's z transformation and DerSimonian-Laird random-effects estimator in R.",
+      "datasets": [
+        "Medline",
+        "PsycInfo",
+        "Embase"
+      ],
+      "conditions": [
+        "English language publications only",
+        "Generic child/adolescent population aged 5-18",
+        "Correlations converted using compute.es package in R"
+      ]
+    },
+    {
+      "id": "openalex:W2593771132:m2",
+      "paper_id": "openalex:W2593771132",
+      "name": "Euclidean Cluster Analysis",
+      "description": "Agglomerative Euclidean cluster analysis conducted on correlation results to categorize study outcome patterns.",
+      "datasets": [
+        "Extracted correlation metrics from 11 included studies"
+      ],
+      "conditions": [
+        "Agglomerative coefficient of 0.94"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2593771132:l1",
+      "paper_id": "openalex:W2593771132",
+      "text": "The total number of eligible studies focused specifically on social media use and depressive symptoms was low (n = 11), limiting the collated evidence base.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2593771132:l2",
+      "paper_id": "openalex:W2593771132",
+      "text": "Wide heterogeneity in design, sample size, measurement instruments, and results across included studies tempers any firm conclusions.",
+      "normalized_category": "study-heterogeneity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2593771132:l3",
+      "paper_id": "openalex:W2593771132",
+      "text": "Only English-language studies were included due to lack of translation resources, introducing potential selection bias.",
+      "normalized_category": "language-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2593771132:l4",
+      "paper_id": "openalex:W2593771132",
+      "text": "Over half of the reviewed studies were cross-sectional, and longitudinal designs were restricted to short durations (maximum 12 months).",
+      "normalized_category": "study-design-constraints",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2593771132:l5",
+      "paper_id": "openalex:W2593771132",
+      "text": "Prior studies exhibit a high risk of bias due to reliance on self-report, unvalidated measurement tools, and lack of exclusion of existing depression cases.",
+      "normalized_category": "methodological-risk-of-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2593771132:f1",
+      "paper_id": "openalex:W2593771132",
+      "text": "Qualitative methods should be utilized to gain an in-depth understanding of the mental health impact of social media from young people's own perspectives.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2593771132:f2",
+      "paper_id": "openalex:W2593771132",
+      "text": "Researchers must establish consensus on variables and measurement definitions to enable consistent replication.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2593771132:f3",
+      "paper_id": "openalex:W2593771132",
+      "text": "Exploration of using profiling data from online social communication in healthcare risk assessment contexts for early identification of wellbeing concerns.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2593771132:f4",
+      "paper_id": "openalex:W2593771132",
+      "text": "Investigation into how the relationship with social media evolves through developmental stages as user experience grows.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.080725Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

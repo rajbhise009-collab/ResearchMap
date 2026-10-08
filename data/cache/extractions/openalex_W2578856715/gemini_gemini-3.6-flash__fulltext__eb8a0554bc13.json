@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W2578856715",
+  "claims": [
+    {
+      "id": "openalex:W2578856715:c1",
+      "paper_id": "openalex:W2578856715",
+      "text": "The relationship between daily digital-screen time and adolescent mental well-being is described by concave-down quadratic functions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2578856715:c2",
+      "paper_id": "openalex:W2578856715",
+      "text": "Inflection points separating moderate digital screen use from potentially harmful use are higher on weekends than on weekdays.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2578856715:c3",
+      "paper_id": "openalex:W2578856715",
+      "text": "The inflection point where weekday video-game play turns to a negative association with mental well-being occurs at 1 hour 40 minutes per day.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2578856715:c4",
+      "paper_id": "openalex:W2578856715",
+      "text": "Digital-screen engagement in excess of derived inflection points accounts for 1.0% or less of the observed variability in adolescent mental well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2578856715:e1",
+      "claim_id": "openalex:W2578856715:c1",
+      "description": "Concave-down quadratic functions were statistically significant across watching films/TV, playing video games, using computers, and using smartphones on weekdays and weekends.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2578856715:e2",
+      "claim_id": "openalex:W2578856715:c2",
+      "description": "Weekend inflection points ranged from 3 hr 35 min to 4 hr 50 min, whereas weekday inflection points ranged from 1 hr 40 min to 4 hr 17 min.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2578856715:e3",
+      "claim_id": "openalex:W2578856715:c3",
+      "description": "Calculated local extrema revealed an inflection point of 1 hr 40 min for weekday video-game play when controlling for demographic confounds.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2578856715:e4",
+      "claim_id": "openalex:W2578856715:c4",
+      "description": "The average Cohen's d for screen time engagement in excess of local inflection points was -0.18, explaining 1.0% or less of outcome variance.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2578856715:m1",
+      "paper_id": "openalex:W2578856715",
+      "name": "Preregistered quadratic regression modeling of screen time and well-being",
+      "description": "Cross-sectional survey study applying linear and quadratic regression models to evaluate nonlinear relations and local extrema between self-reported daily screen time and Warwick-Edinburgh Mental Well-Being Scale scores.",
+      "datasets": [
+        "United Kingdom Department for Education National Pupil Database (n = 120,115)"
+      ],
+      "conditions": [
+        "Weekday vs. weekend screen time",
+        "Four digital activity categories (TV/films, video games, computer, smartphone)",
+        "Controls for gender, ethnicity, and local area deprivation index"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2578856715:l1",
+      "paper_id": "openalex:W2578856715",
+      "text": "Two planned control variables (parental marital status and participant birthplace) were unavailable in the dataset.",
+      "normalized_category": "missing-control-variables",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2578856715:l2",
+      "paper_id": "openalex:W2578856715",
+      "text": "Screen time measures relied on self-reported survey responses, which may be influenced by extreme mischievous responding.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2578856715:l3",
+      "paper_id": "openalex:W2578856715",
+      "text": "Previous literature relied on omnibus screen time measures that failed to differentiate specific activity types and applied arbitrary categorical cutoffs.",
+      "normalized_category": "measurement-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2578856715:f1",
+      "paper_id": "openalex:W2578856715",
+      "text": "Examine how specific affordances intrinsic to digital technologies relate to mental health outcomes and analyze what activities are displaced or amplified.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2578856715:f2",
+      "paper_id": "openalex:W2578856715",
+      "text": "Incorporate convergent data sources from caregivers, peers, and teachers to validate relations between screen time and well-being.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.060127Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

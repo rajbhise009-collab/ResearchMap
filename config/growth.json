@@ -1,0 +1,4 @@
+{
+  "paused": false,
+  "note": "Set paused to true to stop all weekly growth (no collection, no spending, no publishing). The run still opens its Issue saying it is paused. Set back to false to resume; anything submitted before the pause is collected on the next run."
+}

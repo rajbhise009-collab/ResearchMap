@@ -1,0 +1,66 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "labels": {
+  "W2134077691": {
+   "label": "off-domain",
+   "why": "trait self-control and outcomes, no depletion"
+  },
+  "W2056606926": {
+   "label": "off-domain",
+   "why": "validity of self-control measures"
+  },
+  "W2000141755": {
+   "label": "on-domain",
+   "why": "mechanistic revision of ego depletion"
+  },
+  "W1767956543": {
+   "label": "borderline",
+   "why": "mental-control handbook; self-regulation chapters"
+  },
+  "W1967859970": {
+   "label": "on-domain",
+   "why": "depletion and persistence with glucose"
+  },
+  "W1949366217": {
+   "label": "off-domain",
+   "why": "self-awareness theory"
+  },
+  "W2109223890": {
+   "label": "on-domain",
+   "why": "neural account of depletion"
+  },
+  "W2152831629": {
+   "label": "off-domain",
+   "why": "trait self-discipline and grades"
+  },
+  "W2123232906": {
+   "label": "borderline",
+   "why": "everyday desire regulation; resistance over time"
+  },
+  "W1585013689": {
+   "label": "off-domain",
+   "why": "competence motivation"
+  },
+  "W1992322615": {
+   "label": "on-domain",
+   "why": "ostracism depletes resources"
+  },
+  "W2017680376": {
+   "label": "off-domain",
+   "why": "cognitive dissonance"
+  },
+  "W4321429583": {
+   "label": "off-domain",
+   "why": "impression management and health"
+  },
+  "W2171838050": {
+   "label": "off-domain",
+   "why": "nonconscious goal pursuit"
+  },
+  "W2020191227": {
+   "label": "on-domain",
+   "why": "self-presentation and resource depletion"
+  }
+ }
+}

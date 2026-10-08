@@ -1,0 +1,133 @@
+{
+  "paper_id": "openalex:W2081155210",
+  "claims": [
+    {
+      "id": "openalex:W2081155210:c1",
+      "paper_id": "openalex:W2081155210",
+      "text": "People form social attachments readily under most conditions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2081155210:c2",
+      "paper_id": "openalex:W2081155210",
+      "text": "People resist the dissolution of existing social bonds.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2081155210:c3",
+      "paper_id": "openalex:W2081155210",
+      "text": "Belongingness affects emotional patterns.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2081155210:c4",
+      "paper_id": "openalex:W2081155210",
+      "text": "Belongingness affects cognitive processes.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2081155210:c5",
+      "paper_id": "openalex:W2081155210",
+      "text": "Lack of social attachments is linked to ill effects on health.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2081155210:c6",
+      "paper_id": "openalex:W2081155210",
+      "text": "Lack of social attachments is linked to ill effects on adjustment.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2081155210:c7",
+      "paper_id": "openalex:W2081155210",
+      "text": "Lack of social attachments is linked to ill effects on well-being.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2081155210:c8",
+      "paper_id": "openalex:W2081155210",
+      "text": "The need to belong is a fundamental and pervasive human motivation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2081155210:e1",
+      "claim_id": "openalex:W2081155210:c1",
+      "description": "Consistent with the belongingness hypothesis, people form social attachments readily under most conditions.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2081155210:e2",
+      "claim_id": "openalex:W2081155210:c2",
+      "description": "Consistent with the belongingness hypothesis, people resist the dissolution of existing bonds.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2081155210:e3",
+      "claim_id": "openalex:W2081155210:c3",
+      "description": "Belongingness appears to have multiple and strong effects on emotional patterns.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2081155210:e4",
+      "claim_id": "openalex:W2081155210:c4",
+      "description": "Belongingness appears to have multiple and strong effects on cognitive processes.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2081155210:e5",
+      "claim_id": "openalex:W2081155210:c5",
+      "description": "Lack of attachments is linked to a variety of ill effects on health.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2081155210:e6",
+      "claim_id": "openalex:W2081155210:c6",
+      "description": "Lack of attachments is linked to a variety of ill effects on adjustment.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2081155210:e7",
+      "claim_id": "openalex:W2081155210:c7",
+      "description": "Lack of attachments is linked to a variety of ill effects on well-being.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2081155210:e8",
+      "claim_id": "openalex:W2081155210:c8",
+      "description": "Existing evidence supports the hypothesis that the need to belong is a powerful, fundamental, and extremely pervasive motivation.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2081155210:m1",
+      "paper_id": "openalex:W2081155210",
+      "name": "Empirical Literature Synthesis",
+      "description": "Evaluates the hypothesized need for interpersonal relationships in light of existing empirical psychological literature.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.086667Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

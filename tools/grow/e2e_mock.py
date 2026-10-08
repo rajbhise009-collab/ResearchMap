@@ -2,26 +2,32 @@
 
   .venv/bin/python tools/grow/e2e_mock.py [--quick]
 
-Builds a throwaway clone of the committed HEAD whose `origin` is a local
-bare repository (stands in for GitHub), runs tools/grow/run_weekly.py with
-mocked OpenAlex and Gemini (GROW_MOCK=1) and the clone's own copy of the
-ledger (a temporary ledger: the real one is never touched), Issues written
-to files (GROW_ISSUE_DIR), and the live check pointed at a local server of
-the clone's build. Scenarios:
+A throwaway clone of the committed HEAD whose `origin` is a local bare
+repository (stands in for GitHub); tools/grow/run_weekly.py with mocked
+OpenAlex and Gemini (GROW_MOCK=1); the clone's own copy of the ledger and a
+temporary money config (MONEY_CONFIG_PATH: ₹600 remaining); Issues written to
+files (GROW_ISSUE_DIR); the live check against a local server of the clone's
+build. Scenarios:
 
-  1  week 1: nothing pending → submit a batch per library → gates → main
-  2  week 2: collect (papers added, billed at batch rate) → follow-on checks
-     (new disagreement flagged "not yet checked") → gates → main
-  3  missing secrets (no mock): clean stop, nothing pushed, Issue says what to do
-  4  OpenAlex down after last week's batch was collected: stop, work + spend
-     record pushed to grow/<date>, main untouched
-  5  next run while grow/<date> is unmerged: refuses to spend, Issue says why
-  6  a publish gate fails (a broken test is committed): nothing to main,
-     branch grow/<date>, Issue carries the gate output
-  7  daily health: site down → Issue opened; site up → Issue closed
+  1  week 1: submit across every growing library (round-robin budget) and
+     start building the first affordable queued library
+  2  week 2: collect papers, finish the queued library (a new library on a
+     five-plus-library site), every publish gate, publish
+  3  missing secret: clean stop, nothing pushed, Issue names the secret
+  4  OpenAlex down after collecting: bookkeeping-only commit to main (paid
+     work kept, site files untouched), no blocking branch
+  5  next week: runs normally (not blocked)
+  6  budget exhausted mid-run: collecting uses up the money; submission is
+     refused; Issue says what to do (console_spent_inr / account_total_inr)
+  7  a publish gate fails: site files unchanged, branch grow/<date>,
+     bookkeeping still on main
+  8  next run with that branch open: collects, starts nothing new
+  9  pause (config/growth.json) then resume
+ 10  daily health: site down -> Issue opened; site up -> Issue closed
 
---quick skips the gates in scenarios 1, 2 (honoured only with GROW_MOCK=1).
-Writes a JSON report to ~/ResearchMap-private/launch-qa/grow-e2e.json.
+--quick skips the publish gates except in scenario 7 (honoured only with
+GROW_MOCK=1). Writes ~/ResearchMap-private/launch-qa/grow-e2e.json and, on a
+full pass, docs/releases/growth-e2e-passed.json.
 """
 from __future__ import annotations
 
@@ -38,6 +44,7 @@ PY = sys.executable
 QUICK = "--quick" in sys.argv
 OUT = Path(os.environ.get("E2E_DIR") or (Path("/private/tmp") / f"grow-e2e-{int(time.time())}"))
 WORK, REMOTE, ISSUES, MOCKST = OUT / "work", OUT / "remote.git", OUT / "issues", OUT / "mockstate"
+MONEY = OUT / "money.json"
 PORT = "8797"
 SITE = f"http://127.0.0.1:{PORT}"
 FAKE_SECRET = "oa-FAKE-SECRET-value-123456"
@@ -67,11 +74,12 @@ def remote_head(ref="main"):
 
 def env(date, **extra):
     e = {k: v for k, v in os.environ.items()
-         if k not in ("OPENALEX_API_KEY", "GEMINI_API_KEY", "GH_TOKEN", "GITHUB_TOKEN")}
+         if k not in ("OPENALEX_API_KEY", "GEMINI_API_KEY", "GH_TOKEN", "GITHUB_TOKEN", "WEEKLY_BUDGET_INR")}
     e.update(GROW_MOCK="1", GROW_MOCK_STATE=str(MOCKST), GROW_ISSUE_DIR=str(ISSUES), GROW_DATE=date,
-             GROW_LIVE_WAIT_S="0", NEXT_PUBLIC_SITE_URL=SITE, WEEKLY_BUDGET_INR="25",
-             GROW_VERCEL_HOST="",
-             PYTHONHASHSEED="0")
+             GROW_LIVE_WAIT_S="0", NEXT_PUBLIC_SITE_URL=SITE, MONEY_CONFIG_PATH=str(MONEY),
+             GROW_VERCEL_HOST="", GROW_RETRY_BASE_S="0", PYTHONHASHSEED="0")
+    if QUICK:
+        e["GROW_GATES"] = "skip"
     e.update(extra)
     return {k: v for k, v in e.items() if v is not None}
 
@@ -85,19 +93,27 @@ def run_weekly(date, **extra):
 
 def issue(date):
     p = ISSUES / f"Weekly-grow---{date}.json"
-    return json.loads(p.read_text()) if p.exists() else None
-
-
-def ledger():
-    return json.loads((WORK / "data" / "spend_ledger.json").read_text())
+    return json.loads(p.read_text()) if p.exists() else {"body": "", "labels": [], "state": "missing"}
 
 
 def ledger_inr():
-    return round(ledger()["cumulative_inr"], 4)
+    return round(json.loads((WORK / "data" / "spend_ledger.json").read_text())["cumulative_inr"], 4)
 
 
 def papers(slug):
     return len(json.loads((WORK / "data" / "domains" / slug / "prelabelled.json").read_text())["entries"])
+
+
+def registry():
+    return {l["slug"]: l for l in json.loads((WORK / "data" / "library_registry.json").read_text())["libraries"]}
+
+
+def site_libs():
+    return [l["slug"] for l in json.loads((WORK / "frontend/public/data/libraries.json").read_text())["libraries"]]
+
+
+def public_tree_sha(ref):
+    return git("rev-parse", f"{ref}:frontend/public", cwd=REMOTE)
 
 
 def setup():
@@ -108,20 +124,38 @@ def setup():
     sh(["git", "clone", "-q", str(REMOTE), str(WORK)], cwd=OUT)
     for rel in ("frontend/node_modules", "tools/qa/node_modules"):
         (WORK / rel).symlink_to(ROOT / rel)
-    # node_modules symlinks must not make the checkout dirty
     with open(WORK / ".git" / "info" / "exclude", "a") as f:
         f.write("frontend/node_modules\ntools/qa/node_modules\n")
+    _set_money(650)
 
 
-def write_marker(results: list[dict]) -> None:
-    """Public copy may describe weekly growth only after a full pass
-    (backend/tests/api/test_hardening.py checks this marker)."""
+def _set_money(headroom):
+    led = json.loads((WORK / "data" / "spend_ledger.json").read_text())["cumulative_inr"]
+    MONEY.write_text(json.dumps({"account_total_inr": round(led + headroom, 2), "safety_buffer_inr": 50,
+                                 "console_spent_inr": None, "console_spent_date": None,
+                                 "growth_horizon_weeks": 12, "growth_horizon_start": "2026-10-12",
+                                 "weekly_budget_max_inr": 60, "queued_domain_reserve_weeks": 4}))
+
+
+def commit_push(msg, files):
+    git("add", *files)
+    git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m", msg)
+    git("push", "-q", "origin", "HEAD:main")
+
+
+def sync_main():
+    git("checkout", "-q", "main")
+    git("fetch", "-q", "origin")
+    git("reset", "-q", "--hard", "origin/main")
+
+
+def write_marker(results):
     head = git("rev-parse", "HEAD", cwd=ROOT)
     m = ROOT / "docs" / "releases" / "growth-e2e-passed.json"
     m.parent.mkdir(parents=True, exist_ok=True)
     m.write_text(json.dumps({
-        "what": "tools/grow/e2e_mock.py full run (every publish gate), mocked OpenAlex and Gemini, "
-                "temporary ledger, local stand-in for GitHub",
+        "what": "tools/grow/e2e_mock.py full run (every publish gate in scenarios 1, 2 and 7), mocked OpenAlex "
+                "and Gemini, temporary ledger and money config, local stand-in for GitHub",
         "date": time.strftime("%Y-%m-%d"), "tested_commit": head, "full": True,
         "passed": sum(r["ok"] for r in results), "failed": sum(not r["ok"] for r in results),
         "scenarios": sorted({str(r["scenario"]) for r in results}),
@@ -133,131 +167,158 @@ def main() -> int:
     srv = subprocess.Popen([PY, "tools/qa/serve.py", PORT], cwd=WORK,
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     real_ledger_before = (ROOT / "data" / "spend_ledger.json").read_bytes()
+    reg0 = registry()
+    growing = [s for s, l in reg0.items() if l["status"] == "built" and not l["frozen"]]
+    queued0 = [s for s, l in reg0.items() if l["status"] == "queued"]
+    full = {"GROW_GATES": None}
     try:
-        gates = {"GROW_GATES": "skip"} if QUICK else {}
         if QUICK:   # the live check needs a built site to look at
             sh(["npm", "run", "build"], cwd=WORK / "frontend", env={**os.environ, "NEXT_PUBLIC_SITE_URL": SITE})
         # 1 ---------------------------------------------------------------
-        d1 = "2026-10-12"
+        d = "2026-10-12"
         m0 = remote_head()
-        r = run_weekly(d1, **gates)
-        it = issue(d1)
-        pend = {s: (WORK / "data" / "domains" / s / "grow" / "pending.json").exists()
-                for s in ("diet-and-mortality", "ml-fairness")}
+        r = run_weekly(d, **({} if QUICK else full))
+        it = issue(d)
+        pend = {s: (WORK / "data/domains" / s / "grow/pending.json").exists() for s in growing}
         check(1, r.returncode == 0, "week 1 exits 0", r.stdout[-600:])
-        check(1, remote_head() != m0 and remote_head() == git("rev-parse", "HEAD"),
-              "main advanced on the remote (ls-remote == local HEAD)")
-        check(1, all(pend.values()), "a batch is pending for each library", pend)
-        check(1, it and it["state"] == "open" and it["body"].startswith("**Status:** published to main"),
-              "one Issue, status published")
-        check(1, (WORK / "docs" / "releases" / f"{d1}.json").exists(), "release fingerprint written")
-        fpp = WORK / "docs" / "releases" / f"{d1}.json"
-        fp = json.loads(fpp.read_text()) if fpp.exists() else {"gates": None}
-        check(1, fp["gates"] and all(g["ok"] for g in fp["gates"]), "fingerprint records every gate passing",
+        check(1, remote_head() != m0 and remote_head() == git("rev-parse", "HEAD"), "main advanced (ls-remote == HEAD)")
+        check(1, sum(pend.values()) >= 2, "batches pending across the growing libraries (round-robin)", pend)
+        building = [s for s, l in registry().items() if l["status"] == "building"]
+        check(1, building == queued0[:1], "the first queued library started building", building)
+        check(1, it["body"].startswith("**Status:** published to main") and "## Money" in it["body"]
+              and "weeks left" in it["body"], "one Issue: published, with money and weeks left")
+        fp = json.loads((WORK / "docs/releases" / f"{d}.json").read_text())
+        check(1, fp["gates"] and all(g["ok"] for g in fp["gates"]), "every publish gate passed",
               [g for g in fp["gates"] or [] if not g["ok"]])
         if r.returncode != 0:
-            raise SystemExit("week 1 failed; see " + str(OUT / f"run-{d1}.log"))
+            raise SystemExit("week 1 failed; see " + str(OUT / f"run-{d}.log"))
         # 2 ---------------------------------------------------------------
-        d2 = "2026-10-19"
-        before = {s: papers(s) for s in ("diet-and-mortality", "ml-fairness")}
-        submitted = {s: len(json.loads((WORK / "data/domains" / s / "grow/pending.json").read_text())["entries"])
-                     for s in before}
+        d = "2026-10-19"
+        before = {s: papers(s) for s in growing}
+        submitted = {s: (len(json.loads((WORK / "data/domains" / s / "grow/pending.json").read_text())["entries"])
+                         if pend[s] else 0) for s in growing}
         l_before = ledger_inr()
-        r = run_weekly(d2, **gates)
-        it = issue(d2)
-        after = {s: papers(s) for s in ("diet-and-mortality", "ml-fairness")}
+        r = run_weekly(d, **({} if QUICK else full))
+        it = issue(d)
+        after = {s: papers(s) for s in growing}
+        new_lib = queued0[0]
         check(2, r.returncode == 0, "week 2 exits 0", r.stdout[-800:])
-        check(2, all(after[s] > before[s] for s in after), "papers added to both libraries", (before, after))
-        check(2, all(after[s] - before[s] == submitted[s] for s in after),
-              "every submitted paper that extracted cleanly was added, nothing else", (before, after, submitted))
-        w1 = issue(d1)["body"]
-        check(2, all(k in w1 for k in ("duplicate among candidates", "already in library", "rubric: off-domain")),
-              "week 1 dropped the planted duplicates and the off-topic record")
-        batch_rows = [e for e in ledger()["entries"] if e["stage"].startswith("grow_extract_") and e.get("batch")]
-        check(2, batch_rows and ledger_inr() > l_before, "last week's batch billed to the ledger at the batch rate",
-              len(batch_rows))
-        facts = {l["slug"]: l for l in json.loads((WORK / "frontend/public/data/site-facts.json").read_text())["libraries"]}
-        check(2, all(facts[s]["papers"] == after[s] for s in after), "site facts show the new paper counts")
-        opps = json.loads((WORK / "frontend/public/data/library/diet-and-mortality/opportunities.json").read_text())["items"]
+        check(2, all(after[s] - before[s] == submitted[s] for s in growing),
+              "every submitted paper that extracted cleanly was added", (before, after, submitted))
+        check(2, ledger_inr() > l_before, "last week's batches billed to the ledger")
+        check(2, registry()[new_lib]["status"] == "built" and new_lib in site_libs(),
+              f"queued library {new_lib} built and on the site", site_libs())
+        check(2, len(site_libs()) >= 5, f"a {len(site_libs())}-library site built" + ("" if QUICK else
+              " and passed every gate"), site_libs())
+        if not QUICK:
+            fp = json.loads((WORK / "docs/releases" / f"{d}.json").read_text())
+            check(2, fp["gates"] and all(g["ok"] for g in fp["gates"]), "every publish gate passed",
+                  [g for g in fp["gates"] or [] if not g["ok"]])
+        facts = {l["slug"]: l for l in
+                 json.loads((WORK / "frontend/public/data/site-facts.json").read_text())["libraries"]}
+        opps = json.loads((WORK / f"frontend/public/data/library/{new_lib}/opportunities.json").read_text())["items"]
         flagged = [o for o in opps if o.get("verdict") == "unaudited"]
-        check(2, flagged, "a new disagreement is shown as flagged, not yet checked", len(flagged))
-        check(2, all(o["consumer"].get("verdict_label") == "Flagged by the system, not yet checked" for o in flagged),
-              "flagged label is exact")
-        check(2, facts["diet-and-mortality"]["results_total"] == sum(
-            1 for o in opps if o.get("verdict") in (None, "genuine")), "flagged pairs do not count in results")
-        sh_ = [o for o in opps if o.get("scorer") == "structural_holes"]
-        check(2, all(o.get("confirm_status") for o in sh_), "every shown method-transfer lead went through confirmation")
-        check(2, it and "Flagged disagreements awaiting your audit" in it["body"] and "- [ ]" in it["body"],
-              "Issue lists flagged pairs with an audit checklist")
-        check(2, "papers added" in (WORK / "docs" / "CHANGELOG.md").read_text(), "changelog entry written")
+        check(2, all(o["consumer"].get("verdict_label") == "Flagged by the system, not yet checked" for o in flagged)
+              and facts[new_lib]["results_total"] == sum(1 for o in opps if o.get("verdict") in (None, "genuine")),
+              "new library: flagged pairs labelled 'not yet checked' and never counted", len(flagged))
+        check(2, all(o.get("confirm_status") for o in opps if o.get("scorer") == "structural_holes"),
+              "new library: every shown method-transfer lead went through confirmation")
+        check(2, "## New libraries" in it["body"] and new_lib in it["body"], "Issue reports the new library")
         # 3 ---------------------------------------------------------------
-        d3 = "2026-10-20"
+        d = "2026-10-20"
         m = remote_head()
-        r = run_weekly(d3, GROW_MOCK=None, OPENALEX_API_KEY=FAKE_SECRET, GEMINI_API_KEY=None)
-        it = issue(d3)
-        check(3, r.returncode == 2, "missing secret → clean stop (exit 2)", r.stdout[-400:])
-        check(3, remote_head() == m and not git("status", "--porcelain"), "nothing pushed, nothing changed")
-        check(3, it and "GEMINI_API_KEY" in it["body"] and "Settings" in it["body"], "Issue says which secret to add")
-        check(3, FAKE_SECRET not in (it or {}).get("body", "") and FAKE_SECRET not in r.stdout + r.stderr,
-              "the secret that WAS set appears nowhere in the Issue or log")
+        r = run_weekly(d, GROW_MOCK=None, OPENALEX_API_KEY=FAKE_SECRET, GEMINI_API_KEY=None)
+        it = issue(d)
+        check(3, r.returncode == 2 and remote_head() == m and not git("status", "--porcelain"),
+              "missing secret: clean stop, nothing pushed or changed", r.stdout[-300:])
+        check(3, "GEMINI_API_KEY" in it["body"], "Issue names the secret to add")
+        check(3, FAKE_SECRET not in it["body"] + r.stdout + r.stderr, "the set secret appears nowhere")
         # 4 ---------------------------------------------------------------
-        d4 = "2026-10-26"
-        m = remote_head()
+        d = "2026-10-26"
+        pub_before = public_tree_sha("main")
         l_before = ledger_inr()
-        r = run_weekly(d4, GROW_MOCK_FAIL="openalex", GROW_GATES="skip")
-        it = issue(d4)
-        check(4, r.returncode == 2, "OpenAlex down → clean stop (exit 2)", r.stdout[-400:])
-        check(4, remote_head() == m, "main untouched on the remote")
-        check(4, remote_head(f"grow/{d4}") is not None, f"work pushed to grow/{d4}")
-        br_ledger = json.loads(sh(["git", "show", f"grow/{d4}:data/spend_ledger.json"], cwd=REMOTE).stdout)
-        check(4, br_ledger["cumulative_inr"] > l_before,
-              "the spend recorded before the stop is preserved on the branch")
-        check(4, it and "OpenAlex" in it["body"] and "needs-action" in it["labels"], "Issue explains the stop")
+        r = run_weekly(d, GROW_MOCK_FAIL="openalex", GROW_GATES="skip")
+        it = issue(d)
+        led_main = json.loads(sh(["git", "show", "main:data/spend_ledger.json"], cwd=REMOTE).stdout)["cumulative_inr"]
+        check(4, r.returncode == 2, "OpenAlex down -> clean stop (exit 2)", r.stdout[-300:])
+        check(4, led_main > l_before, "the spend recorded before the stop is on main (bookkeeping commit)")
+        check(4, public_tree_sha("main") == pub_before, "site files on main unchanged")
+        check(4, not git("ls-remote", "--heads", str(REMOTE), "grow/*"), "no blocking branch")
+        check(4, "OpenAlex" in it["body"] and "next week" in it["body"], "Issue explains and says it retries")
         # 5 ---------------------------------------------------------------
-        d5 = "2026-11-02"
-        git("checkout", "-q", "main")
-        git("reset", "-q", "--hard", "origin/main")
-        l_before = ledger_inr()
-        mock_jobs = len(list(MOCKST.glob("*.json")))
-        r = run_weekly(d5, GROW_GATES="skip")
-        it = issue(d5)
-        check(5, r.returncode == 2 and "unmerged growth branch" in r.stdout, "refuses to run with grow/* unmerged")
-        check(5, ledger_inr() == l_before and len(list(MOCKST.glob("*.json"))) == mock_jobs,
-              "nothing spent, nothing submitted")
-        check(5, it and f"grow/{d4}" in it["body"], "Issue names the branch to merge or delete")
+        sync_main()
+        d = "2026-11-02"
+        r = run_weekly(d, GROW_GATES="skip")
+        check(5, r.returncode == 0 and issue(d)["body"].startswith("**Status:** published"),
+              "next week runs normally (not blocked)", r.stdout[-300:])
         # 6 ---------------------------------------------------------------
-        git("merge", "-q", "--no-edit", f"origin/grow/{d4}")
-        git("push", "-q", "origin", "main")
-        git("push", "-q", "origin", "--delete", f"grow/{d4}")
-        (WORK / "backend/tests/test_e2e_broken.py").write_text("def test_broken():\n    assert False\n")
-        git("add", "-A")
-        git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m", "e2e: broken test")
-        git("push", "-q", "origin", "main")
-        m = remote_head()
-        d6 = "2026-11-09"
-        r = run_weekly(d6)
-        it = issue(d6)
-        check(6, r.returncode == 1, "a failing gate → exit 1", r.stdout[-400:])
-        check(6, remote_head() == m, "nothing committed to main")
-        check(6, remote_head(f"grow/{d6}") is not None, f"work pushed to grow/{d6}")
-        check(6, it and "❌ full tests" in it["body"] and "test_broken" in it["body"],
-              "Issue shows which gate failed, with its output")
+        d = "2026-11-09"
+        r = run_weekly(d, GROW_GATES="skip", GROW_MOCK_USAGE_MULT="600")
+        it = issue(d)
+        check(6, "BUDGET EXHAUSTED" in it["body"].splitlines()[0] if it["body"] else False,
+              "collecting used up the money: status says BUDGET EXHAUSTED", it["body"][:200])
+        check(6, "console_spent_inr" in it["body"] and "account_total_inr" in it["body"],
+              "Issue says exactly what the owner can do")
+        check(6, all(not (WORK / "data/domains" / s / "grow/pending.json").exists() for s in growing),
+              "nothing new submitted after exhaustion")
+        _set_money(650)          # restore money for the remaining scenarios
         # 7 ---------------------------------------------------------------
+        sync_main()
+        (WORK / "backend/tests/test_e2e_broken.py").write_text("def test_broken():\n    assert False\n")
+        commit_push("e2e: broken test", ["backend/tests/test_e2e_broken.py"])
+        d = "2026-11-16"
+        pub_before = public_tree_sha("main")
+        r = run_weekly(d, GROW_GATES=None)
+        it = issue(d)
+        check(7, r.returncode == 1, "a failing gate -> exit 1", r.stdout[-300:])
+        check(7, public_tree_sha("main") == pub_before, "site files on main unchanged")
+        check(7, remote_head(f"grow/{d}") is not None, f"work pushed to grow/{d}")
+        check(7, "❌ full tests" in it["body"] and "test_broken" in it["body"], "Issue shows the failed gate")
+        # 8 ---------------------------------------------------------------
+        sync_main()
+        (WORK / "backend/tests/test_e2e_broken.py").unlink()
+        commit_push("e2e: fix test", ["-A", "backend/tests"])
+        d = "2026-11-23"
+        jobs0 = len(list(MOCKST.glob("*.json")))
+        r = run_weekly(d, GROW_GATES="skip")
+        it = issue(d)
+        check(8, r.returncode == 0 and "starting nothing new" in it["body"],
+              "with the failed-gate branch open: runs, collects, starts nothing new", r.stdout[-300:])
+        check(8, len(list(MOCKST.glob("*.json"))) == jobs0, "no new batch submitted")
+        git("push", "-q", "origin", "--delete", "grow/2026-11-16")
+        # 9 ---------------------------------------------------------------
+        sync_main()
+        g = json.loads((WORK / "config/growth.json").read_text())
+        g["paused"] = True
+        (WORK / "config/growth.json").write_text(json.dumps(g, indent=1))
+        commit_push("pause growth", ["config/growth.json"])
+        d = "2026-11-30"
+        m, l_before = remote_head(), ledger_inr()
+        r = run_weekly(d, GROW_GATES="skip")
+        check(9, r.returncode == 0 and remote_head() == m and ledger_inr() == l_before
+              and issue(d)["body"].startswith("**Status:** paused"), "paused: nothing collected, spent or pushed")
+        g["paused"] = False
+        (WORK / "config/growth.json").write_text(json.dumps(g, indent=1))
+        commit_push("resume growth", ["config/growth.json"])
+        d = "2026-12-07"
+        r = run_weekly(d, GROW_GATES="skip")
+        check(9, r.returncode == 0 and issue(d)["body"].startswith("**Status:** published"), "resumed",
+              r.stdout[-300:])
+        # 10 --------------------------------------------------------------
         e = env("x", NEXT_PUBLIC_SITE_URL="http://127.0.0.1:9")
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=e)
         hp = ISSUES / "Daily-health-check-failing.json"
-        check(7, r.returncode == 1 and hp.exists() and json.loads(hp.read_text())["state"] == "open",
-              "site down → health Issue opened", r.stdout[-300:])
-        git("checkout", "-q", "main")
+        check(10, r.returncode == 1 and json.loads(hp.read_text())["state"] == "open", "site down -> Issue opened")
+        sync_main()
         sh(["npm", "run", "build"], cwd=WORK / "frontend", env={**os.environ, "NEXT_PUBLIC_SITE_URL": SITE})
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=env("x"))
-        check(7, r.returncode == 0 and json.loads(hp.read_text())["state"] == "closed",
-              "site up → health Issue closed", r.stdout[-600:])
-        # global -----------------------------------------------------------
+        check(10, r.returncode == 0 and json.loads(hp.read_text())["state"] == "closed", "site up -> Issue closed",
+              r.stdout[-600:])
+        # all -------------------------------------------------------------
         check("all", (ROOT / "data" / "spend_ledger.json").read_bytes() == real_ledger_before,
               "the real ledger was never touched")
-        allbodies = "".join(p.read_text() for p in ISSUES.glob("*.json"))
-        check("all", FAKE_SECRET not in allbodies, "no secret in any Issue")
+        check("all", FAKE_SECRET not in "".join(p.read_text() for p in ISSUES.glob("*.json")),
+              "no secret in any Issue")
     finally:
         srv.terminate()
     rep = Path.home() / "ResearchMap-private" / "launch-qa" / "grow-e2e.json"

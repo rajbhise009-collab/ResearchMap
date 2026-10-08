@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.467,
+ "in_out_agreement": 0.533,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W2781585732",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "benchmark suite design"
+  },
+  {
+   "wid": "W2101355568",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "representation method"
+  },
+  {
+   "wid": "W2891790128",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "evaluating generalisation via procedural levels"
+  },
+  {
+   "wid": "W2151210636",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "Atari method"
+  },
+  {
+   "wid": "W2342662072",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "benchmarking deep RL"
+  },
+  {
+   "wid": "W3048094199",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "network fingerprinting"
+  },
+  {
+   "wid": "W2151554678",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "optimisation theory"
+  },
+  {
+   "wid": "W1499669280",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "policy search method"
+  },
+  {
+   "wid": "W2747402019",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "reproducibility of benchmarked tasks"
+  },
+  {
+   "wid": "W2916826721",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "evaluation practice: generalisation"
+  },
+  {
+   "wid": "W2810785043",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "robot grasping method"
+  },
+  {
+   "wid": "W2624780181",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "transfer method"
+  },
+  {
+   "wid": "W4383112908",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "transfer survey"
+  },
+  {
+   "wid": "W3015437096",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "representation method"
+  },
+  {
+   "wid": "W2726187156",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "locomotion results"
+  }
+ ]
+}

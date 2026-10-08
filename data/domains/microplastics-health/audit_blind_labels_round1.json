@@ -1,0 +1,66 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "labels": {
+  "W2546432926": {
+   "label": "off-domain",
+   "why": "wastewater detection, no human question"
+  },
+  "W2797793834": {
+   "label": "borderline",
+   "why": "food web transfer with human implications"
+  },
+  "W2885126584": {
+   "label": "on-domain",
+   "why": "seafood exposure and human health"
+  },
+  "W3010537688": {
+   "label": "on-domain",
+   "why": "salt, water and air: direct human exposure"
+  },
+  "W2808334666": {
+   "label": "on-domain",
+   "why": "tap water, beer, salt contamination"
+  },
+  "W3177759384": {
+   "label": "off-domain",
+   "why": "plastisphere ecology"
+  },
+  "W2295281563": {
+   "label": "off-domain",
+   "why": "zebrafish toxicity, no human argument"
+  },
+  "W2515987409": {
+   "label": "on-domain",
+   "why": "EFSA statement on micro/nanoplastics in food"
+  },
+  "W1722748867": {
+   "label": "borderline",
+   "why": "plastics in commercial bivalves"
+  },
+  "W2617805895": {
+   "label": "off-domain",
+   "why": "cobalt toxicity"
+  },
+  "W1810360004": {
+   "label": "off-domain",
+   "why": "urban environmental occurrence"
+  },
+  "W1983247439": {
+   "label": "off-domain",
+   "why": "metal adsorption to pellets"
+  },
+  "W2021829952": {
+   "label": "off-domain",
+   "why": "pollutants on marine debris"
+  },
+  "W2221942389": {
+   "label": "off-domain",
+   "why": "fish toxicity"
+  },
+  "W2908304050": {
+   "label": "off-domain",
+   "why": "definitions of plastic debris"
+  }
+ }
+}

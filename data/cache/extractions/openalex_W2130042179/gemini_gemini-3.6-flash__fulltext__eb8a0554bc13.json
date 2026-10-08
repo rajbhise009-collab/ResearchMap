@@ -1,0 +1,188 @@
+{
+  "paper_id": "openalex:W2130042179",
+  "claims": [
+    {
+      "id": "openalex:W2130042179:c1",
+      "paper_id": "openalex:W2130042179",
+      "text": "Overall survey adherence among patients with major depressive disorder using the Mindful Moods personal smartphone app was 77.78% over a 30-day period.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2130042179:c2",
+      "paper_id": "openalex:W2130042179",
+      "text": "Survey completion rates varied significantly across times of day, reaching 84.2% in the afternoon compared to 75.5% in both the morning and evening.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2130042179:c3",
+      "paper_id": "openalex:W2130042179",
+      "text": "PHQ-9 score estimates calculated from app responses strongly correlated with paper-administered PHQ-9 scores (r = 0.84).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2130042179:c4",
+      "paper_id": "openalex:W2130042179",
+      "text": "PHQ-9 scores obtained via the smartphone app were on average 3.02 points higher than paper-based PHQ-9 scores.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2130042179:c5",
+      "paper_id": "openalex:W2130042179",
+      "text": "Nine out of 13 subjects (69%) reported significant suicidal ideation via the app, whereas zero subjects reported significant suicidal ideation on the paper-based PHQ-9.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2130042179:c6",
+      "paper_id": "openalex:W2130042179",
+      "text": "App survey completion rates stabilized after approximately two weeks of study participation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2130042179:e1",
+      "claim_id": "openalex:W2130042179:c1",
+      "description": "A total of 903 of the 1161 short surveys administered to the cohort were completed, yielding an overall adherence of 77.78%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2130042179:e2",
+      "claim_id": "openalex:W2130042179:c2",
+      "description": "The percentages of surveys completed were 75.5% (292/387) in the morning, 84.2% (326/387) in the afternoon, and 75.5% (292/387) in the evening. Analysis of variance showed a statistically significant difference in these adherence rates.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2130042179:e3",
+      "claim_id": "openalex:W2130042179:c3",
+      "description": "The two scores were fairly strongly correlated, yielding a Pearson correlation coefficient of .84 (95% CI .55-.95).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2130042179:e4",
+      "claim_id": "openalex:W2130042179:c4",
+      "description": "We found that the app scores were on average 3.02 (SD 2.25) points higher than paper scores.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2130042179:e5",
+      "claim_id": "openalex:W2130042179:c5",
+      "description": "while no patient reported suicidality at a level of 2 or 3 on the paper-based PHQ-9, a total of 9 of the 13 subjects (69%) reported suicidal ideation on the app at these levels.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2130042179:e6",
+      "claim_id": "openalex:W2130042179:c6",
+      "description": "adherence appeared to increase after a few days, decrease, and ultimately stabilize after about 2 weeks.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2130042179:m1",
+      "paper_id": "openalex:W2130042179",
+      "name": "Mindful Moods Personal Smartphone EMA",
+      "description": "An ecological momentary assessment methodology where patients complete up to three daily randomized 3-question PHQ-9 sub-surveys on their personal iOS or Android smartphone over 29-30 days.",
+      "datasets": [
+        "Mindful Moods App Survey Dataset",
+        "In-Clinic Paper PHQ-9 Dataset"
+      ],
+      "conditions": [
+        "Major depressive disorder diagnosis",
+        "Current outpatient psychiatric treatment",
+        "Personal smartphone ownership (iOS or Android)",
+        "Financial compensation of $50 contingent on >=70% survey completion"
+      ]
+    },
+    {
+      "id": "openalex:W2130042179:m2",
+      "paper_id": "openalex:W2130042179",
+      "name": "PHQ-9 Daily Score Statistical Estimation",
+      "description": "A statistical estimation technique predicting daily PHQ-9 total scores by combining a 2-week moving average response per item with daily observed score deviations to adjust for question sampling and missing data.",
+      "datasets": [
+        "Mindful Moods App Survey Dataset"
+      ],
+      "conditions": [
+        "Random sampling without replacement of 3 PHQ-9 questions per session",
+        "2-week rolling window prediction base"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2130042179:l1",
+      "paper_id": "openalex:W2130042179",
+      "text": "Paper-and-pencil ecological momentary assessment is labor-intensive, intrusive, and prone to retrospective data backfilling by patients.",
+      "normalized_category": "data-quality-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2130042179:l2",
+      "paper_id": "openalex:W2130042179",
+      "text": "Static clinical rating scales administered at fixed time points are subject to patient retrospective recall bias.",
+      "normalized_category": "recall-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2130042179:l3",
+      "paper_id": "openalex:W2130042179",
+      "text": "The study sample size was small, consisting of only 13 enrolled outpatients with major depressive disorder.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2130042179:l4",
+      "paper_id": "openalex:W2130042179",
+      "text": "Subjects received $50 compensation contingent upon completing at least 70% of survey sessions, which may have influenced study adherence rates.",
+      "normalized_category": "financial-incentive-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2130042179:l5",
+      "paper_id": "openalex:W2130042179",
+      "text": "The study lacked a control group to isolate app-based self-reporting from clinical interaction effects.",
+      "normalized_category": "lack-of-control-group",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2130042179:l6",
+      "paper_id": "openalex:W2130042179",
+      "text": "Subjects knew their app responses were not actively monitored in real time, unlike paper scale responses which received immediate clinical attention.",
+      "normalized_category": "confounding-factors",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2130042179:f1",
+      "paper_id": "openalex:W2130042179",
+      "text": "Evaluating smartphone and related technology apps for the real-time detection and potential prevention of suicidal ideation and behavior.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2130042179:f2",
+      "paper_id": "openalex:W2130042179",
+      "text": "Developing more sophisticated statistical approaches for predicting composite scale scores from randomized, incomplete smartphone EMA survey data.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2130042179:f3",
+      "paper_id": "openalex:W2130042179",
+      "text": "Understanding clinical applications and validating clinical correlations of passive data collected from smartphone sensors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.083525Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

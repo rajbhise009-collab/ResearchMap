@@ -1,0 +1,166 @@
+{
+  "paper_id": "openalex:W2074577226",
+  "claims": [
+    {
+      "id": "openalex:W2074577226:c1",
+      "paper_id": "openalex:W2074577226",
+      "text": "1.2% (18 out of 1,319) of surveyed respondents met the criteria for Internet addiction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2074577226:c2",
+      "paper_id": "openalex:W2074577226",
+      "text": "Internet addiction tendencies are positively associated with depressive symptoms across the sample.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2074577226:c3",
+      "paper_id": "openalex:W2074577226",
+      "text": "Men exhibit significantly higher Internet addictive tendencies than women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2074577226:c4",
+      "paper_id": "openalex:W2074577226",
+      "text": "Young people are significantly more likely to show Internet addictive symptoms than older people.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2074577226:c5",
+      "paper_id": "openalex:W2074577226",
+      "text": "Respondents classified with Internet addiction scored in the moderately-to-severely depressed range on the Beck Depression Inventory, significantly higher than matched non-addicted controls who scored in the non-depressed range.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2074577226:c6",
+      "paper_id": "openalex:W2074577226",
+      "text": "Respondents with Internet addiction engage significantly more in sexually gratifying websites compared to non-addicted controls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2074577226:c7",
+      "paper_id": "openalex:W2074577226",
+      "text": "Respondents with Internet addiction engage significantly more in gaming websites compared to non-addicted controls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2074577226:c8",
+      "paper_id": "openalex:W2074577226",
+      "text": "Respondents with Internet addiction engage significantly more in online community and chat websites compared to non-addicted controls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2074577226:e1",
+      "claim_id": "openalex:W2074577226:c1",
+      "description": "1,319 respondents completed the questionnaires, with 18 (1.2%) identified as falling in the IA category.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2074577226:e2",
+      "claim_id": "openalex:W2074577226:c2",
+      "description": "Across the whole data sample, there was a close relationship between IA tendencies and depression, such that IA respondents were more depressed.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2074577226:e3",
+      "claim_id": "openalex:W2074577226:c3",
+      "description": "There were also significant differences between the sexes, with men showing more addictive tendencies than women.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2074577226:e4",
+      "claim_id": "openalex:W2074577226:c4",
+      "description": "Young people were significantly more likely to show addictive symptoms than were older people.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2074577226:e5",
+      "claim_id": "openalex:W2074577226:c5",
+      "description": "There was a significant difference between the IA and the NA group in their levels of depressive symptoms, with the NA group firmly in the non-depressed range, and the IA group in the moderately-to-severely depressed range (F(1, 34) = 22.35; p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2074577226:e6",
+      "claim_id": "openalex:W2074577226:c6",
+      "description": "The IA group engaged significantly more than the NA group in sexually gratifying websites.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2074577226:e7",
+      "claim_id": "openalex:W2074577226:c7",
+      "description": "The IA group engaged significantly more than the NA group in gaming websites.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2074577226:e8",
+      "claim_id": "openalex:W2074577226:c8",
+      "description": "The IA group engaged significantly more than the NA group in online community/chat websites.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2074577226:m1",
+      "paper_id": "openalex:W2074577226",
+      "name": "Online Questionnaire-Based Survey and Factorial Comparison",
+      "description": "An online survey evaluating Internet usage, Internet functions, and depressive tendencies using the IA Test, Internet Function Questionnaire, and Beck Depression Inventory (BDI).",
+      "datasets": [
+        "Online questionnaire sample of 1,319 young people and adults"
+      ],
+      "conditions": [
+        "Whole-sample correlational analysis",
+        "Matched group comparison between 18 IA respondents and a matched group of non-addicted (NA) respondents"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2074577226:l1",
+      "paper_id": "openalex:W2074577226",
+      "text": "Internet addiction as a psychiatric construct needs to be better defined and understood.",
+      "normalized_category": "construct-definition",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2074577226:l2",
+      "paper_id": "openalex:W2074577226",
+      "text": "The observed relationship between Internet addiction and depression requires further validation to clarify causality and comorbidity.",
+      "normalized_category": "causal-inference",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2074577226:f1",
+      "paper_id": "openalex:W2074577226",
+      "text": "Corroborate existing evidence and address the nature of the causal relationship between Internet addiction and depression.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2074577226:f2",
+      "paper_id": "openalex:W2074577226",
+      "text": "Conduct greater investigation into the comorbidity between Internet addiction and depressive conditions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.074814Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

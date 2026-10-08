@@ -1,0 +1,82 @@
+{
+  "paper_id": "openalex:W2112205306",
+  "claims": [
+    {
+      "id": "openalex:W2112205306:c1",
+      "paper_id": "openalex:W2112205306",
+      "text": "Using social media websites is among the most common activities for children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2112205306:c2",
+      "paper_id": "openalex:W2112205306",
+      "text": "Social media sites have grown exponentially in recent years.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2112205306:c3",
+      "paper_id": "openalex:W2112205306",
+      "text": "Not all social media sites are healthy environments for children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2112205306:c4",
+      "paper_id": "openalex:W2112205306",
+      "text": "Pediatricians are in a unique position to help families understand social media sites and encourage healthy use.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2112205306:c5",
+      "paper_id": "openalex:W2112205306",
+      "text": "Social media use carries potential risks including cyberbullying, Facebook depression, sexting, and exposure to inappropriate content.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2112205306:e1",
+      "claim_id": "openalex:W2112205306:c1",
+      "description": "Using social media Web sites is among the most common activity of today's children and adolescents.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2112205306:e2",
+      "claim_id": "openalex:W2112205306:c2",
+      "description": "Such sites offer today's youth a portal for entertainment and communication and have grown exponentially in recent years.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2112205306:e3",
+      "claim_id": "openalex:W2112205306:c3",
+      "description": "...given that not all of them are healthy environments for children and adolescents.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2112205306:e4",
+      "claim_id": "openalex:W2112205306:c4",
+      "description": "Pediatricians are in a unique position to help families understand these sites and to encourage healthy use...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2112205306:e5",
+      "claim_id": "openalex:W2112205306:c5",
+      "description": "...urge parents to monitor for potential problems with cyberbullying, 'Facebook depression,' sexting, and exposure to inappropriate content.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.042763Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

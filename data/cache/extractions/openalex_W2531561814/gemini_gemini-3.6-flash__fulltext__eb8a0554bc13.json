@@ -1,0 +1,163 @@
+{
+  "paper_id": "openalex:W2531561814",
+  "claims": [
+    {
+      "id": "openalex:W2531561814:c1",
+      "paper_id": "openalex:W2531561814",
+      "text": "Sixteen percent of reviewed empirical studies (n = 5) found a statistically significant positive correlation between engagement in online social networking and depression symptoms, with effect sizes ranging from r=.15 to r=.26.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2531561814:c2",
+      "paper_id": "openalex:W2531561814",
+      "text": "Six percent of reviewed studies (n = 2) found a statistically significant negative correlation between online social networking engagement and depression symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2531561814:c3",
+      "paper_id": "openalex:W2531561814",
+      "text": "Thirteen percent of reviewed studies (n = 4) found no statistically significant correlation between online social networking engagement and depression symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2531561814:c4",
+      "paper_id": "openalex:W2531561814",
+      "text": "Depression is positively correlated with negative online social networking interactions, Facebook addiction or pathological SNS use, and Facebook intrusion.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2531561814:c5",
+      "paper_id": "openalex:W2531561814",
+      "text": "Depression is negatively correlated with Facebook social support satisfaction, positive social comparison, number of Facebook friends, and perceived Facebook social connectedness.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2531561814:c6",
+      "paper_id": "openalex:W2531561814",
+      "text": "Social comparison and rumination act as candidate mediators in the relationship between social networking site use and depression.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2531561814:e1",
+      "claim_id": "openalex:W2531561814:c1",
+      "description": "In total, 16% of the studies (n = 5) found a positive correlation between engagement in online social networking and presence of symptoms of depression, reflecting small effect sizes (correlations ranged between r=.15 to r=.26).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2531561814:e2",
+      "claim_id": "openalex:W2531561814:c2",
+      "description": "Six percent (n = 2) found a negative correlation (POR= 0.50, r=-.303).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2531561814:e3",
+      "claim_id": "openalex:W2531561814:c3",
+      "description": "Thirteen percent (n = 4) found no significant correlations between online social networking and symptoms of depression.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2531561814:e4",
+      "claim_id": "openalex:W2531561814:c4",
+      "description": "Positive correlations were found between depression and negative social networking interactions, Facebook addiction or pathological SNS use, and Facebook intrusion.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2531561814:e5",
+      "claim_id": "openalex:W2531561814:c5",
+      "description": "Negative correlations were found between depression and Facebook social support satisfaction, positive social comparison, number of Facebook friends, and perceived Facebook social connectedness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2531561814:e6",
+      "claim_id": "openalex:W2531561814:c6",
+      "description": "A further finding of this review is that in the context of online social networking, social comparison and rumination are likely to be candidate mediators in the relationship between SNS use and depression.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2531561814:m1",
+      "paper_id": "openalex:W2531561814",
+      "name": "Systematic literature review and STROBE quality appraisal",
+      "description": "A systematic review of 30 quantitative empirical studies across five academic databases examining the relationship between online social networking and depression symptoms, appraised for reporting quality using the STROBE Statement tool.",
+      "datasets": [
+        "PsycINFO",
+        "Web of Science",
+        "CINAHL",
+        "MEDLINE",
+        "EMBASE"
+      ],
+      "conditions": [
+        "Quantitative study design comparing SNS use and depression measures",
+        "English language publications searched through April 2016",
+        "Included 30 studies comprising 35,044 participants across 14 countries"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2531561814:l1",
+      "paper_id": "openalex:W2531561814",
+      "text": "The review identified a significant research bias towards Facebook over other social networking platforms, which limits the generalisability of findings across evolving platforms.",
+      "normalized_category": "platform-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2531561814:l2",
+      "paper_id": "openalex:W2531561814",
+      "text": "Due to the predominance of cross-sectional study designs (27 out of 30 reviewed studies), it is not possible to establish causal relationships between online social networking and depression.",
+      "normalized_category": "cross-sectional-design-causality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2531561814:l3",
+      "paper_id": "openalex:W2531561814",
+      "text": "Reliance on self-report survey measures across all reviewed studies introduces potential memory inaccuracies, social desirability bias, and cultural response style bias.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2531561814:l4",
+      "paper_id": "openalex:W2531561814",
+      "text": "Existing classification schemes for social media and social networking sites lack systematic categorization to account for rapid diversification and functional variations across platforms.",
+      "normalized_category": "lack-of-systematic-classification",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2531561814:f1",
+      "paper_id": "openalex:W2531561814",
+      "text": "Conduct longitudinal and experimental research to establish causality and test mediational and moderational models in the relationship between social networking and depression.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2531561814:f2",
+      "paper_id": "openalex:W2531561814",
+      "text": "Conduct a dedicated systematic review of qualitative studies examining online social networking and depression.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2531561814:f3",
+      "paper_id": "openalex:W2531561814",
+      "text": "Repeat the systematic review in five years to evaluate how evolving platform functionalities alter the relationship between SNS use and depression.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.082087Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

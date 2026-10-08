@@ -1,0 +1,125 @@
+{
+  "paper_id": "openalex:W2770314219",
+  "claims": [
+    {
+      "id": "openalex:W2770314219:c1",
+      "paper_id": "openalex:W2770314219",
+      "text": "Depressive symptoms among U.S. adolescents in grades 8 through 12 increased between 2010 and 2015, especially among females.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2770314219:c2",
+      "paper_id": "openalex:W2770314219",
+      "text": "Suicide-related outcomes among U.S. adolescents in grades 8 through 12 increased between 2010 and 2015, especially among females.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2770314219:c3",
+      "paper_id": "openalex:W2770314219",
+      "text": "Suicide rates among U.S. adolescents aged 13 to 18 increased between 2010 and 2015.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2770314219:c4",
+      "paper_id": "openalex:W2770314219",
+      "text": "Adolescents who spent more time on new media were more likely to report mental health issues.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2770314219:c5",
+      "paper_id": "openalex:W2770314219",
+      "text": "Adolescents who spent more time on nonscreen activities were less likely to report mental health issues.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2770314219:c6",
+      "paper_id": "openalex:W2770314219",
+      "text": "Since 2010, adolescents spent more time on new media screen activities and less time on nonscreen activities.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2770314219:c7",
+      "paper_id": "openalex:W2770314219",
+      "text": "Cyclical economic factors such as unemployment and the Dow Jones Index were not linked to adolescent depressive symptoms or suicide rates when matched by year.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2770314219:e1",
+      "claim_id": "openalex:W2770314219:c1",
+      "description": "Analysis of two nationally representative surveys of U.S. adolescents in grades 8 through 12 (N = 506,820) showed an increase in depressive symptoms between 2010 and 2015, particularly for females.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2770314219:e2",
+      "claim_id": "openalex:W2770314219:c2",
+      "description": "Analysis of two nationally representative surveys of U.S. adolescents (N = 506,820) showed an increase in suicide-related outcomes between 2010 and 2015, particularly for females.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2770314219:e3",
+      "claim_id": "openalex:W2770314219:c3",
+      "description": "National statistics on suicide deaths for individuals aged 13 to 18 indicated increased suicide rates between 2010 and 2015.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2770314219:e4",
+      "claim_id": "openalex:W2770314219:c4",
+      "description": "Survey data indicated that adolescents spending more time on electronic devices and social media were more likely to report mental health issues.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2770314219:e5",
+      "claim_id": "openalex:W2770314219:c5",
+      "description": "Survey data showed lower likelihood of mental health issues among adolescents engaging in in-person social interaction, sports, homework, print media, and religious services.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2770314219:e6",
+      "claim_id": "openalex:W2770314219:c6",
+      "description": "Survey trends after 2010 demonstrated a shift toward increased screen time and decreased nonscreen time among iGen adolescents.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2770314219:e7",
+      "claim_id": "openalex:W2770314219:c7",
+      "description": "Year-matched economic indicators, specifically unemployment rate and the Dow Jones Index, demonstrated no link to depressive symptoms or suicide rates.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2770314219:m1",
+      "paper_id": "openalex:W2770314219",
+      "name": "Cross-temporal survey and statistical trend analysis",
+      "description": "Analysis of trends across two nationally representative adolescent surveys, national mortality statistics, and macroeconomic indicators matched by year.",
+      "datasets": [
+        "Two nationally representative surveys of U.S. adolescents in grades 8-12 (N = 506,820)",
+        "U.S. national statistics on suicide deaths (ages 13-18)"
+      ],
+      "conditions": [
+        "Timeframe: 2010 to 2015",
+        "Year-matched economic indicators (unemployment, Dow Jones Index)"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.044321Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,153 @@
+{
+  "paper_id": "openalex:W2553776800",
+  "claims": [
+    {
+      "id": "openalex:W2553776800:c1",
+      "paper_id": "openalex:W2553776800",
+      "text": "Positive interactions, social support, and social connectedness on social networking sites were consistently related to lower levels of depression and anxiety.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2553776800:c2",
+      "paper_id": "openalex:W2553776800",
+      "text": "Negative interactions and social comparisons on social networking sites were related to higher levels of depression and anxiety.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2553776800:c3",
+      "paper_id": "openalex:W2553776800",
+      "text": "Of 30 studies examining total frequency or time spent on social networking sites, 8 found a direct positive association with depression and 16 found a nonsignificant association.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2553776800:c4",
+      "paper_id": "openalex:W2553776800",
+      "text": "Of 30 studies examining social networking site use frequency, 3 found direct positive associations with anxiety and 7 found nonsignificant associations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2553776800:c5",
+      "paper_id": "openalex:W2553776800",
+      "text": "Applying Cochrane-adapted risk of bias criteria across two independent raters yielded a linear weighted kappa statistic of 0.78 (SE = 0.06).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2553776800:e1",
+      "claim_id": "openalex:W2553776800:c1",
+      "description": "Positive interactions, social support, and social connectedness on SNSs were consistently related to lower levels of depression and anxiety",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2553776800:e2",
+      "claim_id": "openalex:W2553776800:c2",
+      "description": "whereas negative interaction and social comparisons on SNSs were related to higher levels of depression and anxiety.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2553776800:e3",
+      "claim_id": "openalex:W2553776800:c3",
+      "description": "Of the 30 studies examining these variables [...] 8 studies found a direct positive association with depression and 16 found a nonsignificant association.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2553776800:e4",
+      "claim_id": "openalex:W2553776800:c4",
+      "description": "For anxiety (and social anxiety), 3 studies found direct positive associations and 7 found nonsignificant associations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2553776800:e5",
+      "claim_id": "openalex:W2553776800:c5",
+      "description": "A linear weighted kappa statistic for interrater reliability (.78, SE=.06) indicated that there was very good agreement in applying the bias criteria.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2553776800:m1",
+      "paper_id": "openalex:W2553776800",
+      "name": "Systematic Literature Review and Synthesis",
+      "description": "A multidatabase systematic search and qualitative synthesis of quantitative and mixed-method studies published between January 2005 and June 2016 examining relationships between social networking site use, depression, anxiety, and well-being.",
+      "datasets": [
+        "PsycINFO",
+        "MEDLINE",
+        "Scopus",
+        "IEEE Xplore",
+        "CINAHL",
+        "ERIC",
+        "Social Sciences Citation Index",
+        "Communication and Mass Media Complete"
+      ],
+      "conditions": [
+        "English language publications between Jan 2005 and June 2016",
+        "Peer-reviewed journal articles or conference proceedings",
+        "Direct measurement of depression or anxiety in relation to SNS use",
+        "Cochrane-adapted risk of bias score below 3"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2553776800:l1",
+      "paper_id": "openalex:W2553776800",
+      "text": "Studies included in the review focused narrowly on young adult populations (late teens or early 20s).",
+      "normalized_category": "narrow-sample-demographics",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2553776800:l2",
+      "paper_id": "openalex:W2553776800",
+      "text": "The review search was restricted to English language, peer-reviewed journal and conference publications, excluding gray literature and qualitative research.",
+      "normalized_category": "publication-and-language-selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2553776800:l3",
+      "paper_id": "openalex:W2553776800",
+      "text": "Methodology in the reviewed literature has predominantly focused on self-report cross-sectional approaches, which relies on participant retrospective estimates of SNS behavior.",
+      "normalized_category": "self-report-cross-sectional-design",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2553776800:l4",
+      "paper_id": "openalex:W2553776800",
+      "text": "Few studies in the reviewed literature considered individual differences such as gender and personality and their interaction with social networking site variables.",
+      "normalized_category": "unaddressed-moderator-variables",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2553776800:f1",
+      "paper_id": "openalex:W2553776800",
+      "text": "Leveraging real-time, unobtrusive SNS data over time through experience sampling methods (ESMs) and computational science techniques.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2553776800:f2",
+      "paper_id": "openalex:W2553776800",
+      "text": "Expanding research across a broader demographic spectrum across the lifespan, particularly among older adults.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2553776800:f3",
+      "paper_id": "openalex:W2553776800",
+      "text": "Investigating how individual user characteristics, such as gender and personality, interact with SNS variables to influence mental health outcomes.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.064113Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

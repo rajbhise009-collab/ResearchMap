@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.533,
+ "in_out_agreement": 0.667,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W3165275692",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "microplastics in human lung tissue"
+  },
+  {
+   "wid": "W2130707940",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "ocean plastic abundance"
+  },
+  {
+   "wid": "W2097990779",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "combustion particles"
+  },
+  {
+   "wid": "W2077860073",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "metals and cancer"
+  },
+  {
+   "wid": "W2344283116",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "human health impact via food chain"
+  },
+  {
+   "wid": "W2100129058",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "air pollution and lupus"
+  },
+  {
+   "wid": "W2797793834",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "food web transfer, human implications"
+  },
+  {
+   "wid": "W1967273901",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "mussel translocation"
+  },
+  {
+   "wid": "W1971345082",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "freshwater review"
+  },
+  {
+   "wid": "W2286955579",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "atmospheric fallout"
+  },
+  {
+   "wid": "W2402476636",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "seafood extraction protocol"
+  },
+  {
+   "wid": "W4206925937",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "microplastics in human sputum"
+  },
+  {
+   "wid": "W4200605805",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "microplastics in human faeces and IBD"
+  },
+  {
+   "wid": "W2977747666",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "human health effects overview"
+  },
+  {
+   "wid": "W1810360004",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "urban environmental occurrence"
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "labels": {
+  "W2066320299": {
+   "label": "on-domain",
+   "why": "meta-analysis: implicit theories and self-regulation"
+  },
+  "W2076300620": {
+   "label": "borderline",
+   "why": "implicit theories of attributes generally"
+  },
+  "W3005834498": {
+   "label": "on-domain",
+   "why": "language-ability mindsets and outcomes"
+  },
+  "W4226442993": {
+   "label": "off-domain",
+   "why": "self-esteem"
+  },
+  "W2913734454": {
+   "label": "borderline",
+   "why": "teacher fixed-ability beliefs"
+  },
+  "W1963562210": {
+   "label": "off-domain",
+   "why": "earnings inequality"
+  },
+  "W1994521514": {
+   "label": "borderline",
+   "why": "broad essay on mindsets"
+  },
+  "W1996549795": {
+   "label": "off-domain",
+   "why": "self-perceptions at school transition"
+  },
+  "W2607441414": {
+   "label": "off-domain",
+   "why": "'mindset' meaning approach"
+  },
+  "W4379882918": {
+   "label": "borderline",
+   "why": "growth-mindset training, entrepreneurship outcome"
+  },
+  "W2101245043": {
+   "label": "borderline",
+   "why": "education interventions incl. mindset"
+  },
+  "W1972113035": {
+   "label": "on-domain",
+   "why": "children's beliefs about intelligence and school performance"
+  },
+  "W3138997684": {
+   "label": "borderline",
+   "why": "entity theory of personality and symptoms"
+  },
+  "W3185413328": {
+   "label": "off-domain",
+   "why": "neuroscience training"
+  },
+  "W2129409176": {
+   "label": "off-domain",
+   "why": "poverty and working memory"
+  }
+ }
+}

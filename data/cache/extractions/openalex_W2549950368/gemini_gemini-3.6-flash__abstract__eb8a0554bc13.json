@@ -1,0 +1,110 @@
+{
+  "paper_id": "openalex:W2549950368",
+  "claims": [
+    {
+      "id": "openalex:W2549950368:c1",
+      "paper_id": "openalex:W2549950368",
+      "text": "Facebook use affects well-being negatively.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2549950368:c2",
+      "paper_id": "openalex:W2549950368",
+      "text": "Taking a break from Facebook increases life satisfaction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2549950368:c3",
+      "paper_id": "openalex:W2549950368",
+      "text": "Taking a break from Facebook causes emotions to become more positive.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2549950368:c4",
+      "paper_id": "openalex:W2549950368",
+      "text": "The positive well-being effects of taking a break from Facebook are significantly greater for heavy Facebook users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2549950368:c5",
+      "paper_id": "openalex:W2549950368",
+      "text": "The positive well-being effects of taking a break from Facebook are significantly greater for passive Facebook users.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2549950368:c6",
+      "paper_id": "openalex:W2549950368",
+      "text": "The positive well-being effects of taking a break from Facebook are significantly greater for users who tend to envy others on Facebook.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2549950368:e1",
+      "claim_id": "openalex:W2549950368:c1",
+      "description": "Demonstrated via a 1-week experiment with 1,095 participants in Denmark comparing a group taking a break from Facebook with a control group continuing use.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2549950368:e2",
+      "claim_id": "openalex:W2549950368:c2",
+      "description": "Comparison between treatment group (taking a break from Facebook) and control group showed an increase in life satisfaction for the treatment group.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2549950368:e3",
+      "claim_id": "openalex:W2549950368:c3",
+      "description": "Comparison between treatment group (taking a break from Facebook) and control group showed that participants' emotions became more positive in the treatment group.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2549950368:e4",
+      "claim_id": "openalex:W2549950368:c4",
+      "description": "Subgroup analysis within the 1-week randomized experiment demonstrated significantly greater well-being increases among heavy Facebook users.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2549950368:e5",
+      "claim_id": "openalex:W2549950368:c5",
+      "description": "Subgroup analysis within the 1-week randomized experiment demonstrated significantly greater well-being increases among passive Facebook users.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2549950368:e6",
+      "claim_id": "openalex:W2549950368:c6",
+      "description": "Subgroup analysis within the 1-week randomized experiment demonstrated significantly greater well-being increases among users who tend to envy others on Facebook.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2549950368:m1",
+      "paper_id": "openalex:W2549950368",
+      "name": "Randomized controlled experiment",
+      "description": "A 1-week field experiment comparing participants instructed to take a break from Facebook against a control group instructed to continue using Facebook as normal.",
+      "datasets": [
+        "1,095 participants in Denmark (late 2015)"
+      ],
+      "conditions": [
+        "Treatment group: took a 1-week break from Facebook",
+        "Control group: kept using Facebook"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.076327Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

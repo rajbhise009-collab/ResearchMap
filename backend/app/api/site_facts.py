@@ -140,8 +140,8 @@ def _check_line(dc: dict | None) -> str | None:
 def _growth(slug: str) -> dict:
     """What the weekly growth run has actually added (counted from the
     library's entries, never assumed)."""
-    from backend.app.grow.core import GROW_SLUGS
-    if slug not in GROW_SLUGS:
+    from backend.app.grow.core import grow_slugs
+    if slug not in grow_slugs():
         return {"grows": False, "added": 0, "last_added": None}
     pre = DATA / "domains" / slug / "prelabelled.json"
     entries = _j(pre)["entries"] if pre.exists() else []

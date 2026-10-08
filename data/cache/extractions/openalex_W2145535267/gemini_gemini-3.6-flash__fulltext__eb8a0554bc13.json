@@ -1,0 +1,132 @@
+{
+  "paper_id": "openalex:W2145535267",
+  "claims": [
+    {
+      "id": "openalex:W2145535267:c1",
+      "paper_id": "openalex:W2145535267",
+      "text": "Demands for achievement and availability originating from work, study, social life, and individual aspirations are central drivers of high quantitative ICT use among young adults.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2145535267:c2",
+      "paper_id": "openalex:W2145535267",
+      "text": "Perceived expectations for constant availability via mobile phones generate stress and feelings of guilt when communications are left unreturned.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2145535267:c3",
+      "paper_id": "openalex:W2145535267",
+      "text": "High quantitative ICT use contributes to sleep disturbances through late-night computer activities and nighttime disruptions from phone notifications.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2145535267:c4",
+      "paper_id": "openalex:W2145535267",
+      "text": "Blinded clinical psychiatric evaluation identified previously undiagnosed psychiatric disorders in 12 out of 32 participants selected for high ICT use and subjective mental symptoms.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2145535267:e1",
+      "claim_id": "openalex:W2145535267:c1",
+      "description": "Qualitative analysis showed central factors explaining high ICT use were personal dependency, and demands for achievement and availability originating from work, study, social life, and individual aspirations.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2145535267:e2",
+      "claim_id": "openalex:W2145535267:c2",
+      "description": "Participants reported being expected to answer phone calls and messages immediately, noting that being unable to answer resulted in overload, stress, and feelings of guilt.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2145535267:e3",
+      "claim_id": "openalex:W2145535267:c3",
+      "description": "Participants described dislocated sleep from sitting up late at computers and reported being woken at night by mobile phone calls, vibrating alerts, or blinking lights.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2145535267:e4",
+      "claim_id": "openalex:W2145535267:c4",
+      "description": "A physician blinded to the explorative interviews diagnosed 6 men and 6 women with psychiatric disorders (including depression and anxiety), none of which had been previously identified.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2145535267:m1",
+      "paper_id": "openalex:W2145535267",
+      "name": "Qualitative content analysis of semi-structured interviews",
+      "description": "Conducted semi-structured open-ended individual interviews with 32 young adults reporting high ICT use and mental symptoms, followed by stepwise conventional qualitative content analysis.",
+      "datasets": [
+        "University student cohort survey (n=1843, 2004-2005)"
+      ],
+      "conditions": [
+        "High computer use (>20h/week for women, >40h/week for men)",
+        "High mobile phone use (>11 calls/SMS per day for women, >12 for men)",
+        "Confirmed prolonged mental symptoms (stress, depressive symptoms, sleep disturbances)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2145535267:l1",
+      "paper_id": "openalex:W2145535267",
+      "text": "The study was performed with a highly selected study group consisting of high-achieving academic students, limiting generalizability.",
+      "normalized_category": "sample-selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2145535267:l2",
+      "paper_id": "openalex:W2145535267",
+      "text": "Current mental states of participants at the time of interview may have influenced their perceptions of ICT connections.",
+      "normalized_category": "recall-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2145535267:l3",
+      "paper_id": "openalex:W2145535267",
+      "text": "Participants sometimes spoke in general terms or about people in general rather than exclusively from personal experience.",
+      "normalized_category": "speculative-responses",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2145535267:l4",
+      "paper_id": "openalex:W2145535267",
+      "text": "Socio-economic factors and academic background were not controlled or explicitly accounted for in the analysis.",
+      "normalized_category": "uncontrolled-confounding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2145535267:l5",
+      "paper_id": "openalex:W2145535267",
+      "text": "Prospective epidemiological studies found associations between high ICT use and mental health symptoms, but causal mechanisms remained unclear.",
+      "normalized_category": "unclear-causal-mechanisms",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2145535267:f1",
+      "paper_id": "openalex:W2145535267",
+      "text": "Test the proposed pathway model in longitudinal epidemiological studies combining ICT exposure levels with psychosocial demands, dependency, and lifestyle factors.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2145535267:f2",
+      "paper_id": "openalex:W2145535267",
+      "text": "Design and evaluate tailored intervention studies targeting specific domain demands, availability pressures, and dependency factors.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.085541Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

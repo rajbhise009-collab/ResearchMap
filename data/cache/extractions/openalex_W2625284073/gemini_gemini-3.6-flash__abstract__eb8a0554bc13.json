@@ -1,0 +1,96 @@
+{
+  "paper_id": "openalex:W2625284073",
+  "claims": [
+    {
+      "id": "openalex:W2625284073:c1",
+      "paper_id": "openalex:W2625284073",
+      "text": "The overall correlation between time spent on social networking sites and psychological well-being is low (r = -0.07).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625284073:c2",
+      "paper_id": "openalex:W2625284073",
+      "text": "The correlations between time spent on social networking sites and positive psychological well-being indicators (self-esteem and life satisfaction) are close to 0.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625284073:c3",
+      "paper_id": "openalex:W2625284073",
+      "text": "The correlations between time spent on social networking sites and negative psychological well-being indicators (depression and loneliness) are weak.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2625284073:c4",
+      "paper_id": "openalex:W2625284073",
+      "text": "The effects of publication outlet, site on which users spent time, scale of time spent, participant age, and participant gender on the relationship between time spent on social networking sites and psychological well-being are not significant.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2625284073:e1",
+      "claim_id": "openalex:W2625284073:c1",
+      "description": "A meta-analysis across 61 studies comprising 67 independent samples and 19,652 participants yielded a mean correlation of r = -0.07.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2625284073:e2",
+      "claim_id": "openalex:W2625284073:c2",
+      "description": "Meta-analytic synthesis showed correlations close to 0 when examining self-esteem and life satisfaction.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2625284073:e3",
+      "claim_id": "openalex:W2625284073:c3",
+      "description": "Meta-analytic synthesis revealed weak correlations when examining depression and loneliness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2625284073:e4",
+      "claim_id": "openalex:W2625284073:c4",
+      "description": "Moderator analyses testing publication outlet, specific platform, time measurement scale, participant age, and gender showed no statistically significant moderation effects.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2625284073:m1",
+      "paper_id": "openalex:W2625284073",
+      "name": "Meta-analysis",
+      "description": "A meta-analytic synthesis evaluating the correlation between social network site time and psychological well-being across multiple independent samples.",
+      "datasets": [],
+      "conditions": [
+        "61 studies",
+        "67 independent samples",
+        "19,652 participants"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2625284073:l1",
+      "paper_id": "openalex:W2625284073",
+      "text": "Most included studies in the meta-analysis relied on student samples.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2625284073:f1",
+      "paper_id": "openalex:W2625284073",
+      "text": "Future research should be conducted to examine the relationship between time spent on social networking sites and psychological well-being specifically for non-student adult populations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.073131Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

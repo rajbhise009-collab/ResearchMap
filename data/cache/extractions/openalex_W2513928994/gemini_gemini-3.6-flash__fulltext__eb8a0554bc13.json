@@ -1,0 +1,222 @@
+{
+  "paper_id": "openalex:W2513928994",
+  "claims": [
+    {
+      "id": "openalex:W2513928994:c1",
+      "paper_id": "openalex:W2513928994",
+      "text": "Photos posted by depressed individuals tend to have higher hue values (bluer) compared to photos posted by healthy individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c2",
+      "paper_id": "openalex:W2513928994",
+      "text": "Photos posted by depressed individuals tend to have lower saturation values (grayer) compared to photos posted by healthy individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c3",
+      "paper_id": "openalex:W2513928994",
+      "text": "Photos posted by depressed individuals tend to have lower brightness values (darker) compared to photos posted by healthy individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c4",
+      "paper_id": "openalex:W2513928994",
+      "text": "Depressed individuals are less likely to apply Instagram filters to their posted photographs than healthy individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c5",
+      "paper_id": "openalex:W2513928994",
+      "text": "When applying Instagram filters, depressed individuals most disproportionately favor the Inkwell black-and-white filter.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c6",
+      "paper_id": "openalex:W2513928994",
+      "text": "Depressed participants are more likely than healthy participants to post photos containing human faces.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c7",
+      "paper_id": "openalex:W2513928994",
+      "text": "Photos posted by depressed participants contain a lower average face count per photograph than photos posted by healthy participants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c8",
+      "paper_id": "openalex:W2513928994",
+      "text": "The All-data Random Forest classifier achieved a depression recall of 0.697, compared to general practitioners' unassisted diagnostic recall of 0.510.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c9",
+      "paper_id": "openalex:W2513928994",
+      "text": "Predictive markers of depression are detectable in Instagram posts made prior to the date of first clinical diagnosis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2513928994:c10",
+      "paper_id": "openalex:W2513928994",
+      "text": "Human ratings of photo sadness and happiness show extremely low correlation with computationally extracted image features.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2513928994:e1",
+      "claim_id": "openalex:W2513928994:c1",
+      "description": "Increased hue predicted depression with positive regression coefficients in both All-data (coef = .325) and Pre-diagnosis (coef = .802) Bayesian logistic regression models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e2",
+      "claim_id": "openalex:W2513928994:c2",
+      "description": "Decreased saturation predicted depression with negative regression coefficients in both All-data (coef = -.602) and Pre-diagnosis (coef = -.271) models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e3",
+      "claim_id": "openalex:W2513928994:c3",
+      "description": "Decreased brightness predicted depression with negative regression coefficients in both All-data (coef = -.572) and Pre-diagnosis (coef = -.209) models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e4",
+      "claim_id": "openalex:W2513928994:c4",
+      "description": "Filter usage was negatively associated with depression status in both All-data (coef = -.124) and Pre-diagnosis (coef = -.071) regression models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e5",
+      "claim_id": "openalex:W2513928994:c5",
+      "description": "Chi-squared analysis showed depressed participants disproportionately favored the Inkwell filter compared to expected usage frequencies (p < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e6",
+      "claim_id": "openalex:W2513928994:c6",
+      "description": "The presence of a face ('Has face') positively predicted depression in both All-data (coef = .243) and Pre-diagnosis (coef = .267) models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e7",
+      "claim_id": "openalex:W2513928994:c7",
+      "description": "'Face count' negatively predicted depression in both All-data (coef = -.105) and Pre-diagnosis (coef = -.207) models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e8",
+      "claim_id": "openalex:W2513928994:c8",
+      "description": "A 1200-tree Random Forest classifier achieved a recall of .697 (SD .008) vs general practitioner recall of .510 from meta-analysis benchmark.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e9",
+      "claim_id": "openalex:W2513928994:c9",
+      "description": "The Pre-diagnosis Random Forest model using only posts made prior to first diagnosis achieved precision of .541 and specificity of .833.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2513928994:e10",
+      "claim_id": "openalex:W2513928994:c10",
+      "description": "Pearson product-moment correlation matrix showed correlations near zero between human affective ratings (happy, sad) and computational features (hue, saturation, brightness).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2513928994:m1",
+      "paper_id": "openalex:W2513928994",
+      "name": "Computational feature extraction and Random Forest classification",
+      "description": "Extracted pixel-level HSV color statistics, metadata features, and algorithmic face counts from Instagram user posting histories to train Bayesian logistic regression and Random Forest models for depression screening.",
+      "datasets": [
+        "43,950 Instagram photos from 166 individuals"
+      ],
+      "conditions": [
+        "All-data model (entire posting history)",
+        "Pre-diagnosis model (posts prior to clinical diagnosis)",
+        "Human ratings subset (13,184 photos rated on MTurk)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2513928994:l1",
+      "paper_id": "openalex:W2513928994",
+      "text": "Prior health-screening studies on social media relied exclusively on text analysis and did not harness visual data.",
+      "normalized_category": "prior-work-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2513928994:l2",
+      "paper_id": "openalex:W2513928994",
+      "text": "The study used a broad clinical definition of depression without acquiring specific diagnostic sub-class or comorbidity details.",
+      "normalized_category": "diagnostic-specificity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2513928994:l3",
+      "paper_id": "openalex:W2513928994",
+      "text": "The participant sample consisted of individuals who sought clinical care and agreed to share social media data, limiting broad inferences to all depressed individuals.",
+      "normalized_category": "sample-selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2513928994:l4",
+      "paper_id": "openalex:W2513928994",
+      "text": "Socio-technical predictive models degrade over time as data trends change, requiring frequent recalibration.",
+      "normalized_category": "model-degradation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2513928994:l5",
+      "paper_id": "openalex:W2513928994",
+      "text": "Forty-three percent of survey participants refused to share Instagram data due to data privacy concerns.",
+      "normalized_category": "participant-attrition",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2513928994:f1",
+      "paper_id": "openalex:W2513928994",
+      "text": "Integrate textual analysis of Instagram comments, captions, and tags alongside visual feature modeling.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2513928994:f2",
+      "paper_id": "openalex:W2513928994",
+      "text": "Adjust questionnaires in future studies to acquire specific diagnostic class and comorbidity information.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2513928994:f3",
+      "paper_id": "openalex:W2513928994",
+      "text": "Establish stronger participant confidence regarding data security and privacy in social media research.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.069135Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

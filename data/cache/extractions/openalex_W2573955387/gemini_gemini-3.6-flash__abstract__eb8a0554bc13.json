@@ -1,0 +1,98 @@
+{
+  "paper_id": "openalex:W2573955387",
+  "claims": [
+    {
+      "id": "openalex:W2573955387:c1",
+      "paper_id": "openalex:W2573955387",
+      "text": "Face-to-face social interactions enhance well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2573955387:c2",
+      "paper_id": "openalex:W2573955387",
+      "text": "Overall, the use of Facebook is negatively associated with well-being.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2573955387:c3",
+      "paper_id": "openalex:W2573955387",
+      "text": "A 1-standard-deviation increase in likes clicked, links clicked, or status updates is associated with a decrease of 5% to 8% of a standard deviation in self-reported mental health.",
+      "type": "finding",
+      "confidence": 0.99,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2573955387:c4",
+      "paper_id": "openalex:W2573955387",
+      "text": "The negative associations between Facebook use and well-being are robust to multivariate cross-sectional analyses and 2-wave prospective analyses.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2573955387:c5",
+      "paper_id": "openalex:W2573955387",
+      "text": "The negative associations of Facebook use are comparable to or greater in magnitude than the positive impact of offline interactions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2573955387:e1",
+      "claim_id": "openalex:W2573955387:c1",
+      "description": "Face-to-face social interactions enhance well-being.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2573955387:e2",
+      "claim_id": "openalex:W2573955387:c2",
+      "description": "Our results showed that overall, the use of Facebook was negatively associated with well-being.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2573955387:e3",
+      "claim_id": "openalex:W2573955387:c3",
+      "description": "a 1-standard-deviation increase in 'likes clicked', 'links clicked', or 'status updates' was associated with a decrease of 5%-8% of a standard deviation in self-reported mental health.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W2573955387:e4",
+      "claim_id": "openalex:W2573955387:c4",
+      "description": "These associations were robust to multivariate cross-sectional analyses, as well as to 2-wave prospective analyses.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2573955387:e5",
+      "claim_id": "openalex:W2573955387:c5",
+      "description": "The negative associations of Facebook use were comparable to or greater in magnitude than the positive impact of offline interactions, which suggests a possible tradeoff between offline and online relationships.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2573955387:m1",
+      "paper_id": "openalex:W2573955387",
+      "name": "Longitudinal survey and objective social media measurement",
+      "description": "Assessed associations of online and offline social activity with subjective well-being measures using 3 waves of survey data combined with objective Facebook activity metrics.",
+      "datasets": [
+        "Gallup Panel Social Network Study"
+      ],
+      "conditions": [
+        "3 waves (2013, 2014, and 2015)",
+        "5,208 subjects",
+        "multivariate cross-sectional analyses",
+        "2-wave prospective analyses"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.077669Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

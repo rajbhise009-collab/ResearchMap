@@ -1,0 +1,131 @@
+{
+  "paper_id": "openalex:W2598210266",
+  "claims": [
+    {
+      "id": "openalex:W2598210266:c1",
+      "paper_id": "openalex:W2598210266",
+      "text": "A systematic search identified 285 empirical studies evaluating immersive virtual reality applications in adult mental health out of 1096 identified records.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2598210266:c2",
+      "paper_id": "openalex:W2598210266",
+      "text": "Anxiety disorders constituted the largest body of VR research in mental health, representing 192 of the 285 identified empirical studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2598210266:c3",
+      "paper_id": "openalex:W2598210266",
+      "text": "VR cognitive therapy produced a large controlled effect size of d = 1.3 relative to VR exposure therapy in reducing persecutory delusions in schizophrenia patients.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2598210266:c4",
+      "paper_id": "openalex:W2598210266",
+      "text": "Experiencing a virtual body ownership illusion of a healthy body mass index reduced body size overestimation in patients with anorexia nervosa for at least 2 hours.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2598210266:e1",
+      "claim_id": "openalex:W2598210266:c1",
+      "description": "A total of 1096 studies were identified from the literature searches, of which 285 met the review inclusion criteria.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2598210266:e2",
+      "claim_id": "openalex:W2598210266:c2",
+      "description": "The main disorders researched were anxiety (n = 192), schizophrenia (n = 44), substance-related disorders (n = 22) and eating disorders (n = 18).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2598210266:e3",
+      "claim_id": "openalex:W2598210266:c3",
+      "description": "The small treatment study with 30 patients with persecutory delusions showed that VR cognitive therapy is potentially much more efficacious than VR exposure therapy... The controlled effect size (d = 1.3) for VR cognitive therapy was large.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2598210266:e4",
+      "claim_id": "openalex:W2598210266:c4",
+      "description": "Keizer et al. (2016) helped patients with anorexia nervosa to experience ownership of a healthy body mass index (BMI) body, which led afterwards, for at least 2 h, to a reduction in body size overestimation.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2598210266:m1",
+      "paper_id": "openalex:W2598210266",
+      "name": "Systematic literature review of empirical VR mental health research",
+      "description": "Conducted systematic PubMed database searches up to 2016 for peer-reviewed empirical studies in English focusing on immersive virtual reality applications in assessment, theory, and treatment of adult mental health disorders.",
+      "datasets": [
+        "PubMed"
+      ],
+      "conditions": [
+        "Peer-reviewed empirical studies in English",
+        "Immersive VR systems (HMD, CAVE, large projection screen, 3D display)",
+        "Focus on adult mental health disorders (anxiety, depression, psychosis, substance use, eating disorders)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2598210266:l1",
+      "paper_id": "openalex:W2598210266",
+      "text": "The review restricted literature searches to PubMed, peer-reviewed English-language journal articles, and published empirical data up to the end of 2016.",
+      "normalized_category": "search-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2598210266:l2",
+      "paper_id": "openalex:W2598210266",
+      "text": "The paper excluded health psychology, cognitive disorders, personality disorders, childhood-onset disorders, and non-intervention VR gaming applications.",
+      "normalized_category": "domain-exclusion-limits",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2598210266:l3",
+      "paper_id": "openalex:W2598210266",
+      "text": "The methodological quality of earlier empirical VR studies in mental health was generally low, characterized by small sample sizes and a lack of randomized controlled trials.",
+      "normalized_category": "methodological-quality-deficits",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2598210266:l4",
+      "paper_id": "openalex:W2598210266",
+      "text": "The term virtual reality in existing literature was frequently misapplied to non-interactive and non-immersive technologies, such as desktop computer displays.",
+      "normalized_category": "terminological-misclassification",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2598210266:f1",
+      "paper_id": "openalex:W2598210266",
+      "text": "Investigating optimal methods for immersing individuals in VR using affordable equipment so that clinical learning effectively transfers to real-world environments.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2598210266:f2",
+      "paper_id": "openalex:W2598210266",
+      "text": "Testing whether theory-driven psychological interventions beyond exposure can be delivered effectively without a therapist present or via automated avatars.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2598210266:f3",
+      "paper_id": "openalex:W2598210266",
+      "text": "Evaluating the psychometric reliability and validity of VR-based assessment tools compared with standard clinical retrospective self-reports across understudied disorders like depression.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.095259Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

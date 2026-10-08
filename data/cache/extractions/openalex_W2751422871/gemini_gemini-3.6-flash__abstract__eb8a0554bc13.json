@@ -1,0 +1,74 @@
+{
+  "paper_id": "openalex:W2751422871",
+  "claims": [
+    {
+      "id": "openalex:W2751422871:c1",
+      "paper_id": "openalex:W2751422871",
+      "text": "Parent and adolescent reports of adolescent social media account counts are moderately correlated with parent-reported DSM-5 symptoms of inattention, hyperactivity/impulsivity, ODD, anxiety, and depression.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2751422871:c2",
+      "paper_id": "openalex:W2751422871",
+      "text": "Parent and adolescent reports of adolescent social media account counts are moderately correlated with adolescent-reported fear of missing out (FoMO) and loneliness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2751422871:c3",
+      "paper_id": "openalex:W2751422871",
+      "text": "Adolescent anxiety and depressive symptoms are highest among adolescents with both a relatively high number of parent-reported social media accounts and relatively high FoMO.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2751422871:e1",
+      "claim_id": "openalex:W2751422871:c1",
+      "description": "Parent and adolescent reports of the number of adolescents' social media accounts were moderately correlated with parent-reported DSM-5 symptoms of inattention, hyperactivity/impulsivity, ODD, anxiety, and depressive symptoms.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2751422871:e2",
+      "claim_id": "openalex:W2751422871:c2",
+      "description": "Parent and adolescent reports of the number of adolescents' social media accounts were moderately correlated with adolescent-reported fear of missing out (FoMO) and loneliness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2751422871:e3",
+      "claim_id": "openalex:W2751422871:c3",
+      "description": "Lastly, anxiety and depressive symptoms were highest among adolescents with a relatively high number of parent-reported social media accounts and relatively high FoMO.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2751422871:m1",
+      "paper_id": "openalex:W2751422871",
+      "name": "Parent-adolescent dyad survey study",
+      "description": "Cross-sectional survey of parent-adolescent dyads examining social media account numbers alongside reported DSM-5 mental health symptoms, FoMO, and loneliness.",
+      "datasets": [],
+      "conditions": [
+        "226 participants (113 parent-adolescent dyads)",
+        "Adolescents aged 14 to 17",
+        "United States sample"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W2751422871:f1",
+      "paper_id": "openalex:W2751422871",
+      "text": "Conduct related longitudinal studies to evaluate causal or temporal relationships between social media use, FoMO, and adolescent mental health.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.072409Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

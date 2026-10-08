@@ -1,0 +1,92 @@
+{
+  "paper_id": "openalex:W2162403058",
+  "claims": [
+    {
+      "id": "openalex:W2162403058:c1",
+      "paper_id": "openalex:W2162403058",
+      "text": "Short sleep duration is significantly associated with an increased risk of depression in adults.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2162403058:c2",
+      "paper_id": "openalex:W2162403058",
+      "text": "Long sleep duration is significantly associated with an increased risk of depression in adults.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2162403058:c3",
+      "paper_id": "openalex:W2162403058",
+      "text": "The associations between sleep duration and risk of depression do not substantially change in sensitivity and subgroup analyses.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2162403058:c4",
+      "paper_id": "openalex:W2162403058",
+      "text": "No evidence of publication bias was found among the included prospective studies.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2162403058:e1",
+      "claim_id": "openalex:W2162403058:c1",
+      "description": "The pooled RR for depression was 1.31 (95% CI, 1.04-1.64; I(2) = 0%) for short sleep duration across 25,271 participants.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2162403058:e2",
+      "claim_id": "openalex:W2162403058:c2",
+      "description": "The pooled RR for depression was 1.42 (95% CI, 1.04-1.92; I(2) = 0%) for long sleep duration across 23,663 participants.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2162403058:e3",
+      "claim_id": "openalex:W2162403058:c3",
+      "description": "Sensitivity and subgroup analyses showed that the associations between short or long sleep duration and risk of depression did not substantially change.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2162403058:e4",
+      "claim_id": "openalex:W2162403058:c4",
+      "description": "Statistical testing indicated no evidence of publication bias across the seven included studies.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2162403058:m1",
+      "paper_id": "openalex:W2162403058",
+      "name": "Random-effects meta-analysis",
+      "description": "Systematic literature search of PubMed and Web of Science followed by random-effects meta-analysis to calculate pooled relative risks.",
+      "datasets": [
+        "PubMed",
+        "Web of Science"
+      ],
+      "conditions": [
+        "Prospective longitudinal studies",
+        "Adult participants",
+        "Search cutoff October 22, 2014"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2162403058:l1",
+      "paper_id": "openalex:W2162403058",
+      "text": "Results from longitudinal studies on sleep duration and incidence of depression remain controversial.",
+      "normalized_category": "inconsistent-prior-literature",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.100265Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

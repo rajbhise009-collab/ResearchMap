@@ -1,0 +1,84 @@
+{
+  "paper_id": "openalex:W2140296281",
+  "claims": [
+    {
+      "id": "openalex:W2140296281:c1",
+      "paper_id": "openalex:W2140296281",
+      "text": "Instant messenger use is positively related to compulsive Internet use six months later in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2140296281:c2",
+      "paper_id": "openalex:W2140296281",
+      "text": "Chatting in chat rooms is positively related to compulsive Internet use six months later in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2140296281:c3",
+      "paper_id": "openalex:W2140296281",
+      "text": "Instant messenger use is positively associated with depression six months later in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2140296281:c4",
+      "paper_id": "openalex:W2140296281",
+      "text": "Loneliness is negatively related to instant messenger use six months later in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2140296281:e1",
+      "claim_id": "openalex:W2140296281:c1",
+      "description": "A 2-wave longitudinal survey of 663 students showed instant messenger use was positively related to compulsive Internet use 6 months later.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2140296281:e2",
+      "claim_id": "openalex:W2140296281:c2",
+      "description": "A 2-wave longitudinal survey of 663 students showed chatting in chat rooms was positively related to compulsive Internet use 6 months later.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2140296281:e3",
+      "claim_id": "openalex:W2140296281:c3",
+      "description": "Instant messenger use was positively associated with depression 6 months later in a sample of 663 adolescents.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2140296281:e4",
+      "claim_id": "openalex:W2140296281:c4",
+      "description": "Loneliness was negatively related to instant messenger use 6 months later across the 2-wave longitudinal sample.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2140296281:m1",
+      "paper_id": "openalex:W2140296281",
+      "name": "2-wave longitudinal questionnaire survey",
+      "description": "A 2-wave longitudinal classroom questionnaire study with a 6-month interval evaluating online communication and psychosocial outcomes in adolescents.",
+      "datasets": [
+        "Adolescent survey sample (N=663)"
+      ],
+      "conditions": [
+        "6-month longitudinal interval",
+        "Ages 12 to 15 years",
+        "318 male and 345 female students",
+        "Classroom setting administration"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.067065Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

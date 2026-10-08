@@ -1,0 +1,131 @@
+{
+  "paper_id": "openalex:W3023645215",
+  "claims": [
+    {
+      "id": "openalex:W3023645215:c1",
+      "paper_id": "openalex:W3023645215",
+      "text": "There is a significant positive statistical correlation between self-reported social media use and the spread of panic related to COVID-19 in Iraqi Kurdistan (R=.8701).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3023645215:c2",
+      "paper_id": "openalex:W3023645215",
+      "text": "Facebook was the most widely used social media platform for obtaining COVID-19 information in Iraqi Kurdistan, used by 82.6% of respondents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3023645215:c3",
+      "paper_id": "openalex:W3023645215",
+      "text": "Fake news about COVID-19 was reported as the primary category of information creating panic on social media by 26.6% of participants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3023645215:c4",
+      "paper_id": "openalex:W3023645215",
+      "text": "Exposure to social media news during the COVID-19 outbreak psychologically affected 38.6% of survey participants.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3023645215:c5",
+      "paper_id": "openalex:W3023645215",
+      "text": "Health news related to COVID-19 was the most followed news topic among social media users in Iraqi Kurdistan, read by 76.4% of respondents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3023645215:e1",
+      "claim_id": "openalex:W3023645215:c1",
+      "description": "We found a significant positive statistical correlation between self-reported social media use and the spread of panic related to COVID-19 (R=.8701).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3023645215:e2",
+      "claim_id": "openalex:W3023645215:c2",
+      "description": "The majority of participants (426/516, 82.6%) used Facebook to acquire information about COVID-19.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3023645215:e3",
+      "claim_id": "openalex:W3023645215:c3",
+      "description": "Many participants (n=137, 26.6%) answered 'fake news about COVID-19' as having the most impact on creating panic on social media.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3023645215:e4",
+      "claim_id": "openalex:W3023645215:c4",
+      "description": "38.6% (n=199) of the participants were psychologically affected by the fear generated from social media posts.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3023645215:e5",
+      "claim_id": "openalex:W3023645215:c5",
+      "description": "The highest proportion of participants (n=394, 76.4%) had heard, seen, or read health news (COVID-19).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3023645215:m1",
+      "paper_id": "openalex:W3023645215",
+      "name": "Quantitative Online Survey and Content Analysis",
+      "description": "An online questionnaire administered in the Kurdish language to 516 social media users, analyzed using descriptive content analysis and statistical testing in SPSS.",
+      "datasets": [
+        "Self-collected online survey data (N=516 social media users in Iraqi Kurdistan)"
+      ],
+      "conditions": [
+        "COVID-19 lockdown period in Iraqi Kurdistan",
+        "Random online sampling"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3023645215:l1",
+      "paper_id": "openalex:W3023645215",
+      "text": "The study relies on self-reported data from self-selected participants.",
+      "normalized_category": "self-reported-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3023645215:l2",
+      "paper_id": "openalex:W3023645215",
+      "text": "The COVID-19 lockdown period constrained the ability to gather a more representative sample.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3023645215:l3",
+      "paper_id": "openalex:W3023645215",
+      "text": "There was limited evidence prior to this study on the perception and impact of social media during a pandemic within non-Western communities.",
+      "normalized_category": "lack-of-prior-research",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3023645215:f1",
+      "paper_id": "openalex:W3023645215",
+      "text": "Design courses and symposiums at universities to help students and faculty learn how to search for, evaluate, and discern health information during health crises.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3023645215:f2",
+      "paper_id": "openalex:W3023645215",
+      "text": "Establish collaboration between media experts, health professionals, and governmental ministries to ensure only well-vetted information is disseminated during epidemics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.061928Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

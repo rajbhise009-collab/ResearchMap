@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W2143095451",
+  "claims": [
+    {
+      "id": "openalex:W2143095451:c1",
+      "paper_id": "openalex:W2143095451",
+      "text": "The most dangerous form of suicidal desire is caused by the simultaneous presence of thwarted belongingness and perceived burdensomeness, along with hopelessness about these states.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2143095451:c2",
+      "paper_id": "openalex:W2143095451",
+      "text": "The capability to engage in suicidal behavior is separate from the desire to engage in suicidal behavior.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2143095451:c3",
+      "paper_id": "openalex:W2143095451",
+      "text": "The capability for suicidal behavior emerges via habituation and opponent processes in response to repeated exposure to physically painful or fear-inducing experiences.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2143095451:e1",
+      "claim_id": "openalex:W2143095451:c1",
+      "description": "We propose that the most dangerous form of suicidal desire is caused by the simultaneous presence of two interpersonal constructs-thwarted belongingness and perceived burdensomeness (and hopelessness about these states)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2143095451:e2",
+      "claim_id": "openalex:W2143095451:c2",
+      "description": "...and further that the capability to engage in suicidal behavior is separate from the desire to engage in suicidal behavior.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2143095451:e3",
+      "claim_id": "openalex:W2143095451:c3",
+      "description": "According to the theory, the capability for suicidal behavior emerges, via habituation and opponent processes, in response to repeated exposure to physically painful and/or fear-inducing experiences.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2143095451:m1",
+      "paper_id": "openalex:W2143095451",
+      "name": "Interpersonal Theory of Suicidal Behavior",
+      "description": "A theoretical framework proposing explicit, falsifiable hypotheses distinguishing the desire for suicide from the capability for suicide.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2143095451:l1",
+      "paper_id": "openalex:W2143095451",
+      "text": "Suicidal behavior has received relatively little empirical attention due in part to a relative absence of theoretical development.",
+      "normalized_category": "lack-of-prior-theory",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2143095451:f1",
+      "paper_id": "openalex:W2143095451",
+      "text": "Scientific inquiry and potential empirical falsification of the delineated hypotheses of the interpersonal theory of suicide.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.087343Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

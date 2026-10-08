@@ -1,0 +1,140 @@
+{
+  "paper_id": "openalex:W2957614298",
+  "claims": [
+    {
+      "id": "openalex:W2957614298:c1",
+      "paper_id": "openalex:W2957614298",
+      "text": "Depressive symptoms in adolescents increased yearly over a 4-year period.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2957614298:c2",
+      "paper_id": "openalex:W2957614298",
+      "text": "Increased social media use is associated with higher depressive symptoms across individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2957614298:c3",
+      "paper_id": "openalex:W2957614298",
+      "text": "Increased computer use is associated with higher depressive symptoms across individuals.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2957614298:c4",
+      "paper_id": "openalex:W2957614298",
+      "text": "Within-person annual increases in social media use are associated with concurrent increases in depressive symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2957614298:c5",
+      "paper_id": "openalex:W2957614298",
+      "text": "Within-person annual increases in television viewing are associated with concurrent increases in depressive symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2957614298:c6",
+      "paper_id": "openalex:W2957614298",
+      "text": "Associations between screen time, exercise, and self-esteem support the upward social comparison hypothesis over the displacement hypothesis.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2957614298:c7",
+      "paper_id": "openalex:W2957614298",
+      "text": "Interaction between between-person and within-person associations concerning social media and self-esteem supports the reinforcing spirals hypothesis.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2957614298:e1",
+      "claim_id": "openalex:W2957614298:c1",
+      "description": "Depression symptoms increased from a year 1 mean of 4.29 points to a year 4 mean of 5.45 points.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2957614298:e2",
+      "claim_id": "openalex:W2957614298:c2",
+      "description": "For every increased hour spent using social media, adolescents showed a 0.64-unit increase in depressive symptoms (95% CI, 0.32-0.51).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2957614298:e3",
+      "claim_id": "openalex:W2957614298:c3",
+      "description": "Between-level associations for computer use showed a 0.69-unit increase in depressive symptoms per hour (95% CI, 0.47-0.91).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2957614298:e4",
+      "claim_id": "openalex:W2957614298:c4",
+      "description": "A further 1-hour increase in social media use in a given year was associated with a further 0.41-unit increase in depressive symptoms in that same year.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2957614298:e5",
+      "claim_id": "openalex:W2957614298:c5",
+      "description": "A within-person association was found for television viewing (0.18; 95% CI, 0.09-0.27).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2957614298:e6",
+      "claim_id": "openalex:W2957614298:c6",
+      "description": "Significant between-person and within-person associations between screen time and exercise and self-esteem supported upward social comparison and not displacement hypothesis.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2957614298:e7",
+      "claim_id": "openalex:W2957614298:c7",
+      "description": "A significant interaction between between-person and within-person associations concerning social media and self-esteem supported reinforcing spirals hypothesis.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2957614298:m1",
+      "paper_id": "openalex:W2957614298",
+      "name": "Multilevel modeling of longitudinal survey data",
+      "description": "Secondary analysis using multilevel models with random intercepts at school and individual levels to estimate between-person and within-person associations over 4 years.",
+      "datasets": [
+        "Secondary analysis data from a trial assessing 4-year efficacy of a personality-targeted drug and alcohol prevention intervention"
+      ],
+      "conditions": [
+        "Sample of 3826 adolescents starting in 7th grade in 31 schools in Greater Montreal",
+        "Annual survey administration from 2012 to 2018",
+        "Brief Symptoms Inventory for depression outcome"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2957614298:l1",
+      "paper_id": "openalex:W2957614298",
+      "text": "Longitudinal studies measuring the association between screen time and depression in adolescents are lacking.",
+      "normalized_category": "lack-of-longitudinal-evidence",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2957614298:f1",
+      "paper_id": "openalex:W2957614298",
+      "text": "Take both social media and television screen time modes into account when developing preventive measures and advising parents.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.072855Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

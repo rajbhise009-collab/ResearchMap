@@ -1,0 +1,94 @@
+{
+ "items": [
+  {
+   "wid": "W3008632805",
+   "title": "Reallocation Effects of the Minimum Wage",
+   "venue": "The Quarterly Journal of Economics",
+   "abstract": "Abstract We investigate the wage, employment, and reallocation effects of the introduction of a nationwide minimum wage in Germany that affected 15% of all employees. Based on identification designs that exploit variation in exposure across individuals and local areas, we find that the minimum wage raised wages but did not lower employment. It also led to the reallocation of low-wage workers from smaller to larger, from lower- to higher-paying, and from less to more productive establishments. This worker upgrading accounts for up to 17% of the wage increase induced by the minimum wage. Moreover, at the regional level, average establishment quality increased in more affected areas in the years following the introduction of the minimum wage."
+  },
+  {
+   "wid": "W3125512578",
+   "title": "Identification and Inference in Nonlinear Difference-in-Differences Models",
+   "venue": "Econometrica",
+   "abstract": "This paper develops a generalization of the widely used difference-in-differences method for evaluating the effects of policy changes. We propose a model that allows the control and treatment groups to have different average benefits from the treatment. The assumptions of the proposed model are invariant to the scaling of the outcome. We provide conditions under which the model is nonparametrically identified and propose an estimator that can be applied using either repeated cross section or panel data. Our approach provides an estimate of the entire counterfactual distribution of outcomes that would have been experienced by the treatment group in the absence of the treatment and likewise for the untreated group in the presence of the treatment. Thus, it enables the evaluation of policy interventions according to criteria such as a mean-variance trade-off. We also propose methods for inference, showing that our estimator for the average treatment effect is root-N consistent and asymptotically normal. We consider extensions to allow for covariates, discrete dependent variables, and multiple groups and time periods. Copyright The Econometric Society 2006."
+  },
+  {
+   "wid": "W2049844255",
+   "title": "Code of the Street: Decency, Violence, and the Moral Life of the Inner City",
+   "venue": "Teaching Sociology",
+   "abstract": "Where the rule of law does not apply, survival depends on intimate knowledge of this powerful, inflexible etiquette that colors every human transaction. Inner-city black America often seems to be defined by random, senseless street violence. In fact, although violence is a salient feature of inner-city communities, its use is far from random; it is regulated through an informal but well-known code of the street. How you dress, how you talk, whether you make eye contact, your understanding of the pecking order-such crucial details can have life-or-death consequences, and young people are particularly at risk. As Elijah Anderson shows in this brilliant anatomy of the inner-city psyche, the code is a response to the lack of jobs that pay a living wage; to the stigma of race; to rampant drug use; to alienation and lack of hope. The police exercise no control here, and the individual's safety and sense of worth are defined by how much respect he can command in public; this deference is based on physical and psychological control and, always, on an implied threat of violence. The most powerful force counteracting the code and its reign of terror is the strong, loving, decent family, and we meet many heroic figures in the course of this narrative. Unfortunately, the culture of the street thrives and often defeats decency because it controls public spaces, so that individuals with higher, better aspirations are often entangled in the code and its self-destructive behaviors."
+  },
+  {
+   "wid": "W1604935828",
+   "title": "Effects of the Minimum Wage on the Employment Status of Youths: An Update",
+   "venue": "The Journal of Human Resources",
+   "abstract": "The large decline in the relative value of the minimum wage during the 1980s makes that period a valuable one for identifying the impact of variation in the minimum wage on youth employment. This study produces the robust finding that, when the experience of the 1980s is included, a 10 percent increase in the minimum wage is estimated to reduce teen employment by less than 1 percent-the lower end of the range of previous estimates. Because this small employment effect is offset by a labor force withdrawal effect, the study finds no discernible effect on measured unemployment. The study also finds no apparent effect of the minimum wage on the employment of young adults aged 20-24."
+  },
+  {
+   "wid": "W2095516703",
+   "title": "Counterfactual decomposition of changes in wage distributions using quantile regression",
+   "venue": "Journal of Applied Econometrics",
+   "abstract": "Abstract We propose a method to decompose the changes in the wage distribution over a period of time in several factors contributing to those changes. The method is based on the estimation of marginal wage distributions consistent with a conditional distribution estimated by quantile regression as well as with any hypothesized distribution for the covariates. Comparing the marginal distributions implied by different distributions for the covariates, one is then able to perform counterfactual exercises. The proposed methodology enables the identification of the sources of the increased wage inequality observed in most countries. Specifically, it decomposes the changes in the wage distribution over a period of time into several factors contributing to those changes, namely by discriminating between changes in the characteristics of the working population and changes in the returns to these characteristics. We apply this methodology to Portuguese data for the period 1986\u20131995, and find that the observed increase in educational levels contributed decisively towards greater wage inequality. Copyright \u00a9 2005 John Wiley & Sons, Ltd."
+  },
+  {
+   "wid": "W2118844622",
+   "title": "The Effects of Minimum Wages on Wage Dispersion and Employment: Evidence from the U.K. Wages Councils",
+   "venue": "Industrial and Labor Relations Review",
+   "abstract": "Using data on Wages Council coverage from the United Kingdom New Earnings Survey, the authors examine the impact of mandated minimum wages on wage dispersion and employment in the United Kingdom in the 1980s. They find evidence that a dramatic decline in the toughness of the regulation imposed by the Wages Councils through the 1980s\u2014a decline, that is, in the level of the minimum wage relative to the average wage\u2014significantly contributed to widening wage dispersion over those years. There is, however, no evidence of an increase in employment resulting from the weakening bite of the Wages Council minimum pay rates. Instead, consistent with the conclusions of several recent U.S. studies, the findings suggest that the minimum wage had either no effect or a positive effect on employment."
+  },
+  {
+   "wid": "W2890705475",
+   "title": "Short-term rentals and the housing market: Quasi-experimental evidence from Airbnb in Los Angeles",
+   "venue": "Journal of Urban Economics",
+   "abstract": "Online short-term rental (STR) platforms such as Airbnb have grown spectacularly. We study the effects of regulation of these platforms on the housing market using a quasi-experimental research design. 18 out of 88 cities in Los Angeles County have severely restricted short-term rentals by adopting Home Sharing Ordinances. We apply a panel regression-discontinuity design around the cities\u2019 borders. Ordinances reduced listings by 50% and housing prices by 2%. Additional difference-in-differences estimates show that ordinances reduced rents also by 2%. These estimates imply large effects of Airbnb on property values in areas attractive to tourists (e.g. an increase in house prices of 15% within 2.5km of Hollywood\u2019s Walk of Fame)."
+  },
+  {
+   "wid": "W2320014267",
+   "title": "What Explains the 2007-2009 Drop in Employment?",
+   "venue": "Econometrica",
+   "abstract": "We show that deterioration in household balance sheets, or the housing net worth channel, played a significant role in the sharp decline in U.S. employment between 2007 and 2009. Counties with a larger decline in housing net worth experience a larger decline in non-tradable employment. This result is not driven by industry-specific supply-side shocks, exposure to the construction sector, policy-induced business uncertainty, or contemporaneous credit supply tightening. We find little evidence of labor market adjustment in response to the housing net worth shock. There is no significant expansion of the tradable sector in counties with the largest decline in housing net worth. Further, there is little evidence of wage adjustment within or emigration out of the hardest hit counties."
+  },
+  {
+   "wid": "W3121343181",
+   "title": "Credible Research Designs for Minimum Wage Studies",
+   "venue": "Industrial and Labor Relations Review",
+   "abstract": "The authors assess the critique by Neumark, Salas, and Wascher (2014) of minimum wage studies that found small effects on teen employment. Data from 1979 to 2014 contradict NSW; the authors show that the disemployment suggested by a model assuming parallel trends across U.S. states mostly reflects differential pre-existing trends. A data-driven LASSO procedure that optimally corrects for state trends produces a small employment elasticity (\u20130.01). Even a highly sparse model rules out substantial disemployment effects, contrary to NSW\u2019s claim that the authors discard too much information. Synthetic controls do place more weight on nearby states\u2014confirming the value of regional controls\u2014and generate an elasticity of \u22120.04. A similar elasticity (\u22120.06) obtains from a design comparing contiguous border counties, which the authors show to be good controls. NSW\u2019s preferred matching estimates mix treatment and control units, obtain poor matches, and find the highest employment declines where the relative minimum wage falls. These findings refute NSW\u2019s key claims."
+  },
+  {
+   "wid": "W2023936086",
+   "title": "Unemployment Insurance and Job Search Decisions",
+   "venue": "Industrial and Labor Relations Review",
+   "abstract": "Investigation of the development of a model on unemployment insurance (UI) and job search decisions. Information on job turnover; Details on the individual worker's preferences; Process of job search decision; Offsetting incentive effects of UI. (Abstract copyright EBSCO.)"
+  },
+  {
+   "wid": "W1549833036",
+   "title": "The New Division of Labor",
+   "venue": "Princeton University Press eBooks",
+   "abstract": "As the current recession ends, many workers will not be returning to the jobs they once held--those jobs are gone. In The New Division of Labor , Frank Levy and Richard Murnane show how computers are changing the employment landscape and how the right kinds of education can ease the transition to the new job market. The book tells stories of people at work--a high-end financial advisor, a customer service representative, a pair of successful chefs, a cardiologist, an automotive mechanic, the author Victor Hugo, floor traders in a London financial exchange. The authors merge these stories with insights from cognitive science, computer science, and economics to show how computers are enhancing productivity in many jobs even as they eliminate other jobs--both directly and by sending work offshore. At greatest risk are jobs that can be expressed in programmable rules--blue collar, clerical, and similar work that requires moderate skills and used to pay middle-class wages. The loss of these jobs leaves a growing division between those who can and cannot earn a good living in the computerized economy. Left unchecked, the division threatens the nation's democratic institutions. The nation's challenge is to recognize this division and to prepare the population for the high-wage/high-skilled jobs that are rapidly growing in number--jobs involving extensive problem solving and interpersonal communication. Using detailed examples--a second grade classroom, an IBM managerial training pro"
+  },
+  {
+   "wid": "W3125353260",
+   "title": "Beyond Becker: Training in Imperfect Labour Markets",
+   "venue": "The Economic Journal",
+   "abstract": "Journal Article Beyond Becker: Training in Imperfect Labour Markets Get access Daron Acemoglu, Daron Acemoglu MIT Search for other works by this author on: Oxford Academic Google Scholar Jorn\u2010Steffen Pischke Jorn\u2010Steffen Pischke NBER Search for other works by this author on: Oxford Academic Google Scholar The Economic Journal, Volume 109, Issue 453, 1 February 1999, Pages 112\u2013142, https://doi.org/10.1111/1468-0297.00405 Published: 25 December 2001"
+  },
+  {
+   "wid": "W2009729418",
+   "title": "An Illustration of a Pitfall in Estimating the Effects of Aggregate Variables on Micro Units",
+   "venue": "The Review of Economics and Statistics",
+   "abstract": "Many economic researchers have attempted to measure the effect of aggregate market or public policy variables on micro units by merging aggregate data with micro observations by industry, occupation, or geographical location, then using multiple regression or similar statistical models to measure the effect of the aggregate variable on the micro units. The methods are usually based upon the assumption of independent disturbances, which is typically not appropriate for data from populations with grouped structure. Incorrectly using ordinary least squares can lead to standard errors that are seriously biased downward. This note illustrates the danger of spurious regression from this kind of misspecification, using as an example a wage regression estimated on data for individual workers that includes in the specification aggregate regressors for characteristics of geographical states. Copyright 1990 by MIT Press."
+  },
+  {
+   "wid": "W3122337130",
+   "title": "The Effects of the Minimum Wage on the Employment and Earnings of Youth",
+   "venue": "Journal of Labor Economics",
+   "abstract": "The employment and earnings effects of the minimum wage are estimated by parameterizing a hypothesized relationship between underlying market employment and wage relationships versus observed wage and employment distributions in the presence of a legislated minimum. If there had been no minimum during the 1973-78 period, we estimate that employment among out-of-school men 16-24 would have been approximately 4% higher than it was. Among young men 16-19 employment would have been about 7% higher; among those 20-24, 2% higher. Employment among black youth 16-24 would have been almost 6% higher than it was, compared with somewhat less than 4% for white youth. Although it is sometimes argued that the adverse employment effects of the minimum are offset by increased earnings, we find virtually no earnings effect. Had the minimum not been raised over the 1973-78 period, inflation would have greatly moderated the adverse employment effects of the minimum, with approximately two-thirds of the potential employment gains from elimination of the minimum attained. The weight of our evidence is inconsistent with a general increase in youth wage rates with increases in the real minimum. Our findings support the hypothesis that the effects of the minimum are concentrated on youth with subminimum market wage rates."
+  },
+  {
+   "wid": "W2150372434",
+   "title": "What Do Low-Income Single Mothers Say about Marriage?",
+   "venue": "Social Problems",
+   "abstract": "Current theories of marriage under-predict the extent of non-marriage, have not been adequately tested, or do not apply well to women with low-socioeconomic status. Furthermore, scholarly research on marriage attitudes among low-SES women suffers from a lack of up-to-date qualitative work. This study draws on qualitative interviews with 292 low-income single' mothers in three U.S. cities. Inductive analysis reveals five primary motivations for non-marriage among low-income single mothers. Most mothers agree that potential marriage partners must earn significantly more than the minimum wage, but also emphasize the importance of stability of employment, source of earnings, and the effort men expend to find and keep their jobs. Mothers place equal or greater emphasis on non-monetary factors such as how marriage may diminish or enhance respectability, how it may limit their control over household decisions, their mistrust of men, and their fear of domestic violence. Affordability, respectability, and control have greater salience for African American mothers, while trust and domestic violence have greater salience for whites. The author discusses these findings in relation to existing theories of marriage and in light of welfare reform."
+  }
+ ]
+}

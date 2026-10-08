@@ -1,0 +1,88 @@
+{
+  "paper_id": "openalex:W2415849311",
+  "claims": [
+    {
+      "id": "openalex:W2415849311:c1",
+      "paper_id": "openalex:W2415849311",
+      "text": "Greater overall social media use in adolescents is associated with poorer sleep quality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2415849311:c2",
+      "paper_id": "openalex:W2415849311",
+      "text": "Greater overall social media use in adolescents is associated with lower self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2415849311:c3",
+      "paper_id": "openalex:W2415849311",
+      "text": "Greater overall social media use in adolescents is associated with higher levels of anxiety and depression.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2415849311:c4",
+      "paper_id": "openalex:W2415849311",
+      "text": "Nighttime-specific social media use predicts poorer sleep quality after controlling for anxiety, depression, and self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2415849311:e1",
+      "claim_id": "openalex:W2415849311:c1",
+      "description": "Adolescents who used social media more - both overall and at night - and those who were more emotionally invested in social media experienced poorer sleep quality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2415849311:e2",
+      "claim_id": "openalex:W2415849311:c2",
+      "description": "Adolescents who used social media more experienced lower self-esteem.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2415849311:e3",
+      "claim_id": "openalex:W2415849311:c3",
+      "description": "Adolescents who used social media more experienced higher levels of anxiety and depression.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2415849311:e4",
+      "claim_id": "openalex:W2415849311:c4",
+      "description": "Nighttime-specific social media use predicted poorer sleep quality after controlling for anxiety, depression and self-esteem.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2415849311:m1",
+      "paper_id": "openalex:W2415849311",
+      "name": "Cross-sectional survey assessment",
+      "description": "Measured overall social media use, nighttime social media use, emotional investment, sleep quality, self-esteem, anxiety, and depression in 467 Scottish adolescents.",
+      "datasets": [
+        "467 Scottish adolescents"
+      ],
+      "conditions": [
+        "controlling for anxiety, depression and self-esteem"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W2415849311:f1",
+      "paper_id": "openalex:W2415849311",
+      "text": "Further investigation into nighttime-specific social media use and emotional investment in social media in relation to adolescent sleep and wellbeing.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.050790Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

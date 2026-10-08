@@ -1,0 +1,148 @@
+{
+  "paper_id": "openalex:W2998834126",
+  "claims": [
+    {
+      "id": "openalex:W2998834126:c1",
+      "paper_id": "openalex:W2998834126",
+      "text": "Most research to date on digital technology usage and adolescent mental health has been correlational.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2998834126:c2",
+      "paper_id": "openalex:W2998834126",
+      "text": "Most research to date on digital technology usage has focused on adults rather than adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2998834126:c3",
+      "paper_id": "openalex:W2998834126",
+      "text": "Research on digital technology usage and adolescent mental health has generated a mix of conflicting small positive, negative, and null associations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2998834126:c4",
+      "paper_id": "openalex:W2998834126",
+      "text": "Recent large-scale preregistered studies report small associations between daily digital technology usage and adolescents' well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2998834126:c5",
+      "paper_id": "openalex:W2998834126",
+      "text": "Associations reported in recent large-scale preregistered studies do not offer a way of distinguishing cause from effect.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2998834126:c6",
+      "paper_id": "openalex:W2998834126",
+      "text": "The estimated associations between daily digital technology usage and adolescents' well-being are unlikely to be of clinical or practical significance.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2998834126:e1",
+      "claim_id": "openalex:W2998834126:c1",
+      "description": "The review highlights that most research to date has been correlational.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2998834126:e2",
+      "claim_id": "openalex:W2998834126:c2",
+      "description": "The review highlights that most research to date has been focused on adults versus adolescents.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2998834126:e3",
+      "claim_id": "openalex:W2998834126:c3",
+      "description": "The review notes that research has generated a mix of often conflicting small positive, negative and null associations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2998834126:e4",
+      "claim_id": "openalex:W2998834126:c4",
+      "description": "The most recent and rigorous large-scale preregistered studies report small associations between the amount of daily digital technology usage and adolescents' well-being.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2998834126:e5",
+      "claim_id": "openalex:W2998834126:c5",
+      "description": "Large-scale preregistered studies report associations that do not offer a way of distinguishing cause from effect.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2998834126:e6",
+      "claim_id": "openalex:W2998834126:c6",
+      "description": "Estimated associations between daily digital technology usage and well-being, as estimated, are unlikely to be of clinical or practical significance.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2998834126:m1",
+      "paper_id": "openalex:W2998834126",
+      "name": "Literature Review Synthesis",
+      "description": "Synthesized data from narrative reviews, meta-analyses, large-scale preregistered cohort studies, and intensive longitudinal and ecological momentary assessment studies.",
+      "datasets": [
+        "narrative reviews and meta-analyses (2014-2019)",
+        "large-scale preregistered cohort studies",
+        "intensive longitudinal and ecological momentary assessment studies"
+      ],
+      "conditions": [
+        "adolescent mental health",
+        "depression",
+        "anxiety"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2998834126:l1",
+      "paper_id": "openalex:W2998834126",
+      "text": "Most research to date has been correlational and does not offer a way of distinguishing cause from effect.",
+      "normalized_category": "correlational-design",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2998834126:l2",
+      "paper_id": "openalex:W2998834126",
+      "text": "Most prior research focused on adults versus adolescents.",
+      "normalized_category": "adult-focused-sample",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2998834126:l3",
+      "paper_id": "openalex:W2998834126",
+      "text": "Prior research has generated a mix of often conflicting small positive, negative, and null associations.",
+      "normalized_category": "inconsistent-findings",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2998834126:f1",
+      "paper_id": "openalex:W2998834126",
+      "text": "Improve future research methodologies regarding adolescent digital technology usage and mental health.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2998834126:f2",
+      "paper_id": "openalex:W2998834126",
+      "text": "Develop strategies and frameworks for supporting adolescents' mental health in the digital age.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.054129Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

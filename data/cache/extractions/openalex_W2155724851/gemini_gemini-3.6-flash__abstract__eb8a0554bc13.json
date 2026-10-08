@@ -1,0 +1,66 @@
+{
+  "paper_id": "openalex:W2155724851",
+  "claims": [
+    {
+      "id": "openalex:W2155724851:c1",
+      "paper_id": "openalex:W2155724851",
+      "text": "Becoming self-aware by viewing one's own Facebook profile enhances self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155724851:c2",
+      "paper_id": "openalex:W2155724851",
+      "text": "Updating one's profile during Facebook exposure leads to greater reported self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2155724851:c3",
+      "paper_id": "openalex:W2155724851",
+      "text": "Selective self-presentation in digital media influences impressions of the self.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2155724851:e1",
+      "claim_id": "openalex:W2155724851:c1",
+      "description": "The results revealed that, in contrast to previous work on OSA, becoming self-aware by viewing one's own Facebook profile enhances self-esteem rather than diminishes it.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2155724851:e2",
+      "claim_id": "openalex:W2155724851:c2",
+      "description": "Participants that updated their profiles and viewed their own profiles during the experiment also reported greater self-esteem, which lends additional support to the Hyperpersonal Model.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2155724851:e3",
+      "claim_id": "openalex:W2155724851:c3",
+      "description": "These findings suggest that selective self-presentation in digital media, which leads to intensified relationship formation, also influences impressions of the self.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2155724851:m1",
+      "paper_id": "openalex:W2155724851",
+      "name": "Controlled Facebook Exposure Experiment",
+      "description": "An experiment testing self-esteem outcomes after participants view or update their own Facebook profiles, contrasting Objective Self-Awareness theory and the Hyperpersonal Model.",
+      "datasets": [],
+      "conditions": [
+        "viewing own Facebook profile",
+        "updating own Facebook profile"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.098394Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

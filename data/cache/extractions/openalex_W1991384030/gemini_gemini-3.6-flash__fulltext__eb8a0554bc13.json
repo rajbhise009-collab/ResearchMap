@@ -1,0 +1,172 @@
+{
+  "paper_id": "openalex:W1991384030",
+  "claims": [
+    {
+      "id": "openalex:W1991384030:c1",
+      "paper_id": "openalex:W1991384030",
+      "text": "High extraversion significantly predicts addictive tendencies toward social networking sites.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1991384030:c2",
+      "paper_id": "openalex:W1991384030",
+      "text": "Low conscientiousness significantly predicts addictive tendencies toward social networking sites.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1991384030:c3",
+      "paper_id": "openalex:W1991384030",
+      "text": "Social searching on Facebook produces higher emotional pleasure than social browsing as measured by psychophysiological metrics.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1991384030:c4",
+      "paper_id": "openalex:W1991384030",
+      "text": "Facebook users have lower Grade Point Averages compared to non-users among university students.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1991384030:c5",
+      "paper_id": "openalex:W1991384030",
+      "text": "Facebook users spend less time studying compared to non-users among university students.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1991384030:c6",
+      "paper_id": "openalex:W1991384030",
+      "text": "24% of surveyed Chinese college students met the threshold for addiction to the social networking game Happy Farm using the Internet Addiction Test.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1991384030:c7",
+      "paper_id": "openalex:W1991384030",
+      "text": "34% of surveyed Chinese college students met the classification for addiction to Xiaonei.com using Young's Internet Addiction Test.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1991384030:e1",
+      "claim_id": "openalex:W1991384030:c1",
+      "description": "A multiple regression analysis in a sample of 201 Australian university students showed high extraversion scores significantly predicted addictive tendencies toward SNSs.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1991384030:e2",
+      "claim_id": "openalex:W1991384030:c2",
+      "description": "A multiple regression analysis in a sample of 201 Australian university students showed low conscientiousness scores significantly predicted addictive tendencies toward SNSs.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1991384030:e3",
+      "claim_id": "openalex:W1991384030:c3",
+      "description": "Psychophysiological measures including skin conductance and facial electromyography indicated social searching was more pleasurable than social browsing.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W1991384030:e4",
+      "claim_id": "openalex:W1991384030:c4",
+      "description": "A study of 219 university students demonstrated that Facebook users had lower GPAs than non-users.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1991384030:e5",
+      "claim_id": "openalex:W1991384030:c5",
+      "description": "A study of 219 university students found that Facebook users spent less time studying than non-users.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1991384030:e6",
+      "claim_id": "openalex:W1991384030:c6",
+      "description": "Using a cut-off of endorsing 5 out of 8 IAT items, 24% of 342 Chinese college students were identified as addicted to Happy Farm.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1991384030:e7",
+      "claim_id": "openalex:W1991384030:c7",
+      "description": "Using a cut-off of endorsing 5 or more IAT items, 34% of 335 Chinese college students were classified as addicted to Xiaonei.com.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1991384030:m1",
+      "paper_id": "openalex:W1991384030",
+      "name": "Systematic Narrative Literature Review",
+      "description": "A comprehensive narrative review evaluating 43 empirical studies extracted from Web of Knowledge and Google Scholar covering usage, motivations, personality, negative consequences, addiction, and comorbidity in SNS contexts.",
+      "datasets": [
+        "Web of Knowledge",
+        "Google Scholar"
+      ],
+      "conditions": [
+        "Studies containing empirical data",
+        "Studies addressing SNS usage, motivations, personality traits, negative correlates, addiction, or comorbidity"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1991384030:l1",
+      "paper_id": "openalex:W1991384030",
+      "text": "Existing empirical studies rely heavily on small, non-representative convenience samples of university students and teenagers, severely limiting generalizability.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1991384030:l2",
+      "paper_id": "openalex:W1991384030",
+      "text": "The existing scientific literature lacks longitudinal designs, preventing any causal inferences between excessive SNS usage and reported negative consequences.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1991384030:l3",
+      "paper_id": "openalex:W1991384030",
+      "text": "Quantitative studies in prior literature measure general addictive tendencies or high-frequency usage rather than establishing clinical addiction pathology and impairment.",
+      "normalized_category": "measurement-validity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1991384030:f1",
+      "paper_id": "openalex:W1991384030",
+      "text": "Conduct longitudinal studies to determine causal relationships between heavy SNS usage and functional negative correlates.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1991384030:f2",
+      "paper_id": "openalex:W1991384030",
+      "text": "Utilize larger, nationally representative samples across varied age groups to improve external validity.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1991384030:f3",
+      "paper_id": "openalex:W1991384030",
+      "text": "Apply validated and diagnostic clinical criteria adapted from DSM or ICD manuals to differentiate true addiction from high-frequency or excessive use.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1991384030:f4",
+      "paper_id": "openalex:W1991384030",
+      "text": "Investigate SNS addiction specificity and potential comorbidities with substance use disorders and other behavioral addictions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.090204Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

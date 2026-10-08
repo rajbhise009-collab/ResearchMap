@@ -1,0 +1,78 @@
+{
+  "paper_id": "openalex:W3197232629",
+  "claims": [
+    {
+      "id": "openalex:W3197232629:c1",
+      "paper_id": "openalex:W3197232629",
+      "text": "Smartphones, social media, artificial intelligence, and virtual reality offer new opportunities for digital phenotyping in mental health.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3197232629:c2",
+      "paper_id": "openalex:W3197232629",
+      "text": "Smartphones, social media, artificial intelligence, and virtual reality offer new opportunities for remote mental health interventions.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3197232629:c3",
+      "paper_id": "openalex:W3197232629",
+      "text": "The i-PARIHS framework can be applied to analyze implementation challenges and opportunities for digital psychiatry innovations.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3197232629:e1",
+      "claim_id": "openalex:W3197232629:c1",
+      "description": "The authors detail how smartphones, social media, artificial intelligence and virtual reality present new opportunities for 'digital phenotyping'.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3197232629:e2",
+      "claim_id": "openalex:W3197232629:c2",
+      "description": "The authors detail how smartphones, social media, artificial intelligence and virtual reality present new opportunities for remote intervention.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3197232629:e3",
+      "claim_id": "openalex:W3197232629:c3",
+      "description": "The paper uses the Integrated Promoting Action on Research Implementation in Health Services (i-PARIHS) framework to explain how innovations, recipients, and context must be considered.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3197232629:m1",
+      "paper_id": "openalex:W3197232629",
+      "name": "i-PARIHS Framework Analysis",
+      "description": "Qualitative evaluation of digital psychiatry adoption through the Integrated Promoting Action on Research Implementation in Health Services framework.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3197232629:l1",
+      "paper_id": "openalex:W3197232629",
+      "text": "Digital health technologies face significant real-world implementation barriers across patient, provider, and policy levels.",
+      "normalized_category": "implementation-barriers",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3197232629:f1",
+      "paper_id": "openalex:W3197232629",
+      "text": "Address key implementation issues at the patient, provider, and policy levels to enable adoption in mental health care systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.053780Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

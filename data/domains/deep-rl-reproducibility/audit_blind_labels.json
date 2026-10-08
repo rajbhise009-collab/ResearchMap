@@ -1,0 +1,67 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "after_fix": true,
+ "labels": {
+  "W2904246096": {
+   "label": "off-domain",
+   "why": "algorithm paper"
+  },
+  "W2797527950": {
+   "label": "on-domain",
+   "why": "overfitting/evaluation study"
+  },
+  "W2766413382": {
+   "label": "borderline",
+   "why": "benchmark framework for traffic"
+  },
+  "W4394758536": {
+   "label": "off-domain",
+   "why": "unclear augmentation method"
+  },
+  "W2781726626": {
+   "label": "off-domain",
+   "why": "algorithm paper"
+  },
+  "W2953708620": {
+   "label": "on-domain",
+   "why": "benchmarking model-based RL"
+  },
+  "W2979211489": {
+   "label": "on-domain",
+   "why": "benchmarking batch deep RL"
+  },
+  "W3016525976": {
+   "label": "on-domain",
+   "why": "benchmark datasets"
+  },
+  "W4367595583": {
+   "label": "off-domain",
+   "why": "ChatGPT overview"
+  },
+  "W2997502221": {
+   "label": "borderline",
+   "why": "new RL environment"
+  },
+  "W2754879180": {
+   "label": "on-domain",
+   "why": "ALE evaluation protocols"
+  },
+  "W3087549734": {
+   "label": "off-domain",
+   "why": "multi-task survey"
+  },
+  "W3162079807": {
+   "label": "off-domain",
+   "why": "application review"
+  },
+  "W2609650878": {
+   "label": "off-domain",
+   "why": "theory"
+  },
+  "W4383112908": {
+   "label": "off-domain",
+   "why": "transfer survey"
+  }
+ }
+}

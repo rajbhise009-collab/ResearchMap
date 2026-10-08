@@ -1,0 +1,66 @@
+{
+  "paper_id": "openalex:W2611287876",
+  "claims": [
+    {
+      "id": "openalex:W2611287876:c1",
+      "paper_id": "openalex:W2611287876",
+      "text": "Virtual reality allows users to experience a sense of presence in a computer-generated three-dimensional environment.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2611287876:c2",
+      "paper_id": "openalex:W2611287876",
+      "text": "Head-tracking devices alter displayed images naturally with head motion to enable immersion.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2611287876:c3",
+      "paper_id": "openalex:W2611287876",
+      "text": "Virtual reality enables therapist-controlled delivery of sensory stimulation.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2611287876:e1",
+      "claim_id": "openalex:W2611287876:c1",
+      "description": "Virtual reality allows users to experience a sense of presence in a computer-generated, three-dimensional environment.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2611287876:e2",
+      "claim_id": "openalex:W2611287876:c2",
+      "description": "These devices track head movements so that the movements and images change in a natural way with head motion, allowing for a sense of immersion.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2611287876:e3",
+      "claim_id": "openalex:W2611287876:c3",
+      "description": "VR, which allows for controlled delivery of sensory stimulation via the therapist, is a convenient and cost-effective treatment.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2611287876:m1",
+      "paper_id": "openalex:W2611287876",
+      "name": "Systematic Literature Search",
+      "description": "A systematic literature review identifying studies implementing VR-based treatments for anxiety or other psychiatric disorders.",
+      "datasets": [],
+      "conditions": [
+        "VR-based treatment for anxiety disorders",
+        "VR-based treatment for psychiatric disorders"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.098943Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.533,
+ "in_out_agreement": 0.667,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W2904246096",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "algorithm paper"
+  },
+  {
+   "wid": "W2797527950",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "overfitting/evaluation study"
+  },
+  {
+   "wid": "W2766413382",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "benchmark framework for traffic"
+  },
+  {
+   "wid": "W4394758536",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "unclear augmentation method"
+  },
+  {
+   "wid": "W2781726626",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "algorithm paper"
+  },
+  {
+   "wid": "W2953708620",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "benchmarking model-based RL"
+  },
+  {
+   "wid": "W2979211489",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "benchmarking batch deep RL"
+  },
+  {
+   "wid": "W3016525976",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "benchmark datasets"
+  },
+  {
+   "wid": "W4367595583",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "ChatGPT overview"
+  },
+  {
+   "wid": "W2997502221",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "new RL environment"
+  },
+  {
+   "wid": "W2754879180",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "ALE evaluation protocols"
+  },
+  {
+   "wid": "W3087549734",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "multi-task survey"
+  },
+  {
+   "wid": "W3162079807",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "application review"
+  },
+  {
+   "wid": "W2609650878",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "theory"
+  },
+  {
+   "wid": "W4383112908",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "transfer survey"
+  }
+ ]
+}

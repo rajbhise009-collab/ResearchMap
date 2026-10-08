@@ -10,7 +10,8 @@
    "name": "Language-model reliability",
    "short_name": "LLM calibration",
    "blurb": "How language models express confidence, when they should refuse to answer, how their uncertainty is measured, and why they state false things as fact.",
-   "not_advice_note": null
+   "not_advice_note": null,
+   "footer_note": "The oldest, most-scored library in the project."
   },
   {
    "slug": "diet-and-mortality",
@@ -21,7 +22,8 @@
    "name": "Diet and all-cause mortality",
    "short_name": "Diet & mortality",
    "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
-   "not_advice_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you."
+   "not_advice_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you.",
+   "footer_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you."
   },
   {
    "slug": "ml-fairness",
@@ -32,7 +34,8 @@
    "name": "Algorithmic fairness in machine learning",
    "short_name": "ML fairness",
    "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-   "not_advice_note": null
+   "not_advice_note": null,
+   "footer_note": "Some definitions of fairness are mathematically proven unable to all hold at once. Our disagreement check found no conflicting claims among the papers read; why is not established."
   },
   {
    "slug": "nudge-effectiveness",
@@ -43,7 +46,8 @@
    "name": "Nudges and choice architecture",
    "short_name": "Nudges",
    "blurb": "Whether defaults, reminders, social-norm messages and other changes to how choices are presented change what people do, and how large those effects really are.",
-   "not_advice_note": "Research-literature analysis, not policy or professional advice."
+   "not_advice_note": "Research-literature analysis, not policy or professional advice.",
+   "footer_note": "Research-literature analysis, not policy or professional advice."
   },
   {
    "slug": "social-media-teen-mental-health",
@@ -54,7 +58,8 @@
    "name": "Social media and adolescent mental health",
    "short_name": "Social media & teens",
    "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
-   "not_advice_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service."
+   "not_advice_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service.",
+   "footer_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service."
   },
   {
    "slug": "ego-depletion",
@@ -65,7 +70,8 @@
    "name": "Ego depletion and self-control",
    "short_name": "Ego depletion",
    "blurb": "Whether using self-control uses up a limited resource, and why large replication attempts disagree with the original findings.",
-   "not_advice_note": null
+   "not_advice_note": null,
+   "footer_note": "Whether using self-control uses up a limited resource, and why large replication attempts disagree with the original findings."
   },
   {
    "slug": "minimum-wage",
@@ -77,7 +83,8 @@
    "short_name": "Minimum wage",
    "blurb": "What raising the minimum wage does to jobs, hours and earnings, and why careful studies reach different answers.",
    "not_advice_note": "Research-literature analysis, not economic, policy or employment advice.",
-   "not_ready_reason": "Blind self-audit agreement 60% then 67% after the one allowed rubric fix (80% required): general labour-economics papers still enter as borderline. Needs a human rubric revision before it can be built (docs/findings/domain-selection-2026-10-09.md)."
+   "not_ready_reason": "Blind self-audit agreement 60% then 67% after the one allowed rubric fix (80% required): general labour-economics papers still enter as borderline. Needs a human rubric revision before it can be built (docs/findings/domain-selection-2026-10-09.md).",
+   "footer_note": "Research-literature analysis, not economic, policy or employment advice."
   },
   {
    "slug": "growth-mindset",
@@ -88,18 +95,34 @@
    "name": "Growth-mindset interventions",
    "short_name": "Growth mindset",
    "blurb": "Whether teaching students that ability can grow improves their learning and grades, for whom, and by how much.",
-   "not_advice_note": "Research-literature analysis, not educational or parenting advice."
+   "not_advice_note": "Research-literature analysis, not educational or parenting advice.",
+   "footer_note": "Research-literature analysis, not educational or parenting advice."
   },
   {
    "slug": "deep-rl-reproducibility",
    "domain_key": "deeprl",
-   "status": "queued",
+   "status": "not-ready",
    "frozen": false,
    "is_default": false,
    "name": "Deep reinforcement learning: evaluation and reproducibility",
    "short_name": "Deep RL evaluation",
    "blurb": "How deep reinforcement-learning results are measured, why many fail to reproduce, and which evaluation practices make comparisons trustworthy.",
-   "not_advice_note": null
+   "not_advice_note": null,
+   "not_ready_reason": "Blind self-audit agreement 53% then 67% after the one allowed rubric fix (80% required): the snowball mostly collects RL methods papers. Needs a human rubric and seed revision.",
+   "footer_note": "How deep reinforcement-learning results are measured, why many fail to reproduce, and which evaluation practices make comparisons trustworthy."
+  },
+  {
+   "slug": "microplastics-health",
+   "domain_key": "microplastics",
+   "status": "not-ready",
+   "frozen": false,
+   "is_default": false,
+   "name": "Microplastics and human health",
+   "short_name": "Microplastics",
+   "blurb": "What is known about micro- and nanoplastics in the human body, how they are measured, and what they may do to health.",
+   "not_advice_note": "Research-literature analysis, not medical or exposure advice. Take health concerns to a clinician.",
+   "footer_note": "Research-literature analysis, not medical or exposure advice. Take health concerns to a clinician.",
+   "not_ready_reason": "Blind self-audit agreement 60% then 67% after the one allowed rubric fix (80% required): environmental microplastics papers (oceans, freshwater, fallout) still enter as borderline. Needs a human rubric revision."
   }
  ]
 }

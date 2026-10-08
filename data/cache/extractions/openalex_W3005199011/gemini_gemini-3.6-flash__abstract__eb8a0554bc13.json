@@ -1,0 +1,26 @@
+{
+  "paper_id": "openalex:W3005199011",
+  "claims": [
+    {
+      "id": "openalex:W3005199011:c1",
+      "paper_id": "openalex:W3005199011",
+      "text": "In the last decade, increasing mental distress and treatment for mental health conditions among youth in North America has paralleled a steep rise in the use of smartphones and social media by children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3005199011:e1",
+      "claim_id": "openalex:W3005199011:c1",
+      "description": "In the last decade, increasing mental distress and treatment for mental health conditions among youth in North America has paralleled a steep rise in the use of smartphones and social media by children and adolescents.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.065111Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

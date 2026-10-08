@@ -1,0 +1,104 @@
+{
+  "paper_id": "openalex:W2609940642",
+  "claims": [
+    {
+      "id": "openalex:W2609940642:c1",
+      "paper_id": "openalex:W2609940642",
+      "text": "Psychological interventions delivered via smartphone result in significantly greater reductions in total anxiety scores compared to control conditions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2609940642:c2",
+      "paper_id": "openalex:W2609940642",
+      "text": "There was no evidence of publication bias in the meta-analysis of smartphone interventions for anxiety.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2609940642:c3",
+      "paper_id": "openalex:W2609940642",
+      "text": "Smartphone interventions produce significantly greater reductions in anxiety compared to waitlist or inactive control conditions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2609940642:c4",
+      "paper_id": "openalex:W2609940642",
+      "text": "Smartphone interventions produce significantly greater reductions in anxiety compared to active control conditions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2609940642:e1",
+      "claim_id": "openalex:W2609940642:c1",
+      "description": "Significantly greater reductions in total anxiety scores were observed from smartphone interventions than control conditions (g=0.325, 95% C.I.=0.17-0.48, p<0.01)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2609940642:e2",
+      "claim_id": "openalex:W2609940642:c2",
+      "description": "Meta-analysis showed no evidence of publication bias among included RCTs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2609940642:e3",
+      "claim_id": "openalex:W2609940642:c3",
+      "description": "Effect sizes from smartphone interventions were significantly greater when compared to waitlist/inactive controls (g=0.45, 95% C.I.=0.30-0.61, p<0.01)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2609940642:e4",
+      "claim_id": "openalex:W2609940642:c4",
+      "description": "Effect sizes from smartphone interventions were significant compared to active control conditions (g=0.19, 95% C.I.=0.07-0.31, p=0.003)",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2609940642:m1",
+      "paper_id": "openalex:W2609940642",
+      "name": "Systematic Review and Random-Effects Meta-Analysis",
+      "description": "A systematic search of major electronic databases conducted in November 2016 identified 9 eligible RCTs evaluating smartphone-delivered psychological interventions on anxiety using random-effects meta-analyses to calculate Hedges' g.",
+      "datasets": [
+        "9 eligible RCTs with 1837 participants"
+      ],
+      "conditions": [
+        "smartphone interventions vs. control conditions",
+        "waitlist/inactive control conditions",
+        "active control conditions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2609940642:l1",
+      "paper_id": "openalex:W2609940642",
+      "text": "The extent to which smartphone interventions can match (or exceed) the efficacy of recognised treatments for anxiety has yet to be established.",
+      "normalized_category": "lack-of-treatment-comparability",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2609940642:f1",
+      "paper_id": "openalex:W2609940642",
+      "text": "Develop pragmatic methods for implementing smartphone-based support for people with anxiety.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2609940642:f2",
+      "paper_id": "openalex:W2609940642",
+      "text": "Compare the efficacy of smartphone interventions to standard face-to-face psychological care.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.064563Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

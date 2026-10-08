@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.6,
+ "in_out_agreement": 0.6,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W3008632805",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "German minimum wage: wages, employment, reallocation"
+  },
+  {
+   "wid": "W3125512578",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "econometric method"
+  },
+  {
+   "wid": "W2049844255",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "urban sociology"
+  },
+  {
+   "wid": "W1604935828",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "minimum wage and youth employment"
+  },
+  {
+   "wid": "W2095516703",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "wage-distribution decomposition method"
+  },
+  {
+   "wid": "W2118844622",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "UK wages councils: dispersion and employment"
+  },
+  {
+   "wid": "W2890705475",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "short-term rental regulation"
+  },
+  {
+   "wid": "W2320014267",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "recession employment, housing wealth"
+  },
+  {
+   "wid": "W3121343181",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "research designs for minimum-wage studies"
+  },
+  {
+   "wid": "W2023936086",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "unemployment insurance"
+  },
+  {
+   "wid": "W1549833036",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "technology and jobs"
+  },
+  {
+   "wid": "W3125353260",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "training in imperfect labour markets; minimum wage an application"
+  },
+  {
+   "wid": "W2009729418",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "statistical pitfall"
+  },
+  {
+   "wid": "W3122337130",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "minimum wage, youth employment and earnings"
+  },
+  {
+   "wid": "W2150372434",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "marriage attitudes"
+  }
+ ]
+}

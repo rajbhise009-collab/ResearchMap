@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.4,
+ "in_out_agreement": 0.667,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W2066320299",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "meta-analysis: implicit theories and self-regulation"
+  },
+  {
+   "wid": "W2076300620",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "implicit theories of attributes generally"
+  },
+  {
+   "wid": "W3005834498",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "language-ability mindsets and outcomes"
+  },
+  {
+   "wid": "W4226442993",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "self-esteem"
+  },
+  {
+   "wid": "W2913734454",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "teacher fixed-ability beliefs"
+  },
+  {
+   "wid": "W1963562210",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "earnings inequality"
+  },
+  {
+   "wid": "W1994521514",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "broad essay on mindsets"
+  },
+  {
+   "wid": "W1996549795",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "self-perceptions at school transition"
+  },
+  {
+   "wid": "W2607441414",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "'mindset' meaning approach"
+  },
+  {
+   "wid": "W4379882918",
+   "rubric": "off-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": false,
+   "why": "growth-mindset training, entrepreneurship outcome"
+  },
+  {
+   "wid": "W2101245043",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "education interventions incl. mindset"
+  },
+  {
+   "wid": "W1972113035",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "children's beliefs about intelligence and school performance"
+  },
+  {
+   "wid": "W3138997684",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "entity theory of personality and symptoms"
+  },
+  {
+   "wid": "W3185413328",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "neuroscience training"
+  },
+  {
+   "wid": "W2129409176",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "poverty and working memory"
+  }
+ ]
+}

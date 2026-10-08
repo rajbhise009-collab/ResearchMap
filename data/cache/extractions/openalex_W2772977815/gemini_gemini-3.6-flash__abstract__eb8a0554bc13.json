@@ -1,0 +1,82 @@
+{
+  "paper_id": "openalex:W2772977815",
+  "claims": [
+    {
+      "id": "openalex:W2772977815:c1",
+      "paper_id": "openalex:W2772977815",
+      "text": "Evidence does not support implementing digital screen limits of less than 1 or 2 hours per day recommended by the AAP after controlling for demographic and socioeconomic covariates.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2772977815:c2",
+      "paper_id": "openalex:W2772977815",
+      "text": "Digital screen time is linked to caregiver attachment via small parabolic functions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2772977815:c3",
+      "paper_id": "openalex:W2772977815",
+      "text": "Digital screen time is linked to positive affect via small parabolic functions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2772977815:e1",
+      "claim_id": "openalex:W2772977815:c1",
+      "description": "Evidence did not support implementing limits (< 1 or < 2 hr/day) as recommended by the American Academy of Pediatrics, once variability in child ethnicity, age, gender, household income, and caregiver educational attainment were considered.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2772977815:e2",
+      "claim_id": "openalex:W2772977815:c2",
+      "description": "Small parabolic functions linked screen time to attachment.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2772977815:e3",
+      "claim_id": "openalex:W2772977815:c3",
+      "description": "Small parabolic functions linked screen time to positive affect.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2772977815:m1",
+      "paper_id": "openalex:W2772977815",
+      "name": "Population-Based Parent Telephone Interviews",
+      "description": "Cross-sectional assessment of young children's screen engagement and psychological well-being reported by parents via telephone interviews.",
+      "datasets": [
+        "19,957 telephone interviews with parents of 2- to 5-year-olds"
+      ],
+      "conditions": [
+        "Controlling for variability in child ethnicity, age, gender, household income, and caregiver educational attainment"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2772977815:l1",
+      "paper_id": "openalex:W2772977815",
+      "text": "There is little empirical understanding of how young children's screen engagement links to their well-being.",
+      "normalized_category": "limited-prior-research",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2772977815:f1",
+      "paper_id": "openalex:W2772977815",
+      "text": "Conduct a critical cost-benefit analysis to determine whether setting firm screen time limits constitutes a judicious use of caregiver and professional resources.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.081237Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

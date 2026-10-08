@@ -1,0 +1,101 @@
+{
+  "paper_id": "openalex:W2766751125",
+  "claims": [
+    {
+      "id": "openalex:W2766751125:c1",
+      "paper_id": "openalex:W2766751125",
+      "text": "The interaction between thwarted belongingness and perceived burdensomeness is significantly associated with suicidal ideation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2766751125:c2",
+      "paper_id": "openalex:W2766751125",
+      "text": "The interaction between thwarted belongingness, perceived burdensomeness, and capability for suicide is significantly related to a greater number of prior suicide attempts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2766751125:c3",
+      "paper_id": "openalex:W2766751125",
+      "text": "Effect sizes for the interpersonal theory interaction pathways are modest.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2766751125:c4",
+      "paper_id": "openalex:W2766751125",
+      "text": "Alternative configurations of interpersonal theory variables are similarly useful for predicting suicide risk as theory-consistent pathways.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2766751125:e1",
+      "claim_id": "openalex:W2766751125:c1",
+      "description": "Meta-analyses across 122 distinct samples showed that the interaction between thwarted belongingness and perceived burdensomeness was significantly associated with suicidal ideation.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2766751125:e2",
+      "claim_id": "openalex:W2766751125:c2",
+      "description": "Meta-analyses across 122 distinct samples demonstrated that the interaction between thwarted belongingness, perceived burdensomeness, and capability for suicide was significantly related to a greater number of prior suicide attempts.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2766751125:e3",
+      "claim_id": "openalex:W2766751125:c3",
+      "description": "Random-effects meta-analytic evaluation revealed modest effect sizes for the posited theoretical interaction pathways.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2766751125:e4",
+      "claim_id": "openalex:W2766751125:c4",
+      "description": "Meta-analytic comparisons indicated that alternative configurations of theoretical constructs predicted suicide risk with similar utility to theory-consistent pathways.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2766751125:m1",
+      "paper_id": "openalex:W2766751125",
+      "name": "Systematic Review and Meta-Analysis",
+      "description": "Hypothesis-driven systematic review and random-effects meta-analyses of published and unpublished literature evaluating interpersonal theory constructs.",
+      "datasets": [
+        "PubMed",
+        "Medline",
+        "PsycINFO",
+        "Web of Science",
+        "122 distinct samples"
+      ],
+      "conditions": [
+        "Random effects models",
+        "Literature search through March 2016"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2766751125:l1",
+      "paper_id": "openalex:W2766751125",
+      "text": "Effect sizes for key interpersonal theory interactions were modest.",
+      "normalized_category": "modest-effect-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2766751125:l2",
+      "paper_id": "openalex:W2766751125",
+      "text": "Theory-consistent interaction pathways do not outperform alternative configurations of the same theoretical variables in predicting suicide risk.",
+      "normalized_category": "lack-of-pathway-specificity",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.096153Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

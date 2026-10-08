@@ -1,0 +1,151 @@
+{
+  "paper_id": "openalex:W3101126289",
+  "claims": [
+    {
+      "id": "openalex:W3101126289:c1",
+      "paper_id": "openalex:W3101126289",
+      "text": "Feelings of loneliness had a higher negative impact on adolescents' happiness during COVID-19 quarantine than feelings of anxiety.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c2",
+      "paper_id": "openalex:W3101126289",
+      "text": "Anxious participants indicated using social media more often to actively seek ways to adapt to the situation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c3",
+      "paper_id": "openalex:W3101126289",
+      "text": "Anxious participants used social media to a lesser extent as a way to keep in touch with friends and family.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c4",
+      "paper_id": "openalex:W3101126289",
+      "text": "The indirect effect of anxiety on happiness through active social media coping was significantly positive.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c5",
+      "paper_id": "openalex:W3101126289",
+      "text": "Participants feeling lonely were more inclined to use social media to cope with lacking social contact.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c6",
+      "paper_id": "openalex:W3101126289",
+      "text": "Using social media to cope with lacking social contact was not significantly related to feelings of happiness.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c7",
+      "paper_id": "openalex:W3101126289",
+      "text": "Humorous social media coping was positively related to feelings of happiness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c8",
+      "paper_id": "openalex:W3101126289",
+      "text": "Humorous social media coping was not influenced by feelings of loneliness or anxiety.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3101126289:c9",
+      "paper_id": "openalex:W3101126289",
+      "text": "Social media can serve as a constructive coping strategy for adolescents dealing with anxious feelings during quarantine.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3101126289:e1",
+      "claim_id": "openalex:W3101126289:c1",
+      "description": "Structural equation modeling revealed that feelings of loneliness had a higher negative impact on adolescents' happiness than feelings of anxiety.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e2",
+      "claim_id": "openalex:W3101126289:c2",
+      "description": "Anxious participants indicated to use social media more often to actively seek for a manner to adapt to the current situation.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e3",
+      "claim_id": "openalex:W3101126289:c3",
+      "description": "Anxious participants indicated using social media to a lesser extent as a way to keep in touch with friends and family.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e4",
+      "claim_id": "openalex:W3101126289:c4",
+      "description": "The indirect effect of anxiety on happiness through active coping was significantly positive.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e5",
+      "claim_id": "openalex:W3101126289:c5",
+      "description": "Participants who were feeling lonely were more inclined to use social media to cope with lacking social contact.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e6",
+      "claim_id": "openalex:W3101126289:c6",
+      "description": "Coping with lacking social contact through social media was not significantly related to their happiness feelings.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e7",
+      "claim_id": "openalex:W3101126289:c7",
+      "description": "Humorous coping was positively related with feelings of happiness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e8",
+      "claim_id": "openalex:W3101126289:c8",
+      "description": "Humorous coping was not influenced by loneliness or anxiety.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3101126289:e9",
+      "claim_id": "openalex:W3101126289:c9",
+      "description": "Social media can be used as a constructive coping strategy for adolescents to deal with anxious feelings during the COVID-19 quarantine.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3101126289:m1",
+      "paper_id": "openalex:W3101126289",
+      "name": "Structural Equation Modeling of Cross-Sectional Survey Data",
+      "description": "Evaluated relationships between anxiety, loneliness, happiness, and social media coping strategies using structural equation modeling.",
+      "datasets": [
+        "Survey of 2,165 Belgian adolescents (13-19 years old)"
+      ],
+      "conditions": [
+        "COVID-19 quarantine / lockdown"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.066276Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

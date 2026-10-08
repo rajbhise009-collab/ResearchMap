@@ -1,0 +1,41 @@
+{
+  "paper_id": "openalex:W2030386269",
+  "claims": [
+    {
+      "id": "openalex:W2030386269:c1",
+      "paper_id": "openalex:W2030386269",
+      "text": "Cognitive therapy provides structured models and techniques for assessing and treating specific anxiety disorders.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2030386269:e1",
+      "claim_id": "openalex:W2030386269:c1",
+      "description": "The text outlines cognitive models, assessment, and techniques applied to Panic Disorder, Hypochondriasis, Social Phobia, Generalised Anxiety Disorder, and Obsessive-Compulsive Disorder.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2030386269:m1",
+      "paper_id": "openalex:W2030386269",
+      "name": "Cognitive Therapy for Anxiety Disorders",
+      "description": "A psychological intervention approach using cognitive models, systematic assessment, and target-specific techniques to treat various anxiety conditions.",
+      "datasets": [],
+      "conditions": [
+        "Panic Disorder",
+        "Hypochondriasis",
+        "Social Phobia",
+        "Generalised Anxiety Disorder",
+        "Obsessive-Compulsive Disorder"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.100803Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

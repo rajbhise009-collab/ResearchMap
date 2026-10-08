@@ -1,0 +1,190 @@
+{
+  "paper_id": "openalex:W2908500884",
+  "claims": [
+    {
+      "id": "openalex:W2908500884:c1",
+      "paper_id": "openalex:W2908500884",
+      "text": "The magnitude of association between social media use and depressive symptoms is larger for adolescent girls than for boys.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c2",
+      "paper_id": "openalex:W2908500884",
+      "text": "Girls spending 3 to <5 hours daily on social media show a 26% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c3",
+      "paper_id": "openalex:W2908500884",
+      "text": "Boys spending 3 to <5 hours daily on social media show a 21% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c4",
+      "paper_id": "openalex:W2908500884",
+      "text": "Girls spending 5 or more hours daily on social media show a 50% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c5",
+      "paper_id": "openalex:W2908500884",
+      "text": "Boys spending 5 or more hours daily on social media show a 35% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c6",
+      "paper_id": "openalex:W2908500884",
+      "text": "Adolescents using social media for 5 or more hours daily are 31% more likely to experience body weight dissatisfaction compared to those using social media for 1 to <3 hours.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c7",
+      "paper_id": "openalex:W2908500884",
+      "text": "Body weight dissatisfaction is directly associated with 15% higher depressive symptom scores in adolescents.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c8",
+      "paper_id": "openalex:W2908500884",
+      "text": "Poor sleep and online harassment represent the most important explanatory pathways mediating the association between social media use and depressive symptoms.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2908500884:c9",
+      "paper_id": "openalex:W2908500884",
+      "text": "Social media use of 5 or more hours daily retains an independent 11% higher depressive symptom score after adjusting for mediating factors.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2908500884:e1",
+      "claim_id": "openalex:W2908500884:c1",
+      "description": "The magnitude of association between social media use and depressive symptoms was larger for girls than for boys.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2908500884:e2",
+      "claim_id": "openalex:W2908500884:c2",
+      "description": "Compared with 1-3 h of daily use: 3 to < 5 h 26% increase in scores vs 21%... for girls and boys respectively.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2908500884:e3",
+      "claim_id": "openalex:W2908500884:c3",
+      "description": "Compared with 1-3 h of daily use: 3 to < 5 h 26% increase in scores vs 21%... for girls and boys respectively.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2908500884:e4",
+      "claim_id": "openalex:W2908500884:c4",
+      "description": "≥ 5 h 50% vs 35% for girls and boys respectively.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2908500884:e5",
+      "claim_id": "openalex:W2908500884:c5",
+      "description": "≥ 5 h 50% vs 35% for girls and boys respectively.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2908500884:e6",
+      "claim_id": "openalex:W2908500884:c6",
+      "description": "greater hours social media use related to body weight dissatisfaction (≥ 5 h 31% more likely to be dissatisfied)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2908500884:e7",
+      "claim_id": "openalex:W2908500884:c7",
+      "description": "body dissatisfaction 15% higher depressive symptom scores",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2908500884:e8",
+      "claim_id": "openalex:W2908500884:c8",
+      "description": "The most important pathways were via poor sleep and online harassment.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2908500884:e9",
+      "claim_id": "openalex:W2908500884:c9",
+      "description": "There was still an independent association between social media use and depressive symptom scores, 'unexplained' by the mediating factors (≥ 5 h 11% higher scores).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2908500884:m1",
+      "paper_id": "openalex:W2908500884",
+      "name": "Multivariable regression and structural equation path modeling",
+      "description": "Multivariate linear regression and generalised structural equation models (GSEM) were applied to population-based cohort data to examine associations and explanatory pathways between social media use and depressive symptoms.",
+      "datasets": [
+        "UK Millennium Cohort Study (MCS)"
+      ],
+      "conditions": [
+        "10,904 14-year-olds",
+        "multiple imputation for missing covariate data",
+        "survey weights applied",
+        "adjusted for age 11 internalising symptoms, family income, family structure, and age"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2908500884:l1",
+      "paper_id": "openalex:W2908500884",
+      "text": "Findings are based largely on cross sectional data and thus causality cannot be inferred.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2908500884:l2",
+      "paper_id": "openalex:W2908500884",
+      "text": "Due to data availability, the study was not able to account for specific types of social media use (active versus passive), emotional investment, fear of missing out, or time of day of screen exposure.",
+      "normalized_category": "unmeasured-confounders",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2908500884:l3",
+      "paper_id": "openalex:W2908500884",
+      "text": "Self-reported data regarding time spent on social media and sleep measures may lack accuracy or be subject to reporting bias.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2908500884:l4",
+      "paper_id": "openalex:W2908500884",
+      "text": "Prior studies have not examined online harassment, sleep, self-esteem, and body image as potential explanatory pathways between social media use and mental health simultaneously.",
+      "normalized_category": "prior-work-scope",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2908500884:f1",
+      "paper_id": "openalex:W2908500884",
+      "text": "Future research using prospectively collected data from the same population sample with the use of repeated measures and the application of causal analyses will help to provide a more comprehensive picture of the relationship between social media use and young people's mental health.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.063265Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

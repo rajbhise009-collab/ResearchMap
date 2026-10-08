@@ -1,0 +1,124 @@
+{
+  "paper_id": "openalex:W3126140319",
+  "claims": [
+    {
+      "id": "openalex:W3126140319:c1",
+      "paper_id": "openalex:W3126140319",
+      "text": "Youth is no longer considered a prerequisite for subjective well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3126140319:c2",
+      "paper_id": "openalex:W3126140319",
+      "text": "Modest aspirations are no longer considered a prerequisite for subjective well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3126140319:c3",
+      "paper_id": "openalex:W3126140319",
+      "text": "Demographic factors have small overall effects on subjective well-being.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3126140319:c4",
+      "paper_id": "openalex:W3126140319",
+      "text": "Subjective well-being consists of separable components including life satisfaction, pleasant affect, and unpleasant affect.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3126140319:e1",
+      "claim_id": "openalex:W3126140319:c1",
+      "description": "A number of his conclusions have been overturned: youth and modest aspirations no longer are seen as prerequisites of SWB.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3126140319:e2",
+      "claim_id": "openalex:W3126140319:c2",
+      "description": "A number of his conclusions have been overturned: youth and modest aspirations no longer are seen as prerequisites of SWB.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3126140319:e3",
+      "claim_id": "openalex:W3126140319:c3",
+      "description": "As we shall see, demographic factors have surprisingly small effects on SWB, but these effects may depend on the personalities of those individuals being studied.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3126140319:e4",
+      "claim_id": "openalex:W3126140319:c4",
+      "description": "In the past, many researchers have treated SWB as a monolithic entity, but it is now clear that there are separable components that exhibit unique patterns of relations with different variables.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3126140319:m1",
+      "paper_id": "openalex:W3126140319",
+      "name": "Literature Review",
+      "description": "A comprehensive review of theoretical approaches and empirical findings on subjective well-being over three decades.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3126140319:l1",
+      "paper_id": "openalex:W3126140319",
+      "text": "The causal direction of demographic correlates such as marriage and income remains unconfirmed and uncertain.",
+      "normalized_category": "uncertain-causality",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3126140319:l2",
+      "paper_id": "openalex:W3126140319",
+      "text": "The psychological processes responsible for adaptation to good and bad circumstances are poorly understood.",
+      "normalized_category": "unclear-mechanisms",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W3126140319:l3",
+      "paper_id": "openalex:W3126140319",
+      "text": "Prior research frequently treated subjective well-being as a monolithic entity rather than investigating its distinct components.",
+      "normalized_category": "oversimplified-construct",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3126140319:f1",
+      "paper_id": "openalex:W3126140319",
+      "text": "Examine the causal direction of the correlates of happiness through more sophisticated methodologies.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3126140319:f2",
+      "paper_id": "openalex:W3126140319",
+      "text": "Focus greater attention on Person X Situation interactions between internal factors (such as personality traits) and external circumstances.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3126140319:f3",
+      "paper_id": "openalex:W3126140319",
+      "text": "Understand adaptation processes by examining how habituation, coping strategies, and changing goals influence adaptation.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3126140319:f4",
+      "paper_id": "openalex:W3126140319",
+      "text": "Refine theories to make specific predictions about how input variables differentially influence the separate components of subjective well-being.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.087121Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

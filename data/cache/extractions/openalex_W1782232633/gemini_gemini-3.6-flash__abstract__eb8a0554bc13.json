@@ -1,0 +1,91 @@
+{
+  "paper_id": "openalex:W1782232633",
+  "claims": [
+    {
+      "id": "openalex:W1782232633:c1",
+      "paper_id": "openalex:W1782232633",
+      "text": "Depression is a predictor of Facebook intrusion.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1782232633:c2",
+      "paper_id": "openalex:W1782232633",
+      "text": "Daily Internet use time in minutes is a predictor of Facebook intrusion.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1782232633:c3",
+      "paper_id": "openalex:W1782232633",
+      "text": "Being male is a predictor of Facebook intrusion.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1782232633:c4",
+      "paper_id": "openalex:W1782232633",
+      "text": "Young age is a predictor of Facebook intrusion.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1782232633:e1",
+      "claim_id": "openalex:W1782232633:c1",
+      "description": "We showed that depression can be a predictor of Facebook intrusion.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1782232633:e2",
+      "claim_id": "openalex:W1782232633:c2",
+      "description": "Our results provides additional evidence that daily Internet use time in minutes is a predictor of Facebook intrusion.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1782232633:e3",
+      "claim_id": "openalex:W1782232633:c3",
+      "description": "Facebook intrusion can be predicted by being male.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1782232633:e4",
+      "claim_id": "openalex:W1782232633:c4",
+      "description": "Facebook intrusion can be predicted by young age.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1782232633:m1",
+      "paper_id": "openalex:W1782232633",
+      "name": "Cross-sectional survey with snowball sampling",
+      "description": "A cross-sectional study assessing 672 Facebook users via the Facebook Intrusion Questionnaire and Center for Epidemiologic Studies Depression Scale collected through snowball sampling.",
+      "datasets": [
+        "Sample of 672 Facebook users"
+      ],
+      "conditions": [
+        "snowball sampling procedure",
+        "Facebook Intrusion Questionnaire",
+        "Center for Epidemiologic Studies Depression Scale"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1782232633:l1",
+      "paper_id": "openalex:W1782232633",
+      "text": "Previous findings on the relationship between Facebook addiction and depression were not unambiguous.",
+      "normalized_category": "ambiguous-prior-literature",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.084468Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

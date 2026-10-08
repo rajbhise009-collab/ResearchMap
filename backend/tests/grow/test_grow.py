@@ -8,6 +8,7 @@ import importlib.util
 import re
 from pathlib import Path
 
+import pytest
 import yaml
 
 from backend.app.grow import core
@@ -58,7 +59,8 @@ def test_selection_drops_planted_duplicates_and_off_topic(monkeypatch):
 
 
 def test_llm_calibration_is_never_grown():
-    assert "llm-calibration" not in core.GROW_SLUGS
+    assert "llm-calibration" not in core.grow_slugs()
+    assert {"diet-and-mortality", "ml-fairness"} <= set(core.grow_slugs())
 
 
 def test_zero_budget_submits_nothing(monkeypatch, tmp_path):
@@ -69,8 +71,12 @@ def test_zero_budget_submits_nothing(monkeypatch, tmp_path):
     monkeypatch.setattr(core, "pending_path", lambda slug: tmp_path / f"{slug}-pending.json")
     cl = mock_clients()
     errs: list[str] = []
-    r = core.submit("ml-fairness", cl, core.Budget(0.0), ref=dt.date(2026, 10, 12), errors=errs)
+    prep = core.prepare("ml-fairness", cl, ref=dt.date(2026, 10, 12), errors=errs)
+    picked = core.allocate({"ml-fairness": prep}, core.Budget(0.0), {"ml-fairness": 99})
+    r = core.submit("ml-fairness", cl, core.Budget(0.0), picked["ml-fairness"], ref=dt.date(2026, 10, 12))
     assert r["submitted"] == 0 and r["projected_inr"] == 0
+    if prep["items"]:
+        assert prep["dropped"].get("over weekly budget", 0) == len(prep["items"])
     assert not core.pending_path("ml-fairness").exists()
 
 
@@ -104,3 +110,27 @@ def test_triggers_permissions_pins_and_secret_scope():
                 assert "echo $" not in blob or "GITHUB_ENV" in blob
     d, on = _wf("weekly-grow.yml")
     assert not re.fullmatch(r"0 .*", on["schedule"][0]["cron"])      # off the hour
+
+
+def test_round_robin_allocation_favours_open_candidates_then_low_coverage():
+    def items(n, inr=1.0):
+        return [{"entry": {"wid": f"W{i}"}, "inr": inr} for i in range(n)]
+    prep = {"a": {"items": items(5), "dropped": {}}, "b": {"items": items(2), "dropped": {}},
+            "c": {"items": items(5), "dropped": {}}}
+    # budget 6.0 padded x1.5 => 4 papers; a and c tie on candidates, c has fewer papers
+    picked = core.allocate(prep, core.Budget(6.0), {"a": 200, "b": 50, "c": 100})
+    assert [len(picked[s]) for s in ("c", "a", "b")] == [2, 1, 1]
+    assert prep["a"]["dropped"]["over weekly budget"] == 4
+
+
+def test_transient_errors_retry_then_succeed():
+    calls = {"n": 0}
+
+    def flaky():
+        calls["n"] += 1
+        if calls["n"] < 3:
+            raise RuntimeError("OpenAlex HTTP 503 on /works")
+        return "ok"
+    assert core.with_retry(flaky, base_s=0) == "ok" and calls["n"] == 3
+    with pytest.raises(ValueError):
+        core.with_retry(lambda: (_ for _ in ()).throw(ValueError("bad input")), base_s=0)

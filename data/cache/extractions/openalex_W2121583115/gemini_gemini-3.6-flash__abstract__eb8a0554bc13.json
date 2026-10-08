@@ -1,0 +1,138 @@
+{
+  "paper_id": "openalex:W2121583115",
+  "claims": [
+    {
+      "id": "openalex:W2121583115:c1",
+      "paper_id": "openalex:W2121583115",
+      "text": "Frequency of friend networking site use has an indirect effect on adolescents' social self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121583115:c2",
+      "paper_id": "openalex:W2121583115",
+      "text": "Frequency of friend networking site use has an indirect effect on adolescents' well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121583115:c3",
+      "paper_id": "openalex:W2121583115",
+      "text": "Friend networking site use stimulates the number of relationships formed on the site.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121583115:c4",
+      "paper_id": "openalex:W2121583115",
+      "text": "Friend networking site use stimulates the frequency with which adolescents receive feedback on their profiles.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121583115:c5",
+      "paper_id": "openalex:W2121583115",
+      "text": "Positive feedback on profile enhances adolescents' social self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121583115:c6",
+      "paper_id": "openalex:W2121583115",
+      "text": "Positive feedback on profile enhances adolescents' well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121583115:c7",
+      "paper_id": "openalex:W2121583115",
+      "text": "Negative feedback on profile decreases adolescents' social self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121583115:c8",
+      "paper_id": "openalex:W2121583115",
+      "text": "Negative feedback on profile decreases adolescents' well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2121583115:e1",
+      "claim_id": "openalex:W2121583115:c1",
+      "description": "Structural equation modeling of survey data from 881 adolescents showed an indirect effect of site use frequency on social self-esteem.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121583115:e2",
+      "claim_id": "openalex:W2121583115:c2",
+      "description": "Structural equation modeling of survey data from 881 adolescents showed an indirect effect of site use frequency on well-being.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121583115:e3",
+      "claim_id": "openalex:W2121583115:c3",
+      "description": "Survey results indicated that use of the friend networking site stimulated the number of relationships formed on the site.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121583115:e4",
+      "claim_id": "openalex:W2121583115:c4",
+      "description": "Survey results indicated that use of the friend networking site stimulated the frequency of profile feedback received.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121583115:e5",
+      "claim_id": "openalex:W2121583115:c5",
+      "description": "Structural equation modeling showed positive feedback on profiles enhanced social self-esteem.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121583115:e6",
+      "claim_id": "openalex:W2121583115:c6",
+      "description": "Structural equation modeling showed positive feedback on profiles enhanced well-being.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121583115:e7",
+      "claim_id": "openalex:W2121583115:c7",
+      "description": "Structural equation modeling showed negative feedback decreased self-esteem.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121583115:e8",
+      "claim_id": "openalex:W2121583115:c8",
+      "description": "Structural equation modeling showed negative feedback decreased well-being.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2121583115:m1",
+      "paper_id": "openalex:W2121583115",
+      "name": "Structural Equation Modeling of Survey Data",
+      "description": "Adolescents with online profiles on a Dutch friend networking site completed a survey, and structural equation modeling was used to evaluate indirect effects on self-esteem and well-being.",
+      "datasets": [
+        "Survey of Dutch friend networking site users (N=881)"
+      ],
+      "conditions": [
+        "10-19-year-old adolescents",
+        "Had an online profile on a Dutch friend networking site"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.092268Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

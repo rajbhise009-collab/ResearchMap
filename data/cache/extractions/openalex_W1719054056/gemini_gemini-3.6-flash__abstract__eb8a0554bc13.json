@@ -1,0 +1,69 @@
+{
+  "paper_id": "openalex:W1719054056",
+  "claims": [
+    {
+      "id": "openalex:W1719054056:c1",
+      "paper_id": "openalex:W1719054056",
+      "text": "Vulnerability constitutes the core of anxiety disorders.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1719054056:c2",
+      "paper_id": "openalex:W1719054056",
+      "text": "Threat reactions in anxiety are governed by cognitive structures and anxiogenic rules.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1719054056:c3",
+      "paper_id": "openalex:W1719054056",
+      "text": "Cognitive therapy addresses anxiety by restructuring patient assumptions across cognitive, affective, and behavioral components.",
+      "type": "method",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1719054056:e1",
+      "claim_id": "openalex:W1719054056:c1",
+      "description": "Text explicitly identifies 'Vulnerability: The Core of Anxiety Disorders' as a primary theoretical premise.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W1719054056:e2",
+      "claim_id": "openalex:W1719054056:c2",
+      "description": "Text details 'The Cognitive Model of Threat Reactions' and 'Cognitive Structures and Anxiogenic Rules' as conceptual components of anxiety.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W1719054056:e3",
+      "claim_id": "openalex:W1719054056:c3",
+      "description": "Text outlines cognitive restructuring techniques aimed at modifying imagery, affective components, behavioral components, and major patient assumptions.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1719054056:m1",
+      "paper_id": "openalex:W1719054056",
+      "name": "Cognitive Therapy for Anxiety Disorders",
+      "description": "A therapeutic approach involving cognitive restructuring, imagery modification, affective adaptation, and behavioral modification to change core assumptions.",
+      "datasets": [],
+      "conditions": [
+        "Generalized Anxiety Disorder",
+        "Panic Disorder",
+        "Simple Phobias",
+        "Agoraphobic Syndrome",
+        "Evaluation Anxieties"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.088363Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

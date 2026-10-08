@@ -1,0 +1,86 @@
+{
+  "paper_id": "openalex:W2166281097",
+  "claims": [
+    {
+      "id": "openalex:W2166281097:c1",
+      "paper_id": "openalex:W2166281097",
+      "text": "A self-assessment scale was developed for detecting states of depression and anxiety in hospital medical outpatient clinics.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2166281097:c2",
+      "paper_id": "openalex:W2166281097",
+      "text": "The developed self-assessment scale is a reliable instrument for detecting depression and anxiety in hospital medical outpatients.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2166281097:c3",
+      "paper_id": "openalex:W2166281097",
+      "text": "The anxiety subscale is a valid measure of the severity of emotional disorder.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2166281097:c4",
+      "paper_id": "openalex:W2166281097",
+      "text": "The depressive subscale is a valid measure of the severity of emotional disorder.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2166281097:e1",
+      "claim_id": "openalex:W2166281097:c1",
+      "description": "A self-assessment scale has been developed and found to be a reliable instrument for detecting states of depression and anxiety in the setting of an hospital medical outpatient clinic.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2166281097:e2",
+      "claim_id": "openalex:W2166281097:c2",
+      "description": "found to be a reliable instrument for detecting states of depression and anxiety in the setting of an hospital medical outpatient clinic.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2166281097:e3",
+      "claim_id": "openalex:W2166281097:c3",
+      "description": "The anxiety and depressive subscales are also valid measures of severity of the emotional disorder.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2166281097:e4",
+      "claim_id": "openalex:W2166281097:c4",
+      "description": "The anxiety and depressive subscales are also valid measures of severity of the emotional disorder.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2166281097:m1",
+      "paper_id": "openalex:W2166281097",
+      "name": "Hospital Anxiety and Depression Scale (HADS) self-assessment",
+      "description": "A self-assessment questionnaire containing anxiety and depressive subscales designed for hospital medical outpatient settings.",
+      "datasets": [],
+      "conditions": [
+        "hospital medical outpatient clinic"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W2166281097:f1",
+      "paper_id": "openalex:W2166281097",
+      "text": "Introduce the scales into general hospital practice to facilitate detection and management of emotional disorders in medical and surgical departments.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.086473Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

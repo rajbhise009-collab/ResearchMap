@@ -1,0 +1,97 @@
+{
+  "paper_id": "openalex:W2025569446",
+  "claims": [
+    {
+      "id": "openalex:W2025569446:c1",
+      "paper_id": "openalex:W2025569446",
+      "text": "For adolescents who perceive low friendship quality, Internet use for communication purposes predicts less depression.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025569446:c2",
+      "paper_id": "openalex:W2025569446",
+      "text": "For adolescents who perceive low friendship quality, Internet use for non-communication purposes predicts more depression.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025569446:c3",
+      "paper_id": "openalex:W2025569446",
+      "text": "For adolescents who perceive low friendship quality, Internet use for non-communication purposes predicts more social anxiety.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025569446:c4",
+      "paper_id": "openalex:W2025569446",
+      "text": "Instant messaging supports social compensation effects on depression for adolescents with low perceived friendship quality.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2025569446:c5",
+      "paper_id": "openalex:W2025569446",
+      "text": "Non-communication Internet surfing supports poor-get-poorer effects on depression and social anxiety for adolescents with low perceived friendship quality.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2025569446:e1",
+      "claim_id": "openalex:W2025569446:c1",
+      "description": "Longitudinal questionnaire data gathered from 307 Dutch middle adolescents across two waves with a one-year interval showed communication Internet use predicted less depression among those perceiving low friendship quality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025569446:e2",
+      "claim_id": "openalex:W2025569446:c2",
+      "description": "Two-wave longitudinal questionnaire data from 307 Dutch middle adolescents showed non-communication Internet use predicted higher depression scores in adolescents with low perceived friendship quality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025569446:e3",
+      "claim_id": "openalex:W2025569446:c3",
+      "description": "Two-wave longitudinal questionnaire data from 307 Dutch middle adolescents showed non-communication Internet use predicted higher social anxiety in adolescents with low perceived friendship quality.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2025569446:e4",
+      "claim_id": "openalex:W2025569446:c4",
+      "description": "Empirical reduction in depression via communication-based Internet use specifically among low friendship quality adolescents supports the social compensation hypothesis.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2025569446:e5",
+      "claim_id": "openalex:W2025569446:c5",
+      "description": "Empirical increase in depression and social anxiety via non-communication Internet use specifically among low friendship quality adolescents supports the poor-get-poorer hypothesis.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2025569446:m1",
+      "paper_id": "openalex:W2025569446",
+      "name": "Two-wave longitudinal questionnaire study",
+      "description": "A two-wave longitudinal survey design with a one-year interval evaluating different types of Internet use, depression, social anxiety, and perceived friendship quality.",
+      "datasets": [
+        "Questionnaire data from 307 Dutch middle adolescents"
+      ],
+      "conditions": [
+        "One-year interval",
+        "Middle adolescents (average age 15 years)",
+        "Moderation by perceived friendship quality"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.077919Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

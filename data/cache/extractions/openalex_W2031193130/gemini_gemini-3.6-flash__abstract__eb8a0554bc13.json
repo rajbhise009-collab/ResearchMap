@@ -1,0 +1,85 @@
+{
+  "paper_id": "openalex:W2031193130",
+  "claims": [
+    {
+      "id": "openalex:W2031193130:c1",
+      "paper_id": "openalex:W2031193130",
+      "text": "Prolonged use of social networking sites may be related to signs and symptoms of depression.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2031193130:c2",
+      "paper_id": "openalex:W2031193130",
+      "text": "Certain social networking site activities might be associated with low self-esteem, especially in children and adolescents.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2031193130:c3",
+      "paper_id": "openalex:W2031193130",
+      "text": "Social networking can have a positive impact on self-esteem.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2031193130:c4",
+      "paper_id": "openalex:W2031193130",
+      "text": "The relationship between social networking site use and mental problems remains controversial.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2031193130:e1",
+      "claim_id": "openalex:W2031193130:c1",
+      "description": "Several studies cited in the review indicated that prolonged use of SNS, such as Facebook, may be related to depression symptoms.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W2031193130:e2",
+      "claim_id": "openalex:W2031193130:c2",
+      "description": "Some authors indicated an association between certain SNS activities and low self-esteem in children and adolescents.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W2031193130:e3",
+      "claim_id": "openalex:W2031193130:c3",
+      "description": "Studies reviewed presented opposite results showing a positive impact of social networking on self-esteem.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W2031193130:e4",
+      "claim_id": "openalex:W2031193130:c4",
+      "description": "Literature review reveals mixed and conflicting results regarding SNS use and mental health outcomes.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2031193130:m1",
+      "paper_id": "openalex:W2031193130",
+      "name": "Literature Review",
+      "description": "A concise narrative review of recent findings regarding social networking sites and mental health issues.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2031193130:l1",
+      "paper_id": "openalex:W2031193130",
+      "text": "Research on the connection between SNS use and mental health problems faces numerous methodology challenges and yields controversial, conflicting results.",
+      "normalized_category": "methodological-challenges",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.068007Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

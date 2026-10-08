@@ -1,0 +1,224 @@
+{
+  "paper_id": "openalex:W2289545039",
+  "claims": [
+    {
+      "id": "openalex:W2289545039:c1",
+      "paper_id": "openalex:W2289545039",
+      "text": "Prior systematic review identified only five mental health apps that were supported by trial-based evidence from randomized controlled trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c2",
+      "paper_id": "openalex:W2289545039",
+      "text": "Computerized cognitive behavioral therapy (CCBT) for depression and anxiety yields a medium effect size of g = 0.77 across 49 randomized controlled trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c3",
+      "paper_id": "openalex:W2289545039",
+      "text": "Computerized cognitive behavioral therapy yields an effect size of g = 0.88 across a meta-analysis of 22 randomized controlled trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c4",
+      "paper_id": "openalex:W2289545039",
+      "text": "Including homework or between-session activities in therapy produces an effect size of d = 0.48 compared to therapy without homework.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c5",
+      "paper_id": "openalex:W2289545039",
+      "text": "Transdiagnostic cognitive behavioral therapy yields a standardized mean difference of -0.79 across different anxiety disorders.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c6",
+      "paper_id": "openalex:W2289545039",
+      "text": "Exercise interventions for individuals diagnosed with mental illness produce a standardized mean difference of 0.80 for depressive symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c7",
+      "paper_id": "openalex:W2289545039",
+      "text": "Behavioral activation for clinical depression outperforms control conditions with a standardized mean difference of -0.70.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c8",
+      "paper_id": "openalex:W2289545039",
+      "text": "Relaxation training demonstrates an effect size of d = 0.57 for reducing anxiety across 27 randomized controlled trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c9",
+      "paper_id": "openalex:W2289545039",
+      "text": "Electronic-game-based depression interventions demonstrate a moderate effect size of d = -0.47 on depressive symptoms across 10 randomized controlled trials.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2289545039:c10",
+      "paper_id": "openalex:W2289545039",
+      "text": "A set of 16 evidence-based recommendations guides the design, functionality, and evaluation of future mental health smartphone apps.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2289545039:e1",
+      "claim_id": "openalex:W2289545039:c1",
+      "description": "Their systematic review identified only 5 apps that had supporting evidence from randomized controlled trials (RCTs).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e2",
+      "claim_id": "openalex:W2289545039:c2",
+      "description": "A meta-analysis of 49 RCTs revealed a significant medium effect size (g = 0.77, 95% CI 0.59-0.95) for computerized CBT (CCBT) for depression and anxiety.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e3",
+      "claim_id": "openalex:W2289545039:c3",
+      "description": "Another meta-analysis of 22 RCTs found an even greater effect size (g = 0.88, 95% CI 0.76-0.99).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e4",
+      "claim_id": "openalex:W2289545039:c4",
+      "description": "A meta-analysis of studies that compared therapy with and without homework found an effect size of d = 0.48 in favor of using between-session activities.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e5",
+      "claim_id": "openalex:W2289545039:c5",
+      "description": "A meta-analysis of RCTs found a large effect size (standardized mean difference = −0.79, 95% CI −1.30 to −0.27) for TCBT across different anxiety disorders.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e6",
+      "claim_id": "openalex:W2289545039:c6",
+      "description": "A meta-analysis of 39 RCTs examined the effects of exercise on people diagnosed with a mental illness, and found large effect sizes for depressive symptoms (standardized mean difference = 0.80, 95% CI 0.47-1.13).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e7",
+      "claim_id": "openalex:W2289545039:c7",
+      "description": "A meta-analysis of 17 RCTs reported that BA for clinical depression outperformed control conditions (standardized mean difference = −0.70, 95% CI −1.00 to −0.39).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e8",
+      "claim_id": "openalex:W2289545039:c8",
+      "description": "A meta-analysis of 27 RCTs found a medium to large effect size for relaxation training on anxiety (d = 0.57, 95% CI 0.52-0.68).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e9",
+      "claim_id": "openalex:W2289545039:c9",
+      "description": "A meta-analysis of 10 RCTs found that electronic-game-based depression interventions had a moderate effect on depressive symptoms (d = −0.47, 95% CI −0.69 to −0.24).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2289545039:e10",
+      "claim_id": "openalex:W2289545039:c10",
+      "description": "Sixteen recommendations were formulated based on literature across mental health interventions, preventative health, mobile health, and mobile app design.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2289545039:m1",
+      "paper_id": "openalex:W2289545039",
+      "name": "Literature Review and Recommendation Framework Synthesis",
+      "description": "A cross-disciplinary literature review across mental health interventions, mobile health, and app design to formulate 16 practical, evidence-based recommendations for mental health app development.",
+      "datasets": [
+        "PsycInfo",
+        "Scopus",
+        "ProQuest",
+        "iTunes App Store"
+      ],
+      "conditions": [
+        "Peer-reviewed articles published between March 1975 and March 2015",
+        "Directly relevant to mental health or computerized health interventions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2289545039:l1",
+      "paper_id": "openalex:W2289545039",
+      "text": "The recommendations presented in this review have not been rigorously validated by RCTs specifically in a mental health smartphone app setting.",
+      "normalized_category": "unvalidated-recommendations-in-mhapp-setting",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2289545039:l2",
+      "paper_id": "openalex:W2289545039",
+      "text": "The study was not a systematic review, so the specific number of articles found and excluded during searches was not tracked.",
+      "normalized_category": "non-systematic-review-methodology",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2289545039:l3",
+      "paper_id": "openalex:W2289545039",
+      "text": "Many currently available mental health apps lack features that would improve functionality or include non-optimized features.",
+      "normalized_category": "lack-of-optimized-features-in-existing-apps",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2289545039:l4",
+      "paper_id": "openalex:W2289545039",
+      "text": "Developers of mental health apps rarely conduct or publish trial-based experimental validation of their applications.",
+      "normalized_category": "lack-of-experimental-validation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2289545039:l5",
+      "paper_id": "openalex:W2289545039",
+      "text": "None of the five mental health apps previously validated by RCTs in systematic review remained available to consumers on app stores.",
+      "normalized_category": "lack-of-public-availability-of-validated-apps",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2289545039:f1",
+      "paper_id": "openalex:W2289545039",
+      "text": "Conduct randomized controlled trials to validate future mental health apps, their design principles, and the specific 16 recommendations presented in this review.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2289545039:f2",
+      "paper_id": "openalex:W2289545039",
+      "text": "Develop a well-validated, standardized, and brief assessment tool for mental health literacy suitable for administration on smartphone interfaces.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2289545039:f3",
+      "paper_id": "openalex:W2289545039",
+      "text": "Investigate the relative efficacy of reflection-focused, education-focused, and goal-focused mental health app designs across different user populations.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.058239Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

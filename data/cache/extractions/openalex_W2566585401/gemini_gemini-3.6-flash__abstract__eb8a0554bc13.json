@@ -1,0 +1,98 @@
+{
+  "paper_id": "openalex:W2566585401",
+  "claims": [
+    {
+      "id": "openalex:W2566585401:c1",
+      "paper_id": "openalex:W2566585401",
+      "text": "Fear of missing out (FOMO) mediates the link between psychopathological symptoms and negative consequences of using social networking sites via mobile devices.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2566585401:c2",
+      "paper_id": "openalex:W2566585401",
+      "text": "Social networking intensity mediates the link between psychopathological symptoms and negative consequences of using social networking sites via mobile devices.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2566585401:c3",
+      "paper_id": "openalex:W2566585401",
+      "text": "FOMO and social networking intensity mediate the link between psychopathology and negative consequences of mobile social networking site use through different mechanisms.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2566585401:c4",
+      "paper_id": "openalex:W2566585401",
+      "text": "For adolescent girls, feeling depressed triggers higher social networking site involvement.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2566585401:c5",
+      "paper_id": "openalex:W2566585401",
+      "text": "For adolescent boys, anxiety triggers higher social networking site involvement.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2566585401:e1",
+      "claim_id": "openalex:W2566585401:c1",
+      "description": "Structural equation modeling of online survey data from 1,468 Spanish-speaking Latin-American social media users aged 16-18 showed that FOMO mediates the link between psychopathology and negative consequences of mobile SNS use (CERM).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2566585401:e2",
+      "claim_id": "openalex:W2566585401:c2",
+      "description": "Structural equation modeling of online survey data from 1,468 Spanish-speaking Latin-American social media users aged 16-18 showed that Social Networking Intensity (SNI) mediates the link between psychopathology and negative consequences of mobile SNS use (CERM).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2566585401:e3",
+      "claim_id": "openalex:W2566585401:c3",
+      "description": "Structural equation modeling revealed that FOMO and SNI mediate the psychopathology-CERM relationship through distinct mechanisms.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2566585401:e4",
+      "claim_id": "openalex:W2566585401:c4",
+      "description": "Structural equation modeling showed a specific link where feeling depressed triggers higher SNS involvement among girls.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2566585401:e5",
+      "claim_id": "openalex:W2566585401:c5",
+      "description": "Structural equation modeling showed a specific link where anxiety triggers higher SNS involvement among boys.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2566585401:m1",
+      "paper_id": "openalex:W2566585401",
+      "name": "Structural Equation Modeling on Online Survey Data",
+      "description": "Analysis using structural equation modeling on data collected via HADS, SNI, FOMOs, and CERM questionnaires.",
+      "datasets": [
+        "Online survey of 1468 Spanish-speaking Latin-American social media users aged 16 to 18"
+      ],
+      "conditions": [
+        "Hospital Anxiety and Depression Scale (HADS)",
+        "Social Networking Intensity scale (SNI)",
+        "FOMO scale (FOMOs)",
+        "Questionnaire on negative consequences of using SNS via mobile device (CERM)"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.058894Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

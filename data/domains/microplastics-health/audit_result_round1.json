@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.533,
+ "in_out_agreement": 0.6,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W2546432926",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "wastewater detection, no human question"
+  },
+  {
+   "wid": "W2797793834",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "food web transfer with human implications"
+  },
+  {
+   "wid": "W2885126584",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "seafood exposure and human health"
+  },
+  {
+   "wid": "W3010537688",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "salt, water and air: direct human exposure"
+  },
+  {
+   "wid": "W2808334666",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "tap water, beer, salt contamination"
+  },
+  {
+   "wid": "W3177759384",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "plastisphere ecology"
+  },
+  {
+   "wid": "W2295281563",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "zebrafish toxicity, no human argument"
+  },
+  {
+   "wid": "W2515987409",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "EFSA statement on micro/nanoplastics in food"
+  },
+  {
+   "wid": "W1722748867",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "plastics in commercial bivalves"
+  },
+  {
+   "wid": "W2617805895",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "cobalt toxicity"
+  },
+  {
+   "wid": "W1810360004",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "urban environmental occurrence"
+  },
+  {
+   "wid": "W1983247439",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "metal adsorption to pellets"
+  },
+  {
+   "wid": "W2021829952",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "pollutants on marine debris"
+  },
+  {
+   "wid": "W2221942389",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "fish toxicity"
+  },
+  {
+   "wid": "W2908304050",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "definitions of plastic debris"
+  }
+ ]
+}

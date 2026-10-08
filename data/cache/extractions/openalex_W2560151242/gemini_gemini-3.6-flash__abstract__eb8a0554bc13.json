@@ -1,0 +1,152 @@
+{
+  "paper_id": "openalex:W2560151242",
+  "claims": [
+    {
+      "id": "openalex:W2560151242:c1",
+      "paper_id": "openalex:W2560151242",
+      "text": "Computerised cognitive behavioural therapy (cCBT) provides clinical benefit for depression in adolescents and young adults.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2560151242:c2",
+      "paper_id": "openalex:W2560151242",
+      "text": "Computerised cognitive behavioural therapy (cCBT) provides clinical benefit for anxiety in adolescents and young adults.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2560151242:c3",
+      "paper_id": "openalex:W2560151242",
+      "text": "The benefits of digital health interventions in managing ADHD in children and young people are uncertain.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2560151242:c4",
+      "paper_id": "openalex:W2560151242",
+      "text": "The benefits of digital health interventions in managing autism in children and young people are uncertain.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2560151242:c5",
+      "paper_id": "openalex:W2560151242",
+      "text": "The benefits of digital health interventions in managing psychosis in children and young people are uncertain.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2560151242:c6",
+      "paper_id": "openalex:W2560151242",
+      "text": "The benefits of digital health interventions in managing eating disorders in children and young people are uncertain.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2560151242:c7",
+      "paper_id": "openalex:W2560151242",
+      "text": "Evidence regarding the cost-effectiveness of digital health interventions for children and young people is lacking.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2560151242:e1",
+      "claim_id": "openalex:W2560151242:c1",
+      "description": "The meta-review findings provide some support for the clinical benefit of DHIs, particularly cCBT, for depression in adolescents and young adults.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2560151242:e2",
+      "claim_id": "openalex:W2560151242:c2",
+      "description": "The meta-review findings provide some support for the clinical benefit of DHIs, particularly cCBT, for anxiety in adolescents and young adults.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2560151242:e3",
+      "claim_id": "openalex:W2560151242:c3",
+      "description": "Systematic review of 30 new RCTs showed that benefits of DHIs in managing ADHD are uncertain.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2560151242:e4",
+      "claim_id": "openalex:W2560151242:c4",
+      "description": "Systematic review of 30 new RCTs showed that benefits of DHIs in managing autism are uncertain.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2560151242:e5",
+      "claim_id": "openalex:W2560151242:c5",
+      "description": "Systematic review of 30 new RCTs showed that benefits of DHIs in managing psychosis are uncertain.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2560151242:e6",
+      "claim_id": "openalex:W2560151242:c6",
+      "description": "Systematic review of 30 new RCTs showed that benefits of DHIs in managing eating disorders are uncertain.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2560151242:e7",
+      "claim_id": "openalex:W2560151242:c7",
+      "description": "Review findings indicated that evidence is lacking regarding the cost-effectiveness of DHIs.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2560151242:m1",
+      "paper_id": "openalex:W2560151242",
+      "name": "Meta-review and updated systematic review",
+      "description": "Meta-review of 21 scoping, narrative, systematic, or meta-analytical reviews combined with an updated systematic review of 30 RCTs of DHIs published in the last 3 years.",
+      "datasets": [],
+      "conditions": [
+        "children and young people (CYP)",
+        "mental health interventions",
+        "randomised controlled trials"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2560151242:l1",
+      "paper_id": "openalex:W2560151242",
+      "text": "Existing clinical trials of DHIs suffer from variable uptake and engagement, small sample sizes, and lack of blinded outcome assessment.",
+      "normalized_category": "methodological-shortcomings",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2560151242:l2",
+      "paper_id": "openalex:W2560151242",
+      "text": "Existing research lacks an agreed typology/taxonomy for DHIs and poorly specifies the level of human support.",
+      "normalized_category": "lack-of-standardization",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2560151242:l3",
+      "paper_id": "openalex:W2560151242",
+      "text": "Clinical trials of DHIs frequently combine different comparators and rely on short-term follow-up.",
+      "normalized_category": "study-design-flaws",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2560151242:f1",
+      "paper_id": "openalex:W2560151242",
+      "text": "Implementation of recommendations addressing key research questions and methodological issues for the evaluation and clinical adoption of DHIs for children and young people.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.099481Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

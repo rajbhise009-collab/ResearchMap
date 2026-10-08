@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W2999059035",
+  "claims": [
+    {
+      "id": "openalex:W2999059035:c1",
+      "paper_id": "openalex:W2999059035",
+      "text": "Adolescent girls spend more time on smartphones, social media, texting, general computer use, and online than adolescent boys.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2999059035:c2",
+      "paper_id": "openalex:W2999059035",
+      "text": "Adolescent boys spend more time gaming and on electronic devices in general than adolescent girls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2999059035:c3",
+      "paper_id": "openalex:W2999059035",
+      "text": "Associations between moderate or heavy digital media use and low psychological well-being or mental health issues are larger for adolescent girls than for boys.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2999059035:c4",
+      "paper_id": "openalex:W2999059035",
+      "text": "Light users of digital media exhibit slightly higher psychological well-being than non-users.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2999059035:c5",
+      "paper_id": "openalex:W2999059035",
+      "text": "The positive difference in well-being between light digital media users and non-users is larger among boys than girls.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2999059035:c6",
+      "paper_id": "openalex:W2999059035",
+      "text": "Heavy users of digital media are often twice as likely as low users to experience low psychological well-being or mental health issues.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2999059035:e1",
+      "claim_id": "openalex:W2999059035:c1",
+      "description": "Adolescent girls spent more time on smartphones, social media, texting, general computer use, and online",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2999059035:e2",
+      "claim_id": "openalex:W2999059035:c2",
+      "description": "boys spent more time gaming and on electronic devices in general.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2999059035:e3",
+      "claim_id": "openalex:W2999059035:c3",
+      "description": "Associations between moderate or heavy digital media use and low psychological well-being/mental health issues were generally larger for girls than for boys.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2999059035:e4",
+      "claim_id": "openalex:W2999059035:c4",
+      "description": "Light users of digital media were slightly higher in well-being than non-users",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2999059035:e5",
+      "claim_id": "openalex:W2999059035:c5",
+      "description": "Light users of digital media were slightly higher in well-being than non-users, with larger differences among boys.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2999059035:e6",
+      "claim_id": "openalex:W2999059035:c6",
+      "description": "Among both genders, heavy users of digital media were often twice as likely as low users to be low in well-being or have mental health issues, including risk factors for suicide.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2999059035:m1",
+      "paper_id": "openalex:W2999059035",
+      "name": "Cross-sectional survey analysis",
+      "description": "Analyzed daily hours of digital media use and psychological well-being measures across three large, representative adolescent datasets separately.",
+      "datasets": [
+        "Three large representative surveys in U.S. and UK"
+      ],
+      "conditions": [
+        "Adolescents aged 13-18",
+        "Total N = 221,096"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2999059035:l1",
+      "paper_id": "openalex:W2999059035",
+      "text": "Gender differences in digital media use and in associations with psychological well-being were previously unclear.",
+      "normalized_category": "unclear-prior-gender-differences",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.065788Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

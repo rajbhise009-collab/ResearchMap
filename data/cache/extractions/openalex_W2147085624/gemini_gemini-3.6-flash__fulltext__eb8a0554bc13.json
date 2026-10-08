@@ -1,0 +1,186 @@
+{
+  "paper_id": "openalex:W2147085624",
+  "claims": [
+    {
+      "id": "openalex:W2147085624:c1",
+      "paper_id": "openalex:W2147085624",
+      "text": "Machine learning models achieved a mean classification accuracy of 60.3% in predicting user location from mobile phone sensor data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2147085624:c2",
+      "paper_id": "openalex:W2147085624",
+      "text": "Machine learning models predicting binary categorical social and activity contexts achieved mean accuracy rates ranging from 64.5% to 90.9%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2147085624:c3",
+      "paper_id": "openalex:W2147085624",
+      "text": "Machine learning models predicting scale-rated internal states such as mood performed no better than chance.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2147085624:c4",
+      "paper_id": "openalex:W2147085624",
+      "text": "Participants receiving the Mobilyze! intervention showed significant reductions in self-reported depressive symptoms over 8 weeks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2147085624:c5",
+      "paper_id": "openalex:W2147085624",
+      "text": "Participants receiving Mobilyze! showed significant reductions in clinician-rated depressive symptoms over 8 weeks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2147085624:c6",
+      "paper_id": "openalex:W2147085624",
+      "text": "Participants receiving Mobilyze! experienced a significant reduction in the likelihood of meeting major depressive disorder diagnostic criteria.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2147085624:c7",
+      "paper_id": "openalex:W2147085624",
+      "text": "Participants receiving Mobilyze! showed significant reductions in comorbid anxiety symptoms over 8 weeks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2147085624:e1",
+      "claim_id": "openalex:W2147085624:c1",
+      "description": "Across 7 treatment completers, the mean rate of accurate classification for location was 60.3% (bootstrap 95% CI 43.2–77.2).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2147085624:e2",
+      "claim_id": "openalex:W2147085624:c2",
+      "description": "Table 1 shows mean accuracies ranging from 64.5% for 'not conversing' to 90.9% for 'miscellaneous people in the larger environment'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2147085624:e3",
+      "claim_id": "openalex:W2147085624:c3",
+      "description": "Cross-validation correlation coefficients were negative for scale-based states, and accuracy of scale-based state models was conceptualized as no better than chance.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2147085624:e4",
+      "claim_id": "openalex:W2147085624:c4",
+      "description": "Self-reported depressive symptoms on PHQ-9 decreased significantly over time (beta_week = -.82, P < .001, per-protocol Cohen d = 3.43).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2147085624:e5",
+      "claim_id": "openalex:W2147085624:c5",
+      "description": "Evaluator-rated depressive symptoms on QIDS-C improved significantly (beta_week = -.81, P < .001, per-protocol Cohen d = 3.55).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2147085624:e6",
+      "claim_id": "openalex:W2147085624:c6",
+      "description": "Generalized estimating equations showed participants were less likely to meet MDD diagnosis (b_week = -.65, P = .03, per-protocol remission rate = 85.71%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2147085624:e7",
+      "claim_id": "openalex:W2147085624:c7",
+      "description": "Anxiety symptoms on the GAD-7 decreased significantly (beta_week = -.71, P < .001, per-protocol Cohen d = 2.58).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2147085624:m1",
+      "paper_id": "openalex:W2147085624",
+      "name": "Mobilyze! Field Trial",
+      "description": "A single-arm 8-week pilot field trial evaluating a context-aware mobile phone application combining sensor data machine learning predictions, ecological momentary interventions, a behavioral skills website, and telephone coaching.",
+      "datasets": [
+        "Concurrent mobile sensor readings",
+        "Ecological Momentary Assessment state labels"
+      ],
+      "conditions": [
+        "Adults with major depressive disorder (N=8)",
+        "8-week intervention duration"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2147085624:l1",
+      "paper_id": "openalex:W2147085624",
+      "text": "The trial did not include a control condition to account for regression to the mean or confounding factors.",
+      "normalized_category": "lack-of-control-group",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2147085624:l2",
+      "paper_id": "openalex:W2147085624",
+      "text": "Machine learning prediction models for continuous scale-based states (e.g. mood) achieved poor accuracy, performing no better than chance.",
+      "normalized_category": "poor-model-accuracy",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2147085624:l3",
+      "paper_id": "openalex:W2147085624",
+      "text": "Technical problems including server connectivity loss and rapid battery drain reduced the delivery of prompts and interventions.",
+      "normalized_category": "technical-reliability-issues",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2147085624:l4",
+      "paper_id": "openalex:W2147085624",
+      "text": "The study was conducted with a small sample size of 8 participants.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2147085624:l5",
+      "paper_id": "openalex:W2147085624",
+      "text": "Traditional Internet interventions for depression suffer from modest outcomes due to high rates of user attrition.",
+      "normalized_category": "high-attrition-rate",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2147085624:f1",
+      "paper_id": "openalex:W2147085624",
+      "text": "Conduct a randomized controlled trial to confirm clinical outcomes against control conditions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2147085624:f2",
+      "paper_id": "openalex:W2147085624",
+      "text": "Adopt cross-platform development frameworks to allow deployment across multiple operating systems and participants' personal devices.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2147085624:f3",
+      "paper_id": "openalex:W2147085624",
+      "text": "Implement battery management and duty-cycling algorithms to optimize mobile sensor power consumption.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2147085624:f4",
+      "paper_id": "openalex:W2147085624",
+      "text": "Apply feature extraction, normalization transformations, unpruned regression trees, and ensemble machine learning algorithms to improve continuous state prediction accuracy.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.101669Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

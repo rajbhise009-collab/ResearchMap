@@ -1,0 +1,101 @@
+{
+  "paper_id": "openalex:W2063077274",
+  "claims": [
+    {
+      "id": "openalex:W2063077274:c1",
+      "paper_id": "openalex:W2063077274",
+      "text": "Ninety-seven percent of children and adolescents in the United States play video games for at least one hour per day.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2063077274:c2",
+      "paper_id": "openalex:W2063077274",
+      "text": "Playing video games yields positive effects in the cognitive domain.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2063077274:c3",
+      "paper_id": "openalex:W2063077274",
+      "text": "Playing video games yields positive effects in the motivational domain.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2063077274:c4",
+      "paper_id": "openalex:W2063077274",
+      "text": "Playing video games yields positive effects in the emotional domain.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2063077274:c5",
+      "paper_id": "openalex:W2063077274",
+      "text": "Playing video games yields positive effects in the social domain.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2063077274:e1",
+      "claim_id": "openalex:W2063077274:c1",
+      "description": "97% playing for at least one hour per day in the United States.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2063077274:e2",
+      "claim_id": "openalex:W2063077274:c2",
+      "description": "A small but significant body of research emerging mostly in the last five years documents these benefits.",
+      "strength": 0.75
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2063077274:m1",
+      "paper_id": "openalex:W2063077274",
+      "name": "Theoretical synthesis and literature review",
+      "description": "Summarizes research on the positive effects of gaming across four main domains and integrates theoretical insights from developmental, positive, social, and media psychology.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2063077274:l1",
+      "paper_id": "openalex:W2063077274",
+      "text": "The vast majority of psychological research on gaming has focused predominantly on negative impacts related to violence, addiction, and depression.",
+      "normalized_category": "prior-work-negative-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2063077274:l2",
+      "paper_id": "openalex:W2063077274",
+      "text": "The mental health benefits of gaming remain largely unexplored.",
+      "normalized_category": "unexplored-mental-health-benefits",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2063077274:f1",
+      "paper_id": "openalex:W2063077274",
+      "text": "Establish new programs of research focused on the mental health benefits of gaming.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2063077274:f2",
+      "paper_id": "openalex:W2063077274",
+      "text": "Conduct intervention research and clinical applications to test the positive uses of video games.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.088567Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

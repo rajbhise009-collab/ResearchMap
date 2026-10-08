@@ -1,0 +1,90 @@
+{
+  "paper_id": "openalex:W2052878984",
+  "claims": [
+    {
+      "id": "openalex:W2052878984:c1",
+      "paper_id": "openalex:W2052878984",
+      "text": "Use of Facebook has a positive and significant relationship with anxiety in Iranian university students.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2052878984:c2",
+      "paper_id": "openalex:W2052878984",
+      "text": "Use of Facebook has a positive and significant relationship with stress in Iranian university students.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2052878984:c3",
+      "paper_id": "openalex:W2052878984",
+      "text": "Individuals who use Facebook exhibit higher anxiety compared to non-users.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2052878984:c4",
+      "paper_id": "openalex:W2052878984",
+      "text": "Individuals who use Facebook exhibit higher stress compared to non-users.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2052878984:e1",
+      "claim_id": "openalex:W2052878984:c1",
+      "description": "The study found that use of Facebook has a positive and significant relation with anxiety among 265 Esfahan university students.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2052878984:e2",
+      "claim_id": "openalex:W2052878984:c2",
+      "description": "The study found that use of Facebook has a positive and significant relation with stress among 265 Esfahan university students.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2052878984:e3",
+      "claim_id": "openalex:W2052878984:c3",
+      "description": "Results show that individuals using Facebook site (compared to non-users) have more anxiety.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2052878984:e4",
+      "claim_id": "openalex:W2052878984:c4",
+      "description": "Results show that individuals using Facebook site (compared to non-users) have more stress.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2052878984:m1",
+      "paper_id": "openalex:W2052878984",
+      "name": "Survey assessment using Farsi DASS-21 and demographic questionnaire",
+      "description": "Evaluated mental health indices and Facebook usage among Iranian university students using the translated Farsi form of DASS-21 and a demography questionnaire.",
+      "datasets": [
+        "265 Esfahan University students (162 Female & 103 Male)"
+      ],
+      "conditions": [
+        "Convenience sampling",
+        "Farsi form of DASS-21"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2052878984:l1",
+      "paper_id": "openalex:W2052878984",
+      "text": "Participants were chosen using convenience sampling.",
+      "normalized_category": "convenience-sampling",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.086003Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

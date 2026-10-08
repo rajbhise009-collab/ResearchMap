@@ -1,0 +1,168 @@
+{
+  "paper_id": "openalex:W2314751257",
+  "claims": [
+    {
+      "id": "openalex:W2314751257:c1",
+      "paper_id": "openalex:W2314751257",
+      "text": "Correlations between symptoms of addictive technology use and mental disorder symptoms were all positive and significant.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c2",
+      "paper_id": "openalex:W2314751257",
+      "text": "The interrelationship between addictive use of social media and addictive use of video games is weak.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c3",
+      "paper_id": "openalex:W2314751257",
+      "text": "Age is inversely related to the addictive use of social media and video games.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c4",
+      "paper_id": "openalex:W2314751257",
+      "text": "Being male is significantly associated with addictive use of video games.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c5",
+      "paper_id": "openalex:W2314751257",
+      "text": "Being female is significantly associated with addictive use of social media.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c6",
+      "paper_id": "openalex:W2314751257",
+      "text": "Being single is positively related to addictive social networking.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c7",
+      "paper_id": "openalex:W2314751257",
+      "text": "Being single is positively related to addictive video gaming.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c8",
+      "paper_id": "openalex:W2314751257",
+      "text": "Demographic factors explain between 11% and 12% of the variance in addictive technology use.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c9",
+      "paper_id": "openalex:W2314751257",
+      "text": "Mental health variables explain between 7% and 15% of the variance in addictive technology use.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2314751257:c10",
+      "paper_id": "openalex:W2314751257",
+      "text": "The concept of Internet use disorder as a unified construct is not warranted.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2314751257:e1",
+      "claim_id": "openalex:W2314751257:c1",
+      "description": "Correlations between symptoms of addictive technology use and mental disorder symptoms were all positive and significant.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2314751257:e2",
+      "claim_id": "openalex:W2314751257:c2",
+      "description": "Results showed a weak interrelationship between the two addictive technological behaviors.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2314751257:e3",
+      "claim_id": "openalex:W2314751257:c3",
+      "description": "Age appeared to be inversely related to the addictive use of these technologies.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2314751257:e4",
+      "claim_id": "openalex:W2314751257:c4",
+      "description": "Being male was significantly associated with addictive use of video games.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2314751257:e5",
+      "claim_id": "openalex:W2314751257:c5",
+      "description": "Being female was significantly associated with addictive use of social media.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2314751257:e6",
+      "claim_id": "openalex:W2314751257:c6",
+      "description": "Being single was positively related to both addictive social networking and video gaming.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2314751257:e7",
+      "claim_id": "openalex:W2314751257:c7",
+      "description": "Being single was positively related to both addictive social networking and video gaming.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2314751257:e8",
+      "claim_id": "openalex:W2314751257:c8",
+      "description": "Hierarchical regression analyses showed that demographic factors explained between 11 and 12% of the variance in addictive technology use.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2314751257:e9",
+      "claim_id": "openalex:W2314751257:c9",
+      "description": "The mental health variables explained between 7 and 15% of the variance.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2314751257:e10",
+      "claim_id": "openalex:W2314751257:c10",
+      "description": "The study suggests that the concept of Internet use disorder (i.e., \"Internet addiction\") as a unified construct is not warranted.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2314751257:m1",
+      "paper_id": "openalex:W2314751257",
+      "name": "Cross-sectional online survey and hierarchical regression analysis",
+      "description": "An online cross-sectional survey of adults evaluating demographic factors and psychiatric symptoms as predictors of addictive social media and video game use using hierarchical regression.",
+      "datasets": [
+        "Online cross-sectional survey of 23,533 adults"
+      ],
+      "conditions": [
+        "ADHD symptoms",
+        "OCD symptoms",
+        "Anxiety symptoms",
+        "Depression symptoms"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.030645Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

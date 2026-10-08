@@ -1,0 +1,194 @@
+{
+  "paper_id": "openalex:W2402700",
+  "claims": [
+    {
+      "id": "openalex:W2402700:c1",
+      "paper_id": "openalex:W2402700",
+      "text": "Social media activity contains behavioral signals capable of predicting major depressive disorder in individuals prior to reported onset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2402700:c2",
+      "paper_id": "openalex:W2402700",
+      "text": "Individuals in the depression class exhibit 38% lower post volume compared to the non-depression class.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2402700:c3",
+      "paper_id": "openalex:W2402700",
+      "text": "Individuals in the depression class make 32% fewer @-replies compared to the non-depression class.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2402700:c4",
+      "paper_id": "openalex:W2402700",
+      "text": "Individuals in the depression class express 28% higher negative affect in their Twitter posts compared to the non-depression class.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2402700:c5",
+      "paper_id": "openalex:W2402700",
+      "text": "Individuals in the depression class express 11% lower emotional activation compared to the non-depression class.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2402700:c6",
+      "paper_id": "openalex:W2402700",
+      "text": "Twitter posts from individuals in the depression class contain 68% higher usage of first-person pronouns compared to the non-depression class.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2402700:c7",
+      "paper_id": "openalex:W2402700",
+      "text": "Twitter posts from individuals in the depression class contain 71% lower usage of third-person pronouns compared to the non-depression class.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2402700:c8",
+      "paper_id": "openalex:W2402700",
+      "text": "An RBF Support Vector Machine classifier using dimension-reduced social media and demographic features achieves 70.35% positive class accuracy and 0.742 precision in predicting depression ahead of onset.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2402700:e1",
+      "claim_id": "openalex:W2402700:c1",
+      "description": "We leverage these behavioral cues, to build a statistical classifier that provides estimates of the risk of depression, before the reported onset.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2402700:e2",
+      "claim_id": "openalex:W2402700:c2",
+      "description": "At an aggregate level, for the depression class, we observe considerable decrease in user engagement measures, such as volume (38% lower; p<.001 based on a t-test).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2402700:e3",
+      "claim_id": "openalex:W2402700:c3",
+      "description": "we observe considerable decrease in user engagement measures, such as ... replies (32% lower; p<.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2402700:e4",
+      "claim_id": "openalex:W2402700:c4",
+      "description": "The same set of users exhibit higher expression of NA (28% higher; p<.01), possibly reflecting their mental instability and helplessness.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2402700:e5",
+      "claim_id": "openalex:W2402700:c5",
+      "description": "lower activation relative to the non-depression class (11% lower; p<.01) may indicate loneliness, restlessness, exhaustion, lack of energy, and sleep deprivation",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2402700:e6",
+      "claim_id": "openalex:W2402700:c6",
+      "description": "the presence of the first-person pronoun is considerably high (68% higher; p<.0001)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2402700:e7",
+      "claim_id": "openalex:W2402700:c7",
+      "description": "while that of 3rd person pronouns is low in posts of the users in this class (71% lower; p<.0001)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2402700:e8",
+      "claim_id": "openalex:W2402700:c8",
+      "description": "The best performing model (dimension-reduced features) in our test set yields an average accuracy of ~70% and high precision of 0.74, corresponding to the depression class.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2402700:m1",
+      "paper_id": "openalex:W2402700",
+      "name": "Crowdsourced Ground Truth Labeling",
+      "description": "Collected self-reported depression diagnosis histories and psychometric scale scores via Amazon Mechanical Turk using CES-D and BDI screening tests.",
+      "datasets": [
+        "Amazon Mechanical Turk crowdworker survey responses"
+      ],
+      "conditions": [
+        "US-located crowdworkers",
+        "approval rating >= 90%",
+        "completion time >= 2 minutes",
+        "CES-D cut-off score of 22"
+      ]
+    },
+    {
+      "id": "openalex:W2402700:m2",
+      "paper_id": "openalex:W2402700",
+      "name": "Social Media Behavioral Feature Extraction",
+      "description": "Extracted daily dynamic time-series features capturing engagement, egocentric graph metrics, LIWC affect and style, and depression topical lexicons across one year of Twitter activity.",
+      "datasets": [
+        "Twitter Firehose data"
+      ],
+      "conditions": [
+        "1 year of tweets preceding reported depression onset for positive class",
+        "1 year of tweets preceding survey date for negative class"
+      ]
+    },
+    {
+      "id": "openalex:W2402700:m3",
+      "paper_id": "openalex:W2402700",
+      "name": "SVM Predictive Modeling",
+      "description": "Trained Support Vector Machine classifiers with an RBF kernel using 188 standardized dynamic and demographic features (including PCA dimensionality reduction) to predict MDD risk.",
+      "datasets": [
+        "188-feature cohort vector dataset"
+      ],
+      "conditions": [
+        "10-fold cross validation",
+        "100 randomized experimental runs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2402700:l1",
+      "paper_id": "openalex:W2402700",
+      "text": "Prior depression research relies heavily on small, homogeneous samples and retrospective self-reports that lack temporal granularity.",
+      "normalized_category": "small-sample-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2402700:l2",
+      "paper_id": "openalex:W2402700",
+      "text": "Given limited availability of data, the authors could not confirm whether neighbors of users in the depressed class were also depressed.",
+      "normalized_category": "limited-data-availability",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2402700:f1",
+      "paper_id": "openalex:W2402700",
+      "text": "Developing scalable social media analysis methods for automated public health tracking at population scale.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2402700:f2",
+      "paper_id": "openalex:W2402700",
+      "text": "Tracking the diffusion of affective disorders, identifying crisis event trauma impacts, and modeling help-seeking behavior and suicide risk.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.048467Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

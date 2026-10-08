@@ -1,0 +1,136 @@
+{
+  "paper_id": "openalex:W2068511562",
+  "claims": [
+    {
+      "id": "openalex:W2068511562:c1",
+      "paper_id": "openalex:W2068511562",
+      "text": "The general aggression model serves as a useful theoretical framework for understanding cyberbullying.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2068511562:c2",
+      "paper_id": "openalex:W2068511562",
+      "text": "Normative beliefs about aggression are among the strongest associations with cyberbullying perpetration.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2068511562:c3",
+      "paper_id": "openalex:W2068511562",
+      "text": "Moral disengagement is among the strongest associations with cyberbullying perpetration.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2068511562:c4",
+      "paper_id": "openalex:W2068511562",
+      "text": "Stress is among the strongest associations with cyberbullying victimization.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2068511562:c5",
+      "paper_id": "openalex:W2068511562",
+      "text": "Suicidal ideation is among the strongest associations with cyberbullying victimization.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2068511562:c6",
+      "paper_id": "openalex:W2068511562",
+      "text": "Methodological and sample characteristics serve as moderators of relationships between cyberbullying and behavioral/psychological variables.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2068511562:e1",
+      "claim_id": "openalex:W2068511562:c1",
+      "description": "The general aggression model is proposed as a useful theoretical framework from which to understand this phenomenon.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2068511562:e2",
+      "claim_id": "openalex:W2068511562:c2",
+      "description": "Mixed effects meta-analysis results indicate that among the strongest associations with cyberbullying perpetration were normative beliefs about aggression",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2068511562:e3",
+      "claim_id": "openalex:W2068511562:c3",
+      "description": "Mixed effects meta-analysis results indicate that among the strongest associations with cyberbullying perpetration were... moral disengagement",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2068511562:e4",
+      "claim_id": "openalex:W2068511562:c4",
+      "description": "the strongest associations with cyberbullying victimization were stress",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2068511562:e5",
+      "claim_id": "openalex:W2068511562:c5",
+      "description": "the strongest associations with cyberbullying victimization were... suicidal ideation.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2068511562:e6",
+      "claim_id": "openalex:W2068511562:c6",
+      "description": "Several methodological and sample characteristics served as moderators of these relationships.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2068511562:m1",
+      "paper_id": "openalex:W2068511562",
+      "name": "Mixed-effects meta-analysis",
+      "description": "A meta-analytic review examining cyberbullying research among youth to synthesize relationships with behavioral and psychological variables.",
+      "datasets": [],
+      "conditions": [
+        "studies on youth cyberbullying"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2068511562:l1",
+      "paper_id": "openalex:W2068511562",
+      "text": "Existing cyberbullying literature is highly fragmented and lacks theoretical focus.",
+      "normalized_category": "lack-of-theoretical-focus",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2068511562:l2",
+      "paper_id": "openalex:W2068511562",
+      "text": "Meta-analytic associations face issues dealing with causality or directionality.",
+      "normalized_category": "causality-directionality-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2068511562:l3",
+      "paper_id": "openalex:W2068511562",
+      "text": "Generalizability is limited for meta-analytic estimates based on smaller sets of studies (k < 5).",
+      "normalized_category": "limited-generalizability-small-k",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2068511562:f1",
+      "paper_id": "openalex:W2068511562",
+      "text": "Understand the incremental impact of cyberbullying over and above traditional bullying on key behavioral and psychological outcomes.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.088098Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

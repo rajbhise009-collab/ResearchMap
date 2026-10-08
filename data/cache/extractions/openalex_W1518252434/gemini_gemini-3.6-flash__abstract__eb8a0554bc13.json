@@ -1,0 +1,54 @@
+{
+  "paper_id": "openalex:W1518252434",
+  "claims": [
+    {
+      "id": "openalex:W1518252434:c1",
+      "paper_id": "openalex:W1518252434",
+      "text": "When humans experience stress, the body activates the same physiological responses as an animal's body.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1518252434:c2",
+      "paper_id": "openalex:W1518252434",
+      "text": "Humans do not resolve psychological conflict through fighting or fleeing.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1518252434:c3",
+      "paper_id": "openalex:W1518252434",
+      "text": "Prolonged activation of the stress response causes or intensifies a range of physical and mental afflictions over time.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1518252434:e1",
+      "claim_id": "openalex:W1518252434:c1",
+      "description": "When we worry or experience stress, our body turns on the same physiological responses that an animal's does.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1518252434:e2",
+      "claim_id": "openalex:W1518252434:c2",
+      "description": "Humans do not resolve conflict in the same way as animals—through fighting or fleeing.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W1518252434:e3",
+      "claim_id": "openalex:W1518252434:c3",
+      "description": "Prolonged stress causes or intensifies a range of physical and mental afflictions, including depression, ulcers, colitis, heart disease, and more.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.098048Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

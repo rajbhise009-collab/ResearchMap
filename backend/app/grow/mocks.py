@@ -26,10 +26,11 @@ import httpx
 from backend.app.config import REPO_ROOT
 from backend.app.corpus import records
 from backend.app.extraction.batch_client import BatchJob
-from backend.app.grow.core import GROW_SLUGS, Clients, _wid, domains_dir
+from backend.app.grow.core import Clients, _wid, domains_dir, grow_slugs
 from backend.app.relationships.embeddings import MockEmbeddingClient
 
-_USAGE = {"promptTokenCount": 1800, "candidatesTokenCount": 900, "thoughtsTokenCount": 600}
+_M = int(os.environ.get("GROW_MOCK_USAGE_MULT") or 1)     # tests: make collection expensive
+_USAGE = {"promptTokenCount": 1800 * _M, "candidatesTokenCount": 900 * _M, "thoughtsTokenCount": 600 * _M}
 
 
 def _fail(kind: str) -> bool:
@@ -47,7 +48,7 @@ class MockOpenAlex:
         day = dt.date.fromisoformat(os.environ.get("GROW_DATE") or dt.date.today().isoformat())
         wk = day.toordinal() // 7
         self.week = wk
-        for n, slug in enumerate(GROW_SLUGS):
+        for n, slug in enumerate(grow_slugs()):
             self.pool[slug] = self._build_pool(slug, 9_000_000_000 + n * 100_000 + (wk % 900) * 100, wk)
             for r in records.load(slug)["records"]:
                 self.owner[_wid(r["id"])] = slug
@@ -166,10 +167,12 @@ class MockBatch:
         name, keys = st["display_name"], st["keys"]
         if "hole_confirm" in name:
             return {k: (json.dumps({"verdict": "substantive", "reason": "mock"}), _USAGE) for k in keys}
+        if "contradiction" in name:
+            return {k: (json.dumps({"relationship": "contradicts", "explanation": "mock"}), _USAGE) for k in keys}
         if "fw_match" in name:
             return {k: (json.dumps({"label": "not_addressed", "justification": "mock",
                                     "addressing_element": ""}), _USAGE) for k in keys}
-        slug = name.removeprefix("researchmap-grow-")
+        slug = name.removeprefix("researchmap-grow-").removeprefix("researchmap-")
         mirror = _first_contradiction_text(slug)
         return {k: (json.dumps(_extraction(k, mirror if i == 0 else None)), _USAGE)
                 for i, k in enumerate(keys)}
@@ -202,7 +205,7 @@ class MockEmbed(MockEmbeddingClient):
         super().__init__(dim=768)
         from backend.app.corpus import multi_domain_reason as R
         self.by_text: dict[str, list[float]] = {}
-        for slug in GROW_SLUGS:
+        for slug in grow_slugs():
             cp = R._embedding_cache_path(slug)
             cache = json.loads(cp.read_text()) if cp.exists() else {}
             for e in R.load_extractions(slug):

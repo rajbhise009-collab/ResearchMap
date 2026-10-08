@@ -1,0 +1,80 @@
+{
+  "paper_id": "openalex:W2137810726",
+  "claims": [
+    {
+      "id": "openalex:W2137810726:c1",
+      "paper_id": "openalex:W2137810726",
+      "text": "Mixed findings exist in the literature regarding the role social media plays in fostering social connectedness in young people.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2137810726:c2",
+      "paper_id": "openalex:W2137810726",
+      "text": "Online tools elevate the ease with which individuals form and create online groups and communities.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2137810726:c3",
+      "paper_id": "openalex:W2137810726",
+      "text": "Online tools can create a source of alienation and ostracism for adolescents.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2137810726:c4",
+      "paper_id": "openalex:W2137810726",
+      "text": "Online tools create a paradox for adolescent social connectedness.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2137810726:e1",
+      "claim_id": "openalex:W2137810726:c1",
+      "description": "Mixed findings are reported regarding the role that social media plays in fostering social connectedness, which suggests that young people may experience both positive and negative psychological outcomes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2137810726:e2",
+      "claim_id": "openalex:W2137810726:c2",
+      "description": "On one hand, they elevate the ease in which individuals may form and create online groups and communities...",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2137810726:e3",
+      "claim_id": "openalex:W2137810726:c3",
+      "description": "...but on the other, they can create a source of alienation and ostracism.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2137810726:e4",
+      "claim_id": "openalex:W2137810726:c4",
+      "description": "As a result, this article argues that online tools create a paradox for social connectedness.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2137810726:m1",
+      "paper_id": "openalex:W2137810726",
+      "name": "Critical Literature Review",
+      "description": "A critical review of literature examining how social media use affects social connectedness across sense of belonging, psychosocial wellbeing, and identity development.",
+      "datasets": [],
+      "conditions": [
+        "Adolescent social media use",
+        "Assessment of social connectedness"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.076069Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

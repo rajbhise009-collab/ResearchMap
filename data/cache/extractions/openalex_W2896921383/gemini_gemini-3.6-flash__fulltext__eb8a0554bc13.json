@@ -1,0 +1,187 @@
+{
+  "paper_id": "openalex:W2896921383",
+  "claims": [
+    {
+      "id": "openalex:W2896921383:c1",
+      "paper_id": "openalex:W2896921383",
+      "text": "After 1 hour per day of screen use, higher daily screen time is associated with lower psychological well-being among children and adolescents aged 2 to 17.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2896921383:c2",
+      "paper_id": "openalex:W2896921383",
+      "text": "Non-users and low users (1 hour per day) of screens generally do not differ in psychological well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2896921383:c3",
+      "paper_id": "openalex:W2896921383",
+      "text": "Associations between screen time and lower psychological well-being are larger among adolescents than among younger children.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2896921383:c4",
+      "paper_id": "openalex:W2896921383",
+      "text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to ever have been diagnosed with depression (RR 2.39).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2896921383:c5",
+      "paper_id": "openalex:W2896921383",
+      "text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to ever have been diagnosed with anxiety (RR 2.26).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2896921383:c6",
+      "paper_id": "openalex:W2896921383",
+      "text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to have been treated by a mental health professional in the last 12 months (RR 2.22).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2896921383:c7",
+      "paper_id": "openalex:W2896921383",
+      "text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to have taken medication for a psychological or behavioral issue in the last 12 months (RR 2.99).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2896921383:c8",
+      "paper_id": "openalex:W2896921383",
+      "text": "Moderate use of screens (4 hours per day vs 1 hour per day) is associated with lower psychological well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2896921383:e1",
+      "claim_id": "openalex:W2896921383:c1",
+      "description": "After 1 h/day of use, more hours of daily screen time were associated with lower psychological well-being, including less curiosity, lower self-control, more distractibility, more difficulty making friends, less emotional stability, being more difficult to care for, and inability to finish tasks.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2896921383:e2",
+      "claim_id": "openalex:W2896921383:c2",
+      "description": "Non-users and low users of screens generally did not differ in well-being.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2896921383:e3",
+      "claim_id": "openalex:W2896921383:c3",
+      "description": "Associations between screen time and lower psychological well-being were larger among adolescents than younger children.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2896921383:e4",
+      "claim_id": "openalex:W2896921383:c4",
+      "description": "Among 14- to 17-year-olds, high users of screens (7+ h/day vs. low users of 1 h/day) were more than twice as likely to ever have been diagnosed with depression (RR 2.39, 95% CI 1.54, 3.70).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2896921383:e5",
+      "claim_id": "openalex:W2896921383:c5",
+      "description": "Among 14- to 17-year-olds, high users of screens (7+ h/day vs. low users of 1 h/day) were more than twice as likely to ever have been diagnosed with anxiety (RR 2.26, CI 1.59, 3.22).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2896921383:e6",
+      "claim_id": "openalex:W2896921383:c6",
+      "description": "Among 14- to 17-year-olds, high users of screens (7+ h/day vs. low users of 1 h/day) were more than twice as likely to have been treated by a mental health professional (RR 2.22, CI 1.62, 3.03) in the last 12 months.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2896921383:e7",
+      "claim_id": "openalex:W2896921383:c7",
+      "description": "Among 14- to 17-year-olds, high users of screens (7+ h/day vs. low users of 1 h/day) were more than twice as likely to have taken medication for a psychological or behavioral issue (RR 2.99, CI 1.94, 4.62) in the last 12 months.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2896921383:e8",
+      "claim_id": "openalex:W2896921383:c8",
+      "description": "Moderate use of screens (4 h/day) was also associated with lower psychological well-being.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2896921383:m1",
+      "paper_id": "openalex:W2896921383",
+      "name": "Cross-sectional survey analysis of 2016 NSCH data",
+      "description": "Analyzed caregiver reports from a nationally representative random sample of US children aged 2 to 17, examining associations between daily screen time categories and measures of psychological well-being with demographic controls.",
+      "datasets": [
+        "National Survey of Children's Health (NSCH) 2016"
+      ],
+      "conditions": [
+        "Caregivers of children aged 2 to 17",
+        "Excluded children with 8 major conditions (autism, blindness, cerebral palsy, deafness, Down Syndrome, developmental delay, epilepsy, intellectual disability)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2896921383:l1",
+      "paper_id": "openalex:W2896921383",
+      "text": "Previous research exploring associations between screen time and psychological well-being among children and adolescents has been inconsistent.",
+      "normalized_category": "inconsistent-prior-literature",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2896921383:l2",
+      "paper_id": "openalex:W2896921383",
+      "text": "Screen time was reported by caregivers and not the children or adolescents themselves, likely resulting in underestimates of screen time.",
+      "normalized_category": "informant-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2896921383:l3",
+      "paper_id": "openalex:W2896921383",
+      "text": "Due to the cross-sectional design of the study, it is not possible to determine causality between screen time and low psychological well-being.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2896921383:l4",
+      "paper_id": "openalex:W2896921383",
+      "text": "The survey assessed only weekday screen time and excluded weekend screen time.",
+      "normalized_category": "incomplete-exposure-measurement",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2896921383:l5",
+      "paper_id": "openalex:W2896921383",
+      "text": "The survey items combined TV and electronic games into one question, preventing differentiation between legacy media and digital media.",
+      "normalized_category": "aggregated-measurement-items",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2896921383:f1",
+      "paper_id": "openalex:W2896921383",
+      "text": "Public health organizations should consider extending specific screen time limit recommendations to preteens and teens.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2896921383:f2",
+      "paper_id": "openalex:W2896921383",
+      "text": "Healthcare providers should assess screen time during clinical evaluations to identify children and adolescents at higher risk for mental health issues.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.052193Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,112 @@
+{
+  "paper_id": "openalex:W2128839620",
+  "claims": [
+    {
+      "id": "openalex:W2128839620:c1",
+      "paper_id": "openalex:W2128839620",
+      "text": "Clinical diagnosis and treatment of child and adolescent psychiatric disorders increased over recent decades.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2128839620:c2",
+      "paper_id": "openalex:W2128839620",
+      "text": "Epidemiological comparisons of unselected population cohorts using equivalent assessments find little evidence of an increased rate of ADHD.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2128839620:c3",
+      "paper_id": "openalex:W2128839620",
+      "text": "There is substantial secular change in emotional problems in high-income countries, including periods of increase and decrease in symptom prevalence.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2128839620:c4",
+      "paper_id": "openalex:W2128839620",
+      "text": "There is substantial secular change in antisocial behaviour in high-income countries, including periods of increase and decrease in symptom prevalence.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2128839620:c5",
+      "paper_id": "openalex:W2128839620",
+      "text": "Cross-cohort comparisons can provide valuable complementary information on the aetiology of mental illness.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2128839620:e1",
+      "claim_id": "openalex:W2128839620:c1",
+      "description": "Clinical diagnosis and treatment of child and adolescent psychiatric disorders increased over recent decades.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2128839620:e2",
+      "claim_id": "openalex:W2128839620:c2",
+      "description": "Epidemiological comparisons of unselected population cohorts using equivalent assessments of mental health have found little evidence of an increased rate of ADHD.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2128839620:e3",
+      "claim_id": "openalex:W2128839620:c3",
+      "description": "Findings do suggest substantial secular change in emotional problems and antisocial behaviour in high-income countries, including periods of increase and decrease in symptom prevalence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2128839620:e4",
+      "claim_id": "openalex:W2128839620:c4",
+      "description": "Findings do suggest substantial secular change in emotional problems and antisocial behaviour in high-income countries, including periods of increase and decrease in symptom prevalence.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2128839620:e5",
+      "claim_id": "openalex:W2128839620:c5",
+      "description": "The review also addresses how cross-cohort comparisons can provide valuable complementary information on the aetiology of mental illness.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2128839620:m1",
+      "paper_id": "openalex:W2128839620",
+      "name": "Systematic literature review of epidemiological cross-cohort comparisons",
+      "description": "Evaluates population prevalence trends in child and adolescent mental health problems using systematic searches of cross-cohort epidemiological literature.",
+      "datasets": [
+        "Web of Knowledge database"
+      ],
+      "conditions": [
+        "epidemiological cross-cohort comparisons",
+        "equivalent assessments of mental health",
+        "unselected population cohorts"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2128839620:l1",
+      "paper_id": "openalex:W2128839620",
+      "text": "Cross-cohort comparisons of rates of ASD are lacking at this time.",
+      "normalized_category": "lack-of-cross-cohort-asd-data",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2128839620:l2",
+      "paper_id": "openalex:W2128839620",
+      "text": "Evidence from low- and middle-income countries is very limited.",
+      "normalized_category": "limited-lmic-geographic-coverage",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.099876Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

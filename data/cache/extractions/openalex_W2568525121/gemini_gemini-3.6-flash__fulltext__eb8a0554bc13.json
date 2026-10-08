@@ -1,0 +1,160 @@
+{
+  "paper_id": "openalex:W2568525121",
+  "claims": [
+    {
+      "id": "openalex:W2568525121:c1",
+      "paper_id": "openalex:W2568525121",
+      "text": "4.5% of Hungarian adolescents in a nationally representative sample were classified as at-risk for problematic social media use based on latent profile analysis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568525121:c2",
+      "paper_id": "openalex:W2568525121",
+      "text": "Adolescents at-risk of problematic social media use report significantly lower self-esteem compared to non-risk and low-risk peers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568525121:c3",
+      "paper_id": "openalex:W2568525121",
+      "text": "Adolescents at-risk of problematic social media use report significantly higher levels of depressive symptoms compared to non-risk and low-risk peers.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568525121:c4",
+      "paper_id": "openalex:W2568525121",
+      "text": "Female adolescents report significantly higher weekly time spent on social media than male adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568525121:c5",
+      "paper_id": "openalex:W2568525121",
+      "text": "A cut-off score of 19 on the Bergen Social Media Addiction Scale yields 83% sensitivity and 99% specificity for classifying adolescents at-risk of problematic social media use.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2568525121:c6",
+      "paper_id": "openalex:W2568525121",
+      "text": "The single-factor structure of the Bergen Social Media Addiction Scale demonstrated acceptable structural model fit in adolescent survey data.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2568525121:e1",
+      "claim_id": "openalex:W2568525121:c1",
+      "description": "Using the Bergen Social Media Addiction Scale (BSMAS) and based on latent profile analysis, 4.5% of the adolescents belonged to the at-risk group.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568525121:e2",
+      "claim_id": "openalex:W2568525121:c2",
+      "description": "At-risk class self-esteem mean was 2.44 compared to 2.54 in low-risk and 2.79 in no-risk classes (Wald χ2 = 155.10, p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568525121:e3",
+      "claim_id": "openalex:W2568525121:c3",
+      "description": "At-risk class depressive symptoms mean was 2.36 compared to 2.16 in low-risk and 1.85 in no-risk classes (Wald χ2 = 210.12, p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568525121:e4",
+      "claim_id": "openalex:W2568525121:c4",
+      "description": "Mean weekly social media use was 25.71 hours for females versus 20.53 hours for males (U = 3,672,101, p < 0.001; r = -0.17).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568525121:e5",
+      "claim_id": "openalex:W2568525121:c5",
+      "description": "At a cut-off score of 19 points, BSMAS sensitivity was 83%, specificity was 99%, positive predictive value was 73%, negative predictive value was 99%, and overall accuracy was 98%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2568525121:e6",
+      "claim_id": "openalex:W2568525121:c6",
+      "description": "Confirmatory factor analysis for the one-factor BSMAS yielded χ2 = 5836.190 (df = 15, p < 0.001), CFI = 0.950, TLI = 0.917, RMSEA = 0.073, and SRMR = 0.034.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2568525121:m1",
+      "paper_id": "openalex:W2568525121",
+      "name": "BSMAS Latent Profile and Factor Analysis",
+      "description": "Cross-sectional survey of adolescents evaluating BSMAS psychometric properties via Confirmatory Factor Analysis and identifying risk profiles using Latent Profile Analysis.",
+      "datasets": [
+        "European School Survey Project on Alcohol and Other Drugs (ESPAD) Hungary 2015 dataset"
+      ],
+      "conditions": [
+        "Nationally representative sample of Hungarian adolescents (N = 5,961)",
+        "Weighted strata sampling",
+        "Self-report measures (BSMAS, RSES-HU, CES-D)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2568525121:l1",
+      "paper_id": "openalex:W2568525121",
+      "text": "Prior research lacks consensual definitions and validated psychometric scales to assess problematic social media use, often relying on platform-specific scales or non-representative samples.",
+      "normalized_category": "lack-of-standardized-definition",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2568525121:l2",
+      "paper_id": "openalex:W2568525121",
+      "text": "The sample was limited strictly to Hungarian adolescents, limiting direct cross-cultural generalizability.",
+      "normalized_category": "geographic-sample-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2568525121:l3",
+      "paper_id": "openalex:W2568525121",
+      "text": "Data were collected via self-report measures, which are susceptible to memory recall bias, social desirability bias, and extreme response styles.",
+      "normalized_category": "self-report-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2568525121:l4",
+      "paper_id": "openalex:W2568525121",
+      "text": "The study utilized a cross-sectional design, which prevents establishing causal relationships between risk factors and problematic social media use.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2568525121:l5",
+      "paper_id": "openalex:W2568525121",
+      "text": "Participants may have included non-social networking activities (e.g., gaming or gambling on social platforms) in their subjective conception of social media use while taking the BSMAS.",
+      "normalized_category": "construct-misinterpretation-risk",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2568525121:f1",
+      "paper_id": "openalex:W2568525121",
+      "text": "Conduct cross-cultural studies in different countries to further evaluate the psychometric properties of the BSMAS across diverse adolescent populations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2568525121:f2",
+      "paper_id": "openalex:W2568525121",
+      "text": "Apply longitudinal study designs to determine causality and identify contributing developmental factors of problematic social media use.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.055040Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

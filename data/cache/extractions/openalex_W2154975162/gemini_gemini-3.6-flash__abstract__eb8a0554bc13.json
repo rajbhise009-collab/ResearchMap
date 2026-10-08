@@ -1,0 +1,77 @@
+{
+  "paper_id": "openalex:W2154975162",
+  "claims": [
+    {
+      "id": "openalex:W2154975162:c1",
+      "paper_id": "openalex:W2154975162",
+      "text": "An experimentally-induced increase in Facebook status updating activity reduces loneliness.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2154975162:c2",
+      "paper_id": "openalex:W2154975162",
+      "text": "The decrease in loneliness from status updating is mediated by participants feeling more connected to their friends on a daily basis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2154975162:c3",
+      "paper_id": "openalex:W2154975162",
+      "text": "The effect of posting status updates on loneliness is independent of receiving direct social feedback from friends.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2154975162:e1",
+      "claim_id": "openalex:W2154975162:c1",
+      "description": "Results revealed that the experimentally-induced increase in status updating activity reduced loneliness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2154975162:e2",
+      "claim_id": "openalex:W2154975162:c2",
+      "description": "Results revealed that the decrease in loneliness was due to participants feeling more connected to their friends on a daily basis.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2154975162:e3",
+      "claim_id": "openalex:W2154975162:c3",
+      "description": "Results revealed that the effect of posting on loneliness was independent of direct social feedback (i.e. responses) by friends.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2154975162:m1",
+      "paper_id": "openalex:W2154975162",
+      "name": "One-Week Facebook Status Updating Experiment",
+      "description": "A controlled experiment where participants were randomly assigned to post more status updates than usual or receive no instructions, with protocol compliance tracked via a lab Facebook Research Profile.",
+      "datasets": [
+        "Facebook status update logs and responses",
+        "Daily psychological survey responses"
+      ],
+      "conditions": [
+        "Experimental condition: instructed to post status updates more than usual for one week",
+        "Control condition: received no posting instructions"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2154975162:l1",
+      "paper_id": "openalex:W2154975162",
+      "text": "Prior research on the psychological consequences of online social networking lacks empirical evidence and causally-conclusive experimental design.",
+      "normalized_category": "lack-of-causal-evidence",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.068255Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

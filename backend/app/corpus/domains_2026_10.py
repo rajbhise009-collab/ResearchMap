@@ -192,25 +192,58 @@ DEEP_RL = DomainConfig(
         'reproducible OR benchmark OR "evaluation protocol" OR "statistical significance" OR "random seeds" OR '
         'hyperparameter OR "continuous control"),type:article|preprint,publication_year:>2015'),
     anchor_terms=("reinforcement learning", "deep rl", "policy gradient", "q-learning", "actor-critic"),
-    topic_terms=("reproducibility", "reproducible", "benchmark", "evaluation", "variance", "random seeds",
-                 "hyperparameters", "significance", "generalization", "generalisation"),
+    # Fixed once after the blind audit (2026-10-09, in/out agreement 53%):
+    # "generalization"/"evaluation" in a title and the ML-venue rescue let RL
+    # method papers in. Topic and pair terms are now evaluation and
+    # reproducibility practice only; no venue rescue.
+    topic_terms=("reproducibility", "reproducible", "benchmarking", "benchmark suite", "evaluation protocol",
+                 "statistical significance", "random seeds", "reliable evaluation", "hyperparameter sensitivity",
+                 "implementation details"),
     strong_topic_terms=("deep reinforcement learning", "deep rl", "proximal policy optimization",
                         "soft actor-critic", "deep q-network", "policy optimization", "continuous control",
                         "mujoco", "atari"),
     pair_terms=("reproducibility", "reproducible", "random seeds", "statistical significance",
                 "evaluation protocol", "evaluation methodology", "variance across runs", "hyperparameter sensitivity",
-                "implementation details", "confidence intervals", "reliable evaluation", "benchmarking",
-                "performance comparison", "replicate", "replication"),
+                "implementation details", "confidence intervals", "reliable evaluation", "replication"),
     require_pair_in_title_or_sentence=True,
-    venue_allowlist=("neural information processing systems", "neurips", "international conference on machine learning",
-                     "icml", "iclr", "aaai", "journal of machine learning research", "transactions on machine learning research"),
+    venue_allowlist=(),
     venue_denylist=("physical review", "chemistry"),
     field_allowlist=("computer science", "engineering", "mathematics"),
     field_denylist=("chemistry", "materials science", "physics and astronomy", "medicine", "earth and planetary sciences"),
 )
 
+MICROPLASTICS = DomainConfig(
+    slug="microplastics-health",
+    name="Microplastics and human health",
+    seed_filter=(
+        'title_and_abstract.search:(microplastic OR microplastics OR nanoplastic OR nanoplastics) AND ("human health" '
+        'OR "human exposure" OR toxicity OR "health risk" OR "risk assessment" OR placenta OR blood),'
+        'type:article|preprint,publication_year:>2014'),
+    anchor_terms=("microplastic", "microplastics", "nanoplastic", "nanoplastics", "plastic particles"),
+    # Fixed once after the blind audit (2026-10-09, in/out agreement 60%):
+    # "toxicity", "oxidative stress" and "inflammation" let fish and zebrafish
+    # toxicity in as core. Topic and pair terms are now human exposure and
+    # human health only.
+    topic_terms=("human health", "human exposure", "humans", "health risk", "drinking water", "seafood",
+                 "placenta", "human blood", "human body", "food"),
+    strong_topic_terms=("microplastic", "microplastics", "nanoplastic", "nanoplastics", "micro- and nanoplastics",
+                        "plastic particles"),
+    pair_terms=("human health", "human exposure", "human health risk", "human risk assessment", "human cells",
+                "human tissue", "human tissues", "human blood", "human placenta", "human body", "human intake",
+                "dietary exposure", "inhalation exposure", "drinking water", "table salt", "seafood consumption",
+                "food consumption", "exposure to humans", "detected in human"),
+    require_pair_in_title_or_sentence=True,
+    venue_allowlist=("environmental science & technology", "environment international", "science of the total environment",
+                     "journal of hazardous materials", "environmental health perspectives", "nature", "science"),
+    venue_denylist=("physical review",),
+    field_allowlist=("environmental science", "medicine", "pharmacology, toxicology and pharmaceutics",
+                     "biochemistry, genetics and molecular biology", "chemistry"),
+    field_denylist=("physics and astronomy", "mathematics", "computer science", "economics, econometrics and finance"),
+)
+
 ALL = {"social-media": SOCIAL_MEDIA, "nudges": NUDGES, "minwage": MINIMUM_WAGE,
-       "ego": EGO_DEPLETION, "mindset": GROWTH_MINDSET, "deeprl": DEEP_RL}
+       "ego": EGO_DEPLETION, "mindset": GROWTH_MINDSET, "deeprl": DEEP_RL,
+       "microplastics": MICROPLASTICS}
 
 # Health or social domains carry a plain "not advice" note, as Diet does.
 NOT_ADVICE = {
@@ -222,4 +255,6 @@ NOT_ADVICE = {
     "ego-depletion": None,
     "growth-mindset": "Research-literature analysis, not educational or parenting advice.",
     "deep-rl-reproducibility": None,
+    "microplastics-health": ("Research-literature analysis, not medical or exposure advice. Take health "
+                             "concerns to a clinician."),
 }

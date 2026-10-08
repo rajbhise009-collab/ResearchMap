@@ -1,0 +1,66 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "labels": {
+  "W3008632805": {
+   "label": "on-domain",
+   "why": "German minimum wage: wages, employment, reallocation"
+  },
+  "W3125512578": {
+   "label": "off-domain",
+   "why": "econometric method"
+  },
+  "W2049844255": {
+   "label": "off-domain",
+   "why": "urban sociology"
+  },
+  "W1604935828": {
+   "label": "on-domain",
+   "why": "minimum wage and youth employment"
+  },
+  "W2095516703": {
+   "label": "off-domain",
+   "why": "wage-distribution decomposition method"
+  },
+  "W2118844622": {
+   "label": "on-domain",
+   "why": "UK wages councils: dispersion and employment"
+  },
+  "W2890705475": {
+   "label": "off-domain",
+   "why": "short-term rental regulation"
+  },
+  "W2320014267": {
+   "label": "off-domain",
+   "why": "recession employment, housing wealth"
+  },
+  "W3121343181": {
+   "label": "on-domain",
+   "why": "research designs for minimum-wage studies"
+  },
+  "W2023936086": {
+   "label": "off-domain",
+   "why": "unemployment insurance"
+  },
+  "W1549833036": {
+   "label": "off-domain",
+   "why": "technology and jobs"
+  },
+  "W3125353260": {
+   "label": "borderline",
+   "why": "training in imperfect labour markets; minimum wage an application"
+  },
+  "W2009729418": {
+   "label": "off-domain",
+   "why": "statistical pitfall"
+  },
+  "W3122337130": {
+   "label": "on-domain",
+   "why": "minimum wage, youth employment and earnings"
+  },
+  "W2150372434": {
+   "label": "off-domain",
+   "why": "marriage attitudes"
+  }
+ }
+}

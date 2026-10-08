@@ -1,0 +1,127 @@
+{
+  "paper_id": "openalex:W2153813098",
+  "claims": [
+    {
+      "id": "openalex:W2153813098:c1",
+      "paper_id": "openalex:W2153813098",
+      "text": "Depression rates in children born between 1965 and 1996 showed no effect of year of birth.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2153813098:c2",
+      "paper_id": "openalex:W2153813098",
+      "text": "The overall prevalence estimate of depression for children under age 13 is 2.8%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2153813098:c3",
+      "paper_id": "openalex:W2153813098",
+      "text": "The overall prevalence estimate of depression for adolescents aged 13 to 18 is 5.6%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2153813098:c4",
+      "paper_id": "openalex:W2153813098",
+      "text": "The overall prevalence estimate of depression for girls aged 13 to 18 is 5.9%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2153813098:c5",
+      "paper_id": "openalex:W2153813098",
+      "text": "The overall prevalence estimate of depression for boys aged 13 to 18 is 4.6%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2153813098:c6",
+      "paper_id": "openalex:W2153813098",
+      "text": "There is no evidence for an increased prevalence of child or adolescent depression over the past 30 years when concurrent assessment is used.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2153813098:e1",
+      "claim_id": "openalex:W2153813098:c1",
+      "description": "Rates of depression showed no effect of year of birth in a meta-analysis of close to 60,000 observations.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2153813098:e2",
+      "claim_id": "openalex:W2153813098:c2",
+      "description": "The overall prevalence estimates were: under 13, 2.8% (standard error .5%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2153813098:e3",
+      "claim_id": "openalex:W2153813098:c3",
+      "description": "The overall prevalence estimates were: 13-18, 5.6% (standard error .3%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2153813098:e4",
+      "claim_id": "openalex:W2153813098:c4",
+      "description": "The overall prevalence estimates were: 13-18 girls: 5.9% (standard error .3%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2153813098:e5",
+      "claim_id": "openalex:W2153813098:c5",
+      "description": "The overall prevalence estimates were: 13-18 boys: 4.6% (standard error .3%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2153813098:e6",
+      "claim_id": "openalex:W2153813098:c6",
+      "description": "When concurrent assessment rather than retrospective recall is used, there is no evidence for an increased prevalence of child or adolescent depression over the past 30 years.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2153813098:m1",
+      "paper_id": "openalex:W2153813098",
+      "name": "Epidemiologic Meta-Analysis",
+      "description": "Systematic review and meta-analysis of epidemiologic studies using structured diagnostic interviews to assess formal depression diagnoses on representative population samples, controlling for age, sex, sample size, taxonomy, measurement instrument, and interview time-frame.",
+      "datasets": [
+        "26 epidemiologic studies",
+        "Close to 60,000 observations on children born between 1965 and 1996"
+      ],
+      "conditions": [
+        "Structured diagnostic interviews",
+        "Representative population samples up to age 18",
+        "Formal diagnoses of depression"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2153813098:l1",
+      "paper_id": "openalex:W2153813098",
+      "text": "Prior claims of an epidemic relied on retrospective recall by successive birth cohorts of adults.",
+      "normalized_category": "retrospective-recall-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2153813098:l2",
+      "paper_id": "openalex:W2153813098",
+      "text": "Child and adolescent depression was long under-diagnosed by clinicians in past practice.",
+      "normalized_category": "historical-underdiagnosis",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.097433Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

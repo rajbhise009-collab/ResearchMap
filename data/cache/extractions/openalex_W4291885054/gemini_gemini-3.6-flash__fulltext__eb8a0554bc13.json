@@ -1,0 +1,133 @@
+{
+  "paper_id": "openalex:W4291885054",
+  "claims": [
+    {
+      "id": "openalex:W4291885054:c1",
+      "paper_id": "openalex:W4291885054",
+      "text": "Depression was identified as a social media health-related risk in 19 out of 68 reviewed reports (27.9%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4291885054:c2",
+      "paper_id": "openalex:W4291885054",
+      "text": "Diet-associated problems were identified as a social media health-related risk in 15 out of 68 reviewed reports (22.1%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4291885054:c3",
+      "paper_id": "openalex:W4291885054",
+      "text": "Cyberbullying was identified as a social media health-related risk in 15 out of 68 reviewed reports (22.1%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4291885054:c4",
+      "paper_id": "openalex:W4291885054",
+      "text": "Psychological problems were identified as a social media health-related risk in 14 out of 68 reviewed reports (20.6%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4291885054:c5",
+      "paper_id": "openalex:W4291885054",
+      "text": "Sleep-related problems were identified as a social media health-related risk in 13 out of 68 reviewed reports (19.1%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4291885054:e1",
+      "claim_id": "openalex:W4291885054:c1",
+      "description": "Depression was argued in 19 reports, being the main topic found (27.9% of the whole study).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4291885054:e2",
+      "claim_id": "openalex:W4291885054:c2",
+      "description": "Diet associated problems were discussed in 15 reports (22.1% of the total 68 reports analyzed).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4291885054:e3",
+      "claim_id": "openalex:W4291885054:c3",
+      "description": "Cyberbullying was discussed in 15 reports (22.1% of the total 68 reports analyzed).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4291885054:e4",
+      "claim_id": "openalex:W4291885054:c4",
+      "description": "Psychological problems were discussed in 14 reports (20.6% of the total 68 reports analyzed).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4291885054:e5",
+      "claim_id": "openalex:W4291885054:c5",
+      "description": "Sleep related problems were discussed in 13 reports (19.1% of the total 68 reports analyzed).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4291885054:m1",
+      "paper_id": "openalex:W4291885054",
+      "name": "PRISMA Scoping Review",
+      "description": "A scoping review following PRISMA Extension guidelines conducted on PubMed to evaluate health risks of social media in children and adolescents under 18 years.",
+      "datasets": [
+        "PubMed database"
+      ],
+      "conditions": [
+        "Search terms: social media, social network, health, pediatrics",
+        "Target population: children and adolescents under 18 years old",
+        "Publication year: 2004 to January 23, 2022",
+        "Language: English only"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4291885054:l1",
+      "paper_id": "openalex:W4291885054",
+      "text": "The existing literature does not allow establishing causality between social media use and internalizing or behavioral problems versus reverse directionality.",
+      "normalized_category": "causality-establishment-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4291885054:l2",
+      "paper_id": "openalex:W4291885054",
+      "text": "The included articles vary significantly in study design (ranging from systematic reviews to clinical studies, letters, and editorials), making accurate comparison difficult.",
+      "normalized_category": "study-heterogeneity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4291885054:l3",
+      "paper_id": "openalex:W4291885054",
+      "text": "The literature search was limited exclusively to PubMed and excluded non-English reports.",
+      "normalized_category": "search-scope-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4291885054:f1",
+      "paper_id": "openalex:W4291885054",
+      "text": "Development of targeted prevention measures by health practitioners, caregivers, and application developers to protect pediatric populations from social media risks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4291885054:f2",
+      "paper_id": "openalex:W4291885054",
+      "text": "Implementation of screening protocols during periodic pediatric check-ups to assess the amount and content of social media exposure.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.067755Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,66 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "labels": {
+  "W2781585732": {
+   "label": "on-domain",
+   "why": "benchmark suite design"
+  },
+  "W2101355568": {
+   "label": "off-domain",
+   "why": "representation method"
+  },
+  "W2891790128": {
+   "label": "on-domain",
+   "why": "evaluating generalisation via procedural levels"
+  },
+  "W2151210636": {
+   "label": "off-domain",
+   "why": "Atari method"
+  },
+  "W2342662072": {
+   "label": "on-domain",
+   "why": "benchmarking deep RL"
+  },
+  "W3048094199": {
+   "label": "off-domain",
+   "why": "network fingerprinting"
+  },
+  "W2151554678": {
+   "label": "off-domain",
+   "why": "optimisation theory"
+  },
+  "W1499669280": {
+   "label": "off-domain",
+   "why": "policy search method"
+  },
+  "W2747402019": {
+   "label": "on-domain",
+   "why": "reproducibility of benchmarked tasks"
+  },
+  "W2916826721": {
+   "label": "on-domain",
+   "why": "evaluation practice: generalisation"
+  },
+  "W2810785043": {
+   "label": "off-domain",
+   "why": "robot grasping method"
+  },
+  "W2624780181": {
+   "label": "off-domain",
+   "why": "transfer method"
+  },
+  "W4383112908": {
+   "label": "off-domain",
+   "why": "transfer survey"
+  },
+  "W3015437096": {
+   "label": "off-domain",
+   "why": "representation method"
+  },
+  "W2726187156": {
+   "label": "off-domain",
+   "why": "locomotion results"
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "paper_id": "openalex:W2439026984",
+  "claims": [
+    {
+      "id": "openalex:W2439026984:c1",
+      "paper_id": "openalex:W2439026984",
+      "text": "Online social networking is adversely associated with self-reported mental problems among Korean students.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2439026984:c2",
+      "paper_id": "openalex:W2439026984",
+      "text": "Online social networking is adversely associated with suicidal thought among Korean students.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2439026984:e1",
+      "claim_id": "openalex:W2439026984:c1",
+      "description": "Hierarchical linear models analyzing Wave 4 and Wave 5 of the Korean Youth Panel Survey show an adverse association between online social networking and self-reported mental problems while controlling for time-lagged variables.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2439026984:e2",
+      "claim_id": "openalex:W2439026984:c2",
+      "description": "Hierarchical linear models analyzing Wave 4 and Wave 5 of the Korean Youth Panel Survey show an adverse association between online social networking and suicidal thought while controlling for time-lagged variables.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2439026984:m1",
+      "paper_id": "openalex:W2439026984",
+      "name": "Hierarchical Linear Modeling on Longitudinal Panel Data",
+      "description": "Hierarchical linear models were estimated on longitudinal panel data to probe the psychological effects of time spent online while holding constant time-lagged control variables at student and school levels.",
+      "datasets": [
+        "Korean Youth Panel Survey (KYPS) Wave 4",
+        "Korean Youth Panel Survey (KYPS) Wave 5"
+      ],
+      "conditions": [
+        "individual (student) level time-lagged control variables",
+        "contextual (school) level time-lagged control variables"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2439026984:l1",
+      "paper_id": "openalex:W2439026984",
+      "text": "The bulk of previous research on the pros and cons of online social media use is based on cross-sectional data, thereby precluding causal inference.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.085814Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

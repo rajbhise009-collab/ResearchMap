@@ -1,0 +1,69 @@
+{
+  "paper_id": "openalex:W2017596542",
+  "claims": [
+    {
+      "id": "openalex:W2017596542:c1",
+      "paper_id": "openalex:W2017596542",
+      "text": "Frequent Facebook interaction is directly associated with greater psychological distress.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2017596542:c2",
+      "paper_id": "openalex:W2017596542",
+      "text": "Frequent Facebook interaction is indirectly associated with greater psychological distress via a two-step pathway that increases communication overload and reduces self-esteem.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2017596542:c3",
+      "paper_id": "openalex:W2017596542",
+      "text": "Communication overload mediates the psychological distress and mental health implications of social media interaction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2017596542:e1",
+      "claim_id": "openalex:W2017596542:c1",
+      "description": "Structural equation modeling on a survey of 513 college students demonstrated a direct relationship between frequent Facebook interaction and higher psychological distress.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2017596542:e2",
+      "claim_id": "openalex:W2017596542:c2",
+      "description": "Structural equation modeling confirmed a two-step mediation pathway where frequent Facebook interaction raises communication overload, which in turn lowers self-esteem and leads to distress.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2017596542:e3",
+      "claim_id": "openalex:W2017596542:c3",
+      "description": "Structural equation model analysis assessed communication overload as an underlying mechanism linking Facebook interaction to mental health outcomes in N=513 college students.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2017596542:m1",
+      "paper_id": "openalex:W2017596542",
+      "name": "Structural Equation Modeling",
+      "description": "Used structural equation modeling on survey data from college students to assess direct and mediating pathways between social media interaction and psychological distress.",
+      "datasets": [
+        "Survey of college students (N=513)"
+      ],
+      "conditions": [
+        "Facebook interaction",
+        "Communication overload",
+        "Self-esteem"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.082373Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

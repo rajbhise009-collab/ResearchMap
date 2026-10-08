@@ -629,8 +629,8 @@ PRIVACY_NOTE = {
 }
 
 # Multi-library manifest — the one place a user-facing view learns that
-# other libraries exist. Kept in sync with
-# backend/app/api/multi_library_export.py::LIBRARIES; anything visible
+# other libraries exist. Built from data/library_registry.json (the same
+# source as backend/app/api/multi_library_export.py); anything visible
 # to the reader lives here so the translation-layer honesty tests can
 # police it.
 def _site_name() -> str:
@@ -659,36 +659,12 @@ LIBRARIES_NOTE = {
         "to switch, use the picker at the top of the page or append "
         "?lib=<slug> to any URL (?lib= wins over the stored choice)."
     ),
+    # Built libraries, in registry order (data/library_registry.json).
     "items": [
-        {
-            "slug": "llm-calibration",
-            "name": "Language-model reliability",
-            "n_papers": 113,
-            "note": "The oldest, most-scored library in the project.",
-        },
-        {
-            "slug": "diet-and-mortality",
-            "name": "Diet and all-cause mortality",
-            "n_papers": _domain_n_papers("diet-and-mortality"),
-            "note": (
-                "Research-literature analysis, not dietary or medical "
-                "advice. Some papers here disagree with each other, "
-                "for example on red meat and on alcohol (checked by hand, "
-                "not by experts). Take medical "
-                "decisions to a clinician who knows you."
-            ),
-        },
-        {
-            "slug": "ml-fairness",
-            "name": "Algorithmic fairness in machine learning",
-            "n_papers": _domain_n_papers("ml-fairness"),
-            "note": (
-                "Some definitions of fairness are mathematically proven "
-                "unable to all hold at once. Our disagreement check found "
-                "no conflicting claims among the papers read; why is not "
-                "established."
-            ),
-        },
+        {"slug": _l["slug"], "name": _l["name"],
+         "n_papers": 113 if _l["slug"] == "llm-calibration" else _domain_n_papers(_l["slug"]),
+         "note": _l["footer_note"]}
+        for _l in __import__("backend.app.api.registry", fromlist=["built"]).built()
     ],
 }
 

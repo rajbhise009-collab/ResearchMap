@@ -1,0 +1,38 @@
+{
+  "paper_id": "openalex:W2314000390",
+  "claims": [
+    {
+      "id": "openalex:W2314000390:c1",
+      "paper_id": "openalex:W2314000390",
+      "text": "Social networking sites provide abundant social comparison opportunities.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2314000390:e1",
+      "claim_id": "openalex:W2314000390:c1",
+      "description": "Social networking sites (SNSs), such as Facebook, provide abundant social comparison opportunities.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2314000390:m1",
+      "paper_id": "openalex:W2314000390",
+      "name": "Social media comparison exposure evaluation",
+      "description": "Examines the impact of chronic and temporary exposure to social media-based social comparison information on self-esteem.",
+      "datasets": [],
+      "conditions": [
+        "chronic exposure",
+        "temporary exposure"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.095684Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

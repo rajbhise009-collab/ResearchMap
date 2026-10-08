@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.6,
+ "in_out_agreement": 0.667,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W2134077691",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "trait self-control and outcomes, no depletion"
+  },
+  {
+   "wid": "W2056606926",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "validity of self-control measures"
+  },
+  {
+   "wid": "W2000141755",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "mechanistic revision of ego depletion"
+  },
+  {
+   "wid": "W1767956543",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "mental-control handbook; self-regulation chapters"
+  },
+  {
+   "wid": "W1967859970",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "depletion and persistence with glucose"
+  },
+  {
+   "wid": "W1949366217",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "self-awareness theory"
+  },
+  {
+   "wid": "W2109223890",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "neural account of depletion"
+  },
+  {
+   "wid": "W2152831629",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "trait self-discipline and grades"
+  },
+  {
+   "wid": "W2123232906",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "everyday desire regulation; resistance over time"
+  },
+  {
+   "wid": "W1585013689",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "competence motivation"
+  },
+  {
+   "wid": "W1992322615",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "ostracism depletes resources"
+  },
+  {
+   "wid": "W2017680376",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "cognitive dissonance"
+  },
+  {
+   "wid": "W4321429583",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "impression management and health"
+  },
+  {
+   "wid": "W2171838050",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "nonconscious goal pursuit"
+  },
+  {
+   "wid": "W2020191227",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "self-presentation and resource depletion"
+  }
+ ]
+}

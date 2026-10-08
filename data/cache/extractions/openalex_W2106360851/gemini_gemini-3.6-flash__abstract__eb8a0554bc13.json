@@ -1,0 +1,109 @@
+{
+  "paper_id": "openalex:W2106360851",
+  "claims": [
+    {
+      "id": "openalex:W2106360851:c1",
+      "paper_id": "openalex:W2106360851",
+      "text": "Adolescents spend more time online than adults do.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2106360851:c2",
+      "paper_id": "openalex:W2106360851",
+      "text": "Adolescents use the Internet for social interaction more often than adults do.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2106360851:c3",
+      "paper_id": "openalex:W2106360851",
+      "text": "Studies conducted in the 1990s suggested that Internet use was detrimental to adolescent social connectedness and well-being.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2106360851:c4",
+      "paper_id": "openalex:W2106360851",
+      "text": "Recent studies tend to report positive effects of Internet use on adolescents' social connectedness and well-being.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2106360851:c5",
+      "paper_id": "openalex:W2106360851",
+      "text": "The Internet-enhanced self-disclosure hypothesis explains recent findings regarding online communication effects on adolescents.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2106360851:e1",
+      "claim_id": "openalex:W2106360851:c1",
+      "description": "Abstract states that adolescents spend more time online than adults do.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2106360851:e2",
+      "claim_id": "openalex:W2106360851:c2",
+      "description": "Abstract states that adolescents use the Internet for social interaction more often than adults do.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2106360851:e3",
+      "claim_id": "openalex:W2106360851:c3",
+      "description": "Abstract notes several studies in the 1990s suggested Internet use is detrimental.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2106360851:e4",
+      "claim_id": "openalex:W2106360851:c4",
+      "description": "Abstract indicates recent studies report opposite (positive) effects compared to 1990s literature.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2106360851:e5",
+      "claim_id": "openalex:W2106360851:c5",
+      "description": "Abstract discusses the Internet-enhanced self-disclosure hypothesis as a viable explanation for recent empirical findings.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2106360851:m1",
+      "paper_id": "openalex:W2106360851",
+      "name": "Literature Synthesis and Conceptual Review",
+      "description": "A review of empirical literature comparing early and recent studies on the consequences of online communication technologies for adolescents.",
+      "datasets": [],
+      "conditions": [
+        "Adolescent internet usage",
+        "Online communication technologies"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2106360851:l1",
+      "paper_id": "openalex:W2106360851",
+      "text": "Results of earlier 1990s studies diverged from modern findings due to evolving online contexts and adoption patterns.",
+      "normalized_category": "temporal-generalizability",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2106360851:f1",
+      "paper_id": "openalex:W2106360851",
+      "text": "Investigation of contingent factors that moderate the social consequences of online communication for adolescents.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.098675Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

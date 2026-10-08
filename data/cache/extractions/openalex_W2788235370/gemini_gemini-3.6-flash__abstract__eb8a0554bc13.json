@@ -1,0 +1,153 @@
+{
+  "paper_id": "openalex:W2788235370",
+  "claims": [
+    {
+      "id": "openalex:W2788235370:c1",
+      "paper_id": "openalex:W2788235370",
+      "text": "Psychological well-being among US 8th, 10th, and 12th graders suddenly decreased after 2012.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c2",
+      "paper_id": "openalex:W2788235370",
+      "text": "Adolescents who spent more time on electronic communication and screens had lower psychological well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c3",
+      "paper_id": "openalex:W2788235370",
+      "text": "Adolescents who spent less time on nonscreen activities had lower psychological well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c4",
+      "paper_id": "openalex:W2788235370",
+      "text": "Adolescents spending a small amount of time on electronic communication were the happiest.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c5",
+      "paper_id": "openalex:W2788235370",
+      "text": "Psychological well-being was lower in years when adolescents spent more time on screens.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c6",
+      "paper_id": "openalex:W2788235370",
+      "text": "Psychological well-being was higher in years when adolescents spent more time on nonscreen activities.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c7",
+      "paper_id": "openalex:W2788235370",
+      "text": "Changes in activities generally preceded declines in psychological well-being.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c8",
+      "paper_id": "openalex:W2788235370",
+      "text": "Cyclical economic indicators such as unemployment were not significantly correlated with psychological well-being.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2788235370:c9",
+      "paper_id": "openalex:W2788235370",
+      "text": "The decrease in adolescent psychological well-being may be at least partially due to the rapid adoption of smartphones and the subsequent shift in time use.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2788235370:e1",
+      "claim_id": "openalex:W2788235370:c1",
+      "description": "In nationally representative yearly surveys of US 8th, 10th, and 12th graders 1991-2016 (N = 1.1 million), psychological well-being (self-esteem, life satisfaction, happiness) suddenly decreased after 2012.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2788235370:e2",
+      "claim_id": "openalex:W2788235370:c2",
+      "description": "Adolescents spending more time on social media, the Internet, texting, and gaming had lower psychological well-being.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2788235370:e3",
+      "claim_id": "openalex:W2788235370:c3",
+      "description": "Adolescents spending less time on in-person social interaction, sports/exercise, homework, and attending religious services had lower psychological well-being.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2788235370:e4",
+      "claim_id": "openalex:W2788235370:c4",
+      "description": "Adolescents spending a small amount of time on electronic communication reported the highest happiness.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2788235370:e5",
+      "claim_id": "openalex:W2788235370:c5",
+      "description": "Psychological well-being was lower in years when adolescents spent more time on screens.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2788235370:e6",
+      "claim_id": "openalex:W2788235370:c6",
+      "description": "Psychological well-being was higher in years when adolescents spent more time on nonscreen activities.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2788235370:e7",
+      "claim_id": "openalex:W2788235370:c7",
+      "description": "Changes in daily activities generally preceded declines in adolescent psychological well-being.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2788235370:e8",
+      "claim_id": "openalex:W2788235370:c8",
+      "description": "Cyclical economic indicators such as unemployment were not significantly correlated with well-being.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2788235370:e9",
+      "claim_id": "openalex:W2788235370:c9",
+      "description": "Lack of correlation with economic indicators suggests the Great Recession was not the cause, pointing instead to smartphone adoption and shifts in time use.",
+      "strength": 0.75
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2788235370:m1",
+      "paper_id": "openalex:W2788235370",
+      "name": "Nationally representative yearly survey analysis",
+      "description": "Analyzed long-term repeated cross-sectional survey data tracking psychological well-being and activity time use among US adolescents.",
+      "datasets": [
+        "Nationally representative yearly surveys of US 8th, 10th, and 12th graders"
+      ],
+      "conditions": [
+        "Years 1991-2016",
+        "N = 1.1 million adolescents",
+        "US 8th, 10th, and 12th graders"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.062722Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

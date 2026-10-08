@@ -1,0 +1,110 @@
+{
+  "paper_id": "openalex:W1849635709",
+  "claims": [
+    {
+      "id": "openalex:W1849635709:c1",
+      "paper_id": "openalex:W1849635709",
+      "text": "25.2% of middle and high school students reported using social networking sites for more than 2 hours every day.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1849635709:c2",
+      "paper_id": "openalex:W1849635709",
+      "text": "Students reporting an unmet need for mental health support are more likely to use social networking sites for more than 2 hours per day than those without unmet needs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1849635709:c3",
+      "paper_id": "openalex:W1849635709",
+      "text": "Daily social networking site use of more than 2 hours is independently associated with poor self-rated mental health in children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1849635709:c4",
+      "paper_id": "openalex:W1849635709",
+      "text": "Daily social networking site use of more than 2 hours is independently associated with high levels of psychological distress in children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1849635709:c5",
+      "paper_id": "openalex:W1849635709",
+      "text": "Daily social networking site use of more than 2 hours is independently associated with suicidal ideation in children and adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1849635709:e1",
+      "claim_id": "openalex:W1849635709:c1",
+      "description": "Overall, 25.2% of students reported using SNSs for more than 2 hours every day.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1849635709:e2",
+      "claim_id": "openalex:W1849635709:c2",
+      "description": "Students who reported unmet need for mental health support were more likely to report using SNSs for more than 2 hours every day than those with no identified unmet need for mental health support.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1849635709:e3",
+      "claim_id": "openalex:W1849635709:c3",
+      "description": "Daily SNS use of more than 2 hours was also independently associated with poor self-rating of mental health.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1849635709:e4",
+      "claim_id": "openalex:W1849635709:c4",
+      "description": "Daily SNS use of more than 2 hours was also independently associated with experiences of high levels of psychological distress.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1849635709:e5",
+      "claim_id": "openalex:W1849635709:c5",
+      "description": "Daily SNS use of more than 2 hours was also independently associated with suicidal ideation.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1849635709:m1",
+      "paper_id": "openalex:W1849635709",
+      "name": "Multinomial logistic regression survey analysis",
+      "description": "Multinomial logistic regression was applied to survey data to evaluate associations between social networking site time and youth mental health indicators.",
+      "datasets": [
+        "2013 Ontario Student Drug Use and Health Survey"
+      ],
+      "conditions": [
+        "Sample of 753 students (55% female, mean age 14.1 years) in grades 7-12 in Ottawa, Canada"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1849635709:l1",
+      "paper_id": "openalex:W1849635709",
+      "text": "The relationship between the use of Web-based social networking platforms and mental health problems in children and adolescents is unclear.",
+      "normalized_category": "unclear-relationship",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1849635709:f1",
+      "paper_id": "openalex:W1849635709",
+      "text": "Enhance the presence of health service providers on social networking sites to offer mental health support to youth.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.075746Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

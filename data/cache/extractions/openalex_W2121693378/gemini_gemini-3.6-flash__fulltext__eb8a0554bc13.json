@@ -1,0 +1,140 @@
+{
+  "paper_id": "openalex:W2121693378",
+  "claims": [
+    {
+      "id": "openalex:W2121693378:c1",
+      "paper_id": "openalex:W2121693378",
+      "text": "Randomized controlled trials evaluating online mental health services demonstrated no statistically significant change in help-seeking behavior compared to control groups.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121693378:c2",
+      "paper_id": "openalex:W2121693378",
+      "text": "A quasi-experimental evaluation of an online mental health educational game found a statistically significant increase in willingness to seek help from pre-test to post-test.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121693378:c3",
+      "paper_id": "openalex:W2121693378",
+      "text": "Cross-sectional studies found that an average of 35% of users reported online mental health services facilitated seeking help from a professional source.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121693378:c4",
+      "paper_id": "openalex:W2121693378",
+      "text": "An online self-help cognitive behavioral therapy program produced a modest reduction in depressive symptoms in young adults post-test with an effect size of d = 0.20.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2121693378:c5",
+      "paper_id": "openalex:W2121693378",
+      "text": "Only 22% of reviewed studies evaluating online mental health services utilized adequate measures of help-seeking.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2121693378:e1",
+      "claim_id": "openalex:W2121693378:c1",
+      "description": "Across three RCTs, no significant difference in mental health visits or formal/informal help-seeking behavior was found between intervention and control groups over time.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2121693378:e2",
+      "claim_id": "openalex:W2121693378:c2",
+      "description": "In Shandley et al., playing ReachOut Central led to an increase in willingness to seek help from pre-test (male mean 4.01, female mean 4.17) to post-test (male mean 4.39, female mean 5.04; F 1,264 = 18.04, P < .001).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121693378:e3",
+      "claim_id": "openalex:W2121693378:c3",
+      "description": "Cross-sectional studies reported that online services facilitated seeking professional help for an average of 34.9% (range 6% to 75.8%) of users.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2121693378:e4",
+      "claim_id": "openalex:W2121693378:c4",
+      "description": "Clarke et al. reported a modest reduction in depressive symptoms post-test (N=160, d=0.20, 95% CI 0.00-0.50) following an online CBT self-help program.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2121693378:e5",
+      "claim_id": "openalex:W2121693378:c5",
+      "description": "Only 4 out of 18 (22%) included studies used adequate measures of help-seeking as a primary outcome.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2121693378:m1",
+      "paper_id": "openalex:W2121693378",
+      "name": "PRISMA Systematic Review",
+      "description": "A systematic literature review conducted according to PRISMA guidelines searching PubMed, PsycINFO, and Cochrane Library databases for studies evaluating online mental health services and help-seeking among young people.",
+      "datasets": [
+        "PubMed",
+        "PsycINFO",
+        "Cochrane Library"
+      ],
+      "conditions": [
+        "Target population aged 14-25 years",
+        "Evaluated online mental health services and help-seeking outcomes",
+        "Citations published up to February 27, 2013"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2121693378:l1",
+      "paper_id": "openalex:W2121693378",
+      "text": "No statistical meta-analyses could be conducted due to the heterogeneity of study designs permitted in the inclusion criteria.",
+      "normalized_category": "methodological-heterogeneity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2121693378:l2",
+      "paper_id": "openalex:W2121693378",
+      "text": "Only three randomized controlled trials met inclusion criteria, limiting strong causal inference regarding online service efficacy.",
+      "normalized_category": "limited-evidence-base",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2121693378:l3",
+      "paper_id": "openalex:W2121693378",
+      "text": "Prior studies in this domain frequently suffered from small sample sizes, lack of longitudinal follow-up, and reliance on non-validated, single-item help-seeking measures.",
+      "normalized_category": "methodological-flaws-in-prior-work",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2121693378:f1",
+      "paper_id": "openalex:W2121693378",
+      "text": "Conduct high-quality randomized controlled trials with large representative samples and longitudinal follow-up of 6 to 12 months to determine the efficacy of online mental health help-seeking services.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2121693378:f2",
+      "paper_id": "openalex:W2121693378",
+      "text": "Develop and apply standardized, validated measures to assess help-seeking behavior, intentions, and client satisfaction in e-mental health evaluations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2121693378:f3",
+      "paper_id": "openalex:W2121693378",
+      "text": "Design and evaluate specifically tailored online mental health services for young men to improve their engagement and help-seeking rates.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.079252Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

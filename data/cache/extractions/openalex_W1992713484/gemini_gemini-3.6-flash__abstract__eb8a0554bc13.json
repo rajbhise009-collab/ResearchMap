@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W1992713484",
+  "claims": [
+    {
+      "id": "openalex:W1992713484:c1",
+      "paper_id": "openalex:W1992713484",
+      "text": "Research on psychological problems significantly dwarfs literature focused on positive psychological functioning.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1992713484:c2",
+      "paper_id": "openalex:W1992713484",
+      "text": "Prevailing formulations equate mental health with the absence of illness or psychological symptomatology.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1992713484:c3",
+      "paper_id": "openalex:W1992713484",
+      "text": "Defining mental health effectively requires conceptualizing it as the presence of positive psychological functioning rather than merely the absence of illness.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1992713484:c4",
+      "paper_id": "openalex:W1992713484",
+      "text": "Consensus on defining negative psychological states is easier to achieve than consensus on defining positive psychological functioning.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1992713484:e1",
+      "claim_id": "openalex:W1992713484:c1",
+      "description": "The paper notes that studies of psychological problems dwarf the literature on positive psychological functioning.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1992713484:e2",
+      "claim_id": "openalex:W1992713484:c2",
+      "description": "Typical usage equates health with the absence of illness, viewing a person as mentally sound if they do not suffer from anxiety, depression, or other symptomatology.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1992713484:e3",
+      "claim_id": "openalex:W1992713484:c3",
+      "description": "The author asserts that the prevailing formulation never gets to the heart of wellness, and that mental health must be defined as the presence of the positive.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1992713484:e4",
+      "claim_id": "openalex:W1992713484:c4",
+      "description": "The text states that consensus in identification of the negative is somehow easier to achieve despite values being involved in both positive and negative definitions.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W1992713484:l1",
+      "paper_id": "openalex:W1992713484",
+      "text": "Prior psychological literature equates health with the absence of illness rather than exploring positive wellness.",
+      "normalized_category": "conceptual-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1992713484:l2",
+      "paper_id": "openalex:W1992713484",
+      "text": "Explicating positive psychological functioning requires grappling with basic values and ideals, making consensus difficult to achieve.",
+      "normalized_category": "subjective-value-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.091161Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

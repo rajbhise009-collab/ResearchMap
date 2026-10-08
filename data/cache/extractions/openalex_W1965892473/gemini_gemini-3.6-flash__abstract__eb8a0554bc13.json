@@ -1,0 +1,187 @@
+{
+  "paper_id": "openalex:W1965892473",
+  "claims": [
+    {
+      "id": "openalex:W1965892473:c1",
+      "paper_id": "openalex:W1965892473",
+      "text": "Rates of major depression increased in cohorts born after World War II.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c2",
+      "paper_id": "openalex:W1965892473",
+      "text": "The age of onset of major depression decreased, with an increase in rates in late teenaged and early adult years.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c3",
+      "paper_id": "openalex:W1965892473",
+      "text": "Rates of depression increased across all age groups between 1960 and 1975.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c4",
+      "paper_id": "openalex:W1965892473",
+      "text": "The risk of depression is consistently two to three times higher among women than men across all adult ages.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c5",
+      "paper_id": "openalex:W1965892473",
+      "text": "The risk of depression is two to three times higher in first-degree relatives of affected individuals compared with controls.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c6",
+      "paper_id": "openalex:W1965892473",
+      "text": "The differential risk of depression between men and women is narrowing due to a greater risk increase among young men.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c7",
+      "paper_id": "openalex:W1965892473",
+      "text": "Increasing depression trends are evident in the United States, Sweden, Germany, Canada, and New Zealand.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c8",
+      "paper_id": "openalex:W1965892473",
+      "text": "Increasing depression trends are not evident in comparable studies in Korea, Puerto Rico, and Mexican-Americans living in the United States.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1965892473:c9",
+      "paper_id": "openalex:W1965892473",
+      "text": "Cohort changes in depression rates cannot be fully attributed to artifacts of reporting, recall, mortality, or labeling.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1965892473:e1",
+      "claim_id": "openalex:W1965892473:c1",
+      "description": "Large epidemiologic and family studies suggest an increase in the rates in the cohorts born after World War II.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1965892473:e2",
+      "claim_id": "openalex:W1965892473:c2",
+      "description": "Studies report a decrease in the age of onset with an increase in the late teenaged and early adult years.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1965892473:e3",
+      "claim_id": "openalex:W1965892473:c3",
+      "description": "Epidemiologic data show an increase between 1960 and 1975 in the rates of depression for all ages.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1965892473:e4",
+      "claim_id": "openalex:W1965892473:c4",
+      "description": "Studies show a persistent gender effect, with the risk of depression consistently two to three times higher among women than men across all adult ages.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1965892473:e5",
+      "claim_id": "openalex:W1965892473:c5",
+      "description": "Family studies show a persistent family effect, with the risk about two to three times higher in first-degree relatives as compared with controls.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1965892473:e6",
+      "claim_id": "openalex:W1965892473:c6",
+      "description": "Data suggest a narrowing of the differential risk to men and women due to a greater increase in risk of depression among young men.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1965892473:e7",
+      "claim_id": "openalex:W1965892473:c7",
+      "description": "Trends drawn from studies using comparable methods and modern diagnostic criteria are evident in the United States, Sweden, Germany, Canada, and New Zealand.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1965892473:e8",
+      "claim_id": "openalex:W1965892473:c8",
+      "description": "Trends are not evident in comparable studies conducted in Korea and Puerto Rico and of Mexican-Americans living in the United States.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1965892473:e9",
+      "claim_id": "openalex:W1965892473:c9",
+      "description": "Analysis concludes cohort changes cannot be fully attributed to artifacts of reporting, recall, mortality, or labeling.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1965892473:m1",
+      "paper_id": "openalex:W1965892473",
+      "name": "Cross-national epidemiologic and family study synthesis",
+      "description": "Comparative evaluation of large epidemiologic and family cohort studies measuring temporal depression rates.",
+      "datasets": [
+        "United States cohort studies",
+        "Sweden cohort studies",
+        "Germany cohort studies",
+        "Canada cohort studies",
+        "New Zealand cohort studies",
+        "Korea cohort studies",
+        "Puerto Rico cohort studies",
+        "US Mexican-American cohort studies"
+      ],
+      "conditions": [
+        "Comparable study methodologies",
+        "Modern diagnostic criteria"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1965892473:l1",
+      "paper_id": "openalex:W1965892473",
+      "text": "The reported temporal increases in depression rates are not universal and fail to appear in studies from Korea, Puerto Rico, and Mexican-Americans in the United States.",
+      "normalized_category": "geographic-population-limitations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1965892473:l2",
+      "paper_id": "openalex:W1965892473",
+      "text": "Epidemiologic cohort findings must account for potential artifacts related to reporting, recall bias, differential mortality, and changes in diagnostic labeling.",
+      "normalized_category": "reporting-recall-artifacts",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1965892473:f1",
+      "paper_id": "openalex:W1965892473",
+      "text": "Investigating the specific etiology underlying secular and cohort changes in major depression rates.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1965892473:f2",
+      "paper_id": "openalex:W1965892473",
+      "text": "Determining the implications of changing depression rates and earlier age of onset for clinical practice.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.100508Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

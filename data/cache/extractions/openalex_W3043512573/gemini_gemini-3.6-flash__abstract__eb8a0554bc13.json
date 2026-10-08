@@ -1,0 +1,180 @@
+{
+  "paper_id": "openalex:W3043512573",
+  "claims": [
+    {
+      "id": "openalex:W3043512573:c1",
+      "paper_id": "openalex:W3043512573",
+      "text": "Adolescents are particularly worried about schooling during the COVID-19 crisis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c2",
+      "paper_id": "openalex:W3043512573",
+      "text": "Adolescents are particularly worried about peer relationships during the COVID-19 crisis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c3",
+      "paper_id": "openalex:W3043512573",
+      "text": "COVID-19 stress is associated with increased loneliness in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c4",
+      "paper_id": "openalex:W3043512573",
+      "text": "COVID-19 stress is associated with increased depression in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c5",
+      "paper_id": "openalex:W3043512573",
+      "text": "The positive relationship between COVID-19 stress and loneliness/depression is stronger for adolescents who spend more time on social media.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c6",
+      "paper_id": "openalex:W3043512573",
+      "text": "More time spent connecting virtually to friends during the pandemic is associated with greater depression beyond COVID-19 stress.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c7",
+      "paper_id": "openalex:W3043512573",
+      "text": "Spending more time with family during the pandemic is associated with less depression beyond COVID-19 stress.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c8",
+      "paper_id": "openalex:W3043512573",
+      "text": "Spending more time on schoolwork during the pandemic is associated with less depression beyond COVID-19 stress.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c9",
+      "paper_id": "openalex:W3043512573",
+      "text": "Time spent with family during the pandemic is associated with lower loneliness beyond COVID-19 stress.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c10",
+      "paper_id": "openalex:W3043512573",
+      "text": "Time spent connecting to friends during the pandemic is associated with lower loneliness beyond COVID-19 stress.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3043512573:c11",
+      "paper_id": "openalex:W3043512573",
+      "text": "Engaging in physical activity during the pandemic is associated with lower loneliness beyond COVID-19 stress.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3043512573:e1",
+      "claim_id": "openalex:W3043512573:c1",
+      "description": "Results showed that adolescents are very concerned about the COVID-19 crisis and are particularly worried about schooling...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e2",
+      "claim_id": "openalex:W3043512573:c2",
+      "description": "Results showed that adolescents are... particularly worried about schooling and peer relationships.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e3",
+      "claim_id": "openalex:W3043512573:c3",
+      "description": "COVID-19 stress was related to more loneliness...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e4",
+      "claim_id": "openalex:W3043512573:c4",
+      "description": "COVID-19 stress was related to... more depression...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e5",
+      "claim_id": "openalex:W3043512573:c5",
+      "description": "...especially for adolescents who spend more time on social media.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3043512573:e6",
+      "claim_id": "openalex:W3043512573:c6",
+      "description": "Beyond COVID-19 stress, more time connecting to friends virtually during the pandemic was related to greater depression...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e7",
+      "claim_id": "openalex:W3043512573:c7",
+      "description": "...but family time... was related to less depression.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e8",
+      "claim_id": "openalex:W3043512573:c8",
+      "description": "...and schoolwork was related to less depression.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e9",
+      "claim_id": "openalex:W3043512573:c9",
+      "description": "Results show promising avenues to stave off loneliness, as time with family... were related to lower loneliness, beyond COVID-19 stress.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e10",
+      "claim_id": "openalex:W3043512573:c10",
+      "description": "...time connecting to friends... were related to lower loneliness, beyond COVID-19 stress.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3043512573:e11",
+      "claim_id": "openalex:W3043512573:c11",
+      "description": "...as well as physical activity were related to lower loneliness, beyond COVID-19 stress.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3043512573:m1",
+      "paper_id": "openalex:W3043512573",
+      "name": "Cross-sectional Online Survey",
+      "description": "Canadian adolescents completed online surveys measuring COVID-19 stress, loneliness, depression, and time spent in various activities during initial pandemic lockdowns.",
+      "datasets": [
+        "Canadian adolescents online survey dataset (n = 1,054)"
+      ],
+      "conditions": [
+        "Initial COVID-19 crisis",
+        "School closures and widespread lockdowns"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-08T19:00:50.060419Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

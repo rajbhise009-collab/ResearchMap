@@ -1,0 +1,69 @@
+{
+  "paper_id": "openalex:W2126370723",
+  "claims": [
+    {
+      "id": "openalex:W2126370723:c1",
+      "paper_id": "openalex:W2126370723",
+      "text": "There is a statistically significant positive correlation between BDI-II depression scores and time spent on online social networking in high school students.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2126370723:c2",
+      "paper_id": "openalex:W2126370723",
+      "text": "Average daily time spent on online social networking among high school student participants was 1.86 hours.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2126370723:e1",
+      "claim_id": "openalex:W2126370723:c1",
+      "description": "Statistically significant positive correlation (p<0.05, R=0.15) was found between BDI-II-II score and the time spent on social networking.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2126370723:e2",
+      "claim_id": "openalex:W2126370723:c2",
+      "description": "Average daily time spent on social networking was 1.86 h (SD=2.08 h).",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2126370723:m1",
+      "paper_id": "openalex:W2126370723",
+      "name": "Anonymous Structured Questionnaire and BDI-II Assessment",
+      "description": "A total of 160 high school students were surveyed using an anonymous structured questionnaire and the Beck Depression Inventory - second edition (BDI-II) to collect behavioral and physical metrics.",
+      "datasets": [],
+      "conditions": [
+        "160 high school students",
+        "Anonymous structured questionnaire",
+        "Self-reported time on social networking and TV",
+        "Beck Depression Inventory - second edition (BDI-II)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2126370723:l1",
+      "paper_id": "openalex:W2126370723",
+      "text": "The study design does not determine the causal nature of the relationship between online social networking and depression.",
+      "normalized_category": "unestablished-causality",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2126370723:f1",
+      "paper_id": "openalex:W2126370723",
+      "text": "Additional research is required to determine the possible causal nature of the relationship between social networking and depression.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.079670Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,102 @@
+{
+  "paper_id": "openalex:W2799945256",
+  "claims": [
+    {
+      "id": "openalex:W2799945256:c1",
+      "paper_id": "openalex:W2799945256",
+      "text": "Adolescents perceive social media as a threat to mental wellbeing.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2799945256:c2",
+      "paper_id": "openalex:W2799945256",
+      "text": "Adolescents believe social media causes mood and anxiety disorders for some peers.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2799945256:c3",
+      "paper_id": "openalex:W2799945256",
+      "text": "Adolescents view social media as a platform for cyberbullying.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2799945256:c4",
+      "paper_id": "openalex:W2799945256",
+      "text": "Adolescents frame the use of social media as a form of addiction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2799945256:e1",
+      "claim_id": "openalex:W2799945256:c1",
+      "description": "Thematic analysis suggested that adolescents perceived social media as a threat to mental wellbeing.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2799945256:e2",
+      "claim_id": "openalex:W2799945256:c2",
+      "description": "Thematic analysis identified that social media was believed to cause mood and anxiety disorders for some adolescents.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2799945256:e3",
+      "claim_id": "openalex:W2799945256:c3",
+      "description": "Thematic analysis identified that social media was viewed as a platform for cyberbullying.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2799945256:e4",
+      "claim_id": "openalex:W2799945256:c4",
+      "description": "Thematic analysis identified that the use of social media itself was often framed as a kind of 'addiction'.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2799945256:m1",
+      "paper_id": "openalex:W2799945256",
+      "name": "Focus group thematic analysis",
+      "description": "Conducting six focus groups over 3 months with adolescents to evaluate perceptions of social media through thematic analysis.",
+      "datasets": [
+        "54 adolescents aged 11-18 years recruited from schools in Leicester and London (UK)"
+      ],
+      "conditions": [
+        "Six focus groups over 3 months"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2799945256:l1",
+      "paper_id": "openalex:W2799945256",
+      "text": "There is a dearth of empirical research into how adolescents themselves perceive social media, especially as a knowledge resource, or how they draw upon wider social and media discourses.",
+      "normalized_category": "lack-of-prior-empirical-research",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2799945256:f1",
+      "paper_id": "openalex:W2799945256",
+      "text": "Targeting and utilizing social media for promoting mental wellbeing among adolescents.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2799945256:f2",
+      "paper_id": "openalex:W2799945256",
+      "text": "Educating youth to manage the possible deleterious effects of social media.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.073921Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

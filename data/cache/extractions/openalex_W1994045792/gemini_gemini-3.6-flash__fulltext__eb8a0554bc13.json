@@ -1,0 +1,196 @@
+{
+  "paper_id": "openalex:W1994045792",
+  "claims": [
+    {
+      "id": "openalex:W1994045792:c1",
+      "paper_id": "openalex:W1994045792",
+      "text": "Facebook use predicts moment-to-moment declines in affective well-being over time.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1994045792:c2",
+      "paper_id": "openalex:W1994045792",
+      "text": "Facebook use over a two-week period predicts declines in overall life satisfaction over time.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1994045792:c3",
+      "paper_id": "openalex:W1994045792",
+      "text": "Direct social interaction predicts increases in affective well-being over time.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1994045792:c4",
+      "paper_id": "openalex:W1994045792",
+      "text": "Direct social interaction does not predict changes in cognitive life satisfaction.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1994045792:c5",
+      "paper_id": "openalex:W1994045792",
+      "text": "Baseline affect levels do not predict subsequent changes in Facebook usage.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1994045792:c6",
+      "paper_id": "openalex:W1994045792",
+      "text": "Loneliness predicts subsequent increases in Facebook usage over time.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1994045792:c7",
+      "paper_id": "openalex:W1994045792",
+      "text": "Direct social interaction magnifies the negative effect of Facebook use on affective well-being.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1994045792:c8",
+      "paper_id": "openalex:W1994045792",
+      "text": "Individual difference variables such as network size, perceived support, gender, self-esteem, depression, and motivation do not moderate Facebook's impact on well-being declines.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1994045792:e1",
+      "claim_id": "openalex:W1994045792:c1",
+      "description": "Nested time-lag analyses indicated that the more people used Facebook the worse they subsequently felt, B = .08, x2 = 28.90, p < .0001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1994045792:e2",
+      "claim_id": "openalex:W1994045792:c2",
+      "description": "Average Facebook use over the 14-day period predicted life satisfaction declines at the end of the study, B = -.012, b = -.124, t(73) = -2.39, p = .02.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1994045792:e3",
+      "claim_id": "openalex:W1994045792:c3",
+      "description": "Direct social interaction predicted increases in affective well-being, B = -.15, x2 = 65.30, p < .0001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1994045792:e4",
+      "claim_id": "openalex:W1994045792:c4",
+      "description": "Direct social interaction did not predict changes in cognitive well-being, B = -.006, b = -.059, t(73) = 1.04, p = .30.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1994045792:e5",
+      "claim_id": "openalex:W1994045792:c5",
+      "description": "The reverse pathway (T1 Affect predicting T1–2 Facebook use, controlling for T0–1 Facebook use) was not significant, B = -.005, x2 = .05, p = .82.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1994045792:e6",
+      "claim_id": "openalex:W1994045792:c6",
+      "description": "Loneliness significantly predicted changes in Facebook use over time, B = .07, x2 = 8.54, p < .01.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1994045792:e7",
+      "claim_id": "openalex:W1994045792:c7",
+      "description": "Facebook use and direct social contact interacted significantly to predict changes in affective well-being, B = .002, x2 = 19.55, p < .0001.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1994045792:e8",
+      "claim_id": "openalex:W1994045792:c8",
+      "description": "In no case did Facebook friend count, network support, depressive symptoms, loneliness, gender, self-esteem, or motivation interact significantly with Facebook use to predict well-being changes (ps > .16).",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1994045792:m1",
+      "paper_id": "openalex:W1994045792",
+      "name": "Experience-sampling methodology",
+      "description": "Text-messaged 82 participants 5 times per day over 14 days to measure real-time Facebook use, affect, worry, loneliness, and direct social interaction, paired with pre- and post-study life satisfaction surveys.",
+      "datasets": [
+        "Satisfaction With Life Scale (SWLS)",
+        "Beck Depression Inventory (BDI)",
+        "Rosenberg Self-Esteem Scale",
+        "Social Provision Scale",
+        "Revised UCLA Loneliness Scale"
+      ],
+      "conditions": [
+        "14-day sampling window",
+        "5 text-message prompts per day within 168-minute random windows"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1994045792:l1",
+      "paper_id": "openalex:W1994045792",
+      "text": "Previous research relied on cross-sectional designs, making it impossible to determine causal temporal ordering.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W1994045792:l2",
+      "paper_id": "openalex:W1994045792",
+      "text": "The sample was concentrated on young adults, so findings may not generalize to other age demographics or other social network platforms.",
+      "normalized_category": "demographic-generalizability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1994045792:l3",
+      "paper_id": "openalex:W1994045792",
+      "text": "The observed statistical effect sizes of Facebook usage on well-being were relatively small.",
+      "normalized_category": "small-effect-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1994045792:l4",
+      "paper_id": "openalex:W1994045792",
+      "text": "Affect was measured using a single bipolar scale, which can obscure whether outcomes specifically reflect reductions in positive affect, increases in negative affect, or both.",
+      "normalized_category": "bipolar-scale-measurement",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1994045792:f1",
+      "paper_id": "openalex:W1994045792",
+      "text": "Examine whether findings generalize to broader age groups and other online social networks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1994045792:f2",
+      "paper_id": "openalex:W1994045792",
+      "text": "Investigate underlying mechanisms such as social comparison or interference with physical activity.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1994045792:f3",
+      "paper_id": "openalex:W1994045792",
+      "text": "Conduct experimental studies manipulating Facebook use in daily life to establish definitive causal relations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1994045792:f4",
+      "paper_id": "openalex:W1994045792",
+      "text": "Administer two unipolar affect questions to measure positive and negative affect separately.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.046760Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

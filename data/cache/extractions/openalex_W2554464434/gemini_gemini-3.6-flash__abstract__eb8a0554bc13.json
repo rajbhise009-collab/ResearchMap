@@ -1,0 +1,145 @@
+{
+  "paper_id": "openalex:W2554464434",
+  "claims": [
+    {
+      "id": "openalex:W2554464434:c1",
+      "paper_id": "openalex:W2554464434",
+      "text": "The 12-month prevalence of major depressive episodes in adolescents increased from 8.7% in 2005 to 11.3% in 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2554464434:c2",
+      "paper_id": "openalex:W2554464434",
+      "text": "The 12-month prevalence of major depressive episodes in young adults increased from 8.8% in 2005 to 9.6% in 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2554464434:c3",
+      "paper_id": "openalex:W2554464434",
+      "text": "The increase in major depressive episode prevalence was larger and statistically significant only in the age range of 12 to 20 years.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2554464434:c4",
+      "paper_id": "openalex:W2554464434",
+      "text": "Prevalence trends of major depressive episodes remained significant after adjustment for substance use disorders and sociodemographic factors.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2554464434:c5",
+      "paper_id": "openalex:W2554464434",
+      "text": "Overall mental health care contacts did not change over time between 2005 and 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2554464434:c6",
+      "paper_id": "openalex:W2554464434",
+      "text": "The use of specialty mental health providers increased in adolescents and young adults between 2005 and 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2554464434:c7",
+      "paper_id": "openalex:W2554464434",
+      "text": "The use of prescription medications increased in adolescents between 2005 and 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2554464434:c8",
+      "paper_id": "openalex:W2554464434",
+      "text": "Inpatient hospitalizations increased in adolescents between 2005 and 2014.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2554464434:e1",
+      "claim_id": "openalex:W2554464434:c1",
+      "description": "The 12-month prevalence of MDEs increased from 8.7% in 2005 to 11.3% in 2014 in adolescents (P < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2554464434:e2",
+      "claim_id": "openalex:W2554464434:c2",
+      "description": "The 12-month prevalence of MDEs increased from 8.8% to 9.6% in young adults (P < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2554464434:e3",
+      "claim_id": "openalex:W2554464434:c3",
+      "description": "The increase was larger and statistically significant only in the age range of 12 to 20 years.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2554464434:e4",
+      "claim_id": "openalex:W2554464434:c4",
+      "description": "The trends remained significant after adjustment for substance use disorders and sociodemographic factors.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2554464434:e5",
+      "claim_id": "openalex:W2554464434:c5",
+      "description": "Mental health care contacts overall did not change over time.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2554464434:e6",
+      "claim_id": "openalex:W2554464434:c6",
+      "description": "The use of specialty mental health providers increased in adolescents and young adults.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2554464434:e7",
+      "claim_id": "openalex:W2554464434:c7",
+      "description": "The use of prescription medications and inpatient hospitalizations increased in adolescents.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2554464434:e8",
+      "claim_id": "openalex:W2554464434:c8",
+      "description": "The use of prescription medications and inpatient hospitalizations increased in adolescents.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2554464434:m1",
+      "paper_id": "openalex:W2554464434",
+      "name": "Cross-sectional trend analysis of national survey data",
+      "description": "Analysis of annual cross-sectional population survey data to evaluate 10-year trends in 12-month prevalence of major depressive episodes and mental health service utilization.",
+      "datasets": [
+        "National Surveys on Drug Use and Health (2005-2014)"
+      ],
+      "conditions": [
+        "Adolescents aged 12 to 17 (N = 172,495)",
+        "Young adults aged 18 to 25 (N = 178,755)"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W2554464434:f1",
+      "paper_id": "openalex:W2554464434",
+      "text": "Renewed efforts are needed to expand service capacity to best meet the mental health care needs of adolescents and young adults.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-08T19:00:50.092685Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
