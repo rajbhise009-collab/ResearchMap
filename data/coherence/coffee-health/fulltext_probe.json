@@ -1,0 +1,139 @@
+{
+ "n": 25,
+ "with_fulltext": 11,
+ "by_source": {
+  "abstract_only": 14,
+  "unpaywall": 4,
+  "cache": 2,
+  "europepmc": 5
+ },
+ "rows": [
+  {
+   "wid": "W2226817873",
+   "title": "Dietary and Policy Priorities for Cardiovascular Disease, Diabetes, and Obesity",
+   "source": null
+  },
+  {
+   "wid": "W2531872507",
+   "title": "The epidemiology of Parkinson's disease: risk factors and prevention",
+   "source": null
+  },
+  {
+   "wid": "W2071521423",
+   "title": "Guidelines for the Diagnosis and Management of Gastroesophageal Reflux Disease",
+   "source": null
+  },
+  {
+   "wid": "W2936595371",
+   "title": "European Consensus Guidelines on the Management of Respiratory Distress Syndrome \u2013 2019 Update",
+   "source": null
+  },
+  {
+   "wid": "W2767209834",
+   "title": "Chlorogenic acid (CGA): A pharmacological review and call for further research",
+   "source": null
+  },
+  {
+   "wid": "W2100315071",
+   "title": "Insufficient Sleep in Adolescents and Young Adults: An Update on Causes and Consequences",
+   "source": null
+  },
+  {
+   "wid": "W4292856627",
+   "title": "Practice Guidelines for Preoperative Fasting and the Use of Pharmacologic Agents to Reduce the Risk of Pulmonary Aspiration: Application to Healthy Patients Undergoing Elective Procedures",
+   "source": null
+  },
+  {
+   "wid": "W2152276356",
+   "title": "Epidemiology and etiology of Parkinson\u2019s disease: a review of the evidence",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W4213290949",
+   "title": "Dietary Polyphenols and Their Role in Oxidative Stress-Induced Human Diseases: Insights Into Protective Effects, Antioxidant Potentials and Mechanism(s) of Action",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2430898493",
+   "title": "Plant-Based Dietary Patterns and Incidence of Type 2 Diabetes in US Men and Women: Results from Three Prospective Cohort Studies",
+   "source": "cache"
+  },
+  {
+   "wid": "W2791581924",
+   "title": "IOC consensus statement: dietary supplements and the high-performance athlete",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2735659721",
+   "title": "Healthful and Unhealthful Plant-Based Diets and the Risk of Coronary Heart Disease in U.S. Adults",
+   "source": null
+  },
+  {
+   "wid": "W2961821163",
+   "title": "Diagnosis and Treatment of Alcohol\u2010Associated Liver Diseases: 2019 Practice Guidance From the American Association for the Study of Liver Diseases",
+   "source": null
+  },
+  {
+   "wid": "W2107157101",
+   "title": "Health Effects of Energy Drinks on Children, Adolescents, and Young Adults",
+   "source": null
+  },
+  {
+   "wid": "W2764113930",
+   "title": "A review on environmental monitoring of water organic pollutants identified by EU guidelines",
+   "source": null
+  },
+  {
+   "wid": "W2163210582",
+   "title": "Multifunctional shade-tree management in tropical agroforestry landscapes - a review",
+   "source": null
+  },
+  {
+   "wid": "W2771044916",
+   "title": "Coffee consumption and health: umbrella review of meta-analyses of multiple health outcomes",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2216606325",
+   "title": "Role of Chlorogenic Acids in Controlling Oxidative and Inflammatory Stress Conditions",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2605131570",
+   "title": "The potential effects of chlorogenic acid, the main phenolic components in coffee, on health: a comprehensive review of the literature",
+   "source": null
+  },
+  {
+   "wid": "W2148847015",
+   "title": "Review of risk from potential emerging contaminants in UK groundwater",
+   "source": null
+  },
+  {
+   "wid": "W1993790483",
+   "title": "Meta\u2010analysis of early nonmotor features and risk factors for Parkinson disease",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2789317488",
+   "title": "Risk factors for type 2 diabetes mellitus: An exposure-wide umbrella review of meta-analyses",
+   "source": "cache"
+  },
+  {
+   "wid": "W4320891754",
+   "title": "European Consensus Guidelines on the Management of Respiratory Distress Syndrome: 2022 Update",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2133304451",
+   "title": "Cohort profile: The Tromso Study",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2794365389",
+   "title": "Potential Health Benefits of Olive Oil and Plant Polyphenols",
+   "source": "europepmc"
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.44
+}

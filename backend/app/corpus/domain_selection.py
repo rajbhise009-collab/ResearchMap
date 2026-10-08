@@ -218,6 +218,24 @@ def score(c: Candidate, *, probe: bool = True) -> dict:
             "filter": c.spec.filt, "health_or_social": c.health_or_social}
 
 
+BUILD_NOW = ("nudge-effectiveness", "social-media-teen-mental-health")
+QUEUED = ("ego-depletion", "minimum-wage", "growth-mindset")
+
+
+def report_table() -> str:
+    rows = sorted(json.loads((CACHE / "selection.json").read_text()).values(),
+                  key=lambda r: -(r["composite"] or 0))
+    out = ["| # | candidate | OpenAlex matches | reputation | predictor | contestedness | full text (25 probed) "
+           "| audience | advice risk | composite | decision |",
+           "|--:|:--|--:|--:|--:|--:|--:|--:|--:|--:|:--|"]
+    for i, r in enumerate(rows, 1):
+        dec = "**build now**" if r["slug"] in BUILD_NOW else ("queued" if r["slug"] in QUEUED else "—")
+        out.append(f"| {i} | {r['name']} | {r['matches']:,} | {r['reputation']:.2f} | {r['predictor_contested']:.2f} "
+                   f"| {r['contestedness']:.2f} | {r['fulltext_rate']:.0%} | {r['audience']:.1f} "
+                   f"| {r['advice_risk']:.1f} | {r['composite']:.3f} | {dec} |")
+    return "\n".join(out)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", nargs="*")

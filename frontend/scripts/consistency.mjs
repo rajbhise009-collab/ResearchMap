@@ -94,8 +94,7 @@ for (const lib of manifest.libraries) {
     if (o[k] !== f[k]) fail(`${s}: share image ${k} ${o[k]} != facts ${f[k]} (re-run tools/og/make_og_images.py)`);
   }
   // findings doc: the generated results table row
-  const name = { "llm-calibration": "LLM calibration", "diet-and-mortality": "Diet & mortality",
-                 "ml-fairness": "ML fairness" }[s];
+  const name = f.short_name;          // the findings table labels libraries by short name
   const lines = md.split("\n");
   const hdr = lines.findIndex((l) => l.startsWith("| library |") && l.includes("| total results |"));
   let row = null;

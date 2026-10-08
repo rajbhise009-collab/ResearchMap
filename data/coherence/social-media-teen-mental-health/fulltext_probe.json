@@ -1,0 +1,138 @@
+{
+ "n": 25,
+ "with_fulltext": 7,
+ "by_source": {
+  "abstract_only": 18,
+  "europepmc": 5,
+  "unpaywall": 2
+ },
+ "rows": [
+  {
+   "wid": "W2770314219",
+   "title": "Increases in Depressive Symptoms, Suicide-Related Outcomes, and Suicide Rates Among U.S. Adolescents After 2010 and Links to Increased New Media Screen Time",
+   "source": null
+  },
+  {
+   "wid": "W2538387706",
+   "title": "Children and Adolescents and Digital Media",
+   "source": null
+  },
+  {
+   "wid": "W2415849311",
+   "title": "#Sleepyteens: Social media use in adolescence is associated with poor sleep quality, anxiety, depression and low self\u2010esteem",
+   "source": null
+  },
+  {
+   "wid": "W2896921383",
+   "title": "Associations between screen time and lower psychological well-being among children and adolescents: Evidence from a population-based study",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W3034871545",
+   "title": "The effects of social deprivation on adolescent development and mental health",
+   "source": null
+  },
+  {
+   "wid": "W3197232629",
+   "title": "The growing field of digital psychiatry: current evidence and the future of apps, social media, chatbots, and virtual reality",
+   "source": null
+  },
+  {
+   "wid": "W2998834126",
+   "title": "Annual Research Review: Adolescent mental health in the digital age: facts, fears, and future directions",
+   "source": null
+  },
+  {
+   "wid": "W3037105315",
+   "title": "Adolescent psychiatric disorders during the COVID-19 pandemic and lockdown",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2792445075",
+   "title": "Online social media fatigue and psychological wellbeing\u2014A study of compulsive use, fear of missing out, fatigue, anxiety and depression",
+   "source": null
+  },
+  {
+   "wid": "W3039247277",
+   "title": "An investigation of mental health status of children and adolescents in china during the outbreak of COVID-19",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2568525121",
+   "title": "Problematic Social Media Use: Results from a Large-Scale Nationally Representative Adolescent Sample",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W3170018027",
+   "title": "Physical activity behaviours in adolescence: current evidence and opportunities for intervention",
+   "source": null
+  },
+  {
+   "wid": "W2566585401",
+   "title": "Negative consequences from heavy social networking in adolescents: The mediating role of fear of missing out",
+   "source": null
+  },
+  {
+   "wid": "W2578856715",
+   "title": "A Large-Scale Test of the Goldilocks Hypothesis",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W3043512573",
+   "title": "Physically isolated but socially connected: Psychological adjustment and stress among adolescents during the initial COVID-19 crisis.",
+   "source": null
+  },
+  {
+   "wid": "W2560151242",
+   "title": "Annual Research Review: Digital health interventions for children and young people with mental health problems \u2013 a systematic and meta\u2010review",
+   "source": null
+  },
+  {
+   "wid": "W3037505531",
+   "title": "Worldwide Effect of COVID-19 on Physical Activity: A Descriptive Study",
+   "source": null
+  },
+  {
+   "wid": "W4206340542",
+   "title": "School Closures During Social Lockdown and Mental Health, Health Behaviors, and Well-being Among Children and Adolescents During the First COVID-19 Wave",
+   "source": null
+  },
+  {
+   "wid": "W3023645215",
+   "title": "The Impact of Social Media on Panic During the COVID-19 Pandemic in Iraqi Kurdistan: Online Questionnaire Study",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2012064690",
+   "title": "Using Social Media for Social Comparison and Feedback-Seeking: Gender and Popularity Moderate Associations with Depressive Symptoms",
+   "source": null
+  },
+  {
+   "wid": "W2788235370",
+   "title": "Decreases in psychological well-being among American adolescents after 2012 and links to screen time during the rise of smartphone technology.",
+   "source": null
+  },
+  {
+   "wid": "W2908500884",
+   "title": "Social Media Use and Adolescent Mental Health: Findings From the UK Millennium Cohort Study",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2979663154",
+   "title": "Does time spent using social media impact mental health?: An eight year longitudinal study",
+   "source": null
+  },
+  {
+   "wid": "W3005199011",
+   "title": "Smartphones, social media use and youth mental health",
+   "source": null
+  },
+  {
+   "wid": "W2999059035",
+   "title": "Gender differences in associations between digital media use and psychological well\u2010being: Evidence from three large datasets",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.28
+}

@@ -1,0 +1,138 @@
+{
+ "n": 25,
+ "with_fulltext": 15,
+ "by_source": {
+  "arxiv-openalex": 13,
+  "abstract_only": 10,
+  "arxiv-s2": 2
+ },
+ "rows": [
+  {
+   "wid": "W2781726626",
+   "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2904246096",
+   "title": "Soft Actor-Critic Algorithms and Applications",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2919358988",
+   "title": "A State-of-the-Art Survey on Deep Learning Theory and Architectures",
+   "source": null
+  },
+  {
+   "wid": "W2962804345",
+   "title": "In-Edge AI: Intelligentizing Mobile Edge Computing, Caching and Communication by Federated Learning",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W3008014991",
+   "title": "Reconfigurable Intelligent Surface Assisted Multiuser MISO Systems Exploiting Deep Reinforcement Learning",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2981038142",
+   "title": "A survey and critique of multiagent deep reinforcement learning",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2886509985",
+   "title": "Energy-Efficient UAV Control for Effective and Fair Communication Coverage: A Deep Reinforcement Learning Approach",
+   "source": null
+  },
+  {
+   "wid": "W2794842204",
+   "title": "A Deep Reinforcement Learning Network for Traffic Light Cycle Control",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W3001989995",
+   "title": "A Learning-Based Incentive Mechanism for Federated Learning",
+   "source": null
+  },
+  {
+   "wid": "W4353056919",
+   "title": "Dense reinforcement learning for safety validation of autonomous vehicles",
+   "source": null
+  },
+  {
+   "wid": "W3126321819",
+   "title": "How to train your robot with deep reinforcement learning: lessons we have learned",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2963165400",
+   "title": "Human-like autonomous car-following model with deep reinforcement learning",
+   "source": "arxiv-s2"
+  },
+  {
+   "wid": "W4389636822",
+   "title": "Newton-Raphson-based optimizer: A new population-based metaheuristic algorithm for continuous optimization problems",
+   "source": null
+  },
+  {
+   "wid": "W4214866088",
+   "title": "Multi-Agent Deep Reinforcement Learning for Task Offloading in UAV-Assisted Mobile Edge Computing",
+   "source": null
+  },
+  {
+   "wid": "W2749928749",
+   "title": "Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W3158743991",
+   "title": "Multi-hop RIS-Empowered Terahertz Communications: A DRL-based Hybrid Beamforming Design",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2793022090",
+   "title": "The History Began from AlexNet: A Comprehensive Survey on Deep Learning Approaches",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2948175577",
+   "title": "Deep Reinforcement Learning for Multiobjective Optimization",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2966492573",
+   "title": "Adaptive Power System Emergency Control Using Deep Reinforcement Learning",
+   "source": "arxiv-s2"
+  },
+  {
+   "wid": "W2962764565",
+   "title": "Optimization of Molecules via Deep Reinforcement Learning",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2964291307",
+   "title": "Rainbow: Combining Improvements in Deep Reinforcement Learning",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W3080667742",
+   "title": "Reducing Offloading Latency for Digital Twin Edge Networks in 6G",
+   "source": null
+  },
+  {
+   "wid": "W4210870706",
+   "title": "Outracing champion Gran Turismo drivers with deep reinforcement learning",
+   "source": null
+  },
+  {
+   "wid": "W2913127416",
+   "title": "Performance Optimization for Blockchain-Enabled Industrial Internet of Things (IIoT) Systems: A Deep Reinforcement Learning Approach",
+   "source": null
+  },
+  {
+   "wid": "W4293723184",
+   "title": "Breast cancer detection using deep learning: Datasets, methods, and challenges ahead",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.6
+}

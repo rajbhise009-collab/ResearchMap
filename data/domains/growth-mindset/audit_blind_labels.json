@@ -1,0 +1,67 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "after_fix": true,
+ "labels": {
+  "W2121543297": {
+   "label": "off-domain",
+   "why": "achievement-goal scales, no mindset"
+  },
+  "W3199310186": {
+   "label": "borderline",
+   "why": "achievement motivation review incl. mindsets"
+  },
+  "W2754043007": {
+   "label": "on-domain",
+   "why": "origins of children's mindsets"
+  },
+  "W2806644486": {
+   "label": "on-domain",
+   "why": "meta-analysis: implicit theories and achievement"
+  },
+  "W3037626064": {
+   "label": "on-domain",
+   "why": "growth mindset and language achievement"
+  },
+  "W1978630615": {
+   "label": "off-domain",
+   "why": "goal-setting theory"
+  },
+  "W2322168695": {
+   "label": "on-domain",
+   "why": "mindsets and mathematics attainment"
+  },
+  "W3155188001": {
+   "label": "on-domain",
+   "why": "mindset x SES and achievement"
+  },
+  "W4205424695": {
+   "label": "off-domain",
+   "why": "attendance and course performance"
+  },
+  "W2135175034": {
+   "label": "on-domain",
+   "why": "theories of intelligence vs stereotype threat"
+  },
+  "W1950299194": {
+   "label": "on-domain",
+   "why": "Dweck's self-theories"
+  },
+  "W1529024143": {
+   "label": "borderline",
+   "why": "competence and motivation handbook"
+  },
+  "W3095059924": {
+   "label": "off-domain",
+   "why": "engagement in medical education"
+  },
+  "W1990356991": {
+   "label": "off-domain",
+   "why": "achievement goals, no mindset"
+  },
+  "W2589972988": {
+   "label": "on-domain",
+   "why": "implicit theories and L2 writers' motivation"
+  }
+ }
+}

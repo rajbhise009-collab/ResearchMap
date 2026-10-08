@@ -61,7 +61,8 @@ def query_cites_both(
         close = True
     try:
         r = client.get(f"{OA_BASE}/works", params=params)
-        r.raise_for_status()
+        if r.status_code >= 400:   # not raise_for_status(): its message carries the URL and key
+            raise httpx.HTTPStatusError(f"OpenAlex HTTP {r.status_code}", request=r.request, response=r)
         payload = r.json()
     finally:
         if close:
@@ -124,7 +125,8 @@ def compute_cites_both_for_domain(
                 "api_key": key,
             })
             credits_used += int(r.headers.get("X-RateLimit-Credits-Used") or 0)
-            r.raise_for_status()
+            if r.status_code >= 400:   # not raise_for_status(): its message carries the URL and key
+                raise httpx.HTTPStatusError(f"OpenAlex HTTP {r.status_code}", request=r.request, response=r)
             payload = r.json()
             total = int((payload.get("meta") or {}).get("count") or 0)
             top = []

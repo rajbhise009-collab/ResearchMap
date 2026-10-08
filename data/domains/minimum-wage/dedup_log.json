@@ -1,0 +1,49 @@
+{
+ "collapsed": [
+  {
+   "dropped": "W2106022734",
+   "title": "Skills, Tasks and Technologies: Implications for Employment and Earnings",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2106759695",
+   "title": "Technical Change, Inequality, and the Labor Market",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W1590058660",
+   "title": "Effects of the Minimum Wage on Employment Dynamics",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W1515906603",
+   "title": "Labor Market Institutions and the Distribution of Wages, 1973-1992: A Semiparametric Approach",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2118254697",
+   "title": "Revisiting the Minimum Wage-Employment Debate: Throwing Out the Baby with the Bathwater?",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W1583906397",
+   "title": "Time-Series Evidence of the Effect of the Minimum Wage on Youth Employment and Unemployment",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2008607450",
+   "title": "Unemployment Effects of Minimum Wages",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2114359437",
+   "title": "Minimum Wage Effects Across State Borders: Estimates Using Contiguous Counties",
+   "rule": "same normalised title as W3124128996"
+  },
+  {
+   "dropped": "W4240197956",
+   "title": "Myth and Measurement: The New Economics of the Minimum Wage",
+   "rule": "same normalised title as W2027736991"
+  }
+ ]
+}

@@ -440,6 +440,50 @@ def classify_pairs(slug: str, exts: list[PaperExtraction], pairs: list,
             "file_counts": counts}
 
 
+def classify_pairs_batch(slug: str, exts: list[PaperExtraction], pairs: list, *,
+                         client=None, wait_timeout_s: float = 26 * 3600) -> dict:
+    """Batch-mode classify_pairs (half price): same prompt, same verdict log,
+    same skip-if-paid rule. Submitted once (state saved under reasoning/),
+    billed once, each verdict appended as it is read. Gate: projection at
+    the batch rate x2 must fit the ledger's remaining money."""
+    from backend.app.reasoning.run_library_scorers import _run_batch
+    domain_name = DOMAINS[slug].name
+    text_by_id = {c.id: (e.paper_id, c.text) for e in exts for c in (e.claims or [])}
+    done = load_classified_keys(slug)
+    todo = [p for p in pairs if _pair_key(p.from_claim_id, p.to_claim_id) not in done]
+    if not todo:
+        return {"slug": slug, "n_todo": 0, "stats": {}, "file_counts": materialize_verdicts(slug)}
+    prompts, base = {}, {}
+    for p in todo:
+        a_pid, a_text = text_by_id[p.from_claim_id]
+        b_pid, b_text = text_by_id[p.to_claim_id]
+        k = f"{p.from_claim_id}||{p.to_claim_id}"
+        prompts[k] = PAIR_PROMPT_MULTI.format(domain_name=domain_name, a_paper_id=a_pid, a_text=a_text,
+                                              b_paper_id=b_pid, b_text=b_text)
+        base[k] = {"from_claim_id": p.from_claim_id, "to_claim_id": p.to_claim_id,
+                   "similarity": p.similarity, "a_paper_id": a_pid, "a_text": a_text,
+                   "b_paper_id": b_pid, "b_text": b_text}
+    raw, money = _run_batch(slug, "contradiction", prompts, client=client, wait_timeout_s=wait_timeout_s)
+    stats = Counter()
+    for k, text in raw.items():
+        rec = {**base[k], "ts": time.time()}
+        try:
+            data = json.loads(text)
+            rel = str(data.get("relationship", "")).lower()
+            rel = rel if rel in _VERDICT_FILES else "none"
+            _append_verdict(slug, {**rec, "relationship": rel,
+                                   "explanation": str(data.get("explanation", ""))[:400]})
+            stats[rel] += 1
+        except (json.JSONDecodeError, AttributeError):
+            _append_verdict(slug, {**rec, "relationship": "fail", "reason": "json_decode",
+                                   "detail": text[:200]})
+            stats["fail"] += 1
+    from backend.app.reasoning.run_library_scorers import _state
+    _state(slug, "contradiction").unlink(missing_ok=True)
+    return {"slug": slug, "n_todo": len(todo), "stats": dict(stats), "money": money,
+            "file_counts": materialize_verdicts(slug)}
+
+
 def assertion_strength_distribution(exts: list[PaperExtraction]) -> dict:
     """Count firm vs hedged claims across a domain's extractions. Uses
     the lexical hedge classifier from `multi_domain_findings.is_hedged`

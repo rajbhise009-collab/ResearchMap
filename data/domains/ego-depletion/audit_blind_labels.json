@@ -1,0 +1,67 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "after_fix": true,
+ "labels": {
+  "W2146569853": {
+   "label": "on-domain",
+   "why": "glucose as the limited resource"
+  },
+  "W1992433314": {
+   "label": "off-domain",
+   "why": "thought suppression, no depletion"
+  },
+  "W1546584494": {
+   "label": "on-domain",
+   "why": "nature of self-regulatory fatigue / ego depletion"
+  },
+  "W2109861317": {
+   "label": "on-domain",
+   "why": "depletion moderated by motivation"
+  },
+  "W2000625275": {
+   "label": "on-domain",
+   "why": "failed replication of depletion"
+  },
+  "W1989768409": {
+   "label": "on-domain",
+   "why": "overestimation of the depletion effect"
+  },
+  "W1999752882": {
+   "label": "on-domain",
+   "why": "cognitive-control account of depletion"
+  },
+  "W2008437934": {
+   "label": "off-domain",
+   "why": "error-related brain activity"
+  },
+  "W1966401421": {
+   "label": "on-domain",
+   "why": "blood glucose and self-control depletion"
+  },
+  "W2078057515": {
+   "label": "on-domain",
+   "why": "ego depletion and inhibition"
+  },
+  "W2097442078": {
+   "label": "off-domain",
+   "why": "mindfulness at work"
+  },
+  "W2133672655": {
+   "label": "on-domain",
+   "why": "depletion vs vitality theory"
+  },
+  "W3121414047": {
+   "label": "off-domain",
+   "why": "construal level and self-control, no depletion"
+  },
+  "W2103583865": {
+   "label": "borderline",
+   "why": "critique of effortful-inhibition models"
+  },
+  "W2093761921": {
+   "label": "off-domain",
+   "why": "grit scale"
+  }
+ }
+}

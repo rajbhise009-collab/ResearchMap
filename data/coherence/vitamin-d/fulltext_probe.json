@@ -1,0 +1,138 @@
+{
+ "n": 25,
+ "with_fulltext": 8,
+ "by_source": {
+  "abstract_only": 17,
+  "europepmc": 5,
+  "unpaywall": 3
+ },
+ "rows": [
+  {
+   "wid": "W2153059487",
+   "title": "Evaluation, Treatment, and Prevention of Vitamin D Deficiency: an Endocrine Society Clinical Practice Guideline",
+   "source": null
+  },
+  {
+   "wid": "W2743254891",
+   "title": "Induction of the Vitamin D Receptor Attenuates Autophagy Dysfunction-Mediated Cell Death Following Traumatic Brain Injury",
+   "source": null
+  },
+  {
+   "wid": "W2092170177",
+   "title": "Frailty Consensus: A Call to Action",
+   "source": null
+  },
+  {
+   "wid": "W4318923555",
+   "title": "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease",
+   "source": null
+  },
+  {
+   "wid": "W3013463190",
+   "title": "Evidence that Vitamin D Supplementation Could Reduce Risk of Influenza and COVID-19 Infections and Deaths",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2139860898",
+   "title": "Denosumab versus zoledronic acid for treatment of bone metastases in men with castration-resistant prostate cancer: a randomised, double-blind study",
+   "source": null
+  },
+  {
+   "wid": "W2583633660",
+   "title": "Third European Evidence-based Consensus on Diagnosis and Management of Ulcerative Colitis. Part 1: Definitions, Diagnosis, Extra-intestinal Manifestations, Pregnancy, Cancer Surveillance, Surgery, and Ileo-anal Pouch Disorders",
+   "source": null
+  },
+  {
+   "wid": "W2899572198",
+   "title": "Vitamin D Supplements and Prevention of Cancer and Cardiovascular Disease",
+   "source": null
+  },
+  {
+   "wid": "W2999622127",
+   "title": "Vitamin D deficiency 2.0: an update on the current status worldwide",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W1994006843",
+   "title": "Vitamin D for Health: A Global Perspective",
+   "source": null
+  },
+  {
+   "wid": "W2149775776",
+   "title": "Randomized, Double-Blind Study of Denosumab Versus Zoledronic Acid in the Treatment of Bone Metastases in Patients With Advanced Cancer (Excluding Breast and Prostate Cancer) or Multiple Myeloma",
+   "source": null
+  },
+  {
+   "wid": "W2126264646",
+   "title": "'Scoping the scope' of a cochrane review",
+   "source": null
+  },
+  {
+   "wid": "W2092900117",
+   "title": "Sunlight and Vitamin D",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2896178057",
+   "title": "Skeletal and Extraskeletal Actions of Vitamin D: Current Evidence and Outstanding Questions",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2417995089",
+   "title": "American Association of Clinical Endocrinologists and American College of Endocrinology Clinical Practice Guidelines for the Diagnosis and Treatment of Postmenopausal Osteoporosis \u2014 2016--Executive Summary",
+   "source": null
+  },
+  {
+   "wid": "W2068854614",
+   "title": "Edible Mushrooms: Improving Human Health and Promoting Quality Life",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2995815973",
+   "title": "Diagnosis and Management of Autoimmune Hepatitis in Adults and Children: 2019 Practice Guidance and Guidelines From the American Association for the Study of Liver Diseases",
+   "source": null
+  },
+  {
+   "wid": "W2109064733",
+   "title": "Effect of Cinacalcet on Cardiovascular Disease in Patients Undergoing Dialysis",
+   "source": null
+  },
+  {
+   "wid": "W1960684477",
+   "title": "Interventions for preventing falls in older people in care facilities and hospitals",
+   "source": null
+  },
+  {
+   "wid": "W2800951902",
+   "title": "Role of ROS and Nutritional Antioxidants in Human Diseases",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2085977362",
+   "title": "Calcium supplements with or without vitamin D and risk of cardiovascular events: reanalysis of the Women's Health Initiative limited access dataset and meta-analysis",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2016591779",
+   "title": "Vitamin D effects on musculoskeletal health, immunity, autoimmunity, cardiovascular disease, cancer, fertility, pregnancy, dementia and mortality\u2014A review of recent evidence",
+   "source": null
+  },
+  {
+   "wid": "W2177651241",
+   "title": "The First European Evidence-based Consensus on Extra-intestinal Manifestations in Inflammatory Bowel Disease",
+   "source": null
+  },
+  {
+   "wid": "W2149088854",
+   "title": "A Pooled Analysis of Vitamin D Dose Requirements for Fracture Prevention",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W1976472175",
+   "title": "The Nonskeletal Effects of Vitamin D: An Endocrine Society Scientific Statement",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.32
+}

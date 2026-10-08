@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.6,
+ "in_out_agreement": 0.667,
+ "required": 0.8,
+ "passes": false,
+ "rows": [
+  {
+   "wid": "W1493992439",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "review of the Card-Krueger minimum-wage evidence"
+  },
+  {
+   "wid": "W2125146074",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "EITC"
+  },
+  {
+   "wid": "W2147042673",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "forecasting handbook"
+  },
+  {
+   "wid": "W1637200184",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "minimum wages in Mexico and Colombia"
+  },
+  {
+   "wid": "W1499179285",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "decline in black teen employment; minimum wage likely one cause"
+  },
+  {
+   "wid": "W2914043640",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "behavioural spillovers method"
+  },
+  {
+   "wid": "W2102292466",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "wage structure in general"
+  },
+  {
+   "wid": "W3008632805",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "German minimum wage effects"
+  },
+  {
+   "wid": "W3125319288",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "event-study econometrics"
+  },
+  {
+   "wid": "W2042248782",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "residual wage inequality"
+  },
+  {
+   "wid": "W3021819415",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "time-series minimum wage and youth employment"
+  },
+  {
+   "wid": "W2117735259",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "computerisation and wages"
+  },
+  {
+   "wid": "W1516381423",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "search model of inequality"
+  },
+  {
+   "wid": "W2003942153",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "teen employment and the minimum wage, Canada"
+  },
+  {
+   "wid": "W3123296453",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "California minimum wage and employment"
+  }
+ ]
+}

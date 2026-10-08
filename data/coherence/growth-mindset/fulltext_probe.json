@@ -1,0 +1,139 @@
+{
+ "n": 25,
+ "with_fulltext": 6,
+ "by_source": {
+  "unpaywall": 2,
+  "abstract_only": 19,
+  "europepmc": 3,
+  "arxiv-openalex": 1
+ },
+ "rows": [
+  {
+   "wid": "W2964722401",
+   "title": "A national experiment reveals where a growth mindset improves achievement",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2912646984",
+   "title": "Mindsets: A View From Two Eras",
+   "source": null
+  },
+  {
+   "wid": "W2518885625",
+   "title": "Motivation to learn: an overview of contemporary theories",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W3116178148",
+   "title": "What can be learned from growth mindset controversies?",
+   "source": null
+  },
+  {
+   "wid": "W2083614944",
+   "title": "Self-efficacy and academic achievement: Why do implicit beliefs, goals, and effort regulation matter?",
+   "source": null
+  },
+  {
+   "wid": "W2487945683",
+   "title": "Growth mindset tempers the effects of poverty on academic achievement",
+   "source": null
+  },
+  {
+   "wid": "W2036087550",
+   "title": "A multidimensional approach to measuring well-being in students: Application of the PERMA framework",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2508466548",
+   "title": "Using design thinking to improve psychological interventions: The case of the growth mindset during the transition to high school.",
+   "source": null
+  },
+  {
+   "wid": "W2915762765",
+   "title": "Estimating Treatment Effects with Causal Forests: An Application",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2913734454",
+   "title": "STEM faculty who believe ability is fixed have larger racial achievement gaps and inspire less student motivation in their classes",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W1994521514",
+   "title": "Mindsets and human nature: Promoting change in the Middle East, the schoolyard, the racial divide, and willpower.",
+   "source": null
+  },
+  {
+   "wid": "W2077429714",
+   "title": "The role of individual differences in cognitive training and transfer",
+   "source": null
+  },
+  {
+   "wid": "W2754043007",
+   "title": "The Origins of Children's Growth and Fixed Mindsets: New Research and a New Proposal",
+   "source": null
+  },
+  {
+   "wid": "W4226442993",
+   "title": "Is high self-esteem beneficial? Revisiting a classic question.",
+   "source": null
+  },
+  {
+   "wid": "W3037626064",
+   "title": "The role of growth mindset, self-efficacy and intrinsic value in self-regulated learning and English language learning achievements",
+   "source": null
+  },
+  {
+   "wid": "W4200292999",
+   "title": "Teacher Mindsets Help Explain Where a Growth-Mindset Intervention Does and Doesn\u2019t Work",
+   "source": null
+  },
+  {
+   "wid": "W1816201314",
+   "title": "Promise and Paradox",
+   "source": null
+  },
+  {
+   "wid": "W2755841505",
+   "title": "A single\u2010session growth mindset intervention for adolescent anxiety and depression: 9\u2010month outcomes of a randomized trial",
+   "source": null
+  },
+  {
+   "wid": "W2789973029",
+   "title": "Malleability, plasticity, and individuality: How children learn and develop in context1",
+   "source": null
+  },
+  {
+   "wid": "W3034046607",
+   "title": "Digital Mindsets: Recognizing and Leveraging Individual Beliefs for Digital Transformation",
+   "source": null
+  },
+  {
+   "wid": "W2806644486",
+   "title": "Implicit Theories of Intelligence and Academic Achievement: A Meta-Analytic Review",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2743410539",
+   "title": "Intellectual humility and openness to the opposing view",
+   "source": null
+  },
+  {
+   "wid": "W2607441414",
+   "title": "Auditor Mindsets and Audits of Complex Estimates",
+   "source": null
+  },
+  {
+   "wid": "W4308060187",
+   "title": "Do growth mindset interventions impact students\u2019 academic achievement? A systematic review and meta-analysis with recommendations for best practices.",
+   "source": null
+  },
+  {
+   "wid": "W2124735841",
+   "title": "My intelligence may be more malleable than yours: the revised implicit theories of intelligence (self-theory) scale is a better predictor of achievement, motivation, and student disengagement",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.24
+}

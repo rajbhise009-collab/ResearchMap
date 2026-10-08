@@ -1,0 +1,138 @@
+{
+ "n": 25,
+ "with_fulltext": 7,
+ "by_source": {
+  "abstract_only": 18,
+  "europepmc": 5,
+  "unpaywall": 2
+ },
+ "rows": [
+  {
+   "wid": "W2998467274",
+   "title": "Effects of Intermittent Fasting on Health, Aging, and Disease",
+   "source": null
+  },
+  {
+   "wid": "W2799787925",
+   "title": "Early Time-Restricted Feeding Improves Insulin Sensitivity, Blood Pressure, and Oxidative Stress Even without Weight Loss in Men with Prediabetes",
+   "source": null
+  },
+  {
+   "wid": "W2096935190",
+   "title": "Promoting Health and Longevity through Diet: From Model Organisms to Humans",
+   "source": null
+  },
+  {
+   "wid": "W2551231535",
+   "title": "Circadian physiology of metabolism",
+   "source": null
+  },
+  {
+   "wid": "W2440558121",
+   "title": "Fasting, Circadian Rhythms, and Time-Restricted Feeding in Healthy Lifespan",
+   "source": null
+  },
+  {
+   "wid": "W2171666144",
+   "title": "Time-Restricted Feeding Is a Preventative and Therapeutic Intervention against Diverse Nutritional Challenges",
+   "source": null
+  },
+  {
+   "wid": "W2016539998",
+   "title": "Diet and Feeding Pattern Affect the Diurnal Dynamics of the Gut Microbiome",
+   "source": null
+  },
+  {
+   "wid": "W2992787906",
+   "title": "Ten-Hour Time-Restricted Eating Reduces Weight, Blood Pressure, and Atherogenic Lipids in Patients with Metabolic Syndrome",
+   "source": null
+  },
+  {
+   "wid": "W2766781761",
+   "title": "Flipping the Metabolic Switch: Understanding and Applying the Health Benefits of Fasting",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2582896210",
+   "title": "Meal Timing and Frequency: Implications for Cardiovascular Disease Prevention: A Scientific Statement From the American Heart Association",
+   "source": null
+  },
+  {
+   "wid": "W2530424415",
+   "title": "Effects of eight weeks of time-restricted feeding (16/8) on basal metabolism, maximal strength, body composition, inflammation, and cardiovascular risk factors in resistance-trained males",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2889094742",
+   "title": "Time-Restricted Feeding Prevents Obesity and Metabolic Syndrome in Mice Lacking a Circadian Clock",
+   "source": null
+  },
+  {
+   "wid": "W2753963188",
+   "title": "Intermittent Fasting Promotes White Adipose Browning and Decreases Obesity by Shaping the Gut Microbiota",
+   "source": null
+  },
+  {
+   "wid": "W2947106737",
+   "title": "Early Time-Restricted Feeding Improves 24-Hour Glucose Levels and Affects Markers of the Circadian Clock, Aging, and Autophagy in Humans",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2611504779",
+   "title": "Effect of Alternate-Day Fasting on Weight Loss, Weight Maintenance, and Cardioprotection Among Metabolically Healthy Obese Adults",
+   "source": null
+  },
+  {
+   "wid": "W2799962683",
+   "title": "Effects of 8-hour time restricted feeding on body weight and metabolic disease risk factors in obese adults: A pilot study",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W3043503484",
+   "title": "Effects of 4- and 6-h Time-Restricted Feeding on Weight and Cardiometabolic Health: A Randomized Controlled Trial in Adults with Obesity",
+   "source": null
+  },
+  {
+   "wid": "W2806113892",
+   "title": "Intermittent Fasting Confers Protection in CNS Autoimmunity by Altering the Gut Microbiota",
+   "source": null
+  },
+  {
+   "wid": "W3093872008",
+   "title": "Cancer Metabolism: Phenotype, Signaling and Therapeutic Targets",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W3008031857",
+   "title": "Gut microbiota mediates intermittent-fasting alleviation of diabetes-induced cognitive impairment",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W3088501974",
+   "title": "Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters in Women and Men With Overweight and Obesity",
+   "source": null
+  },
+  {
+   "wid": "W4224218202",
+   "title": "Calorie Restriction with or without Time-Restricted Eating in Weight Loss",
+   "source": null
+  },
+  {
+   "wid": "W3025278547",
+   "title": "Sleep, circadian rhythm, and gut microbiota",
+   "source": null
+  },
+  {
+   "wid": "W2936878266",
+   "title": "Time\u2010Restricted Feeding Improves Glucose Tolerance in Men at Risk for Type 2 Diabetes: A Randomized Crossover Trial",
+   "source": null
+  },
+  {
+   "wid": "W2800440086",
+   "title": "Fasting Activates Fatty Acid Oxidation to Enhance Intestinal Stem Cell Function during Homeostasis and Aging",
+   "source": "unpaywall"
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.28
+}

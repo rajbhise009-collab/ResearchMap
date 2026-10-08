@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.667,
+ "in_out_agreement": 0.867,
+ "required": 0.8,
+ "passes": true,
+ "rows": [
+  {
+   "wid": "W1545460766",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "statistics methods primer"
+  },
+  {
+   "wid": "W2568525121",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "adolescents' problematic social media use and depression"
+  },
+  {
+   "wid": "W2164846125",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "addiction relapse treatment, no media"
+  },
+  {
+   "wid": "W2000070104",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "review of social media and adolescent well-being"
+  },
+  {
+   "wid": "W2112205306",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "social media risks for children incl. depression"
+  },
+  {
+   "wid": "W2553776800",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "social networking and depression, not adolescent-specific"
+  },
+  {
+   "wid": "W2549950368",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "quitting Facebook and well-being in adults"
+  },
+  {
+   "wid": "W2766751125",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "suicide theory, no media"
+  },
+  {
+   "wid": "W2106360851",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "internet use and adolescents' well-being"
+  },
+  {
+   "wid": "W2147085624",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "app-delivered depression treatment"
+  },
+  {
+   "wid": "W3101126289",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "adolescents' social media use and anxiety/loneliness"
+  },
+  {
+   "wid": "W1991384030",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "social networking addiction, general users"
+  },
+  {
+   "wid": "W2571405988",
+   "rubric": "off-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": false,
+   "why": "children's lifestyle clusters; screen time one component"
+  },
+  {
+   "wid": "W2071611852",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "smartphone social networking addiction, general users"
+  },
+  {
+   "wid": "W2999059035",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "adolescents' digital media use and well-being"
+  }
+ ]
+}

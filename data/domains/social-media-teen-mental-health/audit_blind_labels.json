@@ -1,0 +1,66 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "labels": {
+  "W1545460766": {
+   "label": "off-domain",
+   "why": "statistics methods primer"
+  },
+  "W2568525121": {
+   "label": "on-domain",
+   "why": "adolescents' problematic social media use and depression"
+  },
+  "W2164846125": {
+   "label": "off-domain",
+   "why": "addiction relapse treatment, no media"
+  },
+  "W2000070104": {
+   "label": "on-domain",
+   "why": "review of social media and adolescent well-being"
+  },
+  "W2112205306": {
+   "label": "on-domain",
+   "why": "social media risks for children incl. depression"
+  },
+  "W2553776800": {
+   "label": "borderline",
+   "why": "social networking and depression, not adolescent-specific"
+  },
+  "W2549950368": {
+   "label": "borderline",
+   "why": "quitting Facebook and well-being in adults"
+  },
+  "W2766751125": {
+   "label": "off-domain",
+   "why": "suicide theory, no media"
+  },
+  "W2106360851": {
+   "label": "on-domain",
+   "why": "internet use and adolescents' well-being"
+  },
+  "W2147085624": {
+   "label": "borderline",
+   "why": "app-delivered depression treatment"
+  },
+  "W3101126289": {
+   "label": "on-domain",
+   "why": "adolescents' social media use and anxiety/loneliness"
+  },
+  "W1991384030": {
+   "label": "borderline",
+   "why": "social networking addiction, general users"
+  },
+  "W2571405988": {
+   "label": "borderline",
+   "why": "children's lifestyle clusters; screen time one component"
+  },
+  "W2071611852": {
+   "label": "borderline",
+   "why": "smartphone social networking addiction, general users"
+  },
+  "W2999059035": {
+   "label": "on-domain",
+   "why": "adolescents' digital media use and well-being"
+  }
+ }
+}

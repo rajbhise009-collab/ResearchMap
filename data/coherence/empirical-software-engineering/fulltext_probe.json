@@ -1,0 +1,138 @@
+{
+ "n": 25,
+ "with_fulltext": 2,
+ "by_source": {
+  "abstract_only": 23,
+  "unpaywall": 1,
+  "europepmc": 1
+ },
+ "rows": [
+  {
+   "wid": "W2474835145",
+   "title": "An Empirical Comparison of Model Validation Techniques for Defect Prediction Models",
+   "source": null
+  },
+  {
+   "wid": "W2731935965",
+   "title": "Heterogeneous Defect Prediction",
+   "source": null
+  },
+  {
+   "wid": "W2791812915",
+   "title": "Progress on approaches to software defect prediction",
+   "source": null
+  },
+  {
+   "wid": "W2735995639",
+   "title": "A Comparative Study to Benchmark Cross-Project Defect Prediction Approaches",
+   "source": null
+  },
+  {
+   "wid": "W2563167163",
+   "title": "A New Feature Extraction Method Based on EEMD and Multi-Scale Fuzzy Entropy for Motor Bearing",
+   "source": null
+  },
+  {
+   "wid": "W4304688778",
+   "title": "On the use of deep learning in software defect prediction",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2897049944",
+   "title": "Software defect prediction based on kernel PCA and weighted extreme learning machine",
+   "source": null
+  },
+  {
+   "wid": "W3119533254",
+   "title": "Machine learning based methods for software fault prediction: A survey",
+   "source": null
+  },
+  {
+   "wid": "W3013745307",
+   "title": "An Empirical Study of Model-Agnostic Techniques for Defect Prediction Models",
+   "source": null
+  },
+  {
+   "wid": "W2744611928",
+   "title": "MULTI: Multi-objective effort-aware just-in-time software defect prediction",
+   "source": null
+  },
+  {
+   "wid": "W3174740339",
+   "title": "Investigation on the stability of SMOTE-based oversampling techniques in software defect prediction",
+   "source": null
+  },
+  {
+   "wid": "W2913474130",
+   "title": "An empirical study to investigate oversampling methods for improving software defect prediction using imbalanced data",
+   "source": null
+  },
+  {
+   "wid": "W2959969964",
+   "title": "Performance Analysis of Feature Selection Methods in Software Defect Prediction: A Search Method Approach",
+   "source": null
+  },
+  {
+   "wid": "W2898383220",
+   "title": "Revisiting supervised and unsupervised models for effort-aware just-in-time defect prediction",
+   "source": null
+  },
+  {
+   "wid": "W2945699300",
+   "title": "An Improved CNN Model for Within-Project Software Defect Prediction",
+   "source": null
+  },
+  {
+   "wid": "W2497047467",
+   "title": "An empirical study of some software fault prediction techniques for the number of faults prediction",
+   "source": null
+  },
+  {
+   "wid": "W4405781847",
+   "title": "Fault Detection and Diagnosis in Industry 4.0: A Review on Challenges and Opportunities",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2593156329",
+   "title": "Toward a Smell-Aware Bug Prediction Model",
+   "source": null
+  },
+  {
+   "wid": "W2912086532",
+   "title": "Empirical Study of Software Defect Prediction: A Systematic Mapping",
+   "source": null
+  },
+  {
+   "wid": "W2895067255",
+   "title": "Software defect number prediction: Unsupervised vs supervised methods",
+   "source": null
+  },
+  {
+   "wid": "W2789535000",
+   "title": "Fault diagnosis of rotating machinery based on multiple probabilistic classifiers",
+   "source": null
+  },
+  {
+   "wid": "W2964279097",
+   "title": "The Impact of Mislabeled Changes by SZZ on Just-in-Time Defect Prediction",
+   "source": null
+  },
+  {
+   "wid": "W2791527767",
+   "title": "Empirical analysis of change metrics for software fault prediction",
+   "source": null
+  },
+  {
+   "wid": "W2922408684",
+   "title": "An empirical study on pareto based multi-objective feature selection for software defect prediction",
+   "source": null
+  },
+  {
+   "wid": "W3164087770",
+   "title": "An Empirical Study on Software Defect Prediction Using CodeBERT Model",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.08
+}

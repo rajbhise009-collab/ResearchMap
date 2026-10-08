@@ -1,0 +1,66 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "labels": {
+  "W2112709014": {
+   "label": "borderline",
+   "why": "behavioural economics book; nudges one component"
+  },
+  "W2133738397": {
+   "label": "off-domain",
+   "why": "attitude polarization, no intervention"
+  },
+  "W2161535853": {
+   "label": "on-domain",
+   "why": "field test of social-norm messages"
+  },
+  "W3137759237": {
+   "label": "borderline",
+   "why": "dark patterns: choice architecture used against users"
+  },
+  "W2144332805": {
+   "label": "borderline",
+   "why": "conceptual/legal analysis of nudging"
+  },
+  "W2954007086": {
+   "label": "off-domain",
+   "why": "hiring discrimination; 'default' in another sense"
+  },
+  "W2236924981": {
+   "label": "on-domain",
+   "why": "active vs passive (default) savings decisions"
+  },
+  "W3190969019": {
+   "label": "on-domain",
+   "why": "RCT of reminder nudges on vaccination"
+  },
+  "W2168962180": {
+   "label": "off-domain",
+   "why": "tax incidence theory"
+  },
+  "W2108531043": {
+   "label": "off-domain",
+   "why": "ideology and consumer choice"
+  },
+  "W2888832224": {
+   "label": "borderline",
+   "why": "behavioural economics for clinical behaviour change"
+  },
+  "W2160510947": {
+   "label": "off-domain",
+   "why": "green-electricity participation, no nudge named"
+  },
+  "W1864591907": {
+   "label": "on-domain",
+   "why": "welfare effects of social-comparison nudges"
+  },
+  "W2889738356": {
+   "label": "borderline",
+   "why": "information intervention for retirement enrolment"
+  },
+  "W2345863192": {
+   "label": "on-domain",
+   "why": "review of positional food nudges"
+  }
+ }
+}

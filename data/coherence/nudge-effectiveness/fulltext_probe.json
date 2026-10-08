@@ -1,0 +1,139 @@
+{
+ "n": 25,
+ "with_fulltext": 7,
+ "by_source": {
+  "abstract_only": 18,
+  "europepmc": 3,
+  "unpaywall": 3,
+  "arxiv-openalex": 1
+ },
+ "rows": [
+  {
+   "wid": "W2107067966",
+   "title": "Financial Literacy, Financial Education, and Downstream Financial Behaviors",
+   "source": null
+  },
+  {
+   "wid": "W3013473577",
+   "title": "Fighting COVID-19 Misinformation on Social Media: Experimental Evidence for a Scalable Accuracy-Nudge Intervention",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2743157434",
+   "title": "Nudging and Boosting: Steering or Empowering Good Decisions",
+   "source": null
+  },
+  {
+   "wid": "W2624183453",
+   "title": "Should Governments Invest More in Nudging?",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W3123463080",
+   "title": "Nudge and the Manipulation of Choice",
+   "source": null
+  },
+  {
+   "wid": "W223747650",
+   "title": "Sustainable food consumption: an overview of contemporary issues and policies",
+   "source": null
+  },
+  {
+   "wid": "W2921959179",
+   "title": "How effective is nudging? A quantitative review on the effect sizes and limits of empirical nudging studies",
+   "source": null
+  },
+  {
+   "wid": "W2192163651",
+   "title": "Nudging \u2013 A promising tool for sustainable consumption behaviour?",
+   "source": null
+  },
+  {
+   "wid": "W2545457694",
+   "title": "Nudges for Privacy and Security",
+   "source": null
+  },
+  {
+   "wid": "W3121638228",
+   "title": "RCTs to Scale: Comprehensive Evidence From Two Nudge Units",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W3190969019",
+   "title": "Behavioural nudges increase COVID-19 vaccinations",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2910229398",
+   "title": "Consumer effects of front-of-package nutrition labeling: an interdisciplinary meta-analysis",
+   "source": null
+  },
+  {
+   "wid": "W3003606046",
+   "title": "Citizens Versus the Internet: Confronting Digital Challenges With Cognitive Tools",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2120868938",
+   "title": "Regulating Consumer Financial Products: Evidence from Credit Cards *",
+   "source": null
+  },
+  {
+   "wid": "W2191661049",
+   "title": "The 5As: A practical taxonomy for the determinants of vaccine uptake",
+   "source": null
+  },
+  {
+   "wid": "W2187929566",
+   "title": "The Definition of Nudge and Libertarian Paternalism: Does the Hand Fit the Glove?",
+   "source": null
+  },
+  {
+   "wid": "W2127751106",
+   "title": "Summer nudging: Can personalized text messages and peer mentor outreach increase college going among low-income high school graduates?",
+   "source": null
+  },
+  {
+   "wid": "W1864591907",
+   "title": "The Welfare Effects of Nudges: A Case Study of Energy Use Social Comparisons",
+   "source": null
+  },
+  {
+   "wid": "W3028756896",
+   "title": "Says Who? The Effects of Presentation Format and Source Rating on Fake News in Social Media1",
+   "source": null
+  },
+  {
+   "wid": "W2338305963",
+   "title": "Debiasing Decisions",
+   "source": null
+  },
+  {
+   "wid": "W3083006799",
+   "title": "Policy Learning With Observational Data",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2260803494",
+   "title": "Green nudges: Do they work? Are they ethical?",
+   "source": null
+  },
+  {
+   "wid": "W4232317699",
+   "title": "Fighting COVID-19 misinformation on social media: Experimental evidence for a scalable accuracy nudge intervention",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2592183460",
+   "title": "Changing children's eating behaviour - A review of experimental research",
+   "source": null
+  },
+  {
+   "wid": "W2608762407",
+   "title": "#Republic: Divided Democracy in the Age of Social Media",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.28
+}

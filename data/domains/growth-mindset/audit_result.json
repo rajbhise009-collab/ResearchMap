@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.667,
+ "in_out_agreement": 0.867,
+ "required": 0.8,
+ "passes": true,
+ "rows": [
+  {
+   "wid": "W2121543297",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "achievement-goal scales, no mindset"
+  },
+  {
+   "wid": "W3199310186",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "achievement motivation review incl. mindsets"
+  },
+  {
+   "wid": "W2754043007",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "origins of children's mindsets"
+  },
+  {
+   "wid": "W2806644486",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "meta-analysis: implicit theories and achievement"
+  },
+  {
+   "wid": "W3037626064",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "growth mindset and language achievement"
+  },
+  {
+   "wid": "W1978630615",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "goal-setting theory"
+  },
+  {
+   "wid": "W2322168695",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "mindsets and mathematics attainment"
+  },
+  {
+   "wid": "W3155188001",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "mindset x SES and achievement"
+  },
+  {
+   "wid": "W4205424695",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "attendance and course performance"
+  },
+  {
+   "wid": "W2135175034",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "theories of intelligence vs stereotype threat"
+  },
+  {
+   "wid": "W1950299194",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "Dweck's self-theories"
+  },
+  {
+   "wid": "W1529024143",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "competence and motivation handbook"
+  },
+  {
+   "wid": "W3095059924",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "engagement in medical education"
+  },
+  {
+   "wid": "W1990356991",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "achievement goals, no mindset"
+  },
+  {
+   "wid": "W2589972988",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "implicit theories and L2 writers' motivation"
+  }
+ ]
+}

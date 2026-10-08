@@ -1,0 +1,67 @@
+{
+ "auditor": "Claude (blind: titles, venues and abstracts only; rubric labels hidden)",
+ "date": "2026-10-09",
+ "after_fix": true,
+ "labels": {
+  "W1493992439": {
+   "label": "on-domain",
+   "why": "review of the Card-Krueger minimum-wage evidence"
+  },
+  "W2125146074": {
+   "label": "off-domain",
+   "why": "EITC"
+  },
+  "W2147042673": {
+   "label": "off-domain",
+   "why": "forecasting handbook"
+  },
+  "W1637200184": {
+   "label": "on-domain",
+   "why": "minimum wages in Mexico and Colombia"
+  },
+  "W1499179285": {
+   "label": "borderline",
+   "why": "decline in black teen employment; minimum wage likely one cause"
+  },
+  "W2914043640": {
+   "label": "off-domain",
+   "why": "behavioural spillovers method"
+  },
+  "W2102292466": {
+   "label": "off-domain",
+   "why": "wage structure in general"
+  },
+  "W3008632805": {
+   "label": "on-domain",
+   "why": "German minimum wage effects"
+  },
+  "W3125319288": {
+   "label": "off-domain",
+   "why": "event-study econometrics"
+  },
+  "W2042248782": {
+   "label": "off-domain",
+   "why": "residual wage inequality"
+  },
+  "W3021819415": {
+   "label": "on-domain",
+   "why": "time-series minimum wage and youth employment"
+  },
+  "W2117735259": {
+   "label": "off-domain",
+   "why": "computerisation and wages"
+  },
+  "W1516381423": {
+   "label": "off-domain",
+   "why": "search model of inequality"
+  },
+  "W2003942153": {
+   "label": "on-domain",
+   "why": "teen employment and the minimum wage, Canada"
+  },
+  "W3123296453": {
+   "label": "on-domain",
+   "why": "California minimum wage and employment"
+  }
+ }
+}

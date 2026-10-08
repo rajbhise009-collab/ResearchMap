@@ -1,0 +1,315 @@
+{
+ "nudge-effectiveness": {
+  "slug": "nudge-effectiveness",
+  "name": "Nudges and choice architecture: do they work?",
+  "matches": 7559,
+  "gate_ok": true,
+  "predictor_contested": 0.504,
+  "predictor_mt": 0.706,
+  "reputation": 0.9,
+  "contestedness": 0.781,
+  "fulltext_rate": 0.28,
+  "fulltext_by_source": {
+   "abstract_only": 18,
+   "europepmc": 3,
+   "unpaywall": 3,
+   "arxiv-openalex": 1
+  },
+  "audience": 0.9,
+  "advice_risk": 0.2,
+  "composite": 0.677,
+  "why": {
+   "reputation": "Mertens 2022 meta-analysis vs Maier 2022 (no evidence after bias correction).",
+   "audience": "Behavioural-science and policy readers; new audience.",
+   "advice": "Low advice risk."
+  },
+  "filter": "title_and_abstract.search:(nudge OR nudging OR \"choice architecture\" OR \"default effect\") AND (effect OR effectiveness OR meta-analysis OR intervention),type:article|preprint,publication_year:>2012",
+  "health_or_social": true
+ },
+ "social-media-teen-mental-health": {
+  "slug": "social-media-teen-mental-health",
+  "name": "Social media and adolescent mental health",
+  "matches": 9983,
+  "gate_ok": true,
+  "predictor_contested": 0.829,
+  "predictor_mt": 0.713,
+  "reputation": 0.95,
+  "contestedness": 0.914,
+  "fulltext_rate": 0.28,
+  "fulltext_by_source": {
+   "abstract_only": 18,
+   "europepmc": 5,
+   "unpaywall": 2
+  },
+  "audience": 0.9,
+  "advice_risk": 0.6,
+  "composite": 0.676,
+  "why": {
+   "reputation": "Openly contested (Twenge/Haidt vs Orben/Przybylski; effect-size and specification debates).",
+   "audience": "Parents, educators, policy readers; new audience.",
+   "advice": "Parents may read results as advice about their children; needs a not-advice note."
+  },
+  "filter": "title_and_abstract.search:(\"social media\" OR \"screen time\" OR smartphone) AND (adolescent OR adolescents OR teen OR youth) AND (depression OR anxiety OR \"mental health\" OR \"well-being\"),type:article|preprint,publication_year:>2014",
+  "health_or_social": true
+ },
+ "ego-depletion": {
+  "slug": "ego-depletion",
+  "name": "Ego depletion and psychology replication debates",
+  "matches": 1867,
+  "gate_ok": true,
+  "predictor_contested": 0.512,
+  "predictor_mt": 0.804,
+  "reputation": 0.95,
+  "contestedness": 0.819,
+  "fulltext_rate": 0.12,
+  "fulltext_by_source": {
+   "unpaywall": 3,
+   "abstract_only": 22
+  },
+  "audience": 0.9,
+  "advice_risk": 0.1,
+  "composite": 0.668,
+  "why": {
+   "reputation": "Canonical replication dispute (Hagger 2016 RRR vs the original depletion literature).",
+   "audience": "Psychology readers; new audience.",
+   "advice": "Low advice risk."
+  },
+  "filter": "title_and_abstract.search:(\"ego depletion\" OR \"self-control depletion\" OR \"power posing\" OR \"registered replication report\"),type:article|preprint,publication_year:>2010",
+  "health_or_social": false
+ },
+ "minimum-wage": {
+  "slug": "minimum-wage",
+  "name": "Minimum wage and employment",
+  "matches": 8716,
+  "gate_ok": true,
+  "predictor_contested": 0.395,
+  "predictor_mt": 0.847,
+  "reputation": 0.95,
+  "contestedness": 0.783,
+  "fulltext_rate": 0.16,
+  "fulltext_by_source": {
+   "arxiv-openalex": 2,
+   "abstract_only": 21,
+   "unpaywall": 2
+  },
+  "audience": 1.0,
+  "advice_risk": 0.2,
+  "composite": 0.663,
+  "why": {
+   "reputation": "Classic economics dispute (Card-Krueger vs Neumark-Wascher; Seattle studies disagree).",
+   "audience": "Economics and policy readers; new audience.",
+   "advice": "Policy, not personal advice."
+  },
+  "filter": "title_and_abstract.search:(\"minimum wage\") AND (employment OR jobs OR labor OR labour),type:article|preprint,publication_year:>1995",
+  "health_or_social": true
+ },
+ "growth-mindset": {
+  "slug": "growth-mindset",
+  "name": "Growth-mindset interventions",
+  "matches": 6670,
+  "gate_ok": true,
+  "predictor_contested": 0.46,
+  "predictor_mt": 0.748,
+  "reputation": 0.9,
+  "contestedness": 0.768,
+  "fulltext_rate": 0.24,
+  "fulltext_by_source": {
+   "unpaywall": 2,
+   "abstract_only": 19,
+   "europepmc": 3,
+   "arxiv-openalex": 1
+  },
+  "audience": 0.9,
+  "advice_risk": 0.3,
+  "composite": 0.646,
+  "why": {
+   "reputation": "Large trials and meta-analyses disagree sharply (Yeager 2019 vs Sisk 2018, Macnamara 2023).",
+   "audience": "Education and psychology readers; new audience.",
+   "advice": "Teachers might apply it, but it is not medical advice."
+  },
+  "filter": "title_and_abstract.search:(\"growth mindset\" OR \"mindset intervention\" OR \"implicit theories of intelligence\"),type:article|preprint,publication_year:>2010",
+  "health_or_social": true
+ },
+ "deep-rl-reproducibility": {
+  "slug": "deep-rl-reproducibility",
+  "name": "Deep reinforcement learning: evaluation and reproducibility",
+  "matches": 11153,
+  "gate_ok": true,
+  "predictor_contested": 0.413,
+  "predictor_mt": 0.599,
+  "reputation": 0.7,
+  "contestedness": 0.614,
+  "fulltext_rate": 0.6,
+  "fulltext_by_source": {
+   "arxiv-openalex": 13,
+   "abstract_only": 10,
+   "arxiv-s2": 2
+  },
+  "audience": 0.3,
+  "advice_risk": 0.0,
+  "composite": 0.621,
+  "why": {
+   "reputation": "Henderson 2018 and Agarwal 2021 dispute evaluation practice; many results fail to reproduce.",
+   "audience": "ML readers; overlaps LLM calibration and ML fairness.",
+   "advice": "No advice risk."
+  },
+  "filter": "title_and_abstract.search:(\"deep reinforcement learning\") AND (reproducibility OR benchmark OR \"continuous control\" OR evaluation),type:article|preprint,publication_year:>2016",
+  "health_or_social": false
+ },
+ "microplastics-health": {
+  "slug": "microplastics-health",
+  "name": "Microplastics and human health",
+  "matches": 25771,
+  "gate_ok": true,
+  "predictor_contested": 1.0,
+  "predictor_mt": 0.801,
+  "reputation": 0.7,
+  "contestedness": 0.79,
+  "fulltext_rate": 0.28,
+  "fulltext_by_source": {
+   "abstract_only": 18,
+   "europepmc": 3,
+   "unpaywall": 4
+  },
+  "audience": 0.8,
+  "advice_risk": 0.5,
+  "composite": 0.62,
+  "why": {
+   "reputation": "Open disputes over detection methods, contamination of samples and dose-response in humans.",
+   "audience": "Environmental-health readers; no overlap with diet or ML.",
+   "advice": "Readers may ask 'are microplastics harming me'; exposure advice risk is moderate."
+  },
+  "filter": "title_and_abstract.search:(microplastic OR nanoplastic) AND (human OR health OR exposure OR toxic),type:article|preprint,publication_year:>2018",
+  "health_or_social": true
+ },
+ "stereotype-threat": {
+  "slug": "stereotype-threat",
+  "name": "Stereotype threat",
+  "matches": 2210,
+  "gate_ok": true,
+  "predictor_contested": 0.588,
+  "predictor_mt": 0.792,
+  "reputation": 0.85,
+  "contestedness": 0.771,
+  "fulltext_rate": 0.04,
+  "fulltext_by_source": {
+   "abstract_only": 24,
+   "unpaywall": 1
+  },
+  "audience": 0.9,
+  "advice_risk": 0.2,
+  "composite": 0.612,
+  "why": {
+   "reputation": "Meta-analyses disagree on whether the effect survives publication-bias correction.",
+   "audience": "Psychology and education readers; new audience.",
+   "advice": "Low advice risk."
+  },
+  "filter": "title_and_abstract.search:(\"stereotype threat\"),type:article|preprint,publication_year:>2005",
+  "health_or_social": true
+ },
+ "vitamin-d": {
+  "slug": "vitamin-d",
+  "name": "Vitamin D supplementation and health outcomes",
+  "matches": 10072,
+  "gate_ok": true,
+  "predictor_contested": 0.729,
+  "predictor_mt": 0.588,
+  "reputation": 0.85,
+  "contestedness": 0.814,
+  "fulltext_rate": 0.32,
+  "fulltext_by_source": {
+   "abstract_only": 17,
+   "europepmc": 5,
+   "unpaywall": 3
+  },
+  "audience": 0.5,
+  "advice_risk": 0.9,
+  "composite": 0.536,
+  "why": {
+   "reputation": "Observational benefit vs null large trials (VITAL, D-Health).",
+   "audience": "Health readers; partial overlap with Diet.",
+   "advice": "Supplement advice risk is high."
+  },
+  "filter": "title_and_abstract.search:(\"vitamin D\") AND (supplementation OR trial) AND (mortality OR cancer OR fracture OR cardiovascular),type:article|preprint,publication_year:>2010",
+  "health_or_social": true
+ },
+ "empirical-software-engineering": {
+  "slug": "empirical-software-engineering",
+  "name": "Empirical software engineering (defect prediction)",
+  "matches": 625,
+  "gate_ok": true,
+  "predictor_contested": 0.679,
+  "predictor_mt": 0.684,
+  "reputation": 0.6,
+  "contestedness": 0.624,
+  "fulltext_rate": 0.08,
+  "fulltext_by_source": {
+   "abstract_only": 23,
+   "unpaywall": 1,
+   "europepmc": 1
+  },
+  "audience": 0.5,
+  "advice_risk": 0.0,
+  "composite": 0.526,
+  "why": {
+   "reputation": "Disputes over metrics and datasets (Shepperd 2014 researcher bias vs replies).",
+   "audience": "Software engineers; partial overlap with ML readers.",
+   "advice": "No advice risk."
+  },
+  "filter": "title_and_abstract.search:(\"defect prediction\" OR \"bug prediction\" OR \"fault prediction\") AND (empirical OR replication OR reproducibility),type:article|preprint,publication_year:>2015",
+  "health_or_social": false
+ },
+ "intermittent-fasting": {
+  "slug": "intermittent-fasting",
+  "name": "Intermittent fasting and time-restricted eating",
+  "matches": 5478,
+  "gate_ok": true,
+  "predictor_contested": 0.658,
+  "predictor_mt": 0.858,
+  "reputation": 0.8,
+  "contestedness": 0.757,
+  "fulltext_rate": 0.28,
+  "fulltext_by_source": {
+   "abstract_only": 18,
+   "europepmc": 5,
+   "unpaywall": 2
+  },
+  "audience": 0.4,
+  "advice_risk": 0.8,
+  "composite": 0.501,
+  "why": {
+   "reputation": "Trials disagree on whether benefits exceed plain calorie restriction (e.g. Lowe 2020 vs earlier small trials).",
+   "audience": "Overlaps the Diet library's readers.",
+   "advice": "Directly actionable eating advice; high risk of being read as a recommendation."
+  },
+  "filter": "title_and_abstract.search:(\"intermittent fasting\" OR \"time-restricted eating\" OR \"time-restricted feeding\" OR \"alternate-day fasting\"),type:article|preprint,publication_year:>2012",
+  "health_or_social": true
+ },
+ "coffee-health": {
+  "slug": "coffee-health",
+  "name": "Coffee, caffeine and health",
+  "matches": 16272,
+  "gate_ok": true,
+  "predictor_contested": 0.56,
+  "predictor_mt": 0.541,
+  "reputation": 0.6,
+  "contestedness": 0.588,
+  "fulltext_rate": 0.44,
+  "fulltext_by_source": {
+   "abstract_only": 14,
+   "unpaywall": 4,
+   "cache": 2,
+   "europepmc": 5
+  },
+  "audience": 0.3,
+  "advice_risk": 0.8,
+  "composite": 0.45,
+  "why": {
+   "reputation": "Observational results flip across outcomes and doses; fewer head-on disputes than diet staples.",
+   "audience": "Strong overlap with the Diet library.",
+   "advice": "'Is coffee good for me' is the first question readers bring."
+  },
+  "filter": "title_and_abstract.search:(coffee OR caffeine) AND (mortality OR cardiovascular OR cancer OR \"risk of\"),type:article|preprint,publication_year:>2010",
+  "health_or_social": true
+ }
+}

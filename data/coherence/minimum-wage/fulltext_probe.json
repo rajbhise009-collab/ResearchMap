@@ -1,0 +1,138 @@
+{
+ "n": 25,
+ "with_fulltext": 4,
+ "by_source": {
+  "arxiv-openalex": 2,
+  "abstract_only": 21,
+  "unpaywall": 2
+ },
+ "rows": [
+  {
+   "wid": "W3113269512",
+   "title": "Difference-in-Differences with multiple time periods",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W1963965317",
+   "title": "Labor Market Institutions and the Distribution of Wages, 1973-1992: A Semiparametric Approach",
+   "source": null
+  },
+  {
+   "wid": "W2942870997",
+   "title": "The Effect of Minimum Wages on Low-Wage Jobs*",
+   "source": null
+  },
+  {
+   "wid": "W2048593579",
+   "title": "Trends in U.S. Wage Inequality: Revising the Revisionists",
+   "source": null
+  },
+  {
+   "wid": "W3124128996",
+   "title": "Minimum Wage Effects Across State Borders: Estimates Using Contiguous Counties",
+   "source": null
+  },
+  {
+   "wid": "W2120819732",
+   "title": "Publication Selection Bias in Minimum\u2010Wage Research? A Meta\u2010Regression Analysis",
+   "source": null
+  },
+  {
+   "wid": "W3121742762",
+   "title": "Revisiting the Minimum Wage\u2014Employment Debate: Throwing Out the Baby with the Bathwater?",
+   "source": null
+  },
+  {
+   "wid": "W2156152815",
+   "title": "Minimum Wages and Employment",
+   "source": null
+  },
+  {
+   "wid": "W4230865396",
+   "title": "Effects of the Minimum Wage on Employment Dynamics",
+   "source": null
+  },
+  {
+   "wid": "W3121608115",
+   "title": "How Wages Change: Micro Evidence from the International Wage Flexibility Project",
+   "source": null
+  },
+  {
+   "wid": "W2125289095",
+   "title": "Minimum Wage Effects on Labor Market Outcomes under Search, Matching, and Endogenous Contact Rates",
+   "source": null
+  },
+  {
+   "wid": "W2744241451",
+   "title": "Unequal Gain of Equal Resources across Racial Groups",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2030033665",
+   "title": "Coordination failures and government policy: A model with applications to East Asia and Eastern Europe",
+   "source": null
+  },
+  {
+   "wid": "W2136539811",
+   "title": "Do Minimum Wages Really Reduce Teen Employment? Accounting for Heterogeneity and Selectivity in State Panel Data",
+   "source": null
+  },
+  {
+   "wid": "W3156042878",
+   "title": "Cluster-robust inference: A guide to empirical practice",
+   "source": "arxiv-openalex"
+  },
+  {
+   "wid": "W2136002330",
+   "title": "Minimum Wage Shocks, Employment Flows, and Labor Market Frictions",
+   "source": null
+  },
+  {
+   "wid": "W2035990215",
+   "title": "Workfare With Welfare: Recent Reforms of the Danish Welfare State",
+   "source": null
+  },
+  {
+   "wid": "W1637200184",
+   "title": "The Impact of Minimum Wages in Mexico and Colombia",
+   "source": null
+  },
+  {
+   "wid": "W4385362789",
+   "title": "The Sum of Us: What Racism Costs Everyone and How We Can Prosper Together",
+   "source": null
+  },
+  {
+   "wid": "W3008632805",
+   "title": "Reallocation Effects of the Minimum Wage",
+   "source": null
+  },
+  {
+   "wid": "W2153310842",
+   "title": "An Empirical Equilibrium Search Model of the Labor Market",
+   "source": null
+  },
+  {
+   "wid": "W2103985836",
+   "title": "Minimum Wages and Firm Profitability",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2188881060",
+   "title": "Who Pays for the Minimum Wage?",
+   "source": null
+  },
+  {
+   "wid": "W2150372434",
+   "title": "What Do Low-Income Single Mothers Say about Marriage?",
+   "source": null
+  },
+  {
+   "wid": "W2114359437",
+   "title": "Minimum Wage Effects Across State Borders: Estimates Using Contiguous Counties",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.16
+}

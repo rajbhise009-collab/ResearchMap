@@ -13,12 +13,17 @@ import type {
   GapDoc, PaperDoc, LanguagePack, SearchIndex, SearchResult,
   PreflightResult,
 } from "../../lib/types";
+import { matchingLibraries, type OtherLib } from "../../lib/otherLibraries";
 import { search } from "../../lib/search";
 import { useDev, DevKV, DevJSON } from "./DevMode";
 import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
 import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
+
+// The out-of-scope panel lists this many other libraries before folding the
+// rest into "All N other libraries" (scales to any number of libraries).
+const OTHER_LIBS_SHOWN = 3;
 import { adviceLike, panelBlocked, selfHarm } from "../../lib/safety";
 
 const EXAMPLES = [
@@ -152,20 +157,9 @@ export default function Ask({ lang, gaps, papers }: {
       Array<{ slug: string; name: string; snapshot_path: string }> | undefined;
     if (!others || !committed.trim()) return;
     let live = true;
-    (async () => {
-      for (const other of others) {
-        try {
-          const r = await fetch(asset(`${other.snapshot_path}/search-index.json`));
-          if (!r.ok) continue;
-          const idx = await r.json();
-          const probe = search(idx, committed, 1);
-          if (probe.verdict === "in_domain" && live) {
-            setOtherLibHits({ slug: other.slug, name: other.name });
-            return;
-          }
-        } catch {}
-      }
-    })();
+    matchingLibraries(others, committed).then((m) => {
+      if (live && m.length) setOtherLibHits({ slug: m[0].slug, name: m[0].name });
+    });
     return () => { live = false; };
   }, [result, committed]);
 
@@ -547,8 +541,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
   const [preflightState, setPreflightState] = useState<
     "idle" | "loading" | "ok" | "unavailable"
   >("idle");
-  const [otherLibs, setOtherLibs] = useState<
-    Array<{ slug: string; name: string; blurb?: string }> | null>(null);
+  const [otherLibs, setOtherLibs] = useState<OtherLib[] | null>(null);
   const { dev } = useDev();
   const S = lang.search.out_of_domain;
   const B = lang.build_library;
@@ -563,6 +556,12 @@ function OutOfDomain({ lang, query, activeLibrary }: {
         const others = (m.libraries || [])
           .filter((l: any) => !activeLibrary || l.slug !== activeLibrary.slug);
         setOtherLibs(others);
+        // Libraries whose index matches the query go first.
+        matchingLibraries(others, query).then((hits) => {
+          if (!live || !hits.length) return;
+          const first = new Set(hits.map((h) => h.slug));
+          setOtherLibs([...hits, ...others.filter((o: any) => !first.has(o.slug))]);
+        });
       })
       .catch(() => {});
     return () => { live = false; };
@@ -621,7 +620,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
         <section className="block">
           <h2>Other libraries you can try</h2>
           <ul className="foot-sources-list">
-            {otherLibs.map((lib) => (
+            {otherLibs.slice(0, OTHER_LIBS_SHOWN).map((lib) => (
               <li key={lib.slug}>
                 <strong>{lib.name}</strong>
                 {lib.blurb && (
@@ -634,6 +633,21 @@ function OutOfDomain({ lang, query, activeLibrary }: {
               </li>
             ))}
           </ul>
+          {otherLibs.length > OTHER_LIBS_SHOWN && (
+            <details className="more-libs">
+              <summary>All {otherLibs.length} other libraries</summary>
+              <ul className="foot-sources-list">
+                {otherLibs.slice(OTHER_LIBS_SHOWN).map((lib) => (
+                  <li key={lib.slug}>
+                    <strong>{lib.name}</strong>{" "}
+                    <a href={`?lib=${encodeURIComponent(lib.slug)}&q=${encodeURIComponent(query)}`}>
+                      switch and ask there →
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
         </section>
       )}
 

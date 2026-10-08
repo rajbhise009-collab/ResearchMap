@@ -1,0 +1,19 @@
+{
+ "collapsed": [
+  {
+   "dropped": "W2963120839",
+   "title": "Deep Reinforcement Learning that Matters",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2745868649",
+   "title": "A Brief Survey of Deep Reinforcement Learning",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W3213132814",
+   "title": "A Survey of Generalisation in Deep Reinforcement Learning",
+   "rule": "ingestion 4-pass dedupe"
+  }
+ ]
+}

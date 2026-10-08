@@ -5,9 +5,9 @@
       "name": "Language-model reliability",
       "short_name": "LLM calibration",
       "blurb": "How language models express confidence, when they should refuse to answer, how their uncertainty is measured, and why they state false things as fact.",
-      "n_papers": 113,
       "is_default": true,
       "not_advice_note": null,
+      "n_papers": 113,
       "snapshot_path": "/data"
     },
     {
@@ -15,9 +15,9 @@
       "name": "Diet and all-cause mortality",
       "short_name": "Diet & mortality",
       "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
-      "n_papers": 100,
       "is_default": false,
       "not_advice_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you.",
+      "n_papers": 100,
       "snapshot_path": "/data/library/diet-and-mortality"
     },
     {
@@ -25,9 +25,9 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "n_papers": 99,
       "is_default": false,
       "not_advice_note": null,
+      "n_papers": 99,
       "snapshot_path": "/data/library/ml-fairness"
     }
   ],

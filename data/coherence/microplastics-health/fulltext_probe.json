@@ -1,0 +1,138 @@
+{
+ "n": 25,
+ "with_fulltext": 7,
+ "by_source": {
+  "abstract_only": 18,
+  "europepmc": 3,
+  "unpaywall": 4
+ },
+ "rows": [
+  {
+   "wid": "W3109968655",
+   "title": "Plasticenta: First evidence of microplastics in human placenta",
+   "source": null
+  },
+  {
+   "wid": "W2948574679",
+   "title": "Human Consumption of Microplastics",
+   "source": null
+  },
+  {
+   "wid": "W2977747666",
+   "title": "Environmental exposure to microplastics: An overview on possible human health effects",
+   "source": null
+  },
+  {
+   "wid": "W2918895016",
+   "title": "Microplastics in freshwaters and drinking water: Critical review and assessment of data quality",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2941378544",
+   "title": "Microplastics Can Change Soil Properties and Affect Plant Performance",
+   "source": null
+  },
+  {
+   "wid": "W2907773784",
+   "title": "Microplastics in wastewater treatment plants: Detection, occurrence and removal",
+   "source": null
+  },
+  {
+   "wid": "W3006275595",
+   "title": "A Detailed Review Study on Potential Effects of Microplastics and Additives of Concern on Human Health",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2972186294",
+   "title": "Detection of Various Microplastics in Human Stool",
+   "source": null
+  },
+  {
+   "wid": "W3122119529",
+   "title": "Understanding plastic degradation and microplastic formation in the environment: A review",
+   "source": null
+  },
+  {
+   "wid": "W3126538505",
+   "title": "Microplastics and human health",
+   "source": null
+  },
+  {
+   "wid": "W4220900610",
+   "title": "Detection of microplastics in human lung tissue using \u03bcFTIR spectroscopy",
+   "source": null
+  },
+  {
+   "wid": "W2972563087",
+   "title": "Effects of Microplastics in Soil Ecosystems: Above and Below Ground",
+   "source": null
+  },
+  {
+   "wid": "W3006187093",
+   "title": "Atmospheric microplastics: A review on current status and perspectives",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2999939473",
+   "title": "Ecology of the plastisphere",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W2999690316",
+   "title": "A Global Perspective on Microplastics",
+   "source": null
+  },
+  {
+   "wid": "W4402625926",
+   "title": "Twenty years of microplastic pollution research\u2014what have we learned?",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W3165275692",
+   "title": "Presence of airborne microplastics in human lung tissue",
+   "source": null
+  },
+  {
+   "wid": "W2924663053",
+   "title": "Rethinking microplastics as a diverse contaminant suite",
+   "source": null
+  },
+  {
+   "wid": "W2910368005",
+   "title": "Emergence of Nanoplastic in the Environment and Possible Impact on Human Health",
+   "source": null
+  },
+  {
+   "wid": "W3007943994",
+   "title": "Source, migration and toxicology of microplastics in soil",
+   "source": null
+  },
+  {
+   "wid": "W2998576579",
+   "title": "Atmospheric microplastic deposition in an urban environment and an evaluation of transport",
+   "source": "europepmc"
+  },
+  {
+   "wid": "W2975218902",
+   "title": "Plastic Teabags Release Billions of Microparticles and Nanoparticles into Tea",
+   "source": null
+  },
+  {
+   "wid": "W3196228331",
+   "title": "Chemical Analysis of Microplastics and Nanoplastics: Challenges, Advanced Methods, and Perspectives",
+   "source": null
+  },
+  {
+   "wid": "W4205750562",
+   "title": "Risk assessment of microplastic particles",
+   "source": "unpaywall"
+  },
+  {
+   "wid": "W4392520497",
+   "title": "Microplastics and Nanoplastics in Atheromas and Cardiovascular Events",
+   "source": null
+  }
+ ],
+ "date": "2026-10-09",
+ "rate": 0.28
+}

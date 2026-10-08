@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.733,
+ "in_out_agreement": 0.867,
+ "required": 0.8,
+ "passes": true,
+ "rows": [
+  {
+   "wid": "W2146569853",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "glucose as the limited resource"
+  },
+  {
+   "wid": "W1992433314",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "thought suppression, no depletion"
+  },
+  {
+   "wid": "W1546584494",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "nature of self-regulatory fatigue / ego depletion"
+  },
+  {
+   "wid": "W2109861317",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "depletion moderated by motivation"
+  },
+  {
+   "wid": "W2000625275",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "failed replication of depletion"
+  },
+  {
+   "wid": "W1989768409",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "overestimation of the depletion effect"
+  },
+  {
+   "wid": "W1999752882",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "cognitive-control account of depletion"
+  },
+  {
+   "wid": "W2008437934",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "error-related brain activity"
+  },
+  {
+   "wid": "W1966401421",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "blood glucose and self-control depletion"
+  },
+  {
+   "wid": "W2078057515",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "ego depletion and inhibition"
+  },
+  {
+   "wid": "W2097442078",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "mindfulness at work"
+  },
+  {
+   "wid": "W2133672655",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "depletion vs vitality theory"
+  },
+  {
+   "wid": "W3121414047",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "construal level and self-control, no depletion"
+  },
+  {
+   "wid": "W2103583865",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "critique of effortful-inhibition models"
+  },
+  {
+   "wid": "W2093761921",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "grit scale"
+  }
+ ]
+}

@@ -64,70 +64,17 @@ def _prelabel_count(slug: str) -> int:
     return len(json.loads(f.read_text())["entries"])
 
 
-LLM_CAL_MANIFEST = {
-    "slug": "llm-calibration",
-    "name": "Language-model reliability",
-    "short_name": "LLM calibration",
-    "blurb": ("How language models express confidence, when they should "
-              "refuse to answer, how their uncertainty is measured, "
-              "and why they state false things as fact."),
-    "n_papers": 113,
-    "is_default": True,
-    "not_advice_note": None,
-}
-
-DIET_MANIFEST = {
-    "slug": "diet-and-mortality",
-    "name": "Diet and all-cause mortality",
-    "short_name": "Diet & mortality",
-    "blurb": ("What the epidemiology and clinical-trial literature says "
-              "about diet — food groups, dietary patterns, and specific "
-              "regimes — and mortality-related outcomes."),
-    "n_papers": _prelabel_count("diet-and-mortality"),
-    "is_default": False,
-    # Raj-required disclaimer for a biomedical library.
-    "not_advice_note": (
-        "Research-literature analysis, not dietary or medical advice. "
-        "Some papers here disagree with each other, for example on red "
-        "meat and on alcohol (checked by hand, not by experts). Take "
-        "medical decisions to a clinician who knows you."
-    ),
-}
-
-FAIRNESS_MANIFEST = {
-    "slug": "ml-fairness",
-    "name": "Algorithmic fairness in machine learning",
-    "short_name": "ML fairness",
-    "blurb": ("Definitions and metrics for fair machine-learning "
-              "classifiers, incompatibility results between them, "
-              "bias-mitigation methods, and audits of deployed systems."),
-    "n_papers": _prelabel_count("ml-fairness"),
-    "is_default": False,
-    "not_advice_note": None,
-}
+def _manifest(lib: dict) -> dict:
+    """One library's entry in libraries.json, from data/library_registry.json."""
+    keys = ("slug", "name", "short_name", "blurb", "is_default", "not_advice_note")
+    m = {k: lib[k] for k in keys}
+    m["n_papers"] = 113 if lib["slug"] == "llm-calibration" else _prelabel_count(lib["slug"])
+    return m
 
 
-LIBRARIES = [LLM_CAL_MANIFEST, DIET_MANIFEST, FAIRNESS_MANIFEST]
-
-
-_LEDGER_STAGE_KEYS = {"diet-and-mortality": ("diet-and-mortality", "extract_diet"),
-                      "ml-fairness": ("ml-fairness", "extract_fairness")}
-
-
-def _ledger_spend_usd(slug: str) -> float:
-    """Sum of ledger entries whose stage belongs to this library (stage names
-    carry the slug, or `extract_diet` / `extract_fairness[_batch]`)."""
-    path = REPO_ROOT / "data" / "spend_ledger.json"
-    if not path.exists() or slug not in _LEDGER_STAGE_KEYS:
-        return 0.0
-    keys = _LEDGER_STAGE_KEYS[slug]
-    total = 0.0
-    for e in json.loads(path.read_text()).get("entries", []):
-        st = e.get("stage", "")
-        if (st.endswith("_" + keys[0]) or f"_{keys[0]}_" in st
-                or st == keys[1] or st.startswith(keys[1] + "_")):
-            total += e.get("cost_usd", 0.0)
-    return round(total, 4)
+def libraries() -> list[dict]:
+    from backend.app.api import registry
+    return [_manifest(l) for l in registry.built()]
 
 
 # ---- Per-library snapshot writer -----------------------------------------
@@ -514,16 +461,17 @@ def libraries_manifest() -> dict:
     """Top-level `libraries.json`. The frontend uses this both to
     populate the selector and to know where to fetch each library's
     snapshot files."""
+    libs = libraries()
     return {
         "libraries": [
             {**m, "snapshot_path":
                 (f"/data/library/{m['slug']}"
                  if not m.get("is_default") else "/data")}
-            for m in LIBRARIES
+            for m in libs
         ],
         "default_slug": next(
-            (m["slug"] for m in LIBRARIES if m.get("is_default")),
-            LIBRARIES[0]["slug"],
+            (m["slug"] for m in libs if m.get("is_default")),
+            libs[0]["slug"],
         ),
     }
 
@@ -538,7 +486,8 @@ def main() -> int:
     r0 = write_llm_calibration_snapshot(out_root)
     print(f"  {json.dumps(r0)}")
 
-    for slug in ("diet-and-mortality", "ml-fairness"):
+    from backend.app.api import registry
+    for slug in [l["slug"] for l in registry.built() if l["slug"] != "llm-calibration"]:
         print(f"→ {slug} snapshot")
         r = write_multi_domain_snapshot(slug, out_root)
         print(f"  {json.dumps(r)}")

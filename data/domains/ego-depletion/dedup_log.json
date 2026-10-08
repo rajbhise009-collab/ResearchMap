@@ -1,0 +1,39 @@
+{
+ "collapsed": [
+  {
+   "dropped": "W4213347290",
+   "title": "Ego depletion: Is the active self a limited resource?",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2134469114",
+   "title": "Self-control as a limited resource: Regulatory depletion patterns.",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W4251471142",
+   "title": "Paradoxical effects of thought suppression.",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W4247294283",
+   "title": "Self-control and alcohol restraint: An initial application of the Self-Control Strength Model.",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W4301716042",
+   "title": "Self-regulation and sexual restraint: Dispositionally and temporarily poor self-regulatory abilities contribute to failures at restraining sexual behavior",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2150604285",
+   "title": "Building a Sustainable Model of Human Energy in Organizations: Exploring the Critical Role of Resources",
+   "rule": "ingestion 4-pass dedupe"
+  },
+  {
+   "dropped": "W2313304565",
+   "title": "Making choices impairs subsequent self-control: A limited-resource account of decision making, self-regulation, and active initiative.",
+   "rule": "same normalised title as W2107354492"
+  }
+ ]
+}

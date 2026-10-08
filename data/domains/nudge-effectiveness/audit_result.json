@@ -1,0 +1,129 @@
+{
+ "n": 15,
+ "exact_agreement": 0.533,
+ "in_out_agreement": 0.867,
+ "required": 0.8,
+ "passes": true,
+ "rows": [
+  {
+   "wid": "W2112709014",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "behavioural economics book; nudges one component"
+  },
+  {
+   "wid": "W2133738397",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "attitude polarization, no intervention"
+  },
+  {
+   "wid": "W2161535853",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "field test of social-norm messages"
+  },
+  {
+   "wid": "W3137759237",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "dark patterns: choice architecture used against users"
+  },
+  {
+   "wid": "W2144332805",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "conceptual/legal analysis of nudging"
+  },
+  {
+   "wid": "W2954007086",
+   "rubric": "on-domain",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "hiring discrimination; 'default' in another sense"
+  },
+  {
+   "wid": "W2236924981",
+   "rubric": "borderline",
+   "auditor": "on-domain",
+   "exact": false,
+   "in_out": true,
+   "why": "active vs passive (default) savings decisions"
+  },
+  {
+   "wid": "W3190969019",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "RCT of reminder nudges on vaccination"
+  },
+  {
+   "wid": "W2168962180",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "tax incidence theory"
+  },
+  {
+   "wid": "W2108531043",
+   "rubric": "off-domain",
+   "auditor": "off-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "ideology and consumer choice"
+  },
+  {
+   "wid": "W2888832224",
+   "rubric": "on-domain",
+   "auditor": "borderline",
+   "exact": false,
+   "in_out": true,
+   "why": "behavioural economics for clinical behaviour change"
+  },
+  {
+   "wid": "W2160510947",
+   "rubric": "borderline",
+   "auditor": "off-domain",
+   "exact": false,
+   "in_out": false,
+   "why": "green-electricity participation, no nudge named"
+  },
+  {
+   "wid": "W1864591907",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "welfare effects of social-comparison nudges"
+  },
+  {
+   "wid": "W2889738356",
+   "rubric": "borderline",
+   "auditor": "borderline",
+   "exact": true,
+   "in_out": true,
+   "why": "information intervention for retirement enrolment"
+  },
+  {
+   "wid": "W2345863192",
+   "rubric": "on-domain",
+   "auditor": "on-domain",
+   "exact": true,
+   "in_out": true,
+   "why": "review of positional food nudges"
+  }
+ ]
+}
