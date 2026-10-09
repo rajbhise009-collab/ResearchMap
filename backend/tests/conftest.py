@@ -88,3 +88,4 @@ def _no_inherited_money_config(monkeypatch):
     rule to the temporary ledgers the spend tests create. A test that needs
     it sets it itself."""
     monkeypatch.delenv("MONEY_CONFIG_PATH", raising=False)
+    monkeypatch.delenv("RUN_CAP_LEDGER_INR", raising=False)

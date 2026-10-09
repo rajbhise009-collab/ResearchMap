@@ -58,10 +58,15 @@ def remaining_inr(cfg: dict, cumulative_inr: float, entries: list[dict]) -> floa
 
 
 def effective_cap_inr(cumulative_inr: float, entries: list[dict]) -> float | None:
+    """Ledger-terms ceiling: the money rule, further lowered by a per-run cap
+    (RUN_CAP_LEDGER_INR, an absolute ledger total set by a manual weekly run
+    with run_budget_inr) when one is in force."""
     cfg = load()
-    if cfg is None:
-        return None
-    return cumulative_inr + remaining_inr(cfg, cumulative_inr, entries)
+    cap = None if cfg is None else cumulative_inr + remaining_inr(cfg, cumulative_inr, entries)
+    run_cap = os.environ.get("RUN_CAP_LEDGER_INR")
+    if run_cap:
+        cap = float(run_cap) if cap is None else min(cap, float(run_cap))
+    return cap
 
 
 def weeks_left(cfg: dict, today: dt.date | None = None) -> int:

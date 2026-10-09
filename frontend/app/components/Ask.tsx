@@ -24,7 +24,7 @@ import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
 // The out-of-scope panel lists this many other libraries before folding the
 // rest into "All N other libraries" (scales to any number of libraries).
 const OTHER_LIBS_SHOWN = 3;
-import { adviceLike, panelBlocked, selfHarm } from "../../lib/safety";
+import { adviceLike, distress, HELPLINE_URL, panelBlocked, selfHarm } from "../../lib/safety";
 
 const EXAMPLES = [
   "why do language models sound confident when they're wrong",
@@ -65,7 +65,8 @@ export default function Ask({ lang, gaps, papers }: {
   const [otherLibHits, setOtherLibHits] = useState<
     { slug: string; name: string } | null>(null);
   const [activeLib, setActiveLib] = useState<
-    { slug: string; name: string; blurb?: string; not_advice_note?: string | null } | null>(null);
+    { slug: string; name: string; blurb?: string; not_advice_note?: string | null;
+      health_adjacent?: boolean } | null>(null);
 
   // Preload the index so the first keystroke is already answered.
   // Reads the currently-selected library's search-index (via ?lib=…);
@@ -93,7 +94,8 @@ export default function Ask({ lang, gaps, papers }: {
             if (live) {
               setActiveLib({ slug: lib.slug, name: lib.name,
                              blurb: (lib as any).blurb,
-                             not_advice_note: (lib as any).not_advice_note ?? null });
+                             not_advice_note: (lib as any).not_advice_note ?? null,
+                             health_adjacent: !!(lib as any).health_adjacent });
             }
           }
         }
@@ -294,6 +296,10 @@ export default function Ask({ lang, gaps, papers }: {
     && result.verdict !== "out_of_domain"
     && result.verdict !== "empty";
   const isTyping = result?.verdict === "typing" || !!result?.typing;
+  // Personal distress: no research results, no "build a library" offer,
+  // one calm message instead (lib/safety.ts). Checked on what is being typed
+  // as well as what was submitted, so nothing flashes first.
+  const distressed = distress(q) || distress(committed);
 
   return (
     <>
@@ -364,7 +370,22 @@ export default function Ask({ lang, gaps, papers }: {
         {/* Out-of-domain banner is only allowed to render after a pause
             of about 700 ms or Enter — so a word being typed never
             flashes a refusal between keystrokes. */}
-        {result?.verdict === "out_of_domain" && bannerAllowed && (
+        {distressed && (
+          <div className="distress-note" role="note" aria-live="polite" style={{ marginTop: "var(--s-6)" }}>
+            <p>
+              <strong>This is a research tool, not a support service.</strong> It reads academic
+              papers and cannot help with how you are feeling.
+            </p>
+            <p>
+              If you are struggling, you deserve support from a person. You can find a free,
+              confidential helpline in your country at{" "}
+              <a href={HELPLINE_URL} target="_blank" rel="noopener noreferrer">findahelpline.com</a>.
+              If you are in immediate danger, contact your local emergency number.
+            </p>
+          </div>
+        )}
+
+        {!distressed && result?.verdict === "out_of_domain" && bannerAllowed && (
           <>
             {otherLibHits && (
               <div className="caveat" style={{ marginTop: "var(--s-6)" }}>
@@ -380,7 +401,7 @@ export default function Ask({ lang, gaps, papers }: {
           </>
         )}
 
-        {showResults && (
+        {!distressed && showResults && (
           <>
             <div className="verdict-line">
               <span className="count">
@@ -402,9 +423,9 @@ export default function Ask({ lang, gaps, papers }: {
                 plain sentence that we cannot advise anyone. */}
             {activeLib?.not_advice_note && (
               <p className="not-advice" role="note" style={{ marginTop: "var(--s-3)" }}>
-                {adviceLike(committed) && (
-                  <><strong>We can&apos;t tell you what to eat or drink.</strong>{" "}
-                  This only shows what research papers report.{" "}</>
+                {adviceLike(committed) && activeLib.health_adjacent && (
+                  <><strong>This is research literature, not medical or parenting advice.</strong>{" "}
+                  It only shows what research papers report.{" "}</>
                 )}
                 <strong>Note:</strong> {activeLib.not_advice_note}
               </p>
@@ -653,8 +674,10 @@ function OutOfDomain({ lang, query, activeLibrary }: {
 
       {harm && (
         <p className="not-advice" role="note" style={{ marginTop: "var(--s-5)" }}>
-          If you are thinking about harming yourself, please contact local emergency
-          services or a crisis line in your country now. You deserve support from a person.
+          If you are thinking about harming yourself, you deserve support from a person: find a free
+          helpline in your country at{" "}
+          <a href={HELPLINE_URL} target="_blank" rel="noopener noreferrer">findahelpline.com</a>,
+          or contact your local emergency number.
         </p>
       )}
       {blocked ? null : !showBuild ? (

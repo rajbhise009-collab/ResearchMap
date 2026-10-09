@@ -7,6 +7,7 @@
       "blurb": "How language models express confidence, when they should refuse to answer, how their uncertainty is measured, and why they state false things as fact.",
       "is_default": true,
       "not_advice_note": null,
+      "health_adjacent": false,
       "n_papers": 113,
       "snapshot_path": "/data"
     },
@@ -17,6 +18,7 @@
       "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
       "is_default": false,
       "not_advice_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you.",
+      "health_adjacent": true,
       "n_papers": 100,
       "snapshot_path": "/data/library/diet-and-mortality"
     },
@@ -27,6 +29,7 @@
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
       "is_default": false,
       "not_advice_note": null,
+      "health_adjacent": false,
       "n_papers": 99,
       "snapshot_path": "/data/library/ml-fairness"
     },
@@ -37,6 +40,7 @@
       "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
       "is_default": false,
       "not_advice_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service.",
+      "health_adjacent": true,
       "n_papers": 100,
       "snapshot_path": "/data/library/social-media-teen-mental-health"
     }

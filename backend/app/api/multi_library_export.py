@@ -66,7 +66,7 @@ def _prelabel_count(slug: str) -> int:
 
 def _manifest(lib: dict) -> dict:
     """One library's entry in libraries.json, from data/library_registry.json."""
-    keys = ("slug", "name", "short_name", "blurb", "is_default", "not_advice_note")
+    keys = ("slug", "name", "short_name", "blurb", "is_default", "not_advice_note", "health_adjacent")
     m = {k: lib[k] for k in keys}
     m["n_papers"] = 113 if lib["slug"] == "llm-calibration" else _prelabel_count(lib["slug"])
     return m

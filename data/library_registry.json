@@ -1,5 +1,5 @@
 {
- "note": "Every library the site knows. status: built (on the site) or queued (prepared; the weekly workflow builds it when the money rule allows), not-ready (failed its rubric audit; never built automatically). frozen: never grown. Read by backend/app/api/registry.py.",
+ "note": "Every library the site knows. status: built (on the site) or queued (prepared; the weekly workflow builds it when the money rule allows), not-ready (failed its rubric audit; never built automatically). frozen: never grown. Read by backend/app/api/registry.py. health_adjacent: advice-style questions lead with a research-not-advice note; a queued library inherits the flag set here when it is built.",
  "libraries": [
   {
    "slug": "llm-calibration",
@@ -11,7 +11,8 @@
    "short_name": "LLM calibration",
    "blurb": "How language models express confidence, when they should refuse to answer, how their uncertainty is measured, and why they state false things as fact.",
    "not_advice_note": null,
-   "footer_note": "The oldest, most-scored library in the project."
+   "footer_note": "The oldest, most-scored library in the project.",
+   "health_adjacent": false
   },
   {
    "slug": "diet-and-mortality",
@@ -23,7 +24,8 @@
    "short_name": "Diet & mortality",
    "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
    "not_advice_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you.",
-   "footer_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you."
+   "footer_note": "Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you.",
+   "health_adjacent": true
   },
   {
    "slug": "ml-fairness",
@@ -35,7 +37,8 @@
    "short_name": "ML fairness",
    "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
    "not_advice_note": null,
-   "footer_note": "Some definitions of fairness are mathematically proven unable to all hold at once. Our disagreement check found no conflicting claims among the papers read; why is not established."
+   "footer_note": "Some definitions of fairness are mathematically proven unable to all hold at once. Our disagreement check found no conflicting claims among the papers read; why is not established.",
+   "health_adjacent": false
   },
   {
    "slug": "nudge-effectiveness",
@@ -47,7 +50,8 @@
    "short_name": "Nudges",
    "blurb": "Whether defaults, reminders, social-norm messages and other changes to how choices are presented change what people do, and how large those effects really are.",
    "not_advice_note": "Research-literature analysis, not policy or professional advice.",
-   "footer_note": "Research-literature analysis, not policy or professional advice."
+   "footer_note": "Research-literature analysis, not policy or professional advice.",
+   "health_adjacent": false
   },
   {
    "slug": "social-media-teen-mental-health",
@@ -59,7 +63,8 @@
    "short_name": "Social media & teens",
    "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
    "not_advice_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service.",
-   "footer_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service."
+   "footer_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service.",
+   "health_adjacent": true
   },
   {
    "slug": "ego-depletion",
@@ -71,7 +76,8 @@
    "short_name": "Ego depletion",
    "blurb": "Whether using self-control uses up a limited resource, and why large replication attempts disagree with the original findings.",
    "not_advice_note": null,
-   "footer_note": "Whether using self-control uses up a limited resource, and why large replication attempts disagree with the original findings."
+   "footer_note": "Whether using self-control uses up a limited resource, and why large replication attempts disagree with the original findings.",
+   "health_adjacent": false
   },
   {
    "slug": "minimum-wage",
@@ -84,7 +90,8 @@
    "blurb": "What raising the minimum wage does to jobs, hours and earnings, and why careful studies reach different answers.",
    "not_advice_note": "Research-literature analysis, not economic, policy or employment advice.",
    "not_ready_reason": "Blind self-audit agreement 60% then 67% after the one allowed rubric fix (80% required): general labour-economics papers still enter as borderline. Needs a human rubric revision before it can be built (docs/findings/domain-selection-2026-10-09.md).",
-   "footer_note": "Research-literature analysis, not economic, policy or employment advice."
+   "footer_note": "Research-literature analysis, not economic, policy or employment advice.",
+   "health_adjacent": false
   },
   {
    "slug": "growth-mindset",
@@ -96,7 +103,8 @@
    "short_name": "Growth mindset",
    "blurb": "Whether teaching students that ability can grow improves their learning and grades, for whom, and by how much.",
    "not_advice_note": "Research-literature analysis, not educational or parenting advice.",
-   "footer_note": "Research-literature analysis, not educational or parenting advice."
+   "footer_note": "Research-literature analysis, not educational or parenting advice.",
+   "health_adjacent": false
   },
   {
    "slug": "deep-rl-reproducibility",
@@ -109,7 +117,8 @@
    "blurb": "How deep reinforcement-learning results are measured, why many fail to reproduce, and which evaluation practices make comparisons trustworthy.",
    "not_advice_note": null,
    "not_ready_reason": "Blind self-audit agreement 53% then 67% after the one allowed rubric fix (80% required): the snowball mostly collects RL methods papers. Needs a human rubric and seed revision.",
-   "footer_note": "How deep reinforcement-learning results are measured, why many fail to reproduce, and which evaluation practices make comparisons trustworthy."
+   "footer_note": "How deep reinforcement-learning results are measured, why many fail to reproduce, and which evaluation practices make comparisons trustworthy.",
+   "health_adjacent": false
   },
   {
    "slug": "microplastics-health",
@@ -122,7 +131,8 @@
    "blurb": "What is known about micro- and nanoplastics in the human body, how they are measured, and what they may do to health.",
    "not_advice_note": "Research-literature analysis, not medical or exposure advice. Take health concerns to a clinician.",
    "footer_note": "Research-literature analysis, not medical or exposure advice. Take health concerns to a clinician.",
-   "not_ready_reason": "Blind self-audit agreement 60% then 67% after the one allowed rubric fix (80% required): environmental microplastics papers (oceans, freshwater, fallout) still enter as borderline. Needs a human rubric revision."
+   "not_ready_reason": "Blind self-audit agreement 60% then 67% after the one allowed rubric fix (80% required): environmental microplastics papers (oceans, freshwater, fallout) still enter as borderline. Needs a human rubric revision.",
+   "health_adjacent": true
   }
  ]
 }

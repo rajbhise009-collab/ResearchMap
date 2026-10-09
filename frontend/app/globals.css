@@ -1515,3 +1515,16 @@ main#main { min-height: 100vh; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
   main#main { min-height: 0; }
 }
+
+/* Personal-distress message (lib/safety.ts): calm, plain, no alarm colours. */
+.distress-note {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elev, transparent);
+  padding: var(--s-4) var(--s-5);
+  border-radius: 6px;
+  max-width: 62ch;
+}
+.distress-note p { margin: 0 0 var(--s-3); }
+.distress-note p:last-child { margin-bottom: 0; }
+@media (forced-colors: active) { .distress-note { border: 1px solid CanvasText; } }

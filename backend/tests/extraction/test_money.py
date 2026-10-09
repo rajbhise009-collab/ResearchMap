@@ -63,3 +63,17 @@ def test_weekly_pacing_and_queued_affordability(tmp_path):
     assert money.weekly_budget_inr(5000.0, c, dt.date(2026, 10, 12)) == 60.0   # capped
     assert money.queued_affordable(20.0, 70.0, 10.0, c)          # 30 + 40 <= 70
     assert not money.queued_affordable(21.0, 70.0, 10.0, c)
+
+
+def test_run_cap_is_enforced_at_call_time(tmp_path, monkeypatch):
+    """A manual weekly run's run_budget_inr becomes an absolute ledger cap."""
+    mp, _c = _cfg(tmp_path, account_total_inr=1000)          # money rule: plenty left
+    lp = _ledger(tmp_path, [{"ts": 1.0, "cost_inr": 50.0, "cost_usd": 50.0 / 84, "stage": "x"}])
+    monkeypatch.setenv("MONEY_CONFIG_PATH", str(mp))
+    monkeypatch.setenv("RUN_CAP_LEDGER_INR", "75")           # this run may add ₹25
+    led = SpendLedger(lp)
+    assert led.snapshot()["cap_inr"] == pytest.approx(75.0)
+    with pytest.raises(SpendCapExceededError):
+        led.check_headroom(prompt_tokens_est=10_000_000, output_tokens_est=1_000_000, batch=False, stage="t")
+    monkeypatch.delenv("RUN_CAP_LEDGER_INR")
+    assert SpendLedger(lp).snapshot()["cap_inr"] == pytest.approx(990.0)    # scheduled runs: money rule only

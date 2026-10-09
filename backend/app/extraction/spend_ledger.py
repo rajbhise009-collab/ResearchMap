@@ -167,7 +167,8 @@ class SpendLedger:
             state = LedgerState()
         # The money rule (config/money.json) replaces the stored cap for the
         # real ledger, or for any ledger when MONEY_CONFIG_PATH is set (tests).
-        if self.path.resolve() == LEDGER_PATH.resolve() or os.environ.get("MONEY_CONFIG_PATH"):
+        if (self.path.resolve() == LEDGER_PATH.resolve() or os.environ.get("MONEY_CONFIG_PATH")
+                or os.environ.get("RUN_CAP_LEDGER_INR")):
             from backend.app.extraction import money
             cap = money.effective_cap_inr(state.cumulative_inr, state.entries)
             if cap is not None:

@@ -148,6 +148,32 @@ pair:
 The workflow never writes to `contradiction_audit.json`, the frozen review
 folders under `docs/review/`, or the baseline tag.
 
+## Manual runs: cap and dry run
+
+**Run workflow** (Actions → Weekly grow) takes two inputs. They apply only to
+manual runs; scheduled Monday runs follow the money rule as described above.
+
+| input | default | effect |
+|---|---|---|
+| `run_budget_inr` | 25 | Caps **total** spend for this run, in rupees. It is enforced at call time like the money rule: any paid call that would take the ledger past (ledger at the start of the run + this amount) is refused. |
+| `build_queued` | false | When false, no queued library is started or finished in this run. |
+
+**See what a run would spend, for free, before running it:**
+
+```bash
+.venv/bin/python tools/grow/run_weekly.py --dry-run
+GROW_RUN_BUDGET_INR=40 GROW_BUILD_QUEUED=true .venv/bin/python tools/grow/run_weekly.py --dry-run
+```
+
+It prints, per library:
+
+- the candidates found (free OpenAlex queries);
+- the papers that would be submitted;
+- the projected extraction and follow-on cost.
+
+It also prints the cap and the remaining money afterwards. It makes no
+Gemini call, writes no commit and opens no Issue.
+
 ## Pause, resume, change the pace
 
 - **Pause everything:** set `"paused": true` in `config/growth.json` and

@@ -16,10 +16,15 @@ on:
     - cron: "23 5 * * 1"        # Mondays 05:23 UTC (off the hour)
   workflow_dispatch:
     inputs:
-      weekly_budget_inr:
-        description: "Budget for this run's new commitments, INR"
+      run_budget_inr:
+        description: "Cap on TOTAL spend for this manual run, INR (enforced at call time)"
         required: false
         default: "25"
+      build_queued:
+        description: "Also build a queued library if the money rule allows it"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write     # commit to main, or push grow/<date> when a gate fails
@@ -62,6 +67,11 @@ jobs:
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GH_TOKEN: ${{ github.token }}
-          WEEKLY_BUDGET_INR: ${{ inputs.weekly_budget_inr || vars.WEEKLY_BUDGET_INR || '25' }}
+          # Manual runs: run_budget_inr caps total spend; build_queued (default
+          # false) gates queued-library builds. Scheduled runs: the money rule.
+          GROW_EVENT: ${{ github.event_name }}
+          GROW_RUN_BUDGET_INR: ${{ inputs.run_budget_inr }}
+          GROW_BUILD_QUEUED: ${{ inputs.build_queued }}
+          WEEKLY_BUDGET_INR: ${{ vars.WEEKLY_BUDGET_INR }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
         run: python tools/grow/run_weekly.py

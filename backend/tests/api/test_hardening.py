@@ -144,3 +144,16 @@ def test_prototype_words_do_not_break_search():
                         "-e", script], capture_output=True, text=True, check=True)
     v = json.loads(r.stdout)
     assert v[-1] == "in_domain" and all(x in ("out_of_domain", "typing", "empty", "borderline") for x in v[:-1]), v
+
+
+def test_health_adjacent_flag_is_declared_and_shipped():
+    reg = json.loads((REPO / "data" / "library_registry.json").read_text())["libraries"]
+    for l in reg:
+        assert isinstance(l.get("health_adjacent"), bool), l["slug"]
+        if l["health_adjacent"]:
+            assert l.get("not_advice_note"), l["slug"]     # flagged libraries carry the note
+    shipped = {l["slug"]: l for l in json.loads((FE / "public" / "data" / "libraries.json").read_text())["libraries"]}
+    for l in reg:
+        if l["slug"] in shipped:                           # built libraries inherit the flag
+            assert shipped[l["slug"]]["health_adjacent"] == l["health_adjacent"], l["slug"]
+    assert shipped["diet-and-mortality"]["health_adjacent"] and shipped["social-media-teen-mental-health"]["health_adjacent"]

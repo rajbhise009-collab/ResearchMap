@@ -134,3 +134,20 @@ def test_transient_errors_retry_then_succeed():
     assert core.with_retry(flaky, base_s=0) == "ok" and calls["n"] == 3
     with pytest.raises(ValueError):
         core.with_retry(lambda: (_ for _ in ()).throw(ValueError("bad input")), base_s=0)
+
+
+def test_manual_run_inputs_and_controls(monkeypatch):
+    _d, on = _wf("weekly-grow.yml")
+    inp = on["workflow_dispatch"]["inputs"]
+    assert inp["run_budget_inr"]["default"] == "25"
+    assert inp["build_queued"]["type"] == "boolean" and inp["build_queued"]["default"] is False
+    rw = _load_run_weekly()
+    monkeypatch.setenv("GROW_EVENT", "schedule")
+    assert rw.run_controls() == (False, None, True)                  # scheduled: money rule, queued allowed
+    monkeypatch.setenv("GROW_EVENT", "workflow_dispatch")
+    monkeypatch.delenv("GROW_RUN_BUDGET_INR", raising=False)
+    monkeypatch.delenv("GROW_BUILD_QUEUED", raising=False)
+    assert rw.run_controls() == (True, 25.0, False)                  # manual defaults
+    monkeypatch.setenv("GROW_RUN_BUDGET_INR", "40")
+    monkeypatch.setenv("GROW_BUILD_QUEUED", "true")
+    assert rw.run_controls() == (True, 40.0, True)

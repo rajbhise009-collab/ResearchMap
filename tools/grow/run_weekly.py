@@ -347,8 +347,16 @@ def main() -> int:
             say(f"issue: {issues.upsert(title, body, ['weekly-grow'])}")
             return 0
         l0 = ledger_inr()
+        manual, run_budget, build_queued = run_controls()
+        if run_budget is not None:
+            # every paid call in this process is refused past this ledger total
+            os.environ["RUN_CAP_LEDGER_INR"] = str(round(l0[0] + run_budget, 6))
+            say(f"manual run: total spend capped at ₹{run_budget:.2f}; queued builds "
+                f"{'allowed' if build_queued else 'skipped'}")
         mstat = money.status(ref)
         weekly = mstat.get("weekly_budget_inr", 0.0)
+        if run_budget is not None:
+            weekly = min(weekly, run_budget)
         if os.environ.get("WEEKLY_BUDGET_INR"):        # optional owner override: can only lower it
             weekly = min(weekly, float(os.environ["WEEKLY_BUDGET_INR"]))
         exhausted = mstat["remaining_inr"] < 1.0
@@ -421,7 +429,7 @@ def main() -> int:
                 say(f"submit {slug}: {r.get('submitted', 0)} papers, projected ₹{r.get('projected_inr', 0):.2f}")
                 p2.append(r)
         # A queued library, if the money rule says it is affordable (one at a time)
-        if budget.weekly_inr > 0 and not queued.building():
+        if budget.weekly_inr > 0 and not queued.building() and build_queued:
             rem = money.status(ref)["remaining_inr"] - budget.committed
             for lib in registry_queued():
                 queued.open_fulltext(lib, cl)
@@ -504,6 +512,92 @@ def main() -> int:
     return 0 if ok and (live is None or live[0]) else 1
 
 
+def run_controls() -> tuple[bool, float | None, bool]:
+    """(manual?, run budget or None, build queued libraries?). Manual runs
+    (workflow_dispatch) use the inputs; scheduled runs keep the money rule
+    and may build a queued library when it is affordable."""
+    manual = os.environ.get("GROW_EVENT") == "workflow_dispatch"
+    if not manual:
+        return False, None, True
+    raw = (os.environ.get("GROW_RUN_BUDGET_INR") or "25").strip()
+    return True, max(0.0, float(raw)), os.environ.get("GROW_BUILD_QUEUED", "false").lower() == "true"
+
+
+def dry_run() -> int:
+    """Planned spend for a manual run with the defaults (or the GROW_* inputs),
+    without spending anything: free OpenAlex queries and projections only.
+    No Gemini call, no commit, no Issue."""
+    from backend.app.corpus import multi_domain_reason as R
+    from backend.app.extraction import money
+    from backend.app.grow import core, queued
+    from backend.app.grow.core import Clients
+    from backend.app.reasoning import run_library_scorers as S
+    os.environ.setdefault("GROW_EVENT", "workflow_dispatch")
+    date = os.environ.get("GROW_DATE") or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    ref = dt.date.fromisoformat(date)
+    _manual, run_budget, build_queued = run_controls()
+    st = money.status(ref)
+    weekly = min(st["weekly_budget_inr"], run_budget) if run_budget is not None else st["weekly_budget_inr"]
+    if os.environ.get("WEEKLY_BUDGET_INR"):
+        weekly = min(weekly, float(os.environ["WEEKLY_BUDGET_INR"]))
+
+    class _NoPaid:
+        def __getattr__(self, name):
+            raise RuntimeError("dry run: no paid call")
+
+    import httpx
+    from backend.app.config import get_settings
+    from backend.app.corpus.multi_domain import retrieve_fulltext_one
+    from backend.app.refresh.weekly_candidates import LiveOpenAlexClient
+    k = get_settings().openalex_api_key
+    http = httpx.Client(timeout=25.0, follow_redirects=True, headers={"User-Agent": "ResearchMap/0.3 dry-run"})
+    cl = Clients(openalex=LiveOpenAlexClient(k.get_secret_value() if hasattr(k, "get_secret_value") else k),
+                 batch=_NoPaid(), embed=_NoPaid(), llm=_NoPaid(),
+                 fulltext=lambda e, r: retrieve_fulltext_one(e, r, client=http))
+    budget = core.Budget(weekly)
+    print(f"DRY RUN {date} — nothing is spent")
+    print(f"money: ceiling ₹{st['ceiling_inr']:.2f}, ledger ₹{st['ledger_inr']:.2f}, remaining "
+          f"₹{st['remaining_inr']:.2f}, weeks left {st['weeks_left']}, money-rule weekly ₹{st['weekly_budget_inr']:.2f}")
+    print(f"this run: cap ₹{run_budget if run_budget is not None else st['weekly_budget_inr']:.2f} "
+          f"(run_budget_inr), weekly budget used ₹{weekly:.2f}, queued builds "
+          f"{'allowed' if build_queued else 'SKIPPED (build_queued=false)'}")
+    rows, followon_total, errs = [], 0.0, []
+    for slug in core.grow_slugs():
+        f = 0.0
+        exts = R.load_extractions(slug)
+        pairs = R.compute_shortlist(exts, use_real_embeddings=True, slug=slug, embed_client=_NoPaid())
+        done = R.load_classified_keys(slug)
+        unseen = sum(1 for p in pairs if (p.from_claim_id, p.to_claim_id) not in done)
+        f += unseen * R.projected_inr_per_pair()
+        f += S.fwmatch(slug, dry_run=True).get("projected_inr", 0.0)
+        f += S.confirm(slug, dry_run=True).get("projected_inr", 0.0)
+        followon_total += f
+        rows.append([slug, f])
+    prepared = {s: core.prepare(s, cl, ref=ref, errors=errs) for s in core.grow_slugs()}
+    papers = {s: len(json.loads((ROOT / "data/domains" / s / "prelabelled.json").read_text())["entries"])
+              for s in prepared}
+    picked = core.allocate(prepared, budget, papers)
+    print("\n| library | candidates | planned papers | follow-on checks ₹ | extraction ₹ (batch) | padded ×1.5 ₹ |")
+    print("|:--|--:|--:|--:|--:|--:|")
+    tot_x = 0.0
+    for slug, f in rows:
+        x = sum(it["inr"] for it in picked[slug])
+        tot_x += x
+        print(f"| {slug} | {len(prepared[slug]['items'])} | {len(picked[slug])} | {f:.2f} | {x:.2f} | {x * 1.5:.2f} |")
+    q = registry_queued()[:1]
+    if q:
+        print(f"\nqueued library {q[0]['slug']}: extraction projected ₹{queued.projection_inr(q[0]):.2f} "
+              f"— {'would be considered' if build_queued else 'skipped this run'}")
+    planned = tot_x + followon_total
+    cap = run_budget if run_budget is not None else None
+    print(f"\nplanned spend: ₹{planned:.2f} (extraction ₹{tot_x:.2f} + follow-on ₹{followon_total:.2f})"
+          + (f"; cap ₹{cap:.2f}" if cap is not None else ""))
+    print(f"remaining money afterwards: ₹{st['remaining_inr'] - planned:.2f} (if every projection is spent)")
+    if errs:
+        print("OpenAlex notes:", "; ".join(errs[:5]))
+    return 0
+
+
 def registry_queued() -> list[dict]:
     from backend.app.api import registry
     return registry.queued()
@@ -571,4 +665,4 @@ def publish_branch(date: str, msg: str) -> str:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(dry_run() if "--dry-run" in sys.argv else main())

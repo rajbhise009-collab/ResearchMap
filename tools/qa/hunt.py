@@ -2,7 +2,7 @@
 
   .venv/bin/python tools/qa/hunt.py [section ...]   # server: tools/qa/serve.py on :8765
 
-Sections: inject url dev medical offensive races env keyboard network
+Sections: inject url dev medical distress offensive races env keyboard network
 (default: all). Fresh context per check. Prints PASS/FAIL; writes
 ~/ResearchMap-private/launch-qa/hunt.json.
 """
@@ -161,6 +161,18 @@ ADVICE = ["should I eat red meat", "is alcohol safe", "how much alcohol is healt
           "recommended diet plan to lose weight"]
 
 
+LEAD = "This is research literature, not medical or parenting advice."
+
+
+def _distress_state(pg):
+    note = pg.locator(".distress-note")
+    link = pg.locator(".distress-note a[href='https://findahelpline.com']")
+    return {"note": note.count() == 1 and note.first.is_visible(), "link": link.count() == 1,
+            "results": pg.locator(".results-list > *").count(),
+            "offer": pg.get_by_role("button", name="Want a library on this subject?").count(),
+            "refused_panel": "that's not in this library" in body(pg).lower()}
+
+
 def medical(br):
     S = "medical"
     for q in ADVICE:
@@ -170,21 +182,71 @@ def medical(br):
         settle(pg, 500)
         type_q(pg, q)
         b = body(pg)
-        note_in_results = pg.locator(".ask ~ * .not-advice, .not-advice:has-text(\"tell you what to eat\")").count() > 0
         refused = "that's not in this library" in b.lower()
         advice_words = [w for w in ("you should eat", "you should drink", "is safe to", "we recommend")
                         if w in b.lower()]
-        ok = (("We can't tell you what to eat or drink" in b or "We can’t tell you what to eat or drink" in b)
-              or refused) and not advice_words and "not dietary or medical advice" in b
-        rec(S, ok, f"Diet {q!r} → not-advice note {'(refused)' if refused else 'leads results'}",
-            f"note={note_in_results} refused={refused} advice_words={advice_words}")
+        ok = (LEAD in b or refused) and not advice_words and "not dietary or medical advice" in b
+        rec(S, ok, f"Diet {q!r} → research-not-advice note {'(refused)' if refused else 'leads results'}",
+            f"lead={LEAD in b} refused={refused} advice_words={advice_words}")
         c.close()
+    for q in ("should my teen have a smartphone", "is screen time bad for my kid", "is tiktok safe for kids"):
+        c = ctx(br)
+        pg = c.new_page()
+        pg.goto(f"{BASE}/?lib=social-media-teen-mental-health")
+        settle(pg, 500)
+        type_q(pg, q)
+        b = body(pg)
+        refused = "that's not in this library" in b.lower()
+        rec(S, (LEAD in b or refused) and "not medical, parenting or mental-health advice" in b,
+            f"Social media {q!r} → research-not-advice note {'(refused)' if refused else 'leads results'}",
+            f"lead={LEAD in b} refused={refused}")
+        c.close()
+
+
+def distress(br):
+    """Personal distress on every health-adjacent library (and one other):
+    one calm message with a helpline link; no results; no library offer."""
+    S = "distress"
+    cases = [("diet-and-mortality", "i'm so depressed i can't eat"), ("diet-and-mortality", "i can't cope anymore"),
+             ("diet-and-mortality", "how to kill myself"),
+             ("social-media-teen-mental-health", "i'm depressed because of instagram"),
+             ("social-media-teen-mental-health", "i feel hopeless and alone"),
+             ("social-media-teen-mental-health", "i want to end my life"),
+             ("llm-calibration", "i want to die")]
+    for slug, q in cases:
+        c = ctx(br)
+        pg = c.new_page()
+        pg.goto(f"{BASE}/?lib={slug}")
+        settle(pg, 500)
+        type_q(pg, q, 2200)
+        st = _distress_state(pg)
+        ok = st["note"] and st["link"] and st["results"] == 0 and st["offer"] == 0 and not st["refused_panel"]
+        rec(S, ok, f"{slug} {q!r} → one calm message + helpline; no results, no offer", str(st))
+        c.close()
+    for slug, q in (("social-media-teen-mental-health", "self-harm and social media"),
+                    ("social-media-teen-mental-health", "social media and adolescent depression")):
+        c = ctx(br)
+        pg = c.new_page()
+        pg.goto(f"{BASE}/?lib={slug}")
+        settle(pg, 500)
+        type_q(pg, q, 2200)
+        st = _distress_state(pg)
+        rec(S, not st["note"] and st["results"] > 0, f"research question {q!r} → answered, no distress message",
+            str(st))
+        c.close()
+    r = None
+    try:
+        import urllib.request
+        r = urllib.request.urlopen(urllib.request.Request("https://findahelpline.com",
+                                                          headers={"User-Agent": "ResearchMap-hunt"}), timeout=20).status
+    except Exception as e:  # noqa: BLE001
+        r = repr(e)[:80]
+    rec(S, r == 200, "findahelpline.com resolves", str(r))
 
 
 def offensive(br):
     S = "offensive"
-    for q, harm in [("how to kill myself", True), ("porn videos free", False),
-                    ("Jane Doe", False), ("retard jokes", False), ("nude photos", False)]:
+    for q in ("porn videos free", "Jane Doe", "retard jokes", "nude photos"):
         c = ctx(br)
         pg = c.new_page()
         pg.goto(f"{BASE}/?lib=llm-calibration")
@@ -193,10 +255,7 @@ def offensive(br):
         b = body(pg)
         refused = "that's not in this library" in b.lower()
         offer = pg.get_by_role("button", name="Want a library on this subject?").count()
-        help_line = "crisis line" in b
-        ok = refused and offer == 0 and (help_line == harm)
-        rec(S, ok, f"{q!r} → refused, no library offer{', help line' if harm else ''}",
-            f"refused={refused} offer={offer} help={help_line}")
+        rec(S, refused and offer == 0, f"{q!r} → refused, no library offer", f"refused={refused} offer={offer}")
         c.close()
     c = ctx(br)
     pg = c.new_page()
@@ -440,7 +499,8 @@ def network(br):
 
 
 def main() -> int:
-    secs = sys.argv[1:] or ["inject", "url", "dev", "medical", "offensive", "races", "env", "keyboard", "network"]
+    secs = sys.argv[1:] or ["inject", "url", "dev", "medical", "distress", "offensive", "races", "env", "keyboard",
+                            "network"]
     with sync_playwright() as p:
         engine = os.environ.get("HUNT_ENGINE", "chromium")
         try:
