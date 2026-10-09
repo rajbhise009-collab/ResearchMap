@@ -24,8 +24,10 @@ from backend.app.api.search_index import STOPWORDS, _stem, search
 DATA = Path(__file__).resolve().parents[3] / "frontend" / "public" / "data"
 LIBS = json.loads((DATA / "libraries.json").read_text())["libraries"]
 MAX_SHARE = 0.15
-REFUSE = ["melanoma treatment", "stock market prediction", "camera calibration for stereo vision",
-          "quantum computing error correction", "recipe for chocolate cake"]
+# Far from every library this project could hold (not "stock market": an
+# economics or behavioural library may legitimately cover markets).
+REFUSE = ["melanoma treatment", "volcano eruption forecasting", "camera calibration for stereo vision",
+          "quantum computing error correction", "medieval castle architecture"]
 
 
 def _idx(lib):

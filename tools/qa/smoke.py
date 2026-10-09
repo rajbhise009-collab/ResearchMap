@@ -32,6 +32,7 @@ def rec(ok, label, detail=""):
 
 
 LIBS = json.loads((DATA / "libraries.json").read_text())["libraries"]
+FACTS = {l["slug"]: l for l in json.loads((DATA / "site-facts.json").read_text())["libraries"]}
 SETTLED = {"diet-and-mortality": "alc", "ml-fairness": "fair", "llm-calibration": "halluc"}
 
 
@@ -129,7 +130,12 @@ def run(p, base, engine, mobile, axe):
         rec(lib["name"] in card, f"{tag} {slug} library card shows its name", card[:80])
         b, n, g = search(pg, q)
         banner = "that's not in this library" in b or "at the edge of this library" in b
-        rec(n > 0 and g > 0 and not banner, f"{tag} {slug} '{q}' → results incl. gaps",
+        # A small or brand-new library may have few visible results (e.g. all
+        # its disagreements still await the owner's audit): gap hits are
+        # required only when it has at least 3.
+        need_gaps = FACTS.get(slug, {}).get("results_total", 0) >= 3
+        rec(n > 0 and (g > 0 or not need_gaps) and not banner,
+            f"{tag} {slug} '{q}' → results" + (" incl. gaps" if need_gaps else ""),
             f"results={n} gaps={g} banner={banner}")
         pg.goto(f"{base}/?lib={slug}")          # fresh page: no state from the first search
         settle(pg, 500)
