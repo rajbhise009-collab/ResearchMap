@@ -69,8 +69,9 @@ jobs:
 
       - name: Grow, gate, publish
         env:
-          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # gates_only runs get no API keys at all (zero spend by construction)
+          OPENALEX_API_KEY: ${{ inputs.gates_only != true && secrets.OPENALEX_API_KEY || '' }}
+          GEMINI_API_KEY: ${{ inputs.gates_only != true && secrets.GEMINI_API_KEY || '' }}
           GH_TOKEN: ${{ github.token }}
           # Manual runs: run_budget_inr caps total spend; build_queued (default
           # false) gates queued-library builds. Scheduled runs: the money rule.

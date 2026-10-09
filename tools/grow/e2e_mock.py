@@ -127,6 +127,16 @@ def setup():
         (WORK / rel).symlink_to(ROOT / rel)
     with open(WORK / ".git" / "info" / "exclude", "a") as f:
         f.write("frontend/node_modules\ntools/qa/node_modules\n")
+    # The clone carries the REAL pending batches (submitted by a live run and
+    # billed when a live run collects them). The mocked Gemini cannot know
+    # those batch ids, so the mock world starts with none. Only this scratch
+    # clone and its stand-in remote change; the real files are untouched.
+    real_pending = sorted(str(p.relative_to(WORK)) for p in (WORK / "data" / "domains").glob("*/grow/pending.json"))
+    if real_pending:
+        git("rm", "-q", *real_pending)
+        git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m",
+            "e2e: start the mock world with no real pending batches")
+        git("push", "-q", "origin", "HEAD:main")
     _set_money(650)
 
 

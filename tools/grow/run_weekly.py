@@ -406,6 +406,8 @@ def main() -> int:
     mstat: dict = {}
     note = None
     try:
+        if os.environ.get("GROW_GATES_ONLY", "").lower() == "true":
+            return gates_only(date)      # zero spend; works even while paused
         hold = guards()
         if paused():
             body = issue_body(date, "paused — nothing collected, spent or published", p1=[], p2=[], diff=None,
@@ -413,8 +415,6 @@ def main() -> int:
                               note="config/growth.json has paused: true. Set it to false to resume.")
             say(f"issue: {issues.upsert(title, body, ['weekly-grow'])}")
             return 0
-        if os.environ.get("GROW_GATES_ONLY", "").lower() == "true":
-            return gates_only(date)
         # PREFLIGHT: nothing is spent unless the fresh checkout passes
         pre = preflight_checks()
         if not all(g["ok"] for g in pre):

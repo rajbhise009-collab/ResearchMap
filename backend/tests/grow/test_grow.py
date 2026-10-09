@@ -204,3 +204,30 @@ def test_pending_commitments_count_once(monkeypatch, tmp_path):
     assert money.pending_inr() == 10.0
     (d / "pending.json").write_text('{"projected_inr": 10.0, "ledger_recorded": true}')
     assert money.pending_inr() == 0.0
+
+
+def test_gates_only_spends_nothing_and_publishes_nothing(monkeypatch, capsys):
+    """F: gates_only runs preflight and every gate, reports pass/fail per
+    gate, and never builds a client, collects, submits, publishes or files
+    an Issue — even while growth is paused."""
+    rw = _load_run_weekly()
+    monkeypatch.setenv("GROW_GATES_ONLY", "true")
+    monkeypatch.setattr(rw, "paused", lambda: True)
+    boom = lambda *a, **k: (_ for _ in ()).throw(AssertionError("must not be called"))  # noqa: E731
+    for name in ("guards", "publish_bookkeeping", "publish_branch", "regenerate", "_reset_rest"):
+        if hasattr(rw, name):
+            monkeypatch.setattr(rw, name, boom if name != "_reset_rest" else (lambda: None))
+    monkeypatch.setattr(rw.issues, "upsert", boom)
+    import backend.app.grow.clients as C
+    import backend.app.grow.core as core_mod
+    monkeypatch.setattr(C, "make_clients", boom)
+    for fn in ("collect", "submit", "prepare", "followon"):
+        monkeypatch.setattr(core_mod, fn, boom)
+    ok = {"ok": True, "tail": "", "failed": []}
+    monkeypatch.setattr(rw, "preflight_checks", lambda: [dict(ok, gate="preflight: full tests")])
+    monkeypatch.setattr(rw, "gates", lambda **k: [dict(ok, gate="docs check"),
+                                                  {"gate": "smoke", "ok": False, "tail": "boom",
+                                                   "failed": ["[FAIL] smoke x"]}])
+    assert rw.main() == 1
+    out = capsys.readouterr().out
+    assert "| docs check | PASS |" in out and "| smoke | FAIL |" in out and "GATE FAILURES" in out
