@@ -34,47 +34,47 @@
  "cap_used": 5,
  "tau": {
   "llm-calibration": 0.6326,
-  "diet-and-mortality": 0.6691,
+  "diet-and-mortality": 0.6703,
   "ml-fairness": 0.7544,
-  "social-media-teen-mental-health": 0.7348
+  "social-media-teen-mental-health": 0.7417
  },
  "N": 88,
- "addressed": 15,
- "share_addressed": 0.17,
- "n_required_at_observed_share": 209,
- "power_at_observed_share": 0.446,
+ "addressed": 14,
+ "share_addressed": 0.159,
+ "n_required_at_observed_share": 217,
+ "power_at_observed_share": 0.426,
  "powered": false,
  "enough_per_class": true,
  "results": {
   "engine": {
-   "auc": 0.574,
+   "auc": 0.552,
    "auc_ci": [
-    0.429,
-    0.713
+    0.407,
+    0.695
    ],
    "precision": {
     "5": 0.0,
     "10": 0.1,
-    "20": 0.25
+    "20": 0.2
    }
   },
   "citations_up_to_Y": {
-   "auc": 0.601,
+   "auc": 0.568,
    "auc_ci": [
-    0.438,
-    0.76
+    0.403,
+    0.735
    ],
    "precision": {
-    "5": 0.6,
-    "10": 0.4,
-    "20": 0.25
+    "5": 0.4,
+    "10": 0.3,
+    "20": 0.2
    }
   },
   "recency": {
-   "auc": 0.474,
+   "auc": 0.487,
    "auc_ci": [
-    0.317,
-    0.628
+    0.319,
+    0.645
    ],
    "precision": {
     "5": 0.0,
@@ -84,28 +84,28 @@
   },
   "random": {
    "auc_null_mean": 0.5,
-   "p_auc": 0.1857,
+   "p_auc": 0.2722,
    "p_precision": {
     "5": 1.0,
-    "10": 0.86,
-    "20": 0.2214
+    "10": 0.8392,
+    "20": 0.3947
    },
    "precision_null_mean": {
-    "5": 0.17,
-    "10": 0.17,
-    "20": 0.17
+    "5": 0.158,
+    "10": 0.158,
+    "20": 0.158
    }
   },
   "engine_minus_citation_auc_ci": [
-   -0.225,
-   0.176
+   -0.224,
+   0.19
   ],
   "matched": {
-   "pairs": 15,
-   "auc": 0.569,
+   "pairs": 14,
+   "auc": 0.561,
    "auc_ci": [
-    0.356,
-    0.779
+    0.347,
+    0.766
    ]
   }
  },
@@ -125,7 +125,7 @@
   },
   "social-media-teen-mental-health": {
    "N": 29,
-   "addressed": 5
+   "addressed": 4
   }
  },
  "items": [
@@ -1303,7 +1303,7 @@
    "cites_up_to_Y": 461,
    "n_citing_used": 5,
    "best_cosine": 0.7366,
-   "addressed": true
+   "addressed": false
   },
   {
    "library": "social-media-teen-mental-health",

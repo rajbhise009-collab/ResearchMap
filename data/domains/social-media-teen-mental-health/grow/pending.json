@@ -1,0 +1,3928 @@
+{
+ "batch_id": "81z1omo95lr2rjm68equjxed35pmagl9828j",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-10-09",
+ "submitted_at": 1791560239.733441,
+ "projected_inr": 5.257161,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7220393051": "fulltext",
+  "openalex:W7220846371": "abstract",
+  "openalex:W7220964018": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7220393051",
+   "openalex_id": "https://openalex.org/W7220393051",
+   "title": "Association Between Social Media Screen Time and Depression and Anxiety Among Adolescents: A Systematic Review",
+   "year": 2026,
+   "doi": "https://doi.org/10.64823/ijepp.2601011",
+   "venue": "International Journal of Education Pedagogy and Psychology",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "Social media use by youth is nearly a universal phenomenon. Adolescents of this generation find it very challenging to envision a life without social media. Despite its pervasive use among children and adolescents, there has been very little research conducted to understand the impact of time spent on social media on children, especially on their mental health and wellbeing. This systematic review examines the extent to which social media screen time is associated between depressive and anxiety symptoms among adolescents aged 10-19 years. Following the PRISMA 2020 Statement, six databases and Google Scholar were searched, of which fifty eligibility studies were retrieved which was published between January 2015 and August 2026, comprising 33 cross-sectional and 17 cohort designs. Two independent reviewers partitioned records, extracted data, and assessed methodological quality using the Joanna Briggs Institute (JBI) Critical Appraisal Checklists for cross-sectional and cohort studies. As a result of the substantial heterogeneity in exposure and outcome measures, a narrative synthesis of the findings was more relevant than statistical pooling. The majority of studies reported a significant positive association between social media use and depressive symptoms, with the recent cohort studies using within-person analytic techniques strengthening this association. Evidence for anxiety was directionally similar but weaker, less consistent, and in several studies non-linear. The key moderating and mediating factors were gender, sleep disruptions, cyberbullying, active vs. passive engagement, and familial and peer environments. Quality appraisal indicated a generally sound evidence base, with all cross-sectional studies rated high quality, confidence was limited by widespread dependence on unvalidated self-report exposure measures and unclear baseline symptom status in the cohort studies. These findings support a shift in clinical practice, policy, and future research away from screen-time limits alone and toward assessing the pattern, content, and context of adolescent social media use. Keywords: mental health; Depression; Anxiety; Adolescents; social media screen time",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  },
+  {
+   "wid": "W7220846371",
+   "openalex_id": "https://openalex.org/W7220846371",
+   "title": "When less is more: Unifinal framing promotes intention to use social media for social connection",
+   "year": 2026,
+   "doi": "https://doi.org/10.1016/j.jesp.2026.105013",
+   "venue": "Journal of Experimental Social Psychology",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "People often wish to rekindle their dormant relationships yet struggle to act on their intentions. This intention-action gap is notable in an era of rising loneliness and surprising in a time marked by unprecedented technological tools for social connection. We propose that one reason for this gap lies in how people evaluate the appropriateness of the means for achieving their social connection goals. Drawing on goal systems theory, we examined whether framing social media platforms as serving a single social connection goal (unifinality) versus multiple goals (multifinality) shapes evaluations of the means and intentions to reconnect with dormant ties. Across three preregistered studies ( N = 1095), unifinal framing increased perceived diagnosticity\u2014the sense that a means is well suited to a focal goal\u2014which in turn enhanced intentions to reconnect. Diagnosticity was empirically distinguishable from perceived instrumentality and more consistently accounted for the effect of framing on intentions to reconnect. These findings highlight goal structure as a key determinant of when people view digital platforms as appropriate tools for meaningful social connection and when they intend to use them for such purposes. We discuss broader implications for how individuals navigate their social goals in increasingly multifinal digital environments and for how technology companies must balance emphasizing multifunctionality with highlighting specific relational affordances.",
+   "label": "on-domain",
+   "rationale": "strong term in title: 'social media' + pair anywhere: 'loneliness'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7220964018",
+   "openalex_id": "https://openalex.org/W7220964018",
+   "title": "Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study",
+   "year": 2026,
+   "doi": "https://doi.org/10.2196/98925",
+   "venue": "JMIR Mental Health",
+   "field": "psychology",
+   "cited_by_count": 0,
+   "abstract": "BACKGROUND Mental illness contributes substantially to global disability, and public adoption of AI for mental health support is accelerating without commensurate safety evaluation. General-purpose large language models can fail to recognize naturalistic text expressing suicidal ideation, with immediate clinical consequences. Domain-specific natural language processing methods offer a contrasting approach, but ensembles integrating the two have not been formally characterized. OBJECTIVE We aimed to (1) benchmark 5 modeling approaches for classifying mental health\u2013related social media text, (2) develop and optimize ensembles integrating a domain-specific natural language processing classifier with a fine-tuned large language model, and (3) derive a closed-form framework constraining ensemble weighting in safety-critical classification. METHODS We analyzed 60,889 publicly available Reddit and Twitter texts spanning 9 categories (anxiety, bipolar disorder, depression, a normal baseline, personality disorder, stress, suicidal ideation, attention-deficit/hyperactivity disorder, and autism spectrum disorder). Labels were derived from the originating subreddit or a self-stated condition and are not clinical diagnoses. Five architectures were compared: prompt-engineered base GPT-4o-mini; fine-tuned GPT-4o-mini; a domain-specific classifier (support vector machine over symptom-informed lexical features); and 2 ensembles of these models, hybrid probability\u2013indicator fusion and soft probability fusion. Data were split into 70%, 10%, and 20% at the post level (n=42,622, n=6089, and n=12,178); weights were selected on the validation split and all reported performance comes from the held-out test split. Closed-form bounds on permissible language model weights were derived for both strategies. CIs are paired bootstrap intervals (n=10,000 replicates); accuracy differences were tested with exact McNemar tests. RESULTS The domain-specific classifier achieved 91.9% accuracy (95% CI 91.4%-92.4%), exceeding the base (58.7%) and fine-tuned (88.6%) large language models. Both ensembles outperformed either constituent model, reaching 93.9% (soft fusion; 95% CI 93.5%-94.3%) and 93.8% (hybrid fusion; 95% CI 93.4%-94.2%) at a weighting of 60% classifier to 40% fine-tuned model, selected on validation (P<.001 for both against the classifier alone; the 2 ensembles did not differ from each other [P=.16]). The hybrid ensemble reduced the miss rate for the suicidal ideation category from 32.5% (650/2000) to 1.9% (37/2000), a 17.6-fold reduction relative to the base model, although its advantage over the classifier alone within that category was not significant (P=.68). Accuracy fell discontinuously above a 50% language model weight, where the hybrid ensemble reduced exactly to the fine-tuned model; the selected weight satisfies the derived instance-level bound of 44.0%. CONCLUSIONS Domain-specific clinical grounding remained necessary for stable ensemble performance in this corpus, and probabilistic fusion outperformed both constituent models when language model weight was bounded by a derivable, model-agnostic constraint. Because labels were community-inferred and only one corpus was analyzed, these results are hypotheses requiring external validation on clinically characterized data before use in decision support.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7220393051",
+   "doi": "https://doi.org/10.64823/ijepp.2601011",
+   "title": "Association Between Social Media Screen Time and Depression and Anxiety Among Adolescents: A Systematic Review",
+   "display_name": "Association Between Social Media Screen Time and Depression and Anxiety Among Adolescents: A Systematic Review",
+   "publication_year": 2026,
+   "publication_date": "2026-10-06",
+   "ids": {
+    "openalex": "https://openalex.org/W7220393051",
+    "doi": "https://doi.org/10.64823/ijepp.2601011"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.64823/ijepp.2601011",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.64823/ijepp.2601011",
+    "pdf_url": "https://ioro.org/article/399387653156/pdf",
+    "source": {
+     "id": "https://openalex.org/S7407062861",
+     "display_name": "International Journal of Education Pedagogy and Psychology",
+     "issn_l": "3143-7060",
+     "issn": [
+      "3143-7060"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "International Journal of Education, Pedagogy and Psychology",
+    "raw_type": "journal-article"
+   },
+   "type": "review",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://ioro.org/article/399387653156/pdf",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5143966600",
+      "display_name": "Reuben B Joy",
+      "orcid": "https://orcid.org/0000-0002-3194-3138",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-3194-3138"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": true,
+     "raw_author_name": "Reuben B Joy",
+     "raw_affiliation_strings": [
+      "Psychologist , Hyderabad , India"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-3194-3138",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Psychologist , Hyderabad , India",
+       "institution_ids": []
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 0,
+   "institutions_distinct_count": 0,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5143966600"
+   ],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.83888889,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "1",
+    "issue": "2",
+    "first_page": "1",
+    "last_page": "20"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.9990000128746033,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.9990000128746033,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12060",
+     "display_name": "Child Development and Digital Technology",
+     "score": 0.0003000000142492354,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3304",
+      "display_name": "Education"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10182",
+     "display_name": "Child and Adolescent Psychosocial and Emotional Development",
+     "score": 9.999999747378752e-05,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/social-media-use",
+     "display_name": "social media use",
+     "score": 0.8460000157356262
+    },
+    {
+     "id": "https://openalex.org/keywords/screen-time",
+     "display_name": "screen time",
+     "score": 0.9660000205039978
+    },
+    {
+     "id": "https://openalex.org/keywords/adolescents",
+     "display_name": "adolescents",
+     "score": 0.8019999861717224
+    },
+    {
+     "id": "https://openalex.org/keywords/depression",
+     "display_name": "depression",
+     "score": 0.7720000147819519
+    },
+    {
+     "id": "https://openalex.org/keywords/anxiety",
+     "display_name": "anxiety",
+     "score": 0.9340000152587891
+    },
+    {
+     "id": "https://openalex.org/keywords/mental-health",
+     "display_name": "mental health",
+     "score": 0.6940000057220459
+    },
+    {
+     "id": "https://openalex.org/keywords/sleep-disruption",
+     "display_name": "sleep disruption",
+     "score": 0.8889999985694885
+    },
+    {
+     "id": "https://openalex.org/keywords/cyberbullying",
+     "display_name": "cyberbullying",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/gender-differences",
+     "display_name": "gender differences",
+     "score": 0.7020000219345093
+    },
+    {
+     "id": "https://openalex.org/keywords/screen-time-limits",
+     "display_name": "screen time limits",
+     "score": 0.6859999895095825
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.7232999801635742
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.6208000183105469
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.617900013923645
+    },
+    {
+     "id": "https://openalex.org/C72563966",
+     "wikidata": "https://www.wikidata.org/wiki/Q1303415",
+     "display_name": "Cohort",
+     "level": 2,
+     "score": 0.6069999933242798
+    },
+    {
+     "id": "https://openalex.org/C142853389",
+     "wikidata": "https://www.wikidata.org/wiki/Q744778",
+     "display_name": "Association (psychology)",
+     "level": 2,
+     "score": 0.592199981212616
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.550000011920929
+    },
+    {
+     "id": "https://openalex.org/C2776867660",
+     "wikidata": "https://www.wikidata.org/wiki/Q1814941",
+     "display_name": "Depression (economics)",
+     "level": 2,
+     "score": 0.4950000047683716
+    },
+    {
+     "id": "https://openalex.org/C2777545354",
+     "wikidata": "https://www.wikidata.org/wiki/Q3557657",
+     "display_name": "Social anxiety",
+     "level": 3,
+     "score": 0.4869999885559082
+    },
+    {
+     "id": "https://openalex.org/C2781253360",
+     "wikidata": "https://www.wikidata.org/wiki/Q28130149",
+     "display_name": "Screen time",
+     "level": 3,
+     "score": 0.4864000082015991
+    },
+    {
+     "id": "https://openalex.org/C152541439",
+     "wikidata": "https://www.wikidata.org/wiki/Q5186693",
+     "display_name": "Critical appraisal",
+     "level": 3,
+     "score": 0.48510000109672546
+    },
+    {
+     "id": "https://openalex.org/C70410870",
+     "wikidata": "https://www.wikidata.org/wiki/Q199906",
+     "display_name": "Clinical psychology",
+     "level": 1,
+     "score": 0.48089998960494995
+    },
+    {
+     "id": "https://openalex.org/C201903717",
+     "wikidata": "https://www.wikidata.org/wiki/Q1778788",
+     "display_name": "Cohort study",
+     "level": 2,
+     "score": 0.4666000008583069
+    },
+    {
+     "id": "https://openalex.org/C2779951463",
+     "wikidata": "https://www.wikidata.org/wiki/Q7268788",
+     "display_name": "Quality of life (healthcare)",
+     "level": 2,
+     "score": 0.4018000066280365
+    },
+    {
+     "id": "https://openalex.org/C189708586",
+     "wikidata": "https://www.wikidata.org/wiki/Q1504425",
+     "display_name": "Systematic review",
+     "level": 3,
+     "score": 0.3562000095844269
+    },
+    {
+     "id": "https://openalex.org/C118552586",
+     "wikidata": "https://www.wikidata.org/wiki/Q7867",
+     "display_name": "Psychiatry",
+     "level": 1,
+     "score": 0.33869999647140503
+    },
+    {
+     "id": "https://openalex.org/C95190672",
+     "wikidata": "https://www.wikidata.org/wiki/Q815382",
+     "display_name": "Meta-analysis",
+     "level": 2,
+     "score": 0.3257000148296356
+    },
+    {
+     "id": "https://openalex.org/C178233286",
+     "wikidata": "https://www.wikidata.org/wiki/Q645999",
+     "display_name": "Social comparison theory",
+     "level": 2,
+     "score": 0.3174999952316284
+    },
+    {
+     "id": "https://openalex.org/C3019858935",
+     "wikidata": "https://www.wikidata.org/wiki/Q4340209",
+     "display_name": "Depressive symptoms",
+     "level": 3,
+     "score": 0.3124000132083893
+    },
+    {
+     "id": "https://openalex.org/C3020000205",
+     "wikidata": "https://www.wikidata.org/wiki/Q2412849",
+     "display_name": "Narrative review",
+     "level": 2,
+     "score": 0.29660001397132874
+    },
+    {
+     "id": "https://openalex.org/C2778600172",
+     "wikidata": "https://www.wikidata.org/wiki/Q7160415",
+     "display_name": "Peer victimization",
+     "level": 4,
+     "score": 0.29429998993873596
+    },
+    {
+     "id": "https://openalex.org/C65067816",
+     "wikidata": "https://www.wikidata.org/wiki/Q2295139",
+     "display_name": "Computer-assisted web interviewing",
+     "level": 2,
+     "score": 0.29409998655319214
+    },
+    {
+     "id": "https://openalex.org/C27415008",
+     "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+     "display_name": "Psychological intervention",
+     "level": 2,
+     "score": 0.2815999984741211
+    },
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.27619999647140503
+    },
+    {
+     "id": "https://openalex.org/C128593788",
+     "wikidata": "https://www.wikidata.org/wiki/Q1194193",
+     "display_name": "Peer group",
+     "level": 2,
+     "score": 0.2727000117301941
+    },
+    {
+     "id": "https://openalex.org/C2779530757",
+     "wikidata": "https://www.wikidata.org/wiki/Q1207505",
+     "display_name": "Quality (philosophy)",
+     "level": 2,
+     "score": 0.25200000405311584
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.64823/ijepp.2601011",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.64823/ijepp.2601011",
+     "pdf_url": "https://ioro.org/article/399387653156/pdf",
+     "source": {
+      "id": "https://openalex.org/S7407062861",
+      "display_name": "International Journal of Education Pedagogy and Psychology",
+      "issn_l": "3143-7060",
+      "issn": [
+       "3143-7060"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "International Journal of Education, Pedagogy and Psychology",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.64823/ijepp.2601011",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.64823/ijepp.2601011",
+    "pdf_url": "https://ioro.org/article/399387653156/pdf",
+    "source": {
+     "id": "https://openalex.org/S7407062861",
+     "display_name": "International Journal of Education Pedagogy and Psychology",
+     "issn_l": "3143-7060",
+     "issn": [
+      "3143-7060"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "International Journal of Education, Pedagogy and Psychology",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "score": 1.0,
+     "id": "https://metadata.un.org/sdg/3",
+     "display_name": "Good health and well-being"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [
+    {
+     "id": "https://openalex.org/study-designs/systematic-review",
+     "display_name": "Systematic Review"
+    }
+   ],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": true,
+    "pdf": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7220393051.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7220393051.grobid-xml"
+   },
+   "referenced_works_count": 52,
+   "referenced_works": [
+    "https://openalex.org/W1849635709",
+    "https://openalex.org/W2415849311",
+    "https://openalex.org/W2751422871",
+    "https://openalex.org/W2888996398",
+    "https://openalex.org/W2892761420",
+    "https://openalex.org/W2896921383",
+    "https://openalex.org/W2908500884",
+    "https://openalex.org/W2952745509",
+    "https://openalex.org/W2957614298",
+    "https://openalex.org/W2964434626",
+    "https://openalex.org/W2972459530",
+    "https://openalex.org/W2979663154",
+    "https://openalex.org/W2983017028",
+    "https://openalex.org/W3006120578",
+    "https://openalex.org/W3008073110",
+    "https://openalex.org/W3029678251",
+    "https://openalex.org/W3037865145",
+    "https://openalex.org/W3039383731",
+    "https://openalex.org/W3048566403",
+    "https://openalex.org/W3049599056",
+    "https://openalex.org/W3090679770",
+    "https://openalex.org/W3118615836",
+    "https://openalex.org/W3149562586",
+    "https://openalex.org/W3180725277",
+    "https://openalex.org/W4205291379",
+    "https://openalex.org/W4282920511",
+    "https://openalex.org/W4306756760",
+    "https://openalex.org/W4322582728",
+    "https://openalex.org/W4366990569",
+    "https://openalex.org/W4386623891",
+    "https://openalex.org/W4395098280",
+    "https://openalex.org/W4400988932",
+    "https://openalex.org/W4401168422",
+    "https://openalex.org/W4402318620",
+    "https://openalex.org/W4403162922",
+    "https://openalex.org/W4405496286",
+    "https://openalex.org/W4406087131",
+    "https://openalex.org/W4407121726",
+    "https://openalex.org/W4407167990",
+    "https://openalex.org/W4408011511",
+    "https://openalex.org/W4410382681",
+    "https://openalex.org/W4410551898",
+    "https://openalex.org/W4414767826",
+    "https://openalex.org/W4415213162",
+    "https://openalex.org/W4417423011",
+    "https://openalex.org/W4417488514",
+    "https://openalex.org/W7154482270",
+    "https://openalex.org/W7162546304",
+    "https://openalex.org/W7162846814",
+    "https://openalex.org/W7167614909",
+    "https://openalex.org/W7169883868",
+    "https://openalex.org/W7170092495"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Social": [
+     0
+    ],
+    "media": [
+     1,
+     49,
+     68,
+     178,
+     293,
+     302
+    ],
+    "use": [
+     2,
+     28,
+     179
+    ],
+    "by": [
+     3,
+     248
+    ],
+    "youth": [
+     4
+    ],
+    "is": [
+     5,
+     71
+    ],
+    "nearly": [
+     6
+    ],
+    "a": [
+     7,
+     20,
+     144,
+     155,
+     172,
+     233,
+     268
+    ],
+    "universal": [
+     8
+    ],
+    "phenomenon.": [
+     9
+    ],
+    "Adolescents": [
+     10
+    ],
+    "of": [
+     11,
+     44,
+     95,
+     146,
+     158,
+     169,
+     290
+    ],
+    "this": [
+     12,
+     193
+    ],
+    "generation": [
+     13
+    ],
+    "find": [
+     14
+    ],
+    "it": [
+     15
+    ],
+    "very": [
+     16,
+     36
+    ],
+    "challenging": [
+     17
+    ],
+    "to": [
+     18,
+     40,
+     65
+    ],
+    "envision": [
+     19
+    ],
+    "life": [
+     21
+    ],
+    "without": [
+     22
+    ],
+    "social": [
+     23,
+     48,
+     67,
+     177,
+     292,
+     301
+    ],
+    "media.": [
+     24
+    ],
+    "Despite": [
+     25
+    ],
+    "its": [
+     26
+    ],
+    "pervasive": [
+     27
+    ],
+    "among": [
+     29,
+     78
+    ],
+    "children": [
+     30
+    ],
+    "and": [
+     31,
+     57,
+     75,
+     90,
+     108,
+     114,
+     125,
+     140,
+     152,
+     180,
+     205,
+     213,
+     225,
+     227,
+     256,
+     274,
+     282,
+     288
+    ],
+    "adolescents,": [
+     32
+    ],
+    "there": [
+     33
+    ],
+    "has": [
+     34
+    ],
+    "been": [
+     35
+    ],
+    "little": [
+     37
+    ],
+    "research": [
+     38,
+     276
+    ],
+    "conducted": [
+     39
+    ],
+    "understand": [
+     41
+    ],
+    "the": [
+     42,
+     63,
+     84,
+     130,
+     147,
+     159,
+     184,
+     262,
+     285
+    ],
+    "impact": [
+     43
+    ],
+    "time": [
+     45,
+     70,
+     304
+    ],
+    "spent": [
+     46
+    ],
+    "on": [
+     47,
+     50,
+     53,
+     251
+    ],
+    "children,": [
+     51
+    ],
+    "especially": [
+     52
+    ],
+    "their": [
+     54
+    ],
+    "mental": [
+     55,
+     296
+    ],
+    "health": [
+     56
+    ],
+    "wellbeing.": [
+     58
+    ],
+    "This": [
+     59
+    ],
+    "systematic": [
+     60
+    ],
+    "review": [
+     61
+    ],
+    "examines": [
+     62
+    ],
+    "extent": [
+     64
+    ],
+    "which": [
+     66,
+     96,
+     102
+    ],
+    "screen": [
+     69,
+     303
+    ],
+    "associated": [
+     72
+    ],
+    "between": [
+     73,
+     105,
+     176
+    ],
+    "depressive": [
+     74,
+     181
+    ],
+    "anxiety": [
+     76,
+     197
+    ],
+    "symptoms": [
+     77
+    ],
+    "adolescents": [
+     79
+    ],
+    "aged": [
+     80
+    ],
+    "10-19": [
+     81
+    ],
+    "years.": [
+     82
+    ],
+    "Following": [
+     83
+    ],
+    "PRISMA": [
+     85
+    ],
+    "2020": [
+     86
+    ],
+    "Statement,": [
+     87
+    ],
+    "six": [
+     88
+    ],
+    "databases": [
+     89
+    ],
+    "Google": [
+     91
+    ],
+    "Scholar": [
+     92
+    ],
+    "were": [
+     93,
+     100,
+     216
+    ],
+    "searched,": [
+     94
+    ],
+    "fifty": [
+     97
+    ],
+    "eligibility": [
+     98
+    ],
+    "studies": [
+     99,
+     170,
+     187,
+     208,
+     241
+    ],
+    "retrieved": [
+     101
+    ],
+    "was": [
+     103,
+     161,
+     198,
+     246
+    ],
+    "published": [
+     104
+    ],
+    "January": [
+     106
+    ],
+    "2015": [
+     107
+    ],
+    "August": [
+     109
+    ],
+    "2026,": [
+     110
+    ],
+    "comprising": [
+     111
+    ],
+    "33": [
+     112
+    ],
+    "cross-sectional": [
+     113,
+     139,
+     240
+    ],
+    "17": [
+     115
+    ],
+    "cohort": [
+     116,
+     141,
+     186,
+     263
+    ],
+    "designs.": [
+     117
+    ],
+    "Two": [
+     118
+    ],
+    "independent": [
+     119
+    ],
+    "reviewers": [
+     120
+    ],
+    "partitioned": [
+     121
+    ],
+    "records,": [
+     122
+    ],
+    "extracted": [
+     123
+    ],
+    "data,": [
+     124
+    ],
+    "assessed": [
+     126
+    ],
+    "methodological": [
+     127
+    ],
+    "quality": [
+     128
+    ],
+    "using": [
+     129,
+     188
+    ],
+    "Joanna": [
+     131
+    ],
+    "Briggs": [
+     132
+    ],
+    "Institute": [
+     133
+    ],
+    "(JBI)": [
+     134
+    ],
+    "Critical": [
+     135
+    ],
+    "Appraisal": [
+     136
+    ],
+    "Checklists": [
+     137
+    ],
+    "for": [
+     138,
+     196
+    ],
+    "studies.": [
+     142,
+     264
+    ],
+    "As": [
+     143
+    ],
+    "result": [
+     145
+    ],
+    "substantial": [
+     148
+    ],
+    "heterogeneity": [
+     149
+    ],
+    "in": [
+     150,
+     206,
+     261,
+     270
+    ],
+    "exposure": [
+     151,
+     254
+    ],
+    "outcome": [
+     153
+    ],
+    "measures,": [
+     154
+    ],
+    "narrative": [
+     156
+    ],
+    "synthesis": [
+     157
+    ],
+    "findings": [
+     160,
+     266
+    ],
+    "more": [
+     162
+    ],
+    "relevant": [
+     163
+    ],
+    "than": [
+     164
+    ],
+    "statistical": [
+     165
+    ],
+    "pooling.": [
+     166
+    ],
+    "The": [
+     167,
+     210
+    ],
+    "majority": [
+     168
+    ],
+    "reported": [
+     171
+    ],
+    "significant": [
+     173
+    ],
+    "positive": [
+     174
+    ],
+    "association": [
+     175
+    ],
+    "symptoms,": [
+     182
+    ],
+    "with": [
+     183,
+     238
+    ],
+    "recent": [
+     185
+    ],
+    "within-person": [
+     189
+    ],
+    "analytic": [
+     190
+    ],
+    "techniques": [
+     191
+    ],
+    "strengthening": [
+     192
+    ],
+    "association.": [
+     194
+    ],
+    "Evidence": [
+     195
+    ],
+    "directionally": [
+     199
+    ],
+    "similar": [
+     200
+    ],
+    "but": [
+     201
+    ],
+    "weaker,": [
+     202
+    ],
+    "less": [
+     203
+    ],
+    "consistent,": [
+     204
+    ],
+    "several": [
+     207
+    ],
+    "non-linear.": [
+     209
+    ],
+    "key": [
+     211
+    ],
+    "moderating": [
+     212
+    ],
+    "mediating": [
+     214
+    ],
+    "factors": [
+     215
+    ],
+    "gender,": [
+     217
+    ],
+    "sleep": [
+     218
+    ],
+    "disruptions,": [
+     219
+    ],
+    "cyberbullying,": [
+     220
+    ],
+    "active": [
+     221
+    ],
+    "vs.": [
+     222
+    ],
+    "passive": [
+     223
+    ],
+    "engagement,": [
+     224
+    ],
+    "familial": [
+     226
+    ],
+    "peer": [
+     228
+    ],
+    "environments.": [
+     229
+    ],
+    "Quality": [
+     230
+    ],
+    "appraisal": [
+     231
+    ],
+    "indicated": [
+     232
+    ],
+    "generally": [
+     234
+    ],
+    "sound": [
+     235
+    ],
+    "evidence": [
+     236
+    ],
+    "base,": [
+     237
+    ],
+    "all": [
+     239
+    ],
+    "rated": [
+     242
+    ],
+    "high": [
+     243
+    ],
+    "quality,": [
+     244
+    ],
+    "confidence": [
+     245
+    ],
+    "limited": [
+     247
+    ],
+    "widespread": [
+     249
+    ],
+    "dependence": [
+     250
+    ],
+    "unvalidated": [
+     252
+    ],
+    "self-report": [
+     253
+    ],
+    "measures": [
+     255
+    ],
+    "unclear": [
+     257
+    ],
+    "baseline": [
+     258
+    ],
+    "symptom": [
+     259
+    ],
+    "status": [
+     260
+    ],
+    "These": [
+     265
+    ],
+    "support": [
+     267
+    ],
+    "shift": [
+     269
+    ],
+    "clinical": [
+     271
+    ],
+    "practice,": [
+     272
+    ],
+    "policy,": [
+     273
+    ],
+    "future": [
+     275
+    ],
+    "away": [
+     277
+    ],
+    "from": [
+     278
+    ],
+    "screen-time": [
+     279
+    ],
+    "limits": [
+     280
+    ],
+    "alone": [
+     281
+    ],
+    "toward": [
+     283
+    ],
+    "assessing": [
+     284
+    ],
+    "pattern,": [
+     286
+    ],
+    "content,": [
+     287
+    ],
+    "context": [
+     289
+    ],
+    "adolescent": [
+     291
+    ],
+    "use.": [
+     294
+    ],
+    "Keywords:": [
+     295
+    ],
+    "health;": [
+     297
+    ],
+    "Depression;": [
+     298
+    ],
+    "Anxiety;": [
+     299
+    ],
+    "Adolescents;": [
+     300
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-07T09:51:55.459714",
+   "created_date": "2026-10-06T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7220846371",
+   "doi": "https://doi.org/10.1016/j.jesp.2026.105013",
+   "title": "When less is more: Unifinal framing promotes intention to use social media for social connection",
+   "display_name": "When less is more: Unifinal framing promotes intention to use social media for social connection",
+   "publication_year": 2026,
+   "publication_date": "2026-10-07",
+   "ids": {
+    "openalex": "https://openalex.org/W7220846371",
+    "doi": "https://doi.org/10.1016/j.jesp.2026.105013"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1016/j.jesp.2026.105013",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1016/j.jesp.2026.105013",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S12410666",
+     "display_name": "Journal of Experimental Social Psychology",
+     "issn_l": "0022-1031",
+     "issn": [
+      "0022-1031",
+      "1096-0465"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-a",
+      "cwts-core",
+      "erih-plus",
+      "jufo-2",
+      "ki-jl-1",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320990",
+     "host_organization_name": "Elsevier BV",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320990"
+     ],
+     "host_organization_lineage_names": [
+      "Elsevier BV"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-nd",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of Experimental Social Psychology",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://doi.org/10.1016/j.jesp.2026.105013",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5100648336",
+      "display_name": "David S. Lee",
+      "orcid": "https://orcid.org/0000-0003-4267-4604",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-4267-4604"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I63190737",
+       "display_name": "University at Buffalo, State University of New York",
+       "ror": "https://ror.org/01y64my43",
+       "country_code": "US",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I63190737"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "David S. Lee",
+     "raw_affiliation_strings": [
+      "University at Buffalo, The State University of New York, Buffalo, NY, USA"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "University at Buffalo, The State University of New York, Buffalo, NY, USA",
+       "institution_ids": [
+        "https://openalex.org/I63190737"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5066300043",
+      "display_name": "Daniel Kulesza",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I63190737",
+       "display_name": "University at Buffalo, State University of New York",
+       "ror": "https://ror.org/01y64my43",
+       "country_code": "US",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I63190737"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Daniel Kulesza",
+     "raw_affiliation_strings": [
+      "University at Buffalo, The State University of New York, Buffalo, NY, USA"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "University at Buffalo, The State University of New York, Buffalo, NY, USA",
+       "institution_ids": [
+        "https://openalex.org/I63190737"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5100648336"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I63190737"
+   ],
+   "apc_list": {
+    "value": 3220,
+    "currency": "USD",
+    "value_usd": 3220
+   },
+   "apc_paid": {
+    "value": 3220,
+    "currency": "USD",
+    "value_usd": 3220
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.9451671,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "128",
+    "issue": null,
+    "first_page": "105013",
+    "last_page": "105013"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.5776000022888184,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.5776000022888184,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12214",
+     "display_name": "Media Influence and Health",
+     "score": 0.06379999965429306,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1208",
+      "display_name": "Literature and Literary Theory"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/12",
+      "display_name": "Arts and Humanities"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10803",
+     "display_name": "Innovative Human-Technology Interaction",
+     "score": 0.05260000005364418,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1709",
+      "display_name": "Human-Computer Interaction"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/framing-effects",
+     "display_name": "framing effects",
+     "score": 0.6890000104904175
+    },
+    {
+     "id": "https://openalex.org/keywords/social-media-use",
+     "display_name": "social media use",
+     "score": 0.8970000147819519
+    },
+    {
+     "id": "https://openalex.org/keywords/social-connection",
+     "display_name": "social connectedness",
+     "score": 0.9670000076293945
+    },
+    {
+     "id": "https://openalex.org/keywords/intention-to-use",
+     "display_name": "intention to use",
+     "score": 0.6959999799728394
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.7339000105857849
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.7192999720573425
+    },
+    {
+     "id": "https://openalex.org/C169087156",
+     "wikidata": "https://www.wikidata.org/wiki/Q2131593",
+     "display_name": "Framing (construction)",
+     "level": 2,
+     "score": 0.656499981880188
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.6075000166893005
+    },
+    {
+     "id": "https://openalex.org/C13355873",
+     "wikidata": "https://www.wikidata.org/wiki/Q2920850",
+     "display_name": "Connection (principal bundle)",
+     "level": 2,
+     "score": 0.38040000200271606
+    },
+    {
+     "id": "https://openalex.org/C130064352",
+     "wikidata": "https://www.wikidata.org/wiki/Q853725",
+     "display_name": "Social relation",
+     "level": 2,
+     "score": 0.3666999936103821
+    },
+    {
+     "id": "https://openalex.org/C129484327",
+     "wikidata": "https://www.wikidata.org/wiki/Q177603",
+     "display_name": "Social perception",
+     "level": 3,
+     "score": 0.3384999930858612
+    },
+    {
+     "id": "https://openalex.org/C178233286",
+     "wikidata": "https://www.wikidata.org/wiki/Q645999",
+     "display_name": "Social comparison theory",
+     "level": 2,
+     "score": 0.33320000767707825
+    },
+    {
+     "id": "https://openalex.org/C136714292",
+     "wikidata": "https://www.wikidata.org/wiki/Q1440683",
+     "display_name": "Framing effect",
+     "level": 3,
+     "score": 0.322299987077713
+    },
+    {
+     "id": "https://openalex.org/C2992801459",
+     "wikidata": "https://www.wikidata.org/wiki/Q223642",
+     "display_name": "Interpersonal interaction",
+     "level": 2,
+     "score": 0.26899999380111694
+    },
+    {
+     "id": "https://openalex.org/C109778625",
+     "wikidata": "https://www.wikidata.org/wiki/Q796573",
+     "display_name": "Computer-mediated communication",
+     "level": 3,
+     "score": 0.2554999887943268
+    },
+    {
+     "id": "https://openalex.org/C98447023",
+     "wikidata": "https://www.wikidata.org/wiki/Q1540351",
+     "display_name": "Social identity theory",
+     "level": 3,
+     "score": 0.2549000084400177
+    },
+    {
+     "id": "https://openalex.org/C131158328",
+     "wikidata": "https://www.wikidata.org/wiki/Q1307337",
+     "display_name": "Social influence",
+     "level": 2,
+     "score": 0.25049999356269836
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1016/j.jesp.2026.105013",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1016/j.jesp.2026.105013",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S12410666",
+      "display_name": "Journal of Experimental Social Psychology",
+      "issn_l": "0022-1031",
+      "issn": [
+       "0022-1031",
+       "1096-0465"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "abdc-a",
+       "cwts-core",
+       "erih-plus",
+       "jufo-2",
+       "ki-jl-1",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320990",
+      "host_organization_name": "Elsevier BV",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320990"
+      ],
+      "host_organization_lineage_names": [
+       "Elsevier BV"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by-nc-nd",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of Experimental Social Psychology",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1016/j.jesp.2026.105013",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1016/j.jesp.2026.105013",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S12410666",
+     "display_name": "Journal of Experimental Social Psychology",
+     "issn_l": "0022-1031",
+     "issn": [
+      "0022-1031",
+      "1096-0465"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-a",
+      "cwts-core",
+      "erih-plus",
+      "jufo-2",
+      "ki-jl-1",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320990",
+     "host_organization_name": "Elsevier BV",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320990"
+     ],
+     "host_organization_lineage_names": [
+      "Elsevier BV"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-nd",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of Experimental Social Psychology",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 30,
+   "referenced_works": [
+    "https://openalex.org/W325661287",
+    "https://openalex.org/W1470155931",
+    "https://openalex.org/W1865628228",
+    "https://openalex.org/W1985749074",
+    "https://openalex.org/W1994045792",
+    "https://openalex.org/W2015257607",
+    "https://openalex.org/W2022258280",
+    "https://openalex.org/W2030515160",
+    "https://openalex.org/W2057650742",
+    "https://openalex.org/W2071141511",
+    "https://openalex.org/W2081155210",
+    "https://openalex.org/W2087822443",
+    "https://openalex.org/W2099556653",
+    "https://openalex.org/W2107752627",
+    "https://openalex.org/W2125568867",
+    "https://openalex.org/W2130602313",
+    "https://openalex.org/W2133339457",
+    "https://openalex.org/W2159516798",
+    "https://openalex.org/W2160326831",
+    "https://openalex.org/W2168681459",
+    "https://openalex.org/W2787407045",
+    "https://openalex.org/W3002972930",
+    "https://openalex.org/W3108070005",
+    "https://openalex.org/W3210923385",
+    "https://openalex.org/W4212838134",
+    "https://openalex.org/W4230929083",
+    "https://openalex.org/W4234715662",
+    "https://openalex.org/W4256005559",
+    "https://openalex.org/W4309765371",
+    "https://openalex.org/W4402555024"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "People": [
+     0
+    ],
+    "often": [
+     1
+    ],
+    "wish": [
+     2
+    ],
+    "to": [
+     3,
+     10,
+     94,
+     119,
+     127,
+     147,
+     175
+    ],
+    "rekindle": [
+     4
+    ],
+    "their": [
+     5,
+     13,
+     59,
+     189
+    ],
+    "dormant": [
+     6,
+     97
+    ],
+    "relationships": [
+     7
+    ],
+    "yet": [
+     8
+    ],
+    "struggle": [
+     9
+    ],
+    "act": [
+     11
+    ],
+    "on": [
+     12,
+     64,
+     145
+    ],
+    "intentions.": [
+     14
+    ],
+    "This": [
+     15
+    ],
+    "intention-action": [
+     16
+    ],
+    "gap": [
+     17,
+     46
+    ],
+    "is": [
+     18,
+     116
+    ],
+    "notable": [
+     19
+    ],
+    "in": [
+     20,
+     28,
+     48,
+     123,
+     192
+    ],
+    "an": [
+     21
+    ],
+    "era": [
+     22
+    ],
+    "of": [
+     23,
+     54,
+     89,
+     143,
+     158
+    ],
+    "rising": [
+     24
+    ],
+    "loneliness": [
+     25
+    ],
+    "and": [
+     26,
+     92,
+     136,
+     171,
+     197
+    ],
+    "surprising": [
+     27
+    ],
+    "a": [
+     29,
+     77,
+     114,
+     120,
+     155
+    ],
+    "time": [
+     30
+    ],
+    "marked": [
+     31
+    ],
+    "by": [
+     32
+    ],
+    "unprecedented": [
+     33
+    ],
+    "technological": [
+     34
+    ],
+    "tools": [
+     35,
+     166
+    ],
+    "for": [
+     36,
+     44,
+     57,
+     140,
+     167,
+     178,
+     185,
+     198
+    ],
+    "social": [
+     37,
+     60,
+     72,
+     79,
+     169,
+     190
+    ],
+    "connection.": [
+     38
+    ],
+    "We": [
+     39,
+     181
+    ],
+    "propose": [
+     40
+    ],
+    "that": [
+     41,
+     113
+    ],
+    "one": [
+     42
+    ],
+    "reason": [
+     43
+    ],
+    "this": [
+     45
+    ],
+    "lies": [
+     47
+    ],
+    "how": [
+     49,
+     186,
+     199
+    ],
+    "people": [
+     50,
+     160
+    ],
+    "evaluate": [
+     51
+    ],
+    "the": [
+     52,
+     55,
+     90,
+     141
+    ],
+    "appropriateness": [
+     53
+    ],
+    "means": [
+     56,
+     91,
+     115
+    ],
+    "achieving": [
+     58
+    ],
+    "connection": [
+     61,
+     80,
+     170
+    ],
+    "goals.": [
+     62
+    ],
+    "Drawing": [
+     63
+    ],
+    "goal": [
+     65,
+     81,
+     152
+    ],
+    "systems": [
+     66
+    ],
+    "theory,": [
+     67
+    ],
+    "we": [
+     68
+    ],
+    "examined": [
+     69
+    ],
+    "whether": [
+     70
+    ],
+    "framing": [
+     71,
+     108,
+     144
+    ],
+    "media": [
+     73
+    ],
+    "platforms": [
+     74,
+     163
+    ],
+    "as": [
+     75,
+     154,
+     164
+    ],
+    "serving": [
+     76
+    ],
+    "single": [
+     78
+    ],
+    "(unifinality)": [
+     82
+    ],
+    "versus": [
+     83
+    ],
+    "multiple": [
+     84
+    ],
+    "goals": [
+     85,
+     191
+    ],
+    "(multifinality)": [
+     86
+    ],
+    "shapes": [
+     87
+    ],
+    "evaluations": [
+     88
+    ],
+    "intentions": [
+     93,
+     126,
+     146
+    ],
+    "reconnect": [
+     95
+    ],
+    "with": [
+     96,
+     206
+    ],
+    "ties.": [
+     98
+    ],
+    "Across": [
+     99
+    ],
+    "three": [
+     100
+    ],
+    "preregistered": [
+     101
+    ],
+    "studies": [
+     102
+    ],
+    "(": [
+     103
+    ],
+    "N": [
+     104
+    ],
+    "=": [
+     105
+    ],
+    "1095),": [
+     106
+    ],
+    "unifinal": [
+     107
+    ],
+    "increased": [
+     109
+    ],
+    "perceived": [
+     110,
+     134
+    ],
+    "diagnosticity\u2014the": [
+     111
+    ],
+    "sense": [
+     112
+    ],
+    "well": [
+     117
+    ],
+    "suited": [
+     118
+    ],
+    "focal": [
+     121
+    ],
+    "goal\u2014which": [
+     122
+    ],
+    "turn": [
+     124
+    ],
+    "enhanced": [
+     125
+    ],
+    "reconnect.": [
+     128,
+     148
+    ],
+    "Diagnosticity": [
+     129
+    ],
+    "was": [
+     130
+    ],
+    "empirically": [
+     131
+    ],
+    "distinguishable": [
+     132
+    ],
+    "from": [
+     133
+    ],
+    "instrumentality": [
+     135
+    ],
+    "more": [
+     137
+    ],
+    "consistently": [
+     138
+    ],
+    "accounted": [
+     139
+    ],
+    "effect": [
+     142
+    ],
+    "These": [
+     149
+    ],
+    "findings": [
+     150
+    ],
+    "highlight": [
+     151
+    ],
+    "structure": [
+     153
+    ],
+    "key": [
+     156
+    ],
+    "determinant": [
+     157
+    ],
+    "when": [
+     159,
+     172
+    ],
+    "view": [
+     161
+    ],
+    "digital": [
+     162,
+     195
+    ],
+    "appropriate": [
+     165
+    ],
+    "meaningful": [
+     168
+    ],
+    "they": [
+     173
+    ],
+    "intend": [
+     174
+    ],
+    "use": [
+     176
+    ],
+    "them": [
+     177
+    ],
+    "such": [
+     179
+    ],
+    "purposes.": [
+     180
+    ],
+    "discuss": [
+     182
+    ],
+    "broader": [
+     183
+    ],
+    "implications": [
+     184
+    ],
+    "individuals": [
+     187
+    ],
+    "navigate": [
+     188
+    ],
+    "increasingly": [
+     193
+    ],
+    "multifinal": [
+     194
+    ],
+    "environments": [
+     196
+    ],
+    "technology": [
+     200
+    ],
+    "companies": [
+     201
+    ],
+    "must": [
+     202
+    ],
+    "balance": [
+     203
+    ],
+    "emphasizing": [
+     204
+    ],
+    "multifunctionality": [
+     205
+    ],
+    "highlighting": [
+     207
+    ],
+    "specific": [
+     208
+    ],
+    "relational": [
+     209
+    ],
+    "affordances.": [
+     210
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-08T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7220964018",
+   "doi": "https://doi.org/10.2196/98925",
+   "title": "Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study",
+   "display_name": "Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study",
+   "publication_year": 2026,
+   "publication_date": "2026-10-08",
+   "ids": {
+    "openalex": "https://openalex.org/W7220964018",
+    "doi": "https://doi.org/10.2196/98925"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.2196/98925",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.2196/98925",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S2764449704",
+     "display_name": "JMIR Mental Health",
+     "issn_l": "2368-7959",
+     "issn": [
+      "2368-7959"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "doyens",
+      "jufo-1",
+      "ki-jl-1",
+      "medline",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320608",
+     "host_organization_name": "JMIR Publications",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320608"
+     ],
+     "host_organization_lineage_names": [
+      "JMIR Publications"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "JMIR Mental Health",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref",
+    "doaj"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://doi.org/10.2196/98925",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5009150408",
+      "display_name": "Thomas Kallstenius",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Thomas Kallstenius",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0003-2344-4133",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5034583689",
+      "display_name": "Basil Duvernoy",
+      "orcid": "https://orcid.org/0000-0001-5429-5594",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-5429-5594"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Basil Duvernoy",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0001-5429-5594",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5157936830",
+      "display_name": "Adam Kallstenius",
+      "orcid": "https://orcid.org/0009-0000-9662-7550",
+      "observed_orcids": [
+       "https://orcid.org/0009-0000-9662-7550"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Adam Kallstenius",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0009-0000-9662-7550",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5000366328",
+      "display_name": "Andrea Johansson Capusan",
+      "orcid": "https://orcid.org/0000-0003-1758-2206",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-1758-2206"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Andrea Johansson Capusan",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0003-1758-2206",
+     "affiliations": []
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5012563992",
+      "display_name": "Adam Williamson",
+      "orcid": "https://orcid.org/0000-0002-5632-0084",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-5632-0084"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Adam Williamson",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-5632-0084",
+     "affiliations": []
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 0,
+   "institutions_distinct_count": 0,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": {
+    "value": 2750,
+    "currency": "USD",
+    "value_usd": 2750
+   },
+   "apc_paid": {
+    "value": 2750,
+    "currency": "USD",
+    "value_usd": 2750
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.92850945,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "13",
+    "issue": null,
+    "first_page": "e98925",
+    "last_page": "e98925"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T12488",
+    "display_name": "Mental Health via Writing",
+    "score": 1.0,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3207",
+     "display_name": "Social Psychology"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/32",
+     "display_name": "Psychology"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T12488",
+     "display_name": "Mental Health via Writing",
+     "score": 1.0,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3207",
+      "display_name": "Social Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10664",
+     "display_name": "Sentiment Analysis and Opinion Mining",
+     "score": 0.0,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12262",
+     "display_name": "Hate Speech and Cyberbullying Detection",
+     "score": 0.0,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.5909000039100647
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.5906999707221985
+    },
+    {
+     "id": "https://openalex.org/C119857082",
+     "wikidata": "https://www.wikidata.org/wiki/Q2539",
+     "display_name": "Machine learning",
+     "level": 1,
+     "score": 0.5228999853134155
+    },
+    {
+     "id": "https://openalex.org/C2776641880",
+     "wikidata": "https://www.wikidata.org/wiki/Q944142",
+     "display_name": "Suicidal ideation",
+     "level": 4,
+     "score": 0.5063999891281128
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.49720001220703125
+    },
+    {
+     "id": "https://openalex.org/C204321447",
+     "wikidata": "https://www.wikidata.org/wiki/Q30642",
+     "display_name": "Natural language processing",
+     "level": 1,
+     "score": 0.4925999939441681
+    },
+    {
+     "id": "https://openalex.org/C186282968",
+     "wikidata": "https://www.wikidata.org/wiki/Q1434261",
+     "display_name": "McNemar's test",
+     "level": 2,
+     "score": 0.4618000090122223
+    },
+    {
+     "id": "https://openalex.org/C12267149",
+     "wikidata": "https://www.wikidata.org/wiki/Q282453",
+     "display_name": "Support vector machine",
+     "level": 2,
+     "score": 0.4609000086784363
+    },
+    {
+     "id": "https://openalex.org/C137293760",
+     "wikidata": "https://www.wikidata.org/wiki/Q3621696",
+     "display_name": "Language model",
+     "level": 2,
+     "score": 0.45739999413490295
+    },
+    {
+     "id": "https://openalex.org/C95623464",
+     "wikidata": "https://www.wikidata.org/wiki/Q1096149",
+     "display_name": "Classifier (UML)",
+     "level": 2,
+     "score": 0.4438000023365021
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.4122999906539917
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.41019999980926514
+    },
+    {
+     "id": "https://openalex.org/C45942800",
+     "wikidata": "https://www.wikidata.org/wiki/Q245652",
+     "display_name": "Ensemble learning",
+     "level": 2,
+     "score": 0.40630000829696655
+    },
+    {
+     "id": "https://openalex.org/C3017944768",
+     "wikidata": "https://www.wikidata.org/wiki/Q1450463",
+     "display_name": "Poison control",
+     "level": 2,
+     "score": 0.37119999527931213
+    },
+    {
+     "id": "https://openalex.org/C195324797",
+     "wikidata": "https://www.wikidata.org/wiki/Q33742",
+     "display_name": "Natural language",
+     "level": 2,
+     "score": 0.35679998993873596
+    },
+    {
+     "id": "https://openalex.org/C129792486",
+     "wikidata": "https://www.wikidata.org/wiki/Q1050419",
+     "display_name": "Language identification",
+     "level": 3,
+     "score": 0.35010001063346863
+    },
+    {
+     "id": "https://openalex.org/C2778538070",
+     "wikidata": "https://www.wikidata.org/wiki/Q1436063",
+     "display_name": "Autism spectrum disorder",
+     "level": 3,
+     "score": 0.34279999136924744
+    },
+    {
+     "id": "https://openalex.org/C50644808",
+     "wikidata": "https://www.wikidata.org/wiki/Q192776",
+     "display_name": "Artificial neural network",
+     "level": 2,
+     "score": 0.3197000026702881
+    },
+    {
+     "id": "https://openalex.org/C183115368",
+     "wikidata": "https://www.wikidata.org/wiki/Q856577",
+     "display_name": "Weighting",
+     "level": 2,
+     "score": 0.31630000472068787
+    },
+    {
+     "id": "https://openalex.org/C2776674806",
+     "wikidata": "https://www.wikidata.org/wiki/Q12135",
+     "display_name": "Mental illness",
+     "level": 3,
+     "score": 0.28279998898506165
+    },
+    {
+     "id": "https://openalex.org/C139265228",
+     "wikidata": "https://www.wikidata.org/wiki/Q5283089",
+     "display_name": "Distress",
+     "level": 2,
+     "score": 0.26809999346733093
+    },
+    {
+     "id": "https://openalex.org/C155092808",
+     "wikidata": "https://www.wikidata.org/wiki/Q182557",
+     "display_name": "Computational linguistics",
+     "level": 2,
+     "score": 0.262800008058548
+    }
+   ],
+   "mesh": [],
+   "locations_count": 2,
+   "locations": [
+    {
+     "id": "doi:10.2196/98925",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.2196/98925",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S2764449704",
+      "display_name": "JMIR Mental Health",
+      "issn_l": "2368-7959",
+      "issn": [
+       "2368-7959"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "doaj",
+       "doyens",
+       "jufo-1",
+       "ki-jl-1",
+       "medline",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320608",
+      "host_organization_name": "JMIR Publications",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320608"
+      ],
+      "host_organization_lineage_names": [
+       "JMIR Publications"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "JMIR Mental Health",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "doi:10.2196/preprints.98925",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.2196/preprints.98925",
+     "pdf_url": null,
+     "source": null,
+     "license": null,
+     "license_id": null,
+     "version": "acceptedVersion",
+     "is_accepted": true,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "posted-content"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.2196/98925",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.2196/98925",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S2764449704",
+     "display_name": "JMIR Mental Health",
+     "issn_l": "2368-7959",
+     "issn": [
+      "2368-7959"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "doyens",
+      "jufo-1",
+      "ki-jl-1",
+      "medline",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320608",
+     "host_organization_name": "JMIR Publications",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320608"
+     ],
+     "host_organization_lineage_names": [
+      "JMIR Publications"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "JMIR Mental Health",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 22,
+   "referenced_works": [
+    "https://openalex.org/W1984615306",
+    "https://openalex.org/W2266871031",
+    "https://openalex.org/W2609940642",
+    "https://openalex.org/W2623779865",
+    "https://openalex.org/W2895995041",
+    "https://openalex.org/W2972598474",
+    "https://openalex.org/W2977128309",
+    "https://openalex.org/W3014634077",
+    "https://openalex.org/W3022528244",
+    "https://openalex.org/W3043553083",
+    "https://openalex.org/W3153837393",
+    "https://openalex.org/W3197232629",
+    "https://openalex.org/W4323900694",
+    "https://openalex.org/W4384561707",
+    "https://openalex.org/W4392922283",
+    "https://openalex.org/W4394875731",
+    "https://openalex.org/W4403330054",
+    "https://openalex.org/W4407229447",
+    "https://openalex.org/W4408165606",
+    "https://openalex.org/W4412056654",
+    "https://openalex.org/W4413618661",
+    "https://openalex.org/W4415337474"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "BACKGROUND": [
+     0
+    ],
+    "Mental": [
+     1
+    ],
+    "illness": [
+     2
+    ],
+    "contributes": [
+     3
+    ],
+    "substantially": [
+     4
+    ],
+    "to": [
+     5,
+     29,
+     62,
+     290,
+     329,
+     336,
+     369
+    ],
+    "global": [
+     6
+    ],
+    "disability,": [
+     7
+    ],
+    "and": [
+     8,
+     77,
+     93,
+     112,
+     132,
+     147,
+     171,
+     180,
+     190,
+     198,
+     207,
+     258,
+     277,
+     396,
+     418
+    ],
+    "public": [
+     9
+    ],
+    "adoption": [
+     10
+    ],
+    "of": [
+     11,
+     174,
+     287,
+     381
+    ],
+    "AI": [
+     12
+    ],
+    "for": [
+     13,
+     68,
+     226,
+     298,
+     321,
+     389
+    ],
+    "mental": [
+     14,
+     70
+    ],
+    "health": [
+     15
+    ],
+    "support": [
+     16
+    ],
+    "is": [
+     17
+    ],
+    "accelerating": [
+     18
+    ],
+    "without": [
+     19
+    ],
+    "commensurate": [
+     20
+    ],
+    "safety": [
+     21
+    ],
+    "evaluation.": [
+     22
+    ],
+    "General-purpose": [
+     23
+    ],
+    "large": [
+     24,
+     90,
+     261
+    ],
+    "language": [
+     25,
+     42,
+     84,
+     91,
+     221,
+     262,
+     360,
+     404
+    ],
+    "models": [
+     26,
+     402
+    ],
+    "can": [
+     27
+    ],
+    "fail": [
+     28
+    ],
+    "recognize": [
+     30
+    ],
+    "naturalistic": [
+     31
+    ],
+    "text": [
+     32
+    ],
+    "expressing": [
+     33
+    ],
+    "suicidal": [
+     34,
+     128,
+     323
+    ],
+    "ideation,": [
+     35,
+     129
+    ],
+    "with": [
+     36,
+     87,
+     240
+    ],
+    "immediate": [
+     37
+    ],
+    "clinical": [
+     38,
+     150,
+     385
+    ],
+    "consequences.": [
+     39
+    ],
+    "Domain-specific": [
+     40,
+     384
+    ],
+    "natural": [
+     41,
+     83
+    ],
+    "processing": [
+     43,
+     85
+    ],
+    "methods": [
+     44
+    ],
+    "offer": [
+     45
+    ],
+    "a": [
+     46,
+     81,
+     88,
+     96,
+     122,
+     144,
+     161,
+     285,
+     332,
+     358,
+     410
+    ],
+    "contrasting": [
+     47
+    ],
+    "approach,": [
+     48
+    ],
+    "but": [
+     49
+    ],
+    "ensembles": [
+     50,
+     79,
+     173,
+     265,
+     306
+    ],
+    "integrating": [
+     51,
+     80
+    ],
+    "the": [
+     52,
+     140,
+     193,
+     204,
+     213,
+     255,
+     301,
+     304,
+     318,
+     322,
+     337,
+     344,
+     364,
+     370,
+     373,
+     377
+    ],
+    "two": [
+     53
+    ],
+    "have": [
+     54
+    ],
+    "not": [
+     55,
+     149,
+     308,
+     351
+    ],
+    "been": [
+     56
+    ],
+    "formally": [
+     57
+    ],
+    "characterized.": [
+     58
+    ],
+    "OBJECTIVE": [
+     59
+    ],
+    "We": [
+     60,
+     106
+    ],
+    "aimed": [
+     61
+    ],
+    "(1)": [
+     63
+    ],
+    "benchmark": [
+     64
+    ],
+    "5": [
+     65
+    ],
+    "modeling": [
+     66
+    ],
+    "approaches": [
+     67
+    ],
+    "classifying": [
+     69
+    ],
+    "health\u2013related": [
+     71
+    ],
+    "social": [
+     72
+    ],
+    "media": [
+     73
+    ],
+    "text,": [
+     74
+    ],
+    "(2)": [
+     75
+    ],
+    "develop": [
+     76
+    ],
+    "optimize": [
+     78
+    ],
+    "domain-specific": [
+     82,
+     162,
+     246
+    ],
+    "classifier": [
+     86,
+     163,
+     247,
+     289,
+     302,
+     345
+    ],
+    "fine-tuned": [
+     89,
+     159,
+     259,
+     292,
+     371
+    ],
+    "model,": [
+     92,
+     269,
+     293,
+     339
+    ],
+    "(3)": [
+     94
+    ],
+    "derive": [
+     95
+    ],
+    "closed-form": [
+     97
+    ],
+    "framework": [
+     98
+    ],
+    "constraining": [
+     99
+    ],
+    "ensemble": [
+     100,
+     316,
+     366,
+     391
+    ],
+    "weighting": [
+     101,
+     286
+    ],
+    "in": [
+     102,
+     393,
+     437
+    ],
+    "safety-critical": [
+     103
+    ],
+    "classification.": [
+     104
+    ],
+    "METHODS": [
+     105
+    ],
+    "analyzed": [
+     107
+    ],
+    "60,889": [
+     108
+    ],
+    "publicly": [
+     109
+    ],
+    "available": [
+     110
+    ],
+    "Reddit": [
+     111
+    ],
+    "Twitter": [
+     113
+    ],
+    "texts": [
+     114
+    ],
+    "spanning": [
+     115
+    ],
+    "9": [
+     116
+    ],
+    "categories": [
+     117
+    ],
+    "(anxiety,": [
+     118
+    ],
+    "bipolar": [
+     119
+    ],
+    "disorder,": [
+     120,
+     126,
+     131
+    ],
+    "depression,": [
+     121
+    ],
+    "normal": [
+     123
+    ],
+    "baseline,": [
+     124
+    ],
+    "personality": [
+     125
+    ],
+    "stress,": [
+     127
+    ],
+    "attention-deficit/hyperactivity": [
+     130
+    ],
+    "autism": [
+     133
+    ],
+    "spectrum": [
+     134
+    ],
+    "disorder).": [
+     135
+    ],
+    "Labels": [
+     136
+    ],
+    "were": [
+     137,
+     154,
+     185,
+     201,
+     224,
+     238,
+     416
+    ],
+    "derived": [
+     138,
+     225,
+     378
+    ],
+    "from": [
+     139,
+     212,
+     310,
+     326
+    ],
+    "originating": [
+     141
+    ],
+    "subreddit": [
+     142
+    ],
+    "or": [
+     143
+    ],
+    "self-stated": [
+     145
+    ],
+    "condition": [
+     146
+    ],
+    "are": [
+     148,
+     230,
+     426
+    ],
+    "diagnoses.": [
+     151
+    ],
+    "Five": [
+     152
+    ],
+    "architectures": [
+     153
+    ],
+    "compared:": [
+     155
+    ],
+    "prompt-engineered": [
+     156
+    ],
+    "base": [
+     157,
+     256,
+     338
+    ],
+    "GPT-4o-mini;": [
+     158,
+     160
+    ],
+    "(support": [
+     164
+    ],
+    "vector": [
+     165
+    ],
+    "machine": [
+     166
+    ],
+    "over": [
+     167,
+     343
+    ],
+    "symptom-informed": [
+     168
+    ],
+    "lexical": [
+     169
+    ],
+    "features);": [
+     170
+    ],
+    "2": [
+     172,
+     305
+    ],
+    "these": [
+     175,
+     424
+    ],
+    "models,": [
+     176
+    ],
+    "hybrid": [
+     177,
+     315,
+     365
+    ],
+    "probability\u2013indicator": [
+     178
+    ],
+    "fusion": [
+     179,
+     398
+    ],
+    "soft": [
+     181
+    ],
+    "probability": [
+     182
+    ],
+    "fusion.": [
+     183
+    ],
+    "Data": [
+     184
+    ],
+    "split": [
+     186,
+     206
+    ],
+    "into": [
+     187
+    ],
+    "70%,": [
+     188
+    ],
+    "10%,": [
+     189
+    ],
+    "20%": [
+     191
+    ],
+    "at": [
+     192,
+     284
+    ],
+    "post": [
+     194
+    ],
+    "level": [
+     195
+    ],
+    "(n=42,622,": [
+     196
+    ],
+    "n=6089,": [
+     197
+    ],
+    "n=12,178);": [
+     199
+    ],
+    "weights": [
+     200,
+     223
+    ],
+    "selected": [
+     202,
+     294,
+     374
+    ],
+    "on": [
+     203,
+     219,
+     295,
+     431
+    ],
+    "validation": [
+     205,
+     296,
+     430
+    ],
+    "all": [
+     208
+    ],
+    "reported": [
+     209
+    ],
+    "performance": [
+     210,
+     392
+    ],
+    "comes": [
+     211
+    ],
+    "held-out": [
+     214
+    ],
+    "test": [
+     215
+    ],
+    "split.": [
+     216
+    ],
+    "Closed-form": [
+     217
+    ],
+    "bounds": [
+     218
+    ],
+    "permissible": [
+     220
+    ],
+    "model": [
+     222,
+     361,
+     405
+    ],
+    "both": [
+     227,
+     299,
+     400
+    ],
+    "strategies.": [
+     228
+    ],
+    "CIs": [
+     229
+    ],
+    "paired": [
+     231
+    ],
+    "bootstrap": [
+     232
+    ],
+    "intervals": [
+     233
+    ],
+    "(n=10,000": [
+     234
+    ],
+    "replicates);": [
+     235
+    ],
+    "accuracy": [
+     236,
+     250
+    ],
+    "differences": [
+     237
+    ],
+    "tested": [
+     239
+    ],
+    "exact": [
+     241
+    ],
+    "McNemar": [
+     242
+    ],
+    "tests.": [
+     243
+    ],
+    "RESULTS": [
+     244
+    ],
+    "The": [
+     245,
+     314
+    ],
+    "achieved": [
+     248
+    ],
+    "91.9%": [
+     249
+    ],
+    "(95%": [
+     251
+    ],
+    "CI": [
+     252,
+     275,
+     282
+    ],
+    "91.4%-92.4%),": [
+     253
+    ],
+    "exceeding": [
+     254
+    ],
+    "(58.7%)": [
+     257
+    ],
+    "(88.6%)": [
+     260
+    ],
+    "models.": [
+     263
+    ],
+    "Both": [
+     264
+    ],
+    "outperformed": [
+     266,
+     399
+    ],
+    "either": [
+     267
+    ],
+    "constituent": [
+     268,
+     401
+    ],
+    "reaching": [
+     270
+    ],
+    "93.9%": [
+     271
+    ],
+    "(soft": [
+     272
+    ],
+    "fusion;": [
+     273,
+     280
+    ],
+    "95%": [
+     274,
+     281
+    ],
+    "93.5%-94.3%)": [
+     276
+    ],
+    "93.8%": [
+     278
+    ],
+    "(hybrid": [
+     279
+    ],
+    "93.4%-94.2%)": [
+     283
+    ],
+    "60%": [
+     288
+    ],
+    "40%": [
+     291
+    ],
+    "(P<.001": [
+     297
+    ],
+    "against": [
+     300
+    ],
+    "alone;": [
+     303
+    ],
+    "did": [
+     307
+    ],
+    "differ": [
+     309
+    ],
+    "each": [
+     311
+    ],
+    "other": [
+     312
+    ],
+    "[P=.16]).": [
+     313
+    ],
+    "reduced": [
+     317,
+     367
+    ],
+    "miss": [
+     319
+    ],
+    "rate": [
+     320
+    ],
+    "ideation": [
+     324
+    ],
+    "category": [
+     325,
+     349
+    ],
+    "32.5%": [
+     327
+    ],
+    "(650/2000)": [
+     328
+    ],
+    "1.9%": [
+     330
+    ],
+    "(37/2000),": [
+     331
+    ],
+    "17.6-fold": [
+     333
+    ],
+    "reduction": [
+     334
+    ],
+    "relative": [
+     335
+    ],
+    "although": [
+     340
+    ],
+    "its": [
+     341
+    ],
+    "advantage": [
+     342
+    ],
+    "alone": [
+     346
+    ],
+    "within": [
+     347
+    ],
+    "that": [
+     348
+    ],
+    "was": [
+     350,
+     407,
+     422
+    ],
+    "significant": [
+     352
+    ],
+    "(P=.68).": [
+     353
+    ],
+    "Accuracy": [
+     354
+    ],
+    "fell": [
+     355
+    ],
+    "discontinuously": [
+     356
+    ],
+    "above": [
+     357
+    ],
+    "50%": [
+     359
+    ],
+    "weight,": [
+     362
+    ],
+    "where": [
+     363
+    ],
+    "exactly": [
+     368
+    ],
+    "model;": [
+     372
+    ],
+    "weight": [
+     375,
+     406
+    ],
+    "satisfies": [
+     376
+    ],
+    "instance-level": [
+     379
+    ],
+    "bound": [
+     380
+    ],
+    "44.0%.": [
+     382
+    ],
+    "CONCLUSIONS": [
+     383
+    ],
+    "grounding": [
+     386
+    ],
+    "remained": [
+     387
+    ],
+    "necessary": [
+     388
+    ],
+    "stable": [
+     390
+    ],
+    "this": [
+     394
+    ],
+    "corpus,": [
+     395
+    ],
+    "probabilistic": [
+     397
+    ],
+    "when": [
+     403
+    ],
+    "bounded": [
+     408
+    ],
+    "by": [
+     409
+    ],
+    "derivable,": [
+     411
+    ],
+    "model-agnostic": [
+     412
+    ],
+    "constraint.": [
+     413
+    ],
+    "Because": [
+     414
+    ],
+    "labels": [
+     415
+    ],
+    "community-inferred": [
+     417
+    ],
+    "only": [
+     419
+    ],
+    "one": [
+     420
+    ],
+    "corpus": [
+     421
+    ],
+    "analyzed,": [
+     423
+    ],
+    "results": [
+     425
+    ],
+    "hypotheses": [
+     427
+    ],
+    "requiring": [
+     428
+    ],
+    "external": [
+     429
+    ],
+    "clinically": [
+     432
+    ],
+    "characterized": [
+     433
+    ],
+    "data": [
+     434
+    ],
+    "before": [
+     435
+    ],
+    "use": [
+     436
+    ],
+    "decision": [
+     438
+    ],
+    "support.": [
+     439
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-09T00:00:00"
+  }
+ ]
+}

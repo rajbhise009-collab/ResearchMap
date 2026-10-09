@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-04",
+  "date": "2026-10-09",
   "n_papers_in_check": 99,
   "paper_ids": [
     "openalex:W1819662813",
@@ -112,5 +112,5 @@
     "threshold": 0.8,
     "max_per_claim": 2
   },
-  "note": ""
+  "note": "updated by the weekly growth run"
 }
