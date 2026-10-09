@@ -1,0 +1,199 @@
+{
+  "paper_id": "openalex:W7219603619",
+  "claims": [
+    {
+      "id": "openalex:W7219603619:c1",
+      "paper_id": "openalex:W7219603619",
+      "text": "The Human-Centred Personalised Admissions Framework (HCPAF) comprises five interconnected dimensions: learner profiling and contextual understanding, explainable AI decision support, equity and inclusion auditing, human oversight and shared decision-making, and personalised transition and success support.",
+      "type": "method",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219603619:c2",
+      "paper_id": "openalex:W7219603619",
+      "text": "HCPAF reconceptualises higher education admissions as the beginning of a personalised learning ecosystem rather than a terminal selection event.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219603619:c3",
+      "paper_id": "openalex:W7219603619",
+      "text": "In HCPAF, trust is conceptualised as a relational, calibrated, and empirically contingent mediating construct connecting transparency, fairness, learner agency, and AI adoption rather than an automatic benefit of AI adoption.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219603619:c4",
+      "paper_id": "openalex:W7219603619",
+      "text": "The five dimensions of HCPAF operate recursively with mutual constraints and trade-offs rather than as a frictionless linear pipeline.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219603619:c5",
+      "paper_id": "openalex:W7219603619",
+      "text": "HCPAF extends AI governance across the full student lifecycle via a five-stage Human-Centred AI Ecosystem spanning admissions through to graduate development.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219603619:c6",
+      "paper_id": "openalex:W7219603619",
+      "text": "Generative AI within HCPAF functions primarily as an interaction and explanation layer spanning Dimensions 2, 4, and 5 rather than for predictive risk estimation.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7219603619:e1",
+      "claim_id": "openalex:W7219603619:c1",
+      "description": "The framework comprises five interconnected dimensions: learner profiling and contextual understanding; explainable AI decision support; equity and inclusion auditing; human oversight and shared decision-making; and personalised transition and success support.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7219603619:e2",
+      "claim_id": "openalex:W7219603619:c2",
+      "description": "The Human-Centred Personalised Admissions Framework (HCPAF) reconceptualises higher education admissions as the first stage of a personalised learning ecosystem rather than a terminal selection event.",
+      "strength": 1.0
+    },
+    {
+      "id": "openalex:W7219603619:e3",
+      "claim_id": "openalex:W7219603619:c3",
+      "description": "The HCPAF treats trust as a relational and contingent mediating construct rather than an automatic consequence of transparency... HCPAF consequently treats trust as an empirical outcome to be evaluated across stakeholder groups rather than as a presumed benefit of AI adoption.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219603619:e4",
+      "claim_id": "openalex:W7219603619:c4",
+      "description": "The numerical ordering of the five dimensions is explanatory rather than procedural. In practice, they operate recursively... Figure 1 therefore represents the HCPAF as an interconnected system of mutual constraints and feedback rather than as a frictionless linear pipeline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219603619:e5",
+      "claim_id": "openalex:W7219603619:c5",
+      "description": "Beyond the five dimensions of HCPAF, the framework extends AI governance across the full student lifecycle through a five-stage Human-Centred AI Ecosystem. This extension recognises that admissions is not an isolated event but the beginning of an educational relationship extending through transition, learning, success, and graduate development.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219603619:e6",
+      "claim_id": "openalex:W7219603619:c6",
+      "description": "Within the HCPAF, generative AI occupies a different role from predictive machine learning... GenAI is positioned mainly as an interaction and explanation layer spanning Dimensions 2, 4, and 5.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7219603619:m1",
+      "paper_id": "openalex:W7219603619",
+      "name": "Integrative literature review and conceptual synthesis",
+      "description": "An iterative and concept-led synthesis of multidisciplinary scholarship supplemented by a targeted ERIC search and bibliographic verification using publisher and policy repositories.",
+      "datasets": [
+        "ERIC database",
+        "SpringerLink",
+        "ScienceDirect",
+        "Policy repositories (UNESCO, OECD, EU, ICO, OfS, UCAS, Universities UK)"
+      ],
+      "conditions": [
+        "Peer-reviewed scholarship and policy sources published predominantly from 2012 to 2026",
+        "Inclusion based on contribution to AI/analytics capabilities, equity/privacy risks, human-centred governance theory, or regulation",
+        "Exclusion of purely technical studies disconnected from educational decision-making or learner support"
+      ]
+    },
+    {
+      "id": "openalex:W7219603619:m2",
+      "paper_id": "openalex:W7219603619",
+      "name": "Human-Centred Personalised Admissions Framework (HCPAF)",
+      "description": "A five-dimensional governance architecture integrating learner profiling, explainable AI, equity auditing, human oversight, and transition support across a five-stage student lifecycle.",
+      "datasets": [],
+      "conditions": [
+        "Human-in-the-loop oversight for all consequential decisions",
+        "Layered explanation architectures for multiple stakeholder groups",
+        "Continuous multi-metric algorithmic fairness auditing"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7219603619:l1",
+      "paper_id": "openalex:W7219603619",
+      "text": "Evidence on prospective, live AI-assisted admissions remains limited, with most studies based on retrospective data analysis.",
+      "normalized_category": "empirical-evidence-gap",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7219603619:l2",
+      "paper_id": "openalex:W7219603619",
+      "text": "Much existing AI admissions scholarship is narrowly focused on prediction accuracy, enrolment optimisation, or efficiency without engaging learner agency, social inclusion, or institutional power.",
+      "normalized_category": "scope-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7219603619:l3",
+      "paper_id": "openalex:W7219603619",
+      "text": "The integrative literature review is concept-led rather than exhaustive, protocol-driven, or systematically reproducible, reporting no retrospective screening counts.",
+      "normalized_category": "methodological-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7219603619:l4",
+      "paper_id": "openalex:W7219603619",
+      "text": "The HCPAF remains a conceptual framework and design heuristic rather than an empirically validated admissions model tested in live institutional deployments.",
+      "normalized_category": "lack-of-empirical-validation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7219603619:l5",
+      "paper_id": "openalex:W7219603619",
+      "text": "The illustrative scenarios used to demonstrate HCPAF are constructed and hypothetical rather than documented real-world implementations.",
+      "normalized_category": "hypothetical-evaluation",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7219603619:f1",
+      "paper_id": "openalex:W7219603619",
+      "text": "Empirically validate HCPAF through comparative institutional case studies examining organisational adoption, failure, and staff use or resistance to AI recommendations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7219603619:f2",
+      "paper_id": "openalex:W7219603619",
+      "text": "Conduct experimental studies and think-aloud protocols testing which XAI explanation formats most effectively support applicant understanding and admissions staff decision-making.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7219603619:f3",
+      "paper_id": "openalex:W7219603619",
+      "text": "Conduct longitudinal studies testing whether connecting admissions analytics with transition support improves retention and attainment among widening participation students without increasing stigma or surveillance.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7219603619:f4",
+      "paper_id": "openalex:W7219603619",
+      "text": "Investigate internal framework trade-offs including the balance between contextual data collection and privacy costs, and predictive performance versus explainability.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7219603619:f5",
+      "paper_id": "openalex:W7219603619",
+      "text": "Examine equity and integrity implications of applicant generative AI use in personal statement writing using mixed methods and discourse analysis.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7219603619:f6",
+      "paper_id": "openalex:W7219603619",
+      "text": "Execute a pre-registered systematic or scoping review to test the sensitivity of the HCPAF framework against a fully exhaustive literature corpus.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-09T18:38:46.429397Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

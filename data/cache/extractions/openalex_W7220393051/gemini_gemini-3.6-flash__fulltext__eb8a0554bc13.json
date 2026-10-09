@@ -1,0 +1,269 @@
+{
+  "paper_id": "openalex:W7220393051",
+  "claims": [
+    {
+      "id": "openalex:W7220393051:c1",
+      "paper_id": "openalex:W7220393051",
+      "text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c2",
+      "paper_id": "openalex:W7220393051",
+      "text": "Cohort studies using within-person analytic techniques found that within-person increases in social media use predicted subsequent increases in depressive symptoms after accounting for baseline levels.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c3",
+      "paper_id": "openalex:W7220393051",
+      "text": "Evidence linking social media screen time to anxiety was weaker and less consistent across studies compared to evidence linking it to depression.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c4",
+      "paper_id": "openalex:W7220393051",
+      "text": "Two large cohort studies observed a non-linear, U-shaped relationship where moderate social media use was associated with lower anxiety symptoms than persistently low or high use.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c5",
+      "paper_id": "openalex:W7220393051",
+      "text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c6",
+      "paper_id": "openalex:W7220393051",
+      "text": "Sleep disruption and cyberbullying were identified as key mediating pathways linking adolescent social media use with mental health distress.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c7",
+      "paper_id": "openalex:W7220393051",
+      "text": "Passive social media use was more strongly associated with internalizing symptoms than active social media use.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c8",
+      "paper_id": "openalex:W7220393051",
+      "text": "Problematic or compulsive social media use scales were more strongly and consistently associated with distress than raw screen-time duration measures.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c9",
+      "paper_id": "openalex:W7220393051",
+      "text": "All 33 cross-sectional studies were rated high quality under JBI appraisal, whereas 10 of 17 cohort studies were rated high quality and 7 were rated moderate quality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c10",
+      "paper_id": "openalex:W7220393051",
+      "text": "The validity and reliability of the social media exposure measure was rated unclear in 79% of cross-sectional studies and 82% of cohort studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220393051:c11",
+      "paper_id": "openalex:W7220393051",
+      "text": "Eighty-eight percent of included cohort studies did not establish that participants were free of depressive or anxiety outcomes at baseline.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220393051:e1",
+      "claim_id": "openalex:W7220393051:c1",
+      "description": "The authors report that 'A substantial majority of the studies, approximately four in five, have reported a statistically significant positive association between higher social media screen time or problematic use and depressive symptoms in at least one analysis.'",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220393051:e2",
+      "claim_id": "openalex:W7220393051:c2",
+      "description": "The review synthesizes cohort findings noting that 'within-person increases in social media use were predictors for subsequent increases in depressive symptoms after accounting for baseline levels and stable individual characteristics'.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220393051:e3",
+      "claim_id": "openalex:W7220393051:c3",
+      "description": "The authors state that evidence linking social media screen time to anxiety was 'directionally similar to the depression evidence but markedly less consistent', with many studies reporting small, non-significant, or non-persisting effects.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220393051:e4",
+      "claim_id": "openalex:W7220393051:c4",
+      "description": "The text notes that 'moderate social media use was associated with lower anxiety than either persistently low or high use, suggesting a non-linear, U-shaped relationship rather than a simple dose-response effect' in a trajectory-based ABCD study cohort and a Norwegian registry-linkage cohort.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220393051:e5",
+      "claim_id": "openalex:W7220393051:c5",
+      "description": "The review observes that 'Associations between social media use and depressive symptoms were generally stronger among girls than boys', with girls appearing more susceptible to platform-based social comparison.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220393051:e6",
+      "claim_id": "openalex:W7220393051:c6",
+      "description": "The text states that 'night-time-specific social media use predicting poorer sleep quality, which in turn predicted higher depression and anxiety scores' and 'cyberbullying and online harassment were also identified as key mediators'.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220393051:e7",
+      "claim_id": "openalex:W7220393051:c7",
+      "description": "The authors summarize findings showing that 'Passive use (browsing without interaction) was more strongly associated with detrimental symptoms than active use (posting, messaging)'.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7220393051:e8",
+      "claim_id": "openalex:W7220393051:c8",
+      "description": "The review highlights that 'problematic or compulsive use, measured through addiction-type scales was more strongly and consistently associated with distress than simple hours-per-day measures'.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220393051:e9",
+      "claim_id": "openalex:W7220393051:c9",
+      "description": "Table 4 shows 33 of 33 (100%) cross-sectional studies were rated high quality, whereas 10 of 17 (58.8%) cohort studies were rated high quality and 7 of 17 (41.2%) were rated moderate quality.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220393051:e10",
+      "claim_id": "openalex:W7220393051:c10",
+      "description": "Item-level JBI analysis found exposure measure validity/reliability was unclear in 26 of 33 (79%) cross-sectional studies and 14 of 17 (82%) cohort studies due to reliance on unvalidated single-item duration measures.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220393051:e11",
+      "claim_id": "openalex:W7220393051:c11",
+      "description": "The authors report that 'the criterion requiring that participants be free of the outcome (depression or anxiety) at baseline was rated \"No\" in 15 of 17 (88%) studies'.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220393051:m1",
+      "paper_id": "openalex:W7220393051",
+      "name": "PRISMA-guided Systematic Review and JBI Quality Appraisal",
+      "description": "A systematic review following the PRISMA 2020 statement and using JBI Critical Appraisal Checklists to synthesize 50 observational studies (33 cross-sectional and 17 cohort) examining social media screen time and adolescent depression and anxiety.",
+      "datasets": [
+        "PubMed/MEDLINE",
+        "Scopus",
+        "Web of Science",
+        "PsycINFO",
+        "CINAHL",
+        "Cochrane Library",
+        "Google Scholar"
+      ],
+      "conditions": [
+        "English-language peer-reviewed publications between January 2015 and August 2026",
+        "Adolescent participants aged 10 to 19 years",
+        "Distinct social media screen time exposure",
+        "Validated depression or anxiety outcome measures",
+        "Cross-sectional or cohort observational designs"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220393051:l1",
+      "paper_id": "openalex:W7220393051",
+      "text": "Substantial heterogeneity in social media exposure definitions and over fifteen different depression and anxiety outcome instruments precluded meta-analysis, requiring a less quantitatively precise narrative synthesis.",
+      "normalized_category": "heterogeneity-precluding-meta-analysis",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220393051:l2",
+      "paper_id": "openalex:W7220393051",
+      "text": "The literature search was restricted to English-language peer-reviewed publications, which may have excluded relevant evidence in other languages or in grey literature and introduced potential publication bias.",
+      "normalized_category": "language-and-publication-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220393051:l3",
+      "paper_id": "openalex:W7220393051",
+      "text": "The review restricted eligibility to cross-sectional and cohort designs, excluding qualitative and experimental evidence.",
+      "normalized_category": "design-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220393051:l4",
+      "paper_id": "openalex:W7220393051",
+      "text": "The retrieved evidence base was predominantly concentrated in high-income, Western countries, limiting global generalizability to low- and middle-income regions.",
+      "normalized_category": "geographic-sampling-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220393051:l5",
+      "paper_id": "openalex:W7220393051",
+      "text": "Included primary studies relied heavily on unvalidated, self-report single-item exposure measures prone to recall and reporting bias.",
+      "normalized_category": "unvalidated-self-report-exposure",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7220393051:l6",
+      "paper_id": "openalex:W7220393051",
+      "text": "Most included cohort studies failed to confirm that participants were symptom-free at baseline, impeding clear causal inference and temporal ordering.",
+      "normalized_category": "unclear-baseline-symptom-status",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220393051:f1",
+      "paper_id": "openalex:W7220393051",
+      "text": "Develop and use social media exposure measures with established validity and reliability, ideally supplemented by device-recorded objective screen-time data.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220393051:f2",
+      "paper_id": "openalex:W7220393051",
+      "text": "Conduct longitudinal cohort studies that explicitly establish baseline freedom from depressive and anxiety symptoms and transparently explore loss to follow-up.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220393051:f3",
+      "paper_id": "openalex:W7220393051",
+      "text": "Implement experimental and intervention designs capable of establishing causal directions rather than relying solely on observational associations.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220393051:f4",
+      "paper_id": "openalex:W7220393051",
+      "text": "Explicitly test and model non-linear dose-response relationships between social media use and mental health outcomes, especially for anxiety.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220393051:f5",
+      "paper_id": "openalex:W7220393051",
+      "text": "Expand empirical research into adolescent populations in low- and middle-income countries across Africa, South America, and South Asia.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220393051:f6",
+      "paper_id": "openalex:W7220393051",
+      "text": "Conduct subgroup meta-analyses using standardized instruments like PHQ-9 and GAD-7 paired with standardized daily hours measures.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-09T18:43:37.578867Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

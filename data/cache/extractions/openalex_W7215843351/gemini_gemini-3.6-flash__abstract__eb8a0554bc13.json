@@ -1,0 +1,99 @@
+{
+  "paper_id": "openalex:W7215843351",
+  "claims": [
+    {
+      "id": "openalex:W7215843351:c1",
+      "paper_id": "openalex:W7215843351",
+      "text": "Artificial intelligence systems are being widely adopted in public health.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7215843351:c2",
+      "paper_id": "openalex:W7215843351",
+      "text": "Adoption of artificial intelligence systems in public health affects evidence generation processes.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7215843351:c3",
+      "paper_id": "openalex:W7215843351",
+      "text": "Adoption of artificial intelligence systems in public health affects decision-making processes.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7215843351:c4",
+      "paper_id": "openalex:W7215843351",
+      "text": "Concerns regarding data interpretation and ethics of accountability in AI governance in healthcare conceivably mitigate risks related to health inequities in global healthcare systems.",
+      "type": "theoretical",
+      "confidence": 0.8,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7215843351:c5",
+      "paper_id": "openalex:W7215843351",
+      "text": "The proposed strategy addresses AI literacy through a holistic approach across its multiple domains.",
+      "type": "method",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7215843351:e1",
+      "claim_id": "openalex:W7215843351:c1",
+      "description": "Systems of artificial intelligence (AI) are now being widely adopted in public health, affecting the evidence generation and decision-making processes.",
+      "strength": 0.6
+    },
+    {
+      "id": "openalex:W7215843351:e2",
+      "claim_id": "openalex:W7215843351:c2",
+      "description": "Systems of artificial intelligence (AI) are now being widely adopted in public health, affecting the evidence generation and decision-making processes.",
+      "strength": 0.6
+    },
+    {
+      "id": "openalex:W7215843351:e3",
+      "claim_id": "openalex:W7215843351:c3",
+      "description": "Systems of artificial intelligence (AI) are now being widely adopted in public health, affecting the evidence generation and decision-making processes.",
+      "strength": 0.6
+    },
+    {
+      "id": "openalex:W7215843351:e4",
+      "claim_id": "openalex:W7215843351:c4",
+      "description": "Concerns about data interpretation and the ethics of accountability in the governance of AI systems in healthcare are conceivably mitigating risks related to health inequities in global healthcare systems.",
+      "strength": 0.5
+    },
+    {
+      "id": "openalex:W7215843351:e5",
+      "claim_id": "openalex:W7215843351:c5",
+      "description": "The proposed strategy will address AI literacy and take a holistic approach to its various domains.",
+      "strength": 0.6
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7215843351:m1",
+      "paper_id": "openalex:W7215843351",
+      "name": "Holistic AI literacy framework",
+      "description": "A proposed strategy taking a holistic approach to address diverse domains of artificial intelligence literacy in public health governance and decision-making.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7215843351:l1",
+      "paper_id": "openalex:W7215843351",
+      "text": "The outcomes of AI research are not always consistent.",
+      "normalized_category": "inconsistent-outcomes",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-09T18:38:46.429113Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

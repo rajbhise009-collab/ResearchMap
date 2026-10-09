@@ -1,0 +1,198 @@
+{
+  "paper_id": "openalex:W7214947317",
+  "claims": [
+    {
+      "id": "openalex:W7214947317:c1",
+      "paper_id": "openalex:W7214947317",
+      "text": "Across evaluated datasets, the LOW label-flipping strategy produces an average cumulative change of -0.058 ± 0.028 in Matthews Correlation Coefficient from pollution rate ρ = 0.00 to ρ = 0.20.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7214947317:c2",
+      "paper_id": "openalex:W7214947317",
+      "text": "Across evaluated datasets, the LOW label-flipping strategy produces an average cumulative change of 0.292 ± 0.06 in Equalized Odds from pollution rate ρ = 0.00 to ρ = 0.20.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7214947317:c3",
+      "paper_id": "openalex:W7214947317",
+      "text": "Across evaluated datasets, the HIGH label-flipping strategy produces an average cumulative change of -0.164 ± 0.026 in Matthews Correlation Coefficient from pollution rate ρ = 0.00 to ρ = 0.20.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7214947317:c4",
+      "paper_id": "openalex:W7214947317",
+      "text": "Across evaluated datasets, the HIGH label-flipping strategy produces an average cumulative change of 0.146 ± 0.056 in Equalized Odds from pollution rate ρ = 0.00 to ρ = 0.20.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7214947317:c5",
+      "paper_id": "openalex:W7214947317",
+      "text": "Across evaluated datasets, the RANDOM label-flipping strategy produces an average cumulative change of -0.032 ± 0.02 in Matthews Correlation Coefficient from pollution rate ρ = 0.00 to ρ = 0.20.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7214947317:c6",
+      "paper_id": "openalex:W7214947317",
+      "text": "Across evaluated datasets, the RANDOM label-flipping strategy produces an average cumulative change of 0.208 ± 0.037 in Equalized Odds from pollution rate ρ = 0.00 to ρ = 0.20.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7214947317:c7",
+      "paper_id": "openalex:W7214947317",
+      "text": "The SLF-FST protocol relabels selected protected-positive instances as negative.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7214947317:c8",
+      "paper_id": "openalex:W7214947317",
+      "text": "The SLF-FST protocol relabels selected privileged-negative instances as positive.",
+      "type": "method",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7214947317:e1",
+      "claim_id": "openalex:W7214947317:c1",
+      "description": "Table 4 reports the Average Matthews Correlation Coefficient for LOW as -0.058 ± 0.028 across Adult, Bank, and COMPAS.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7214947317:e2",
+      "claim_id": "openalex:W7214947317:c2",
+      "description": "Table 4 reports the Average Equalized odds for LOW as 0.292 ± 0.06 across Adult, Bank, and COMPAS.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7214947317:e3",
+      "claim_id": "openalex:W7214947317:c3",
+      "description": "Table 4 reports the Average Matthews Correlation Coefficient for HIGH as -0.164 ± 0.026 across Adult, Bank, and COMPAS.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7214947317:e4",
+      "claim_id": "openalex:W7214947317:c4",
+      "description": "Table 4 reports the Average Equalized odds for HIGH as 0.146 ± 0.056 across Adult, Bank, and COMPAS.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7214947317:e5",
+      "claim_id": "openalex:W7214947317:c5",
+      "description": "Table 4 reports the Average Matthews Correlation Coefficient for RANDOM as -0.032 ± 0.02 across Adult, Bank, and COMPAS.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7214947317:e6",
+      "claim_id": "openalex:W7214947317:c6",
+      "description": "Table 4 reports the Average Equalized odds for RANDOM as 0.208 ± 0.037 across Adult, Bank, and COMPAS.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7214947317:e7",
+      "claim_id": "openalex:W7214947317:c7",
+      "description": "Section 4 states: 'The selected protected-positive instances are relabeled as negative, while the selected privileged-negative instances are relabeled as positive.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7214947317:e8",
+      "claim_id": "openalex:W7214947317:c8",
+      "description": "Section 4 states: 'The selected protected-positive instances are relabeled as negative, while the selected privileged-negative instances are relabeled as positive.'",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7214947317:m1",
+      "paper_id": "openalex:W7214947317",
+      "name": "Systematic Label Flipping for Fairness Stress Testing (SLF–FST)",
+      "description": "A diagnostic stress-testing framework that perturbs group-conditional training labels across progressive pollution rates to evaluate classifier accuracy and fairness degradation.",
+      "datasets": [
+        "Adult",
+        "Bank Marketing",
+        "COMPAS"
+      ],
+      "conditions": [
+        "Pollution rates ρ ∈ {0.05, 0.10, 0.15, 0.20}",
+        "Three selection rules: LOW, HIGH, RANDOM",
+        "Auxiliary Random Forest estimator for instance confidence scoring",
+        "Stratified 5-fold cross-validation with 8 independent repetitions",
+        "Four classifier families: Decision Tree, Logistic Regression, Random Forest, feedforward Neural Network",
+        "Hyperparameter optimization using Optuna Tree-structured Parzen Estimator over 50 trials targeting validation MCC"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7214947317:l1",
+      "paper_id": "openalex:W7214947317",
+      "text": "The confidence-guided LOW and HIGH strategies depend on the auxiliary estimator used to rank eligible instances, and the paper does not include an auxiliary-estimator ablation study.",
+      "normalized_category": "auxiliary-model-dependency",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7214947317:l2",
+      "paper_id": "openalex:W7214947317",
+      "text": "The empirical evaluation is restricted to comparisons among internal selection strategies and does not include external generic label-noise or data-poisoning baselines.",
+      "normalized_category": "missing-external-baselines",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7214947317:l3",
+      "paper_id": "openalex:W7214947317",
+      "text": "Each dataset is evaluated using a single binary sensitive attribute without modeling user bias or intersectional relationships among multiple attributes.",
+      "normalized_category": "single-sensitive-attribute",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7214947317:l4",
+      "paper_id": "openalex:W7214947317",
+      "text": "Prior genetic-algorithm-based bias generation approaches exhibit scalability limitations on large or high-dimensional datasets.",
+      "normalized_category": "scalability-limitation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7214947317:f1",
+      "paper_id": "openalex:W7214947317",
+      "text": "Extending fairness stress testing methodologies to multi-class classification tasks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7214947317:f2",
+      "paper_id": "openalex:W7214947317",
+      "text": "Evaluating calibrated and uncalibrated estimates, alternative auxiliary ranking models, and selection-overlap measures.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7214947317:f3",
+      "paper_id": "openalex:W7214947317",
+      "text": "Conducting empirical benchmarks that compare SLF-FST with external generic label-noise and data-poisoning techniques under harmonized protocols.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7214947317:f4",
+      "paper_id": "openalex:W7214947317",
+      "text": "Integrating fairness mitigation algorithms into the stress-testing pipeline and evaluating models in dynamic or evolving data environments.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-09T18:38:46.428626Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

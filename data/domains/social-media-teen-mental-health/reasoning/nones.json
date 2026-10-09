@@ -1,5 +1,5 @@
 {
-  "n": 69,
+  "n": 81,
   "items": [
     {
       "from_claim_id": "openalex:W2788235370:c3",
@@ -690,6 +690,126 @@
       "b_paper_id": "openalex:W2972459530",
       "b_text": "In adjusted analyses, social media use is not significantly associated with externalizing problems alone among adolescents.",
       "explanation": "Claim A addresses internalizing problems like anxiety and depression, whereas Claim B focuses specifically on externalizing problems, meaning they evaluate different constructs."
+    },
+    {
+      "from_claim_id": "openalex:W2972459530:c1",
+      "to_claim_id": "openalex:W7220393051:c7",
+      "similarity": 0.8500157594680786,
+      "a_paper_id": "openalex:W2972459530",
+      "a_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with internalizing problems alone among adolescents.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Passive social media use was more strongly associated with internalizing symptoms than active social media use.",
+      "explanation": "Claim A evaluates overall time spent on social media, whereas Claim B examines the distinction between passive and active types of use, addressing different aspects of social media exposure."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c5",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8494441509246826,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Boys spending 5 or more hours daily on social media show a 35% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Claim A quantifies an increase in depressive symptoms for high-use boys, whereas Claim B compares the relative strength of the association across genders, making the findings compatible without directly supporting or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c3",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.848800778388977,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Boys spending 3 to <5 hours daily on social media show a 21% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Claim A quantifies an increase in depressive symptoms for boys at specific usage levels, which does not directly support or contradict Claim B's finding that the association is generally stronger among girls."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c1",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.8487644195556641,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Sixteen percent of reviewed empirical studies (n = 5) found a statistically significant positive correlation between engagement in online social networking and depression symptoms, with effect sizes ranging from r=.15 to r=.26.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "The claims report conflicting proportions of literature showing an association, but they describe different sets of reviewed studies and examine distinct constructs (general engagement versus screen time and problematic use)."
+    },
+    {
+      "from_claim_id": "openalex:W2568525121:c4",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8481450080871582,
+      "a_paper_id": "openalex:W2568525121",
+      "a_text": "Female adolescents report significantly higher weekly time spent on social media than male adolescents.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Claim A examines gender differences in the amount of time spent on social media, whereas Claim B examines gender differences in the strength of the association between social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2972459530:c1",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8370440006256104,
+      "a_paper_id": "openalex:W2972459530",
+      "a_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with internalizing problems alone among adolescents.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Claim A identifies an association between specific daily social media usage duration and internalizing problems, while Claim B identifies gender differences in the strength of the association with depressive symptoms, addressing distinct aspects without directly reinforcing or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2415849311:c3",
+      "to_claim_id": "openalex:W7220393051:c3",
+      "similarity": 0.8218564391136169,
+      "a_paper_id": "openalex:W2415849311",
+      "a_text": "Greater overall social media use in adolescents is associated with higher levels of anxiety and depression.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Evidence linking social media screen time to anxiety was weaker and less consistent across studies compared to evidence linking it to depression.",
+      "explanation": "Claim A asserts an association between social media use and both anxiety and depression, while Claim B evaluates the relative consistency and strength of the evidence across studies for each outcome without directly confirming or refuting Claim A."
+    },
+    {
+      "from_claim_id": "openalex:W2972459530:c3",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8095605373382568,
+      "a_paper_id": "openalex:W2972459530",
+      "a_text": "In adjusted analyses, social media use is not significantly associated with externalizing problems alone among adolescents.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Claim A addresses externalizing problems, whereas Claim B examines gender differences in the association with depressive symptoms, representing distinct outcome constructs."
+    },
+    {
+      "from_claim_id": "openalex:W2972459530:c2",
+      "to_claim_id": "openalex:W7220393051:c7",
+      "similarity": 0.8082919120788574,
+      "a_paper_id": "openalex:W2972459530",
+      "a_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with comorbid internalizing and externalizing problems among adolescents.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Passive social media use was more strongly associated with internalizing symptoms than active social media use.",
+      "explanation": "Claim A addresses the overall duration of social media use and comorbid problems, while Claim B differentiates between passive and active modes of use regarding internalizing symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W4291885054:c1",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.8067492246627808,
+      "a_paper_id": "openalex:W4291885054",
+      "a_text": "Depression was identified as a social media health-related risk in 19 out of 68 reviewed reports (27.9%).",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "The claims summarize different sets of reviewed literature and evaluate distinct metrics regarding depression and social media, so they neither directly support nor contradict each other."
+    },
+    {
+      "from_claim_id": "openalex:W3043512573:c5",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8044208288192749,
+      "a_paper_id": "openalex:W3043512573",
+      "a_text": "The positive relationship between COVID-19 stress and loneliness/depression is stronger for adolescents who spend more time on social media.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Claim A examines social media use as a moderator of the link between COVID-19 stress and mental health, while Claim B examines gender differences in the direct association between social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2896921383:c4",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8005859851837158,
+      "a_paper_id": "openalex:W2896921383",
+      "a_text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to ever have been diagnosed with depression (RR 2.39).",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Claim A quantifies the overall risk of depression diagnosis associated with high screen time, whereas Claim B focuses on sex differences in the association between social media use and depressive symptoms."
     }
   ]
 }

@@ -1,0 +1,80 @@
+{
+  "paper_id": "openalex:W7220846371",
+  "claims": [
+    {
+      "id": "openalex:W7220846371:c1",
+      "paper_id": "openalex:W7220846371",
+      "text": "Unifinal framing of social media platforms increases perceived diagnosticity.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220846371:c2",
+      "paper_id": "openalex:W7220846371",
+      "text": "Perceived diagnosticity enhances intentions to reconnect with dormant ties.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220846371:c3",
+      "paper_id": "openalex:W7220846371",
+      "text": "Perceived diagnosticity is empirically distinguishable from perceived instrumentality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220846371:c4",
+      "paper_id": "openalex:W7220846371",
+      "text": "Perceived diagnosticity more consistently accounts for the effect of framing on intentions to reconnect than perceived instrumentality does.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220846371:e1",
+      "claim_id": "openalex:W7220846371:c1",
+      "description": "Across three preregistered studies (N = 1095), unifinal framing increased perceived diagnosticity compared to multifinal framing.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220846371:e2",
+      "claim_id": "openalex:W7220846371:c2",
+      "description": "In three preregistered studies, increased perceived diagnosticity in turn enhanced intentions to reconnect with dormant ties.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220846371:e3",
+      "claim_id": "openalex:W7220846371:c3",
+      "description": "Diagnosticity was empirically distinguishable from perceived instrumentality across three preregistered studies.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220846371:e4",
+      "claim_id": "openalex:W7220846371:c4",
+      "description": "Diagnosticity more consistently accounted for the effect of framing on intentions to reconnect compared to perceived instrumentality.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220846371:m1",
+      "paper_id": "openalex:W7220846371",
+      "name": "Preregistered experimental framing studies",
+      "description": "Three preregistered experimental studies (N = 1095) evaluating the effects of framing social media platforms as serving a single goal versus multiple goals on perceived diagnosticity, instrumentality, and reconnection intentions.",
+      "datasets": [],
+      "conditions": [
+        "unifinal framing",
+        "multifinal framing"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-09T18:43:37.579359Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

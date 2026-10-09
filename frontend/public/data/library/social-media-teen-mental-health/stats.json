@@ -1,15 +1,15 @@
 {
-  "papers": 100,
-  "full_text": 22,
-  "abstract_only": 78,
-  "n_extractions": 99,
-  "extraction_coverage_note": "Claims read from 99 of 100 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
+  "papers": 103,
+  "full_text": 23,
+  "abstract_only": 80,
+  "n_extractions": 102,
+  "extraction_coverage_note": "Claims read from 102 of 103 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
   "zero_finding_note": null,
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [],
   "disagreement_check": {
-    "shortlist_pairs": 179,
-    "classified_pairs": 179,
+    "shortlist_pairs": 197,
+    "classified_pairs": 197,
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
@@ -18,21 +18,21 @@
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 99
+    "papers_covered": 102
   },
-  "extraction_coverage_share": 0.99,
+  "extraction_coverage_share": 0.9902912621359223,
   "assertion_strength": {
-    "total_claims": 422,
+    "total_claims": 448,
     "distribution": {
-      "firm": 405,
+      "firm": 431,
       "hedged": 17
     },
-    "firm_share": 0.9597156398104265,
-    "hedged_share": 0.04028436018957346
+    "firm_share": 0.9620535714285714,
+    "hedged_share": 0.03794642857142857
   },
   "gap_type_counts": {
-    "n_papers": 99,
-    "n_limitations": 136,
+    "n_papers": 102,
+    "n_limitations": 145,
     "limitation_categories": {
       "cross-sectional-design": 7,
       "self-report-bias": 6,
@@ -146,9 +146,18 @@
       "reporting-recall-artifacts": 1,
       "poor-model-accuracy": 1,
       "technical-reliability-issues": 1,
-      "high-attrition-rate": 1
+      "high-attrition-rate": 1,
+      "heterogeneity-precluding-meta-analysis": 1,
+      "language-and-publication-bias": 1,
+      "design-restriction": 1,
+      "geographic-sampling-bias": 1,
+      "unvalidated-self-report-exposure": 1,
+      "unclear-baseline-symptom-status": 1,
+      "label-quality": 1,
+      "single-dataset-evaluation": 1,
+      "lack-of-prior-characterization": 1
     },
-    "n_future_work_items": 93
+    "n_future_work_items": 100
   },
   "n_confirmed_contradictions": 2,
   "raw_flagged_contradictions": 6,
@@ -164,13 +173,13 @@
     "unresolved_contradictions": 2,
     "persistent_limitations": 4,
     "orphaned_future_work": 26,
-    "structural_holes": 1,
+    "structural_holes": 0,
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 68,
+  "core": 71,
   "peripheral": 32,
   "manifest_hash": null,
   "relationships": 6,
-  "note": "Multi-domain library \u2014 claims extracted from 99 of 100 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 102 of 103 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

@@ -1,0 +1,4062 @@
+{
+ "batch_id": "kbgzsrwcqfxd7dq1tkxljrz8d13v8apere9w",
+ "slug": "diet-and-mortality",
+ "submitted_on": "2026-10-09",
+ "submitted_at": 1791560235.334094,
+ "projected_inr": 2.782962,
+ "ledger_recorded": true,
+ "input_source": {
+  "openalex:W7218462786": "abstract",
+  "openalex:W7220707047": "abstract",
+  "openalex:W7220864522": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7218462786",
+   "openalex_id": "https://openalex.org/W7218462786",
+   "title": "Mediterranean Diet, Physical Activity, and Metabolic Syndrome in Breast Cancer Survivors on Adjuvant Endocrine Therapy: A Cross-Sectional Study From North Africa",
+   "year": 2026,
+   "doi": "https://doi.org/10.1080/27697061.2026.2731004",
+   "venue": "Journal of the American Nutrition Association",
+   "field": "medicine",
+   "cited_by_count": 0,
+   "abstract": "Objective This study aimed to determine the prevalence of metabolic syndrome and to examine its association with Mediterranean diet adherence and physical activity among women receiving adjuvant endocrine therapy for hormone receptor-positive breast cancer, in North Africa.Methods This cross-sectional study recruited 150 women in Oran, Algeria (May 2022-December 2025), receiving either tamoxifen (n = 73) or aromatase inhibitors (n = 77). Metabolic syndrome was defined per International Diabetes Federation 2006 criteria. Mediterranean diet adherence was assessed using a culturally adapted 14-item Mediterranean Diet Adherence Screener (adapted MEDAS). Physical activity level (PAL) was estimated using GENI software and entered as a continuous variable in the primary analysis, with sedentary/non-sedentary categorization (PAL < 1.40) as a secondary analysis. Dietary intake was assessed using a 24-h recall and a three-day food record with photographic verification. Factors independently associated with metabolic syndrome were identified using multivariable logistic regression.Results Metabolic syndrome was highly prevalent, affecting 68.0% of participants. Although overall prevalence did not differ between treatment groups (aromatase inhibitors: 72.7% vs. tamoxifen: 63.0%; p = 0.202), the two regimens differed in individual metabolic abnormalities: aromatase inhibitor users had lower HDL-cholesterol, higher fasting glucose, and higher blood pressure, while tamoxifen users had higher triglycerides. In multivariable analysis, higher PAL (OR = 0.44 per 0.1-unit increase; 95% CI: 0.28\u20130.68; p < 0.001) and greater Mediterranean diet adherence (OR = 0.72; 95% CI: 0.60\u20130.87; p = 0.001) were independently associated with lower odds of metabolic syndrome. The model showed an apparent AUC of 0.832 (5-fold cross-validated AUC: 0.800) and satisfactory calibration (Hosmer\u2013Lemeshow p = 0.400).Conclusion Metabolic syndrome affects more than two-thirds of breast cancer survivors receiving endocrine therapy, and was independently associated with lower Mediterranean diet adherence and lower physical activity. Given the cross-sectional design, these associations cannot establish causality; nonetheless, these findings support further prospective and interventional research to determine whether modifying these behaviors could reduce this risk.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7220707047",
+   "openalex_id": "https://openalex.org/W7220707047",
+   "title": "Beyond Lifestyle Advice: Why Chronic Disease Prevention Must Move from Individual Choice to Health-Enabling Environments",
+   "year": 2026,
+   "doi": "https://doi.org/10.1080/19325037.2026.2744358",
+   "venue": "American Journal of Health Education",
+   "field": "health professions",
+   "cited_by_count": 0,
+   "abstract": "In chronic disease prevention, lifestyle advice remains necessary but increasingly insufficient. Noncommunicable diseases account for a major share of global mortality, while key behavioral risks \u2013 poor diet, physical inactivity, tobacco exposure, harmful alcohol use, chronic stress, inadequate sleep, and weakened social connection \u2013 are shaped by environments as much as by individual intention. Yet health education often continues to frame lifestyle change as a matter of personal responsibility: eat better, move more, manage stress, stop smoking, and make healthier choices. This commentary argues that such advice becomes ethically thin and practically limited when healthy choices are structurally constrained by food pricing, unsafe streets, sedentary institutional routines, commercial marketing, poverty, caregiving burdens, and social isolation. Drawing on social ecological and commercial determinants perspectives, the article calls for health education to move from changing minds alone to changing the conditions under which everyday health decisions are made. The task is not to abandon personal agency, but to protect it from environments that make harmful behavior normal, affordable, convenient, or unavoidable. For health educators and Certified Health Education Specialists, this requires environmental assessment, participatory planning, policy advocacy, coalition-building, and evaluation of both behavioral and contextual outcomes.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur within 30 tokens",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7220864522",
+   "openalex_id": "https://openalex.org/W7220864522",
+   "title": "Sodium intake, mortality, and life expectancy in US adults: a retrospective cohort study stratified by cardiovascular health",
+   "year": 2026,
+   "doi": "https://doi.org/10.1108/nfs-01-2026-0037",
+   "venue": "Nutrition & Food Science",
+   "field": "nursing",
+   "cited_by_count": 0,
+   "abstract": "Purpose This study aims to examine the associations of sodium intake with mortality and life expectancy, stratified by cardiovascular health (CVH) levels. Design/methodology/approach A retrospective cohort study was conducted using NHANES 2007\u20132014 data linked to mortality follow-up through December 31, 2019, from the National Center for Health Statistics. Sodium intake was measured via 24-h recall, and CVH was assessed by the Life\u2019s Essential 8 score. Weighted Cox models and life table method were used for analysis. Findings During a median follow-up of 8.9 years, 690 total deaths and 198 cardiovascular disease (CVD) deaths occurred. After adjustment for confounders, no significant associations between sodium intake and CVD mortality were observed across CVH strata. In moderate CVH participants, there was a significant inverse association between sodium intake and all-cause mortality (third quartile [Q3] vs first quartile [Q1]: hazard ratio [HR] 0.62, 95% confidence intervals [CI] 0.39\u20130.98; fourth quartile [Q4] vs Q1: HR 0.39, 95% CI 0.18\u20130.85). Similar but nonsignificant associations were seen in good CVH participants. Compared with lowest sodium intake, higher sodium intake was generally associated with higher estimated life expectancy among participants with moderate and good CVH, whereas this pattern was not observed among those with poor CVH. Originality/value These findings suggest that the association between sodium intake and mortality may vary across levels of cardiovascular health. Further prospective studies are needed to determine whether cardiovascular health modifies these associations.",
+   "label": "on-domain",
+   "rationale": "strong term in title: 'sodium intake' + pair anywhere: 'all-cause mortality'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7218462786",
+   "doi": "https://doi.org/10.1080/27697061.2026.2731004",
+   "title": "Mediterranean Diet, Physical Activity, and Metabolic Syndrome in Breast Cancer Survivors on Adjuvant Endocrine Therapy: A Cross-Sectional Study From North Africa",
+   "display_name": "Mediterranean Diet, Physical Activity, and Metabolic Syndrome in Breast Cancer Survivors on Adjuvant Endocrine Therapy: A Cross-Sectional Study From North Africa",
+   "publication_year": 2026,
+   "publication_date": "2026-10-03",
+   "ids": {
+    "openalex": "https://openalex.org/W7218462786",
+    "doi": "https://doi.org/10.1080/27697061.2026.2731004",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/42829331"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1080/27697061.2026.2731004",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1080/27697061.2026.2731004",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S4210233975",
+     "display_name": "Journal of the American Nutrition Association",
+     "issn_l": "2769-7061",
+     "issn": [
+      "2769-7061",
+      "2769-707X"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "ki-jl-1",
+      "medline",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320547",
+     "host_organization_name": "Taylor & Francis",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320547",
+      "https://openalex.org/P4310320449"
+     ],
+     "host_organization_lineage_names": [
+      "Taylor & Francis",
+      "Informa"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of the American Nutrition Association",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref",
+    "pubmed"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5118846382",
+      "display_name": "Ilhem Sarra Manel Mohamedi",
+      "orcid": "https://orcid.org/0009-0000-1218-1476",
+      "observed_orcids": [
+       "https://orcid.org/0009-0000-1218-1476"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I137407579",
+       "display_name": "Universit\u00e9 Oran 1 Ahmed Ben Bella",
+       "ror": "https://ror.org/059et2b68",
+       "country_code": "DZ",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I137407579"
+       ]
+      }
+     ],
+     "countries": [
+      "DZ"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Ilhem Sarra Manel Mohamedi",
+     "raw_affiliation_strings": [
+      "Laboratoire de Nutrition Clinique et M\u00e9tabolique, Facult\u00e9 des Sciences de la Nature et de la Vie, Universit\u00e9 Oran 1 Ahmed Ben Bella"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0000-1218-1476",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Laboratoire de Nutrition Clinique et M\u00e9tabolique, Facult\u00e9 des Sciences de la Nature et de la Vie, Universit\u00e9 Oran 1 Ahmed Ben Bella",
+       "institution_ids": [
+        "https://openalex.org/I137407579"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5156414835",
+      "display_name": "Imene Moussaoui",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Imene Moussaoui",
+     "raw_affiliation_strings": [
+      "Service d\u2019Oncologie, EPH Akid Othmane Ain-El-Turk"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Service d\u2019Oncologie, EPH Akid Othmane Ain-El-Turk",
+       "institution_ids": []
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5118846382"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I137407579"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.90747034,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "13"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10866",
+    "display_name": "Nutritional Studies and Diet",
+    "score": 0.9634000062942505,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2739",
+     "display_name": "Public Health, Environmental and Occupational Health"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/27",
+     "display_name": "Medicine"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/4",
+     "display_name": "Health Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10866",
+     "display_name": "Nutritional Studies and Diet",
+     "score": 0.9634000062942505,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2739",
+      "display_name": "Public Health, Environmental and Occupational Health"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12103",
+     "display_name": "Cancer Risks and Factors",
+     "score": 0.01769999973475933,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2730",
+      "display_name": "Oncology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10178",
+     "display_name": "Cancer survivorship and care",
+     "score": 0.01510000042617321,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2730",
+      "display_name": "Oncology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/mediterranean-diet",
+     "display_name": "Mediterranean diet",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/exercise",
+     "display_name": "physical activity",
+     "score": 0.9990000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/metabolic-syndrome",
+     "display_name": "metabolic syndrome",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/breast-cancer-survivors",
+     "display_name": "breast cancer survivors",
+     "score": 0.996999979019165
+    },
+    {
+     "id": "https://openalex.org/keywords/adjuvant-endocrine-therapy",
+     "display_name": "adjuvant endocrine therapy",
+     "score": 0.9710000157356262
+    },
+    {
+     "id": "https://openalex.org/keywords/north-africa",
+     "display_name": "North Africa",
+     "score": 0.5699999928474426
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.8395000100135803
+    },
+    {
+     "id": "https://openalex.org/C530470458",
+     "wikidata": "https://www.wikidata.org/wiki/Q128581",
+     "display_name": "Breast cancer",
+     "level": 3,
+     "score": 0.695900022983551
+    },
+    {
+     "id": "https://openalex.org/C2780578515",
+     "wikidata": "https://www.wikidata.org/wiki/Q657193",
+     "display_name": "Metabolic syndrome",
+     "level": 3,
+     "score": 0.695900022983551
+    },
+    {
+     "id": "https://openalex.org/C2777863537",
+     "wikidata": "https://www.wikidata.org/wiki/Q357896",
+     "display_name": "Adjuvant",
+     "level": 2,
+     "score": 0.5285999774932861
+    },
+    {
+     "id": "https://openalex.org/C143998085",
+     "wikidata": "https://www.wikidata.org/wiki/Q162555",
+     "display_name": "Oncology",
+     "level": 1,
+     "score": 0.4666999876499176
+    },
+    {
+     "id": "https://openalex.org/C126322002",
+     "wikidata": "https://www.wikidata.org/wiki/Q11180",
+     "display_name": "Internal medicine",
+     "level": 1,
+     "score": 0.46230000257492065
+    },
+    {
+     "id": "https://openalex.org/C46699223",
+     "wikidata": "https://www.wikidata.org/wiki/Q11078",
+     "display_name": "Endocrine system",
+     "level": 3,
+     "score": 0.4505999982357025
+    },
+    {
+     "id": "https://openalex.org/C121608353",
+     "wikidata": "https://www.wikidata.org/wiki/Q12078",
+     "display_name": "Cancer",
+     "level": 2,
+     "score": 0.41269999742507935
+    },
+    {
+     "id": "https://openalex.org/C29456083",
+     "wikidata": "https://www.wikidata.org/wiki/Q1221899",
+     "display_name": "Gynecology",
+     "level": 1,
+     "score": 0.34540000557899475
+    },
+    {
+     "id": "https://openalex.org/C4646841",
+     "wikidata": "https://www.wikidata.org/wiki/Q13996",
+     "display_name": "Mediterranean climate",
+     "level": 2,
+     "score": 0.3224000036716461
+    },
+    {
+     "id": "https://openalex.org/C511355011",
+     "wikidata": "https://www.wikidata.org/wiki/Q12174",
+     "display_name": "Obesity",
+     "level": 2,
+     "score": 0.2924000024795532
+    },
+    {
+     "id": "https://openalex.org/C2779134260",
+     "wikidata": "https://www.wikidata.org/wiki/Q12136",
+     "display_name": "Disease",
+     "level": 2,
+     "score": 0.2822999954223633
+    },
+    {
+     "id": "https://openalex.org/C61511704",
+     "wikidata": "https://www.wikidata.org/wiki/Q1671857",
+     "display_name": "Incidence (geometry)",
+     "level": 2,
+     "score": 0.2815000116825104
+    },
+    {
+     "id": "https://openalex.org/C42407357",
+     "wikidata": "https://www.wikidata.org/wiki/Q521",
+     "display_name": "Physiology",
+     "level": 1,
+     "score": 0.2750999927520752
+    },
+    {
+     "id": "https://openalex.org/C555293320",
+     "wikidata": "https://www.wikidata.org/wiki/Q12206",
+     "display_name": "Diabetes mellitus",
+     "level": 2,
+     "score": 0.27309998869895935
+    },
+    {
+     "id": "https://openalex.org/C2779880527",
+     "wikidata": "https://www.wikidata.org/wiki/Q4959796",
+     "display_name": "Breast disease",
+     "level": 4,
+     "score": 0.2524000108242035
+    }
+   ],
+   "mesh": [],
+   "locations_count": 2,
+   "locations": [
+    {
+     "id": "doi:10.1080/27697061.2026.2731004",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1080/27697061.2026.2731004",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4210233975",
+      "display_name": "Journal of the American Nutrition Association",
+      "issn_l": "2769-7061",
+      "issn": [
+       "2769-7061",
+       "2769-707X"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "ki-jl-1",
+       "medline",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320547",
+      "host_organization_name": "Taylor & Francis",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320547",
+       "https://openalex.org/P4310320449"
+      ],
+      "host_organization_lineage_names": [
+       "Taylor & Francis",
+       "Informa"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of the American Nutrition Association",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "pmid:42829331",
+     "is_oa": false,
+     "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/42829331",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306525036",
+      "display_name": "PubMed",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I1299303238",
+      "host_organization_name": "National Institutes of Health",
+      "host_organization_lineage": [
+       "https://openalex.org/I1299303238"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of the American Nutrition Association",
+     "raw_type": "Journal Article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "score": 1.0,
+     "id": "https://metadata.un.org/sdg/3",
+     "display_name": "Good health and well-being"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 46,
+   "referenced_works": [
+    "https://openalex.org/W1966928606",
+    "https://openalex.org/W2019708693",
+    "https://openalex.org/W2033795022",
+    "https://openalex.org/W2081740445",
+    "https://openalex.org/W2116404316",
+    "https://openalex.org/W2130717716",
+    "https://openalex.org/W2136098791",
+    "https://openalex.org/W2166000498",
+    "https://openalex.org/W2612896980",
+    "https://openalex.org/W2896476100",
+    "https://openalex.org/W2899033585",
+    "https://openalex.org/W2904974103",
+    "https://openalex.org/W2963504600",
+    "https://openalex.org/W2990992250",
+    "https://openalex.org/W3015424411",
+    "https://openalex.org/W3096988636",
+    "https://openalex.org/W3159182860",
+    "https://openalex.org/W3194167116",
+    "https://openalex.org/W3194401096",
+    "https://openalex.org/W3205779276",
+    "https://openalex.org/W4292229870",
+    "https://openalex.org/W4306828734",
+    "https://openalex.org/W4307764941",
+    "https://openalex.org/W4313245324",
+    "https://openalex.org/W4319002809",
+    "https://openalex.org/W4361305382",
+    "https://openalex.org/W4380870645",
+    "https://openalex.org/W4388232920",
+    "https://openalex.org/W4391066537",
+    "https://openalex.org/W4392642897",
+    "https://openalex.org/W4393039278",
+    "https://openalex.org/W4396551421",
+    "https://openalex.org/W4399491795",
+    "https://openalex.org/W4401779604",
+    "https://openalex.org/W4403148885",
+    "https://openalex.org/W4406408445",
+    "https://openalex.org/W4406617640",
+    "https://openalex.org/W4407870211",
+    "https://openalex.org/W4409150339",
+    "https://openalex.org/W4409286722",
+    "https://openalex.org/W4411453913",
+    "https://openalex.org/W4412084204",
+    "https://openalex.org/W4415008897",
+    "https://openalex.org/W7117120863",
+    "https://openalex.org/W7117294052",
+    "https://openalex.org/W7117673581"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Objective": [
+     0
+    ],
+    "This": [
+     1,
+     37
+    ],
+    "study": [
+     2,
+     39
+    ],
+    "aimed": [
+     3
+    ],
+    "to": [
+     4,
+     12,
+     301
+    ],
+    "determine": [
+     5,
+     302
+    ],
+    "the": [
+     6,
+     103,
+     171,
+     284
+    ],
+    "prevalence": [
+     7,
+     155
+    ],
+    "of": [
+     8,
+     151,
+     235,
+     244,
+     263
+    ],
+    "metabolic": [
+     9,
+     136,
+     177,
+     236
+    ],
+    "syndrome": [
+     10,
+     62,
+     137,
+     145,
+     258
+    ],
+    "and": [
+     11,
+     20,
+     96,
+     124,
+     188,
+     215,
+     250,
+     270,
+     279,
+     298
+    ],
+    "examine": [
+     13
+    ],
+    "its": [
+     14
+    ],
+    "association": [
+     15
+    ],
+    "with": [
+     16,
+     106,
+     129,
+     135,
+     232,
+     274
+    ],
+    "Mediterranean": [
+     17,
+     71,
+     81,
+     217,
+     276
+    ],
+    "diet": [
+     18,
+     72,
+     218,
+     277
+    ],
+    "adherence": [
+     19,
+     73,
+     219,
+     278
+    ],
+    "physical": [
+     21,
+     281
+    ],
+    "activity": [
+     22,
+     88
+    ],
+    "among": [
+     23
+    ],
+    "women": [
+     24,
+     42
+    ],
+    "receiving": [
+     25,
+     49,
+     267
+    ],
+    "adjuvant": [
+     26
+    ],
+    "endocrine": [
+     27,
+     268
+    ],
+    "therapy": [
+     28
+    ],
+    "for": [
+     29
+    ],
+    "hormone": [
+     30
+    ],
+    "receptor-positive": [
+     31
+    ],
+    "breast": [
+     32,
+     264
+    ],
+    "cancer,": [
+     33
+    ],
+    "in": [
+     34,
+     43,
+     102,
+     175
+    ],
+    "North": [
+     35
+    ],
+    "Africa.Methods": [
+     36
+    ],
+    "cross-sectional": [
+     38,
+     285
+    ],
+    "recruited": [
+     40
+    ],
+    "150": [
+     41
+    ],
+    "Oran,": [
+     44
+    ],
+    "Algeria": [
+     45
+    ],
+    "(May": [
+     46
+    ],
+    "2022-December": [
+     47
+    ],
+    "2025),": [
+     48
+    ],
+    "either": [
+     50
+    ],
+    "tamoxifen": [
+     51,
+     193
+    ],
+    "(n": [
+     52,
+     58
+    ],
+    "=": [
+     53,
+     59,
+     169,
+     204,
+     221,
+     227,
+     255
+    ],
+    "73)": [
+     54
+    ],
+    "or": [
+     55
+    ],
+    "aromatase": [
+     56,
+     179
+    ],
+    "inhibitors": [
+     57
+    ],
+    "77).": [
+     60
+    ],
+    "Metabolic": [
+     61,
+     144,
+     257
+    ],
+    "was": [
+     63,
+     74,
+     91,
+     118,
+     146,
+     271
+    ],
+    "defined": [
+     64
+    ],
+    "per": [
+     65,
+     206
+    ],
+    "International": [
+     66
+    ],
+    "Diabetes": [
+     67
+    ],
+    "Federation": [
+     68
+    ],
+    "2006": [
+     69
+    ],
+    "criteria.": [
+     70
+    ],
+    "assessed": [
+     75,
+     119
+    ],
+    "using": [
+     76,
+     93,
+     120,
+     140
+    ],
+    "a": [
+     77,
+     99,
+     113,
+     121,
+     125
+    ],
+    "culturally": [
+     78
+    ],
+    "adapted": [
+     79
+    ],
+    "14-item": [
+     80
+    ],
+    "Diet": [
+     82
+    ],
+    "Adherence": [
+     83
+    ],
+    "Screener": [
+     84
+    ],
+    "(adapted": [
+     85
+    ],
+    "MEDAS).": [
+     86
+    ],
+    "Physical": [
+     87
+    ],
+    "level": [
+     89
+    ],
+    "(PAL)": [
+     90
+    ],
+    "estimated": [
+     92
+    ],
+    "GENI": [
+     94
+    ],
+    "software": [
+     95
+    ],
+    "entered": [
+     97
+    ],
+    "as": [
+     98,
+     112
+    ],
+    "continuous": [
+     100
+    ],
+    "variable": [
+     101
+    ],
+    "primary": [
+     104
+    ],
+    "analysis,": [
+     105,
+     200
+    ],
+    "sedentary/non-sedentary": [
+     107
+    ],
+    "categorization": [
+     108
+    ],
+    "(PAL": [
+     109
+    ],
+    "<": [
+     110,
+     213
+    ],
+    "1.40)": [
+     111
+    ],
+    "secondary": [
+     114
+    ],
+    "analysis.": [
+     115
+    ],
+    "Dietary": [
+     116
+    ],
+    "intake": [
+     117
+    ],
+    "24-h": [
+     122
+    ],
+    "recall": [
+     123
+    ],
+    "three-day": [
+     126
+    ],
+    "food": [
+     127
+    ],
+    "record": [
+     128
+    ],
+    "photographic": [
+     130
+    ],
+    "verification.": [
+     131
+    ],
+    "Factors": [
+     132
+    ],
+    "independently": [
+     133,
+     230,
+     272
+    ],
+    "associated": [
+     134,
+     231,
+     273
+    ],
+    "were": [
+     138,
+     229
+    ],
+    "identified": [
+     139
+    ],
+    "multivariable": [
+     141,
+     199
+    ],
+    "logistic": [
+     142
+    ],
+    "regression.Results": [
+     143
+    ],
+    "highly": [
+     147
+    ],
+    "prevalent,": [
+     148
+    ],
+    "affecting": [
+     149
+    ],
+    "68.0%": [
+     150
+    ],
+    "participants.": [
+     152
+    ],
+    "Although": [
+     153
+    ],
+    "overall": [
+     154
+    ],
+    "did": [
+     156
+    ],
+    "not": [
+     157
+    ],
+    "differ": [
+     158
+    ],
+    "between": [
+     159
+    ],
+    "treatment": [
+     160
+    ],
+    "groups": [
+     161
+    ],
+    "(aromatase": [
+     162
+    ],
+    "inhibitors:": [
+     163
+    ],
+    "72.7%": [
+     164
+    ],
+    "vs.": [
+     165
+    ],
+    "tamoxifen:": [
+     166
+    ],
+    "63.0%;": [
+     167
+    ],
+    "p": [
+     168,
+     212,
+     226,
+     254
+    ],
+    "0.202),": [
+     170
+    ],
+    "two": [
+     172
+    ],
+    "regimens": [
+     173
+    ],
+    "differed": [
+     174
+    ],
+    "individual": [
+     176
+    ],
+    "abnormalities:": [
+     178
+    ],
+    "inhibitor": [
+     180
+    ],
+    "users": [
+     181,
+     194
+    ],
+    "had": [
+     182,
+     195
+    ],
+    "lower": [
+     183,
+     233,
+     275,
+     280
+    ],
+    "HDL-cholesterol,": [
+     184
+    ],
+    "higher": [
+     185,
+     189,
+     196,
+     201
+    ],
+    "fasting": [
+     186
+    ],
+    "glucose,": [
+     187
+    ],
+    "blood": [
+     190
+    ],
+    "pressure,": [
+     191
+    ],
+    "while": [
+     192
+    ],
+    "triglycerides.": [
+     197
+    ],
+    "In": [
+     198
+    ],
+    "PAL": [
+     202
+    ],
+    "(OR": [
+     203,
+     220
+    ],
+    "0.44": [
+     205
+    ],
+    "0.1-unit": [
+     207
+    ],
+    "increase;": [
+     208
+    ],
+    "95%": [
+     209,
+     223
+    ],
+    "CI:": [
+     210,
+     224
+    ],
+    "0.28\u20130.68;": [
+     211
+    ],
+    "0.001)": [
+     214,
+     228
+    ],
+    "greater": [
+     216
+    ],
+    "0.72;": [
+     222
+    ],
+    "0.60\u20130.87;": [
+     225
+    ],
+    "odds": [
+     234
+    ],
+    "syndrome.": [
+     237
+    ],
+    "The": [
+     238
+    ],
+    "model": [
+     239
+    ],
+    "showed": [
+     240
+    ],
+    "an": [
+     241
+    ],
+    "apparent": [
+     242
+    ],
+    "AUC": [
+     243
+    ],
+    "0.832": [
+     245
+    ],
+    "(5-fold": [
+     246
+    ],
+    "cross-validated": [
+     247
+    ],
+    "AUC:": [
+     248
+    ],
+    "0.800)": [
+     249
+    ],
+    "satisfactory": [
+     251
+    ],
+    "calibration": [
+     252
+    ],
+    "(Hosmer\u2013Lemeshow": [
+     253
+    ],
+    "0.400).Conclusion": [
+     256
+    ],
+    "affects": [
+     259
+    ],
+    "more": [
+     260
+    ],
+    "than": [
+     261
+    ],
+    "two-thirds": [
+     262
+    ],
+    "cancer": [
+     265
+    ],
+    "survivors": [
+     266
+    ],
+    "therapy,": [
+     269
+    ],
+    "activity.": [
+     282
+    ],
+    "Given": [
+     283
+    ],
+    "design,": [
+     286
+    ],
+    "these": [
+     287,
+     293,
+     305
+    ],
+    "associations": [
+     288
+    ],
+    "cannot": [
+     289
+    ],
+    "establish": [
+     290
+    ],
+    "causality;": [
+     291
+    ],
+    "nonetheless,": [
+     292
+    ],
+    "findings": [
+     294
+    ],
+    "support": [
+     295
+    ],
+    "further": [
+     296
+    ],
+    "prospective": [
+     297
+    ],
+    "interventional": [
+     299
+    ],
+    "research": [
+     300
+    ],
+    "whether": [
+     303
+    ],
+    "modifying": [
+     304
+    ],
+    "behaviors": [
+     306
+    ],
+    "could": [
+     307
+    ],
+    "reduce": [
+     308
+    ],
+    "this": [
+     309
+    ],
+    "risk.": [
+     310
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-05T09:50:58.205359",
+   "created_date": "2026-10-04T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7220707047",
+   "doi": "https://doi.org/10.1080/19325037.2026.2744358",
+   "title": "Beyond Lifestyle Advice: Why Chronic Disease Prevention Must Move from Individual Choice to Health-Enabling Environments",
+   "display_name": "Beyond Lifestyle Advice: Why Chronic Disease Prevention Must Move from Individual Choice to Health-Enabling Environments",
+   "publication_year": 2026,
+   "publication_date": "2026-10-06",
+   "ids": {
+    "openalex": "https://openalex.org/W7220707047",
+    "doi": "https://doi.org/10.1080/19325037.2026.2744358"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1080/19325037.2026.2744358",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1080/19325037.2026.2744358",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S2764814719",
+     "display_name": "American Journal of Health Education",
+     "issn_l": "1932-5037",
+     "issn": [
+      "1932-5037",
+      "2168-3751"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core"
+     ],
+     "host_organization": "https://openalex.org/P4310320547",
+     "host_organization_name": "Taylor & Francis",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320547",
+      "https://openalex.org/P4310320449"
+     ],
+     "host_organization_lineage_names": [
+      "Taylor & Francis",
+      "Informa"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "American Journal of Health Education",
+    "raw_type": "journal-article"
+   },
+   "type": "editorial",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5005608165",
+      "display_name": "Pramana Pramana",
+      "orcid": "https://orcid.org/0000-0001-7254-6908",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-7254-6908"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I119896790",
+       "display_name": "Sebelas Maret University",
+       "ror": "https://ror.org/021hq5q33",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Pramana",
+     "raw_affiliation_strings": [
+      "Universitas Sebelas Maret"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-7254-6908",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Universitas Sebelas Maret",
+       "institution_ids": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5110634941",
+      "display_name": "Prahastiwi Utari",
+      "orcid": "https://orcid.org/0009-0009-9014-2785",
+      "observed_orcids": [
+       "https://orcid.org/0009-0009-9014-2785"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I119896790",
+       "display_name": "Sebelas Maret University",
+       "ror": "https://ror.org/021hq5q33",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Prahastiwi Utari",
+     "raw_affiliation_strings": [
+      "Universitas Sebelas Maret"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0009-9014-2785",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Universitas Sebelas Maret",
+       "institution_ids": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5031184275",
+      "display_name": "Sri Hastjarjo",
+      "orcid": "https://orcid.org/0000-0002-0306-9594",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-0306-9594"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I119896790",
+       "display_name": "Sebelas Maret University",
+       "ror": "https://ror.org/021hq5q33",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Sri Hastjarjo",
+     "raw_affiliation_strings": [
+      "Universitas Sebelas Maret"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-0306-9594",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Universitas Sebelas Maret",
+       "institution_ids": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5119737152",
+      "display_name": "Adi Inggit Handoko",
+      "orcid": "https://orcid.org/0009-0005-4363-1261",
+      "observed_orcids": [
+       "https://orcid.org/0009-0005-4363-1261"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I271888150",
+       "display_name": "Sriwijaya University",
+       "ror": "https://ror.org/030bmb197",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I271888150"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Adi Inggit Handoko",
+     "raw_affiliation_strings": [
+      "Universitas Sriwijaya"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0005-4363-1261",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Universitas Sriwijaya",
+       "institution_ids": [
+        "https://openalex.org/I271888150"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5063128829",
+      "display_name": "Monika Sri Yuliarti",
+      "orcid": "https://orcid.org/0000-0002-1447-3031",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-1447-3031"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I119896790",
+       "display_name": "Sebelas Maret University",
+       "ror": "https://ror.org/021hq5q33",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Monika Sri Yuliarti",
+     "raw_affiliation_strings": [
+      "Universitas Sebelas Maret"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-1447-3031",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Universitas Sebelas Maret",
+       "institution_ids": [
+        "https://openalex.org/I119896790"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5108702774",
+      "display_name": "Tri Susanto",
+      "orcid": "https://orcid.org/0000-0003-0828-248X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-0828-248X"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210096913",
+       "display_name": "University of Singaperbangsa Karawang",
+       "ror": "https://ror.org/00vc1fz20",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I4210096913"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Tri Susanto",
+     "raw_affiliation_strings": [
+      "Universitas Singaperbangsa Karawang"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-0828-248X",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Universitas Singaperbangsa Karawang",
+       "institution_ids": [
+        "https://openalex.org/I4210096913"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 3,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5005608165"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I119896790"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": null,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": null,
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "5"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T12041",
+    "display_name": "Public Health Policies and Education",
+    "score": 0.8032000064849854,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3600",
+     "display_name": "General Health Professions"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/36",
+     "display_name": "Health Professions"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/4",
+     "display_name": "Health Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T12041",
+     "display_name": "Public Health Policies and Education",
+     "score": 0.8032000064849854,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3600",
+      "display_name": "General Health Professions"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/36",
+      "display_name": "Health Professions"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12816",
+     "display_name": "Global Public Health Policies and Epidemiology",
+     "score": 0.15309999883174896,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1407",
+      "display_name": "Organizational Behavior and Human Resource Management"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/14",
+      "display_name": "Business, Management and Accounting"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12831",
+     "display_name": "School Health and Nursing Education",
+     "score": 0.011300000362098217,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3616",
+      "display_name": "Speech and Hearing"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/36",
+      "display_name": "Health Professions"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/chronic-disease-prevention",
+     "display_name": "chronic disease prevention",
+     "score": 0.9990000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/non-communicable-diseases",
+     "display_name": "non-communicable diseases",
+     "score": 0.8830000162124634
+    },
+    {
+     "id": "https://openalex.org/keywords/structural-determinants-of-health",
+     "display_name": "structural determinants of health",
+     "score": 0.7950000166893005
+    },
+    {
+     "id": "https://openalex.org/keywords/commercial-determinants-of-health",
+     "display_name": "commercial determinants of health",
+     "score": 0.7839999794960022
+    },
+    {
+     "id": "https://openalex.org/keywords/socio-ecological-model",
+     "display_name": "socio-ecological model",
+     "score": 0.8029999732971191
+    },
+    {
+     "id": "https://openalex.org/keywords/health-education",
+     "display_name": "health education",
+     "score": 0.6119999885559082
+    },
+    {
+     "id": "https://openalex.org/keywords/lifestyle-advice",
+     "display_name": "lifestyle advice",
+     "score": 0.6449999809265137
+    },
+    {
+     "id": "https://openalex.org/keywords/personal-responsibility",
+     "display_name": "personal responsibility",
+     "score": 0.5960000157356262
+    },
+    {
+     "id": "https://openalex.org/keywords/environmental-assessment",
+     "display_name": "environmental assessment",
+     "score": 0.4699999988079071
+    },
+    {
+     "id": "https://openalex.org/keywords/participatory-planning",
+     "display_name": "participatory planning",
+     "score": 0.7789999842643738
+    },
+    {
+     "id": "https://openalex.org/keywords/policy-advocacy",
+     "display_name": "policy advocacy",
+     "score": 0.949999988079071
+    },
+    {
+     "id": "https://openalex.org/keywords/social-isolation",
+     "display_name": "social isolation",
+     "score": 0.5870000123977661
+    },
+    {
+     "id": "https://openalex.org/keywords/poverty",
+     "display_name": "poverty",
+     "score": 0.35600000619888306
+    },
+    {
+     "id": "https://openalex.org/keywords/caregiving",
+     "display_name": "caregiving",
+     "score": 0.421999990940094
+    },
+    {
+     "id": "https://openalex.org/keywords/food-pricing",
+     "display_name": "food pricing",
+     "score": 0.5189999938011169
+    },
+    {
+     "id": "https://openalex.org/keywords/tobacco-marketing",
+     "display_name": "tobacco marketing",
+     "score": 0.5849999785423279
+    },
+    {
+     "id": "https://openalex.org/keywords/alcohol-marketing",
+     "display_name": "alcohol marketing",
+     "score": 0.5490000247955322
+    },
+    {
+     "id": "https://openalex.org/keywords/physical-inactivity",
+     "display_name": "physical inactivity",
+     "score": 0.7860000133514404
+    },
+    {
+     "id": "https://openalex.org/keywords/sleep",
+     "display_name": "sleep",
+     "score": 0.3869999945163727
+    },
+    {
+     "id": "https://openalex.org/keywords/chronic-stress",
+     "display_name": "chronic stress",
+     "score": 0.6740000247955322
+    },
+    {
+     "id": "https://openalex.org/keywords/social-connection",
+     "display_name": "social connectedness",
+     "score": 0.597000002861023
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C14262774",
+     "wikidata": "https://www.wikidata.org/wiki/Q4880695",
+     "display_name": "Behavior change",
+     "level": 2,
+     "score": 0.5368000268936157
+    },
+    {
+     "id": "https://openalex.org/C113807197",
+     "wikidata": "https://www.wikidata.org/wiki/Q60894",
+     "display_name": "Health education",
+     "level": 3,
+     "score": 0.4523000121116638
+    },
+    {
+     "id": "https://openalex.org/C2987552334",
+     "wikidata": "https://www.wikidata.org/wiki/Q383126",
+     "display_name": "Chronic disease",
+     "level": 2,
+     "score": 0.4415999948978424
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.4196999967098236
+    },
+    {
+     "id": "https://openalex.org/C185618831",
+     "wikidata": "https://www.wikidata.org/wiki/Q1851928",
+     "display_name": "Health promotion",
+     "level": 3,
+     "score": 0.4106000065803528
+    },
+    {
+     "id": "https://openalex.org/C39549134",
+     "wikidata": "https://www.wikidata.org/wiki/Q133080",
+     "display_name": "Public relations",
+     "level": 1,
+     "score": 0.3801000118255615
+    },
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.3709000051021576
+    },
+    {
+     "id": "https://openalex.org/C2908875944",
+     "wikidata": "https://www.wikidata.org/wiki/Q7331102",
+     "display_name": "Excessive alcohol consumption",
+     "level": 4,
+     "score": 0.36410000920295715
+    },
+    {
+     "id": "https://openalex.org/C46304622",
+     "wikidata": "https://www.wikidata.org/wiki/Q374814",
+     "display_name": "Certification",
+     "level": 2,
+     "score": 0.36230000853538513
+    },
+    {
+     "id": "https://openalex.org/C2779134260",
+     "wikidata": "https://www.wikidata.org/wiki/Q12136",
+     "display_name": "Disease",
+     "level": 2,
+     "score": 0.358599990606308
+    },
+    {
+     "id": "https://openalex.org/C18767781",
+     "wikidata": "https://www.wikidata.org/wiki/Q5465445",
+     "display_name": "Food choice",
+     "level": 2,
+     "score": 0.3549000024795532
+    },
+    {
+     "id": "https://openalex.org/C203663800",
+     "wikidata": "https://www.wikidata.org/wiki/Q848979",
+     "display_name": "Citizen journalism",
+     "level": 2,
+     "score": 0.3416000008583069
+    },
+    {
+     "id": "https://openalex.org/C30772137",
+     "wikidata": "https://www.wikidata.org/wiki/Q5164762",
+     "display_name": "Consumption (sociology)",
+     "level": 2,
+     "score": 0.3375999927520752
+    },
+    {
+     "id": "https://openalex.org/C3019615273",
+     "wikidata": "https://www.wikidata.org/wiki/Q60894",
+     "display_name": "Health educators",
+     "level": 4,
+     "score": 0.3208000063896179
+    },
+    {
+     "id": "https://openalex.org/C2776031354",
+     "wikidata": "https://www.wikidata.org/wiki/Q5104029",
+     "display_name": "Choice architecture",
+     "level": 2,
+     "score": 0.32010000944137573
+    },
+    {
+     "id": "https://openalex.org/C74909509",
+     "wikidata": "https://www.wikidata.org/wiki/Q10387",
+     "display_name": "Gerontology",
+     "level": 1,
+     "score": 0.3190000057220459
+    },
+    {
+     "id": "https://openalex.org/C138816342",
+     "wikidata": "https://www.wikidata.org/wiki/Q189603",
+     "display_name": "Public health",
+     "level": 2,
+     "score": 0.30869999527931213
+    },
+    {
+     "id": "https://openalex.org/C78491826",
+     "wikidata": "https://www.wikidata.org/wiki/Q3045352",
+     "display_name": "Social determinants of health",
+     "level": 3,
+     "score": 0.3075999915599823
+    },
+    {
+     "id": "https://openalex.org/C47344431",
+     "wikidata": "https://www.wikidata.org/wiki/Q1519812",
+     "display_name": "Health policy",
+     "level": 3,
+     "score": 0.29840001463890076
+    },
+    {
+     "id": "https://openalex.org/C1691868",
+     "wikidata": "https://www.wikidata.org/wiki/Q1811049",
+     "display_name": "Life course approach",
+     "level": 2,
+     "score": 0.29670000076293945
+    },
+    {
+     "id": "https://openalex.org/C3020759390",
+     "wikidata": "https://www.wikidata.org/wiki/Q4880694",
+     "display_name": "Behaviour change",
+     "level": 3,
+     "score": 0.2955999970436096
+    },
+    {
+     "id": "https://openalex.org/C2776035688",
+     "wikidata": "https://www.wikidata.org/wiki/Q1606558",
+     "display_name": "Affect (linguistics)",
+     "level": 2,
+     "score": 0.29330000281333923
+    },
+    {
+     "id": "https://openalex.org/C2780451532",
+     "wikidata": "https://www.wikidata.org/wiki/Q759676",
+     "display_name": "Task (project management)",
+     "level": 2,
+     "score": 0.29170000553131104
+    },
+    {
+     "id": "https://openalex.org/C99454951",
+     "wikidata": "https://www.wikidata.org/wiki/Q932068",
+     "display_name": "Environmental health",
+     "level": 1,
+     "score": 0.29100000858306885
+    },
+    {
+     "id": "https://openalex.org/C110379092",
+     "wikidata": "https://www.wikidata.org/wiki/Q1571836",
+     "display_name": "Social environment",
+     "level": 2,
+     "score": 0.28450000286102295
+    },
+    {
+     "id": "https://openalex.org/C111476811",
+     "wikidata": "https://www.wikidata.org/wiki/Q5190255",
+     "display_name": "Moral responsibility",
+     "level": 2,
+     "score": 0.2840000092983246
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.2838999927043915
+    },
+    {
+     "id": "https://openalex.org/C79416737",
+     "wikidata": "https://www.wikidata.org/wiki/Q2305519",
+     "display_name": "Social learning",
+     "level": 2,
+     "score": 0.275299996137619
+    },
+    {
+     "id": "https://openalex.org/C148803439",
+     "wikidata": "https://www.wikidata.org/wiki/Q4986688",
+     "display_name": "Built environment",
+     "level": 2,
+     "score": 0.2630000114440918
+    },
+    {
+     "id": "https://openalex.org/C2777754422",
+     "wikidata": "https://www.wikidata.org/wiki/Q17081927",
+     "display_name": "Social marketing",
+     "level": 2,
+     "score": 0.2621000111103058
+    },
+    {
+     "id": "https://openalex.org/C126042441",
+     "wikidata": "https://www.wikidata.org/wiki/Q1324888",
+     "display_name": "Frame (networking)",
+     "level": 2,
+     "score": 0.2615000009536743
+    },
+    {
+     "id": "https://openalex.org/C12713177",
+     "wikidata": "https://www.wikidata.org/wiki/Q1900281",
+     "display_name": "Perspective (graphical)",
+     "level": 2,
+     "score": 0.2599000036716461
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1080/19325037.2026.2744358",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1080/19325037.2026.2744358",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S2764814719",
+      "display_name": "American Journal of Health Education",
+      "issn_l": "1932-5037",
+      "issn": [
+       "1932-5037",
+       "2168-3751"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core"
+      ],
+      "host_organization": "https://openalex.org/P4310320547",
+      "host_organization_name": "Taylor & Francis",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320547",
+       "https://openalex.org/P4310320449"
+      ],
+      "host_organization_lineage_names": [
+       "Taylor & Francis",
+       "Informa"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "American Journal of Health Education",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "score": 0.9537000060081482,
+     "id": "https://metadata.un.org/sdg/3",
+     "display_name": "Good health and well-being"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 15,
+   "referenced_works": [
+    "https://openalex.org/W2158089900",
+    "https://openalex.org/W2159478271",
+    "https://openalex.org/W2165243546",
+    "https://openalex.org/W2179965972",
+    "https://openalex.org/W2323455124",
+    "https://openalex.org/W2522454246",
+    "https://openalex.org/W2550008669",
+    "https://openalex.org/W2885117088",
+    "https://openalex.org/W2946281272",
+    "https://openalex.org/W2946931470",
+    "https://openalex.org/W2949234365",
+    "https://openalex.org/W4281654519",
+    "https://openalex.org/W4360603423",
+    "https://openalex.org/W4392600894",
+    "https://openalex.org/W4399993456"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "In": [
+     0
+    ],
+    "chronic": [
+     1,
+     35
+    ],
+    "disease": [
+     2
+    ],
+    "prevention,": [
+     3
+    ],
+    "lifestyle": [
+     4,
+     61
+    ],
+    "advice": [
+     5,
+     86
+    ],
+    "remains": [
+     6
+    ],
+    "necessary": [
+     7
+    ],
+    "but": [
+     8,
+     154
+    ],
+    "increasingly": [
+     9
+    ],
+    "insufficient.": [
+     10
+    ],
+    "Noncommunicable": [
+     11
+    ],
+    "diseases": [
+     12
+    ],
+    "account": [
+     13
+    ],
+    "for": [
+     14,
+     126
+    ],
+    "a": [
+     15,
+     64
+    ],
+    "major": [
+     16
+    ],
+    "share": [
+     17
+    ],
+    "of": [
+     18,
+     66,
+     188
+    ],
+    "global": [
+     19
+    ],
+    "mortality,": [
+     20
+    ],
+    "while": [
+     21
+    ],
+    "key": [
+     22
+    ],
+    "behavioral": [
+     23,
+     190
+    ],
+    "risks": [
+     24
+    ],
+    "\u2013": [
+     25,
+     43
+    ],
+    "poor": [
+     26
+    ],
+    "diet,": [
+     27
+    ],
+    "physical": [
+     28
+    ],
+    "inactivity,": [
+     29
+    ],
+    "tobacco": [
+     30
+    ],
+    "exposure,": [
+     31
+    ],
+    "harmful": [
+     32,
+     162
+    ],
+    "alcohol": [
+     33
+    ],
+    "use,": [
+     34
+    ],
+    "stress,": [
+     36,
+     74
+    ],
+    "inadequate": [
+     37
+    ],
+    "sleep,": [
+     38
+    ],
+    "and": [
+     39,
+     77,
+     90,
+     112,
+     119,
+     172,
+     186,
+     191
+    ],
+    "weakened": [
+     40
+    ],
+    "social": [
+     41,
+     113,
+     117
+    ],
+    "connection": [
+     42
+    ],
+    "are": [
+     44,
+     96,
+     144
+    ],
+    "shaped": [
+     45
+    ],
+    "by": [
+     46,
+     51,
+     99
+    ],
+    "environments": [
+     47,
+     159
+    ],
+    "as": [
+     48,
+     50,
+     63
+    ],
+    "much": [
+     49
+    ],
+    "individual": [
+     52
+    ],
+    "intention.": [
+     53
+    ],
+    "Yet": [
+     54
+    ],
+    "health": [
+     55,
+     127,
+     142,
+     170
+    ],
+    "education": [
+     56,
+     128
+    ],
+    "often": [
+     57
+    ],
+    "continues": [
+     58
+    ],
+    "to": [
+     59,
+     129,
+     135,
+     150,
+     155
+    ],
+    "frame": [
+     60
+    ],
+    "change": [
+     62
+    ],
+    "matter": [
+     65
+    ],
+    "personal": [
+     67,
+     152
+    ],
+    "responsibility:": [
+     68
+    ],
+    "eat": [
+     69
+    ],
+    "better,": [
+     70
+    ],
+    "move": [
+     71,
+     130
+    ],
+    "more,": [
+     72
+    ],
+    "manage": [
+     73
+    ],
+    "stop": [
+     75
+    ],
+    "smoking,": [
+     76
+    ],
+    "make": [
+     78,
+     161
+    ],
+    "healthier": [
+     79
+    ],
+    "choices.": [
+     80
+    ],
+    "This": [
+     81
+    ],
+    "commentary": [
+     82
+    ],
+    "argues": [
+     83
+    ],
+    "that": [
+     84,
+     160
+    ],
+    "such": [
+     85
+    ],
+    "becomes": [
+     87
+    ],
+    "ethically": [
+     88
+    ],
+    "thin": [
+     89
+    ],
+    "practically": [
+     91
+    ],
+    "limited": [
+     92
+    ],
+    "when": [
+     93
+    ],
+    "healthy": [
+     94
+    ],
+    "choices": [
+     95
+    ],
+    "structurally": [
+     97
+    ],
+    "constrained": [
+     98
+    ],
+    "food": [
+     100
+    ],
+    "pricing,": [
+     101
+    ],
+    "unsafe": [
+     102
+    ],
+    "streets,": [
+     103
+    ],
+    "sedentary": [
+     104
+    ],
+    "institutional": [
+     105
+    ],
+    "routines,": [
+     106
+    ],
+    "commercial": [
+     107,
+     120
+    ],
+    "marketing,": [
+     108
+    ],
+    "poverty,": [
+     109
+    ],
+    "caregiving": [
+     110
+    ],
+    "burdens,": [
+     111
+    ],
+    "isolation.": [
+     114
+    ],
+    "Drawing": [
+     115
+    ],
+    "on": [
+     116
+    ],
+    "ecological": [
+     118
+    ],
+    "determinants": [
+     121
+    ],
+    "perspectives,": [
+     122
+    ],
+    "the": [
+     123,
+     137
+    ],
+    "article": [
+     124
+    ],
+    "calls": [
+     125
+    ],
+    "from": [
+     131,
+     158
+    ],
+    "changing": [
+     132,
+     136
+    ],
+    "minds": [
+     133
+    ],
+    "alone": [
+     134
+    ],
+    "conditions": [
+     138
+    ],
+    "under": [
+     139
+    ],
+    "which": [
+     140
+    ],
+    "everyday": [
+     141
+    ],
+    "decisions": [
+     143
+    ],
+    "made.": [
+     145
+    ],
+    "The": [
+     146
+    ],
+    "task": [
+     147
+    ],
+    "is": [
+     148
+    ],
+    "not": [
+     149
+    ],
+    "abandon": [
+     151
+    ],
+    "agency,": [
+     153
+    ],
+    "protect": [
+     156
+    ],
+    "it": [
+     157
+    ],
+    "behavior": [
+     163
+    ],
+    "normal,": [
+     164
+    ],
+    "affordable,": [
+     165
+    ],
+    "convenient,": [
+     166
+    ],
+    "or": [
+     167
+    ],
+    "unavoidable.": [
+     168
+    ],
+    "For": [
+     169
+    ],
+    "educators": [
+     171
+    ],
+    "Certified": [
+     173
+    ],
+    "Health": [
+     174
+    ],
+    "Education": [
+     175
+    ],
+    "Specialists,": [
+     176
+    ],
+    "this": [
+     177
+    ],
+    "requires": [
+     178
+    ],
+    "environmental": [
+     179
+    ],
+    "assessment,": [
+     180
+    ],
+    "participatory": [
+     181
+    ],
+    "planning,": [
+     182
+    ],
+    "policy": [
+     183
+    ],
+    "advocacy,": [
+     184
+    ],
+    "coalition-building,": [
+     185
+    ],
+    "evaluation": [
+     187
+    ],
+    "both": [
+     189
+    ],
+    "contextual": [
+     192
+    ],
+    "outcomes.": [
+     193
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-08T09:06:37.294493",
+   "created_date": "2026-10-07T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7220864522",
+   "doi": "https://doi.org/10.1108/nfs-01-2026-0037",
+   "title": "Sodium intake, mortality, and life expectancy in US adults: a retrospective cohort study stratified by cardiovascular health",
+   "display_name": "Sodium intake, mortality, and life expectancy in US adults: a retrospective cohort study stratified by cardiovascular health",
+   "publication_year": 2026,
+   "publication_date": "2026-10-07",
+   "ids": {
+    "openalex": "https://openalex.org/W7220864522",
+    "doi": "https://doi.org/10.1108/nfs-01-2026-0037"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1108/nfs-01-2026-0037",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1108/nfs-01-2026-0037",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S65201940",
+     "display_name": "Nutrition & Food Science",
+     "issn_l": "0034-6659",
+     "issn": [
+      "0034-6659",
+      "1758-6917"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "jufo-1",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310319811",
+     "host_organization_name": "Emerald Publishing Limited",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319811"
+     ],
+     "host_organization_lineage_names": [
+      "Emerald Publishing Limited"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Nutrition &amp; Food Science",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5157876443",
+      "display_name": "Qiuyu Yang",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I76214153",
+       "display_name": "Lanzhou University",
+       "ror": "https://ror.org/01mkqqe32",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Qiuyu Yang",
+     "raw_affiliation_strings": [
+      "Lanzhou University Department of Health Policy and Management, School of Public Health, , Lanzhou,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Lanzhou University Department of Health Policy and Management, School of Public Health, , Lanzhou,",
+       "institution_ids": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5137883029",
+      "display_name": "Gihad Nesrallah",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I185261750",
+       "display_name": "University of Toronto",
+       "ror": "https://ror.org/03dbr7087",
+       "country_code": "CA",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I185261750"
+       ]
+      }
+     ],
+     "countries": [
+      "CA"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Gihad Nesrallah",
+     "raw_affiliation_strings": [
+      "University of Toronto Department of Medicine, Temerty Faculty of Medicine, , Toronto,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "University of Toronto Department of Medicine, Temerty Faculty of Medicine, , Toronto,",
+       "institution_ids": [
+        "https://openalex.org/I185261750"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5157880818",
+      "display_name": "Robin W.M. Vernooij",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I3018483916",
+       "display_name": "University Medical Center Utrecht",
+       "ror": "https://ror.org/0575yy874",
+       "country_code": "NL",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I3018483916"
+       ]
+      }
+     ],
+     "countries": [
+      "NL"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Robin W.M. Vernooij",
+     "raw_affiliation_strings": [
+      "University Medical Centre Utrecht Department of Nephrology and Hypertension, Julius Center for Health Sciences and Primary Care, , Utrecht, , and Julius Center for Health Sciences and Primary Care, University Medical Center Utrecht, Utrecht University, Utrecht, The Netherlands"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "University Medical Centre Utrecht Department of Nephrology and Hypertension, Julius Center for Health Sciences and Primary Care, , Utrecht, , and Julius Center for Health Sciences and Primary Care, University Medical Center Utrecht, Utrecht University, Utrecht, The Netherlands",
+       "institution_ids": [
+        "https://openalex.org/I3018483916"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5013315390",
+      "display_name": "Ma\u0142gorzata Maria Ba\u0142a",
+      "orcid": "https://orcid.org/0000-0003-1978-7264",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-1978-7264"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I126596746",
+       "display_name": "Jagiellonian University",
+       "ror": "https://ror.org/03bqmcz70",
+       "country_code": "PL",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I126596746"
+       ]
+      }
+     ],
+     "countries": [
+      "PL"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Ma\u0142gorzata M. Ba\u0142a",
+     "raw_affiliation_strings": [
+      "Jagiellonian University Medical College Department of Hygiene and Dietetics, Chair of Epidemiology and Preventive Medicine, , Krakow,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Jagiellonian University Medical College Department of Hygiene and Dietetics, Chair of Epidemiology and Preventive Medicine, , Krakow,",
+       "institution_ids": [
+        "https://openalex.org/I126596746"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5157852315",
+      "display_name": "Qi Wang",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I76214153",
+       "display_name": "Lanzhou University",
+       "ror": "https://ror.org/01mkqqe32",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Qi Wang",
+     "raw_affiliation_strings": [
+      "Lanzhou University Department of Health Policy and Management, School of Public Health, , Lanzhou,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Lanzhou University Department of Health Policy and Management, School of Public Health, , Lanzhou,",
+       "institution_ids": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5157812614",
+      "display_name": "Rui Yang",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210092839",
+       "display_name": "Gansu University of Traditional Chinese Medicine",
+       "ror": "https://ror.org/00g741v42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I4210092839"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Rui Yang",
+     "raw_affiliation_strings": [
+      "Gansu University of Chinese Medicine School of Nursing, , Lanzhou,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Gansu University of Chinese Medicine School of Nursing, , Lanzhou,",
+       "institution_ids": [
+        "https://openalex.org/I4210092839"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5102996791",
+      "display_name": "Min Han",
+      "orcid": "https://orcid.org/0000-0001-6240-8667",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-6240-8667",
+       "https://orcid.org/0000-0002-4288-1534"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I76214153",
+       "display_name": "Lanzhou University",
+       "ror": "https://ror.org/01mkqqe32",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Min Han",
+     "raw_affiliation_strings": [
+      "Lanzhou University Department of Health Policy and Management, School of Public Health, , Lanzhou,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Lanzhou University Department of Health Policy and Management, School of Public Health, , Lanzhou,",
+       "institution_ids": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5130670581",
+      "display_name": "Jinhui Tian",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210114651",
+       "display_name": "Evidence Based Research (United States)",
+       "ror": "https://ror.org/021tyky57",
+       "country_code": "US",
+       "type": "company",
+       "lineage": [
+        "https://openalex.org/I4210114651"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I76214153",
+       "display_name": "Lanzhou University",
+       "ror": "https://ror.org/01mkqqe32",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ],
+     "countries": [
+      "CN",
+      "US"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Jinhui Tian",
+     "raw_affiliation_strings": [
+      "Lanzhou University Key Laboratory of Evidence Based Medicine of Gansu Province, Evidence-Based Medicine Center, School of Basic Medical Sciences, , Lanzhou,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Lanzhou University Key Laboratory of Evidence Based Medicine of Gansu Province, Evidence-Based Medicine Center, School of Basic Medical Sciences, , Lanzhou,",
+       "institution_ids": [
+        "https://openalex.org/I4210114651",
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5121978652",
+      "display_name": "Xiong Yue",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210118272",
+       "display_name": "Gansu Provincial Maternal and Child Health Hospital",
+       "ror": "https://ror.org/02n9as466",
+       "country_code": "CN",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I4210118272"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Xiong Yue",
+     "raw_affiliation_strings": [
+      "Gansu Provincial Maternity and Child Care Hospital Department of Medical, , Lanzhou,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Gansu Provincial Maternity and Child Care Hospital Department of Medical, , Lanzhou,",
+       "institution_ids": [
+        "https://openalex.org/I4210118272"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5109378556",
+      "display_name": "Long Ge",
+      "orcid": "https://orcid.org/0000-0002-3555-1107",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-3555-1107"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I76214153",
+       "display_name": "Lanzhou University",
+       "ror": "https://ror.org/01mkqqe32",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Long Ge",
+     "raw_affiliation_strings": [
+      "Lanzhou University School of Public Health, , Lanzhou,"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-3555-1107",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Lanzhou University School of Public Health, , Lanzhou,",
+       "institution_ids": [
+        "https://openalex.org/I76214153"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 5,
+   "institutions_distinct_count": 7,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5109378556"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I76214153"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.87228971,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "15"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T12075",
+    "display_name": "Sodium Intake and Health",
+    "score": 0.9994999766349792,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2916",
+     "display_name": "Nutrition and Dietetics"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/29",
+     "display_name": "Nursing"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/4",
+     "display_name": "Health Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T12075",
+     "display_name": "Sodium Intake and Health",
+     "score": 0.9994999766349792,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2916",
+      "display_name": "Nutrition and Dietetics"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/29",
+      "display_name": "Nursing"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10866",
+     "display_name": "Nutritional Studies and Diet",
+     "score": 0.00039999998989515007,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2739",
+      "display_name": "Public Health, Environmental and Occupational Health"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T13522",
+     "display_name": "Cardiovascular Health and Risk Factors",
+     "score": 9.999999747378752e-05,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2705",
+      "display_name": "Cardiology and Cardiovascular Medicine"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/sodium-intake",
+     "display_name": "sodium intake",
+     "score": 0.9789999723434448
+    },
+    {
+     "id": "https://openalex.org/keywords/mortality",
+     "display_name": "mortality",
+     "score": 0.609000027179718
+    },
+    {
+     "id": "https://openalex.org/keywords/life-expectancy",
+     "display_name": "life expectancy",
+     "score": 0.9869999885559082
+    },
+    {
+     "id": "https://openalex.org/keywords/cardiovascular-health",
+     "display_name": "cardiovascular health",
+     "score": 0.9990000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/life-s-essential-8",
+     "display_name": "Life's Essential 8",
+     "score": 0.8579999804496765
+    },
+    {
+     "id": "https://openalex.org/keywords/cardiovascular-mortality",
+     "display_name": "cardiovascular mortality",
+     "score": 0.9779999852180481
+    },
+    {
+     "id": "https://openalex.org/keywords/all-cause-mortality",
+     "display_name": "all-cause mortality",
+     "score": 0.972000002861023
+    },
+    {
+     "id": "https://openalex.org/keywords/dietary-salt",
+     "display_name": "dietary salt",
+     "score": 0.5889999866485596
+    },
+    {
+     "id": "https://openalex.org/keywords/nhanes",
+     "display_name": "NHANES",
+     "score": 0.9020000100135803
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.9021000266075134
+    },
+    {
+     "id": "https://openalex.org/C68443243",
+     "wikidata": "https://www.wikidata.org/wiki/Q2786686",
+     "display_name": "Quartile",
+     "level": 3,
+     "score": 0.8461999893188477
+    },
+    {
+     "id": "https://openalex.org/C207103383",
+     "wikidata": "https://www.wikidata.org/wiki/Q3930246",
+     "display_name": "Hazard ratio",
+     "level": 3,
+     "score": 0.698199987411499
+    },
+    {
+     "id": "https://openalex.org/C133925201",
+     "wikidata": "https://www.wikidata.org/wiki/Q188419",
+     "display_name": "Life expectancy",
+     "level": 3,
+     "score": 0.647599995136261
+    },
+    {
+     "id": "https://openalex.org/C167135981",
+     "wikidata": "https://www.wikidata.org/wiki/Q2146302",
+     "display_name": "Retrospective cohort study",
+     "level": 2,
+     "score": 0.5799999833106995
+    },
+    {
+     "id": "https://openalex.org/C44249647",
+     "wikidata": "https://www.wikidata.org/wiki/Q208498",
+     "display_name": "Confidence interval",
+     "level": 2,
+     "score": 0.5442000031471252
+    },
+    {
+     "id": "https://openalex.org/C50382708",
+     "wikidata": "https://www.wikidata.org/wiki/Q223218",
+     "display_name": "Proportional hazards model",
+     "level": 2,
+     "score": 0.5360000133514404
+    },
+    {
+     "id": "https://openalex.org/C201903717",
+     "wikidata": "https://www.wikidata.org/wiki/Q1778788",
+     "display_name": "Cohort study",
+     "level": 2,
+     "score": 0.5307999849319458
+    },
+    {
+     "id": "https://openalex.org/C3018284874",
+     "wikidata": "https://www.wikidata.org/wiki/Q389735",
+     "display_name": "Cardiovascular health",
+     "level": 3,
+     "score": 0.49300000071525574
+    },
+    {
+     "id": "https://openalex.org/C72563966",
+     "wikidata": "https://www.wikidata.org/wiki/Q1303415",
+     "display_name": "Cohort",
+     "level": 2,
+     "score": 0.40689998865127563
+    },
+    {
+     "id": "https://openalex.org/C188816634",
+     "wikidata": "https://www.wikidata.org/wiki/Q2113324",
+     "display_name": "Prospective cohort study",
+     "level": 2,
+     "score": 0.38199999928474426
+    },
+    {
+     "id": "https://openalex.org/C537181965",
+     "wikidata": "https://www.wikidata.org/wiki/Q658",
+     "display_name": "Sodium",
+     "level": 2,
+     "score": 0.37540000677108765
+    },
+    {
+     "id": "https://openalex.org/C126322002",
+     "wikidata": "https://www.wikidata.org/wiki/Q11180",
+     "display_name": "Internal medicine",
+     "level": 1,
+     "score": 0.3578999936580658
+    },
+    {
+     "id": "https://openalex.org/C2779134260",
+     "wikidata": "https://www.wikidata.org/wiki/Q12136",
+     "display_name": "Disease",
+     "level": 2,
+     "score": 0.3443000018596649
+    },
+    {
+     "id": "https://openalex.org/C149923435",
+     "wikidata": "https://www.wikidata.org/wiki/Q37732",
+     "display_name": "Demography",
+     "level": 1,
+     "score": 0.3107999861240387
+    },
+    {
+     "id": "https://openalex.org/C99454951",
+     "wikidata": "https://www.wikidata.org/wiki/Q932068",
+     "display_name": "Environmental health",
+     "level": 1,
+     "score": 0.2969000041484833
+    },
+    {
+     "id": "https://openalex.org/C74909509",
+     "wikidata": "https://www.wikidata.org/wiki/Q10387",
+     "display_name": "Gerontology",
+     "level": 1,
+     "score": 0.2906999886035919
+    },
+    {
+     "id": "https://openalex.org/C29374701",
+     "wikidata": "https://www.wikidata.org/wiki/Q1931388",
+     "display_name": "Cause of death",
+     "level": 3,
+     "score": 0.2721000015735626
+    },
+    {
+     "id": "https://openalex.org/C107130276",
+     "wikidata": "https://www.wikidata.org/wiki/Q133805",
+     "display_name": "Epidemiology",
+     "level": 2,
+     "score": 0.26919999718666077
+    },
+    {
+     "id": "https://openalex.org/C2777984932",
+     "wikidata": "https://www.wikidata.org/wiki/Q7336293",
+     "display_name": "Risk of mortality",
+     "level": 2,
+     "score": 0.26460000872612
+    },
+    {
+     "id": "https://openalex.org/C2908747478",
+     "wikidata": "https://www.wikidata.org/wiki/Q3337048",
+     "display_name": "Dietary Sodium",
+     "level": 3,
+     "score": 0.25949999690055847
+    },
+    {
+     "id": "https://openalex.org/C179755657",
+     "wikidata": "https://www.wikidata.org/wiki/Q58702",
+     "display_name": "Mortality rate",
+     "level": 2,
+     "score": 0.25369998812675476
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1108/nfs-01-2026-0037",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1108/nfs-01-2026-0037",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S65201940",
+      "display_name": "Nutrition & Food Science",
+      "issn_l": "0034-6659",
+      "issn": [
+       "0034-6659",
+       "1758-6917"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-1",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310319811",
+      "host_organization_name": "Emerald Publishing Limited",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319811"
+      ],
+      "host_organization_lineage_names": [
+       "Emerald Publishing Limited"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Nutrition &amp; Food Science",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "score": 1.0,
+     "id": "https://metadata.un.org/sdg/3",
+     "display_name": "Good health and well-being"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [
+    {
+     "id": "https://openalex.org/study-designs/observational-study",
+     "display_name": "Observational Study"
+    }
+   ],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 28,
+   "referenced_works": [
+    "https://openalex.org/W1980749853",
+    "https://openalex.org/W2018553669",
+    "https://openalex.org/W2047241023",
+    "https://openalex.org/W2113983175",
+    "https://openalex.org/W2125436925",
+    "https://openalex.org/W2135383573",
+    "https://openalex.org/W2150639294",
+    "https://openalex.org/W2153504598",
+    "https://openalex.org/W2155257259",
+    "https://openalex.org/W2266679947",
+    "https://openalex.org/W2275737843",
+    "https://openalex.org/W2293588448",
+    "https://openalex.org/W2331665784",
+    "https://openalex.org/W2600552530",
+    "https://openalex.org/W2802410718",
+    "https://openalex.org/W2896933293",
+    "https://openalex.org/W2911368425",
+    "https://openalex.org/W2939872178",
+    "https://openalex.org/W2991474408",
+    "https://openalex.org/W3012246951",
+    "https://openalex.org/W3091282298",
+    "https://openalex.org/W3114023250",
+    "https://openalex.org/W3196263837",
+    "https://openalex.org/W4200059582",
+    "https://openalex.org/W4283695295",
+    "https://openalex.org/W4316466220",
+    "https://openalex.org/W4363678105",
+    "https://openalex.org/W4404969260"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Purpose": [
+     0
+    ],
+    "This": [
+     1
+    ],
+    "study": [
+     2,
+     26
+    ],
+    "aims": [
+     3
+    ],
+    "to": [
+     4,
+     34,
+     222
+    ],
+    "examine": [
+     5
+    ],
+    "the": [
+     6,
+     42,
+     60,
+     203
+    ],
+    "associations": [
+     7,
+     100,
+     157
+    ],
+    "of": [
+     8,
+     81,
+     214
+    ],
+    "sodium": [
+     9,
+     102,
+     123,
+     167,
+     170,
+     206
+    ],
+    "intake": [
+     10,
+     49,
+     103,
+     124,
+     171,
+     207
+    ],
+    "with": [
+     11,
+     165,
+     175,
+     182,
+     195
+    ],
+    "mortality": [
+     12,
+     35,
+     106,
+     127,
+     209
+    ],
+    "and": [
+     13,
+     55,
+     68,
+     87,
+     104,
+     125,
+     184,
+     208
+    ],
+    "life": [
+     14,
+     69,
+     178
+    ],
+    "expectancy,": [
+     15
+    ],
+    "stratified": [
+     16
+    ],
+    "by": [
+     17,
+     59
+    ],
+    "cardiovascular": [
+     18,
+     89,
+     215,
+     225
+    ],
+    "health": [
+     19,
+     226
+    ],
+    "(CVH)": [
+     20
+    ],
+    "levels.": [
+     21
+    ],
+    "Design/methodology/approach": [
+     22
+    ],
+    "A": [
+     23
+    ],
+    "retrospective": [
+     24
+    ],
+    "cohort": [
+     25
+    ],
+    "was": [
+     27,
+     50,
+     57,
+     117,
+     172,
+     190
+    ],
+    "conducted": [
+     28
+    ],
+    "using": [
+     29
+    ],
+    "NHANES": [
+     30
+    ],
+    "2007\u20132014": [
+     31
+    ],
+    "data": [
+     32
+    ],
+    "linked": [
+     33
+    ],
+    "follow-up": [
+     36,
+     80
+    ],
+    "through": [
+     37
+    ],
+    "December": [
+     38
+    ],
+    "31,": [
+     39
+    ],
+    "2019,": [
+     40
+    ],
+    "from": [
+     41
+    ],
+    "National": [
+     43
+    ],
+    "Center": [
+     44
+    ],
+    "for": [
+     45,
+     74,
+     96
+    ],
+    "Health": [
+     46
+    ],
+    "Statistics.": [
+     47
+    ],
+    "Sodium": [
+     48
+    ],
+    "measured": [
+     51
+    ],
+    "via": [
+     52
+    ],
+    "24-h": [
+     53
+    ],
+    "recall,": [
+     54
+    ],
+    "CVH": [
+     56,
+     110,
+     114,
+     162
+    ],
+    "assessed": [
+     58
+    ],
+    "Life\u2019s": [
+     61
+    ],
+    "Essential": [
+     62
+    ],
+    "8": [
+     63
+    ],
+    "score.": [
+     64
+    ],
+    "Weighted": [
+     65
+    ],
+    "Cox": [
+     66
+    ],
+    "models": [
+     67
+    ],
+    "table": [
+     70
+    ],
+    "method": [
+     71
+    ],
+    "were": [
+     72,
+     107,
+     158
+    ],
+    "used": [
+     73
+    ],
+    "analysis.": [
+     75
+    ],
+    "Findings": [
+     76
+    ],
+    "During": [
+     77
+    ],
+    "a": [
+     78,
+     118
+    ],
+    "median": [
+     79
+    ],
+    "8.9": [
+     82
+    ],
+    "years,": [
+     83
+    ],
+    "690": [
+     84
+    ],
+    "total": [
+     85
+    ],
+    "deaths": [
+     86,
+     92
+    ],
+    "198": [
+     88
+    ],
+    "disease": [
+     90
+    ],
+    "(CVD)": [
+     91
+    ],
+    "occurred.": [
+     93
+    ],
+    "After": [
+     94
+    ],
+    "adjustment": [
+     95
+    ],
+    "confounders,": [
+     97
+    ],
+    "no": [
+     98
+    ],
+    "significant": [
+     99,
+     119
+    ],
+    "between": [
+     101,
+     122,
+     205
+    ],
+    "CVD": [
+     105
+    ],
+    "observed": [
+     108,
+     192
+    ],
+    "across": [
+     109,
+     212
+    ],
+    "strata.": [
+     111
+    ],
+    "In": [
+     112
+    ],
+    "moderate": [
+     113,
+     183
+    ],
+    "participants,": [
+     115
+    ],
+    "there": [
+     116
+    ],
+    "inverse": [
+     120
+    ],
+    "association": [
+     121,
+     204
+    ],
+    "all-cause": [
+     126
+    ],
+    "(third": [
+     128
+    ],
+    "quartile": [
+     129,
+     133,
+     145
+    ],
+    "[Q3]": [
+     130
+    ],
+    "vs": [
+     131,
+     147
+    ],
+    "first": [
+     132
+    ],
+    "[Q1]:": [
+     134
+    ],
+    "hazard": [
+     135
+    ],
+    "ratio": [
+     136
+    ],
+    "[HR]": [
+     137
+    ],
+    "0.62,": [
+     138
+    ],
+    "95%": [
+     139,
+     151
+    ],
+    "confidence": [
+     140
+    ],
+    "intervals": [
+     141
+    ],
+    "[CI]": [
+     142
+    ],
+    "0.39\u20130.98;": [
+     143
+    ],
+    "fourth": [
+     144
+    ],
+    "[Q4]": [
+     146
+    ],
+    "Q1:": [
+     148
+    ],
+    "HR": [
+     149
+    ],
+    "0.39,": [
+     150
+    ],
+    "CI": [
+     152
+    ],
+    "0.18\u20130.85).": [
+     153
+    ],
+    "Similar": [
+     154
+    ],
+    "but": [
+     155
+    ],
+    "nonsignificant": [
+     156
+    ],
+    "seen": [
+     159
+    ],
+    "in": [
+     160
+    ],
+    "good": [
+     161,
+     185
+    ],
+    "participants.": [
+     163
+    ],
+    "Compared": [
+     164
+    ],
+    "lowest": [
+     166
+    ],
+    "intake,": [
+     168
+    ],
+    "higher": [
+     169,
+     176
+    ],
+    "generally": [
+     173
+    ],
+    "associated": [
+     174
+    ],
+    "estimated": [
+     177
+    ],
+    "expectancy": [
+     179
+    ],
+    "among": [
+     180,
+     193
+    ],
+    "participants": [
+     181
+    ],
+    "CVH,": [
+     186
+    ],
+    "whereas": [
+     187
+    ],
+    "this": [
+     188
+    ],
+    "pattern": [
+     189
+    ],
+    "not": [
+     191
+    ],
+    "those": [
+     194
+    ],
+    "poor": [
+     196
+    ],
+    "CVH.": [
+     197
+    ],
+    "Originality/value": [
+     198
+    ],
+    "These": [
+     199
+    ],
+    "findings": [
+     200
+    ],
+    "suggest": [
+     201
+    ],
+    "that": [
+     202
+    ],
+    "may": [
+     210
+    ],
+    "vary": [
+     211
+    ],
+    "levels": [
+     213
+    ],
+    "health.": [
+     216
+    ],
+    "Further": [
+     217
+    ],
+    "prospective": [
+     218
+    ],
+    "studies": [
+     219
+    ],
+    "are": [
+     220
+    ],
+    "needed": [
+     221
+    ],
+    "determine": [
+     223
+    ],
+    "whether": [
+     224
+    ],
+    "modifies": [
+     227
+    ],
+    "these": [
+     228
+    ],
+    "associations.": [
+     229
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-08T00:00:00"
+  }
+ ],
+ "recorded_inr": 3.053106,
+ "outcome": {
+  "state": "BATCH_STATE_SUCCEEDED",
+  "collected_on": "2026-10-09",
+  "added": [
+   "openalex:W7218462786",
+   "openalex:W7220707047",
+   "openalex:W7220864522"
+  ],
+  "failed": []
+ }
+}

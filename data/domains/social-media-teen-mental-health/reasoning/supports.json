@@ -1,5 +1,5 @@
 {
-  "n": 104,
+  "n": 121,
   "items": [
     {
       "from_claim_id": "openalex:W2549950368:c1",
@@ -1040,6 +1040,176 @@
       "b_paper_id": "openalex:W2896921383",
       "b_text": "Adolescents aged 14 to 17 with high screen use (7+ hours per day vs 1 hour per day) are more than twice as likely to have been treated by a mental health professional in the last 12 months (RR 2.22).",
       "explanation": "Both claims provide mutually reinforcing findings that greater engagement with non-screen activities is associated with better adolescent mental health, whereas high screen use is linked to increased mental health issues."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c1",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.9310627579689026,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "The magnitude of association between social media use and depressive symptoms is larger for adolescent girls than for boys.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Both claims assert that the association between social media use and depressive symptoms is stronger for adolescent girls than for boys."
+    },
+    {
+      "from_claim_id": "openalex:W2957614298:c4",
+      "to_claim_id": "openalex:W7220393051:c2",
+      "similarity": 0.8847845792770386,
+      "a_paper_id": "openalex:W2957614298",
+      "a_text": "Within-person annual increases in social media use are associated with concurrent increases in depressive symptoms.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Cohort studies using within-person analytic techniques found that within-person increases in social media use predicted subsequent increases in depressive symptoms after accounting for baseline levels.",
+      "explanation": "Both claims find that within-person increases in social media use are linked to increases in depressive symptoms, providing mutually reinforcing evidence across concurrent and prospective timeframes."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8621823787689209,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Both claims find an association between social media use and depressive symptoms in adolescents, with Claim B reinforcing the presence of the link observed in Claim A by examining gender-specific differences."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c4",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8529883623123169,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Girls spending 5 or more hours daily on social media show a 50% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Both claims indicate that female adolescents experience a meaningful association between social media use and increased depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2415849311:c3",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8492878079414368,
+      "a_paper_id": "openalex:W2415849311",
+      "a_text": "Greater overall social media use in adolescents is associated with higher levels of anxiety and depression.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Both claims affirm a positive association between adolescent social media use and depressive symptoms, with Claim B adding nuance regarding gender differences."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c2",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.848907470703125,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Girls spending 3 to <5 hours daily on social media show a 26% increase in depressive symptom scores compared to those using social media for 1 to <3 hours.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Both claims mutually reinforce the finding that social media use is linked to depressive symptoms among female adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2566585401:c4",
+      "to_claim_id": "openalex:W7220393051:c5",
+      "similarity": 0.8424518704414368,
+      "a_paper_id": "openalex:W2566585401",
+      "a_text": "For adolescent girls, feeling depressed triggers higher social networking site involvement.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "The association between social media use and depressive symptoms was generally stronger among female adolescents than male adolescents.",
+      "explanation": "Both claims indicate a prominent link between depressive symptoms and social media use specifically among female adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2957614298:c2",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.8405053019523621,
+      "a_paper_id": "openalex:W2957614298",
+      "a_text": "Increased social media use is associated with higher depressive symptoms across individuals.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "Claim B summarizes evidence from multiple studies that reinforces Claim A's finding of a positive association between social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c9",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.8385598063468933,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Social media use of 5 or more hours daily retains an independent 11% higher depressive symptom score after adjusting for mediating factors.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "Both claims report a positive association between elevated social media screen time and higher depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2531561814:c3",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.8378973007202148,
+      "a_paper_id": "openalex:W2531561814",
+      "a_text": "Thirteen percent of reviewed studies (n = 4) found no statistically significant correlation between online social networking engagement and depression symptoms.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "Both claims mutually reinforce the finding that the vast majority of reviewed studies show a statistically significant relationship between social media engagement and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c2",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.8369729518890381,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across cross-sectional studies is r = 0.12.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "Both claims independently find a positive association between social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c3",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.836135983467102,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across longitudinal studies is r = 0.12.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "Both claims report a positive association between social media use and depressive symptoms, with one providing a positive pooled correlation estimate and the other noting that the vast majority of reviewed studies found a statistically significant positive relationship."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c3",
+      "to_claim_id": "openalex:W7220393051:c2",
+      "similarity": 0.8271781206130981,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across longitudinal studies is r = 0.12.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Cohort studies using within-person analytic techniques found that within-person increases in social media use predicted subsequent increases in depressive symptoms after accounting for baseline levels.",
+      "explanation": "Both claims report a positive longitudinal association between increased social media use and depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c4",
+      "to_claim_id": "openalex:W7220393051:c1",
+      "similarity": 0.8239370584487915,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "Trimming and filling outlying studies reduces the random-effects pooled correlation estimate between social media use and depressive symptoms to r = 0.09.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Approximately four in five reviewed studies reported a statistically significant positive association between social media screen time or problematic use and depressive symptoms.",
+      "explanation": "Both claims independently find a positive association between social media use and depressive symptoms among reviewed studies."
+    },
+    {
+      "from_claim_id": "openalex:W2908500884:c8",
+      "to_claim_id": "openalex:W7220393051:c6",
+      "similarity": 0.8163930773735046,
+      "a_paper_id": "openalex:W2908500884",
+      "a_text": "Poor sleep and online harassment represent the most important explanatory pathways mediating the association between social media use and depressive symptoms.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Sleep disruption and cyberbullying were identified as key mediating pathways linking adolescent social media use with mental health distress.",
+      "explanation": "Both claims identify sleep disruption and online harassment or cyberbullying as key pathways mediating the link between social media use and negative adolescent mental health outcomes."
+    },
+    {
+      "from_claim_id": "openalex:W2553776800:c4",
+      "to_claim_id": "openalex:W7220393051:c3",
+      "similarity": 0.8159615993499756,
+      "a_paper_id": "openalex:W2553776800",
+      "a_text": "Of 30 studies examining social networking site use frequency, 3 found direct positive associations with anxiety and 7 found nonsignificant associations.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Evidence linking social media screen time to anxiety was weaker and less consistent across studies compared to evidence linking it to depression.",
+      "explanation": "Claim A provides empirical evidence showing infrequent and nonsignificant associations with anxiety, which reinforces Claim B's finding that the link between social media use and anxiety is weak and inconsistent."
+    },
+    {
+      "from_claim_id": "openalex:W2799945256:c3",
+      "to_claim_id": "openalex:W7220393051:c6",
+      "similarity": 0.8032024502754211,
+      "a_paper_id": "openalex:W2799945256",
+      "a_text": "Adolescents view social media as a platform for cyberbullying.",
+      "b_paper_id": "openalex:W7220393051",
+      "b_text": "Sleep disruption and cyberbullying were identified as key mediating pathways linking adolescent social media use with mental health distress.",
+      "explanation": "Both claims mutually reinforce the connection between adolescent social media use and cyberbullying, showing that adolescents recognize it as a platform for bullying and that cyberbullying acts as a key mechanism linking use to distress."
     }
   ]
 }

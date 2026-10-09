@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W7220864522",
+  "claims": [
+    {
+      "id": "openalex:W7220864522:c1",
+      "paper_id": "openalex:W7220864522",
+      "text": "No significant associations were observed between sodium intake and cardiovascular disease mortality across cardiovascular health strata after adjustment for confounders.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220864522:c2",
+      "paper_id": "openalex:W7220864522",
+      "text": "In participants with moderate cardiovascular health, sodium intake was inversely associated with all-cause mortality for the third quartile compared to the first quartile (HR 0.62, 95% CI 0.39–0.98).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220864522:c3",
+      "paper_id": "openalex:W7220864522",
+      "text": "In participants with moderate cardiovascular health, sodium intake was inversely associated with all-cause mortality for the fourth quartile compared to the first quartile (HR 0.39, 95% CI 0.18–0.85).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220864522:c4",
+      "paper_id": "openalex:W7220864522",
+      "text": "In participants with good cardiovascular health, associations between sodium intake and all-cause mortality were similar to those in moderate cardiovascular health but nonsignificant.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220864522:c5",
+      "paper_id": "openalex:W7220864522",
+      "text": "Higher sodium intake compared with lowest sodium intake was generally associated with higher estimated life expectancy among participants with moderate and good cardiovascular health.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220864522:c6",
+      "paper_id": "openalex:W7220864522",
+      "text": "The pattern of higher sodium intake associating with higher estimated life expectancy was not observed among participants with poor cardiovascular health.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220864522:e1",
+      "claim_id": "openalex:W7220864522:c1",
+      "description": "After adjustment for confounders, no significant associations between sodium intake and CVD mortality were observed across CVH strata during a median follow-up of 8.9 years with 198 CVD deaths.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220864522:e2",
+      "claim_id": "openalex:W7220864522:c2",
+      "description": "In moderate CVH participants, third quartile [Q3] vs first quartile [Q1]: hazard ratio [HR] 0.62, 95% confidence intervals [CI] 0.39–0.98.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220864522:e3",
+      "claim_id": "openalex:W7220864522:c3",
+      "description": "In moderate CVH participants, fourth quartile [Q4] vs Q1: HR 0.39, 95% CI 0.18–0.85.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220864522:e4",
+      "claim_id": "openalex:W7220864522:c4",
+      "description": "Similar but nonsignificant associations were seen in good CVH participants regarding all-cause mortality.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220864522:e5",
+      "claim_id": "openalex:W7220864522:c5",
+      "description": "Compared with lowest sodium intake, higher sodium intake was generally associated with higher estimated life expectancy among participants with moderate and good CVH using the life table method.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220864522:e6",
+      "claim_id": "openalex:W7220864522:c6",
+      "description": "Life expectancy association pattern seen in moderate and good CVH participants was not observed among those with poor CVH.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220864522:m1",
+      "paper_id": "openalex:W7220864522",
+      "name": "Weighted Cox proportional hazards regression and life table method",
+      "description": "Retrospective cohort study using 24-h recall sodium intake and Life's Essential 8 cardiovascular health scores linked to mortality follow-up to evaluate survival and life expectancy.",
+      "datasets": [
+        "NHANES 2007–2014 linked to National Center for Health Statistics mortality follow-up through December 31, 2019"
+      ],
+      "conditions": [
+        "Median follow-up of 8.9 years",
+        "Stratified by cardiovascular health (CVH) levels assessed by Life's Essential 8 score",
+        "Sodium intake measured via 24-h recall"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W7220864522:f1",
+      "paper_id": "openalex:W7220864522",
+      "text": "Further prospective studies are needed to determine whether cardiovascular health modifies associations between sodium intake, mortality, and life expectancy.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-09T18:36:00.348257Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

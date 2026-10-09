@@ -1,0 +1,106 @@
+{
+  "paper_id": "openalex:W7220707047",
+  "claims": [
+    {
+      "id": "openalex:W7220707047:c1",
+      "paper_id": "openalex:W7220707047",
+      "text": "Noncommunicable diseases account for a major share of global mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220707047:c2",
+      "paper_id": "openalex:W7220707047",
+      "text": "Key behavioral risks for chronic diseases are shaped by environments as much as by individual intention.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220707047:c3",
+      "paper_id": "openalex:W7220707047",
+      "text": "Lifestyle advice framing chronic disease prevention as personal responsibility becomes practically limited when healthy choices are structurally constrained.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220707047:c4",
+      "paper_id": "openalex:W7220707047",
+      "text": "Lifestyle advice framing chronic disease prevention as personal responsibility becomes ethically thin when healthy choices are structurally constrained.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220707047:c5",
+      "paper_id": "openalex:W7220707047",
+      "text": "Health education must move from changing minds alone to changing the conditions under which everyday health decisions are made.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220707047:e1",
+      "claim_id": "openalex:W7220707047:c1",
+      "description": "Noncommunicable diseases account for a major share of global mortality.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220707047:e2",
+      "claim_id": "openalex:W7220707047:c2",
+      "description": "Behavioral risks including poor diet, physical inactivity, tobacco exposure, harmful alcohol use, chronic stress, inadequate sleep, and weakened social connection are shaped by environments as much as by individual intention.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7220707047:e3",
+      "claim_id": "openalex:W7220707047:c3",
+      "description": "Advice becomes practically limited when healthy choices are structurally constrained by food pricing, unsafe streets, sedentary institutional routines, commercial marketing, poverty, caregiving burdens, and social isolation.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7220707047:e4",
+      "claim_id": "openalex:W7220707047:c4",
+      "description": "Advice becomes ethically thin when healthy choices are structurally constrained by food pricing, unsafe streets, sedentary institutional routines, commercial marketing, poverty, caregiving burdens, and social isolation.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7220707047:e5",
+      "claim_id": "openalex:W7220707047:c5",
+      "description": "Drawing on social ecological and commercial determinants perspectives, the commentary advocates protecting personal agency from environments that make harmful behavior normal, affordable, convenient, or unavoidable.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220707047:m1",
+      "paper_id": "openalex:W7220707047",
+      "name": "Social Ecological and Commercial Determinants Framework",
+      "description": "A conceptual commentary synthesis applying social ecological and commercial determinants perspectives to reframe chronic disease prevention and health education practices.",
+      "datasets": [],
+      "conditions": []
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220707047:l1",
+      "paper_id": "openalex:W7220707047",
+      "text": "Health education often continues to frame lifestyle change solely as a matter of personal responsibility, rendering advice insufficient in structurally constrained environments.",
+      "normalized_category": "individual-level-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220707047:f1",
+      "paper_id": "openalex:W7220707047",
+      "text": "Incorporate environmental assessment, participatory planning, policy advocacy, coalition-building, and evaluation of both behavioral and contextual outcomes into health education and Certified Health Education Specialist practice.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-09T18:36:00.347991Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

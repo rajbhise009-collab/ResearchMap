@@ -18,5 +18,25 @@
     "b_pid": "openalex:W2610178560",
     "method": "Taxonomic Conceptual Synthesis",
     "limitation": "The allocation algorithm design and evaluation are part of an ongoing project focused on a single organization context (412 Food Rescue)."
+  },
+  "opp:hole:W4362714312->W3203106571": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's domain-specific taxonomy of fair graph mining does not provide a methodology to overcome Paper B's search process constraints regarding target databases, keyword queries, and inclusion filtering.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W4362714312",
+    "b_pid": "openalex:W3203106571",
+    "method": "Taxonomy and systematic review of fair graph mining",
+    "limitation": "The literature search process is constrained by the choice of target databases, keyword queries, and inclusion filtering rules."
+  },
+  "opp:hole:W4362714312->W2599025709": {
+    "verdict": "not_addressing",
+    "reason": "Paper A provides a broad survey and taxonomy of static graph mining fairness techniques, which does not address the dynamic feedback loops and performative distribution shifts inherent in criminal justice decision-making.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W4362714312",
+    "b_pid": "openalex:W2599025709",
+    "method": "Taxonomy and systematic review of fair graph mining",
+    "limitation": "Training data derived from historical criminal justice practices reflects past biases and may become compromised or invalidated as risk algorithms alter future decision-making."
   }
 }

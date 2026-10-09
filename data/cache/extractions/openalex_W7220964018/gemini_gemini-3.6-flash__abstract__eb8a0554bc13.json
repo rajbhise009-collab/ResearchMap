@@ -1,0 +1,236 @@
+{
+  "paper_id": "openalex:W7220964018",
+  "claims": [
+    {
+      "id": "openalex:W7220964018:c1",
+      "paper_id": "openalex:W7220964018",
+      "text": "The prompt-engineered base GPT-4o-mini model achieved 58.7% accuracy on the held-out test split.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c2",
+      "paper_id": "openalex:W7220964018",
+      "text": "The fine-tuned GPT-4o-mini model achieved 88.6% accuracy on the held-out test split.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c3",
+      "paper_id": "openalex:W7220964018",
+      "text": "The domain-specific classifier (support vector machine over symptom-informed lexical features) achieved 91.9% accuracy (95% CI 91.4%-92.4%), exceeding both the base and fine-tuned large language models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c4",
+      "paper_id": "openalex:W7220964018",
+      "text": "Soft probability fusion of the domain-specific classifier and fine-tuned large language model reached 93.9% accuracy (95% CI 93.5%-94.3%) at a 60% classifier to 40% fine-tuned model weighting.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c5",
+      "paper_id": "openalex:W7220964018",
+      "text": "Hybrid probability-indicator fusion reached 93.8% accuracy (95% CI 93.4%-94.2%) at a 60% classifier to 40% fine-tuned model weighting.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c6",
+      "paper_id": "openalex:W7220964018",
+      "text": "Both ensemble models significantly outperformed the domain-specific classifier alone (P < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c7",
+      "paper_id": "openalex:W7220964018",
+      "text": "The accuracy of the soft fusion ensemble did not differ significantly from the hybrid fusion ensemble (P = .16).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c8",
+      "paper_id": "openalex:W7220964018",
+      "text": "The hybrid ensemble reduced the miss rate for the suicidal ideation category from 32.5% (650/2000) to 1.9% (37/2000) relative to the base model.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c9",
+      "paper_id": "openalex:W7220964018",
+      "text": "The advantage of the hybrid ensemble over the domain-specific classifier alone within the suicidal ideation category was not statistically significant (P = .68).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c10",
+      "paper_id": "openalex:W7220964018",
+      "text": "Ensemble accuracy fell discontinuously above a 50% language model weight, where the hybrid ensemble reduced exactly to the fine-tuned model.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964018:c11",
+      "paper_id": "openalex:W7220964018",
+      "text": "General-purpose large language models can fail to recognize naturalistic text expressing suicidal ideation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220964018:e1",
+      "claim_id": "openalex:W7220964018:c1",
+      "description": "Base large language models achieved 58.7% accuracy on the test set of 12,178 posts.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e2",
+      "claim_id": "openalex:W7220964018:c2",
+      "description": "Fine-tuned large language models achieved 88.6% accuracy on the held-out test split.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e3",
+      "claim_id": "openalex:W7220964018:c3",
+      "description": "The domain-specific classifier achieved 91.9% accuracy (95% CI 91.4%-92.4%), exceeding the base (58.7%) and fine-tuned (88.6%) large language models.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e4",
+      "claim_id": "openalex:W7220964018:c4",
+      "description": "Soft fusion reached 93.9% (95% CI 93.5%-94.3%) at a weighting of 60% classifier to 40% fine-tuned model.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e5",
+      "claim_id": "openalex:W7220964018:c5",
+      "description": "Hybrid fusion reached 93.8% (95% CI 93.4%-94.2%) at a weighting of 60% classifier to 40% fine-tuned model.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e6",
+      "claim_id": "openalex:W7220964018:c6",
+      "description": "P < .001 for both ensembles against the classifier alone based on exact McNemar tests.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e7",
+      "claim_id": "openalex:W7220964018:c7",
+      "description": "The 2 ensembles did not differ from each other (P = .16) using exact McNemar tests.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e8",
+      "claim_id": "openalex:W7220964018:c8",
+      "description": "The hybrid ensemble reduced the miss rate for the suicidal ideation category from 32.5% (650/2000) to 1.9% (37/2000), a 17.6-fold reduction relative to the base model.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e9",
+      "claim_id": "openalex:W7220964018:c9",
+      "description": "The hybrid ensemble's advantage over the classifier alone within the suicidal ideation category was not significant (P = .68).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e10",
+      "claim_id": "openalex:W7220964018:c10",
+      "description": "Accuracy fell discontinuously above a 50% language model weight, where the hybrid ensemble reduced exactly to the fine-tuned model; the selected weight satisfies the derived instance-level bound of 44.0%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220964018:e11",
+      "claim_id": "openalex:W7220964018:c11",
+      "description": "Base GPT-4o-mini had a miss rate of 32.5% (650/2000) for the suicidal ideation category.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220964018:m1",
+      "paper_id": "openalex:W7220964018",
+      "name": "Domain-Specific NLP Classifier",
+      "description": "A support vector machine trained over symptom-informed lexical features to classify mental health-related text into 9 categories.",
+      "datasets": [
+        "Reddit and Twitter mental health dataset (n=60,889)"
+      ],
+      "conditions": [
+        "Evaluated on held-out test split (n=12,178)"
+      ]
+    },
+    {
+      "id": "openalex:W7220964018:m2",
+      "paper_id": "openalex:W7220964018",
+      "name": "Hybrid Probability-Indicator Fusion Ensemble",
+      "description": "An ensemble combining predictions from a domain-specific classifier and fine-tuned GPT-4o-mini using probability-indicator fusion under derived closed-form weight bounds.",
+      "datasets": [
+        "Reddit and Twitter mental health dataset (n=60,889)"
+      ],
+      "conditions": [
+        "60% classifier to 40% LLM weight",
+        "Validation split weight selection (n=6,089)",
+        "Held-out test evaluation (n=12,178)"
+      ]
+    },
+    {
+      "id": "openalex:W7220964018:m3",
+      "paper_id": "openalex:W7220964018",
+      "name": "Soft Probability Fusion Ensemble",
+      "description": "An ensemble combining soft probabilities from a domain-specific classifier and fine-tuned GPT-4o-mini under closed-form weighting constraints.",
+      "datasets": [
+        "Reddit and Twitter mental health dataset (n=60,889)"
+      ],
+      "conditions": [
+        "60% classifier to 40% LLM weight",
+        "Validation split weight selection (n=6,089)",
+        "Held-out test evaluation (n=12,178)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220964018:l1",
+      "paper_id": "openalex:W7220964018",
+      "text": "Labels were derived from the originating subreddit or a self-stated condition and are not clinical diagnoses.",
+      "normalized_category": "label-quality",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220964018:l2",
+      "paper_id": "openalex:W7220964018",
+      "text": "Only one corpus was analyzed, limiting generalizability.",
+      "normalized_category": "single-dataset-evaluation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220964018:l3",
+      "paper_id": "openalex:W7220964018",
+      "text": "Ensembles integrating domain-specific natural language processing methods with large language models have not been formally characterized.",
+      "normalized_category": "lack-of-prior-characterization",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220964018:f1",
+      "paper_id": "openalex:W7220964018",
+      "text": "External validation on clinically characterized data before use in decision support.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-09T18:43:37.579582Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

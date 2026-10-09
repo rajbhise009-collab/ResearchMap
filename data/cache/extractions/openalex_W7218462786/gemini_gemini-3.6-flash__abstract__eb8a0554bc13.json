@@ -1,0 +1,181 @@
+{
+  "paper_id": "openalex:W7218462786",
+  "claims": [
+    {
+      "id": "openalex:W7218462786:c1",
+      "paper_id": "openalex:W7218462786",
+      "text": "Metabolic syndrome affected 68.0% of breast cancer survivors receiving adjuvant endocrine therapy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c2",
+      "paper_id": "openalex:W7218462786",
+      "text": "Overall prevalence of metabolic syndrome did not differ significantly between aromatase inhibitor users (72.7%) and tamoxifen users (63.0%, p = 0.202).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c3",
+      "paper_id": "openalex:W7218462786",
+      "text": "Aromatase inhibitor users had lower HDL-cholesterol compared to tamoxifen users.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c4",
+      "paper_id": "openalex:W7218462786",
+      "text": "Aromatase inhibitor users had higher fasting glucose compared to tamoxifen users.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c5",
+      "paper_id": "openalex:W7218462786",
+      "text": "Aromatase inhibitor users had higher blood pressure compared to tamoxifen users.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c6",
+      "paper_id": "openalex:W7218462786",
+      "text": "Tamoxifen users had higher triglycerides compared to aromatase inhibitor users.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c7",
+      "paper_id": "openalex:W7218462786",
+      "text": "Higher physical activity level was independently associated with lower odds of metabolic syndrome (OR = 0.44 per 0.1-unit increase; 95% CI: 0.28–0.68; p < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c8",
+      "paper_id": "openalex:W7218462786",
+      "text": "Greater Mediterranean diet adherence was independently associated with lower odds of metabolic syndrome (OR = 0.72; 95% CI: 0.60–0.87; p = 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c9",
+      "paper_id": "openalex:W7218462786",
+      "text": "The multivariable prediction model for metabolic syndrome showed an apparent AUC of 0.832 and a 5-fold cross-validated AUC of 0.800.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7218462786:c10",
+      "paper_id": "openalex:W7218462786",
+      "text": "The multivariable prediction model for metabolic syndrome had a Hosmer–Lemeshow calibration p-value of 0.400.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7218462786:e1",
+      "claim_id": "openalex:W7218462786:c1",
+      "description": "Metabolic syndrome was highly prevalent, affecting 68.0% of participants.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7218462786:e2",
+      "claim_id": "openalex:W7218462786:c2",
+      "description": "Although overall prevalence did not differ between treatment groups (aromatase inhibitors: 72.7% vs. tamoxifen: 63.0%; p = 0.202)...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7218462786:e3",
+      "claim_id": "openalex:W7218462786:c3",
+      "description": "...aromatase inhibitor users had lower HDL-cholesterol...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7218462786:e4",
+      "claim_id": "openalex:W7218462786:c4",
+      "description": "...aromatase inhibitor users had... higher fasting glucose...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7218462786:e5",
+      "claim_id": "openalex:W7218462786:c5",
+      "description": "...aromatase inhibitor users had... higher blood pressure...",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7218462786:e6",
+      "claim_id": "openalex:W7218462786:c6",
+      "description": "...while tamoxifen users had higher triglycerides.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7218462786:e7",
+      "claim_id": "openalex:W7218462786:c7",
+      "description": "In multivariable analysis, higher PAL (OR = 0.44 per 0.1-unit increase; 95% CI: 0.28–0.68; p < 0.001)... [was] independently associated with lower odds of metabolic syndrome.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7218462786:e8",
+      "claim_id": "openalex:W7218462786:c8",
+      "description": "In multivariable analysis... greater Mediterranean diet adherence (OR = 0.72; 95% CI: 0.60–0.87; p = 0.001) were independently associated with lower odds of metabolic syndrome.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7218462786:e9",
+      "claim_id": "openalex:W7218462786:c9",
+      "description": "The model showed an apparent AUC of 0.832 (5-fold cross-validated AUC: 0.800)...",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7218462786:e10",
+      "claim_id": "openalex:W7218462786:c10",
+      "description": "...and satisfactory calibration (Hosmer–Lemeshow p = 0.400).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7218462786:m1",
+      "paper_id": "openalex:W7218462786",
+      "name": "Cross-sectional multivariable logistic regression analysis",
+      "description": "Cross-sectional study assessing metabolic syndrome (IDF 2006 criteria) and its associations with Mediterranean diet adherence (culturally adapted 14-item MEDAS) and physical activity levels (GENI software) in breast cancer survivors.",
+      "datasets": [
+        "150 women receiving adjuvant endocrine therapy in Oran, Algeria (May 2022–December 2025)"
+      ],
+      "conditions": [
+        "tamoxifen (n = 73)",
+        "aromatase inhibitors (n = 77)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7218462786:l1",
+      "paper_id": "openalex:W7218462786",
+      "text": "Given the cross-sectional design, these associations cannot establish causality.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7218462786:f1",
+      "paper_id": "openalex:W7218462786",
+      "text": "Further prospective and interventional research to determine whether modifying Mediterranean diet adherence and physical activity could reduce metabolic syndrome risk.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-09T18:36:00.347291Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

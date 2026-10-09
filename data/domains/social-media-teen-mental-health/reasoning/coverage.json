@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "n_papers_in_check": 99,
+  "n_papers_in_check": 102,
   "paper_ids": [
     "openalex:W1498181550",
     "openalex:W1518252434",
@@ -100,10 +100,13 @@
     "openalex:W3101126289",
     "openalex:W3126140319",
     "openalex:W3197232629",
-    "openalex:W4291885054"
+    "openalex:W4291885054",
+    "openalex:W7220393051",
+    "openalex:W7220846371",
+    "openalex:W7220964018"
   ],
-  "shortlist_pairs": 179,
-  "classified_pairs": 179,
+  "shortlist_pairs": 197,
+  "classified_pairs": 197,
   "unclassified_pairs": 0,
   "papers_with_pending_pairs": 0,
   "pending_paper_ids": [],
@@ -112,5 +115,5 @@
     "threshold": 0.8,
     "max_per_claim": 2
   },
-  "note": "built by backend/app/corpus/build_library.py"
+  "note": "updated by the weekly growth run"
 }
