@@ -381,8 +381,15 @@ def main() -> int:
             try:
                 r = queued.finish(lib, cl, mock=cl.mock)
             except Exception as e:  # noqa: BLE001
-                raise core.GrowStop(f"error while finishing the {lib['slug']} library: {type(e).__name__}: {e}",
-                                    "Usually transient. The batch state was saved; next week's run resumes.") from None
+                from backend.app.extraction.spend_gate import SpendGateRefused
+                from backend.app.extraction.spend_ledger import SpendCapExceededError
+                if isinstance(e, (SpendGateRefused, SpendCapExceededError)):
+                    note = "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
+                    budget = core.Budget(0.0)
+                    r = {"status": "waiting for money (stays 'building'; resumes when money is available)"}
+                else:
+                    raise core.GrowStop(f"error while finishing the {lib['slug']} library: {type(e).__name__}: {e}",
+                                        "Usually transient. The batch state was saved; next week's run resumes.") from None
             say(f"build {lib['slug']}: {r.get('status')}")
             builds.append({"slug": lib["slug"], "status": r.get("status"),
                            "detail": "new library published" if r.get("status") == "built" else None})
@@ -445,6 +452,10 @@ def main() -> int:
             "was committed as bookkeeping and the next run resumes.")
         say(f"STOP: {stop.what}")
         l1 = ledger_inr() if l0[1] else l0
+        try:
+            mstat = money.status(ref)          # after this run's spending, not before
+        except Exception:  # noqa: BLE001
+            pass
         kept = publish_bookkeeping(date, f"weekly grow {date}: bookkeeping only ({stop.what[:50]})")
         body = issue_body(date, "stopped cleanly — the site was not changed", p1=p1, p2=p2, diff=diff,
                           spent=l1[0] - l0[0], ledger=l1, budget=budget, gate_res=None,
