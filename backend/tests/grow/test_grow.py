@@ -231,3 +231,66 @@ def test_gates_only_spends_nothing_and_publishes_nothing(monkeypatch, capsys):
     assert rw.main() == 1
     out = capsys.readouterr().out
     assert "| docs check | PASS |" in out and "| smoke | FAIL |" in out and "GATE FAILURES" in out
+
+
+def _gates_only_run(monkeypatch, tmp_path, pre, res):
+    """Run gates_only with fake gate results; return (exit code, job summary)."""
+    rw = _load_run_weekly()
+    monkeypatch.setenv("GROW_GATES_ONLY", "true")
+    summary = tmp_path / "summary.md"
+    monkeypatch.setenv("GITHUB_STEP_SUMMARY", str(summary))
+    monkeypatch.setattr(rw, "_reset_rest", lambda: None)
+    monkeypatch.setattr(rw, "preflight_checks", lambda: pre)
+    monkeypatch.setattr(rw, "gates", lambda **k: res)
+    rc = rw.main()
+    return rc, summary.read_text()
+
+
+def _row(name, ok, note=None):
+    r = {"gate": name, "ok": ok, "tail": "" if ok else "boom", "failed": [] if ok else [f"[FAIL] {name}"]}
+    if note:
+        r["note"] = note
+    return r
+
+
+_PRE = [_row("preflight: typecheck", True), _row("preflight: production build", True),
+        _row("preflight: full tests", True)]
+_RESTATED = [_row(n, True, note="passed in preflight") for n in ("typecheck", "production build", "full tests")]
+_LATER = ["docs check", "consistency script", "banned-phrase tests", "search regression suite",
+          "hardening tests", "browser hunt", "smoke checks on the build"]
+
+
+def test_gates_only_exits_nonzero_if_any_row_fails(monkeypatch, tmp_path):
+    """Every row in the table counts: one failing gate anywhere -> exit 1,
+    and that FAIL is in the one table the run writes."""
+    for bad in range(len(_LATER)):
+        res = _RESTATED + [_row(n, i != bad) for i, n in enumerate(_LATER)]
+        (tmp_path / str(bad)).mkdir()
+        rc, summ = _gates_only_run(monkeypatch, tmp_path / str(bad), _PRE, res)
+        assert rc == 1, _LATER[bad]
+        assert f"| {_LATER[bad]} | FAIL |" in summ and "1 FAILED" in summ
+    # a failing preflight row also fails the run (later gates not run)
+    (tmp_path / "pre").mkdir()
+    rc, summ = _gates_only_run(monkeypatch, tmp_path / "pre",
+                               [_row("preflight: typecheck", True), _row("preflight: full tests", False)], None)
+    assert rc == 1 and "| preflight: full tests | FAIL |" in summ
+
+
+def test_gates_only_writes_one_table_with_every_gate_once(monkeypatch, tmp_path):
+    """All pass -> exit 0, and the job summary is ONE table: 3 preflight
+    rows + 7 later gates, each exactly once."""
+    rc, summ = _gates_only_run(monkeypatch, tmp_path, _PRE, _RESTATED + [_row(n, True) for n in _LATER])
+    assert rc == 0
+    assert summ.count("| gate | result |") == 1 and summ.count("## Weekly grow") == 1
+    rows = [ln for ln in summ.splitlines() if ln.startswith("| ") and not ln.startswith("| gate")]
+    assert len(rows) == 10 and all(ln.endswith("| PASS |") for ln in rows)
+    assert len({ln.split("|")[1] for ln in rows}) == 10       # no gate listed twice
+
+
+def test_tests_never_see_the_workflow_output_files():
+    """The fixture in conftest strips GITHUB_STEP_SUMMARY & co, so no test
+    can write into a live job's summary (the cause of a fake 'smoke: FAIL'
+    row in gates_only run #3)."""
+    import os
+    for k in ("GITHUB_STEP_SUMMARY", "GITHUB_OUTPUT", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_STATE"):
+        assert k not in os.environ, k

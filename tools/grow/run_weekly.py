@@ -600,28 +600,44 @@ def main() -> int:
     return 0 if ok and (live is None or live[0]) else 1
 
 
+def gates_only_rows(pre: list[dict], res: list[dict] | None) -> list[dict]:
+    """The one list of rows a gates_only run reports AND is judged by:
+    the preflight checks, then every later gate (rows that only restate a
+    preflight pass are dropped, so each check appears once)."""
+    return list(pre) + [g for g in (res or []) if not g.get("note")]
+
+
+def gates_only_summary(date: str, rows: list[dict]) -> str:
+    bad = sum(not g["ok"] for g in rows)
+    return "\n".join([f"## Weekly grow — gates only ({date}): "
+                      + ("all passed" if not bad else f"{bad} FAILED"), "",
+                      "| gate | result |", "|:--|:--|",
+                      *[f"| {g['gate']} | {'PASS' if g['ok'] else 'FAIL'} |" for g in rows], ""])
+
+
 def gates_only(date: str) -> int:
     """Zero-spend proof run: no API call, no batch submit or collect, no
     publish, ledger untouched, no Issue. Preflight then every gate, on the
-    runner, with a pass/fail line per gate."""
+    runner. The job summary is written once, as one table of every row, and
+    the exit code is non-zero if ANY row in that table failed."""
     say(f"GATES ONLY {date}: no API calls, nothing submitted, collected or published")
     led0 = (ROOT / "data" / "spend_ledger.json").read_bytes()
     pre = preflight_checks()
-    res = pre if not all(g["ok"] for g in pre) else gates(after_preflight=True)
-    allres = pre + [g for g in res if g not in pre and not g.get("note")]
-    lines = ["| gate | result |", "|:--|:--|"] + [
-        f"| {g['gate']} | {'PASS' if g['ok'] else 'FAIL'} |" for g in allres]
-    summary = "\n".join([f"## Weekly grow — gates only ({date})", "", *lines, ""])
+    res = gates(after_preflight=True) if all(g["ok"] for g in pre) else None
+    rows = gates_only_rows(pre, res)
+    if (ROOT / "data" / "spend_ledger.json").read_bytes() != led0:   # must never happen
+        rows.append({"gate": "ledger untouched", "ok": False, "failed": [],
+                     "tail": "data/spend_ledger.json changed during a gates_only run"})
+    summary = gates_only_summary(date, rows)
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
             f.write(summary + "\n")
     print(summary, flush=True)
-    assert (ROOT / "data" / "spend_ledger.json").read_bytes() == led0, "gates_only must not touch the ledger"
-    block = failure_block(allres)
+    block = failure_block(rows)
     if block:
         print(block, flush=True)
     _reset_rest()
-    return 0 if all(g["ok"] for g in allres) else 1
+    return 0 if rows and all(g["ok"] for g in rows) else 1
 
 
 def run_controls() -> tuple[bool, float | None, bool]:

@@ -36,5 +36,10 @@ export CI=1 TZ=UTC HOME="$TMP/home"
 "$PY" -m backend.app.corpus.doc_numbers >> "$TMP/regen.log" 2>&1
 "$PY" -m backend.app.api.multi_library_export >> "$TMP/regen.log" 2>&1
 ( cd frontend && npm run build > "$TMP/build.log" 2>&1 ) || { tail -30 "$TMP/build.log"; echo "runner mode: BUILD FAILED"; exit 1; }
+# like the runner, a live job-summary file exists; the tests must not write it
+export GITHUB_STEP_SUMMARY="$TMP/job-summary.md"
 "$PY" -m pytest backend/tests -q -p no:cacheprovider
+if [ -s "$GITHUB_STEP_SUMMARY" ]; then
+  echo "runner mode: the tests wrote into the job summary:"; cat "$GITHUB_STEP_SUMMARY"; exit 1
+fi
 echo "== runner mode: OK"

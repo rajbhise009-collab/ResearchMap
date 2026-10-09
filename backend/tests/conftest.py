@@ -91,6 +91,17 @@ def _no_inherited_money_config(monkeypatch):
     monkeypatch.delenv("RUN_CAP_LEDGER_INR", raising=False)
 
 
+
+@pytest.fixture(autouse=True)
+def _no_github_output_files(monkeypatch):
+    """Tests never write to the workflow's own output files. On the runner
+    GITHUB_STEP_SUMMARY etc. point at the live job: a test that exercises
+    the summary writer (with deliberately failing fake gates) once put a
+    fake 'smoke: FAIL' table into the real gates_only run's summary."""
+    for k in ("GITHUB_STEP_SUMMARY", "GITHUB_OUTPUT", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_STATE"):
+        monkeypatch.delenv(k, raising=False)
+
+
 # On the workflow runner (CI=1) the safety checks must RUN, never skip: a
 # skip there would let a publish through unchecked. Any skip in these
 # modules becomes a failure with the skip reason.
