@@ -148,6 +148,56 @@ pair:
 The workflow never writes to `contradiction_audit.json`, the frozen review
 folders under `docs/review/`, or the baseline tag.
 
+## Before any money is spent: preflight
+
+Every live run first runs, on its fresh checkout:
+
+1. the typecheck;
+2. the production build;
+3. the full test suite.
+
+If any fails, the run spends ₹0, submits and collects nothing, puts the
+failing test names in its Issue, and exits with status 3. The publish gates
+after regeneration are unchanged.
+
+**Zero-spend check on the runner:** Actions → Weekly grow → Run workflow,
+with **gates_only** ticked. It makes no API call, submits and collects
+nothing, publishes nothing and leaves the ledger untouched. It runs the
+preflight and every publish gate and prints a pass/fail table (also in the
+run's summary). Use it after any change, before a paid run.
+
+**Reading a failure:** the log ends with one block marked
+`GATE FAILURES`, listing each failed gate, its failing test names and the
+last 60 lines of its output. The Issue carries the same.
+
+**Run the runner's checks locally:** `make test` (or `tools/test.sh`). It
+runs the suite, then the same suite the way the runner sees it:
+
+- a fresh clone with no local caches;
+- `CI=1`, `TZ=UTC`, and no `~/ResearchMap-private`;
+- the regenerate step first, then the build.
+
+With `CI=1` the safety tests (distress handling, banned phrases,
+consistency, money rule, no full text) are not allowed to skip.
+
+## Money already committed: pending batches
+
+A batch submitted but not yet collected is not in the ledger yet. The
+money rule subtracts these **pending commitments**: available = remaining −
+pending. The weekly budget is paced on available money. A library with a
+pending batch gets nothing new until that batch is collected and billed,
+once. A manual run's `run_budget_inr` applies to its own new spending;
+collecting an earlier run's batch does not use it up. The dry run lists
+every pending batch.
+
+## A grow/<date> branch you will not merge
+
+The workflow never deletes branches. If you decide a `grow/<date>` branch
+should not be merged, add it with a reason to
+`data/grow/resolved_branches.json` and commit. Runs then stop holding back
+new spending for it. A branch whose commits are already on main is ignored
+automatically.
+
 ## Manual runs: cap and dry run
 
 **Run workflow** (Actions → Weekly grow) takes two inputs. They apply only to
