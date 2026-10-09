@@ -106,7 +106,13 @@ def resolve_arxiv_id(
 
 def _pdf_bytes_to_text(content: bytes) -> Optional[str]:
     """pypdf-extract text from raw PDF bytes. None on parse failure."""
+    import logging
     from pypdf import PdfReader
+    # pypdf logs a warning per oddity in real-world PDFs ("Overwriting cache
+    # for 0 923" = an object defined twice in a malformed file; the later one
+    # wins and extraction continues). Harmless, and it floods the workflow
+    # log; errors still show.
+    logging.getLogger("pypdf").setLevel(logging.ERROR)
 
     if content[:4] != b"%PDF":
         return None

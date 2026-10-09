@@ -89,3 +89,29 @@ def _no_inherited_money_config(monkeypatch):
     it sets it itself."""
     monkeypatch.delenv("MONEY_CONFIG_PATH", raising=False)
     monkeypatch.delenv("RUN_CAP_LEDGER_INR", raising=False)
+
+
+# On the workflow runner (CI=1) the safety checks must RUN, never skip: a
+# skip there would let a publish through unchecked. Any skip in these
+# modules becomes a failure with the skip reason.
+_NEVER_SKIP_ON_RUNNER = (
+    "backend/tests/api/test_safety_queries.py",      # distress handling
+    "backend/tests/api/test_rendered_output.py",     # banned phrases in the built site
+    "backend/tests/api/test_public_claims.py",       # banned phrases / public claims
+    "backend/tests/api/test_language.py",
+    "backend/tests/api/test_consistency.py",         # cross-surface consistency
+    "backend/tests/api/test_hardening.py",           # incl. no full text shipped
+    "backend/tests/extraction/test_money.py",        # the money rule
+    "backend/tests/extraction/test_spend_ledger.py",
+    "backend/tests/extraction/test_spend_gate.py",
+)
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    if (rep.skipped and os.environ.get("CI")
+            and any(item.nodeid.startswith(m) for m in _NEVER_SKIP_ON_RUNNER)):
+        rep.outcome = "failed"
+        rep.longrepr = f"safety test skipped on the runner (CI=1): {rep.longrepr}"

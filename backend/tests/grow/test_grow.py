@@ -151,3 +151,56 @@ def test_manual_run_inputs_and_controls(monkeypatch):
     monkeypatch.setenv("GROW_RUN_BUDGET_INR", "40")
     monkeypatch.setenv("GROW_BUILD_QUEUED", "true")
     assert rw.run_controls() == (True, 40.0, True)
+
+
+def test_preflight_failure_spends_nothing_and_names_the_failing_tests(monkeypatch):
+    """B: if the fresh checkout fails its tests, no client is built, nothing
+    is collected or submitted, and the Issue names the failing tests."""
+    rw = _load_run_weekly()
+    monkeypatch.setattr(rw, "guards", lambda: None)
+    monkeypatch.setattr(rw, "paused", lambda: False)
+    monkeypatch.delenv("GROW_GATES_ONLY", raising=False)
+    monkeypatch.setattr(rw, "preflight_checks", lambda: [
+        {"gate": "preflight: typecheck", "ok": True, "tail": "", "failed": []},
+        {"gate": "preflight: full tests", "ok": False, "tail": "x\nFAILED backend/tests/a.py::test_b - boom",
+         "failed": ["FAILED backend/tests/a.py::test_b"]}])
+    posted = {}
+    monkeypatch.setattr(rw.issues, "upsert", lambda title, body, labels: posted.update(body=body, labels=labels))
+    import backend.app.grow.clients as C
+    monkeypatch.setattr(C, "make_clients", lambda: (_ for _ in ()).throw(AssertionError("clients built")))
+    import backend.app.grow.core as core_mod
+    for fn in ("collect", "submit", "prepare", "followon"):
+        monkeypatch.setattr(core_mod, fn, lambda *a, **k: (_ for _ in ()).throw(AssertionError(f"{fn} called")))
+    assert rw.main() == 3
+    assert "test_b" in posted["body"] and "nothing spent" in posted["body"] and "needs-action" in posted["labels"]
+
+
+def test_rerun_with_pending_batches_collects_and_never_resubmits(monkeypatch, tmp_path):
+    """D.3: while a library has a pending batch, prepare() returns nothing to
+    submit for it, and its pending papers are never candidates again."""
+    import json as _json
+    pend = tmp_path / "ml-fairness-pending.json"
+    pend.write_text(_json.dumps({"entries": [{"wid": "W1"}], "batch_id": "b"}))
+    monkeypatch.setattr(core, "pending_path", lambda slug: pend if slug == "ml-fairness" else tmp_path / "none.json")
+    monkeypatch.setenv("GROW_DATE", "2026-10-12")
+    from backend.app.grow.mocks import mock_clients
+    monkeypatch.setenv("GROW_MOCK_STATE", str(tmp_path / "state"))
+    cl = mock_clients()
+    r = core.prepare("ml-fairness", cl, ref=dt.date(2026, 10, 12), errors=[])
+    assert r["items"] == [] and "not collected" in r["note"]
+    # and a library without a pending batch still gets candidates, none of them pending papers
+    r2 = core.prepare("diet-and-mortality", cl, ref=dt.date(2026, 10, 12), errors=[])
+    assert all(it["entry"]["wid"] != "W1" for it in r2["items"])
+
+
+def test_pending_commitments_count_once(monkeypatch, tmp_path):
+    """D.4: submitted-not-billed batches reduce available money and the
+    weekly budget, and are excluded once billed (ledger_recorded)."""
+    from backend.app.extraction import money
+    d = tmp_path / "data" / "domains" / "x" / "grow"
+    d.mkdir(parents=True)
+    (d / "pending.json").write_text('{"projected_inr": 10.0, "ledger_recorded": false, "entries": [1, 2]}')
+    monkeypatch.setattr(money, "_REPO_ROOT", tmp_path)
+    assert money.pending_inr() == 10.0
+    (d / "pending.json").write_text('{"projected_inr": 10.0, "ledger_recorded": true}')
+    assert money.pending_inr() == 0.0

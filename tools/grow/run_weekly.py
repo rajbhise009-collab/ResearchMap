@@ -90,11 +90,27 @@ def guards() -> str | None:
     if MOCK and not (url.startswith("/") or url.startswith("file:")):
         raise GrowStop("mock run against a real remote", "Mock runs may only push to a local test remote.")
     heads = git("ls-remote", "--heads", "origin", "grow/*")
-    if heads:
-        names = [ln.split("refs/heads/", 1)[-1] for ln in heads.splitlines()]
+    resolved = _resolved_branches()
+    names = []
+    for ln in heads.splitlines():
+        sha, ref = ln.split()
+        name = ref.split("refs/heads/", 1)[-1]
+        merged = sh(["git", "merge-base", "--is-ancestor", sha, "HEAD"], check=False).returncode == 0
+        if name in resolved or merged:
+            continue
+        names.append(name)
+    if names:
         return (f"an earlier run's publish gates failed (branch {', '.join(names)}): collecting what was "
                 "already paid for, starting nothing new until that branch is merged into main or deleted")
     return None
+
+
+def _resolved_branches() -> set[str]:
+    """grow/<date> branches the owner (or a later fix) has dealt with without
+    merging; listed in data/grow/resolved_branches.json with a reason.
+    Branches are never deleted by the workflow."""
+    p = ROOT / "data" / "grow" / "resolved_branches.json"
+    return set(json.loads(p.read_text()).get("resolved", {})) if p.exists() else set()
 
 
 def paused() -> bool:
@@ -150,7 +166,53 @@ def _serve(fn):
         srv.terminate()
 
 
-def gates() -> list[dict]:
+def _gate_result(name: str, r) -> dict:
+    """ok, the failing test/check names, and the last 60 lines of output."""
+    if r.returncode == 0:
+        return {"gate": name, "ok": True, "tail": "", "failed": []}
+    out = redact((r.stdout or "") + (r.stderr or ""))
+    failed = [ln.split(" - ")[0].strip() for ln in out.splitlines()
+              if ln.startswith(("FAILED ", "ERROR ")) or ln.startswith("[FAIL]")]
+    return {"gate": name, "ok": False, "failed": failed[:40],
+            "tail": "\n".join(out.strip().splitlines()[-60:])}
+
+
+def failure_block(gate_res: list[dict]) -> str:
+    """One clearly marked block: every failed gate, its failing tests and
+    the last 60 lines of its output. Printed last and copied into the Issue."""
+    bad = [g for g in gate_res if not g["ok"]]
+    if not bad:
+        return ""
+    L = ["", "=" * 25 + " GATE FAILURES " + "=" * 25]
+    for g in bad:
+        L += [f"--- {g['gate']} ---", "failing: " + (", ".join(g.get("failed") or []) or "(see output)"),
+              "last 60 lines:", g.get("tail") or "(no output)", ""]
+    L.append("=" * 65)
+    return "\n".join(L)
+
+
+def preflight_checks() -> list[dict]:
+    """Before ANY paid step, on the fresh checkout: typecheck, the
+    production build (the rendered-output and safety tests need it) and the
+    full test suite. Nothing is spent unless all three pass."""
+    if MOCK and os.environ.get("GROW_GATES") == "skip":
+        return [{"gate": "(preflight skipped: mock run)", "ok": True, "tail": "", "failed": []}]
+    res = []
+    for name, cmd, cwd in (("preflight: typecheck", ["npm", "run", "typecheck"], FE),
+                           ("preflight: production build", ["npm", "run", "build"], FE),
+                           ("preflight: full tests", [PY, "-m", "pytest", "backend/tests", "-q"], ROOT)):
+        r = sh(cmd, cwd=cwd, check=False, timeout=3600)
+        res.append(_gate_result(name, r))
+        say(f"{'PASS' if r.returncode == 0 else 'FAIL'}: {name}")
+        if r.returncode != 0:
+            break
+    return res
+
+
+def gates(*, after_preflight: bool = False) -> list[dict]:
+    """after_preflight: typecheck, build and full tests just passed on this
+    same tree (gates_only mode, nothing regenerated in between), so they are
+    not repeated."""
     if MOCK and os.environ.get("GROW_GATES") == "skip":      # offline e2e only
         say("gates skipped (mock run, GROW_GATES=skip)")
         return [{"gate": "(skipped: mock run)", "ok": True, "tail": ""}]
@@ -170,12 +232,15 @@ def gates() -> list[dict]:
         ("hardening tests (Part 3)", [PY, "-m", "pytest", "-q", t + "test_hardening.py"], ROOT),
     ]
     res = []
+    if after_preflight:
+        steps = steps[3:]
+        res = [{"gate": n, "ok": True, "tail": "", "failed": [], "note": "passed in preflight"}
+               for n in ("typecheck", "production build (+ consistency before and after)", "full tests")]
     for name, cmd, cwd in steps:
         r = sh(cmd, cwd=cwd, check=False, timeout=3600)
-        res.append({"gate": name, "ok": r.returncode == 0,
-                    "tail": "" if r.returncode == 0 else redact((r.stdout + r.stderr).strip()[-800:])})
+        res.append(_gate_result(name, r))
         say(f"gate {'PASS' if r.returncode == 0 else 'FAIL'}: {name}")
-    built = res[1]["ok"]
+    built = next(g["ok"] for g in res if g["gate"].startswith("production build"))
     for name, script, extra in (("browser hunt (Part 3)", "tools/qa/hunt.py", []),
                                 ("smoke checks on the build", "tools/qa/smoke.py", ["--engines=chromium"])):
         if not built:
@@ -183,8 +248,7 @@ def gates() -> list[dict]:
             continue
         r = _serve(lambda base: sh([PY, script, *extra] + ([base] if "smoke" in script else []),
                                    check=False, timeout=3600, env={"HUNT_BASE": base}))
-        res.append({"gate": name, "ok": r.returncode == 0,
-                    "tail": "" if r.returncode == 0 else redact(r.stdout.strip()[-800:])})
+        res.append(_gate_result(name, r))
         say(f"gate {'PASS' if r.returncode == 0 else 'FAIL'}: {name}")
     return res
 
@@ -295,8 +359,11 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
     if gate_res:
         L += ["## Publish gates", ""] + [f"- {'✅' if g['ok'] else '❌'} {g['gate']}" for g in gate_res]
         for g in gate_res:
-            if not g["ok"] and g["tail"]:
-                L += ["", f"<details><summary>{g['gate']} output</summary>", "", "```", g["tail"], "```", "</details>"]
+            if not g["ok"]:
+                L += ["", f"**{g['gate']}** failing: " + (", ".join(f"`{x}`" for x in g.get("failed") or []) or
+                                                          "(see output)"),
+                      "", f"<details><summary>{g['gate']}: last 60 lines</summary>", "", "```",
+                      g.get("tail") or "", "```", "</details>"]
         L.append("")
     if branch:
         L += [f"Nothing was published to the site. This run's work is on branch `{branch}`. Until it is merged "
@@ -346,11 +413,29 @@ def main() -> int:
                               note="config/growth.json has paused: true. Set it to false to resume.")
             say(f"issue: {issues.upsert(title, body, ['weekly-grow'])}")
             return 0
+        if os.environ.get("GROW_GATES_ONLY", "").lower() == "true":
+            return gates_only(date)
+        # PREFLIGHT: nothing is spent unless the fresh checkout passes
+        pre = preflight_checks()
+        if not all(g["ok"] for g in pre):
+            block = failure_block(pre)
+            body = issue_body(date, "preflight failed — nothing spent, nothing submitted", p1=[], p2=[],
+                              diff=None, spent=0.0, ledger=ledger_inr(), budget=budget, gate_res=pre,
+                              note="The full tests or typecheck failed on the fresh checkout BEFORE any paid "
+                                   "step, so the run stopped. Fix the failing tests below and run again.")
+            say(f"issue: {issues.upsert(title, body, ['weekly-grow', 'needs-action'])}")
+            print(block, flush=True)
+            return 3
+        _reset_rest()          # the preflight build must not leave the tree dirty
         l0 = ledger_inr()
         manual, run_budget, build_queued = run_controls()
         if run_budget is not None:
-            # every paid call in this process is refused past this ledger total
-            os.environ["RUN_CAP_LEDGER_INR"] = str(round(l0[0] + run_budget, 6))
+            # Every paid call in this process is refused past this ledger
+            # total. Collecting batches submitted by an EARLIER run records
+            # money that run already committed, so that is added on top:
+            # this run's cap is for this run's new spending only.
+            pend0 = money.pending_inr()
+            os.environ["RUN_CAP_LEDGER_INR"] = str(round(l0[0] + pend0 + run_budget, 6))
             say(f"manual run: total spend capped at ₹{run_budget:.2f}; queued builds "
                 f"{'allowed' if build_queued else 'skipped'}")
         mstat = money.status(ref)
@@ -509,7 +594,34 @@ def main() -> int:
     needs = not ok or (live is not None and not live[0]) or bool(note)
     labels = ["weekly-grow"] + (["needs-action"] if needs else [])
     say(f"issue: {issues.upsert(title, body, labels)}")
+    block = failure_block(gate_res)
+    if block:
+        print(block, flush=True)       # last thing in the log
     return 0 if ok and (live is None or live[0]) else 1
+
+
+def gates_only(date: str) -> int:
+    """Zero-spend proof run: no API call, no batch submit or collect, no
+    publish, ledger untouched, no Issue. Preflight then every gate, on the
+    runner, with a pass/fail line per gate."""
+    say(f"GATES ONLY {date}: no API calls, nothing submitted, collected or published")
+    led0 = (ROOT / "data" / "spend_ledger.json").read_bytes()
+    pre = preflight_checks()
+    res = pre if not all(g["ok"] for g in pre) else gates(after_preflight=True)
+    allres = pre + [g for g in res if g not in pre and not g.get("note")]
+    lines = ["| gate | result |", "|:--|:--|"] + [
+        f"| {g['gate']} | {'PASS' if g['ok'] else 'FAIL'} |" for g in allres]
+    summary = "\n".join([f"## Weekly grow — gates only ({date})", "", *lines, ""])
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
+            f.write(summary + "\n")
+    print(summary, flush=True)
+    assert (ROOT / "data" / "spend_ledger.json").read_bytes() == led0, "gates_only must not touch the ledger"
+    block = failure_block(allres)
+    if block:
+        print(block, flush=True)
+    _reset_rest()
+    return 0 if all(g["ok"] for g in allres) else 1
 
 
 def run_controls() -> tuple[bool, float | None, bool]:
@@ -557,7 +669,12 @@ def dry_run() -> int:
     budget = core.Budget(weekly)
     print(f"DRY RUN {date} — nothing is spent")
     print(f"money: ceiling ₹{st['ceiling_inr']:.2f}, ledger ₹{st['ledger_inr']:.2f}, remaining "
-          f"₹{st['remaining_inr']:.2f}, weeks left {st['weeks_left']}, money-rule weekly ₹{st['weekly_budget_inr']:.2f}")
+          f"₹{st['remaining_inr']:.2f}, pending (submitted, not yet billed) ₹{st['pending_inr']:.2f}, "
+          f"available ₹{st['available_inr']:.2f}, weeks left {st['weeks_left']}, "
+          f"money-rule weekly ₹{st['weekly_budget_inr']:.2f}")
+    for c in money.pending_commitments():
+        print(f"  pending: {c['file']} — {c['papers']} papers, ₹{c['projected_inr']:.2f} (collected and billed "
+              "once by the next live run; its library gets no new submission until then)")
     print(f"this run: cap ₹{run_budget if run_budget is not None else st['weekly_budget_inr']:.2f} "
           f"(run_budget_inr), weekly budget used ₹{weekly:.2f}, queued builds "
           f"{'allowed' if build_queued else 'SKIPPED (build_queued=false)'}")
@@ -584,6 +701,10 @@ def dry_run() -> int:
         x = sum(it["inr"] for it in picked[slug])
         tot_x += x
         print(f"| {slug} | {len(prepared[slug]['items'])} | {len(picked[slug])} | {f:.2f} | {x:.2f} | {x * 1.5:.2f} |")
+        for it in picked[slug]:
+            e = it["entry"]
+            print(f"|   {e['wid']} | {it['src']} ({e.get('fulltext_source') or 'no open full text'}) | | | "
+                  f"{it['inr']:.2f} | |")
     q = registry_queued()[:1]
     if q:
         print(f"\nqueued library {q[0]['slug']}: extraction projected ₹{queued.projection_inr(q[0]):.2f} "
@@ -592,7 +713,10 @@ def dry_run() -> int:
     cap = run_budget if run_budget is not None else None
     print(f"\nplanned spend: ₹{planned:.2f} (extraction ₹{tot_x:.2f} + follow-on ₹{followon_total:.2f})"
           + (f"; cap ₹{cap:.2f}" if cap is not None else ""))
-    print(f"remaining money afterwards: ₹{st['remaining_inr'] - planned:.2f} (if every projection is spent)")
+    print(f"available money afterwards: ₹{st['available_inr'] - planned:.2f} (if every projection is spent; "
+          f"pending ₹{st['pending_inr']:.2f} already counted)")
+    print("note: a live run fetches open full text again; a paper whose PDF was unreachable here but "
+          "reachable then costs about 3x more (abstract ~₹0.9, full text ~₹2.7).")
     if errs:
         print("OpenAlex notes:", "; ".join(errs[:5]))
     return 0

@@ -1,0 +1,9 @@
+{
+ "note": "grow/<date> branches dealt with without merging. The weekly workflow never deletes branches; a branch listed here no longer holds back new spending.",
+ "resolved": {
+  "grow/2026-10-09": {
+   "date": "2026-10-09",
+   "reason": "Run #2's publish gates failed on a test-ordering bug (since fixed). Its bookkeeping (pending batches) is on main in 8ce269c. Its other commit (1c0f56f) holds only regenerated files that encode a since-fixed bug: every follow-on check had rewritten coverage dates, moving each library's 'built' date and regenerating share images and icons on the runner. Not merged: merging would publish wrong 'built' dates; the next run regenerates these files correctly. Kept, not deleted."
+  }
+ }
+}

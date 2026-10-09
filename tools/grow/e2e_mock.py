@@ -19,9 +19,10 @@ build. Scenarios:
   5  next week: runs normally (not blocked)
   6  budget exhausted mid-run: collecting uses up the money; submission is
      refused; Issue says what to do (console_spent_inr / account_total_inr)
-  7  a publish gate fails: site files unchanged, branch grow/<date>,
-     bookkeeping still on main
-  8  next run with that branch open: collects, starts nothing new
+  7  a failing test: PREFLIGHT stops the run before any spend (exit 3), the
+     Issue names the test, one marked failure block ends the log
+  8  an unmerged grow/* branch holds back new spending; once recorded in
+     data/grow/resolved_branches.json the run proceeds (branch kept)
   9  pause (config/growth.json) then resume
  10  daily health: site down -> Issue opened; site up -> Issue closed
 
@@ -267,25 +268,49 @@ def main() -> int:
         (WORK / "backend/tests/test_e2e_broken.py").write_text("def test_broken():\n    assert False\n")
         commit_push("e2e: broken test", ["backend/tests/test_e2e_broken.py"])
         d = "2026-11-16"
-        pub_before = public_tree_sha("main")
+        pub_before, m = public_tree_sha("main"), remote_head()
+        l_before, jobs0 = ledger_inr(), len(list(MOCKST.glob("*.json")))
         r = run_weekly(d, GROW_GATES=None)
         it = issue(d)
-        check(7, r.returncode == 1, "a failing gate -> exit 1", r.stdout[-300:])
-        check(7, public_tree_sha("main") == pub_before, "site files on main unchanged")
-        check(7, remote_head(f"grow/{d}") is not None, f"work pushed to grow/{d}")
-        check(7, "❌ full tests" in it["body"] and "test_broken" in it["body"], "Issue shows the failed gate")
+        check(7, r.returncode == 3, "a failing test is caught by PREFLIGHT -> exit 3", r.stdout[-300:])
+        check(7, remote_head() == m and public_tree_sha("main") == pub_before, "nothing pushed, site unchanged")
+        check(7, ledger_inr() == l_before and len(list(MOCKST.glob("*.json"))) == jobs0,
+              "nothing spent, collected or submitted")
+        check(7, "test_broken" in it["body"] and "nothing spent" in it["body"], "Issue names the failing test")
+        check(7, "GATE FAILURES" in r.stdout and "test_broken" in r.stdout.split("GATE FAILURES")[-1],
+              "one marked failure block at the end of the log")
         # 8 ---------------------------------------------------------------
         sync_main()
         (WORK / "backend/tests/test_e2e_broken.py").unlink()
         commit_push("e2e: fix test", ["-A", "backend/tests"])
+        # an unmerged grow/* branch holds back new spending ...
+        git("checkout", "-q", "-b", "grow/2026-11-20")
+        (WORK / "docs" / "e2e-branch-note.md").write_text("unmerged work\n")
+        commit_push_branch = ["docs/e2e-branch-note.md"]
+        git("add", *commit_push_branch)
+        git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m", "unmerged")
+        git("push", "-q", "origin", "grow/2026-11-20")
+        sync_main()
         d = "2026-11-23"
         jobs0 = len(list(MOCKST.glob("*.json")))
         r = run_weekly(d, GROW_GATES="skip")
         it = issue(d)
         check(8, r.returncode == 0 and "starting nothing new" in it["body"],
-              "with the failed-gate branch open: runs, collects, starts nothing new", r.stdout[-300:])
+              "with an unmerged grow/* branch: runs, collects, starts nothing new", r.stdout[-300:])
         check(8, len(list(MOCKST.glob("*.json"))) == jobs0, "no new batch submitted")
-        git("push", "-q", "origin", "--delete", "grow/2026-11-16")
+        # ... until it is recorded as resolved (branches are never deleted)
+        sync_main()
+        rb = WORK / "data" / "grow" / "resolved_branches.json"
+        reg = json.loads(rb.read_text()) if rb.exists() else {"resolved": {}}
+        reg["resolved"]["grow/2026-11-20"] = {"date": "2026-11-23", "reason": "e2e"}
+        rb.parent.mkdir(parents=True, exist_ok=True)
+        rb.write_text(json.dumps(reg, indent=1))
+        commit_push("resolve grow/2026-11-20", [str(rb.relative_to(WORK))])
+        d = "2026-11-24"
+        r = run_weekly(d, GROW_GATES="skip")
+        check(8, r.returncode == 0 and "starting nothing new" not in issue(d)["body"]
+              and remote_head("grow/2026-11-20") is not None,
+              "recorded as resolved: runs normally again; the branch still exists")
         # 9 ---------------------------------------------------------------
         sync_main()
         g = json.loads((WORK / "config/growth.json").read_text())

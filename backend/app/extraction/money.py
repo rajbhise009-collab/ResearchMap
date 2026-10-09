@@ -85,6 +85,31 @@ def queued_affordable(projection_inr: float, remaining: float, weekly: float, cf
     return projection_inr * mult + int(cfg["queued_domain_reserve_weeks"]) * weekly <= remaining + 1e-9
 
 
+def pending_commitments() -> list[dict]:
+    """Batches submitted but not yet collected (so not yet in the ledger):
+    weekly-growth pending.json, queued-library extraction states, and
+    follow-on scorer batch states. Their projections are money already
+    committed; they are billed once, when collected."""
+    out = []
+    domains = _REPO_ROOT / "data" / "domains"
+    for p in sorted(domains.glob("*/grow/pending.json")) + sorted(domains.glob("*/extractions/batch_state.json")) \
+            + sorted(domains.glob("*/reasoning/*_batch_state.json")):
+        try:
+            st = json.loads(p.read_text())
+        except Exception:  # noqa: BLE001
+            continue
+        if st.get("ledger_recorded"):
+            continue
+        out.append({"file": str(p.relative_to(_REPO_ROOT)), "batch_id": st.get("batch_id"),
+                    "projected_inr": round(float(st.get("projected_inr") or 0.0), 4),
+                    "papers": st.get("n_submitted") or len(st.get("entries") or []) or st.get("n")})
+    return out
+
+
+def pending_inr() -> float:
+    return round(sum(c["projected_inr"] for c in pending_commitments()), 4)
+
+
 def status(today: dt.date | None = None) -> dict:
     """Everything a run or a report needs, computed from the ledger + config."""
     from backend.app.extraction.spend_ledger import SpendLedger
@@ -92,13 +117,18 @@ def status(today: dt.date | None = None) -> dict:
     snap = SpendLedger.load().snapshot()
     led = SpendLedger.load()._read()
     rem = remaining_inr(cfg, snap["cumulative_inr"], led.entries) if cfg else snap["remaining_inr"]
+    pend = pending_inr()
+    avail = max(0.0, rem - pend)
     out = {"ceiling_inr": ceiling_inr(cfg) if cfg else snap["cap_inr"],
            "ledger_inr": round(snap["cumulative_inr"], 2), "remaining_inr": round(rem, 2),
+           # submitted, not yet billed: committed money that remaining_inr
+           # does not yet show (counted once here, billed once when collected)
+           "pending_inr": round(pend, 2), "available_inr": round(avail, 2),
            "console_spent_inr": cfg.get("console_spent_inr"),
            "console_spent_date": cfg.get("console_spent_date")}
     if cfg:
         out["weeks_left"] = weeks_left(cfg, today)
-        out["weekly_budget_inr"] = weekly_budget_inr(rem, cfg, today)
+        out["weekly_budget_inr"] = weekly_budget_inr(avail, cfg, today)
     return out
 
 
