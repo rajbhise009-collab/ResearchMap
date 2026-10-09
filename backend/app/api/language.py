@@ -448,6 +448,24 @@ def why_it_surfaced(card: dict[str, Any]) -> str:
 _EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
 
+# OpenAlex sometimes stores a publisher's full body text as the "abstract".
+# Republishing it would break the no-full-text rule, so anything far longer
+# than a real abstract (structured ones reach ~4,500 characters) is shortened.
+ABSTRACT_MAX = 5_000
+ABSTRACT_KEEP = 2_000
+ABSTRACT_SHORTENED = (" … [Shortened: the catalogue record for this paper holds far more text than "
+                      "an abstract, so only its opening is shown.]")
+
+
+def public_abstract(text: str | None) -> str | None:
+    """The abstract as the site may show it: contacts redacted, and never
+    longer than a real abstract."""
+    text = redact_contacts(text)
+    if text and len(text) > ABSTRACT_MAX:
+        return text[:ABSTRACT_KEEP].rsplit(" ", 1)[0] + ABSTRACT_SHORTENED
+    return text
+
+
 def redact_contacts(text: str | None) -> str | None:
     """Abstracts sometimes carry a corresponding author's email address. The
     site has no reason to republish it."""

@@ -157,3 +157,30 @@ def test_health_adjacent_flag_is_declared_and_shipped():
         if l["slug"] in shipped:                           # built libraries inherit the flag
             assert shipped[l["slug"]]["health_adjacent"] == l["health_adjacent"], l["slug"]
     assert shipped["diet-and-mortality"]["health_adjacent"] and shipped["social-media-teen-mental-health"]["health_adjacent"]
+
+
+def test_no_full_text_is_shipped_or_committed():
+    """Standing rule: full text of papers is never published or committed.
+    Public paper files carry no full-text field and no string anywhere near
+    full-paper length; data/cache/fulltext is never tracked by git."""
+    longest = 0
+    for f in (FE / "public" / "data").rglob("paper/*.json"):
+        d = json.loads(f.read_text())
+        assert "fulltext" not in d and "full_text_body" not in d, f.name
+        stack = [d]
+        while stack:
+            x = stack.pop()
+            if isinstance(x, dict):
+                stack.extend(x.values())
+            elif isinstance(x, list):
+                stack.extend(x)
+            elif isinstance(x, str):
+                longest = max(longest, len(x))
+    assert longest < 15_000, f"a shipped string is {longest} characters long (full text?)"
+    from backend.app.api.language import ABSTRACT_MAX, ABSTRACT_SHORTENED
+    for f in (FE / "public" / "data").rglob("paper/*.json"):
+        a = json.loads(f.read_text()).get("abstract") or ""
+        assert len(a) <= ABSTRACT_MAX + len(ABSTRACT_SHORTENED), (f.name, len(a))
+    tracked = subprocess.run(["git", "ls-files", "data/cache/fulltext"], cwd=REPO, capture_output=True,
+                             text=True).stdout.strip()
+    assert tracked == "", tracked[:200]

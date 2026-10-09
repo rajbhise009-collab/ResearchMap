@@ -167,7 +167,7 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
             "domain_centrality": e.get("domain_centrality"),
             "input_source": e.get("input_source"),
             "abstract_only": e.get("input_source") != "fulltext",
-            "abstract": lang_mod.redact_contacts(e.get("abstract")),
+            "abstract": lang_mod.public_abstract(e.get("abstract")),
             # Records merged into this one (docs/merge-policy.md provenance).
             "merged_from": e.get("merged_from", []),
             "claims": [c.model_dump() for c in (ext.claims or [])] if ext else [],

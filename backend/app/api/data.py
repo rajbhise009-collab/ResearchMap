@@ -12,7 +12,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from backend.app.config import REPO_ROOT
-from backend.app.api.language import redact_contacts
+from backend.app.api.language import public_abstract, redact_contacts
 from backend.app.ranking.assemble import build_evidence_cards
 from backend.app.ranking.schema import EvidenceCard
 from backend.app.reasoning.corpus_view import load_reasoning_corpus
@@ -92,7 +92,7 @@ def paper_detail(pid: str) -> dict | None:
         "paper_id": pid, "title": p.title, "year": p.year, "doi": rec.get("doi"),
         "input_source": p.input_source, "abstract_only": p.input_source != "fulltext",
         "domain_centrality": p.domain_centrality, "provenance": rec.get("provenance"),
-        "abstract": redact_contacts(rec.get("abstract")),
+        "abstract": public_abstract(rec.get("abstract")),
         "claims": _dump(ext.claims) if ext else [],
         "limitations": _dump(ext.limitations) if ext else [],
         "future_work": _dump(ext.future_work) if ext else [],
