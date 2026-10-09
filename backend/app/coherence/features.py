@@ -233,7 +233,9 @@ def citation_modularity(records: list[dict]) -> float:
             kn = degree[n]
             # Neighbour communities and this node's own connections into each.
             k_i_in: dict[int, int] = {}
-            for nb in adj[n]:
+            # sorted: ties between equal gains must not depend on set order
+            # (Python's per-process hash seed), or the score changes run to run
+            for nb in sorted(adj[n]):
                 k_i_in[community[nb]] = k_i_in.get(community[nb], 0) + 1
             # Remove n from its current community for a fair delta.
             comm_deg[cn] -= kn

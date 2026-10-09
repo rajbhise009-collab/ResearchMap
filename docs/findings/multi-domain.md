@@ -204,7 +204,7 @@ reputational grounds that meta-analyses in this field famously disagree.
 | LLM calibration | 0.818 (high) | 0 |
 | Diet & mortality | 0.44 (moderate) | 5 |
 | ML fairness | 0.667 (high) | 0 |
-| Social media & teens | 0.829 (high) | 2 |
+| Social media & teens | 0.833 (high) | 2 |
 <!-- /gen:predictor -->
 
 On these three libraries the predictor's ordering does not match the

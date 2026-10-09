@@ -52,7 +52,7 @@ The three failures share a cause. The shared rubric code keeps a paper as border
   - **genuine:** "Smartphones and teenagers' well-being: a real decline, or too small to matter?" (47 later papers cite both sides) and "Depression across generations: a real rise, or an artifact of recall?" (17);
   - **set aside:** 3 artifact, 1 duplicate.
 - **Method-transfer lead:** 1 lead, judged "not addressing" by the confirmation step, so set aside.
-- **Coherence predictor:** scored this domain 0.829 ("high"); it produced 2 genuine disagreements (outcome row added to multi-domain.md).
+- **Coherence predictor:** scored this domain 0.833 ("high"); it produced 2 genuine disagreements (outcome row added to multi-domain.md).
 - **Not-advice note:** points readers who are struggling to a doctor or a local support service.
 
 Every library's page, search index and vocabulary, generated search test set (15 phrases + 5 refusals), share image, sitemap entries, /method tables and findings-doc rows were regenerated.
