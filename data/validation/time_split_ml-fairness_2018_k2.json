@@ -1,0 +1,135 @@
+{
+ "slug": "ml-fairness",
+ "year": 2018,
+ "k": 2,
+ "n_frozen_papers": 48,
+ "n_r_papers": 21,
+ "n_r_claims": 103,
+ "tau": 0.7571,
+ "pool": 12,
+ "base_rate": 0.083,
+ "ranked": [
+  {
+   "rank": 1,
+   "opportunity": "opp:orphan:openalex:W2100960835:f4",
+   "score": 0.8769,
+   "source": "openalex:W2100960835",
+   "source_year": 2012,
+   "best_r_cosine": 0.7398,
+   "addressed_later": false
+  },
+  {
+   "rank": 2,
+   "opportunity": "opp:orphan:openalex:W2100960835:f2",
+   "score": 0.8588,
+   "source": "openalex:W2100960835",
+   "source_year": 2012,
+   "best_r_cosine": 0.7069,
+   "addressed_later": false
+  },
+  {
+   "rank": 3,
+   "opportunity": "opp:orphan:openalex:W2116984840:f4",
+   "score": 0.8545,
+   "source": "openalex:W2116984840",
+   "source_year": 2011,
+   "best_r_cosine": 0.7849,
+   "addressed_later": false
+  },
+  {
+   "rank": 4,
+   "opportunity": "opp:orphan:openalex:W2100960835:f3",
+   "score": 0.8345,
+   "source": "openalex:W2100960835",
+   "source_year": 2012,
+   "best_r_cosine": 0.7117,
+   "addressed_later": false
+  },
+  {
+   "rank": 5,
+   "opportunity": "opp:orphan:openalex:W2116984840:f2",
+   "score": 0.8286,
+   "source": "openalex:W2116984840",
+   "source_year": 2011,
+   "best_r_cosine": 0.7489,
+   "addressed_later": false
+  },
+  {
+   "rank": 6,
+   "opportunity": "opp:orphan:openalex:W2116984840:f3",
+   "score": 0.8222,
+   "source": "openalex:W2116984840",
+   "source_year": 2011,
+   "best_r_cosine": 0.7386,
+   "addressed_later": false
+  },
+  {
+   "rank": 7,
+   "opportunity": "opp:orphan:openalex:W2097246321:f2",
+   "score": 0.8154,
+   "source": "openalex:W2097246321",
+   "source_year": 2010,
+   "best_r_cosine": 0.7199,
+   "addressed_later": false
+  },
+  {
+   "rank": 8,
+   "opportunity": "opp:orphan:openalex:W2097246321:f3",
+   "score": 0.7913,
+   "source": "openalex:W2097246321",
+   "source_year": 2010,
+   "best_r_cosine": 0.7615,
+   "addressed_later": false
+  },
+  {
+   "rank": 9,
+   "opportunity": "opp:orphan:openalex:W2100960835:f1",
+   "score": 0.7913,
+   "source": "openalex:W2100960835",
+   "source_year": 2012,
+   "best_r_cosine": 0.7225,
+   "addressed_later": false
+  },
+  {
+   "rank": 10,
+   "opportunity": "opp:orphan:openalex:W2014352947:f3",
+   "score": 0.608,
+   "source": "openalex:W2014352947",
+   "source_year": 2015,
+   "best_r_cosine": 0.7165,
+   "addressed_later": false
+  },
+  {
+   "rank": 11,
+   "opportunity": "opp:orphan:openalex:W2524301210:f1",
+   "score": 0.5922,
+   "source": "openalex:W2524301210",
+   "source_year": 2016,
+   "best_r_cosine": 0.768,
+   "addressed_later": true
+  },
+  {
+   "rank": 12,
+   "opportunity": "opp:orphan:openalex:W4386564359:f1",
+   "score": 0.5556,
+   "source": "openalex:W4386564359",
+   "source_year": 2016,
+   "best_r_cosine": 0.7121,
+   "addressed_later": false
+  }
+ ],
+ "precision": {
+  "5": 0.0,
+  "10": 0.0
+ },
+ "recency_precision": {
+  "5": 0.2,
+  "10": 0.1
+ },
+ "p_values": {
+  "5": 1.0,
+  "10": 1.0
+ },
+ "tau_equiv": 0.7569,
+ "novel_r_claims": 69
+}

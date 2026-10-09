@@ -1,0 +1,69 @@
+{
+ "slug": "social-media-teen-mental-health",
+ "year": 2016,
+ "k": 2,
+ "n_frozen_papers": 66,
+ "n_r_papers": 18,
+ "n_r_claims": 87,
+ "tau": 0.7111,
+ "pool": 5,
+ "base_rate": 0.0,
+ "ranked": [
+  {
+   "rank": 1,
+   "opportunity": "opp:orphan:openalex:W2126370723:f1",
+   "score": 0.6667,
+   "source": "openalex:W2126370723",
+   "source_year": 2012,
+   "best_r_cosine": 0.7464,
+   "addressed_later": false
+  },
+  {
+   "rank": 2,
+   "opportunity": "opp:orphan:openalex:W2118360093:f1",
+   "score": 0.5238,
+   "source": "openalex:W2118360093",
+   "source_year": 2012,
+   "best_r_cosine": 0.6819,
+   "addressed_later": false
+  },
+  {
+   "rank": 3,
+   "opportunity": "opp:orphan:openalex:W1994045792:f1",
+   "score": 0.5176,
+   "source": "openalex:W1994045792",
+   "source_year": 2013,
+   "best_r_cosine": 0.6873,
+   "addressed_later": false
+  },
+  {
+   "rank": 4,
+   "opportunity": "opp:orphan:openalex:W2068511562:f1",
+   "score": 0.4333,
+   "source": "openalex:W2068511562",
+   "source_year": 2014,
+   "best_r_cosine": 0.7164,
+   "addressed_later": false
+  },
+  {
+   "rank": 5,
+   "opportunity": "opp:orphan:openalex:W2121693378:f1",
+   "score": 0.3641,
+   "source": "openalex:W2121693378",
+   "source_year": 2014,
+   "best_r_cosine": 0.6996,
+   "addressed_later": false
+  }
+ ],
+ "precision": {
+  "5": 0.0
+ },
+ "recency_precision": {
+  "5": 0.0
+ },
+ "p_values": {
+  "5": 1.0
+ },
+ "tau_equiv": 0.7603,
+ "novel_r_claims": 35
+}

@@ -1,0 +1,27 @@
+{
+ "slug": "diet-and-mortality",
+ "year": 2016,
+ "k": 2,
+ "n_frozen_papers": 69,
+ "n_r_papers": 18,
+ "n_r_claims": 123,
+ "tau": 0.5822,
+ "pool": 1,
+ "base_rate": 1.0,
+ "ranked": [
+  {
+   "rank": 1,
+   "opportunity": "opp:orphan:openalex:W2109401990:f1",
+   "score": 0.6308,
+   "source": "openalex:W2109401990",
+   "source_year": 2010,
+   "best_r_cosine": 0.7181,
+   "addressed_later": true
+  }
+ ],
+ "precision": {},
+ "recency_precision": {},
+ "p_values": {},
+ "tau_equiv": 0.7326,
+ "novel_r_claims": 48
+}

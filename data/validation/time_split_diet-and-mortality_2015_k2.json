@@ -1,0 +1,17 @@
+{
+ "slug": "diet-and-mortality",
+ "year": 2015,
+ "k": 2,
+ "n_frozen_papers": 60,
+ "n_r_papers": 20,
+ "n_r_claims": 146,
+ "tau": 1.0,
+ "pool": 0,
+ "base_rate": 0.0,
+ "ranked": [],
+ "precision": {},
+ "recency_precision": {},
+ "p_values": {},
+ "tau_equiv": 0.7381,
+ "novel_r_claims": 89
+}

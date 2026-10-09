@@ -1,0 +1,96 @@
+{
+ "slug": "social-media-teen-mental-health",
+ "year": 2017,
+ "k": 2,
+ "n_frozen_papers": 79,
+ "n_r_papers": 10,
+ "n_r_claims": 47,
+ "tau": 0.7111,
+ "pool": 8,
+ "base_rate": 0.0,
+ "ranked": [
+  {
+   "rank": 1,
+   "opportunity": "opp:orphan:openalex:W2126370723:f1",
+   "score": 0.7619,
+   "source": "openalex:W2126370723",
+   "source_year": 2012,
+   "best_r_cosine": 0.7127,
+   "addressed_later": false
+  },
+  {
+   "rank": 2,
+   "opportunity": "opp:orphan:openalex:W2118360093:f1",
+   "score": 0.6807,
+   "source": "openalex:W2118360093",
+   "source_year": 2012,
+   "best_r_cosine": 0.6819,
+   "addressed_later": false
+  },
+  {
+   "rank": 3,
+   "opportunity": "opp:orphan:openalex:W1994045792:f1",
+   "score": 0.6,
+   "source": "openalex:W1994045792",
+   "source_year": 2013,
+   "best_r_cosine": 0.6677,
+   "addressed_later": false
+  },
+  {
+   "rank": 4,
+   "opportunity": "opp:orphan:openalex:W2068511562:f1",
+   "score": 0.5818,
+   "source": "openalex:W2068511562",
+   "source_year": 2014,
+   "best_r_cosine": 0.7164,
+   "addressed_later": false
+  },
+  {
+   "rank": 5,
+   "opportunity": "opp:orphan:openalex:W2121693378:f1",
+   "score": 0.5176,
+   "source": "openalex:W2121693378",
+   "source_year": 2014,
+   "best_r_cosine": 0.6269,
+   "addressed_later": false
+  },
+  {
+   "rank": 6,
+   "opportunity": "opp:orphan:openalex:W1849635709:f1",
+   "score": 0.5048,
+   "source": "openalex:W1849635709",
+   "source_year": 2015,
+   "best_r_cosine": 0.7329,
+   "addressed_later": false
+  },
+  {
+   "rank": 7,
+   "opportunity": "opp:orphan:openalex:W2121693378:f2",
+   "score": 0.4308,
+   "source": "openalex:W2121693378",
+   "source_year": 2014,
+   "best_r_cosine": 0.6263,
+   "addressed_later": false
+  },
+  {
+   "rank": 8,
+   "opportunity": "opp:orphan:openalex:W2130042179:f1",
+   "score": 0.3641,
+   "source": "openalex:W2130042179",
+   "source_year": 2015,
+   "best_r_cosine": 0.6176,
+   "addressed_later": false
+  }
+ ],
+ "precision": {
+  "5": 0.0
+ },
+ "recency_precision": {
+  "5": 0.0
+ },
+ "p_values": {
+  "5": 1.0
+ },
+ "tau_equiv": 0.7625,
+ "novel_r_claims": 3
+}

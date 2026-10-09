@@ -1,5 +1,20 @@
 # PROGRESS
 
+## Phase 6 validation — free pilot, inconclusive (2026-10-09)
+
+- `backend/app/validation/time_split.py`: the documented time-split matching rule for the
+  open-question scorer (freeze at Y, later evidence Y+1..Y+2, embedding match with no language
+  model, within-field calibration, precision@K vs chance and a newest-first baseline). Free;
+  deterministic; leak-free (tests in backend/tests/validation).
+- Result: the 100-paper libraries are too small to test the claim. Frozen pools hold 0–15 open
+  questions, with 0–1 addressed later; no ranking can beat chance at that size.
+  docs/findings/validation-pilot-2026-10.md.
+- Found: calibrating τ against other fields is degenerate (below ordinary within-field
+  similarity). The fix (negatives = claims older than the source paper; a separate
+  near-duplicate threshold for novelty) extends the rule and needs owner approval for the policy doc.
+- **Owner decision needed:** field-level evidence from OpenAlex citers' abstracts (~₹5–15,
+  changes the rule's unit) or bigger historical corpora (~₹400–450). Phase 6 is still owed.
+
 ## Scheduled expansion — more domains, unattended growth (2026-10-09) ✅
 
 - Money: config/money.json is the only limit (₹1450 ceiling on the ledger; console figure optional);
