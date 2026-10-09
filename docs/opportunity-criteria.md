@@ -287,3 +287,29 @@ opportunity gets a binary match/no-match on the historical record. If
 we relax this to "expert judgment says this was still a valuable
 suggestion", the evaluation becomes uncheckable and the project loses
 its only quantitative claim.
+
+## Amendment 2026-10-09 (post-pilot) — calibrating the matching threshold
+
+*Added after the free pilot (docs/findings/validation-pilot-2026-10.md).
+The original rule above is unchanged; this section specifies what it left
+open. These choices were derived **after seeing pilot data**, so the pilot
+itself cannot count as validation of anything.*
+
+1. **Matching threshold τ, calibrated within the field, per opportunity.**
+   For each open question O, draw (20 times, fixed seed) a set of texts of
+   the same size as O's evidence set from papers in the same library that are
+   **older than O's source paper**. Those papers cannot address a direction
+   that had not yet been written, so they are within-field negatives chosen
+   with no language model. Take the highest cosine similarity to O in each
+   draw. τ is the 95th percentile of those maxima, pooled per library, so a
+   field-typical but unrelated evidence set "matches" fewer than 5% of open
+   questions. The pilot showed why this is needed: τ calibrated against
+   *other* fields (≈0.58) fell below the ordinary within-field similarity
+   (median ≈0.59), so everything matched.
+2. **A separate near-duplicate threshold for novelty.** "Has zero
+   equivalent claim before the freeze" is judged with its own threshold: the
+   99th percentile of cosine similarity between claims of *different*
+   pre-freeze papers. Using τ here marked 98 of 103 later claims as already
+   known in the pilot.
+3. Both thresholds are computed by code from the data and a fixed seed. No
+   language model judges any match.
