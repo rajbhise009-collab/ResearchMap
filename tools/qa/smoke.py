@@ -85,8 +85,16 @@ def settle(pg, ms=900):
 
 
 def search(pg, q):
-    pg.fill("#ask-input", "")
-    pg.type("#ask-input", q, delay=110)
+    """Type like a reader. On a busy machine (shared CI runners) typing can
+    stall; then reload once and enter the query directly, so a slow runner
+    never fails a weekly publish on its own."""
+    try:
+        pg.fill("#ask-input", "")
+        pg.type("#ask-input", q, delay=110, timeout=20000)
+    except Exception:  # noqa: BLE001
+        pg.reload()
+        settle(pg, 800)
+        pg.fill("#ask-input", q, timeout=20000)
     pg.wait_for_timeout(1600)
     b = pg.inner_text("body").lower()
     gaps = pg.locator("section:has(> p.section-eyebrow:text-is('Gaps we found')) .results-list > *").count()
@@ -123,6 +131,8 @@ def run(p, base, engine, mobile, axe):
         banner = "that's not in this library" in b or "at the edge of this library" in b
         rec(n > 0 and g > 0 and not banner, f"{tag} {slug} '{q}' → results incl. gaps",
             f"results={n} gaps={g} banner={banner}")
+        pg.goto(f"{base}/?lib={slug}")          # fresh page: no state from the first search
+        settle(pg, 500)
         b, _, _ = search(pg, "melanoma treatment")
         rec("that's not in this library" in b, f"{tag} {slug} 'melanoma treatment' refuses")
         c.close()
