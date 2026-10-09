@@ -1,0 +1,78 @@
+{
+ "date": "2026-10-09",
+ "parent_commit": "deff0d23006ed58af07b42746c164cfd73cad2a0",
+ "libraries": {
+  "llm-calibration": {
+   "papers": 113,
+   "results": 66,
+   "set_aside": 10,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "705562e364fd56bb34e524243a9676ce4d3031d16499db1056d2d993eee3755d"
+  },
+  "diet-and-mortality": {
+   "papers": 100,
+   "results": 12,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "92ead09c38537808d7a79148fccf26df6fda98a9070b290d597d0ac69134283b"
+  },
+  "ml-fairness": {
+   "papers": 99,
+   "results": 55,
+   "set_aside": 2,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "9ff5ab72c399df8bc31cb29caca82e626c8af43629b8ddd7b2336ac7f496f682"
+  },
+  "social-media-teen-mental-health": {
+   "papers": 100,
+   "results": 32,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "b61e4ebb58d0bcdae5e3e602225336b88f5aea9795deadf3568643c1a45606b3"
+  }
+ },
+ "ledger_inr": 1146.8849,
+ "ledger_cap_inr": 1171.884886,
+ "gates": [
+  {
+   "gate": "typecheck",
+   "ok": true
+  },
+  {
+   "gate": "production build (+ consistency before and after)",
+   "ok": true
+  },
+  {
+   "gate": "full tests",
+   "ok": false
+  },
+  {
+   "gate": "docs check",
+   "ok": true
+  },
+  {
+   "gate": "consistency script",
+   "ok": true
+  },
+  {
+   "gate": "banned-phrase tests",
+   "ok": true
+  },
+  {
+   "gate": "search regression suite",
+   "ok": true
+  },
+  {
+   "gate": "hardening tests (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "browser hunt (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "smoke checks on the build",
+   "ok": true
+  }
+ ]
+}
