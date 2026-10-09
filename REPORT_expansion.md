@@ -72,7 +72,27 @@ Each weekly Issue lists papers added per library, new libraries, spend this week
 
 **End-to-end test** (`tools/grow/e2e_mock.py`, mocked OpenAlex and Gemini, temporary ledger and money config):
 
-E2E_RESULT
+**Clean pass: 39/39**, with every publish gate run for real in scenarios 1, 2 and 7 (`docs/releases/growth-e2e-passed.json`, tested commit `ddfab60`).
+
+1. **Week 1:** batches across every growing library (round-robin); the first queued library starts building; published.
+2. **Week 2:** papers collected and billed once; the queued library finished and published on a **six-library site**; its flagged pairs labelled "not yet checked" and not counted; leads confirmed before display.
+3. **Missing secret:** clean stop, nothing pushed; the set secret appears nowhere.
+4. **OpenAlex down after collecting:** bookkeeping-only commit (spend kept on main), site files unchanged, no blocking branch.
+5. **Next week:** runs normally.
+6. **Money runs out mid-run:** status BUDGET EXHAUSTED, nothing new submitted, the Issue says what you can do.
+7. **Failing gate:** site unchanged, `grow/<date>` branch, the Issue shows the output.
+8. **With that branch open:** collects, starts nothing new.
+9. **Pause, then resume.**
+10. **Daily health:** site down opens the Issue; site up closes it.
+
+The real ledger was never touched, and no secret appeared in any Issue.
+
+Getting to a clean pass took four runs. Each failed run exposed a real problem, now fixed:
+
+- an inherited money config capping the test ledgers;
+- smoke checks that stalled on a busy machine;
+- two checks written for the original libraries that didn't fit a new one;
+- money running out while finishing a queued library was treated as an error.
 
 What the end-to-end runs caught and I fixed:
 
@@ -97,7 +117,44 @@ What the end-to-end runs caught and I fixed:
 
 ## Verification and publishing
 
-PUBLISH_RESULT
+**Local, final build:**
+
+- 775 tests passed.
+- Typecheck, production build and the consistency script (before and after the build, four libraries) pass.
+- The docs check passes and is now stable: the coherence predictor's modularity was nondeterministic, so the check flipped between runs; fixed.
+- Curious-visitor checks: 76/76 on Chromium and 76/76 on WebKit.
+- Smoke checks: 108/108 (every library on Chromium and WebKit, desktop and iPhone 13: its card, /gaps, a gap page with a working .bib export, one settled search, the refusal, axe with zero serious issues, no console errors).
+- Synthetic eight-library UI test: 23/23.
+
+**Pushed** (each confirmed by exit code 0 and `git ls-remote`): `iteration-2` → `e738c14`, then `main` → `e738c14` (fast-forward from `8e90824`).
+
+**Production, about 4 minutes later** (https://researchmap-one.vercel.app):
+
+- `libraries.json` lists the four libraries.
+- Smoke checks: **108/108**.
+- Curious-visitor checks: **76/76**. Three hostile URLs are refused by Vercel's edge (400/403) before reaching the site, as in the last run.
+- Live check:
+
+```
+PASS  https works  — GET https://researchmap-one.vercel.app/ -> 200
+PASS  sitemap.xml served, hosts match  — status 200, 620 URLs, 0 with another host
+PASS  robots.txt served, sitemap host matches  — status 200, sitemap lines ['https://researchmap-one.vercel.app/sitemap.xml']
+PASS  robots.txt allows indexing
+PASS  home: security headers  — X-Content-Type-Options: nosniff; Referrer-Policy: strict-origin-when-cross-origin; Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(); X-Frame-Options: DENY
+PASS  home: canonical and og:url host = researchmap-one.vercel.app
+PASS  home: og:image returns 200  — https://researchmap-one.vercel.app/og/default.png -> 200
+PASS  gap page: security headers  — X-Content-Type-Options: nosniff; Referrer-Policy: strict-origin-when-cross-origin; Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(); X-Frame-Options: DENY
+PASS  gap page: canonical and og:url host = researchmap-one.vercel.app
+PASS  gap page: og:image returns 200  — https://researchmap-one.vercel.app/og/diet-and-mortality.png -> 200
+WARN  analytics script (/_vercel/insights/script.js)  — status 404 — enable Web Analytics in the Vercel dashboard
+PASS  http -> https  — http://researchmap-one.vercel.app/ -> https://researchmap-one.vercel.app/ (200)
+SKIP  www <-> apex redirect  — not applicable to researchmap-one.vercel.app
+SKIP  *.vercel.app redirect  — the base URL is the vercel.app host
+
+0 failed, 11 passed, 1 warnings, 2 skipped
+```
+
+No revert was needed. This report is committed after the checks above.
 
 ## Steps only you can do
 
