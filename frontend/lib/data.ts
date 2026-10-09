@@ -162,6 +162,16 @@ export function readFromLibrary<T>(lib: LibraryManifest, rel: string): T {
   return read<T>(path.join(relBase(lib.snapshot_path), rel));
 }
 
+/** The pre-registered validation result (backend/app/validation/report_v1.py). */
+export interface ValidationSummary {
+  verdict: string; plain: string; protocol_commit: string; n: number; addressed: number;
+  n_required: number; power: number; engine_auc: number; engine_auc_ci: [number, number];
+  citation_auc: number; citation_auc_ci: [number, number]; recency_auc: number; random_auc: number;
+}
+export function getValidation(): ValidationSummary | null {
+  try { return read<ValidationSummary>("validation.json"); } catch { return null; }
+}
+
 /** Facts for the trust pages and library headers (backend/app/api/site_facts.py). */
 export function getSiteFacts(): SiteFacts {
   return read<SiteFacts>("site-facts.json");

@@ -1,0 +1,21 @@
+{
+ "verdict": "inconclusive",
+ "plain": "Not yet validated. The pre-registered test was inconclusive: too few open questions to tell a useful ranking from chance, and on the numbers it has, the engine did not do better than ranking by citation count.",
+ "protocol_commit": "1bcdb4b",
+ "n": 88,
+ "addressed": 15,
+ "n_required": 209,
+ "power": 0.446,
+ "engine_auc": 0.574,
+ "engine_auc_ci": [
+  0.429,
+  0.713
+ ],
+ "citation_auc": 0.601,
+ "citation_auc_ci": [
+  0.438,
+  0.76
+ ],
+ "recency_auc": 0.474,
+ "random_auc": 0.5
+}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSiteFacts } from "../../lib/data";
+import { getSiteFacts, getValidation } from "../../lib/data";
 import { pageMeta } from "../../lib/meta";
 import { site } from "../../lib/site";
 
@@ -156,6 +156,39 @@ export default function Method() {
           </ul>
         </>
       )}
+
+      <h2>Has this been tested?</h2>
+      {(() => {
+        const v = getValidation();
+        if (!v) return <p>Not yet. No test of whether the results anticipate later research has been run.</p>;
+        return (
+          <>
+            <p><strong>{v.plain}</strong></p>
+            <p>
+              The test was written down before it was run: freeze each library at an earlier year,
+              let the tool rank the questions it finds open, then check whether papers citing each
+              question&apos;s source paper took it up in the next two years. {v.n} questions were
+              tested and {v.addressed} were taken up; a test able to tell a useful ranking from
+              chance would need at least {v.n_required}.
+            </p>
+            <table>
+              <thead><tr><th>Ranking</th><th>How well it picked the questions later taken up (0.5 = chance)</th></tr></thead>
+              <tbody>
+                <tr><td>This tool</td><td>{v.engine_auc} (95% range {v.engine_auc_ci[0]}–{v.engine_auc_ci[1]})</td></tr>
+                <tr><td>Most-cited source paper first</td><td>{v.citation_auc} (95% range {v.citation_auc_ci[0]}–{v.citation_auc_ci[1]})</td></tr>
+                <tr><td>Newest source paper first</td><td>{v.recency_auc}</td></tr>
+                <tr><td>Random order</td><td>{v.random_auc}</td></tr>
+              </tbody>
+            </table>
+            <p className="small">
+              &ldquo;Taken up&rdquo; is a proxy: a citing paper whose summary is close in meaning to
+              the question. Citing is not the same as answering. Full report:{" "}
+              <Link href="/findings/validation-v1/">Validation v1</Link> (protocol committed before the
+              run, {v.protocol_commit}).
+            </p>
+          </>
+        );
+      })()}
 
       <h2>Known limits</h2>
       <ul>

@@ -324,9 +324,10 @@ edited.
 | `hole_confirm_ml-fairness` | 2 | $0.0039 | ₹0.33 |
 | `hole_confirm_social-media-teen-mental-health` | 1 | $0.0021 | ₹0.18 |
 | `unknown` | 200 | $0.0060 | ₹0.50 |
-| **total (ledger, after corrections)** | 1758 | **$13.5183** | **₹1,135.54** |
+| `validation_v1_embed` | 5 | $0.1351 | ₹11.35 |
+| **total (ledger, after corrections)** | 1763 | **$13.6534** | **₹1,146.88** |
 | ceiling (config/money.json: account total − safety buffer) |  |  | ₹1,450.00 |
-| remaining (money rule) |  |  | ₹314.46 |
+| remaining (money rule) |  |  | ₹303.12 |
 <!-- /gen:spend -->
 
 The project budgets against this ledger, which records more spend than
