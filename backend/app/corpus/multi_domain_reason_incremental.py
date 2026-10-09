@@ -56,6 +56,15 @@ def write_coverage(slug: str, exts, pairs, *, note: str = "",
         "note": note,
     }
     p = coverage_path(slug)
+    # The date records when the check's coverage last CHANGED (it is the
+    # library's "built" date on the site). A run that changes nothing keeps
+    # the old file, so a weekly no-op never moves the date.
+    if p.exists():
+        old = json.loads(p.read_text())
+        same = {k: v for k, v in old.items() if k not in ("date", "note")} == \
+               {k: v for k, v in cov.items() if k not in ("date", "note")}
+        if same:
+            return old
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(cov, indent=2))
     return cov

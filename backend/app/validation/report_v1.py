@@ -89,6 +89,22 @@ embedding is cached in `data/validation/v1/`, so it reproduces for free.
 |:--|--:|--:|--:|
 {lib_rows}
 
+## Correction (2026-10-09, same day)
+
+The first run listed each library's paper files in directory order, which
+differs between platforms and checkouts. The seeded draws behind τ
+therefore depended on the machine; the weekly workflow's runner caught it
+(two τ values differed). The code now lists files in sorted order and the
+numbers above were recomputed from the same cached data at no cost.
+
+- τ changed for Diet (0.6691 → 0.6539) and Social media (0.7348 → 0.7351).
+- The set of addressed questions, every measure and the verdict are
+  unchanged.
+
+The original record is kept in
+`data/validation/v1/result_2026-10-09_original_order.json`. This is a
+reproducibility fix, not a parameter change.
+
 ## Reading it plainly
 
 On these numbers the engine's ranking is not distinguishable from chance,

@@ -112,5 +112,5 @@
     "threshold": 0.8,
     "max_per_claim": 2
   },
-  "note": "updated by the weekly growth run"
+  "note": "built by backend/app/corpus/build_library.py"
 }

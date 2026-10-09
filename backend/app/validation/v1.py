@@ -236,14 +236,16 @@ def n_required(p):
 def _library_abstracts(slug):
     d = PUB if slug == "llm-calibration" else PUB / "library" / slug
     out = {}
-    for f in (d / "paper").glob("*.json"):
+    # sorted: the seeded draws index into this order, and directory listing
+    # order differs between platforms and between checkouts
+    for f in sorted((d / "paper").glob("*.json")):
         j = json.loads(f.read_text())
         if j.get("abstract") and j.get("year"):
             out[f.stem] = (int(j["year"]), _trunc(j["abstract"]))
     return out
 
 
-def run(*, client=None) -> dict:
+def run(*, client=None, write: bool = False) -> dict:
     rng_seed = PROTOCOL["seed"]
     items, corpora = pool()
     # free fetches
@@ -375,8 +377,9 @@ def run(*, client=None) -> dict:
            "by_library": {s: {"N": sum(1 for it in items if it["library"] == s),
                               "addressed": sum(1 for it in items if it["library"] == s and it["addressed"])} for s in LIBS},
            "items": items}
-    DIR.mkdir(parents=True, exist_ok=True)
-    (DIR / "result.json").write_text(json.dumps(out, indent=1, default=str))
+    if write:    # only the CLI writes; tests and reruns never touch the record
+        DIR.mkdir(parents=True, exist_ok=True)
+        (DIR / "result.json").write_text(json.dumps(out, indent=1, default=str))
     return out
 
 
@@ -389,7 +392,7 @@ def main() -> int:
         items, _ = pool()
         print(len(items), {s: sum(1 for i in items if i["library"] == s) for s in LIBS})
     if a.run:
-        r = run()
+        r = run(write=True)
         print(json.dumps({k: v for k, v in r.items() if k != "items"}, indent=1, default=str))
     return 0
 

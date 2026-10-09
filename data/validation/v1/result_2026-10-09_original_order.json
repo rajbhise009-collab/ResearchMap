@@ -34,9 +34,9 @@
  "cap_used": 5,
  "tau": {
   "llm-calibration": 0.6326,
-  "diet-and-mortality": 0.6539,
+  "diet-and-mortality": 0.6691,
   "ml-fairness": 0.7544,
-  "social-media-teen-mental-health": 0.7351
+  "social-media-teen-mental-health": 0.7348
  },
  "N": 88,
  "addressed": 15,

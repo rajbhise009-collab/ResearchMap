@@ -4,11 +4,11 @@
     "basis": "file date of the library's frozen gap list (data/reasoning/opportunities.jsonl)"
   },
   "diet-and-mortality": {
-    "date": "2026-10-09",
+    "date": "2026-10-02",
     "basis": "last run of the disagreement check over the final corpus"
   },
   "ml-fairness": {
-    "date": "2026-10-09",
+    "date": "2026-10-04",
     "basis": "last run of the disagreement check over the final corpus"
   }
 }
