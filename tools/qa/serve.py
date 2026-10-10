@@ -54,6 +54,11 @@ class H(http.server.SimpleHTTPRequestHandler):
 class TS(socketserver.ThreadingMixIn, http.server.HTTPServer):
     daemon_threads = True
     allow_reuse_address = True
+    # The default listen backlog (5) overflows when a page loads several
+    # libraries' data in parallel: the OS then RESETS the extra connections
+    # and the browser checks see "Failed to load resource:
+    # net::ERR_CONNECTION_RESET" from this QA server, not from the site.
+    request_queue_size = 128
 
 
 if __name__ == "__main__":
