@@ -586,7 +586,16 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
     # 1.0 (every token known) so a rare word beside an OOD one can't
     # sneak through.
     HIGH_IDF = max_idf * 0.55
-    matched_specifically = [t for t in qvec if idf.get(t, 0.0) >= HIGH_IDF]
+
+    def _share(t: str) -> float:
+        return max(0.0, (n + 1) / math.exp(idf[t]) - 0.5) / n if n else 0.0
+    # "Specific" = rare enough for the bypass (idf) OR below the breadth
+    # gate's share: the two thresholds are independent constants, and for
+    # some library sizes a sliver of shares fell between them (run #7's
+    # follow-up: COMPAS at 8.87% vs the 9% gate). The union closes it; a
+    # term above the gate's share still goes through the full gate.
+    matched_specifically = [t for t in qvec
+                            if idf.get(t, 0.0) >= HIGH_IDF or (t in idf and _share(t) <= in_br)]
     specific_hit = (coverage >= 0.95 and best > 0
                     and matched_specifically and breadth > 0)
 

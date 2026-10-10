@@ -259,7 +259,11 @@ export function search(index: SearchIndex, query: string, limit = 20,
   let specificHit = false;
   if (coverage >= 0.95 && best > 0 && breadth > 0) {
     for (const t of qvec.keys()) {
-      if ((idf[t] ?? 0) >= HIGH_IDF) { specificHit = true; break; }
+      // rare enough for the bypass OR below the breadth gate's share (the
+      // union closes the gap between the two; mirrors search_index.py)
+      const share = idf[t] !== undefined && nDocs
+        ? Math.max(0, (nDocs + 1) / Math.exp(idf[t]) - 0.5) / nDocs : 1;
+      if ((idf[t] ?? 0) >= HIGH_IDF || share <= inBr) { specificHit = true; break; }
     }
   }
 

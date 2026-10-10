@@ -233,6 +233,25 @@ submitted or published are never re-filtered. Proposed removals go to
   each failing day, closed on the first passing day, and reopened (never
   duplicated) if it fails again.
 
+## When a run's publish gates fail
+
+Paid work is never left only on the run's `grow/<date>` branch. Every paid
+step pushes `data/` to main straight away (checkpoints), so the branch holds
+only regenerated site files.
+
+- **Next run, automatically:** a branch whose data is already on main does
+  not hold back spending. The next run regenerates and publishes everything,
+  then records the branch as resolved. If the branch holds data that main
+  lacks and main has not touched those files, that data is brought to main
+  first. Only data that both sides changed (rare) holds back spending; the
+  Issue then says which files.
+- **Sooner, at zero spend, once the cause is fixed:** Actions → Weekly grow
+  → Run workflow → `republish_branch: grow/<date>` (leave everything else
+  as it is). It makes no API calls and leaves the ledger untouched. It
+  regenerates on main, runs every gate, and fast-forwards main only if all
+  pass. It then records the branch as resolved (never deleted) and closes
+  that run's Issue.
+
 ## Removing a paper from a library
 
 Write a spec like `data/removals/2026-10-10.json`, then run

@@ -21,8 +21,9 @@ build. Scenarios:
      refused; Issue says what to do (console_spent_inr / account_total_inr)
   7  a failing test: PREFLIGHT stops the run before any spend (exit 3), the
      Issue names the test, one marked failure block ends the log
-  8  an unmerged grow/* branch holds back new spending; once recorded in
-     data/grow/resolved_branches.json the run proceeds (branch kept)
+  8  a failed run's branch whose data is on main does not hold the next run
+     (recorded resolved on publish); one whose data conflicts with main holds
+     new spending until the owner records it resolved (branches never deleted)
   9  pause (config/growth.json) then resume
  10  daily health: site down -> Issue opened; site up -> Issue closed
  11  rotation week: a library never served (and owed its follow-on checks)
@@ -305,34 +306,56 @@ def main() -> int:
         sync_main()
         (WORK / "backend/tests/test_e2e_broken.py").unlink()
         commit_push("e2e: fix test", ["-A", "backend/tests"])
-        # an unmerged grow/* branch holds back new spending ...
+        # 8a: a failed run's branch whose paid data is already on main (the
+        #     usual case: checkpoints) does NOT hold the next run, which
+        #     republishes everything and records the branch resolved
         git("checkout", "-q", "-b", "grow/2026-11-20")
-        (WORK / "docs" / "e2e-branch-note.md").write_text("unmerged work\n")
-        commit_push_branch = ["docs/e2e-branch-note.md"]
-        git("add", *commit_push_branch)
-        git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m", "unmerged")
+        (WORK / "docs" / "e2e-branch-note.md").write_text("regenerated site files only\n")
+        git("add", "docs/e2e-branch-note.md")
+        git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m", "site only")
         git("push", "-q", "origin", "grow/2026-11-20")
         sync_main()
         d = "2026-11-23"
         jobs0 = len(list(MOCKST.glob("*.json")))
         r = run_weekly(d, GROW_GATES="skip")
         it = issue(d)
-        check(8, r.returncode == 0 and "starting nothing new" in it["body"],
-              "with an unmerged grow/* branch: runs, collects, starts nothing new", r.stdout[-300:])
+        sync_main()
+        resolved = json.loads((WORK / "data/grow/resolved_branches.json").read_text())["resolved"]
+        check(8, r.returncode == 0 and "starting nothing new" not in it["body"],
+              "a branch whose data is on main does not hold the next run", r.stdout[-300:])
+        check(8, len(list(MOCKST.glob("*.json"))) > jobs0, "new batches submitted as usual")
+        check(8, "grow/2026-11-20" in resolved and remote_head("grow/2026-11-20") is not None,
+              "recorded resolved when the run published; the branch still exists")
+        # 8b: a branch whose paid data CONFLICTS with main holds new spending
+        #     until the owner resolves it (never deleted)
+        note = WORK / "data" / "grow" / "e2e-note.json"
+        git("checkout", "-q", "-b", "grow/2026-11-21")
+        note.parent.mkdir(parents=True, exist_ok=True)
+        note.write_text('{"side": "branch"}')
+        git("add", str(note.relative_to(WORK)))
+        git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m", "branch data")
+        git("push", "-q", "origin", "grow/2026-11-21")
+        sync_main()
+        note.write_text('{"side": "main"}')
+        commit_push("e2e: main changes the same data file", [str(note.relative_to(WORK))])
+        d = "2026-11-24"
+        jobs0 = len(list(MOCKST.glob("*.json")))
+        r = run_weekly(d, GROW_GATES="skip")
+        it = issue(d)
+        check(8, r.returncode == 0 and "starting nothing new" in it["body"] and "grow/2026-11-21" in it["body"],
+              "a branch with conflicting data: runs, collects, starts nothing new", r.stdout[-300:])
         check(8, len(list(MOCKST.glob("*.json"))) == jobs0, "no new batch submitted")
-        # ... until it is recorded as resolved (branches are never deleted)
         sync_main()
         rb = WORK / "data" / "grow" / "resolved_branches.json"
-        reg = json.loads(rb.read_text()) if rb.exists() else {"resolved": {}}
-        reg["resolved"]["grow/2026-11-20"] = {"date": "2026-11-23", "reason": "e2e"}
-        rb.parent.mkdir(parents=True, exist_ok=True)
+        reg = json.loads(rb.read_text())
+        reg["resolved"]["grow/2026-11-21"] = {"date": "2026-11-24", "reason": "e2e: owner resolved"}
         rb.write_text(json.dumps(reg, indent=1))
-        commit_push("resolve grow/2026-11-20", [str(rb.relative_to(WORK))])
-        d = "2026-11-24"
+        commit_push("resolve grow/2026-11-21", [str(rb.relative_to(WORK))])
+        d = "2026-11-25"
         r = run_weekly(d, GROW_GATES="skip")
         check(8, r.returncode == 0 and "starting nothing new" not in issue(d)["body"]
-              and remote_head("grow/2026-11-20") is not None,
-              "recorded as resolved: runs normally again; the branch still exists")
+              and remote_head("grow/2026-11-21") is not None,
+              "recorded as resolved by the owner: runs normally again; the branch still exists")
         # 9 ---------------------------------------------------------------
         sync_main()
         g = json.loads((WORK / "config/growth.json").read_text())

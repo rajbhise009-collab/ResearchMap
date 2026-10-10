@@ -90,17 +90,22 @@ def test_core_terms_stay_in_domain_as_the_library_grows(slug):
         assert not bad, (slug, f"+{k} copies of each core topic's papers", bad)
 
 
-def test_demographic_parity_stays_in_domain_at_every_growth_step():
-    """The run #7 case, one paper at a time: more papers using the
-    library's core phrase must never make it LESS in-domain."""
+@pytest.mark.parametrize("query,prefix", [("demographic parity", "demographic par"), ("COMPAS", None),
+                                          ("equalized odds", None), ("disparate impact", None)])
+def test_core_terms_stay_in_domain_at_every_growth_step(query, prefix):
+    """One, two, ... twenty more papers using a core term must never make it
+    LESS in-domain. Run #7 found the gap with 'demographic parity'; the
+    growth simulation then found a narrower one with 'COMPAS' (a share
+    between the rare-term bypass and the 9% breadth gate)."""
     cards, papers = _inputs("ml-fairness")
-    donor = _donors(papers, "demographic parity")
-    assert donor, "no ML fairness paper uses the phrase"
-    for k in range(0, 11):
+    donor = _donors(papers, query)
+    assert donor, f"no ML fairness paper uses {query!r}"
+    for k in range(0, 21):
         idx = build_index(cards, _grow(papers, donor[:1], k))
-        r = search(idx, "demographic parity")
-        assert r["verdict"] == "in_domain", (k, r["verdict"], r["coverage"], r["best"], r["breadth"])
-        assert search(idx, "demographic par", expand_trailing=True)["verdict"] == "in_domain", k
+        r = search(idx, query)
+        assert r["verdict"] == "in_domain", (query, k, r["verdict"], r["coverage"], r["best"], r["breadth"])
+        if prefix:
+            assert search(idx, prefix, expand_trailing=True)["verdict"] == "in_domain", (prefix, k)
 
 
 @pytest.mark.parametrize("slug", GROWING)
