@@ -1,9 +1,9 @@
 {
  "what": "tools/grow/e2e_mock.py full run (every publish gate in scenarios 1, 2 and 7), mocked OpenAlex and Gemini, temporary ledger and money config, local stand-in for GitHub",
  "date": "2026-10-10",
- "tested_commit": "2be5c24901030ab8ff1b52b563a815c7dae1e79e",
+ "tested_commit": "88cc824edab4d0bd519c834b752df9871aa13a7d",
  "full": true,
- "passed": 56,
+ "passed": 64,
  "failed": 0,
  "scenarios": [
   "1",
@@ -11,6 +11,7 @@
   "11",
   "12",
   "13",
+  "14",
   "2",
   "3",
   "4",
