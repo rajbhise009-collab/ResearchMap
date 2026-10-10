@@ -226,6 +226,20 @@ export function search(index: SearchIndex, query: string, limit = 20,
     || ((a.type === "opportunity" ? 0 : 1) - (b.type === "opportunity" ? 0 : 1)));
   const best = hits.length ? hits[0].score : 0;
   const breadth = index.n_docs ? hits.length / index.n_docs : 0;
+  // Shipped documents keep only their top terms, so the hit count
+  // undercounts a term's reach. Its true document share comes back from its
+  // idf (inverse of build_index's formula); the breadth gate uses the larger
+  // of the two, so a library using its core term MORE never demotes it.
+  // Mirrors backend/app/api/search_index.py.
+  const nDocs = index.n_docs;
+  let termBreadth = 0;
+  if (nDocs) {
+    for (const t of qvec.keys()) {
+      const share = Math.max(0, (nDocs + 1) / Math.exp(idf[t]) - 0.5) / nDocs;
+      if (share > termBreadth) termBreadth = share;
+    }
+  }
+  const gateBreadth = Math.max(breadth, termBreadth);
 
   // Per-library gate thresholds carried on the index; the constants
   // above remain the fallback for an older index without them.
@@ -250,7 +264,7 @@ export function search(index: SearchIndex, query: string, limit = 20,
   }
 
   let verdict: SearchResult["verdict"];
-  if (coverage >= inCov && best >= inBest && breadth >= inBr) {
+  if (coverage >= inCov && best >= inBest && gateBreadth >= inBr) {
     verdict = "in_domain";
   } else if (specificHit) {
     verdict = "in_domain";

@@ -555,6 +555,17 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
     hits.sort(key=lambda h: (-h["score"], 0 if h["type"] == "opportunity" else 1))
     best = hits[0]["score"] if hits else 0.0
     breadth = len(hits) / index["n_docs"] if index["n_docs"] else 0.0
+    # Each shipped document keeps only its top terms (TOP_TERMS_PER_DOC), so
+    # the hit count undercounts how much of the library a term covers: a core
+    # phrase in 16 documents may sit in only 7 shipped vectors. The term's
+    # TRUE document share is recoverable from its idf (inverse of the formula
+    # in build_index). The breadth gate uses the larger of the two — still a
+    # lower bound on "share of documents with any query term", so a library
+    # using its own core term MORE can never make that term less in-domain.
+    n = index["n_docs"]
+    term_breadth = (max(max(0.0, (n + 1) / math.exp(idf[t]) - 0.5) / n for t in qvec)
+                    if (qvec and n) else 0.0)
+    gate_breadth = max(breadth, term_breadth)
 
     # Per-library gate thresholds live on the index; the LLM-cal-tuned
     # constants are the fallback for an older index without them.
@@ -579,7 +590,7 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
     specific_hit = (coverage >= 0.95 and best > 0
                     and matched_specifically and breadth > 0)
 
-    if coverage >= in_cov and best >= in_best and breadth >= in_br:
+    if coverage >= in_cov and best >= in_best and gate_breadth >= in_br:
         verdict = "in_domain"
     elif specific_hit:
         verdict = "in_domain"
@@ -606,6 +617,7 @@ def search(index: dict[str, Any], query: str, limit: int = 20,
 
     return {"verdict": verdict, "coverage": round(coverage, 4),
             "best": round(best, 5), "breadth": round(breadth, 4),
+            "term_breadth": round(term_breadth, 4),
             # Mirrors lib/search.ts: gaps and papers capped separately
             # (shown in separate sections), then merged in score order.
             "hits": sorted([h for h in hits if h["type"] == "opportunity"][:limit]
