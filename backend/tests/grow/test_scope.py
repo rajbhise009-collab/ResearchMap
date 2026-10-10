@@ -187,10 +187,13 @@ def test_paid_paper_outside_scope_is_collected_kept_and_not_published(tmp_path, 
     """A paper already paid for that fails the scope at collection (e.g. Diet
     W7221006525) is kept under scope_excluded, reported, never published,
     and never raises."""
-    import shutil
     slug = "diet-and-mortality"
     (tmp_path / slug).mkdir()
-    shutil.copy(DOM / slug / "prelabelled.json", tmp_path / slug / "prelabelled.json")
+    # A FROZEN fixture library (never the live prelabelled.json: the real
+    # weekly run collects this very paper, and a test reading live data then
+    # sees it as already known -> run #7's false failure)
+    (tmp_path / slug / "prelabelled.json").write_text(json.dumps(
+        {"entries": [], "removed": [], "scope_excluded": [], "n_kept": 0}))
     monkeypatch.setattr(core, "domains_dir", lambda: tmp_path)
     from backend.app.corpus import records as R
     monkeypatch.setattr(R, "append", lambda s, recs: None)

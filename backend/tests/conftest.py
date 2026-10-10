@@ -95,7 +95,7 @@ def _no_inherited_money_config(monkeypatch):
 _RUN_CONTROLS_AND_SECRETS = (
     # the weekly run's controls: a test must never inherit a SCHEDULED event
     # (or a manual run's inputs) from the run whose preflight is executing it
-    "GROW_EVENT", "GROW_RUN_BUDGET_INR", "GROW_BUILD_QUEUED", "GROW_GATES_ONLY", "GROW_ISSUE_MARKER",
+    "GROW_EVENT", "GROW_RUN_BUDGET_INR", "GROW_BUILD_QUEUED", "GROW_GATES_ONLY", "GROW_REPUBLISH", "GROW_ISSUE_MARKER",
     "GROW_FAIL_GATE", "GROW_STEPS", "WEEKLY_BUDGET_INR",
     # GitHub credentials (the API keys are BLANKED by _isolated_env above,
     # which beats .env; deleting them would let .env show through)

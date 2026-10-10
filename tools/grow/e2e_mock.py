@@ -31,6 +31,9 @@ build. Scenarios:
      kept on file, not published, listed in the Issue; the run is not blocked
  13  a publish gate fails after regeneration: site unchanged, paid work on
      main, grow/<date> branch, one marked failure block, Issue names the gate
+ 14  zero-spend REPUBLISH of that branch (manual, no keys): regenerated on
+     main, gates pass, main fast-forwarded, ledger untouched, branch kept and
+     recorded as resolved, the run's Issue closed
 
 --quick skips the publish gates except in scenario 7 (honoured only with
 GROW_MOCK=1). Every run takes the SCHEDULED path (event=schedule, empty
@@ -412,6 +415,21 @@ def main() -> int:
               "one marked failure block at the end of the log")
         check(13, "search regression suite" in it["body"] and "needs-action" in it["labels"],
               "the Issue names the failing gate and needs action")
+        # 14 republish -------------------------------------------------------
+        sync_main()
+        failed = f"grow/{d}"
+        pub_before, m, l_before = public_tree_sha("main"), remote_head(), ledger_inr()
+        jobs0 = len(list(MOCKST.glob("*.json")))
+        r = run_weekly("2026-12-29", GROW_EVENT="workflow_dispatch", GROW_REPUBLISH=failed, GROW_GATES="skip")
+        sync_main()
+        resolved = json.loads((WORK / "data/grow/resolved_branches.json").read_text())["resolved"]
+        it = issue(d)
+        check(14, r.returncode == 0 and "REPUBLISH" in r.stdout, "republish exits 0", r.stdout[-400:])
+        check(14, remote_head() != m and public_tree_sha("main") != pub_before, "main fast-forwarded, site updated")
+        check(14, ledger_inr() == l_before and len(list(MOCKST.glob("*.json"))) == jobs0,
+              "nothing spent, submitted or collected")
+        check(14, failed in resolved and remote_head(failed) is not None, "branch recorded as resolved and kept")
+        check(14, it.get("state") == "closed", "the failed run's Issue is closed", it.get("state"))
         # 10 --------------------------------------------------------------
         e = env("x", NEXT_PUBLIC_SITE_URL="http://127.0.0.1:9")
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=e)
