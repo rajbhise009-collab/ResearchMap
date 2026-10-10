@@ -194,8 +194,8 @@ def test_paid_paper_outside_scope_is_collected_kept_and_not_published(tmp_path, 
     monkeypatch.setattr(core, "domains_dir", lambda: tmp_path)
     from backend.app.corpus import records as R
     monkeypatch.setattr(R, "append", lambda s, recs: None)
-    pend = json.loads((DOM / slug / "grow" / "pending.json").read_text())
-    pairs = [(e, r) for e, r in zip(pend["entries"], pend["records"])]
+    fx = json.loads((Path(__file__).parent / "fixtures" / "scope_exclusion_w7221006525.json").read_text())
+    pairs = [(x["entry"], x["record"]) for x in fx["pairs"]]
     out: list[dict] = []
     added = core.add_to_library(slug, pairs, ref=dt.date(2026, 10, 12), excluded=out)
     after = json.loads((tmp_path / slug / "prelabelled.json").read_text())

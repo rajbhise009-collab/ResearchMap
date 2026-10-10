@@ -213,6 +213,7 @@ def test_gates_only_spends_nothing_and_publishes_nothing(monkeypatch, capsys):
     an Issue — even while growth is paused."""
     rw = _load_run_weekly()
     monkeypatch.setenv("GROW_GATES_ONLY", "true")
+    monkeypatch.setenv("GROW_EVENT", "workflow_dispatch")
     monkeypatch.setattr(rw, "paused", lambda: True)
     boom = lambda *a, **k: (_ for _ in ()).throw(AssertionError("must not be called"))  # noqa: E731
     for name in ("guards", "publish_bookkeeping", "publish_branch", "regenerate", "_reset_rest"):
@@ -238,6 +239,14 @@ def _gates_only_run(monkeypatch, tmp_path, pre, res):
     """Run gates_only with fake gate results; return (exit code, job summary)."""
     rw = _load_run_weekly()
     monkeypatch.setenv("GROW_GATES_ONLY", "true")
+    monkeypatch.setenv("GROW_EVENT", "workflow_dispatch")
+    # any fall-through to the live path must fail loudly, never run
+    boom = lambda *a, **k: (_ for _ in ()).throw(AssertionError("live path reached"))  # noqa: E731
+    import backend.app.grow.clients as C
+    import backend.app.grow.core as core_mod
+    monkeypatch.setattr(C, "make_clients", boom)
+    for fn in ("collect", "submit", "prepare", "followon"):
+        monkeypatch.setattr(core_mod, fn, boom)
     summary = tmp_path / "summary.md"
     monkeypatch.setenv("GITHUB_STEP_SUMMARY", str(summary))
     monkeypatch.setattr(rw, "_reset_rest", lambda: None)
@@ -405,3 +414,37 @@ def test_keepalive_acts_only_after_40_quiet_days():
     import datetime as _dt
     now = _dt.datetime.now(_dt.timezone.utc)
     assert k.quiet_days(now) >= 0
+
+
+def test_tests_never_see_a_scheduled_runs_controls_or_credentials():
+    """Inside the suite, the scheduled run's controls and credentials are
+    gone (conftest), so a test can never inherit a scheduled run's live path."""
+    import os
+    for k in ("GROW_EVENT", "GROW_GATES_ONLY", "GEMINI_API_KEY", "OPENALEX_API_KEY", "GH_TOKEN"):
+        assert k not in os.environ, k
+
+
+def test_gate_subprocesses_get_no_credentials(monkeypatch):
+    rw = _load_run_weekly()
+    monkeypatch.setenv("GEMINI_API_KEY", "x-test")
+    monkeypatch.setenv("GROW_EVENT", "schedule")
+    import sys as _sys
+    r = rw.sh([_sys.executable, "-c", "import os; print(os.environ.get('GEMINI_API_KEY'), os.environ.get('GROW_EVENT'))"],
+              no_secrets=True)
+    assert r.stdout.strip() == "None None"
+
+
+def test_live_run_refused_inside_pytest_when_credentials_are_present(monkeypatch):
+    """Raised before anything runs: no client, no bookkeeping, no reset."""
+    rw = _load_run_weekly()
+    monkeypatch.setenv("GEMINI_API_KEY", "x-test")
+    with pytest.raises(RuntimeError, match="refusing a live run inside pytest"):
+        rw.main()
+
+
+def test_no_git_writes_inside_pytest():
+    rw = _load_run_weekly()
+    for fn, args in ((rw.publish_main, ("2026-10-12",)), (rw.publish_bookkeeping, ("2026-10-12", "m")),
+                     (rw.publish_branch, ("2026-10-12", "m")), (rw._reset_rest, ())):
+        with pytest.raises(RuntimeError, match="refusing to write to git inside pytest"):
+            fn(*args)

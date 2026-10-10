@@ -92,6 +92,28 @@ def _no_inherited_money_config(monkeypatch):
 
 
 
+_RUN_CONTROLS_AND_SECRETS = (
+    # the weekly run's controls: a test must never inherit a SCHEDULED event
+    # (or a manual run's inputs) from the run whose preflight is executing it
+    "GROW_EVENT", "GROW_RUN_BUDGET_INR", "GROW_BUILD_QUEUED", "GROW_GATES_ONLY", "GROW_ISSUE_MARKER",
+    "GROW_FAIL_GATE", "GROW_STEPS", "WEEKLY_BUDGET_INR",
+    # credentials: the offline suite never sees a real key or token
+    "GEMINI_API_KEY", "OPENALEX_API_KEY", "ANTHROPIC_API_KEY", "SEMANTIC_SCHOLAR_API_KEY",
+    "GH_TOKEN", "GITHUB_TOKEN",
+)
+
+
+@pytest.fixture(autouse=True)
+def _no_run_controls_or_secrets(monkeypatch):
+    """Tests are hermetic: weekly-grow's preflight runs this suite inside a
+    scheduled run, whose environment holds GROW_EVENT=schedule and the API
+    keys. A test calling run_weekly.main() must never take the live path
+    with them (it once could have: a gates_only test fell through to a full
+    run inside pytest)."""
+    for k in _RUN_CONTROLS_AND_SECRETS:
+        monkeypatch.delenv(k, raising=False)
+
+
 @pytest.fixture(autouse=True)
 def _no_github_output_files(monkeypatch):
     """Tests never write to the workflow's own output files. On the runner

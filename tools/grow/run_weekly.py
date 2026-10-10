@@ -78,10 +78,31 @@ def say(msg: str) -> None:
     print(msg, flush=True)
 
 
+SECRET_ENV = ("GEMINI_API_KEY", "OPENALEX_API_KEY", "ANTHROPIC_API_KEY", "SEMANTIC_SCHOLAR_API_KEY",
+              "GH_TOKEN", "GITHUB_TOKEN")
+
+
+def _in_tests() -> bool:
+    return bool(os.environ.get("PYTEST_CURRENT_TEST"))
+
+
+def _no_git_writes_in_tests(what: str) -> None:
+    """Commits, pushes, checkouts and cleans never run inside a test process:
+    there ROOT is the developer's working tree (a test once reached the
+    error path and reset it). Tests patch these functions instead."""
+    if _in_tests():
+        raise RuntimeError(f"run_weekly.{what}: refusing to write to git inside pytest")
+
+
 def sh(cmd: list[str], *, cwd: Path = ROOT, check: bool = True, timeout: int | None = None,
-       env: dict | None = None) -> subprocess.CompletedProcess:
-    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=timeout,
-                       env={**os.environ, **(env or {})})
+       env: dict | None = None, no_secrets: bool = False) -> subprocess.CompletedProcess:
+    """no_secrets: the child gets no credentials and no run controls (tests,
+    builds and gates never need them)."""
+    full = {**os.environ, **(env or {})}
+    if no_secrets:
+        for k in (*SECRET_ENV, "GROW_EVENT", "GROW_RUN_BUDGET_INR", "GROW_BUILD_QUEUED", "GROW_GATES_ONLY"):
+            full.pop(k, None)
+    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=timeout, env=full)
     if check and r.returncode != 0:
         raise RuntimeError(redact(f"{' '.join(cmd[:4])} exited {r.returncode}: "
                                   f"{(r.stderr or r.stdout).strip()[-600:]}"))
@@ -217,7 +238,7 @@ def preflight_checks() -> list[dict]:
     for name, cmd, cwd in (("preflight: typecheck", ["npm", "run", "typecheck"], FE),
                            ("preflight: production build", ["npm", "run", "build"], FE),
                            ("preflight: full tests", [PY, "-m", "pytest", "backend/tests", "-q"], ROOT)):
-        r = sh(cmd, cwd=cwd, check=False, timeout=3600)
+        r = sh(cmd, cwd=cwd, check=False, timeout=3600, no_secrets=True)
         res.append(_gate_result(name, r))
         say(f"{'PASS' if r.returncode == 0 else 'FAIL'}: {name}")
         if r.returncode != 0:
@@ -258,7 +279,7 @@ def gates(*, after_preflight: bool = False) -> list[dict]:
         res = [{"gate": n, "ok": True, "tail": "", "failed": [], "note": "passed in preflight"}
                for n in ("typecheck", "production build (+ consistency before and after)", "full tests")]
     for name, cmd, cwd in steps:
-        r = sh(cmd, cwd=cwd, check=False, timeout=3600)
+        r = sh(cmd, cwd=cwd, check=False, timeout=3600, no_secrets=True)
         res.append(_gate_result(name, r))
         say(f"gate {'PASS' if r.returncode == 0 else 'FAIL'}: {name}")
     built = next(g["ok"] for g in res if g["gate"].startswith("production build"))
@@ -268,7 +289,7 @@ def gates(*, after_preflight: bool = False) -> list[dict]:
             res.append({"gate": name, "ok": False, "tail": "not run: the build failed"})
             continue
         r = _serve(lambda base: sh([PY, script, *extra] + ([base] if "smoke" in script else []),
-                                   check=False, timeout=3600, env={"HUNT_BASE": base}))
+                                   check=False, timeout=3600, env={"HUNT_BASE": base}, no_secrets=True))
         res.append(_gate_result(name, r))
         say(f"gate {'PASS' if r.returncode == 0 else 'FAIL'}: {name}")
     return res
@@ -562,6 +583,11 @@ def main() -> int:
     budget = core.Budget(0.0)
     mstat: dict = {}
     note = None
+    if _in_tests() and any(os.environ.get(k) for k in SECRET_ENV):
+        # a live run never starts inside a test process that holds credentials
+        # (the suite strips them; this is the last line). Raised BEFORE the
+        # try: no error path (bookkeeping commit, reset) may run either.
+        raise RuntimeError("run_weekly.main(): refusing a live run inside pytest with credentials present")
     try:
         if (os.environ.get("GROW_GATES_ONLY", "").lower() == "true"
                 and os.environ.get("GROW_EVENT", "workflow_dispatch") == "workflow_dispatch"):
@@ -937,6 +963,7 @@ def _identity() -> list[str]:
 
 
 def publish_main(date: str) -> str:
+    _no_git_writes_in_tests("publish_main")
     git("add", "-A")
     git(*_identity(), "commit", "-q", "-m", f"weekly grow {date}\n\nAutomated by .github/workflows/weekly-grow.yml; "
         f"see docs/releases/{date}.json and docs/CHANGELOG.md.")
@@ -965,6 +992,7 @@ def publish_bookkeeping(date: str, msg: str, *, keep_rest: bool = False) -> str 
     verdict logs, corpus files) to main and push, so paid work is never lost
     and the next run resumes. The public site (frontend/, docs/) is not
     touched. Unless keep_rest, the rest of the working tree is then reset."""
+    _no_git_writes_in_tests("publish_bookkeeping")
     git("add", "--", *BOOKKEEPING)
     if not git("diff", "--cached", "--name-only"):
         if not keep_rest:
@@ -982,11 +1010,13 @@ def publish_bookkeeping(date: str, msg: str, *, keep_rest: bool = False) -> str 
 
 
 def _reset_rest() -> None:
+    _no_git_writes_in_tests("_reset_rest")
     git("checkout", "--", ".")
     sh(["git", "clean", "-fdq", "--", "frontend/public", "docs"], check=False)
 
 
 def publish_branch(date: str, msg: str) -> str:
+    _no_git_writes_in_tests("publish_branch")
     branch = f"grow/{date}"
     git("checkout", "-q", "-B", branch)
     git("add", "-A")

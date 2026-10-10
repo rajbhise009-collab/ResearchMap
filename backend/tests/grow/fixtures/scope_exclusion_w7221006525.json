@@ -1,0 +1,32 @@
+{
+ "note": "copy of the Diet paper submitted on 2026-10-09 before the core-scope rule (data/domains/diet-and-mortality/grow/pending.json); fixed here so the test does not depend on the batch still being pending",
+ "pairs": [
+  {
+   "entry": {
+    "wid": "W7221006525",
+    "openalex_id": "https://openalex.org/W7221006525",
+    "title": "Comparative associations of six predefined dietary patterns with site-specific cancer risk in the UK Biobank",
+    "year": 2026,
+    "doi": "https://doi.org/10.3389/fnut.2026.1976233",
+    "venue": "Frontiers in Nutrition",
+    "field": "medicine",
+    "cited_by_count": 0,
+    "abstract": "Background Previous studies on diet and cancer have mainly examined individual dietary indices in relation to specific cancer outcomes, limiting direct comparison across dietary patterns. A unified population with consistent adjustment and standardized dietary-index scales is needed to explore whether different dietary patterns show different statistical associations with each specific cancer outcome. Methods We included 118,056 cancer-free UK Biobank participants with at least two valid 24-h dietary assessments. Six predefined dietary indices were evaluated: DRLCD, aMED, AHEI-2010, DASH, CDAI, and E-DII. All indices were standardized to enable direct comparison. Progressively adjusted Cox regression models and 1-, 3-, and 5-year lagged sensitivity analyses were used as the primary analysis to identify the most stable diet\u2013cancer outcome pairs. In the exploratory analysis, after excluding potential non-linear associations, standardized dietary indices were compared for colorectal, kidney, and lung cancers in the overall population and high genetic risk group to compare the direction and magnitude of associations across dietary patterns for each cancer outcome. Results Eleven robust diet\u2013cancer associations were identified. AHEI-2010 and DASH were inversely associated with colorectal cancer; AHEI-2010, aMED, CDAI, DASH, and reversed E-DII were inversely associated with kidney cancer; AHEI-2010, aMED, and reversed E-DII were inversely associated with lung cancer; and reversed E-DII was associated with lower overall cancer risk. DRLCD showed no robust association. In cross-index comparisons, the lowest HRs in the overall population were for DASH (colorectal cancer), reversed E-DII (kidney cancer), and AHEI-2010 (lung cancer); in the higher PRS group, they were for DASH (colorectal cancer), AHEI-2010 (kidney cancer), and reversed E-DII (lung cancer). However, bootstrap pairwise comparisons were not statistically significant, suggesting directional trends, not evidence of superiority. Conclusion We identified significant and stable diet\u2013cancer risk associations and observed differences in the direction or magnitude of associations across dietary indices. Because bootstrap pairwise comparisons were not statistically significant, these findings should be interpreted as directional trends and hypothesis-generating, not as evidence of a definitively optimal dietary strategy or dietary superiority.",
+    "label": "on-domain",
+    "rationale": "strong term in title: 'dietary pattern' + pair anywhere: 'colorectal cancer'",
+    "domain_centrality": "core",
+    "added_by": "weekly-grow",
+    "added_on": "2026-10-09",
+    "found_via": "snowball",
+    "found_via_detail": "cites papers in this library",
+    "input_source": "abstract_only",
+    "fulltext_source": null,
+    "abstract_only": true
+   },
+   "record": {
+    "id": "https://openalex.org/W7221006525",
+    "title": "Comparative associations of six predefined dietary patterns with site-specific cancer risk in the UK Biobank"
+   }
+  }
+ ]
+}
