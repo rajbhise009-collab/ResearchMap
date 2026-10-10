@@ -1,0 +1,119 @@
+{
+ "date": "2026-10-10",
+ "parent_commit": "5b1e6e90008cb61c6ff116e9f0e2dea83eccce95",
+ "libraries": {
+  "llm-calibration": {
+   "papers": 113,
+   "results": 66,
+   "set_aside": 10,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "705562e364fd56bb34e524243a9676ce4d3031d16499db1056d2d993eee3755d"
+  },
+  "diet-and-mortality": {
+   "papers": 101,
+   "results": 11,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "83267e6f72e70ac69df190a443198d851a8a8ef89981bd0bad3c3cf75484df34"
+  },
+  "ml-fairness": {
+   "papers": 102,
+   "results": 58,
+   "set_aside": 3,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "1f4b14876ec9a6d9bef3b4de42ae4a0074e1f48dc14694be09a9d11c61e67979"
+  },
+  "social-media-teen-mental-health": {
+   "papers": 101,
+   "results": 30,
+   "set_aside": 4,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "910d6b17322597a1521f45a7dc44ad0e2d121f171ef6ee59d599e827369f74dc"
+  }
+ },
+ "ledger_inr": 1174.8901,
+ "ledger_cap_inr": 1450.0,
+ "gates": [
+  {
+   "gate": "typecheck",
+   "ok": true
+  },
+  {
+   "gate": "production build (+ consistency before and after)",
+   "ok": true
+  },
+  {
+   "gate": "full tests",
+   "ok": true
+  },
+  {
+   "gate": "docs check",
+   "ok": true
+  },
+  {
+   "gate": "consistency script",
+   "ok": true
+  },
+  {
+   "gate": "banned-phrase tests",
+   "ok": true
+  },
+  {
+   "gate": "search regression suite",
+   "ok": true
+  },
+  {
+   "gate": "hardening tests (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "browser hunt (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "smoke checks on the build",
+   "ok": true
+  }
+ ],
+ "results_changed": {
+  "llm-calibration": {
+   "shown_before": 66,
+   "shown_after": 66,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "diet-and-mortality": {
+   "shown_before": 11,
+   "shown_after": 11,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "ml-fairness": {
+   "shown_before": 58,
+   "shown_after": 58,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "social-media-teen-mental-health": {
+   "shown_before": 32,
+   "shown_after": 30,
+   "removed_shown": [
+    {
+     "id": "opp-social-media-teen-mental-health-orphan-openalex-w2118360093-f1",
+     "headline": "Develop research designs specifically capable of addressing causal relationships between media use, face-to-face interaction, and socioemotional well-being.",
+     "reason": "open question answered: the later paper W7220393051 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)"
+    },
+    {
+     "id": "opp-social-media-teen-mental-health-orphan-openalex-w2531561814-f3",
+     "headline": "Repeat the systematic review in five years to evaluate how evolving platform functionalities alter the relationship between SNS use and depression.",
+     "reason": "open question answered: the later paper W7220393051 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)"
+    }
+   ],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  }
+ }
+}

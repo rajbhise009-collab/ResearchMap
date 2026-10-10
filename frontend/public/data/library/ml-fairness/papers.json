@@ -1,5 +1,5 @@
 {
-  "total": 101,
+  "total": 102,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1108,6 +1108,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.1007/s44217-026-02221-2",
       "venue": "Discover Education",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7219660580",
+      "wid": "W7219660580",
+      "title": "Deep Learning\u2013Driven Chest Radiography: An Integrated Framework for Image Enhancement, Automated Diagnosis, and Fairness Optimization",
+      "year": 2026,
+      "doi": "https://doi.org/10.48084/etasr.18255",
+      "venue": "Engineering Technology & Applied Science Research",
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
