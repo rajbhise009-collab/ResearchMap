@@ -253,7 +253,8 @@ def gates(*, after_preflight: bool = False) -> list[dict]:
     return res
 
 
-def fingerprint(date: str, gate_res: list[dict] | None, ledger: tuple[float, float]) -> Path:
+def fingerprint(date: str, gate_res: list[dict] | None, ledger: tuple[float, float],
+                diff: dict | None = None) -> Path:
     facts = {l["slug"]: l for l in json.loads((DATA / "site-facts.json").read_text())["libraries"]}
     libs = {}
     for slug, d in libs_built():
@@ -269,6 +270,10 @@ def fingerprint(date: str, gate_res: list[dict] | None, ledger: tuple[float, flo
         "date": date, "parent_commit": git("rev-parse", "HEAD"), "libraries": libs,
         "ledger_inr": round(ledger[0], 4), "ledger_cap_inr": ledger[1],
         "gates": [{"gate": g["gate"], "ok": g["ok"]} for g in gate_res] if gate_res else None,
+        # the permanent record of every result that left, with its reason
+        "results_changed": {slug: {k: d[k] for k in ("shown_before", "shown_after", "removed_shown",
+                                                     "removed_not_shown", "verdict_changed")}
+                            for slug, d in (diff or {}).items()} or None,
     }, indent=1) + "\n")
     return p
 
@@ -281,18 +286,92 @@ def changelog(date: str, lines: list[str]) -> None:
     p.write_text(head + f"\n## {date}\n\n" + "\n".join(f"- {l}" for l in lines) + "\n" + body)
 
 
+SHOWN = (None, "genuine")       # verdicts a reader sees as a result
+UNEXPLAINED = "UNEXPLAINED"
+
+
+def _fw_addressal(slug: str, fw_id: str) -> dict | None:
+    """The recorded verdict that a later paper addresses this future-work
+    item (addressed or partial), if any."""
+    p = ROOT / "data" / "domains" / slug / "reasoning" / "fw_addressals.jsonl"
+    if not p.exists():
+        return None
+    hit = None
+    for ln in p.read_text().splitlines():
+        if ln.strip():
+            r = json.loads(ln)
+            if r.get("future_work_id") == fw_id and r.get("label") in ("addressed", "partial"):
+                hit = r
+    return hit
+
+
+def removal_reason(slug: str, item_slug: str) -> str:
+    """Why a result left the library, from the recorded data and the rule
+    that applies. UNEXPLAINED when no rule accounts for it."""
+    m = re.search(r"-orphan-(openalex)-(w\d+)-(f\d+)$", item_slug)
+    if m:
+        fw = f"{m.group(1)}:{m.group(2).upper()}:{m.group(3)}"
+        r = _fw_addressal(slug, fw)
+        if r:
+            return (f"open question answered: the later paper {r['to_paper_id'].split(':')[-1]} was judged to "
+                    f"address it ({r['label']}); an open question a later paper addresses is no longer open "
+                    "(docs/opportunity-criteria.md)")
+        return UNEXPLAINED
+    if re.search(r"-hole-w\d+-w\d+$", item_slug):
+        return ("method-transfer candidates are recomputed every run from the library's paper clusters; "
+                "with the new papers this pair is no longer a candidate")
+    return UNEXPLAINED
+
+
 def diff_items(before, after) -> dict:
+    """Per library: what appeared and what left, with a reason for every
+    item that left. Counts add up: shown_before + new_results (+ new flagged
+    shown later) - removed_shown + promoted - demoted = shown_after."""
     out = {}
     for slug in after:
         b, a = before.get(slug, {}), after[slug]
         new = [s for s in a if s not in b]
+        gone = [s for s in b if s not in a]
         out[slug] = {
-            "new_results": [a[s]["headline"] for s in new if a[s]["verdict"] in (None, "genuine")],
+            "shown_before": sum(1 for s in b if b[s]["verdict"] in SHOWN),
+            "shown_after": sum(1 for s in a if a[s]["verdict"] in SHOWN),
+            "new_results": [a[s]["headline"] for s in new if a[s]["verdict"] in SHOWN],
             "new_flagged": [(s, a[s]["headline"]) for s in new if a[s]["verdict"] == "unaudited"],
-            "new_set_aside": [a[s]["headline"] for s in new if a[s]["verdict"] not in (None, "genuine", "unaudited")],
-            "removed": [b[s]["headline"] for s in b if s not in a],
+            "new_set_aside": [a[s]["headline"] for s in new if a[s]["verdict"] not in (*SHOWN, "unaudited")],
+            "removed_shown": [{"id": s, "headline": b[s]["headline"], "reason": removal_reason(slug, s)}
+                              for s in gone if b[s]["verdict"] in SHOWN],
+            "removed_not_shown": [{"id": s, "headline": b[s]["headline"], "was": b[s]["verdict"],
+                                   "reason": removal_reason(slug, s)} for s in gone if b[s]["verdict"] not in SHOWN],
+            "verdict_changed": [{"id": s, "from": b[s]["verdict"], "to": a[s]["verdict"]}
+                                for s in a if s in b and a[s]["verdict"] != b[s]["verdict"]],
         }
+        # back-compat key: every removed id (shown or not)
+        out[slug]["removed"] = [r["headline"] for r in out[slug]["removed_shown"] + out[slug]["removed_not_shown"]]
     return out
+
+
+def diff_lines(diff: dict) -> list[str]:
+    """Changelog/Issue lines: shown counts before -> after, and every item
+    that left with its reason."""
+    L = []
+    for slug, d in diff.items():
+        if slug == "llm-calibration" and not (d["new_results"] or d["removed"]):
+            continue
+        L.append(f"{slug}: results shown {d['shown_before']} -> {d['shown_after']} "
+                 f"(+{len(d['new_results'])} new, -{len(d['removed_shown'])} no longer shown); "
+                 f"{len(d['new_flagged'])} flagged disagreements (not yet checked)"
+                 + (f"; {len(d['removed_not_shown'])} set-aside item(s) dropped (never shown)"
+                    if d["removed_not_shown"] else ""))
+        for r in d["removed_shown"]:
+            L.append(f"  - no longer shown: {r['id']} — {r['reason']}")
+        for r in d["removed_not_shown"]:
+            L.append(f"  - dropped (was {r['was']}, never shown): {r['id']} — {r['reason']}")
+    return L
+
+
+def unexplained(diff: dict) -> list[str]:
+    return [r["id"] for d in (diff or {}).values() for r in d.get("removed_shown", []) + d.get("removed_not_shown", [])
+            if r["reason"] == UNEXPLAINED]
 
 
 def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, branch=None,
@@ -338,9 +417,16 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
         L += ["## New on the site", ""]
         for slug, d in diff.items():
             if d["new_results"] or d["new_set_aside"] or d["removed"]:
-                L.append(f"- {slug}: {len(d['new_results'])} new results, {len(d['new_set_aside'])} set aside, "
-                         f"{len(d['removed'])} no longer shown")
-                L += [f"  - {h}" for h in d["new_results"][:20]]
+                L.append(f"- {slug}: results shown {d['shown_before']} → {d['shown_after']}: "
+                         f"{len(d['new_results'])} new, {len(d['removed_shown'])} no longer shown; "
+                         f"{len(d['new_set_aside'])} new set aside; "
+                         f"{len(d['removed_not_shown'])} set-aside item(s) dropped (never shown)")
+                L += [f"  - new: {h}" for h in d["new_results"][:20]]
+                L += [f"  - no longer shown: {r['headline']} (`{r['id']}`) — {r['reason']}" for r in d["removed_shown"]]
+                L += [f"  - dropped, never shown: `{r['id']}` — {r['reason']}" for r in d["removed_not_shown"]]
+        if unexplained(diff):
+            L += ["", "**Results left without a recorded reason (needs your look):** "
+                  + ", ".join(f"`{x}`" for x in unexplained(diff))]
         if not any(d["new_results"] or d["new_set_aside"] or d["removed"] for d in diff.values()):
             L.append("- nothing new")
         L.append("")
@@ -562,12 +648,11 @@ def main() -> int:
     added = {r["slug"]: len(r.get("added", [])) for r in p1}
     changelog(date, [f"{s_}: {n} papers added" for s_, n in added.items()]
               + [f"new library {b['slug']}: {b['status']}" for b in builds]
-              + [f"{s_}: {len(d['new_results'])} new results, {len(d['new_flagged'])} flagged disagreements "
-                 "(not yet checked)" for s_, d in diff.items() if s_ != "llm-calibration"]
+              + diff_lines(diff)
               + [f"spend recorded ₹{l1[0] - l0[0]:.2f}; remaining ₹{mstat['remaining_inr']:.2f}"])
-    fingerprint(date, None, l1)
+    fingerprint(date, None, l1, diff)
     gate_res = gates()
-    fingerprint(date, gate_res, l1)
+    fingerprint(date, gate_res, l1, diff)
     ok = all(g["ok"] for g in gate_res)
     live = None
     if ok:
@@ -591,7 +676,7 @@ def main() -> int:
     body = issue_body(date, status, p1=p1, p2=p2, diff=diff, spent=l1[0] - l0[0], ledger=l1,
                       budget=budget, gate_res=gate_res, branch=branch, live=live, money=mstat,
                       builds=builds, note=note)
-    needs = not ok or (live is not None and not live[0]) or bool(note)
+    needs = not ok or (live is not None and not live[0]) or bool(note) or bool(unexplained(diff))
     labels = ["weekly-grow"] + (["needs-action"] if needs else [])
     say(f"issue: {issues.upsert(title, body, labels)}")
     block = failure_block(gate_res)

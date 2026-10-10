@@ -180,6 +180,43 @@ runs the suite, then the same suite the way the runner sees it:
 With `CI=1` the safety tests (distress handling, banned phrases,
 consistency, money rule, no full text) are not allowed to skip.
 
+## What weekly growth admits
+
+A candidate is added only if:
+
+- the domain rubric labels it **on-domain** (borderline papers are
+  excluded); and
+- it meets the domain's **core scope** (`backend/app/grow/scope.py`,
+  deterministic):
+  - **Diet:** a mortality or survival outcome that the paper reports;
+  - **Social media:** adolescents or young people, plus a mental-health
+    outcome;
+  - **ML fairness:** fairness of algorithmic decisions.
+
+A library without a core scope is not grown unattended. Papers already
+submitted or published are never re-filtered. Proposed removals go to
+`docs/proposals/` for approval.
+
+## Results that leave a library
+
+Every weekly run records each result that leaves, together with the rule
+that removed it, in three places:
+
+- the Issue;
+- `docs/CHANGELOG.md`;
+- `docs/releases/<date>.json` (`results_changed`).
+
+The rules are:
+
+- **Open question answered:** a later paper was judged to address it
+  (`fw_addressals.jsonl`).
+- **Method-transfer candidates recomputed:** each run rebuilds them from the
+  paper clusters.
+
+Counts separate results that were shown from set-aside items that were never
+shown. A removal that no rule explains is listed as **UNEXPLAINED**, and the
+Issue is labelled `needs-action`.
+
 ## Money already committed: pending batches
 
 A batch submitted but not yet collected is not in the ledger yet. The

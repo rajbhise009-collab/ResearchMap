@@ -50,11 +50,10 @@ def _phrase(slug):
     """A settled search for a library without a hand-picked one: its most
     distinctive title phrase that the search answers in_domain."""
     sys.path.insert(0, str(ROOT))
-    sys.path.insert(0, str(ROOT / "backend" / "tests" / "api"))
     from backend.app.api.search_index import search
-    import test_search_autogen as A
-    for q in A.queries(slug):
-        if search(A.INDEX[slug], q)["verdict"] == "in_domain":
+    from backend.app.api.search_phrases import INDEX, queries   # stdlib only (no pytest)
+    for q in queries(slug):
+        if search(INDEX[slug], q)["verdict"] == "in_domain":
             return q
     return slug.replace("-", " ")
 

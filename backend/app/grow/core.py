@@ -228,6 +228,7 @@ def select(slug: str, cands: list[dict], records: dict[str, dict], *,
 
     from backend.app.corpus.multi_domain import _abstract_of, classify
     from backend.app.corpus.multi_domain_reason import DOMAINS   # short and full slugs
+    from backend.app.grow.scope import core_scope
     from backend.app.ingestion.normalizer import deduplicate, from_openalex, normalize_title
     from backend.app.refresh.weekly_candidates import Candidate, _dedupe_candidates
     cfg = DOMAINS[slug]
@@ -247,10 +248,14 @@ def select(slug: str, cands: list[dict], records: dict[str, dict], *,
             drops["record not returned"] += 1
             continue
         label, why = classify(rec, abstract=_abstract_of(rec), config=cfg)
-        if label != "on-domain":
+        if label != "on-domain":                 # borderline is excluded from weekly growth
             drops[f"rubric: {label}"] += 1
             continue
-        kept.append((_entry(rec, c, label, why, ref), rec))
+        ok, scope_why = core_scope(slug, rec.get("title") or rec.get("display_name") or "", _abstract_of(rec))
+        if not ok:                               # the domain's core population and outcome
+            drops["outside the core scope"] += 1
+            continue
+        kept.append((_entry(rec, c, label, f"{why}; core scope: {scope_why}", ref), rec))
 
     # 1. candidate rule (wid, DOI, title+year, title>=25 chars)
     cobjs = [Candidate(wid=e["wid"], title=e["title"] or "", year=e["year"],

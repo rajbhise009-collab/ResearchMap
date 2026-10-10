@@ -294,3 +294,82 @@ def test_tests_never_see_the_workflow_output_files():
     import os
     for k in ("GITHUB_STEP_SUMMARY", "GITHUB_OUTPUT", "GITHUB_ENV", "GITHUB_PATH", "GITHUB_STATE"):
         assert k not in os.environ, k
+
+
+def _snap(**items):
+    return {k.replace("_", "-"): {"headline": f"h {k}", "verdict": v, "kind": "x"} for k, v in items.items()}
+
+
+def test_every_removed_result_has_a_reason_and_counts_add_up(monkeypatch, tmp_path):
+    """A result never disappears silently: each one that leaves carries the
+    rule that removed it; shown counts before/after match the arithmetic;
+    set-aside items that drop are not reported as 'no longer shown'."""
+    rw = _load_run_weekly()
+    monkeypatch.setattr(rw, "ROOT", tmp_path)
+    d = tmp_path / "data" / "domains" / "lib" / "reasoning"
+    d.mkdir(parents=True)
+    (d / "fw_addressals.jsonl").write_text(
+        '{"future_work_id": "openalex:W1:f1", "to_paper_id": "openalex:W9", "label": "partial"}\n'
+        '{"future_work_id": "openalex:W2:f1", "to_paper_id": "openalex:W9", "label": "not_addressed"}\n')
+    before = {"lib": {"opp-lib-orphan-openalex-w1-f1": {"headline": "answered", "verdict": None, "kind": "o"},
+                      "opp-lib-orphan-openalex-w3-f1": {"headline": "kept", "verdict": None, "kind": "o"},
+                      "opp-lib-hole-w4-w5": {"headline": "hole", "verdict": "set_aside", "kind": "m"}}}
+    after = {"lib": {"opp-lib-orphan-openalex-w3-f1": {"headline": "kept", "verdict": None, "kind": "o"},
+                     "opp-lib-orphan-openalex-w6-f2": {"headline": "new", "verdict": None, "kind": "o"}}}
+    x = rw.diff_items(before, after)["lib"]
+    assert (x["shown_before"], x["shown_after"]) == (2, 2)
+    assert x["shown_before"] + len(x["new_results"]) - len(x["removed_shown"]) == x["shown_after"]
+    assert [r["id"] for r in x["removed_shown"]] == ["opp-lib-orphan-openalex-w1-f1"]
+    assert "W9" in x["removed_shown"][0]["reason"] and "partial" in x["removed_shown"][0]["reason"]
+    assert [r["id"] for r in x["removed_not_shown"]] == ["opp-lib-hole-w4-w5"]
+    assert "clusters" in x["removed_not_shown"][0]["reason"]
+    lines = "\n".join(rw.diff_lines({"lib": x}))
+    assert "results shown 2 -> 2 (+1 new, -1 no longer shown)" in lines
+    assert "never shown" in lines and rw.unexplained({"lib": x}) == []
+
+
+def test_a_result_leaving_without_a_recorded_reason_is_flagged(monkeypatch, tmp_path):
+    """An open question whose removal no addressal explains (and any kind no
+    rule covers) is UNEXPLAINED: listed in the Issue and marks needs-action."""
+    rw = _load_run_weekly()
+    monkeypatch.setattr(rw, "ROOT", tmp_path)
+    before = {"lib": {"opp-lib-orphan-openalex-w1-f1": {"headline": "a", "verdict": None, "kind": "o"},
+                      "opp-contra-lib-01-x-y": {"headline": "b", "verdict": "genuine", "kind": "d"}}}
+    diff = rw.diff_items(before, {"lib": {}})
+    assert sorted(rw.unexplained(diff)) == ["opp-contra-lib-01-x-y", "opp-lib-orphan-openalex-w1-f1"]
+    body = rw.issue_body("2026-10-12", "published", p1=[], p2=[], diff=diff, spent=0.0, ledger=(0.0, 0.0),
+                         budget=rw_budget(), gate_res=None)
+    assert "without a recorded reason" in body and "opp-lib-orphan-openalex-w1-f1" in body
+
+
+def test_run5_accounting_replays_with_a_reason_for_every_change():
+    """Replays weekly-grow run #5 (954ce65 -> 9fa4dc9) from git: Diet 12 -> 11
+    (one open question answered by W7220864522), ML fairness 55 -> 60 (+5,
+    two set-aside method transfers dropped, never shown), Social media
+    32 -> 32 (one set-aside method transfer dropped, never shown)."""
+    import json as _json
+    import subprocess as _sp
+    rw = _load_run_weekly()
+    if _sp.run(["git", "cat-file", "-e", "9fa4dc9^{commit}"], cwd=rw.ROOT, capture_output=True).returncode:
+        pytest.skip("history not available in this checkout (shallow clone)")
+
+    def snap(rev):
+        out = {}
+        for slug in ("diet-and-mortality", "ml-fairness", "social-media-teen-mental-health"):
+            raw = _sp.run(["git", "show", f"{rev}:frontend/public/data/library/{slug}/opportunities.json"],
+                          cwd=rw.ROOT, capture_output=True, text=True).stdout
+            out[slug] = {i["slug"]: {"headline": i["consumer"]["headline"], "verdict": i.get("verdict"),
+                                     "kind": i["consumer"]["kind_id"]} for i in _json.loads(raw)["items"]}
+        return out
+    d = rw.diff_items(snap("954ce65"), snap("9fa4dc9"))
+    got = {s: (x["shown_before"], len(x["new_results"]), len(x["removed_shown"]), len(x["removed_not_shown"]),
+               x["shown_after"]) for s, x in d.items()}
+    assert got == {"diet-and-mortality": (12, 0, 1, 0, 11), "ml-fairness": (55, 5, 0, 2, 60),
+                   "social-media-teen-mental-health": (32, 0, 0, 1, 32)}
+    assert rw.unexplained(d) == []
+    assert "W7220864522" in d["diet-and-mortality"]["removed_shown"][0]["reason"]
+
+
+def rw_budget():
+    from backend.app.grow.core import Budget
+    return Budget(0.0)

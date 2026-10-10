@@ -59,8 +59,12 @@ class MockOpenAlex:
         pre = json.loads((domains_dir() / slug / "prelabelled.json").read_text())
         snow = records.load(slug)
         recs = {_wid(r["id"]): r for r in snow["records"]}
+        from backend.app.grow.scope import core_scope
+        # planted duplicates copy library papers that pass the rubric AND the
+        # core scope, so they reach (and must be caught by) the dedupe steps
         core = [recs[e["wid"]] for e in pre["entries"]
-                if e.get("label") == "on-domain" and e["wid"] in recs and e.get("abstract")]
+                if e.get("label") == "on-domain" and e["wid"] in recs and e.get("abstract")
+                and core_scope(slug, e.get("title") or "", e.get("abstract"))[0]]
         out = []
 
         def mk(src, i, title, doi=None):
@@ -82,7 +86,9 @@ class MockOpenAlex:
         a, t, st = cfg.anchor_terms[0], cfg.topic_terms[0], cfg.strong_topic_terms[0]
         pair = (cfg.pair_terms or (t,))[0]
         def synth(r, tag):
-            text = (f"We examined {st} and {pair} in test cohort {tag}. "
+            # "among adolescents": weekly growth also requires each domain's core
+            # population and outcome (backend/app/grow/scope.py)
+            text = (f"We examined {st} and {pair} among adolescents in test cohort {tag}. "
                     f"The {a} measure and {t} were recorded for every participant.")
             r["abstract_inverted_index"] = {}
             for pos, w in enumerate(text.split()):
