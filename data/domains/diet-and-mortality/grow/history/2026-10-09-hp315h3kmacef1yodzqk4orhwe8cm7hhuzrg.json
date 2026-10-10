@@ -4,7 +4,7 @@
  "submitted_on": "2026-10-09",
  "submitted_at": 1791571863.6467533,
  "projected_inr": 0.939771,
- "ledger_recorded": false,
+ "ledger_recorded": true,
  "input_source": {
   "openalex:W7221006525": "abstract"
  },
@@ -1895,5 +1895,20 @@
    "updated_date": "2026-10-09T09:14:12.587421",
    "created_date": "2026-10-09T00:00:00"
   }
- ]
+ ],
+ "recorded_inr": 1.383102,
+ "outcome": {
+  "state": "BATCH_STATE_SUCCEEDED",
+  "collected_on": "2026-10-10",
+  "added": [],
+  "failed": [],
+  "scope_excluded": [
+   {
+    "wid": "W7221006525",
+    "title": "Comparative associations of six predefined dietary patterns with site-specific cancer risk in the UK Biobank",
+    "reason": "no mortality or survival outcome: not in the title, and no abstract sentence reports one (a background mention does not count)",
+    "collected_on": "2026-10-10"
+   }
+  ]
+ }
 }

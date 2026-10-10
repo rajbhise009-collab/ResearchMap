@@ -4,7 +4,7 @@
  "submitted_on": "2026-10-09",
  "submitted_at": 1791571866.1376653,
  "projected_inr": 2.5271820000000003,
- "ledger_recorded": false,
+ "ledger_recorded": true,
  "input_source": {
   "openalex:W7219660580": "fulltext"
  },
@@ -1206,5 +1206,15 @@
    "updated_date": "2026-10-06T10:28:23.643775",
    "created_date": "2026-10-05T00:00:00"
   }
- ]
+ ],
+ "recorded_inr": 1.856169,
+ "outcome": {
+  "state": "BATCH_STATE_SUCCEEDED",
+  "collected_on": "2026-10-10",
+  "added": [
+   "openalex:W7219660580"
+  ],
+  "failed": [],
+  "scope_excluded": []
+ }
 }

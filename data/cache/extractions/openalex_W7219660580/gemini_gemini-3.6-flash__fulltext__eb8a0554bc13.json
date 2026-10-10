@@ -1,0 +1,195 @@
+{
+  "paper_id": "openalex:W7219660580",
+  "claims": [
+    {
+      "id": "openalex:W7219660580:c1",
+      "paper_id": "openalex:W7219660580",
+      "text": "The proposed enhancement framework improves PSNR on NIH CXR8 from 22.37 dB to 30.45 dB compared to raw inputs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219660580:c2",
+      "paper_id": "openalex:W7219660580",
+      "text": "The proposed enhancement framework improves SSIM on NIH CXR8 from 0.65 to 0.88 compared to raw inputs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219660580:c3",
+      "paper_id": "openalex:W7219660580",
+      "text": "The full framework achieves 92.4% classification accuracy and 0.937 AUC on the NIH ChestX-ray8 test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219660580:c4",
+      "paper_id": "openalex:W7219660580",
+      "text": "The full framework achieves a Demographic Parity Difference (DPD) of 0.05 and Equalized Odds (EO) of 0.07 on the NIH ChestX-ray8 test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219660580:c5",
+      "paper_id": "openalex:W7219660580",
+      "text": "When trained on NIH ChestX-ray8 and tested on CheXpert without retraining, the proposed framework achieves an AUC of 0.912 compared to 0.887 for baseline DenseNet.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219660580:c6",
+      "paper_id": "openalex:W7219660580",
+      "text": "Intersectional fairness analysis for Female ≥60 vs. Male <40 subgroups shows DPD reduction from 0.14 to 0.06 and EO reduction from 0.17 to 0.08 after applying SCL.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219660580:c7",
+      "paper_id": "openalex:W7219660580",
+      "text": "The proposed framework obtains lower AUC and F1-scores for Infiltration (AUC 0.752, F1 0.609), Pneumonia (AUC 0.791, F1 0.639), Consolidation (AUC 0.812, F1 0.651), and Nodule (AUC 0.803, F1 0.658) than for visually distinct conditions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7219660580:c8",
+      "paper_id": "openalex:W7219660580",
+      "text": "Supervised Contrastive Learning (SCL) utilizes demographic group labels exclusively to build cross-demographic positive pairs sharing pathology labels during training, omitting sensitive attributes during inference.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7219660580:e1",
+      "claim_id": "openalex:W7219660580:c1",
+      "description": "Table IV reports PSNR of 22.37 dB for Raw Input and 30.45 dB for Proposed (NAMF + CLAHE + Drago) on NIH CXR8.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219660580:e2",
+      "claim_id": "openalex:W7219660580:c2",
+      "description": "Table IV shows SSIM improves from 0.65 for Raw Input to 0.88 for Proposed (NAMF + CLAHE + Drago) on NIH CXR8.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219660580:e3",
+      "claim_id": "openalex:W7219660580:c3",
+      "description": "Table VI reports Full Framework achieving 92.4% Accuracy and 0.937 AUC on NIH ChestX-ray8 test set (mean across 3 runs).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219660580:e4",
+      "claim_id": "openalex:W7219660580:c4",
+      "description": "Table VI records Full Framework DPD of 0.05 and EO of 0.07 compared to Baseline DenseNet DPD of 0.12 and EO of 0.14.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219660580:e5",
+      "claim_id": "openalex:W7219660580:c5",
+      "description": "\"To evaluate cross-domain generalization, the model was trained on NIH ChestX-ray8 and tested on CheXpert without retraining. The proposed framework achieved an AUC of 0.912, outperforming the baseline DenseNet model (AUC = 0.887).\"",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7219660580:e6",
+      "claim_id": "openalex:W7219660580:c6",
+      "description": "\"An intersectional fairness analysis for the Female ≥60 (n=754) vs. Male <40 (n=893) subgroups showed DPD reduction from 0.14 to 0.06 and EO reduction from 0.17 to 0.08, confirming the framework’s efficacy beyond binary demographic categories.\"",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7219660580:e7",
+      "claim_id": "openalex:W7219660580:c7",
+      "description": "Table VII shows per-pathology diagnostic metrics on NIH ChestX-ray8 test set: Infiltration (AUC 0.752, F1 0.609), Pneumonia (AUC 0.791, F1 0.639), Consolidation (AUC 0.812, F1 0.651), and Nodule (AUC 0.803, F1 0.658).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7219660580:e8",
+      "claim_id": "openalex:W7219660580:c8",
+      "description": "\"During SCL, demographic labels were used only for constructing cross-demographic positive pairs among samples that shared the same pathology label. This design encourages pathology-consistent feature representation across demographic groups without making the final classifier explicitly dependent on sensitive attributes.\"",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7219660580:m1",
+      "paper_id": "openalex:W7219660580",
+      "name": "Integrated Enhancement-Diagnosis-Fairness Framework",
+      "description": "A three-stage framework combining NAMF, CLAHE, and Drago tone mapping for enhancement, DenseNet-121 for automated multi-label thoracic disease diagnosis, and Supervised Contrastive Learning (SCL) for demographic fairness optimization.",
+      "datasets": [
+        "NIH ChestX-ray8",
+        "CheXpert",
+        "COVIDx CXR-3"
+      ],
+      "conditions": [
+        "320x320 image resolution",
+        "Patient-level data splits",
+        "Pretrained DenseNet-121 backbone",
+        "Weighted binary cross-entropy loss",
+        "Temperature tau = 0.07",
+        "SCL loss weight lambda = 0.3",
+        "Learning rate 1e-4 with Adam optimizer",
+        "Batch size 32",
+        "Drago tone mapping partitioned into 4 brightness groups"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7219660580:l1",
+      "paper_id": "openalex:W7219660580",
+      "text": "Existing image enhancement techniques frequently process images separately without considering downstream diagnosis or fairness across patient subpopulations, leading to demographic bias in diagnostic models.",
+      "normalized_category": "lack-of-integration",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7219660580:l2",
+      "paper_id": "openalex:W7219660580",
+      "text": "Some demographic subgroup and intersectional cohorts contain smaller sample sizes, potentially increasing variance in fairness metric estimates.",
+      "normalized_category": "small-subgroup-sample-size",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7219660580:l3",
+      "paper_id": "openalex:W7219660580",
+      "text": "Enhancement methods such as CLAHE and tone mapping may introduce artificial intensity patterns or alter subtle image patterns if parameters are not carefully controlled.",
+      "normalized_category": "enhancement-artifact-risk",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7219660580:l4",
+      "paper_id": "openalex:W7219660580",
+      "text": "Public datasets may contain hidden demographic, institutional, and labeling biases, rendering the findings promising but not fully conclusive for external deployment without prospective or reader study validation.",
+      "normalized_category": "external-validity-constraint",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7219660580:f1",
+      "paper_id": "openalex:W7219660580",
+      "text": "Explore intersectional fairness analysis (e.g., Female ≥ 60 years) to further evaluate bias across combined demographic attributes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7219660580:f2",
+      "paper_id": "openalex:W7219660580",
+      "text": "Conduct radiologist reader studies comparing diagnostic decisions on raw and enhanced images.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7219660580:f3",
+      "paper_id": "openalex:W7219660580",
+      "text": "Perform multi-center validation, prospective testing, and domain adaptation to confirm real-world clinical reliability.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-10T09:27:48.346721Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

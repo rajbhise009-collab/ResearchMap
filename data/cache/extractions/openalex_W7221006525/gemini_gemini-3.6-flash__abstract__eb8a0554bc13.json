@@ -1,0 +1,225 @@
+{
+  "paper_id": "openalex:W7221006525",
+  "claims": [
+    {
+      "id": "openalex:W7221006525:c1",
+      "paper_id": "openalex:W7221006525",
+      "text": "AHEI-2010 was inversely associated with colorectal cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c2",
+      "paper_id": "openalex:W7221006525",
+      "text": "DASH was inversely associated with colorectal cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c3",
+      "paper_id": "openalex:W7221006525",
+      "text": "AHEI-2010 was inversely associated with kidney cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c4",
+      "paper_id": "openalex:W7221006525",
+      "text": "aMED was inversely associated with kidney cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c5",
+      "paper_id": "openalex:W7221006525",
+      "text": "CDAI was inversely associated with kidney cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c6",
+      "paper_id": "openalex:W7221006525",
+      "text": "DASH was inversely associated with kidney cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c7",
+      "paper_id": "openalex:W7221006525",
+      "text": "Reversed E-DII was inversely associated with kidney cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c8",
+      "paper_id": "openalex:W7221006525",
+      "text": "AHEI-2010 was inversely associated with lung cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c9",
+      "paper_id": "openalex:W7221006525",
+      "text": "aMED was inversely associated with lung cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c10",
+      "paper_id": "openalex:W7221006525",
+      "text": "Reversed E-DII was inversely associated with lung cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c11",
+      "paper_id": "openalex:W7221006525",
+      "text": "Reversed E-DII was associated with lower overall cancer risk.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c12",
+      "paper_id": "openalex:W7221006525",
+      "text": "DRLCD showed no robust association with the evaluated cancer outcomes.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221006525:c13",
+      "paper_id": "openalex:W7221006525",
+      "text": "Bootstrap pairwise comparisons across dietary indices were not statistically significant.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221006525:e1",
+      "claim_id": "openalex:W7221006525:c1",
+      "description": "AHEI-2010 and DASH were inversely associated with colorectal cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e2",
+      "claim_id": "openalex:W7221006525:c2",
+      "description": "AHEI-2010 and DASH were inversely associated with colorectal cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e3",
+      "claim_id": "openalex:W7221006525:c3",
+      "description": "AHEI-2010, aMED, CDAI, DASH, and reversed E-DII were inversely associated with kidney cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e4",
+      "claim_id": "openalex:W7221006525:c4",
+      "description": "AHEI-2010, aMED, CDAI, DASH, and reversed E-DII were inversely associated with kidney cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e5",
+      "claim_id": "openalex:W7221006525:c5",
+      "description": "AHEI-2010, aMED, CDAI, DASH, and reversed E-DII were inversely associated with kidney cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e6",
+      "claim_id": "openalex:W7221006525:c6",
+      "description": "AHEI-2010, aMED, CDAI, DASH, and reversed E-DII were inversely associated with kidney cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e7",
+      "claim_id": "openalex:W7221006525:c7",
+      "description": "AHEI-2010, aMED, CDAI, DASH, and reversed E-DII were inversely associated with kidney cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e8",
+      "claim_id": "openalex:W7221006525:c8",
+      "description": "AHEI-2010, aMED, and reversed E-DII were inversely associated with lung cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e9",
+      "claim_id": "openalex:W7221006525:c9",
+      "description": "AHEI-2010, aMED, and reversed E-DII were inversely associated with lung cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e10",
+      "claim_id": "openalex:W7221006525:c10",
+      "description": "AHEI-2010, aMED, and reversed E-DII were inversely associated with lung cancer.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e11",
+      "claim_id": "openalex:W7221006525:c11",
+      "description": "reversed E-DII was associated with lower overall cancer risk.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e12",
+      "claim_id": "openalex:W7221006525:c12",
+      "description": "DRLCD showed no robust association.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221006525:e13",
+      "claim_id": "openalex:W7221006525:c13",
+      "description": "However, bootstrap pairwise comparisons were not statistically significant, suggesting directional trends, not evidence of superiority.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221006525:m1",
+      "paper_id": "openalex:W7221006525",
+      "name": "Standardized dietary pattern analysis via Cox regression and sensitivity analyses",
+      "description": "Evaluated six standardized dietary indices (DRLCD, aMED, AHEI-2010, DASH, CDAI, and E-DII) against site-specific cancer risk using progressively adjusted Cox proportional hazards regression models alongside 1-, 3-, and 5-year lagged sensitivity analyses.",
+      "datasets": [
+        "UK Biobank"
+      ],
+      "conditions": [
+        "cancer-free participants with at least two valid 24-h dietary assessments (n=118,056)",
+        "progressively adjusted Cox regression models",
+        "1-, 3-, and 5-year lagged sensitivity analyses",
+        "bootstrap pairwise comparisons"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221006525:l1",
+      "paper_id": "openalex:W7221006525",
+      "text": "Previous studies on diet and cancer mainly examined individual dietary indices in relation to specific cancer outcomes, which limited direct comparisons across dietary patterns.",
+      "normalized_category": "lack-of-direct-comparison",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221006525:l2",
+      "paper_id": "openalex:W7221006525",
+      "text": "Bootstrap pairwise comparisons between dietary indices were not statistically significant, meaning results represent directional trends and are hypothesis-generating rather than evidence of dietary superiority or an optimal dietary strategy.",
+      "normalized_category": "statistical-power-or-significance",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-10T09:27:47.975705Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -38,5 +38,15 @@
     "b_pid": "openalex:W2599025709",
     "method": "Taxonomy and systematic review of fair graph mining",
     "limitation": "Training data derived from historical criminal justice practices reflects past biases and may become compromised or invalidated as risk algorithms alter future decision-making."
+  },
+  "opp:hole:W2963174898->W4288414189": {
+    "verdict": "not_addressing",
+    "reason": "A's convex optimization pre-processing method for fairness does not address B's limitation regarding participant pool demographics in human-subject explanation studies.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2963174898",
+    "b_pid": "openalex:W4288414189",
+    "method": "Probabilistic Convex Optimization Pre-Processing",
+    "limitation": "The study was conducted with crowdworkers rather than judges or domain experts who would be actual users of algorithmic recidivism prediction tools."
   }
 }
