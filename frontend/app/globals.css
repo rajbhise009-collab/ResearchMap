@@ -852,6 +852,10 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   line-height: var(--line-snug);
 }
 .caveat + .caveat { margin-top: var(--s-3); }
+/* On result cards the caveats now come straight after the quote: give the
+   text that follows them the same breathing room they have above. */
+.result .caveat + .verdict-chip,
+.result .caveat + .why { margin-top: var(--s-4); }
 .caveat .cav-label {
   display: block;
   font-family: var(--font-sans);
