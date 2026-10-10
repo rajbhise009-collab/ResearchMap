@@ -177,15 +177,21 @@ class SpendLedger:
         return state
 
     def _write(self, state: LedgerState) -> None:
-        tmp = self.path.with_suffix(".tmp")
-        tmp.write_text(json.dumps({
+        from backend.app.extraction.ledger_rules import LedgerAppendOnlyError, append_only_violation
+        new = {
             "cap_inr": state.cap_inr,
             "cap_usd": state.cap_usd,
             "fx_usd_to_inr": state.fx_usd_to_inr,
             "cumulative_usd": state.cumulative_usd,
             "cumulative_inr": state.cumulative_inr,
             "entries": state.entries,
-        }, indent=2))
+        }
+        old = json.loads(self.path.read_text()) if self.path.exists() else None
+        why = append_only_violation(old, new)
+        if why:      # append-only: recorded spend is never rewritten or dropped
+            raise LedgerAppendOnlyError(f"{self.path}: {why}")
+        tmp = self.path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(new, indent=2))
         tmp.replace(self.path)
 
     # --- Headroom check -----------------------------------------------

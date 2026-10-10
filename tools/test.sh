@@ -10,7 +10,7 @@
 #     not skip (backend/tests/conftest.py).
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PY="$ROOT/.venv/bin/python"
+PY="${PY:-$ROOT/.venv/bin/python}"     # CI sets PY=python
 echo "== 1/2 full tests (this checkout)"
 "$PY" -m pytest "$ROOT/backend/tests" -q -p no:cacheprovider
 
