@@ -1389,7 +1389,10 @@ section.block p { color: var(--ink-soft); }
   .about-card { padding: var(--s-4); }
   .ask { margin-top: var(--s-6); }
   .ask-box { padding-left: var(--s-4); padding-right: 4px; }
-  .ask-box input { font-size: var(--step-1); padding: 12px 0; }
+  /* 16px (the base step, and the smallest size iOS does not zoom on) so the
+     placeholder fits a 390px screen instead of clipping mid-word */
+  .ask-box input { font-size: var(--step-0); padding: 12px 0; }
+  .cmdk-input { font-size: var(--step-0); padding: var(--s-4); }
   .ask-btn { padding: 0 14px; height: 40px; min-width: 40px; }
   .hero h1 { font-size: clamp(1.65rem, 7.5vw, 2.2rem); letter-spacing: -0.02em; }
   .hero .lede { font-size: var(--step-0); }
