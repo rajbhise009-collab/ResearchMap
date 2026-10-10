@@ -1,0 +1,16 @@
+{
+ "decided_on": "2026-10-10",
+ "proposal": "docs/proposals/2026-10-10-growth-scope-removals.md",
+ "removals": [
+  {"slug": "diet-and-mortality", "wid": "W7218462786",
+   "reason": "outside the core scope: no mortality or survival outcome (the outcome is metabolic syndrome)"},
+  {"slug": "diet-and-mortality", "wid": "W7220707047",
+   "reason": "outside the core scope: a commentary; mortality is mentioned only as background"},
+  {"slug": "social-media-teen-mental-health", "wid": "W7220846371",
+   "reason": "outside the core scope: no adolescents or young people"},
+  {"slug": "social-media-teen-mental-health", "wid": "W7220964018",
+   "reason": "outside the core scope: no adolescents or young people (Reddit/Twitter posts, population unstated)"},
+  {"slug": "ml-fairness", "wid": "W7215843351",
+   "reason": "outside the core scope (owner's judgement): about people's AI literacy, not the fairness of algorithmic decisions"}
+ ]
+}

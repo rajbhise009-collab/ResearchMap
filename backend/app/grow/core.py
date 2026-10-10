@@ -235,6 +235,8 @@ def select(slug: str, cands: list[dict], records: dict[str, dict], *,
     pre, entries, raw = _library(slug)
     drops: Counter = Counter()
     known_wids = {e["wid"] for e in entries} | {_wid(m) for e in entries for m in e.get("merged_from", [])}
+    # papers the owner removed from the library never re-enter
+    removed_wids = {r["wid"] for r in pre.get("removed", [])}
     pend = pending_path(slug)
     if pend.exists():
         known_wids |= {e["wid"] for e in _read(pend)["entries"]}
@@ -243,6 +245,9 @@ def select(slug: str, cands: list[dict], records: dict[str, dict], *,
 
     kept: list[tuple[dict, dict]] = []
     for c in sorted(cands, key=lambda c: (REASON_RANK[c["reason"]], -c["cited_by_count"], c["wid"])):
+        if c["wid"] in removed_wids:
+            drops["removed from the library by the owner"] += 1
+            continue
         rec = records.get(c["wid"])
         if rec is None:
             drops["record not returned"] += 1
@@ -329,11 +334,67 @@ def prepare(slug: str, cl: Clients, *, ref: dt.date, errors: list[str]) -> dict:
     return {"slug": slug, "items": items, "candidates": len(cands), "dropped": drops}
 
 
-def allocate(prepared: dict[str, dict], budget: Budget, papers: dict[str, int]) -> dict[str, list[dict]]:
+# ---------------------------------------------------------------------------
+# Fairness: no library is starved by a fixed order.
+#   data/grow/fairness.json  {slug: {"extraction_served": date, "followon_served": date,
+#                                    "followon_owed": [step, ...]}}
+# Each week the library served longest ago goes first (never served = first);
+# a library whose follow-on checks were skipped (budget) is owed them and goes
+# first in next week's follow-on phase. Skipped work is recomputed next run
+# (unchecked pairs, unembedded items), so nothing is lost, only delayed.
+
+def fairness_path() -> Path:
+    return domains_dir().parent / "grow" / "fairness.json"
+
+
+def load_fairness() -> dict:
+    p = fairness_path()
+    return json.loads(p.read_text()) if p.exists() else {}
+
+
+def fair_order(slugs, kind: str, *, papers: dict[str, int] | None = None,
+               candidates: dict[str, int] | None = None) -> list[str]:
+    """kind: "extraction" or "followon"."""
+    f = load_fairness()
+    papers, candidates = papers or {}, candidates or {}
+
+    def key(s):
+        st = f.get(s, {})
+        owed = 0 if (kind == "followon" and st.get("followon_owed")) else 1
+        return (owed, st.get(f"{kind}_served") or "0000-00-00", -candidates.get(s, 0), papers.get(s, 0), s)
+    return sorted(slugs, key=key)
+
+
+def record_fairness(slug: str, kind: str, *, served: bool, ref: dt.date, owed: list[str] | None = None) -> None:
+    f = load_fairness()
+    st = f.setdefault(slug, {})
+    if served:
+        st[f"{kind}_served"] = ref.isoformat()
+    if kind == "followon":
+        st["followon_owed"] = list(owed or [])
+    p = fairness_path()
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(f, indent=1, sort_keys=True) + "\n")
+
+
+def followon_owed(r: dict) -> list[str]:
+    """Follow-on steps skipped for money this run (carried over)."""
+    owed = [k for k, v in r.items() if isinstance(v, str) and v.startswith("skipped")]
+    if r.get("disagreement_unchecked_pairs"):
+        owed.append("disagreement")
+    if r.get("money_refused"):
+        owed.append("all (money rule)")
+    return owed
+
+
+def allocate(prepared: dict[str, dict], budget: Budget, papers: dict[str, int],
+             order: list[str] | None = None) -> dict[str, list[dict]]:
     """Round-robin across libraries, one paper per library per round, until
-    the week's budget (padded x1.5) is spent. Library order each round:
-    most open candidates first, then fewest papers (lowest coverage)."""
-    order = sorted(prepared, key=lambda s: (-len(prepared[s]["items"]), papers.get(s, 0), s))
+    the week's budget (padded x1.5) is spent. Library order each round: the
+    fair order (served longest ago first; see fair_order), else most open
+    candidates first, then fewest papers (lowest coverage)."""
+    order = [s for s in (order or []) if s in prepared] or \
+        sorted(prepared, key=lambda s: (-len(prepared[s]["items"]), papers.get(s, 0), s))
     picked: dict[str, list[dict]] = {s: [] for s in prepared}
     total = 0.0
     for rnd in range(max((len(p["items"]) for p in prepared.values()), default=0)):
@@ -393,6 +454,44 @@ def with_retry(fn, *, tries: int = 4, base_s: float | None = None):
 # Phase 1: collect
 # ---------------------------------------------------------------------------
 
+def add_to_library(slug: str, pairs: list[tuple[dict, dict]], *, ref: dt.date | None = None,
+                   excluded: list[dict] | None = None) -> list[str]:
+    """Append collected (entry, record) pairs to the library. A paper already
+    in it, or removed from it by the owner, is never (re-)added. A paper that
+    was paid for but fails the core scope at collection (it was submitted
+    before the rule, or the rule changed) is kept on file under
+    "scope_excluded" — never deleted, never published — and reported in
+    `excluded` for the weekly Issue. Returns the wids added."""
+    from backend.app.grow.scope import core_scope
+    pre_p = domains_dir() / slug / "prelabelled.json"
+    pre = _read(pre_p)
+    have = ({e["wid"] for e in pre["entries"]} | {r["wid"] for r in pre.get("removed", [])}
+            | {r["wid"] for r in pre.get("scope_excluded", [])})
+    new_recs, wids = [], []
+    for e, r in pairs:
+        if e["wid"] in have:
+            continue
+        try:
+            ok, why = core_scope(slug, e.get("title") or "", e.get("abstract"))
+        except Exception as ex:  # noqa: BLE001  (a scope check must never block a run)
+            ok, why = True, f"scope check failed ({type(ex).__name__}); kept"
+        new_recs.append(r)              # the record is kept either way
+        if not ok:
+            x = {"wid": e["wid"], "title": e.get("title"), "reason": why,
+                 "collected_on": (ref or dt.date.today()).isoformat(), "entry": e}
+            pre.setdefault("scope_excluded", []).append(x)
+            if excluded is not None:
+                excluded.append({k: v for k, v in x.items() if k != "entry"})
+            continue
+        pre["entries"].append(e)
+        wids.append(e["wid"])
+    pre["n_kept"] = len(pre["entries"])
+    pre_p.write_text(json.dumps(pre))
+    from backend.app.corpus import records
+    records.append(slug, new_recs)
+    return wids
+
+
 def collect(slug: str, cl: Clients, *, ref: dt.date) -> dict:
     from backend.app.corpus.multi_domain_extract import MODEL_ID, _paper_from_entry
     from backend.app.corpus.run_batch_corpus import _validate_and_cache
@@ -431,28 +530,17 @@ def collect(slug: str, cl: Clients, *, ref: dt.date) -> dict:
         (added if out == "ok" else fails).append(pid if out == "ok" else (pid, out))
     for pid in sorted(set(st["input_source"]) - set(with_usage)):
         fails.append((pid, "no-result-returned"))
+    scope_excluded: list[dict] = []
     if added:
-        pre_p = domains_dir() / slug / "prelabelled.json"
-        pre = _read(pre_p)
-        have = {e["wid"] for e in pre["entries"]}
-        new_recs = []
-        for pid in added:
-            e, r = by_pid[pid]
-            if e["wid"] in have:
-                continue
-            pre["entries"].append(e)
-            new_recs.append(r)
-        pre["n_kept"] = len(pre["entries"])
-        pre_p.write_text(json.dumps(pre))
-        from backend.app.corpus import records
-        records.append(slug, new_recs)
+        in_lib = set(add_to_library(slug, [by_pid[pid] for pid in added], ref=ref, excluded=scope_excluded))
+        added = [pid for pid in added if pid.split(":")[-1] in in_lib]
     st["outcome"] = {"state": job.state, "collected_on": ref.isoformat(),
-                     "added": added, "failed": fails}
+                     "added": added, "failed": fails, "scope_excluded": scope_excluded}
     _write(hist, st)
     sp.unlink()
     return {"slug": slug, "status": "collected", "recorded_inr": round(st["recorded_inr"], 4),
             "added": added, "added_titles": [by_pid[p][0]["title"] for p in added],
-            "failed": fails}
+            "failed": fails, "scope_excluded": scope_excluded}
 
 
 # ---------------------------------------------------------------------------

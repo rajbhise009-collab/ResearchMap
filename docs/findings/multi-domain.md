@@ -19,9 +19,9 @@ FX: 1 USD = ₹84.
 | library | slug | papers | core | peripheral | full text | claims extracted |
 |:--|:--|--:|--:|--:|--:|--:|
 | LLM calibration | `llm-calibration` | 113 | 100 | 13 | 67 (59%) | 113 of 113 |
-| Diet & mortality | `diet-and-mortality` | 103 | 70 | 33 | 17 (17%) | 103 of 103 |
-| ML fairness | `ml-fairness` | 102 | 102 | 0 | 52 (51%) | 102 of 102 |
-| Social media & teens | `social-media-teen-mental-health` | 103 | 71 | 32 | 23 (22%) | 102 of 103 |
+| Diet & mortality | `diet-and-mortality` | 101 | 68 | 33 | 17 (17%) | 101 of 101 |
+| ML fairness | `ml-fairness` | 101 | 101 | 0 | 52 (51%) | 101 of 101 |
+| Social media & teens | `social-media-teen-mental-health` | 101 | 69 | 32 | 23 (23%) | 100 of 101 |
 <!-- /gen:corpus -->
 
 Diet & mortality was completed in iteration 3 (synchronous API). ML
@@ -138,7 +138,7 @@ part of the honest contradiction count, not optional polish.
 ### ML fairness — what was measured
 
 <!-- gen:mlf-facts -->
-- Claims extracted from 102 of 102 papers.
+- Claims extracted from 101 of 101 papers.
 - 91 of 91 shortlisted pairs classified; 0 flagged as contradictions.
 <!-- /gen:mlf-facts -->
 - Pairs touching the impossibility-result papers, rebuilt from the cached
@@ -272,9 +272,9 @@ killed mid-loop; the ledger entries in `data/spend_ledger.json` under
 | library | full text | abstract only | full-text share |
 |:--|--:|--:|--:|
 | LLM calibration | 67 | 46 | 59% |
-| Diet & mortality | 17 | 86 | 17% |
-| ML fairness | 52 | 50 | 51% |
-| Social media & teens | 23 | 80 | 22% |
+| Diet & mortality | 17 | 84 | 17% |
+| ML fairness | 52 | 49 | 51% |
+| Social media & teens | 23 | 78 | 23% |
 <!-- /gen:fulltext -->
 
 Diet's full-text share is the lowest of the three. Biomedical journals are
@@ -288,9 +288,9 @@ Gap-type raw counts from the extractions:
 <!-- gen:gap-types -->
 | library | papers extracted | limitations | future-work items |
 |:--|--:|--:|--:|
-| Diet & mortality | 103 (17 full text) | 143 | 60 |
-| ML fairness | 102 (52 full text) | 228 | 156 |
-| Social media & teens | 102 (23 full text) | 145 | 100 |
+| Diet & mortality | 101 (17 full text) | 141 | 58 |
+| ML fairness | 101 (52 full text) | 227 | 156 |
+| Social media & teens | 100 (23 full text) | 142 | 99 |
 <!-- /gen:gap-types -->
 
 ## 6. Spend
@@ -364,7 +364,7 @@ translation as LLM calibration (`backend/app/api/library_cards.py`,
 |:--|--:|--:|--:|--:|--:|--:|
 | LLM calibration | 0 | 1 | 2 | 63 | 10 | 66 |
 | Diet & mortality | 5 | 2 | 0 | 4 | 5 | 11 |
-| ML fairness | 0 | 1 | 0 | 59 | 2 | 60 |
+| ML fairness | 0 | 1 | 0 | 57 | 0 | 58 |
 | Social media & teens | 2 | 4 | 0 | 26 | 4 | 32 |
 <!-- /gen:scorer-yields -->
 

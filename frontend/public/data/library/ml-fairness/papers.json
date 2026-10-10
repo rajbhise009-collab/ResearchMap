@@ -1,5 +1,5 @@
 {
-  "total": 102,
+  "total": 101,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1100,17 +1100,6 @@
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
-    },
-    {
-      "paper_id": "https://openalex.org/W7215843351",
-      "wid": "W7215843351",
-      "title": "Artificial Intelligence Literacy as a Driver of Trust, Fairness, and Evidence Appraisal in Public Health Decision-Making",
-      "year": 2026,
-      "doi": "https://doi.org/10.4018/979-8-2600-4599-2.ch008",
-      "venue": "Advances in computational intelligence and robotics book series",
-      "domain_centrality": "core",
-      "input_source": "abstract_only",
-      "abstract_only": true
     },
     {
       "paper_id": "https://openalex.org/W7219603619",

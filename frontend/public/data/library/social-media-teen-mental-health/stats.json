@@ -1,9 +1,9 @@
 {
-  "papers": 103,
+  "papers": 101,
   "full_text": 23,
-  "abstract_only": 80,
-  "n_extractions": 102,
-  "extraction_coverage_note": "Claims read from 102 of 103 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
+  "abstract_only": 78,
+  "n_extractions": 100,
+  "extraction_coverage_note": "Claims read from 100 of 101 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
   "zero_finding_note": null,
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [],
@@ -13,26 +13,26 @@
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
-    "date": "2026-10-09",
+    "date": "2026-10-10",
     "shortlist_settings": {
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 102
+    "papers_covered": 100
   },
-  "extraction_coverage_share": 0.9902912621359223,
+  "extraction_coverage_share": 0.9900990099009901,
   "assertion_strength": {
-    "total_claims": 448,
+    "total_claims": 433,
     "distribution": {
-      "firm": 431,
+      "firm": 416,
       "hedged": 17
     },
-    "firm_share": 0.9620535714285714,
-    "hedged_share": 0.03794642857142857
+    "firm_share": 0.9607390300230947,
+    "hedged_share": 0.03926096997690531
   },
   "gap_type_counts": {
-    "n_papers": 102,
-    "n_limitations": 145,
+    "n_papers": 100,
+    "n_limitations": 142,
     "limitation_categories": {
       "cross-sectional-design": 7,
       "self-report-bias": 6,
@@ -152,12 +152,9 @@
       "design-restriction": 1,
       "geographic-sampling-bias": 1,
       "unvalidated-self-report-exposure": 1,
-      "unclear-baseline-symptom-status": 1,
-      "label-quality": 1,
-      "single-dataset-evaluation": 1,
-      "lack-of-prior-characterization": 1
+      "unclear-baseline-symptom-status": 1
     },
-    "n_future_work_items": 100
+    "n_future_work_items": 99
   },
   "n_confirmed_contradictions": 2,
   "raw_flagged_contradictions": 6,
@@ -177,9 +174,9 @@
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 71,
+  "core": 69,
   "peripheral": 32,
   "manifest_hash": null,
   "relationships": 6,
-  "note": "Multi-domain library \u2014 claims extracted from 102 of 103 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 100 of 101 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

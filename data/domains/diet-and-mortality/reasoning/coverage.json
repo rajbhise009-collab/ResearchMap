@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-09",
-  "n_papers_in_check": 103,
+  "date": "2026-10-10",
+  "n_papers_in_check": 101,
   "paper_ids": [
     "openalex:W1503681091",
     "openalex:W1520609538",
@@ -102,8 +102,6 @@
     "openalex:W3194401096",
     "openalex:W4229029536",
     "openalex:W4392600894",
-    "openalex:W7218462786",
-    "openalex:W7220707047",
     "openalex:W7220864522"
   ],
   "shortlist_pairs": 152,
@@ -116,5 +114,5 @@
     "threshold": 0.8,
     "max_per_claim": 2
   },
-  "note": "updated by the weekly growth run"
+  "note": "papers removed by the owner (2026-10-10)"
 }

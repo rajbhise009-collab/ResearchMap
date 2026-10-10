@@ -1,5 +1,5 @@
 {
-  "total": 103,
+  "total": 101,
   "items": [
     {
       "paper_id": "https://openalex.org/W2734724639",
@@ -1098,28 +1098,6 @@
       "doi": "https://doi.org/10.1002/hep.23314",
       "venue": "Hepatology",
       "domain_centrality": "peripheral",
-      "input_source": "abstract_only",
-      "abstract_only": true
-    },
-    {
-      "paper_id": "https://openalex.org/W7218462786",
-      "wid": "W7218462786",
-      "title": "Mediterranean Diet, Physical Activity, and Metabolic Syndrome in Breast Cancer Survivors on Adjuvant Endocrine Therapy: A Cross-Sectional Study From North Africa",
-      "year": 2026,
-      "doi": "https://doi.org/10.1080/27697061.2026.2731004",
-      "venue": "Journal of the American Nutrition Association",
-      "domain_centrality": "core",
-      "input_source": "abstract_only",
-      "abstract_only": true
-    },
-    {
-      "paper_id": "https://openalex.org/W7220707047",
-      "wid": "W7220707047",
-      "title": "Beyond Lifestyle Advice: Why Chronic Disease Prevention Must Move from Individual Choice to Health-Enabling Environments",
-      "year": 2026,
-      "doi": "https://doi.org/10.1080/19325037.2026.2744358",
-      "venue": "American Journal of Health Education",
-      "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
     },

@@ -65,12 +65,12 @@
       "name": "Diet and all-cause mortality",
       "short_name": "Diet & mortality",
       "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
-      "built": "2026-10-09",
+      "built": "2026-10-10",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 103,
-      "claims_read": 103,
+      "papers": 101,
+      "claims_read": 101,
       "full_text": 17,
-      "abstract_only": 86,
+      "abstract_only": 84,
       "gap_cards": 11,
       "results": [
         {
@@ -102,7 +102,7 @@
       "set_aside_total": 5,
       "growth": {
         "grows": true,
-        "added": 3,
+        "added": 1,
         "last_added": "2026-10-09"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (152 pairs); pairs worded differently are never compared.",
@@ -127,13 +127,13 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "built": "2026-10-09",
+      "built": "2026-10-10",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 102,
-      "claims_read": 102,
+      "papers": 101,
+      "claims_read": 101,
       "full_text": 52,
-      "abstract_only": 50,
-      "gap_cards": 60,
+      "abstract_only": 49,
+      "gap_cards": 58,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -155,16 +155,16 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 59,
+          "count": 57,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 60,
-      "set_aside_total": 2,
+      "results_total": 58,
+      "set_aside_total": 0,
       "growth": {
         "grows": true,
-        "added": 3,
+        "added": 2,
         "last_added": "2026-10-09"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (91 pairs); pairs worded differently are never compared.",
@@ -190,10 +190,10 @@
       "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
       "built": null,
       "built_basis": null,
-      "papers": 103,
-      "claims_read": 102,
+      "papers": 101,
+      "claims_read": 100,
       "full_text": 23,
-      "abstract_only": 80,
+      "abstract_only": 78,
       "gap_cards": 32,
       "results": [
         {
@@ -225,7 +225,7 @@
       "set_aside_total": 4,
       "growth": {
         "grows": true,
-        "added": 3,
+        "added": 1,
         "last_added": "2026-10-09"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (197 pairs); pairs worded differently are never compared.",

@@ -1,5 +1,5 @@
 {
-  "total": 103,
+  "total": 101,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1111,28 +1111,6 @@
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
-    },
-    {
-      "paper_id": "https://openalex.org/W7220846371",
-      "wid": "W7220846371",
-      "title": "When less is more: Unifinal framing promotes intention to use social media for social connection",
-      "year": 2026,
-      "doi": "https://doi.org/10.1016/j.jesp.2026.105013",
-      "venue": "Journal of Experimental Social Psychology",
-      "domain_centrality": "core",
-      "input_source": "abstract_only",
-      "abstract_only": true
-    },
-    {
-      "paper_id": "https://openalex.org/W7220964018",
-      "wid": "W7220964018",
-      "title": "Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study",
-      "year": 2026,
-      "doi": "https://doi.org/10.2196/98925",
-      "venue": "JMIR Mental Health",
-      "domain_centrality": "core",
-      "input_source": "abstract_only",
-      "abstract_only": true
     }
   ]
 }

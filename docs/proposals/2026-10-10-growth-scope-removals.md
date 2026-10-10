@@ -1,7 +1,49 @@
-# Proposal: remove 4 papers added by weekly growth run #5 (awaiting approval)
+# Proposal: remove papers added by weekly growth run #5 — **APPLIED 2026-10-10**
 
-Nothing below has been removed. Published content stays as it is until you
-approve. This proposal was written on 2026-10-10.
+**Status: APPLIED (owner-approved 2026-10-10).** The owner approved the 4
+proposed removals plus W7215843351 (ML fairness; owner's judgement). They
+were applied by `tools/corpus/apply_removals.py data/removals/2026-10-10.json`
+at no cost (₹0, ledger unchanged).
+
+Each paper moved from the library's `prelabelled.json` "entries" to
+"removed", with its reason. Nothing was deleted: its record, extraction
+and spend stay on file. Weekly growth can never re-add a removed paper,
+either by selection or by collection (tests in
+`backend/tests/grow/test_scope.py`). The record is in
+`docs/releases/2026-10-10-removals.json` and `docs/CHANGELOG.md`.
+
+## Applied
+
+| library | paper | reason |
+|:--|:--|:--|
+| Diet | W7218462786 | outside the core scope: no mortality or survival outcome (metabolic syndrome) |
+| Diet | W7220707047 | outside the core scope: a commentary; mortality is mentioned only as background |
+| Social media | W7220846371 | outside the core scope: no adolescents or young people |
+| Social media | W7220964018 | outside the core scope: no adolescents or young people |
+| ML fairness | W7215843351 | outside the core scope (owner's judgement): about people's AI literacy, not the fairness of algorithmic decisions |
+
+**Papers:** Diet 103 → 101, Social media 103 → 101, ML fairness 102 → 101.
+
+**Results shown, before → after (scorers re-run):**
+
+- Diet: 11 → 11, unchanged.
+- Social media: 32 → 32, unchanged.
+- ML fairness: 60 → 58. Two open questions are no longer shown:
+  `opp-ml-fairness-orphan-openalex-w3159960173-f1` and
+  `opp-ml-fairness-orphan-openalex-w3203106571-f2`. Each needs at least 5
+  later, topically near papers that do not address it. W7215843351 was one
+  of exactly 5 for each, so each now has 4. These are the only results that
+  depended on the removed papers. Two never-shown, set-aside method-transfer
+  leads also dropped, because candidates are recomputed from the paper
+  clusters.
+
+**Correction to the original proposal below.** It said the ML fairness
+results were unaffected. That was checked only for the 4 proposed papers;
+W7215843351 was added later and does affect two results, as listed above.
+
+---
+
+*Original proposal, as written before approval:*
 
 ## The rule
 

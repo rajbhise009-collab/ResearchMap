@@ -15,9 +15,9 @@ and produced zero".
 | library | papers | claims read | disagreement check | confirmed contradictions | persistent limitations | orphaned future work | structural holes |
 |:--|--:|--:|:--|--:|--:|:--|:--|
 | llm-calibration | 113 | 113 (100%) | 437 / 437 pairs | 0 (of 2 flagged) | 1 | 63 | 12 (2 substantive) |
-| diet-and-mortality | 103 | 103 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | 4 | 0 (0 substantive) |
-| ml-fairness | 102 | 102 (100%) | 91 / 91 pairs | 0 | 1 | 59 | 2 (0 substantive) |
-| social-media-teen-mental-health | 103 | 102 (99%) | 197 / 197 pairs | 2 (of 6 flagged) | 4 | 26 | 0 (0 substantive) |
+| diet-and-mortality | 101 | 101 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | 4 | 0 (0 substantive) |
+| ml-fairness | 101 | 101 (100%) | 91 / 91 pairs | 0 | 1 | 57 | 0 (0 substantive) |
+| social-media-teen-mental-health | 101 | 100 (99%) | 197 / 197 pairs | 2 (of 6 flagged) | 4 | 26 | 0 (0 substantive) |
 <!-- /gen:scorer-status -->
 
 "Pairs" are shortlisted claim pairs. Diet and ML-fairness: cosine

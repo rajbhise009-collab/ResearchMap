@@ -197,6 +197,56 @@ A library without a core scope is not grown unattended. Papers already
 submitted or published are never re-filtered. Proposed removals go to
 `docs/proposals/` for approval.
 
+## Unattended weekly growth
+
+- **Schedule:** Mondays 05:23 UTC (10:53 IST). A scheduled run has no
+  inputs: the weekly money rule decides everything. `run_budget_inr`,
+  `build_queued` and `gates_only` apply to manual runs only.
+- **Concurrency:** one run at a time, scheduled and manual alike, and the
+  keepalive shares the group. A running job is never cancelled. After every
+  paid step, `data/` (ledger, batch states, pending batches) is pushed to
+  main straight away, so a timeout or cancellation loses nothing and nothing
+  is paid twice.
+- **Fairness:** both the follow-on checks and the share of new papers go in
+  a fair order (`data/grow/fairness.json`). A library owed follow-on checks
+  that were skipped for budget goes first, then the library served longest
+  ago, then the one with fewest papers. Skipped checks carry over and are
+  listed in the Issue.
+- **Scope exclusions:** a paper already paid for that fails the core scope
+  when collected is kept on file (`scope_excluded`), not published, and
+  listed in the Issue under "Scope exclusions". It never blocks a run. To
+  publish one anyway, move its entry back into `entries`.
+- **Queued libraries** are built only from prepared papers that meet their
+  core scope (`backend/app/grow/scope.py`; blind-audit agreement: nudges
+  93%, ego depletion 100%, growth mindset 87%). The others are kept under
+  `scope_excluded`. Minimum wage, deep-RL and microplastics have no core
+  scope and are never built unattended.
+- **Failures:** preflight failures spend ₹0. Gate failures leave the site
+  unchanged and print one `GATE FAILURES` block. Anything the run cannot
+  report itself (install failure, crash, timeout, cancellation) is reported
+  by the workflow's last step. Each case updates the run's ONE Issue,
+  `Weekly grow — <date>`.
+- **Keepalive:** GitHub disables schedules after 60 days without commits.
+  `keepalive.yml` checks weekly and commits a one-line heartbeat
+  (`data/keepalive.json`) only if main has been quiet for 40 days.
+- **Daily health:** one Issue, "Daily health check failing". It is updated
+  each failing day, closed on the first passing day, and reopened (never
+  duplicated) if it fails again.
+
+## Removing a paper from a library
+
+Write a spec like `data/removals/2026-10-10.json`, then run
+`python tools/corpus/apply_removals.py <spec>`. It costs nothing (an
+embedding call would raise, and the ledger is checked byte for byte):
+
+- each paper moves to `removed` in `prelabelled.json` with its reason;
+- coverage, site data, docs and share images are regenerated;
+- every result change is accounted for (an UNEXPLAINED change aborts);
+- the change is recorded in the changelog and in
+  `docs/releases/<date>-removals.json`.
+
+Removed papers can never re-enter through weekly growth.
+
 ## Results that leave a library
 
 Every weekly run records each result that leaves, together with the rule

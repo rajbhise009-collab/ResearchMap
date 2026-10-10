@@ -1,0 +1,87 @@
+{
+ "date": "2026-10-10",
+ "proposal": "docs/proposals/2026-10-10-growth-scope-removals.md",
+ "removed": [
+  {
+   "slug": "diet-and-mortality",
+   "wid": "W7218462786",
+   "title": "Mediterranean Diet, Physical Activity, and Metabolic Syndrome in Breast Cancer Survivors on Adjuvant Endocrine Therapy: A Cross-Sectional Study From North Africa",
+   "reason": "outside the core scope: no mortality or survival outcome (the outcome is metabolic syndrome)"
+  },
+  {
+   "slug": "diet-and-mortality",
+   "wid": "W7220707047",
+   "title": "Beyond Lifestyle Advice: Why Chronic Disease Prevention Must Move from Individual Choice to Health-Enabling Environments",
+   "reason": "outside the core scope: a commentary; mortality is mentioned only as background"
+  },
+  {
+   "slug": "ml-fairness",
+   "wid": "W7215843351",
+   "title": "Artificial Intelligence Literacy as a Driver of Trust, Fairness, and Evidence Appraisal in Public Health Decision-Making",
+   "reason": "outside the core scope (owner's judgement): about people's AI literacy, not the fairness of algorithmic decisions"
+  },
+  {
+   "slug": "social-media-teen-mental-health",
+   "wid": "W7220846371",
+   "title": "When less is more: Unifinal framing promotes intention to use social media for social connection",
+   "reason": "outside the core scope: no adolescents or young people"
+  },
+  {
+   "slug": "social-media-teen-mental-health",
+   "wid": "W7220964018",
+   "title": "Ensemble of Domain-Specific Natural Language Processing and Large Language Models for Detecting Suicidal Ideation and Mental Health Conditions in Social Media Text: Development and Evaluation Study",
+   "reason": "outside the core scope: no adolescents or young people (Reddit/Twitter posts, population unstated)"
+  }
+ ],
+ "results_changed": {
+  "diet-and-mortality": {
+   "shown_before": 11,
+   "shown_after": 11,
+   "new_results": [],
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "ml-fairness": {
+   "shown_before": 60,
+   "shown_after": 58,
+   "new_results": [],
+   "removed_shown": [
+    {
+     "id": "opp-ml-fairness-orphan-openalex-w3159960173-f1",
+     "headline": "Develop further educational resources and methodologies for educating software and AI stakeholders about algorithmic FATE.",
+     "reason": "no longer meets the open-question rule: 4 later topically near papers that do not address it, minimum 5 (papers removed from the library: W7215843351)"
+    },
+    {
+     "id": "opp-ml-fairness-orphan-openalex-w3203106571-f2",
+     "headline": "Identify context-dependent requirements for explainable machine learning tailored to specific high-stakes stakeholders such as policy decision-makers, medical auditors, and judicial officers.",
+     "reason": "no longer meets the open-question rule: 4 later topically near papers that do not address it, minimum 5 (papers removed from the library: W7215843351)"
+    }
+   ],
+   "removed_not_shown": [
+    {
+     "id": "opp-ml-fairness-hole-w4362714312-w2599025709",
+     "headline": "\u201cTaxonomy and systematic review of fair graph mining\u201d might solve a problem reported by \u201cFairness in Criminal Justice Risk Assessments: The State of the Art\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w4362714312-w3203106571",
+     "headline": "\u201cTaxonomy and systematic review of fair graph mining\u201d might solve a problem reported by \u201cA sociotechnical view of algorithmic fairness\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    }
+   ],
+   "verdict_changed": []
+  },
+  "social-media-teen-mental-health": {
+   "shown_before": 32,
+   "shown_after": 32,
+   "new_results": [],
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  }
+ },
+ "spend_inr": 0.0
+}
