@@ -216,9 +216,11 @@ def test_gates_only_spends_nothing_and_publishes_nothing(monkeypatch, capsys):
     monkeypatch.setenv("GROW_EVENT", "workflow_dispatch")
     monkeypatch.setattr(rw, "paused", lambda: True)
     boom = lambda *a, **k: (_ for _ in ()).throw(AssertionError("must not be called"))  # noqa: E731
-    for name in ("guards", "publish_bookkeeping", "publish_branch", "regenerate", "_reset_rest"):
+    for name in ("guards", "publish_bookkeeping", "publish_branch", "publish_main", "_reset_rest"):
         if hasattr(rw, name):
             monkeypatch.setattr(rw, name, boom if name != "_reset_rest" else (lambda: None))
+    regen = []
+    monkeypatch.setattr(rw, "regenerate", lambda: regen.append(1))    # free and local: it SHOULD run
     monkeypatch.setattr(rw.issues, "upsert", boom)
     import backend.app.grow.clients as C
     import backend.app.grow.core as core_mod
@@ -233,6 +235,7 @@ def test_gates_only_spends_nothing_and_publishes_nothing(monkeypatch, capsys):
     assert rw.main() == 1
     out = capsys.readouterr().out
     assert "| docs check | PASS |" in out and "| smoke | FAIL |" in out and "GATE FAILURES" in out
+    assert regen == [1]                     # gates ran on the regenerated site, as a real run's do
 
 
 def _gates_only_run(monkeypatch, tmp_path, pre, res):
@@ -250,6 +253,7 @@ def _gates_only_run(monkeypatch, tmp_path, pre, res):
     summary = tmp_path / "summary.md"
     monkeypatch.setenv("GITHUB_STEP_SUMMARY", str(summary))
     monkeypatch.setattr(rw, "_reset_rest", lambda: None)
+    monkeypatch.setattr(rw, "regenerate", lambda: None)
     monkeypatch.setattr(rw, "preflight_checks", lambda: pre)
     monkeypatch.setattr(rw, "gates", lambda **k: res)
     rc = rw.main()
@@ -265,8 +269,9 @@ def _row(name, ok, note=None):
 
 _PRE = [_row("preflight: typecheck", True), _row("preflight: production build", True),
         _row("preflight: full tests", True)]
-_RESTATED = [_row(n, True, note="passed in preflight") for n in ("typecheck", "production build", "full tests")]
-_LATER = ["docs check", "consistency script", "banned-phrase tests", "search regression suite",
+_RESTATED: list[dict] = []        # gates_only now runs EVERY gate after regenerating (none restated)
+_LATER = ["typecheck", "production build", "full tests",
+          "docs check", "consistency script", "banned-phrase tests", "search regression suite",
           "hardening tests", "browser hunt", "smoke checks on the build"]
 
 
@@ -288,13 +293,13 @@ def test_gates_only_exits_nonzero_if_any_row_fails(monkeypatch, tmp_path):
 
 def test_gates_only_writes_one_table_with_every_gate_once(monkeypatch, tmp_path):
     """All pass -> exit 0, and the job summary is ONE table: 3 preflight
-    rows + 7 later gates, each exactly once."""
+    rows + all 10 gates after regenerating, each exactly once."""
     rc, summ = _gates_only_run(monkeypatch, tmp_path, _PRE, _RESTATED + [_row(n, True) for n in _LATER])
     assert rc == 0
     assert summ.count("| gate | result |") == 1 and summ.count("## Weekly grow") == 1
     rows = [ln for ln in summ.splitlines() if ln.startswith("| ") and not ln.startswith("| gate")]
-    assert len(rows) == 10 and all(ln.endswith("| PASS |") for ln in rows)
-    assert len({ln.split("|")[1] for ln in rows}) == 10       # no gate listed twice
+    assert len(rows) == 13 and all(ln.endswith("| PASS |") for ln in rows)
+    assert len({ln.split("|")[1] for ln in rows}) == 13       # no gate listed twice
 
 
 def test_tests_never_see_the_workflow_output_files():

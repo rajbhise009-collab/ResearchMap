@@ -885,13 +885,21 @@ def gates_only_summary(date: str, rows: list[dict]) -> str:
 
 def gates_only(date: str) -> int:
     """Zero-spend proof run: no API call, no batch submit or collect, no
-    publish, ledger untouched, no Issue. Preflight then every gate, on the
-    runner. The job summary is written once, as one table of every row, and
-    the exit code is non-zero if ANY row in that table failed."""
+    publish, ledger untouched, no Issue. Preflight on the fresh checkout,
+    then regenerate (free) and EVERY gate, on the runner. The job summary is
+    written once, as one table of every row, and the exit code is non-zero
+    if ANY row in that table failed."""
     say(f"GATES ONLY {date}: no API calls, nothing submitted, collected or published")
     led0 = (ROOT / "data" / "spend_ledger.json").read_bytes()
     pre = preflight_checks()
-    res = gates(after_preflight=True) if all(g["ok"] for g in pre) else None
+    res = None
+    if all(g["ok"] for g in pre):
+        # exactly what a run's gates face: the site regenerated from the
+        # current data first (free), then EVERY gate (after a failed run the
+        # data on main is ahead of the site until it is republished)
+        _reset_rest()
+        regenerate()
+        res = gates()
     rows = gates_only_rows(pre, res)
     if (ROOT / "data" / "spend_ledger.json").read_bytes() != led0:   # must never happen
         rows.append({"gate": "ledger untouched", "ok": False, "failed": [],

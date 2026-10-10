@@ -32,9 +32,9 @@ ln -s "$ROOT/frontend/node_modules" "$TMP/repo/frontend/node_modules"
 mkdir -p "$TMP/home"
 cd "$TMP/repo"
 export CI=1 TZ=UTC HOME="$TMP/home"
-"$PY" -m backend.app.api.multi_library_export > "$TMP/regen.log" 2>&1
-"$PY" -m backend.app.corpus.doc_numbers >> "$TMP/regen.log" 2>&1
-"$PY" -m backend.app.api.multi_library_export >> "$TMP/regen.log" 2>&1
+# the run's OWN regenerate step (exports, docs numbers, share images)
+"$PY" -c 'import sys; sys.path[:0] = ["tools/grow"]; import run_weekly; run_weekly.regenerate()' > "$TMP/regen.log" 2>&1
+"$PY" -m backend.app.corpus.doc_numbers --check
 ( cd frontend && npm run build > "$TMP/build.log" 2>&1 ) || { tail -30 "$TMP/build.log"; echo "runner mode: BUILD FAILED"; exit 1; }
 # like the runner, a live job-summary file exists; the tests must not write it
 export GITHUB_STEP_SUMMARY="$TMP/job-summary.md"
