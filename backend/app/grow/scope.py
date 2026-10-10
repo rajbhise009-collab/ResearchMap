@@ -60,6 +60,47 @@ ALGO = _rx(r"algorithm", r"machine[- ]learning", r"\bML\b", r"artificial intelli
            r"risk assessment", r"representations?\b", r"automated", r"scoring", r"recidivism")
 
 
+# --- queued domains (built unattended when the money rule allows) ----------
+NUDGE = _rx(r"nudg", r"choice architecture", r"default (?:option|effect|setting|enrol)", r"\bdefaults?\b",
+            r"automatic(?:ally)? enrol", r"opt[- ]out", r"opt[- ]in", r"social[- ]norms?", r"social comparison",
+            r"reminders?", r"framing", r"salience", r"commitment device", r"active (?:choice|decision)",
+            r"positional", r"(?:descriptive|injunctive) norms?", r"normative (?:information|messages?|feedback)",
+            r"passive (?:choices?|decisions?|savers?)", r"automatic (?:contribution|escalation)")
+BEHAVIOUR = _rx(r"behavio", r"uptake", r"take[- ]up", r"enrol", r"participation", r"saving", r"vaccinat",
+                r"consumption", r"energy use", r"choices?\b", r"donat", r"complian", r"adherence", r"purchas",
+                r"contribution", r"attendance", r"turnout")
+DEPLETION = _rx(r"ego[- ]depletion", r"deplet", r"strength model", r"limited (?:energy|resource)",
+                r"self-regulatory fatigue", r"resource model")
+SELF_CONTROL = _rx(r"self[- ]control", r"self[- ]regulat", r"willpower", r"persisten", r"performance",
+                   r"stroop", r"handgrip", r"subsequent task", r"second task", r"inhibition", r"replicat")
+MINDSET = _rx(r"growth[- ]mindset", r"fixed[- ]mindset", r"mindsets?\b", r"implicit theor", r"theories of intelligence",
+              r"incremental theor", r"entity theor", r"self-theories", r"beliefs about intelligence", r"malleab")
+LEARNING = _rx(r"achievement", r"academic", r"grades?\b", r"\bgpa\b", r"performance", r"learning", r"motivation",
+               r"students?", r"children", r"school", r"math", r"test scores", r"persistence", r"attainment")
+
+QUEUED_SCOPES = {
+    # slug: (description, construct, outcome)
+    "nudge-effectiveness": ("a nudge or choice-architecture intervention and a behaviour it changes",
+                            NUDGE, BEHAVIOUR),
+    "ego-depletion": ("ego depletion (the limited-resource model) and a self-control outcome",
+                      DEPLETION, SELF_CONTROL),
+    "growth-mindset": ("growth mindset / implicit theories of intelligence and a learning or achievement outcome",
+                       MINDSET, LEARNING),
+}
+
+
+def _pair(text_title: str, text_abstract: str, a: re.Pattern, b: re.Pattern) -> tuple[bool, str]:
+    """Both terms in the title, or both in one sentence."""
+    x, y = _hit(a, text_title), _hit(b, text_title)
+    if x and y:
+        return True, f"title: {x!r} + {y!r}"
+    for s in _sentences(f"{text_title}. {text_abstract or ''}"):
+        x, y = _hit(a, s), _hit(b, s)
+        if x and y:
+            return True, f"same sentence: {x!r} + {y!r}"
+    return False, "no sentence pairs the construct with the outcome"
+
+
 def _sentences(text: str) -> list[str]:
     return [s for s in _SENT.split(text or "") if s.strip()]
 
@@ -69,9 +110,13 @@ def _hit(rx: re.Pattern, text: str) -> str | None:
     return m.group(0) if m else None
 
 
+_HYPHENS = str.maketrans({c: "-" for c in "\u2010\u2011\u2012\u2013\u2014\u2212"})
+
+
 def core_scope(slug: str, title: str, abstract: str | None) -> tuple[bool, str]:
     """(passes, reason) for a weekly-growth candidate."""
-    title = title or ""
+    title = (title or "").translate(_HYPHENS)
+    abstract = (abstract or "").translate(_HYPHENS)
     text = f"{title}. {abstract or ''}"
     if slug == "diet-and-mortality":
         h = _hit(MORTALITY, title)
@@ -98,4 +143,7 @@ def core_scope(slug: str, title: str, abstract: str | None) -> tuple[bool, str]:
             if f and a:
                 return True, f"same sentence: fairness {f!r} + algorithmic {a!r}"
         return False, "no sentence pairs a fairness term with an algorithm/model term"
+    if slug in QUEUED_SCOPES:
+        _desc, a, b = QUEUED_SCOPES[slug]
+        return _pair(title, abstract or "", a, b)
     return False, f"no core scope defined for {slug!r}; not grown unattended"

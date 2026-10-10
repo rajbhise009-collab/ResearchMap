@@ -67,6 +67,31 @@ def open_fulltext(lib: dict, cl: Clients) -> dict:
     return {"slug": cfg.slug, "papers": len(pre["entries"]), "full_text": n_ft}
 
 
+def apply_core_scope(lib: dict) -> dict:
+    """Free, idempotent. A queued library is built only from prepared papers
+    that meet its core scope (backend/app/grow/scope.py). The others move to
+    "scope_excluded" with the reason (kept on file, never deleted), so they
+    are neither extracted nor paid for. Run before the projection."""
+    from backend.app.corpus.multi_domain import DOMAINS, _prelabel_path
+    from backend.app.grow.scope import core_scope
+    cfg = DOMAINS[_key(lib)]
+    p = _prelabel_path(cfg)
+    pre = json.loads(p.read_text())
+    keep, out = [], pre.setdefault("scope_excluded", [])
+    for e in pre["entries"]:
+        ok, why = core_scope(cfg.slug, e.get("title") or "", e.get("abstract"))
+        if ok:
+            keep.append(e)
+        else:
+            out.append({"wid": e["wid"], "title": e.get("title"), "reason": why,
+                        "rule": "backend/app/grow/scope.py", "entry": e})
+    moved = len(pre["entries"]) - len(keep)
+    pre["entries"] = keep
+    pre["n_kept"] = len(keep)
+    p.write_text(json.dumps(pre))
+    return {"slug": cfg.slug, "kept": len(keep), "excluded_now": moved, "excluded_total": len(out)}
+
+
 def projection_inr(lib: dict) -> float:
     from backend.app.corpus import multi_domain_extract as X
     return float(X.dry_run(_key(lib))["proj_cost_inr"]) / 2      # batch rate

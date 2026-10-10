@@ -39,6 +39,22 @@ sys.path.insert(0, str(ROOT / "tools" / "grow"))
 
 import issues  # noqa: E402
 
+_upsert = issues.upsert
+
+
+def _upsert_marked(title: str, body: str, labels: list[str]) -> str:
+    """Every Issue this run writes also drops a marker, so the workflow's
+    failure step knows the run reported for itself (and never overwrites
+    that report)."""
+    out = _upsert(title, body, labels)
+    m = os.environ.get("GROW_ISSUE_MARKER")
+    if m:
+        Path(m).write_text(title)
+    return out
+
+
+issues.upsert = _upsert_marked
+
 PY = sys.executable
 FE = ROOT / "frontend"
 DATA = FE / "public" / "data"
@@ -213,6 +229,11 @@ def gates(*, after_preflight: bool = False) -> list[dict]:
     """after_preflight: typecheck, build and full tests just passed on this
     same tree (gates_only mode, nothing regenerated in between), so they are
     not repeated."""
+    if MOCK and os.environ.get("GROW_FAIL_GATE"):            # offline e2e only: a gate that fails
+        name = os.environ["GROW_FAIL_GATE"]
+        say(f"gate FAIL: {name} (forced: mock run, GROW_FAIL_GATE)")
+        return [{"gate": name, "ok": False, "failed": [f"FAILED {name} (forced by the mocked e2e)"],
+                 "tail": f"{name}: forced failure for the mocked end-to-end test"}]
     if MOCK and os.environ.get("GROW_GATES") == "skip":      # offline e2e only
         say("gates skipped (mock run, GROW_GATES=skip)")
         return [{"gate": "(skipped: mock run)", "ok": True, "tail": ""}]
@@ -305,9 +326,38 @@ def _fw_addressal(slug: str, fw_id: str) -> dict | None:
     return hit
 
 
+def _removed_papers(slug: str) -> dict[str, dict]:
+    """Papers taken out of a library by an owner decision (prelabelled.json
+    "removed"), by wid."""
+    p = ROOT / "data" / "domains" / slug / "prelabelled.json"
+    if not p.exists():
+        return {}
+    return {r["wid"]: r for r in json.loads(p.read_text()).get("removed", [])}
+
+
+_ORPHAN_RULES: dict[str, dict] = {}
+
+
+def _orphan_rules(slug: str) -> dict:
+    """The open-question rule's verdict for every future-work item in the
+    library as it is NOW (backend/app/reasoning/scorers.orphan_evaluation)."""
+    if slug not in _ORPHAN_RULES:
+        try:
+            from backend.app.reasoning.library_corpus import load_library_corpus
+            from backend.app.reasoning.scorers import orphan_evaluation
+            _ORPHAN_RULES[slug] = orphan_evaluation(load_library_corpus(slug))
+        except Exception:  # noqa: BLE001  (no corpus: no rule can explain it)
+            _ORPHAN_RULES[slug] = {}
+    return _ORPHAN_RULES[slug]
+
+
 def removal_reason(slug: str, item_slug: str) -> str:
     """Why a result left the library, from the recorded data and the rule
     that applies. UNEXPLAINED when no rule accounts for it."""
+    for wid, r in _removed_papers(slug).items():
+        if f"-{wid.lower()}" in item_slug:
+            return (f"its paper {wid} was removed from the library ({r.get('decided_on')}, owner-approved): "
+                    f"{r.get('reason')}")
     m = re.search(r"-orphan-(openalex)-(w\d+)-(f\d+)$", item_slug)
     if m:
         fw = f"{m.group(1)}:{m.group(2).upper()}:{m.group(3)}"
@@ -316,10 +366,19 @@ def removal_reason(slug: str, item_slug: str) -> str:
             return (f"open question answered: the later paper {r['to_paper_id'].split(':')[-1]} was judged to "
                     f"address it ({r['label']}); an open question a later paper addresses is no longer open "
                     "(docs/opportunity-criteria.md)")
+        ev = _orphan_rules(slug).get(fw)
+        if ev and not ev["shown"] and ev["rule"] == "too few later near papers":
+            from backend.app.config import get_settings
+            gone = [w for w in _removed_papers(slug)]
+            return (f"no longer meets the open-question rule: {ev['near_later']} later topically near papers that "
+                    f"do not address it, minimum {get_settings().rel_futurework_min_near_later}"
+                    + (f" (papers removed from the library: {', '.join(gone)})" if gone else ""))
+        if ev and not ev["shown"] and ev["rule"] == "not open long enough":
+            return f"no longer meets the open-question rule: open {ev['age']} years, minimum 2"
         return UNEXPLAINED
     if re.search(r"-hole-w\d+-w\d+$", item_slug):
         return ("method-transfer candidates are recomputed every run from the library's paper clusters; "
-                "with the new papers this pair is no longer a candidate")
+                "with the library's current papers this pair is no longer a candidate")
     return UNEXPLAINED
 
 
@@ -327,6 +386,7 @@ def diff_items(before, after) -> dict:
     """Per library: what appeared and what left, with a reason for every
     item that left. Counts add up: shown_before + new_results (+ new flagged
     shown later) - removed_shown + promoted - demoted = shown_after."""
+    _ORPHAN_RULES.clear()      # the rules are read from the library as it is now
     out = {}
     for slug in after:
         b, a = before.get(slug, {}), after[slug]
@@ -392,6 +452,7 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
               f"- recorded this run: ₹{spent:.2f} (includes last week's batches at the batch rate)",
               f"- new commitments this run (padded projections): ₹{budget.committed:.2f}", ""]
     L += ["## Papers added this week", ""]
+    owed = [(r["slug"], r["followon_owed"]) for r in p1 if r.get("followon_owed")]
     for r in p1:
         if r.get("status") == "collected":
             L.append(f"- {r['slug']}: {len(r['added'])} added"
@@ -401,6 +462,16 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
             L.append(f"- {r['slug']}: {r.get('status', 'not reached')}")
     if not p1:
         L.append("- none")
+    if owed:
+        L += ["", "Follow-on checks carried over to next run (budget); that library goes first next week:", ""]
+        L += [f"- {slug}: {', '.join(steps)}" for slug, steps in owed]
+    excl = [(r["slug"], x) for r in p1 for x in r.get("scope_excluded", [])]
+    if excl:
+        L += ["", "## Scope exclusions (proposals; nothing deleted)", "",
+              "Paid for and collected, but outside the library's core scope (backend/app/grow/scope.py), so "
+              "**not published**. Kept on file under `scope_excluded` in the library's prelabelled.json. "
+              "To publish one anyway, move its entry back into `entries` and commit.", ""]
+        L += [f"- {slug}: {x['wid']} — {x.get('title') or ''} — {x['reason']}" for slug, x in excl]
     if builds:
         L += ["", "## New libraries", ""] + [f"- {b['slug']}: {b.get('status')}" + (
             f" — {b['detail']}" if b.get("detail") else "") for b in builds]
@@ -492,8 +563,9 @@ def main() -> int:
     mstat: dict = {}
     note = None
     try:
-        if os.environ.get("GROW_GATES_ONLY", "").lower() == "true":
-            return gates_only(date)      # zero spend; works even while paused
+        if (os.environ.get("GROW_GATES_ONLY", "").lower() == "true"
+                and os.environ.get("GROW_EVENT", "workflow_dispatch") == "workflow_dispatch"):
+            return gates_only(date)      # zero spend; works even while paused; manual runs only
         hold = guards()
         if paused():
             body = issue_body(date, "paused — nothing collected, spent or published", p1=[], p2=[], diff=None,
@@ -539,22 +611,39 @@ def main() -> int:
             f"weekly budget ₹{weekly:.2f}")
         cl = make_clients()
         before = items_snapshot()
-        # Phase 1: collect last week's growth batches + budget-gated follow-on checks
+        # Phase 1a: collect last week's growth batches (already paid for)
+        collected: dict[str, dict] = {}
         for slug in core.grow_slugs():
             try:
                 r = core.collect(slug, cl, ref=ref)
-                say(f"collect {slug}: {r['status']} added={len(r['added'])}")
-                r["followon"] = core.followon(slug, cl, budget)
-                say(f"follow-on {slug}: {json.dumps(r['followon'], default=str)[:400]}")
-                if r["followon"].get("money_refused"):
-                    note = "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
-                    budget = core.Budget(0.0)          # nothing new for the rest of this run
             except Exception as e:  # noqa: BLE001
                 raise core.GrowStop(f"Gemini or data error while collecting {slug}: {type(e).__name__}: {e}",
                                     "Usually transient (retried with backoff already). Nothing is lost: the "
                                     "saved batch state and the ledger were committed, and next week's run "
                                     "resumes. To retry sooner, run “Weekly grow” from the Actions tab.") from None
-            p1.append(r)
+            say(f"collect {slug}: {r['status']} added={len(r['added'])}")
+            collected[slug] = r
+        # Phase 1b: budget-gated follow-on checks, in the FAIR order (owed work
+        # first, then the library served longest ago); skipped steps are owed
+        for slug in core.fair_order(list(collected), "followon"):
+            r = collected[slug]
+            try:
+                r["followon"] = core.followon(slug, cl, budget)
+            except Exception as e:  # noqa: BLE001
+                raise core.GrowStop(f"Gemini or data error in the follow-on checks for {slug}: "
+                                    f"{type(e).__name__}: {e}",
+                                    "Usually transient. Nothing is lost: saved batch states and the ledger were "
+                                    "committed, and next week's run resumes.") from None
+            say(f"follow-on {slug}: {json.dumps(r['followon'], default=str)[:400]}")
+            owed = core.followon_owed(r["followon"])
+            core.record_fairness(slug, "followon", served=not owed, ref=ref, owed=owed)
+            if owed:
+                r["followon_owed"] = owed
+            if r["followon"].get("money_refused"):
+                note = "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
+                budget = core.Budget(0.0)          # nothing new for the rest of this run
+        p1.extend(collected[s_] for s_ in collected)
+        checkpoint(date, "collected and checked")
         # Libraries being built by the workflow: finish them (already paid for)
         for lib in queued.building():
             try:
@@ -572,6 +661,8 @@ def main() -> int:
             say(f"build {lib['slug']}: {r.get('status')}")
             builds.append({"slug": lib["slug"], "status": r.get("status"),
                            "detail": "new library published" if r.get("status") == "built" else None})
+        if builds:
+            checkpoint(date, "queued library steps")
         regenerate()
         # Phase 2: new candidates for every growing library, budget shared round-robin
         prepared, errs = {}, []
@@ -584,8 +675,12 @@ def main() -> int:
                                     "up. Nothing is lost; next week's run tries again.")
             papers = {s_: len(json.loads((ROOT / "data/domains" / s_ / "prelabelled.json").read_text())["entries"])
                       for s_ in prepared}
-            picked = core.allocate(prepared, budget, papers)
-            for slug, pr in prepared.items():
+            order = core.fair_order(list(prepared), "extraction", papers=papers,
+                                    candidates={s_: len(prepared[s_]["items"]) for s_ in prepared})
+            say("allocation order (fair): " + ", ".join(order))
+            picked = core.allocate(prepared, budget, papers, order)
+            for slug in order:
+                pr = prepared[slug]
                 try:
                     r = core.submit(slug, cl, budget, picked[slug], ref=ref)
                 except Exception as e:  # noqa: BLE001
@@ -597,12 +692,17 @@ def main() -> int:
                         raise core.GrowStop(f"Gemini error while submitting {slug}: {type(e).__name__}: {e}",
                                             "Usually transient; next week's run tries again.") from None
                 r.update(candidates=pr["candidates"], dropped=pr["dropped"], note=r.get("note") or pr.get("note"))
+                # served: it got papers, or it had nothing to submit (not starved)
+                core.record_fairness(slug, "extraction", ref=ref,
+                                     served=bool(r.get("submitted")) or not pr["items"])
                 say(f"submit {slug}: {r.get('submitted', 0)} papers, projected ₹{r.get('projected_inr', 0):.2f}")
                 p2.append(r)
+            checkpoint(date, "submitted")
         # A queued library, if the money rule says it is affordable (one at a time)
         if budget.weekly_inr > 0 and not queued.building() and build_queued:
             rem = money.status(ref)["remaining_inr"] - budget.committed
             for lib in registry_queued():
+                queued.apply_core_scope(lib)          # free; only in-scope papers are built
                 queued.open_fulltext(lib, cl)
                 proj = queued.projection_inr(lib)
                 if money.queued_affordable(proj, rem, budget.weekly_inr, money.load()):
@@ -616,6 +716,7 @@ def main() -> int:
                                        "detail": "refused by the money rule"})
                         break
                     say(f"queued {lib['slug']}: submitted {r.get('submitted')} papers, projected ₹{proj:.2f}")
+                    checkpoint(date, f"queued {lib['slug']} submitted")
                     builds.append({"slug": lib["slug"], "status": "building (extraction submitted)",
                                    "detail": f"projected ₹{proj:.2f}; finishes next week"})
                 else:
@@ -794,7 +895,10 @@ def dry_run() -> int:
     prepared = {s: core.prepare(s, cl, ref=ref, errors=errs) for s in core.grow_slugs()}
     papers = {s: len(json.loads((ROOT / "data/domains" / s / "prelabelled.json").read_text())["entries"])
               for s in prepared}
-    picked = core.allocate(prepared, budget, papers)
+    order = core.fair_order(list(prepared), "extraction", papers=papers,
+                            candidates={s_: len(prepared[s_]["items"]) for s_ in prepared})
+    print("allocation order (fair: served longest ago first): " + ", ".join(order))
+    picked = core.allocate(prepared, budget, papers, order)
     print("\n| library | candidates | planned papers | follow-on checks ₹ | extraction ₹ (batch) | padded ×1.5 ₹ |")
     print("|:--|--:|--:|--:|--:|--:|")
     tot_x = 0.0
@@ -846,6 +950,14 @@ def publish_main(date: str) -> str:
 
 
 BOOKKEEPING = ("data",)        # everything paid for or recorded; never the public site or docs
+
+
+def checkpoint(date: str, what: str) -> None:
+    """Right after a paid step: push data/ (ledger, batch states, pending
+    files) to main BEFORE any long step (gates can take an hour). If the job
+    is cancelled or times out afterwards, nothing paid for is lost and the
+    next run collects it instead of paying again. The site is not touched."""
+    publish_bookkeeping(date, f"weekly grow {date}: checkpoint ({what})", keep_rest=True)
 
 
 def publish_bookkeeping(date: str, msg: str, *, keep_rest: bool = False) -> str | None:

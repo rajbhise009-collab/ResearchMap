@@ -38,17 +38,25 @@ def upsert(title: str, body: str, labels: list[str]) -> str:
     if d:
         d.mkdir(parents=True, exist_ok=True)
         p = d / _fname(title)
-        prev = json.loads(p.read_text()) if p.exists() else {"updates": 0}
+        prev = json.loads(p.read_text()) if p.exists() else {"updates": 0, "reopened": 0}
         p.write_text(json.dumps({"title": title, "body": body, "labels": labels, "state": "open",
-                                 "updates": prev["updates"] + 1}, indent=1))
+                                 "updates": prev["updates"] + 1,
+                                 "reopened": prev.get("reopened", 0) + (prev.get("state") == "closed")},
+                                indent=1))
         return str(p)
     for lab in labels:   # create missing labels quietly
         subprocess.run(["gh", "label", "create", lab, "--force"], capture_output=True, text=True)
     n = _find(title)
     if n is None:
+        # ONE Issue per title, ever: a closed one is reopened, not duplicated
+        n = _find(title, state="closed")
+        if n is not None:
+            _gh("issue", "reopen", str(n))
+    if n is None:
         return _gh("issue", "create", "--title", title, "--body-file", "-",
                    *sum((["--label", lab] for lab in labels), []), stdin=body).strip()
-    _gh("issue", "edit", str(n), "--body-file", "-", stdin=body)
+    _gh("issue", "edit", str(n), "--body-file", "-", *sum((["--add-label", lab] for lab in labels), []),
+        stdin=body)
     return f"#{n} (updated)"
 
 

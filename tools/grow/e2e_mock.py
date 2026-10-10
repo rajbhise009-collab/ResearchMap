@@ -25,10 +25,17 @@ build. Scenarios:
      data/grow/resolved_branches.json the run proceeds (branch kept)
   9  pause (config/growth.json) then resume
  10  daily health: site down -> Issue opened; site up -> Issue closed
+ 11  rotation week: a library never served (and owed its follow-on checks)
+     goes first in both phases and gets papers
+ 12  scope exclusion: a paid-for paper outside the core scope is collected,
+     kept on file, not published, listed in the Issue; the run is not blocked
+ 13  a publish gate fails after regeneration: site unchanged, paid work on
+     main, grow/<date> branch, one marked failure block, Issue names the gate
 
 --quick skips the publish gates except in scenario 7 (honoured only with
-GROW_MOCK=1). Writes ~/ResearchMap-private/launch-qa/grow-e2e.json and, on a
-full pass, docs/releases/growth-e2e-passed.json.
+GROW_MOCK=1). Every run takes the SCHEDULED path (event=schedule, empty
+inputs). Writes <E2E_DIR>/grow-e2e.json and, on a full pass,
+docs/releases/growth-e2e-passed.json.
 """
 from __future__ import annotations
 
@@ -76,6 +83,8 @@ def remote_head(ref="main"):
 def env(date, **extra):
     e = {k: v for k, v in os.environ.items()
          if k not in ("OPENALEX_API_KEY", "GEMINI_API_KEY", "GH_TOKEN", "GITHUB_TOKEN", "WEEKLY_BUDGET_INR")}
+    # the SCHEDULED path, as the workflow runs it: event=schedule and empty inputs
+    e.update(GROW_EVENT="schedule", GROW_RUN_BUDGET_INR="", GROW_BUILD_QUEUED="", GROW_GATES_ONLY="")
     e.update(GROW_MOCK="1", GROW_MOCK_STATE=str(MOCKST), GROW_ISSUE_DIR=str(ISSUES), GROW_DATE=date,
              GROW_LIVE_WAIT_S="0", NEXT_PUBLIC_SITE_URL=SITE, MONEY_CONFIG_PATH=str(MONEY),
              GROW_VERCEL_HOST="", GROW_RETRY_BASE_S="0", PYTHONHASHSEED="0")
@@ -339,6 +348,70 @@ def main() -> int:
         r = run_weekly(d, GROW_GATES="skip")
         check(9, r.returncode == 0 and issue(d)["body"].startswith("**Status:** published"), "resumed",
               r.stdout[-300:])
+        # 11 rotation -----------------------------------------------------
+        sync_main()
+        last = "social-media-teen-mental-health"
+        fair_p = WORK / "data" / "grow" / "fairness.json"
+        fair = {s: {"extraction_served": "2026-12-07", "followon_served": "2026-12-07", "followon_owed": []}
+                for s in growing if s != last}
+        fair[last] = {"followon_owed": ["fw_match"]}            # never served for papers; owed its checks
+        fair_p.parent.mkdir(parents=True, exist_ok=True)
+        fair_p.write_text(json.dumps(fair, indent=1))
+        commit_push("e2e: social media starved so far", [str(fair_p.relative_to(WORK))])
+        d = "2026-12-14"
+        r = run_weekly(d, GROW_GATES="skip")
+        order = next((ln.split(":", 1)[1].strip().split(", ") for ln in r.stdout.splitlines()
+                      if ln.strip().startswith("allocation order (fair)") or "allocation order (fair):" in ln), [])
+        fo = [ln.split("follow-on ", 1)[1].split(":")[0] for ln in r.stdout.splitlines() if "follow-on " in ln
+              and ":" in ln.split("follow-on ", 1)[1]]
+        sub = json.loads((WORK / "data/domains" / last / "grow/pending.json").read_text())["entries"] \
+            if (WORK / "data/domains" / last / "grow/pending.json").exists() else []
+        check(11, r.returncode == 0, "rotation week exits 0", r.stdout[-300:])
+        check(11, order[:1] == [last], "the never-served library goes first in allocation", order)
+        check(11, fo[:1] == [last], "the library owed follow-on checks goes first in the follow-on phase", fo)
+        check(11, len(sub) >= 1, "and it gets papers this week", len(sub))
+        f_after = json.loads(fair_p.read_text())
+        check(11, f_after[last].get("extraction_served") == d, "fairness record updated (served this week)", f_after)
+        # 12 scope exclusion -------------------------------------------------
+        sync_main()
+        diet = "diet-and-mortality"
+        pp = WORK / "data/domains" / diet / "grow/pending.json"
+        excl_wid = None
+        if pp.exists():
+            st = json.loads(pp.read_text())
+            st["entries"][0]["title"] = "Dietary fibre and the composition of the gut microbiota"
+            st["entries"][0]["abstract"] = "We measured fibre intake and microbial diversity in 200 adults."
+            excl_wid = st["entries"][0]["wid"]
+            pp.write_text(json.dumps(st))
+            commit_push("e2e: a pending paper submitted before the scope rule", [str(pp.relative_to(WORK))])
+        d = "2026-12-21"
+        r = run_weekly(d, GROW_GATES="skip")
+        it = issue(d)
+        pre = json.loads((WORK / "data/domains" / diet / "prelabelled.json").read_text())
+        check(12, excl_wid is not None, "a diet batch was pending to collect", excl_wid)
+        check(12, r.returncode == 0, "a scope exclusion never blocks the run", r.stdout[-300:])
+        check(12, excl_wid not in {e["wid"] for e in pre["entries"]}
+              and excl_wid in {x["wid"] for x in pre.get("scope_excluded", [])},
+              "collected, kept on file under scope_excluded, not in the library")
+        check(12, "## Scope exclusions" in it["body"] and str(excl_wid) in it["body"],
+              "listed as a proposal under 'Scope exclusions' in the Issue")
+        check(12, not (WORK / f"frontend/public/data/library/{diet}/paper/{excl_wid}.json").exists(),
+              "not published")
+        # 13 gate failure after regeneration -----------------------------------
+        sync_main()
+        d = "2026-12-28"
+        pub_before, l_before = public_tree_sha("main"), ledger_inr()
+        r = run_weekly(d, GROW_GATES=None, GROW_FAIL_GATE="search regression suite")
+        it = issue(d)
+        led_main = json.loads(sh(["git", "show", "main:data/spend_ledger.json"], cwd=REMOTE).stdout)["cumulative_inr"]
+        check(13, r.returncode == 1, "a failed publish gate -> exit 1", r.stdout[-300:])
+        check(13, public_tree_sha("main") == pub_before, "site files on main unchanged")
+        check(13, led_main >= l_before and remote_head(f"grow/{d}") is not None,
+              "paid work on main (checkpoints/bookkeeping) and the run's grow/<date> branch pushed")
+        check(13, "GATE FAILURES" in r.stdout and "search regression suite" in r.stdout.split("GATE FAILURES")[-1],
+              "one marked failure block at the end of the log")
+        check(13, "search regression suite" in it["body"] and "needs-action" in it["labels"],
+              "the Issue names the failing gate and needs action")
         # 10 --------------------------------------------------------------
         e = env("x", NEXT_PUBLIC_SITE_URL="http://127.0.0.1:9")
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=e)
@@ -356,8 +429,7 @@ def main() -> int:
               "no secret in any Issue")
     finally:
         srv.terminate()
-    rep = Path.home() / "ResearchMap-private" / "launch-qa" / "grow-e2e.json"
-    rep.parent.mkdir(parents=True, exist_ok=True)
+    rep = OUT / "grow-e2e.json"          # never ~/ResearchMap-private (left untouched)
     rep.write_text(json.dumps({"dir": str(OUT), "quick": QUICK, "results": R}, indent=1))
     n_fail = sum(not x["ok"] for x in R)
     print(f"\ne2e: PASS={len(R) - n_fail} FAIL={n_fail} (logs in {OUT})")

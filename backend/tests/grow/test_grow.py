@@ -90,12 +90,13 @@ def _wf(name):
 def test_only_the_two_new_workflows_run_on_a_schedule():
     names = {p.name for p in WF.glob("*.yml")}
     assert "weekly-refresh.yml" not in names
-    assert {"weekly-grow.yml", "daily-health.yml"} <= names
+    assert {"weekly-grow.yml", "daily-health.yml", "keepalive.yml"} <= names
 
 
 def test_triggers_permissions_pins_and_secret_scope():
     for name, perms in (("weekly-grow.yml", {"contents": "write", "issues": "write"}),
-                        ("daily-health.yml", {"contents": "read", "issues": "write"})):
+                        ("daily-health.yml", {"contents": "read", "issues": "write"}),
+                        ("keepalive.yml", {"contents": "write"})):
         d, on = _wf(name)
         assert set(on) == {"schedule", "workflow_dispatch"}, name       # never pull_request
         assert d["permissions"] == perms, name
@@ -373,3 +374,34 @@ def test_run5_accounting_replays_with_a_reason_for_every_change():
 def rw_budget():
     from backend.app.grow.core import Budget
     return Budget(0.0)
+
+
+def test_scheduled_runs_use_the_money_rule_and_ignore_manual_inputs(monkeypatch):
+    """A scheduled run (event=schedule, no inputs) is never manual: no run
+    cap, queued builds left to the money rule, and gates_only ignored even if
+    the variables were somehow set."""
+    rw = _load_run_weekly()
+    monkeypatch.setenv("GROW_EVENT", "schedule")
+    monkeypatch.setenv("GROW_RUN_BUDGET_INR", "5")
+    monkeypatch.setenv("GROW_BUILD_QUEUED", "false")
+    assert rw.run_controls() == (False, None, True)
+    d, on = _wf("weekly-grow.yml")
+    assert on["schedule"][0]["cron"] == "23 5 * * 1"
+    assert d["concurrency"] == {"group": "weekly-grow", "cancel-in-progress": False}
+    _d2, _on2 = _wf("keepalive.yml")
+    assert _d2["concurrency"]["group"] == "weekly-grow" and _d2["concurrency"]["cancel-in-progress"] is False
+    text = (WF / "weekly-grow.yml").read_text()
+    assert "if: failure() || cancelled()" in text and "on_failure.py" in text
+    src = (Path(rw.__file__)).read_text()
+    assert 'os.environ.get("GROW_EVENT", "workflow_dispatch") == "workflow_dispatch"' in src
+
+
+def test_keepalive_acts_only_after_40_quiet_days():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("keepalive", WF.parents[1] / "tools" / "grow" / "keepalive.py")
+    k = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(k)
+    assert k.QUIET_DAYS <= 45
+    import datetime as _dt
+    now = _dt.datetime.now(_dt.timezone.utc)
+    assert k.quiet_days(now) >= 0

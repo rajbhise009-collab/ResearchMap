@@ -35,6 +35,10 @@ permissions:
   contents: write     # commit to main, or push grow/<date> when a gate fails
   issues: write       # one Issue per run
 
+# One run at a time, scheduled and manual alike (same group). A run in
+# progress is NEVER cancelled (it may have submitted or collected paid
+# batches); a newer trigger waits. Paid state is also pushed to main right
+# after each paid step (run_weekly.checkpoint), so even a timeout loses nothing.
 concurrency:
   group: weekly-grow
   cancel-in-progress: false
@@ -59,7 +63,10 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install (no secrets)
+        id: install
+        shell: bash
         run: |
+          exec > >(tee "$RUNNER_TEMP/install.log") 2>&1
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt playwright==1.63.0
           python -m playwright install --with-deps chromium
@@ -68,6 +75,8 @@ jobs:
           echo "AXE_PATH=$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js" >> "$GITHUB_ENV"
 
       - name: Grow, gate, publish
+        id: grow
+        shell: bash
         env:
           # gates_only runs get no API keys at all (zero spend by construction)
           OPENALEX_API_KEY: ${{ inputs.gates_only != true && secrets.OPENALEX_API_KEY || '' }}
@@ -81,4 +90,19 @@ jobs:
           GROW_GATES_ONLY: ${{ inputs.gates_only }}
           WEEKLY_BUDGET_INR: ${{ vars.WEEKLY_BUDGET_INR }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-        run: python tools/grow/run_weekly.py
+          GROW_ISSUE_MARKER: ${{ runner.temp }}/grow-issue-written
+        run: python tools/grow/run_weekly.py 2>&1 | tee "$RUNNER_TEMP/grow.log"
+
+      # Any failure the run could not report itself (install failed, crash,
+      # timeout, cancellation): open or update the run's ONE Issue with the
+      # failing step and the last 60 lines. Spends nothing; changes no file.
+      - name: Report a failure
+        if: failure() || cancelled()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GROW_ISSUE_MARKER: ${{ runner.temp }}/grow-issue-written
+          GROW_STEPS: ${{ toJSON(steps) }}
+          GROW_EVENT: ${{ github.event_name }}
+          GROW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python tools/grow/on_failure.py "$RUNNER_TEMP/install.log" "$RUNNER_TEMP/grow.log"
