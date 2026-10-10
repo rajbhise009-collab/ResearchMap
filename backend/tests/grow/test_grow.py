@@ -420,8 +420,10 @@ def test_tests_never_see_a_scheduled_runs_controls_or_credentials():
     """Inside the suite, the scheduled run's controls and credentials are
     gone (conftest), so a test can never inherit a scheduled run's live path."""
     import os
-    for k in ("GROW_EVENT", "GROW_GATES_ONLY", "GEMINI_API_KEY", "OPENALEX_API_KEY", "GH_TOKEN"):
+    for k in ("GROW_EVENT", "GROW_GATES_ONLY", "GH_TOKEN", "GITHUB_TOKEN"):
         assert k not in os.environ, k
+    for k in ("GEMINI_API_KEY", "OPENALEX_API_KEY", "ANTHROPIC_API_KEY"):
+        assert not os.environ.get(k), k              # blanked (beats .env)
 
 
 def test_gate_subprocesses_get_no_credentials(monkeypatch):

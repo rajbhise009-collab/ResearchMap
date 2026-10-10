@@ -97,8 +97,8 @@ _RUN_CONTROLS_AND_SECRETS = (
     # (or a manual run's inputs) from the run whose preflight is executing it
     "GROW_EVENT", "GROW_RUN_BUDGET_INR", "GROW_BUILD_QUEUED", "GROW_GATES_ONLY", "GROW_ISSUE_MARKER",
     "GROW_FAIL_GATE", "GROW_STEPS", "WEEKLY_BUDGET_INR",
-    # credentials: the offline suite never sees a real key or token
-    "GEMINI_API_KEY", "OPENALEX_API_KEY", "ANTHROPIC_API_KEY", "SEMANTIC_SCHOLAR_API_KEY",
+    # GitHub credentials (the API keys are BLANKED by _isolated_env above,
+    # which beats .env; deleting them would let .env show through)
     "GH_TOKEN", "GITHUB_TOKEN",
 )
 
