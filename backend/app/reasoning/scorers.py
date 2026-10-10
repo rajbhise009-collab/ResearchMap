@@ -225,32 +225,33 @@ def score_unresolved_contradictions(corpus: ReasoningCorpus) -> list[Opportunity
 # are UNSCOREABLE and excluded. Every opportunity carries the corpus-relative
 # caveat. gap_type UNFOLLOWED_FUTURE_WORK.
 
-def score_orphaned_future_work(corpus: ReasoningCorpus) -> list[Opportunity]:
+def orphan_evaluation(corpus: ReasoningCorpus) -> dict[str, dict]:
+    """Per future-work item: whether the open-question rule shows it, and if
+    not, which rule excludes it. The ONE place the rule is decided; the
+    scorer below and the weekly result accounting both read it."""
     s = get_settings()
     cutoff = max((p.year for p in corpus.papers.values() if p.year), default=None)
     labels_by_fw: dict[str, set] = defaultdict(set)
-    notaddr_ids: dict[str, list] = defaultdict(list)
     for a in corpus.addressals:
         labels_by_fw[a.future_work_id].add(a.label)
-        if a.label == "not_addressed":
-            notaddr_ids[a.future_work_id].append(a.to_paper_id)
-
-    # near-later count per fw (guard) — reuse embeddings
     fw_index = {fid: i for i, fid in enumerate(corpus.fw_ids)}
     claim_year = np.array([corpus.papers.get(corpus.claim_paper.get(c)).year
                            if corpus.papers.get(corpus.claim_paper.get(c)) and
                            corpus.papers[corpus.claim_paper[c]].year else -1
                            for c in corpus.claim_ids])
-    out: list[Opportunity] = []
+    out: dict[str, dict] = {}
     for fw, meta in corpus.future_work:
         src = meta.paper_id
         labels = labels_by_fw.get(fw.id, set())
+        ev = {"shown": False, "rule": None, "near_later": None, "age": None, "cutoff": cutoff}
+        out[fw.id] = ev
         if "addressed" in labels or "partial" in labels:
-            continue  # engaged — not orphaned
+            ev["rule"] = "addressed"       # engaged — not orphaned
+            continue
         meta_year = corpus.papers[src].year if src in corpus.papers else None
         if meta_year is None or fw.id not in fw_index:
+            ev["rule"] = "no year or no embedding"
             continue
-        # near-later count
         i = fw_index[fw.id]
         sims = corpus.claim_vectors @ corpus.fw_vectors[i]
         later = claim_year > meta_year
@@ -259,12 +260,34 @@ def score_orphaned_future_work(corpus: ReasoningCorpus) -> list[Opportunity]:
             idx = np.where(later)[0]
             near_pids = {corpus.claim_paper.get(corpus.claim_ids[int(k)])
                         for k in idx if sims[k] >= s.rel_futurework_topical_threshold}
-        near = len(near_pids)
-        if near < s.rel_futurework_min_near_later:
-            continue  # INDETERMINATE — unscoreable, excluded (mandatory)
-        age = (cutoff - meta_year) if cutoff else 0
-        if age < s.reason_orphan_min_years:
-            continue  # trivial: not unfollowed long enough (criteria #3)
+        ev["near_later"] = len(near_pids)
+        ev["age"] = (cutoff - meta_year) if cutoff else 0
+        if ev["near_later"] < s.rel_futurework_min_near_later:
+            ev["rule"] = "too few later near papers"   # INDETERMINATE — unscoreable, excluded (mandatory)
+            continue
+        if ev["age"] < s.reason_orphan_min_years:
+            ev["rule"] = "not open long enough"        # trivial (criteria #3)
+            continue
+        ev["shown"] = True
+    return out
+
+
+def score_orphaned_future_work(corpus: ReasoningCorpus) -> list[Opportunity]:
+    s = get_settings()
+    cutoff = max((p.year for p in corpus.papers.values() if p.year), default=None)
+    notaddr_ids: dict[str, list] = defaultdict(list)
+    for a in corpus.addressals:
+        if a.label == "not_addressed":
+            notaddr_ids[a.future_work_id].append(a.to_paper_id)
+    evaluation = orphan_evaluation(corpus)
+    out: list[Opportunity] = []
+    for fw, meta in corpus.future_work:
+        ev = evaluation[fw.id]
+        if not ev["shown"]:
+            continue
+        src = meta.paper_id
+        meta_year = corpus.papers[src].year
+        near, age = ev["near_later"], ev["age"]
         near_score = _saturating(near, k=8.0)
         age_score = _clamp01(age / 6.0)
         score = _clamp01(0.6 * near_score + 0.4 * age_score)
