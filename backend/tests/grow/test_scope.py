@@ -84,12 +84,14 @@ def test_every_founding_diet_paper_that_reports_mortality_passes():
 def test_selection_drops_borderline_and_out_of_scope(monkeypatch):
     """Wiring: select() keeps only rubric 'on-domain' papers that also pass
     the core scope; both kinds of drop are counted."""
-    monkeypatch.setenv("GROW_DATE", "2026-10-12")
+    # A mock week no workflow run or e2e scenario uses: its candidates are
+    # never already in the library, whatever state the data is in.
+    monkeypatch.setenv("GROW_DATE", "2031-03-03")
     from backend.app.corpus import multi_domain
     from backend.app.grow import scope
     from backend.app.grow.mocks import MockOpenAlex
     oa = MockOpenAlex()
-    ref = dt.date(2026, 10, 12)
+    ref = dt.date(2031, 3, 3)
     cands = core.find_candidates("social-media-teen-mental-health", oa, ref=ref, errors=[])
     recs = core.fetch_records(oa, [c["wid"] for c in cands])
     real_classify, real_scope = multi_domain.classify, scope.core_scope
