@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Pre-push (enable once per clone: git config core.hooksPath .githooks).
+# Fast checks only (~30 s); the full suite and runner mode run in CI (ci.yml).
+#   1. never delete a remote branch, never a non-fast-forward (force) push
+#   2. the spend ledger stays append-only across the commits being pushed
+#   3. the fast test subset: weekly growth, search, safety, money, hooks
+set -euo pipefail
+ROOT="$(git rev-parse --show-toplevel)"
+PY="${PY:-$ROOT/.venv/bin/python}"
+ZERO=0000000000000000000000000000000000000000
+fail() { echo "pre-push: $*" >&2; exit 1; }
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ -z "${local_ref:-}" ] && continue
+  if [ "$local_sha" = "$ZERO" ]; then
+    fail "refusing to delete $remote_ref (standing rule: never delete branches)"
+  fi
+  if [ "$remote_sha" != "$ZERO" ]; then
+    git cat-file -e "$remote_sha^{commit}" 2>/dev/null || fail "unknown remote tip for $remote_ref: fetch first"
+    git merge-base --is-ancestor "$remote_sha" "$local_sha" \
+      || fail "refusing a non-fast-forward push to $remote_ref (standing rule: no history rewrites)"
+  fi
+  "$PY" "$ROOT/tools/ci/check_ledger.py" "$remote_sha" "$local_sha" || fail "ledger check failed"
+done
+
+echo "pre-push: fast tests"
+"$PY" -m pytest -q -x -p no:cacheprovider \
+  "$ROOT/backend/tests/grow" \
+  "$ROOT/backend/tests/test_claude_hooks.py" \
+  "$ROOT/backend/tests/extraction/test_ledger_append_only.py" \
+  "$ROOT/backend/tests/extraction/test_money.py" \
+  "$ROOT/backend/tests/api/test_safety_queries.py" \
+  "$ROOT/backend/tests/api/test_hardening.py" \
+  "$ROOT/backend/tests/api/test_search_per_library.py" \
+  "$ROOT/backend/tests/api/test_search_growth.py" \
+  "$ROOT/backend/tests/test_daily_health_deps.py" \
+  || fail "fast tests failed (the full suite runs in CI)"
