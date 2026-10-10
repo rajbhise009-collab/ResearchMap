@@ -62,9 +62,12 @@ class MockOpenAlex:
         from backend.app.grow.scope import core_scope
         # planted duplicates copy library papers that pass the rubric AND the
         # core scope, so they reach (and must be caught by) the dedupe steps
-        core = [recs[e["wid"]] for e in pre["entries"]
-                if e.get("label") == "on-domain" and e["wid"] in recs and e.get("abstract")
-                and core_scope(slug, e.get("title") or "", e.get("abstract"))[0]]
+        on = [e for e in pre["entries"] if e.get("label") == "on-domain" and e["wid"] in recs and e.get("abstract")]
+        scoped = [e for e in on if core_scope(slug, e.get("title") or "", e.get("abstract"))[0]]
+        # a library with no core scope defined (e.g. one just built from the
+        # queue) is not grown unattended: its candidates are all dropped by
+        # select(), so any of its papers can seed the pool
+        core = [recs[e["wid"]] for e in (scoped if len(scoped) >= 8 else on)]
         out = []
 
         def mk(src, i, title, doi=None):
