@@ -1,0 +1,4499 @@
+{
+ "batch_id": "0kbxw1r5sfna96b0j6nxykaodcurnv9y2n4u",
+ "slug": "ml-fairness",
+ "submitted_on": "2026-10-10",
+ "submitted_at": 1791624891.2889483,
+ "projected_inr": 5.349771,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7220401908": "abstract",
+  "openalex:W7220671976": "fulltext",
+  "openalex:W7220846069": "abstract",
+  "openalex:W7221029226": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7220401908",
+   "openalex_id": "https://openalex.org/W7220401908",
+   "title": "Algorithmic Crowding Out: The Reproduction of Gender Division in the Exposure of Algorithm\u2010Driven Job Advertisements",
+   "year": 2026,
+   "doi": "https://doi.org/10.1111/gwao.70267",
+   "venue": "Gender Work and Organization",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "ABSTRACT This study explores how algorithms curate women's exposure to job ads and reproduce gender divisions through mechanisms more subtle than overt stereotyping. Applying quantitative methods, we analysed over 700 algorithm\u2010driven job ads on a Chinese advertising platform and compared exposure rates between genders. Results reveal that women receive significantly less exposure to job ads than men, with a 32.4% lower exposure rate. This disparity is not attributable to the gender distribution of the platform's user base but is rooted in algorithmic decision\u2010making processes. The findings indicate that women encounter disproportionately more shopping and entertainment ads alongside fewer job ads in their information feeds. This pattern suggests that sectors with higher commercial value for women audiences receive greater algorithmic visibility, thereby reducing women's exposure to employment\u2010related information. Additionally, the study finds that job ads for white\u2010collar positions and high\u2010paying jobs exhibit lower exposure rates for women, whereas ads for blue\u2010collar and low\u2010paying occupations have higher exposure rates among women. To enrich the current understanding of the reproduction of gender stereotypes and segregation in the digital age, we introduce the concept of \u201calgorithmic crowding out,\u201d which encompasses socioeconomic inequalities encoded in algorithms, the systematic exclusion of women from certain job opportunities, and the reproduction of gender orders in algorithm\u2010driven forms. This paper contributes to the classic dichotomy of production and reproduction in discussing gender division by demonstrating the power of algorithms in connecting the production sector of job opportunities and the reproduction sector of gender stereotypes.",
+   "label": "on-domain",
+   "rationale": "strong in-domain term: 'compas'; core scope: same sentence: fairness 'disparit' + algorithmic 'algorithm'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-10",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7220671976",
+   "openalex_id": "https://openalex.org/W7220671976",
+   "title": "Who bears the cost of fairness? Empirical evidence from a cross-regional bias detection and mitigation pipeline in machine learning",
+   "year": 2026,
+   "doi": "https://doi.org/10.62486/sai2026102",
+   "venue": "SAP Social AI",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "Introduction: Machine learning systems deployed across socioeconomically and geopolitically heterogeneous regions frequently generate unequal error distributions while still appearing compliant under aggregate evaluation metrics. This creates major governance concerns for high-stakes applications such as credit scoring, employment screening, and healthcare decision-making. Objective: This study evaluated whether commonly used bias mitigation strategies can reduce cross-regional algorithmic disparities without imposing disproportionate performance costs on structurally disadvantaged populations. Methods: A data-centric bias detection and mitigation pipeline was implemented using a synthetic cross-regional dataset (N = 6 000) parameterised from World Bank, ILO, and Global Findex distributional statistics across six world regions: Sub-Saharan Africa, South Asia, East Asia, Western Europe, North America, and Latin America. Four fairness metrics were evaluated simultaneously across all regions: AUC-ROC, Equalized Odds, Demographic Parity Gap, and F1 Score. Results: Pre-processing reweighting produced no measurable fairness improvement across regions. Post-processing isotonic calibration reduced disparity in some high-resource regions but degraded performance in South Asia. False Positive Rates exceeded 0,913 across all regions, revealing threshold collapse, meaning models classified nearly all cases as positive despite high aggregate recall. Fairness intervention costs were geographically asymmetric: Sub-Saharan Africa experienced an F1 reduction of 0,014 for only a 0,007 reduction in Demographic Parity Gap, whereas North America remained largely unaffected. Conclusions: Cross-regional algorithmic fairness cannot be achieved through post-hoc correction alone. AI governance frameworks should therefore require region-stratified auditing, geographically disaggregated reporting, and region-specific fairness evaluation prior to deployment.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: title: fairness 'fairness' + algorithmic 'machine learning'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-10",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  },
+  {
+   "wid": "W7220846069",
+   "openalex_id": "https://openalex.org/W7220846069",
+   "title": "Equity-Driven AI Frameworks for Faculty Performance Evaluation in Public and Private Universities",
+   "year": 2026,
+   "doi": "https://doi.org/10.1108/978-1-83662-878-120261005",
+   "venue": "Emerald Group Publishing Limited eBooks",
+   "field": "computer science",
+   "cited_by_count": 0,
+   "abstract": "Abstract This chapter investigates how artificial intelligence (AI) might improve teacher performance evaluation systems by eliminating biases and improving equity in public and private universities. Faculty evaluations are frequently criticized for being subjective, inconsistent, and shaped by institutional cultures. The structural and resource imbalances between public and private institutions exacerbate these issues. This chapter uses AI technology to provide equity-driven frameworks for evaluating faculty contributions in teaching, research, and service. This chapter will delve into the ethical aspects of AI deployment, providing insights into creating systems that reduce biases, increase accountability, and accord with institutional ideals. The study provides theoretical frameworks and practical examples to solve challenges faced by public and private universities and suggests AI-driven solutions for equity.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur within 30 tokens; core scope: title: fairness 'Equit' + algorithmic 'AI'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-10",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7221029226",
+   "openalex_id": "https://openalex.org/W7221029226",
+   "title": "Uncovering Hidden Water Insecurity: A Conflict\u2010Augmented, Equity\u2010Weighted Machine Learning Framework for Global SDG 6.1 Risk Assessment",
+   "year": 2026,
+   "doi": "https://doi.org/10.1002/sd.71744",
+   "venue": "Sustainable Development",
+   "field": "environmental science",
+   "cited_by_count": 0,
+   "abstract": "ABSTRACT Achieving Sustainable Development Goal 6.1\u2014universal safe drinking water access by 2030\u2014demands forward\u2010looking risk intelligence that moves beyond trend extrapolation, yet monitoring frameworks report current coverage and cannot anticipate its deterioration. We merge WHO/UNICEF Joint Monitoring Programme, World Bank, ACLED conflict, ND\u2010GAIN climate vulnerability and Fragile States Index data into a 232\u2010country panel spanning 2000\u20132024, and predict from 15 features\u2014eight socioeconomic and service\u2010coverage, seven conflict\u2010climate\u2014whether safely managed coverage will fall below 50% 5 years ahead ( country\u2010years). Under country\u2010grouped cross\u2010validation a persistence baseline dominates rank\u2010order discrimination (AUC = 0.968), a finding that should reframe how such models are judged: machine learning contributes through calibration, equity and attribution rather than ranking. Conflict and climate covariates improve calibration (Brier 0.190 vs. 0.196) and yield a Hidden Vulnerability Index, evaluated against seed, architecture and permutation controls, that ranks countries whose reported trajectories understate structural risk. Equity weighting narrows the equal\u2010opportunity gap across income groups by 41.5%, and temporal attribution identifies the urban\u2013rural gap as the fastest\u2010rising predictor of future insecurity ( pp/year). Only 40.5% of countries are projected to achieve SDG 6.1, with no low\u2010income country on track.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: title: fairness 'Equit' + algorithmic 'Machine Learning'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-10",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7220401908",
+   "doi": "https://doi.org/10.1111/gwao.70267",
+   "title": "Algorithmic Crowding Out: The Reproduction of Gender Division in the Exposure of Algorithm\u2010Driven Job Advertisements",
+   "display_name": "Algorithmic Crowding Out: The Reproduction of Gender Division in the Exposure of Algorithm\u2010Driven Job Advertisements",
+   "publication_year": 2026,
+   "publication_date": "2026-10-05",
+   "ids": {
+    "openalex": "https://openalex.org/W7220401908",
+    "doi": "https://doi.org/10.1111/gwao.70267"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1111/gwao.70267",
+    "doi": "https://doi.org/10.1111/gwao.70267",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1111/gwao.70267",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gwao.70267",
+    "source": {
+     "id": "https://openalex.org/S172342871",
+     "display_name": "Gender Work and Organization",
+     "issn_l": "0968-6673",
+     "issn": [
+      "0968-6673",
+      "1468-0432"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-a",
+      "cwts-core",
+      "erih-plus",
+      "jufo-3",
+      "ki-jl-1",
+      "norway-2"
+     ],
+     "host_organization": "https://openalex.org/P4310320595",
+     "host_organization_name": "Wiley",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320595"
+     ],
+     "host_organization_lineage_names": [
+      "Wiley"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Gender, Work &amp; Organization",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "bronze",
+    "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gwao.70267",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5079515962",
+      "display_name": "Zhen-Zhen Wang",
+      "orcid": "https://orcid.org/0000-0001-5844-821X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-5844-821X"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I180726961",
+       "display_name": "Shenzhen University",
+       "ror": "https://ror.org/01vy4gh70",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I180726961"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Zhen\u2010Zhen Wang",
+     "raw_affiliation_strings": [
+      "School of Media and Communication Shenzhen University  Shenzhen China"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-5844-821X",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Media and Communication Shenzhen University  Shenzhen China",
+       "institution_ids": [
+        "https://openalex.org/I180726961"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5036464764",
+      "display_name": "Songyin Liu",
+      "orcid": "https://orcid.org/0000-0003-0177-3972",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-0177-3972"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I180726961",
+       "display_name": "Shenzhen University",
+       "ror": "https://ror.org/01vy4gh70",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I180726961"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Songyin Liu",
+     "raw_affiliation_strings": [
+      "Institute of Global Communications Shenzhen University  Shenzhen China",
+      "School of Media and Communication Shenzhen University  Shenzhen China"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-0177-3972",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Institute of Global Communications Shenzhen University  Shenzhen China",
+       "institution_ids": []
+      },
+      {
+       "raw_affiliation_string": "School of Media and Communication Shenzhen University  Shenzhen China",
+       "institution_ids": [
+        "https://openalex.org/I180726961"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5157475354",
+      "display_name": "Ping Wang",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Ping Wang",
+     "raw_affiliation_strings": [
+      "Digital Marketing Department OPPO  Shenzhen China"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Digital Marketing Department OPPO  Shenzhen China",
+       "institution_ids": []
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5036464764"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I180726961"
+   ],
+   "apc_list": {
+    "value": 4880,
+    "currency": "USD",
+    "value_usd": 4880
+   },
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.90886527,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10883",
+    "display_name": "Ethics and Social Impacts of AI",
+    "score": 0.8432999849319458,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3311",
+     "display_name": "Safety Research"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.8432999849319458,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12908",
+     "display_name": "Media, Gender, and Advertising",
+     "score": 0.05420000106096268,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3318",
+      "display_name": "Gender Studies"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T13911",
+     "display_name": "Employment, Labor, and Gender Studies",
+     "score": 0.02800000086426735,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/algorithmic-discrimination",
+     "display_name": "algorithmic discrimination",
+     "score": 0.6570000052452087
+    },
+    {
+     "id": "https://openalex.org/keywords/gender-division",
+     "display_name": "gender division",
+     "score": 0.7020000219345093
+    },
+    {
+     "id": "https://openalex.org/keywords/job-advertisements",
+     "display_name": "job advertisements",
+     "score": 0.8109999895095825
+    },
+    {
+     "id": "https://openalex.org/keywords/algorithmic-curation",
+     "display_name": "algorithmic curation",
+     "score": 0.7049999833106995
+    },
+    {
+     "id": "https://openalex.org/keywords/women-s-employment-opportunities",
+     "display_name": "women's employment opportunities",
+     "score": 0.5899999737739563
+    },
+    {
+     "id": "https://openalex.org/keywords/gender-stereotypes",
+     "display_name": "gender stereotypes",
+     "score": 0.765999972820282
+    },
+    {
+     "id": "https://openalex.org/keywords/production-and-reproduction",
+     "display_name": "production and reproduction",
+     "score": 0.6439999938011169
+    },
+    {
+     "id": "https://openalex.org/keywords/online-labour-platforms",
+     "display_name": "online labour platforms",
+     "score": 0.3709999918937683
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C59659247",
+     "wikidata": "https://www.wikidata.org/wiki/Q11990",
+     "display_name": "Reproduction",
+     "level": 2,
+     "score": 0.8144000172615051
+    },
+    {
+     "id": "https://openalex.org/C2778348673",
+     "wikidata": "https://www.wikidata.org/wiki/Q739302",
+     "display_name": "Production (economics)",
+     "level": 2,
+     "score": 0.5343999862670898
+    },
+    {
+     "id": "https://openalex.org/C149333683",
+     "wikidata": "https://www.wikidata.org/wiki/Q5189188",
+     "display_name": "Crowding",
+     "level": 2,
+     "score": 0.5335000157356262
+    },
+    {
+     "id": "https://openalex.org/C45555294",
+     "wikidata": "https://www.wikidata.org/wiki/Q28113351",
+     "display_name": "Inequality",
+     "level": 2,
+     "score": 0.4991999864578247
+    },
+    {
+     "id": "https://openalex.org/C110121322",
+     "wikidata": "https://www.wikidata.org/wiki/Q865811",
+     "display_name": "Distribution (mathematics)",
+     "level": 2,
+     "score": 0.477400004863739
+    },
+    {
+     "id": "https://openalex.org/C994546",
+     "wikidata": "https://www.wikidata.org/wiki/Q207449",
+     "display_name": "Division of labour",
+     "level": 2,
+     "score": 0.47440001368522644
+    },
+    {
+     "id": "https://openalex.org/C112698675",
+     "wikidata": "https://www.wikidata.org/wiki/Q37038",
+     "display_name": "Advertising",
+     "level": 1,
+     "score": 0.4575999975204468
+    },
+    {
+     "id": "https://openalex.org/C147077947",
+     "wikidata": "https://www.wikidata.org/wiki/Q1515895",
+     "display_name": "Socioeconomic status",
+     "level": 3,
+     "score": 0.45680001378059387
+    },
+    {
+     "id": "https://openalex.org/C512170562",
+     "wikidata": "https://www.wikidata.org/wiki/Q173799",
+     "display_name": "Entertainment",
+     "level": 2,
+     "score": 0.43209999799728394
+    },
+    {
+     "id": "https://openalex.org/C2994533747",
+     "wikidata": "https://www.wikidata.org/wiki/Q2891097",
+     "display_name": "Gender inequality",
+     "level": 3,
+     "score": 0.4300999939441681
+    },
+    {
+     "id": "https://openalex.org/C8031360",
+     "wikidata": "https://www.wikidata.org/wiki/Q1071788",
+     "display_name": "Crowding out",
+     "level": 2,
+     "score": 0.4153999984264374
+    },
+    {
+     "id": "https://openalex.org/C4249254",
+     "wikidata": "https://www.wikidata.org/wiki/Q3044431",
+     "display_name": "Demographic economics",
+     "level": 1,
+     "score": 0.3817000091075897
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.3582000136375427
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.33399999141693115
+    },
+    {
+     "id": "https://openalex.org/C144024400",
+     "wikidata": "https://www.wikidata.org/wiki/Q21201",
+     "display_name": "Sociology",
+     "level": 0,
+     "score": 0.3172000050544739
+    },
+    {
+     "id": "https://openalex.org/C145236788",
+     "wikidata": "https://www.wikidata.org/wiki/Q28161",
+     "display_name": "Labour economics",
+     "level": 1,
+     "score": 0.30640000104904175
+    },
+    {
+     "id": "https://openalex.org/C163258240",
+     "wikidata": "https://www.wikidata.org/wiki/Q25342",
+     "display_name": "Power (physics)",
+     "level": 2,
+     "score": 0.3001999855041504
+    },
+    {
+     "id": "https://openalex.org/C162324750",
+     "wikidata": "https://www.wikidata.org/wiki/Q8134",
+     "display_name": "Economics",
+     "level": 0,
+     "score": 0.29490000009536743
+    },
+    {
+     "id": "https://openalex.org/C3018726217",
+     "wikidata": "https://www.wikidata.org/wiki/Q2672163",
+     "display_name": "Gender relations",
+     "level": 2,
+     "score": 0.273499995470047
+    },
+    {
+     "id": "https://openalex.org/C2778334786",
+     "wikidata": "https://www.wikidata.org/wiki/Q1586270",
+     "display_name": "Variation (astronomy)",
+     "level": 2,
+     "score": 0.2728999853134155
+    },
+    {
+     "id": "https://openalex.org/C2986619947",
+     "wikidata": "https://www.wikidata.org/wiki/Q30103150",
+     "display_name": "Gender gap",
+     "level": 2,
+     "score": 0.26820001006126404
+    },
+    {
+     "id": "https://openalex.org/C30772137",
+     "wikidata": "https://www.wikidata.org/wiki/Q5164762",
+     "display_name": "Consumption (sociology)",
+     "level": 2,
+     "score": 0.26440000534057617
+    },
+    {
+     "id": "https://openalex.org/C2993271050",
+     "wikidata": "https://www.wikidata.org/wiki/Q93200",
+     "display_name": "Gender discrimination",
+     "level": 2,
+     "score": 0.2628999948501587
+    },
+    {
+     "id": "https://openalex.org/C110888244",
+     "wikidata": "https://www.wikidata.org/wiki/Q187588",
+     "display_name": "Social class",
+     "level": 2,
+     "score": 0.259799987077713
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1111/gwao.70267",
+     "doi": "https://doi.org/10.1111/gwao.70267",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1111/gwao.70267",
+     "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gwao.70267",
+     "source": {
+      "id": "https://openalex.org/S172342871",
+      "display_name": "Gender Work and Organization",
+      "issn_l": "0968-6673",
+      "issn": [
+       "0968-6673",
+       "1468-0432"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "abdc-a",
+       "cwts-core",
+       "erih-plus",
+       "jufo-3",
+       "ki-jl-1",
+       "norway-2"
+      ],
+      "host_organization": "https://openalex.org/P4310320595",
+      "host_organization_name": "Wiley",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320595"
+      ],
+      "host_organization_lineage_names": [
+       "Wiley"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Gender, Work &amp; Organization",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1111/gwao.70267",
+    "doi": "https://doi.org/10.1111/gwao.70267",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1111/gwao.70267",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gwao.70267",
+    "source": {
+     "id": "https://openalex.org/S172342871",
+     "display_name": "Gender Work and Organization",
+     "issn_l": "0968-6673",
+     "issn": [
+      "0968-6673",
+      "1468-0432"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-a",
+      "cwts-core",
+      "erih-plus",
+      "jufo-3",
+      "ki-jl-1",
+      "norway-2"
+     ],
+     "host_organization": "https://openalex.org/P4310320595",
+     "host_organization_name": "Wiley",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320595"
+     ],
+     "host_organization_lineage_names": [
+      "Wiley"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Gender, Work &amp; Organization",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "display_name": "Gender equality",
+     "id": "https://metadata.un.org/sdg/5",
+     "score": 1.0
+    },
+    {
+     "display_name": "Reduced inequalities",
+     "id": "https://metadata.un.org/sdg/10",
+     "score": 0.9629999995231628
+    },
+    {
+     "display_name": "Decent work and economic growth",
+     "id": "https://metadata.un.org/sdg/8",
+     "score": 0.7257999777793884
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320327557",
+     "display_name": "National Office for Philosophy and Social Sciences",
+     "ror": "https://ror.org/04m0ms912"
+    }
+   ],
+   "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7220401908.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7220401908.grobid-xml"
+   },
+   "referenced_works_count": 48,
+   "referenced_works": [
+    "https://openalex.org/W178437142",
+    "https://openalex.org/W1574146915",
+    "https://openalex.org/W1819662813",
+    "https://openalex.org/W1860055233",
+    "https://openalex.org/W1865166680",
+    "https://openalex.org/W1965035284",
+    "https://openalex.org/W1994485561",
+    "https://openalex.org/W2016571220",
+    "https://openalex.org/W2027613509",
+    "https://openalex.org/W2045805927",
+    "https://openalex.org/W2075068302",
+    "https://openalex.org/W2096731204",
+    "https://openalex.org/W2100153433",
+    "https://openalex.org/W2100960835",
+    "https://openalex.org/W2109200844",
+    "https://openalex.org/W2126179497",
+    "https://openalex.org/W2138424453",
+    "https://openalex.org/W2140688319",
+    "https://openalex.org/W2164330449",
+    "https://openalex.org/W2164710706",
+    "https://openalex.org/W2275591480",
+    "https://openalex.org/W2315157751",
+    "https://openalex.org/W2332784310",
+    "https://openalex.org/W2472081261",
+    "https://openalex.org/W2499370362",
+    "https://openalex.org/W2527098785",
+    "https://openalex.org/W2530495025",
+    "https://openalex.org/W2550925836",
+    "https://openalex.org/W2560682528",
+    "https://openalex.org/W2574568515",
+    "https://openalex.org/W2765744331",
+    "https://openalex.org/W2768321702",
+    "https://openalex.org/W2951002685",
+    "https://openalex.org/W2953001331",
+    "https://openalex.org/W2969896603",
+    "https://openalex.org/W2981869278",
+    "https://openalex.org/W2999490220",
+    "https://openalex.org/W3081791661",
+    "https://openalex.org/W3085671829",
+    "https://openalex.org/W3121544778",
+    "https://openalex.org/W3122467956",
+    "https://openalex.org/W4210406706",
+    "https://openalex.org/W4213009331",
+    "https://openalex.org/W4232070357",
+    "https://openalex.org/W4238600264",
+    "https://openalex.org/W4245292249",
+    "https://openalex.org/W4249673087",
+    "https://openalex.org/W4365388160"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "ABSTRACT": [
+     0
+    ],
+    "This": [
+     1,
+     63,
+     104,
+     209
+    ],
+    "study": [
+     2,
+     129
+    ],
+    "explores": [
+     3
+    ],
+    "how": [
+     4
+    ],
+    "algorithms": [
+     5,
+     229
+    ],
+    "curate": [
+     6
+    ],
+    "women's": [
+     7,
+     122
+    ],
+    "exposure": [
+     8,
+     40,
+     51,
+     61,
+     123,
+     142,
+     155
+    ],
+    "to": [
+     9,
+     52,
+     68,
+     124,
+     212
+    ],
+    "job": [
+     10,
+     31,
+     53,
+     98,
+     132,
+     198,
+     236
+    ],
+    "ads": [
+     11,
+     32,
+     54,
+     95,
+     99,
+     133,
+     147
+    ],
+    "and": [
+     12,
+     38,
+     93,
+     137,
+     150,
+     170,
+     200,
+     218,
+     238
+    ],
+    "reproduce": [
+     13
+    ],
+    "gender": [
+     14,
+     70,
+     168,
+     204,
+     222,
+     243
+    ],
+    "divisions": [
+     15
+    ],
+    "through": [
+     16
+    ],
+    "mechanisms": [
+     17
+    ],
+    "more": [
+     18,
+     91
+    ],
+    "subtle": [
+     19
+    ],
+    "than": [
+     20,
+     55
+    ],
+    "overt": [
+     21
+    ],
+    "stereotyping.": [
+     22
+    ],
+    "Applying": [
+     23
+    ],
+    "quantitative": [
+     24
+    ],
+    "methods,": [
+     25
+    ],
+    "we": [
+     26,
+     176
+    ],
+    "analysed": [
+     27
+    ],
+    "over": [
+     28
+    ],
+    "700": [
+     29
+    ],
+    "algorithm\u2010driven": [
+     30,
+     207
+    ],
+    "on": [
+     33
+    ],
+    "a": [
+     34,
+     58
+    ],
+    "Chinese": [
+     35
+    ],
+    "advertising": [
+     36
+    ],
+    "platform": [
+     37
+    ],
+    "compared": [
+     39
+    ],
+    "rates": [
+     41,
+     143,
+     156
+    ],
+    "between": [
+     42
+    ],
+    "genders.": [
+     43
+    ],
+    "Results": [
+     44
+    ],
+    "reveal": [
+     45
+    ],
+    "that": [
+     46,
+     87,
+     107,
+     131
+    ],
+    "women": [
+     47,
+     88,
+     114,
+     195
+    ],
+    "receive": [
+     48,
+     116
+    ],
+    "significantly": [
+     49
+    ],
+    "less": [
+     50
+    ],
+    "men,": [
+     56
+    ],
+    "with": [
+     57,
+     109
+    ],
+    "32.4%": [
+     59
+    ],
+    "lower": [
+     60,
+     141
+    ],
+    "rate.": [
+     62
+    ],
+    "disparity": [
+     64
+    ],
+    "is": [
+     65,
+     78
+    ],
+    "not": [
+     66
+    ],
+    "attributable": [
+     67
+    ],
+    "the": [
+     69,
+     73,
+     128,
+     161,
+     165,
+     173,
+     178,
+     191,
+     201,
+     213,
+     226,
+     232,
+     239
+    ],
+    "distribution": [
+     71
+    ],
+    "of": [
+     72,
+     164,
+     167,
+     180,
+     194,
+     203,
+     216,
+     228,
+     235,
+     242
+    ],
+    "platform's": [
+     74
+    ],
+    "user": [
+     75
+    ],
+    "base": [
+     76
+    ],
+    "but": [
+     77
+    ],
+    "rooted": [
+     79
+    ],
+    "in": [
+     80,
+     100,
+     172,
+     189,
+     206,
+     220,
+     230
+    ],
+    "algorithmic": [
+     81,
+     118
+    ],
+    "decision\u2010making": [
+     82
+    ],
+    "processes.": [
+     83
+    ],
+    "The": [
+     84
+    ],
+    "findings": [
+     85
+    ],
+    "indicate": [
+     86
+    ],
+    "encounter": [
+     89
+    ],
+    "disproportionately": [
+     90
+    ],
+    "shopping": [
+     92
+    ],
+    "entertainment": [
+     94
+    ],
+    "alongside": [
+     96
+    ],
+    "fewer": [
+     97
+    ],
+    "their": [
+     101
+    ],
+    "information": [
+     102
+    ],
+    "feeds.": [
+     103
+    ],
+    "pattern": [
+     105
+    ],
+    "suggests": [
+     106
+    ],
+    "sectors": [
+     108
+    ],
+    "higher": [
+     110,
+     154
+    ],
+    "commercial": [
+     111
+    ],
+    "value": [
+     112
+    ],
+    "for": [
+     113,
+     134,
+     144,
+     148
+    ],
+    "audiences": [
+     115
+    ],
+    "greater": [
+     117
+    ],
+    "visibility,": [
+     119
+    ],
+    "thereby": [
+     120
+    ],
+    "reducing": [
+     121
+    ],
+    "employment\u2010related": [
+     125
+    ],
+    "information.": [
+     126
+    ],
+    "Additionally,": [
+     127
+    ],
+    "finds": [
+     130
+    ],
+    "white\u2010collar": [
+     135
+    ],
+    "positions": [
+     136
+    ],
+    "high\u2010paying": [
+     138
+    ],
+    "jobs": [
+     139
+    ],
+    "exhibit": [
+     140
+    ],
+    "women,": [
+     145
+    ],
+    "whereas": [
+     146
+    ],
+    "blue\u2010collar": [
+     149
+    ],
+    "low\u2010paying": [
+     151
+    ],
+    "occupations": [
+     152
+    ],
+    "have": [
+     153
+    ],
+    "among": [
+     157
+    ],
+    "women.": [
+     158
+    ],
+    "To": [
+     159
+    ],
+    "enrich": [
+     160
+    ],
+    "current": [
+     162
+    ],
+    "understanding": [
+     163
+    ],
+    "reproduction": [
+     166,
+     202,
+     219,
+     240
+    ],
+    "stereotypes": [
+     169
+    ],
+    "segregation": [
+     171
+    ],
+    "digital": [
+     174
+    ],
+    "age,": [
+     175
+    ],
+    "introduce": [
+     177
+    ],
+    "concept": [
+     179
+    ],
+    "\u201calgorithmic": [
+     181
+    ],
+    "crowding": [
+     182
+    ],
+    "out,\u201d": [
+     183
+    ],
+    "which": [
+     184
+    ],
+    "encompasses": [
+     185
+    ],
+    "socioeconomic": [
+     186
+    ],
+    "inequalities": [
+     187
+    ],
+    "encoded": [
+     188
+    ],
+    "algorithms,": [
+     190
+    ],
+    "systematic": [
+     192
+    ],
+    "exclusion": [
+     193
+    ],
+    "from": [
+     196
+    ],
+    "certain": [
+     197
+    ],
+    "opportunities,": [
+     199
+    ],
+    "orders": [
+     205
+    ],
+    "forms.": [
+     208
+    ],
+    "paper": [
+     210
+    ],
+    "contributes": [
+     211
+    ],
+    "classic": [
+     214
+    ],
+    "dichotomy": [
+     215
+    ],
+    "production": [
+     217,
+     233
+    ],
+    "discussing": [
+     221
+    ],
+    "division": [
+     223
+    ],
+    "by": [
+     224
+    ],
+    "demonstrating": [
+     225
+    ],
+    "power": [
+     227
+    ],
+    "connecting": [
+     231
+    ],
+    "sector": [
+     234,
+     241
+    ],
+    "opportunities": [
+     237
+    ],
+    "stereotypes.": [
+     244
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-07T09:51:55.459714",
+   "created_date": "2026-10-06T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7220671976",
+   "doi": "https://doi.org/10.62486/sai2026102",
+   "title": "Who bears the cost of fairness? Empirical evidence from a cross-regional bias detection and mitigation pipeline in machine learning",
+   "display_name": "Who bears the cost of fairness? Empirical evidence from a cross-regional bias detection and mitigation pipeline in machine learning",
+   "publication_year": 2026,
+   "publication_date": "2026-10-02",
+   "ids": {
+    "openalex": "https://openalex.org/W7220671976",
+    "doi": "https://doi.org/10.62486/sai2026102"
+   },
+   "language": null,
+   "primary_location": {
+    "id": "doi:10.62486/sai2026102",
+    "doi": "https://doi.org/10.62486/sai2026102",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.62486/sai2026102",
+    "pdf_url": "https://southam.pub/journals/article/sai2026102.pdf",
+    "source": {
+     "id": "https://openalex.org/S7407056735",
+     "display_name": "SAP Social AI",
+     "issn_l": "3121-2131",
+     "issn": [
+      "3121-2131"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "SAP Social AI",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://southam.pub/journals/article/sai2026102.pdf",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5139267123",
+      "display_name": "Linda Bessa-Simons",
+      "orcid": "https://orcid.org/0009-0003-7434-4201",
+      "observed_orcids": [
+       "https://orcid.org/0009-0003-7434-4201"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I291863076",
+       "display_name": "University of Energy and Natural Resources",
+       "ror": "https://ror.org/05r9rzb75",
+       "country_code": "GH",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I291863076"
+       ]
+      }
+     ],
+     "countries": [
+      "GH"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Linda Bessa-Simons",
+     "raw_affiliation_strings": [
+      "Department of Computer and Electrical Engineering, University of Energy and Natural Resources. Sunyani, Ghana"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0003-7434-4201",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer and Electrical Engineering, University of Energy and Natural Resources. Sunyani, Ghana",
+       "institution_ids": [
+        "https://openalex.org/I291863076"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5133533250",
+      "display_name": "Clinton Amponsah",
+      "orcid": "https://orcid.org/0009-0006-8414-9794",
+      "observed_orcids": [
+       "https://orcid.org/0009-0006-8414-9794"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I291863076",
+       "display_name": "University of Energy and Natural Resources",
+       "ror": "https://ror.org/05r9rzb75",
+       "country_code": "GH",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I291863076"
+       ]
+      }
+     ],
+     "countries": [
+      "GH"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Clinton Amponsah",
+     "raw_affiliation_strings": [
+      "Department of Computer and Electrical Engineering, University of Energy and Natural Resources. Sunyani, Ghana"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0006-8414-9794",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer and Electrical Engineering, University of Energy and Natural Resources. Sunyani, Ghana",
+       "institution_ids": [
+        "https://openalex.org/I291863076"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5118867245",
+      "display_name": "Bernard Kyiewu",
+      "orcid": "https://orcid.org/0009-0004-4806-0077",
+      "observed_orcids": [
+       "https://orcid.org/0009-0004-4806-0077"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I291863076",
+       "display_name": "University of Energy and Natural Resources",
+       "ror": "https://ror.org/05r9rzb75",
+       "country_code": "GH",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I291863076"
+       ]
+      }
+     ],
+     "countries": [
+      "GH"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Bernard Kyiewu",
+     "raw_affiliation_strings": [
+      "Department of Computer and Electrical Engineering, University of Energy and Natural Resources. Sunyani, Ghana"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0004-4806-0077",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer and Electrical Engineering, University of Energy and Natural Resources. Sunyani, Ghana",
+       "institution_ids": [
+        "https://openalex.org/I291863076"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I291863076"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.91619075,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "2",
+    "issue": null,
+    "first_page": "102",
+    "last_page": "102"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10883",
+    "display_name": "Ethics and Social Impacts of AI",
+    "score": 0.9994999766349792,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3311",
+     "display_name": "Safety Research"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.9994999766349792,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12026",
+     "display_name": "Explainable Artificial Intelligence (XAI)",
+     "score": 0.00019999999494757503,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11652",
+     "display_name": "Imbalanced Data Classification Techniques",
+     "score": 9.999999747378752e-05,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/algorithmic-fairness",
+     "display_name": "algorithmic fairness",
+     "score": 0.9710000157356262
+    },
+    {
+     "id": "https://openalex.org/keywords/bias-mitigation",
+     "display_name": "bias mitigation",
+     "score": 0.781000018119812
+    },
+    {
+     "id": "https://openalex.org/keywords/fairness-metrics",
+     "display_name": "fairness metrics",
+     "score": 0.45100000500679016
+    },
+    {
+     "id": "https://openalex.org/keywords/equalized-odds",
+     "display_name": "equalized odds",
+     "score": 0.7699999809265137
+    },
+    {
+     "id": "https://openalex.org/keywords/ai-governance",
+     "display_name": "AI governance",
+     "score": 0.5180000066757202
+    },
+    {
+     "id": "https://openalex.org/keywords/socioeconomic-inequality",
+     "display_name": "socioeconomic disparities",
+     "score": 0.4569999873638153
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C119857082",
+     "wikidata": "https://www.wikidata.org/wiki/Q2539",
+     "display_name": "Machine learning",
+     "level": 1,
+     "score": 0.532800018787384
+    },
+    {
+     "id": "https://openalex.org/C39389867",
+     "wikidata": "https://www.wikidata.org/wiki/Q380767",
+     "display_name": "Corporate governance",
+     "level": 2,
+     "score": 0.5241000056266785
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.5117999911308289
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.5098000168800354
+    },
+    {
+     "id": "https://openalex.org/C149782125",
+     "wikidata": "https://www.wikidata.org/wiki/Q160039",
+     "display_name": "Econometrics",
+     "level": 1,
+     "score": 0.46000000834465027
+    },
+    {
+     "id": "https://openalex.org/C2780623907",
+     "wikidata": "https://www.wikidata.org/wiki/Q106394435",
+     "display_name": "Disadvantaged",
+     "level": 2,
+     "score": 0.400299996137619
+    },
+    {
+     "id": "https://openalex.org/C166052673",
+     "wikidata": "https://www.wikidata.org/wiki/Q83021",
+     "display_name": "Empirical evidence",
+     "level": 2,
+     "score": 0.3962000012397766
+    },
+    {
+     "id": "https://openalex.org/C162324750",
+     "wikidata": "https://www.wikidata.org/wiki/Q8134",
+     "display_name": "Economics",
+     "level": 0,
+     "score": 0.3700000047683716
+    },
+    {
+     "id": "https://openalex.org/C45555294",
+     "wikidata": "https://www.wikidata.org/wiki/Q28113351",
+     "display_name": "Inequality",
+     "level": 2,
+     "score": 0.34279999136924744
+    },
+    {
+     "id": "https://openalex.org/C165838908",
+     "wikidata": "https://www.wikidata.org/wiki/Q736777",
+     "display_name": "Calibration",
+     "level": 2,
+     "score": 0.3411000072956085
+    },
+    {
+     "id": "https://openalex.org/C196083921",
+     "wikidata": "https://www.wikidata.org/wiki/Q7915758",
+     "display_name": "Variance (accounting)",
+     "level": 2,
+     "score": 0.33180001378059387
+    },
+    {
+     "id": "https://openalex.org/C12725497",
+     "wikidata": "https://www.wikidata.org/wiki/Q810247",
+     "display_name": "Baseline (sea)",
+     "level": 2,
+     "score": 0.32429999113082886
+    },
+    {
+     "id": "https://openalex.org/C43521106",
+     "wikidata": "https://www.wikidata.org/wiki/Q2165493",
+     "display_name": "Pipeline (software)",
+     "level": 2,
+     "score": 0.3167000114917755
+    },
+    {
+     "id": "https://openalex.org/C4679612",
+     "wikidata": "https://www.wikidata.org/wiki/Q866298",
+     "display_name": "Aggregate (composite)",
+     "level": 2,
+     "score": 0.3093999922275543
+    },
+    {
+     "id": "https://openalex.org/C29122968",
+     "wikidata": "https://www.wikidata.org/wiki/Q1414816",
+     "display_name": "Incentive",
+     "level": 2,
+     "score": 0.296099990606308
+    },
+    {
+     "id": "https://openalex.org/C105795698",
+     "wikidata": "https://www.wikidata.org/wiki/Q12483",
+     "display_name": "Statistics",
+     "level": 1,
+     "score": 0.29159998893737793
+    },
+    {
+     "id": "https://openalex.org/C158886217",
+     "wikidata": "https://www.wikidata.org/wiki/Q16799549",
+     "display_name": "Latin Americans",
+     "level": 2,
+     "score": 0.2847000062465668
+    },
+    {
+     "id": "https://openalex.org/C2778058735",
+     "wikidata": "https://www.wikidata.org/wiki/Q4692253",
+     "display_name": "Aggregate data",
+     "level": 2,
+     "score": 0.2752000093460083
+    },
+    {
+     "id": "https://openalex.org/C176217482",
+     "wikidata": "https://www.wikidata.org/wiki/Q860554",
+     "display_name": "Metric (unit)",
+     "level": 2,
+     "score": 0.26759999990463257
+    },
+    {
+     "id": "https://openalex.org/C2780148112",
+     "wikidata": "https://www.wikidata.org/wiki/Q1432581",
+     "display_name": "Proxy (statistics)",
+     "level": 2,
+     "score": 0.26499998569488525
+    },
+    {
+     "id": "https://openalex.org/C162118730",
+     "wikidata": "https://www.wikidata.org/wiki/Q1128453",
+     "display_name": "Actuarial science",
+     "level": 1,
+     "score": 0.25130000710487366
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.62486/sai2026102",
+     "doi": "https://doi.org/10.62486/sai2026102",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.62486/sai2026102",
+     "pdf_url": "https://southam.pub/journals/article/sai2026102.pdf",
+     "source": {
+      "id": "https://openalex.org/S7407056735",
+      "display_name": "SAP Social AI",
+      "issn_l": "3121-2131",
+      "issn": [
+       "3121-2131"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "SAP Social AI",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.62486/sai2026102",
+    "doi": "https://doi.org/10.62486/sai2026102",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.62486/sai2026102",
+    "pdf_url": "https://southam.pub/journals/article/sai2026102.pdf",
+    "source": {
+     "id": "https://openalex.org/S7407056735",
+     "display_name": "SAP Social AI",
+     "issn_l": "3121-2131",
+     "issn": [
+      "3121-2131"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "SAP Social AI",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "display_name": "Reduced inequalities",
+     "id": "https://metadata.un.org/sdg/10",
+     "score": 1.0
+    },
+    {
+     "display_name": "Peace, justice, and strong institutions",
+     "id": "https://metadata.un.org/sdg/16",
+     "score": 0.5473999977111816
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7220671976.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7220671976.grobid-xml"
+   },
+   "referenced_works_count": 17,
+   "referenced_works": [
+    "https://openalex.org/W2543774860",
+    "https://openalex.org/W2784397426",
+    "https://openalex.org/W2809878087",
+    "https://openalex.org/W2969896603",
+    "https://openalex.org/W3004493409",
+    "https://openalex.org/W3032340379",
+    "https://openalex.org/W3092541244",
+    "https://openalex.org/W3101206394",
+    "https://openalex.org/W4210736086",
+    "https://openalex.org/W4280615754",
+    "https://openalex.org/W4288758404",
+    "https://openalex.org/W4294837428",
+    "https://openalex.org/W4385416124",
+    "https://openalex.org/W4388646529",
+    "https://openalex.org/W4396514806",
+    "https://openalex.org/W4399492816",
+    "https://openalex.org/W4401729066"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Introduction:": [
+     0
+    ],
+    "Machine": [
+     1
+    ],
+    "learning": [
+     2
+    ],
+    "systems": [
+     3
+    ],
+    "deployed": [
+     4
+    ],
+    "across": [
+     5,
+     94,
+     117,
+     137,
+     159
+    ],
+    "socioeconomically": [
+     6
+    ],
+    "and": [
+     7,
+     38,
+     70,
+     89,
+     108,
+     126,
+     228
+    ],
+    "geopolitically": [
+     8
+    ],
+    "heterogeneous": [
+     9
+    ],
+    "regions": [
+     10,
+     147
+    ],
+    "frequently": [
+     11
+    ],
+    "generate": [
+     12
+    ],
+    "unequal": [
+     13
+    ],
+    "error": [
+     14
+    ],
+    "distributions": [
+     15
+    ],
+    "while": [
+     16
+    ],
+    "still": [
+     17
+    ],
+    "appearing": [
+     18
+    ],
+    "compliant": [
+     19
+    ],
+    "under": [
+     20
+    ],
+    "aggregate": [
+     21,
+     175
+    ],
+    "evaluation": [
+     22,
+     231
+    ],
+    "metrics.": [
+     23
+    ],
+    "This": [
+     24,
+     42
+    ],
+    "creates": [
+     25
+    ],
+    "major": [
+     26
+    ],
+    "governance": [
+     27,
+     218
+    ],
+    "concerns": [
+     28
+    ],
+    "for": [
+     29,
+     191
+    ],
+    "high-stakes": [
+     30
+    ],
+    "applications": [
+     31
+    ],
+    "such": [
+     32
+    ],
+    "as": [
+     33,
+     171
+    ],
+    "credit": [
+     34
+    ],
+    "scoring,": [
+     35
+    ],
+    "employment": [
+     36
+    ],
+    "screening,": [
+     37
+    ],
+    "healthcare": [
+     39
+    ],
+    "decision-making.": [
+     40
+    ],
+    "Objective:": [
+     41
+    ],
+    "study": [
+     43
+    ],
+    "evaluated": [
+     44,
+     115
+    ],
+    "whether": [
+     45
+    ],
+    "commonly": [
+     46
+    ],
+    "used": [
+     47
+    ],
+    "bias": [
+     48,
+     68
+    ],
+    "mitigation": [
+     49,
+     71
+    ],
+    "strategies": [
+     50
+    ],
+    "can": [
+     51
+    ],
+    "reduce": [
+     52
+    ],
+    "cross-regional": [
+     53,
+     78
+    ],
+    "algorithmic": [
+     54,
+     208
+    ],
+    "disparities": [
+     55
+    ],
+    "without": [
+     56
+    ],
+    "imposing": [
+     57
+    ],
+    "disproportionate": [
+     58
+    ],
+    "performance": [
+     59,
+     150
+    ],
+    "costs": [
+     60,
+     179
+    ],
+    "on": [
+     61
+    ],
+    "structurally": [
+     62
+    ],
+    "disadvantaged": [
+     63
+    ],
+    "populations.": [
+     64
+    ],
+    "Methods:": [
+     65
+    ],
+    "A": [
+     66
+    ],
+    "data-centric": [
+     67
+    ],
+    "detection": [
+     69
+    ],
+    "pipeline": [
+     72
+    ],
+    "was": [
+     73
+    ],
+    "implemented": [
+     74
+    ],
+    "using": [
+     75
+    ],
+    "a": [
+     76,
+     193
+    ],
+    "synthetic": [
+     77
+    ],
+    "dataset": [
+     79
+    ],
+    "(N": [
+     80
+    ],
+    "=": [
+     81
+    ],
+    "6": [
+     82
+    ],
+    "000)": [
+     83
+    ],
+    "parameterised": [
+     84
+    ],
+    "from": [
+     85
+    ],
+    "World": [
+     86
+    ],
+    "Bank,": [
+     87
+    ],
+    "ILO,": [
+     88
+    ],
+    "Global": [
+     90
+    ],
+    "Findex": [
+     91
+    ],
+    "distributional": [
+     92
+    ],
+    "statistics": [
+     93
+    ],
+    "six": [
+     95
+    ],
+    "world": [
+     96
+    ],
+    "regions:": [
+     97,
+     119
+    ],
+    "Sub-Saharan": [
+     98,
+     183
+    ],
+    "Africa,": [
+     99
+    ],
+    "South": [
+     100,
+     152
+    ],
+    "Asia,": [
+     101,
+     103
+    ],
+    "East": [
+     102
+    ],
+    "Western": [
+     104
+    ],
+    "Europe,": [
+     105
+    ],
+    "North": [
+     106,
+     201
+    ],
+    "America,": [
+     107
+    ],
+    "Latin": [
+     109
+    ],
+    "America.": [
+     110
+    ],
+    "Four": [
+     111
+    ],
+    "fairness": [
+     112,
+     135,
+     209,
+     230
+    ],
+    "metrics": [
+     113
+    ],
+    "were": [
+     114,
+     180
+    ],
+    "simultaneously": [
+     116
+    ],
+    "all": [
+     118,
+     160,
+     169
+    ],
+    "AUC-ROC,": [
+     120
+    ],
+    "Equalized": [
+     121
+    ],
+    "Odds,": [
+     122
+    ],
+    "Demographic": [
+     123,
+     197
+    ],
+    "Parity": [
+     124,
+     198
+    ],
+    "Gap,": [
+     125,
+     199
+    ],
+    "F1": [
+     127,
+     187
+    ],
+    "Score.": [
+     128
+    ],
+    "Results:": [
+     129
+    ],
+    "Pre-processing": [
+     130
+    ],
+    "reweighting": [
+     131
+    ],
+    "produced": [
+     132
+    ],
+    "no": [
+     133
+    ],
+    "measurable": [
+     134
+    ],
+    "improvement": [
+     136
+    ],
+    "regions.": [
+     138
+    ],
+    "Post-processing": [
+     139
+    ],
+    "isotonic": [
+     140
+    ],
+    "calibration": [
+     141
+    ],
+    "reduced": [
+     142
+    ],
+    "disparity": [
+     143
+    ],
+    "in": [
+     144,
+     151,
+     196
+    ],
+    "some": [
+     145
+    ],
+    "high-resource": [
+     146
+    ],
+    "but": [
+     148
+    ],
+    "degraded": [
+     149
+    ],
+    "Asia.": [
+     153
+    ],
+    "False": [
+     154
+    ],
+    "Positive": [
+     155
+    ],
+    "Rates": [
+     156
+    ],
+    "exceeded": [
+     157
+    ],
+    "0,913": [
+     158
+    ],
+    "regions,": [
+     161
+    ],
+    "revealing": [
+     162
+    ],
+    "threshold": [
+     163
+    ],
+    "collapse,": [
+     164
+    ],
+    "meaning": [
+     165
+    ],
+    "models": [
+     166
+    ],
+    "classified": [
+     167
+    ],
+    "nearly": [
+     168
+    ],
+    "cases": [
+     170
+    ],
+    "positive": [
+     172
+    ],
+    "despite": [
+     173
+    ],
+    "high": [
+     174
+    ],
+    "recall.": [
+     176
+    ],
+    "Fairness": [
+     177
+    ],
+    "intervention": [
+     178
+    ],
+    "geographically": [
+     181,
+     225
+    ],
+    "asymmetric:": [
+     182
+    ],
+    "Africa": [
+     184
+    ],
+    "experienced": [
+     185
+    ],
+    "an": [
+     186
+    ],
+    "reduction": [
+     188,
+     195
+    ],
+    "of": [
+     189
+    ],
+    "0,014": [
+     190
+    ],
+    "only": [
+     192
+    ],
+    "0,007": [
+     194
+    ],
+    "whereas": [
+     200
+    ],
+    "America": [
+     202
+    ],
+    "remained": [
+     203
+    ],
+    "largely": [
+     204
+    ],
+    "unaffected.": [
+     205
+    ],
+    "Conclusions:": [
+     206
+    ],
+    "Cross-regional": [
+     207
+    ],
+    "cannot": [
+     210
+    ],
+    "be": [
+     211
+    ],
+    "achieved": [
+     212
+    ],
+    "through": [
+     213
+    ],
+    "post-hoc": [
+     214
+    ],
+    "correction": [
+     215
+    ],
+    "alone.": [
+     216
+    ],
+    "AI": [
+     217
+    ],
+    "frameworks": [
+     219
+    ],
+    "should": [
+     220
+    ],
+    "therefore": [
+     221
+    ],
+    "require": [
+     222
+    ],
+    "region-stratified": [
+     223
+    ],
+    "auditing,": [
+     224
+    ],
+    "disaggregated": [
+     226
+    ],
+    "reporting,": [
+     227
+    ],
+    "region-specific": [
+     229
+    ],
+    "prior": [
+     232
+    ],
+    "to": [
+     233
+    ],
+    "deployment.": [
+     234
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-08T09:06:37.294493",
+   "created_date": "2026-10-07T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7220846069",
+   "doi": "https://doi.org/10.1108/978-1-83662-878-120261005",
+   "title": "Equity-Driven AI Frameworks for Faculty Performance Evaluation in Public and Private Universities",
+   "display_name": "Equity-Driven AI Frameworks for Faculty Performance Evaluation in Public and Private Universities",
+   "publication_year": 2026,
+   "publication_date": "2026-10-07",
+   "ids": {
+    "openalex": "https://openalex.org/W7220846069",
+    "doi": "https://doi.org/10.1108/978-1-83662-878-120261005"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1108/978-1-83662-878-120261005",
+    "doi": "https://doi.org/10.1108/978-1-83662-878-120261005",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1108/978-1-83662-878-120261005",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S4306463236",
+     "display_name": "Emerald Group Publishing Limited eBooks",
+     "issn_l": null,
+     "issn": null,
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": "https://openalex.org/P4310319811",
+     "host_organization_name": "Emerald Publishing Limited",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319811"
+     ],
+     "host_organization_lineage_names": [
+      "Emerald Publishing Limited"
+     ],
+     "type": "ebook platform"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Future-Proof",
+    "raw_type": "book-chapter"
+   },
+   "type": "book-chapter",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5099983890",
+      "display_name": "Alice Alakoum",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I88491126",
+       "display_name": "Bucharest University of Economic Studies",
+       "ror": "https://ror.org/04yvncj21",
+       "country_code": "RO",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I88491126"
+       ]
+      }
+     ],
+     "countries": [
+      "RO"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Alice AlAkoum",
+     "raw_affiliation_strings": [
+      "Bucharest University of Economic Studies ,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Bucharest University of Economic Studies ,",
+       "institution_ids": [
+        "https://openalex.org/I88491126"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5047877413",
+      "display_name": "Elvira Nica",
+      "orcid": "https://orcid.org/0000-0002-7383-2161",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-7383-2161"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I88491126",
+       "display_name": "Bucharest University of Economic Studies",
+       "ror": "https://ror.org/04yvncj21",
+       "country_code": "RO",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I88491126"
+       ]
+      }
+     ],
+     "countries": [
+      "RO"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Elvira Nica",
+     "raw_affiliation_strings": [
+      "Bucharest University of Economic Studies ,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Bucharest University of Economic Studies ,",
+       "institution_ids": [
+        "https://openalex.org/I88491126"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5003824738",
+      "display_name": "Mohammad Abiad",
+      "orcid": "https://orcid.org/0000-0003-4641-4412",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-4641-4412"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2803079837",
+       "display_name": "American University of the Middle East",
+       "ror": "https://ror.org/02gqgne03",
+       "country_code": "KW",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2803079837"
+       ]
+      }
+     ],
+     "countries": [
+      "KW"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Mohammad Abiad",
+     "raw_affiliation_strings": [
+      "American University of the Middle East ,"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "American University of the Middle East ,",
+       "institution_ids": [
+        "https://openalex.org/I2803079837"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 2,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.95220927,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "73",
+    "last_page": "91"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T14414",
+    "display_name": "Artificial Intelligence in Education",
+    "score": 0.5102999806404114,
+    "subfield": {
+     "id": "https://openalex.org/subfields/1710",
+     "display_name": "Information Systems"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/17",
+     "display_name": "Computer Science"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T14414",
+     "display_name": "Artificial Intelligence in Education",
+     "score": 0.5102999806404114,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1710",
+      "display_name": "Information Systems"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T13812",
+     "display_name": "AI and HR Technologies",
+     "score": 0.2443999946117401,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1407",
+      "display_name": "Organizational Behavior and Human Resource Management"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/14",
+      "display_name": "Business, Management and Accounting"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.15520000457763672,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/faculty-performance-evaluation",
+     "display_name": "faculty performance evaluation",
+     "score": 0.9290000200271606
+    },
+    {
+     "id": "https://openalex.org/keywords/artificial-intelligence-in-higher-education",
+     "display_name": "artificial intelligence in higher education",
+     "score": 0.8870000243186951
+    },
+    {
+     "id": "https://openalex.org/keywords/equity-in-academia",
+     "display_name": "academic equity",
+     "score": 0.6690000295639038
+    },
+    {
+     "id": "https://openalex.org/keywords/bias-mitigation",
+     "display_name": "bias mitigation",
+     "score": 0.8009999990463257
+    },
+    {
+     "id": "https://openalex.org/keywords/public-and-private-universities",
+     "display_name": "public and private universities",
+     "score": 0.8389999866485596
+    },
+    {
+     "id": "https://openalex.org/keywords/ai-ethics",
+     "display_name": "AI ethics",
+     "score": 0.7289999723434448
+    },
+    {
+     "id": "https://openalex.org/keywords/accountability",
+     "display_name": "accountability",
+     "score": 0.8299999833106995
+    },
+    {
+     "id": "https://openalex.org/keywords/institutional-culture",
+     "display_name": "institutional culture",
+     "score": 0.8510000109672546
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C199728807",
+     "wikidata": "https://www.wikidata.org/wiki/Q2578557",
+     "display_name": "Equity (law)",
+     "level": 2,
+     "score": 0.5648999810218811
+    },
+    {
+     "id": "https://openalex.org/C55587333",
+     "wikidata": "https://www.wikidata.org/wiki/Q1133029",
+     "display_name": "Engineering ethics",
+     "level": 1,
+     "score": 0.42260000109672546
+    },
+    {
+     "id": "https://openalex.org/C56739046",
+     "wikidata": "https://www.wikidata.org/wiki/Q192060",
+     "display_name": "Knowledge management",
+     "level": 1,
+     "score": 0.3862000107765198
+    },
+    {
+     "id": "https://openalex.org/C539667460",
+     "wikidata": "https://www.wikidata.org/wiki/Q2414942",
+     "display_name": "Management science",
+     "level": 1,
+     "score": 0.38600000739097595
+    },
+    {
+     "id": "https://openalex.org/C39549134",
+     "wikidata": "https://www.wikidata.org/wiki/Q133080",
+     "display_name": "Public relations",
+     "level": 1,
+     "score": 0.3758000135421753
+    },
+    {
+     "id": "https://openalex.org/C144133560",
+     "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+     "display_name": "Business",
+     "level": 0,
+     "score": 0.35350000858306885
+    },
+    {
+     "id": "https://openalex.org/C17744445",
+     "wikidata": "https://www.wikidata.org/wiki/Q36442",
+     "display_name": "Political science",
+     "level": 0,
+     "score": 0.353300005197525
+    },
+    {
+     "id": "https://openalex.org/C121426985",
+     "wikidata": "https://www.wikidata.org/wiki/Q591763",
+     "display_name": "Private sector",
+     "level": 2,
+     "score": 0.32350000739097595
+    },
+    {
+     "id": "https://openalex.org/C206345919",
+     "wikidata": "https://www.wikidata.org/wiki/Q20380951",
+     "display_name": "Resource (disambiguation)",
+     "level": 2,
+     "score": 0.32260000705718994
+    },
+    {
+     "id": "https://openalex.org/C120912362",
+     "wikidata": "https://www.wikidata.org/wiki/Q136822",
+     "display_name": "Higher education",
+     "level": 2,
+     "score": 0.3222000002861023
+    },
+    {
+     "id": "https://openalex.org/C71110296",
+     "wikidata": "https://www.wikidata.org/wiki/Q476115",
+     "display_name": "Private equity",
+     "level": 2,
+     "score": 0.3077999949455261
+    },
+    {
+     "id": "https://openalex.org/C109986646",
+     "wikidata": "https://www.wikidata.org/wiki/Q546113",
+     "display_name": "Public policy",
+     "level": 2,
+     "score": 0.27799999713897705
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.275299996137619
+    },
+    {
+     "id": "https://openalex.org/C31196326",
+     "wikidata": "https://www.wikidata.org/wiki/Q7257916",
+     "display_name": "Public institution",
+     "level": 2,
+     "score": 0.2644999921321869
+    },
+    {
+     "id": "https://openalex.org/C127413603",
+     "wikidata": "https://www.wikidata.org/wiki/Q11023",
+     "display_name": "Engineering",
+     "level": 0,
+     "score": 0.26440000534057617
+    },
+    {
+     "id": "https://openalex.org/C162324750",
+     "wikidata": "https://www.wikidata.org/wiki/Q8134",
+     "display_name": "Economics",
+     "level": 0,
+     "score": 0.25699999928474426
+    },
+    {
+     "id": "https://openalex.org/C147859227",
+     "wikidata": "https://www.wikidata.org/wiki/Q294217",
+     "display_name": "Public sector",
+     "level": 2,
+     "score": 0.25619998574256897
+    },
+    {
+     "id": "https://openalex.org/C144024400",
+     "wikidata": "https://www.wikidata.org/wiki/Q21201",
+     "display_name": "Sociology",
+     "level": 0,
+     "score": 0.2502000033855438
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1108/978-1-83662-878-120261005",
+     "doi": "https://doi.org/10.1108/978-1-83662-878-120261005",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1108/978-1-83662-878-120261005",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306463236",
+      "display_name": "Emerald Group Publishing Limited eBooks",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/P4310319811",
+      "host_organization_name": "Emerald Publishing Limited",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319811"
+      ],
+      "host_organization_lineage_names": [
+       "Emerald Publishing Limited"
+      ],
+      "type": "ebook platform"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Future-Proof",
+     "raw_type": "book-chapter"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "display_name": "Quality education",
+     "id": "https://metadata.un.org/sdg/4",
+     "score": 0.8278999924659729
+    },
+    {
+     "display_name": "Reduced inequalities",
+     "id": "https://metadata.un.org/sdg/10",
+     "score": 0.7578999996185303
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 53,
+   "referenced_works": [
+    "https://openalex.org/W2759819614",
+    "https://openalex.org/W2805654720",
+    "https://openalex.org/W2833650956",
+    "https://openalex.org/W2883807722",
+    "https://openalex.org/W2905136983",
+    "https://openalex.org/W2912115269",
+    "https://openalex.org/W2952360544",
+    "https://openalex.org/W2963272316",
+    "https://openalex.org/W2974817986",
+    "https://openalex.org/W2992606886",
+    "https://openalex.org/W3000370698",
+    "https://openalex.org/W3017131514",
+    "https://openalex.org/W3081827895",
+    "https://openalex.org/W3108965446",
+    "https://openalex.org/W3131839876",
+    "https://openalex.org/W3135781295",
+    "https://openalex.org/W3155263273",
+    "https://openalex.org/W3157651069",
+    "https://openalex.org/W3173900512",
+    "https://openalex.org/W3197230498",
+    "https://openalex.org/W3200688999",
+    "https://openalex.org/W3209912268",
+    "https://openalex.org/W4206487964",
+    "https://openalex.org/W4206635589",
+    "https://openalex.org/W4210960313",
+    "https://openalex.org/W4214596099",
+    "https://openalex.org/W4280609100",
+    "https://openalex.org/W4285084317",
+    "https://openalex.org/W4317860549",
+    "https://openalex.org/W4318966368",
+    "https://openalex.org/W4319063013",
+    "https://openalex.org/W4362241060",
+    "https://openalex.org/W4367625612",
+    "https://openalex.org/W4376622637",
+    "https://openalex.org/W4378192581",
+    "https://openalex.org/W4384273441",
+    "https://openalex.org/W4384447746",
+    "https://openalex.org/W4386285839",
+    "https://openalex.org/W4388480930",
+    "https://openalex.org/W4390229867",
+    "https://openalex.org/W4391131201",
+    "https://openalex.org/W4391171092",
+    "https://openalex.org/W4395027662",
+    "https://openalex.org/W4396648178",
+    "https://openalex.org/W4398314221",
+    "https://openalex.org/W4399902914",
+    "https://openalex.org/W4400303336",
+    "https://openalex.org/W4401760347",
+    "https://openalex.org/W4403170312",
+    "https://openalex.org/W4403463989",
+    "https://openalex.org/W4403660285",
+    "https://openalex.org/W4403981746",
+    "https://openalex.org/W4404543728"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Abstract": [
+     0
+    ],
+    "This": [
+     1,
+     52,
+     70
+    ],
+    "chapter": [
+     2,
+     53,
+     71
+    ],
+    "investigates": [
+     3
+    ],
+    "how": [
+     4
+    ],
+    "artificial": [
+     5
+    ],
+    "intelligence": [
+     6
+    ],
+    "(AI)": [
+     7
+    ],
+    "might": [
+     8
+    ],
+    "improve": [
+     9
+    ],
+    "teacher": [
+     10
+    ],
+    "performance": [
+     11
+    ],
+    "evaluation": [
+     12
+    ],
+    "systems": [
+     13,
+     85
+    ],
+    "by": [
+     14,
+     36,
+     108
+    ],
+    "eliminating": [
+     15
+    ],
+    "biases": [
+     16
+    ],
+    "and": [
+     17,
+     22,
+     34,
+     41,
+     46,
+     68,
+     91,
+     101,
+     110,
+     113
+    ],
+    "improving": [
+     18
+    ],
+    "equity": [
+     19
+    ],
+    "in": [
+     20,
+     65
+    ],
+    "public": [
+     21,
+     45,
+     109
+    ],
+    "private": [
+     23,
+     47,
+     111
+    ],
+    "universities.": [
+     24
+    ],
+    "Faculty": [
+     25
+    ],
+    "evaluations": [
+     26
+    ],
+    "are": [
+     27
+    ],
+    "frequently": [
+     28
+    ],
+    "criticized": [
+     29
+    ],
+    "for": [
+     30,
+     61,
+     117
+    ],
+    "being": [
+     31
+    ],
+    "subjective,": [
+     32
+    ],
+    "inconsistent,": [
+     33
+    ],
+    "shaped": [
+     35
+    ],
+    "institutional": [
+     37,
+     94
+    ],
+    "cultures.": [
+     38
+    ],
+    "The": [
+     39,
+     96
+    ],
+    "structural": [
+     40
+    ],
+    "resource": [
+     42
+    ],
+    "imbalances": [
+     43
+    ],
+    "between": [
+     44
+    ],
+    "institutions": [
+     48
+    ],
+    "exacerbate": [
+     49
+    ],
+    "these": [
+     50
+    ],
+    "issues.": [
+     51
+    ],
+    "uses": [
+     54
+    ],
+    "AI": [
+     55,
+     79
+    ],
+    "technology": [
+     56
+    ],
+    "to": [
+     57,
+     104
+    ],
+    "provide": [
+     58
+    ],
+    "equity-driven": [
+     59
+    ],
+    "frameworks": [
+     60,
+     100
+    ],
+    "evaluating": [
+     62
+    ],
+    "faculty": [
+     63
+    ],
+    "contributions": [
+     64
+    ],
+    "teaching,": [
+     66
+    ],
+    "research,": [
+     67
+    ],
+    "service.": [
+     69
+    ],
+    "will": [
+     72
+    ],
+    "delve": [
+     73
+    ],
+    "into": [
+     74,
+     83
+    ],
+    "the": [
+     75
+    ],
+    "ethical": [
+     76
+    ],
+    "aspects": [
+     77
+    ],
+    "of": [
+     78
+    ],
+    "deployment,": [
+     80
+    ],
+    "providing": [
+     81
+    ],
+    "insights": [
+     82
+    ],
+    "creating": [
+     84
+    ],
+    "that": [
+     86
+    ],
+    "reduce": [
+     87
+    ],
+    "biases,": [
+     88
+    ],
+    "increase": [
+     89
+    ],
+    "accountability,": [
+     90
+    ],
+    "accord": [
+     92
+    ],
+    "with": [
+     93
+    ],
+    "ideals.": [
+     95
+    ],
+    "study": [
+     97
+    ],
+    "provides": [
+     98
+    ],
+    "theoretical": [
+     99
+    ],
+    "practical": [
+     102
+    ],
+    "examples": [
+     103
+    ],
+    "solve": [
+     105
+    ],
+    "challenges": [
+     106
+    ],
+    "faced": [
+     107
+    ],
+    "universities": [
+     112
+    ],
+    "suggests": [
+     114
+    ],
+    "AI-driven": [
+     115
+    ],
+    "solutions": [
+     116
+    ],
+    "equity.": [
+     118
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-08T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7221029226",
+   "doi": "https://doi.org/10.1002/sd.71744",
+   "title": "Uncovering Hidden Water Insecurity: A Conflict\u2010Augmented, Equity\u2010Weighted Machine Learning Framework for Global SDG 6.1 Risk Assessment",
+   "display_name": "Uncovering Hidden Water Insecurity: A Conflict\u2010Augmented, Equity\u2010Weighted Machine Learning Framework for Global SDG 6.1 Risk Assessment",
+   "publication_year": 2026,
+   "publication_date": "2026-10-08",
+   "ids": {
+    "openalex": "https://openalex.org/W7221029226",
+    "doi": "https://doi.org/10.1002/sd.71744"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1002/sd.71744",
+    "doi": "https://doi.org/10.1002/sd.71744",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1002/sd.71744",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S165666656",
+     "display_name": "Sustainable Development",
+     "issn_l": "0968-0802",
+     "issn": [
+      "0968-0802",
+      "1099-1719"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-c",
+      "cwts-core",
+      "jufo-2",
+      "norway-2"
+     ],
+     "host_organization": "https://openalex.org/P4310320595",
+     "host_organization_name": "Wiley",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320595"
+     ],
+     "host_organization_lineage_names": [
+      "Wiley"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Sustainable Development",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5032665814",
+      "display_name": "Kiran Kishor Maharana",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2800445823",
+       "display_name": "Bharatiya Vidya Bhavan",
+       "ror": "https://ror.org/00t4jm248",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2800445823"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Kiran Kishor Maharana",
+     "raw_affiliation_strings": [
+      "Department of Computer Engineering Bharatiya Vidya Bhavan's Sardar Patel Institute of Technology (SPIT)  Mumbai Maharashtra India"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0002-8090-444X",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer Engineering Bharatiya Vidya Bhavan's Sardar Patel Institute of Technology (SPIT)  Mumbai Maharashtra India",
+       "institution_ids": [
+        "https://openalex.org/I2800445823"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5038786438",
+      "display_name": "Prasenjit Bhavathankar",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2800445823",
+       "display_name": "Bharatiya Vidya Bhavan",
+       "ror": "https://ror.org/00t4jm248",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2800445823"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Prasenjit Bhavathankar",
+     "raw_affiliation_strings": [
+      "Department of Computer Engineering Bharatiya Vidya Bhavan's Sardar Patel Institute of Technology (SPIT)  Mumbai Maharashtra India"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer Engineering Bharatiya Vidya Bhavan's Sardar Patel Institute of Technology (SPIT)  Mumbai Maharashtra India",
+       "institution_ids": [
+        "https://openalex.org/I2800445823"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5029367540",
+      "display_name": "Renuka Pawar",
+      "orcid": "https://orcid.org/0000-0003-2330-0543",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-2330-0543"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2800445823",
+       "display_name": "Bharatiya Vidya Bhavan",
+       "ror": "https://ror.org/00t4jm248",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2800445823"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Renuka Pawar",
+     "raw_affiliation_strings": [
+      "Department of Computer Engineering Bharatiya Vidya Bhavan's Sardar Patel Institute of Technology (SPIT)  Mumbai Maharashtra India"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer Engineering Bharatiya Vidya Bhavan's Sardar Patel Institute of Technology (SPIT)  Mumbai Maharashtra India",
+       "institution_ids": [
+        "https://openalex.org/I2800445823"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I2800445823"
+   ],
+   "apc_list": {
+    "value": 4250,
+    "currency": "USD",
+    "value_usd": 4250
+   },
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.76462466,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T14232",
+    "display_name": "Water Resource Management and Quality",
+    "score": 0.7109000086784363,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2312",
+     "display_name": "Water Science and Technology"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/23",
+     "display_name": "Environmental Science"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T14232",
+     "display_name": "Water Resource Management and Quality",
+     "score": 0.7109000086784363,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2312",
+      "display_name": "Water Science and Technology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/23",
+      "display_name": "Environmental Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11755",
+     "display_name": "Transboundary Water Resource Management",
+     "score": 0.18799999356269836,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T14178",
+     "display_name": "Environmental Science and Water Management",
+     "score": 0.016300000250339508,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2312",
+      "display_name": "Water Science and Technology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/23",
+      "display_name": "Environmental Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C119857082",
+     "wikidata": "https://www.wikidata.org/wiki/Q2539",
+     "display_name": "Machine learning",
+     "level": 1,
+     "score": 0.5112000107765198
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.4837000072002411
+    },
+    {
+     "id": "https://openalex.org/C187029079",
+     "wikidata": "https://www.wikidata.org/wiki/Q958679",
+     "display_name": "Cognitive reframing",
+     "level": 2,
+     "score": 0.4553000032901764
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.43050000071525574
+    },
+    {
+     "id": "https://openalex.org/C199728807",
+     "wikidata": "https://www.wikidata.org/wiki/Q2578557",
+     "display_name": "Equity (law)",
+     "level": 2,
+     "score": 0.4284999966621399
+    },
+    {
+     "id": "https://openalex.org/C132651083",
+     "wikidata": "https://www.wikidata.org/wiki/Q7942",
+     "display_name": "Climate change",
+     "level": 2,
+     "score": 0.3935000002384186
+    },
+    {
+     "id": "https://openalex.org/C147077947",
+     "wikidata": "https://www.wikidata.org/wiki/Q1515895",
+     "display_name": "Socioeconomic status",
+     "level": 3,
+     "score": 0.390500009059906
+    },
+    {
+     "id": "https://openalex.org/C552854447",
+     "wikidata": "https://www.wikidata.org/wiki/Q131201",
+     "display_name": "Sustainable development",
+     "level": 2,
+     "score": 0.3752000033855438
+    },
+    {
+     "id": "https://openalex.org/C12174686",
+     "wikidata": "https://www.wikidata.org/wiki/Q1058438",
+     "display_name": "Risk assessment",
+     "level": 2,
+     "score": 0.3659999966621399
+    },
+    {
+     "id": "https://openalex.org/C80191262",
+     "wikidata": "https://www.wikidata.org/wiki/Q5477668",
+     "display_name": "Fragility",
+     "level": 2,
+     "score": 0.36039999127388
+    },
+    {
+     "id": "https://openalex.org/C143299363",
+     "wikidata": "https://www.wikidata.org/wiki/Q900584",
+     "display_name": "Attribution",
+     "level": 2,
+     "score": 0.3560999929904938
+    },
+    {
+     "id": "https://openalex.org/C183115368",
+     "wikidata": "https://www.wikidata.org/wiki/Q856577",
+     "display_name": "Weighting",
+     "level": 2,
+     "score": 0.3465999960899353
+    },
+    {
+     "id": "https://openalex.org/C153083717",
+     "wikidata": "https://www.wikidata.org/wiki/Q6535263",
+     "display_name": "Leverage (statistics)",
+     "level": 2,
+     "score": 0.33079999685287476
+    },
+    {
+     "id": "https://openalex.org/C95713431",
+     "wikidata": "https://www.wikidata.org/wiki/Q631425",
+     "display_name": "Vulnerability (computing)",
+     "level": 2,
+     "score": 0.329800009727478
+    },
+    {
+     "id": "https://openalex.org/C162118730",
+     "wikidata": "https://www.wikidata.org/wiki/Q1128453",
+     "display_name": "Actuarial science",
+     "level": 1,
+     "score": 0.32899999618530273
+    },
+    {
+     "id": "https://openalex.org/C197129107",
+     "wikidata": "https://www.wikidata.org/wiki/Q1921621",
+     "display_name": "Merge (version control)",
+     "level": 2,
+     "score": 0.3271999955177307
+    },
+    {
+     "id": "https://openalex.org/C2780210451",
+     "wikidata": "https://www.wikidata.org/wiki/Q3433166",
+     "display_name": "Climate risk",
+     "level": 3,
+     "score": 0.3174999952316284
+    },
+    {
+     "id": "https://openalex.org/C158600405",
+     "wikidata": "https://www.wikidata.org/wiki/Q5054566",
+     "display_name": "Causal inference",
+     "level": 2,
+     "score": 0.31150001287460327
+    },
+    {
+     "id": "https://openalex.org/C127598652",
+     "wikidata": "https://www.wikidata.org/wiki/Q558635",
+     "display_name": "Per capita",
+     "level": 3,
+     "score": 0.30559998750686646
+    },
+    {
+     "id": "https://openalex.org/C107826830",
+     "wikidata": "https://www.wikidata.org/wiki/Q929380",
+     "display_name": "Environmental resource management",
+     "level": 1,
+     "score": 0.30239999294281006
+    },
+    {
+     "id": "https://openalex.org/C150921843",
+     "wikidata": "https://www.wikidata.org/wiki/Q1170431",
+     "display_name": "Resampling",
+     "level": 2,
+     "score": 0.3001999855041504
+    },
+    {
+     "id": "https://openalex.org/C12725497",
+     "wikidata": "https://www.wikidata.org/wiki/Q810247",
+     "display_name": "Baseline (sea)",
+     "level": 2,
+     "score": 0.296099990606308
+    },
+    {
+     "id": "https://openalex.org/C149782125",
+     "wikidata": "https://www.wikidata.org/wiki/Q160039",
+     "display_name": "Econometrics",
+     "level": 1,
+     "score": 0.296099990606308
+    },
+    {
+     "id": "https://openalex.org/C2776214188",
+     "wikidata": "https://www.wikidata.org/wiki/Q408386",
+     "display_name": "Inference",
+     "level": 2,
+     "score": 0.29319998621940613
+    },
+    {
+     "id": "https://openalex.org/C46686674",
+     "wikidata": "https://www.wikidata.org/wiki/Q466303",
+     "display_name": "Boosting (machine learning)",
+     "level": 2,
+     "score": 0.27720001339912415
+    },
+    {
+     "id": "https://openalex.org/C147021879",
+     "wikidata": "https://www.wikidata.org/wiki/Q3027971",
+     "display_name": "Decile",
+     "level": 2,
+     "score": 0.275299996137619
+    },
+    {
+     "id": "https://openalex.org/C112930515",
+     "wikidata": "https://www.wikidata.org/wiki/Q4389547",
+     "display_name": "Risk analysis (engineering)",
+     "level": 1,
+     "score": 0.2705000042915344
+    },
+    {
+     "id": "https://openalex.org/C97053079",
+     "wikidata": "https://www.wikidata.org/wiki/Q1061108",
+     "display_name": "Water supply",
+     "level": 2,
+     "score": 0.2680000066757202
+    },
+    {
+     "id": "https://openalex.org/C2781067378",
+     "wikidata": "https://www.wikidata.org/wiki/Q17027399",
+     "display_name": "Interpretability",
+     "level": 2,
+     "score": 0.2669000029563904
+    },
+    {
+     "id": "https://openalex.org/C144133560",
+     "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+     "display_name": "Business",
+     "level": 0,
+     "score": 0.265500009059906
+    },
+    {
+     "id": "https://openalex.org/C189430467",
+     "wikidata": "https://www.wikidata.org/wiki/Q7293293",
+     "display_name": "Ranking (information retrieval)",
+     "level": 2,
+     "score": 0.265500009059906
+    },
+    {
+     "id": "https://openalex.org/C49937458",
+     "wikidata": "https://www.wikidata.org/wiki/Q2599292",
+     "display_name": "Probabilistic logic",
+     "level": 2,
+     "score": 0.2587999999523163
+    },
+    {
+     "id": "https://openalex.org/C108650721",
+     "wikidata": "https://www.wikidata.org/wiki/Q1783253",
+     "display_name": "Counterfactual thinking",
+     "level": 2,
+     "score": 0.257999986410141
+    },
+    {
+     "id": "https://openalex.org/C74256435",
+     "wikidata": "https://www.wikidata.org/wiki/Q134052",
+     "display_name": "Flood myth",
+     "level": 2,
+     "score": 0.2535000145435333
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1002/sd.71744",
+     "doi": "https://doi.org/10.1002/sd.71744",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1002/sd.71744",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S165666656",
+      "display_name": "Sustainable Development",
+      "issn_l": "0968-0802",
+      "issn": [
+       "0968-0802",
+       "1099-1719"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "abdc-c",
+       "cwts-core",
+       "jufo-2",
+       "norway-2"
+      ],
+      "host_organization": "https://openalex.org/P4310320595",
+      "host_organization_name": "Wiley",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320595"
+      ],
+      "host_organization_lineage_names": [
+       "Wiley"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Sustainable Development",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 35,
+   "referenced_works": [
+    "https://openalex.org/W1712969469",
+    "https://openalex.org/W2021213084",
+    "https://openalex.org/W2084530896",
+    "https://openalex.org/W2085866051",
+    "https://openalex.org/W2113991966",
+    "https://openalex.org/W2120490269",
+    "https://openalex.org/W2543774860",
+    "https://openalex.org/W2750808144",
+    "https://openalex.org/W2807323495",
+    "https://openalex.org/W2906943265",
+    "https://openalex.org/W2962922665",
+    "https://openalex.org/W3014816114",
+    "https://openalex.org/W3081852077",
+    "https://openalex.org/W3208007843",
+    "https://openalex.org/W4200009982",
+    "https://openalex.org/W4233283252",
+    "https://openalex.org/W4233654598",
+    "https://openalex.org/W4386736958",
+    "https://openalex.org/W4392343712",
+    "https://openalex.org/W4393344310",
+    "https://openalex.org/W4396930956",
+    "https://openalex.org/W4403514006",
+    "https://openalex.org/W4403903869",
+    "https://openalex.org/W4405355626",
+    "https://openalex.org/W4408279149",
+    "https://openalex.org/W4409106848",
+    "https://openalex.org/W4410196869",
+    "https://openalex.org/W4410763090",
+    "https://openalex.org/W4411042097",
+    "https://openalex.org/W4411350274",
+    "https://openalex.org/W4412513215",
+    "https://openalex.org/W7125934111",
+    "https://openalex.org/W7128307215",
+    "https://openalex.org/W7134131720",
+    "https://openalex.org/W7161814118"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "ABSTRACT": [
+     0
+    ],
+    "Achieving": [
+     1
+    ],
+    "Sustainable": [
+     2
+    ],
+    "Development": [
+     3
+    ],
+    "Goal": [
+     4
+    ],
+    "6.1\u2014universal": [
+     5
+    ],
+    "safe": [
+     6
+    ],
+    "drinking": [
+     7
+    ],
+    "water": [
+     8
+    ],
+    "access": [
+     9
+    ],
+    "by": [
+     10,
+     151
+    ],
+    "2030\u2014demands": [
+     11
+    ],
+    "forward\u2010looking": [
+     12
+    ],
+    "risk": [
+     13
+    ],
+    "intelligence": [
+     14
+    ],
+    "that": [
+     15,
+     91,
+     133
+    ],
+    "moves": [
+     16
+    ],
+    "beyond": [
+     17
+    ],
+    "trend": [
+     18
+    ],
+    "extrapolation,": [
+     19
+    ],
+    "yet": [
+     20
+    ],
+    "monitoring": [
+     21
+    ],
+    "frameworks": [
+     22
+    ],
+    "report": [
+     23
+    ],
+    "current": [
+     24
+    ],
+    "coverage": [
+     25,
+     67
+    ],
+    "and": [
+     26,
+     44,
+     55,
+     61,
+     105,
+     111,
+     120,
+     130,
+     153
+    ],
+    "cannot": [
+     27
+    ],
+    "anticipate": [
+     28
+    ],
+    "its": [
+     29
+    ],
+    "deterioration.": [
+     30
+    ],
+    "We": [
+     31
+    ],
+    "merge": [
+     32
+    ],
+    "WHO/UNICEF": [
+     33
+    ],
+    "Joint": [
+     34
+    ],
+    "Monitoring": [
+     35
+    ],
+    "Programme,": [
+     36
+    ],
+    "World": [
+     37
+    ],
+    "Bank,": [
+     38
+    ],
+    "ACLED": [
+     39
+    ],
+    "conflict,": [
+     40
+    ],
+    "ND\u2010GAIN": [
+     41
+    ],
+    "climate": [
+     42,
+     112
+    ],
+    "vulnerability": [
+     43
+    ],
+    "Fragile": [
+     45
+    ],
+    "States": [
+     46
+    ],
+    "Index": [
+     47
+    ],
+    "data": [
+     48
+    ],
+    "into": [
+     49
+    ],
+    "a": [
+     50,
+     80,
+     89,
+     122
+    ],
+    "232\u2010country": [
+     51
+    ],
+    "panel": [
+     52
+    ],
+    "spanning": [
+     53
+    ],
+    "2000\u20132024,": [
+     54
+    ],
+    "predict": [
+     56
+    ],
+    "from": [
+     57
+    ],
+    "15": [
+     58
+    ],
+    "features\u2014eight": [
+     59
+    ],
+    "socioeconomic": [
+     60
+    ],
+    "service\u2010coverage,": [
+     62
+    ],
+    "seven": [
+     63
+    ],
+    "conflict\u2010climate\u2014whether": [
+     64
+    ],
+    "safely": [
+     65
+    ],
+    "managed": [
+     66
+    ],
+    "will": [
+     68
+    ],
+    "fall": [
+     69
+    ],
+    "below": [
+     70
+    ],
+    "50%": [
+     71
+    ],
+    "5": [
+     72
+    ],
+    "years": [
+     73
+    ],
+    "ahead": [
+     74
+    ],
+    "(": [
+     75,
+     167
+    ],
+    "country\u2010years).": [
+     76
+    ],
+    "Under": [
+     77
+    ],
+    "country\u2010grouped": [
+     78
+    ],
+    "cross\u2010validation": [
+     79
+    ],
+    "persistence": [
+     81
+    ],
+    "baseline": [
+     82
+    ],
+    "dominates": [
+     83
+    ],
+    "rank\u2010order": [
+     84
+    ],
+    "discrimination": [
+     85
+    ],
+    "(AUC": [
+     86
+    ],
+    "=": [
+     87
+    ],
+    "0.968),": [
+     88
+    ],
+    "finding": [
+     90
+    ],
+    "should": [
+     92
+    ],
+    "reframe": [
+     93
+    ],
+    "how": [
+     94
+    ],
+    "such": [
+     95
+    ],
+    "models": [
+     96
+    ],
+    "are": [
+     97,
+     173
+    ],
+    "judged:": [
+     98
+    ],
+    "machine": [
+     99
+    ],
+    "learning": [
+     100
+    ],
+    "contributes": [
+     101
+    ],
+    "through": [
+     102
+    ],
+    "calibration,": [
+     103
+    ],
+    "equity": [
+     104
+    ],
+    "attribution": [
+     106,
+     155
+    ],
+    "rather": [
+     107
+    ],
+    "than": [
+     108
+    ],
+    "ranking.": [
+     109
+    ],
+    "Conflict": [
+     110
+    ],
+    "covariates": [
+     113
+    ],
+    "improve": [
+     114
+    ],
+    "calibration": [
+     115
+    ],
+    "(Brier": [
+     116
+    ],
+    "0.190": [
+     117
+    ],
+    "vs.": [
+     118
+    ],
+    "0.196)": [
+     119
+    ],
+    "yield": [
+     121
+    ],
+    "Hidden": [
+     123
+    ],
+    "Vulnerability": [
+     124
+    ],
+    "Index,": [
+     125
+    ],
+    "evaluated": [
+     126
+    ],
+    "against": [
+     127
+    ],
+    "seed,": [
+     128
+    ],
+    "architecture": [
+     129
+    ],
+    "permutation": [
+     131
+    ],
+    "controls,": [
+     132
+    ],
+    "ranks": [
+     134
+    ],
+    "countries": [
+     135,
+     172
+    ],
+    "whose": [
+     136
+    ],
+    "reported": [
+     137
+    ],
+    "trajectories": [
+     138
+    ],
+    "understate": [
+     139
+    ],
+    "structural": [
+     140
+    ],
+    "risk.": [
+     141
+    ],
+    "Equity": [
+     142
+    ],
+    "weighting": [
+     143
+    ],
+    "narrows": [
+     144
+    ],
+    "the": [
+     145,
+     157,
+     161
+    ],
+    "equal\u2010opportunity": [
+     146
+    ],
+    "gap": [
+     147,
+     159
+    ],
+    "across": [
+     148
+    ],
+    "income": [
+     149
+    ],
+    "groups": [
+     150
+    ],
+    "41.5%,": [
+     152
+    ],
+    "temporal": [
+     154
+    ],
+    "identifies": [
+     156
+    ],
+    "urban\u2013rural": [
+     158
+    ],
+    "as": [
+     160
+    ],
+    "fastest\u2010rising": [
+     162
+    ],
+    "predictor": [
+     163
+    ],
+    "of": [
+     164,
+     171
+    ],
+    "future": [
+     165
+    ],
+    "insecurity": [
+     166
+    ],
+    "pp/year).": [
+     168
+    ],
+    "Only": [
+     169
+    ],
+    "40.5%": [
+     170
+    ],
+    "projected": [
+     174
+    ],
+    "to": [
+     175
+    ],
+    "achieve": [
+     176
+    ],
+    "SDG": [
+     177
+    ],
+    "6.1,": [
+     178
+    ],
+    "with": [
+     179
+    ],
+    "no": [
+     180
+    ],
+    "low\u2010income": [
+     181
+    ],
+    "country": [
+     182
+    ],
+    "on": [
+     183
+    ],
+    "track.": [
+     184
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-09T00:00:00"
+  }
+ ]
+}

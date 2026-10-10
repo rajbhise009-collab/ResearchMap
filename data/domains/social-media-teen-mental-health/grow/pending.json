@@ -1,0 +1,4100 @@
+{
+ "batch_id": "qemjytbyi9l1oxxn24qxv4k4cueg5z1iey7p",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-10-10",
+ "submitted_at": 1791624894.8373194,
+ "projected_inr": 4.617144,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7220961377": "fulltext",
+  "openalex:W7221029458": "abstract",
+  "openalex:W7221031988": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7220961377",
+   "openalex_id": "https://openalex.org/W7220961377",
+   "title": "Estimating the Economic Value of Supported Online Parent-Led Cognitive Behavioral Therapy to Prevent Child Anxiety Problems: Economic Evaluation of the MYCATS Cluster Randomized Controlled Trial",
+   "year": 2026,
+   "doi": "https://doi.org/10.2196/87123",
+   "venue": "Journal of Medical Internet Research",
+   "field": "economics, econometrics and finance",
+   "cited_by_count": 0,
+   "abstract": "Abstract Background Childhood anxiety disorders are common and lead to substantial negative long-term outcomes in various life domains. Although digital interventions for preventing childhood anxiety problems have been increasingly used in the recent decade, there is limited evidence documenting their cost-effectiveness (CE). Objective This study aimed to evaluate the CE of a parent-led online cognitive behavioral therapy with therapist support (OSI+TS) alongside usual school practice (USP), compared to USP alone for children aged 4\u20107 years at risk of anxiety disorders identified through universal school screening. Methods The economic evaluation was conducted alongside the MYCATS trial (N=865), a parallel group, superiority cluster randomized trial across 95 primary or infant schools in England. Schools were randomized (1:1) to OSI+TS or USP, stratified by school-level deprivation. The primary analyses, at 12 months after randomization, considered child quality-adjusted life years (QALYs) as the health economic outcome, using both the UK adult and the Australia adolescent value sets, and costs were from the National Health Service and Personal Social Services perspective. Incremental cost-effectiveness ratios (ICERs) were compared to the UK National Institute for Health and Care Excellence (NICE) recommended threshold of \u00a320,000-\u00a330,000 (\u00a31=US $1.35 as of September 10, 2026) per QALY gained, as per predefined Health Economics Analysis Plan. Sensitivity analyses included a societal perspective and the application of the new NICE cost-effectiveness threshold. Results Children receiving OSI+TS gained 0.021 (95% CI 0.010-0.033; P <.001) and 0.043 (95% CI 0.021-0.064; P <.001) QALYs, respectively, for United Kingdom and Australia value sets, with an additional cost of \u00a3244.16 compared to school usual practice only, resulting in ICERs of \u00a311,462.47 and \u00a35,700.98, respectively. At the \u00a320,000 threshold, OSI+TS had an 88.2% or 99.3% chance of being cost-effective. Conclusions OSI+TS is cost-effective compared to usual school provision, supporting its future implementation for children at risk of anxiety problems.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: young population 'Child' + mental-health outcome 'Anxi'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-10",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "europepmc",
+   "abstract_only": false
+  },
+  {
+   "wid": "W7221029458",
+   "openalex_id": "https://openalex.org/W7221029458",
+   "title": "Prevalence and Correlates of Internet Addiction and its Association with Anxiety among School-going Adolescents in Lucknow, India: A Cross-sectional Study",
+   "year": 2026,
+   "doi": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+   "venue": "Indian Journal of Community Medicine",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "Abstract Background: Internet addiction, defined as excessive and compulsive use of Internet-enabled devices, has emerged as an important public health concern due to its association with anxiety, emotional distress, and impaired daily functioning. In India, rapid digitalization and widespread access to smartphones and online platforms have significantly increased Internet use among adolescents, raising concerns about problematic usage patterns and their impact on mental health. Methods: A school-based cross-sectional study was conducted from June to December 2024 among 400 adolescents aged 12\u201318 years in Lucknow District, Uttar Pradesh, India. Participants were selected through a multistage stratified random sampling method from government and private schools. Data were collected through a questionnaire with Young\u2019s Internet Addiction Test (IAT) and the Generalized Anxiety Disorder-7 (GAD-7) scale. Statistical analyses were performed using SPSS version 22.0, employing Chi-square tests and multivariable logistic regression. Results: Overall, 289 participants (72.25%) exhibited some degree of Internet addiction (IAT \u226531), while severe addiction in 4 participants (1%). Internet addiction showed significant associations with age, gender, school type, daily screen time, and anxiety severity (all P < 0.05). Multivariable analysis revealed higher odds of Internet addiction among adolescents aged 15\u201316 years, in private schools, longer screen time, and levels of anxiety. Female gender, higher parental education, private school attendance, and screen time exceeding 4 hours per day were identified as important risk factors. Conclusion: Internet addiction is highly prevalent among adolescents. Comprehensive school-based interventions, including mental health screening and awareness programs, are needed to promote healthy Internet use and psychological wellbeing.",
+   "label": "on-domain",
+   "rationale": "same-sentence pair: 'screen time' + 'anxiety'; core scope: young population 'Adolescen' + mental-health outcome 'Anxi'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-10",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7221031988",
+   "openalex_id": "https://openalex.org/W7221031988",
+   "title": "Social media exposure and anxiety and depression in young people: A systematic review and meta\u2010analysis of longitudinal and experimental studies",
+   "year": 2026,
+   "doi": "https://doi.org/10.1111/bjc.70100",
+   "venue": "British Journal of Clinical Psychology",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "OBJECTIVES: The aim of the current review was to comprehensively synthesize the evidence for the relationship between social media use and anxiety and depression symptoms in young people using data from robust methodological designs, namely, longitudinal and experimental studies. METHODS: PsycINFO, Web of Science, MEDLINE, Embase and Scopus databases were searched for peer-reviewed, English-language, longitudinal and experimental studies. Included studies measured SMU in terms of time or frequency of use, mainly via self-report, used standardized measures of depression and anxiety, and recruited samples ranging from 10 to 24 years of age. RESULTS: Screening retrieved 37 eligible studies that included 36 longitudinal observational studies and one experiment. Twelve studies examined depression outcomes (pooled r = .08, 95% CIs [0.04, 0.11]), and five studies examined anxiety (pooled r = 0.093, 95% CIs [0.059, 0.126]), showing very small linear effects. There were no moderating effects for year of publication, duration of follow-up or mean age of sample for the depression effects. CONCLUSIONS: Given the very weak relationships between SMU and the severity of anxiety and depression symptoms, SMU is unlikely to account for the contemporary youth mental health crisis. Further longitudinal research designed to examine potential non-monotonic relationships between SMU and adverse mental health outcomes is required, along with attention to other potential causes of increased prevalence of mental health problems in young people.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: young population 'young people' + mental-health outcome 'anxi'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-10",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7220961377",
+   "doi": "https://doi.org/10.2196/87123",
+   "title": "Estimating the Economic Value of Supported Online Parent-Led Cognitive Behavioral Therapy to Prevent Child Anxiety Problems: Economic Evaluation of the MYCATS Cluster Randomized Controlled Trial",
+   "display_name": "Estimating the Economic Value of Supported Online Parent-Led Cognitive Behavioral Therapy to Prevent Child Anxiety Problems: Economic Evaluation of the MYCATS Cluster Randomized Controlled Trial",
+   "publication_year": 2026,
+   "publication_date": "2026-10-08",
+   "ids": {
+    "openalex": "https://openalex.org/W7220961377",
+    "doi": "https://doi.org/10.2196/87123"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.2196/87123",
+    "doi": "https://doi.org/10.2196/87123",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.2196/87123",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S17147534",
+     "display_name": "Journal of Medical Internet Research",
+     "issn_l": "1438-8871",
+     "issn": [
+      "1438-8871",
+      "1439-4456"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "doyens",
+      "jufo-2",
+      "ki-jl-2",
+      "medline",
+      "norway-2"
+     ],
+     "host_organization": "https://openalex.org/P4310320608",
+     "host_organization_name": "JMIR Publications",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320608"
+     ],
+     "host_organization_lineage_names": [
+      "JMIR Publications"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of Medical Internet Research",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref",
+    "doaj"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://doi.org/10.2196/87123",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5025883708",
+      "display_name": "Shuye Yu",
+      "orcid": "https://orcid.org/0000-0002-2073-7574",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-2073-7574"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Shuye Yu",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-2073-7574",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5013506339",
+      "display_name": "Tessa C. Reardon",
+      "orcid": "https://orcid.org/0000-0002-9298-091X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-9298-091X"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Tessa Reardon",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-9298-091X",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5071371634",
+      "display_name": "Obioha Chukwunyere Ukoumunne",
+      "orcid": "https://orcid.org/0000-0002-0551-9157",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-0551-9157"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Obioha C Ukoumunne",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-0551-9157",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5049402932",
+      "display_name": "Rebecca G Njuguna",
+      "orcid": "https://orcid.org/0000-0003-2378-3215",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-2378-3215"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Rebecca Njuguna",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0003-2378-3215",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5011145627",
+      "display_name": "Helen Frances Dodd",
+      "orcid": "https://orcid.org/0000-0003-1446-5338",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-1446-5338"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Helen Dodd",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0003-1446-5338",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5029455244",
+      "display_name": "Gemma Halliday",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Gemma Halliday",
+     "raw_affiliation_strings": [],
+     "raw_orcid": null,
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5157930976",
+      "display_name": "Clare Hill",
+      "orcid": "https://orcid.org/0009-0007-5639-1396",
+      "observed_orcids": [
+       "https://orcid.org/0009-0007-5639-1396"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Clare Hill",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0009-0007-5639-1396",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5054576273",
+      "display_name": "Bec Jasper",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Bec Jasper",
+     "raw_affiliation_strings": [],
+     "raw_orcid": null,
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5073512949",
+      "display_name": "Ben Jones",
+      "orcid": "https://orcid.org/0000-0001-7374-1107",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-7374-1107"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Benjamin Jones",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0001-7374-1107",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5016403160",
+      "display_name": "Peter J. Lawrence",
+      "orcid": "https://orcid.org/0000-0001-6181-433X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-6181-433X"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Peter J. Lawrence",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0001-6181-433X",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5056885145",
+      "display_name": "Fran Morgan",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Fran Morgan",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-8883-0812",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5078782065",
+      "display_name": "Anna Placzek",
+      "orcid": "https://orcid.org/0000-0002-6745-5996",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-6745-5996"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Anna Placzek",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-6745-5996",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5009313813",
+      "display_name": "Ronald M. Rapee",
+      "orcid": "https://orcid.org/0000-0002-1724-1076",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-1724-1076"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Ronald M Rapee",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-1724-1076",
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5126383743",
+      "display_name": "MYCATS Team",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "MYCATS Team",
+     "raw_affiliation_strings": [],
+     "raw_orcid": null,
+     "affiliations": []
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5061171982",
+      "display_name": "Mara Violato",
+      "orcid": "https://orcid.org/0000-0002-0484-7706",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-0484-7706"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Mara Violato",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0002-0484-7706",
+     "affiliations": []
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5030885392",
+      "display_name": "Cathy Creswell",
+      "orcid": "https://orcid.org/0000-0003-1889-0956",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-1889-0956"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Cathy Creswell",
+     "raw_affiliation_strings": [],
+     "raw_orcid": "https://orcid.org/0000-0003-1889-0956",
+     "affiliations": []
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 0,
+   "institutions_distinct_count": 0,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": {
+    "value": 2950,
+    "currency": "USD",
+    "value_usd": 2950
+   },
+   "apc_paid": {
+    "value": 2950,
+    "currency": "USD",
+    "value_usd": 2950
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.9228333,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "28",
+    "issue": null,
+    "first_page": "e87123",
+    "last_page": "e87123"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10804",
+    "display_name": "Health Systems, Economic Evaluations, Quality of Life",
+    "score": 0.5015000104904175,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2002",
+     "display_name": "Economics and Econometrics"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/20",
+     "display_name": "Economics, Econometrics and Finance"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10804",
+     "display_name": "Health Systems, Economic Evaluations, Quality of Life",
+     "score": 0.5015000104904175,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2002",
+      "display_name": "Economics and Econometrics"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/20",
+      "display_name": "Economics, Econometrics and Finance"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11519",
+     "display_name": "Digital Mental Health Interventions",
+     "score": 0.489300012588501,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3202",
+      "display_name": "Applied Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10182",
+     "display_name": "Child and Adolescent Psychosocial and Emotional Development",
+     "score": 0.002199999988079071,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C2776125615",
+     "wikidata": "https://www.wikidata.org/wiki/Q18391886",
+     "display_name": "Economic evaluation",
+     "level": 2,
+     "score": 0.7921000123023987
+    },
+    {
+     "id": "https://openalex.org/C168563851",
+     "wikidata": "https://www.wikidata.org/wiki/Q1436668",
+     "display_name": "Randomized controlled trial",
+     "level": 2,
+     "score": 0.6935999989509583
+    },
+    {
+     "id": "https://openalex.org/C2779256446",
+     "wikidata": "https://www.wikidata.org/wiki/Q33959",
+     "display_name": "Nice",
+     "level": 2,
+     "score": 0.5849000215530396
+    },
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.5608000159263611
+    },
+    {
+     "id": "https://openalex.org/C27415008",
+     "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+     "display_name": "Psychological intervention",
+     "level": 2,
+     "score": 0.5386000275611877
+    },
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.4821999967098236
+    },
+    {
+     "id": "https://openalex.org/C2781265626",
+     "wikidata": "https://www.wikidata.org/wiki/Q1147152",
+     "display_name": "Cognitive behavioral therapy",
+     "level": 3,
+     "score": 0.4650000035762787
+    },
+    {
+     "id": "https://openalex.org/C64332521",
+     "wikidata": "https://www.wikidata.org/wiki/Q614165",
+     "display_name": "Quality-adjusted life year",
+     "level": 3,
+     "score": 0.4616999924182892
+    },
+    {
+     "id": "https://openalex.org/C176400912",
+     "wikidata": "https://www.wikidata.org/wiki/Q3058662",
+     "display_name": "Cluster randomised controlled trial",
+     "level": 3,
+     "score": 0.43639999628067017
+    },
+    {
+     "id": "https://openalex.org/C524218345",
+     "wikidata": "https://www.wikidata.org/wiki/Q31218",
+     "display_name": "Health economics",
+     "level": 3,
+     "score": 0.4244999885559082
+    },
+    {
+     "id": "https://openalex.org/C3019080777",
+     "wikidata": "https://www.wikidata.org/wiki/Q1754768",
+     "display_name": "Cost effectiveness",
+     "level": 2,
+     "score": 0.4235999882221222
+    },
+    {
+     "id": "https://openalex.org/C70410870",
+     "wikidata": "https://www.wikidata.org/wiki/Q199906",
+     "display_name": "Clinical psychology",
+     "level": 1,
+     "score": 0.4050999879837036
+    },
+    {
+     "id": "https://openalex.org/C2777352838",
+     "wikidata": "https://www.wikidata.org/wiki/Q5419420",
+     "display_name": "Excellence",
+     "level": 2,
+     "score": 0.38690000772476196
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.38199999928474426
+    },
+    {
+     "id": "https://openalex.org/C164866538",
+     "wikidata": "https://www.wikidata.org/wiki/Q367351",
+     "display_name": "Cluster (spacecraft)",
+     "level": 2,
+     "score": 0.3698999881744385
+    },
+    {
+     "id": "https://openalex.org/C109574028",
+     "wikidata": "https://www.wikidata.org/wiki/Q647525",
+     "display_name": "Behavioral economics",
+     "level": 2,
+     "score": 0.35190001130104065
+    },
+    {
+     "id": "https://openalex.org/C118552586",
+     "wikidata": "https://www.wikidata.org/wiki/Q7867",
+     "display_name": "Psychiatry",
+     "level": 1,
+     "score": 0.3497999906539917
+    },
+    {
+     "id": "https://openalex.org/C2779477915",
+     "wikidata": "https://www.wikidata.org/wiki/Q13693745",
+     "display_name": "Cognitive therapy",
+     "level": 3,
+     "score": 0.33329999446868896
+    },
+    {
+     "id": "https://openalex.org/C2779951463",
+     "wikidata": "https://www.wikidata.org/wiki/Q7268788",
+     "display_name": "Quality of life (healthcare)",
+     "level": 2,
+     "score": 0.3181999921798706
+    },
+    {
+     "id": "https://openalex.org/C160735492",
+     "wikidata": "https://www.wikidata.org/wiki/Q31207",
+     "display_name": "Health care",
+     "level": 2,
+     "score": 0.3131999969482422
+    },
+    {
+     "id": "https://openalex.org/C169900460",
+     "wikidata": "https://www.wikidata.org/wiki/Q2200417",
+     "display_name": "Cognition",
+     "level": 2,
+     "score": 0.3093000054359436
+    },
+    {
+     "id": "https://openalex.org/C127454912",
+     "wikidata": "https://www.wikidata.org/wiki/Q942582",
+     "display_name": "Cost\u2013benefit analysis",
+     "level": 2,
+     "score": 0.29510000348091125
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.27570000290870667
+    },
+    {
+     "id": "https://openalex.org/C2779408567",
+     "wikidata": "https://www.wikidata.org/wiki/Q543906",
+     "display_name": "Anxiety sensitivity",
+     "level": 3,
+     "score": 0.27459999918937683
+    },
+    {
+     "id": "https://openalex.org/C515549039",
+     "wikidata": "https://www.wikidata.org/wiki/Q1754768",
+     "display_name": "Cost-effectiveness analysis",
+     "level": 3,
+     "score": 0.2720000147819519
+    },
+    {
+     "id": "https://openalex.org/C145096142",
+     "wikidata": "https://www.wikidata.org/wiki/Q5333450",
+     "display_name": "Economic cost",
+     "level": 2,
+     "score": 0.2689000070095062
+    },
+    {
+     "id": "https://openalex.org/C2777545354",
+     "wikidata": "https://www.wikidata.org/wiki/Q3557657",
+     "display_name": "Social anxiety",
+     "level": 3,
+     "score": 0.25760000944137573
+    },
+    {
+     "id": "https://openalex.org/C512399662",
+     "wikidata": "https://www.wikidata.org/wiki/Q3505712",
+     "display_name": "Family medicine",
+     "level": 1,
+     "score": 0.2565999925136566
+    },
+    {
+     "id": "https://openalex.org/C147077947",
+     "wikidata": "https://www.wikidata.org/wiki/Q1515895",
+     "display_name": "Socioeconomic status",
+     "level": 3,
+     "score": 0.25220000743865967
+    },
+    {
+     "id": "https://openalex.org/C535046627",
+     "wikidata": "https://www.wikidata.org/wiki/Q30612",
+     "display_name": "Clinical trial",
+     "level": 2,
+     "score": 0.251800000667572
+    },
+    {
+     "id": "https://openalex.org/C2779473830",
+     "wikidata": "https://www.wikidata.org/wiki/Q1540899",
+     "display_name": "MEDLINE",
+     "level": 2,
+     "score": 0.2513999938964844
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.2196/87123",
+     "doi": "https://doi.org/10.2196/87123",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.2196/87123",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S17147534",
+      "display_name": "Journal of Medical Internet Research",
+      "issn_l": "1438-8871",
+      "issn": [
+       "1438-8871",
+       "1439-4456"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "doaj",
+       "doyens",
+       "jufo-2",
+       "ki-jl-2",
+       "medline",
+       "norway-2"
+      ],
+      "host_organization": "https://openalex.org/P4310320608",
+      "host_organization_name": "JMIR Publications",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320608"
+      ],
+      "host_organization_lineage_names": [
+       "JMIR Publications"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of Medical Internet Research",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.2196/87123",
+    "doi": "https://doi.org/10.2196/87123",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.2196/87123",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S17147534",
+     "display_name": "Journal of Medical Internet Research",
+     "issn_l": "1438-8871",
+     "issn": [
+      "1438-8871",
+      "1439-4456"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "doyens",
+      "jufo-2",
+      "ki-jl-2",
+      "medline",
+      "norway-2"
+     ],
+     "host_organization": "https://openalex.org/P4310320608",
+     "host_organization_name": "JMIR Publications",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320608"
+     ],
+     "host_organization_lineage_names": [
+      "JMIR Publications"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of Medical Internet Research",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 34,
+   "referenced_works": [
+    "https://openalex.org/W1562415841",
+    "https://openalex.org/W1575787019",
+    "https://openalex.org/W1864246873",
+    "https://openalex.org/W1896805399",
+    "https://openalex.org/W1969519267",
+    "https://openalex.org/W1990166011",
+    "https://openalex.org/W2018995282",
+    "https://openalex.org/W2118826874",
+    "https://openalex.org/W2140092196",
+    "https://openalex.org/W2140303763",
+    "https://openalex.org/W2151182129",
+    "https://openalex.org/W2165813562",
+    "https://openalex.org/W2169709815",
+    "https://openalex.org/W2560151242",
+    "https://openalex.org/W2615820797",
+    "https://openalex.org/W2803107171",
+    "https://openalex.org/W2920440182",
+    "https://openalex.org/W3091537033",
+    "https://openalex.org/W3123445364",
+    "https://openalex.org/W3164324796",
+    "https://openalex.org/W3196369451",
+    "https://openalex.org/W4206071468",
+    "https://openalex.org/W4212947763",
+    "https://openalex.org/W4223487014",
+    "https://openalex.org/W4285094133",
+    "https://openalex.org/W4366773496",
+    "https://openalex.org/W4385879576",
+    "https://openalex.org/W4391277407",
+    "https://openalex.org/W4391579789",
+    "https://openalex.org/W4392661358",
+    "https://openalex.org/W4403312365",
+    "https://openalex.org/W4404587159",
+    "https://openalex.org/W4409721943",
+    "https://openalex.org/W7130512081"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Abstract": [
+     0
+    ],
+    "Background": [
+     1
+    ],
+    "Childhood": [
+     2
+    ],
+    "anxiety": [
+     3,
+     24,
+     78,
+     298
+    ],
+    "disorders": [
+     4,
+     79
+    ],
+    "are": [
+     5
+    ],
+    "common": [
+     6
+    ],
+    "and": [
+     7,
+     147,
+     153,
+     161,
+     179,
+     210,
+     230,
+     242,
+     263
+    ],
+    "lead": [
+     8
+    ],
+    "to": [
+     9,
+     46,
+     67,
+     115,
+     172,
+     253,
+     285
+    ],
+    "substantial": [
+     10
+    ],
+    "negative": [
+     11
+    ],
+    "long-term": [
+     12
+    ],
+    "outcomes": [
+     13
+    ],
+    "in": [
+     14,
+     30,
+     109,
+     259
+    ],
+    "various": [
+     15
+    ],
+    "life": [
+     16,
+     134
+    ],
+    "domains.": [
+     17
+    ],
+    "Although": [
+     18
+    ],
+    "digital": [
+     19
+    ],
+    "interventions": [
+     20
+    ],
+    "for": [
+     21,
+     70,
+     177,
+     239,
+     293
+    ],
+    "preventing": [
+     22
+    ],
+    "childhood": [
+     23
+    ],
+    "problems": [
+     25
+    ],
+    "have": [
+     26
+    ],
+    "been": [
+     27
+    ],
+    "increasingly": [
+     28
+    ],
+    "used": [
+     29
+    ],
+    "the": [
+     31,
+     48,
+     92,
+     138,
+     144,
+     148,
+     157,
+     173,
+     211,
+     214,
+     267
+    ],
+    "recent": [
+     32
+    ],
+    "decade,": [
+     33
+    ],
+    "there": [
+     34
+    ],
+    "is": [
+     35,
+     282
+    ],
+    "limited": [
+     36
+    ],
+    "evidence": [
+     37
+    ],
+    "documenting": [
+     38
+    ],
+    "their": [
+     39
+    ],
+    "cost-effectiveness": [
+     40,
+     167,
+     217
+    ],
+    "(CE).": [
+     41
+    ],
+    "Objective": [
+     42
+    ],
+    "This": [
+     43
+    ],
+    "study": [
+     44
+    ],
+    "aimed": [
+     45
+    ],
+    "evaluate": [
+     47
+    ],
+    "CE": [
+     49
+    ],
+    "of": [
+     50,
+     77,
+     185,
+     190,
+     213,
+     250,
+     261,
+     277,
+     297
+    ],
+    "a": [
+     51,
+     96,
+     207
+    ],
+    "parent-led": [
+     52
+    ],
+    "online": [
+     53
+    ],
+    "cognitive": [
+     54
+    ],
+    "behavioral": [
+     55
+    ],
+    "therapy": [
+     56
+    ],
+    "with": [
+     57,
+     246
+    ],
+    "therapist": [
+     58
+    ],
+    "support": [
+     59
+    ],
+    "(OSI+TS)": [
+     60
+    ],
+    "alongside": [
+     61,
+     91
+    ],
+    "usual": [
+     62,
+     255,
+     286
+    ],
+    "school": [
+     63,
+     83,
+     254,
+     287
+    ],
+    "practice": [
+     64,
+     256
+    ],
+    "(USP),": [
+     65
+    ],
+    "compared": [
+     66,
+     171,
+     252,
+     284
+    ],
+    "USP": [
+     68
+    ],
+    "alone": [
+     69
+    ],
+    "children": [
+     71,
+     294
+    ],
+    "aged": [
+     72
+    ],
+    "4\u20107": [
+     73
+    ],
+    "years": [
+     74,
+     135
+    ],
+    "at": [
+     75,
+     126,
+     295
+    ],
+    "risk": [
+     76,
+     296
+    ],
+    "identified": [
+     80
+    ],
+    "through": [
+     81
+    ],
+    "universal": [
+     82
+    ],
+    "screening.": [
+     84
+    ],
+    "Methods": [
+     85
+    ],
+    "The": [
+     86,
+     123
+    ],
+    "economic": [
+     87,
+     140
+    ],
+    "evaluation": [
+     88
+    ],
+    "was": [
+     89
+    ],
+    "conducted": [
+     90
+    ],
+    "MYCATS": [
+     93
+    ],
+    "trial": [
+     94,
+     102
+    ],
+    "(N=865),": [
+     95
+    ],
+    "parallel": [
+     97
+    ],
+    "group,": [
+     98
+    ],
+    "superiority": [
+     99
+    ],
+    "cluster": [
+     100
+    ],
+    "randomized": [
+     101,
+     113
+    ],
+    "across": [
+     103
+    ],
+    "95": [
+     104
+    ],
+    "primary": [
+     105,
+     124
+    ],
+    "or": [
+     106,
+     117,
+     274
+    ],
+    "infant": [
+     107
+    ],
+    "schools": [
+     108
+    ],
+    "England.": [
+     110
+    ],
+    "Schools": [
+     111
+    ],
+    "were": [
+     112,
+     155,
+     170
+    ],
+    "(1:1)": [
+     114
+    ],
+    "OSI+TS": [
+     116,
+     222,
+     270,
+     281
+    ],
+    "USP,": [
+     118
+    ],
+    "stratified": [
+     119
+    ],
+    "by": [
+     120
+    ],
+    "school-level": [
+     121
+    ],
+    "deprivation.": [
+     122
+    ],
+    "analyses,": [
+     125
+    ],
+    "12": [
+     127
+    ],
+    "months": [
+     128
+    ],
+    "after": [
+     129
+    ],
+    "randomization,": [
+     130
+    ],
+    "considered": [
+     131
+    ],
+    "child": [
+     132
+    ],
+    "quality-adjusted": [
+     133
+    ],
+    "(QALYs)": [
+     136
+    ],
+    "as": [
+     137,
+     189,
+     197
+    ],
+    "health": [
+     139
+    ],
+    "outcome,": [
+     141
+    ],
+    "using": [
+     142
+    ],
+    "both": [
+     143
+    ],
+    "UK": [
+     145,
+     174
+    ],
+    "adult": [
+     146
+    ],
+    "Australia": [
+     149,
+     243
+    ],
+    "adolescent": [
+     150
+    ],
+    "value": [
+     151,
+     244
+    ],
+    "sets,": [
+     152,
+     245
+    ],
+    "costs": [
+     154
+    ],
+    "from": [
+     156
+    ],
+    "National": [
+     158,
+     175
+    ],
+    "Health": [
+     159,
+     178,
+     200
+    ],
+    "Service": [
+     160
+    ],
+    "Personal": [
+     162
+    ],
+    "Social": [
+     163
+    ],
+    "Services": [
+     164
+    ],
+    "perspective.": [
+     165
+    ],
+    "Incremental": [
+     166
+    ],
+    "ratios": [
+     168
+    ],
+    "(ICERs)": [
+     169
+    ],
+    "Institute": [
+     176
+    ],
+    "Care": [
+     180
+    ],
+    "Excellence": [
+     181
+    ],
+    "(NICE)": [
+     182
+    ],
+    "recommended": [
+     183
+    ],
+    "threshold": [
+     184
+    ],
+    "\u00a320,000-\u00a330,000": [
+     186
+    ],
+    "(\u00a31=US": [
+     187
+    ],
+    "$1.35": [
+     188
+    ],
+    "September": [
+     191
+    ],
+    "10,": [
+     192
+    ],
+    "2026)": [
+     193
+    ],
+    "per": [
+     194,
+     198
+    ],
+    "QALY": [
+     195
+    ],
+    "gained,": [
+     196
+    ],
+    "predefined": [
+     199
+    ],
+    "Economics": [
+     201
+    ],
+    "Analysis": [
+     202
+    ],
+    "Plan.": [
+     203
+    ],
+    "Sensitivity": [
+     204
+    ],
+    "analyses": [
+     205
+    ],
+    "included": [
+     206
+    ],
+    "societal": [
+     208
+    ],
+    "perspective": [
+     209
+    ],
+    "application": [
+     212
+    ],
+    "new": [
+     215
+    ],
+    "NICE": [
+     216
+    ],
+    "threshold.": [
+     218
+    ],
+    "Results": [
+     219
+    ],
+    "Children": [
+     220
+    ],
+    "receiving": [
+     221
+    ],
+    "gained": [
+     223
+    ],
+    "0.021": [
+     224
+    ],
+    "(95%": [
+     225,
+     232
+    ],
+    "CI": [
+     226,
+     233
+    ],
+    "0.010-0.033;": [
+     227
+    ],
+    "P": [
+     228,
+     235
+    ],
+    "<.001)": [
+     229,
+     236
+    ],
+    "0.043": [
+     231
+    ],
+    "0.021-0.064;": [
+     234
+    ],
+    "QALYs,": [
+     237
+    ],
+    "respectively,": [
+     238
+    ],
+    "United": [
+     240
+    ],
+    "Kingdom": [
+     241
+    ],
+    "an": [
+     247,
+     272
+    ],
+    "additional": [
+     248
+    ],
+    "cost": [
+     249
+    ],
+    "\u00a3244.16": [
+     251
+    ],
+    "only,": [
+     257
+    ],
+    "resulting": [
+     258
+    ],
+    "ICERs": [
+     260
+    ],
+    "\u00a311,462.47": [
+     262
+    ],
+    "\u00a35,700.98,": [
+     264
+    ],
+    "respectively.": [
+     265
+    ],
+    "At": [
+     266
+    ],
+    "\u00a320,000": [
+     268
+    ],
+    "threshold,": [
+     269
+    ],
+    "had": [
+     271
+    ],
+    "88.2%": [
+     273
+    ],
+    "99.3%": [
+     275
+    ],
+    "chance": [
+     276
+    ],
+    "being": [
+     278
+    ],
+    "cost-effective.": [
+     279
+    ],
+    "Conclusions": [
+     280
+    ],
+    "cost-effective": [
+     283
+    ],
+    "provision,": [
+     288
+    ],
+    "supporting": [
+     289
+    ],
+    "its": [
+     290
+    ],
+    "future": [
+     291
+    ],
+    "implementation": [
+     292
+    ],
+    "problems.": [
+     299
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-09T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7221029458",
+   "doi": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+   "title": "Prevalence and Correlates of Internet Addiction and its Association with Anxiety among School-going Adolescents in Lucknow, India: A Cross-sectional Study",
+   "display_name": "Prevalence and Correlates of Internet Addiction and its Association with Anxiety among School-going Adolescents in Lucknow, India: A Cross-sectional Study",
+   "publication_year": 2026,
+   "publication_date": "2026-10-07",
+   "ids": {
+    "openalex": "https://openalex.org/W7221029458",
+    "doi": "https://doi.org/10.4103/ijcm.ijcm_477_25"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.4103/ijcm.ijcm_477_25",
+    "doi": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S195303007",
+     "display_name": "Indian Journal of Community Medicine",
+     "issn_l": "0970-0218",
+     "issn": [
+      "0970-0218",
+      "1998-3581"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "jufo-1",
+      "ki-jl-1",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320448",
+     "host_organization_name": "Medknow",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320448",
+      "https://openalex.org/P4310318547"
+     ],
+     "host_organization_lineage_names": [
+      "Medknow",
+      "Wolters Kluwer"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-sa",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Indian Journal of Community Medicine",
+    "raw_type": "journal-article"
+   },
+   "type": "article",
+   "indexed_in": [
+    "crossref",
+    "doaj"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5109390211",
+      "display_name": "Shweta Rajpal",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I280994",
+       "display_name": "King George's Medical University",
+       "ror": "https://ror.org/00gvw6327",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I280994"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Shweta Rajpal",
+     "raw_affiliation_strings": [
+      "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India",
+       "institution_ids": [
+        "https://openalex.org/I280994"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5030965609",
+      "display_name": "Ruchi Chaturvedi",
+      "orcid": "https://orcid.org/0000-0003-3645-412X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-3645-412X"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I280994",
+       "display_name": "King George's Medical University",
+       "ror": "https://ror.org/00gvw6327",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I280994"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4210107565",
+       "display_name": "Era's Lucknow Medical College and Hospital",
+       "ror": "https://ror.org/01df9ep43",
+       "country_code": "IN",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I4210107565"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Ruchi Chaturvedi",
+     "raw_affiliation_strings": [
+      "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India",
+      "Department of Community Medicine, Era\u2019s Lucknow Medical College and Hospital, Lucknow, Uttar Pradesh, India"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India",
+       "institution_ids": [
+        "https://openalex.org/I280994"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Department of Community Medicine, Era\u2019s Lucknow Medical College and Hospital, Lucknow, Uttar Pradesh, India",
+       "institution_ids": [
+        "https://openalex.org/I4210107565"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5157926410",
+      "display_name": "Ritika Chaturvedi",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I280994",
+       "display_name": "King George's Medical University",
+       "ror": "https://ror.org/00gvw6327",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I280994"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4210107565",
+       "display_name": "Era's Lucknow Medical College and Hospital",
+       "ror": "https://ror.org/01df9ep43",
+       "country_code": "IN",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I4210107565"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Ritika Chaturvedi",
+     "raw_affiliation_strings": [
+      "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India",
+      "Department of Community Medicine, Era\u2019s Lucknow Medical College and Hospital, Lucknow, Uttar Pradesh, India"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India",
+       "institution_ids": [
+        "https://openalex.org/I280994"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Department of Community Medicine, Era\u2019s Lucknow Medical College and Hospital, Lucknow, Uttar Pradesh, India",
+       "institution_ids": [
+        "https://openalex.org/I4210107565"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5157982546",
+      "display_name": "Prashant Bajpai",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I280994",
+       "display_name": "King George's Medical University",
+       "ror": "https://ror.org/00gvw6327",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I280994"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Prashant Bajpai",
+     "raw_affiliation_strings": [
+      "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Community Medicine and Public Health, King George\u2019s Medical University, Lucknow, Uttar Pradesh, India",
+       "institution_ids": [
+        "https://openalex.org/I280994"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5088390801",
+      "display_name": "Jai Singh",
+      "orcid": "https://orcid.org/0000-0002-0045-2977",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-0045-2977"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210107565",
+       "display_name": "Era's Lucknow Medical College and Hospital",
+       "ror": "https://ror.org/01df9ep43",
+       "country_code": "IN",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I4210107565"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Jai Singh",
+     "raw_affiliation_strings": [
+      "Department of Psychiatry, Era\u2019s Lucknow Medical College and Hospital, Lucknow, Uttar Pradesh, India"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Psychiatry, Era\u2019s Lucknow Medical College and Hospital, Lucknow, Uttar Pradesh, India",
+       "institution_ids": [
+        "https://openalex.org/I4210107565"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": {
+    "value": 80,
+    "currency": "USD",
+    "value_usd": 80
+   },
+   "apc_paid": {
+    "value": 80,
+    "currency": "USD",
+    "value_usd": 80
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.95171746,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.9994999766349792,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.9994999766349792,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12335",
+     "display_name": "Sexuality, Behavior, and Technology",
+     "score": 9.999999747378752e-05,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12060",
+     "display_name": "Child Development and Digital Technology",
+     "score": 9.999999747378752e-05,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3304",
+      "display_name": "Education"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C48856860",
+     "wikidata": "https://www.wikidata.org/wiki/Q12029",
+     "display_name": "Addiction",
+     "level": 2,
+     "score": 0.8166000247001648
+    },
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.7372000217437744
+    },
+    {
+     "id": "https://openalex.org/C110875604",
+     "wikidata": "https://www.wikidata.org/wiki/Q75",
+     "display_name": "The Internet",
+     "level": 2,
+     "score": 0.6901000142097473
+    },
+    {
+     "id": "https://openalex.org/C143095724",
+     "wikidata": "https://www.wikidata.org/wiki/Q515895",
+     "display_name": "Odds",
+     "level": 3,
+     "score": 0.5961999893188477
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.5734999775886536
+    },
+    {
+     "id": "https://openalex.org/C151956035",
+     "wikidata": "https://www.wikidata.org/wiki/Q1132755",
+     "display_name": "Logistic regression",
+     "level": 2,
+     "score": 0.5439000129699707
+    },
+    {
+     "id": "https://openalex.org/C142853389",
+     "wikidata": "https://www.wikidata.org/wiki/Q744778",
+     "display_name": "Association (psychology)",
+     "level": 2,
+     "score": 0.5242999792098999
+    },
+    {
+     "id": "https://openalex.org/C118552586",
+     "wikidata": "https://www.wikidata.org/wiki/Q7867",
+     "display_name": "Psychiatry",
+     "level": 1,
+     "score": 0.5088000297546387
+    },
+    {
+     "id": "https://openalex.org/C70410870",
+     "wikidata": "https://www.wikidata.org/wiki/Q199906",
+     "display_name": "Clinical psychology",
+     "level": 1,
+     "score": 0.507099986076355
+    },
+    {
+     "id": "https://openalex.org/C49898467",
+     "wikidata": "https://www.wikidata.org/wiki/Q1517706",
+     "display_name": "Stratified sampling",
+     "level": 2,
+     "score": 0.5026999711990356
+    },
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.501800000667572
+    },
+    {
+     "id": "https://openalex.org/C156957248",
+     "wikidata": "https://www.wikidata.org/wiki/Q1862216",
+     "display_name": "Odds ratio",
+     "level": 2,
+     "score": 0.4507000148296356
+    },
+    {
+     "id": "https://openalex.org/C3018581295",
+     "wikidata": "https://www.wikidata.org/wiki/Q1498",
+     "display_name": "Uttar pradesh",
+     "level": 2,
+     "score": 0.421099990606308
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.35580000281333923
+    },
+    {
+     "id": "https://openalex.org/C2778137410",
+     "wikidata": "https://www.wikidata.org/wiki/Q2732820",
+     "display_name": "Government (linguistics)",
+     "level": 2,
+     "score": 0.3398999869823456
+    },
+    {
+     "id": "https://openalex.org/C2779159551",
+     "wikidata": "https://www.wikidata.org/wiki/Q1414874",
+     "display_name": "Comorbidity",
+     "level": 2,
+     "score": 0.3379000127315521
+    },
+    {
+     "id": "https://openalex.org/C138816342",
+     "wikidata": "https://www.wikidata.org/wiki/Q189603",
+     "display_name": "Public health",
+     "level": 2,
+     "score": 0.3305000066757202
+    },
+    {
+     "id": "https://openalex.org/C142052008",
+     "wikidata": "https://www.wikidata.org/wiki/Q954027",
+     "display_name": "Cross-sectional study",
+     "level": 2,
+     "score": 0.3305000066757202
+    },
+    {
+     "id": "https://openalex.org/C2777267654",
+     "wikidata": "https://www.wikidata.org/wiki/Q3519023",
+     "display_name": "Test (biology)",
+     "level": 2,
+     "score": 0.32280001044273376
+    },
+    {
+     "id": "https://openalex.org/C83849155",
+     "wikidata": "https://www.wikidata.org/wiki/Q1472399",
+     "display_name": "Internet access",
+     "level": 3,
+     "score": 0.30790001153945923
+    },
+    {
+     "id": "https://openalex.org/C2777271380",
+     "wikidata": "https://www.wikidata.org/wiki/Q1513352",
+     "display_name": "Behavioral addiction",
+     "level": 3,
+     "score": 0.290800005197525
+    },
+    {
+     "id": "https://openalex.org/C93225998",
+     "wikidata": "https://www.wikidata.org/wiki/Q1941972",
+     "display_name": "Moderation",
+     "level": 2,
+     "score": 0.2529999911785126
+    },
+    {
+     "id": "https://openalex.org/C2776317618",
+     "wikidata": "https://www.wikidata.org/wiki/Q544006",
+     "display_name": "Anxiety disorder",
+     "level": 3,
+     "score": 0.2522999942302704
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.4103/ijcm.ijcm_477_25",
+     "doi": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S195303007",
+      "display_name": "Indian Journal of Community Medicine",
+      "issn_l": "0970-0218",
+      "issn": [
+       "0970-0218",
+       "1998-3581"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "doaj",
+       "jufo-1",
+       "ki-jl-1",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320448",
+      "host_organization_name": "Medknow",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320448",
+       "https://openalex.org/P4310318547"
+      ],
+      "host_organization_lineage_names": [
+       "Medknow",
+       "Wolters Kluwer"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by-nc-sa",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Indian Journal of Community Medicine",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.4103/ijcm.ijcm_477_25",
+    "doi": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S195303007",
+     "display_name": "Indian Journal of Community Medicine",
+     "issn_l": "0970-0218",
+     "issn": [
+      "0970-0218",
+      "1998-3581"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "jufo-1",
+      "ki-jl-1",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320448",
+     "host_organization_name": "Medknow",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320448",
+      "https://openalex.org/P4310318547"
+     ],
+     "host_organization_lineage_names": [
+      "Medknow",
+      "Wolters Kluwer"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-sa",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-sa",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Indian Journal of Community Medicine",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 17,
+   "referenced_works": [
+    "https://openalex.org/W2027929577",
+    "https://openalex.org/W2043705607",
+    "https://openalex.org/W2055097229",
+    "https://openalex.org/W2289070970",
+    "https://openalex.org/W2296067305",
+    "https://openalex.org/W2594908076",
+    "https://openalex.org/W2609491485",
+    "https://openalex.org/W2884846658",
+    "https://openalex.org/W2896921383",
+    "https://openalex.org/W3118962368",
+    "https://openalex.org/W3135385977",
+    "https://openalex.org/W3140134675",
+    "https://openalex.org/W3203045709",
+    "https://openalex.org/W4310465999",
+    "https://openalex.org/W4399050001",
+    "https://openalex.org/W4399795790",
+    "https://openalex.org/W4403467046"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Abstract": [
+     0
+    ],
+    "Background:": [
+     1
+    ],
+    "Internet": [
+     2,
+     48,
+     111,
+     146,
+     157,
+     183,
+     223,
+     245
+    ],
+    "addiction,": [
+     3
+    ],
+    "defined": [
+     4
+    ],
+    "as": [
+     5,
+     15,
+     218
+    ],
+    "excessive": [
+     6
+    ],
+    "and": [
+     7,
+     29,
+     37,
+     42,
+     58,
+     100,
+     115,
+     133,
+     170,
+     196,
+     208,
+     237,
+     247
+    ],
+    "compulsive": [
+     8
+    ],
+    "use": [
+     9,
+     49,
+     246
+    ],
+    "of": [
+     10,
+     145,
+     182,
+     198
+    ],
+    "Internet-enabled": [
+     11
+    ],
+    "devices,": [
+     12
+    ],
+    "has": [
+     13
+    ],
+    "emerged": [
+     14
+    ],
+    "an": [
+     16
+    ],
+    "important": [
+     17,
+     219
+    ],
+    "public": [
+     18
+    ],
+    "health": [
+     19,
+     235
+    ],
+    "concern": [
+     20
+    ],
+    "due": [
+     21
+    ],
+    "to": [
+     22,
+     40,
+     73,
+     242
+    ],
+    "its": [
+     23
+    ],
+    "association": [
+     24
+    ],
+    "with": [
+     25,
+     109,
+     162
+    ],
+    "anxiety,": [
+     26
+    ],
+    "emotional": [
+     27
+    ],
+    "distress,": [
+     28
+    ],
+    "impaired": [
+     30
+    ],
+    "daily": [
+     31,
+     167
+    ],
+    "functioning.": [
+     32
+    ],
+    "In": [
+     33
+    ],
+    "India,": [
+     34
+    ],
+    "rapid": [
+     35
+    ],
+    "digitalization": [
+     36
+    ],
+    "widespread": [
+     38
+    ],
+    "access": [
+     39
+    ],
+    "smartphones": [
+     41
+    ],
+    "online": [
+     43
+    ],
+    "platforms": [
+     44
+    ],
+    "have": [
+     45
+    ],
+    "significantly": [
+     46
+    ],
+    "increased": [
+     47
+    ],
+    "among": [
+     50,
+     76,
+     185,
+     228
+    ],
+    "adolescents,": [
+     51
+    ],
+    "raising": [
+     52
+    ],
+    "concerns": [
+     53
+    ],
+    "about": [
+     54
+    ],
+    "problematic": [
+     55
+    ],
+    "usage": [
+     56
+    ],
+    "patterns": [
+     57
+    ],
+    "their": [
+     59
+    ],
+    "impact": [
+     60
+    ],
+    "on": [
+     61
+    ],
+    "mental": [
+     62,
+     234
+    ],
+    "health.": [
+     63
+    ],
+    "Methods:": [
+     64
+    ],
+    "A": [
+     65
+    ],
+    "school-based": [
+     66,
+     231
+    ],
+    "cross-sectional": [
+     67
+    ],
+    "study": [
+     68
+    ],
+    "was": [
+     69
+    ],
+    "conducted": [
+     70
+    ],
+    "from": [
+     71,
+     98
+    ],
+    "June": [
+     72
+    ],
+    "December": [
+     74
+    ],
+    "2024": [
+     75
+    ],
+    "400": [
+     77
+    ],
+    "adolescents": [
+     78,
+     186
+    ],
+    "aged": [
+     79,
+     187
+    ],
+    "12\u201318": [
+     80
+    ],
+    "years": [
+     81
+    ],
+    "in": [
+     82,
+     153,
+     190
+    ],
+    "Lucknow": [
+     83
+    ],
+    "District,": [
+     84
+    ],
+    "Uttar": [
+     85
+    ],
+    "Pradesh,": [
+     86
+    ],
+    "India.": [
+     87
+    ],
+    "Participants": [
+     88
+    ],
+    "were": [
+     89,
+     104,
+     124,
+     216
+    ],
+    "selected": [
+     90
+    ],
+    "through": [
+     91,
+     106
+    ],
+    "a": [
+     92,
+     107
+    ],
+    "multistage": [
+     93
+    ],
+    "stratified": [
+     94
+    ],
+    "random": [
+     95
+    ],
+    "sampling": [
+     96
+    ],
+    "method": [
+     97
+    ],
+    "government": [
+     99
+    ],
+    "private": [
+     101,
+     191,
+     205
+    ],
+    "schools.": [
+     102
+    ],
+    "Data": [
+     103
+    ],
+    "collected": [
+     105
+    ],
+    "questionnaire": [
+     108
+    ],
+    "Young\u2019s": [
+     110
+    ],
+    "Addiction": [
+     112
+    ],
+    "Test": [
+     113
+    ],
+    "(IAT)": [
+     114
+    ],
+    "the": [
+     116
+    ],
+    "Generalized": [
+     117
+    ],
+    "Anxiety": [
+     118
+    ],
+    "Disorder-7": [
+     119
+    ],
+    "(GAD-7)": [
+     120
+    ],
+    "scale.": [
+     121
+    ],
+    "Statistical": [
+     122
+    ],
+    "analyses": [
+     123
+    ],
+    "performed": [
+     125
+    ],
+    "using": [
+     126
+    ],
+    "SPSS": [
+     127
+    ],
+    "version": [
+     128
+    ],
+    "22.0,": [
+     129
+    ],
+    "employing": [
+     130
+    ],
+    "Chi-square": [
+     131
+    ],
+    "tests": [
+     132
+    ],
+    "multivariable": [
+     134
+    ],
+    "logistic": [
+     135
+    ],
+    "regression.": [
+     136
+    ],
+    "Results:": [
+     137
+    ],
+    "Overall,": [
+     138
+    ],
+    "289": [
+     139
+    ],
+    "participants": [
+     140,
+     155
+    ],
+    "(72.25%)": [
+     141
+    ],
+    "exhibited": [
+     142
+    ],
+    "some": [
+     143
+    ],
+    "degree": [
+     144
+    ],
+    "addiction": [
+     147,
+     152,
+     158,
+     184,
+     224
+    ],
+    "(IAT": [
+     148
+    ],
+    "\u226531),": [
+     149
+    ],
+    "while": [
+     150
+    ],
+    "severe": [
+     151
+    ],
+    "4": [
+     154,
+     212
+    ],
+    "(1%).": [
+     156
+    ],
+    "showed": [
+     159
+    ],
+    "significant": [
+     160
+    ],
+    "associations": [
+     161
+    ],
+    "age,": [
+     163
+    ],
+    "gender,": [
+     164,
+     201
+    ],
+    "school": [
+     165,
+     206
+    ],
+    "type,": [
+     166
+    ],
+    "screen": [
+     168,
+     194,
+     209
+    ],
+    "time,": [
+     169,
+     195
+    ],
+    "anxiety": [
+     171
+    ],
+    "severity": [
+     172
+    ],
+    "(all": [
+     173
+    ],
+    "P": [
+     174
+    ],
+    "<": [
+     175
+    ],
+    "0.05).": [
+     176
+    ],
+    "Multivariable": [
+     177
+    ],
+    "analysis": [
+     178
+    ],
+    "revealed": [
+     179
+    ],
+    "higher": [
+     180,
+     202
+    ],
+    "odds": [
+     181
+    ],
+    "15\u201316": [
+     188
+    ],
+    "years,": [
+     189
+    ],
+    "schools,": [
+     192
+    ],
+    "longer": [
+     193
+    ],
+    "levels": [
+     197
+    ],
+    "anxiety.": [
+     199
+    ],
+    "Female": [
+     200
+    ],
+    "parental": [
+     203
+    ],
+    "education,": [
+     204
+    ],
+    "attendance,": [
+     207
+    ],
+    "time": [
+     210
+    ],
+    "exceeding": [
+     211
+    ],
+    "hours": [
+     213
+    ],
+    "per": [
+     214
+    ],
+    "day": [
+     215
+    ],
+    "identified": [
+     217
+    ],
+    "risk": [
+     220
+    ],
+    "factors.": [
+     221
+    ],
+    "Conclusion:": [
+     222
+    ],
+    "is": [
+     225
+    ],
+    "highly": [
+     226
+    ],
+    "prevalent": [
+     227
+    ],
+    "adolescents.": [
+     229
+    ],
+    "Comprehensive": [
+     230
+    ],
+    "interventions,": [
+     232
+    ],
+    "including": [
+     233
+    ],
+    "screening": [
+     236
+    ],
+    "awareness": [
+     238
+    ],
+    "programs,": [
+     239
+    ],
+    "are": [
+     240
+    ],
+    "needed": [
+     241
+    ],
+    "promote": [
+     243
+    ],
+    "healthy": [
+     244
+    ],
+    "psychological": [
+     248
+    ],
+    "wellbeing.": [
+     249
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-09T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7221031988",
+   "doi": "https://doi.org/10.1111/bjc.70100",
+   "title": "Social media exposure and anxiety and depression in young people: A systematic review and meta\u2010analysis of longitudinal and experimental studies",
+   "display_name": "Social media exposure and anxiety and depression in young people: A systematic review and meta\u2010analysis of longitudinal and experimental studies",
+   "publication_year": 2026,
+   "publication_date": "2026-10-08",
+   "ids": {
+    "openalex": "https://openalex.org/W7221031988",
+    "doi": "https://doi.org/10.1111/bjc.70100",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/42845154"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1111/bjc.70100",
+    "doi": "https://doi.org/10.1111/bjc.70100",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1111/bjc.70100",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S36339387",
+     "display_name": "British Journal of Clinical Psychology",
+     "issn_l": "0144-6657",
+     "issn": [
+      "0144-6657",
+      "2044-8260"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "erih-plus",
+      "jufo-1",
+      "ki-jl-1",
+      "medline",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320595",
+     "host_organization_name": "Wiley",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320595"
+     ],
+     "host_organization_lineage_names": [
+      "Wiley"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-nd",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "British Journal of Clinical Psychology",
+    "raw_type": "journal-article"
+   },
+   "type": "review",
+   "indexed_in": [
+    "crossref",
+    "pubmed"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://doi.org/10.1111/bjc.70100",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5157960285",
+      "display_name": "William Peachey",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86695891",
+       "display_name": "Australian Catholic University",
+       "ror": "https://ror.org/04cxm4j25",
+       "country_code": "AU",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86695891"
+       ]
+      }
+     ],
+     "countries": [
+      "AU"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "William Peachey",
+     "raw_affiliation_strings": [
+      "Healthy Brain and Mind Research Centre, School of Behavioural and Health Sciences Australian Catholic University  Fitzroy Victoria Australia"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Healthy Brain and Mind Research Centre, School of Behavioural and Health Sciences Australian Catholic University  Fitzroy Victoria Australia",
+       "institution_ids": [
+        "https://openalex.org/I86695891"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5046771801",
+      "display_name": "Stefan Piantella",
+      "orcid": "https://orcid.org/0000-0003-0122-6979",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-0122-6979"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86695891",
+       "display_name": "Australian Catholic University",
+       "ror": "https://ror.org/04cxm4j25",
+       "country_code": "AU",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86695891"
+       ]
+      }
+     ],
+     "countries": [
+      "AU"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Stefan Piantella",
+     "raw_affiliation_strings": [
+      "Healthy Brain and Mind Research Centre, School of Behavioural and Health Sciences Australian Catholic University  Fitzroy Victoria Australia"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Healthy Brain and Mind Research Centre, School of Behavioural and Health Sciences Australian Catholic University  Fitzroy Victoria Australia",
+       "institution_ids": [
+        "https://openalex.org/I86695891"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5015532195",
+      "display_name": "Sue Cotton",
+      "orcid": "https://orcid.org/0000-0002-9386-8348",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-9386-8348"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Sue M. Cotton",
+     "raw_affiliation_strings": [
+      "NHMRC Centre of Research Excellence in Bipolar Disorder, School of Psychological Science Monash University  Melbourne Victoria Australia"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-9386-8348",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "NHMRC Centre of Research Excellence in Bipolar Disorder, School of Psychological Science Monash University  Melbourne Victoria Australia",
+       "institution_ids": []
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5047926815",
+      "display_name": "John Gleeson",
+      "orcid": "https://orcid.org/0000-0001-7969-492X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-7969-492X"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86695891",
+       "display_name": "Australian Catholic University",
+       "ror": "https://ror.org/04cxm4j25",
+       "country_code": "AU",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86695891"
+       ]
+      }
+     ],
+     "countries": [
+      "AU"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "John F. M. Gleeson",
+     "raw_affiliation_strings": [
+      "Healthy Brain and Mind Research Centre, School of Behavioural and Health Sciences Australian Catholic University  Fitzroy Victoria Australia"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-7969-492X",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Healthy Brain and Mind Research Centre, School of Behavioural and Health Sciences Australian Catholic University  Fitzroy Victoria Australia",
+       "institution_ids": [
+        "https://openalex.org/I86695891"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": {
+    "value": 3760,
+    "currency": "USD",
+    "value_usd": 3760
+   },
+   "apc_paid": {
+    "value": 3760,
+    "currency": "USD",
+    "value_usd": 3760
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.87359761,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.9994999766349792,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.9994999766349792,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12488",
+     "display_name": "Mental Health via Writing",
+     "score": 9.999999747378752e-05,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3207",
+      "display_name": "Social Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10182",
+     "display_name": "Child and Adolescent Psychosocial and Emotional Development",
+     "score": 0.0,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.7878000140190125
+    },
+    {
+     "id": "https://openalex.org/C2776867660",
+     "wikidata": "https://www.wikidata.org/wiki/Q1814941",
+     "display_name": "Depression (economics)",
+     "level": 2,
+     "score": 0.7615000009536743
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.73089998960495
+    },
+    {
+     "id": "https://openalex.org/C2777895361",
+     "wikidata": "https://www.wikidata.org/wiki/Q1758614",
+     "display_name": "Longitudinal study",
+     "level": 2,
+     "score": 0.6748999953269958
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.6711999773979187
+    },
+    {
+     "id": "https://openalex.org/C23131810",
+     "wikidata": "https://www.wikidata.org/wiki/Q818574",
+     "display_name": "Observational study",
+     "level": 2,
+     "score": 0.6033999919891357
+    },
+    {
+     "id": "https://openalex.org/C70410870",
+     "wikidata": "https://www.wikidata.org/wiki/Q199906",
+     "display_name": "Clinical psychology",
+     "level": 1,
+     "score": 0.6011999845504761
+    },
+    {
+     "id": "https://openalex.org/C118552586",
+     "wikidata": "https://www.wikidata.org/wiki/Q7867",
+     "display_name": "Psychiatry",
+     "level": 1,
+     "score": 0.43470001220703125
+    },
+    {
+     "id": "https://openalex.org/C83867959",
+     "wikidata": "https://www.wikidata.org/wiki/Q371467",
+     "display_name": "Scopus",
+     "level": 3,
+     "score": 0.38960000872612
+    },
+    {
+     "id": "https://openalex.org/C2777545354",
+     "wikidata": "https://www.wikidata.org/wiki/Q3557657",
+     "display_name": "Social anxiety",
+     "level": 3,
+     "score": 0.357699990272522
+    },
+    {
+     "id": "https://openalex.org/C3020672099",
+     "wikidata": "https://www.wikidata.org/wiki/Q857354",
+     "display_name": "Longitudinal data",
+     "level": 2,
+     "score": 0.3431999981403351
+    },
+    {
+     "id": "https://openalex.org/C95190672",
+     "wikidata": "https://www.wikidata.org/wiki/Q815382",
+     "display_name": "Meta-analysis",
+     "level": 2,
+     "score": 0.32440000772476196
+    },
+    {
+     "id": "https://openalex.org/C2776317618",
+     "wikidata": "https://www.wikidata.org/wiki/Q544006",
+     "display_name": "Anxiety disorder",
+     "level": 3,
+     "score": 0.31349998712539673
+    },
+    {
+     "id": "https://openalex.org/C2779473830",
+     "wikidata": "https://www.wikidata.org/wiki/Q1540899",
+     "display_name": "MEDLINE",
+     "level": 2,
+     "score": 0.29989999532699585
+    },
+    {
+     "id": "https://openalex.org/C107130276",
+     "wikidata": "https://www.wikidata.org/wiki/Q133805",
+     "display_name": "Epidemiology",
+     "level": 2,
+     "score": 0.29739999771118164
+    },
+    {
+     "id": "https://openalex.org/C201903717",
+     "wikidata": "https://www.wikidata.org/wiki/Q1778788",
+     "display_name": "Cohort study",
+     "level": 2,
+     "score": 0.29159998893737793
+    },
+    {
+     "id": "https://openalex.org/C27415008",
+     "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+     "display_name": "Psychological intervention",
+     "level": 2,
+     "score": 0.27810001373291016
+    },
+    {
+     "id": "https://openalex.org/C2779318504",
+     "wikidata": "https://www.wikidata.org/wiki/Q1438035",
+     "display_name": "Research design",
+     "level": 2,
+     "score": 0.2727999985218048
+    },
+    {
+     "id": "https://openalex.org/C2778087770",
+     "wikidata": "https://www.wikidata.org/wiki/Q2297111",
+     "display_name": "Social support",
+     "level": 2,
+     "score": 0.26759999990463257
+    },
+    {
+     "id": "https://openalex.org/C205545832",
+     "wikidata": "https://www.wikidata.org/wiki/Q17156455",
+     "display_name": "Young adult",
+     "level": 2,
+     "score": 0.26750001311302185
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.2615000009536743
+    },
+    {
+     "id": "https://openalex.org/C3020774429",
+     "wikidata": "https://www.wikidata.org/wiki/Q1201886",
+     "display_name": "Web of science",
+     "level": 3,
+     "score": 0.2596000134944916
+    }
+   ],
+   "mesh": [],
+   "locations_count": 2,
+   "locations": [
+    {
+     "id": "doi:10.1111/bjc.70100",
+     "doi": "https://doi.org/10.1111/bjc.70100",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1111/bjc.70100",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S36339387",
+      "display_name": "British Journal of Clinical Psychology",
+      "issn_l": "0144-6657",
+      "issn": [
+       "0144-6657",
+       "2044-8260"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "erih-plus",
+       "jufo-1",
+       "ki-jl-1",
+       "medline",
+       "norway-1"
+      ],
+      "host_organization": "https://openalex.org/P4310320595",
+      "host_organization_name": "Wiley",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320595"
+      ],
+      "host_organization_lineage_names": [
+       "Wiley"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by-nc-nd",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "British Journal of Clinical Psychology",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "pmid:42845154",
+     "doi": null,
+     "is_oa": false,
+     "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/42845154",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306525036",
+      "display_name": "PubMed",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I1299303238",
+      "host_organization_name": "National Institutes of Health",
+      "host_organization_lineage": [
+       "https://openalex.org/I1299303238"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "The British journal of clinical psychology",
+     "raw_type": "Journal Article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1111/bjc.70100",
+    "doi": "https://doi.org/10.1111/bjc.70100",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1111/bjc.70100",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S36339387",
+     "display_name": "British Journal of Clinical Psychology",
+     "issn_l": "0144-6657",
+     "issn": [
+      "0144-6657",
+      "2044-8260"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "erih-plus",
+      "jufo-1",
+      "ki-jl-1",
+      "medline",
+      "norway-1"
+     ],
+     "host_organization": "https://openalex.org/P4310320595",
+     "host_organization_name": "Wiley",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320595"
+     ],
+     "host_organization_lineage_names": [
+      "Wiley"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-nd",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "British Journal of Clinical Psychology",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 49,
+   "referenced_works": [
+    "https://openalex.org/W2037557484",
+    "https://openalex.org/W2047503249",
+    "https://openalex.org/W2097019163",
+    "https://openalex.org/W2114488753",
+    "https://openalex.org/W2139168999",
+    "https://openalex.org/W2161016026",
+    "https://openalex.org/W2766237264",
+    "https://openalex.org/W2788235370",
+    "https://openalex.org/W2888198681",
+    "https://openalex.org/W2902663138",
+    "https://openalex.org/W2912991937",
+    "https://openalex.org/W2924664363",
+    "https://openalex.org/W2951404944",
+    "https://openalex.org/W2955504934",
+    "https://openalex.org/W2957614298",
+    "https://openalex.org/W2979663154",
+    "https://openalex.org/W2983017028",
+    "https://openalex.org/W3009225151",
+    "https://openalex.org/W3037122923",
+    "https://openalex.org/W3049599056",
+    "https://openalex.org/W3090679770",
+    "https://openalex.org/W3110709293",
+    "https://openalex.org/W3110734950",
+    "https://openalex.org/W3112674396",
+    "https://openalex.org/W3132483503",
+    "https://openalex.org/W3163626725",
+    "https://openalex.org/W3164160662",
+    "https://openalex.org/W3199963218",
+    "https://openalex.org/W3201042575",
+    "https://openalex.org/W4200202568",
+    "https://openalex.org/W4210698485",
+    "https://openalex.org/W4210719381",
+    "https://openalex.org/W4214825533",
+    "https://openalex.org/W4223546470",
+    "https://openalex.org/W4224326984",
+    "https://openalex.org/W4226253208",
+    "https://openalex.org/W4291885054",
+    "https://openalex.org/W4292681243",
+    "https://openalex.org/W4297918764",
+    "https://openalex.org/W4309314357",
+    "https://openalex.org/W4379015845",
+    "https://openalex.org/W4388300432",
+    "https://openalex.org/W4391040232",
+    "https://openalex.org/W4392002193",
+    "https://openalex.org/W4395011842",
+    "https://openalex.org/W4400052171",
+    "https://openalex.org/W4402219961",
+    "https://openalex.org/W4403186134",
+    "https://openalex.org/W4404692245"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "OBJECTIVES:": [
+     0
+    ],
+    "The": [
+     1
+    ],
+    "aim": [
+     2
+    ],
+    "of": [
+     3,
+     42,
+     64,
+     68,
+     76,
+     89,
+     144,
+     147,
+     152,
+     169,
+     211,
+     214
+    ],
+    "the": [
+     4,
+     11,
+     14,
+     155,
+     160,
+     167,
+     180
+    ],
+    "current": [
+     5
+    ],
+    "review": [
+     6
+    ],
+    "was": [
+     7
+    ],
+    "to": [
+     8,
+     86,
+     177,
+     190,
+     207
+    ],
+    "comprehensively": [
+     9
+    ],
+    "synthesize": [
+     10
+    ],
+    "evidence": [
+     12
+    ],
+    "for": [
+     13,
+     51,
+     142,
+     154,
+     179
+    ],
+    "relationship": [
+     15
+    ],
+    "between": [
+     16,
+     164,
+     195
+    ],
+    "social": [
+     17
+    ],
+    "media": [
+     18
+    ],
+    "use": [
+     19
+    ],
+    "and": [
+     20,
+     22,
+     36,
+     46,
+     55,
+     78,
+     80,
+     103,
+     119,
+     166,
+     171,
+     197
+    ],
+    "anxiety": [
+     21,
+     123,
+     170
+    ],
+    "depression": [
+     23,
+     77,
+     109,
+     156,
+     172
+    ],
+    "symptoms": [
+     24
+    ],
+    "in": [
+     25,
+     62,
+     218
+    ],
+    "young": [
+     26,
+     219
+    ],
+    "people": [
+     27
+    ],
+    "using": [
+     28
+    ],
+    "data": [
+     29
+    ],
+    "from": [
+     30,
+     84
+    ],
+    "robust": [
+     31
+    ],
+    "methodological": [
+     32
+    ],
+    "designs,": [
+     33
+    ],
+    "namely,": [
+     34
+    ],
+    "longitudinal": [
+     35,
+     54,
+     100,
+     187
+    ],
+    "experimental": [
+     37,
+     56
+    ],
+    "studies.": [
+     38,
+     57
+    ],
+    "METHODS:": [
+     39
+    ],
+    "PsycINFO,": [
+     40
+    ],
+    "Web": [
+     41
+    ],
+    "Science,": [
+     43
+    ],
+    "MEDLINE,": [
+     44
+    ],
+    "Embase": [
+     45
+    ],
+    "Scopus": [
+     47
+    ],
+    "databases": [
+     48
+    ],
+    "were": [
+     49,
+     138
+    ],
+    "searched": [
+     50
+    ],
+    "peer-reviewed,": [
+     52
+    ],
+    "English-language,": [
+     53
+    ],
+    "Included": [
+     58
+    ],
+    "studies": [
+     59,
+     96,
+     102,
+     107,
+     121
+    ],
+    "measured": [
+     60
+    ],
+    "SMU": [
+     61,
+     165,
+     174,
+     196
+    ],
+    "terms": [
+     63
+    ],
+    "time": [
+     65
+    ],
+    "or": [
+     66,
+     149
+    ],
+    "frequency": [
+     67
+    ],
+    "use,": [
+     69
+    ],
+    "mainly": [
+     70
+    ],
+    "via": [
+     71
+    ],
+    "self-report,": [
+     72
+    ],
+    "used": [
+     73
+    ],
+    "standardized": [
+     74
+    ],
+    "measures": [
+     75
+    ],
+    "anxiety,": [
+     79
+    ],
+    "recruited": [
+     81
+    ],
+    "samples": [
+     82
+    ],
+    "ranging": [
+     83
+    ],
+    "10": [
+     85
+    ],
+    "24": [
+     87
+    ],
+    "years": [
+     88
+    ],
+    "age.": [
+     90
+    ],
+    "RESULTS:": [
+     91
+    ],
+    "Screening": [
+     92
+    ],
+    "retrieved": [
+     93
+    ],
+    "37": [
+     94
+    ],
+    "eligible": [
+     95
+    ],
+    "that": [
+     97
+    ],
+    "included": [
+     98
+    ],
+    "36": [
+     99
+    ],
+    "observational": [
+     101
+    ],
+    "one": [
+     104
+    ],
+    "experiment.": [
+     105
+    ],
+    "Twelve": [
+     106
+    ],
+    "examined": [
+     108,
+     122
+    ],
+    "outcomes": [
+     110,
+     201
+    ],
+    "(pooled": [
+     111,
+     124
+    ],
+    "r": [
+     112,
+     125
+    ],
+    "=": [
+     113,
+     126
+    ],
+    ".08,": [
+     114
+    ],
+    "95%": [
+     115,
+     128
+    ],
+    "CIs": [
+     116,
+     129
+    ],
+    "[0.04,": [
+     117
+    ],
+    "0.11]),": [
+     118
+    ],
+    "five": [
+     120
+    ],
+    "0.093,": [
+     127
+    ],
+    "[0.059,": [
+     130
+    ],
+    "0.126]),": [
+     131
+    ],
+    "showing": [
+     132
+    ],
+    "very": [
+     133,
+     161
+    ],
+    "small": [
+     134
+    ],
+    "linear": [
+     135
+    ],
+    "effects.": [
+     136,
+     157
+    ],
+    "There": [
+     137
+    ],
+    "no": [
+     139
+    ],
+    "moderating": [
+     140
+    ],
+    "effects": [
+     141
+    ],
+    "year": [
+     143
+    ],
+    "publication,": [
+     145
+    ],
+    "duration": [
+     146
+    ],
+    "follow-up": [
+     148
+    ],
+    "mean": [
+     150
+    ],
+    "age": [
+     151
+    ],
+    "sample": [
+     153
+    ],
+    "CONCLUSIONS:": [
+     158
+    ],
+    "Given": [
+     159
+    ],
+    "weak": [
+     162
+    ],
+    "relationships": [
+     163,
+     194
+    ],
+    "severity": [
+     168
+    ],
+    "symptoms,": [
+     173
+    ],
+    "is": [
+     175,
+     202
+    ],
+    "unlikely": [
+     176
+    ],
+    "account": [
+     178
+    ],
+    "contemporary": [
+     181
+    ],
+    "youth": [
+     182
+    ],
+    "mental": [
+     183,
+     199,
+     215
+    ],
+    "health": [
+     184,
+     200,
+     216
+    ],
+    "crisis.": [
+     185
+    ],
+    "Further": [
+     186
+    ],
+    "research": [
+     188
+    ],
+    "designed": [
+     189
+    ],
+    "examine": [
+     191
+    ],
+    "potential": [
+     192,
+     209
+    ],
+    "non-monotonic": [
+     193
+    ],
+    "adverse": [
+     198
+    ],
+    "required,": [
+     203
+    ],
+    "along": [
+     204
+    ],
+    "with": [
+     205
+    ],
+    "attention": [
+     206
+    ],
+    "other": [
+     208
+    ],
+    "causes": [
+     210
+    ],
+    "increased": [
+     212
+    ],
+    "prevalence": [
+     213
+    ],
+    "problems": [
+     217
+    ],
+    "people.": [
+     220
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-09T09:14:12.587421",
+   "created_date": "2026-10-09T00:00:00"
+  }
+ ]
+}

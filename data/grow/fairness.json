@@ -1,13 +1,16 @@
 {
  "diet-and-mortality": {
+  "extraction_served": "2026-10-10",
   "followon_owed": [],
   "followon_served": "2026-10-10"
  },
  "ml-fairness": {
+  "extraction_served": "2026-10-10",
   "followon_owed": [],
   "followon_served": "2026-10-10"
  },
  "social-media-teen-mental-health": {
+  "extraction_served": "2026-10-10",
   "followon_owed": [],
   "followon_served": "2026-10-10"
  }
