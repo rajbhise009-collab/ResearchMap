@@ -361,8 +361,10 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 .foot {
   border-top: 1px solid var(--rule);
   font-family: var(--font-sans);
-  font-size: var(--step--2);
-  color: var(--faint);
+  /* caveats and the support line live here: at least 14px, and --muted
+     (4.96:1 light, 5.93:1 dark), never --faint (2.78:1) */
+  font-size: max(var(--step--1), 14px);
+  color: var(--muted);
 }
 .foot-in {
   max-width: var(--wide);
@@ -481,13 +483,14 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   max-width: var(--wide);
   margin: 0 auto;
   padding: 0 var(--s-5) var(--s-5);
-  font-size: var(--step--2);
-  color: var(--faint);
+  font-size: max(var(--step--1), 14px);
+  line-height: var(--line-snug);
+  color: var(--muted);
   border-top: 1px dashed var(--rule);
   padding-top: var(--s-4);
 }
-.foot-sources-label { color: var(--muted); font-weight: 500; }
-.foot-sources-intro { color: var(--faint); }
+.foot-sources-label { color: var(--ink-soft); font-weight: 500; }
+.foot-sources-intro { color: var(--muted); }
 .foot-sources-list {
   list-style: none;
   padding: 0;
@@ -498,7 +501,15 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .foot-sources-list li { display: inline; }
 .foot-sources-list a { color: var(--muted); }
-.foot-sources-note { color: var(--faint); }
+.foot-sources-note { color: var(--muted); }
+/* The "if you or a young person you know is struggling" sentence: its own
+   line, body-strength ink, semibold. Wording unchanged (split, not edited). */
+.foot-support {
+  display: block;
+  margin-top: var(--s-1);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
 
 /* ==========================================================================
    4. Landing
@@ -1388,7 +1399,7 @@ section.block p { color: var(--ink-soft); }
   h1 { letter-spacing: -0.015em; }
   .filters { gap: var(--s-4); }
   .filters .count { margin-left: 0; width: 100%; text-align: right; }
-  .foot-in { padding: var(--s-4); font-size: var(--step--2); }
+  .foot-in { padding: var(--s-4); font-size: max(var(--step--1), 14px); }
 }
 
 /* ==========================================================================
@@ -1403,7 +1414,7 @@ section.block p { color: var(--ink-soft); }
   flex-wrap: wrap;
   gap: var(--s-2) var(--s-5);
   font-family: var(--font-sans);
-  font-size: var(--step--1);
+  font-size: max(var(--step--1), 14px);
 }
 .foot-links a { color: var(--muted); }
 .foot-links a:hover { color: var(--accent); }

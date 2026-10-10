@@ -59,6 +59,18 @@ const BASE = (
 // no FOUC on first paint. Zero effect otherwise.
 const themeScript = `try{var t=new URLSearchParams(location.search).get('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
 
+// A library note's support sentence ("If you or a young person you know is
+// struggling, talk to …") is shown on its own line with real weight. The text
+// is split at sentence boundaries only: every word stays as written.
+const SUPPORT_SENTENCE = /struggling|support service|helpline/i;
+function splitSupport(note: string): { rest: string; support: string } {
+  const sentences = note.split(/(?<=[.!?])\s+/);
+  return {
+    rest: sentences.filter((x) => !SUPPORT_SENTENCE.test(x)).join(" "),
+    support: sentences.filter((x) => SUPPORT_SENTENCE.test(x)).join(" "),
+  };
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -126,7 +138,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <li key={lib.slug}>
                       <strong>{lib.name}</strong>{" "}
                       <span className="foot-sources-note">
-                        ({lib.n_papers} papers) — {lib.note}
+                        ({lib.n_papers} papers) — {splitSupport(lib.note).rest}
+                        {splitSupport(lib.note).support && (
+                          <span className="foot-support">{splitSupport(lib.note).support}</span>
+                        )}
                       </span>
                     </li>
                   ))}
