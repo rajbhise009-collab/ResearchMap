@@ -1,5 +1,78 @@
 # PROGRESS
 
+## UI polish (branch `ui-polish`, local only) — 2026-10-11
+
+Polish within the existing design system: no new fonts, no new colour
+tokens, no redesign. Before and after screenshots are in
+`~/Desktop/rm-ui-before` and `~/Desktop/rm-ui-after` (outside the repo).
+After every commit the following ran clean: typecheck, production build
+(consistency before and after), 938 backend tests. The Playwright smoke
+suite ran 54/54 after the last commit.
+
+- `38f363b` example questions per library (`frontend/lib/examples.ts`); each
+  lands in_domain in its own library and trips no safety check.
+- `49b10fd` footer caveat and support text at 14px and >=4.5:1 (`--muted`,
+  `--ink-soft`; it was `--faint` at 2.78:1); the "If you or a young person
+  you know is struggling…" sentence on its own line, semibold, same words.
+- `07e524f` the search placeholder fits at 390px in the search bar and the
+  palette (16px on phones).
+- `b8f93d6` result cards: caveat panels directly under the quote.
+- `e7781ad` (copy, owner-approved exception in `language.py`): placeholder
+  "What do you want to know?"; the footer no longer mentions `?lib=` or
+  `?dev=1`; the "Try:" hint comes from the library's first example (built in
+  the frontend; `search.hint` is unchanged because `language_pack()` takes no
+  library).
+
+### Footer paragraph shortenings — PROPOSED, not applied (needs approval)
+
+Each keeps every caveat. The social-media note, including the support
+sentence, stays word for word.
+
+| Paragraph (source) | Current | Proposed |
+|:--|:--|:--|
+| Libraries intro (`language.py` `LIBRARIES_NOTE.intro`) | Each library is one subject read through the same pipeline. The library currently on screen is the one this URL renders; to switch, use the library picker at the top of the page. | Each library covers one subject, read the same way. To switch, use the library picker at the top of the page. |
+| Diet note (`data/library_registry.json` `footer_note`) | Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you. | Research-literature analysis, not dietary or medical advice. Some papers here disagree, for example on red meat and alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you. |
+| ML fairness note (registry) | Some definitions of fairness are mathematically proven unable to all hold at once. Our disagreement check found no conflicting claims among the papers read; why is not established. | Some definitions of fairness provably cannot all hold at once. Our disagreement check found no conflicting claims among these papers; we don't yet know why. |
+| LLM calibration note (registry) | The oldest, most-scored library in the project. | unchanged |
+| Social media note (registry) | Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service. | unchanged |
+| Sources (`language.py` `ATTRIBUTION.intro`) | Paper metadata, citations and abstracts come from these openly licensed sources. Only short, structured extractions (claims, limitations, future-work statements) are shown here — full text was read to produce those extractions, not republished. | Paper metadata, citations and abstracts come from these openly licensed sources. We show only short extractions (claims, limitations, future-work statements); full text was read to make them, never republished. |
+| Privacy (`language.py` `PRIVACY_NOTE.body`) | On the public deploy this page sends anonymised page-view counts to Vercel Web Analytics (which URLs got visited, roughly what country, no cookies, no cross-site tracking, no identifiers). What you type into the search box runs against an index in your browser — the query itself is NOT sent to any server. Downloads (.bib, .csv) are generated locally. The versions you run on your own computer send no analytics. | The public site counts anonymised page views with Vercel Web Analytics (pages visited and rough country; no cookies, no cross-site tracking, no identifiers). Your searches run in your browser and are never sent to any server. Downloads (.bib, .csv) are made on your device. The versions you run on your own computer send no analytics. |
+
+### Investigated, not changed: result cards with no caveats
+
+Shown cards with **no** caveat panel, across all four libraries:
+
+| Card type | Shown | With no caveats |
+|:--|--:|--:|
+| A disagreement between papers | 7 | **7** |
+| A problem several teams hit | 8 | **4** |
+| An unfollowed question | 150 | 0 |
+| A method that might transfer | 2 | 0 |
+
+- Caveats are attached in `backend/app/ranking/assemble.py:70`
+  (`_caveats()`: `corpus_relative` for open questions, `mixed_fidelity` when a
+  supporting paper is summary-only, `generic_category`, `construct_gated`,
+  `semantic_lead` for method leads). `backend/app/api/language.py:262`
+  (`caveats_for()`) translates them into the panel text.
+- **Disagreements:** a gap, not a documented design.
+  `backend/app/api/multi_library_export.py:286` sets `"caveats": []`, so
+  disagreement cards bypass `_caveats()` entirely. 5 of the 7 rest on at
+  least one summary-only paper and would carry "Based partly on summaries
+  only" under the rule every other card type follows. They do carry the
+  hand-check verdict label, which is not a caveat.
+- **Problems several teams hit:** this follows the documented design.
+  `_caveats()` gives this type only conditional caveats (summary-only
+  papers, a generic category, a split category), so a card from full-text
+  papers with a specific category gets none. No "only checked within these
+  papers" caveat is defined for this type.
+- **What the docs require:** `PROGRESS.md` (Phase 5 and 7) makes it an
+  invariant that open questions carry `corpus_relative` and method leads
+  carry `semantic_lead`; "every card carries `caveats`" means the field
+  exists, not that it is non-empty. `docs/relationship-layer.md` ("Orphan
+  judgments are corpus-relative") requires the coverage caveat on open
+  questions only. Neither `docs/` nor `CLAUDE.md` requires a caveat on
+  disagreements or repeated problems.
+
 ## Phase 6 validation — free pilot, inconclusive (2026-10-09)
 
 - `backend/app/validation/time_split.py`: the documented time-split matching rule for the
