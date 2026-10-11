@@ -1,5 +1,5 @@
 {
-  "total": 101,
+  "total": 104,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1111,6 +1111,39 @@
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7220961377",
+      "wid": "W7220961377",
+      "title": "Estimating the Economic Value of Supported Online Parent-Led Cognitive Behavioral Therapy to Prevent Child Anxiety Problems: Economic Evaluation of the MYCATS Cluster Randomized Controlled Trial",
+      "year": 2026,
+      "doi": "https://doi.org/10.2196/87123",
+      "venue": "Journal of Medical Internet Research",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7221029458",
+      "wid": "W7221029458",
+      "title": "Prevalence and Correlates of Internet Addiction and its Association with Anxiety among School-going Adolescents in Lucknow, India: A Cross-sectional Study",
+      "year": 2026,
+      "doi": "https://doi.org/10.4103/ijcm.ijcm_477_25",
+      "venue": "Indian Journal of Community Medicine",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221031988",
+      "wid": "W7221031988",
+      "title": "Social media exposure and anxiety and depression in young people: A systematic review and meta\u2010analysis of longitudinal and experimental studies",
+      "year": 2026,
+      "doi": "https://doi.org/10.1111/bjc.70100",
+      "venue": "British Journal of Clinical Psychology",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
     }
   ]
 }

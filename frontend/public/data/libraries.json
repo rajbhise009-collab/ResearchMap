@@ -30,7 +30,7 @@
       "is_default": false,
       "not_advice_note": null,
       "health_adjacent": false,
-      "n_papers": 102,
+      "n_papers": 106,
       "snapshot_path": "/data/library/ml-fairness"
     },
     {
@@ -41,7 +41,7 @@
       "is_default": false,
       "not_advice_note": "Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service.",
       "health_adjacent": true,
-      "n_papers": 101,
+      "n_papers": 104,
       "snapshot_path": "/data/library/social-media-teen-mental-health"
     }
   ],

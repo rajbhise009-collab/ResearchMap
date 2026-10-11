@@ -2,6 +2,20 @@
 
 One entry per weekly growth run (newest first).
 
+## 2026-10-11
+
+- diet-and-mortality: 0 papers added
+- ml-fairness: 4 papers added
+- social-media-teen-mental-health: 3 papers added
+- diet-and-mortality: results shown 11 -> 11 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- ml-fairness: results shown 58 -> 60 (+2 new, -0 no longer shown); 0 flagged disagreements (not yet checked); 3 set-aside item(s) dropped (never shown)
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2963174898-w4288414189 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w4362714312-w2599025709 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w4362714312-w3203106571 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+- social-media-teen-mental-health: results shown 30 -> 31 (+2 new, -1 no longer shown); 2 flagged disagreements (not yet checked)
+-   - no longer shown: opp-social-media-teen-mental-health-orphan-openalex-w1994045792-f1 — open question answered: the later paper W7221031988 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)
+- spend recorded ₹17.29; remaining ₹257.82
+
 ## 2026-10-10 (republished grow/2026-10-10)
 
 - diet-and-mortality: results shown 11 -> 11 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)

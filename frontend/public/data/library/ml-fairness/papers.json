@@ -1,5 +1,5 @@
 {
-  "total": 102,
+  "total": 106,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1122,6 +1122,50 @@
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7220401908",
+      "wid": "W7220401908",
+      "title": "Algorithmic Crowding Out: The Reproduction of Gender Division in the Exposure of Algorithm\u2010Driven Job Advertisements",
+      "year": 2026,
+      "doi": "https://doi.org/10.1111/gwao.70267",
+      "venue": "Gender Work and Organization",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7220671976",
+      "wid": "W7220671976",
+      "title": "Who bears the cost of fairness? Empirical evidence from a cross-regional bias detection and mitigation pipeline in machine learning",
+      "year": 2026,
+      "doi": "https://doi.org/10.62486/sai2026102",
+      "venue": "SAP Social AI",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7220846069",
+      "wid": "W7220846069",
+      "title": "Equity-Driven AI Frameworks for Faculty Performance Evaluation in Public and Private Universities",
+      "year": 2026,
+      "doi": "https://doi.org/10.1108/978-1-83662-878-120261005",
+      "venue": "Emerald Group Publishing Limited eBooks",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221029226",
+      "wid": "W7221029226",
+      "title": "Uncovering Hidden Water Insecurity: A Conflict\u2010Augmented, Equity\u2010Weighted Machine Learning Framework for Global SDG 6.1 Risk Assessment",
+      "year": 2026,
+      "doi": "https://doi.org/10.1002/sd.71744",
+      "venue": "Sustainable Development",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
     }
   ]
 }
