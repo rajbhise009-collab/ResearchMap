@@ -1,0 +1,1155 @@
+{
+ "batch_id": "56mpji61xvjozupy21oxmjgbw0tey9x7y5ys",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-10-11",
+ "submitted_at": 1791736338.2907002,
+ "projected_inr": 0.924588,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7221316535": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7221316535",
+   "openalex_id": "https://openalex.org/W7221316535",
+   "title": "Understanding Youth Screen Time and Mental Health: A Natural Language Processing Topic Modeling Analysis",
+   "year": 2026,
+   "doi": "https://doi.org/10.3390/future4040032",
+   "venue": "Future",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "Youth excessive screen time and mental health challenges continue to be a public health concern. Guided by a social cognitive theoretical framework, this study explored the utility of using natural language processing (NLP) topic modeling and qualitative triangulation for understanding how youth-related experiences described in subreddit posts described mental wellbeing from 2017 to 2025 with most of the posts created during the COVID-19 pandemic and afterwards. The study includes 202 r/Teenagers subreddit posts. All posts (n = 202) were analyzed qualitatively, with a subset of these posts that had body text (n = 133) analyzed using topic modeling. A natural language processing latent Dirichlet allocation (LDA) was performed to analyze the social media posts and generate topics that represent the social media data, with exploratory input from ChatGPT. In addition, the data were analyzed using qualitative open coding in order to compare the LDA results with the qualitative open coding results. The NLP analysis identified seven topics based on coherence scores and the qualitative open coding yielded three emergent themes. Both the NLP and qualitative analyses revealed overlapping topics/themes pertaining to: (1) online school was challenging and youth needed personal connection with others, (2) youth wanted friends and appeared to use screens for social connection, and (3) youth valued creative activities, such as playing games to foster social connection. This research demonstrates the benefits and limitations of using natural language processing topic modeling for analyzing unstructured text data. It also provides important information regarding the usage of screens and youth mental health challenges.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: young population 'Youth' + mental-health outcome 'Mental Health'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-11",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7221316535",
+   "doi": "https://doi.org/10.3390/future4040032",
+   "title": "Understanding Youth Screen Time and Mental Health: A Natural Language Processing Topic Modeling Analysis",
+   "display_name": "Understanding Youth Screen Time and Mental Health: A Natural Language Processing Topic Modeling Analysis",
+   "publication_year": 2026,
+   "publication_date": "2026-10-10",
+   "ids": {
+    "openalex": "https://openalex.org/W7221316535",
+    "doi": "https://doi.org/10.3390/future4040032"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.3390/future4040032",
+    "doi": "https://doi.org/10.3390/future4040032",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/future4040032",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S4387281810",
+     "display_name": "Future",
+     "issn_l": "2813-2882",
+     "issn": [
+      "2813-2882"
+     ],
+     "is_oa": true,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310310987",
+     "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310310987"
+     ],
+     "host_organization_lineage_names": [
+      "Multidisciplinary Digital Publishing Institute"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Future",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://doi.org/10.3390/future4040032",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5063948828",
+      "display_name": "Matthew R. Rodriguez",
+      "orcid": "https://orcid.org/0000-0002-0901-8595",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-0901-8595"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2801694295",
+       "display_name": "Virginia Cooperative Extension",
+       "ror": "https://ror.org/0149vtr75",
+       "country_code": "US",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2801694295"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Matthew R. Rodriguez",
+     "raw_affiliation_strings": [
+      "University of California Cooperative Extension, 2855 2nd Street, Auburn, CA 95603, USA"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-0901-8595",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "University of California Cooperative Extension, 2855 2nd Street, Auburn, CA 95603, USA",
+       "institution_ids": [
+        "https://openalex.org/I2801694295"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5079989030",
+      "display_name": "Kwangman Ko",
+      "orcid": "https://orcid.org/0000-0002-0581-2409",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-0581-2409"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I119443389",
+       "display_name": "East Tennessee State University",
+       "ror": "https://ror.org/05rfqv493",
+       "country_code": "US",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I119443389"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Kwangman Ko",
+     "raw_affiliation_strings": [
+      "Department of Counseling and Human Services, East Tennessee State University, Johnson City, TN 37614, USA"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Counseling and Human Services, East Tennessee State University, Johnson City, TN 37614, USA",
+       "institution_ids": [
+        "https://openalex.org/I119443389"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": {
+    "value": 1000,
+    "currency": "CHF",
+    "value_usd": 1207
+   },
+   "apc_paid": {
+    "value": 1000,
+    "currency": "CHF",
+    "value_usd": 1207
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.95005282,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "4",
+    "issue": "4",
+    "first_page": "32",
+    "last_page": "32"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.5390999913215637,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.5390999913215637,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12488",
+     "display_name": "Mental Health via Writing",
+     "score": 0.31369999051094055,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3207",
+      "display_name": "Social Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T13910",
+     "display_name": "Computational and Text Analysis Methods",
+     "score": 0.08009999990463257,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3300",
+      "display_name": "General Social Sciences"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C171686336",
+     "wikidata": "https://www.wikidata.org/wiki/Q3532085",
+     "display_name": "Topic model",
+     "level": 2,
+     "score": 0.6478999853134155
+    },
+    {
+     "id": "https://openalex.org/C500882744",
+     "wikidata": "https://www.wikidata.org/wiki/Q269236",
+     "display_name": "Latent Dirichlet allocation",
+     "level": 3,
+     "score": 0.6280999779701233
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.5856000185012817
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.5109000205993652
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.5019999742507935
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.4609000086784363
+    },
+    {
+     "id": "https://openalex.org/C179518139",
+     "wikidata": "https://www.wikidata.org/wiki/Q5140297",
+     "display_name": "Coding (social sciences)",
+     "level": 2,
+     "score": 0.4555000066757202
+    },
+    {
+     "id": "https://openalex.org/C190248442",
+     "wikidata": "https://www.wikidata.org/wiki/Q839486",
+     "display_name": "Qualitative research",
+     "level": 2,
+     "score": 0.4422999918460846
+    },
+    {
+     "id": "https://openalex.org/C169900460",
+     "wikidata": "https://www.wikidata.org/wiki/Q2200417",
+     "display_name": "Cognition",
+     "level": 2,
+     "score": 0.3652999997138977
+    },
+    {
+     "id": "https://openalex.org/C156325361",
+     "wikidata": "https://www.wikidata.org/wiki/Q1152864",
+     "display_name": "Grounded theory",
+     "level": 3,
+     "score": 0.35920000076293945
+    },
+    {
+     "id": "https://openalex.org/C204321447",
+     "wikidata": "https://www.wikidata.org/wiki/Q30642",
+     "display_name": "Natural language processing",
+     "level": 1,
+     "score": 0.336899995803833
+    },
+    {
+     "id": "https://openalex.org/C87156501",
+     "wikidata": "https://www.wikidata.org/wiki/Q7268708",
+     "display_name": "Qualitative property",
+     "level": 2,
+     "score": 0.33219999074935913
+    },
+    {
+     "id": "https://openalex.org/C2522767166",
+     "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+     "display_name": "Data science",
+     "level": 1,
+     "score": 0.3276999890804291
+    },
+    {
+     "id": "https://openalex.org/C36464697",
+     "wikidata": "https://www.wikidata.org/wiki/Q451553",
+     "display_name": "Visualization",
+     "level": 2,
+     "score": 0.3181000053882599
+    },
+    {
+     "id": "https://openalex.org/C84389358",
+     "wikidata": "https://www.wikidata.org/wiki/Q1129466",
+     "display_name": "Discourse analysis",
+     "level": 2,
+     "score": 0.3149000108242035
+    },
+    {
+     "id": "https://openalex.org/C85973986",
+     "wikidata": "https://www.wikidata.org/wiki/Q1091731",
+     "display_name": "Exploratory research",
+     "level": 2,
+     "score": 0.310699999332428
+    },
+    {
+     "id": "https://openalex.org/C162446236",
+     "wikidata": "https://www.wikidata.org/wiki/Q653137",
+     "display_name": "Content analysis",
+     "level": 2,
+     "score": 0.3100000023841858
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.30640000104904175
+    },
+    {
+     "id": "https://openalex.org/C205778803",
+     "wikidata": "https://www.wikidata.org/wiki/Q38404",
+     "display_name": "Autism",
+     "level": 2,
+     "score": 0.2806999981403351
+    },
+    {
+     "id": "https://openalex.org/C195324797",
+     "wikidata": "https://www.wikidata.org/wiki/Q33742",
+     "display_name": "Natural language",
+     "level": 2,
+     "score": 0.2791999876499176
+    },
+    {
+     "id": "https://openalex.org/C3018587665",
+     "wikidata": "https://www.wikidata.org/wiki/Q7268696",
+     "display_name": "Qualitative analysis",
+     "level": 3,
+     "score": 0.2775000035762787
+    },
+    {
+     "id": "https://openalex.org/C2781181686",
+     "wikidata": "https://www.wikidata.org/wiki/Q4226068",
+     "display_name": "Coherence (philosophical gambling strategy)",
+     "level": 2,
+     "score": 0.2678999900817871
+    },
+    {
+     "id": "https://openalex.org/C169087156",
+     "wikidata": "https://www.wikidata.org/wiki/Q2131593",
+     "display_name": "Framing (construction)",
+     "level": 2,
+     "score": 0.26759999990463257
+    },
+    {
+     "id": "https://openalex.org/C86658582",
+     "wikidata": "https://www.wikidata.org/wiki/Q1432778",
+     "display_name": "Social cognition",
+     "level": 3,
+     "score": 0.2572999894618988
+    },
+    {
+     "id": "https://openalex.org/C2781095836",
+     "wikidata": "https://www.wikidata.org/wiki/Q7187937",
+     "display_name": "Photovoice",
+     "level": 2,
+     "score": 0.2529999911785126
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.3390/future4040032",
+     "doi": "https://doi.org/10.3390/future4040032",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.3390/future4040032",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4387281810",
+      "display_name": "Future",
+      "issn_l": "2813-2882",
+      "issn": [
+       "2813-2882"
+      ],
+      "is_oa": true,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310310987",
+      "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310310987"
+      ],
+      "host_organization_lineage_names": [
+       "Multidisciplinary Digital Publishing Institute"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Future",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.3390/future4040032",
+    "doi": "https://doi.org/10.3390/future4040032",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/future4040032",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S4387281810",
+     "display_name": "Future",
+     "issn_l": "2813-2882",
+     "issn": [
+      "2813-2882"
+     ],
+     "is_oa": true,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310310987",
+     "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310310987"
+     ],
+     "host_organization_lineage_names": [
+      "Multidisciplinary Digital Publishing Institute"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Future",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 18,
+   "referenced_works": [
+    "https://openalex.org/W2038043464",
+    "https://openalex.org/W2169818249",
+    "https://openalex.org/W2563852449",
+    "https://openalex.org/W2788235370",
+    "https://openalex.org/W2809100814",
+    "https://openalex.org/W2983493784",
+    "https://openalex.org/W3032994313",
+    "https://openalex.org/W3034038324",
+    "https://openalex.org/W3110653194",
+    "https://openalex.org/W3130298200",
+    "https://openalex.org/W3133366050",
+    "https://openalex.org/W3137326656",
+    "https://openalex.org/W3192175805",
+    "https://openalex.org/W3209895760",
+    "https://openalex.org/W3210261198",
+    "https://openalex.org/W4388504402",
+    "https://openalex.org/W4389638968",
+    "https://openalex.org/W4414413421"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Youth": [
+     0
+    ],
+    "excessive": [
+     1
+    ],
+    "screen": [
+     2
+    ],
+    "time": [
+     3
+    ],
+    "and": [
+     4,
+     35,
+     64,
+     114,
+     161,
+     173,
+     186,
+     197,
+     205,
+     224,
+     248
+    ],
+    "mental": [
+     5,
+     48,
+     250
+    ],
+    "health": [
+     6,
+     13,
+     251
+    ],
+    "challenges": [
+     7
+    ],
+    "continue": [
+     8
+    ],
+    "to": [
+     9,
+     52,
+     108,
+     140,
+     199,
+     215
+    ],
+    "be": [
+     10
+    ],
+    "a": [
+     11,
+     17,
+     82
+    ],
+    "public": [
+     12
+    ],
+    "concern.": [
+     14
+    ],
+    "Guided": [
+     15
+    ],
+    "by": [
+     16
+    ],
+    "social": [
+     18,
+     111,
+     120,
+     203,
+     217
+    ],
+    "cognitive": [
+     19
+    ],
+    "theoretical": [
+     20
+    ],
+    "framework,": [
+     21
+    ],
+    "this": [
+     22
+    ],
+    "study": [
+     23,
+     67
+    ],
+    "explored": [
+     24
+    ],
+    "the": [
+     25,
+     57,
+     61,
+     110,
+     119,
+     130,
+     142,
+     146,
+     162,
+     171,
+     222,
+     244
+    ],
+    "utility": [
+     26
+    ],
+    "of": [
+     27,
+     56,
+     84,
+     226,
+     246
+    ],
+    "using": [
+     28,
+     95,
+     134,
+     227
+    ],
+    "natural": [
+     29,
+     99,
+     228
+    ],
+    "language": [
+     30,
+     100,
+     229
+    ],
+    "processing": [
+     31,
+     101,
+     230
+    ],
+    "(NLP)": [
+     32
+    ],
+    "topic": [
+     33,
+     96,
+     231
+    ],
+    "modeling": [
+     34,
+     232
+    ],
+    "qualitative": [
+     36,
+     135,
+     147,
+     163,
+     174
+    ],
+    "triangulation": [
+     37
+    ],
+    "for": [
+     38,
+     202,
+     233
+    ],
+    "understanding": [
+     39
+    ],
+    "how": [
+     40
+    ],
+    "youth-related": [
+     41
+    ],
+    "experiences": [
+     42
+    ],
+    "described": [
+     43,
+     47
+    ],
+    "in": [
+     44,
+     138
+    ],
+    "subreddit": [
+     45,
+     71
+    ],
+    "posts": [
+     46,
+     58,
+     74,
+     86,
+     113
+    ],
+    "wellbeing": [
+     49
+    ],
+    "from": [
+     50,
+     126
+    ],
+    "2017": [
+     51
+    ],
+    "2025": [
+     53
+    ],
+    "with": [
+     54,
+     81,
+     123,
+     145,
+     191
+    ],
+    "most": [
+     55
+    ],
+    "created": [
+     59
+    ],
+    "during": [
+     60
+    ],
+    "COVID-19": [
+     62
+    ],
+    "pandemic": [
+     63
+    ],
+    "afterwards.": [
+     65
+    ],
+    "The": [
+     66,
+     151
+    ],
+    "includes": [
+     68
+    ],
+    "202": [
+     69
+    ],
+    "r/Teenagers": [
+     70
+    ],
+    "posts.": [
+     72
+    ],
+    "All": [
+     73
+    ],
+    "(n": [
+     75,
+     91
+    ],
+    "=": [
+     76,
+     92
+    ],
+    "202)": [
+     77
+    ],
+    "were": [
+     78,
+     132
+    ],
+    "analyzed": [
+     79,
+     94,
+     133
+    ],
+    "qualitatively,": [
+     80
+    ],
+    "subset": [
+     83
+    ],
+    "these": [
+     85
+    ],
+    "that": [
+     87,
+     117
+    ],
+    "had": [
+     88
+    ],
+    "body": [
+     89
+    ],
+    "text": [
+     90,
+     236
+    ],
+    "133)": [
+     93
+    ],
+    "modeling.": [
+     97
+    ],
+    "A": [
+     98
+    ],
+    "latent": [
+     102
+    ],
+    "Dirichlet": [
+     103
+    ],
+    "allocation": [
+     104
+    ],
+    "(LDA)": [
+     105
+    ],
+    "was": [
+     106,
+     184
+    ],
+    "performed": [
+     107
+    ],
+    "analyze": [
+     109
+    ],
+    "media": [
+     112,
+     121
+    ],
+    "generate": [
+     115
+    ],
+    "topics": [
+     116,
+     156
+    ],
+    "represent": [
+     118
+    ],
+    "data,": [
+     122
+    ],
+    "exploratory": [
+     124
+    ],
+    "input": [
+     125
+    ],
+    "ChatGPT.": [
+     127
+    ],
+    "In": [
+     128
+    ],
+    "addition,": [
+     129
+    ],
+    "data": [
+     131
+    ],
+    "open": [
+     136,
+     148,
+     164
+    ],
+    "coding": [
+     137,
+     149,
+     165
+    ],
+    "order": [
+     139
+    ],
+    "compare": [
+     141
+    ],
+    "LDA": [
+     143
+    ],
+    "results": [
+     144
+    ],
+    "results.": [
+     150
+    ],
+    "NLP": [
+     152,
+     172
+    ],
+    "analysis": [
+     153
+    ],
+    "identified": [
+     154
+    ],
+    "seven": [
+     155
+    ],
+    "based": [
+     157
+    ],
+    "on": [
+     158
+    ],
+    "coherence": [
+     159
+    ],
+    "scores": [
+     160
+    ],
+    "yielded": [
+     166
+    ],
+    "three": [
+     167
+    ],
+    "emergent": [
+     168
+    ],
+    "themes.": [
+     169
+    ],
+    "Both": [
+     170
+    ],
+    "analyses": [
+     175
+    ],
+    "revealed": [
+     176
+    ],
+    "overlapping": [
+     177
+    ],
+    "topics/themes": [
+     178
+    ],
+    "pertaining": [
+     179
+    ],
+    "to:": [
+     180
+    ],
+    "(1)": [
+     181
+    ],
+    "online": [
+     182
+    ],
+    "school": [
+     183
+    ],
+    "challenging": [
+     185
+    ],
+    "youth": [
+     187,
+     194,
+     207,
+     249
+    ],
+    "needed": [
+     188
+    ],
+    "personal": [
+     189
+    ],
+    "connection": [
+     190
+    ],
+    "others,": [
+     192
+    ],
+    "(2)": [
+     193
+    ],
+    "wanted": [
+     195
+    ],
+    "friends": [
+     196
+    ],
+    "appeared": [
+     198
+    ],
+    "use": [
+     200
+    ],
+    "screens": [
+     201,
+     247
+    ],
+    "connection,": [
+     204
+    ],
+    "(3)": [
+     206
+    ],
+    "valued": [
+     208
+    ],
+    "creative": [
+     209
+    ],
+    "activities,": [
+     210
+    ],
+    "such": [
+     211
+    ],
+    "as": [
+     212
+    ],
+    "playing": [
+     213
+    ],
+    "games": [
+     214
+    ],
+    "foster": [
+     216
+    ],
+    "connection.": [
+     218
+    ],
+    "This": [
+     219
+    ],
+    "research": [
+     220
+    ],
+    "demonstrates": [
+     221
+    ],
+    "benefits": [
+     223
+    ],
+    "limitations": [
+     225
+    ],
+    "analyzing": [
+     234
+    ],
+    "unstructured": [
+     235
+    ],
+    "data.": [
+     237
+    ],
+    "It": [
+     238
+    ],
+    "also": [
+     239
+    ],
+    "provides": [
+     240
+    ],
+    "important": [
+     241
+    ],
+    "information": [
+     242
+    ],
+    "regarding": [
+     243
+    ],
+    "usage": [
+     245
+    ],
+    "challenges.": [
+     252
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-11T09:32:39.932853",
+   "created_date": "2026-10-11T00:00:00"
+  }
+ ]
+}
