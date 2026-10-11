@@ -17,14 +17,21 @@ scope by design: its build-cost panel sends the query to the local server.
 Only the given base URL is reachable; every other request is aborted.
 
 An old shared link carrying ?q= is ignored: the page opens with an empty box,
-and the value reaches no request after the first navigation (every request
-is watched, from the first one).
+and the value reaches no request after the first navigation and no Referer
+header (every request is watched, from the first one). Both vercel.json
+files must send Referrer-Policy: strict-origin (referrer_policy_problems).
 """
 from __future__ import annotations
 
 import json
 import sys
 import urllib.parse
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[2]
+# The root copy is what tools/qa/serve.py serves; Vercel deploys frontend/.
+VERCEL_CONFIGS = (REPO / "vercel.json", REPO / "frontend" / "vercel.json")
+REFERRER_POLICY = "strict-origin"   # origin only: never a path or query string
 
 
 def _forms(q: str) -> set[str]:
@@ -96,6 +103,20 @@ SCENARIOS = [
 ]
 
 
+def referrer_policy_problems(configs=VERCEL_CONFIGS) -> list[str]:
+    """Each config must set Referrer-Policy to exactly strict-origin, on every
+    route that sets it, and set it on at least one route."""
+    out = []
+    for path in configs:
+        values = [h.get("value") for rule in json.loads(Path(path).read_text()).get("headers", [])
+                  for h in rule.get("headers", []) if str(h.get("key", "")).lower() == "referrer-policy"]
+        if not values:
+            out.append(f"{path}: no Referrer-Policy header")
+        out += [f"{path}: Referrer-Policy is {v!r}, expected {REFERRER_POLICY!r}"
+                for v in values if v != REFERRER_POLICY]
+    return out
+
+
 def run(base: str) -> list[dict]:
     from playwright.sync_api import sync_playwright
 
@@ -145,7 +166,8 @@ def run(base: str) -> list[dict]:
         # from the first one, so scripts fetched before hydration count too.
         # The value DOES remain in this page's own address bar (the visitor
         # put it there and the app does not rewrite the URL); that is accepted.
-        # The only request whose URL may contain it is the first navigation.
+        # With Referrer-Policy: strict-origin no Referer carries it, and the
+        # only request whose URL may contain it is the first navigation.
         q = "zzqlegacy probe"
         ctx = br.new_context(viewport={"width": 1440, "height": 900})
         ctx.route("**/*", lambda r: r.continue_() if r.request.url.startswith(base) else r.abort())
@@ -168,7 +190,8 @@ def run(base: str) -> list[dict]:
         pg.locator("a[href*='/gaps']").first.click()       # requests made after a click count too
         pg.wait_for_timeout(1500)
         first, rest = (seen[0] if seen else {"url": ""}), seen[1:]
-        leaks = [f"request {r['url'][:80]}" for r in rest if _contains(r["url"], q)]
+        leaks = [f"Referer of {r['url'][:80]}" for r in seen if _contains(r["referer"], q)]
+        leaks += [f"request {r['url'][:80]}" for r in rest if _contains(r["url"], q)]
         leaks += [f"request body to {r['url'][:80]}" for r in seen if _contains(r["body"], q)]
         read = [k for k in ("session", "local", "title", "text", "inputs") if _contains(page_state[k], q)]
         if page_state["url"] != link:
@@ -212,6 +235,6 @@ def failures(results: list[dict]) -> list[str]:
 if __name__ == "__main__":
     res = run(sys.argv[1])
     print(json.dumps(res, indent=1))
-    bad = failures(res)
+    bad = failures(res) + referrer_policy_problems()
     print("\n".join(bad) if bad else f"query privacy: OK ({len(res)} ways of searching, no leak)")
     sys.exit(1 if bad else 0)
