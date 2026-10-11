@@ -65,6 +65,46 @@ sent to any server" would be too. Neither was changed. Fixing it needs an
 owner decision: either change the wording, or stop the `?q=` hand-off (the
 links in `Ask.tsx:397, 653, 666` and `CommandPalette.tsx:239, 307`).
 
+### Privacy leak fixed, then Privacy paragraph applied (2026-10-11)
+
+- **`9036f56`:** the search query never goes in a URL. The five links that
+  put it there now keep only `?lib=`:
+  - `Ask.tsx`: "Maybe wrong library? Switch and ask there", and both "switch
+    and ask there" lists in the out-of-domain panel;
+  - `CommandPalette.tsx`: Enter with no results, and "See what this library
+    covers".
+
+  The query is handed over in `sessionStorage` (`frontend/lib/handoff.ts`):
+  same tab only, never the URL or the fragment, read once and cleared at
+  once, discarded after 60 s. The palette's no-results hand-off now stays in
+  the current library too; before, it dropped the reader into the default
+  library. An old shared `?q=` link is honoured once and then stripped from
+  the address bar.
+- **Regression:** `tools/qa/query_privacy.py` runs 12 ways of searching on
+  the built site, via `backend/tests/api/test_query_privacy.py`. Like the
+  other safety tests it is never skipped with `CI=1`. It fails if any request
+  URL, Referer header, page URL, hash or `document.title` contains the query,
+  if a hand-off does not arrive in the right library, or if it is left in
+  `sessionStorage`. On the old code it fails on four paths, including one the
+  first manual check missed: the palette's client navigation also fetched
+  `index.txt?q=…&_rsc=…`. It passes now.
+- **`dae0141`:** the Privacy paragraph rewrite, applied after the check
+  passed everywhere. Two known exceptions it does not cover:
+  - developer mode (`?dev=1`, local builds only): its "Want a library on this
+    subject?" panel sends the query through the local server to
+    api.openalex.org;
+  - the first page request of an old shared `?q=` link, which arrives from
+    outside the site.
+- **The developer-mode panel does not say** the query goes to a third
+  party. Proposed wording (not applied), shown on the panel before the
+  lookup: "In developer mode, opening this panel sends your question,
+  through the local server, to OpenAlex (api.openalex.org), a public
+  catalogue of research papers, to estimate how much literature exists on
+  it."
+- **Checks after these commits:** typecheck clean; build passes with
+  consistency OK; 939 tests pass; Playwright smoke passes 54/54. Screenshots
+  are in `~/Desktop/rm-ui-after/c7-*`.
+
 ### Investigated, not changed: result cards with no caveats
 
 Shown cards with **no** caveat panel, across all four libraries:
