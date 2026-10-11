@@ -643,13 +643,12 @@ FOOTER_SCOPE = (
 PRIVACY_NOTE = {
     "label": "Privacy",
     "body": (
-        "On the public deploy this page sends anonymised page-view "
-        "counts to Vercel Web Analytics (which URLs got visited, "
-        "roughly what country, no cookies, no cross-site tracking, no "
-        "identifiers). What you type into the search box runs against "
-        "an index in your browser — the query itself is NOT sent to "
-        "any server. Downloads (.bib, .csv) are generated locally. The "
-        "versions you run on your own computer send no analytics."
+        "The public site counts anonymised page views with Vercel Web "
+        "Analytics (pages visited and rough country; no cookies, no "
+        "cross-site tracking, no identifiers). Your searches run in your "
+        "browser and are never sent to any server. Downloads (.bib, .csv) "
+        "are made on your device. The versions you run on your own computer "
+        "send no analytics."
     ),
 }
 
