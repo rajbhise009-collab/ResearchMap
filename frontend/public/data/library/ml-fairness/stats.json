@@ -1,9 +1,9 @@
 {
-  "papers": 101,
-  "full_text": 52,
+  "papers": 102,
+  "full_text": 53,
   "abstract_only": 49,
-  "n_extractions": 101,
-  "extraction_coverage_note": "Claims read from 101 of 101 papers.",
+  "n_extractions": 102,
+  "extraction_coverage_note": "Claims read from 102 of 102 papers.",
   "zero_finding_note": "Zero here means none were found among the papers read. It does not mean none exist.",
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [
@@ -20,21 +20,21 @@
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 101
+    "papers_covered": 102
   },
   "extraction_coverage_share": 1.0,
   "assertion_strength": {
-    "total_claims": 480,
+    "total_claims": 488,
     "distribution": {
-      "firm": 474,
+      "firm": 482,
       "hedged": 6
     },
-    "firm_share": 0.9875,
-    "hedged_share": 0.0125
+    "firm_share": 0.9877049180327869,
+    "hedged_share": 0.012295081967213115
   },
   "gap_type_counts": {
-    "n_papers": 101,
-    "n_limitations": 227,
+    "n_papers": 102,
+    "n_limitations": 231,
     "limitation_categories": {
       "accuracy-fairness-tradeoff": 3,
       "algorithmic-bias": 3,
@@ -254,9 +254,13 @@
       "scope-limitation": 1,
       "methodological-limitation": 1,
       "lack-of-empirical-validation": 1,
-      "hypothetical-evaluation": 1
+      "hypothetical-evaluation": 1,
+      "lack-of-integration": 1,
+      "small-subgroup-sample-size": 1,
+      "enhancement-artifact-risk": 1,
+      "external-validity-constraint": 1
     },
-    "n_future_work_items": 156
+    "n_future_work_items": 159
   },
   "n_confirmed_contradictions": 0,
   "raw_flagged_contradictions": 0,
@@ -272,13 +276,13 @@
     "unresolved_contradictions": 0,
     "persistent_limitations": 1,
     "orphaned_future_work": 57,
-    "structural_holes": 0,
+    "structural_holes": 3,
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 101,
+  "core": 102,
   "peripheral": 0,
   "manifest_hash": null,
   "relationships": 0,
-  "note": "Multi-domain library \u2014 claims extracted from 101 of 101 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 102 of 102 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

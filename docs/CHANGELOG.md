@@ -2,6 +2,14 @@
 
 One entry per weekly growth run (newest first).
 
+## 2026-10-10 (republished grow/2026-10-10)
+
+- diet-and-mortality: results shown 11 -> 11 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- ml-fairness: results shown 58 -> 58 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- social-media-teen-mental-health: results shown 32 -> 30 (+0 new, -2 no longer shown); 0 flagged disagreements (not yet checked)
+-   - no longer shown: opp-social-media-teen-mental-health-orphan-openalex-w2118360093-f1 — open question answered: the later paper W7220393051 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)
+-   - no longer shown: opp-social-media-teen-mental-health-orphan-openalex-w2531561814-f3 — open question answered: the later paper W7220393051 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)
+
 ## 2026-10-10 (removals)
 
 - diet-and-mortality: paper W7218462786 removed (owner-approved, docs/proposals/2026-10-10-growth-scope-removals.md): outside the core scope: no mortality or survival outcome (the outcome is metabolic syndrome)
