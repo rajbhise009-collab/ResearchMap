@@ -21,6 +21,7 @@ import { GapResult, PaperResult } from "./ResultCard";
 import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
 import { examplesFor, tryHintFor } from "../../lib/examples";
+import { handOffQuery, takeHandedOffQuery, HANDOFF_EVENT } from "../../lib/handoff";
 
 // The out-of-scope panel lists this many other libraries before folding the
 // rest into "All N other libraries" (scales to any number of libraries).
@@ -178,13 +179,27 @@ export default function Ask({ lang, gaps, papers }: {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Read ?q= from the URL on load — the command palette hands off here for
-  // out-of-domain queries so the user sees the honest refusal in context.
-  // Setting only `q` lets the debounced effect below run the search once
-  // the index is ready.
+  // A query handed over from another page (the command palette, or a
+  // "switch and ask there" link) arrives through sessionStorage, never the
+  // URL: a query in the URL would reach the server, every Referer header and
+  // page-view analytics (lib/handoff.ts). Setting only `q` lets the debounced
+  // effect below run the search once the index is ready.
   useEffect(() => {
-    const u = cleanQuery(new URLSearchParams(window.location.search).get("q"));
-    if (u.trim()) setQ(u);
+    const take = () => { const h = takeHandedOffQuery(); if (h.trim()) setQ(h); };
+    take();
+    window.addEventListener(HANDOFF_EVENT, take);
+    // An old shared link may still carry ?q=: honour it once, then drop it
+    // from the address bar so it is not carried into later Referer headers.
+    const params = new URLSearchParams(window.location.search);
+    const legacy = cleanQuery(params.get("q"));
+    if (legacy.trim()) {
+      setQ(legacy);
+      params.delete("q");
+      const rest = params.toString();
+      window.history.replaceState(window.history.state, "",
+        window.location.pathname + (rest ? `?${rest}` : "") + window.location.hash);
+    }
+    return () => window.removeEventListener(HANDOFF_EVENT, take);
   }, []);
 
   // `banner` controls whether the borderline/out-of-domain banners are
@@ -394,7 +409,8 @@ export default function Ask({ lang, gaps, papers }: {
                 <span className="cav-label">Maybe wrong library?</span>
                 This looks like it's about the{" "}
                 <strong>{otherLibHits.name}</strong> library.{" "}
-                <a href={`?lib=${encodeURIComponent(otherLibHits.slug)}&q=${encodeURIComponent(committed)}`}>
+                <a href={`?lib=${encodeURIComponent(otherLibHits.slug)}`}
+                   onClick={() => handOffQuery(committed)}>
                   Switch and ask there →
                 </a>
               </div>
@@ -650,7 +666,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
                   <span className="foot-sources-note"> — {lib.blurb}</span>
                 )}
                 {" "}
-                <a href={`?lib=${encodeURIComponent(lib.slug)}&q=${encodeURIComponent(query)}`}>
+                <a href={`?lib=${encodeURIComponent(lib.slug)}`} onClick={() => handOffQuery(query)}>
                   switch and ask there →
                 </a>
               </li>
@@ -663,7 +679,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
                 {otherLibs.slice(OTHER_LIBS_SHOWN).map((lib) => (
                   <li key={lib.slug}>
                     <strong>{lib.name}</strong>{" "}
-                    <a href={`?lib=${encodeURIComponent(lib.slug)}&q=${encodeURIComponent(query)}`}>
+                    <a href={`?lib=${encodeURIComponent(lib.slug)}`} onClick={() => handOffQuery(query)}>
                       switch and ask there →
                     </a>
                   </li>

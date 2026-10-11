@@ -134,6 +134,7 @@ _NEVER_SKIP_ON_RUNNER = (
     "backend/tests/api/test_language.py",
     "backend/tests/api/test_consistency.py",         # cross-surface consistency
     "backend/tests/api/test_hardening.py",           # incl. no full text shipped
+    "backend/tests/api/test_query_privacy.py",       # search text never leaves the browser
     "backend/tests/extraction/test_money.py",        # the money rule
     "backend/tests/extraction/test_spend_ledger.py",
     "backend/tests/extraction/test_spend_gate.py",
