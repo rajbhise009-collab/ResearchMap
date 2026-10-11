@@ -679,9 +679,8 @@ def _domain_n_papers(slug: str) -> int:
 LIBRARIES_NOTE = {
     "label": "Libraries in this project",
     "intro": (
-        "Each library is one subject read through the same pipeline. "
-        "The library currently on screen is the one this URL renders; "
-        "to switch, use the library picker at the top of the page."
+        "Each library covers one subject, read the same way. "
+        "To switch, use the library picker at the top of the page."
     ),
     # Built libraries, in registry order (data/library_registry.json).
     "items": [
@@ -698,9 +697,9 @@ ATTRIBUTION = {
     "label": "Sources",
     "intro": (
         "Paper metadata, citations and abstracts come from these openly "
-        "licensed sources. Only short, structured extractions (claims, "
-        "limitations, future-work statements) are shown here — full text "
-        "was read to produce those extractions, not republished."
+        "licensed sources. We show only short extractions (claims, "
+        "limitations, future-work statements); full text was read to make "
+        "them, not republished."
     ),
     "items": [
         ("OpenAlex", "https://openalex.org/", "primary source of paper metadata, citations and abstracts (CC0)"),
