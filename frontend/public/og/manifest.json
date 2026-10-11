@@ -12,16 +12,16 @@
       "built": "2026-10-10"
     },
     "ml-fairness": {
-      "papers": 106,
-      "claims_read": 106,
+      "papers": 107,
+      "claims_read": 107,
       "built": "2026-10-11"
     },
     "social-media-teen-mental-health": {
-      "papers": 104,
-      "claims_read": 103,
+      "papers": 105,
+      "claims_read": 104,
       "built": null
     }
   },
-  "total_papers": 424,
+  "total_papers": 426,
   "n_libraries": 4
 }

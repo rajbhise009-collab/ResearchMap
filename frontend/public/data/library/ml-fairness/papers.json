@@ -1,5 +1,5 @@
 {
-  "total": 106,
+  "total": 107,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1163,6 +1163,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.1002/sd.71744",
       "venue": "Sustainable Development",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7220928809",
+      "wid": "W7220928809",
+      "title": "Leveraging Large Language Models for Automated Discriminatory Test Generation",
+      "year": 2026,
+      "doi": "https://doi.org/10.1145/3843782.3844658",
+      "venue": null,
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true

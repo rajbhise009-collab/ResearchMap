@@ -1,6 +1,6 @@
 {
  "date": "2026-10-11",
- "parent_commit": "833cb891d6b3124fc56035480b57fc00625b6c16",
+ "parent_commit": "dc01c24ff20031f908f5cbfc5ccdf236caafd234",
  "libraries": {
   "llm-calibration": {
    "papers": 113,
@@ -17,22 +17,22 @@
    "opportunities_sha256": "bb7f1b16e6e4c3c6a8a55efaf396c6206ed48d928dbbde7c5b14cc01cedb37fa"
   },
   "ml-fairness": {
-   "papers": 106,
-   "results": 60,
-   "set_aside": 1,
+   "papers": 107,
+   "results": 64,
+   "set_aside": 3,
    "flagged_not_checked": 0,
-   "opportunities_sha256": "fbfb69f3ee9704e4ec21214e5b56095e0d7743c523e23c420e703c24a2be3efb"
+   "opportunities_sha256": "cc49d8eafb54c92fe00c75dce4fb8dd2e0f01fb7484b837c1790f12a0ca361f5"
   },
   "social-media-teen-mental-health": {
-   "papers": 104,
+   "papers": 105,
    "results": 31,
-   "set_aside": 7,
+   "set_aside": 6,
    "flagged_not_checked": 2,
-   "opportunities_sha256": "153c6bbf90093be824b6f5adf511e97aab8a80dd04623a7b6dd44d4bddc6582f"
+   "opportunities_sha256": "5fea62d2a509ba5b6d0f74d69f2857cee3569caeec8ee122527ad4bcc8fd4949"
   }
  },
- "ledger_inr": 1192.1831,
- "ledger_cap_inr": 1209.856987,
+ "ledger_inr": 1196.9138,
+ "ledger_cap_inr": 1244.000283,
  "gates": [
   {
    "gate": "typecheck",
@@ -91,42 +91,30 @@
    "verdict_changed": []
   },
   "ml-fairness": {
-   "shown_before": 58,
-   "shown_after": 60,
+   "shown_before": 60,
+   "shown_after": 64,
    "removed_shown": [],
-   "removed_not_shown": [
-    {
-     "id": "opp-ml-fairness-hole-w2963174898-w4288414189",
-     "headline": "\u201cProbabilistic Convex Optimization Pre-Processing\u201d might solve a problem reported by \u201cExplaining models\u201d",
-     "was": "set_aside",
-     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
-    },
-    {
-     "id": "opp-ml-fairness-hole-w4362714312-w2599025709",
-     "headline": "\u201cTaxonomy and systematic review of fair graph mining\u201d might solve a problem reported by \u201cFairness in Criminal Justice Risk Assessments: The State of the Art\u201d",
-     "was": "set_aside",
-     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
-    },
-    {
-     "id": "opp-ml-fairness-hole-w4362714312-w3203106571",
-     "headline": "\u201cTaxonomy and systematic review of fair graph mining\u201d might solve a problem reported by \u201cA sociotechnical view of algorithmic fairness\u201d",
-     "was": "set_aside",
-     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
-    }
-   ],
+   "removed_not_shown": [],
    "verdict_changed": []
   },
   "social-media-teen-mental-health": {
-   "shown_before": 30,
+   "shown_before": 31,
    "shown_after": 31,
    "removed_shown": [
     {
-     "id": "opp-social-media-teen-mental-health-orphan-openalex-w1994045792-f1",
-     "headline": "Examine whether findings generalize to broader age groups and other online social networks.",
-     "reason": "open question answered: the later paper W7221031988 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)"
+     "id": "opp-social-media-teen-mental-health-orphan-openalex-w2998834126-f1",
+     "headline": "Improve future research methodologies regarding adolescent digital technology usage and mental health.",
+     "reason": "open question answered: the later paper W7220964971 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)"
     }
    ],
-   "removed_not_shown": [],
+   "removed_not_shown": [
+    {
+     "id": "opp-social-media-teen-mental-health-hole-w2030386269-w2289545039",
+     "headline": "\u201cCognitive Therapy for Anxiety Disorders\u201d might solve a problem reported by \u201cMental Health Smartphone Apps: Review and Evidence-Based Recommendations for Future Developments\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    }
+   ],
    "verdict_changed": []
   }
  }

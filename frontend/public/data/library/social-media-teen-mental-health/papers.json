@@ -1,5 +1,5 @@
 {
-  "total": 104,
+  "total": 105,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1141,6 +1141,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.1111/bjc.70100",
       "venue": "British Journal of Clinical Psychology",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7220964971",
+      "wid": "W7220964971",
+      "title": "Loneliness and the social Re-orientation process of adolescence: towards a truly developmental approach",
+      "year": 2026,
+      "doi": "https://doi.org/10.1080/17405629.2026.2746076",
+      "venue": "European Journal of Developmental Psychology",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
