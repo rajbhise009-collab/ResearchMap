@@ -20,39 +20,13 @@ import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
 import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
+import { examplesFor, tryHintFor } from "../../lib/examples";
 
 // The out-of-scope panel lists this many other libraries before folding the
 // rest into "All N other libraries" (scales to any number of libraries).
 const OTHER_LIBS_SHOWN = 3;
 import { adviceLike, distress, HELPLINE_URL, panelBlocked, selfHarm } from "../../lib/safety";
 
-// Example questions per library, written from each library's own subject.
-// Every one is answered in_domain by that library's own index and trips none
-// of the safety checks (lib/safety.ts). A library without its own set (e.g.
-// one built later from the queue) shows no examples rather than another
-// library's.
-const EXAMPLES_BY_LIBRARY: Record<string, string[]> = {
-  "llm-calibration": [
-    "why do language models sound confident when they're wrong",
-    "when should a chatbot refuse to answer",
-    "fake citations in AI answers",
-  ],
-  "ml-fairness": [
-    "can a model be fair to every group at once",
-    "what is demographic parity",
-    "bias in criminal risk scores",
-  ],
-  "diet-and-mortality": [
-    "red meat and mortality",
-    "alcohol and heart disease",
-    "ultra-processed food and mortality",
-  ],
-  "social-media-teen-mental-health": [
-    "does screen time cause depression in teens",
-    "social media and teenage loneliness",
-    "phone use and sleep in teenagers",
-  ],
-};
 const DEBOUNCE_MS = 200;
 // How long after the last keystroke do the "borderline"/"out of domain"
 // banners become visible. The reader must not see a refusal flash during
@@ -91,7 +65,8 @@ export default function Ask({ lang, gaps, papers }: {
       health_adjacent?: boolean } | null>(null);
   // Until the active library is known, show no examples (never another
   // library's questions for a moment).
-  const examples = activeLib ? EXAMPLES_BY_LIBRARY[activeLib.slug] ?? [] : [];
+  const examples = examplesFor(activeLib?.slug);
+  const tryHint = tryHintFor(activeLib?.slug);
 
   // Preload the index so the first keystroke is already answered.
   // Reads the currently-selected library's search-index (via ?lib=…);
@@ -353,7 +328,7 @@ export default function Ask({ lang, gaps, papers }: {
             ? "Search needs to load its index over http — open this site with a web server, not from disk."
             : !index
               ? (<><span className="swatch" aria-hidden /> {S.searching}</>)
-              : (<>Press <kbd className="inline-kbd">/</kbd> from anywhere to focus this. Try: {S.hint.replace(/^Try: /, "")}</>)}
+              : (<>Press <kbd className="inline-kbd">/</kbd> from anywhere to focus this.{tryHint ? ` ${tryHint}` : ""}</>)}
         </p>
 
         {examples.length > 0 && (

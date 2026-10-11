@@ -548,7 +548,7 @@ def consumer_paper(paper: dict[str, Any]) -> dict[str, Any]:
 # --------------------------------------------------------------------------
 
 SEARCH = {
-    "placeholder": "What do you want to know about?",
+    "placeholder": "What do you want to know?",
     "hint": "Try: why do language models sound confident when they're wrong?",
     "searching": "Looking through the library…",
     "in_domain": {
@@ -648,9 +648,8 @@ PRIVACY_NOTE = {
         "roughly what country, no cookies, no cross-site tracking, no "
         "identifiers). What you type into the search box runs against "
         "an index in your browser — the query itself is NOT sent to "
-        "any server. Downloads (.bib, .csv) are generated locally. The local "
-        ".app / .command versions and ?dev=1 opt out of analytics "
-        "entirely."
+        "any server. Downloads (.bib, .csv) are generated locally. The "
+        "versions you run on your own computer send no analytics."
     ),
 }
 
@@ -682,8 +681,7 @@ LIBRARIES_NOTE = {
     "intro": (
         "Each library is one subject read through the same pipeline. "
         "The library currently on screen is the one this URL renders; "
-        "to switch, use the picker at the top of the page or append "
-        "?lib=<slug> to any URL (?lib= wins over the stored choice)."
+        "to switch, use the library picker at the top of the page."
     ),
     # Built libraries, in registry order (data/library_registry.json).
     "items": [

@@ -18,6 +18,7 @@ import { search } from "../../lib/search";
 import { asset } from "../../lib/basePath";
 import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, MAX_QUERY } from "../../lib/query";
+import { tryHintFor } from "../../lib/examples";
 
 const DEBOUNCE_MS = 90;
 
@@ -264,7 +265,7 @@ function CommandPalette({ lang, gaps, papers }: {
         />
         <div className="cmdk-list" role="listbox">
           {!q.trim() && (
-            <div className="cmdk-empty">{lang.search.hint}</div>
+            tryHintFor(activeSlug) && <div className="cmdk-empty">{tryHintFor(activeSlug)}</div>
           )}
           {q.trim() && !index && (
             <div className="cmdk-empty">{lang.search.searching}</div>
