@@ -79,13 +79,23 @@ jobs:
           npm install --no-save --prefix "$RUNNER_TEMP/axe" axe-core@4.13.0
           echo "AXE_PATH=$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js" >> "$GITHUB_ENV"
 
+      # The paid path (the API keys) runs only on main. A manual run on any
+      # other branch may still use the free gates_only / republish paths.
+      - name: Refuse a paid run off main
+        if: github.ref != 'refs/heads/main' && inputs.gates_only != true && !inputs.republish_branch
+        run: |
+          echo "::error::Paid growth runs only on main (this run: $GITHUB_REF). Use gates_only or republish_branch on other branches."
+          exit 1
+
       - name: Grow, gate, publish
         id: grow
+        if: github.ref == 'refs/heads/main' || inputs.gates_only == true || inputs.republish_branch
         shell: bash
         env:
-          # gates_only and republish runs get no API keys at all (zero spend by construction)
-          OPENALEX_API_KEY: ${{ inputs.gates_only != true && !inputs.republish_branch && secrets.OPENALEX_API_KEY || '' }}
-          GEMINI_API_KEY: ${{ inputs.gates_only != true && !inputs.republish_branch && secrets.GEMINI_API_KEY || '' }}
+          # gates_only and republish runs get no API keys at all (zero spend by
+          # construction), and no run off main ever gets them
+          OPENALEX_API_KEY: ${{ github.ref == 'refs/heads/main' && inputs.gates_only != true && !inputs.republish_branch && secrets.OPENALEX_API_KEY || '' }}
+          GEMINI_API_KEY: ${{ github.ref == 'refs/heads/main' && inputs.gates_only != true && !inputs.republish_branch && secrets.GEMINI_API_KEY || '' }}
           GH_TOKEN: ${{ github.token }}
           # Manual runs: run_budget_inr caps total spend; build_queued (default
           # false) gates queued-library builds. Scheduled runs: the money rule.
