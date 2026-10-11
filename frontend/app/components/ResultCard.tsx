@@ -26,6 +26,10 @@ export function GapResult({ gap, readMore }: { gap: GapDoc; readMore: string }) 
         </Link>
       </h3>
 
+      {/* Caveats first: directly under the quote, before anything that
+          explains or vouches for the result. Same full-size panels. */}
+      <Caveats items={c.caveats} />
+
       {c.verdict_label && (
         <p className="verdict-chip small sans"
            data-verdict={c.verdict || "unaudited"}>
@@ -34,8 +38,6 @@ export function GapResult({ gap, readMore }: { gap: GapDoc; readMore: string }) 
       )}
 
       <p className="why">{c.why}</p>
-
-      <Caveats items={c.caveats} />
 
       <div className="result-foot">
         <Link href={href} className="read-more">

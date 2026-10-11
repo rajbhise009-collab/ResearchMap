@@ -556,7 +556,7 @@ def consumer_paper(paper: dict[str, Any]) -> dict[str, Any]:
 # --------------------------------------------------------------------------
 
 SEARCH = {
-    "placeholder": "What do you want to know about?",
+    "placeholder": "What do you want to know?",
     "hint": "Try: why do language models sound confident when they're wrong?",
     "searching": "Looking through the library…",
     "in_domain": {
@@ -651,14 +651,12 @@ FOOTER_SCOPE = (
 PRIVACY_NOTE = {
     "label": "Privacy",
     "body": (
-        "On the public deploy this page sends anonymised page-view "
-        "counts to Vercel Web Analytics (which URLs got visited, "
-        "roughly what country, no cookies, no cross-site tracking, no "
-        "identifiers). What you type into the search box runs against "
-        "an index in your browser — the query itself is NOT sent to "
-        "any server. Downloads (.bib, .csv) are generated locally. The local "
-        ".app / .command versions and ?dev=1 opt out of analytics "
-        "entirely."
+        "The public site counts anonymised page views with Vercel Web "
+        "Analytics (pages visited and rough country; no cookies, no "
+        "cross-site tracking, no identifiers). Your searches run in your "
+        "browser and are never sent to any server. Downloads (.bib, .csv) "
+        "are made on your device. The versions you run on your own computer "
+        "send no analytics."
     ),
 }
 
@@ -688,10 +686,8 @@ def _domain_n_papers(slug: str) -> int:
 LIBRARIES_NOTE = {
     "label": "Libraries in this project",
     "intro": (
-        "Each library is one subject read through the same pipeline. "
-        "The library currently on screen is the one this URL renders; "
-        "to switch, use the picker at the top of the page or append "
-        "?lib=<slug> to any URL (?lib= wins over the stored choice)."
+        "Each library covers one subject, read the same way. "
+        "To switch, use the library picker at the top of the page."
     ),
     # Built libraries, in registry order (data/library_registry.json).
     "items": [
@@ -708,9 +704,9 @@ ATTRIBUTION = {
     "label": "Sources",
     "intro": (
         "Paper metadata, citations and abstracts come from these openly "
-        "licensed sources. Only short, structured extractions (claims, "
-        "limitations, future-work statements) are shown here — full text "
-        "was read to produce those extractions, not republished."
+        "licensed sources. We show only short extractions (claims, "
+        "limitations, future-work statements); full text was read to make "
+        "them, not republished."
     ),
     "items": [
         ("OpenAlex", "https://openalex.org/", "primary source of paper metadata, citations and abstracts (CC0)"),

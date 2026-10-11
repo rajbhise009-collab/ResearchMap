@@ -1,5 +1,188 @@
 # PROGRESS
 
+## UI polish (branch `ui-polish`, local only) — 2026-10-11
+
+Polish within the existing design system: no new fonts, no new colour
+tokens, no redesign. Before and after screenshots are in
+`~/Desktop/rm-ui-before` and `~/Desktop/rm-ui-after` (outside the repo).
+After every commit the following ran clean: typecheck, production build
+(consistency before and after), 938 backend tests. The Playwright smoke
+suite ran 54/54 after the last commit.
+
+- `38f363b` example questions per library (`frontend/lib/examples.ts`); each
+  lands in_domain in its own library and trips no safety check.
+- `49b10fd` footer caveat and support text at 14px and >=4.5:1 (`--muted`,
+  `--ink-soft`; it was `--faint` at 2.78:1); the "If you or a young person
+  you know is struggling…" sentence on its own line, semibold, same words.
+- `07e524f` the search placeholder fits at 390px in the search bar and the
+  palette (16px on phones).
+- `b8f93d6` result cards: caveat panels directly under the quote.
+- `e7781ad` (copy, owner-approved exception in `language.py`): placeholder
+  "What do you want to know?"; the footer no longer mentions `?lib=` or
+  `?dev=1`; the "Try:" hint comes from the library's first example (built in
+  the frontend; `search.hint` is unchanged because `language_pack()` takes no
+  library).
+
+### Footer paragraph shortenings — PROPOSED, not applied (needs approval)
+
+Each keeps every caveat. The social-media note, including the support
+sentence, stays word for word.
+
+| Paragraph (source) | Current | Proposed |
+|:--|:--|:--|
+| Libraries intro (`language.py` `LIBRARIES_NOTE.intro`) | Each library is one subject read through the same pipeline. The library currently on screen is the one this URL renders; to switch, use the library picker at the top of the page. | Each library covers one subject, read the same way. To switch, use the library picker at the top of the page. |
+| Diet note (`data/library_registry.json` `footer_note`) | Research-literature analysis, not dietary or medical advice. Some papers here disagree with each other, for example on red meat and on alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you. | Research-literature analysis, not dietary or medical advice. Some papers here disagree, for example on red meat and alcohol (checked by hand, not by experts). Take medical decisions to a clinician who knows you. |
+| ML fairness note (registry) | Some definitions of fairness are mathematically proven unable to all hold at once. Our disagreement check found no conflicting claims among the papers read; why is not established. | Some definitions of fairness provably cannot all hold at once. Our disagreement check found no conflicting claims among these papers; we don't yet know why. |
+| LLM calibration note (registry) | The oldest, most-scored library in the project. | unchanged |
+| Social media note (registry) | Research-literature analysis, not medical, parenting or mental-health advice. If you or a young person you know is struggling, talk to a doctor or a local support service. | unchanged |
+| Sources (`language.py` `ATTRIBUTION.intro`) | Paper metadata, citations and abstracts come from these openly licensed sources. Only short, structured extractions (claims, limitations, future-work statements) are shown here — full text was read to produce those extractions, not republished. | Paper metadata, citations and abstracts come from these openly licensed sources. We show only short extractions (claims, limitations, future-work statements); full text was read to make them, never republished. |
+| Privacy (`language.py` `PRIVACY_NOTE.body`) | On the public deploy this page sends anonymised page-view counts to Vercel Web Analytics (which URLs got visited, roughly what country, no cookies, no cross-site tracking, no identifiers). What you type into the search box runs against an index in your browser — the query itself is NOT sent to any server. Downloads (.bib, .csv) are generated locally. The versions you run on your own computer send no analytics. | The public site counts anonymised page views with Vercel Web Analytics (pages visited and rough country; no cookies, no cross-site tracking, no identifiers). Your searches run in your browser and are never sent to any server. Downloads (.bib, .csv) are made on your device. The versions you run on your own computer send no analytics. |
+
+**Decision 2026-10-11 (`e7992bd`):** the owner approved and I applied the
+Libraries intro, and the Sources paragraph with "not republished". The
+Privacy paragraph was **not applied**: a browser check on localhost (below)
+showed the query text can leave the page. The Diet and ML fairness notes
+(`data/library_registry.json`) are unchanged.
+
+### Privacy check: does the search text leave the browser? (2026-10-11)
+
+On the production build served on localhost (Playwright, localhost only),
+the URL, hash and every request were recorded for each way to search:
+
+| Way to search | Query in URL | In hash | Requests carrying the query |
+|:--|:--|:--|--:|
+| Type and press Enter (in-domain, out-of-domain) | no | no | 0 |
+| Type only (type-ahead) | no | no | 0 |
+| Example chip | no | no | 0 |
+| Command palette, type / type and Enter | no | no | 0 |
+| Health query (distress check) | no | no | 0 |
+| **Out-of-domain → "switch and ask there" link** | **yes** (`?lib=…&q=…`) | no | **31**: the page request itself, then every request's `Referer`, including `/_vercel/insights/script.js` |
+| **Developer build, `?dev=1` → "Want a library on this subject?"** | no | no | **1**: `GET /api/preflight?q=…`; the local server forwards the query to api.openalex.org (`backend/app/coherence/preflight.py`) |
+
+So the Privacy paragraph's current wording, "the query itself is NOT sent to
+any server", is already inaccurate on those two paths. The proposed "never
+sent to any server" would be too. Neither was changed. Fixing it needs an
+owner decision: either change the wording, or stop the `?q=` hand-off (the
+links in `Ask.tsx:397, 653, 666` and `CommandPalette.tsx:239, 307`).
+
+### Privacy leak fixed, then Privacy paragraph applied (2026-10-11)
+
+- **`9036f56`:** the search query never goes in a URL. The five links that
+  put it there now keep only `?lib=`:
+  - `Ask.tsx`: "Maybe wrong library? Switch and ask there", and both "switch
+    and ask there" lists in the out-of-domain panel;
+  - `CommandPalette.tsx`: Enter with no results, and "See what this library
+    covers".
+
+  The query is handed over in `sessionStorage` (`frontend/lib/handoff.ts`):
+  same tab only, never the URL or the fragment, read once and cleared at
+  once, discarded after 60 s. The palette's no-results hand-off now stays in
+  the current library too; before, it dropped the reader into the default
+  library. An old shared `?q=` link is honoured once and then stripped from
+  the address bar.
+- **Regression:** `tools/qa/query_privacy.py` runs 12 ways of searching on
+  the built site, via `backend/tests/api/test_query_privacy.py`. Like the
+  other safety tests it is never skipped with `CI=1`. It fails if any request
+  URL, Referer header, page URL, hash or `document.title` contains the query,
+  if a hand-off does not arrive in the right library, or if it is left in
+  `sessionStorage`. On the old code it fails on four paths, including one the
+  first manual check missed: the palette's client navigation also fetched
+  `index.txt?q=…&_rsc=…`. It passes now.
+- **`dae0141`:** the Privacy paragraph rewrite, applied after the check
+  passed everywhere. Two known exceptions it does not cover:
+  - developer mode (`?dev=1`, local builds only): its "Want a library on this
+    subject?" panel sends the query through the local server to
+    api.openalex.org;
+  - the first page request of an old shared `?q=` link, which arrives from
+    outside the site.
+- **The developer-mode panel does not say** the query goes to a third
+  party. Proposed wording (not applied), shown on the panel before the
+  lookup: "In developer mode, opening this panel sends your question,
+  through the local server, to OpenAlex (api.openalex.org), a public
+  catalogue of research papers, to estimate how much literature exists on
+  it."
+- **Checks after these commits:** typecheck clean; build passes with
+  consistency OK; 939 tests pass; Playwright smoke passes 54/54. Screenshots
+  are in `~/Desktop/rm-ui-after/c7-*`.
+
+### `?q=` ignored, Referrer-Policy strict-origin, developer-mode note (2026-10-11)
+
+- **`53b9d6d`:** `?q=` is ignored completely. An old shared link opens with
+  an empty search box; `Ask.tsx` no longer reads `q` or rewrites the address
+  bar. `?lib=` and the `sessionStorage` hand-off are unchanged. This
+  replaces "honoured once and then stripped" above.
+- **`82667a7`:** `Referrer-Policy` is `strict-origin` (was
+  `strict-origin-when-cross-origin`) in `vercel.json` (used by
+  `tools/qa/serve.py`) and `frontend/vercel.json` (what Vercel deploys).
+  `Referer` now carries only the origin. Nothing in the frontend, backend or
+  tools reads `Referer` or `document.referrer`; `docs/` and the Privacy
+  paragraph say nothing about the referrer policy. Commit 1 alone puts `q`
+  in same-origin `Referer` headers (it stays in the address bar), so the two
+  ship together.
+- **`838a991`:** in developer mode only, the "build a library" panel opens
+  with the sentence proposed above, above the panel body. It appears as the
+  panel opens, which is when the lookup request leaves, not before the
+  click. The public build never shows it, with or without `?dev=1`.
+- **Tests:**
+  - The legacy-link case in `tools/qa/query_privacy.py` now records every
+    request from the first one. Before, it attached its listener after load
+    and missed the scripts fetched before hydration. It asserts:
+    - the box is empty;
+    - `q` is never read (storage, DOM, inputs, title, URL not rewritten);
+    - `?lib=` is kept;
+    - no `Referer` header carries the value;
+    - no request after the first navigation carries it.
+
+    The value stays in the page's own address bar, which is accepted.
+  - Both `vercel.json` files must send exactly `strict-origin`, and weaker
+    values are rejected.
+  - A source test pins the exact developer-mode sentence in the developer
+    part of the panel.
+  - The browser check also opens the panel on the public build, with and
+    without `?dev=1`, and fails if the sentence shows.
+  - Each new check failed without its change.
+- **`Referer` experiment** (`/?lib=ml-fairness&q=zzzleak&other=zzzother`):
+  - before: `other` was in 30 of 30 later `Referer` headers and `q` in 12 of 30;
+  - after: 0 of 26 for both, and every `Referer` is the bare origin.
+- **Checks:** typecheck clean; 942 tests pass; Playwright smoke passes
+  54/54. Only `Ask.tsx`, `lib/query.ts`, the two `vercel.json` files and the
+  privacy tests changed.
+
+### Investigated, not changed: result cards with no caveats
+
+Shown cards with **no** caveat panel, across all four libraries:
+
+| Card type | Shown | With no caveats |
+|:--|--:|--:|
+| A disagreement between papers | 7 | **7** |
+| A problem several teams hit | 8 | **4** |
+| An unfollowed question | 150 | 0 |
+| A method that might transfer | 2 | 0 |
+
+- Caveats are attached in `backend/app/ranking/assemble.py:70`
+  (`_caveats()`: `corpus_relative` for open questions, `mixed_fidelity` when a
+  supporting paper is summary-only, `generic_category`, `construct_gated`,
+  `semantic_lead` for method leads). `backend/app/api/language.py:262`
+  (`caveats_for()`) translates them into the panel text.
+- **Disagreements:** a gap, not a documented design.
+  `backend/app/api/multi_library_export.py:286` sets `"caveats": []`, so
+  disagreement cards bypass `_caveats()` entirely. 5 of the 7 rest on at
+  least one summary-only paper and would carry "Based partly on summaries
+  only" under the rule every other card type follows. They do carry the
+  hand-check verdict label, which is not a caveat.
+- **Problems several teams hit:** this follows the documented design.
+  `_caveats()` gives this type only conditional caveats (summary-only
+  papers, a generic category, a split category), so a card from full-text
+  papers with a specific category gets none. No "only checked within these
+  papers" caveat is defined for this type.
+- **What the docs require:** `PROGRESS.md` (Phase 5 and 7) makes it an
+  invariant that open questions carry `corpus_relative` and method leads
+  carry `semantic_lead`; "every card carries `caveats`" means the field
+  exists, not that it is non-empty. `docs/relationship-layer.md` ("Orphan
+  judgments are corpus-relative") requires the coverage caveat on open
+  questions only. Neither `docs/` nor `CLAUDE.md` requires a caveat on
+  disagreements or repeated problems.
+
 ## Phase 6 validation — free pilot, inconclusive (2026-10-09)
 
 - `backend/app/validation/time_split.py`: the documented time-split matching rule for the

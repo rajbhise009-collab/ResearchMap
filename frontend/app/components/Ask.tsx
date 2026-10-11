@@ -20,17 +20,14 @@ import { asset } from "../../lib/basePath";
 import { GapResult, PaperResult } from "./ResultCard";
 import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
+import { examplesFor, tryHintFor } from "../../lib/examples";
+import { handOffQuery, takeHandedOffQuery, HANDOFF_EVENT } from "../../lib/handoff";
 
 // The out-of-scope panel lists this many other libraries before folding the
 // rest into "All N other libraries" (scales to any number of libraries).
 const OTHER_LIBS_SHOWN = 3;
 import { adviceLike, distress, HELPLINE_URL, panelBlocked, selfHarm } from "../../lib/safety";
 
-const EXAMPLES = [
-  "why do language models sound confident when they're wrong",
-  "when should a chatbot refuse to answer",
-  "fake citations in AI answers",
-];
 const DEBOUNCE_MS = 200;
 // How long after the last keystroke do the "borderline"/"out of domain"
 // banners become visible. The reader must not see a refusal flash during
@@ -67,6 +64,10 @@ export default function Ask({ lang, gaps, papers }: {
   const [activeLib, setActiveLib] = useState<
     { slug: string; name: string; blurb?: string; not_advice_note?: string | null;
       health_adjacent?: boolean } | null>(null);
+  // Until the active library is known, show no examples (never another
+  // library's questions for a moment).
+  const examples = examplesFor(activeLib?.slug);
+  const tryHint = tryHintFor(activeLib?.slug);
 
   // Preload the index so the first keystroke is already answered.
   // Reads the currently-selected library's search-index (via ?lib=…);
@@ -178,13 +179,17 @@ export default function Ask({ lang, gaps, papers }: {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Read ?q= from the URL on load — the command palette hands off here for
-  // out-of-domain queries so the user sees the honest refusal in context.
-  // Setting only `q` lets the debounced effect below run the search once
-  // the index is ready.
+  // A query handed over from another page (the command palette, or a
+  // "switch and ask there" link) arrives through sessionStorage, never the
+  // URL: a query in the URL would reach the server, every Referer header and
+  // page-view analytics (lib/handoff.ts). A ?q= in the address (an old shared
+  // link) is ignored: the page opens with an empty box. Setting only `q` lets
+  // the debounced effect below run the search once the index is ready.
   useEffect(() => {
-    const u = cleanQuery(new URLSearchParams(window.location.search).get("q"));
-    if (u.trim()) setQ(u);
+    const take = () => { const h = takeHandedOffQuery(); if (h.trim()) setQ(h); };
+    take();
+    window.addEventListener(HANDOFF_EVENT, take);
+    return () => window.removeEventListener(HANDOFF_EVENT, take);
   }, []);
 
   // `banner` controls whether the borderline/out-of-domain banners are
@@ -328,18 +333,20 @@ export default function Ask({ lang, gaps, papers }: {
             ? "Search needs to load its index over http — open this site with a web server, not from disk."
             : !index
               ? (<><span className="swatch" aria-hidden /> {S.searching}</>)
-              : (<>Press <kbd className="inline-kbd">/</kbd> from anywhere to focus this. Try: {S.hint.replace(/^Try: /, "")}</>)}
+              : (<>Press <kbd className="inline-kbd">/</kbd> from anywhere to focus this.{tryHint ? ` ${tryHint}` : ""}</>)}
         </p>
 
-        <div className="examples">
-          <span className="label">Examples</span>
-          {EXAMPLES.map((ex) => (
-            <button key={ex} type="button" className="example-chip"
-              onClick={() => { setQ(ex); run(ex); }} disabled={!index}>
-              {ex}
-            </button>
-          ))}
-        </div>
+        {examples.length > 0 && (
+          <div className="examples">
+            <span className="label">Examples</span>
+            {examples.map((ex) => (
+              <button key={ex} type="button" className="example-chip"
+                onClick={() => { setQ(ex); run(ex); }} disabled={!index}>
+                {ex}
+              </button>
+            ))}
+          </div>
+        )}
       </form>
 
       <div ref={resultsRef}>
@@ -392,7 +399,8 @@ export default function Ask({ lang, gaps, papers }: {
                 <span className="cav-label">Maybe wrong library?</span>
                 This looks like it's about the{" "}
                 <strong>{otherLibHits.name}</strong> library.{" "}
-                <a href={`?lib=${encodeURIComponent(otherLibHits.slug)}&q=${encodeURIComponent(committed)}`}>
+                <a href={`?lib=${encodeURIComponent(otherLibHits.slug)}`}
+                   onClick={() => handOffQuery(committed)}>
                   Switch and ask there →
                 </a>
               </div>
@@ -648,7 +656,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
                   <span className="foot-sources-note"> — {lib.blurb}</span>
                 )}
                 {" "}
-                <a href={`?lib=${encodeURIComponent(lib.slug)}&q=${encodeURIComponent(query)}`}>
+                <a href={`?lib=${encodeURIComponent(lib.slug)}`} onClick={() => handOffQuery(query)}>
                   switch and ask there →
                 </a>
               </li>
@@ -661,7 +669,7 @@ function OutOfDomain({ lang, query, activeLibrary }: {
                 {otherLibs.slice(OTHER_LIBS_SHOWN).map((lib) => (
                   <li key={lib.slug}>
                     <strong>{lib.name}</strong>{" "}
-                    <a href={`?lib=${encodeURIComponent(lib.slug)}&q=${encodeURIComponent(query)}`}>
+                    <a href={`?lib=${encodeURIComponent(lib.slug)}`} onClick={() => handOffQuery(query)}>
                       switch and ask there →
                     </a>
                   </li>
@@ -692,6 +700,11 @@ function OutOfDomain({ lang, query, activeLibrary }: {
               {B.consumer_body} <Link href="/contact/">Contact</Link>
             </p>
           ) : (<>
+          {/* Developer mode only: says where the query goes before the
+              pre-flight lookup's result appears. */}
+          <p className="small muted" data-testid="dev-openalex-note">
+            In developer mode, opening this panel sends your question, through the local server, to OpenAlex (api.openalex.org), a public catalogue of research papers, to estimate how much literature exists on it.
+          </p>
           <p>{B.body}</p>
 
           {preflightState === "loading" && (

@@ -1,4 +1,4 @@
-// Query hygiene for anything a visitor types or puts in ?q=. React already
+// Query hygiene for anything a visitor types. React already
 // escapes text, so nothing here is about script injection; this is about
 // what gets stored, searched and echoed back:
 //   - control characters, NULs, zero-width and bidi-override characters are

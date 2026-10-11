@@ -18,6 +18,8 @@ import { search } from "../../lib/search";
 import { asset } from "../../lib/basePath";
 import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, MAX_QUERY } from "../../lib/query";
+import { tryHintFor } from "../../lib/examples";
+import { handOffQuery } from "../../lib/handoff";
 
 const DEBOUNCE_MS = 90;
 
@@ -234,10 +236,12 @@ function CommandPalette({ lang, gaps, papers }: {
     else if (e.key === "ArrowUp") { e.preventDefault(); setSelected((i) => Math.max(0, i - 1)); }
     else if (e.key === "Enter" && items[selected]) { e.preventDefault(); go(items[selected].href); }
     else if (e.key === "Enter" && q.trim() && !items.length) {
-      // A fully-typed query with no hits — send them to the honest landing.
-      go(`/?q=${encodeURIComponent(q)}`);
+      // A fully-typed query with no hits — send them to the honest landing,
+      // in the same library, with the query handed over off-URL (lib/handoff.ts).
+      handOffQuery(q, { samePage: true });
+      go(`/${suffix}`);
     }
-  }, [items, selected, q, go]);
+  }, [items, selected, q, go, suffix]);
 
   if (!open) return null;
 
@@ -264,7 +268,7 @@ function CommandPalette({ lang, gaps, papers }: {
         />
         <div className="cmdk-list" role="listbox">
           {!q.trim() && (
-            <div className="cmdk-empty">{lang.search.hint}</div>
+            tryHintFor(activeSlug) && <div className="cmdk-empty">{tryHintFor(activeSlug)}</div>
           )}
           {q.trim() && !index && (
             <div className="cmdk-empty">{lang.search.searching}</div>
@@ -303,8 +307,8 @@ function CommandPalette({ lang, gaps, papers }: {
                 {lang.search.out_of_domain.label}
               </strong>
               Press Enter to see the full honest-refusal panel.{" "}
-              <a href={`/?q=${encodeURIComponent(q)}${activeSlug ? `&lib=${activeSlug}` : ""}`}
-                 onClick={(e) => { e.preventDefault(); go(`/?q=${encodeURIComponent(q)}${suffix ? "&" + suffix.slice(1) : ""}`); }}>
+              <a href={`/${suffix}`}
+                 onClick={(e) => { e.preventDefault(); handOffQuery(q, { samePage: true }); go(`/${suffix}`); }}>
                 See what this library covers →
               </a>
             </div>
