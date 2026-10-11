@@ -1,0 +1,787 @@
+{
+ "batch_id": "lmozx7krmz13d76jet365h8gyip0hqtbvk3z",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-10-11",
+ "submitted_at": 1791729194.7923384,
+ "projected_inr": 0.906885,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7220964971": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7220964971",
+   "openalex_id": "https://openalex.org/W7220964971",
+   "title": "Loneliness and the social Re-orientation process of adolescence: towards a truly developmental approach",
+   "year": 2026,
+   "doi": "https://doi.org/10.1080/17405629.2026.2746076",
+   "venue": "European Journal of Developmental Psychology",
+   "field": "psychology",
+   "cited_by_count": 0,
+   "abstract": "In this article, I describe how research on the links between adolescent loneliness, on the one hand, and internalizing problems and aspects of social media use, on the other hand, has moved beyond simple cross-sectional studies. Adoption of longitudinal (i.e. cross-lagged) modelling and analyses of within-variance and short-term fluctuations over time have led to a more developmental approach to adolescent loneliness. A more fundamental change at the conceptual and measurement level implies that loneliness is increasingly considered both as a daily or state-like experience and a lasting trait. To advance current research even further along developmental lines, scholars of adolescence have to relate the topics discussed in this article to the overall quality of young people\u2019s relationships with their parents and peers and changes therein.",
+   "label": "on-domain",
+   "rationale": "same-sentence pair: 'social media use' + 'loneliness'; core scope: young population 'adolescen' + mental-health outcome 'Loneliness'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-11",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7220964971",
+   "doi": "https://doi.org/10.1080/17405629.2026.2746076",
+   "title": "Loneliness and the social Re-orientation process of adolescence: towards a truly developmental approach",
+   "display_name": "Loneliness and the social Re-orientation process of adolescence: towards a truly developmental approach",
+   "publication_year": 2026,
+   "publication_date": "2026-10-08",
+   "ids": {
+    "openalex": "https://openalex.org/W7220964971",
+    "doi": "https://doi.org/10.1080/17405629.2026.2746076"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1080/17405629.2026.2746076",
+    "doi": "https://doi.org/10.1080/17405629.2026.2746076",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1080/17405629.2026.2746076",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S71860415",
+     "display_name": "European Journal of Developmental Psychology",
+     "issn_l": "1740-5610",
+     "issn": [
+      "1740-5610",
+      "1740-5629"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "anvur-class-a",
+      "anvur-scientific",
+      "cwts-core",
+      "dongbi-c",
+      "erih-plus",
+      "jufo-1",
+      "norway-1",
+      "poland-70",
+      "russia-white-list-2",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320547",
+     "host_organization_name": "Taylor & Francis",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320547",
+      "https://openalex.org/P4310320449"
+     ],
+     "host_organization_lineage_names": [
+      "Taylor & Francis",
+      "Informa"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "European Journal of Developmental Psychology",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5016316090",
+      "display_name": "Luc Goossens",
+      "orcid": "https://orcid.org/0000-0003-3851-0412",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-3851-0412"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I99464096",
+       "display_name": "KU Leuven",
+       "ror": "https://ror.org/05f950310",
+       "country_code": "BE",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I99464096"
+       ]
+      }
+     ],
+     "countries": [
+      "BE"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Luc Goossens",
+     "raw_affiliation_strings": [
+      "Katholieke Universiteit Leuven"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-3851-0412",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Katholieke Universiteit Leuven",
+       "institution_ids": [
+        "https://openalex.org/I99464096"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5016316090"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I99464096"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.91355054,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "12"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10182",
+    "display_name": "Child and Adolescent Psychosocial and Emotional Development",
+    "score": 0.7621999979019165,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3203",
+     "display_name": "Clinical Psychology"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/32",
+     "display_name": "Psychology"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10182",
+     "display_name": "Child and Adolescent Psychosocial and Emotional Development",
+     "score": 0.7621999979019165,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10235",
+     "display_name": "Health disparities and outcomes",
+     "score": 0.044599998742341995,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3306",
+      "display_name": "Health"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10485",
+     "display_name": "Bullying, Victimization, and Aggression",
+     "score": 0.03370000049471855,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3207",
+      "display_name": "Social Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/loneliness",
+     "display_name": "loneliness",
+     "score": 0.9959999918937683
+    },
+    {
+     "id": "https://openalex.org/keywords/adolescence",
+     "display_name": "adolescence",
+     "score": 0.9480000138282776
+    },
+    {
+     "id": "https://openalex.org/keywords/developmental-approach",
+     "display_name": "developmental approach",
+     "score": 0.8560000061988831
+    },
+    {
+     "id": "https://openalex.org/keywords/peer-relationships",
+     "display_name": "peer relationships",
+     "score": 0.718999981880188
+    },
+    {
+     "id": "https://openalex.org/keywords/social-development-developmental-psychology",
+     "display_name": "social development (developmental psychology)",
+     "score": 0.7279999852180481
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.8763999938964844
+    },
+    {
+     "id": "https://openalex.org/C2779998236",
+     "wikidata": "https://www.wikidata.org/wiki/Q223270",
+     "display_name": "Loneliness",
+     "level": 2,
+     "score": 0.869700014591217
+    },
+    {
+     "id": "https://openalex.org/C138496976",
+     "wikidata": "https://www.wikidata.org/wiki/Q175002",
+     "display_name": "Developmental psychology",
+     "level": 1,
+     "score": 0.6690000295639038
+    },
+    {
+     "id": "https://openalex.org/C98045186",
+     "wikidata": "https://www.wikidata.org/wiki/Q205663",
+     "display_name": "Process (computing)",
+     "level": 2,
+     "score": 0.6089000105857849
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.42570000886917114
+    },
+    {
+     "id": "https://openalex.org/C180747234",
+     "wikidata": "https://www.wikidata.org/wiki/Q23373",
+     "display_name": "Cognitive psychology",
+     "level": 1,
+     "score": 0.36980000138282776
+    },
+    {
+     "id": "https://openalex.org/C2987946170",
+     "wikidata": "https://www.wikidata.org/wiki/Q853725",
+     "display_name": "Social relationship",
+     "level": 2,
+     "score": 0.3379000127315521
+    },
+    {
+     "id": "https://openalex.org/C130064352",
+     "wikidata": "https://www.wikidata.org/wiki/Q853725",
+     "display_name": "Social relation",
+     "level": 2,
+     "score": 0.3215000033378601
+    },
+    {
+     "id": "https://openalex.org/C2911114149",
+     "wikidata": "https://www.wikidata.org/wiki/Q719723",
+     "display_name": "Late childhood",
+     "level": 2,
+     "score": 0.3037000000476837
+    },
+    {
+     "id": "https://openalex.org/C109260823",
+     "wikidata": "https://www.wikidata.org/wiki/Q407784",
+     "display_name": "Child development",
+     "level": 2,
+     "score": 0.2937999963760376
+    },
+    {
+     "id": "https://openalex.org/C3019289112",
+     "wikidata": "https://www.wikidata.org/wiki/Q7596908",
+     "display_name": "Developmental stage",
+     "level": 2,
+     "score": 0.28769999742507935
+    },
+    {
+     "id": "https://openalex.org/C206836424",
+     "wikidata": "https://www.wikidata.org/wiki/Q1510761",
+     "display_name": "Social change",
+     "level": 2,
+     "score": 0.2563000023365021
+    },
+    {
+     "id": "https://openalex.org/C127158533",
+     "wikidata": "https://www.wikidata.org/wiki/Q983472",
+     "display_name": "Erikson's stages of psychosocial development",
+     "level": 2,
+     "score": 0.2547999918460846
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1080/17405629.2026.2746076",
+     "doi": "https://doi.org/10.1080/17405629.2026.2746076",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1080/17405629.2026.2746076",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S71860415",
+      "display_name": "European Journal of Developmental Psychology",
+      "issn_l": "1740-5610",
+      "issn": [
+       "1740-5610",
+       "1740-5629"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "anvur-class-a",
+       "anvur-scientific",
+       "cwts-core",
+       "dongbi-c",
+       "erih-plus",
+       "jufo-1",
+       "norway-1",
+       "poland-70",
+       "russia-white-list-2",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310320547",
+      "host_organization_name": "Taylor & Francis",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320547",
+       "https://openalex.org/P4310320449"
+      ],
+      "host_organization_lineage_names": [
+       "Taylor & Francis",
+       "Informa"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "European Journal of Developmental Psychology",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 29,
+   "referenced_works": [
+    "https://openalex.org/W1971772643",
+    "https://openalex.org/W2076304933",
+    "https://openalex.org/W2098003297",
+    "https://openalex.org/W2137190200",
+    "https://openalex.org/W2156547268",
+    "https://openalex.org/W2342843981",
+    "https://openalex.org/W2800542277",
+    "https://openalex.org/W2913810258",
+    "https://openalex.org/W2924438810",
+    "https://openalex.org/W2933856649",
+    "https://openalex.org/W3086440162",
+    "https://openalex.org/W3094171596",
+    "https://openalex.org/W3101126289",
+    "https://openalex.org/W4247665917",
+    "https://openalex.org/W4293051018",
+    "https://openalex.org/W4296921551",
+    "https://openalex.org/W4387336136",
+    "https://openalex.org/W4389170818",
+    "https://openalex.org/W4393338190",
+    "https://openalex.org/W4400891211",
+    "https://openalex.org/W4405382780",
+    "https://openalex.org/W4406294549",
+    "https://openalex.org/W4410280615",
+    "https://openalex.org/W4412580918",
+    "https://openalex.org/W4415961974",
+    "https://openalex.org/W4416553249",
+    "https://openalex.org/W7130653426",
+    "https://openalex.org/W7169831896",
+    "https://openalex.org/W7204228256"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "In": [
+     0
+    ],
+    "this": [
+     1,
+     107
+    ],
+    "article,": [
+     2
+    ],
+    "I": [
+     3
+    ],
+    "describe": [
+     4
+    ],
+    "how": [
+     5
+    ],
+    "research": [
+     6,
+     91
+    ],
+    "on": [
+     7,
+     13,
+     26
+    ],
+    "the": [
+     8,
+     14,
+     27,
+     66,
+     103,
+     110
+    ],
+    "links": [
+     9
+    ],
+    "between": [
+     10
+    ],
+    "adolescent": [
+     11,
+     59
+    ],
+    "loneliness,": [
+     12
+    ],
+    "one": [
+     15
+    ],
+    "hand,": [
+     16,
+     29
+    ],
+    "and": [
+     17,
+     20,
+     42,
+     46,
+     68,
+     84,
+     120,
+     122
+    ],
+    "internalizing": [
+     18
+    ],
+    "problems": [
+     19
+    ],
+    "aspects": [
+     21
+    ],
+    "of": [
+     22,
+     37,
+     44,
+     98,
+     113
+    ],
+    "social": [
+     23
+    ],
+    "media": [
+     24
+    ],
+    "use,": [
+     25
+    ],
+    "other": [
+     28
+    ],
+    "has": [
+     30
+    ],
+    "moved": [
+     31
+    ],
+    "beyond": [
+     32
+    ],
+    "simple": [
+     33
+    ],
+    "cross-sectional": [
+     34
+    ],
+    "studies.": [
+     35
+    ],
+    "Adoption": [
+     36
+    ],
+    "longitudinal": [
+     38
+    ],
+    "(i.e.": [
+     39
+    ],
+    "cross-lagged)": [
+     40
+    ],
+    "modelling": [
+     41
+    ],
+    "analyses": [
+     43
+    ],
+    "within-variance": [
+     45
+    ],
+    "short-term": [
+     47
+    ],
+    "fluctuations": [
+     48
+    ],
+    "over": [
+     49
+    ],
+    "time": [
+     50
+    ],
+    "have": [
+     51,
+     100
+    ],
+    "led": [
+     52
+    ],
+    "to": [
+     53,
+     58,
+     101,
+     109
+    ],
+    "a": [
+     54,
+     79,
+     85
+    ],
+    "more": [
+     55,
+     62
+    ],
+    "developmental": [
+     56,
+     95
+    ],
+    "approach": [
+     57
+    ],
+    "loneliness.": [
+     60
+    ],
+    "A": [
+     61
+    ],
+    "fundamental": [
+     63
+    ],
+    "change": [
+     64
+    ],
+    "at": [
+     65
+    ],
+    "conceptual": [
+     67
+    ],
+    "measurement": [
+     69
+    ],
+    "level": [
+     70
+    ],
+    "implies": [
+     71
+    ],
+    "that": [
+     72
+    ],
+    "loneliness": [
+     73
+    ],
+    "is": [
+     74
+    ],
+    "increasingly": [
+     75
+    ],
+    "considered": [
+     76
+    ],
+    "both": [
+     77
+    ],
+    "as": [
+     78
+    ],
+    "daily": [
+     80
+    ],
+    "or": [
+     81
+    ],
+    "state-like": [
+     82
+    ],
+    "experience": [
+     83
+    ],
+    "lasting": [
+     86
+    ],
+    "trait.": [
+     87
+    ],
+    "To": [
+     88
+    ],
+    "advance": [
+     89
+    ],
+    "current": [
+     90
+    ],
+    "even": [
+     92
+    ],
+    "further": [
+     93
+    ],
+    "along": [
+     94
+    ],
+    "lines,": [
+     96
+    ],
+    "scholars": [
+     97
+    ],
+    "adolescence": [
+     99
+    ],
+    "relate": [
+     102
+    ],
+    "topics": [
+     104
+    ],
+    "discussed": [
+     105
+    ],
+    "in": [
+     106
+    ],
+    "article": [
+     108
+    ],
+    "overall": [
+     111
+    ],
+    "quality": [
+     112
+    ],
+    "young": [
+     114
+    ],
+    "people\u2019s": [
+     115
+    ],
+    "relationships": [
+     116
+    ],
+    "with": [
+     117
+    ],
+    "their": [
+     118
+    ],
+    "parents": [
+     119
+    ],
+    "peers": [
+     121
+    ],
+    "changes": [
+     123
+    ],
+    "therein.": [
+     124
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-10T09:11:00.788812",
+   "created_date": "2026-10-09T00:00:00"
+  }
+ ]
+}
