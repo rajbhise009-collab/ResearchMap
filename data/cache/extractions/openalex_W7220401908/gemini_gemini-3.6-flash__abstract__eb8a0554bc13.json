@@ -1,0 +1,133 @@
+{
+  "paper_id": "openalex:W7220401908",
+  "claims": [
+    {
+      "id": "openalex:W7220401908:c1",
+      "paper_id": "openalex:W7220401908",
+      "text": "Women receive a 32.4% lower exposure rate to algorithm-driven job advertisements compared to men.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220401908:c2",
+      "paper_id": "openalex:W7220401908",
+      "text": "The disparity in job advertisement exposure between genders is not attributable to the gender distribution of the advertising platform's user base.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220401908:c3",
+      "paper_id": "openalex:W7220401908",
+      "text": "Women encounter disproportionately more shopping and entertainment advertisements in their information feeds.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220401908:c4",
+      "paper_id": "openalex:W7220401908",
+      "text": "Job advertisements for white-collar positions exhibit lower exposure rates for women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220401908:c5",
+      "paper_id": "openalex:W7220401908",
+      "text": "Job advertisements for high-paying positions exhibit lower exposure rates for women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220401908:c6",
+      "paper_id": "openalex:W7220401908",
+      "text": "Job advertisements for blue-collar occupations have higher exposure rates among women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220401908:c7",
+      "paper_id": "openalex:W7220401908",
+      "text": "Job advertisements for low-paying occupations have higher exposure rates among women.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220401908:c8",
+      "paper_id": "openalex:W7220401908",
+      "text": "The concept of 'algorithmic crowding out' conceptualizes socioeconomic inequalities encoded in algorithms that systematically exclude women from certain job opportunities and reproduce gender orders.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220401908:e1",
+      "claim_id": "openalex:W7220401908:c1",
+      "description": "Analysis of over 700 algorithm-driven job ads on a Chinese advertising platform showed women received a 32.4% lower exposure rate than men.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220401908:e2",
+      "claim_id": "openalex:W7220401908:c2",
+      "description": "Evaluation determined the disparity is not attributable to user base gender distribution on the platform but rooted in algorithmic decision-making.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220401908:e3",
+      "claim_id": "openalex:W7220401908:c3",
+      "description": "Platform findings showed women encounter disproportionately more shopping and entertainment ads alongside fewer job ads in information feeds.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220401908:e4",
+      "claim_id": "openalex:W7220401908:c4",
+      "description": "Comparison of ad exposure across job categories showed ads for white-collar positions have lower exposure rates for women.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220401908:e5",
+      "claim_id": "openalex:W7220401908:c5",
+      "description": "Comparison of ad exposure across job categories showed ads for high-paying positions have lower exposure rates for women.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220401908:e6",
+      "claim_id": "openalex:W7220401908:c6",
+      "description": "Comparison of ad exposure across job categories showed ads for blue-collar occupations have higher exposure rates among women.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220401908:e7",
+      "claim_id": "openalex:W7220401908:c7",
+      "description": "Comparison of ad exposure across job categories showed ads for low-paying occupations have higher exposure rates among women.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220401908:m1",
+      "paper_id": "openalex:W7220401908",
+      "name": "Quantitative analysis of algorithmic job advertisement exposure",
+      "description": "Analysed over 700 algorithm-driven job advertisements on a Chinese advertising platform and compared exposure rates across genders and job types.",
+      "datasets": [
+        "Chinese advertising platform ad feed dataset"
+      ],
+      "conditions": [
+        "Analysis of over 700 algorithm-driven job ads",
+        "Comparison of male versus female exposure rates",
+        "Categorization across white-collar vs blue-collar and high-paying vs low-paying jobs"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-11T14:18:56.935852Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

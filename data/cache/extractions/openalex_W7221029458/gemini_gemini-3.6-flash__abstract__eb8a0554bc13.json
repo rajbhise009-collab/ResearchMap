@@ -1,0 +1,229 @@
+{
+  "paper_id": "openalex:W7221029458",
+  "claims": [
+    {
+      "id": "openalex:W7221029458:c1",
+      "paper_id": "openalex:W7221029458",
+      "text": "72.25% of adolescent participants (289/400) exhibited some degree of Internet addiction (IAT ≥ 31).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c2",
+      "paper_id": "openalex:W7221029458",
+      "text": "1% of adolescent participants (4/400) exhibited severe Internet addiction.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c3",
+      "paper_id": "openalex:W7221029458",
+      "text": "Internet addiction showed a statistically significant association with age (P < 0.05).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c4",
+      "paper_id": "openalex:W7221029458",
+      "text": "Internet addiction showed a statistically significant association with gender (P < 0.05).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c5",
+      "paper_id": "openalex:W7221029458",
+      "text": "Internet addiction showed a statistically significant association with school type (P < 0.05).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c6",
+      "paper_id": "openalex:W7221029458",
+      "text": "Internet addiction showed a statistically significant association with daily screen time (P < 0.05).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c7",
+      "paper_id": "openalex:W7221029458",
+      "text": "Internet addiction showed a statistically significant association with anxiety severity (P < 0.05).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c8",
+      "paper_id": "openalex:W7221029458",
+      "text": "Multivariable analysis revealed higher odds of Internet addiction among adolescents aged 15–16 years.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c9",
+      "paper_id": "openalex:W7221029458",
+      "text": "Multivariable analysis revealed higher odds of Internet addiction among adolescents attending private schools.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c10",
+      "paper_id": "openalex:W7221029458",
+      "text": "Multivariable analysis revealed higher odds of Internet addiction among adolescents with longer screen time.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c11",
+      "paper_id": "openalex:W7221029458",
+      "text": "Multivariable analysis revealed higher odds of Internet addiction among adolescents with higher levels of anxiety.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c12",
+      "paper_id": "openalex:W7221029458",
+      "text": "Female gender was identified as a risk factor for Internet addiction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c13",
+      "paper_id": "openalex:W7221029458",
+      "text": "Higher parental education was identified as a risk factor for Internet addiction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029458:c14",
+      "paper_id": "openalex:W7221029458",
+      "text": "Screen time exceeding 4 hours per day was identified as a risk factor for Internet addiction.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221029458:e1",
+      "claim_id": "openalex:W7221029458:c1",
+      "description": "Overall, 289 participants (72.25%) exhibited some degree of Internet addiction (IAT ≥31).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221029458:e2",
+      "claim_id": "openalex:W7221029458:c2",
+      "description": "Severe addiction was found in 4 participants (1%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221029458:e3",
+      "claim_id": "openalex:W7221029458:c3",
+      "description": "Internet addiction showed significant associations with age (P < 0.05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221029458:e4",
+      "claim_id": "openalex:W7221029458:c4",
+      "description": "Internet addiction showed significant associations with gender (P < 0.05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221029458:e5",
+      "claim_id": "openalex:W7221029458:c5",
+      "description": "Internet addiction showed significant associations with school type (P < 0.05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221029458:e6",
+      "claim_id": "openalex:W7221029458:c6",
+      "description": "Internet addiction showed significant associations with daily screen time (P < 0.05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221029458:e7",
+      "claim_id": "openalex:W7221029458:c7",
+      "description": "Internet addiction showed significant associations with anxiety severity (P < 0.05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221029458:e8",
+      "claim_id": "openalex:W7221029458:c8",
+      "description": "Multivariable analysis revealed higher odds of Internet addiction among adolescents aged 15–16 years.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221029458:e9",
+      "claim_id": "openalex:W7221029458:c9",
+      "description": "Multivariable analysis revealed higher odds of Internet addiction among adolescents in private schools.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221029458:e10",
+      "claim_id": "openalex:W7221029458:c10",
+      "description": "Multivariable analysis revealed higher odds of Internet addiction among adolescents with longer screen time.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221029458:e11",
+      "claim_id": "openalex:W7221029458:c11",
+      "description": "Multivariable analysis revealed higher odds of Internet addiction among adolescents with higher levels of anxiety.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221029458:e12",
+      "claim_id": "openalex:W7221029458:c12",
+      "description": "Female gender was identified as an important risk factor in multivariable analysis.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221029458:e13",
+      "claim_id": "openalex:W7221029458:c13",
+      "description": "Higher parental education was identified as an important risk factor in multivariable analysis.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221029458:e14",
+      "claim_id": "openalex:W7221029458:c14",
+      "description": "Screen time exceeding 4 hours per day was identified as an important risk factor.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221029458:m1",
+      "paper_id": "openalex:W7221029458",
+      "name": "Cross-sectional survey with IAT and GAD-7",
+      "description": "A school-based cross-sectional study using multistage stratified random sampling, Young’s Internet Addiction Test (IAT), and Generalized Anxiety Disorder-7 (GAD-7) scale analyzed via Chi-square tests and multivariable logistic regression.",
+      "datasets": [
+        "400 school-going adolescents aged 12–18 years in Lucknow District, Uttar Pradesh, India"
+      ],
+      "conditions": [
+        "Multistage stratified random sampling from government and private schools",
+        "Conducted from June to December 2024"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [
+    {
+      "id": "openalex:W7221029458:f1",
+      "paper_id": "openalex:W7221029458",
+      "text": "Comprehensive school-based interventions, including mental health screening and awareness programs, to promote healthy Internet use and psychological wellbeing.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-11T14:18:57.370798Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

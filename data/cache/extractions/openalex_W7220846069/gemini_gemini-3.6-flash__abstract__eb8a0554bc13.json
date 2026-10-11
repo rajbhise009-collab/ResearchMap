@@ -1,0 +1,81 @@
+{
+  "paper_id": "openalex:W7220846069",
+  "claims": [
+    {
+      "id": "openalex:W7220846069:c1",
+      "paper_id": "openalex:W7220846069",
+      "text": "Faculty evaluations are frequently criticized for being subjective, inconsistent, and shaped by institutional cultures.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220846069:c2",
+      "paper_id": "openalex:W7220846069",
+      "text": "Structural and resource imbalances between public and private institutions exacerbate subjectivity and inconsistency in faculty evaluations.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220846069:c3",
+      "paper_id": "openalex:W7220846069",
+      "text": "AI technology can be structured into equity-driven frameworks to evaluate faculty contributions across teaching, research, and service.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220846069:e1",
+      "claim_id": "openalex:W7220846069:c1",
+      "description": "The authors note that faculty evaluations are frequently criticized for being subjective, inconsistent, and shaped by institutional cultures.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7220846069:e2",
+      "claim_id": "openalex:W7220846069:c2",
+      "description": "The authors state that structural and resource imbalances between public and private institutions exacerbate issues of subjectivity and inconsistency.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7220846069:c3",
+      "claim_id": "openalex:W7220846069:c3",
+      "description": "The chapter outlines theoretical frameworks and practical examples using AI technology to evaluate faculty contributions across teaching, research, and service.",
+      "strength": 0.75
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220846069:m1",
+      "paper_id": "openalex:W7220846069",
+      "name": "Equity-Driven AI Faculty Evaluation Framework",
+      "description": "A conceptual framework leveraging AI technology to assess faculty performance across teaching, research, and service while addressing ethical deployment and institutional disparities.",
+      "datasets": [],
+      "conditions": [
+        "public universities",
+        "private universities"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220846069:l1",
+      "paper_id": "openalex:W7220846069",
+      "text": "Faculty evaluations are frequently subjective, inconsistent, and shaped by institutional cultures.",
+      "normalized_category": "evaluation-subjectivity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7220846069:l2",
+      "paper_id": "openalex:W7220846069",
+      "text": "Structural and resource imbalances between public and private institutions exacerbate evaluation inconsistencies.",
+      "normalized_category": "institutional-resource-disparity",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-11T14:18:56.936946Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

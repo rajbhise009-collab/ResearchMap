@@ -1,0 +1,174 @@
+{
+  "paper_id": "openalex:W7220671976",
+  "claims": [
+    {
+      "id": "openalex:W7220671976:c1",
+      "paper_id": "openalex:W7220671976",
+      "text": "Pre-processing reweighting produces negligible fairness improvement across regions when structural disparities are embedded within the feature space.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220671976:c2",
+      "paper_id": "openalex:W7220671976",
+      "text": "Baseline logistic regression exhibits persistent threshold collapse across regions, with false positive rates exceeding 0.913 and reaching 1.0 in four regions.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220671976:c3",
+      "paper_id": "openalex:W7220671976",
+      "text": "Post-processing isotonic calibration improves AUC-ROC in North America to approximately 0.780 but degrades AUC-ROC in South Asia to approximately 0.594, Sub-Saharan Africa to 0.667, and Latin America to 0.656.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220671976:c4",
+      "paper_id": "openalex:W7220671976",
+      "text": "Demographic parity disparities in Sub-Saharan Africa remain resistant to post-hoc mitigation strategies, retaining the highest disparity gap across evaluated models.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220671976:c5",
+      "paper_id": "openalex:W7220671976",
+      "text": "Performance costs of fairness interventions are geographically asymmetric, reducing F1 score by 0.014 in Sub-Saharan Africa for only a 0.007 reduction in Demographic Parity Gap, while high-resource regions remain unaffected.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220671976:c6",
+      "paper_id": "openalex:W7220671976",
+      "text": "In South Asia, post-processing isotonic calibration degrades both performance and fairness, decreasing F1 from 0.911 to 0.909 and worsening Demographic Parity Gap from 0.103 to 0.110.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220671976:e1",
+      "claim_id": "openalex:W7220671976:c1",
+      "description": "Pre-processing reweighting produced no measurable fairness improvement across regions, with absolute differences below 0.001 across aggregate metrics and below 0.002 across regional AUC-ROC relative to baseline.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220671976:e2",
+      "claim_id": "openalex:W7220671976:c2",
+      "description": "False Positive Rates exceeded 0.913 across all regions under Baseline LR, with South Asia, East Asia, Western Europe, and North America recording FPR = 1.000, revealing that high aggregate recall (0.999) was an artefact of threshold collapse.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220671976:e3",
+      "claim_id": "openalex:W7220671976:c3",
+      "description": "Calibrated GBM produced an AUC-ROC of ≈0.780 in North America but dropped to ≈0.594 in South Asia, ≈0.667 in Sub-Saharan Africa, and ≈0.656 in Latin America, with statistically significant reductions confirmed via bootstrap confidence intervals.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220671976:e4",
+      "claim_id": "openalex:W7220671976:c4",
+      "description": "Sub-Saharan Africa recorded DPG = 0.018 in Baseline LR, remained at 0.018 under Reweighted LR, and remained consistently the highest disparity across all models.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220671976:e5",
+      "claim_id": "openalex:W7220671976:c5",
+      "description": "Sub-Saharan Africa experienced an F1 reduction from 0.876 to 0.862 (net Δ = -0.014) for a DPG reduction from 0.180 to 0.173 (gain of 0.007) under calibrated GBM, whereas Western Europe (0.970) and North America (0.980) maintained flat F1 scores.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220671976:e6",
+      "claim_id": "openalex:W7220671976:c6",
+      "description": "For South Asia, calibrated GBM decreased F1 from 0.911 to 0.909 (Δ = -0.002) while DPG worsened from 0.103 to 0.110.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220671976:m1",
+      "paper_id": "openalex:W7220671976",
+      "name": "Cross-Regional Bias Detection and Mitigation Pipeline",
+      "description": "A five-stage evaluation pipeline assessing pre-processing reweighting and post-processing isotonic calibration against a baseline logistic regression across four fairness metrics in six world regions.",
+      "datasets": [
+        "Synthetic cross-regional dataset parameterised from World Bank Development Indicators (2023), ILO Labour Statistics (2023), and Global Findex (2022)"
+      ],
+      "conditions": [
+        "Baseline L2-regularised Logistic Regression",
+        "Fairness-Aware Reweighted Logistic Regression with inverse regional frequency weights",
+        "Gradient Boosting Classifier with 5-fold stratified cross-validation and post-hoc isotonic regression calibration",
+        "Train-test stratified split (75% train, 25% test, N=6,000 total)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220671976:l1",
+      "paper_id": "openalex:W7220671976",
+      "text": "The synthetic dataset, while parameterised from empirical distributional statistics, cannot fully replicate the intersectional complexity and institutional variability of real administrative records.",
+      "normalized_category": "synthetic-data-limits",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220671976:l2",
+      "paper_id": "openalex:W7220671976",
+      "text": "Only three debiasing strategies were evaluated, leaving other fairness-aware approaches like adversarial debiasing, fair representation learning, and constrained optimisation unexamined.",
+      "normalized_category": "narrow-method-scope",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220671976:l3",
+      "paper_id": "openalex:W7220671976",
+      "text": "The study evaluated binary classification outcomes exclusively and does not extend to multi-class classification, ranking systems, or regression settings.",
+      "normalized_category": "task-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220671976:l4",
+      "paper_id": "openalex:W7220671976",
+      "text": "The analysis focused primarily on geographic disparity and did not incorporate intersectional subgroup analysis involving gender, ethnicity, disability, or language.",
+      "normalized_category": "lack-of-intersectional-analysis",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220671976:l5",
+      "paper_id": "openalex:W7220671976",
+      "text": "Access to large-scale, ethically shareable, cross-regional administrative datasets remains highly restricted due to privacy, governance, and institutional barriers.",
+      "normalized_category": "data-access-restrictions",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7220671976:l6",
+      "paper_id": "openalex:W7220671976",
+      "text": "Most existing fairness studies evaluate fairness interventions on only one or two protected attributes within a single national context, typically the United States.",
+      "normalized_category": "narrow-evaluation-context",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220671976:f1",
+      "paper_id": "openalex:W7220671976",
+      "text": "Validate findings using real-world administrative datasets.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220671976:f2",
+      "paper_id": "openalex:W7220671976",
+      "text": "Extend the bias mitigation and evaluation framework to intersectional and multi-class prediction settings.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220671976:f3",
+      "paper_id": "openalex:W7220671976",
+      "text": "Evaluate additional debiasing methods, including adversarial debiasing, fair representation learning, and constrained Pareto-optimal optimisation, within the pipeline architecture.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-11T14:18:56.936447Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

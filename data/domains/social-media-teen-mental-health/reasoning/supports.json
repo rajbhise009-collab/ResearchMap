@@ -1,5 +1,5 @@
 {
-  "n": 121,
+  "n": 132,
   "items": [
     {
       "from_claim_id": "openalex:W2549950368:c1",
@@ -1210,6 +1210,116 @@
       "b_paper_id": "openalex:W7220393051",
       "b_text": "Sleep disruption and cyberbullying were identified as key mediating pathways linking adolescent social media use with mental health distress.",
       "explanation": "Both claims mutually reinforce the connection between adolescent social media use and cyberbullying, showing that adolescents recognize it as a platform for bullying and that cyberbullying acts as a key mechanism linking use to distress."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c3",
+      "to_claim_id": "openalex:W7221031988:c1",
+      "similarity": 0.8901984691619873,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across longitudinal studies is r = 0.12.",
+      "b_paper_id": "openalex:W7221031988",
+      "b_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "explanation": "Both claims independently demonstrate a small positive pooled correlation between social media use and depressive outcomes in young populations."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c2",
+      "to_claim_id": "openalex:W7221031988:c1",
+      "similarity": 0.8850969672203064,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across cross-sectional studies is r = 0.12.",
+      "b_paper_id": "openalex:W7221031988",
+      "b_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "explanation": "Both claims report a small positive pooled correlation between social media use and depression or depressive symptoms in youth."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c4",
+      "to_claim_id": "openalex:W7221031988:c1",
+      "similarity": 0.8787323236465454,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "Trimming and filling outlying studies reduces the random-effects pooled correlation estimate between social media use and depressive symptoms to r = 0.09.",
+      "b_paper_id": "openalex:W7221031988",
+      "b_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "explanation": "Both claims independently find a very small positive pooled correlation between social media use and depressive symptoms in youth, with estimates around r = 0.08 to 0.09."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W7221031988:c1",
+      "similarity": 0.8706035017967224,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W7221031988",
+      "b_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "explanation": "Both claims independently report a small but statistically significant positive association between social media use and depressive symptoms among youth."
+    },
+    {
+      "from_claim_id": "openalex:W2074577226:c4",
+      "to_claim_id": "openalex:W7221029458:c3",
+      "similarity": 0.8534972667694092,
+      "a_paper_id": "openalex:W2074577226",
+      "a_text": "Young people are significantly more likely to show Internet addictive symptoms than older people.",
+      "b_paper_id": "openalex:W7221029458",
+      "b_text": "Internet addiction showed a statistically significant association with age (P < 0.05).",
+      "explanation": "Both claims report a statistically significant relationship between age and Internet addiction, with Claim A specifying the direction of the association reported in Claim B."
+    },
+    {
+      "from_claim_id": "openalex:W2074577226:c3",
+      "to_claim_id": "openalex:W7221029458:c4",
+      "similarity": 0.8503854274749756,
+      "a_paper_id": "openalex:W2074577226",
+      "a_text": "Men exhibit significantly higher Internet addictive tendencies than women.",
+      "b_paper_id": "openalex:W7221029458",
+      "b_text": "Internet addiction showed a statistically significant association with gender (P < 0.05).",
+      "explanation": "Claim B confirms a statistically significant association between gender and Internet addiction, which is consistent with and reinforces Claim A's finding that men exhibit higher addictive tendencies than women."
+    },
+    {
+      "from_claim_id": "openalex:W7220393051:c3",
+      "to_claim_id": "openalex:W7221031988:c2",
+      "similarity": 0.8482520580291748,
+      "a_paper_id": "openalex:W7220393051",
+      "a_text": "Evidence linking social media screen time to anxiety was weaker and less consistent across studies compared to evidence linking it to depression.",
+      "b_paper_id": "openalex:W7221031988",
+      "b_text": "Social media use has a very small linear association with anxiety outcomes in young people (pooled r = 0.093, 95% CI [0.059, 0.126]).",
+      "explanation": "Claim B's finding of a very small effect size for anxiety reinforces Claim A's observation that the evidence linking social media use to anxiety is weak."
+    },
+    {
+      "from_claim_id": "openalex:W2314751257:c5",
+      "to_claim_id": "openalex:W7221029458:c12",
+      "similarity": 0.8341600298881531,
+      "a_paper_id": "openalex:W2314751257",
+      "a_text": "Being female is significantly associated with addictive use of social media.",
+      "b_paper_id": "openalex:W7221029458",
+      "b_text": "Female gender was identified as a risk factor for Internet addiction.",
+      "explanation": "Both claims find that female gender is associated with higher risk or prevalence of addictive online behaviors, specifically social media and internet addiction."
+    },
+    {
+      "from_claim_id": "openalex:W2074577226:c1",
+      "to_claim_id": "openalex:W7221029458:c2",
+      "similarity": 0.8212671279907227,
+      "a_paper_id": "openalex:W2074577226",
+      "a_text": "1.2% (18 out of 1,319) of surveyed respondents met the criteria for Internet addiction.",
+      "b_paper_id": "openalex:W7221029458",
+      "b_text": "1% of adolescent participants (4/400) exhibited severe Internet addiction.",
+      "explanation": "Both studies independently report a mutually reinforcing finding of a very low prevalence rate of internet addiction of approximately 1% among participants."
+    },
+    {
+      "from_claim_id": "openalex:W2944221730:c1",
+      "to_claim_id": "openalex:W7221031988:c1",
+      "similarity": 0.8191754221916199,
+      "a_paper_id": "openalex:W2944221730",
+      "a_text": "The median cross-sectional correlation between adolescent social media use and life satisfaction across all operationalizations was small and negative (psi = -0.13).",
+      "b_paper_id": "openalex:W7221031988",
+      "b_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "explanation": "Both claims report a very small adverse relationship between adolescent social media use and psychological well-being, finding small associations with lower life satisfaction and higher depression, respectively."
+    },
+    {
+      "from_claim_id": "openalex:W2566585401:c5",
+      "to_claim_id": "openalex:W7221029458:c11",
+      "similarity": 0.8008246421813965,
+      "a_paper_id": "openalex:W2566585401",
+      "a_text": "For adolescent boys, anxiety triggers higher social networking site involvement.",
+      "b_paper_id": "openalex:W7221029458",
+      "b_text": "Multivariable analysis revealed higher odds of Internet addiction among adolescents with higher levels of anxiety.",
+      "explanation": "Both claims mutually reinforce the finding that higher anxiety in adolescents is associated with increased online engagement and usage."
     }
   ]
 }

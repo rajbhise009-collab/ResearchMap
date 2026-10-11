@@ -1,0 +1,145 @@
+{
+  "paper_id": "openalex:W7221031988",
+  "claims": [
+    {
+      "id": "openalex:W7221031988:c1",
+      "paper_id": "openalex:W7221031988",
+      "text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221031988:c2",
+      "paper_id": "openalex:W7221031988",
+      "text": "Social media use has a very small linear association with anxiety outcomes in young people (pooled r = 0.093, 95% CI [0.059, 0.126]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221031988:c3",
+      "paper_id": "openalex:W7221031988",
+      "text": "Year of publication does not moderate the effect of social media use on depression outcomes.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221031988:c4",
+      "paper_id": "openalex:W7221031988",
+      "text": "Duration of follow-up does not moderate the effect of social media use on depression outcomes.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221031988:c5",
+      "paper_id": "openalex:W7221031988",
+      "text": "Mean age of sample does not moderate the effect of social media use on depression outcomes.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221031988:c6",
+      "paper_id": "openalex:W7221031988",
+      "text": "Social media use is unlikely to account for the contemporary youth mental health crisis.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221031988:e1",
+      "claim_id": "openalex:W7221031988:c1",
+      "description": "Meta-analysis of twelve studies examining depression outcomes found pooled r = .08, 95% CIs [0.04, 0.11], showing very small linear effects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221031988:e2",
+      "claim_id": "openalex:W7221031988:c2",
+      "description": "Meta-analysis of five studies examining anxiety outcomes found pooled r = 0.093, 95% CIs [0.059, 0.126], showing very small linear effects.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221031988:e3",
+      "claim_id": "openalex:W7221031988:c3",
+      "description": "Moderator analysis showed no moderating effects for year of publication for the depression effects.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221031988:e4",
+      "claim_id": "openalex:W7221031988:c4",
+      "description": "Moderator analysis showed no moderating effects for duration of follow-up for the depression effects.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221031988:e5",
+      "claim_id": "openalex:W7221031988:c5",
+      "description": "Moderator analysis showed no moderating effects for mean age of sample for the depression effects.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221031988:e6",
+      "claim_id": "openalex:W7221031988:c6",
+      "description": "Conclusions drawn from the identified very weak relationships between social media use and severity of anxiety and depression symptoms.",
+      "strength": 0.75
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221031988:m1",
+      "paper_id": "openalex:W7221031988",
+      "name": "Systematic review and meta-analysis",
+      "description": "Systematic search across PsycINFO, Web of Science, MEDLINE, Embase, and Scopus to meta-analyze longitudinal and experimental studies on social media use and youth anxiety and depression.",
+      "datasets": [
+        "PsycINFO",
+        "Web of Science",
+        "MEDLINE",
+        "Embase",
+        "Scopus"
+      ],
+      "conditions": [
+        "Peer-reviewed English-language publications",
+        "Longitudinal and experimental study designs",
+        "Participants aged 10 to 24 years",
+        "Social media use measured by time or frequency",
+        "Standardized measures of depression and anxiety"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221031988:l1",
+      "paper_id": "openalex:W7221031988",
+      "text": "Included studies measured social media use mainly via self-report.",
+      "normalized_category": "measurement-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221031988:l2",
+      "paper_id": "openalex:W7221031988",
+      "text": "The eligible literature contained almost exclusively longitudinal observational studies (36 studies) and only one experimental study.",
+      "normalized_category": "study-design-imbalance",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7221031988:f1",
+      "paper_id": "openalex:W7221031988",
+      "text": "Conduct longitudinal research designed to examine potential non-monotonic relationships between social media use and adverse mental health outcomes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7221031988:f2",
+      "paper_id": "openalex:W7221031988",
+      "text": "Investigate other potential causes of increased prevalence of mental health problems in young people.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-11T14:18:57.371263Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

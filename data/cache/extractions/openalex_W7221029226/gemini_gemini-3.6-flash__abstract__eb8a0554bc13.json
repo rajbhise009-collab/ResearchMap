@@ -1,0 +1,144 @@
+{
+  "paper_id": "openalex:W7221029226",
+  "claims": [
+    {
+      "id": "openalex:W7221029226:c1",
+      "paper_id": "openalex:W7221029226",
+      "text": "Existing monitoring frameworks report current coverage and cannot anticipate its deterioration.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029226:c2",
+      "paper_id": "openalex:W7221029226",
+      "text": "Under country-grouped cross-validation, a persistence baseline achieves an AUC of 0.968, dominating rank-order discrimination.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029226:c3",
+      "paper_id": "openalex:W7221029226",
+      "text": "Inclusion of conflict and climate covariates improves model calibration, reducing Brier score from 0.196 to 0.190.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029226:c4",
+      "paper_id": "openalex:W7221029226",
+      "text": "Equity weighting narrows the equal-opportunity gap across income groups by 41.5%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029226:c5",
+      "paper_id": "openalex:W7221029226",
+      "text": "Temporal attribution identifies the urban–rural gap as the fastest-rising predictor of future water insecurity.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029226:c6",
+      "paper_id": "openalex:W7221029226",
+      "text": "Only 40.5% of countries are projected to achieve SDG 6.1.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221029226:c7",
+      "paper_id": "openalex:W7221029226",
+      "text": "No low-income country is on track to achieve SDG 6.1.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221029226:e1",
+      "claim_id": "openalex:W7221029226:c1",
+      "description": "monitoring frameworks report current coverage and cannot anticipate its deterioration",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221029226:e2",
+      "claim_id": "openalex:W7221029226:c2",
+      "description": "Under country‐grouped cross‐validation a persistence baseline dominates rank‐order discrimination (AUC = 0.968)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221029226:e3",
+      "claim_id": "openalex:W7221029226:c3",
+      "description": "Conflict and climate covariates improve calibration (Brier 0.190 vs. 0.196)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221029226:e4",
+      "claim_id": "openalex:W7221029226:c4",
+      "description": "Equity weighting narrows the equal‐opportunity gap across income groups by 41.5%",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221029226:e5",
+      "claim_id": "openalex:W7221029226:c5",
+      "description": "temporal attribution identifies the urban–rural gap as the fastest‐rising predictor of future insecurity",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221029226:e6",
+      "claim_id": "openalex:W7221029226:c6",
+      "description": "Only 40.5% of countries are projected to achieve SDG 6.1",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221029226:e7",
+      "claim_id": "openalex:W7221029226:c7",
+      "description": "with no low‐income country on track",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221029226:m1",
+      "paper_id": "openalex:W7221029226",
+      "name": "Conflict-augmented, equity-weighted machine learning framework",
+      "description": "Predicts whether safely managed drinking water coverage will fall below 50% five years ahead using 15 socioeconomic, service-coverage, conflict, and climate features.",
+      "datasets": [
+        "WHO/UNICEF Joint Monitoring Programme",
+        "World Bank",
+        "ACLED conflict",
+        "ND-GAIN climate vulnerability",
+        "Fragile States Index"
+      ],
+      "conditions": [
+        "232-country panel spanning 2000–2024",
+        "country-grouped cross-validation",
+        "five-year ahead prediction window"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221029226:l1",
+      "paper_id": "openalex:W7221029226",
+      "text": "Current monitoring frameworks only report current coverage and cannot anticipate its deterioration.",
+      "normalized_category": "predictive-inability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221029226:l2",
+      "paper_id": "openalex:W7221029226",
+      "text": "A persistence baseline dominates rank-order discrimination (AUC = 0.968) over machine learning models under country-grouped cross-validation.",
+      "normalized_category": "baseline-outperformance",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-11T14:18:56.937271Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

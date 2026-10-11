@@ -1,0 +1,257 @@
+{
+  "paper_id": "openalex:W7220961377",
+  "claims": [
+    {
+      "id": "openalex:W7220961377:c1",
+      "paper_id": "openalex:W7220961377",
+      "text": "Children receiving OSI+TS gained 0.021 QALYs using the UK adult value set compared to usual school practice.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c2",
+      "paper_id": "openalex:W7220961377",
+      "text": "Children receiving OSI+TS gained 0.043 QALYs using the Australia adolescent value set compared to usual school practice.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c3",
+      "paper_id": "openalex:W7220961377",
+      "text": "From the NHS and PSS perspective, children in the OSI+TS arm incurred an additional £244.16 compared to the USP arm.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c4",
+      "paper_id": "openalex:W7220961377",
+      "text": "The ICER for OSI+TS compared to USP was £11,462.47 per QALY gained based on the UK adult value set.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c5",
+      "paper_id": "openalex:W7220961377",
+      "text": "The ICER for OSI+TS compared to USP was £5,700.98 per QALY gained based on the Australia adolescent value set.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c6",
+      "paper_id": "openalex:W7220961377",
+      "text": "At a £20,000 WTP threshold per QALY gained, OSI+TS had an 88.2% probability of being cost-effective using the UK adult value set.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c7",
+      "paper_id": "openalex:W7220961377",
+      "text": "At a £20,000 WTP threshold per QALY gained, OSI+TS had a 99.3% probability of being cost-effective using the Australia adolescent value set.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c8",
+      "paper_id": "openalex:W7220961377",
+      "text": "At 12 weeks after randomization, child utilities were significantly higher in the OSI+TS arm than in the USP arm for both the UK adult and Australia adolescent value sets.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c9",
+      "paper_id": "openalex:W7220961377",
+      "text": "At 12 months follow-up, the difference in child utilities between the OSI+TS and USP groups was no longer statistically significant.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c10",
+      "paper_id": "openalex:W7220961377",
+      "text": "No statistically significant differences between trial arms were found for parents' EQ-5D-5L utilities or QALYs throughout the trial.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c11",
+      "paper_id": "openalex:W7220961377",
+      "text": "From a societal perspective, the total mean difference in cost between OSI+TS and USP was £234.71, which was not statistically significant.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220961377:c12",
+      "paper_id": "openalex:W7220961377",
+      "text": "The overall frequency of anxiety problems 12 months after randomization did not differ significantly between the OSI+TS and USP groups in the primary clinical analysis.",
+      "type": "negative",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220961377:e1",
+      "claim_id": "openalex:W7220961377:c1",
+      "description": "Children receiving OSI+TS gained 0.021 (95% CI 0.010-0.033; P <.001) QALYs using the United Kingdom value set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220961377:e2",
+      "claim_id": "openalex:W7220961377:c2",
+      "description": "Children receiving OSI+TS gained 0.043 (95% CI 0.021-0.064; P <.001) QALYs using the Australia value set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220961377:e3",
+      "claim_id": "openalex:W7220961377:c3",
+      "description": "From the NHS and PSS perspective, children in the OSI+TS arm incurred £244.16 (95% CI £76.26-£412.07; P =0.005) more than those in the USP arm.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220961377:e4",
+      "claim_id": "openalex:W7220961377:c4",
+      "description": "In the base-case CUA analysis (NHS and PSS perspective), the estimated ICER was £11,462.47 per QALY gained based on the UK adult value set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220961377:e5",
+      "claim_id": "openalex:W7220961377:c5",
+      "description": "In the base-case CUA analysis, the estimated ICER was £5,700.98 per QALY gained based on the Australia adolescent value set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220961377:e6",
+      "claim_id": "openalex:W7220961377:c6",
+      "description": "At the £20,000 threshold, OSI+TS had an 88.2% chance of being cost-effective using the UK adult value set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220961377:e7",
+      "claim_id": "openalex:W7220961377:c7",
+      "description": "At the £20,000 threshold, OSI+TS had a 99.3% chance of being cost-effective using the Australia adolescent value set.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220961377:e8",
+      "claim_id": "openalex:W7220961377:c8",
+      "description": "Adjusted mean difference at 12 weeks: UK adult value set: 0.019, 95% CI 0.006-0.032; P =.004; Australia adolescent value set: 0.048; 95% CI 0.021-0.076; P =.001.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220961377:e9",
+      "claim_id": "openalex:W7220961377:c9",
+      "description": "At 12 months follow-up, the difference with the USP group narrowed and was no longer statistically significant (adjusted difference UK: 0.010, 95% CI -0.003 to 0.023, P=0.13; AUS: 0.024, 95% CI -0.003 to 0.051, P=0.08).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220961377:e10",
+      "claim_id": "openalex:W7220961377:c10",
+      "description": "In contrast, no statistically significant differences in parents' EQ-5D-5L utilities and QALYs between trial arms were found throughout the trial (adjusted total parent QALY difference: 0.002, 95% CI -0.016 to 0.021, P=0.81).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220961377:e11",
+      "claim_id": "openalex:W7220961377:c11",
+      "description": "From a societal perspective, total societal mean difference in cost was £234.71 (95% CI £-165.37-£634.79; P =0.24) higher for the OSI+TS group compared to the USP group.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220961377:e12",
+      "claim_id": "openalex:W7220961377:c12",
+      "description": "The overall frequency of anxiety problems 12 months after randomization was low and group differences were not significant in the primary clinical analysis (89/865, 6.8% intervention vs 99/865, 11.5% usual school practice [USP]).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220961377:m1",
+      "paper_id": "openalex:W7220961377",
+      "name": "Cost-Utility and Cost-Effectiveness Analysis alongside Cluster RCT",
+      "description": "Conducted a cost-utility analysis calculating QALYs via parent-reported CHU9D (using UK adult and Australia adolescent value sets) and secondary cost-effectiveness analysis from NHS/PSS and societal perspectives over a 12-month horizon using multilevel mixed-effects models and 10,000 bootstrap iterations on 50 multiply imputed datasets.",
+      "datasets": [
+        "MYCATS trial dataset"
+      ],
+      "conditions": [
+        "Children aged 4-7 years identified at risk of anxiety disorders via universal school screening",
+        "OSI+TS (7 online modules plus 8 telephone support sessions) alongside usual school provision",
+        "Usual school provision (USP) control"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220961377:l1",
+      "paper_id": "openalex:W7220961377",
+      "text": "Most prior studies of digital interventions for childhood anxiety problems report on effectiveness, with limited evidence on economic outcomes.",
+      "normalized_category": "lack-of-prior-evidence",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7220961377:l2",
+      "paper_id": "openalex:W7220961377",
+      "text": "Schools and participants were enrolled based on consent, leading to potential nonrandom sample selection where schools or families less focused on mental well-being may have opted out.",
+      "normalized_category": "selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220961377:l3",
+      "paper_id": "openalex:W7220961377",
+      "text": "Because child anxiety problems relate to school absence, school-based screening risks excluding children not attending school.",
+      "normalized_category": "sampling-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220961377:l4",
+      "paper_id": "openalex:W7220961377",
+      "text": "The trial period was relatively short (one year), leaving the long-term effect of OSI+TS unknown.",
+      "normalized_category": "short-follow-up-duration",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220961377:l5",
+      "paper_id": "openalex:W7220961377",
+      "text": "CHU9D was originally developed and validated for children aged 7 to 17 years, and neither the UK adult nor the Australia adolescent value set was developed specifically for children younger than 7 years.",
+      "normalized_category": "instrument-validation-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220961377:l6",
+      "paper_id": "openalex:W7220961377",
+      "text": "In two sensitivity analyses adopting a societal perspective and using the UK adult value set, the probability of cost-effectiveness fell to 59.2% at a £20,000 WTP threshold, indicating considerable decision uncertainty.",
+      "normalized_category": "sensitivity-uncertainty",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220961377:f1",
+      "paper_id": "openalex:W7220961377",
+      "text": "Future research should extrapolate trial results over the medium and longer term to address the gap regarding long-term effects of OSI+TS.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220961377:f2",
+      "paper_id": "openalex:W7220961377",
+      "text": "Further validation work is warranted for the CHU9D descriptive system and preference weights in preschool and early school-aged children.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220961377:f3",
+      "paper_id": "openalex:W7220961377",
+      "text": "Future economic evaluations should take account of evaluating the monetary value and human capital cost of children's displaced time and school absenteeism.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-11T14:18:57.370166Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

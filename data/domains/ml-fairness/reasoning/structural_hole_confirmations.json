@@ -48,5 +48,15 @@
     "b_pid": "openalex:W4288414189",
     "method": "Probabilistic Convex Optimization Pre-Processing",
     "limitation": "The study was conducted with crowdworkers rather than judges or domain experts who would be actual users of algorithmic recidivism prediction tools."
+  },
+  "opp:hole:W2617709446->W2964316623": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's approach also fundamentally relies on human survey inputs about feature fairness, so it does not mitigate or address the self-report bias noted in Paper B.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2617709446",
+    "b_pid": "openalex:W2964316623",
+    "method": "Process fairness estimation via feature selection",
+    "limitation": "Survey responses rely on self-reported ratings which may introduce self-report biases."
   }
 }

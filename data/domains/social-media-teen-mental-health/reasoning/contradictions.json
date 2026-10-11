@@ -1,5 +1,5 @@
 {
-  "n": 6,
+  "n": 8,
   "items": [
     {
       "from_claim_id": "openalex:W2896921383:c2",
@@ -60,6 +60,26 @@
       "b_paper_id": "openalex:W2153813098",
       "b_text": "There is no evidence for an increased prevalence of child or adolescent depression over the past 30 years when concurrent assessment is used.",
       "explanation": "Claim A asserts that historical changes in depression rates reflect real cohort shifts rather than measurement artifacts, whereas Claim B finds no evidence of increased depression prevalence when controlling for recall artifacts through concurrent assessment."
+    },
+    {
+      "from_claim_id": "openalex:W2074577226:c3",
+      "to_claim_id": "openalex:W7221029458:c12",
+      "similarity": 0.8530038595199585,
+      "a_paper_id": "openalex:W2074577226",
+      "a_text": "Men exhibit significantly higher Internet addictive tendencies than women.",
+      "b_paper_id": "openalex:W7221029458",
+      "b_text": "Female gender was identified as a risk factor for Internet addiction.",
+      "explanation": "Claim A finds that men have significantly higher Internet addictive tendencies, whereas Claim B identifies female gender as a risk factor for Internet addiction."
+    },
+    {
+      "from_claim_id": "openalex:W7220393051:c4",
+      "to_claim_id": "openalex:W7221031988:c2",
+      "similarity": 0.8006361126899719,
+      "a_paper_id": "openalex:W7220393051",
+      "a_text": "Two large cohort studies observed a non-linear, U-shaped relationship where moderate social media use was associated with lower anxiety symptoms than persistently low or high use.",
+      "b_paper_id": "openalex:W7221031988",
+      "b_text": "Social media use has a very small linear association with anxiety outcomes in young people (pooled r = 0.093, 95% CI [0.059, 0.126]).",
+      "explanation": "Claim A identifies a non-linear, U-shaped association where moderate use correlates with the lowest anxiety, directly conflicting with Claim B's finding of a linear association between social media use and anxiety."
     }
   ]
 }
