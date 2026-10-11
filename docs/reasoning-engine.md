@@ -89,6 +89,10 @@ compared only when same construct AND same regime. Cost: add field
 all papers** ≈ **$4.65 (batch) + ~$0.71 rerun ≈ $5.4**, over the current
 ~$2 budget. Revisit when budget allows.
 
+## Caveats
+
+**Caveats apply to every card type through one rule set.** Disagreement cards get their caveats from the same `_caveats()` rules as all other card types (`backend/app/ranking/assemble.py`). Today that means "Based partly on summaries only" whenever either paper in the pair was read from its summary alone. A regression test (`backend/tests/api/test_disagreement_caveats.py`) fails if a disagreement resting on a summary-only paper is shown without that caveat. "A problem several teams hit" cards also carry "Only counted within these {n} papers", because the count of teams is only within this library.
+
 ## Honest limitations (what the reviewer should weigh)
 
 - **Thin by design.** Only 5 limitation categories reach the 3-paper floor
