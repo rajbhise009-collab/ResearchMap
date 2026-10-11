@@ -91,6 +91,30 @@ def write_llm_calibration_snapshot(out_root: Path) -> dict:
     return {"slug": "llm-calibration", "root_and_library_dir": True}
 
 
+def _disagreement_caveats(paper_ids: list, entries: list[dict], opp_id: str) -> list[dict]:
+    """Caveats for a disagreement card through the SAME rules as every other
+    card type (backend/app/ranking/assemble.py `_caveats`): e.g. a pair that
+    rests on a summary-only paper carries `mixed_fidelity`. Was a hard-coded
+    empty list, so disagreements never carried a caveat."""
+    from types import SimpleNamespace
+    from backend.app.ranking.assemble import _caveats
+    from backend.app.ranking.schema import SupportingPaper
+    by_pid = {f"openalex:{e['wid']}": e for e in entries}
+    supporting = []
+    for pid in paper_ids:
+        e = by_pid.get(pid or "")
+        if e is None:
+            continue
+        full = e.get("input_source") == "fulltext"
+        supporting.append(SupportingPaper(
+            paper_id=pid, title=e.get("title"), year=e.get("year"),
+            input_source="fulltext" if full else "abstract", abstract_only=not full,
+            domain_centrality=e.get("domain_centrality") or "core"))
+    opp = SimpleNamespace(id=opp_id, component_scores={})
+    return [cv.model_dump(mode="json")
+            for cv in _caveats("unresolved_contradictions", opp, supporting, None, len(entries))]
+
+
 def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
     """Write a domain's snapshot under out_root/library/<slug>/. Reads
     from data/domains/<slug>/ prelabel + extractions + reasoning.
@@ -244,10 +268,13 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         pair_key = tuple(sorted([_oawid(c.get("a_paper_id", "")),
                                     _oawid(c.get("b_paper_id", ""))]))
         cites_both_rec = cb_by_pair.get(pair_key)
+        raw_caveats = _disagreement_caveats(
+            [c.get("a_paper_id"), c.get("b_paper_id")], entries, opp_slug)
         card = {
             "id": opp_slug, "slug": opp_slug, "rank": i,
             "gap_type": "disagreement",
             "scorer": "unresolved_contradictions",
+            "caveats": raw_caveats,
             "title": headline,
             "similarity": c.get("similarity"),
             "explanation": c.get("explanation"),
@@ -283,7 +310,11 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
                 # Our own published doubt about this verdict, if any
                 # (reasoning/audit_doubts.json); the verdict is unchanged.
                 "verdict_doubt": _doubt_for(slug, c.get("a_paper_id"), c.get("b_paper_id"), verdict),
-                "caveats": [],
+                # Same rules and wording as every other card type
+                # (ranking/assemble.py _caveats -> language.caveats_for).
+                "caveats": lang_mod.caveats_for({
+                    "scorer": "unresolved_contradictions", "caveats": raw_caveats,
+                    "library_papers": len(entries)}),
                 "paper_count": 2,
             },
         }
