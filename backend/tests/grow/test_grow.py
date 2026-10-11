@@ -113,6 +113,26 @@ def test_triggers_permissions_pins_and_secret_scope():
     assert not re.fullmatch(r"0 .*", on["schedule"][0]["cron"])      # off the hour
 
 
+def test_api_keys_reach_the_runner_only_on_main():
+    d, _on = _wf("weekly-grow.yml")
+    steps = {s.get("name"): s for s in d["jobs"]["grow"]["steps"]}
+    grow = steps["Grow, gate, publish"]
+    for key in ("OPENALEX_API_KEY", "GEMINI_API_KEY"):
+        expr = grow["env"][key]
+        assert expr.startswith("${{ github.ref == 'refs/heads/main' && "), key
+        assert f"secrets.{key}" in expr
+    # the step itself runs off main only on the free (keyless) paths
+    assert grow["if"] == ("github.ref == 'refs/heads/main' || inputs.gates_only == true "
+                          "|| inputs.republish_branch")
+    # and a paid run off main fails loudly instead of skipping to a green no-op
+    refuse = steps["Refuse a paid run off main"]
+    assert refuse["if"] == ("github.ref != 'refs/heads/main' && inputs.gates_only != true "
+                            "&& !inputs.republish_branch")
+    assert "exit 1" in refuse["run"] and "secrets." not in yaml.safe_dump(refuse)
+    names = list(steps)
+    assert names.index("Refuse a paid run off main") < names.index("Grow, gate, publish")
+
+
 def test_round_robin_allocation_favours_open_candidates_then_low_coverage():
     def items(n, inr=1.0):
         return [{"entry": {"wid": f"W{i}"}, "inr": inr} for i in range(n)]
