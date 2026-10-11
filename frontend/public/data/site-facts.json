@@ -129,9 +129,9 @@
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
       "built": "2026-10-10",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 101,
-      "claims_read": 101,
-      "full_text": 52,
+      "papers": 102,
+      "claims_read": 102,
+      "full_text": 53,
       "abstract_only": 49,
       "gap_cards": 58,
       "results": [
@@ -161,10 +161,10 @@
         }
       ],
       "results_total": 58,
-      "set_aside_total": 0,
+      "set_aside_total": 3,
       "growth": {
         "grows": true,
-        "added": 2,
+        "added": 3,
         "last_added": "2026-10-09"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (91 pairs); pairs worded differently are never compared.",
@@ -194,7 +194,7 @@
       "claims_read": 100,
       "full_text": 23,
       "abstract_only": 78,
-      "gap_cards": 32,
+      "gap_cards": 30,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -216,12 +216,12 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 26,
+          "count": 24,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 32,
+      "results_total": 30,
       "set_aside_total": 4,
       "growth": {
         "grows": true,
