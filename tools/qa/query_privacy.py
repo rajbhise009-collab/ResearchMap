@@ -15,14 +15,16 @@ and ask there" link, the out-of-domain panel's "switch and ask there" links,
 and a health query. Developer mode (?dev=1, local builds only) is out of
 scope by design: its build-cost panel sends the query to the local server.
 Only the given base URL is reachable; every other request is aborted.
+
+An old shared link carrying ?q= is ignored: the page opens with an empty box,
+and the value reaches no request after the first navigation (every request
+is watched, from the first one).
 """
 from __future__ import annotations
 
 import json
 import sys
 import urllib.parse
-
-from playwright.sync_api import sync_playwright
 
 
 def _forms(q: str) -> set[str]:
@@ -95,6 +97,8 @@ SCENARIOS = [
 
 
 def run(base: str) -> list[dict]:
+    from playwright.sync_api import sync_playwright
+
     base = base.rstrip("/")
     results = []
     with sync_playwright() as p:
@@ -136,23 +140,45 @@ def run(base: str) -> list[dict]:
                             "left_in_session_storage": left,
                             "final_url": states[-1]["url"].replace(base, "")})
             ctx.close()
-        # An old shared link with ?q=: the query is honoured once, then removed
-        # from the address bar, so nothing loaded afterwards carries it.
-        q = "demographic parity"
+        # An old shared link with ?q=. The app ignores q: the box stays empty
+        # and the value is never read into the page. Every request is watched
+        # from the first one, so scripts fetched before hydration count too.
+        # The value DOES remain in this page's own address bar (the visitor
+        # put it there and the app does not rewrite the URL); that is accepted.
+        # The only request whose URL may contain it is the first navigation.
+        q = "zzqlegacy probe"
         ctx = br.new_context(viewport={"width": 1440, "height": 900})
         ctx.route("**/*", lambda r: r.continue_() if r.request.url.startswith(base) else r.abort())
+        seen = []
+        ctx.on("request", lambda r: seen.append({"url": r.url, "referer": r.headers.get("referer", ""),
+                                                  "body": r.post_data or ""}))
         pg = ctx.new_page()
-        pg.goto(f"{base}/?lib=ml-fairness&q={urllib.parse.quote(q)}", wait_until="networkidle")
+        link = f"{base}/?lib=ml-fairness&q={urllib.parse.quote(q)}"
+        pg.goto(link, wait_until="networkidle")
         pg.wait_for_timeout(1200)
-        later = []
-        ctx.on("request", lambda r: later.append({"url": r.url, "referer": r.headers.get("referer", "")}))
-        pg.locator("a[href*='/gaps']").first.click()
+        box = pg.locator("#ask-input")
+        box_value = box.input_value() if box.count() else None
+        page_state = pg.evaluate("""() => {
+            const all = s => { try { return JSON.stringify(Object.entries(s)); } catch (e) { return ''; } };
+            return { session: all(sessionStorage), local: all(localStorage), title: document.title,
+                     text: document.body.innerText,
+                     inputs: [...document.querySelectorAll('input,textarea')].map(e => e.value).join('\\n'),
+                     url: location.href, lib: new URLSearchParams(location.search).get('lib') };
+        }""")
+        pg.locator("a[href*='/gaps']").first.click()       # requests made after a click count too
         pg.wait_for_timeout(1500)
-        results.append({"scenario": "old shared ?q= link (honoured once, then stripped)", "query": q,
-                        "requests": len(later), "insights_requests": 0, "expected_lib": None, "arrived": None,
-                        "left_in_session_storage": None, "final_url": pg.url.replace(base, ""),
-                        "leaks": sorted({f"Referer of {r['url'][:80]}" for r in later if _contains(r["referer"], q)}
-                                        | {f"request {r['url'][:80]}" for r in later if _contains(r["url"], q)})})
+        first, rest = (seen[0] if seen else {"url": ""}), seen[1:]
+        leaks = [f"request {r['url'][:80]}" for r in rest if _contains(r["url"], q)]
+        leaks += [f"request body to {r['url'][:80]}" for r in seen if _contains(r["body"], q)]
+        read = [k for k in ("session", "local", "title", "text", "inputs") if _contains(page_state[k], q)]
+        if page_state["url"] != link:
+            read.append(f"address bar rewritten to {page_state['url'].replace(base, '')}")
+        results.append({"scenario": "old shared ?q= link (ignored)", "query": q, "legacy": True,
+                        "requests": len(seen), "insights_requests": sum("/_vercel/insights" in r["url"] for r in seen),
+                        "first_request_is_the_link": first["url"] == link,
+                        "box_value": box_value, "q_read_into": read, "lib": page_state["lib"],
+                        "expected_lib": None, "arrived": None, "left_in_session_storage": None,
+                        "final_url": pg.url.replace(base, ""), "leaks": sorted(set(leaks))})
         ctx.close()
         br.close()
     return results
@@ -165,6 +191,15 @@ def failures(results: list[dict]) -> list[str]:
             out.append(f"{r['scenario']}: query text left the page via {r['leaks'][:3]}")
         if r.get("left_in_session_storage"):
             out.append(f"{r['scenario']}: the hand-off was not cleared after it was read")
+        if r.get("legacy"):
+            if r["box_value"] != "":
+                out.append(f"{r['scenario']}: the search box is not empty ({r['box_value']!r})")
+            if r["q_read_into"]:
+                out.append(f"{r['scenario']}: the app read q (found in {r['q_read_into']})")
+            if r["lib"] != "ml-fairness":
+                out.append(f"{r['scenario']}: ?lib= was not kept ({r['lib']!r})")
+            if not r["first_request_is_the_link"]:
+                out.append(f"{r['scenario']}: requests were not watched from the first navigation")
         if r["expected_lib"]:
             a = r["arrived"] or {}
             if a.get("query_in_box") != r["query"]:

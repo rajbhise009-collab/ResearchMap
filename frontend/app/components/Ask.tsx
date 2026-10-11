@@ -182,23 +182,13 @@ export default function Ask({ lang, gaps, papers }: {
   // A query handed over from another page (the command palette, or a
   // "switch and ask there" link) arrives through sessionStorage, never the
   // URL: a query in the URL would reach the server, every Referer header and
-  // page-view analytics (lib/handoff.ts). Setting only `q` lets the debounced
-  // effect below run the search once the index is ready.
+  // page-view analytics (lib/handoff.ts). A ?q= in the address (an old shared
+  // link) is ignored: the page opens with an empty box. Setting only `q` lets
+  // the debounced effect below run the search once the index is ready.
   useEffect(() => {
     const take = () => { const h = takeHandedOffQuery(); if (h.trim()) setQ(h); };
     take();
     window.addEventListener(HANDOFF_EVENT, take);
-    // An old shared link may still carry ?q=: honour it once, then drop it
-    // from the address bar so it is not carried into later Referer headers.
-    const params = new URLSearchParams(window.location.search);
-    const legacy = cleanQuery(params.get("q"));
-    if (legacy.trim()) {
-      setQ(legacy);
-      params.delete("q");
-      const rest = params.toString();
-      window.history.replaceState(window.history.state, "",
-        window.location.pathname + (rest ? `?${rest}` : "") + window.location.hash);
-    }
     return () => window.removeEventListener(HANDOFF_EVENT, take);
   }, []);
 
