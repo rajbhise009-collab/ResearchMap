@@ -700,6 +700,11 @@ function OutOfDomain({ lang, query, activeLibrary }: {
               {B.consumer_body} <Link href="/contact/">Contact</Link>
             </p>
           ) : (<>
+          {/* Developer mode only: says where the query goes before the
+              pre-flight lookup's result appears. */}
+          <p className="small muted" data-testid="dev-openalex-note">
+            In developer mode, opening this panel sends your question, through the local server, to OpenAlex (api.openalex.org), a public catalogue of research papers, to estimate how much literature exists on it.
+          </p>
           <p>{B.body}</p>
 
           {preflightState === "loading" && (

@@ -9,7 +9,9 @@ link is ignored: the box stays empty, the app never reads q, and from the
 very first request on the value is in no Referer header and in no request URL
 after the first navigation. (It stays in the page's own address bar, where
 the visitor put it; that is accepted.) Both vercel.json files must send
-Referrer-Policy: strict-origin. The checks live in tools/qa/query_privacy.py.
+Referrer-Policy: strict-origin. The developer-mode OpenAlex note sits in the
+developer branch of the build panel and never shows on the public build (with
+or without ?dev=1). The checks live in tools/qa/query_privacy.py.
 
 Needs the production build (frontend/out) and Playwright's Chromium. On the
 runner and in CI (CI=1) this module may not skip (backend/tests/conftest.py).
@@ -63,6 +65,18 @@ def test_referrer_policy_check_rejects_anything_weaker(tmp_path):
     assert qp.referrer_policy_problems([missing])
 
 
+def test_dev_openalex_note_is_in_the_developer_branch_only():
+    qp = _load()
+    src = (REPO / "frontend" / "app" / "components" / "Ask.tsx").read_text()
+    flat = " ".join(src.split())
+    assert flat.count(qp.DEV_OPENALEX_NOTE) == 1
+    at = flat.index(qp.DEV_OPENALEX_NOTE)
+    consumer = flat.index("{!dev ? ( <p> {B.consumer_body}")      # the public branch of the panel
+    dev_branch = flat.index(") : (<>", consumer)                 # ...then the developer branch
+    body = flat.index("<p>{B.body}</p>", dev_branch)
+    assert consumer < dev_branch < at < body, "note must open the developer branch, above the panel body"
+
+
 def test_search_text_never_leaves_the_browser():
     if not OUT.exists():
         pytest.skip("no production build (frontend/out); run `npm run build` first")
@@ -88,7 +102,7 @@ def test_search_text_never_leaves_the_browser():
             if "Executable doesn't exist" in str(e):
                 pytest.skip("Playwright's Chromium is not installed")
             raise
-        assert len(results) >= 12, results
+        assert len(results) >= 14, results
         bad = qp.failures(results)
         assert not bad, "\n".join(bad)
     finally:

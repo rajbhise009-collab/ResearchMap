@@ -20,6 +20,10 @@ An old shared link carrying ?q= is ignored: the page opens with an empty box,
 and the value reaches no request after the first navigation and no Referer
 header (every request is watched, from the first one). Both vercel.json
 files must send Referrer-Policy: strict-origin (referrer_policy_problems).
+
+The developer-mode note about OpenAlex (DEV_OPENALEX_NOTE) must not appear
+outside developer mode: the public build is checked with and without ?dev=1
+(dev_note_visible; run it against an ENABLE_DEV=1 build to see it appear).
 """
 from __future__ import annotations
 
@@ -32,6 +36,9 @@ REPO = Path(__file__).resolve().parents[2]
 # The root copy is what tools/qa/serve.py serves; Vercel deploys frontend/.
 VERCEL_CONFIGS = (REPO / "vercel.json", REPO / "frontend" / "vercel.json")
 REFERRER_POLICY = "strict-origin"   # origin only: never a path or query string
+DEV_OPENALEX_NOTE = ("In developer mode, opening this panel sends your question, through the local "
+                     "server, to OpenAlex (api.openalex.org), a public catalogue of research papers, "
+                     "to estimate how much literature exists on it.")
 
 
 def _forms(q: str) -> set[str]:
@@ -115,6 +122,27 @@ def referrer_policy_problems(configs=VERCEL_CONFIGS) -> list[str]:
         out += [f"{path}: Referrer-Policy is {v!r}, expected {REFERRER_POLICY!r}"
                 for v in values if v != REFERRER_POLICY]
     return out
+
+
+def dev_note_visible(br, base: str, path: str) -> dict:
+    """Open the out-of-domain "build a library" panel at `path` and report
+    whether the developer-mode OpenAlex note is on the page. Requests leave
+    only for `base` (a static server answers /api/preflight with 404)."""
+    ctx = br.new_context(viewport={"width": 1440, "height": 900})
+    ctx.route("**/*", lambda r: r.continue_() if r.request.url.startswith(base) else r.abort())
+    pg = ctx.new_page()
+    pg.goto(f"{base}{path}", wait_until="networkidle")
+    pg.wait_for_timeout(700)
+    _type_enter(pg, "volcano eruption forecasting")
+    pg.wait_for_timeout(1500)
+    before = pg.locator("body").inner_text()
+    pg.locator("button.cta").first.click()
+    pg.wait_for_timeout(1200)
+    panel = pg.locator(".panel").first.inner_text() if pg.locator(".panel").count() else ""
+    after = pg.locator("body").inner_text()
+    ctx.close()
+    return {"path": path, "panel_opened": bool(panel), "before_click": DEV_OPENALEX_NOTE in before,
+            "after_click": DEV_OPENALEX_NOTE in after}
 
 
 def run(base: str) -> list[dict]:
@@ -203,6 +231,13 @@ def run(base: str) -> list[dict]:
                         "expected_lib": None, "arrived": None, "left_in_session_storage": None,
                         "final_url": pg.url.replace(base, ""), "leaks": sorted(set(leaks))})
         ctx.close()
+        # The developer-mode note must not show on a public (non-ENABLE_DEV)
+        # build, whether or not the URL asks for ?dev=1.
+        for path in ("/?lib=ml-fairness", "/?lib=ml-fairness&dev=1"):
+            d = dev_note_visible(br, base, path)
+            results.append({"scenario": f"developer-mode note hidden ({path})", "query": "", "dev_note": d,
+                            "requests": 0, "insights_requests": 0, "expected_lib": None, "arrived": None,
+                            "left_in_session_storage": None, "final_url": path, "leaks": []})
         br.close()
     return results
 
@@ -223,6 +258,12 @@ def failures(results: list[dict]) -> list[str]:
                 out.append(f"{r['scenario']}: ?lib= was not kept ({r['lib']!r})")
             if not r["first_request_is_the_link"]:
                 out.append(f"{r['scenario']}: requests were not watched from the first navigation")
+        if r.get("dev_note"):
+            d = r["dev_note"]
+            if not d["panel_opened"]:
+                out.append(f"{r['scenario']}: the build panel did not open")
+            if d["before_click"] or d["after_click"]:
+                out.append(f"{r['scenario']}: the developer-mode OpenAlex note is visible outside developer mode")
         if r["expected_lib"]:
             a = r["arrived"] or {}
             if a.get("query_in_box") != r["query"]:
