@@ -105,6 +105,49 @@ links in `Ask.tsx:397, 653, 666` and `CommandPalette.tsx:239, 307`).
   consistency OK; 939 tests pass; Playwright smoke passes 54/54. Screenshots
   are in `~/Desktop/rm-ui-after/c7-*`.
 
+### `?q=` ignored, Referrer-Policy strict-origin, developer-mode note (2026-10-11)
+
+- **`53b9d6d`:** `?q=` is ignored completely. An old shared link opens with
+  an empty search box; `Ask.tsx` no longer reads `q` or rewrites the address
+  bar. `?lib=` and the `sessionStorage` hand-off are unchanged. This
+  replaces "honoured once and then stripped" above.
+- **`82667a7`:** `Referrer-Policy` is `strict-origin` (was
+  `strict-origin-when-cross-origin`) in `vercel.json` (used by
+  `tools/qa/serve.py`) and `frontend/vercel.json` (what Vercel deploys).
+  `Referer` now carries only the origin. Nothing in the frontend, backend or
+  tools reads `Referer` or `document.referrer`; `docs/` and the Privacy
+  paragraph say nothing about the referrer policy. Commit 1 alone puts `q`
+  in same-origin `Referer` headers (it stays in the address bar), so the two
+  ship together.
+- **`838a991`:** in developer mode only, the "build a library" panel opens
+  with the sentence proposed above, above the panel body. It appears as the
+  panel opens, which is when the lookup request leaves, not before the
+  click. The public build never shows it, with or without `?dev=1`.
+- **Tests:**
+  - The legacy-link case in `tools/qa/query_privacy.py` now records every
+    request from the first one. Before, it attached its listener after load
+    and missed the scripts fetched before hydration. It asserts:
+    - the box is empty;
+    - `q` is never read (storage, DOM, inputs, title, URL not rewritten);
+    - `?lib=` is kept;
+    - no `Referer` header carries the value;
+    - no request after the first navigation carries it.
+
+    The value stays in the page's own address bar, which is accepted.
+  - Both `vercel.json` files must send exactly `strict-origin`, and weaker
+    values are rejected.
+  - A source test pins the exact developer-mode sentence in the developer
+    part of the panel.
+  - The browser check also opens the panel on the public build, with and
+    without `?dev=1`, and fails if the sentence shows.
+  - Each new check failed without its change.
+- **`Referer` experiment** (`/?lib=ml-fairness&q=zzzleak&other=zzzother`):
+  - before: `other` was in 30 of 30 later `Referer` headers and `q` in 12 of 30;
+  - after: 0 of 26 for both, and every `Referer` is the bare origin.
+- **Checks:** typecheck clean; 942 tests pass; Playwright smoke passes
+  54/54. Only `Ask.tsx`, `lib/query.ts`, the two `vercel.json` files and the
+  privacy tests changed.
+
 ### Investigated, not changed: result cards with no caveats
 
 Shown cards with **no** caveat panel, across all four libraries:
