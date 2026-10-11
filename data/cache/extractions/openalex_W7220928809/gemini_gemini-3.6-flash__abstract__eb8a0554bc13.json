@@ -1,0 +1,52 @@
+{
+  "paper_id": "openalex:W7220928809",
+  "claims": [
+    {
+      "id": "openalex:W7220928809:c1",
+      "paper_id": "openalex:W7220928809",
+      "text": "Machine learning models can exhibit systematic discriminatory behavior based on demographic attributes due to imbalanced training data and the complexity of underlying algorithms.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220928809:c2",
+      "paper_id": "openalex:W7220928809",
+      "text": "An LLM-assisted automated discriminatory test generation approach can be developed using GPT-4o Mini and Claude Sonnet 4 to identify discriminatory behavior in machine learning model outcomes.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220928809:e1",
+      "claim_id": "openalex:W7220928809:c1",
+      "description": "Machine learning (ML) models can exhibit systematic discriminatory behavior based on demographic attributes (e.g., race and gender) due to imbalanced training data and the complexity of underlying algorithms.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220928809:e2",
+      "claim_id": "openalex:W7220928809:c2",
+      "description": "We developed an LLM-assisted automated discriminatory test generation approach for identifying discriminatory behavior in ML model outcomes using GPT-4o Mini and Claude Sonnet 4 model.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220928809:m1",
+      "paper_id": "openalex:W7220928809",
+      "name": "LLM-assisted automated discriminatory test generation",
+      "description": "An automated test generation approach utilizing natural language prompts with GPT-4o Mini and Claude Sonnet 4 models to identify discriminatory behavior in ML model outcomes.",
+      "datasets": [],
+      "conditions": [
+        "GPT-4o Mini",
+        "Claude Sonnet 4"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-11T16:24:10.287024Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

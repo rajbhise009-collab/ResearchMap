@@ -58,5 +58,25 @@
     "b_pid": "openalex:W2964316623",
     "method": "Process fairness estimation via feature selection",
     "limitation": "Survey responses rely on self-reported ratings which may introduce self-report biases."
+  },
+  "opp:hole:W2974817986->W3136620301": {
+    "verdict": "not_addressing",
+    "reason": "AIF360 is a machine learning software toolkit for fairness metrics and mitigation, which cannot address a systematic review's limitation regarding non-English literature inclusion.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2974817986",
+    "b_pid": "openalex:W3136620301",
+    "method": "AI Fairness 360 (AIF360)",
+    "limitation": "The review cannot make assertions about studies on perceived algorithmic fairness published in languages other than English due to the choice of search strings and databases."
+  },
+  "opp:hole:W2974817986->W4288414189": {
+    "verdict": "not_addressing",
+    "reason": "AIF360 is a software toolkit for computing algorithmic fairness metrics and cannot address the limitation of participant recruiting in human-subject studies.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2974817986",
+    "b_pid": "openalex:W4288414189",
+    "method": "AI Fairness 360 (AIF360)",
+    "limitation": "The study was conducted with crowdworkers rather than judges or domain experts who would be actual users of algorithmic recidivism prediction tools."
   }
 }

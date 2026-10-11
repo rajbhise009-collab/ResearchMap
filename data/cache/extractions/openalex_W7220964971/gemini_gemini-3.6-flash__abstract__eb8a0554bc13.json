@@ -1,0 +1,97 @@
+{
+  "paper_id": "openalex:W7220964971",
+  "claims": [
+    {
+      "id": "openalex:W7220964971:c1",
+      "paper_id": "openalex:W7220964971",
+      "text": "Research on the links between adolescent loneliness, internalizing problems, and social media use has moved beyond simple cross-sectional studies.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964971:c2",
+      "paper_id": "openalex:W7220964971",
+      "text": "Adoption of longitudinal cross-lagged modelling has contributed to a more developmental approach to adolescent loneliness.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964971:c3",
+      "paper_id": "openalex:W7220964971",
+      "text": "Analyses of within-person variance and short-term fluctuations over time have contributed to a more developmental approach to adolescent loneliness.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964971:c4",
+      "paper_id": "openalex:W7220964971",
+      "text": "Loneliness is increasingly conceptualized and measured as a daily or state-like experience.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220964971:c5",
+      "paper_id": "openalex:W7220964971",
+      "text": "Loneliness is increasingly conceptualized and measured as a lasting trait.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220964971:e1",
+      "claim_id": "openalex:W7220964971:c1",
+      "description": "In this article, I describe how research on the links between adolescent loneliness, on the one hand, and internalizing problems and aspects of social media use, on the other hand, has moved beyond simple cross-sectional studies.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220964971:e2",
+      "claim_id": "openalex:W7220964971:c2",
+      "description": "Adoption of longitudinal (i.e. cross-lagged) modelling and analyses of within-variance and short-term fluctuations over time have led to a more developmental approach to adolescent loneliness.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220964971:e3",
+      "claim_id": "openalex:W7220964971:c3",
+      "description": "Adoption of longitudinal (i.e. cross-lagged) modelling and analyses of within-variance and short-term fluctuations over time have led to a more developmental approach to adolescent loneliness.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220964971:e4",
+      "claim_id": "openalex:W7220964971:c4",
+      "description": "A more fundamental change at the conceptual and measurement level implies that loneliness is increasingly considered both as a daily or state-like experience and a lasting trait.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220964971:e5",
+      "claim_id": "openalex:W7220964971:c5",
+      "description": "A more fundamental change at the conceptual and measurement level implies that loneliness is increasingly considered both as a daily or state-like experience and a lasting trait.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W7220964971:l1",
+      "paper_id": "openalex:W7220964971",
+      "text": "Earlier research on adolescent loneliness, internalizing problems, and social media use relied on simple cross-sectional studies.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220964971:f1",
+      "paper_id": "openalex:W7220964971",
+      "text": "Scholars of adolescence need to relate adolescent loneliness and its associated factors to the overall quality of young people’s relationships with their parents and peers and changes therein.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-11T16:24:10.598258Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

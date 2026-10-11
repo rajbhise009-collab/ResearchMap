@@ -1,5 +1,5 @@
 {
-  "n": 90,
+  "n": 92,
   "items": [
     {
       "from_claim_id": "openalex:W2788235370:c3",
@@ -900,6 +900,26 @@
       "b_paper_id": "openalex:W7221029458",
       "b_text": "Multivariable analysis revealed higher odds of Internet addiction among adolescents with higher levels of anxiety.",
       "explanation": "While both claims examine adolescent anxiety, they investigate distinct constructs (overall social media use versus Internet addiction) without directly supporting or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2972459530:c1",
+      "to_claim_id": "openalex:W7220964971:c1",
+      "similarity": 0.8460747003555298,
+      "a_paper_id": "openalex:W2972459530",
+      "a_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with internalizing problems alone among adolescents.",
+      "b_paper_id": "openalex:W7220964971",
+      "b_text": "Research on the links between adolescent loneliness, internalizing problems, and social media use has moved beyond simple cross-sectional studies.",
+      "explanation": "Claim A reports a specific statistical association between social media use and internalizing problems, while Claim B describes methodological trends in the broader field of research."
+    },
+    {
+      "from_claim_id": "openalex:W2972459530:c2",
+      "to_claim_id": "openalex:W7220964971:c1",
+      "similarity": 0.8030242919921875,
+      "a_paper_id": "openalex:W2972459530",
+      "a_text": "In adjusted analyses, spending more than 3 hours per day on social media compared with no use is significantly associated with comorbid internalizing and externalizing problems among adolescents.",
+      "b_paper_id": "openalex:W7220964971",
+      "b_text": "Research on the links between adolescent loneliness, internalizing problems, and social media use has moved beyond simple cross-sectional studies.",
+      "explanation": "Claim A reports a specific empirical association between high social media use and comorbid problems, while Claim B makes a methodological observation about the evolution of research designs in the field."
     }
   ]
 }

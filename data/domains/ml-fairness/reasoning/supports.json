@@ -1,5 +1,5 @@
 {
-  "n": 78,
+  "n": 80,
   "items": [
     {
       "from_claim_id": "openalex:W2097246321:c1",
@@ -780,6 +780,26 @@
       "b_paper_id": "openalex:W4285059900",
       "b_text": "Completely ignoring protected group attributes, known as fairness through unawareness, fails to prevent discriminatory outcomes due to correlation with proxy variables.",
       "explanation": "Both claims independently assert that removing or ignoring protected attributes fails to prevent discrimination due to correlations with proxy or other variables."
+    },
+    {
+      "from_claim_id": "openalex:W4288758404:c1",
+      "to_claim_id": "openalex:W7220928809:c1",
+      "similarity": 0.8088341951370239,
+      "a_paper_id": "openalex:W4288758404",
+      "a_text": "Machine learning models can exhibit discrimination against minority groups in decision-making processes.",
+      "b_paper_id": "openalex:W7220928809",
+      "b_text": "Machine learning models can exhibit systematic discriminatory behavior based on demographic attributes due to imbalanced training data and the complexity of underlying algorithms.",
+      "explanation": "Both claims assert that machine learning models are capable of exhibiting discriminatory behavior against demographic or minority groups."
+    },
+    {
+      "from_claim_id": "openalex:W2150997454:c1",
+      "to_claim_id": "openalex:W7220928809:c1",
+      "similarity": 0.8021924495697021,
+      "a_paper_id": "openalex:W2150997454",
+      "a_text": "Standard classification algorithms trained on biased datasets can produce discriminatory classifiers even when sensitive attributes are removed from training data.",
+      "b_paper_id": "openalex:W7220928809",
+      "b_text": "Machine learning models can exhibit systematic discriminatory behavior based on demographic attributes due to imbalanced training data and the complexity of underlying algorithms.",
+      "explanation": "Both claims assert that machine learning models can learn and exhibit systematic discriminatory behavior as a result of biased or imbalanced training data."
     }
   ]
 }
