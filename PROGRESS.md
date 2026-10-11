@@ -38,6 +38,33 @@ sentence, stays word for word.
 | Sources (`language.py` `ATTRIBUTION.intro`) | Paper metadata, citations and abstracts come from these openly licensed sources. Only short, structured extractions (claims, limitations, future-work statements) are shown here — full text was read to produce those extractions, not republished. | Paper metadata, citations and abstracts come from these openly licensed sources. We show only short extractions (claims, limitations, future-work statements); full text was read to make them, never republished. |
 | Privacy (`language.py` `PRIVACY_NOTE.body`) | On the public deploy this page sends anonymised page-view counts to Vercel Web Analytics (which URLs got visited, roughly what country, no cookies, no cross-site tracking, no identifiers). What you type into the search box runs against an index in your browser — the query itself is NOT sent to any server. Downloads (.bib, .csv) are generated locally. The versions you run on your own computer send no analytics. | The public site counts anonymised page views with Vercel Web Analytics (pages visited and rough country; no cookies, no cross-site tracking, no identifiers). Your searches run in your browser and are never sent to any server. Downloads (.bib, .csv) are made on your device. The versions you run on your own computer send no analytics. |
 
+**Decision 2026-10-11 (`e7992bd`):** the owner approved and I applied the
+Libraries intro, and the Sources paragraph with "not republished". The
+Privacy paragraph was **not applied**: a browser check on localhost (below)
+showed the query text can leave the page. The Diet and ML fairness notes
+(`data/library_registry.json`) are unchanged.
+
+### Privacy check: does the search text leave the browser? (2026-10-11)
+
+On the production build served on localhost (Playwright, localhost only),
+the URL, hash and every request were recorded for each way to search:
+
+| Way to search | Query in URL | In hash | Requests carrying the query |
+|:--|:--|:--|--:|
+| Type and press Enter (in-domain, out-of-domain) | no | no | 0 |
+| Type only (type-ahead) | no | no | 0 |
+| Example chip | no | no | 0 |
+| Command palette, type / type and Enter | no | no | 0 |
+| Health query (distress check) | no | no | 0 |
+| **Out-of-domain → "switch and ask there" link** | **yes** (`?lib=…&q=…`) | no | **31**: the page request itself, then every request's `Referer`, including `/_vercel/insights/script.js` |
+| **Developer build, `?dev=1` → "Want a library on this subject?"** | no | no | **1**: `GET /api/preflight?q=…`; the local server forwards the query to api.openalex.org (`backend/app/coherence/preflight.py`) |
+
+So the Privacy paragraph's current wording, "the query itself is NOT sent to
+any server", is already inaccurate on those two paths. The proposed "never
+sent to any server" would be too. Neither was changed. Fixing it needs an
+owner decision: either change the wording, or stop the `?q=` hand-off (the
+links in `Ask.tsx:397, 653, 666` and `CommandPalette.tsx:239, 307`).
+
 ### Investigated, not changed: result cards with no caveats
 
 Shown cards with **no** caveat panel, across all four libraries:
