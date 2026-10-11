@@ -73,6 +73,10 @@ def _caveats(scorer, opp, supporting, confirm_status, n_papers) -> list[Caveat]:
         cav.append(Caveat(code="corpus_relative", label="Corpus-relative",
                           detail=(f"'Orphaned' means unaddressed WITHIN this {n_papers}-paper "
                                   "corpus, not the field; the two-stage matcher precision is ~0.64.")))
+    if scorer == "persistent_limitations":
+        cav.append(Caveat(code="corpus_relative_problem", label="Corpus-relative count",
+                          detail=(f"'Several teams' are counted WITHIN this {n_papers}-paper corpus, "
+                                  "not the field; the problem may already be solved outside it.")))
     n_ab = sum(1 for sp in supporting if sp.abstract_only)
     if n_ab:
         cav.append(Caveat(code="mixed_fidelity", label="Mixed-fidelity",

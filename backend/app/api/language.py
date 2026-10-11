@@ -198,6 +198,13 @@ CAVEATS = {
                 "is {n} papers, not the whole field. Somebody outside it may "
                 "well have answered this already. Check before you invest.",
     },
+    "corpus_relative_problem": {
+        # {n}: the card's own library size, as for corpus_relative above.
+        "label": "Only counted within these {n} papers",
+        "text": "These teams all hit this problem within this library of {n} "
+                "papers, not the whole field. Work outside it may already have "
+                "solved it. Check before you invest.",
+    },
     "mixed_fidelity": {
         "label": "Based partly on summaries only",
         "text": "For some of these papers we only had the summary, not the "
@@ -280,7 +287,8 @@ def caveats_for(card: dict[str, Any]) -> list[dict[str, str]]:
                 if n is not None:
                     return v.replace("{n}", str(n))
                 return v.replace("these {n} papers", "this library's papers").replace(
-                    "is {n} papers", "is a limited set of papers")
+                    "is {n} papers", "is a limited set of papers").replace(
+                    "this library of {n} papers", "this library")
             out.append({"code": code, **{k: fill(v) for k, v in t.items()}})
     if is_hole and status:
         cs = CONFIRM_STATUS.get(status)
@@ -421,7 +429,7 @@ def why_it_surfaced(card: dict[str, Any]) -> str:
         s = (f"{who} each reported hitting this in their own work. They did not "
              "build on each other, so this is unlikely to be one group's bad luck.")
         if span:
-            s += f" Their papers span {span} years."
+            s += f" Their papers span {span} {'year' if span == 1 else 'years'}."
         if ft:
             s += (f" We could read {ft} of them in full, which is where teams "
                   "describe what actually went wrong.")
