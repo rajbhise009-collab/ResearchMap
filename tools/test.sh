@@ -31,6 +31,10 @@ test -f "$TMP/repo/tools/test.sh" || { echo "runner mode: untracked files not co
 ln -s "$ROOT/frontend/node_modules" "$TMP/repo/frontend/node_modules"
 mkdir -p "$TMP/home"
 cd "$TMP/repo"
+# runner mode swaps HOME; keep Playwright's already-installed browsers findable
+# (an explicit PLAYWRIGHT_BROWSERS_PATH wins)
+case "$(uname)" in Darwin) _pw="$HOME/Library/Caches/ms-playwright" ;; *) _pw="$HOME/.cache/ms-playwright" ;; esac
+export PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-$_pw}"
 export CI=1 TZ=UTC HOME="$TMP/home"
 # the run's OWN regenerate step (exports, docs numbers, share images)
 "$PY" -c 'import sys; sys.path[:0] = ["tools/grow"]; import run_weekly; run_weekly.regenerate()' > "$TMP/regen.log" 2>&1
