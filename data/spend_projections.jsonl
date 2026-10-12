@@ -47,3 +47,4 @@
 {"ts": 1791811305.9558482, "stage": "embed_fw_ml-fairness", "n_calls": 7, "projected_inr": 0.0454, "multiplier": 1.5, "padded_inr": 0.068, "cumulative_inr": 1204.3728, "cap_inr": 1450.0, "remaining_inr": 245.6272, "allowed": true}
 {"ts": 1791811306.6915972, "stage": "fw_match_ml-fairness", "n_calls": 6, "projected_inr": 0.8881, "multiplier": 2.0, "padded_inr": 1.7762, "cumulative_inr": 1204.4182, "cap_inr": 1450.0, "remaining_inr": 245.5818, "allowed": true}
 {"ts": 1791811451.6792142, "stage": "hole_confirm_ml-fairness", "n_calls": 2, "projected_inr": 0.3028, "multiplier": 2.0, "padded_inr": 0.6057, "cumulative_inr": 1204.9846, "cap_inr": 1450.0, "remaining_inr": 245.0154, "allowed": true}
+{"ts": 1791811629.8721392, "stage": "grow_extract_ml-fairness", "n_calls": 2, "projected_inr": 1.8289, "multiplier": 1.5, "padded_inr": 2.7433, "cumulative_inr": 1205.1908, "cap_inr": 1450.0, "remaining_inr": 244.8092, "allowed": true}
