@@ -1,0 +1,232 @@
+{
+  "paper_id": "openalex:W3190969019",
+  "claims": [
+    {
+      "id": "openalex:W3190969019:c1",
+      "paper_id": "openalex:W3190969019",
+      "text": "In the first RCT, receiving a text reminder boosted first-dose appointment rates within UCLA Health by 6.07 percentage points (an 84% relative increase) within six days.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c2",
+      "paper_id": "openalex:W3190969019",
+      "text": "In the first RCT, receiving a text reminder boosted vaccination rates within UCLA Health by 3.57 percentage points (a 26% relative increase) within four weeks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c3",
+      "paper_id": "openalex:W3190969019",
+      "text": "In the second RCT, receiving a second text reminder increased appointment rates within UCLA Health by 1.65 percentage points within six days.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c4",
+      "paper_id": "openalex:W3190969019",
+      "text": "In the second RCT, receiving a second text reminder increased vaccination rates within UCLA Health by 1.06 percentage points within four weeks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c5",
+      "paper_id": "openalex:W3190969019",
+      "text": "Adding psychological ownership language to the first reminder increased appointment rates at UCLA Health by 1.51 percentage points compared to reminders without ownership language.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c6",
+      "paper_id": "openalex:W3190969019",
+      "text": "Adding psychological ownership language to the first reminder increased vaccination rates at UCLA Health by 1.09 percentage points compared to reminders without ownership language.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c7",
+      "paper_id": "openalex:W3190969019",
+      "text": "Combining the first text reminder with a video-based information intervention produced no statistically significant evidence of an improvement in appointment or vaccination rates relative to reminders without a video.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c8",
+      "paper_id": "openalex:W3190969019",
+      "text": "In the first RCT, text reminders increased vaccinations obtained anywhere (inside or outside UCLA Health) by 2.1 percentage points within four weeks.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c9",
+      "paper_id": "openalex:W3190969019",
+      "text": "In the first RCT, the reminder effect on appointments was 4.4 percentage points larger among participants who received an influenza shot in recent seasons compared to those who did not.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3190969019:c10",
+      "paper_id": "openalex:W3190969019",
+      "text": "In online experiments, the video intervention caused a small, statistically significant increase in self-reported interest in getting the vaccine, whereas ownership language produced no evidence of increasing vaccination intentions.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3190969019:e1",
+      "claim_id": "openalex:W3190969019:c1",
+      "description": "Our OLS regressions estimate that receiving a text reminder boosted appointment rates within six days by 6.07 percentage points... amounting to a relative increase of 84.33%",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3190969019:e2",
+      "claim_id": "openalex:W3190969019:c2",
+      "description": "Our OLS regressions estimate that receiving a text reminder boosted... vaccination rates within four weeks by 3.57 percentage points (Extended Data Table 2), amounting to a relative increase of... 25.71%",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3190969019:e3",
+      "claim_id": "openalex:W3190969019:c3",
+      "description": "Getting a second reminder increased participants’ likelihood of scheduling the first-dose appointment within six days by 1.65 percentage points (53.36%)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3190969019:e4",
+      "claim_id": "openalex:W3190969019:c4",
+      "description": "Getting a second reminder increased participants’ likelihood of... obtaining the first dose at UCLA Health within four weeks by 1.06 percentage points (17.23%), relative to the 3.10% appointment rates and 6.16% vaccination rates in the holdout arm",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3190969019:e5",
+      "claim_id": "openalex:W3190969019:c5",
+      "description": "Within the follow-through reminder arm, adding the ownership language to the reminder further increased appointment and vaccination rates at UCLA Health by 1.51 and 1.09 percentage points, respectively (Extended Data Table 2)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3190969019:e6",
+      "claim_id": "openalex:W3190969019:c6",
+      "description": "Within the follow-through reminder arm, adding the ownership language to the reminder further increased appointment and vaccination rates at UCLA Health by 1.51 and 1.09 percentage points, respectively (Extended Data Table 2)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3190969019:e7",
+      "claim_id": "openalex:W3190969019:c7",
+      "description": "By contrast, we found no evidence that inviting participants to watch the video improved either outcome variable, relative to reminders without a video (Extended Data Table 2).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3190969019:e8",
+      "claim_id": "openalex:W3190969019:c8",
+      "description": "For the first RCT, we find that reminders increased vaccinations anywhere by 2.1 percentage points, relative to a baseline of 31.85% in the holdout arm (OLS regression, B = 0.021, s.e. = 0.004, P < 0.001, n = 93,354)",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3190969019:e9",
+      "claim_id": "openalex:W3190969019:c9",
+      "description": "The average effect of a reminder held for both participants who received the influenza shot... and those who did not... but was larger among the former than the latter group, by 4.4 percentage points for appointments (OLS regression, B = 0.044, s.e. = 0.004, P < 0.001 for the interaction)",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3190969019:e10",
+      "claim_id": "openalex:W3190969019:c10",
+      "description": "In contrast to the patterns observed in the first RCT, the video intervention resulted in a small—but statistically significant—increase in people’s self-reported interest in getting the vaccine; however, we found no evidence that adding ownership language increased vaccination intentions",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3190969019:m1",
+      "paper_id": "openalex:W3190969019",
+      "name": "Sequential randomized controlled trials (RCTs)",
+      "description": "Two sequential large-scale field RCTs were conducted via SMS to test behavioural interventions on COVID-19 vaccine appointment scheduling and uptake at 1 day and 8 days post-eligibility invitation.",
+      "datasets": [
+        "UCLA Health primary and specialty care attributed patient records",
+        "California Immunization Registry (CAIR)"
+      ],
+      "conditions": [
+        "First RCT: Holdout vs Follow-through reminder (2x2 factorial: Basic vs Ownership framing x Link vs No link to 2-minute informational video)",
+        "Second RCT: Holdout vs Follow-through reminder (2x3 factorial: Prosocial vs Personal messaging x Early access framing vs Fresh start framing vs Standard)"
+      ]
+    },
+    {
+      "id": "openalex:W3190969019:m2",
+      "paper_id": "openalex:W3190969019",
+      "name": "Preregistered online experiments on vaccination intentions",
+      "description": "Three randomized online experiments evaluating hypothetical appointment scheduling likelihood, persuasiveness, and vaccination interest in response to reminder interventions.",
+      "datasets": [
+        "Amazon Mechanical Turk",
+        "Prolific Academic"
+      ],
+      "conditions": [
+        "Basic reminder",
+        "Ownership reminder",
+        "Basic reminder with video",
+        "Ownership reminder with video"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3190969019:l1",
+      "paper_id": "openalex:W3190969019",
+      "text": "The RCT patient sample consists of predominantly elderly and white participants and is not representative of broader populations.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3190969019:l2",
+      "paper_id": "openalex:W3190969019",
+      "text": "Less than 21% of the participants in the first RCT opted to watch the linked 2-minute educational video.",
+      "normalized_category": "low-intervention-compliance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3190969019:l3",
+      "paper_id": "openalex:W3190969019",
+      "text": "The effect of receiving a second text reminder on vaccination rates anywhere was not statistically significant at four weeks (P = 0.127).",
+      "normalized_category": "lack-of-statistical-significance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3190969019:l4",
+      "paper_id": "openalex:W3190969019",
+      "text": "Reminders were designed to remove barriers specifically at UCLA Health rather than at a broad set of vaccination locations.",
+      "normalized_category": "intervention-design-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3190969019:l5",
+      "paper_id": "openalex:W3190969019",
+      "text": "Surveys of vaccination intentions do not always reflect real behaviours, yielding discrepancies when compared with actual field uptake.",
+      "normalized_category": "intention-behavior-gap",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3190969019:f1",
+      "paper_id": "openalex:W3190969019",
+      "text": "Investigating when and under what conditions information interventions can successfully overcome vaccine hesitancy.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3190969019:f2",
+      "paper_id": "openalex:W3190969019",
+      "text": "Evaluating behavioral nudge messaging designs aimed at motivating health-related behaviors more broadly, such as scheduling preventive care tests or health program participation.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.592017Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,268 @@
+{
+  "paper_id": "openalex:W2795688818",
+  "claims": [
+    {
+      "id": "openalex:W2795688818:c1",
+      "paper_id": "openalex:W2795688818",
+      "text": "Risk beliefs about infectious disease correlate reliably with getting vaccinated.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c2",
+      "paper_id": "openalex:W2795688818",
+      "text": "Anticipated regret about infectious disease correlates reliably with getting vaccinated.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c3",
+      "paper_id": "openalex:W2795688818",
+      "text": "Low confidence in vaccine effectiveness correlates reliably with not getting vaccinated.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c4",
+      "paper_id": "openalex:W2795688818",
+      "text": "Concern about vaccine safety correlates reliably with not getting vaccinated.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c5",
+      "paper_id": "openalex:W2795688818",
+      "text": "Few randomized trials have successfully changed what people think and feel about vaccines.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c6",
+      "paper_id": "openalex:W2795688818",
+      "text": "Randomized trials that successfully changed thoughts and feelings about vaccines were minimally effective in increasing vaccination uptake.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c7",
+      "paper_id": "openalex:W2795688818",
+      "text": "Social norms are associated with vaccination.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c8",
+      "paper_id": "openalex:W2795688818",
+      "text": "Few interventions have examined whether normative messages increase vaccination uptake.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c9",
+      "paper_id": "openalex:W2795688818",
+      "text": "Altruism can affect intended vaccination behavior in experimental studies using hypothetical scenarios.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c10",
+      "paper_id": "openalex:W2795688818",
+      "text": "Free riding can affect intended vaccination behavior in experimental studies using hypothetical scenarios.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c11",
+      "paper_id": "openalex:W2795688818",
+      "text": "Few randomized trials have tested strategies to change social processes to increase vaccination uptake.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c12",
+      "paper_id": "openalex:W2795688818",
+      "text": "Interventions can facilitate vaccination by building on favorable intentions through reminders, prompts, and primes.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c13",
+      "paper_id": "openalex:W2795688818",
+      "text": "Interventions can facilitate vaccination by reducing barriers through logistics and healthy defaults.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2795688818:c14",
+      "paper_id": "openalex:W2795688818",
+      "text": "Interventions can shape vaccination behavior through incentives, sanctions, and requirements.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2795688818:e1",
+      "claim_id": "openalex:W2795688818:c1",
+      "description": "Hundreds of studies have shown that risk beliefs about infectious disease correlate reliably with getting vaccinated.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2795688818:e2",
+      "claim_id": "openalex:W2795688818:c2",
+      "description": "Hundreds of studies have shown that anticipated regret about infectious disease correlates reliably with getting vaccinated.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2795688818:e3",
+      "claim_id": "openalex:W2795688818:c3",
+      "description": "Hundreds of studies have shown that low confidence in vaccine effectiveness correlates reliably with not getting vaccinated.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2795688818:e4",
+      "claim_id": "openalex:W2795688818:c4",
+      "description": "Hundreds of studies have shown that concern about safety correlates reliably with not getting vaccinated.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2795688818:e5",
+      "claim_id": "openalex:W2795688818:c5",
+      "description": "The authors found that few randomized trials have successfully changed what people think and feel about vaccines.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2795688818:e6",
+      "claim_id": "openalex:W2795688818:c6",
+      "description": "Those few randomized trials that successfully changed thoughts and feelings about vaccines were minimally effective in increasing uptake.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2795688818:e7",
+      "claim_id": "openalex:W2795688818:c7",
+      "description": "Substantial research has shown that social norms are associated with vaccination.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2795688818:e8",
+      "claim_id": "openalex:W2795688818:c8",
+      "description": "Few interventions examined whether normative messages increase vaccination uptake.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2795688818:e9",
+      "claim_id": "openalex:W2795688818:c9",
+      "description": "Many experimental studies have relied on hypothetical scenarios to demonstrate that altruism can affect intended behavior.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2795688818:e10",
+      "claim_id": "openalex:W2795688818:c10",
+      "description": "Many experimental studies have relied on hypothetical scenarios to demonstrate that free riding can affect intended behavior.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2795688818:e11",
+      "claim_id": "openalex:W2795688818:c11",
+      "description": "Few randomized trials have tested strategies to change social processes to increase vaccination uptake.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2795688818:e12",
+      "claim_id": "openalex:W2795688818:c12",
+      "description": "Interventions build on existing favorable intentions by facilitating action through reminders, prompts, and primes.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2795688818:e13",
+      "claim_id": "openalex:W2795688818:c13",
+      "description": "Interventions build on existing favorable intentions by reducing barriers through logistics and healthy defaults.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2795688818:e14",
+      "claim_id": "openalex:W2795688818:c14",
+      "description": "Interventions shape vaccination behavior through incentives, sanctions, and requirements.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2795688818:m1",
+      "paper_id": "openalex:W2795688818",
+      "name": "Psychological Science Synthesis on Vaccination Uptake",
+      "description": "Reviews and synthesizes empirical studies and randomized trials across three propositions to evaluate psychological mechanisms and interventions for vaccination uptake.",
+      "datasets": [],
+      "conditions": [
+        "Vaccines are available and affordable"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2795688818:l1",
+      "paper_id": "openalex:W2795688818",
+      "text": "Few randomized trials have successfully changed what people think and feel about vaccines.",
+      "normalized_category": "lack-of-randomized-trials",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2795688818:l2",
+      "paper_id": "openalex:W2795688818",
+      "text": "Few interventions have examined whether normative messages increase vaccination uptake.",
+      "normalized_category": "scarcity-of-interventions",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2795688818:l3",
+      "paper_id": "openalex:W2795688818",
+      "text": "Many experimental studies demonstrating effects of altruism and free riding rely on hypothetical scenarios rather than actual uptake behavior.",
+      "normalized_category": "hypothetical-scenario-reliance",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2795688818:l4",
+      "paper_id": "openalex:W2795688818",
+      "text": "Few randomized trials have tested strategies to change social processes to increase vaccination uptake.",
+      "normalized_category": "lack-of-randomized-trials",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2795688818:l5",
+      "paper_id": "openalex:W2795688818",
+      "text": "Identification of principles for changing thoughts and feelings to motivate vaccination remains a work in progress.",
+      "normalized_category": "incomplete-theoretical-principles",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2795688818:f1",
+      "paper_id": "openalex:W2795688818",
+      "text": "Identify principles for changing thoughts and feelings to motivate vaccination.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2795688818:f2",
+      "paper_id": "openalex:W2795688818",
+      "text": "Test strategies in randomized trials to examine whether changing social processes increases vaccination uptake.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.590972Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

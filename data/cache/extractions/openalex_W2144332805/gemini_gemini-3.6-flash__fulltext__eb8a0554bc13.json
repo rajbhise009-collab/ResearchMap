@@ -1,0 +1,200 @@
+{
+  "paper_id": "openalex:W2144332805",
+  "claims": [
+    {
+      "id": "openalex:W2144332805:c1",
+      "paper_id": "openalex:W2144332805",
+      "text": "Nudge interventions can be conceptually categorized into three degrees based on their impact on individual decision-making autonomy.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c2",
+      "paper_id": "openalex:W2144332805",
+      "text": "First Degree nudges respect decision-making autonomy and enhance conscious, reflective decision-making.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c3",
+      "paper_id": "openalex:W2144332805",
+      "text": "Second Degree nudges exploit behavioural or volitional limitations to bias choices while remaining uncoverable upon reflection.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c4",
+      "paper_id": "openalex:W2144332805",
+      "text": "Third Degree nudges involve framing strategies, emotional affect, or covert mechanisms that materially obstruct conscious reflection.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c5",
+      "paper_id": "openalex:W2144332805",
+      "text": "The degree of a nudge intervention is distinct from the specific nudging tool deployed.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c6",
+      "paper_id": "openalex:W2144332805",
+      "text": "Nudges targeting individual decision-making are ineffective as sole interventions when problems stem from collective, structural, or environmental causes.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c7",
+      "paper_id": "openalex:W2144332805",
+      "text": "Second and Third Degree nudges can undermine relationships of trust when targets uncover that they are being paternalistically manipulated.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c8",
+      "paper_id": "openalex:W2144332805",
+      "text": "Opt-out mechanisms in nudging discriminate against individuals with lower cognitive capacity, fewer resources, or vulnerable positions.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c9",
+      "paper_id": "openalex:W2144332805",
+      "text": "The cumulative burden of multiple nudges degrades overall individual autonomy over time.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2144332805:c10",
+      "paper_id": "openalex:W2144332805",
+      "text": "Combining nudges with traditional regulatory mechanisms creates clashes of regulatory logic that can undermine the effectiveness of both.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2144332805:e1",
+      "claim_id": "openalex:W2144332805:c1",
+      "description": "Baldwin defines a three-tiered taxonomy based on impact on target autonomy: First Degree (simple information/reminders), Second Degree (exploiting inertia/biases), and Third Degree (framing/emotional manipulation/covert techniques).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2144332805:e2",
+      "claim_id": "openalex:W2144332805:c2",
+      "description": "The author provides examples such as health warnings on cigarette packs or tax return reminders that supply information to enhance rational, conscious choices without substituting judgment.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2144332805:e3",
+      "claim_id": "openalex:W2144332805:c3",
+      "description": "Default opt-out regimes and physical layout designs are shown to shape behavior by relying on inertia, though the target could uncover the nudge and its effect upon reflection.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2144332805:e4",
+      "claim_id": "openalex:W2144332805:c4",
+      "description": "The author illustrates Third Degree nudges using shocking imagery, fear-based framing, or unannounced subliminal messaging that emotionally or cognitively blocks reflective assessment.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2144332805:e5",
+      "claim_id": "openalex:W2144332805:c5",
+      "description": "Information provision is demonstrated across all three degrees: simple nutritional data (First Degree), biased defaults (Second Degree), and emotive graphic corpses (Third Degree).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2144332805:e6",
+      "claim_id": "openalex:W2144332805:c6",
+      "description": "Evidence from public health shows obesity results from obesogenic environments, food marketing, and economic conditions rather than aggregate individual decision failures alone.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2144332805:e7",
+      "claim_id": "openalex:W2144332805:c7",
+      "description": "In medical contexts, patient perceptions of doctor nudges as scare tactics or covert policing can alienate patients and cause them to withhold diagnostic information.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2144332805:e8",
+      "claim_id": "openalex:W2144332805:c8",
+      "description": "Online mouse clicks, written forms, or physical distance requirements disproportionately burden individuals lacking internet access, illiterate populations, or persons with mobility issues.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2144332805:e9",
+      "claim_id": "openalex:W2144332805:c9",
+      "description": "The paper illustrates how an online shopping interface requiring dozens of opt-outs generates decision fatigue and infantilisation, eroding self-determination over repeated encounters.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2144332805:e10",
+      "claim_id": "openalex:W2144332805:c10",
+      "description": "Traditional command regulation presumes transparent standards and rational agents, which directly conflicts with the covert paternalistic mechanisms of Second and Third Degree nudges.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2144332805:m1",
+      "paper_id": "openalex:W2144332805",
+      "name": "Three degrees of nudge conceptual taxonomy",
+      "description": "A conceptual framework categorizing behavioural change interventions into three distinct degrees according to their degree of impact on personal autonomy and capacity for reflection.",
+      "datasets": [],
+      "conditions": [
+        "Analysis of public policy and regulation",
+        "Evaluation of behavioural interventions and choice architecture"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2144332805:l1",
+      "paper_id": "openalex:W2144332805",
+      "text": "Empirical evidence regarding the impact and effectiveness profiles of different nudge tools across varied target capacities and intentions remains thin on the ground.",
+      "normalized_category": "lack-of-empirical-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2144332805:l2",
+      "paper_id": "openalex:W2144332805",
+      "text": "It is difficult to state in precise terms the exact universal conditions under which nudging can be deployed both effectively and acceptably.",
+      "normalized_category": "lack-of-formal-prescriptive-rules",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2144332805:l3",
+      "paper_id": "openalex:W2144332805",
+      "text": "Prior nudge scholarship and policymaking adopt overly broad definitions of nudge that conflate conscious think strategies with automated System 1 manipulations.",
+      "normalized_category": "conceptual-ambiguity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2144332805:l4",
+      "paper_id": "openalex:W2144332805",
+      "text": "There is a paucity of empirical studies demonstrating that significant population-level behaviour change can be achieved by non-regulatory nudge strategies alone.",
+      "normalized_category": "insufficient-empirical-support",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2144332805:f1",
+      "paper_id": "openalex:W2144332805",
+      "text": "Governments need to establish rigorous and broad-based empirical studies specifically designed to evaluate behaviour change interventions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.596797Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

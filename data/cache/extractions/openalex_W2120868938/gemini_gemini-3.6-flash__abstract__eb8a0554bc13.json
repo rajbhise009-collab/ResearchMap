@@ -1,0 +1,124 @@
+{
+  "paper_id": "openalex:W2120868938",
+  "claims": [
+    {
+      "id": "openalex:W2120868938:c1",
+      "paper_id": "openalex:W2120868938",
+      "text": "Regulatory limits on credit card fees under the CARD Act reduced overall borrowing costs by an annualized 1.6% of average daily balances.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120868938:c2",
+      "paper_id": "openalex:W2120868938",
+      "text": "Regulatory limits on credit card fees reduced borrowing costs by more than 5.3% for consumers with FICO scores below 660.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120868938:c3",
+      "paper_id": "openalex:W2120868938",
+      "text": "Regulatory limits on credit card fees caused no offsetting increase in interest charges.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120868938:c4",
+      "paper_id": "openalex:W2120868938",
+      "text": "Regulatory limits on credit card fees caused no reduction in the volume of credit.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120868938:c5",
+      "paper_id": "openalex:W2120868938",
+      "text": "The CARD Act saved consumers an estimated $11.9 billion per year.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120868938:c6",
+      "paper_id": "openalex:W2120868938",
+      "text": "Disclosing interest savings from paying off balances in 36 months produced a small increase in the share of accounts making the 36-month payment amount.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2120868938:c7",
+      "paper_id": "openalex:W2120868938",
+      "text": "Disclosing interest savings from paying off balances in 36 months produced no evidence of a change in overall payments.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2120868938:e1",
+      "claim_id": "openalex:W2120868938:c1",
+      "description": "Difference-in-differences estimates show regulatory limits on credit card fees reduced overall borrowing costs by an annualized 1.6% of average daily balances.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2120868938:e2",
+      "claim_id": "openalex:W2120868938:c2",
+      "description": "Subgroup analysis indicates a borrowing cost decline of more than 5.3% for consumers with FICO scores below 660.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2120868938:e3",
+      "claim_id": "openalex:W2120868938:c3",
+      "description": "Analysis finds no evidence of an offsetting increase in interest charges following the CARD Act implementation.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2120868938:e4",
+      "claim_id": "openalex:W2120868938:c4",
+      "description": "Analysis finds no evidence of a reduction in the volume of credit following the CARD Act implementation.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2120868938:e5",
+      "claim_id": "openalex:W2120868938:c5",
+      "description": "Aggregated estimates calculate that the CARD Act saved consumers $11.9 billion a year.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2120868938:e6",
+      "claim_id": "openalex:W2120868938:c6",
+      "description": "Evaluation of the 36-month payoff disclosure nudge detected a small increase in the share of accounts making the 36-month payment value.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2120868938:e7",
+      "claim_id": "openalex:W2120868938:c7",
+      "description": "Analysis detected no evidence of a change in overall payments resulting from the 36-month payoff disclosure nudge.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2120868938:m1",
+      "paper_id": "openalex:W2120868938",
+      "name": "Difference-in-differences research design",
+      "description": "Compares changes in outcomes over time for regulated consumer credit cards to unregulated small business credit cards using account-level panel data.",
+      "datasets": [
+        "Panel data set covering 160 million credit card accounts"
+      ],
+      "conditions": [
+        "Consumer credit cards subject to 2009 CARD Act regulations",
+        "Small business credit cards not covered by the 2009 CARD Act"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-12T14:36:26.592585Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W2145309624",
+  "claims": [
+    {
+      "id": "openalex:W2145309624:c1",
+      "paper_id": "openalex:W2145309624",
+      "text": "Labeling environmental surcharges as either an earmarked tax or an offset changes choice preferences for self-identified Republicans and Independents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2145309624:c2",
+      "paper_id": "openalex:W2145309624",
+      "text": "Labeling environmental surcharges as either an earmarked tax or an offset does not affect the preferences of self-identified Democrats.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2145309624:c3",
+      "paper_id": "openalex:W2145309624",
+      "text": "Attribute framing changes the order in which decision-makers pose internal queries supporting alternative options.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2145309624:c4",
+      "paper_id": "openalex:W2145309624",
+      "text": "The effect of attribute labeling on internal query order depends on the mental representations of taxes or offsets held by individuals with different political affiliations.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2145309624:e1",
+      "claim_id": "openalex:W2145309624:c1",
+      "description": "In an experiment with 898 Americans choosing between otherwise identical products or services with a carbon dioxide surcharge, cost framing altered choices for Republicans and Independents.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2145309624:e2",
+      "claim_id": "openalex:W2145309624:c2",
+      "description": "In an experiment with 898 Americans choosing between products with a carbon dioxide surcharge, cost framing did not affect Democrats' preferences.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2145309624:e3",
+      "claim_id": "openalex:W2145309624:c3",
+      "description": "Query theory analysis demonstrated that attribute framing alters the sequence of internal queries generated during the choice process.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2145309624:e4",
+      "claim_id": "openalex:W2145309624:c4",
+      "description": "Observed query order shifts varied according to political affiliation and corresponding representations of taxes versus offsets.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2145309624:m1",
+      "paper_id": "openalex:W2145309624",
+      "name": "Attribute framing choice experiment with query theory analysis",
+      "description": "Participants made choices between products or services featuring a carbon dioxide surcharge framed either as a tax or an offset, with query theory used to trace the order of internal decision queries.",
+      "datasets": [],
+      "conditions": [
+        "earmarked tax framing",
+        "offset framing",
+        "self-identified Republican affiliation",
+        "self-identified Independent affiliation",
+        "self-identified Democrat affiliation"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-12T14:36:26.599141Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,97 @@
+{
+  "paper_id": "openalex:W2169683662",
+  "claims": [
+    {
+      "id": "openalex:W2169683662:c1",
+      "paper_id": "openalex:W2169683662",
+      "text": "The influenza vaccination rate among control condition employees who received reminder mailings was 33.1%.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2169683662:c2",
+      "paper_id": "openalex:W2169683662",
+      "text": "Employees who received a prompt to write down only a planned vaccination date had a vaccination rate 1.5 percentage points higher than the control group.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2169683662:c3",
+      "paper_id": "openalex:W2169683662",
+      "text": "The 1.5 percentage point increase in vaccination rate from the date-only prompt was not statistically significant.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2169683662:c4",
+      "paper_id": "openalex:W2169683662",
+      "text": "Employees who received a prompt to write down both a planned vaccination date and time had a 4.2 percentage point higher vaccination rate than the control group.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2169683662:c5",
+      "paper_id": "openalex:W2169683662",
+      "text": "The 4.2 percentage point increase in vaccination rate from the date and time prompt was statistically significant.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2169683662:e1",
+      "claim_id": "openalex:W2169683662:c1",
+      "description": "The vaccination rate among control condition employees was 33.1%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2169683662:e2",
+      "claim_id": "openalex:W2169683662:c2",
+      "description": "Employees who received the prompt to write down just a date had a vaccination rate 1.5 percentage points higher than the control group",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2169683662:e3",
+      "claim_id": "openalex:W2169683662:c3",
+      "description": "Employees who received the prompt to write down just a date had a vaccination rate 1.5 percentage points higher than the control group, a difference that is not statistically significant.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2169683662:e4",
+      "claim_id": "openalex:W2169683662:c4",
+      "description": "Employees who received the more specific prompt to write down both a date and a time had a 4.2 percentage point higher vaccination rate",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2169683662:e5",
+      "claim_id": "openalex:W2169683662:c5",
+      "description": "Employees who received the more specific prompt to write down both a date and a time had a 4.2 percentage point higher vaccination rate, a difference that is both statistically significant and of meaningful magnitude.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2169683662:m1",
+      "paper_id": "openalex:W2169683662",
+      "name": "Randomized field experiment on implementation intentions prompts",
+      "description": "A field experiment measuring the impact of reminder mailings containing prompts to write down planned vaccination dates and times on employee influenza vaccination receipt at on-site clinics.",
+      "datasets": [
+        "Employee vaccination records from a large firm offering free on-site clinics"
+      ],
+      "conditions": [
+        "Control condition receiving reminder mailings with clinic times and locations",
+        "Treatment condition receiving reminder mailings with a prompt to write down a planned vaccination date",
+        "Treatment condition receiving reminder mailings with a prompt to write down a planned vaccination date and time"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-12T14:36:26.598961Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

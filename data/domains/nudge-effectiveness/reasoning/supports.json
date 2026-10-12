@@ -1,0 +1,95 @@
+{
+  "n": 9,
+  "items": [
+    {
+      "from_claim_id": "openalex:W3121878117:c1",
+      "to_claim_id": "openalex:W3125531654:c2",
+      "similarity": 0.8426573872566223,
+      "a_paper_id": "openalex:W3121878117",
+      "a_text": "Default options can lead to striking differences in preferences.",
+      "b_paper_id": "openalex:W3125531654",
+      "b_text": "Designating an option as the default increases the frequency with which it is chosen relative to non-default options.",
+      "explanation": "Both claims assert that default options have a strong effect on choices, with Claim B specifying that setting an option as the default increases how often it is selected."
+    },
+    {
+      "from_claim_id": "openalex:W1481908410:c3",
+      "to_claim_id": "openalex:W1635891352:c1",
+      "similarity": 0.8365178108215332,
+      "a_paper_id": "openalex:W1481908410",
+      "a_text": "Choice architecture can guide individuals toward beneficial decisions without restricting their freedom of choice.",
+      "b_paper_id": "openalex:W1635891352",
+      "b_text": "Choice architecture can be used to nudge individuals into making better decisions than they would otherwise make.",
+      "explanation": "Both claims affirm that choice architecture can be effectively utilized to steer individuals toward making better, more beneficial decisions."
+    },
+    {
+      "from_claim_id": "openalex:W1683496648:c3",
+      "to_claim_id": "openalex:W2576088228:c3",
+      "similarity": 0.8225701451301575,
+      "a_paper_id": "openalex:W1683496648",
+      "a_text": "Nudging is questionable as an effective means of bringing about lasting behaviour change.",
+      "b_paper_id": "openalex:W2576088228",
+      "b_text": "It is unclear how permanent the effects of nudging interventions are.",
+      "explanation": "Both claims share the finding that the long-term persistence and permanence of behavior change induced by nudging is uncertain or doubtful."
+    },
+    {
+      "from_claim_id": "openalex:W2143855644:c6",
+      "to_claim_id": "openalex:W2346094809:c2",
+      "similarity": 0.8174441456794739,
+      "a_paper_id": "openalex:W2143855644",
+      "a_text": "In the field study, snack display manipulations had no significant main or interactive effects on the sales of unhealthy snacks or total snacks.",
+      "b_paper_id": "openalex:W2346094809",
+      "b_text": "Repositioning healthy foods at the cash register desk did not result in fewer unhealthy products being sold compared to baseline.",
+      "explanation": "Both studies independently find that display and placement nudges failed to decrease the sales of unhealthy food items."
+    },
+    {
+      "from_claim_id": "openalex:W2147478345:c1",
+      "to_claim_id": "openalex:W3125531654:c6",
+      "similarity": 0.8164951801300049,
+      "a_paper_id": "openalex:W2147478345",
+      "a_text": "A descriptive normative message detailing average neighborhood usage produces energy savings in households with high baseline energy consumption.",
+      "b_paper_id": "openalex:W3125531654",
+      "b_text": "Informing households about relative energy usage reduced average energy use by 2 percent, but consumption changes diverged based on political affiliation.",
+      "explanation": "Both claims find that providing households with comparative information about others' energy use results in reductions in energy consumption."
+    },
+    {
+      "from_claim_id": "openalex:W2576088228:c1",
+      "to_claim_id": "openalex:W3113184602:c1",
+      "similarity": 0.81645667552948,
+      "a_paper_id": "openalex:W2576088228",
+      "a_text": "Nudging interventions are broadly defined as a rearrangement of a choice context that gently suggests a specific choice.",
+      "b_paper_id": "openalex:W3113184602",
+      "b_text": "Nudges influence behavior by altering the decision-making environment without restricting options or altering financial incentives.",
+      "explanation": "Both claims provide compatible and mutually reinforcing definitions of nudges as interventions that alter the decision-making context to gently guide behavior without limiting choice."
+    },
+    {
+      "from_claim_id": "openalex:W2236924981:c4",
+      "to_claim_id": "openalex:W3124550172:c2",
+      "similarity": 0.8101022243499756,
+      "a_paper_id": "openalex:W2236924981",
+      "a_text": "Policies that raise retirement contributions if individuals take no action, such as automatic employer contributions, increase wealth accumulation substantially.",
+      "b_paper_id": "openalex:W3124550172",
+      "b_text": "A substantial fraction of 401(k) participants hired under automatic enrollment retain the default contribution rate.",
+      "explanation": "The finding that participants tend to stick with default contribution rates under automatic enrollment mutually reinforces the claim that automatic contribution policies substantially increase wealth accumulation."
+    },
+    {
+      "from_claim_id": "openalex:W2147478345:c3",
+      "to_claim_id": "openalex:W2161535853:c3",
+      "similarity": 0.8075552582740784,
+      "a_paper_id": "openalex:W2147478345",
+      "a_text": "Adding an injunctive message conveying social approval or disapproval eliminates the boomerang effect produced by descriptive normative messages.",
+      "b_paper_id": "openalex:W2161535853",
+      "b_text": "Normative information in persuasive appeals can normalize either desirable or undesirable conduct.",
+      "explanation": "Both claims align on the principle that descriptive normative information can unintentionally promote undesirable behavior (the boomerang effect), with Claim A demonstrating how to mitigate the exact risk identified in Claim B."
+    },
+    {
+      "from_claim_id": "openalex:W1497087006:c1",
+      "to_claim_id": "openalex:W2910229398:c7",
+      "similarity": 0.8017181158065796,
+      "a_paper_id": "openalex:W1497087006",
+      "a_text": "Health labelling at point of purchase is associated with healthier food choice.",
+      "b_paper_id": "openalex:W2910229398",
+      "b_text": "Front-of-package labels have positive but smaller effects on healthy choice compared to the identification of healthy options.",
+      "explanation": "Both claims agree that health labels positively influence consumers to make healthier food choices."
+    }
+  ]
+}

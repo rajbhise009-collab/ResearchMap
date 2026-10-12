@@ -1,0 +1,117 @@
+{
+  "paper_id": "openalex:W2096452841",
+  "claims": [
+    {
+      "id": "openalex:W2096452841:c1",
+      "paper_id": "openalex:W2096452841",
+      "text": "Psychological principles governing decision problem perception and evaluation of probabilities and outcomes produce predictable shifts of preference when problems are framed differently.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2096452841:c2",
+      "paper_id": "openalex:W2096452841",
+      "text": "Reversals of preference occur in choices regarding hypothetical monetary outcomes depending on framing.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2096452841:c3",
+      "paper_id": "openalex:W2096452841",
+      "text": "Reversals of preference occur in choices regarding real monetary outcomes depending on framing.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2096452841:c4",
+      "paper_id": "openalex:W2096452841",
+      "text": "Reversals of preference occur in choices regarding questions pertaining to the loss of human lives depending on framing.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2096452841:c5",
+      "paper_id": "openalex:W2096452841",
+      "text": "The effects of frames on decision preferences are analogous to the effects of perspectives on perceptual appearance.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2096452841:c6",
+      "paper_id": "openalex:W2096452841",
+      "text": "The dependence of preferences on the formulation of decision problems poses a significant challenge to the theory of rational choice.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2096452841:e1",
+      "claim_id": "openalex:W2096452841:c1",
+      "description": "The authors state that psychological principles governing perception of decision problems and evaluation of probabilities and outcomes produce predictable shifts of preference under different frames.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2096452841:e2",
+      "claim_id": "openalex:W2096452841:c2",
+      "description": "Reversals of preference were demonstrated in choices regarding hypothetical monetary outcomes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2096452841:e3",
+      "claim_id": "openalex:W2096452841:c3",
+      "description": "Reversals of preference were demonstrated in choices regarding real monetary outcomes.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2096452841:e4",
+      "claim_id": "openalex:W2096452841:c4",
+      "description": "Reversals of preference were demonstrated in choices regarding questions pertaining to the loss of human lives.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2096452841:e5",
+      "claim_id": "openalex:W2096452841:c5",
+      "description": "The effects of frames on preferences are compared to the effects of perspectives on perceptual appearance.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2096452841:e6",
+      "claim_id": "openalex:W2096452841:c6",
+      "description": "The authors note that the dependence of preferences on the formulation of decision problems is a significant concern for the theory of rational choice.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2096452841:m1",
+      "paper_id": "openalex:W2096452841",
+      "name": "Decision problem framing experiments",
+      "description": "Evaluating shifts and reversals in choice preferences across alternative formulations of identical decision problems.",
+      "datasets": [],
+      "conditions": [
+        "hypothetical monetary outcomes",
+        "real monetary outcomes",
+        "loss of human lives"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2096452841:l1",
+      "paper_id": "openalex:W2096452841",
+      "text": "The theory of rational choice fails to account for the dependence of preferences on the formulation of decision problems.",
+      "normalized_category": "rational-choice-inadequacy",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-12T14:36:26.598029Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

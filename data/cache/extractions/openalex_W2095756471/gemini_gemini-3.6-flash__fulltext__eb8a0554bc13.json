@@ -1,0 +1,234 @@
+{
+  "paper_id": "openalex:W2095756471",
+  "claims": [
+    {
+      "id": "openalex:W2095756471:c1",
+      "paper_id": "openalex:W2095756471",
+      "text": "Monthly reminder messages increased total savings balances by 6% across pooled field experiment samples.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c2",
+      "paper_id": "openalex:W2095756471",
+      "text": "Monthly reminders increased the likelihood of clients reaching their savings goal by 3.1 percentage points.",
+      "type": "finding",
+      "confidence": 1.0,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c3",
+      "paper_id": "openalex:W2095756471",
+      "text": "Reminders that mentioned a specific expenditure goal increased savings balances by approximately 16% relative to no reminders.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c4",
+      "paper_id": "openalex:W2095756471",
+      "text": "Reminders that did not mention a specific expenditure goal did not have a statistically significant effect on savings amounts in Peru.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c5",
+      "paper_id": "openalex:W2095756471",
+      "text": "Visual treatments depicting the client's goal, such as photos or puzzle pieces, had no statistically significant impact on savings.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c6",
+      "paper_id": "openalex:W2095756471",
+      "text": "Reminders produced a larger increase in savings balances for individuals identified ex-ante as time-inconsistent.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c7",
+      "paper_id": "openalex:W2095756471",
+      "text": "Varying reminder framing between gain and loss language did not generate statistically significant differences in savings outcomes.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c8",
+      "paper_id": "openalex:W2095756471",
+      "text": "Sending late reminders to clients who missed deposit dates had no statistically significant additive effect on savings.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c9",
+      "paper_id": "openalex:W2095756471",
+      "text": "Reminders in Bolivia significantly increased savings only when they mentioned financial incentives alongside the savings goal.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2095756471:c10",
+      "paper_id": "openalex:W2095756471",
+      "text": "Limited attention to future lumpy expenditures theoretically leads to undersaving and reduced intertemporal consumption smoothing.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2095756471:e1",
+      "claim_id": "openalex:W2095756471:c1",
+      "description": "Pooled regression results show clients receiving monthly reminders saved 6% more than those who did not (coefficient 0.063, p = 0.079 without baseline controls; coefficient 0.065, p = 0.065 with baseline controls).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2095756471:e2",
+      "claim_id": "openalex:W2095756471:c2",
+      "description": "Clients receiving reminders were 3.1 percentage points more likely to reach their savings goal by the goal date (p < 0.01).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2095756471:e3",
+      "claim_id": "openalex:W2095756471:c3",
+      "description": "In Peru, specific expenditure-focused reminders increased log amount saved by 0.155 (p < 0.01) relative to no reminders.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2095756471:e4",
+      "claim_id": "openalex:W2095756471:c4",
+      "description": "In Peru, standard reminders that did not focus on a specific expenditure had a coefficient of -0.007 (SE = 0.059) on log amount saved.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2095756471:e5",
+      "claim_id": "openalex:W2095756471:c5",
+      "description": "In Peru, puzzle of goal had a coefficient of -0.018 (SE = 0.042) and photo of goal had a coefficient of -0.043 (SE = 0.046) on log amount saved, both statistically insignificant.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2095756471:e6",
+      "claim_id": "openalex:W2095756471:c6",
+      "description": "The interaction term between Any Reminder and Time Inconsistent was positive and statistically significant for savings balances (coefficient 0.472, p = 0.07; 0.548 with controls, p < 0.05).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2095756471:e7",
+      "claim_id": "openalex:W2095756471:c7",
+      "description": "Empirical tests showed no strong evidence of differential effects of loss- versus gain-framed reminder messages on savings across experimental sites.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2095756471:e8",
+      "claim_id": "openalex:W2095756471:c8",
+      "description": "The authors found no evidence that late reminder messages had an additive effect on savings outcomes relative to regular reminders.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2095756471:e9",
+      "claim_id": "openalex:W2095756471:c9",
+      "description": "In Bolivia, reminders that mentioned the life insurance incentive significantly increased savings, while reminders omitting the financial incentive had no statistically significant effect.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2095756471:e10",
+      "claim_id": "openalex:W2095756471:c10",
+      "description": "Theoretical derivations demonstrate that an agent attending to future lumpy expenditures with probability theta < 1 expects a negative savings rate (E[s*] < 0) compared to full attention where s* = 0.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2095756471:m1",
+      "paper_id": "openalex:W2095756471",
+      "name": "Multi-site Randomized Controlled Trial of Savings Reminders",
+      "description": "Randomized evaluation testing text message and mail reminders with varied timing, framing, and content across three partner banks in Bolivia, Peru, and the Philippines.",
+      "datasets": [
+        "First Valley Bank Gihandom savings data (Philippines)",
+        "Caja de Ica Plan Ahorro savings data (Peru)",
+        "Ecofuturo Bank Ecoaguinaldo savings data (Bolivia)"
+      ],
+      "conditions": [
+        "No reminder control group",
+        "Regular monthly reminder",
+        "Late reminder conditional on missed deposit",
+        "Gain vs. loss framing",
+        "Specific expenditure goal mention vs. standard boilerplate reminder",
+        "Financial incentive mention vs. non-incentive reminder",
+        "Visual goal reminders (photo, puzzle, pen)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2095756471:l1",
+      "paper_id": "openalex:W2095756471",
+      "text": "The theoretical model does not account for consumer awareness of limited attention or market competition for limited attention.",
+      "normalized_category": "model-scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2095756471:l2",
+      "paper_id": "openalex:W2095756471",
+      "text": "The experimental data do not cover household full balance sheets, making it impossible to determine if reminders shifted total savings or crowded out savings elsewhere.",
+      "normalized_category": "unobserved-balance-sheet",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2095756471:l3",
+      "paper_id": "openalex:W2095756471",
+      "text": "The sample consists solely of individuals who opened a savings account voluntarily, leaving open whether attention treatments affect non-savers.",
+      "normalized_category": "sample-selection",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2095756471:l4",
+      "paper_id": "openalex:W2095756471",
+      "text": "Direct mail reminders incurred delivery costs of nearly one dollar per letter in Peru, rendering them not cost-effective for small-balance accounts.",
+      "normalized_category": "cost-effectiveness-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2095756471:l5",
+      "paper_id": "openalex:W2095756471",
+      "text": "Standard intertemporal choice models cannot reconcile observed borrowing and saving patterns without positing implausibly high short-term discount rates.",
+      "normalized_category": "theoretical-explanatory-gap",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2095756471:f1",
+      "paper_id": "openalex:W2095756471",
+      "text": "Investigate whether present-biased attention and present-biased preferences coexist, correlate, or dominate across different decision domains.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2095756471:f2",
+      "paper_id": "openalex:W2095756471",
+      "text": "Measure comprehensive balance sheets to test whether reminders crowd out alternative savings instruments or induce borrowing.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2095756471:f3",
+      "paper_id": "openalex:W2095756471",
+      "text": "Study whether firms compete for consumer attention and whether lenders exploit inattention by providing on-demand financing tied to specific expenditures.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2095756471:f4",
+      "paper_id": "openalex:W2095756471",
+      "text": "Evaluate the dynamics of reminder frequency and whether repeated reminders foster habit formation or cause consumers to tune out.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.591483Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,162 @@
+{
+  "paper_id": "openalex:W3092799097",
+  "claims": [
+    {
+      "id": "openalex:W3092799097:c1",
+      "paper_id": "openalex:W3092799097",
+      "text": "For all encounters, the intervention integrating machine learning mortality predictions with behavioral nudges increased serious illness conversation rates from 1.3% in the control group to 4.6% in the intervention group (adjusted difference in percentage points, 3.3; 95% CI, 2.3-4.5; P < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3092799097:c2",
+      "paper_id": "openalex:W3092799097",
+      "text": "Among high-risk patient encounters, the intervention increased serious illness conversation rates from 3.6% in the control group to 15.2% in the intervention group (adjusted difference in percentage points, 11.6; 95% CI, 8.2-12.5; P < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3092799097:c3",
+      "paper_id": "openalex:W3092799097",
+      "text": "For all encounters, advance care planning conversations were conducted in 1.9% of control encounters compared with 4.9% of intervention encounters (adjusted difference in percentage points, 3.0; 95% CI, 2.1-4.1; P = .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3092799097:c4",
+      "paper_id": "openalex:W3092799097",
+      "text": "Among high-risk patient encounters, advance care planning conversations were conducted in 5.8% of control encounters compared with 17.5% of intervention encounters (adjusted difference in percentage points, 11.7; 95% CI, 8.4-15.7; P < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3092799097:c5",
+      "paper_id": "openalex:W3092799097",
+      "text": "The intervention produced an off-target increase of nearly 2 percentage points in serious illness conversations among patients who were not classified as high risk by the algorithm.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3092799097:c6",
+      "paper_id": "openalex:W3092799097",
+      "text": "Oncologists correctly identify fewer than half of their patients who will die within 6 to 12 months.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3092799097:e1",
+      "claim_id": "openalex:W3092799097:c1",
+      "description": "Among all patients, SICs were conducted in 155 of 12 170 control encounters (1.3%) and 632 of 13 889 intervention encounters (4.6%). In adjusted analyses of all patients, the intervention led to a significant increase in the SIC rate (adjusted difference in percentage points, 3.3; 95% CI, 2.3-4.5; P < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3092799097:e2",
+      "claim_id": "openalex:W3092799097:c2",
+      "description": "Among high-risk patients, SICs were conducted in 77 of 2125 control encounters (3.6%) and 304 of 1999 intervention encounters (15.2%). In adjusted analyses of 4124 high-risk patient encounters, there was a significant increase in the SIC rate (adjusted difference in percentage points, 11.6; 95% CI, 8.2-12.5; P < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3092799097:e3",
+      "claim_id": "openalex:W3092799097:c3",
+      "description": "Among all patients, ACPs were conducted in 231 of 12 170 control encounters (1.9%) and 680 of 13 889 intervention encounters (4.9%). In adjusted analyses of all patients, the intervention led to a significant increase in the ACP rate (adjusted difference in percentage points, 3.0; 95% CI, 2.1-4.1; P = .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3092799097:e4",
+      "claim_id": "openalex:W3092799097:c4",
+      "description": "Among high-risk patients, ACPs were conducted in 124 of 2125 control encounters (5.8%) and 350 of 1999 intervention encounters (17.5%). In adjusted analyses of high-risk patients, the intervention led to a significant increase in the ACP rate (adjusted difference in percentage points, 11.7; 95% CI, 8.4-15.7; P < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3092799097:e5",
+      "claim_id": "openalex:W3092799097:c5",
+      "description": "Although our intervention effect was strongest in the high-risk patients flagged by the algorithm, we still detected an increase of nearly 2 percentage points in SICs among patients who were not deemed high-risk by the algorithm.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3092799097:e6",
+      "claim_id": "openalex:W3092799097:c6",
+      "description": "Citing references 11 and 12: 'First, oncologists correctly identify fewer than half of their patients who will die within 6 to 12 months.'",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3092799097:m1",
+      "paper_id": "openalex:W3092799097",
+      "name": "Stepped-wedge cluster randomized clinical trial of machine learning mortality predictions combined with behavioral nudges",
+      "description": "Evaluated a multimodal clinician-directed intervention consisting of weekly performance feedback with peer comparisons, EHR dashboard lists of high-risk 180-day mortality patients identified by an ML algorithm, and appointment-day opt-out text reminders across 5 four-week wedges.",
+      "datasets": [
+        "University of Pennsylvania Health System electronic health record data"
+      ],
+      "conditions": [
+        "9 medical oncology clinics grouped into 8 clinic groups",
+        "78 oncology clinicians",
+        "14,607 patients across 26,059 encounters",
+        "High-risk defined as >=10% predicted 180-day mortality risk",
+        "Up to 6 high-risk patients listed per clinician per week",
+        "Text message reminder opt-out defaults"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3092799097:l1",
+      "paper_id": "openalex:W3092799097",
+      "text": "The study was conducted within a single academic health system, and the participants may not be representative of the general population of oncologists or patients with cancer.",
+      "normalized_category": "single-center-study",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3092799097:l2",
+      "paper_id": "openalex:W3092799097",
+      "text": "Early advance care planning and serious illness conversations were evaluated as surrogate measures rather than longer-term patient clinical or quality-of-life outcomes.",
+      "normalized_category": "surrogate-endpoints",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3092799097:l3",
+      "paper_id": "openalex:W3092799097",
+      "text": "The multicomponent nature of the intervention prevents disentangling the specific effects of individual components such as peer comparisons, high-risk lists, or opt-out text messages.",
+      "normalized_category": "unisolated-intervention-components",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3092799097:l4",
+      "paper_id": "openalex:W3092799097",
+      "text": "Oncologists correctly identify fewer than half of their patients who will die within 6 to 12 months, leading to overoptimistic assessments of short-term mortality risk and inadequate identification of patients needing timely discussions.",
+      "normalized_category": "clinician-prognostication-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3092799097:f1",
+      "paper_id": "openalex:W3092799097",
+      "text": "Conduct longer-term studies to determine clinical and quality-of-life outcomes associated with serious illness conversations prompted by algorithm-based interventions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3092799097:f2",
+      "paper_id": "openalex:W3092799097",
+      "text": "Use head-to-head comparisons to determine which specific intervention components deliver the most benefit.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3092799097:f3",
+      "paper_id": "openalex:W3092799097",
+      "text": "Evaluate how an integrated EHR-based mortality prediction tool can be generalized to other health systems.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.596160Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

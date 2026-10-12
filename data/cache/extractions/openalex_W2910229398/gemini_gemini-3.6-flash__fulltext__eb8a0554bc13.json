@@ -1,0 +1,253 @@
+{
+  "paper_id": "openalex:W2910229398",
+  "claims": [
+    {
+      "id": "openalex:W2910229398:c1",
+      "paper_id": "openalex:W2910229398",
+      "text": "Interpretive nutrient-specific front-of-package labels significantly decrease consumers' attention to the Nutrition Facts Panel.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c2",
+      "paper_id": "openalex:W2910229398",
+      "text": "Interpretive summary indicator labels significantly decrease consumers' attention to the Nutrition Facts Panel.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c3",
+      "paper_id": "openalex:W2910229398",
+      "text": "Interpretive nutrient-specific labels increase consumers' overall healthfulness perceptions of food products.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c4",
+      "paper_id": "openalex:W2910229398",
+      "text": "Interpretive nutrient-specific labels increase the perceived healthfulness of vice products.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c5",
+      "paper_id": "openalex:W2910229398",
+      "text": "Interpretive labels negatively influence consumers' tastiness evaluations of labeled products.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c6",
+      "paper_id": "openalex:W2910229398",
+      "text": "Interpretive summary indicator labels improve consumers' ability to identify healthier food options.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c7",
+      "paper_id": "openalex:W2910229398",
+      "text": "Front-of-package labels have positive but smaller effects on healthy choice compared to the identification of healthy options.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c8",
+      "paper_id": "openalex:W2910229398",
+      "text": "Front-of-package labels have no statistically significant overall effect on actual food consumption across all three label types.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c9",
+      "paper_id": "openalex:W2910229398",
+      "text": "Health claims significantly increase consumers' purchase intentions toward vice products carrying those claims.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2910229398:c10",
+      "paper_id": "openalex:W2910229398",
+      "text": "Consumers are less influenced by front-of-package labels when evaluating the healthfulness of known brands compared to fictitious or unknown brands.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2910229398:e1",
+      "claim_id": "openalex:W2910229398:c1",
+      "description": "Random-effects HOMA meta-analysis found r = -.104 (p < .05, k = 39) for interpretive nutrient-specific labels on attention to NFP.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2910229398:e2",
+      "claim_id": "openalex:W2910229398:c2",
+      "description": "Random-effects HOMA meta-analysis showed r = -.259 (p < .001, k = 1) for interpretive summary indicators on attention to NFP.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W2910229398:e3",
+      "claim_id": "openalex:W2910229398:c3",
+      "description": "Random-effects HOMA reported an overall effect size of r = .051 (p < .001, k = 318) for interpretive nutrient-specific labels on healthfulness perceptions.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2910229398:e4",
+      "claim_id": "openalex:W2910229398:c4",
+      "description": "Interpretive nutrient-specific labels showed r = .030 (p < .01, k = 153) on healthfulness perceptions of vice products.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2910229398:e5",
+      "claim_id": "openalex:W2910229398:c5",
+      "description": "HOMA results showed tastiness perceptions were negatively affected by interpretive nutrient-specific labels (r = -.160, p < .001, k = 88) and interpretive summary indicators (r = -.166, p < .01, k = 29).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2910229398:e6",
+      "claim_id": "openalex:W2910229398:c6",
+      "description": "HOMA meta-analysis showed r = .374 (p < .001, k = 66) for interpretive summary indicator labels on healthy identification.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2910229398:e7",
+      "claim_id": "openalex:W2910229398:c7",
+      "description": "Healthy choice correlations were r = .093 (reductive nutrient-specific), r = .079 (interpretive nutrient-specific), and r = .023 (interpretive summary), markedly lower than identification correlations of r = .266, r = .177, and r = .374.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2910229398:e8",
+      "claim_id": "openalex:W2910229398:c8",
+      "description": "Random-effects HOMA revealed nonsignificant overall effects on consumption for reductive nutrient-specific (r = -.008, k = 6), interpretive nutrient-specific (r = .036, k = 50), and interpretive summary indicator labels (r = .006, k = 13).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2910229398:e9",
+      "claim_id": "openalex:W2910229398:c9",
+      "description": "HOMA results indicated health claims had a significant positive effect on purchase intention for vice products (r = .139, p < .001, k = 11).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2910229398:e10",
+      "claim_id": "openalex:W2910229398:c10",
+      "description": "HiLMA regression showed that brand familiarity had a negative moderating effect on healthfulness perceptions (beta = -.048, p < .001).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2910229398:m1",
+      "paper_id": "openalex:W2910229398",
+      "name": "Random-effects Hedges-Olkin Meta-Analysis (HOMA)",
+      "description": "Weighted random-effects meta-analysis transforming correlation coefficients via Fisher's Zr to estimate mean effect sizes across labels and outcomes.",
+      "datasets": [
+        "1594 effect sizes from 114 articles (130 studies) published between 1996 and 2018"
+      ],
+      "conditions": [
+        "Fisher's Zr transformed correlation coefficients weighted by inverse variance (N - 3)",
+        "Back-transformed to Pearson correlation r"
+      ]
+    },
+    {
+      "id": "openalex:W2910229398:m2",
+      "paper_id": "openalex:W2910229398",
+      "name": "Hierarchical Linear Meta-Analysis (HiLMA)",
+      "description": "Weighted hierarchical regression model accounting for within-study effect size dependency and assessing moderating product, consumer, and study factors.",
+      "datasets": [
+        "1594 effect sizes from 114 articles (130 studies)"
+      ],
+      "conditions": [
+        "Observations weighted by inverse variance",
+        "Clustered by publication to handle correlated errors"
+      ]
+    },
+    {
+      "id": "openalex:W2910229398:m3",
+      "paper_id": "openalex:W2910229398",
+      "name": "Crowdsourced Vice-Virtue Category Rating Survey",
+      "description": "Survey assessing perceived vice vs. virtue ratings of 78 food product categories on a 9-point Likert scale.",
+      "datasets": [
+        "Amazon Mechanical Turk (N = 205, 42% female, Mage = 34.86)"
+      ],
+      "conditions": [
+        "Randomized product category presentation",
+        "Minimum 52 evaluations per category"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2910229398:l1",
+      "paper_id": "openalex:W2910229398",
+      "text": "Prior meta-analyses were restricted to specific FOP labels (such as health claims only) or limited sets of outcomes (such as healthy choice and consumption only).",
+      "normalized_category": "narrow-scope",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2910229398:l2",
+      "paper_id": "openalex:W2910229398",
+      "text": "Many relevant identified studies were excluded from the meta-analysis due to unavailable or non-retrievable data.",
+      "normalized_category": "data-exclusion",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2910229398:l3",
+      "paper_id": "openalex:W2910229398",
+      "text": "The analysis filters only the most common methodological choices, missing other study characteristics that could introduce bias.",
+      "normalized_category": "unobserved-confounders",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2910229398:l4",
+      "paper_id": "openalex:W2910229398",
+      "text": "All included primary studies assume consumer awareness of the label, whereas attention and motivation at point-of-purchase vary in real retail environments.",
+      "normalized_category": "ecological-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2910229398:l5",
+      "paper_id": "openalex:W2910229398",
+      "text": "Certain outcome measures, specifically attention to the NFP for summary indicators and attitude measures, were based on very few effect sizes.",
+      "normalized_category": "small-sample-size",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2910229398:f1",
+      "paper_id": "openalex:W2910229398",
+      "text": "Investigate whether front-of-package label formats influence consumers with differing levels of health consciousness or nutrition knowledge.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2910229398:f2",
+      "paper_id": "openalex:W2910229398",
+      "text": "Examine how label design features (such as shape, coloring, abstractness, and placement) impact attentional capture and consumer choice.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2910229398:f3",
+      "paper_id": "openalex:W2910229398",
+      "text": "Examine the simultaneous influence of multiple front-of-package labels and their interaction with other package claims.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2910229398:f4",
+      "paper_id": "openalex:W2910229398",
+      "text": "Examine the systemic effects of front-of-package labeling on manufacturer recipe reformulation and retailer assortment decisions.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.592340Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

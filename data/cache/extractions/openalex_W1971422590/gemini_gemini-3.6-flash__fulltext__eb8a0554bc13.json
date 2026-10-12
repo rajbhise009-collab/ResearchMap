@@ -1,0 +1,157 @@
+{
+  "paper_id": "openalex:W1971422590",
+  "claims": [
+    {
+      "id": "openalex:W1971422590:c1",
+      "paper_id": "openalex:W1971422590",
+      "text": "Studies of interventions to change diet-related behaviours comprise 70.2% of the identified choice architecture micro-environment evidence base.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1971422590:c2",
+      "paper_id": "openalex:W1971422590",
+      "text": "Studies of interventions relating to physical activity account for 19.1% of the identified evidence base.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1971422590:c3",
+      "paper_id": "openalex:W1971422590",
+      "text": "Studies of interventions relating to alcohol consumption account for 7.3% of the identified evidence base.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1971422590:c4",
+      "paper_id": "openalex:W1971422590",
+      "text": "Studies of interventions relating to tobacco use account for 3.4% of the identified evidence base.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1971422590:c5",
+      "paper_id": "openalex:W1971422590",
+      "text": "Interventions involving point-of-choice labelling and prompting together account for over 40% of the identified study reports.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1971422590:c6",
+      "paper_id": "openalex:W1971422590",
+      "text": "Choice architecture interventions within micro-environments can be grouped into nine types that aggregate into two higher-level classes: altering properties and altering placement of objects or stimuli.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1971422590:e1",
+      "claim_id": "openalex:W1971422590:c1",
+      "description": "This evidence base is dominated by studies of interventions to change diet-related behaviours such as food purchasing and consumption (70.2% of study reports).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1971422590:e2",
+      "claim_id": "openalex:W1971422590:c2",
+      "description": "Reported distribution showed 'many fewer studies relating to physical activity (19.1%)'.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1971422590:e3",
+      "claim_id": "openalex:W1971422590:c3",
+      "description": "Identified study reports for alcohol accounted for 7.3% of the evidence base.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1971422590:e4",
+      "claim_id": "openalex:W1971422590:c4",
+      "description": "Identified study reports for tobacco use accounted for 3.4% of the evidence base.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1971422590:e5",
+      "claim_id": "openalex:W1971422590:c5",
+      "description": "The two types of intervention most frequently encountered, together accounting for over 40% of study reports, were those involving point-of-choice labelling, and prompting.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W1971422590:e6",
+      "claim_id": "openalex:W1971422590:c6",
+      "description": "We grouped the available evidence that was consistent with our definition into nine types... aggregated into two higher-level classes of intervention: i. those that involve altering the properties of objects or stimuli within a micro-environment, and ii. those that involve altering their placement.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W1971422590:m1",
+      "paper_id": "openalex:W1971422590",
+      "name": "Iterative configurative scoping review using text mining",
+      "description": "A systematic, iterative, and configurative scoping review employing text mining technologies to map empirical evidence of micro-environmental choice architecture interventions across four health behaviour domains.",
+      "datasets": [],
+      "conditions": [
+        "Interventions altering properties or placement of objects or stimuli in micro-environments",
+        "Targeting diet, physical activity, alcohol, or tobacco use",
+        "Excluding pure economic instruments"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W1971422590:l1",
+      "paper_id": "openalex:W1971422590",
+      "text": "Formal critical appraisal and synthesis to estimate the direction and magnitude of effects reported in included studies was beyond the scope of this work.",
+      "normalized_category": "lack-of-effect-synthesis",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1971422590:l2",
+      "paper_id": "openalex:W1971422590",
+      "text": "Data on the long-term durability of behavioural effects of interventions were not systematically extracted.",
+      "normalized_category": "missing-durability-data",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1971422590:l3",
+      "paper_id": "openalex:W1971422590",
+      "text": "The proposed definition and typology are provisional and primarily descriptive.",
+      "normalized_category": "provisional-typology",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W1971422590:l4",
+      "paper_id": "openalex:W1971422590",
+      "text": "Prior work lacked clear definitional and conceptual clarity concerning applications of choice architecture to public health intervention.",
+      "normalized_category": "conceptual-clarity-deficit",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1971422590:f1",
+      "paper_id": "openalex:W1971422590",
+      "text": "Conduct rigorous primary research and systematic reviews to estimate the direction, magnitude, and moderators of choice architecture intervention effects.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1971422590:f2",
+      "paper_id": "openalex:W1971422590",
+      "text": "Investigate the cumulative effects of repeated exposure to micro-environment alterations over time within long-term evaluative frameworks.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W1971422590:f3",
+      "paper_id": "openalex:W1971422590",
+      "text": "Explore implementation issues including public acceptability, financial impacts, and the necessity of regulatory or legislative frameworks.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.592968Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

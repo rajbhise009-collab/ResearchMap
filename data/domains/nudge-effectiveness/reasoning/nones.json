@@ -1,0 +1,105 @@
+{
+  "n": 10,
+  "items": [
+    {
+      "from_claim_id": "openalex:W2576088228:c2",
+      "to_claim_id": "openalex:W3182583425:c2",
+      "similarity": 0.8236425518989563,
+      "a_paper_id": "openalex:W2576088228",
+      "a_text": "It is unclear to what extent nudging interventions can be transparent without losing effectiveness.",
+      "b_paper_id": "openalex:W3182583425",
+      "b_text": "Conditions making a nudge easy and cheap to avoid, specifically transparency and deliberation-triggering, are often violated.",
+      "explanation": "Claim A addresses the empirical uncertainty regarding whether transparency reduces the effectiveness of nudges, whereas Claim B observes that real-world nudges frequently fail to implement transparency."
+    },
+    {
+      "from_claim_id": "openalex:W2096654506:c1",
+      "to_claim_id": "openalex:W3124550172:c2",
+      "similarity": 0.8145201206207275,
+      "a_paper_id": "openalex:W2096654506",
+      "a_text": "Compelling new hires to make active decisions about 401(k) enrollment raises the initial fraction that enroll by 28 percentage points relative to a standard opt-in enrollment procedure.",
+      "b_paper_id": "openalex:W3124550172",
+      "b_text": "A substantial fraction of 401(k) participants hired under automatic enrollment retain the default contribution rate.",
+      "explanation": "The claims examine distinct choice architecture mechanisms within 401(k) plans, with one focusing on active decision enrollment rates and the other on default stickiness under automatic enrollment."
+    },
+    {
+      "from_claim_id": "openalex:W2144332805:c1",
+      "to_claim_id": "openalex:W2755747487:c1",
+      "similarity": 0.8144470453262329,
+      "a_paper_id": "openalex:W2144332805",
+      "a_text": "Nudge interventions can be conceptually categorized into three degrees based on their impact on individual decision-making autonomy.",
+      "b_paper_id": "openalex:W2755747487",
+      "b_text": "An alternative framework classifies nudges into two categories: Type 1 and Type 2.",
+      "explanation": "The claims propose two distinct categorization frameworks for nudges based on different criteria without mutually confirming or refuting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2096654506:c1",
+      "to_claim_id": "openalex:W3124550172:c1",
+      "similarity": 0.8129054307937622,
+      "a_paper_id": "openalex:W2096654506",
+      "a_text": "Compelling new hires to make active decisions about 401(k) enrollment raises the initial fraction that enroll by 28 percentage points relative to a standard opt-in enrollment procedure.",
+      "b_paper_id": "openalex:W3124550172",
+      "b_text": "401(k) participation is significantly higher under automatic enrollment.",
+      "explanation": "Although both claims concern mechanisms for increasing 401(k) participation, they evaluate distinct interventions\u2014active choice versus automatic enrollment\u2014and therefore do not directly support or contradict one another."
+    },
+    {
+      "from_claim_id": "openalex:W2576088228:c2",
+      "to_claim_id": "openalex:W3182583425:c5",
+      "similarity": 0.8110619783401489,
+      "a_paper_id": "openalex:W2576088228",
+      "a_text": "It is unclear to what extent nudging interventions can be transparent without losing effectiveness.",
+      "b_paper_id": "openalex:W3182583425",
+      "b_text": "Transparent default nudges do not diminish their effectiveness and can in some cases enhance compliance.",
+      "explanation": "Claim A highlights general uncertainty about whether transparent nudging reduces effectiveness, whereas Claim B provides a specific empirical finding that transparent default nudges maintain or enhance effectiveness."
+    },
+    {
+      "from_claim_id": "openalex:W2096654506:c1",
+      "to_claim_id": "openalex:W3124550172:c5",
+      "similarity": 0.8093129396438599,
+      "a_paper_id": "openalex:W2096654506",
+      "a_text": "Compelling new hires to make active decisions about 401(k) enrollment raises the initial fraction that enroll by 28 percentage points relative to a standard opt-in enrollment procedure.",
+      "b_paper_id": "openalex:W3124550172",
+      "b_text": "Default savings behavior under automatic enrollment results in part from participant inertia.",
+      "explanation": "Claim A quantifies the impact of active decision-making compared to standard opt-in enrollment, while Claim B identifies inertia as a mechanism underlying behavior under automatic enrollment defaults."
+    },
+    {
+      "from_claim_id": "openalex:W2143855644:c2",
+      "to_claim_id": "openalex:W2345863192:c2",
+      "similarity": 0.806038498878479,
+      "a_paper_id": "openalex:W2143855644",
+      "a_text": "In the lab study, shelf display location (top versus bottom) had no significant effect on healthy snack choice.",
+      "b_paper_id": "openalex:W2345863192",
+      "b_text": "The two studies that found no significant effect of positional changes on snack choice manipulated only minor order changes within arm's reach.",
+      "explanation": "Claim A reports a null finding regarding vertical shelf placement on snack choice, while Claim B provides a descriptive characterization of studies that found no positional effect without directly reinforcing or contradicting the specific finding."
+    },
+    {
+      "from_claim_id": "openalex:W2096654506:c1",
+      "to_claim_id": "openalex:W3124550172:c3",
+      "similarity": 0.804639458656311,
+      "a_paper_id": "openalex:W2096654506",
+      "a_text": "Compelling new hires to make active decisions about 401(k) enrollment raises the initial fraction that enroll by 28 percentage points relative to a standard opt-in enrollment procedure.",
+      "b_paper_id": "openalex:W3124550172",
+      "b_text": "A substantial fraction of 401(k) participants hired under automatic enrollment retain the default fund allocation.",
+      "explanation": "Claim A addresses the impact of active choice mandates on initial 401(k) enrollment rates, whereas Claim B focuses on the stickiness of default fund allocations under automatic enrollment."
+    },
+    {
+      "from_claim_id": "openalex:W1497087006:c5",
+      "to_claim_id": "openalex:W1971422590:c1",
+      "similarity": 0.8041863441467285,
+      "a_paper_id": "openalex:W1497087006",
+      "a_text": "The majority of experimental studies examining choice architecture in self-service eating settings were of very weak quality.",
+      "b_paper_id": "openalex:W1971422590",
+      "b_text": "Studies of interventions to change diet-related behaviours comprise 70.2% of the identified choice architecture micro-environment evidence base.",
+      "explanation": "Claim A addresses the methodological quality of studies in self-service eating settings, whereas Claim B describes the proportion of diet-related interventions within the choice architecture literature."
+    },
+    {
+      "from_claim_id": "openalex:W2121354923:c1",
+      "to_claim_id": "openalex:W3125531654:c2",
+      "similarity": 0.8033057451248169,
+      "a_paper_id": "openalex:W2121354923",
+      "a_text": "Reference dependence can play a major role in the effectiveness of default effects.",
+      "b_paper_id": "openalex:W3125531654",
+      "b_text": "Designating an option as the default increases the frequency with which it is chosen relative to non-default options.",
+      "explanation": "Claim B asserts the existence of the default effect, whereas Claim A identifies an underlying psychological mechanism (reference dependence) without directly reinforcing or contradicting the behavioral outcome."
+    }
+  ]
+}

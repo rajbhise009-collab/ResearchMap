@@ -1,0 +1,125 @@
+{
+  "paper_id": "openalex:W1510152352",
+  "claims": [
+    {
+      "id": "openalex:W1510152352:c1",
+      "paper_id": "openalex:W1510152352",
+      "text": "Providing information about why and how to choose a healthy diet has been the typical public-level approach to encouraging behavioral change.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1510152352:c2",
+      "paper_id": "openalex:W1510152352",
+      "text": "Information can influence food producers and marketers to develop and promote more healthful products.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1510152352:c3",
+      "paper_id": "openalex:W1510152352",
+      "text": "Providing nutrition information is not always effective in improving consumer food choices.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1510152352:c4",
+      "paper_id": "openalex:W1510152352",
+      "text": "Nutrition information is complex and difficult to convey in a clear, actionable manner.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1510152352:c5",
+      "paper_id": "openalex:W1510152352",
+      "text": "Nutritional knowledge alone is not sufficient to motivate consumer behavior change.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1510152352:c6",
+      "paper_id": "openalex:W1510152352",
+      "text": "Competing preferences for tastier, less expensive, or more convenient foods can lead consumers away from healthier choices even when nutrition information is understood.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W1510152352:c7",
+      "paper_id": "openalex:W1510152352",
+      "text": "Approaches derived from psychology, marketing, and behavioral economics can complement informational efforts to improve food choices.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W1510152352:e1",
+      "claim_id": "openalex:W1510152352:c1",
+      "description": "At the public level, providing information about why and how to choose a healthy diet has been the typical approach to encouraging behavioral change.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1510152352:e2",
+      "claim_id": "openalex:W1510152352:c2",
+      "description": "Information can also influence food producers and marketers to develop and promote more healthful products, creating an environment in which it is easier for consumers to make healthier dietary choices.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W1510152352:e3",
+      "claim_id": "openalex:W1510152352:c3",
+      "description": "Nevertheless, information may not always be effective in improving food choices.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1510152352:e4",
+      "claim_id": "openalex:W1510152352:c4",
+      "description": "One explanation is that nutrition information is complex and difficult to convey in a clear, actionable manner.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1510152352:e5",
+      "claim_id": "openalex:W1510152352:c5",
+      "description": "Also, knowledge, while necessary, may not be sufficient to motivate behavior change.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W1510152352:e6",
+      "claim_id": "openalex:W1510152352:c6",
+      "description": "Even when consumers understand nutrition information, competing preferences for tastier, less expensive, or more convenient foods may lead them to make other choices.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W1510152352:e7",
+      "claim_id": "openalex:W1510152352:c7",
+      "description": "Findings from psychology, marketing, and behavioral economics research suggest approaches that may enhance the effectiveness of informational approaches and complement informational efforts.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [],
+  "limitations": [
+    {
+      "id": "openalex:W1510152352:l1",
+      "paper_id": "openalex:W1510152352",
+      "text": "Information-only approaches to dietary change are often ineffective due to complexity and competing consumer preferences such as taste, price, and convenience.",
+      "normalized_category": "intervention-efficacy-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W1510152352:f1",
+      "paper_id": "openalex:W1510152352",
+      "text": "Further develop behavioral nudging strategies and evaluate their effectiveness in improving consumer food choices.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.595946Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

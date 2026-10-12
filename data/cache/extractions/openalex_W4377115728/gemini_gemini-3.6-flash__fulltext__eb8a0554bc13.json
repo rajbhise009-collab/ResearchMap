@@ -1,0 +1,331 @@
+{
+  "paper_id": "openalex:W4377115728",
+  "claims": [
+    {
+      "id": "openalex:W4377115728:c1",
+      "paper_id": "openalex:W4377115728",
+      "text": "Weighted to represent the U.S. population, 52.9% of respondents chose the human doctor specialist clinic and 47.1% chose the AI clinic.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c2",
+      "paper_id": "openalex:W4377115728",
+      "text": "Explaining that the AI system has proven superior accuracy compared to human specialists increases the odds of AI provider selection (OR = 1.48, CI: 1.24-1.77, p < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c3",
+      "paper_id": "openalex:W4377115728",
+      "text": "A primary care physician nudging the patient towards AI as the established and recommended choice increases the odds of AI provider selection (OR = 1.25, CI: 1.05-1.50, p = .013).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c4",
+      "paper_id": "openalex:W4377115728",
+      "text": "Reassuring patients that the AI clinic includes trained staff who carefully listen to their lifestyle, preferences, values, and goals increases the odds of AI selection (OR = 1.27, CI: 1.07-1.52, p = .008).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c5",
+      "paper_id": "openalex:W4377115728",
+      "text": "Disease severity does not have a statistically significant effect on AI provider uptake.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c6",
+      "paper_id": "openalex:W4377115728",
+      "text": "A PCP promising to incorporate and explain the AI advice rather than deferring to a patient portal does not have a statistically significant effect on AI provider uptake.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c7",
+      "paper_id": "openalex:W4377115728",
+      "text": "Describing the AI system as racially unbiased does not have a statistically significant main effect on AI provider uptake.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c8",
+      "paper_id": "openalex:W4377115728",
+      "text": "Describing the AI system as financially unbiased does not have a statistically significant main effect on AI provider uptake.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c9",
+      "paper_id": "openalex:W4377115728",
+      "text": "Describing the AI system as using 36 tailored measurements does not have a statistically significant main effect on AI provider uptake.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c10",
+      "paper_id": "openalex:W4377115728",
+      "text": "Compared to White respondents, Black respondents have significantly lower odds of selecting AI (OR = 0.73, CI: 0.55-0.96, p = .023).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c11",
+      "paper_id": "openalex:W4377115728",
+      "text": "Compared to White respondents, Native American respondents have significantly higher odds of selecting AI (OR = 1.37, CI: 1.01-1.87, p = .041).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c12",
+      "paper_id": "openalex:W4377115728",
+      "text": "Older respondents have significantly lower odds of choosing AI (OR = 0.99, CI: 0.987-0.999, p = .03).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c13",
+      "paper_id": "openalex:W4377115728",
+      "text": "Politically conservative respondents have significantly lower odds of choosing AI (OR = 0.65, CI: 0.52-0.81, p < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c14",
+      "paper_id": "openalex:W4377115728",
+      "text": "Respondents who view religion as important have significantly lower odds of choosing AI (OR = 0.64, CI: 0.52-0.77, p < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c15",
+      "paper_id": "openalex:W4377115728",
+      "text": "Higher education level is associated with significantly higher odds of selecting an AI provider (OR = 1.10, CI: 1.03-1.18, p = .004).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4377115728:c16",
+      "paper_id": "openalex:W4377115728",
+      "text": "Higher trust in AI companies is associated with significantly increased odds of choosing an AI provider (OR = 1.29, CI: 1.23-1.36, p < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4377115728:e1",
+      "claim_id": "openalex:W4377115728:c1",
+      "description": "With weighting representative to the U.S. population, respondents were almost evenly split (52.9% chose human doctor and 47.1% chose AI clinic).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e2",
+      "claim_id": "openalex:W4377115728:c2",
+      "description": "Table 5 Model 3 shows AI accuracy manipulation has an odds ratio of 1.48 (CI 1.24–1.77, p < .001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e3",
+      "claim_id": "openalex:W4377115728:c3",
+      "description": "Table 5 Model 3 shows PCP nudge (established) has an odds ratio of 1.25 (CI: 1.05–1.50, p = .013).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e4",
+      "claim_id": "openalex:W4377115728:c4",
+      "description": "Table 5 Model 3 shows AI listens manipulation has an odds ratio of 1.27 (CI: 1.07–1.52, p = .008).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e5",
+      "claim_id": "openalex:W4377115728:c5",
+      "description": "Illness Severity in Table 5 Model 3 had OR = 0.98 (SE = 0.09, p > .05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4377115728:e6",
+      "claim_id": "openalex:W4377115728:c6",
+      "description": "Incorporation in Table 5 Model 3 had OR = 0.88 (SE = 0.08, p > .05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4377115728:e7",
+      "claim_id": "openalex:W4377115728:c7",
+      "description": "Race Unbiased in Table 5 Model 3 had OR = 1.10 (SE = 0.10, p > .05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4377115728:e8",
+      "claim_id": "openalex:W4377115728:c8",
+      "description": "Financial Unbiased in Table 5 Model 3 had OR = 1.10 (SE = 0.10, p > .05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4377115728:e9",
+      "claim_id": "openalex:W4377115728:c9",
+      "description": "Tailored in Table 5 Model 3 had OR = 1.11 (SE = 0.10, p > .05).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4377115728:e10",
+      "claim_id": "openalex:W4377115728:c10",
+      "description": "In Model 3, Black respondents had OR = .73, CI: .55-.96, p = .023 compared to White reference.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e11",
+      "claim_id": "openalex:W4377115728:c11",
+      "description": "In Model 3, Native American respondents had OR = 1.37, CI: 1.01–1.87, p = .041 compared to White reference.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e12",
+      "claim_id": "openalex:W4377115728:c12",
+      "description": "In Model 3, Age had OR = .99, CI: .987-.999, p = .03.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e13",
+      "claim_id": "openalex:W4377115728:c13",
+      "description": "In Model 3, Conservative had OR = .65, CI: .52-.81, p < .001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e14",
+      "claim_id": "openalex:W4377115728:c14",
+      "description": "In Model 3, Religion Important had OR = .64, CI: .52-.77, p < .001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e15",
+      "claim_id": "openalex:W4377115728:c15",
+      "description": "In Model 3, Education had OR = 1.10, CI: 1.03–1.18, p = .004.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4377115728:e16",
+      "claim_id": "openalex:W4377115728:c16",
+      "description": "In Model 3, Trust AI Companies had OR = 1.29, CI: 1.23–1.36, p < .001.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4377115728:m1",
+      "paper_id": "openalex:W4377115728",
+      "name": "Qualitative Semi-Structured Patient Interviews",
+      "description": "Conducted 30-60 minute structured interviews with 24 racially and ethnically diverse clinic patients to pre-test vignettes and generate hypotheses.",
+      "datasets": [
+        "Patient interview transcripts (Tucson, Arizona)"
+      ],
+      "conditions": [
+        "Leukemia scenario",
+        "Sleep apnea scenario"
+      ]
+    },
+    {
+      "id": "openalex:W4377115728:m2",
+      "paper_id": "openalex:W4377115728",
+      "name": "Factorial Vignette Survey Experiment",
+      "description": "Administered a pre-registered, blinded, randomized survey experiment manipulating eight clinical vignette variables with two levels each on a matched sample of 2,675 U.S. adults oversampling minoritized groups.",
+      "datasets": [
+        "YouGov survey sample (N = 2,675 matched; N = 2,472 analyzed after engagement screening)"
+      ],
+      "conditions": [
+        "Illness severity (Leukemia vs. Sleep apnea)",
+        "AI accuracy (Proven more accurate vs. Silent)",
+        "AI listens (45-min counselor interview vs. Silent)",
+        "AI tailored (36 measurements vs. Silent)",
+        "AI racial unbiased (Tested unbiased vs. Silent)",
+        "AI financial unbiased (Tested unbiased vs. Silent)",
+        "PCP incorporates advice (Incorporate-explain vs. Defer-portal)",
+        "PCP nudges (Default-easy vs. None)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4377115728:l1",
+      "paper_id": "openalex:W4377115728",
+      "text": "The qualitative interview pre-study relied on a small convenience sample of 24 patients in one city, preventing strong independent conclusions.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4377115728:l2",
+      "paper_id": "openalex:W4377115728",
+      "text": "Respondents may find it difficult to accurately predict their real-world medical decisions from hypothetical vignettes, especially in high-emotion contexts.",
+      "normalized_category": "external-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4377115728:l3",
+      "paper_id": "openalex:W4377115728",
+      "text": "The Native American sample was older and more conservative than the national average for that group and had the smallest sample size among the racial groups, introducing potential unmeasured confounding.",
+      "normalized_category": "sample-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4377115728:l4",
+      "paper_id": "openalex:W4377115728",
+      "text": "Neither scenario represented an acute or emergent clinical condition, where patient deference to physicians might differ.",
+      "normalized_category": "scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4377115728:l5",
+      "paper_id": "openalex:W4377115728",
+      "text": "Excluding respondents familiar with the tested conditions as originally pre-registered was not feasible because an unexpectedly large portion (N = 998) was familiar, which would have compromised statistical power and balance.",
+      "normalized_category": "methodological-deviation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4377115728:l6",
+      "paper_id": "openalex:W4377115728",
+      "text": "Prior research shows patients typically prefer human doctors over AI-powered machines and report less willingness to schedule appointments with automated decision aids.",
+      "normalized_category": "prior-work-limitation",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4377115728:f1",
+      "paper_id": "openalex:W4377115728",
+      "text": "Conduct studies with larger Native American samples to better understand the higher AI uptake observed in that population.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4377115728:f2",
+      "paper_id": "openalex:W4377115728",
+      "text": "Investigate acute or emergent clinical situations to assess whether patient deference and AI uptake differ.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4377115728:f3",
+      "paper_id": "openalex:W4377115728",
+      "text": "Research the best methods for physician incorporation of AI and drivers of physician uptake to inform clinical practice and shared decision-making.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.597714Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

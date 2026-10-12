@@ -1,0 +1,143 @@
+{
+  "paper_id": "openalex:W3125531654",
+  "claims": [
+    {
+      "id": "openalex:W3125531654:c1",
+      "paper_id": "openalex:W3125531654",
+      "text": "Choice architecture tools can be divided into tools for structuring the choice task and tools for describing choice options.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3125531654:c2",
+      "paper_id": "openalex:W3125531654",
+      "text": "Designating an option as the default increases the frequency with which it is chosen relative to non-default options.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3125531654:c3",
+      "paper_id": "openalex:W3125531654",
+      "text": "Four or five non-dominating options provides an initial choice set size that balances preference matching against consumer cognitive burden.",
+      "type": "theoretical",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3125531654:c4",
+      "paper_id": "openalex:W3125531654",
+      "text": "When decision-makers allocate a limited resource across possibilities, they are biased toward allocating evenly across each identified group or category.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3125531654:c5",
+      "paper_id": "openalex:W3125531654",
+      "text": "The effect of category partitioning on choice is stronger among decision-makers with weaker intrinsic preferences and attenuates among those with stronger preferences.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W3125531654:c6",
+      "paper_id": "openalex:W3125531654",
+      "text": "Informing households about relative energy usage reduced average energy use by 2 percent, but consumption changes diverged based on political affiliation.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W3125531654:e1",
+      "claim_id": "openalex:W3125531654:c1",
+      "description": "The authors organize choice architecture tools into structuring the choice task (what to present) and describing choice options (how to present it).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W3125531654:e2",
+      "claim_id": "openalex:W3125531654:c2",
+      "description": "The authors synthesize evidence showing default options are chosen more often in investment, insurance, organ donation, and marketing contexts.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3125531654:e3",
+      "claim_id": "openalex:W3125531654:c3",
+      "description": "The authors argue that four or five non-dominating options encourages reasoned consideration of tradeoffs while avoiding choice overload and context-specific preference traps.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W3125531654:e4",
+      "claim_id": "openalex:W3125531654:c4",
+      "description": "Prior studies demonstrated 1/n allocation tendencies across 401(k) investment options, charitable donations, grocery shopping carts, and event probability judgments.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W3125531654:e5",
+      "claim_id": "openalex:W3125531654:c5",
+      "description": "Fox et al. (2005) demonstrated that wine novices diversified based on whether wine was grouped by grape or country, while wine experts were largely unaffected by grouping.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W3125531654:e6",
+      "claim_id": "openalex:W3125531654:c6",
+      "description": "Costa and Kahn (2010) found an average 2% decrease in energy usage following relative usage feedback, where liberal households reduced consumption and Republican households increased consumption.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W3125531654:m1",
+      "paper_id": "openalex:W3125531654",
+      "name": "Choice Architecture Tool Taxonomy",
+      "description": "A conceptual categorization framework classifying choice architecture interventions into task structuring (alternatives, decision aids, defaults, time, search) and option description (partitioning, attribute design).",
+      "datasets": [],
+      "conditions": [
+        "Structuring the choice task",
+        "Describing choice options"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W3125531654:l1",
+      "paper_id": "openalex:W3125531654",
+      "text": "The framework does not provide a theoretical account of why the identified tools affect choice.",
+      "normalized_category": "lack-of-theoretical-model",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3125531654:l2",
+      "paper_id": "openalex:W3125531654",
+      "text": "The paper does not provide a normative analysis of how choice architecture ought to be designed or when to apply specific tools.",
+      "normalized_category": "lack-of-normative-framework",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W3125531654:l3",
+      "paper_id": "openalex:W3125531654",
+      "text": "Choice architects may suffer from a curse of knowledge, anchoring on their own knowledge and preferences rather than those of the decision makers.",
+      "normalized_category": "architect-cognitive-bias",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W3125531654:f1",
+      "paper_id": "openalex:W3125531654",
+      "text": "Investigate the behavioral effects of full open disclosure of choice architecture and potential influences to decision makers.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W3125531654:f2",
+      "paper_id": "openalex:W3125531654",
+      "text": "Create and use individual-level data to calibrate behavioral economic models of choice architecture for policy purposes.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.598537Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

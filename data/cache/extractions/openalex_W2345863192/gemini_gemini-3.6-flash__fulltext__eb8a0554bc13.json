@@ -1,0 +1,172 @@
+{
+  "paper_id": "openalex:W2345863192",
+  "claims": [
+    {
+      "id": "openalex:W2345863192:c1",
+      "paper_id": "openalex:W2345863192",
+      "text": "Out of eighteen included studies evaluating food position or order manipulation, sixteen found a positive influence on food choice.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2345863192:c2",
+      "paper_id": "openalex:W2345863192",
+      "text": "The two studies that found no significant effect of positional changes on snack choice manipulated only minor order changes within arm's reach.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2345863192:c3",
+      "paper_id": "openalex:W2345863192",
+      "text": "Only one of the eighteen included studies received a positive quality rating, with fourteen rated as neutral and three as negative.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2345863192:c4",
+      "paper_id": "openalex:W2345863192",
+      "text": "Moving potato chips to a more distant location reduced potato chip selection but was accompanied by an increase in starch selection.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2345863192:c5",
+      "paper_id": "openalex:W2345863192",
+      "text": "Distance from a serving bowl significantly predicted the number of crackers and carrot slices consumed by children.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2345863192:e1",
+      "claim_id": "openalex:W2345863192:c1",
+      "description": "In summary, sixteen of the eighteen studies concluded that positional changes had a positive influence on food choice.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2345863192:e2",
+      "claim_id": "openalex:W2345863192:c2",
+      "description": "In the two experiments (32) where positional changes had no impact on food choice, the degree of manipulation was only a minor change in position, with all the foods remaining within reach.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2345863192:e3",
+      "claim_id": "openalex:W2345863192:c3",
+      "description": "Of the eighteen studies that were included, only one received a positive quality rating (32), with fourteen studies being assessed as neutral and three as negative, because study procedures were not described in detail and several validity questions could not be answered clearly.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2345863192:e4",
+      "claim_id": "openalex:W2345863192:c4",
+      "description": "movement of potato chips to a more distant location, and hence a reduction in chips selection, was accompanied by an increase in starch selection choices among the foods that still remained proximal (chi-square (1) = 6.20, P < 0.001).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2345863192:e5",
+      "claim_id": "openalex:W2345863192:c5",
+      "description": "This study found that the distance from the serving bowl significantly predicted the number of crackers and carrot slices consumed by children (Distance from crackers: beta = -0.41, P < 0.05; Distance from carrots beta = -0.38, P < 0.05).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2345863192:m1",
+      "paper_id": "openalex:W2345863192",
+      "name": "Systematic literature review following PICOS framework",
+      "description": "Searched seven electronic databases up to February 2015 to evaluate experimental and observational studies assessing microenvironmental food positioning (proximity or order) on food choice without confounding multi-variable manipulations.",
+      "datasets": [
+        "Medline",
+        "Pre-Medline",
+        "Embase",
+        "CINAHL",
+        "Scopus",
+        "The Cochrane Library",
+        "PsycINFO"
+      ],
+      "conditions": [
+        "Peer-reviewed full-text articles in English",
+        "Manipulated food position (proximity or order) within microenvironments",
+        "Targeted healthy, normal-weight or overweight/obese participants across any age group",
+        "Excluded studies manipulating multiple simultaneous variables (e.g. adding/removing food items or changing portion sizes)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2345863192:l1",
+      "paper_id": "openalex:W2345863192",
+      "text": "A meta-analysis could not be conducted because study designs and reported outcome measures were too heterogeneous.",
+      "normalized_category": "methodological-heterogeneity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2345863192:l2",
+      "paper_id": "openalex:W2345863192",
+      "text": "The review did not consider grey literature, raising the plausibility of positive publication bias.",
+      "normalized_category": "publication-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2345863192:l3",
+      "paper_id": "openalex:W2345863192",
+      "text": "Assortment structure and supermarket shopping literature were beyond the review's scope, which focused primarily on out-of-home meal service situations.",
+      "normalized_category": "scope-restriction",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2345863192:l4",
+      "paper_id": "openalex:W2345863192",
+      "text": "Included studies lacked long-term evaluations, making it unclear whether positional effects persist over time or decay.",
+      "normalized_category": "short-evaluation-window",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2345863192:l5",
+      "paper_id": "openalex:W2345863192",
+      "text": "Most included studies assessed selection frequencies rather than objectively quantifying intake in grams or energy content.",
+      "normalized_category": "unsuitable-metrics",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W2345863192:l6",
+      "paper_id": "openalex:W2345863192",
+      "text": "Included studies rarely evaluated compensatory consumption behaviors occurring after positional nudges.",
+      "normalized_category": "untested-confounders",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2345863192:f1",
+      "paper_id": "openalex:W2345863192",
+      "text": "Conduct high-quality studies measuring food intake using standardized quantitative indicators like grams consumed or energy intake (kJ/kcal) over longer time horizons.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2345863192:f2",
+      "paper_id": "openalex:W2345863192",
+      "text": "Investigate potential compensatory eating behaviors that may occur secondary to positional nudge interventions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2345863192:f3",
+      "paper_id": "openalex:W2345863192",
+      "text": "Examine covariates such as dietary preferences, restrained/disinhibited eating styles, health consciousness, and habit strength via customer loyalty card schemes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2345863192:f4",
+      "paper_id": "openalex:W2345863192",
+      "text": "Clearly distinguish and standardize keywords and reporting terminology between food order nudges (driven by salience) and food distance/proximity nudges (driven by effort).",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.591760Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

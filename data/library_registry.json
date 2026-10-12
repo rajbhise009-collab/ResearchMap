@@ -43,7 +43,7 @@
   {
    "slug": "nudge-effectiveness",
    "domain_key": "nudges",
-   "status": "building",
+   "status": "built",
    "frozen": false,
    "is_default": false,
    "name": "Nudges and choice architecture",

@@ -1,0 +1,237 @@
+{
+  "paper_id": "openalex:W2309523496",
+  "claims": [
+    {
+      "id": "openalex:W2309523496:c1",
+      "paper_id": "openalex:W2309523496",
+      "text": "Most evaluated nudges were supported by U.S. participants across both representative samples, with default organ donation being consistently opposed.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c2",
+      "paper_id": "openalex:W2309523496",
+      "text": "System 2 nudges received significantly greater support than System 1 nudges.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c3",
+      "paper_id": "openalex:W2309523496",
+      "text": "System 1 nudges were perceived as more threatening to autonomy and more paternalistic than System 2 nudges.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c4",
+      "paper_id": "openalex:W2309523496",
+      "text": "System 2 nudges were perceived as more effective for good decision making, more necessary for changing behavior, sending the right message, and having the right goals compared to System 1 nudges.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c5",
+      "paper_id": "openalex:W2309523496",
+      "text": "The effect of nudge type on support was mediated by perceptions of threat to autonomy, effectiveness for good decision making, and necessity for changing behavior.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c6",
+      "paper_id": "openalex:W2309523496",
+      "text": "Individualism negatively correlated with support for both System 1 and System 2 nudges across both studies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c7",
+      "paper_id": "openalex:W2309523496",
+      "text": "Desire for control and reactance were negatively correlated with support for System 1 nudges.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c8",
+      "paper_id": "openalex:W2309523496",
+      "text": "Overall support for nudges was not significantly affected by framing manipulations targeting personal versus societal impact or costs versus benefits.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c9",
+      "paper_id": "openalex:W2309523496",
+      "text": "People with greater empathy were significantly more supportive of nudges when framed around societal effects rather than personal effects.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c10",
+      "paper_id": "openalex:W2309523496",
+      "text": "Within personal frames, reactant individuals showed greater opposition to nudges framed in terms of costs of rejection compared to benefits.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W2309523496:c11",
+      "paper_id": "openalex:W2309523496",
+      "text": "Judged likability of companies implementing nudges was significantly higher for companies implementing System 2 nudges than System 1 nudges.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W2309523496:e1",
+      "claim_id": "openalex:W2309523496:c1",
+      "description": "In Study 1, mean support differed significantly from zero for all nudges except medical defaults, with organ donation default opposed (33% support vs. 51% oppose). In Study 2, organ donation default was also opposed (39% support vs. 51% oppose).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2309523496:e2",
+      "claim_id": "openalex:W2309523496:c2",
+      "description": "A linear mixed effects model showed a significant effect of nudge type on support (t(8) = 7.15, p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2309523496:e3",
+      "claim_id": "openalex:W2309523496:c3",
+      "description": "Autonomy-threat was rated higher for System 1 than System 2 in Study 1 (3.40 vs 3.28) and Study 2 (3.36 vs 1.94); Paternalism was also rated higher for System 1 (4.52 vs 4.37 in Study 1; 3.68 vs 2.91 in Study 2).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2309523496:e4",
+      "claim_id": "openalex:W2309523496:c4",
+      "description": "System 2 scored higher than System 1 in both studies on Effective (Study 1: 3.44 vs 3.18; Study 2: 3.67 vs 3.04), Necessary (Study 1: 3.57 vs 3.26; Study 2: 4.05 vs 2.71), Right Message (3.57 vs 3.43; 4.06 vs 2.51), and Right Goal (4.16 vs 3.86; 3.92 vs 2.90).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2309523496:e5",
+      "claim_id": "openalex:W2309523496:c5",
+      "description": "Monte Carlo Method of Assessing Mediation showed significant indirect effects for autonomy-threat (a*b = 0.36, 95% CI [0.33, 0.40]), effectiveness (a*b = 0.27, 95% CI [0.24, 0.30]), and necessity (a*b = 0.67, 95% CI [0.63, 0.71]).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2309523496:e6",
+      "claim_id": "openalex:W2309523496:c6",
+      "description": "Correlations between individualism and support were negative and significant: Study 1 System 1 r = -0.38, System 2 r = -0.35; Study 2 System 1 r = -0.31, System 2 r = -0.14 (all p < .05).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W2309523496:e7",
+      "claim_id": "openalex:W2309523496:c7",
+      "description": "Desire for control correlated significantly negatively with System 1 support (Study 1: r = -0.20; Study 2: r = -0.11), and reactance correlated significantly negatively with System 1 support in Study 2 (r = -0.18).",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W2309523496:e8",
+      "claim_id": "openalex:W2309523496:c8",
+      "description": "Mean ratings across frames showed no main effects or interactions between targets (Personal vs Societal) or reference points (Cost vs Benefit) on overall support.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2309523496:e9",
+      "claim_id": "openalex:W2309523496:c9",
+      "description": "The interaction between empathetic concern and Personal vs. Societal frames was statistically significant (t(797) = -2.32, p < 0.01).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W2309523496:e10",
+      "claim_id": "openalex:W2309523496:c10",
+      "description": "In personal frames, the interaction between reactance and the Personal/Cost frame was statistically significant (t(396) = -1.94, p = 0.05).",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W2309523496:e11",
+      "claim_id": "openalex:W2309523496:c11",
+      "description": "Participants liked companies implementing System 2 nudges significantly more than those implementing System 1 nudges (M(diff) = 0.61, t(199) = 16.53, p < 0.001).",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W2309523496:m1",
+      "paper_id": "openalex:W2309523496",
+      "name": "Representative Survey Study 1",
+      "description": "Evaluated public support and perceptions of 13 nudges (9 System 1, 4 System 2) alongside individual disposition scales in a representative sample of 250 U.S. adults.",
+      "datasets": [
+        "Qualtrics U.S. Representative Panel"
+      ],
+      "conditions": [
+        "9 System 1 nudges",
+        "4 System 2 nudges"
+      ]
+    },
+    {
+      "id": "openalex:W2309523496:m2",
+      "paper_id": "openalex:W2309523496",
+      "name": "Representative Survey Study 2 with Factorial Framing",
+      "description": "Evaluated 10 matched nudges across five domains within-subjects, crossed with a 2 (Personal vs. Societal) x 2 (Cost vs. Benefit) between-subjects framing manipulation in 800 U.S. adults.",
+      "datasets": [
+        "Qualtrics U.S. Representative Panel"
+      ],
+      "conditions": [
+        "Personal vs. Societal target",
+        "Cost vs. Benefit frame",
+        "System 1 vs. System 2 nudges",
+        "5 policy domains (Medical Coverage, Retirement Savings, Credit Cards, Organ Donation, Water Conservation)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W2309523496:l1",
+      "paper_id": "openalex:W2309523496",
+      "text": "Results depend directly on the specific nudges selected for examination, and there are no guarantees that findings will generalize to other nudges.",
+      "normalized_category": "selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2309523496:l2",
+      "paper_id": "openalex:W2309523496",
+      "text": "Comparability between System 1 and System 2 nudges in matched pairs was not exact.",
+      "normalized_category": "measurement-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2309523496:l3",
+      "paper_id": "openalex:W2309523496",
+      "text": "In the regression across all four frames, the interaction between reactance and the Personal/Cost frame did not reach statistical significance (t(197) = 1.82, p = 0.16).",
+      "normalized_category": "statistical-insignificance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W2309523496:l4",
+      "paper_id": "openalex:W2309523496",
+      "text": "Prior work by Tannenbaum et al. (2014) selected nudges on partisan appeals, finding partisan nudge bias where attitudes depended on the policymaker or political objective.",
+      "normalized_category": "confounding-factors",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W2309523496:f1",
+      "paper_id": "openalex:W2309523496",
+      "text": "Investigate whether increasing public understanding of the actual effectiveness of System 1 nudges would increase or decrease their perceived threat to autonomy.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W2309523496:f2",
+      "paper_id": "openalex:W2309523496",
+      "text": "Examine the risks and efficacy of personalizing nudges to individual beliefs and preferences without triggering reactance.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T14:36:26.594145Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
