@@ -129,11 +129,11 @@
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
       "built": "2026-10-12",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 109,
-      "claims_read": 109,
+      "papers": 111,
+      "claims_read": 111,
       "full_text": 56,
-      "abstract_only": 53,
-      "gap_cards": 65,
+      "abstract_only": 55,
+      "gap_cards": 69,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -155,17 +155,17 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 64,
+          "count": 68,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 65,
+      "results_total": 69,
       "set_aside_total": 2,
       "growth": {
         "grows": true,
-        "added": 10,
-        "last_added": "2026-10-11"
+        "added": 12,
+        "last_added": "2026-10-12"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (94 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
@@ -182,6 +182,65 @@
         "123 of this library's classifier verdicts are for pairs outside the ones we report: 113 were made with a looser matching setting than the library's documented one (similarity below 0.80; iteration 3 ran at 0.72 with up to 4 matches per claim), and 10 no longer rank among each claim's top 2 matches. None of them is a disagreement, and none is counted."
       ],
       "not_advice": false
+    },
+    {
+      "slug": "nudge-effectiveness",
+      "name": "Nudges and choice architecture",
+      "short_name": "Nudges",
+      "blurb": "Whether defaults, reminders, social-norm messages and other changes to how choices are presented change what people do, and how large those effects really are.",
+      "built": null,
+      "built_basis": null,
+      "papers": 42,
+      "claims_read": 42,
+      "full_text": 12,
+      "abstract_only": 30,
+      "gap_cards": 7,
+      "results": [
+        {
+          "type": "unresolved_contradictions",
+          "count": 0,
+          "label": "disagreements between papers",
+          "note": "none were found among the papers read, which is not the same as none existing"
+        },
+        {
+          "type": "persistent_limitations",
+          "count": 0,
+          "label": "recurring limitations",
+          "note": "none were found among the papers read, which is not the same as none existing"
+        },
+        {
+          "type": "structural_holes",
+          "count": 0,
+          "label": "unexplored connections",
+          "note": "none were found among the papers read, which is not the same as none existing"
+        },
+        {
+          "type": "orphaned_future_work",
+          "count": 7,
+          "label": "open questions",
+          "note": null
+        }
+      ],
+      "results_total": 7,
+      "set_aside_total": 0,
+      "growth": {
+        "grows": true,
+        "added": 0,
+        "last_added": null
+      },
+      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (19 pairs); pairs worded differently are never compared.",
+      "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
+      "disagreement_check": {
+        "shortlisted": 19,
+        "classified": 19,
+        "flagged": 0,
+        "hand_checked": 0,
+        "confirmed": 0,
+        "set_aside": 0,
+        "checked_how": null
+      },
+      "audit_doubts": [],
+      "not_advice": true
     },
     {
       "slug": "social-media-teen-mental-health",

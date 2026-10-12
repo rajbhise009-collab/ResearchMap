@@ -30,8 +30,19 @@
       "is_default": false,
       "not_advice_note": null,
       "health_adjacent": false,
-      "n_papers": 109,
+      "n_papers": 111,
       "snapshot_path": "/data/library/ml-fairness"
+    },
+    {
+      "slug": "nudge-effectiveness",
+      "name": "Nudges and choice architecture",
+      "short_name": "Nudges",
+      "blurb": "Whether defaults, reminders, social-norm messages and other changes to how choices are presented change what people do, and how large those effects really are.",
+      "is_default": false,
+      "not_advice_note": "Research-literature analysis, not policy or professional advice.",
+      "health_adjacent": false,
+      "n_papers": 42,
+      "snapshot_path": "/data/library/nudge-effectiveness"
     },
     {
       "slug": "social-media-teen-mental-health",
