@@ -1,0 +1,296 @@
+{
+  "paper_id": "openalex:W7221101554",
+  "claims": [
+    {
+      "id": "openalex:W7221101554:c1",
+      "paper_id": "openalex:W7221101554",
+      "text": "CatBoost achieved a test-set ROC-AUC of 0.783 (95% CI [0.741, 0.825]) and PR-AUC of 0.506 (95% CI [0.432, 0.595]).",
+      "type": "finding",
+      "confidence": 0.99,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c2",
+      "paper_id": "openalex:W7221101554",
+      "text": "Regularized Logistic Regression achieved a test-set ROC-AUC of 0.780 (95% CI [0.738, 0.820]) and PR-AUC of 0.497.",
+      "type": "finding",
+      "confidence": 0.99,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c3",
+      "paper_id": "openalex:W7221101554",
+      "text": "CatBoost was not statistically significantly different in ROC-AUC from regularized Logistic Regression (DeLong p = 0.590).",
+      "type": "negative",
+      "confidence": 0.99,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c4",
+      "paper_id": "openalex:W7221101554",
+      "text": "No ensemble or gradient-boosting model significantly outperformed regularized Logistic Regression on test-set ROC-AUC.",
+      "type": "negative",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c5",
+      "paper_id": "openalex:W7221101554",
+      "text": "Global SHAP feature importance rankings were highly stable under bootstrap resampling of the test set with a mean Spearman rho of 0.999.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c6",
+      "paper_id": "openalex:W7221101554",
+      "text": "SHAP feature importance rankings showed strong consistency across tree ensembles, with Spearman rho between 0.949 and 0.978.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c7",
+      "paper_id": "openalex:W7221101554",
+      "text": "Adding non-traditional indicators yielded a non-significant incremental change in CatBoost ROC-AUC of +0.008 (95% CI [-0.010, 0.027], DeLong p = 0.360).",
+      "type": "negative",
+      "confidence": 0.99,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c8",
+      "paper_id": "openalex:W7221101554",
+      "text": "Disparate impact ratios for CatBoost at tau = 0.50 exceeded the 0.80 heuristic for Gender (0.956), Geographic Region (0.961), and all gender-by-region intersections (0.881).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c9",
+      "paper_id": "openalex:W7221101554",
+      "text": "CatBoost exhibited a higher false-positive rate for rural applicants (0.680) than for urban applicants (0.492) at tau = 0.50.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221101554:c10",
+      "paper_id": "openalex:W7221101554",
+      "text": "Excluding Repayment History and Credit Score Category reduced CatBoost test-set ROC-AUC from 0.783 to 0.732 (DeLong p < 0.001).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221101554:e1",
+      "claim_id": "openalex:W7221101554:c1",
+      "description": "CatBoost achieved ROC-AUC = 0.783, 95% CI [0.741, 0.825]; PR-AUC = 0.506, 95% CI [0.432, 0.595] as reported in Table 4.",
+      "strength": 0.99
+    },
+    {
+      "id": "openalex:W7221101554:e2",
+      "claim_id": "openalex:W7221101554:c2",
+      "description": "Table 4 lists Logistic regression test-set ROC-AUC as 0.780 [0.738, 0.820] and PR-AUC as 0.497 [0.421, 0.590].",
+      "strength": 0.99
+    },
+    {
+      "id": "openalex:W7221101554:e3",
+      "claim_id": "openalex:W7221101554:c3",
+      "description": "Section 4.3 states: 'DeLong tests indicated no statistically significant differences in ROC-AUC among the leading models: CatBoost vs. Logistic Regression (p = .590)'.",
+      "strength": 0.99
+    },
+    {
+      "id": "openalex:W7221101554:e4",
+      "claim_id": "openalex:W7221101554:c4",
+      "description": "Section 4.9 states: 'H1 was not supported No ensemble or gradient-boosting model achieved significantly higher ROC-AUC than regularized Logistic Regression (all DeLong p >= .139)'.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W7221101554:e5",
+      "claim_id": "openalex:W7221101554:c5",
+      "description": "Section 4.5 reports: 'The global importance ranking was highly stable under bootstrap resampling of the test set (mean Spearman rho = 0.999 across 30 resamples; minimum 0.995)'.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W7221101554:e6",
+      "claim_id": "openalex:W7221101554:c6",
+      "description": "Section 4.5 reports rank consistency across tree ensembles: 'CatBoost-XGBoost rho = 0.978; CatBoost-Random Forest rho = 0.949'.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W7221101554:e7",
+      "claim_id": "openalex:W7221101554:c7",
+      "description": "Section 4.6 reports for CatBoost that adding the three non-traditional indicators produced Delta AUC = +0.008, 95% bootstrap CI [-0.010, 0.027]; DeLong p = .360.",
+      "strength": 0.99
+    },
+    {
+      "id": "openalex:W7221101554:e8",
+      "claim_id": "openalex:W7221101554:c8",
+      "description": "Table 7 and Section 4.8 show disparate impact ratios of 0.956 for Male vs. Female, 0.961 for Urban vs. Rural, and minimum-to-maximum intersectional ratio of 0.881.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W7221101554:e9",
+      "claim_id": "openalex:W7221101554:c9",
+      "description": "Table 7 shows rural false positive rate is 0.680 compared to 0.492 for urban applicants.",
+      "strength": 0.99
+    },
+    {
+      "id": "openalex:W7221101554:e10",
+      "claim_id": "openalex:W7221101554:c10",
+      "description": "Section 4.6 states: 'Test-set ROC-AUC declined from 0.783 to 0.732 for CatBoost (Delta = -0.051; DeLong p < .001)' when excluding Repayment History and Credit Score Category.",
+      "strength": 0.98
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221101554:m1",
+      "paper_id": "openalex:W7221101554",
+      "name": "Supervised Classifier Benchmarking and Hyperparameter Tuning",
+      "description": "Nine supervised classifiers were tuned via grid search using 5-fold stratified cross-validation and evaluated on a held-out 20% test set using ROC-AUC and PR-AUC with bootstrap confidence intervals and DeLong tests.",
+      "datasets": [
+        "De-identified MENA microfinance loan dataset (2022-2023, N=2500)"
+      ],
+      "conditions": [
+        "Stratified 80/20 train/test split (seed 42)",
+        "Classification threshold fixed at tau = 0.50",
+        "Outcome-stratified default base rate of 27.28%"
+      ]
+    },
+    {
+      "id": "openalex:W7221101554:m2",
+      "paper_id": "openalex:W7221101554",
+      "name": "Feature Ablation Analysis of Non-Traditional Indicators",
+      "description": "Models were re-estimated without mobile money frequency, utility payment behavior, and savings group membership to quantify the incremental discriminative gain (Delta AUC).",
+      "datasets": [
+        "De-identified MENA microfinance loan dataset (2022-2023, N=2500)"
+      ],
+      "conditions": [
+        "Fixed hyperparameters, seed, and data split from baseline models",
+        "Tested on CatBoost and regularized Logistic Regression"
+      ]
+    },
+    {
+      "id": "openalex:W7221101554:m3",
+      "paper_id": "openalex:W7221101554",
+      "name": "SHAP Explainability and Rank Stability Validation",
+      "description": "Model predictions were attributed using TreeExplainer on the held-out test set, with rank stability tested via 30 bootstrap resamples and consistency compared across multiple model families.",
+      "datasets": [
+        "De-identified MENA microfinance loan dataset (2022-2023, N=2500)"
+      ],
+      "conditions": [
+        "Evaluated on test set log-odds scale",
+        "30 bootstrap resamples for Spearman rank stability"
+      ]
+    },
+    {
+      "id": "openalex:W7221101554:m4",
+      "paper_id": "openalex:W7221101554",
+      "name": "Multi-Metric Algorithmic Fairness Auditing",
+      "description": "Models were evaluated across gender and geographic subgroups using disparate impact, equal opportunity (TPR), predictive parity (PPV), subgroup error rates, and gender-by-region intersectional analysis.",
+      "datasets": [
+        "De-identified MENA microfinance loan dataset (2022-2023, N=2500)"
+      ],
+      "conditions": [
+        "Fixed threshold tau = 0.50",
+        "Evaluated on approved-loan population",
+        "Screening benchmark of 0.80 for disparate impact"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221101554:l1",
+      "paper_id": "openalex:W7221101554",
+      "text": "The analytical sample used outcome-stratified sampling resulting in a fixed 27.28% default rate that does not reflect true portfolio default prevalence.",
+      "normalized_category": "sampling-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221101554:l2",
+      "paper_id": "openalex:W7221101554",
+      "text": "Data were pooled without institution or country identifiers and not externally validated on an independent portfolio, limiting external validity.",
+      "normalized_category": "external-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221101554:l3",
+      "paper_id": "openalex:W7221101554",
+      "text": "Restricting eligibility to resolved loans eliminated right-censoring but skewed the sample toward shorter-tenor loans (median 4 months) and excluded ongoing loans.",
+      "normalized_category": "selection-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221101554:l4",
+      "paper_id": "openalex:W7221101554",
+      "text": "The internal data-generating processes for institutional risk predictors (Repayment History and Credit Score Category) could not be externally audited.",
+      "normalized_category": "data-verifiability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221101554:l5",
+      "paper_id": "openalex:W7221101554",
+      "text": "Classification metrics and fairness evaluations were computed at a fixed threshold of tau = 0.50 without cost-sensitive threshold optimization.",
+      "normalized_category": "threshold-selection",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221101554:l6",
+      "paper_id": "openalex:W7221101554",
+      "text": "Fairness analysis was constrained to the approved-loan population due to the lack of rejected loan applications (selective-labels problem).",
+      "normalized_category": "selective-labels",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221101554:l7",
+      "paper_id": "openalex:W7221101554",
+      "text": "SHAP attributions inherit known theoretical constraints regarding correlated features and reference distributions, and reflect associative model behavior rather than causal effects.",
+      "normalized_category": "methodological-constraint",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221101554:l8",
+      "paper_id": "openalex:W7221101554",
+      "text": "Comparative classifier benchmarking evidence in credit scoring comes overwhelmingly from consumer-lending datasets in advanced economies rather than small microfinance portfolios.",
+      "normalized_category": "prior-work-generalizability",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221101554:l9",
+      "paper_id": "openalex:W7221101554",
+      "text": "Prior alternative-data studies frequently infer inclusion value from within-model importance rankings rather than ablation designs measuring incremental predictive contribution.",
+      "normalized_category": "prior-work-methodology",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7221101554:f1",
+      "paper_id": "openalex:W7221101554",
+      "text": "Evaluate the incremental value of alternative indicators on thin-file and first-time applicants for whom traditional credit history is uninformative or absent, ideally using randomized or quasi-experimental access designs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7221101554:f2",
+      "paper_id": "openalex:W7221101554",
+      "text": "Conduct external validation across independent microfinance institutions, countries, and diverse lending products.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7221101554:f3",
+      "paper_id": "openalex:W7221101554",
+      "text": "Incorporate reject-inference designs or full applicant-level data to evaluate fairness over the entire applicant pool.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7221101554:f4",
+      "paper_id": "openalex:W7221101554",
+      "text": "Evaluate operational base rates and implement cost-sensitive classification threshold optimization with re-audited threshold-specific fairness metrics.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T13:21:35.872173Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

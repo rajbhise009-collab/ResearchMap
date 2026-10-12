@@ -78,5 +78,25 @@
     "b_pid": "openalex:W4288414189",
     "method": "AI Fairness 360 (AIF360)",
     "limitation": "The study was conducted with crowdworkers rather than judges or domain experts who would be actual users of algorithmic recidivism prediction tools."
+  },
+  "opp:hole:W1988368118->W2892038960": {
+    "verdict": "not_addressing",
+    "reason": "Local techniques for conditioning on observed explanatory attributes do not address causal unidentifiability caused by unobserved confounding factors.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W1988368118",
+    "b_pid": "openalex:W2892038960",
+    "method": "Local techniques for conditional discrimination",
+    "limitation": "If there are unobserved confounding factors that cannot be inferred from the observed proxies, the joint distribution cannot be learned and causal effects become unidentifiable."
+  },
+  "opp:hole:W2963174898->W4220718380": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's convex optimization pre-processing method addresses algorithmic discrimination in data, which does not address Paper B's limitation regarding search strategy terminology in a scoping review.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2963174898",
+    "b_pid": "openalex:W4220718380",
+    "method": "Probabilistic Convex Optimization Pre-Processing",
+    "limitation": "The search strategy may have overlooked relevant publications due to the heterogeneity of terminology used to describe machine learning and racial bias."
   }
 }

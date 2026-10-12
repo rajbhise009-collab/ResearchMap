@@ -1,0 +1,216 @@
+{
+  "paper_id": "openalex:W7220848436",
+  "claims": [
+    {
+      "id": "openalex:W7220848436:c1",
+      "paper_id": "openalex:W7220848436",
+      "text": "Computational systems fix the precisification of open-textured concepts ex ante, uniformly, and at scale during design time.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c2",
+      "paper_id": "openalex:W7220848436",
+      "text": "An algorithmic disparity is contingent relative to a legitimate purpose, a disparity measure, and an admissible class of operationalisations if an alternative operationalisation in that class serves the purpose while reducing the disparity.",
+      "type": "theoretical",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c3",
+      "paper_id": "openalex:W7220848436",
+      "text": "An algorithmic disparity is constitutive relative to a legitimate purpose, a disparity measure, and an admissible class of operationalisations if no alternative operationalisation in that class supports such a system.",
+      "type": "theoretical",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c4",
+      "paper_id": "openalex:W7220848436",
+      "text": "Contingency claims carry an epistemic burden of exhibition, requiring the production of an admissible alternative operationalisation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c5",
+      "paper_id": "openalex:W7220848436",
+      "text": "Constitutivity claims carry an epistemic burden of documented exhaustion over the class of admissible designs and remain defeasible by a single counterexample.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c6",
+      "paper_id": "openalex:W7220848436",
+      "text": "The disparity produced by derogatory person categories in ImageNet inherited from WordNet was contingent relative to the purpose of benchmarking object recognition.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c7",
+      "paper_id": "openalex:W7220848436",
+      "text": "Character-level and byte-level encodings still exhibit more than a fourfold difference in encoding length for certain language pairs.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c8",
+      "paper_id": "openalex:W7220848436",
+      "text": "Re-operationalising health need through measures of health rather than healthcare cost reduced racial disparity in the clinical risk algorithm by 84%.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220848436:c9",
+      "paper_id": "openalex:W7220848436",
+      "text": "Fairness impossibility theorems are a limiting case of constitutive discrimination relative to a design class that holds population partitions and base rates fixed.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220848436:e1",
+      "claim_id": "openalex:W7220848436:c1",
+      "description": "The author notes that computational systems cannot precisify in situ; instead, precisification occurs once at design time through features, categories, thresholds, and objectives, and is applied uniformly at scale without an interpreter.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220848436:e2",
+      "claim_id": "openalex:W7220848436:c2",
+      "description": "Stated in the formal definition of the representational LDA test: a disparity is contingent relative to (P, D, C) if there exists an operationalisation in C supporting a system serving P with less disparity by D.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W7220848436:e3",
+      "claim_id": "openalex:W7220848436:c3",
+      "description": "Stated in the formal definition of the representational LDA test: a disparity is constitutive relative to (P, D, C) if no operationalisation in C supports such a system.",
+      "strength": 0.98
+    },
+    {
+      "id": "openalex:W7220848436:e4",
+      "claim_id": "openalex:W7220848436:c4",
+      "description": "The author specifies that contingency claims are existential and verified by exhibition: producing one admissible operationalisation settles the classification.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220848436:e5",
+      "claim_id": "openalex:W7220848436:c5",
+      "description": "The author defines constitutivity as a negative existential over an unsurveyable design space, established by provisional exhaustion and refuted by exhibiting a single admissible alternative.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220848436:e6",
+      "claim_id": "openalex:W7220848436:c6",
+      "description": "The paper references Yang et al. (2020), showing that filtering and balancing the person subtree in ImageNet served the benchmarking purpose while removing offensive synsets, thus demonstrating an available admissible alternative.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220848436:e7",
+      "claim_id": "openalex:W7220848436:c7",
+      "description": "The text notes that in Petrov et al. (2023), character-level and byte-level models still exhibit more than a fourfold difference in encoding length across certain language pairs due to script information density and UTF-8 encoding costs.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220848436:e8",
+      "claim_id": "openalex:W7220848436:c8",
+      "description": "The author quotes findings from Obermeyer et al. (2019) demonstrating that re-operationalising health need through measures of health instead of costs alone reduced racial disparity by 84%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7220848436:e9",
+      "claim_id": "openalex:W7220848436:c9",
+      "description": "The author demonstrates that setting P as joint satisfaction of calibration and balance and bounding C to designs fixing group partitions and base rates proves constitutivity through mathematical quantification rather than search.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220848436:m1",
+      "paper_id": "openalex:W7220848436",
+      "name": "Representational Less-Discriminatory Alternative (LDA) Test Protocol",
+      "description": "A four-step analytical protocol to evaluate whether algorithmic disparities are contingent or constitutive relative to a specified purpose, disparity measure, and admissible design space.",
+      "datasets": [],
+      "conditions": [
+        "Specified legitimate purpose P",
+        "Specified disparity metric D",
+        "Explicitly bounded class of admissible operationalisations C"
+      ]
+    },
+    {
+      "id": "openalex:W7220848436:m2",
+      "paper_id": "openalex:W7220848436",
+      "name": "Ontological Auditing via Ontological Impact Statement",
+      "description": "An upstream audit mechanism documenting construct representations, excluded dimensions, proxy relationships, considered alternatives, and justifications of constitutivity claims before system deployment.",
+      "datasets": [],
+      "conditions": [
+        "Conducted upstream during design prior to finalising data collection and architecture"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220848436:l1",
+      "paper_id": "openalex:W7220848436",
+      "text": "The criterion provides no theory for normatively fixing the legitimate purpose, disparity measure, or admissible design space parameters.",
+      "normalized_category": "normative-parameter-indeterminacy",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220848436:l2",
+      "paper_id": "openalex:W7220848436",
+      "text": "Operationalising the representational LDA test depends heavily on adequate held-out data and is constrained by the resource costs of developing candidate operationalisations sufficiently to evaluate them.",
+      "normalized_category": "evaluation-resource-constraints",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220848436:l3",
+      "paper_id": "openalex:W7220848436",
+      "text": "The analyzed case studies are illustrative and selected adversarially rather than representing a statistically representative sample of deployed algorithmic systems.",
+      "normalized_category": "non-representative-case-selection",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220848436:l4",
+      "paper_id": "openalex:W7220848436",
+      "text": "The paper's own analytical distinctions coarsen and simplify the complex representational practices they seek to organize.",
+      "normalized_category": "conceptual-coarsening",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220848436:l5",
+      "paper_id": "openalex:W7220848436",
+      "text": "The proposed Ontological Impact Statement and sociotechnical review committees are untested in institutional practice, and their administrative costs remain unknown.",
+      "normalized_category": "untested-governance-proposal",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220848436:f1",
+      "paper_id": "openalex:W7220848436",
+      "text": "Formalize the criterion as a mathematical theory of comparative information loss across admissible design spaces to derive formal necessary conditions for constitutivity.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220848436:f2",
+      "paper_id": "openalex:W7220848436",
+      "text": "Investigate methods for delimiting admissible design classes, specifically differentiating classes constrained by technical necessity from those bounded by commercial conventions.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220848436:f3",
+      "paper_id": "openalex:W7220848436",
+      "text": "Trial the Ontological Impact Statement in real-world design processes to assess its practical feasibility and administrative burden.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-12T13:21:35.871561Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

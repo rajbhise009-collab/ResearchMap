@@ -1,5 +1,5 @@
 {
-  "n": 136,
+  "n": 137,
   "items": [
     {
       "from_claim_id": "openalex:W2786122898:c6",
@@ -1360,6 +1360,16 @@
       "b_paper_id": "openalex:W3152256433",
       "b_text": "A manifestly fair and uniquely optimal predictive algorithm can violate statistical fairness criteria even when base rates are equal across groups.",
       "explanation": "Claim A establishes a mathematical implication regarding sufficiency and demographic parity, while Claim B addresses whether optimal algorithms satisfy statistical fairness criteria under equal base rates."
+    },
+    {
+      "from_claim_id": "openalex:W3152256433:c1",
+      "to_claim_id": "openalex:W7220848436:c9",
+      "similarity": 0.8284737467765808,
+      "a_paper_id": "openalex:W3152256433",
+      "a_text": "Satisfying all statistical criteria of algorithmic fairness simultaneously is impossible unless base rates are equal across relevant groups.",
+      "b_paper_id": "openalex:W7220848436",
+      "b_text": "Fairness impossibility theorems are a limiting case of constitutive discrimination relative to a design class that holds population partitions and base rates fixed.",
+      "explanation": "While both claims discuss algorithmic fairness impossibility theorems and base rates, Claim A asserts a mathematical limitation whereas Claim B offers a broader conceptual interpretation of those theorems."
     }
   ]
 }

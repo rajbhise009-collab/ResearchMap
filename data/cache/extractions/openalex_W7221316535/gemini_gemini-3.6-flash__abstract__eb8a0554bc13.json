@@ -1,0 +1,119 @@
+{
+  "paper_id": "openalex:W7221316535",
+  "claims": [
+    {
+      "id": "openalex:W7221316535:c1",
+      "paper_id": "openalex:W7221316535",
+      "text": "The NLP topic modeling analysis identified seven topics based on coherence scores from r/Teenagers posts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221316535:c2",
+      "paper_id": "openalex:W7221316535",
+      "text": "Qualitative open coding yielded three emergent themes from the r/Teenagers posts.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221316535:c3",
+      "paper_id": "openalex:W7221316535",
+      "text": "Both NLP and qualitative analyses revealed an overlapping theme that online school was challenging and youth needed personal connection with others.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221316535:c4",
+      "paper_id": "openalex:W7221316535",
+      "text": "Both NLP and qualitative analyses revealed an overlapping theme that youth wanted friends and appeared to use screens for social connection.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221316535:c5",
+      "paper_id": "openalex:W7221316535",
+      "text": "Both NLP and qualitative analyses revealed an overlapping theme that youth valued creative activities, such as playing games, to foster social connection.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221316535:c6",
+      "paper_id": "openalex:W7221316535",
+      "text": "The study utilized Latent Dirichlet Allocation (LDA) topic modeling with exploratory input from ChatGPT combined with qualitative open coding triangulation to analyze subreddit posts.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221316535:e1",
+      "claim_id": "openalex:W7221316535:c1",
+      "description": "The NLP analysis identified seven topics based on coherence scores",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221316535:e2",
+      "claim_id": "openalex:W7221316535:c2",
+      "description": "the qualitative open coding yielded three emergent themes.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221316535:e3",
+      "claim_id": "openalex:W7221316535:c3",
+      "description": "Both the NLP and qualitative analyses revealed overlapping topics/themes pertaining to: (1) online school was challenging and youth needed personal connection with others",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221316535:e4",
+      "claim_id": "openalex:W7221316535:c4",
+      "description": "Both the NLP and qualitative analyses revealed overlapping topics/themes pertaining to: ... (2) youth wanted friends and appeared to use screens for social connection",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221316535:e5",
+      "claim_id": "openalex:W7221316535:c5",
+      "description": "Both the NLP and qualitative analyses revealed overlapping topics/themes pertaining to: ... (3) youth valued creative activities, such as playing games to foster social connection.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221316535:e6",
+      "claim_id": "openalex:W7221316535:c6",
+      "description": "A natural language processing latent Dirichlet allocation (LDA) was performed to analyze the social media posts and generate topics that represent the social media data, with exploratory input from ChatGPT. In addition, the data were analyzed using qualitative open coding in order to compare the LDA results with the qualitative open coding results.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221316535:m1",
+      "paper_id": "openalex:W7221316535",
+      "name": "Latent Dirichlet Allocation (LDA) topic modeling and qualitative open coding triangulation",
+      "description": "Analyzed social media posts using LDA topic modeling with exploratory input from ChatGPT alongside qualitative open coding for triangulation.",
+      "datasets": [
+        "r/Teenagers subreddit posts (2017-2025)"
+      ],
+      "conditions": [
+        "Total posts analyzed qualitatively: n = 202",
+        "Subset with body text analyzed via LDA topic modeling: n = 133",
+        "Topic selection determined by coherence scores"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221316535:l1",
+      "paper_id": "openalex:W7221316535",
+      "text": "Only a subset of posts with body text (n = 133 out of 202) could be analyzed using topic modeling.",
+      "normalized_category": "sample-size-restriction",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-12T13:21:36.176714Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
