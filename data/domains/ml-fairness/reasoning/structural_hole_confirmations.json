@@ -98,5 +98,25 @@
     "b_pid": "openalex:W4220718380",
     "method": "Probabilistic Convex Optimization Pre-Processing",
     "limitation": "The search strategy may have overlooked relevant publications due to the heterogeneity of terminology used to describe machine learning and racial bias."
+  },
+  "opp:hole:W4289751798->W3136620301": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's mathematical framework for quantifying algorithmic unfairness cannot address Paper B's systematic review limitation concerning the omission of non-English literature.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W4289751798",
+    "b_pid": "openalex:W3136620301",
+    "method": "Generalized Entropy Unfairness Measurement Framework",
+    "limitation": "The review cannot make assertions about studies on perceived algorithmic fairness published in languages other than English due to the choice of search strings and databases."
+  },
+  "opp:hole:W2157928966->W4288414189": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's data massaging technique for algorithmic fairness does not address Paper B's limitation regarding the participant pool of crowdworkers versus domain experts in a user study.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2157928966",
+    "b_pid": "openalex:W4288414189",
+    "method": "Data Massaging for Non-Discrimination",
+    "limitation": "The study was conducted with crowdworkers rather than judges or domain experts who would be actual users of algorithmic recidivism prediction tools."
   }
 }
