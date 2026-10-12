@@ -1,5 +1,5 @@
 {
-  "total": 105,
+  "total": 106,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1152,6 +1152,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.1080/17405629.2026.2746076",
       "venue": "European Journal of Developmental Psychology",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221316535",
+      "wid": "W7221316535",
+      "title": "Understanding Youth Screen Time and Mental Health: A Natural Language Processing Topic Modeling Analysis",
+      "year": 2026,
+      "doi": "https://doi.org/10.3390/future4040032",
+      "venue": "Future",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true

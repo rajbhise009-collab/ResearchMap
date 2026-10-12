@@ -60,5 +60,5 @@ library is left for the rule to merge.
 | LLM calibration | 113 | 113 | 437 | 437 | unchanged | unchanged | 2 | 2 |
 | Diet & mortality | 101 | 101 | 152 | 152 | unchanged | unchanged | 10 | 10 |
 | ML fairness | 100 | 99 | 95 | 91 | 82 | 78 | 0 | 0 |
-| Social media & teens | 105 | 105 | 214 | 214 | unchanged | unchanged | 8 | 8 |
+| Social media & teens | 106 | 106 | 214 | 214 | unchanged | unchanged | 8 | 8 |
 <!-- /gen:v2-counts -->

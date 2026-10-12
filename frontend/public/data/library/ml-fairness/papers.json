@@ -1,5 +1,5 @@
 {
-  "total": 107,
+  "total": 109,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1177,6 +1177,28 @@
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7220848436",
+      "wid": "W7220848436",
+      "title": "When algorithms cannot be fair: constitutive and contingent discrimination and the limits of less-discriminatory alternatives",
+      "year": 2026,
+      "doi": "https://doi.org/10.1007/s00146-026-03384-0",
+      "venue": "AI & Society",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7221101554",
+      "wid": "W7221101554",
+      "title": "Explainable machine learning models for AI enabled credit scoring and financial inclusion in emerging markets",
+      "year": 2026,
+      "doi": "https://doi.org/10.1007/s44163-026-02392-9",
+      "venue": "Discover Artificial Intelligence",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
     }
   ]
 }

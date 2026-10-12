@@ -16,8 +16,8 @@ and produced zero".
 |:--|--:|--:|:--|--:|--:|:--|:--|
 | llm-calibration | 113 | 113 (100%) | 437 / 437 pairs | 0 (of 2 flagged) | 1 | 63 | 12 (2 substantive) |
 | diet-and-mortality | 101 | 101 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | 4 | 0 (0 substantive) |
-| ml-fairness | 107 | 107 (100%) | 93 / 93 pairs | 0 | 1 | 63 | 3 (0 substantive) |
-| social-media-teen-mental-health | 105 | 104 (99%) | 214 / 214 pairs | 2 (of 8 flagged) | 4 | 25 | 0 (0 substantive) |
+| ml-fairness | 109 | 109 (100%) | 94 / 94 pairs | 0 | 1 | 64 | 2 (0 substantive) |
+| social-media-teen-mental-health | 106 | 105 (99%) | 214 / 214 pairs | 2 (of 8 flagged) | 4 | 25 | 0 (0 substantive) |
 <!-- /gen:scorer-status -->
 
 "Pairs" are shortlisted claim pairs. Diet and ML-fairness: cosine

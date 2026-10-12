@@ -2,6 +2,20 @@
 
 One entry per weekly growth run (newest first).
 
+## 2026-10-12
+
+- diet-and-mortality: 0 papers added
+- ml-fairness: 2 papers added
+- social-media-teen-mental-health: 1 papers added
+- new library nudge-effectiveness: building (extraction submitted)
+- diet-and-mortality: results shown 11 -> 11 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- ml-fairness: results shown 64 -> 65 (+1 new, -0 no longer shown); 0 flagged disagreements (not yet checked); 3 set-aside item(s) dropped (never shown)
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2617709446-w2964316623 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2974817986-w4288414189 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2974817986-w3136620301 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+- social-media-teen-mental-health: results shown 31 -> 31 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- spend recorded ₹8.28; remaining ₹244.81
+
 ## 2026-10-11
 
 - diet-and-mortality: 0 papers added

@@ -127,13 +127,13 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "built": "2026-10-11",
+      "built": "2026-10-12",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 107,
-      "claims_read": 107,
-      "full_text": 54,
+      "papers": 109,
+      "claims_read": 109,
+      "full_text": 56,
       "abstract_only": 53,
-      "gap_cards": 64,
+      "gap_cards": 65,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -155,23 +155,23 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 63,
+          "count": 64,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 64,
-      "set_aside_total": 3,
+      "results_total": 65,
+      "set_aside_total": 2,
       "growth": {
         "grows": true,
-        "added": 8,
+        "added": 10,
         "last_added": "2026-10-11"
       },
-      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (93 pairs); pairs worded differently are never compared.",
+      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (94 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {
-        "shortlisted": 93,
-        "classified": 93,
+        "shortlisted": 94,
+        "classified": 94,
         "flagged": 0,
         "hand_checked": 0,
         "confirmed": 0,
@@ -190,10 +190,10 @@
       "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
       "built": null,
       "built_basis": null,
-      "papers": 105,
-      "claims_read": 104,
+      "papers": 106,
+      "claims_read": 105,
       "full_text": 24,
-      "abstract_only": 81,
+      "abstract_only": 82,
       "gap_cards": 31,
       "results": [
         {
@@ -225,7 +225,7 @@
       "set_aside_total": 6,
       "growth": {
         "grows": true,
-        "added": 5,
+        "added": 6,
         "last_added": "2026-10-11"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (214 pairs); pairs worded differently are never compared.",
