@@ -1,0 +1,985 @@
+{
+ "batch_id": "foyhijig2u01ms5pfdotv0oovc56g92kyo5f",
+ "slug": "ml-fairness",
+ "submitted_on": "2026-10-12",
+ "submitted_at": 1791816098.0197914,
+ "projected_inr": 0.912996,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7221439909": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7221439909",
+   "openalex_id": "https://openalex.org/W7221439909",
+   "title": "Algorithmic Empowerment: The Fair Allocation of Visibility in Platformized Publics",
+   "year": 2026,
+   "doi": "https://doi.org/10.1177/29777984261494012",
+   "venue": "Media Technology and Governance",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "Ranking and recommendation algorithms increasingly allocate visibility, shaping which claims circulate and whose experiences enter public discussion. Much algorithmic fairness scholarship draws on the language of noninterference, asking whether platforms distort a neutral flow of communication. This article argues that platforms produce and allocate visibility, defined as the institutionally produced probability that a communicative act will be delivered to an audience. Drawing on scholarship on epistemic injustice, the article develops the Algorithmic Empowerment Principle (AEP) to articulate platforms\u2019 epistemic responsibilities as gatekeepers of public attention. The AEP holds that platforms with gatekeeping power owe structurally disadvantaged groups a fair opportunity for epistemic participation. When background inequality measurably reduces a group's fair chance to reach an audience, platforms should allocate a reasonable additional share of algorithmic attention to its speech. The article then develops duties of epistemic redress covering ranking design and visibility audits, while requiring platforms to justify their choices to affected communities.",
+   "label": "on-domain",
+   "rationale": "strong in-domain term: 'algorithmic fairness'; core scope: title: fairness 'Fair' + algorithmic 'Algorithm'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-12",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7221439909",
+   "doi": "https://doi.org/10.1177/29777984261494012",
+   "title": "Algorithmic Empowerment: The Fair Allocation of Visibility in Platformized Publics",
+   "display_name": "Algorithmic Empowerment: The Fair Allocation of Visibility in Platformized Publics",
+   "publication_year": 2026,
+   "publication_date": "2026-10-11",
+   "ids": {
+    "openalex": "https://openalex.org/W7221439909",
+    "doi": "https://doi.org/10.1177/29777984261494012"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1177/29777984261494012",
+    "doi": "https://doi.org/10.1177/29777984261494012",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1177/29777984261494012",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S7407057798",
+     "display_name": "Media Technology and Governance",
+     "issn_l": "2977-7984",
+     "issn": [
+      "2977-7984",
+      "2977-7992"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Media, Technology and Governance",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5010784569",
+      "display_name": "Chi Kwok",
+      "orcid": "https://orcid.org/0000-0003-3754-2447",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-3754-2447"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I165488957",
+       "display_name": "Lingnan University",
+       "ror": "https://ror.org/0563pg902",
+       "country_code": "HK",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I165488957"
+       ]
+      }
+     ],
+     "countries": [
+      "HK"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Chi Kwok",
+     "raw_affiliation_strings": [
+      "Lingnan University"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-3754-2447",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Lingnan University",
+       "institution_ids": [
+        "https://openalex.org/I165488957"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5010784569"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I165488957"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.92708011,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10883",
+    "display_name": "Ethics and Social Impacts of AI",
+    "score": 0.9945999979972839,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3311",
+     "display_name": "Safety Research"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.9945999979972839,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12320",
+     "display_name": "Feminist Epistemology and Gender Studies",
+     "score": 0.00430000014603138,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10557",
+     "display_name": "Social Media and Politics",
+     "score": 0.00019999999494757503,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3315",
+      "display_name": "Communication"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C73380752",
+     "wikidata": "https://www.wikidata.org/wiki/Q609087",
+     "display_name": "Gatekeeping",
+     "level": 2,
+     "score": 0.8098000288009644
+    },
+    {
+     "id": "https://openalex.org/C2776515129",
+     "wikidata": "https://www.wikidata.org/wiki/Q7306218",
+     "display_name": "Redress",
+     "level": 2,
+     "score": 0.7340999841690063
+    },
+    {
+     "id": "https://openalex.org/C2778061430",
+     "wikidata": "https://www.wikidata.org/wiki/Q188823",
+     "display_name": "Scholarship",
+     "level": 2,
+     "score": 0.718999981880188
+    },
+    {
+     "id": "https://openalex.org/C123403432",
+     "wikidata": "https://www.wikidata.org/wiki/Q654068",
+     "display_name": "Visibility",
+     "level": 2,
+     "score": 0.6808000206947327
+    },
+    {
+     "id": "https://openalex.org/C2779891390",
+     "wikidata": "https://www.wikidata.org/wiki/Q964630",
+     "display_name": "Custodians",
+     "level": 2,
+     "score": 0.6021000146865845
+    },
+    {
+     "id": "https://openalex.org/C2780623907",
+     "wikidata": "https://www.wikidata.org/wiki/Q106394435",
+     "display_name": "Disadvantaged",
+     "level": 2,
+     "score": 0.5892999768257141
+    },
+    {
+     "id": "https://openalex.org/C144024400",
+     "wikidata": "https://www.wikidata.org/wiki/Q21201",
+     "display_name": "Sociology",
+     "level": 0,
+     "score": 0.5218999981880188
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.48420000076293945
+    },
+    {
+     "id": "https://openalex.org/C2776809875",
+     "wikidata": "https://www.wikidata.org/wiki/Q1375963",
+     "display_name": "Converse",
+     "level": 2,
+     "score": 0.44609999656677246
+    },
+    {
+     "id": "https://openalex.org/C45555294",
+     "wikidata": "https://www.wikidata.org/wiki/Q28113351",
+     "display_name": "Inequality",
+     "level": 2,
+     "score": 0.44200000166893005
+    },
+    {
+     "id": "https://openalex.org/C2776254780",
+     "wikidata": "https://www.wikidata.org/wiki/Q131562",
+     "display_name": "Fair use",
+     "level": 2,
+     "score": 0.43959999084472656
+    },
+    {
+     "id": "https://openalex.org/C189430467",
+     "wikidata": "https://www.wikidata.org/wiki/Q7293293",
+     "display_name": "Ranking (information retrieval)",
+     "level": 2,
+     "score": 0.42719998955726624
+    },
+    {
+     "id": "https://openalex.org/C39549134",
+     "wikidata": "https://www.wikidata.org/wiki/Q133080",
+     "display_name": "Public relations",
+     "level": 1,
+     "score": 0.4259999990463257
+    },
+    {
+     "id": "https://openalex.org/C74039378",
+     "wikidata": "https://www.wikidata.org/wiki/Q7240997",
+     "display_name": "Presentational and representational acting",
+     "level": 2,
+     "score": 0.41920000314712524
+    },
+    {
+     "id": "https://openalex.org/C190253527",
+     "wikidata": "https://www.wikidata.org/wiki/Q295354",
+     "display_name": "Law and economics",
+     "level": 1,
+     "score": 0.3917999863624573
+    },
+    {
+     "id": "https://openalex.org/C2992947560",
+     "wikidata": "https://www.wikidata.org/wiki/Q5167661",
+     "display_name": "Fair share",
+     "level": 2,
+     "score": 0.38920000195503235
+    },
+    {
+     "id": "https://openalex.org/C2780138299",
+     "wikidata": "https://www.wikidata.org/wiki/Q3404265",
+     "display_name": "Privilege (computing)",
+     "level": 2,
+     "score": 0.3815000057220459
+    },
+    {
+     "id": "https://openalex.org/C163258240",
+     "wikidata": "https://www.wikidata.org/wiki/Q25342",
+     "display_name": "Power (physics)",
+     "level": 2,
+     "score": 0.38089999556541443
+    },
+    {
+     "id": "https://openalex.org/C2778531742",
+     "wikidata": "https://www.wikidata.org/wiki/Q17009281",
+     "display_name": "Discoverability",
+     "level": 2,
+     "score": 0.37770000100135803
+    },
+    {
+     "id": "https://openalex.org/C194995250",
+     "wikidata": "https://www.wikidata.org/wiki/Q531136",
+     "display_name": "Affordance",
+     "level": 2,
+     "score": 0.3747999966144562
+    },
+    {
+     "id": "https://openalex.org/C111472728",
+     "wikidata": "https://www.wikidata.org/wiki/Q9471",
+     "display_name": "Epistemology",
+     "level": 1,
+     "score": 0.3490000069141388
+    },
+    {
+     "id": "https://openalex.org/C2780339515",
+     "wikidata": "https://www.wikidata.org/wiki/Q3074698",
+     "display_name": "Arrow",
+     "level": 2,
+     "score": 0.34150001406669617
+    },
+    {
+     "id": "https://openalex.org/C108170787",
+     "wikidata": "https://www.wikidata.org/wiki/Q3951828",
+     "display_name": "Agency (philosophy)",
+     "level": 2,
+     "score": 0.33550000190734863
+    },
+    {
+     "id": "https://openalex.org/C162324750",
+     "wikidata": "https://www.wikidata.org/wiki/Q8134",
+     "display_name": "Economics",
+     "level": 0,
+     "score": 0.3319999873638153
+    },
+    {
+     "id": "https://openalex.org/C43091099",
+     "wikidata": "https://www.wikidata.org/wiki/Q1067788",
+     "display_name": "Through-the-lens metering",
+     "level": 3,
+     "score": 0.3294999897480011
+    },
+    {
+     "id": "https://openalex.org/C165064840",
+     "wikidata": "https://www.wikidata.org/wiki/Q1321061",
+     "display_name": "Matching (statistics)",
+     "level": 2,
+     "score": 0.3084000051021576
+    },
+    {
+     "id": "https://openalex.org/C94966114",
+     "wikidata": "https://www.wikidata.org/wiki/Q29256",
+     "display_name": "Black box",
+     "level": 2,
+     "score": 0.29269999265670776
+    },
+    {
+     "id": "https://openalex.org/C108827166",
+     "wikidata": "https://www.wikidata.org/wiki/Q175975",
+     "display_name": "Internet privacy",
+     "level": 1,
+     "score": 0.29030001163482666
+    },
+    {
+     "id": "https://openalex.org/C20555606",
+     "wikidata": "https://www.wikidata.org/wiki/Q868575",
+     "display_name": "Empowerment",
+     "level": 2,
+     "score": 0.2867000102996826
+    },
+    {
+     "id": "https://openalex.org/C17744445",
+     "wikidata": "https://www.wikidata.org/wiki/Q36442",
+     "display_name": "Political science",
+     "level": 0,
+     "score": 0.28349998593330383
+    },
+    {
+     "id": "https://openalex.org/C94822996",
+     "wikidata": "https://www.wikidata.org/wiki/Q1777902",
+     "display_name": "Satisficing",
+     "level": 2,
+     "score": 0.27129998803138733
+    },
+    {
+     "id": "https://openalex.org/C2776889888",
+     "wikidata": "https://www.wikidata.org/wiki/Q1135789",
+     "display_name": "Unintended consequences",
+     "level": 2,
+     "score": 0.2644999921321869
+    },
+    {
+     "id": "https://openalex.org/C2777200299",
+     "wikidata": "https://www.wikidata.org/wiki/Q52943",
+     "display_name": "Conversation",
+     "level": 2,
+     "score": 0.2574999928474426
+    },
+    {
+     "id": "https://openalex.org/C162222271",
+     "wikidata": "https://www.wikidata.org/wiki/Q92779871",
+     "display_name": "Public good",
+     "level": 2,
+     "score": 0.25189998745918274
+    },
+    {
+     "id": "https://openalex.org/C2779530757",
+     "wikidata": "https://www.wikidata.org/wiki/Q1207505",
+     "display_name": "Quality (philosophy)",
+     "level": 2,
+     "score": 0.25060001015663147
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1177/29777984261494012",
+     "doi": "https://doi.org/10.1177/29777984261494012",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1177/29777984261494012",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S7407057798",
+      "display_name": "Media Technology and Governance",
+      "issn_l": "2977-7984",
+      "issn": [
+       "2977-7984",
+       "2977-7992"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Media, Technology and Governance",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 75,
+   "referenced_works": [
+    "https://openalex.org/W1981892619",
+    "https://openalex.org/W1986347911",
+    "https://openalex.org/W1988208978",
+    "https://openalex.org/W2028391240",
+    "https://openalex.org/W2053718798",
+    "https://openalex.org/W2067024896",
+    "https://openalex.org/W2068670115",
+    "https://openalex.org/W2075701739",
+    "https://openalex.org/W2087961159",
+    "https://openalex.org/W2093858681",
+    "https://openalex.org/W2101744137",
+    "https://openalex.org/W2109741756",
+    "https://openalex.org/W2171323324",
+    "https://openalex.org/W2337934060",
+    "https://openalex.org/W2339645179",
+    "https://openalex.org/W2361256855",
+    "https://openalex.org/W2466363251",
+    "https://openalex.org/W2475162543",
+    "https://openalex.org/W2491354304",
+    "https://openalex.org/W2507975203",
+    "https://openalex.org/W2512228757",
+    "https://openalex.org/W2550925836",
+    "https://openalex.org/W2565683863",
+    "https://openalex.org/W2778635114",
+    "https://openalex.org/W2784259015",
+    "https://openalex.org/W2801313916",
+    "https://openalex.org/W2809386502",
+    "https://openalex.org/W2905002332",
+    "https://openalex.org/W2911280170",
+    "https://openalex.org/W2920950073",
+    "https://openalex.org/W2945776595",
+    "https://openalex.org/W2953083078",
+    "https://openalex.org/W2972945067",
+    "https://openalex.org/W2980951591",
+    "https://openalex.org/W2981869278",
+    "https://openalex.org/W2984492189",
+    "https://openalex.org/W2999490220",
+    "https://openalex.org/W3008694996",
+    "https://openalex.org/W3042215501",
+    "https://openalex.org/W3091779379",
+    "https://openalex.org/W3101206394",
+    "https://openalex.org/W3111445458",
+    "https://openalex.org/W3122247366",
+    "https://openalex.org/W3122548859",
+    "https://openalex.org/W3127162919",
+    "https://openalex.org/W3159435787",
+    "https://openalex.org/W3160265420",
+    "https://openalex.org/W3160887439",
+    "https://openalex.org/W3162260607",
+    "https://openalex.org/W3163140116",
+    "https://openalex.org/W3163161794",
+    "https://openalex.org/W3195032612",
+    "https://openalex.org/W4206125442",
+    "https://openalex.org/W4206597645",
+    "https://openalex.org/W4213068013",
+    "https://openalex.org/W4220994459",
+    "https://openalex.org/W4243728602",
+    "https://openalex.org/W4252633962",
+    "https://openalex.org/W4285059900",
+    "https://openalex.org/W4286715920",
+    "https://openalex.org/W4288086175",
+    "https://openalex.org/W4292296148",
+    "https://openalex.org/W4294792133",
+    "https://openalex.org/W4304690272",
+    "https://openalex.org/W4319300755",
+    "https://openalex.org/W4360618511",
+    "https://openalex.org/W4385298751",
+    "https://openalex.org/W4390699165",
+    "https://openalex.org/W4391535930",
+    "https://openalex.org/W4400016526",
+    "https://openalex.org/W4402063437",
+    "https://openalex.org/W4406845503",
+    "https://openalex.org/W4415396909",
+    "https://openalex.org/W7125497011",
+    "https://openalex.org/W7214191129"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Ranking": [
+     0
+    ],
+    "and": [
+     1,
+     11,
+     42,
+     140
+    ],
+    "recommendation": [
+     2
+    ],
+    "algorithms": [
+     3
+    ],
+    "increasingly": [
+     4
+    ],
+    "allocate": [
+     5,
+     43,
+     118
+    ],
+    "visibility,": [
+     6,
+     44
+    ],
+    "shaping": [
+     7
+    ],
+    "which": [
+     8
+    ],
+    "claims": [
+     9
+    ],
+    "circulate": [
+     10
+    ],
+    "whose": [
+     12
+    ],
+    "experiences": [
+     13
+    ],
+    "enter": [
+     14
+    ],
+    "public": [
+     15,
+     83
+    ],
+    "discussion.": [
+     16
+    ],
+    "Much": [
+     17
+    ],
+    "algorithmic": [
+     18,
+     124
+    ],
+    "fairness": [
+     19
+    ],
+    "scholarship": [
+     20,
+     63
+    ],
+    "draws": [
+     21
+    ],
+    "on": [
+     22,
+     62,
+     64
+    ],
+    "the": [
+     23,
+     47,
+     67,
+     70
+    ],
+    "language": [
+     24
+    ],
+    "of": [
+     25,
+     34,
+     82,
+     123,
+     134
+    ],
+    "noninterference,": [
+     26
+    ],
+    "asking": [
+     27
+    ],
+    "whether": [
+     28
+    ],
+    "platforms": [
+     29,
+     40,
+     89,
+     116,
+     145
+    ],
+    "distort": [
+     30
+    ],
+    "a": [
+     31,
+     52,
+     97,
+     108,
+     119
+    ],
+    "neutral": [
+     32
+    ],
+    "flow": [
+     33
+    ],
+    "communication.": [
+     35
+    ],
+    "This": [
+     36
+    ],
+    "article": [
+     37,
+     68,
+     130
+    ],
+    "argues": [
+     38
+    ],
+    "that": [
+     39,
+     51,
+     88
+    ],
+    "produce": [
+     41
+    ],
+    "defined": [
+     45
+    ],
+    "as": [
+     46,
+     80
+    ],
+    "institutionally": [
+     48
+    ],
+    "produced": [
+     49
+    ],
+    "probability": [
+     50
+    ],
+    "communicative": [
+     53
+    ],
+    "act": [
+     54
+    ],
+    "will": [
+     55
+    ],
+    "be": [
+     56
+    ],
+    "delivered": [
+     57
+    ],
+    "to": [
+     58,
+     75,
+     112,
+     126,
+     146,
+     150
+    ],
+    "an": [
+     59,
+     114
+    ],
+    "audience.": [
+     60
+    ],
+    "Drawing": [
+     61
+    ],
+    "epistemic": [
+     65,
+     78,
+     101,
+     135
+    ],
+    "injustice,": [
+     66
+    ],
+    "develops": [
+     69,
+     132
+    ],
+    "Algorithmic": [
+     71
+    ],
+    "Empowerment": [
+     72
+    ],
+    "Principle": [
+     73
+    ],
+    "(AEP)": [
+     74
+    ],
+    "articulate": [
+     76
+    ],
+    "platforms\u2019": [
+     77
+    ],
+    "responsibilities": [
+     79
+    ],
+    "gatekeepers": [
+     81
+    ],
+    "attention.": [
+     84
+    ],
+    "The": [
+     85,
+     129
+    ],
+    "AEP": [
+     86
+    ],
+    "holds": [
+     87
+    ],
+    "with": [
+     90
+    ],
+    "gatekeeping": [
+     91
+    ],
+    "power": [
+     92
+    ],
+    "owe": [
+     93
+    ],
+    "structurally": [
+     94
+    ],
+    "disadvantaged": [
+     95
+    ],
+    "groups": [
+     96
+    ],
+    "fair": [
+     98,
+     110
+    ],
+    "opportunity": [
+     99
+    ],
+    "for": [
+     100
+    ],
+    "participation.": [
+     102
+    ],
+    "When": [
+     103
+    ],
+    "background": [
+     104
+    ],
+    "inequality": [
+     105
+    ],
+    "measurably": [
+     106
+    ],
+    "reduces": [
+     107
+    ],
+    "group's": [
+     109
+    ],
+    "chance": [
+     111
+    ],
+    "reach": [
+     113
+    ],
+    "audience,": [
+     115
+    ],
+    "should": [
+     117
+    ],
+    "reasonable": [
+     120
+    ],
+    "additional": [
+     121
+    ],
+    "share": [
+     122
+    ],
+    "attention": [
+     125
+    ],
+    "its": [
+     127
+    ],
+    "speech.": [
+     128
+    ],
+    "then": [
+     131
+    ],
+    "duties": [
+     133
+    ],
+    "redress": [
+     136
+    ],
+    "covering": [
+     137
+    ],
+    "ranking": [
+     138
+    ],
+    "design": [
+     139
+    ],
+    "visibility": [
+     141
+    ],
+    "audits,": [
+     142
+    ],
+    "while": [
+     143
+    ],
+    "requiring": [
+     144
+    ],
+    "justify": [
+     147
+    ],
+    "their": [
+     148
+    ],
+    "choices": [
+     149
+    ],
+    "affected": [
+     151
+    ],
+    "communities.": [
+     152
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-12T09:40:04.860316",
+   "created_date": "2026-10-12T00:00:00"
+  }
+ ]
+}
