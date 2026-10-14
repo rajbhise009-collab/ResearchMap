@@ -6,9 +6,10 @@
    10. Detail pages
    ========================================================================== */
 
-.detail-grid {
+.detail-grid {          /* the same grid as home and the list pages */
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
+  grid-template-columns: minmax(0, var(--measure)) minmax(0, var(--aside));
+  justify-content: space-between;
   gap: var(--s-8);
   align-items: start;
 }

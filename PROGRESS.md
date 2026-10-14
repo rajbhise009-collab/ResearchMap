@@ -79,6 +79,31 @@ axe found 4 serious and 12 moderate issues over 40 page-states. Before screensho
   - **axe:** 4 serious and 12 moderate before; 0 after, over 40 page-states (10 pages and states × light/dark × 1280/390).
   - **Screenshots:** before and after, 10 states × 390/768/1280 × light/dark, plus one contact sheet per width, in `~/Desktop/rm-ui-after/v2/`.
 
+### Fix pass after preview feedback (2026-10-14)
+
+- **Phones:**
+  - one slim masthead bar: the nav is a single scrollable row with the current page scrolled into view, and Quick search is icon-only;
+  - the eyebrow is one line in sentence case (the lead-in shortens with "…" before the library name would);
+  - a proper mobile scale: headline about 30px, body 16, secondary 13–14, chips 14, with 44px targets from padding;
+  - spacing tops out at 32px;
+  - the search box ends at 304px (was 451) and all three examples are on the first screen;
+  - Ask never looks disabled; pressing it on an empty box focuses the box.
+- **Desktop:**
+  - one layout everywhere: a centred 66rem container, a 40rem reading column (about 70 characters) and a 20rem sticky aside;
+  - the home card, the "Everything we found" and Papers asides (library summary, filters, count) and the detail "On this page" all use it;
+  - cards are as wide as the column, and caveats align with the quote;
+  - page-level gaps are roughly halved (the headline is 63px higher).
+- **Nav:** the current page shows as a thin underline. A mouse or touch click gives up focus after navigating, so no browser draws the keyboard ring on it; the ring is only for keyboard focus.
+- **Home first screen:**
+  - the library's description and safety note sit in the library card, beside the headline on wide screens and after "What you'll find" on phones; results still lead with the note;
+  - "What you'll find" and the description are in the page from the first paint;
+  - the examples and the hint keep their space.
+- **Measured (gz, 390px, CPU 4x, slow 4G):**
+  - against the PR head `651f075`: FCP 432 → 436 ms (20-round medians 440 → 440); CLS 0.001 → 0.001;
+  - LCP at 360–1920px for all four libraries is 444–484 ms (the PR head reached about 1.2 s at 768px, and for Diet at 390px);
+  - home CSS 6.93 → 7.37 KB gz; home JS 151.7 → 152.0 KB gz.
+- **Screenshots:** before and after at 360/390/768/1024/1280/1440/1920 × light/dark, plus a contact sheet per width, in `~/Desktop/rm-ui-after/v3/`. No horizontal overflow at any width.
+
 **Still open / for the owner:**
 - the footer copy shortenings (proposed 2026-10-11, not applied);
 - "How sure are we?" on disagreement pages shows the strength word without its sentence (the data has no `strength_meaning`);

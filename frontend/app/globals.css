@@ -90,12 +90,17 @@
   --s-4: 1rem;
   --s-5: 1.5rem;
   --s-6: 2rem;
-  --s-7: 3rem;
-  --s-8: 4rem;
-  --s-9: 6rem;
+  /* One spacing scale: 4, 8, 12, 16, 24, 32, then 48 and 64 for page-level
+     breaks only. */
+  --s-7: 2rem;
+  --s-8: 3rem;
+  --s-9: 4rem;
 
-  --measure: 38rem;
-  --wide: 68rem;
+  /* One layout everywhere: a reading column (about 70 characters of body
+     serif) beside an aside, in a centred container. */
+  --measure: 40rem;
+  --aside: 20rem;
+  --wide: 66rem;
   --radius-sm: 4px;
   --radius: 8px;
   --radius-lg: 14px;
@@ -303,7 +308,7 @@ summary:focus-visible, pre:focus-visible, select:focus-visible,
 .masthead-in {
   max-width: var(--wide);
   margin: 0 auto;
-  padding: var(--s-4) var(--s-5);
+  padding: var(--s-1) var(--s-5);
   display: flex;
   align-items: center;
   gap: var(--s-6);
@@ -326,7 +331,7 @@ summary:focus-visible, pre:focus-visible, select:focus-visible,
 }
 .masthead nav a {
   text-decoration: none;
-  display: inline-flex; align-items: center; min-height: 44px;
+  display: inline-flex; align-items: center; min-height: 40px;
   box-shadow: inset 0 -2px 0 transparent;
   transition: color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
@@ -351,6 +356,7 @@ summary:focus-visible, pre:focus-visible, select:focus-visible,
               color var(--dur) var(--ease);
 }
 .kbd-hint:hover { color: var(--ink); border-color: var(--ink-strong); }
+.kbd-hint-icon { flex-shrink: 0; }
 .kbd-hint kbd {
   font-family: var(--font-sans);
   font-size: 11px;
@@ -367,7 +373,7 @@ main {
   max-width: var(--wide);
   width: 100%;
   margin: 0 auto;
-  padding: var(--s-8) var(--s-5) var(--s-9);
+  padding: var(--s-7) var(--s-5) var(--s-9);
 }
 main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 
@@ -430,10 +436,6 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .not-advice strong { color: var(--fg); }
 
-.coverage-note {
-  margin-top: var(--s-3);
-  font-style: italic;
-}
 
 
 .sr-only {
@@ -492,33 +494,54 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    4. Landing
    ========================================================================== */
 
-.hero-grid {
+.hero-grid, .page-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+  grid-template-columns: minmax(0, var(--measure)) minmax(0, var(--aside));
+  justify-content: space-between;
   gap: var(--s-8);
   align-items: start;
 }
+.page-grid > .page-main { grid-column: 1; grid-row: 1; min-width: 0; }
+.page-grid > .page-aside { grid-column: 2; grid-row: 1; }
+.page-head { max-width: var(--measure); margin-bottom: var(--s-6); }
+.page-aside {
+  background: var(--raise-1); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg); padding: var(--s-4) var(--s-5);
+  font-family: var(--font-sans); font-size: var(--step--1); color: var(--ink-soft);
+}
+.page-aside .lib-summary { margin: 0 0 var(--s-3); }
+.page-aside .filters {
+  flex-direction: column; align-items: stretch; gap: var(--s-3);
+  border: 0; padding: 0; margin: 0;
+}
+.page-aside .filters label { justify-content: space-between; }
+.page-aside .filters .count { margin: 0; }
 /* The library card stays in view beside the results on wide screens. */
 @media (min-width: 901px) {
-  .about-card { position: sticky; top: 88px; }
+  .about-card, .page-aside { position: sticky; top: 76px; }
 }
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+  .hero-grid, .page-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }
+  .page-grid > .page-main, .page-grid > .page-aside { grid-column: 1; grid-row: auto; }
   /* Stacked under the hero: wait for the library like the intro does, so
      the card is never pushed down once it is on screen (CLS). */
   .hero-grid:not(:has(.ask-results[data-lib])) .about-card { display: none; }
 }
 
-.hero { max-width: var(--measure); }
+.hero { max-width: var(--measure); min-width: 0; }
 .hero .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-sans);
-  font-size: var(--step--2);
+  font-size: var(--step--1);
   color: var(--muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: var(--s-4);
+  letter-spacing: 0.005em;
+  margin-bottom: var(--s-3);
 }
+/* Home: one line; the lead-in shortens with an ellipsis before the
+   library name would. */
+.eyebrow-line { display: flex; max-width: 100%; white-space: nowrap; }
+.eb-lead { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.eb-name { flex-shrink: 0; }
 .hero .eyebrow { align-items: baseline; }
 .hero .eyebrow::before {
   content: ""; width: 6px; height: 6px; border-radius: 50%;
@@ -526,19 +549,28 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   transform: translateY(-1px);
 }
 .hero .eyebrow strong { color: var(--ink); font-weight: 600; }
-.hero h1 { font-size: clamp(1.9rem, 4.4vw, 3.2rem); margin-bottom: var(--s-4); }
+.hero h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: var(--s-3); }
 /* Results fold the intro away so they start right under the box. */
-.hero .ask { margin-top: var(--s-6); }
-.hero-note { margin-top: var(--s-6); }
+.hero .ask { margin-top: var(--s-5); }
 .hero-intro {
   margin-top: var(--s-7);
   padding-top: var(--s-6);
   border-top: 1px solid var(--rule);
 }
-.hero .hero-intro .covers { margin-top: 0; min-height: 3.2em; }
+/* On phones the description repeats the list above it; it stays in the
+   page (and on wider screens). */
+@media (max-width: 620px) { .hero .hero-intro .lede { display: none; } }
+/* The examples arrive with the library; their space is kept from the first
+   paint so nothing below them moves (heights measured for every library). */
+.hero .examples { min-height: 72px; align-content: flex-start; }
+@media (min-width: 901px) and (max-width: 1023px) { .hero .examples { min-height: 140px; } }
+@media (max-width: 620px) { .hero .examples { min-height: 176px; } }
+.ask-hint { min-height: 3.2em; line-height: 1.6; }
+@media (max-width: 380px) { .ask-hint { min-height: 4.8em; } }   /* a long "Try:" runs to 3 lines */
+.card-note { margin: var(--s-3) 0 0; padding: var(--s-3) var(--s-4); }
 .intro-h {
   font-size: var(--step-2);
-  margin: var(--s-6) 0 var(--s-4);
+  margin: 0 0 var(--s-4);
 }
 .kinds-list {
   list-style: none; margin: 0; padding: 0;
@@ -560,22 +592,11 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    the eyebrow gains the library name, and the hint under the box changes
    from "Looking through the library…" to the library's own "Try:" line. */
 .hero .eyebrow { line-height: 1.6; }
-@media (max-width: 760px) {
-  .hero .eyebrow { min-height: 3.2em; }
-  .ask-hint { min-height: 3.2em; line-height: 1.6; }
-}
 @media (max-width: 620px) {
   .kinds-list { grid-template-columns: 1fr; gap: var(--s-3); }
-  .hero .hero-intro .covers { min-height: 6.4em; }
 }
 .hero .lede { font-size: var(--step-1); color: var(--ink-soft); }
 .hero .lede + .lede { margin-top: var(--s-4); }
-.hero .covers {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  color: var(--muted);
-  margin-top: var(--s-4);
-}
 
 /* The little "here's what this covers" panel that fills the right side */
 .about-card {
@@ -597,19 +618,12 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   margin-bottom: var(--s-3);
 }
 .about-card dl { margin: 0; display: grid; gap: var(--s-3); }
+.card-covers { margin: var(--s-2) 0 0; color: var(--ink-soft); }
 .about-card dt { color: var(--muted); font-size: var(--step--2); }
 .about-card dd {
   margin: 0; color: var(--ink);
   font-family: var(--font-serif); font-size: var(--step-0);
   line-height: var(--line-snug);
-}
-.about-card dd .num {
-  font-family: var(--font-sans);
-  font-variant-numeric: tabular-nums;
-  font-size: var(--step-2);
-  color: var(--ink-strong);
-  font-weight: 500;
-  letter-spacing: -0.01em;
 }
 
 /* ==========================================================================
@@ -617,7 +631,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    ========================================================================== */
 
 .ask {
-  margin-top: var(--s-7);
+  margin-top: var(--s-6);
   max-width: var(--measure);
 }
 .ask-box {
@@ -729,6 +743,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .example-chip:hover { color: var(--ink-strong); border-color: var(--ink-strong); background: var(--raise-1); }
 .example-chip:active, .cta:active, .text-btn:active { transform: scale(0.98); }
+.example-chip { border-radius: 18px; text-align: left; line-height: 1.3; }
 .example-chip { transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease),
                             background var(--dur) var(--ease), transform var(--dur-fast) var(--ease); }
 
@@ -737,7 +752,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    ========================================================================== */
 
 .verdict-line {
-  margin: var(--s-7) 0 var(--s-5);
+  margin: var(--s-6) 0 var(--s-4);
   padding-bottom: var(--s-4);
   border-bottom: 1px solid var(--rule);
   font-family: var(--font-sans);
@@ -792,7 +807,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .result:hover { border-color: var(--rule-strong); box-shadow: var(--shadow-2); }
-.result .caveat { max-width: none; }
+.result .caveat, .result h3, .result .why { max-width: none; }
 
 /* One orchestrated moment: when a search is submitted, its cards arrive
    in a short cascade. Type-ahead updates do not animate. */
@@ -1002,13 +1017,6 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
 .empty p { color: var(--ink-soft); }
 .empty p + p { margin-top: var(--s-3); }
 
-/* Skeletons while search index loads (typically <150ms; polished > absent) */
-.skeleton {
-  animation: shimmer 1.3s ease-in-out infinite;
-  background: color-mix(in oklab, var(--rule) 60%, transparent);
-  border-radius: var(--radius-sm);
-  color: transparent;
-}
 @keyframes shimmer {
   0%, 100% { opacity: 0.4; }
   50%      { opacity: 0.75; }
@@ -1264,54 +1272,84 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
    ========================================================================== */
 
 .muted { color: var(--muted); }
-.faint { color: var(--faint); }
-.ink-soft { color: var(--ink-soft); }
 .sans { font-family: var(--font-sans); }
-.serif { font-family: var(--font-serif); }
-.mono { font-family: var(--font-mono); }
 .small { font-size: var(--step--1); }
 .smaller { font-size: var(--step--2); }
 .lede { font-size: var(--step-1); color: var(--ink-soft); max-width: var(--measure); }
 .stack > * + * { margin-top: var(--s-4); }
 
-/* Mobile refinements */
+/* Phones: a real mobile scale. Body 16px, headline about 30px, secondary
+   text 13-14px, chips 14px; 44px touch targets come from padding, not from
+   bigger text. Spacing tops out at 32px. */
 @media (max-width: 620px) {
+  :root { --s-5: 1.25rem; --s-6: 1.5rem; --s-7: 2rem; --s-8: 2rem; --s-9: 2.5rem; }
   body { font-size: 16px; }
-  main { padding: var(--s-5) var(--s-4) var(--s-7); }
-  .masthead-in { padding: var(--s-4); gap: var(--s-4); flex-wrap: wrap; }
-  .masthead nav { gap: var(--s-4); font-size: var(--step--1); }
+  main { padding: var(--s-4) var(--s-4) var(--s-8); }
+
+  /* One slim bar: wordmark, the nav as one scrollable row, Quick search. */
+  .masthead { position: sticky; }
+  .masthead-in { padding: 0 var(--s-2) 0 var(--s-4); gap: var(--s-3); flex-wrap: nowrap; }
+  .wordmark { font-size: var(--step-0); flex-shrink: 0; }
+  .masthead .grow { display: none; }
+  .masthead nav {
+    flex: 1; min-width: 0; gap: var(--s-4);
+    font-size: 13px; white-space: nowrap;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, #000 calc(100% - 16px), transparent);
+  }
+  .masthead nav::-webkit-scrollbar { display: none; }
+  .masthead nav a { flex-shrink: 0; }
+  .kbd-hint { width: 44px; height: 44px; padding: 0; justify-content: center; flex-shrink: 0; }
+  .kbd-hint-text, .kbd-hint kbd { display: none; }
+
+  .hero .eyebrow { font-size: 12.5px; margin-bottom: var(--s-2); }
+  .hero h1 { font-size: clamp(1.75rem, 7.6vw, 2rem); letter-spacing: -0.02em; margin-bottom: var(--s-3); }
+  .hero-qualifier { font-size: 15px; }
+  .hero .lede, .lede { font-size: var(--step-0); }
+  .hero .ask { margin-top: var(--s-4); }
+  .ask-box { padding-left: var(--s-4); padding-right: 4px; }
+  /* 16px: the smallest size iOS does not zoom on focus */
+  .ask-box input { font-size: var(--step-0); padding: 10px 0; }
+  .ask-btn { padding: 0 16px; height: 44px; min-width: 52px; }
+  .ask-hint { font-size: 13px; margin-top: var(--s-2); padding-left: var(--s-2); }
+  .examples { margin-top: var(--s-3); padding-left: var(--s-2); gap: var(--s-2); }
+  .examples .label { font-size: 12px; width: 100%; }
+  .example-chip { font-size: 14px; padding: 0 12px; }
+
   .panel { padding: var(--s-5) var(--s-4); }
   .about-card { padding: var(--s-4); }
-  .ask { margin-top: var(--s-6); }
-  .ask-box { padding-left: var(--s-4); padding-right: 4px; }
-  /* 16px (the base step, and the smallest size iOS does not zoom on) so the
-     placeholder fits a 390px screen instead of clipping mid-word */
-  .ask-box input { font-size: var(--step-0); padding: 12px 0; }
-  .cmdk-input { font-size: var(--step-0); padding: var(--s-4); }
-  .ask-btn { padding: 0 16px; height: 44px; min-width: 52px; }
-  .hero h1 { font-size: clamp(1.65rem, 7.5vw, 2.2rem); letter-spacing: -0.02em; }
-  .hero .lede { font-size: var(--step-0); }
-  /* Quick search stays reachable on phones: on the wordmark's row, no key
-     hints; the nav takes the second row. The masthead scrolls away so it
-     does not hold a seventh of the screen while reading. */
-  .masthead { position: static; }
-  .masthead nav { order: 3; width: 100%; justify-content: space-between; gap: var(--s-2); }
-  .kbd-hint { min-height: 44px; padding: 0 var(--s-4); font-size: var(--step--1); }
-  .kbd-hint kbd { display: none; }
-  .detail-head h1 { font-size: clamp(1.4rem, 6vw, 1.9rem); }
-  .result h3 { font-size: var(--step-2); }
-  /* A wrapped card header never ends a line with a stray separator. */
-  .result-head { column-gap: var(--s-4); row-gap: var(--s-1); }
+  .page-aside { padding: var(--s-3) var(--s-4); }
+  .page-aside .filters { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .detail-head h1 { font-size: clamp(1.5rem, 6.6vw, 1.75rem); }
+
+  .verdict-line { font-size: 13px; }
+  /* A wrapped meta line never ends or starts with a stray separator. */
+  .result-head { column-gap: var(--s-3); row-gap: 2px; }
   .result-head .sep { display: none; }
+  .lib-switch-notice { border-radius: var(--radius); font-size: 13px; padding: var(--s-2) var(--s-3); }
+  .crumb { margin-bottom: var(--s-2); }
+  .result { padding: var(--s-4) var(--s-4) var(--s-3); }
+  .result-head { font-size: 12.5px; }
+  .result h3 { font-size: 1.125rem; line-height: 1.3; }
+  .result-foot { font-size: 14px; gap: var(--s-4); margin-top: var(--s-2); }
+  .result.paper-result h3 { font-size: var(--step-0); }
+  .caveat { font-size: 15px; padding: var(--s-3) var(--s-4); }
+  .caveat .cav-label { font-size: 11.5px; margin-bottom: var(--s-1); }
+  .not-advice { padding: var(--s-3) var(--s-4); }
+  .kinds-list { gap: var(--s-3); }
+  .kind-name { font-size: 15px; }
+  .kind-short { font-size: 13px; }
+  .intro-h { font-size: 1.125rem; margin: var(--s-5) 0 var(--s-3); }
+
   h1 { letter-spacing: -0.015em; }
-  .filters { gap: var(--s-4); }
+  .filters { gap: var(--s-3); font-size: 14px; }
   .filters .count { margin-left: 0; width: 100%; text-align: right; }
   .foot-in { padding: var(--s-4); font-size: max(var(--step--1), 14px); }
 }
 
 /* Touch screens: every control at least 44px tall (WCAG 2.5.5). */
 @media (pointer: coarse) {
-  .example-chip, .cta, .text-btn, .read-more, .wordmark,
+  .example-chip, .cta, .text-btn, .read-more, .wordmark, .masthead nav a,
   .foot-links a, .crumb, .lib-switcher select, .filters select {
     min-height: 44px; display: inline-flex; align-items: center;
   }
@@ -1361,7 +1399,6 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
   line-height: var(--line-snug);
   max-width: var(--measure);
 }
-.library-built { color: var(--muted); font-family: var(--font-sans); font-size: var(--step--1); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

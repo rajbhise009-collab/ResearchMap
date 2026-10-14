@@ -51,7 +51,7 @@ export default function GapsPageClient({ lang, facts }: {
 
   return (
     <>
-      <div className="hero" style={{ marginBottom: "var(--s-7)" }}>
+      <div className="hero page-head">
         <div className="eyebrow">The library · Everything we found</div>
         <h1 style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.6rem)" }}>
           {lang.ui.all_opportunities}
@@ -61,7 +61,6 @@ export default function GapsPageClient({ lang, facts }: {
             <>Everything the tool found in the <em>{libName}</em> library, strongest first. Each one says how sure we are and what would undermine it.</>
           )}
         </p>
-        {fact && <LibrarySummary fact={fact} />}
         {res.state === "ready" && res.data.audit && (
           <DevKV title="Raw counts (classifier flags vs hand audit)"
                  data={res.data.audit} />
@@ -72,7 +71,9 @@ export default function GapsPageClient({ lang, facts }: {
       {res.state === "error" && <LoadError what="the gap list" />}
       {res.state === "ready" && (
         <>
-          <GapsClient gaps={genuineGaps} lang={lang} />
+          <GapsClient gaps={genuineGaps} lang={lang}
+            aside={fact && <LibrarySummary fact={fact} />}
+            after={<>
 
           {unchecked.length > 0 && (
             <section className="block set-aside">
@@ -127,6 +128,7 @@ export default function GapsPageClient({ lang, facts }: {
               ))}
             </section>
           )}
+            </>} />
         </>
       )}
     </>

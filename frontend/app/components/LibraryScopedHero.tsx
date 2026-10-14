@@ -27,15 +27,17 @@ export default function LibraryScopedHero({ tagline, qualifier, facts, children 
   const fact = current ? facts.find((f) => f.slug === current.slug) : undefined;
 
   const libCount = libraries?.libraries.length ?? 1;
+  // One line: the lead-in may shorten with an ellipsis on a narrow screen;
+  // the library name never does.
   const eyebrow = libCount > 1
-    ? <>Working prototype · {libCount} libraries · viewing{" "}
-        <strong>{current?.short_name ?? "…"}</strong></>
-    : "Working prototype · One library";
+    ? <><span className="eb-lead">Working prototype · {libCount} libraries · viewing&nbsp;</span>
+        <strong className="eb-name">{current?.short_name ?? "…"}</strong></>
+    : <span className="eb-lead">Working prototype · One library</span>;
 
   return (
     <div className="hero-grid">
       <div className="hero">
-        <div className="eyebrow"><span>{eyebrow}</span></div>
+        <div className="eyebrow eyebrow-line">{eyebrow}</div>
         <h1>{tagline}</h1>
         {qualifier && <p className="hero-qualifier">{qualifier}</p>}
 
@@ -53,6 +55,13 @@ export default function LibraryScopedHero({ tagline, qualifier, facts, children 
             <dd>{current?.name ?? "…"}</dd>
           </div>
         </dl>
+        {/* What the library covers lives with the rest of its details. */}
+        {current?.blurb && <p className="card-covers">{current.blurb}</p>}
+        {current?.not_advice_note && (
+          <p className="not-advice card-note" role="note">
+            <strong>Note:</strong> {current.not_advice_note}
+          </p>
+        )}
         {fact ? <LibrarySummary fact={fact} /> : <p className="lib-summary-line">…</p>}
       </aside>
     </div>

@@ -274,7 +274,11 @@ export default function Ask({ lang, gaps, papers }: {
     else if (typed.trim()) setQ(typed);
   }, []);
 
-  const onSubmit = (e: React.FormEvent) => { e.preventDefault(); run(q); };
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!q.trim()) { inputRef.current?.focus(); return; }   // empty: just focus the box
+    run(q);
+  };
 
   // Prefer the live per-library maps (fetched from the active library's
   // snapshot); fall back to the SSR-provided LLM-cal props so legacy
@@ -349,7 +353,7 @@ export default function Ask({ lang, gaps, papers }: {
             autoComplete="off"
             spellCheck="false"
           />
-          <button className="ask-btn" type="submit" disabled={!q.trim() || indexError}>
+          <button className="ask-btn" type="submit" disabled={indexError}>
             {asking || pending ? "…" : "Ask"}
           </button>
         </label>
@@ -371,9 +375,9 @@ export default function Ask({ lang, gaps, papers }: {
           </p>
         )}
 
-        {examples.length > 0 && !indexError && (
+        {!indexError && (
           <div className="examples">
-            <span className="label">Examples</span>
+            {examples.length > 0 && <span className="label">Examples</span>}
             {examples.map((ex) => (
               <button key={ex} type="button" className="example-chip"
                 onClick={() => { setQ(ex); run(ex); }} disabled={indexError}>
@@ -554,32 +558,23 @@ export default function Ask({ lang, gaps, papers }: {
         )}
       </div>
 
-      {/* Before a search: the library's safety note (the results repeat it
-          at their top), then what you'll find. Both wait for the library to
-          be known, so nothing on screen is pushed down when they arrive. */}
-      {activeLib?.not_advice_note && !(showResults && !distressed) && (
-        <p className="not-advice hero-note" role="note">
-          <strong>Note:</strong> {activeLib.not_advice_note}
-        </p>
-      )}
-      {/* In the page from the start (so the description is in the HTML),
-          shown once the library is known and while nothing is on screen
-          below the box. */}
+      {/* Before a search: what you'll find. It does not depend on the library,
+          so it is in the page from the first paint (nothing late lands above
+          it: the examples and the hint keep their space). The library's own
+          details and safety note are in the library card; results repeat
+          the note at their top. */}
       <section className="hero-intro" aria-labelledby="what-youll-find"
-               hidden={!activeLib || !!result || distressed}>
-          {activeLib?.blurb && (
-            <p className="covers"><strong>{activeLib.name}.</strong> {activeLib.blurb}</p>
-          )}
-          <h2 id="what-youll-find" className="intro-h">What you&rsquo;ll find</h2>
-          <ul className="kinds-list">
-            {Object.values(lang.kinds).map((k) => (
-              <li key={k.id}>
-                <span className="kind-name">{k.name}</span>
-                <span className="kind-short">{k.short}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="lede">{lang.ui.what_it_does}</p>
+               hidden={!!result || distressed}>
+        <h2 id="what-youll-find" className="intro-h">What you&rsquo;ll find</h2>
+        <ul className="kinds-list">
+          {Object.values(lang.kinds).map((k) => (
+            <li key={k.id}>
+              <span className="kind-name">{k.name}</span>
+              <span className="kind-short">{k.short}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="lede">{lang.ui.what_it_does}</p>
       </section>
     </>
   );

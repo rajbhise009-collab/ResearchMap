@@ -1,12 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import type { GapDoc, LanguagePack } from "../../lib/types";
 import { GapResult } from "../components/ResultCard";
 
-export default function GapsClient({ gaps, lang }: {
+// The list sits in the reading column; the library summary and the filters
+// sit in the aside (sticky on wide screens, above the list on phones).
+// `after` is anything that belongs under the list in the same column.
+export default function GapsClient({ gaps, lang, aside, after }: {
   gaps: GapDoc[];
   lang: LanguagePack;
+  aside?: ReactNode;
+  after?: ReactNode;
 }) {
   const [kind, setKind] = useState("all");
   const [strength, setStrength] = useState("all");
@@ -26,7 +31,9 @@ export default function GapsClient({ gaps, lang }: {
   const askedForDisagreements = kind === "disagreement";
 
   return (
-    <>
+    <div className="page-grid">
+      <aside className="page-aside" aria-label="This library and filters">
+      {aside}
       <div className="filters">
         <label>
           kind
@@ -48,9 +55,11 @@ export default function GapsClient({ gaps, lang }: {
         </label>
         <span className="count">{shown.length} of {gaps.length}</span>
       </div>
+      </aside>
+      <div className="page-main">
 
       {kind !== "all" && (
-        <p className="small muted sans" style={{ margin: "1rem 0 0" }}>
+        <p className="small muted sans" style={{ margin: "0 0 var(--s-4)" }}>
           {kinds.find((k) => k.id === kind)?.long}
         </p>
       )}
@@ -84,6 +93,8 @@ export default function GapsClient({ gaps, lang }: {
           ))}
         </div>
       )}
-    </>
+      {after}
+      </div>
+    </div>
   );
 }
