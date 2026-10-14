@@ -22,6 +22,7 @@ import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
 import { examplesFor, tryHintFor } from "../../lib/examples";
 import { handOffQuery, takeHandedOffQuery, HANDOFF_EVENT } from "../../lib/handoff";
+import { getLibraries, takeEarlyQuery, takeIndexPrefetch } from "../../lib/prefetch";
 
 // The out-of-scope panel lists this many other libraries before folding the
 // rest into "All N other libraries" (scales to any number of libraries).
@@ -87,9 +88,8 @@ export default function Ask({ lang, gaps, papers }: {
       let allLibs: Array<{ slug: string; name: string;
                             snapshot_path: string }> = [];
       try {
-        const libResp = await fetch(asset("/data/libraries.json"));
-        if (libResp.ok) {
-          const manifest = await libResp.json();
+        const manifest = await getLibraries();
+        if (manifest) {
           allLibs = manifest.libraries || [];
           const requested = new URLSearchParams(window.location.search).get("lib");
           const remembered = storageGet(LIBRARY_KEY);
@@ -107,23 +107,24 @@ export default function Ask({ lang, gaps, papers }: {
           }
         }
       } catch { /* libraries.json missing — legacy deploy */ }
+      // The index and the cards' data load together, and search counts as
+      // ready only when both are in: a search run on the index alone would
+      // draw thin cards that then grow when their data arrives (layout
+      // shift). The <head> script usually started the index already.
+      const indexP = (takeIndexPrefetch(snapshotPath) ?? Promise.resolve(null))
+        .then(async (j) => {
+          if (j) return j;
+          const r = await fetch(asset(`${snapshotPath}/search-index.json`));
+          if (!r.ok) throw new Error(String(r.status));
+          return (await r.json()) as SearchIndex;
+        });
+      // Missing card data falls back to the SSR props, as before.
+      const json = (f: string) => fetch(asset(`${snapshotPath}/${f}`))
+        .then((r) => (r.ok ? r.json() : null)).catch(() => null);
       try {
-        const r = await fetch(asset(`${snapshotPath}/search-index.json`));
-        if (!r.ok) throw new Error(String(r.status));
-        const j: SearchIndex = await r.json();
-        if (live) setIndex(j);
-      } catch {
-        if (live) setIndexError(true);
-      }
-      // Fetch opportunities + papers for the ACTIVE library so the
-      // result-lookup maps are keyed on this library's slugs/wids.
-      try {
-        const [oppResp, papResp] = await Promise.all([
-          fetch(asset(`${snapshotPath}/opportunities.json`)),
-          fetch(asset(`${snapshotPath}/papers.json`)),
-        ]);
-        if (oppResp.ok && live) {
-          const oj = await oppResp.json();
+        const [j, oj, pj] = await Promise.all([indexP, json("opportunities.json"), json("papers.json")]);
+        if (!live) return;
+        if (oj) {
           // Only results count: set-aside and not-yet-checked items live on
           // /gaps in their own sections, never in search.
           setLiveGaps((oj.items || []).filter((o: any) => {
@@ -134,8 +135,7 @@ export default function Ask({ lang, gaps, papers }: {
             dev: { rank: o.rank ?? 0, gap_type: o.gap_type ?? "" },
           })));
         }
-        if (papResp.ok && live) {
-          const pj = await papResp.json();
+        if (pj) {
           setLivePapers((pj.items || []).map((p: any) => ({
             wid: p.wid, title: p.title ?? p.wid,
             year: p.year, abstract_only: p.abstract_only,
@@ -144,7 +144,10 @@ export default function Ask({ lang, gaps, papers }: {
                     domain_centrality: p.domain_centrality ?? "" },
           })));
         }
-      } catch { /* missing — fall back to SSR props */ }
+        setIndex(j);
+      } catch {
+        if (live) setIndexError(true);
+      }
       // Stash the other libraries' metadata for the OOD suggestion.
       if (activeSlug && allLibs.length > 1) {
         (window as any).__researchmap_other_libs =
@@ -261,6 +264,16 @@ export default function Ask({ lang, gaps, papers }: {
     if (index && pending) { const t = pending; setPending(null); run(t); }
   }, [index, pending, run]);
 
+  // Anything typed before the app took over the page is kept: a submitted
+  // question is queued (it runs when the index is ready); unsubmitted text
+  // stays in the box.
+  useEffect(() => {
+    const early = cleanQuery(takeEarlyQuery());
+    const typed = cleanQuery(inputRef.current?.value ?? "");
+    if (early.trim()) { setQ(early); setPending(early); }
+    else if (typed.trim()) setQ(typed);
+  }, []);
+
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); run(q); };
 
   // Prefer the live per-library maps (fetched from the active library's
@@ -371,12 +384,10 @@ export default function Ask({ lang, gaps, papers }: {
         )}
       </form>
 
-      {/* data-active: something is shown below the box (the hero folds its
-          intro away); data-results: result cards are shown (they repeat the
-          library's safety note at the top, so the hero's copy folds away). */}
+      {/* data-lib: the library is known (on phones the library card waits
+          for it, so it is never pushed down once shown). */}
       <div ref={resultsRef} className="ask-results"
-           data-active={result || distressed ? "" : undefined}
-           data-results={!distressed && showResults ? "" : undefined}>
+           data-lib={activeLib ? "" : undefined}>
         {result && (
           <DevKV title={lang.dev.search_heading} data={{
             query: committed,
@@ -542,6 +553,32 @@ export default function Ask({ lang, gaps, papers }: {
           </>
         )}
       </div>
+
+      {/* Before a search: the library's safety note (the results repeat it
+          at their top), then what you'll find. Both wait for the library to
+          be known, so nothing on screen is pushed down when they arrive. */}
+      {activeLib?.not_advice_note && !(showResults && !distressed) && (
+        <p className="not-advice hero-note" role="note">
+          <strong>Note:</strong> {activeLib.not_advice_note}
+        </p>
+      )}
+      {activeLib && !result && !distressed && (
+        <section className="hero-intro" aria-labelledby="what-youll-find">
+          {activeLib.blurb && (
+            <p className="covers"><strong>{activeLib.name}.</strong> {activeLib.blurb}</p>
+          )}
+          <h2 id="what-youll-find" className="intro-h">What you&rsquo;ll find</h2>
+          <ul className="kinds-list">
+            {Object.values(lang.kinds).map((k) => (
+              <li key={k.id}>
+                <span className="kind-name">{k.name}</span>
+                <span className="kind-short">{k.short}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="lede">{lang.ui.what_it_does}</p>
+        </section>
+      )}
     </>
   );
 }
@@ -634,10 +671,9 @@ function OutOfDomain({ lang, query, activeLibrary }: {
   // Fetch the other libraries so the OOD panel can list switch links.
   useEffect(() => {
     let live = true;
-    fetch(asset("/data/libraries.json"))
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
+    getLibraries()
       .then((m) => {
-        if (!live) return;
+        if (!live || !m) return;
         const others = (m.libraries || [])
           .filter((l: any) => !activeLibrary || l.slug !== activeLibrary.slug);
         setOtherLibs(others);

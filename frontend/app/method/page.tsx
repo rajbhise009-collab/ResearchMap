@@ -1,3 +1,4 @@
+import "../components/pages.css";   // styles for every page except home (first paint)
 import Link from "next/link";
 import { getSiteFacts, getValidation } from "../../lib/data";
 import { pageMeta } from "../../lib/meta";

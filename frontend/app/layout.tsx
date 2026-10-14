@@ -6,9 +6,11 @@ import { ogImageFor } from "../lib/meta";
 import { getLanguage } from "../lib/data";
 import { DevModeProvider, DevBanner } from "./components/DevMode";
 import Nav from "./components/Nav";
-import CommandPalette, { PaletteHint } from "./components/CommandPalette";
+import PaletteLoader from "./components/PaletteLoader";
+import { PaletteHint } from "./components/PaletteHint";
 import OptionalAnalytics from "./components/OptionalAnalytics";
 import FooterScope from "./components/FooterScope";
+import { prefetchScript } from "../lib/prefetch";
 
 const lang = getLanguage();
 
@@ -79,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="32x32" href={`${BASE}/favicon-32.png`} />
         <link rel="apple-touch-icon" sizes="180x180" href={`${BASE}/apple-touch-icon.png`} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: prefetchScript(BASE) }} />
       </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>
@@ -98,7 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* The palette fetches the active library's gaps and papers when
                 it opens; embedding every library's documents here would ship
                 them inside every page's HTML (measured ~1 MB per page). */}
-            <CommandPalette lang={lang} gaps={[]} papers={[]} />
+            <PaletteLoader lang={lang} gaps={[]} papers={[]} />
             <header className="masthead" role="banner">
               <div className="masthead-in">
                 <a className="wordmark" href="/">{site.siteName}</a>

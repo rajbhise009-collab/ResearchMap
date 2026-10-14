@@ -1,3 +1,4 @@
+import "../components/pages.css";   // styles for every page except home (first paint)
 import { pageMeta } from "../../lib/meta";
 import { site } from "../../lib/site";
 

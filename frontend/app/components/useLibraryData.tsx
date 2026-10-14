@@ -5,6 +5,7 @@
 // data, library } so callers can show a proper "not in this library"
 // state instead of silently rendering wrong-library content.
 
+import { getLibraries } from "../../lib/prefetch";
 import { useEffect, useState } from "react";
 import { asset } from "../../lib/basePath";
 import type { LibrariesManifest, LibraryManifest } from "../../lib/types";
@@ -22,11 +23,7 @@ export type LibraryDataState<T> =
       reason: string };
 
 async function loadManifest(): Promise<LibrariesManifest | null> {
-  try {
-    const r = await fetch(asset("/data/libraries.json"));
-    if (!r.ok) return null;
-    return (await r.json()) as LibrariesManifest;
-  } catch { return null; }
+  return getLibraries();    // one request per page (lib/prefetch.ts)
 }
 
 function currentSlug(manifest: LibrariesManifest | null): string | null {

@@ -1,3 +1,4 @@
+import "../../components/pages.css";   // styles for every page except home (first paint)
 import Link from "next/link";
 import type { Metadata } from "next";
 import { pageMeta, clip } from "../../../lib/meta";

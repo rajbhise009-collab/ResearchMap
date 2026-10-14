@@ -1,3 +1,4 @@
+import "../components/pages.css";   // styles for every page except home (first paint)
 import { getLanguage } from "../../lib/data";
 import PapersPageClient from "./PapersPageClient";
 import { pageMeta } from "../../lib/meta";

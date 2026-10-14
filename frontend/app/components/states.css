@@ -1,0 +1,24 @@
+/* Loading states for list and detail pages (imported by States.tsx, so it
+   ships only with the pages that load a library file). */
+
+/* Loading states: cards shaped like what is coming, one plain status line. */
+.loading-state { margin-top: var(--s-5); }
+.loading-line {
+  font-family: var(--font-sans); font-size: var(--step--1); color: var(--muted);
+  display: flex; align-items: center; gap: var(--s-2);
+}
+.loading-state .skel-block {
+  padding: var(--s-5); margin-top: var(--s-4);
+  border: 1px solid var(--rule); border-radius: var(--radius-lg); background: var(--raise-1);
+}
+.skel-detail { margin-top: var(--s-5); max-width: var(--measure); }
+.skel-detail .skel-head, .skel-detail .skel-title, .skel-detail .skel-line {
+  background: color-mix(in oklab, var(--rule) 65%, transparent);
+  border-radius: var(--radius-sm); animation: shimmer 1.3s ease-in-out infinite;
+}
+.skel-detail .skel-head { width: 9rem; height: 0.9em; margin-bottom: var(--s-4); }
+.skel-detail .skel-title { height: 2.2em; width: 90%; margin-bottom: var(--s-3); }
+.skel-detail .skel-title.b { width: 60%; margin-bottom: var(--s-6); }
+.skel-detail .skel-line { height: 1em; margin: 0.7em 0; }
+.skel-detail .skel-line.s { width: 70%; }
+

@@ -17,10 +17,8 @@ export default function Landing() {
     <>
       <LibraryScopedHero
         tagline={lang.ui.tagline}
-        whatItDoes={lang.ui.what_it_does}
         qualifier={lang.ui.headline_qualifier}
         facts={getSiteFacts().libraries}
-        kinds={Object.values(lang.kinds)}
       >
         {/* The search sits inside the hero, right under the headline: the
             one primary action. Ask fetches the active library's gaps and

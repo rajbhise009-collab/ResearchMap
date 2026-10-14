@@ -11,7 +11,7 @@
 // runtime CSS-in-JS, works keyboard-first.
 
 import { useEffect, useMemo, useState, useCallback } from "react";
-import { asset } from "../../lib/basePath";
+import { getLibraries } from "../../lib/prefetch";
 import type { LibrariesManifest, LibraryManifest } from "../../lib/types";
 import { storageGet, storageSet, LIBRARY_KEY } from "../../lib/storage";
 import { LIBRARY_EVENT } from "../../lib/activeLibrary";
@@ -22,10 +22,9 @@ export function useLibraries(): LibrariesManifest | null {
   const [m, setM] = useState<LibrariesManifest | null>(null);
   useEffect(() => {
     let live = true;
-    fetch(asset("/data/libraries.json"))
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((j: LibrariesManifest) => { if (live) setM(j); })
-      .catch(() => { /* library manifest is optional — old deploys */ });
+    // One shared request per page (lib/prefetch.ts); the manifest is
+    // optional — old deploys have none.
+    getLibraries().then((j) => { if (live && j) setM(j); });
     return () => { live = false; };
   }, []);
   return m;

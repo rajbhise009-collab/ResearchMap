@@ -1,6 +1,6 @@
 # PROGRESS
 
-## UI v2 (branch `ui-v2`) — in progress, 2026-10-14
+## UI v2 (branch `ui-v2`) — 2026-10-14
 
 Frontend-only pass in four checkpoints. Rules kept throughout:
 - no change to search, ranking, library contents, generated data, `backend/` or `data/`, and no `language.py` copy;
@@ -46,7 +46,40 @@ axe found 4 serious and 12 moderate issues over 40 page-states. Before screensho
   - **Motion:** a submitted search's cards arrive in one short cascade (type-ahead never animates); in-app page changes fade in (never the first load); chips and buttons press in. All of it is off under reduced motion.
   - **Gap pages:** "What kind of gap this is" was empty on disagreement pages (their data has no `kind_long`); it now uses the language pack's description of that kind, or is left out.
   - **Cite buttons:** the interface font, 44px tall.
-- [ ] 4. Mobile, accessibility, performance, final review.
+- [x] **4. Mobile, accessibility, performance, final review.**
+  - **Touch targets:** every control is 44px on touch screens (chips, selects, links, buttons, list rows, nav, footer); the only exception is the skip link, which is off-screen until focused. The Ask button is 44px on phones.
+  - **Phones:** Quick search is reachable (it was hidden), and the masthead scrolls away.
+  - **Developer mode on phones (audit #8):** raw-data panels wrap; the widest element went from 493px to 374px on a 390px screen.
+  - **First search, perceived speed:**
+    - a tiny same-origin `<head>` script (`lib/prefetch.ts`) fetches `libraries.json` once per page (it was fetched by up to four components) and, just after first paint at low priority, the active library's search index;
+    - the index and the cards' data load together, so a search never draws thin cards that then grow;
+    - text typed and submitted before the app has loaded was lost: the browser's own submit reloaded the page. It is now kept in memory and run when ready.
+  - **Layout stability:** library-dependent lines wait for the library instead of pushing content down; the home page's CLS is 0.001 (was 0.018).
+  - **First-paint CSS:** palette styles load with the palette (now a lazy chunk); detail, findings and trust-page styles load only on those pages (`components/pages.css`); loading-state styles load with `States.tsx`.
+  - **Final review:** verdict labels wrap tidily on phones, and wrapped card headers have no stray separator.
+  - **Numbers** (main `9c8a3f2` vs `ui-v2`; local server, 390px, CPU 4x, slow 4G, median of 5; "gz" = served compressed as Vercel does):
+
+    | | before | after |
+    |:--|--:|--:|
+    | FCP = LCP, gz | 448 ms | 436 ms (repeated 20-round runs: within ±12 ms either way) |
+    | CLS | 0.018 | 0.001 |
+    | Search ready, gz | 2464 ms | 2098 ms |
+    | First results after Enter, gz | 137 ms | 98 ms |
+    | Typed straight away, first card, gz | lost 5/5 | 2156 ms |
+    | Search ready, uncompressed | 5858 ms | 6400 ms (now also waits for the cards' data) |
+    | JS, all routes, gz | 258.2 KB | 260.2 KB |
+    | Home JS, gz | 151.6 KB | 151.7 KB |
+    | Home CSS, gz | 7.03 KB | 6.93 KB |
+    | Home HTML, gz | 11.4 KB | 12.0 KB |
+
+    Chrome DevTools trace (Slow 4G, 4x CPU, 390px): LCP 1620 → 1614 ms, CLS 0.02 → 0.00.
+  - **axe:** 4 serious and 12 moderate before; 0 after, over 40 page-states (10 pages and states × light/dark × 1280/390).
+  - **Screenshots:** before and after, 10 states × 390/768/1280 × light/dark, plus one contact sheet per width, in `~/Desktop/rm-ui-after/v2/`.
+
+**Still open / for the owner:**
+- the footer copy shortenings (proposed 2026-10-11, not applied);
+- "How sure are we?" on disagreement pages shows the strength word without its sentence (the data has no `strength_meaning`);
+- the +0.6 KB HTML (the head script) and +2 KB of total JS (new states, the lazy palette chunk).
 
 ## UI polish (branch `ui-polish`, local only) — 2026-10-11
 

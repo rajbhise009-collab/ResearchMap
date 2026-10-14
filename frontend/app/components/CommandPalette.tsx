@@ -20,6 +20,8 @@ import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, MAX_QUERY } from "../../lib/query";
 import { tryHintFor } from "../../lib/examples";
 import { handOffQuery } from "../../lib/handoff";
+import { getLibraries } from "../../lib/prefetch";
+import "./palette.css";
 
 const DEBOUNCE_MS = 90;
 
@@ -49,9 +51,8 @@ function CommandPalette({ lang, gaps, papers }: {
     const loadIndex = async () => {
       let snapshotPath = "/data";
       try {
-        const r = await fetch(asset("/data/libraries.json"));
-        if (r.ok) {
-          const m = await r.json();
+        const m = await getLibraries();
+        if (m) {
           const requested = new URLSearchParams(window.location.search).get("lib");
           const remembered = storageGet(LIBRARY_KEY);
           const slug = requested || remembered || m.default_slug;
@@ -154,7 +155,9 @@ function CommandPalette({ lang, gaps, papers }: {
   useEffect(() => {
     const openHandler = () => setOpen(true);
     window.addEventListener("researchmap:open-palette", openHandler);
-    if (window.location.hash === "#palette") setOpen(true);
+    const w = window as Window & { __rmOpenPalette?: boolean };
+    if (window.location.hash === "#palette" || w.__rmOpenPalette) setOpen(true);
+    w.__rmOpenPalette = false;
     return () => window.removeEventListener("researchmap:open-palette", openHandler);
   }, []);
 
@@ -358,24 +361,3 @@ function CommandPalette({ lang, gaps, papers }: {
 }
 
 export default CommandPalette;
-
-// Keyboard-hint chip in the masthead — the affordance that teaches ⌘K
-// exists. Separate export because RSC's client-manifest can't resolve the
-// static-property pattern (`Palette.Hint = ...`) reliably across builds.
-export function PaletteHint() {
-  const [os, setOs] = useState<"mac" | "other">("mac");
-  useEffect(() => {
-    setOs(/Mac|iPhone|iPad|iPod/.test(navigator.userAgent) ? "mac" : "other");
-  }, []);
-  return (
-    <button
-      className="kbd-hint"
-      onClick={() => window.dispatchEvent(new Event("researchmap:open-palette"))}
-      aria-label="Open command palette"
-    >
-      Quick search
-      <kbd>{os === "mac" ? "⌘" : "Ctrl"}</kbd>
-      <kbd>K</kbd>
-    </button>
-  );
-}

@@ -435,44 +435,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   font-style: italic;
 }
 
-.set-aside { margin-top: var(--s-8); border-top: 1px solid var(--rule); padding-top: var(--s-6); }
 
-.cite-block { margin-top: var(--s-8); border-top: 1px dashed var(--rule); padding-top: var(--s-6); }
-.cite-row { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-4); }
-.cite-actions { display: inline-flex; gap: var(--s-3); }
-.cite-btn {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  min-height: 44px;
-  padding: 6px 14px;
-  background: var(--surface);
-  color: var(--fg);
-  border: 1px solid var(--rule-strong);
-  border-radius: 6px;
-  cursor: pointer;
-}
-.cite-btn:hover { border-color: var(--accent); color: var(--accent); }
-.cite-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.bib-preview {
-  background: var(--surface-raise-1, #faf3e6);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: var(--s-4);
-  overflow-x: auto;
-  font-size: var(--step--2);
-}
-.how-to-cite { margin-top: var(--s-5); }
-.how-to-cite summary { cursor: pointer; color: var(--muted); font-size: var(--step--1); }
-.how-to-cite p { margin: var(--s-3) 0; }
-
-.timeline-wrap {
-  margin: var(--s-4) 0;
-  padding: var(--s-4);
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  overflow-x: auto;
-}
 .sr-only {
   position: absolute;
   width: 1px; height: 1px;
@@ -541,6 +504,9 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+  /* Stacked under the hero: wait for the library like the intro does, so
+     the card is never pushed down once it is on screen (CLS). */
+  .hero-grid:not(:has(.ask-results[data-lib])) .about-card { display: none; }
 }
 
 .hero { max-width: var(--measure); }
@@ -563,8 +529,6 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 .hero h1 { font-size: clamp(1.9rem, 4.4vw, 3.2rem); margin-bottom: var(--s-4); }
 /* Results fold the intro away so they start right under the box. */
 .hero .ask { margin-top: var(--s-6); }
-.hero:has(.ask-results[data-active]) .hero-intro,
-.hero:has(.ask-results[data-results]) .hero-note { display: none; }
 .hero-note { margin-top: var(--s-6); }
 .hero-intro {
   margin-top: var(--s-7);
@@ -592,6 +556,14 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   color: var(--muted); line-height: var(--line-snug);
 }
 .hero .hero-intro .lede { margin-top: var(--s-6); font-size: var(--step-0); }
+/* Client-loaded lines keep their space so nothing below them jumps (CLS):
+   the eyebrow gains the library name, and the hint under the box changes
+   from "Looking through the library…" to the library's own "Try:" line. */
+.hero .eyebrow { line-height: 1.6; }
+@media (max-width: 760px) {
+  .hero .eyebrow { min-height: 3.2em; }
+  .ask-hint { min-height: 3.2em; line-height: 1.6; }
+}
 @media (max-width: 620px) {
   .kinds-list { grid-template-columns: 1fr; gap: var(--s-3); }
   .hero .hero-intro .covers { min-height: 6.4em; }
@@ -676,10 +648,10 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .ask-box input::placeholder { color: var(--muted); opacity: 1; }
 /* The rounded box carries the focus ring; no second square ring inside it. */
-.ask-box input:focus-visible, .cmdk-input:focus-visible { box-shadow: none; }
+.ask-box input:focus-visible { box-shadow: none; }
 /* Once something shows below the box, the starter examples step aside (the
    empty state offers them again), so results start right under the box. */
-.ask:has(+ .ask-results[data-active]) .examples { display: none; }
+.ask:has(+ .ask-results > *) .examples { display: none; }
 .ask-btn {
   flex-shrink: 0;
   height: 44px;
@@ -780,8 +752,9 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    One line, plain wording, colour cue by verdict. */
 .verdict-chip {
   display: inline-block;
-  padding: 2px 10px;
-  border-radius: 999px;
+  padding: 3px 10px;
+  border-radius: 12px;          /* stays tidy when the label wraps on phones */
+  line-height: var(--line-snug);
   border: 1px solid var(--rule);
   background: var(--bg-sub, transparent);
   color: var(--muted);
@@ -1056,30 +1029,12 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
   border-radius: var(--radius-sm); animation: shimmer 1.3s ease-in-out infinite;
 }
 .skel-block .skel-title.b { width: 64%; margin-bottom: var(--s-4); }
-/* Loading states: cards shaped like what is coming, one plain status line. */
-.loading-state { margin-top: var(--s-5); }
-.loading-line {
-  font-family: var(--font-sans); font-size: var(--step--1); color: var(--muted);
-  display: flex; align-items: center; gap: var(--s-2);
-}
+/* The pulsing dot of a loading line (search hint here; list pages in
+   components/states.css). */
 .loading-line .swatch, .ask-hint .swatch {
   display: inline-block; width: 8px; height: 8px; border-radius: 50%;
   background: var(--accent); animation: pulse 1.4s ease-in-out infinite;
 }
-.loading-state .skel-block {
-  padding: var(--s-5); margin-top: var(--s-4);
-  border: 1px solid var(--rule); border-radius: var(--radius-lg); background: var(--raise-1);
-}
-.skel-detail { margin-top: var(--s-5); max-width: var(--measure); }
-.skel-detail .skel-head, .skel-detail .skel-title, .skel-detail .skel-line {
-  background: color-mix(in oklab, var(--rule) 65%, transparent);
-  border-radius: var(--radius-sm); animation: shimmer 1.3s ease-in-out infinite;
-}
-.skel-detail .skel-head { width: 9rem; height: 0.9em; margin-bottom: var(--s-4); }
-.skel-detail .skel-title { height: 2.2em; width: 90%; margin-bottom: var(--s-3); }
-.skel-detail .skel-title.b { width: 60%; margin-bottom: var(--s-6); }
-.skel-detail .skel-line { height: 1em; margin: 0.7em 0; }
-.skel-detail .skel-line.s { width: 70%; }
 
 /* Load errors: what failed and the one fix a reader can try. */
 .load-error {
@@ -1102,126 +1057,7 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
   font-family: var(--font-sans); min-height: 44px;
 }
 
-/* ==========================================================================
-   10. Detail pages
-   ========================================================================== */
-
-.detail-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
-  gap: var(--s-8);
-  align-items: start;
-}
-@media (max-width: 900px) {
-  .detail-grid { grid-template-columns: 1fr; gap: var(--s-5); }
-  .detail-sidebar { display: none; }
-}
-
-.detail-head { margin-bottom: var(--s-6); }
-.detail-head h1 {
-  font-size: clamp(1.75rem, 3.5vw, 2.4rem);
-  margin: var(--s-4) 0 var(--s-4);
-  letter-spacing: -0.02em;
-}
-.detail-head h1.quoted { font-style: italic; }
-.detail-head .subtitle {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  color: var(--muted);
-}
-
-.crumb {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  color: var(--muted);
-  text-decoration: none;
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-bottom: var(--s-6);
-  transition: color var(--dur) var(--ease), gap var(--dur) var(--ease);
-}
-.crumb:hover { color: var(--ink); gap: 10px; text-decoration: none; }
-
-section.block { margin: var(--s-7) 0; max-width: var(--measure); scroll-margin-top: 96px; }
-section.block.wide { max-width: var(--wide); }
-section.block > h2 {
-  font-family: var(--font-sans);
-  font-size: var(--step--2);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 500;
-  margin-bottom: var(--s-4);
-}
-section.block > h2:has(+ .block-lede) { margin-bottom: var(--s-2); }
-.block-lede {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  color: var(--muted);
-  margin: 0 0 var(--s-4);
-}
-section.block p { color: var(--ink-soft); }
-
-/* Sticky page nav on detail pages */
-.detail-sidebar {
-  position: sticky; top: 96px;
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  border-left: 1px solid var(--rule);
-  padding-left: var(--s-4);
-}
-.detail-sidebar .kicker {
-  font-size: var(--step--2);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: var(--s-3);
-  font-weight: 500;
-}
-.detail-sidebar ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.detail-sidebar a {
-  color: var(--muted);
-  text-decoration: none;
-  display: block;
-  transition: color var(--dur) var(--ease), transform var(--dur) var(--ease);
-}
-.detail-sidebar a:hover { color: var(--ink); transform: translateX(2px); }
-.detail-sidebar a.on { color: var(--ink-strong); font-weight: 500; }
-
-.evidence-item {
-  padding: var(--s-4) 0;
-  border-top: 1px solid var(--rule);
-}
-.evidence-item:first-of-type { border-top: 0; padding-top: 0; }
-.evidence-item .src {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  color: var(--muted);
-  margin-bottom: var(--s-2);
-  display: flex; gap: var(--s-3); flex-wrap: wrap; align-items: baseline;
-}
-.evidence-item blockquote {
-  margin: 0;
-  padding-left: var(--s-4);
-  border-left: 2px solid var(--rule-strong);
-  font-style: italic;
-  color: var(--ink);
-}
-
-.paper-line {
-  padding: var(--s-4) 0;
-  border-top: 1px solid var(--rule);
-  display: flex; gap: var(--s-3); align-items: baseline; flex-wrap: wrap;
-}
-.paper-line:first-of-type { border-top: 0; }
-.paper-line .t { flex: 1; min-width: 60%; font-size: var(--step-0); }
-.paper-line .t a { color: var(--ink); text-decoration: none; }
-.paper-line .t a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.paper-line .y {
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
+/* 10. Detail pages: app/components/pages.css (not needed by the home page). */
 
 .tag {
   font-family: var(--font-sans);
@@ -1236,15 +1072,6 @@ section.block p { color: var(--ink-soft); }
   font-weight: 500;
 }
 .tag.warn { color: var(--note-ink); border-color: var(--note-rule); background: var(--note-bg); }
-
-.quote-list { list-style: none; padding: 0; margin: 0; }
-.quote-list li {
-  padding: var(--s-4) 0;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  line-height: var(--line-body);
-}
-.quote-list li:first-child { border-top: 0; padding-top: 0; }
 
 /* ==========================================================================
    11. Filters and list pages
@@ -1284,133 +1111,7 @@ section.block p { color: var(--ink-soft); }
 .filters select:focus-visible { border-bottom-color: var(--accent); box-shadow: none; }
 .filters .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
 
-/* ==========================================================================
-   12. Command palette (Cmd+K)
-   ========================================================================== */
-
-.cmdk-scrim {
-  position: fixed; inset: 0;
-  background: color-mix(in oklab, var(--ink-strong) 30%, transparent);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 100;
-  display: grid; place-items: start center;
-  padding: 12vh var(--s-5) var(--s-5);
-  animation: fade var(--dur) var(--ease);
-}
-@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-
-.cmdk {
-  width: 100%;
-  max-width: 40rem;
-  background: var(--raise-2);
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-3);
-  overflow: hidden;
-  animation: rise var(--dur-slow) var(--ease);
-}
-@keyframes rise { from { transform: translateY(-8px); opacity: 0; } to { transform: none; opacity: 1; } }
-
-.cmdk-head {
-  display: flex; align-items: center; gap: var(--s-3);
-  padding: 0 var(--s-3) 0 var(--s-5);
-  border-bottom: 1px solid var(--rule);
-}
-.cmdk-icon { color: var(--muted); flex-shrink: 0; }
-.cmdk-input {
-  flex: 1; min-width: 0;
-  border: 0; outline: none; background: transparent;
-  padding: var(--s-5) 0;
-  font-family: var(--font-serif);
-  font-size: var(--step-2);
-  color: var(--ink);
-}
-.cmdk-close {
-  flex-shrink: 0; min-height: 44px; padding: 0 var(--s-3);
-  font-family: var(--font-sans); font-size: var(--step--1); color: var(--muted);
-  border-radius: var(--radius);
-  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
-}
-.cmdk-close:hover { color: var(--ink); background: var(--accent-soft); }
-.cmdk-scope {
-  margin: 0; padding: var(--s-2) var(--s-5);
-  font-family: var(--font-sans); font-size: var(--step--2); color: var(--muted);
-  border-bottom: 1px solid var(--rule); background: var(--raise-1);
-}
-.cmdk-scope strong { color: var(--ink); font-weight: 600; }
-.cmdk-group {
-  padding: var(--s-3) 14px var(--s-1);
-  font-family: var(--font-sans); font-size: var(--step--2); font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
-}
-.cmdk-note { text-align: left; }
-.cmdk-note strong { color: var(--ink-strong); display: block; margin-bottom: 6px; }
-.cmdk-input::placeholder { color: var(--muted); opacity: 1; }
-
-.cmdk-list { max-height: 60vh; overflow-y: auto; padding: 6px; }
-.cmdk-item {
-  display: block;
-  width: 100%;
-  min-height: 44px;
-  padding: 12px 14px;
-  border-radius: var(--radius);
-  text-align: left;
-  cursor: pointer;
-  color: var(--ink);
-  text-decoration: none;
-  transition: background var(--dur-fast) var(--ease);
-}
-.cmdk-item .title {
-  font-family: var(--font-serif);
-  font-size: var(--step-0);
-  color: var(--ink-strong);
-  line-height: var(--line-snug);
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-}
-.cmdk-item .meta {
-  margin-top: 4px;
-  font-family: var(--font-sans);
-  font-size: var(--step--2);
-  color: var(--muted);
-  display: flex; gap: var(--s-3); align-items: center;
-}
-.cmdk-item[aria-selected="true"] { background: var(--accent-soft); }
-.cmdk-item:hover { background: var(--accent-soft); }
-.cmdk-empty {
-  padding: var(--s-6) var(--s-5);
-  color: var(--muted);
-  font-family: var(--font-sans);
-  font-size: var(--step--1);
-  text-align: center;
-}
-.cmdk-foot {
-  border-top: 1px solid var(--rule);
-  padding: var(--s-3) var(--s-4);
-  font-family: var(--font-sans);
-  font-size: var(--step--2);
-  color: var(--muted);
-  display: flex; gap: var(--s-4); flex-wrap: wrap;
-  background: var(--raise-1);
-}
-.cmdk-foot kbd {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: var(--paper);
-  border: 1px solid var(--rule-strong);
-  color: var(--muted); line-height: 1;
-}
-
-/* Phones: the palette fills the screen; keyboard hints are for keyboards. */
-@media (max-width: 620px) {
-  .cmdk-scrim { padding: var(--s-2); }
-  .cmdk { display: flex; flex-direction: column; max-height: calc(100dvh - var(--s-4)); }
-  .cmdk-list { flex: 1; max-height: none; }
-  .cmdk-head { padding-left: var(--s-4); }
-}
-@media (hover: none) { .cmdk-foot { display: none; } }
+/* 12. Command palette: app/components/palette.css (loaded with the palette). */
 
 /* ==========================================================================
    13. Developer mode (gated behind ?dev=1)
@@ -1468,44 +1169,7 @@ section.block p { color: var(--ink-soft); }
 .dev .kv .k { color: var(--muted); }
 .dev pre { margin: var(--s-3) 0 0; white-space: pre-wrap; word-break: break-word; font-family: var(--font-mono); }
 
-/* ==========================================================================
-   14. Markdown (findings)
-   ========================================================================== */
-
-.md { max-width: var(--measure); font-size: var(--step-0); }
-.md > * + * { margin-top: var(--s-4); }
-.md h1 { font-size: var(--step-5); }
-.md h2 { font-size: var(--step-3); margin-top: var(--s-6); }
-.md h3 { font-size: var(--step-2); margin-top: var(--s-5); }
-.md p, .md li { color: var(--ink-soft); line-height: var(--line-body); }
-.md ul, .md ol { padding-left: var(--s-6); }
-.md li + li { margin-top: var(--s-2); }
-.md code {
-  font-family: var(--font-mono);
-  font-size: 0.9em;
-  background: var(--accent-soft);
-  padding: 2px 6px;
-  border-radius: var(--radius-sm);
-}
-.md pre {
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
-  background: var(--raise-1);
-  border: 1px solid var(--rule);
-  padding: var(--s-4) var(--s-5);
-  overflow-x: auto;
-  border-radius: var(--radius);
-}
-.md pre code { background: none; padding: 0; }
-.md table { border-collapse: collapse; width: 100%; font-size: var(--step--1); display: block; overflow-x: auto; }
-.md th, .md td { border: 1px solid var(--rule); padding: 8px 12px; text-align: left; }
-.md th { background: var(--raise-1); }
-.md blockquote {
-  border-left: 3px solid var(--rule-strong);
-  margin: var(--s-4) 0;
-  padding: var(--s-2) var(--s-4);
-  color: var(--muted);
-}
+/* 14. Findings markdown: app/components/pages.css. */
 
 /* ==========================================================================
    15. 404
@@ -1537,6 +1201,64 @@ section.block p { color: var(--ink-soft); }
 }
 .notfound .go-back:hover { gap: 12px; text-decoration: underline; }
 
+
+.cite-block { margin-top: var(--s-8); border-top: 1px dashed var(--rule); padding-top: var(--s-6); }
+.cite-row { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-4); }
+.cite-actions { display: inline-flex; gap: var(--s-3); }
+.cite-btn {
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  min-height: 44px;
+  padding: 6px 14px;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--rule-strong);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cite-btn:hover { border-color: var(--accent); color: var(--accent); }
+.cite-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bib-preview {
+  background: var(--surface-raise-1, #faf3e6);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: var(--s-4);
+  overflow-x: auto;
+  font-size: var(--step--2);
+}
+.how-to-cite { margin-top: var(--s-5); }
+.how-to-cite summary { cursor: pointer; color: var(--muted); font-size: var(--step--1); }
+.how-to-cite p { margin: var(--s-3) 0; }
+
+.timeline-wrap {
+  margin: var(--s-4) 0;
+  padding: var(--s-4);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.trust { max-width: var(--measure); }
+.trust h1 { margin-bottom: var(--s-4); }
+.trust h2 { margin-top: var(--s-7); }
+.trust ol, .trust ul { padding-left: 1.3em; }
+.trust li { margin: var(--s-2) 0; }
+.trust table { border-collapse: collapse; width: 100%; font-family: var(--font-sans); font-size: var(--step--1); }
+.trust th, .trust td { text-align: left; padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--rule); vertical-align: top; }
+.trust .updated { color: var(--muted); font-size: var(--step--1); }
+
+
+.detail-grid .not-advice { margin-bottom: var(--s-5); }
+.verdict-doubt {
+  margin-top: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-left: 3px solid var(--note-rule);
+  background: var(--note-bg);
+  color: var(--ink);
+}
+
+.set-aside { margin-top: var(--s-8); border-top: 1px solid var(--rule); padding-top: var(--s-6); }
 /* ==========================================================================
    16. Utilities
    ========================================================================== */
@@ -1566,17 +1288,43 @@ section.block p { color: var(--ink-soft); }
      placeholder fits a 390px screen instead of clipping mid-word */
   .ask-box input { font-size: var(--step-0); padding: 12px 0; }
   .cmdk-input { font-size: var(--step-0); padding: var(--s-4); }
-  .ask-btn { padding: 0 14px; height: 40px; min-width: 40px; }
+  .ask-btn { padding: 0 16px; height: 44px; min-width: 52px; }
   .hero h1 { font-size: clamp(1.65rem, 7.5vw, 2.2rem); letter-spacing: -0.02em; }
   .hero .lede { font-size: var(--step-0); }
-  .kbd-hint { display: none; }
+  /* Quick search stays reachable on phones: on the wordmark's row, no key
+     hints; the nav takes the second row. The masthead scrolls away so it
+     does not hold a seventh of the screen while reading. */
+  .masthead { position: static; }
+  .masthead nav { order: 3; width: 100%; justify-content: space-between; gap: var(--s-2); }
+  .kbd-hint { min-height: 44px; padding: 0 var(--s-4); font-size: var(--step--1); }
+  .kbd-hint kbd { display: none; }
   .detail-head h1 { font-size: clamp(1.4rem, 6vw, 1.9rem); }
   .result h3 { font-size: var(--step-2); }
+  /* A wrapped card header never ends a line with a stray separator. */
+  .result-head { column-gap: var(--s-4); row-gap: var(--s-1); }
+  .result-head .sep { display: none; }
   h1 { letter-spacing: -0.015em; }
   .filters { gap: var(--s-4); }
   .filters .count { margin-left: 0; width: 100%; text-align: right; }
   .foot-in { padding: var(--s-4); font-size: max(var(--step--1), 14px); }
 }
+
+/* Touch screens: every control at least 44px tall (WCAG 2.5.5). */
+@media (pointer: coarse) {
+  .example-chip, .cta, .text-btn, .read-more, .wordmark,
+  .foot-links a, .crumb, .lib-switcher select, .filters select {
+    min-height: 44px; display: inline-flex; align-items: center;
+  }
+  .masthead nav a, .foot-links a { min-width: 44px; justify-content: center; }
+  .result-foot .read-more { min-height: 44px; }
+  .paper-line .t a, .evidence-item .src a { display: inline-block; padding: 11px 0; }
+}
+
+/* Developer mode on phones: raw-data panels wrap inside themselves instead
+   of widening the page (audit #8). */
+.dev { min-width: 0; }
+.dev .kv { grid-template-columns: minmax(0, max-content) minmax(0, 1fr); }
+.dev .kv > * { overflow-wrap: anywhere; min-width: 0; }
 
 /* ==========================================================================
    Launch: footer trust links, deep-link switch notice, trust pages
@@ -1605,15 +1353,6 @@ section.block p { color: var(--ink-soft); }
   background: var(--accent-soft);
 }
 
-.trust { max-width: var(--measure); }
-.trust h1 { margin-bottom: var(--s-4); }
-.trust h2 { margin-top: var(--s-7); }
-.trust ol, .trust ul { padding-left: 1.3em; }
-.trust li { margin: var(--s-2) 0; }
-.trust table { border-collapse: collapse; width: 100%; font-family: var(--font-sans); font-size: var(--step--1); }
-.trust th, .trust td { text-align: left; padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--rule); vertical-align: top; }
-.trust .updated { color: var(--muted); font-size: var(--step--1); }
-
 .hero-qualifier {
   margin-top: 0;
   color: var(--ink-soft);
@@ -1637,14 +1376,6 @@ section.block p { color: var(--ink-soft); }
    library card around (Lighthouse CLS). */
 main#main { min-height: 100vh; }
 
-.detail-grid .not-advice { margin-bottom: var(--s-5); }
-.verdict-doubt {
-  margin-top: var(--s-3);
-  padding: var(--s-3) var(--s-4);
-  border-left: 3px solid var(--note-rule);
-  background: var(--note-bg);
-  color: var(--ink);
-}
 
 /* Library summary: one visible line + "How this library was built" toggle */
 .lib-summary { margin-top: var(--s-3); }

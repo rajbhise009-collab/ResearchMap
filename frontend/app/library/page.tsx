@@ -1,3 +1,4 @@
+import "../components/pages.css";   // styles for every page except home (first paint)
 import { getLanguage, getSiteFacts } from "../../lib/data";
 import LibraryPageClient from "./LibraryPageClient";
 import { pageMeta } from "../../lib/meta";
