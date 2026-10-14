@@ -59,7 +59,8 @@ export function PaperResult({ paper, fidelityLabel, fidelityNote }: {
   fidelityNote: string;
 }) {
   return (
-    <article className="result">
+    <article className="result paper-result">
+      <h3><Link href={`/paper/${paper.wid}/`}>{paper.title}</Link></h3>
       <div className="result-head">
         <span>Paper</span>
         {paper.year && (<><span className="sep" aria-hidden>·</span><span>{paper.year}</span></>)}
@@ -67,7 +68,6 @@ export function PaperResult({ paper, fidelityLabel, fidelityNote }: {
           <Tag warn title={fidelityNote}>{fidelityLabel}</Tag>
         )}
       </div>
-      <h3><Link href={`/paper/${paper.wid}/`}>{paper.title}</Link></h3>
       <DevKV title="Raw values" data={paper.dev} />
     </article>
   );

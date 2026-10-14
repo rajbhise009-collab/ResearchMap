@@ -1,5 +1,35 @@
 # PROGRESS
 
+## UI v2 (branch `ui-v2`) — in progress, 2026-10-14
+
+Frontend-only pass in four checkpoints. Rules kept throughout:
+- no change to search, ranking, library contents, generated data, `backend/` or `data/`, and no `language.py` copy;
+- caveats keep full size;
+- the query never goes in a URL, `Referer`, hash or title;
+- system fonts only, no new dependencies or third-party requests.
+
+`~/Desktop/rm-ui-polish/PLAN.md` does not exist; the ranked list used is the UI audit from 2026-10-11 (`~/Desktop/rm-ui-before`). Of its 8 items, #2, #3, #4 and #6 shipped in `ui-polish`. #1, #5, #7, #8 and the empty-state note are done here.
+
+**Baseline** (main `9c8a3f2`, local static server, 390px, CPU 4x, slow 4G, median of 5):
+- FCP 776 ms, LCP 776 ms, CLS 0.018;
+- search usable 5859 ms after load; results 133 ms after Enter;
+- JS 258 KB gz in total, 152 KB gz on the home page; CSS 7.0 KB gz.
+
+axe found 4 serious and 12 moderate issues over 40 page-states. Before screenshots are in `~/Desktop/rm-ui-after/v2/before/`.
+
+- [x] **1. Layout and hierarchy.**
+  - Home: the search sits directly under the headline and the "starting point, not a verdict" qualifier. The qualifier is now at body size and ink, not small grey.
+  - At 390px the search is on the first screen (y≈360; before, below the fold).
+  - The eyebrow names the library being viewed.
+  - "What you'll find" lists the four kinds of result, using the language pack's own names and short descriptions; the description follows. Both fold away while results are on screen (CSS `:has`), so results start under the box. Safety notes never fold: when results show, they repeat the note at the top.
+  - The library card stays in view beside results on wide screens.
+  - Results use one card style; weak results stay quieter but keep full-size caveats.
+  - The papers list under a search is a compact title-first list.
+  - Text never uses `--faint` (2.8:1); undefined `--fg`, `--surface` and `--bg-elev` now resolve; the dark `--note-ink` contrast is raised.
+- [ ] 2. States: empty, loading, error, first-run.
+- [ ] 3. Motion, interaction, focus, command palette.
+- [ ] 4. Mobile, accessibility, performance, final review.
+
 ## UI polish (branch `ui-polish`, local only) — 2026-10-11
 
 Polish within the existing design system: no new fonts, no new colour

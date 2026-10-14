@@ -40,6 +40,13 @@
   --note-ink: #7a5a17;        /* text on --note-bg (5.7:1) */
   --surface-raise-1: #faf3e6;
 
+  /* Aliases: older rules used these names without a definition, so their
+     colours silently fell back. They now resolve inside the palette. */
+  --fg: var(--ink);
+  --surface: var(--raise-1);
+  --bg-elev: var(--raise-1);
+  --bg-sub: transparent;
+
   --shadow-1: 0 1px 2px rgba(20, 18, 10, 0.04),
               0 1px 3px rgba(20, 18, 10, 0.03);
   --shadow-2: 0 2px 8px rgba(20, 18, 10, 0.06),
@@ -124,9 +131,7 @@
     --note-bg: #201a0d;
     --note-rule: #4d3e1e;
     --note-icon: #b58a3b;
-  --note-ink: #b58a3b;
-  --surface-raise-1: #1a1913;
-    --note-ink: #b58a3b;
+    --note-ink: #c99a45;
     --surface-raise-1: #1a1913;
 
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35),
@@ -159,7 +164,7 @@
   --note-bg: #201a0d;
   --note-rule: #4d3e1e;
   --note-icon: #b58a3b;
-  --note-ink: #b58a3b;
+  --note-ink: #c99a45;
   --surface-raise-1: #1a1913;
   --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.25);
   --shadow-2: 0 3px 12px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -477,7 +482,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   font-size: var(--step--2);
   color: var(--muted);
 }
-.lib-badge-count { color: var(--faint); }
+.lib-badge-count { color: var(--muted); }
 
 .foot-sources {
   max-width: var(--wide);
@@ -517,9 +522,13 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 22rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
   gap: var(--s-8);
   align-items: start;
+}
+/* The library card stays in view beside the results on wide screens. */
+@media (min-width: 901px) {
+  .about-card { position: sticky; top: 88px; }
 }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: var(--s-6); }
@@ -535,11 +544,49 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   text-transform: uppercase;
   margin-bottom: var(--s-4);
 }
+.hero .eyebrow { align-items: baseline; }
 .hero .eyebrow::before {
   content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent); flex-shrink: 0;
+  transform: translateY(-1px);
 }
-.hero h1 { font-size: clamp(1.9rem, 4.4vw, 3.2rem); margin-bottom: var(--s-5); }
+.hero .eyebrow strong { color: var(--ink); font-weight: 600; }
+.hero h1 { font-size: clamp(1.9rem, 4.4vw, 3.2rem); margin-bottom: var(--s-4); }
+/* Results fold the intro away so they start right under the box. */
+.hero .ask { margin-top: var(--s-6); }
+.hero:has(.ask-results[data-active]) .hero-intro,
+.hero:has(.ask-results[data-results]) .hero-note { display: none; }
+.hero-note { margin-top: var(--s-6); }
+.hero-intro {
+  margin-top: var(--s-7);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+.hero .hero-intro .covers { margin-top: 0; min-height: 3.2em; }
+.intro-h {
+  font-size: var(--step-2);
+  margin: var(--s-6) 0 var(--s-4);
+}
+.kinds-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4) var(--s-5);
+}
+.kinds-list li {
+  padding-left: var(--s-4);
+  border-left: 2px solid var(--accent-soft);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.kind-name { font-size: var(--step-0); color: var(--ink-strong); line-height: var(--line-snug); }
+.kind-short {
+  font-family: var(--font-sans); font-size: var(--step--1);
+  color: var(--muted); line-height: var(--line-snug);
+}
+.hero .hero-intro .lede { margin-top: var(--s-6); font-size: var(--step-0); }
+@media (max-width: 620px) {
+  .kinds-list { grid-template-columns: 1fr; gap: var(--s-3); }
+  .hero .hero-intro .covers { min-height: 6.4em; }
+}
 .hero .lede { font-size: var(--step-1); color: var(--ink-soft); }
 .hero .lede + .lede { margin-top: var(--s-4); }
 .hero .covers {
@@ -618,7 +665,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   padding: 14px 0;
   letter-spacing: -0.005em;
 }
-.ask-box input::placeholder { color: var(--faint); }
+.ask-box input::placeholder { color: var(--muted); opacity: 1; }
 .ask-btn {
   flex-shrink: 0;
   height: 44px;
@@ -747,15 +794,32 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 .results-list {
   list-style: none; padding: 0; margin: 0;
   display: flex; flex-direction: column;
+  gap: var(--s-4);
 }
 
+/* One card style everywhere results are listed (search, What we found). */
 .result {
-  padding: var(--s-6) 0;
-  border-bottom: 1px solid var(--rule);
+  padding: var(--s-5) var(--s-5) var(--s-4);
+  background: var(--raise-1);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
   position: relative;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
-.result:first-child { padding-top: var(--s-3); }
-.result:last-child { border-bottom: 0; }
+.result:hover { border-color: var(--rule-strong); box-shadow: var(--shadow-2); }
+.result .caveat { max-width: none; }
+
+/* Papers under a search: a compact list, secondary to the gaps above it. */
+.results-list.papers { gap: 0; }
+.result.paper-result {
+  background: none; border: 0; box-shadow: none; border-radius: 0;
+  border-top: 1px solid var(--rule);
+  padding: var(--s-3) 0;
+}
+.result.paper-result:first-child { border-top: 0; }
+.result.paper-result h3 { font-size: var(--step-1); line-height: var(--line-snug); margin: 0 0 var(--s-1); }
+.result.paper-result .result-head { margin: 0; }
 
 .result-head {
   display: flex; align-items: center; gap: var(--s-3);
@@ -802,7 +866,9 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .result-foot .read-more:hover { color: var(--accent-hover); gap: 10px; text-decoration: underline; }
 
-/* Weaker results are quieter — never dressed up to match a stronger one. */
+/* Weaker results are quieter — never dressed up to match a stronger one.
+   Their caveats keep full size and contrast. */
+.result.is-weak { background: transparent; box-shadow: none; }
 .result.is-weak h3 a { color: var(--ink-soft); }
 
 /* ==========================================================================
@@ -824,7 +890,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .strength.strong { color: var(--ink-strong); }
 .strength.look { color: var(--muted); }
-.strength.unverified { color: var(--faint); font-style: italic; }
+.strength.unverified { color: var(--muted); font-style: italic; }
 .strength.unverified::before { opacity: 0.6; }
 
 .strength-meaning {
@@ -1039,7 +1105,7 @@ section.block p { color: var(--ink-soft); }
   font-size: var(--step--2);
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--muted);
   margin-bottom: var(--s-3);
   font-weight: 500;
 }
@@ -1085,7 +1151,7 @@ section.block p { color: var(--ink-soft); }
 .paper-line .y {
   font-family: var(--font-sans);
   font-size: var(--step--1);
-  color: var(--faint);
+  color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1148,7 +1214,7 @@ section.block p { color: var(--ink-soft); }
 }
 .filters select:hover { border-bottom-color: var(--ink); }
 .filters select:focus-visible { border-bottom-color: var(--accent); box-shadow: none; }
-.filters .count { margin-left: auto; color: var(--faint); font-variant-numeric: tabular-nums; }
+.filters .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 /* ==========================================================================
    12. Command palette (Cmd+K)
@@ -1187,7 +1253,7 @@ section.block p { color: var(--ink-soft); }
   color: var(--ink);
   border-bottom: 1px solid var(--rule);
 }
-.cmdk-input::placeholder { color: var(--faint); }
+.cmdk-input::placeholder { color: var(--muted); opacity: 1; }
 
 .cmdk-list { max-height: 60vh; overflow-y: auto; padding: 6px; }
 .cmdk-item {
@@ -1446,11 +1512,12 @@ section.block p { color: var(--ink-soft); }
 .trust .updated { color: var(--muted); font-size: var(--step--1); }
 
 .hero-qualifier {
-  margin-top: var(--s-3);
-  color: var(--muted);
+  margin-top: 0;
+  color: var(--ink-soft);
   font-family: var(--font-sans);
-  font-size: var(--step--1);
-  max-width: 40rem;
+  font-size: var(--step-0);
+  line-height: var(--line-snug);
+  max-width: var(--measure);
 }
 .library-built { color: var(--muted); font-family: var(--font-sans); font-size: var(--step--1); }
 
@@ -1466,8 +1533,6 @@ section.block p { color: var(--ink-soft); }
 /* Layout stability: client-loaded content must not push the footer or the
    library card around (Lighthouse CLS). */
 main#main { min-height: 100vh; }
-.hero-libblock { min-height: 11rem; }
-@media (max-width: 720px) { .hero-libblock { min-height: 15rem; } }
 
 .detail-grid .not-advice { margin-bottom: var(--s-5); }
 .verdict-doubt {

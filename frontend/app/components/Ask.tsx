@@ -349,7 +349,12 @@ export default function Ask({ lang, gaps, papers }: {
         )}
       </form>
 
-      <div ref={resultsRef}>
+      {/* data-active: something is shown below the box (the hero folds its
+          intro away); data-results: result cards are shown (they repeat the
+          library's safety note at the top, so the hero's copy folds away). */}
+      <div ref={resultsRef} className="ask-results"
+           data-active={result || distressed ? "" : undefined}
+           data-results={!distressed && showResults ? "" : undefined}>
         {result && (
           <DevKV title={lang.dev.search_heading} data={{
             query: committed,
@@ -464,7 +469,7 @@ export default function Ask({ lang, gaps, papers }: {
               <>
                 {gapHits.length > 0 ? (
                   <section style={{ marginTop: "var(--s-6)" }}>
-                    <p className="section-eyebrow">Gaps we found</p>
+                    <p className="section-eyebrow" role="heading" aria-level={2}>Gaps we found</p>
                     <div className="results-list">
                       {gapHits.map((g) => (
                         <GapResult key={g.slug} gap={g} readMore={lang.ui.read_more} />
@@ -500,8 +505,8 @@ export default function Ask({ lang, gaps, papers }: {
                 )}
                 {paperHits.length > 0 && (
                   <section style={{ marginTop: "var(--s-7)" }}>
-                    <p className="section-eyebrow">Papers on this</p>
-                    <div className="results-list">
+                    <p className="section-eyebrow" role="heading" aria-level={2}>Papers on this</p>
+                    <div className="results-list papers">
                       {paperHits.map((p) => (
                         <PaperResult key={p.wid} paper={p}
                           fidelityLabel={lang.abstract_only.label}
