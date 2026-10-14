@@ -1,7 +1,8 @@
 // One request for the library manifest per page, and the search index
 // started before the app's JavaScript has loaded.
 //
-// app/layout.tsx puts a tiny inline script in <head> (prefetchScript). It
+// app/layout.tsx loads a tiny static script, public/prefetch.js, async from
+// <head>. It
 // starts fetching /data/libraries.json at once and, on the home page only and
 // just after the first paint (so it never competes with the page's own CSS),
 // the active library's search-index.json at low priority (chosen the same way
@@ -11,7 +12,6 @@
 // hydration, which is what made the first search wait.
 
 import { asset } from "./basePath";
-import { LIBRARY_KEY } from "./storage";
 import type { LibrariesManifest, SearchIndex } from "./types";
 
 type W = Window & {
@@ -53,19 +53,4 @@ export function takeEarlyQuery(): string {
   const q = w.__rmEarly || "";
   w.__rmEarly = "";
   return q;
-}
-
-/** The inline <head> script. `base` is the deployment's base path. */
-export function prefetchScript(base: string): string {
-  const b = JSON.stringify(base);
-  const key = JSON.stringify(LIBRARY_KEY);
-  return `try{var w=window,B=${b};`
-    + `document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&&f.classList.contains('ask')){e.preventDefault();`
-    + `if(!w.__rmHydrated){var i=f.querySelector('#ask-input');if(i)w.__rmEarly=i.value}}},true);`
-    + `w.__rmLibs=fetch(B+'/data/libraries.json').then(function(r){return r.ok?r.json():null}).catch(function(){return null});`
-    + `var p=location.pathname.replace(B,'');if(p==='/'||p===''){w.__rmIndex=new Promise(function(go){requestAnimationFrame(function(){setTimeout(go,0)})}).then(function(){return w.__rmLibs}).then(function(m){if(!m)return null;`
-    + `var s=new URLSearchParams(location.search).get('lib');if(!s){try{s=localStorage.getItem(${key})}catch(e){}}s=s||m.default_slug;`
-    + `var L=m.libraries||[],l=null;for(var i=0;i<L.length;i++)if(L[i].slug===s)l=L[i];l=l||L[0];if(!l)return null;`
-    + `w.__rmIndexPath=l.snapshot_path;return fetch(B+l.snapshot_path+'/search-index.json',{priority:'low'}).then(function(r){return r.ok?r.json():null})})`
-    + `.catch(function(){return null})}}catch(e){}`;
 }

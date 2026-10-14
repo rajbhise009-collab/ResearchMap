@@ -10,7 +10,6 @@ import PaletteLoader from "./components/PaletteLoader";
 import { PaletteHint } from "./components/PaletteHint";
 import OptionalAnalytics from "./components/OptionalAnalytics";
 import FooterScope from "./components/FooterScope";
-import { prefetchScript } from "../lib/prefetch";
 
 const lang = getLanguage();
 
@@ -81,7 +80,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="32x32" href={`${BASE}/favicon-32.png`} />
         <link rel="apple-touch-icon" sizes="180x180" href={`${BASE}/apple-touch-icon.png`} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <script dangerouslySetInnerHTML={{ __html: prefetchScript(BASE) }} />
+        {/* Starts the library manifest (and on the home page the search
+            index) before the app's own code; see lib/prefetch.ts. */}
+        <script src={`${BASE}/prefetch.js`} async />
       </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>

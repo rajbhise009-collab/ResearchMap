@@ -562,9 +562,12 @@ export default function Ask({ lang, gaps, papers }: {
           <strong>Note:</strong> {activeLib.not_advice_note}
         </p>
       )}
-      {activeLib && !result && !distressed && (
-        <section className="hero-intro" aria-labelledby="what-youll-find">
-          {activeLib.blurb && (
+      {/* In the page from the start (so the description is in the HTML),
+          shown once the library is known and while nothing is on screen
+          below the box. */}
+      <section className="hero-intro" aria-labelledby="what-youll-find"
+               hidden={!activeLib || !!result || distressed}>
+          {activeLib?.blurb && (
             <p className="covers"><strong>{activeLib.name}.</strong> {activeLib.blurb}</p>
           )}
           <h2 id="what-youll-find" className="intro-h">What you&rsquo;ll find</h2>
@@ -577,8 +580,7 @@ export default function Ask({ lang, gaps, papers }: {
             ))}
           </ul>
           <p className="lede">{lang.ui.what_it_does}</p>
-        </section>
-      )}
+      </section>
     </>
   );
 }
