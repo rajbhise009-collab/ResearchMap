@@ -52,6 +52,9 @@ export default function Ask({ lang, gaps, papers }: {
   // A search asked for before the index has arrived (Enter, Ask or an
   // example): kept here and run the moment the index is ready.
   const [pending, setPending] = useState<string | null>(null);
+  // Bumped on each submitted search: its cards arrive with a short cascade
+  // (globals.css .results-enter); type-ahead updates never animate.
+  const [runKey, setRunKey] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -208,6 +211,7 @@ export default function Ask({ lang, gaps, papers }: {
     // "alc" + Enter behaves like "alcohol" + Enter — the verdict reads
     // the full word.
     setResult(search(index, text, 24, { expandTrailing: true }));
+    setRunKey((k) => k + 1);
     setCommitted(text);
     setBannerAllowed(true);
     requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -485,7 +489,8 @@ export default function Ask({ lang, gaps, papers }: {
             ) : (
               <>
                 {gapHits.length > 0 ? (
-                  <section style={{ marginTop: "var(--s-6)" }}>
+                  <section style={{ marginTop: "var(--s-6)" }} key={runKey}
+                           className={runKey ? "results-enter" : undefined}>
                     <p className="section-eyebrow" role="heading" aria-level={2}>Gaps we found</p>
                     <div className="results-list">
                       {gapHits.map((g) => (

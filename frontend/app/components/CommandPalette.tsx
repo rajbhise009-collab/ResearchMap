@@ -42,6 +42,7 @@ function CommandPalette({ lang, gaps, papers }: {
   // LLM-cal index even when the user has switched to Diet.
   const [activeSnapshot, setActiveSnapshot] = useState<string>("/data");
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const [activeName, setActiveName] = useState<string | null>(null);
   useEffect(() => {
     if (!open || index) return;
     let live = true;
@@ -61,6 +62,7 @@ function CommandPalette({ lang, gaps, papers }: {
             if (live) {
               setActiveSnapshot(snapshotPath);
               setActiveSlug(lib.slug);
+              setActiveName(lib.short_name || lib.name || null);
             }
           }
         }
@@ -223,8 +225,16 @@ function CommandPalette({ lang, gaps, papers }: {
         });
       }
     }
-    return out.slice(0, 10);
+    // Shown in two groups, gaps then papers, as on the search page; each
+    // group keeps the search's own order.
+    const top = out.slice(0, 10);
+    return [...top.filter((x) => x.kind !== "Paper"), ...top.filter((x) => x.kind === "Paper")];
   }, [result, gapBySlug, paperByWid, suffix]);
+
+  // Keep the selected row in view while moving with the arrow keys.
+  useEffect(() => {
+    document.getElementById(`cmdk-opt-${selected}`)?.scrollIntoView({ block: "nearest" });
+  }, [selected]);
 
   const go = useCallback((href: string) => {
     setOpen(false);
@@ -252,48 +262,73 @@ function CommandPalette({ lang, gaps, papers }: {
   return (
     <div
       className="cmdk-scrim"
-      role="dialog" aria-modal="true" aria-label="Search"
+      role="dialog" aria-modal="true" aria-label="Quick search"
       onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
     >
       <div className="cmdk" onKeyDown={onKeyDown}>
-        <input
-          ref={inputRef}
-          className="cmdk-input"
-          placeholder={lang.search.placeholder}
-          value={q}
-          onChange={(e) => setQ(cleanQuery(e.target.value))}
-          maxLength={MAX_QUERY}
-          dir="auto"
-          aria-label={lang.search.placeholder}
-        />
-        <div className="cmdk-list" role="listbox">
+        <div className="cmdk-head">
+          <svg className="cmdk-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden>
+            <circle cx="11" cy="11" r="7" /><line x1="16.4" y1="16.4" x2="21" y2="21" />
+          </svg>
+          <input
+            ref={inputRef}
+            className="cmdk-input"
+            placeholder={lang.search.placeholder}
+            value={q}
+            onChange={(e) => setQ(cleanQuery(e.target.value))}
+            maxLength={MAX_QUERY}
+            dir="auto"
+            aria-label={lang.search.placeholder}
+            role="combobox"
+            aria-expanded={items.length > 0}
+            aria-controls="cmdk-list"
+            aria-autocomplete="list"
+            aria-activedescendant={items[selected] ? `cmdk-opt-${selected}` : undefined}
+          />
+          <button type="button" className="cmdk-close" onClick={() => setOpen(false)}
+                  aria-label="Close quick search">
+            Close
+          </button>
+        </div>
+        {activeName && (
+          <p className="cmdk-scope">Searching the <strong>{activeName}</strong> library</p>
+        )}
+        <div className="cmdk-list" id="cmdk-list" role="listbox" aria-label="Quick search results">
           {!q.trim() && (
-            tryHintFor(activeSlug) && <div className="cmdk-empty">{tryHintFor(activeSlug)}</div>
+            tryHintFor(activeSlug) && <div className="cmdk-empty" role="presentation">{tryHintFor(activeSlug)}</div>
           )}
           {q.trim() && !index && (
-            <div className="cmdk-empty">{lang.search.searching}</div>
+            <div className="cmdk-empty" role="presentation">{lang.search.searching}</div>
           )}
-          {items.map((it, i) => (
-            <a
-              key={it.href}
-              href={it.href}
-              className="cmdk-item"
-              role="option" aria-selected={i === selected}
-              onMouseEnter={() => setSelected(i)}
-              onClick={(e) => { e.preventDefault(); go(it.href); }}
-            >
-              <div className="title">{it.title}</div>
-              <div className="meta">
-                <span>{it.kind}</span>
-                {it.strength && (<><span>·</span><span>{it.strength}</span></>)}
-              </div>
-            </a>
+          {[
+            { label: "Gaps", rows: items.map((it, i) => ({ it, i })).filter((x) => x.it.kind !== "Paper") },
+            { label: "Papers", rows: items.map((it, i) => ({ it, i })).filter((x) => x.it.kind === "Paper") },
+          ].filter((g) => g.rows.length > 0).map((g) => (
+            <div key={g.label} role="group" aria-labelledby={`cmdk-g-${g.label}`}>
+              <div className="cmdk-group" id={`cmdk-g-${g.label}`} role="presentation">{g.label}</div>
+              {g.rows.map(({ it, i }) => (
+                <a
+                  key={it.href}
+                  id={`cmdk-opt-${i}`}
+                  href={it.href}
+                  className="cmdk-item"
+                  role="option" aria-selected={i === selected}
+                  onMouseEnter={() => setSelected(i)}
+                  onClick={(e) => { e.preventDefault(); go(it.href); }}
+                >
+                  <div className="title">{it.title}</div>
+                  <div className="meta">
+                    <span>{it.kind}</span>
+                    {it.strength && (<><span aria-hidden>·</span><span>{it.strength}</span></>)}
+                  </div>
+                </a>
+              ))}
+            </div>
           ))}
           {showBorderline && (
-            <div className="cmdk-empty" style={{ textAlign: "left", paddingBottom: 8 }}>
-              <strong style={{ color: "var(--ink-strong)", display: "block", marginBottom: 6 }}>
-                {lang.search.borderline.label}
-              </strong>
+            <div className="cmdk-empty cmdk-note" role="presentation">
+              <strong>{lang.search.borderline.label}</strong>
               {lang.search.borderline.note}
             </div>
           )}
@@ -302,10 +337,8 @@ function CommandPalette({ lang, gaps, papers }: {
               valid prefix matches like "alc" → the alcohol gaps) is
               what the reader should see. */}
           {showOOD && q.trim() && items.length === 0 && (
-            <div className="cmdk-empty" style={{ textAlign: "left" }}>
-              <strong style={{ color: "var(--ink-strong)", display: "block", marginBottom: 6 }}>
-                {lang.search.out_of_domain.label}
-              </strong>
+            <div className="cmdk-empty cmdk-note" role="presentation">
+              <strong>{lang.search.out_of_domain.label}</strong>
               Press Enter to see the full honest-refusal panel.{" "}
               <a href={`/${suffix}`}
                  onClick={(e) => { e.preventDefault(); handOffQuery(q, { samePage: true }); go(`/${suffix}`); }}>
@@ -315,7 +348,7 @@ function CommandPalette({ lang, gaps, papers }: {
           )}
         </div>
         <div className="cmdk-foot">
-          <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+          <span><kbd>↑</kbd><kbd>↓</kbd> move</span>
           <span><kbd>↵</kbd> open</span>
           <span><kbd>esc</kbd> close</span>
         </div>

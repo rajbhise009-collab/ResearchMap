@@ -34,7 +34,18 @@ axe found 4 serious and 12 moderate issues over 40 page-states. Before screensho
   - **Filters that match nothing** on What we found get a "Show everything" button.
   - **Focus:** the search box no longer draws a second, square focus ring inside the rounded one.
   - **Accessibility:** heading order fixed (moderate axe findings 12 → 0).
-- [ ] 3. Motion, interaction, focus, command palette.
+- [x] **3. Motion, interaction, focus, command palette.**
+  - **Palette:**
+    - a search icon, a Close button, and "Searching the <library> library";
+    - gaps and papers in labelled groups (each keeps the search's order);
+    - the selected row stays in view;
+    - full screen on phones, with no keyboard hints on touch screens;
+    - proper combobox/listbox semantics (axe serious 4 → 0).
+  - **Focus:** a two-tone focus ring (page gap, then accent) visible on every surface in both themes.
+  - **Navigation:** the nav marks the current page with an accent underline and `aria-current`; nav links are 44px tall.
+  - **Motion:** a submitted search's cards arrive in one short cascade (type-ahead never animates); in-app page changes fade in (never the first load); chips and buttons press in. All of it is off under reduced motion.
+  - **Gap pages:** "What kind of gap this is" was empty on disagreement pages (their data has no `kind_long`); it now uses the language pack's description of that kind, or is left out.
+  - **Cite buttons:** the interface font, 44px tall.
 - [ ] 4. Mobile, accessibility, performance, final review.
 
 ## UI polish (branch `ui-polish`, local only) — 2026-10-11

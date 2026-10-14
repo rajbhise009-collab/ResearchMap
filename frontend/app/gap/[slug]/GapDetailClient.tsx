@@ -126,6 +126,10 @@ export default function GapDetailClient({ slug, lang, owners }: {
           : []);
   const contradictionPair = o.a_text && o.b_text;
 
+  // Some cards carry no kind_long of their own; the language pack's
+  // description of that kind is the same text the gap list shows.
+  const kindLong = c.kind_long || (c.kind_id ? lang.kinds[c.kind_id]?.long : "") || "";
+
   const sections: [string, string][] = [
     ["why", "Why this came up"],
     ["how-sure", lang.ui.strength_explainer],
@@ -135,7 +139,7 @@ export default function GapDetailClient({ slug, lang, owners }: {
     ...(said.length ? [["said", lang.ui.what_they_said] as [string, string]] : []),
     ...(contradictionPair
         ? [["disagreement", "The two claims"] as [string, string]] : []),
-    ["kind", "What kind of gap this is"],
+    ...(kindLong ? [["kind", "What kind of gap this is"] as [string, string]] : []),
   ];
 
   return (
@@ -325,10 +329,12 @@ export default function GapDetailClient({ slug, lang, owners }: {
           </section>
         )}
 
-        <section id="kind" className="block">
-          <h2>What kind of gap this is</h2>
-          <p>{c.kind_long ?? ""}</p>
-        </section>
+        {kindLong && (
+          <section id="kind" className="block">
+            <h2>What kind of gap this is</h2>
+            <p>{kindLong}</p>
+          </section>
+        )}
 
         <GapExport
           gapSlug={slug}
