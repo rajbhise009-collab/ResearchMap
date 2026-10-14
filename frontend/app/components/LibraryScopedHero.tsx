@@ -30,9 +30,9 @@ export default function LibraryScopedHero({ tagline, qualifier, facts, children 
   // One line: the lead-in may shorten with an ellipsis on a narrow screen;
   // the library name never does.
   const eyebrow = libCount > 1
-    ? <><span className="eb-lead">Working prototype · {libCount} libraries · viewing&nbsp;</span>
+    ? <><span className="eb-lead">{libCount} research libraries · viewing&nbsp;</span>
         <strong className="eb-name">{current?.short_name ?? "…"}</strong></>
-    : <span className="eb-lead">Working prototype · One library</span>;
+    : <span className="eb-lead">One research library</span>;
 
   return (
     <div className="hero-grid">

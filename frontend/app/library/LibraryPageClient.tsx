@@ -127,7 +127,6 @@ export default function LibraryPageClient({ lang, facts }: {
       <section className="block">
         <h2>{lang.ui.findings_heading}</h2>
         <p>{lang.ui.findings_intro}</p>
-        {lang.ui.budget_note && <p className="small muted">{lang.ui.budget_note}</p>}
         {stats?.audit_doubts && stats.audit_doubts.length > 0 && (
           <div className="audit-doubts">
             <p className="small"><strong>{lang.ui.audit_doubts_heading}</strong></p>
@@ -136,14 +135,18 @@ export default function LibraryPageClient({ lang, facts }: {
             </ul>
           </div>
         )}
-        <p className="small muted sans">{lang.ui.findings_are_technical}</p>
-        {findings.map((f) => (
-          <div className="paper-line" key={f.slug}>
-            <span className="t">
-              <Link href={`/findings/${f.slug}/`}>{f.title}</Link>
-            </span>
-          </div>
-        ))}
+        {/* The working reports and the spending note are for the people
+            building the tool: kept one click away, not deleted. */}
+        <details className="tech-notes">
+          <summary>Technical notes ({findings.length} reports)</summary>
+          <p className="small muted sans">{lang.ui.findings_are_technical}</p>
+          {lang.ui.budget_note && <p className="small muted">{lang.ui.budget_note}</p>}
+          <ul className="tech-list">
+            {findings.map((f) => (
+              <li key={f.slug}><Link href={`/findings/${f.slug}/`}>{f.title}</Link></li>
+            ))}
+          </ul>
+        </details>
       </section>
 
       {stats && (

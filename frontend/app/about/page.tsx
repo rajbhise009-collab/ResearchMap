@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getSiteFacts } from "../../lib/data";
 import { pageMeta } from "../../lib/meta";
 import { site } from "../../lib/site";
+import DocLayout from "../components/DocLayout";
 
 export const metadata = pageMeta({
   title: "About",
@@ -13,7 +14,7 @@ export const metadata = pageMeta({
 export default function About() {
   const facts = getSiteFacts();
   return (
-    <article className="trust">
+    <DocLayout><article className="trust">
       <h1>About {site.siteName}</h1>
       <p className="lede">
         {site.siteName} reads the research papers on one subject and lists questions those
@@ -72,6 +73,6 @@ export default function About() {
         {facts.libraries.filter((l) => !l.growth.grows).map((l) => l.name).join(" and ")} is kept
         fixed.
       </p>
-    </article>
+    </article></DocLayout>
   );
 }

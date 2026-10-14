@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getSiteFacts, getValidation } from "../../lib/data";
 import { pageMeta } from "../../lib/meta";
 import { site } from "../../lib/site";
+import DocLayout from "../components/DocLayout";
 
 export const metadata = pageMeta({
   title: "Method",
@@ -15,7 +16,7 @@ const nm = (v: number | null | undefined) => (v === null || v === undefined ? "n
 export default function Method() {
   const facts = getSiteFacts();
   return (
-    <article className="trust">
+    <DocLayout><article className="trust">
       <h1>Method</h1>
       <p className="lede">
         The rule behind the whole project: a language model only turns paper text into
@@ -214,6 +215,6 @@ export default function Method() {
         Numbers on this page are generated from the project&apos;s data files by a script in the
         source code.
       </p>
-    </article>
+    </article></DocLayout>
   );
 }

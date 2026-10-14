@@ -98,9 +98,12 @@
 
   /* One layout everywhere: a reading column (about 70 characters of body
      serif) beside an aside, in a centred container. */
-  --measure: 40rem;
-  --aside: 20rem;
-  --wide: 66rem;
+  --measure: 44rem;          /* reading text: about 70-75 characters */
+  --aside: 24rem;
+  --wide: 77rem;             /* container: the page uses the screen, not a strip */
+  --gutter: 2rem;            /* page side padding */
+  --col-gap: clamp(2.5rem, 5vw, 5rem);
+  --band: #efece2;           /* footer band */
   --radius-sm: 4px;
   --radius: 8px;
   --radius-lg: 14px;
@@ -140,6 +143,7 @@
     --note-icon: #b58a3b;
     --note-ink: #c99a45;
     --surface-raise-1: #1a1913;
+    --band: #141410;
 
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35),
                 0 1px 3px rgba(0, 0, 0, 0.25);
@@ -173,6 +177,7 @@
   --note-icon: #b58a3b;
   --note-ink: #c99a45;
   --surface-raise-1: #1a1913;
+  --band: #141410;
   --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.25);
   --shadow-2: 0 3px 12px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-3: 0 16px 40px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.35);
@@ -189,6 +194,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html {
+  font-size: clamp(100%, 0.4167vw + 10px, 112.5%);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   /* Defensive: nothing should ever produce horizontal scroll. If the
@@ -202,7 +208,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: var(--line-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -308,7 +314,7 @@ summary:focus-visible, pre:focus-visible, select:focus-visible,
 .masthead-in {
   max-width: var(--wide);
   margin: 0 auto;
-  padding: var(--s-1) var(--s-5);
+  padding: var(--s-1) var(--gutter);
   display: flex;
   align-items: center;
   gap: var(--s-6);
@@ -373,29 +379,37 @@ main {
   max-width: var(--wide);
   width: 100%;
   margin: 0 auto;
-  padding: var(--s-7) var(--s-5) var(--s-9);
+  padding: var(--s-7) var(--gutter) var(--s-9);
 }
 main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 
 .foot {
   border-top: 1px solid var(--rule);
+  background: var(--band);
   font-family: var(--font-sans);
   /* caveats and the support line live here: at least 14px, and --muted
-     (4.96:1 light, 5.93:1 dark), never --faint (2.78:1) */
+     (4.96:1 light, 5.93:1 dark), never --faint */
   font-size: max(var(--step--1), 14px);
+  line-height: var(--line-snug);
   color: var(--muted);
 }
-.foot-in {
-  max-width: var(--wide);
-  margin: 0 auto;
-  padding: var(--s-5);
-  display: flex;
-  gap: var(--s-5);
-  flex-wrap: wrap;
-  align-items: center;
+.foot-wrap { max-width: var(--wide); margin: 0 auto; padding: var(--s-7) var(--gutter) var(--s-6); }
+.foot-top {
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between;
+  gap: var(--s-4) var(--s-7); padding-bottom: var(--s-5); border-bottom: 1px solid var(--rule-strong);
 }
-.foot-brand { color: var(--muted); }
-.foot-dot { color: var(--rule-strong); }
+.foot-id { max-width: 40rem; }
+.foot-brand { font-family: var(--font-serif); font-size: var(--step-1); color: var(--ink-strong); }
+.foot-scope { margin-top: var(--s-1); }
+.foot-cols {
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--s-6) var(--col-gap); padding-top: var(--s-5);
+}
+.foot-h {
+  font-family: var(--font-sans); font-size: var(--step--1); font-weight: 600;
+  color: var(--ink-soft); letter-spacing: 0; margin: 0 0 var(--s-2);
+}
+@media (max-width: 900px) { .foot-cols { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); } }
 
 /* Library switcher — used inside the hero card's kicker and the
    masthead. Plain <select> with a subtle label so it doesn't try to be
@@ -458,28 +472,11 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 }
 .lib-badge-count { color: var(--muted); }
 
-.foot-sources {
-  max-width: var(--wide);
-  margin: 0 auto;
-  padding: 0 var(--s-5) var(--s-5);
-  font-size: max(var(--step--1), 14px);
-  line-height: var(--line-snug);
-  color: var(--muted);
-  border-top: 1px dashed var(--rule);
-  padding-top: var(--s-4);
-}
-.foot-sources-label { color: var(--ink-soft); font-weight: 500; }
-.foot-sources-intro { color: var(--muted); }
-.foot-sources-list {
-  list-style: none;
-  padding: 0;
-  margin: var(--s-3) 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-3) var(--s-5);
-}
-.foot-sources-list li { display: inline; }
-.foot-sources-list a { color: var(--muted); }
+.foot-sources-intro { color: var(--muted); margin: 0; }
+.foot-sources-list { list-style: none; padding: 0; margin: var(--s-3) 0 0; display: grid; gap: var(--s-3); }
+.foot-srcs { gap: var(--s-2); }
+.foot-sources-list a { color: var(--ink-soft); }
+.foot-sources-list strong { color: var(--ink-soft); font-weight: 600; }
 .foot-sources-note { color: var(--muted); }
 /* The "if you or a young person you know is struggling" sentence: its own
    line, body-strength ink, semibold. Wording unchanged (split, not edited). */
@@ -494,13 +491,24 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    4. Landing
    ========================================================================== */
 
-.hero-grid, .page-grid {
+.hero-grid, .page-grid, .doc-grid {
   display: grid;
-  grid-template-columns: minmax(0, var(--measure)) minmax(0, var(--aside));
-  justify-content: space-between;
-  gap: var(--s-8);
+  grid-template-columns: minmax(0, 1fr) clamp(16rem, 27vw, var(--aside));
+  column-gap: var(--col-gap);
   align-items: start;
 }
+.doc-grid > .doc-main { min-width: 0; }
+.doc-aside { position: sticky; top: 76px; }
+.doc-toc {
+  font-family: var(--font-sans); font-size: var(--step--1);
+  border-left: 1px solid var(--rule); padding-left: var(--s-4);
+}
+.doc-toc-h { color: var(--muted); font-size: var(--step--2); letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 var(--s-3); font-weight: 500; }
+.doc-toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+.doc-toc a { color: var(--muted); text-decoration: none; display: block; line-height: var(--line-snug); }
+.doc-toc a:hover { color: var(--ink); }
+.doc-toc a.on { color: var(--ink-strong); font-weight: 500; }
+.doc-main .trust, .doc-main .md, .doc-main .hero { max-width: var(--measure); }
 .page-grid > .page-main { grid-column: 1; grid-row: 1; min-width: 0; }
 .page-grid > .page-aside { grid-column: 2; grid-row: 1; }
 .page-head { max-width: var(--measure); margin-bottom: var(--s-6); }
@@ -521,14 +529,15 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   .about-card, .page-aside { position: sticky; top: 76px; }
 }
 @media (max-width: 900px) {
-  .hero-grid, .page-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }
+  .hero-grid, .page-grid, .doc-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }
+  .doc-aside { display: none; }
   .page-grid > .page-main, .page-grid > .page-aside { grid-column: 1; grid-row: auto; }
   /* Stacked under the hero: wait for the library like the intro does, so
      the card is never pushed down once it is on screen (CLS). */
   .hero-grid:not(:has(.ask-results[data-lib])) .about-card { display: none; }
 }
 
-.hero { max-width: var(--measure); min-width: 0; }
+.hero { min-width: 0; }
 .hero .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-sans);
@@ -564,9 +573,9 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    paint so nothing below them moves (heights measured for every library). */
 .hero .examples { min-height: 72px; align-content: flex-start; }
 @media (min-width: 901px) and (max-width: 1023px) { .hero .examples { min-height: 140px; } }
-@media (max-width: 620px) { .hero .examples { min-height: 176px; } }
+@media (max-width: 620px) { .hero .examples { min-height: 96px; } }
+@media (max-width: 480px) { .hero .examples { min-height: 148px; } }
 .ask-hint { min-height: 3.2em; line-height: 1.6; }
-@media (max-width: 380px) { .ask-hint { min-height: 4.8em; } }   /* a long "Try:" runs to 3 lines */
 .card-note { margin: var(--s-3) 0 0; padding: var(--s-3) var(--s-4); }
 .intro-h {
   font-size: var(--step-2);
@@ -592,9 +601,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
    the eyebrow gains the library name, and the hint under the box changes
    from "Looking through the library…" to the library's own "Try:" line. */
 .hero .eyebrow { line-height: 1.6; }
-@media (max-width: 620px) {
-  .kinds-list { grid-template-columns: 1fr; gap: var(--s-3); }
-}
+
 .hero .lede { font-size: var(--step-1); color: var(--ink-soft); }
 .hero .lede + .lede { margin-top: var(--s-4); }
 
@@ -632,7 +639,6 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
 
 .ask {
   margin-top: var(--s-6);
-  max-width: var(--measure);
 }
 .ask-box {
   display: flex; align-items: center;
@@ -1282,7 +1288,7 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
    text 13-14px, chips 14px; 44px touch targets come from padding, not from
    bigger text. Spacing tops out at 32px. */
 @media (max-width: 620px) {
-  :root { --s-5: 1.25rem; --s-6: 1.5rem; --s-7: 2rem; --s-8: 2rem; --s-9: 2.5rem; }
+  :root { --s-5: 1.25rem; --s-6: 1.5rem; --s-7: 2rem; --s-8: 2rem; --s-9: 2.5rem; --gutter: 1rem; }
   body { font-size: 16px; }
   main { padding: var(--s-4) var(--s-4) var(--s-8); }
 
@@ -1311,10 +1317,11 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
   /* 16px: the smallest size iOS does not zoom on focus */
   .ask-box input { font-size: var(--step-0); padding: 10px 0; }
   .ask-btn { padding: 0 16px; height: 44px; min-width: 52px; }
-  .ask-hint { font-size: 13px; margin-top: var(--s-2); padding-left: var(--s-2); }
-  .examples { margin-top: var(--s-3); padding-left: var(--s-2); gap: var(--s-2); }
-  .examples .label { font-size: 12px; width: 100%; }
-  .example-chip { font-size: 14px; padding: 0 12px; }
+  /* Not needed on a phone: the keyboard hint (no keyboard; its "Try:" is
+     the first example anyway) and the "Examples" label (the chips say it). */
+  .ask-hint, .examples .label { display: none; }
+  .examples { margin-top: var(--s-3); padding-left: 0; gap: var(--s-2); }
+  .example-chip { font-size: 14px; padding: 0 12px; min-height: 44px; display: inline-flex; align-items: center; }
 
   .panel { padding: var(--s-5) var(--s-4); }
   .about-card { padding: var(--s-4); }
@@ -1336,15 +1343,24 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
   .caveat { font-size: 15px; padding: var(--s-3) var(--s-4); }
   .caveat .cav-label { font-size: 11.5px; margin-bottom: var(--s-1); }
   .not-advice { padding: var(--s-3) var(--s-4); }
-  .kinds-list { gap: var(--s-3); }
-  .kind-name { font-size: 15px; }
-  .kind-short { font-size: 13px; }
+  /* What you'll find: the four names only, two by two. */
+  .kinds-list { grid-template-columns: 1fr 1fr; gap: var(--s-2) var(--s-3); }
+  .kind-name { font-size: 14px; }
+  .kind-short { display: none; }
   .intro-h { font-size: 1.125rem; margin: var(--s-5) 0 var(--s-3); }
 
   h1 { letter-spacing: -0.015em; }
   .filters { gap: var(--s-3); font-size: 14px; }
   .filters .count { margin-left: 0; width: 100%; text-align: right; }
-  .foot-in { padding: var(--s-4); font-size: max(var(--step--1), 14px); }
+  .foot-wrap { padding: var(--s-6) var(--gutter) var(--s-5); }
+  .foot-top { gap: var(--s-3); padding-bottom: var(--s-4); }
+  .foot-links { gap: 0 var(--s-4); }
+  .foot-cols { padding-top: var(--s-4); gap: var(--s-4); }
+  .foot-sources-list { gap: var(--s-2); }
+  /* Not caveats, so a phone can do without them: the library intro line and
+     each source's description (the names stay, linked). Library notes stay. */
+  .foot-libs-intro, .foot-srcs .foot-sources-note { display: none; }
+  .foot-srcs { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-4); }
 }
 
 /* Touch screens: every control at least 44px tall (WCAG 2.5.5). */
@@ -1369,14 +1385,8 @@ html[data-nav] main#main > * { animation: enter var(--dur) var(--ease) both; }
    ========================================================================== */
 
 .foot-links {
-  max-width: var(--wide);
-  margin: 0 auto;
-  padding: var(--s-4) var(--s-5);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-2) var(--s-5);
-  font-family: var(--font-sans);
-  font-size: max(var(--step--1), 14px);
+  display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5);
+  font-family: var(--font-sans); font-size: max(var(--step--1), 14px);
 }
 .foot-links a { color: var(--muted); }
 .foot-links a:hover { color: var(--accent); }

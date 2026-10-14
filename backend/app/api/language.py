@@ -632,7 +632,7 @@ BUILD_LIBRARY = {
 # Everything else the interface says.
 # --------------------------------------------------------------------------
 
-FOOTER_SCOPE_PREFIX = "Working prototype · currently shown"
+FOOTER_SCOPE_PREFIX = "Currently shown"
 FOOTER_SCOPE_SUFFIX = "Not a comprehensive research tool."
 
 # Legacy constant kept for backwards-compat with any caller that reads

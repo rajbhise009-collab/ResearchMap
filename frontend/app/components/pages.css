@@ -8,11 +8,11 @@
 
 .detail-grid {          /* the same grid as home and the list pages */
   display: grid;
-  grid-template-columns: minmax(0, var(--measure)) minmax(0, var(--aside));
-  justify-content: space-between;
-  gap: var(--s-8);
+  grid-template-columns: minmax(0, 1fr) clamp(16rem, 27vw, var(--aside));
+  column-gap: var(--col-gap);
   align-items: start;
 }
+.detail-grid > div:first-child { min-width: 0; max-width: var(--measure); }
 @media (max-width: 900px) {
   .detail-grid { grid-template-columns: 1fr; gap: var(--s-5); }
   .detail-sidebar { display: none; }
@@ -174,3 +174,20 @@ section.block p { color: var(--ink-soft); }
   color: var(--muted);
 }
 
+
+/* Library page: the technical reports, one click away. */
+.tech-notes { margin-top: var(--s-5); border-top: 1px solid var(--rule); padding-top: var(--s-4); }
+.tech-notes summary {
+  cursor: pointer; font-family: var(--font-sans); font-size: var(--step--1); color: var(--ink-soft);
+  min-height: 44px; display: flex; align-items: center;
+}
+.tech-notes[open] summary { margin-bottom: var(--s-3); }
+.tech-list { list-style: none; margin: var(--s-3) 0 0; padding: 0; columns: 2 18rem; column-gap: var(--s-6);
+  font-family: var(--font-sans); font-size: var(--step--1); }
+.tech-list li { break-inside: avoid; padding: var(--s-1) 0; }
+.trust td:last-child { white-space: nowrap; }
+/* Phones: a wide table scrolls inside its own box; the page never does. */
+@media (max-width: 620px) {
+  .trust table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .trust td:last-child { white-space: normal; }
+}

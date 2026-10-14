@@ -104,6 +104,32 @@ axe found 4 serious and 12 moderate issues over 40 page-states. Before screensho
   - home CSS 6.93 → 7.37 KB gz; home JS 151.7 → 152.0 KB gz.
 - **Screenshots:** before and after at 360/390/768/1024/1280/1440/1920 × light/dark, plus a contact sheet per width, in `~/Desktop/rm-ui-after/v3/`. No horizontal overflow at any width.
 
+### User-ready pass (2026-10-15)
+
+- **"Prototype" removed from what visitors see:**
+  - the home eyebrow now reads "4 research libraries · viewing …";
+  - the footer line now reads "Currently shown: …". This is `FOOTER_SCOPE_PREFIX` in `language.py`; only the two footer keys changed in the five generated `language.json` files, set to exactly what the generator now produces;
+  - exported citations now say "Literature-analysis tool … has not been independently validated".
+
+  Kept on purpose, because they are true while Phase 6 validation is outstanding: About's "It is not validated…" and the footer's "Not a comprehensive research tool."
+- **Laptops and large screens:**
+  - the container is 77rem (was 66rem) and the reading column fills it beside a 24rem aside;
+  - the gutter scales with the window;
+  - the root size grows from 16px at 1440px to 18px at 1920px, so big screens scale rather than leave wide margins;
+  - text pages (About, Method, Privacy, Terms, Contact, the library page, findings) get an "On this page" aside from their own headings (`components/DocLayout.tsx`);
+  - the footer is a full-width band with a three-column grid;
+  - on the library page, the working reports and the spending note sit behind a closed "Technical notes"; "Our own verdicts we now doubt" stays visible.
+- **Phones, decluttered:**
+  - removed on phones: the keyboard hint, the "Examples" label, the kind descriptions (names stay, two by two), and in the footer the sources' one-line descriptions and the libraries intro line;
+  - every caveat and library safety note stays, including the support line;
+  - the About table scrolls inside its own box.
+- **Checked:** typecheck, build, query privacy 14/14, axe 0 over 40 page-states, smoke 54/54, full suite 953 passed / 1 skipped.
+- **Measured:**
+  - LCP 436–564 ms and CLS ≤ 0.003 at 360–1920px for all four libraries;
+  - FCP 442 vs 442 ms against `2d104ed` (20-round medians);
+  - home JS unchanged (152.0 KB gz), home CSS 7.37 → 7.67 KB gz; all-routes JS +4.9 KB gz (the "On this page" component on the text pages).
+- **Screenshots:** before and after × 7 widths × light/dark, plus contact sheets, in `~/Desktop/rm-ui-after/v4/`.
+
 **Still open / for the owner:**
 - the footer copy shortenings (proposed 2026-10-11, not applied);
 - "How sure are we?" on disagreement pages shows the strength word without its sentence (the data has no `strength_meaning`);

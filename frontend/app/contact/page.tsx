@@ -2,6 +2,7 @@ import "../components/pages.css";   // styles for every page except home (first 
 import { pageMeta } from "../../lib/meta";
 import { site } from "../../lib/site";
 import { contactContent } from "../../lib/contact";
+import DocLayout from "../components/DocLayout";
 
 export const metadata = pageMeta({
   title: "Contact",
@@ -12,7 +13,7 @@ export const metadata = pageMeta({
 export default function Contact() {
   const { lines, none } = contactContent(site);
   return (
-    <article className="trust">
+    <DocLayout><article className="trust">
       <h1>Contact</h1>
       <p className="lede">
         Found a result that looks wrong, a broken link, or a subject you would like a library
@@ -36,6 +37,6 @@ export default function Contact() {
         <p className="small muted">When reporting a result, the page address is the most useful
           thing to include.</p>
       )}
-    </article>
+    </article></DocLayout>
   );
 }
