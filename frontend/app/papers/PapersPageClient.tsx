@@ -5,6 +5,7 @@ import { Tag } from "../components/plain";
 import { DevKV } from "../components/DevMode";
 import { useLibraryData } from "../components/useLibraryData";
 import { useState } from "react";
+import { LoadingCards, LoadError } from "../components/States";
 
 export default function PapersPageClient({ lang }: { lang: LanguagePack }) {
   const res = useLibraryData<{ total: number; items: PaperSummary[] }>(
@@ -30,14 +31,14 @@ export default function PapersPageClient({ lang }: { lang: LanguagePack }) {
           {lang.ui.all_papers}
         </h1>
         <p className="lede">
-          {res.state === "loading" && "Loading the paper list…"}
           {res.state === "ready" && (
             <>The {papers.length} papers in the <em>{libName}</em> library. For {abstractOnly} of them we only had the summary — those are marked, because we know less about them than the rest.</>
           )}
-          {res.state === "error" && "Couldn't load the paper list."}
         </p>
       </div>
 
+      {res.state === "loading" && <LoadingCards label="Loading the paper list…" count={4} />}
+      {res.state === "error" && <LoadError what="the paper list" />}
       {res.state === "ready" && (
         <>
           <div className="filters">

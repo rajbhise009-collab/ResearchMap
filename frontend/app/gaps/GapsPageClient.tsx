@@ -5,6 +5,7 @@ import type { GapDoc, LanguagePack, SiteFactsLibrary } from "../../lib/types";
 import LibrarySummary from "../components/LibrarySummary";
 import GapsClient from "./GapsClient";
 import { DevKV } from "../components/DevMode";
+import { LoadingCards, LoadError } from "../components/States";
 
 interface OpportunitiesFile {
   total: number;
@@ -56,11 +57,9 @@ export default function GapsPageClient({ lang, facts }: {
           {lang.ui.all_opportunities}
         </h1>
         <p className="lede">
-          {res.state === "loading" && "Loading the gap list…"}
           {res.state === "ready" && (
             <>Everything the tool found in the <em>{libName}</em> library, strongest first. Each one says how sure we are and what would undermine it.</>
           )}
-          {res.state === "error" && "Couldn't load the gap list."}
         </p>
         {fact && <LibrarySummary fact={fact} />}
         {res.state === "ready" && res.data.audit && (
@@ -69,6 +68,8 @@ export default function GapsPageClient({ lang, facts }: {
         )}
       </div>
 
+      {res.state === "loading" && <LoadingCards label="Loading the gap list…" />}
+      {res.state === "error" && <LoadError what="the gap list" />}
       {res.state === "ready" && (
         <>
           <GapsClient gaps={genuineGaps} lang={lang} />

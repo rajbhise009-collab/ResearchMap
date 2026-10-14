@@ -58,7 +58,7 @@ export default function GapsClient({ gaps, lang }: {
       {shown.length === 0 ? (
         askedForDisagreements ? (
           <div className="empty" style={{ marginTop: "2rem" }}>
-            <h3>{lang.no_disagreements.headline}</h3>
+            <h2 className="empty-h">{lang.no_disagreements.headline}</h2>
             <p>{lang.no_disagreements.body}</p>
             <p className="small">
               <Link href="/library/">{lang.no_disagreements.link_label} →</Link>
@@ -66,12 +66,19 @@ export default function GapsClient({ gaps, lang }: {
           </div>
         ) : (
           <div className="empty" style={{ marginTop: "2rem" }}>
-            <h3>Nothing matches those filters</h3>
+            <h2 className="empty-h">Nothing matches those filters</h2>
             <p>Widen them and everything comes back.</p>
+            <p className="small">
+              <button type="button" className="text-btn"
+                      onClick={() => { setKind("all"); setStrength("all"); }}>
+                Show everything
+              </button>
+            </p>
           </div>
         )
       ) : (
         <div className="results-list">
+          <h2 className="sr-only">Results</h2>
           {shown.map((g) => (
             <GapResult key={g.slug} gap={g} readMore={lang.ui.read_more} />
           ))}

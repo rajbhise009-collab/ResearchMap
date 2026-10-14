@@ -666,6 +666,11 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   letter-spacing: -0.005em;
 }
 .ask-box input::placeholder { color: var(--muted); opacity: 1; }
+/* The rounded box carries the focus ring; no second square ring inside it. */
+.ask-box input:focus-visible, .cmdk-input:focus-visible { box-shadow: none; }
+/* Once something shows below the box, the starter examples step aside (the
+   empty state offers them again), so results start right under the box. */
+.ask:has(+ .ask-results[data-active]) .examples { display: none; }
 .ask-btn {
   flex-shrink: 0;
   height: 44px;
@@ -710,13 +715,7 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   line-height: 1;
   margin: 0 3px;
 }
-.ask-hint .swatch {
-  display: inline-block; width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  margin-right: 8px;
-  animation: pulse 1.4s ease-in-out infinite;
-}
+.ask-hint .swatch { margin-right: 4px; }
 @keyframes pulse {
   0%, 100% { opacity: 0.4; transform: scale(0.9); }
   50% { opacity: 1; transform: scale(1.1); }
@@ -1033,6 +1032,51 @@ main.reading { max-width: calc(var(--measure) + var(--s-6) * 2); }
   border-radius: var(--radius-sm); animation: shimmer 1.3s ease-in-out infinite;
 }
 .skel-block .skel-title.b { width: 64%; margin-bottom: var(--s-4); }
+/* Loading states: cards shaped like what is coming, one plain status line. */
+.loading-state { margin-top: var(--s-5); }
+.loading-line {
+  font-family: var(--font-sans); font-size: var(--step--1); color: var(--muted);
+  display: flex; align-items: center; gap: var(--s-2);
+}
+.loading-line .swatch, .ask-hint .swatch {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); animation: pulse 1.4s ease-in-out infinite;
+}
+.loading-state .skel-block {
+  padding: var(--s-5); margin-top: var(--s-4);
+  border: 1px solid var(--rule); border-radius: var(--radius-lg); background: var(--raise-1);
+}
+.skel-detail { margin-top: var(--s-5); max-width: var(--measure); }
+.skel-detail .skel-head, .skel-detail .skel-title, .skel-detail .skel-line {
+  background: color-mix(in oklab, var(--rule) 65%, transparent);
+  border-radius: var(--radius-sm); animation: shimmer 1.3s ease-in-out infinite;
+}
+.skel-detail .skel-head { width: 9rem; height: 0.9em; margin-bottom: var(--s-4); }
+.skel-detail .skel-title { height: 2.2em; width: 90%; margin-bottom: var(--s-3); }
+.skel-detail .skel-title.b { width: 60%; margin-bottom: var(--s-6); }
+.skel-detail .skel-line { height: 1em; margin: 0.7em 0; }
+.skel-detail .skel-line.s { width: 70%; }
+
+/* Load errors: what failed and the one fix a reader can try. */
+.load-error {
+  margin: var(--s-5) 0; padding: var(--s-5);
+  border: 1px solid var(--rule-strong); border-left: 3px solid var(--note-rule);
+  border-radius: var(--radius); background: var(--raise-1); max-width: var(--measure);
+}
+.load-error h2 { font-size: var(--step-2); margin-bottom: var(--s-2); }
+.load-error p { color: var(--ink-soft); }
+.load-error .cta { margin-top: var(--s-4); }
+.ask-error { margin-top: var(--s-4); font-family: var(--font-sans); font-size: var(--step--1); }
+
+/* Nothing matched: what this library covers, and its own examples to try. */
+.empty-h { font-size: var(--step-2); margin-bottom: var(--s-3); }
+.empty-help { margin-top: var(--s-6); }
+.empty-covers { font-family: var(--font-sans); font-size: var(--step--1); color: var(--ink-soft); }
+.examples.in-empty { padding-left: 0; margin-top: var(--s-4); }
+.text-btn {
+  color: var(--accent); text-decoration: underline; text-underline-offset: 3px;
+  font-family: var(--font-sans); min-height: 44px;
+}
 
 /* ==========================================================================
    10. Detail pages

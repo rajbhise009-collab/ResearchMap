@@ -49,6 +49,9 @@ export default function Ask({ lang, gaps, papers }: {
   const [indexError, setIndexError] = useState(false);
   const [result, setResult] = useState<SearchResult | null>(null);
   const [asking, setAsking] = useState(false);
+  // A search asked for before the index has arrived (Enter, Ask or an
+  // example): kept here and run the moment the index is ready.
+  const [pending, setPending] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -199,7 +202,8 @@ export default function Ask({ lang, gaps, papers }: {
   const [bannerAllowed, setBannerAllowed] = useState(false);
 
   const run = useCallback((text: string) => {
-    if (!index || !text.trim()) return;
+    if (!text.trim()) return;
+    if (!index) { setPending(text); return; }
     // Enter / Ask expands a trailing prefix to its best completion so
     // "alc" + Enter behaves like "alcohol" + Enter — the verdict reads
     // the full word.
@@ -248,6 +252,10 @@ export default function Ask({ lang, gaps, papers }: {
       clearTimeout(t); clearTimeout(banner); setAsking(false);
     };
   }, [q, index]);
+
+  useEffect(() => {
+    if (index && pending) { const t = pending; setPending(null); run(t); }
+  }, [index, pending, run]);
 
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); run(q); };
 
@@ -308,7 +316,8 @@ export default function Ask({ lang, gaps, papers }: {
 
   return (
     <>
-      <form className="ask" onSubmit={onSubmit} role="search">
+      <form className="ask" onSubmit={onSubmit} role="search"
+            data-ready={index ? "" : undefined}>
         <label className="ask-box" htmlFor="ask-input">
           <SearchIcon className="ask-icon" />
           <input
@@ -323,25 +332,34 @@ export default function Ask({ lang, gaps, papers }: {
             autoComplete="off"
             spellCheck="false"
           />
-          <button className="ask-btn" type="submit" disabled={!index || !q.trim()}>
-            {asking ? "…" : "Ask"}
+          <button className="ask-btn" type="submit" disabled={!q.trim() || indexError}>
+            {asking || pending ? "…" : "Ask"}
           </button>
         </label>
 
-        <p className="ask-hint" aria-live="polite">
-          {indexError
-            ? "Search needs to load its index over http — open this site with a web server, not from disk."
-            : !index
-              ? (<><span className="swatch" aria-hidden /> {S.searching}</>)
+        {indexError ? (
+          <div className="load-error ask-error" role="alert">
+            <p><strong>Search couldn&rsquo;t load this library.</strong> The connection may have
+              dropped, or the site was updated while this page was open.</p>
+            <button type="button" className="cta" onClick={() => window.location.reload()}>
+              Reload the page
+            </button>
+          </div>
+        ) : (
+          <p className="ask-hint" aria-live="polite">
+            {!index
+              ? (<><span className="swatch" aria-hidden /> {S.searching}{" "}
+                  You can start typing.</>)
               : (<>Press <kbd className="inline-kbd">/</kbd> from anywhere to focus this.{tryHint ? ` ${tryHint}` : ""}</>)}
-        </p>
+          </p>
+        )}
 
-        {examples.length > 0 && (
+        {examples.length > 0 && !indexError && (
           <div className="examples">
             <span className="label">Examples</span>
             {examples.map((ex) => (
               <button key={ex} type="button" className="example-chip"
-                onClick={() => { setQ(ex); run(ex); }} disabled={!index}>
+                onClick={() => { setQ(ex); run(ex); }} disabled={indexError}>
                 {ex}
               </button>
             ))}
@@ -370,13 +388,13 @@ export default function Ask({ lang, gaps, papers }: {
           }} />
         )}
 
-        {asking && !result && <ResultsSkeleton />}
+        {((asking && !result) || pending) && <ResultsSkeleton />}
 
         {result?.verdict === "empty" && (
-          <div className="empty" style={{ marginTop: "var(--s-7)" }}>
-            <h3>{S.no_results.label}</h3>
-            <p>Try naming the thing you want to know about.</p>
-          </div>
+          <EmptyHelp title={S.no_results.label}
+                     body="Try naming the thing you want to know about."
+                     covers={activeLib} examples={examples}
+                     onPick={(ex) => { setQ(ex); run(ex); }} />
         )}
 
         {/* Out-of-domain banner is only allowed to render after a pause
@@ -461,10 +479,9 @@ export default function Ask({ lang, gaps, papers }: {
             )}
 
             {gapHits.length === 0 && paperHits.length === 0 ? (
-              <div className="empty">
-                <h3>{S.no_results.label}</h3>
-                <p>{S.no_results.note}</p>
-              </div>
+              <EmptyHelp title={S.no_results.label} body={S.no_results.note}
+                         covers={activeLib} examples={examples}
+                         onPick={(ex) => { setQ(ex); run(ex); }} />
             ) : (
               <>
                 {gapHits.length > 0 ? (
@@ -482,14 +499,14 @@ export default function Ask({ lang, gaps, papers }: {
                      language, reusing the library's own zero_finding_note
                      and coverage line (never hard-coded). */
                   <section style={{ marginTop: "var(--s-6)" }} className="empty">
-                    <h3>
+                    <h2 className="empty-h">
                       {/* Count actual gap cards, not scorer_yields: a
                           yield (e.g. a code-only persistent-limitations
                           count) isn't a card the reader can open. */}
                       {liveGaps !== null && liveGaps.length === 0
                         ? "This library has no gaps to show yet."
                         : "No gaps match this search."}
-                    </h3>
+                    </h2>
                     <p>
                       {paperHits.length > 0
                         ? `${paperHits.length} paper${paperHits.length === 1 ? "" : "s"} match${paperHits.length === 1 ? "es" : ""} below.`
@@ -521,6 +538,35 @@ export default function Ask({ lang, gaps, papers }: {
         )}
       </div>
     </>
+  );
+}
+
+/** Nothing matched: say so, say what this library does cover, and offer its
+ *  own example questions so the next try is one tap away. */
+function EmptyHelp({ title, body, covers, examples, onPick }: {
+  title: string; body: string;
+  covers: { name: string; blurb?: string } | null;
+  examples: string[];
+  onPick: (ex: string) => void;
+}) {
+  return (
+    <div className="empty empty-help" role="status">
+      <h2 className="empty-h">{title}</h2>
+      <p>{body}</p>
+      {covers?.blurb && (
+        <p className="empty-covers"><strong>This library covers:</strong> {covers.blurb}</p>
+      )}
+      {examples.length > 0 && (
+        <div className="examples in-empty">
+          <span className="label">Try</span>
+          {examples.map((ex) => (
+            <button key={ex} type="button" className="example-chip" onClick={() => onPick(ex)}>
+              {ex}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DevKV } from "../components/DevMode";
 import { useLibraryData } from "../components/useLibraryData";
 import type { Stats, LanguagePack, SiteFactsLibrary } from "../../lib/types";
+import { LoadingCards } from "../components/States";
 
 interface OpportunitiesFile {
   total: number;
@@ -40,7 +41,7 @@ export default function LibraryPageClient({ lang, facts }: {
   const kinds = Object.values(lang.kinds);
 
   if (statsRes.state === "loading") {
-    return <p className="muted">Loading library composition…</p>;
+    return <LoadingCards label="Loading library composition…" detail />;
   }
 
   return (

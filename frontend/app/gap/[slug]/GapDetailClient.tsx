@@ -14,6 +14,7 @@ import { GapExport } from "../../components/CiteExport";
 import ContradictionTimeline from "../../components/ContradictionTimeline";
 import type { LanguagePack } from "../../../lib/types";
 import { doiUrl } from "../../../lib/doi";
+import { LoadingCards, LoadError } from "../../components/States";
 
 const wid = (pid: string) => (pid || "").split(":").pop() as string;
 
@@ -94,7 +95,7 @@ export default function GapDetailClient({ slug, lang, owners }: {
   // overwritten here.
 
   if (res.state === "loading") {
-    return <p className="muted">Loading the gap…</p>;
+    return <LoadingCards label="Loading the gap…" detail />;
   }
   if (res.state === "missing") {
     return (
@@ -102,7 +103,7 @@ export default function GapDetailClient({ slug, lang, owners }: {
     );
   }
   if (res.state === "error") {
-    return <p className="muted">Couldn&apos;t load this gap.</p>;
+    return <LoadError what="this gap" />;
   }
 
   const o = res.data;

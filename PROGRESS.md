@@ -26,7 +26,14 @@ axe found 4 serious and 12 moderate issues over 40 page-states. Before screensho
   - Results use one card style; weak results stay quieter but keep full-size caveats.
   - The papers list under a search is a compact title-first list.
   - Text never uses `--faint` (2.8:1); undefined `--fg`, `--surface` and `--bg-elev` now resolve; the dark `--note-ink` contrast is raised.
-- [ ] 2. States: empty, loading, error, first-run.
+- [x] **2. States.**
+  - **Loading:** the search works before its index arrives. Typing, Enter, Ask and the examples are accepted; the search shows a skeleton and runs the moment the index is ready (it used to ignore Enter and grey out the examples). The hint says "Looking through the library… You can start typing."
+  - **Other pages:** the gap list, paper list, gap, paper and library pages show skeleton cards with a status line, not a bare "Loading…" line.
+  - **Errors:** a plain message ("Couldn't load …", why, and a "Reload the page" button) on every page and on the search. The developer-facing "open this site with a web server" line is gone.
+  - **Empty search:** says what this library covers and offers the library's own examples to try. The examples under the box step aside while anything shows below it, so results start right under the box.
+  - **Filters that match nothing** on What we found get a "Show everything" button.
+  - **Focus:** the search box no longer draws a second, square focus ring inside the rounded one.
+  - **Accessibility:** heading order fixed (moderate axe findings 12 → 0).
 - [ ] 3. Motion, interaction, focus, command palette.
 - [ ] 4. Mobile, accessibility, performance, final review.
 
