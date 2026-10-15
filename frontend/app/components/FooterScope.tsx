@@ -1,5 +1,5 @@
 "use client";
-// Footer "Working prototype · currently shown: N papers on <library>."
+// Footer "Currently shown: N papers on <library>. Not a comprehensive …"
 // Follows the active library (via ?lib= or localStorage).
 //
 // The prefix/suffix strings come from the language pack so copy still

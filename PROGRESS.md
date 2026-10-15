@@ -1,5 +1,140 @@
 # PROGRESS
 
+## UI v2 (branch `ui-v2`) — 2026-10-14
+
+Frontend-only pass in four checkpoints. Rules kept throughout:
+- no change to search, ranking, library contents, generated data, `backend/` or `data/`, and no `language.py` copy;
+- caveats keep full size;
+- the query never goes in a URL, `Referer`, hash or title;
+- system fonts only, no new dependencies or third-party requests.
+
+`~/Desktop/rm-ui-polish/PLAN.md` does not exist; the ranked list used is the UI audit from 2026-10-11 (`~/Desktop/rm-ui-before`). Of its 8 items, #2, #3, #4 and #6 shipped in `ui-polish`. #1, #5, #7, #8 and the empty-state note are done here.
+
+**Baseline** (main `9c8a3f2`, local static server, 390px, CPU 4x, slow 4G, median of 5):
+- FCP 776 ms, LCP 776 ms, CLS 0.018;
+- search usable 5859 ms after load; results 133 ms after Enter;
+- JS 258 KB gz in total, 152 KB gz on the home page; CSS 7.0 KB gz.
+
+axe found 4 serious and 12 moderate issues over 40 page-states. Before screenshots are in `~/Desktop/rm-ui-after/v2/before/`.
+
+- [x] **1. Layout and hierarchy.**
+  - Home: the search sits directly under the headline and the "starting point, not a verdict" qualifier. The qualifier is now at body size and ink, not small grey.
+  - At 390px the search is on the first screen (y≈360; before, below the fold).
+  - The eyebrow names the library being viewed.
+  - "What you'll find" lists the four kinds of result, using the language pack's own names and short descriptions; the description follows. Both fold away while results are on screen (CSS `:has`), so results start under the box. Safety notes never fold: when results show, they repeat the note at the top.
+  - The library card stays in view beside results on wide screens.
+  - Results use one card style; weak results stay quieter but keep full-size caveats.
+  - The papers list under a search is a compact title-first list.
+  - Text never uses `--faint` (2.8:1); undefined `--fg`, `--surface` and `--bg-elev` now resolve; the dark `--note-ink` contrast is raised.
+- [x] **2. States.**
+  - **Loading:** the search works before its index arrives. Typing, Enter, Ask and the examples are accepted; the search shows a skeleton and runs the moment the index is ready (it used to ignore Enter and grey out the examples). The hint says "Looking through the library… You can start typing."
+  - **Other pages:** the gap list, paper list, gap, paper and library pages show skeleton cards with a status line, not a bare "Loading…" line.
+  - **Errors:** a plain message ("Couldn't load …", why, and a "Reload the page" button) on every page and on the search. The developer-facing "open this site with a web server" line is gone.
+  - **Empty search:** says what this library covers and offers the library's own examples to try. The examples under the box step aside while anything shows below it, so results start right under the box.
+  - **Filters that match nothing** on What we found get a "Show everything" button.
+  - **Focus:** the search box no longer draws a second, square focus ring inside the rounded one.
+  - **Accessibility:** heading order fixed (moderate axe findings 12 → 0).
+- [x] **3. Motion, interaction, focus, command palette.**
+  - **Palette:**
+    - a search icon, a Close button, and "Searching the <library> library";
+    - gaps and papers in labelled groups (each keeps the search's order);
+    - the selected row stays in view;
+    - full screen on phones, with no keyboard hints on touch screens;
+    - proper combobox/listbox semantics (axe serious 4 → 0).
+  - **Focus:** a two-tone focus ring (page gap, then accent) visible on every surface in both themes.
+  - **Navigation:** the nav marks the current page with an accent underline and `aria-current`; nav links are 44px tall.
+  - **Motion:** a submitted search's cards arrive in one short cascade (type-ahead never animates); in-app page changes fade in (never the first load); chips and buttons press in. All of it is off under reduced motion.
+  - **Gap pages:** "What kind of gap this is" was empty on disagreement pages (their data has no `kind_long`); it now uses the language pack's description of that kind, or is left out.
+  - **Cite buttons:** the interface font, 44px tall.
+- [x] **4. Mobile, accessibility, performance, final review.**
+  - **Touch targets:** every control is 44px on touch screens (chips, selects, links, buttons, list rows, nav, footer); the only exception is the skip link, which is off-screen until focused. The Ask button is 44px on phones.
+  - **Phones:** Quick search is reachable (it was hidden), and the masthead scrolls away.
+  - **Developer mode on phones (audit #8):** raw-data panels wrap; the widest element went from 493px to 374px on a 390px screen.
+  - **First search, perceived speed:**
+    - a tiny same-origin static script, `public/prefetch.js` (loaded async from `<head>`; logic documented in `lib/prefetch.ts`), fetches `libraries.json` once per page (it was fetched by up to four components) and, just after first paint at low priority, the active library's search index;
+    - the index and the cards' data load together, so a search never draws thin cards that then grow;
+    - text typed and submitted before the app has loaded was lost: the browser's own submit reloaded the page. It is now kept in memory and run when ready.
+  - **Layout stability:** library-dependent lines wait for the library instead of pushing content down; the home page's CLS is 0.001 (was 0.018).
+  - **First-paint CSS:** palette styles load with the palette (now a lazy chunk); detail, findings and trust-page styles load only on those pages (`components/pages.css`); loading-state styles load with `States.tsx`.
+  - **Final review:** verdict labels wrap tidily on phones, and wrapped card headers have no stray separator.
+  - **Caught by the full suite:**
+    - `test_hardening` allows raw HTML only for the theme script, so the prefetch is a static file (`public/prefetch.js`), not inline;
+    - `test_rendered_output` needs the description in the page HTML, so "What you'll find" is always in the HTML, hidden until the library is known.
+  - **Numbers** (main `9c8a3f2` vs `ui-v2`; local server, 390px, CPU 4x, slow 4G, median of 5; "gz" = served compressed as Vercel does):
+
+    | | before | after |
+    |:--|--:|--:|
+    | FCP = LCP, gz | 448 ms | 444 ms (repeated 20-round runs: within ±12 ms either way) |
+    | CLS | 0.018 | 0.001 |
+    | Search ready, gz | 2477 ms | 1988 ms |
+    | First results after Enter, gz | 138 ms | 98 ms |
+    | Typed straight away, first card, gz | lost 5/5 | 2161 ms |
+    | Search ready, uncompressed | 5858 ms | 6364 ms (now also waits for the cards' data) |
+    | JS, all routes, gz | 258.2 KB | 260.2 KB (+ `prefetch.js`, 1.0 KB gz) |
+    | Home JS, gz | 151.6 KB | 151.7 KB |
+    | Home CSS, gz | 7.03 KB | 6.93 KB |
+    | Home HTML, gz | 11.45 KB | 11.69 KB |
+
+    Chrome DevTools trace (Slow 4G, 4x CPU, 390px): LCP 1620 → 1614 ms, CLS 0.02 → 0.00.
+  - **axe:** 4 serious and 12 moderate before; 0 after, over 40 page-states (10 pages and states × light/dark × 1280/390).
+  - **Screenshots:** before and after, 10 states × 390/768/1280 × light/dark, plus one contact sheet per width, in `~/Desktop/rm-ui-after/v2/`.
+
+### Fix pass after preview feedback (2026-10-14)
+
+- **Phones:**
+  - one slim masthead bar: the nav is a single scrollable row with the current page scrolled into view, and Quick search is icon-only;
+  - the eyebrow is one line in sentence case (the lead-in shortens with "…" before the library name would);
+  - a proper mobile scale: headline about 30px, body 16, secondary 13–14, chips 14, with 44px targets from padding;
+  - spacing tops out at 32px;
+  - the search box ends at 304px (was 451) and all three examples are on the first screen;
+  - Ask never looks disabled; pressing it on an empty box focuses the box.
+- **Desktop:**
+  - one layout everywhere: a centred 66rem container, a 40rem reading column (about 70 characters) and a 20rem sticky aside;
+  - the home card, the "Everything we found" and Papers asides (library summary, filters, count) and the detail "On this page" all use it;
+  - cards are as wide as the column, and caveats align with the quote;
+  - page-level gaps are roughly halved (the headline is 63px higher).
+- **Nav:** the current page shows as a thin underline. A mouse or touch click gives up focus after navigating, so no browser draws the keyboard ring on it; the ring is only for keyboard focus.
+- **Home first screen:**
+  - the library's description and safety note sit in the library card, beside the headline on wide screens and after "What you'll find" on phones; results still lead with the note;
+  - "What you'll find" and the description are in the page from the first paint;
+  - the examples and the hint keep their space.
+- **Measured (gz, 390px, CPU 4x, slow 4G):**
+  - against the PR head `651f075`: FCP 432 → 436 ms (20-round medians 440 → 440); CLS 0.001 → 0.001;
+  - LCP at 360–1920px for all four libraries is 444–484 ms (the PR head reached about 1.2 s at 768px, and for Diet at 390px);
+  - home CSS 6.93 → 7.37 KB gz; home JS 151.7 → 152.0 KB gz.
+- **Screenshots:** before and after at 360/390/768/1024/1280/1440/1920 × light/dark, plus a contact sheet per width, in `~/Desktop/rm-ui-after/v3/`. No horizontal overflow at any width.
+
+### User-ready pass (2026-10-15)
+
+- **"Prototype" removed from what visitors see:**
+  - the home eyebrow now reads "4 research libraries · viewing …";
+  - the footer line now reads "Currently shown: …". This is `FOOTER_SCOPE_PREFIX` in `language.py`; only the two footer keys changed in the five generated `language.json` files, set to exactly what the generator now produces;
+  - exported citations now say "Literature-analysis tool … has not been independently validated".
+
+  Kept on purpose, because they are true while Phase 6 validation is outstanding: About's "It is not validated…" and the footer's "Not a comprehensive research tool."
+- **Laptops and large screens:**
+  - the container is 77rem (was 66rem) and the reading column fills it beside a 24rem aside;
+  - the gutter scales with the window;
+  - the root size grows from 16px at 1440px to 18px at 1920px, so big screens scale rather than leave wide margins;
+  - text pages (About, Method, Privacy, Terms, Contact, the library page, findings) get an "On this page" aside from their own headings (`components/DocLayout.tsx`);
+  - the footer is a full-width band with a three-column grid;
+  - on the library page, the working reports and the spending note sit behind a closed "Technical notes"; "Our own verdicts we now doubt" stays visible.
+- **Phones, decluttered:**
+  - removed on phones: the keyboard hint, the "Examples" label, the kind descriptions (names stay, two by two), and in the footer the sources' one-line descriptions and the libraries intro line;
+  - every caveat and library safety note stays, including the support line;
+  - the About table scrolls inside its own box.
+- **Checked:** typecheck, build, query privacy 14/14, axe 0 over 40 page-states, smoke 54/54, full suite 953 passed / 1 skipped.
+- **Measured:**
+  - LCP 436–564 ms and CLS ≤ 0.003 at 360–1920px for all four libraries;
+  - FCP 442 vs 442 ms against `2d104ed` (20-round medians);
+  - home JS unchanged (152.0 KB gz), home CSS 7.37 → 7.67 KB gz; all-routes JS +4.9 KB gz (the "On this page" component on the text pages).
+- **Screenshots:** before and after × 7 widths × light/dark, plus contact sheets, in `~/Desktop/rm-ui-after/v4/`.
+
+**Still open / for the owner:**
+- the footer copy shortenings (proposed 2026-10-11, not applied);
+- "How sure are we?" on disagreement pages shows the strength word without its sentence (the data has no `strength_meaning`);
+- the +2 KB of total JS (new states, the lazy palette chunk) and the 1 KB `prefetch.js`.
+
 ## UI polish (branch `ui-polish`, local only) — 2026-10-11
 
 Polish within the existing design system: no new fonts, no new colour

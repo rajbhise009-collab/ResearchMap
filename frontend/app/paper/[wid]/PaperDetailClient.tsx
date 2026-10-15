@@ -14,6 +14,7 @@ import { site } from "../../../lib/site";
 import { PaperExport } from "../../components/CiteExport";
 import type { PaperDetail, LanguagePack } from "../../../lib/types";
 import { bareDoi, doiUrl } from "../../../lib/doi";
+import { LoadingCards, LoadError } from "../../components/States";
 
 const wid = (pid: string) => pid.split(":").pop() as string;
 
@@ -25,7 +26,7 @@ export default function PaperDetailClient({ wid: routeWid, lang, owners }: {
   const res = useLibraryData<PaperDetail>(`paper/${routeWid}.json`, owners);
 
   if (res.state === "loading") {
-    return <p className="muted">Loading the paper…</p>;
+    return <LoadingCards label="Loading the paper…" detail />;
   }
   if (res.state === "missing") {
     return (
@@ -33,7 +34,7 @@ export default function PaperDetailClient({ wid: routeWid, lang, owners }: {
     );
   }
   if (res.state === "error") {
-    return <p className="muted">Couldn&apos;t load this paper.</p>;
+    return <LoadError what="this paper" />;
   }
 
   const p = res.data;

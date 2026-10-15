@@ -1,12 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import type { GapDoc, LanguagePack } from "../../lib/types";
 import { GapResult } from "../components/ResultCard";
 
-export default function GapsClient({ gaps, lang }: {
+// The list sits in the reading column; the library summary and the filters
+// sit in the aside (sticky on wide screens, above the list on phones).
+// `after` is anything that belongs under the list in the same column.
+export default function GapsClient({ gaps, lang, aside, after }: {
   gaps: GapDoc[];
   lang: LanguagePack;
+  aside?: ReactNode;
+  after?: ReactNode;
 }) {
   const [kind, setKind] = useState("all");
   const [strength, setStrength] = useState("all");
@@ -26,7 +31,9 @@ export default function GapsClient({ gaps, lang }: {
   const askedForDisagreements = kind === "disagreement";
 
   return (
-    <>
+    <div className="page-grid">
+      <aside className="page-aside" aria-label="This library and filters">
+      {aside}
       <div className="filters">
         <label>
           kind
@@ -48,9 +55,11 @@ export default function GapsClient({ gaps, lang }: {
         </label>
         <span className="count">{shown.length} of {gaps.length}</span>
       </div>
+      </aside>
+      <div className="page-main">
 
       {kind !== "all" && (
-        <p className="small muted sans" style={{ margin: "1rem 0 0" }}>
+        <p className="small muted sans" style={{ margin: "0 0 var(--s-4)" }}>
           {kinds.find((k) => k.id === kind)?.long}
         </p>
       )}
@@ -58,7 +67,7 @@ export default function GapsClient({ gaps, lang }: {
       {shown.length === 0 ? (
         askedForDisagreements ? (
           <div className="empty" style={{ marginTop: "2rem" }}>
-            <h3>{lang.no_disagreements.headline}</h3>
+            <h2 className="empty-h">{lang.no_disagreements.headline}</h2>
             <p>{lang.no_disagreements.body}</p>
             <p className="small">
               <Link href="/library/">{lang.no_disagreements.link_label} →</Link>
@@ -66,17 +75,26 @@ export default function GapsClient({ gaps, lang }: {
           </div>
         ) : (
           <div className="empty" style={{ marginTop: "2rem" }}>
-            <h3>Nothing matches those filters</h3>
+            <h2 className="empty-h">Nothing matches those filters</h2>
             <p>Widen them and everything comes back.</p>
+            <p className="small">
+              <button type="button" className="text-btn"
+                      onClick={() => { setKind("all"); setStrength("all"); }}>
+                Show everything
+              </button>
+            </p>
           </div>
         )
       ) : (
         <div className="results-list">
+          <h2 className="sr-only">Results</h2>
           {shown.map((g) => (
             <GapResult key={g.slug} gap={g} readMore={lang.ui.read_more} />
           ))}
         </div>
       )}
-    </>
+      {after}
+      </div>
+    </div>
   );
 }

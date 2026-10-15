@@ -5,6 +5,7 @@ import { Tag } from "../components/plain";
 import { DevKV } from "../components/DevMode";
 import { useLibraryData } from "../components/useLibraryData";
 import { useState } from "react";
+import { LoadingCards, LoadError } from "../components/States";
 
 export default function PapersPageClient({ lang }: { lang: LanguagePack }) {
   const res = useLibraryData<{ total: number; items: PaperSummary[] }>(
@@ -24,22 +25,23 @@ export default function PapersPageClient({ lang }: { lang: LanguagePack }) {
 
   return (
     <>
-      <div className="hero" style={{ marginBottom: "var(--s-7)" }}>
+      <div className="hero page-head">
         <div className="eyebrow">The library · Every paper</div>
         <h1 style={{ fontSize: "clamp(1.9rem, 3.6vw, 2.6rem)" }}>
           {lang.ui.all_papers}
         </h1>
         <p className="lede">
-          {res.state === "loading" && "Loading the paper list…"}
           {res.state === "ready" && (
             <>The {papers.length} papers in the <em>{libName}</em> library. For {abstractOnly} of them we only had the summary — those are marked, because we know less about them than the rest.</>
           )}
-          {res.state === "error" && "Couldn't load the paper list."}
         </p>
       </div>
 
+      {res.state === "loading" && <LoadingCards label="Loading the paper list…" count={4} />}
+      {res.state === "error" && <LoadError what="the paper list" />}
       {res.state === "ready" && (
-        <>
+        <div className="page-grid">
+          <aside className="page-aside" aria-label="Filters">
           <div className="filters">
             <label>
               what we had
@@ -51,7 +53,8 @@ export default function PapersPageClient({ lang }: { lang: LanguagePack }) {
             </label>
             <span className="count">{shown.length} of {papers.length}</span>
           </div>
-
+          </aside>
+          <div className="page-main">
           {shown.map((p) => (
             <div className="paper-line" key={p.wid}>
               <span className="t">
@@ -64,7 +67,8 @@ export default function PapersPageClient({ lang }: { lang: LanguagePack }) {
               <DevKV title="" data={p as any} />
             </div>
           ))}
-        </>
+          </div>
+        </div>
       )}
     </>
   );

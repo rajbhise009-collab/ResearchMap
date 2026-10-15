@@ -22,6 +22,7 @@ import { storageGet, typingInField, LIBRARY_KEY } from "../../lib/storage";
 import { cleanQuery, echoQuery, MAX_QUERY } from "../../lib/query";
 import { examplesFor, tryHintFor } from "../../lib/examples";
 import { handOffQuery, takeHandedOffQuery, HANDOFF_EVENT } from "../../lib/handoff";
+import { getLibraries, takeEarlyQuery, takeIndexPrefetch } from "../../lib/prefetch";
 
 // The out-of-scope panel lists this many other libraries before folding the
 // rest into "All N other libraries" (scales to any number of libraries).
@@ -49,6 +50,12 @@ export default function Ask({ lang, gaps, papers }: {
   const [indexError, setIndexError] = useState(false);
   const [result, setResult] = useState<SearchResult | null>(null);
   const [asking, setAsking] = useState(false);
+  // A search asked for before the index has arrived (Enter, Ask or an
+  // example): kept here and run the moment the index is ready.
+  const [pending, setPending] = useState<string | null>(null);
+  // Bumped on each submitted search: its cards arrive with a short cascade
+  // (globals.css .results-enter); type-ahead updates never animate.
+  const [runKey, setRunKey] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -81,9 +88,8 @@ export default function Ask({ lang, gaps, papers }: {
       let allLibs: Array<{ slug: string; name: string;
                             snapshot_path: string }> = [];
       try {
-        const libResp = await fetch(asset("/data/libraries.json"));
-        if (libResp.ok) {
-          const manifest = await libResp.json();
+        const manifest = await getLibraries();
+        if (manifest) {
           allLibs = manifest.libraries || [];
           const requested = new URLSearchParams(window.location.search).get("lib");
           const remembered = storageGet(LIBRARY_KEY);
@@ -101,23 +107,24 @@ export default function Ask({ lang, gaps, papers }: {
           }
         }
       } catch { /* libraries.json missing — legacy deploy */ }
+      // The index and the cards' data load together, and search counts as
+      // ready only when both are in: a search run on the index alone would
+      // draw thin cards that then grow when their data arrives (layout
+      // shift). The <head> script usually started the index already.
+      const indexP = (takeIndexPrefetch(snapshotPath) ?? Promise.resolve(null))
+        .then(async (j) => {
+          if (j) return j;
+          const r = await fetch(asset(`${snapshotPath}/search-index.json`));
+          if (!r.ok) throw new Error(String(r.status));
+          return (await r.json()) as SearchIndex;
+        });
+      // Missing card data falls back to the SSR props, as before.
+      const json = (f: string) => fetch(asset(`${snapshotPath}/${f}`))
+        .then((r) => (r.ok ? r.json() : null)).catch(() => null);
       try {
-        const r = await fetch(asset(`${snapshotPath}/search-index.json`));
-        if (!r.ok) throw new Error(String(r.status));
-        const j: SearchIndex = await r.json();
-        if (live) setIndex(j);
-      } catch {
-        if (live) setIndexError(true);
-      }
-      // Fetch opportunities + papers for the ACTIVE library so the
-      // result-lookup maps are keyed on this library's slugs/wids.
-      try {
-        const [oppResp, papResp] = await Promise.all([
-          fetch(asset(`${snapshotPath}/opportunities.json`)),
-          fetch(asset(`${snapshotPath}/papers.json`)),
-        ]);
-        if (oppResp.ok && live) {
-          const oj = await oppResp.json();
+        const [j, oj, pj] = await Promise.all([indexP, json("opportunities.json"), json("papers.json")]);
+        if (!live) return;
+        if (oj) {
           // Only results count: set-aside and not-yet-checked items live on
           // /gaps in their own sections, never in search.
           setLiveGaps((oj.items || []).filter((o: any) => {
@@ -128,8 +135,7 @@ export default function Ask({ lang, gaps, papers }: {
             dev: { rank: o.rank ?? 0, gap_type: o.gap_type ?? "" },
           })));
         }
-        if (papResp.ok && live) {
-          const pj = await papResp.json();
+        if (pj) {
           setLivePapers((pj.items || []).map((p: any) => ({
             wid: p.wid, title: p.title ?? p.wid,
             year: p.year, abstract_only: p.abstract_only,
@@ -138,7 +144,10 @@ export default function Ask({ lang, gaps, papers }: {
                     domain_centrality: p.domain_centrality ?? "" },
           })));
         }
-      } catch { /* missing — fall back to SSR props */ }
+        setIndex(j);
+      } catch {
+        if (live) setIndexError(true);
+      }
       // Stash the other libraries' metadata for the OOD suggestion.
       if (activeSlug && allLibs.length > 1) {
         (window as any).__researchmap_other_libs =
@@ -199,11 +208,13 @@ export default function Ask({ lang, gaps, papers }: {
   const [bannerAllowed, setBannerAllowed] = useState(false);
 
   const run = useCallback((text: string) => {
-    if (!index || !text.trim()) return;
+    if (!text.trim()) return;
+    if (!index) { setPending(text); return; }
     // Enter / Ask expands a trailing prefix to its best completion so
     // "alc" + Enter behaves like "alcohol" + Enter — the verdict reads
     // the full word.
     setResult(search(index, text, 24, { expandTrailing: true }));
+    setRunKey((k) => k + 1);
     setCommitted(text);
     setBannerAllowed(true);
     requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -249,7 +260,25 @@ export default function Ask({ lang, gaps, papers }: {
     };
   }, [q, index]);
 
-  const onSubmit = (e: React.FormEvent) => { e.preventDefault(); run(q); };
+  useEffect(() => {
+    if (index && pending) { const t = pending; setPending(null); run(t); }
+  }, [index, pending, run]);
+
+  // Anything typed before the app took over the page is kept: a submitted
+  // question is queued (it runs when the index is ready); unsubmitted text
+  // stays in the box.
+  useEffect(() => {
+    const early = cleanQuery(takeEarlyQuery());
+    const typed = cleanQuery(inputRef.current?.value ?? "");
+    if (early.trim()) { setQ(early); setPending(early); }
+    else if (typed.trim()) setQ(typed);
+  }, []);
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!q.trim()) { inputRef.current?.focus(); return; }   // empty: just focus the box
+    run(q);
+  };
 
   // Prefer the live per-library maps (fetched from the active library's
   // snapshot); fall back to the SSR-provided LLM-cal props so legacy
@@ -308,7 +337,8 @@ export default function Ask({ lang, gaps, papers }: {
 
   return (
     <>
-      <form className="ask" onSubmit={onSubmit} role="search">
+      <form className="ask" onSubmit={onSubmit} role="search"
+            data-ready={index ? "" : undefined}>
         <label className="ask-box" htmlFor="ask-input">
           <SearchIcon className="ask-icon" />
           <input
@@ -323,25 +353,34 @@ export default function Ask({ lang, gaps, papers }: {
             autoComplete="off"
             spellCheck="false"
           />
-          <button className="ask-btn" type="submit" disabled={!index || !q.trim()}>
-            {asking ? "…" : "Ask"}
+          <button className="ask-btn" type="submit" disabled={indexError}>
+            {asking || pending ? "…" : "Ask"}
           </button>
         </label>
 
-        <p className="ask-hint" aria-live="polite">
-          {indexError
-            ? "Search needs to load its index over http — open this site with a web server, not from disk."
-            : !index
-              ? (<><span className="swatch" aria-hidden /> {S.searching}</>)
+        {indexError ? (
+          <div className="load-error ask-error" role="alert">
+            <p><strong>Search couldn&rsquo;t load this library.</strong> The connection may have
+              dropped, or the site was updated while this page was open.</p>
+            <button type="button" className="cta" onClick={() => window.location.reload()}>
+              Reload the page
+            </button>
+          </div>
+        ) : (
+          <p className="ask-hint" aria-live="polite">
+            {!index
+              ? (<><span className="swatch" aria-hidden /> {S.searching}{" "}
+                  You can start typing.</>)
               : (<>Press <kbd className="inline-kbd">/</kbd> from anywhere to focus this.{tryHint ? ` ${tryHint}` : ""}</>)}
-        </p>
+          </p>
+        )}
 
-        {examples.length > 0 && (
+        {!indexError && (
           <div className="examples">
-            <span className="label">Examples</span>
+            {examples.length > 0 && <span className="label">Examples</span>}
             {examples.map((ex) => (
               <button key={ex} type="button" className="example-chip"
-                onClick={() => { setQ(ex); run(ex); }} disabled={!index}>
+                onClick={() => { setQ(ex); run(ex); }} disabled={indexError}>
                 {ex}
               </button>
             ))}
@@ -349,7 +388,10 @@ export default function Ask({ lang, gaps, papers }: {
         )}
       </form>
 
-      <div ref={resultsRef}>
+      {/* data-lib: the library is known (on phones the library card waits
+          for it, so it is never pushed down once shown). */}
+      <div ref={resultsRef} className="ask-results"
+           data-lib={activeLib ? "" : undefined}>
         {result && (
           <DevKV title={lang.dev.search_heading} data={{
             query: committed,
@@ -365,13 +407,13 @@ export default function Ask({ lang, gaps, papers }: {
           }} />
         )}
 
-        {asking && !result && <ResultsSkeleton />}
+        {((asking && !result) || pending) && <ResultsSkeleton />}
 
         {result?.verdict === "empty" && (
-          <div className="empty" style={{ marginTop: "var(--s-7)" }}>
-            <h3>{S.no_results.label}</h3>
-            <p>Try naming the thing you want to know about.</p>
-          </div>
+          <EmptyHelp title={S.no_results.label}
+                     body="Try naming the thing you want to know about."
+                     covers={activeLib} examples={examples}
+                     onPick={(ex) => { setQ(ex); run(ex); }} />
         )}
 
         {/* Out-of-domain banner is only allowed to render after a pause
@@ -456,15 +498,15 @@ export default function Ask({ lang, gaps, papers }: {
             )}
 
             {gapHits.length === 0 && paperHits.length === 0 ? (
-              <div className="empty">
-                <h3>{S.no_results.label}</h3>
-                <p>{S.no_results.note}</p>
-              </div>
+              <EmptyHelp title={S.no_results.label} body={S.no_results.note}
+                         covers={activeLib} examples={examples}
+                         onPick={(ex) => { setQ(ex); run(ex); }} />
             ) : (
               <>
                 {gapHits.length > 0 ? (
-                  <section style={{ marginTop: "var(--s-6)" }}>
-                    <p className="section-eyebrow">Gaps we found</p>
+                  <section style={{ marginTop: "var(--s-6)" }} key={runKey}
+                           className={runKey ? "results-enter" : undefined}>
+                    <p className="section-eyebrow" role="heading" aria-level={2}>Gaps we found</p>
                     <div className="results-list">
                       {gapHits.map((g) => (
                         <GapResult key={g.slug} gap={g} readMore={lang.ui.read_more} />
@@ -477,14 +519,14 @@ export default function Ask({ lang, gaps, papers }: {
                      language, reusing the library's own zero_finding_note
                      and coverage line (never hard-coded). */
                   <section style={{ marginTop: "var(--s-6)" }} className="empty">
-                    <h3>
+                    <h2 className="empty-h">
                       {/* Count actual gap cards, not scorer_yields: a
                           yield (e.g. a code-only persistent-limitations
                           count) isn't a card the reader can open. */}
                       {liveGaps !== null && liveGaps.length === 0
                         ? "This library has no gaps to show yet."
                         : "No gaps match this search."}
-                    </h3>
+                    </h2>
                     <p>
                       {paperHits.length > 0
                         ? `${paperHits.length} paper${paperHits.length === 1 ? "" : "s"} match${paperHits.length === 1 ? "es" : ""} below.`
@@ -500,8 +542,8 @@ export default function Ask({ lang, gaps, papers }: {
                 )}
                 {paperHits.length > 0 && (
                   <section style={{ marginTop: "var(--s-7)" }}>
-                    <p className="section-eyebrow">Papers on this</p>
-                    <div className="results-list">
+                    <p className="section-eyebrow" role="heading" aria-level={2}>Papers on this</p>
+                    <div className="results-list papers">
                       {paperHits.map((p) => (
                         <PaperResult key={p.wid} paper={p}
                           fidelityLabel={lang.abstract_only.label}
@@ -515,7 +557,55 @@ export default function Ask({ lang, gaps, papers }: {
           </>
         )}
       </div>
+
+      {/* Before a search: what you'll find. It does not depend on the library,
+          so it is in the page from the first paint (nothing late lands above
+          it: the examples and the hint keep their space). The library's own
+          details and safety note are in the library card; results repeat
+          the note at their top. */}
+      <section className="hero-intro" aria-labelledby="what-youll-find"
+               hidden={!!result || distressed}>
+        <h2 id="what-youll-find" className="intro-h">What you&rsquo;ll find</h2>
+        <ul className="kinds-list">
+          {Object.values(lang.kinds).map((k) => (
+            <li key={k.id}>
+              <span className="kind-name">{k.name}</span>
+              <span className="kind-short">{k.short}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="lede">{lang.ui.what_it_does}</p>
+      </section>
     </>
+  );
+}
+
+/** Nothing matched: say so, say what this library does cover, and offer its
+ *  own example questions so the next try is one tap away. */
+function EmptyHelp({ title, body, covers, examples, onPick }: {
+  title: string; body: string;
+  covers: { name: string; blurb?: string } | null;
+  examples: string[];
+  onPick: (ex: string) => void;
+}) {
+  return (
+    <div className="empty empty-help" role="status">
+      <h2 className="empty-h">{title}</h2>
+      <p>{body}</p>
+      {covers?.blurb && (
+        <p className="empty-covers"><strong>This library covers:</strong> {covers.blurb}</p>
+      )}
+      {examples.length > 0 && (
+        <div className="examples in-empty">
+          <span className="label">Try</span>
+          {examples.map((ex) => (
+            <button key={ex} type="button" className="example-chip" onClick={() => onPick(ex)}>
+              {ex}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -578,10 +668,9 @@ function OutOfDomain({ lang, query, activeLibrary }: {
   // Fetch the other libraries so the OOD panel can list switch links.
   useEffect(() => {
     let live = true;
-    fetch(asset("/data/libraries.json"))
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
+    getLibraries()
       .then((m) => {
-        if (!live) return;
+        if (!live || !m) return;
         const others = (m.libraries || [])
           .filter((l: any) => !activeLibrary || l.slug !== activeLibrary.slug);
         setOtherLibs(others);

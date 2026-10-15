@@ -1,5 +1,7 @@
+import "../components/pages.css";   // styles for every page except home (first paint)
 import { pageMeta } from "../../lib/meta";
 import { site } from "../../lib/site";
+import DocLayout from "../components/DocLayout";
 
 export const metadata = pageMeta({
   title: "Privacy",
@@ -9,7 +11,7 @@ export const metadata = pageMeta({
 
 export default function Privacy() {
   return (
-    <article className="trust">
+    <DocLayout><article className="trust">
       <h1>Privacy</h1>
       <p className="lede">The short version: we count page views, anonymously. That is all.</p>
       <h2>What is collected</h2>
@@ -34,6 +36,6 @@ export default function Privacy() {
       <h2>Links to other sites</h2>
       <p>Paper links go to publishers, doi.org and OpenAlex. Those sites have their own
         privacy policies.</p>
-    </article>
+    </article></DocLayout>
   );
 }

@@ -6,7 +6,7 @@
 // - "Download .csv" for a gap's evidence (paper metadata + short
 //   extracted claim/limitation/future-work text + verdict).
 // - "How to cite this page" line — ResearchMap analysis-tool citation
-//   with URL + access date, states output is unvalidated prototype.
+//   with URL + access date, states the output has not been validated.
 
 import { useEffect, useState } from "react";
 import {
@@ -96,7 +96,7 @@ export function canonicalPageUrl(): string {
 }
 
 /** "How to cite THIS page" — the site as an analysis tool + canonical URL +
- *  date. Always states the output is unvalidated prototype. */
+ *  date. Always states the output has not been validated. */
 export function HowToCite({ pageName, note }: {
   pageName: string;
   note?: string;
@@ -108,10 +108,10 @@ export function HowToCite({ pageName, note }: {
   useEffect(() => { setUrl(canonicalPageUrl()); }, []);
   const today = new Date().toISOString().slice(0, 10);
   const cite =
-    `${site.siteName}. "${pageName}." Prototype literature-analysis tool. ` +
+    `${site.siteName}. "${pageName}." Literature-analysis tool. ` +
     `Retrieved ${today} from ${url}. ` +
-    `Output is an unvalidated prototype and should not be cited as a ` +
-    `primary research finding.`;
+    `Its output has not been independently validated and should not be ` +
+    `cited as a primary research finding.`;
   return (
     <div className="how-to-cite">
       <details>

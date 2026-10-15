@@ -6,7 +6,8 @@ import { ogImageFor } from "../lib/meta";
 import { getLanguage } from "../lib/data";
 import { DevModeProvider, DevBanner } from "./components/DevMode";
 import Nav from "./components/Nav";
-import CommandPalette, { PaletteHint } from "./components/CommandPalette";
+import PaletteLoader from "./components/PaletteLoader";
+import { PaletteHint } from "./components/PaletteHint";
 import OptionalAnalytics from "./components/OptionalAnalytics";
 import FooterScope from "./components/FooterScope";
 
@@ -79,6 +80,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="32x32" href={`${BASE}/favicon-32.png`} />
         <link rel="apple-touch-icon" sizes="180x180" href={`${BASE}/apple-touch-icon.png`} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Starts the library manifest (and on the home page the search
+            index) before the app's own code; see lib/prefetch.ts. */}
+        <script src={`${BASE}/prefetch.js`} async />
       </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>
@@ -98,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* The palette fetches the active library's gaps and papers when
                 it opens; embedding every library's documents here would ship
                 them inside every page's HTML (measured ~1 MB per page). */}
-            <CommandPalette lang={lang} gaps={[]} papers={[]} />
+            <PaletteLoader lang={lang} gaps={[]} papers={[]} />
             <header className="masthead" role="banner">
               <div className="masthead-in">
                 <a className="wordmark" href="/">{site.siteName}</a>
@@ -114,54 +118,59 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </main>
 
             <footer className="foot" role="contentinfo">
-              <div className="foot-in">
-                <span className="foot-brand">{site.siteName}</span>
-                <span className="foot-dot" aria-hidden>·</span>
-                <span>
-                  <FooterScope
-                    prefix={lang.ui.footer_scope_prefix ?? "Working prototype · currently shown"}
-                    suffix={lang.ui.footer_scope_suffix ?? "Not a comprehensive research tool."}
-                    fallback={lang.ui.footer_scope}
-                  />
-                </span>
-              </div>
-              <nav className="foot-links" aria-label="About this site">
-                {TRUST_LINKS.map(([href, label]) => (
-                  <Link key={href} href={href}>{label}</Link>
-                ))}
-              </nav>
-              <div className="foot-sources">
-                <span className="foot-sources-label">{lang.libraries_note.label}:</span>{" "}
-                <span className="foot-sources-intro">{lang.libraries_note.intro}</span>
-                <ul className="foot-sources-list">
-                  {lang.libraries_note.items.map((lib) => (
-                    <li key={lib.slug}>
-                      <strong>{lib.name}</strong>{" "}
-                      <span className="foot-sources-note">
-                        ({lib.n_papers} papers) — {splitSupport(lib.note).rest}
-                        {splitSupport(lib.note).support && (
-                          <span className="foot-support">{splitSupport(lib.note).support}</span>
-                        )}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="foot-sources">
-                <span className="foot-sources-label">{lang.attribution.label}:</span>{" "}
-                <span className="foot-sources-intro">{lang.attribution.intro}</span>
-                <ul className="foot-sources-list">
-                  {lang.attribution.items.map(([name, url, note]) => (
-                    <li key={name}>
-                      <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
-                      <span className="foot-sources-note"> — {note}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="foot-sources">
-                <span className="foot-sources-label">{lang.privacy_note.label}:</span>{" "}
-                <span className="foot-sources-intro">{lang.privacy_note.body}</span>
+              <div className="foot-wrap">
+                <div className="foot-top">
+                  <div className="foot-id">
+                    <span className="foot-brand">{site.siteName}</span>
+                    <p className="foot-scope">
+                      <FooterScope
+                        prefix={lang.ui.footer_scope_prefix ?? "Currently shown"}
+                        suffix={lang.ui.footer_scope_suffix ?? "Not a comprehensive research tool."}
+                        fallback={lang.ui.footer_scope}
+                      />
+                    </p>
+                  </div>
+                  <nav className="foot-links" aria-label="About this site">
+                    {TRUST_LINKS.map(([href, label]) => (
+                      <Link key={href} href={href}>{label}</Link>
+                    ))}
+                  </nav>
+                </div>
+                <div className="foot-cols">
+                  <section className="foot-col foot-sources">
+                    <h2 className="foot-h">{lang.libraries_note.label}</h2>
+                    <p className="foot-sources-intro foot-libs-intro">{lang.libraries_note.intro}</p>
+                    <ul className="foot-sources-list foot-libs">
+                      {lang.libraries_note.items.map((lib) => (
+                        <li key={lib.slug}>
+                          <strong>{lib.name}</strong>{" "}
+                          <span className="foot-sources-note">
+                            ({lib.n_papers} papers) — {splitSupport(lib.note).rest}
+                            {splitSupport(lib.note).support && (
+                              <span className="foot-support">{splitSupport(lib.note).support}</span>
+                            )}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                  <section className="foot-col foot-sources">
+                    <h2 className="foot-h">{lang.attribution.label}</h2>
+                    <p className="foot-sources-intro">{lang.attribution.intro}</p>
+                    <ul className="foot-sources-list foot-srcs">
+                      {lang.attribution.items.map(([name, url, note]) => (
+                        <li key={name}>
+                          <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+                          <span className="foot-sources-note"> — {note}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                  <section className="foot-col foot-sources">
+                    <h2 className="foot-h">{lang.privacy_note.label}</h2>
+                    <p className="foot-sources-intro">{lang.privacy_note.body}</p>
+                  </section>
+                </div>
               </div>
             </footer>
             <OptionalAnalytics />

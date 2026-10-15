@@ -1,3 +1,4 @@
+import "../components/pages.css";   // styles for every page except home (first paint)
 import { getLanguage, getSiteFacts } from "../../lib/data";
 import GapsPageClient from "./GapsPageClient";
 import { pageMeta } from "../../lib/meta";

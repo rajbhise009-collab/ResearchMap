@@ -1,5 +1,7 @@
+import "../components/pages.css";   // styles for every page except home (first paint)
 import { pageMeta } from "../../lib/meta";
 import { site } from "../../lib/site";
+import DocLayout from "../components/DocLayout";
 
 export const metadata = pageMeta({
   title: "Terms",
@@ -10,7 +12,7 @@ export const metadata = pageMeta({
 export default function Terms() {
   const licence = site.repoUrl ? `${site.repoUrl.replace(/\/+$/, "")}/blob/main/LICENSE` : null;
   return (
-    <article className="trust">
+    <DocLayout><article className="trust">
       <h1>Terms</h1>
       <ul>
         <li><strong>A research aid, not advice.</strong> Nothing here is medical, dietary,
@@ -26,6 +28,6 @@ export default function Terms() {
         <li><strong>Code licence.</strong> The source code is released under the MIT
           licence{licence && site.repoIsPublic ? <> (<a href={licence}>read it</a>)</> : null}.</li>
       </ul>
-    </article>
+    </article></DocLayout>
   );
 }

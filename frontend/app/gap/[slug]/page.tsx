@@ -1,3 +1,4 @@
+import "../../components/pages.css";   // styles for every page except home (first paint)
 import type { Metadata } from "next";
 import {
   allOpportunitySlugsAcrossLibraries, duplicateGapHeadlines, getLanguage, ownersOf,

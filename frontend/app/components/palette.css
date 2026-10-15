@@ -1,0 +1,128 @@
+/* Command palette (Cmd+K). Loaded with the palette itself (it is imported
+   lazily from PaletteLoader), so none of this blocks the first paint. */
+
+
+.cmdk-scrim {
+  position: fixed; inset: 0;
+  background: color-mix(in oklab, var(--ink-strong) 30%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 100;
+  display: grid; place-items: start center;
+  padding: 12vh var(--s-5) var(--s-5);
+  animation: fade var(--dur) var(--ease);
+}
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+.cmdk {
+  width: 100%;
+  max-width: 40rem;
+  background: var(--raise-2);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3);
+  overflow: hidden;
+  animation: rise var(--dur-slow) var(--ease);
+}
+@keyframes rise { from { transform: translateY(-8px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.cmdk-head {
+  display: flex; align-items: center; gap: var(--s-3);
+  padding: 0 var(--s-3) 0 var(--s-5);
+  border-bottom: 1px solid var(--rule);
+}
+.cmdk-icon { color: var(--muted); flex-shrink: 0; }
+.cmdk-input {
+  flex: 1; min-width: 0;
+  border: 0; outline: none; background: transparent;
+  padding: var(--s-5) 0;
+  font-family: var(--font-serif);
+  font-size: var(--step-2);
+  color: var(--ink);
+}
+.cmdk-close {
+  flex-shrink: 0; min-height: 44px; padding: 0 var(--s-3);
+  font-family: var(--font-sans); font-size: var(--step--1); color: var(--muted);
+  border-radius: var(--radius);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.cmdk-close:hover { color: var(--ink); background: var(--accent-soft); }
+.cmdk-scope {
+  margin: 0; padding: var(--s-2) var(--s-5);
+  font-family: var(--font-sans); font-size: var(--step--2); color: var(--muted);
+  border-bottom: 1px solid var(--rule); background: var(--raise-1);
+}
+.cmdk-scope strong { color: var(--ink); font-weight: 600; }
+.cmdk-group {
+  padding: var(--s-3) 14px var(--s-1);
+  font-family: var(--font-sans); font-size: var(--step--2); font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.cmdk-note { text-align: left; }
+.cmdk-note strong { color: var(--ink-strong); display: block; margin-bottom: 6px; }
+.cmdk-input::placeholder { color: var(--muted); opacity: 1; }
+
+.cmdk-list { max-height: 60vh; overflow-y: auto; padding: 6px; }
+.cmdk-item {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease);
+}
+.cmdk-item .title {
+  font-family: var(--font-serif);
+  font-size: var(--step-0);
+  color: var(--ink-strong);
+  line-height: var(--line-snug);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.cmdk-item .meta {
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  color: var(--muted);
+  display: flex; gap: var(--s-3); align-items: center;
+}
+.cmdk-item[aria-selected="true"] { background: var(--accent-soft); }
+.cmdk-item:hover { background: var(--accent-soft); }
+.cmdk-empty {
+  padding: var(--s-6) var(--s-5);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: var(--step--1);
+  text-align: center;
+}
+.cmdk-foot {
+  border-top: 1px solid var(--rule);
+  padding: var(--s-3) var(--s-4);
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  color: var(--muted);
+  display: flex; gap: var(--s-4); flex-wrap: wrap;
+  background: var(--raise-1);
+}
+.cmdk-foot kbd {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  color: var(--muted); line-height: 1;
+}
+
+/* Phones: the palette fills the screen; keyboard hints are for keyboards. */
+@media (max-width: 620px) {
+  .cmdk-scrim { padding: var(--s-2); }
+  .cmdk { display: flex; flex-direction: column; max-height: calc(100dvh - var(--s-4)); }
+  .cmdk-list { flex: 1; max-height: none; }
+  .cmdk-head { padding-left: var(--s-4); }
+}
+@media (hover: none) { .cmdk-foot { display: none; } }
+.cmdk-input:focus-visible { box-shadow: none; }

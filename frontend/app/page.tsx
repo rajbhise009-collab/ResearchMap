@@ -17,16 +17,15 @@ export default function Landing() {
     <>
       <LibraryScopedHero
         tagline={lang.ui.tagline}
-        whatItDoes={lang.ui.what_it_does}
         qualifier={lang.ui.headline_qualifier}
         facts={getSiteFacts().libraries}
-      />
-      {/* Ask stays scoped to the default library's search index for
-          now — full per-library search routing lives in Ask.tsx and
-          hits the current library's snapshot_path when ?lib=…. */}
-      {/* Ask fetches the active library's gaps and papers itself; the
-          props are only a fallback, so nothing is embedded in the HTML. */}
-      <Ask lang={lang} gaps={[]} papers={[]} />
+      >
+        {/* The search sits inside the hero, right under the headline: the
+            one primary action. Ask fetches the active library's gaps and
+            papers itself; the props are only a fallback, so nothing is
+            embedded in the HTML. */}
+        <Ask lang={lang} gaps={[]} papers={[]} />
+      </LibraryScopedHero>
     </>
   );
 }
