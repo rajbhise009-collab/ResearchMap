@@ -56,8 +56,17 @@ budget.
 1. **Checks.** The run stops if a secret is missing.
    - If `config/growth.json` says `"paused": true`, it does nothing except
      open its Issue.
-   - If a `grow/<date>` branch from a failed run is still open, it collects
-     what was already paid for but starts nothing new.
+   - **Self-recovery.** If an earlier run failed its gates and its paid data
+     is already on main (the usual case), the run first regenerates the site
+     on main, runs every gate and publishes, before preflight and before any
+     new paid work (no API calls; the ledger is untouched). It comes before
+     preflight because main's tests can fail until the site is regenerated
+     from that data; when it passes, its gates stand in for preflight. If that still fails, the run makes
+     no API call at all (₹0, nothing collected), leaves main and the site
+     unchanged and updates its Issue; batches already paid for wait for the
+     first run that recovers. The next run tries again by itself.
+   - If a `grow/<date>` branch holds data that conflicts with main, it
+     collects what was already paid for but starts nothing new.
 2. **Collect** last week's batches. Each is billed to the ledger once, at the
    batch rate. Papers that extracted cleanly join their library.
 3. **Follow-on checks** on the new material, within the week's budget:
@@ -81,8 +90,18 @@ budget.
    The week's budget is then shared round-robin, one paper per library per
    round. Libraries with the most open candidates go first, then those with
    the fewest papers. At most 15 papers per library.
-7. **Start a queued library** if it is affordable. Its extraction is
-   submitted now and finished next week.
+7. **Start a queued library** (at most one per run) if it is affordable and
+   no earlier failed run is unresolved. First, for free, the run builds that
+   library with mocked OpenAlex and Gemini in a throwaway copy and runs every
+   publish gate there (its scope, search phrases, smoke checks, all tests).
+   If that dry run fails, nothing is spent on it; it stays queued, the next
+   queued library may go instead, and the Issue says why. Otherwise its
+   extraction is submitted now and finished next week.
+   Two pace limits in `config/growth.json` apply first:
+   `max_queued_builds_per_month` (default 1, counted per calendar month from
+   `data/grow/queued_builds.json`) and `min_weekly_growth_reserve_inr`
+   (default ₹15): a queued build may never leave less money than ₹15 of
+   growth for every remaining week of the horizon.
 8. **Fingerprint and changelog:** `docs/releases/<date>.json` and
    `docs/CHANGELOG.md`.
 9. **Publish gates.** Every one must pass:
@@ -93,7 +112,13 @@ budget.
      smoke checks on the built site.
 10. **Publish.**
     - **All pass:** commit to `main` and push. Vercel deploys. After about
-      5 minutes the run checks the live site.
+      5 minutes the run checks the live site (the domain in
+      `frontend/site.config.json`).
+    - **main moved meanwhile** (you pushed during the run): the push is
+      rejected; the run fetches, re-applies its own data on the new main,
+      regenerates, reruns every gate and pushes again (at most 3 times). It
+      never forces. Your commits stay; if the gates fail on the new main,
+      the run's work goes to `grow/<date>` instead.
     - **Any gate fails:** the site is not changed. The run's work goes to
       `grow/<date>`, and the bookkeeping (everything under `data/`) is
       committed to main so nothing paid for is lost.
@@ -106,7 +131,8 @@ budget.
 | OpenAlex or Gemini hiccup | Retries with backoff (four tries). | Nothing. |
 | Still failing after retries | Stops. Commits only the bookkeeping under `data/` to main (ledger, batch states, extractions), so paid work is kept. The site is unchanged, and next week resumes. | Nothing, unless it repeats for weeks. |
 | Money runs out (at the start or mid-run) | No new spending. Batches already submitted are still collected. The site stays live. The Issue status says **BUDGET EXHAUSTED**. | Either enter the console's real spend in `config/money.json` (`console_spent_inr` plus `console_spent_date`; the ledger usually overstates, so this frees money), or add money and raise `account_total_inr`. Commit. |
-| A publish gate fails | Site unchanged. Branch `grow/<date>` plus an Issue with the failing output. Later runs collect, but start nothing new while that branch exists. | Fix it on the branch, merge into main, delete the branch. |
+| A publish gate fails | Site unchanged. Branch `grow/<date>` plus an Issue with the failing output. The next run recovers by itself (self-recovery, above) once the cause is fixed. | Fix the cause on main. Optionally republish sooner (below). |
+| A push fails | Network errors: retried with backoff. main moved underneath: rebuilt on the new main, at most 3 times. | Nothing. |
 | Missing or invalid secret | Stops before doing anything. | Add or replace the secret. |
 | Live site fails after publishing | Reports it; nothing is auto-reverted. | Roll back (below). |
 
@@ -157,7 +183,9 @@ Every live run first runs, on its fresh checkout:
 3. the full test suite.
 
 If any fails, the run spends ₹0, submits and collects nothing, puts the
-failing test names in its Issue, and exits with status 3. The publish gates
+failing test names in its Issue, and exits with status 3. (When the run
+began with a self-recovery that passed, those gates already covered all
+three on the same tree, so preflight is not repeated.) The publish gates
 after regeneration are unchanged.
 
 **Zero-spend check on the runner:** Actions → Weekly grow → Run workflow,
@@ -312,7 +340,7 @@ manual runs; scheduled Monday runs follow the money rule as described above.
 | input | default | effect |
 |---|---|---|
 | `run_budget_inr` | 25 | Caps **total** spend for this run, in rupees. It is enforced at call time like the money rule: any paid call that would take the ledger past (ledger at the start of the run + this amount) is refused. |
-| `build_queued` | false | When false, no queued library is started or finished in this run. |
+| `build_queued` | false | When false, no queued library is started or finished in this run. A queued library's extraction batch that an earlier run submitted (already paid for) is still collected, but its paid follow-on checks wait for a run that allows them (`queued_finish_followon` in `tools/grow/run_weekly.py`). |
 
 **See what a run would spend, for free, before running it:**
 
@@ -368,7 +396,7 @@ on main. The rest of the run's work is on `grow/<date>`.
 | `GEMINI_API_KEY` | secret | Weekly grow ("Grow, gate, publish" step only). Use a key restricted to the Generative Language API. |
 | `OPENALEX_API_KEY` | secret | Weekly grow (same step) |
 | `WEEKLY_BUDGET_INR` | variable (optional) | Lowers the computed weekly budget |
-| `NEXT_PUBLIC_SITE_URL` | variable (optional) | Both workflows; default `https://researchmap-one.vercel.app` |
+| `NEXT_PUBLIC_SITE_URL` | variable (optional) | Both workflows and the frontend build; overrides `siteUrl` in `frontend/site.config.json` (the production domain, `https://www.research-map.com`). The live checks also accept the old `vercelHost` address there when it redirects to the domain or serves the site with the domain as its canonical URL. |
 
 Secrets are never printed. Every message is redacted, and OpenAlex errors
 never carry the request URL, which holds the key.
@@ -379,7 +407,13 @@ never carry the request URL, which holds the key.
 .venv/bin/python tools/grow/e2e_mock.py           # every gate where it matters
 .venv/bin/python tools/grow/e2e_mock.py --quick   # gates skipped except scenario 7
 .venv/bin/python tools/qa/synthetic_libs.py       # the UI with 8 libraries
+.venv/bin/python tools/grow/e2e_mock.py --verify-marker <rev>   # was <rev>'s content the content tested?
 ```
+
+A full pass writes `docs/releases/growth-e2e-passed.json` with the tested
+TREE (the tested commit's files, the marker itself left out). A squashed
+or rebased PR branch with the same files verifies; any other change does
+not. Run `--verify-marker` on a PR head before merging grow changes.
 
 The end-to-end test runs ten scenarios in a throwaway clone, with mocked
 OpenAlex and Gemini, a temporary ledger and money config, and a local

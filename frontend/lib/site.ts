@@ -1,6 +1,7 @@
 // Site identity and canonical URLs — the one place a host or the site
-// name lives. Rename the site by editing site.config.json; point it at a
-// domain by setting NEXT_PUBLIC_SITE_URL at build time.
+// name lives: site.config.json (siteUrl is the production domain; the
+// weekly run, the daily health check and tools/live-check.py read the same
+// file). NEXT_PUBLIC_SITE_URL at build time overrides it.
 import config from "../site.config.json";
 
 export interface SiteConfig {
@@ -10,12 +11,14 @@ export interface SiteConfig {
   affiliation: string;
   repoUrl: string;
   repoIsPublic: boolean;
+  siteUrl: string;
+  vercelHost: string;
 }
 
 export const site: SiteConfig = config as SiteConfig;
 
 /** Fallback when NEXT_PUBLIC_SITE_URL is not set at build time. */
-export const DEFAULT_SITE_URL = "https://researchmap-one.vercel.app";
+export const DEFAULT_SITE_URL = site.siteUrl;
 
 export const SITE_URL: string = (process.env.NEXT_PUBLIC_SITE_URL || DEFAULT_SITE_URL)
   .replace(/\/+$/, "");

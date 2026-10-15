@@ -2,8 +2,12 @@
 
   python tools/grow/run_weekly.py
 
-Order: guards → Phase 1 collect + follow-on checks → regenerate site data →
-Phase 2 submit → release fingerprint + changelog → publish gates →
+Order: guards → preflight → SELF-RECOVERY (an earlier failed run whose paid
+data is on main: regenerate on main, every gate, publish; zero API cost; if
+it still fails, no new paid work this run) → Phase 1 collect + follow-on
+checks → regenerate site data → Phase 2 submit → a queued library (money
+rule, one per run, only after a free dry run of its build passes every
+gate) → release fingerprint + changelog → publish gates →
   all pass: commit to main, push (fast-forward), live check after a wait
   any fail: commit to branch grow/<date>, push it, publish nothing to main
 → ONE Issue per run ("Weekly grow — <date>"), opened or updated.
@@ -14,8 +18,13 @@ run had already changed bookkeeping (ledger, batch state), that work goes to
 grow/<date> so no recorded spend is ever lost, and later runs refuse to
 spend until that branch is merged or deleted.
 
-Environment: WEEKLY_BUDGET_INR (default 25), NEXT_PUBLIC_SITE_URL (default
-https://researchmap-one.vercel.app), GROW_DATE (override, tests),
+Pushes to main are retried with backoff on network errors; when main moved
+underneath (the owner pushed), the run fetches, re-applies its own data on
+the new main, regenerates, reruns every gate and retries (at most 3), never
+forcing.
+
+Environment: WEEKLY_BUDGET_INR (default 25), NEXT_PUBLIC_SITE_URL (default:
+siteUrl in frontend/site.config.json), GROW_DATE (override, tests),
 GROW_LIVE_WAIT_S (default 300), GROW_MOCK=1 (offline test: mocked clients;
 refuses any remote that is not a local path), GROW_ISSUE_DIR (tests).
 Secrets OPENALEX_API_KEY / GEMINI_API_KEY are read from the environment and
@@ -58,7 +67,10 @@ issues.upsert = _upsert_marked
 PY = sys.executable
 FE = ROOT / "frontend"
 DATA = FE / "public" / "data"
-SITE = (os.environ.get("NEXT_PUBLIC_SITE_URL") or "https://researchmap-one.vercel.app").rstrip("/")
+sys.path.insert(0, str(ROOT / "tools"))
+from site_url import site_url, vercel_host  # noqa: E402   (frontend/site.config.json)
+
+SITE = site_url()
 MOCK = os.environ.get("GROW_MOCK") == "1"
 LOG: list[str] = []
 
@@ -608,6 +620,155 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
     return redact("\n".join(L))
 
 
+def queued_start_decision(*, weekly_inr: float, hold: bool, recovery_failed: bool, building: bool,
+                          build_queued: bool, started_this_run: int) -> tuple[bool, str]:
+    """May this run START a queued library at all? (Whether it is affordable is
+    the money rule's call next: money.queued_affordable.) A queued build:
+    at most one per run; never while an earlier failed run is unresolved or
+    its recovery failed; never on a manual run with build_queued=false; never
+    without money this week; never while another library is being built."""
+    if started_this_run:
+        return False, "one queued library per run"
+    if hold:
+        return False, "an earlier run's branch is unresolved (no new paid work)"
+    if recovery_failed:
+        return False, "the earlier failed run could not be republished (no new paid work)"
+    if not build_queued:
+        return False, "manual run with build_queued=false"
+    if weekly_inr <= 0:
+        return False, "no money this week"
+    if building:
+        return False, "a library is already being built"
+    return True, "allowed; the money rule decides"
+
+
+def queued_finish_followon(*, manual: bool, build_queued: bool, no_new_paid: bool) -> tuple[bool, str]:
+    """May this run pay for a queued library's follow-on checks (finishing
+    it)? Collecting its extraction batch is always allowed: that was paid for
+    when it was submitted. docs/OPERATIONS.md: with build_queued=false "no
+    queued library is started or finished in this run"."""
+    if no_new_paid:
+        return False, "no new paid work this run (an earlier failed run is unresolved)"
+    if manual and not build_queued:
+        return False, "manual run with build_queued=false: collected only; finished by a later run"
+    return True, ""
+
+
+# Installed (untracked) packages the gates need, linked into the dry run's
+# worktree: the site build's, and the smoke check's axe-core (on the runner
+# AXE_PATH points elsewhere and is inherited; locally it is tools/qa's).
+DRY_GATE_LINKS = ("frontend/node_modules", "tools/qa/node_modules")
+
+
+def dry_gate(slug: str) -> dict:
+    """Before any PAID queued build: build that library for free (mocked
+    OpenAlex and Gemini) in a throwaway worktree of this checkout and run every
+    publish gate there (its scope, search phrases, smoke checks, all tests).
+    Nothing is spent and nothing is pushed. Returns {ok, gate_res, detail}."""
+    if MOCK and os.environ.get("GROW_FAIL_DRY_GATE") == slug:       # offline e2e only
+        say(f"dry run {slug}: FAIL (forced: mock run, GROW_FAIL_DRY_GATE)")
+        g = {"gate": f"dry run of {slug}: smoke checks on the build", "ok": False,
+             "failed": [f"FAILED {slug} (forced by the mocked e2e)"], "tail": "forced failure"}
+        return {"ok": False, "gate_res": [g], "detail": g["gate"]}
+    if MOCK and os.environ.get("GROW_GATES") == "skip":
+        return {"ok": True, "gate_res": [], "detail": "skipped (mock run, GROW_GATES=skip)"}
+    import shutil
+    import tempfile
+    tmp = Path(tempfile.mkdtemp(prefix=f"dry-gate-{slug}-"))
+    wt = tmp / "wt"
+    say(f"dry run {slug}: free mock build + every gate in a throwaway worktree (nothing spent)")
+    sh(["git", "worktree", "add", "-q", "--detach", str(wt), "HEAD"])
+    try:
+        for rel in DRY_GATE_LINKS:              # installed packages a fresh worktree lacks
+            if (ROOT / rel).exists() and not (wt / rel).exists():
+                (wt / rel).symlink_to((ROOT / rel).resolve())
+        cfg = json.loads((ROOT / "config" / "money.json").read_text())
+        cfg["account_total_inr"] = 1e9          # the throwaway's own money rule: mock calls cost nothing real
+        (tmp / "money.json").write_text(json.dumps(cfg))
+        r = sh([PY, "tools/grow/run_weekly.py", "--dry-gate-build", slug], cwd=wt, check=False, timeout=7200,
+               no_secrets=True, env={"GROW_MOCK": "1", "GROW_MOCK_STATE": str(tmp / "mock"),
+                                     "MONEY_CONFIG_PATH": str(tmp / "money.json"),
+                                     "GROW_ISSUE_DIR": str(tmp / "issues")})
+        out = (r.stdout or "").strip().splitlines()
+        res = json.loads(out[-1]) if out and out[-1].startswith("{") else None
+        if res is None:
+            tail = redact(((r.stdout or "") + (r.stderr or "")).strip())
+            res = {"ok": False, "gate_res": [{"gate": f"dry run of {slug}: mock build", "ok": False,
+                                               "failed": [], "tail": "\n".join(tail.splitlines()[-60:])}]}
+        bad = [g["gate"] for g in res["gate_res"] if not g["ok"]]
+        res["detail"] = "every gate passed" if res["ok"] else "failing: " + ", ".join(bad)
+        say(f"dry run {slug}: {'PASS' if res['ok'] else 'FAIL'} ({res['detail']})")
+        return res
+    finally:
+        sh(["git", "worktree", "remove", "--force", str(wt)], check=False)
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def dry_gate_build(slug: str) -> int:
+    """Inside the dry-run worktree only: mock-build `slug`, regenerate and run
+    every gate; print one JSON line. Refuses to run without GROW_MOCK=1."""
+    if not MOCK:
+        print(json.dumps({"ok": False, "gate_res": [{"gate": "dry run", "ok": False,
+                                                     "tail": "refused: GROW_MOCK=1 is required"}]}))
+        return 2
+    from backend.app.api import registry
+    from backend.app.grow import queued
+    from backend.app.grow.clients import make_clients
+    lib = next(l for l in registry.queued() if l["slug"] == slug)
+    cl = make_clients()
+    rows: list[dict] = []
+    try:
+        queued.apply_core_scope(lib)
+        queued.open_fulltext(lib, cl)
+        queued.start(lib, cl)
+        for _ in range(5):
+            r = queued.finish(lib, cl, mock=True)
+            if r.get("status") == "built":
+                break
+        else:
+            raise RuntimeError(f"mock build did not finish: {r.get('status')}")
+        regenerate()
+        rows = gates()
+    except Exception as e:  # noqa: BLE001
+        rows.append({"gate": f"dry run of {slug}: mock build", "ok": False, "failed": [],
+                     "tail": redact(f"{type(e).__name__}: {e}")})
+    rows = [{**g, "gate": f"dry run of {slug}: {g['gate']}"} for g in rows]
+    print(json.dumps({"ok": bool(rows) and all(g["ok"] for g in rows), "gate_res": rows}))
+    return 0
+
+
+def recover_on_main(date: str) -> dict:
+    """SELF-RECOVERY, before any new paid work: an earlier run failed its
+    gates but its paid data is already on main. Regenerate the site on main
+    (with every fix since), run every gate, and publish if all pass. Zero API
+    cost; the ledger is untouched. Returns {ok, gate_res, branches, sha}."""
+    names = list(_ON_MAIN_BRANCHES)
+    say(f"SELF-RECOVERY: {', '.join(names)} failed earlier but its paid data is on main — regenerating on main "
+        "and running every gate before any new paid work (no API calls)")
+    led0 = (ROOT / "data" / "spend_ledger.json").read_bytes()
+    before = items_snapshot()
+    regenerate()
+    diff = diff_items(before, items_snapshot())
+    res = gates()
+    if (ROOT / "data" / "spend_ledger.json").read_bytes() != led0:
+        res.append({"gate": "ledger untouched", "ok": False, "failed": [], "tail": "ledger changed"})
+    if not all(g["ok"] for g in res):
+        _reset_rest()
+        return {"ok": False, "gate_res": res, "branches": names, "diff": diff}
+    _record_resolved(names, f"its paid data was on main; republished by the self-recovery step of the run of "
+                            f"{date} (every gate passed; branch kept, never deleted)")
+    changelog(f"{date} (self-recovery: republished {', '.join(names)})",
+              diff_lines(diff) or ["no change to the results"])
+    try:
+        sha = publish_main(date, f"weekly grow {date}: self-recovery — republished {', '.join(names)}")
+    except MainMoved as e:
+        _reset_rest()
+        return {"ok": False, "gate_res": e.gate_res or [{"gate": "publish to main", "ok": False, "failed": [],
+                                                         "tail": str(e)}], "branches": names, "diff": diff}
+    _ON_MAIN_BRANCHES.clear()
+    return {"ok": True, "gate_res": res, "branches": names, "sha": sha, "diff": diff}
+
+
 BUDGET_EXHAUSTED_ACTION = (
     "No new spending until there is money. The site stays as it is, and batches already submitted are still "
     "collected. To continue, either (a) open the Google Cloud console's billing page, read what has actually "
@@ -634,6 +795,9 @@ def main() -> int:
     budget = core.Budget(0.0)
     mstat: dict = {}
     note = None
+    recovery_failed: dict | None = None
+    recovered: dict | None = None
+    dry_fail: list[dict] = []
     if _in_tests() and any(os.environ.get(k) for k in SECRET_ENV):
         # a live run never starts inside a test process that holds credentials
         # (the suite strips them; this is the last line). Raised BEFORE the
@@ -653,8 +817,43 @@ def main() -> int:
                               note="config/growth.json has paused: true. Set it to false to resume.")
             say(f"issue: {issues.upsert(title, body, ['weekly-grow'])}")
             return 0
+        # SELF-RECOVERY first, before preflight and any new paid work (zero
+        # API cost). It must come before preflight: a failed run's paid data
+        # is already on main but its site was not regenerated, so the full
+        # tests can fail on main until it is (output vs data), and a preflight
+        # stop would then block every later run. Recovery regenerates and runs
+        # every gate (typecheck, build and full tests included).
+        if _ON_MAIN_BRANCHES and not hold:
+            rec = recover_on_main(date)
+            if rec["ok"]:
+                recovered = rec
+                say(f"self-recovery: republished {', '.join(rec['branches'])} to main ({rec['sha'][:7]})")
+            else:
+                # No API call at all this run (₹0): collecting would add papers
+                # whose claims need (paid) embeddings before the site can be
+                # rebuilt for free, so main's data stays exactly as it is and
+                # the next run recovers once the gate passes.
+                say("self-recovery FAILED: no API calls this run (₹0); batches already paid for wait for "
+                    "the next run")
+                lr = ledger_inr()
+                body = issue_body(date, "self-recovery failed — nothing spent, the site was not changed", p1=[],
+                                  p2=[], diff=None, spent=0.0, ledger=lr, budget=core.Budget(0.0),
+                                  gate_res=rec["gate_res"], money=money.status(ref),
+                                  note=(f"{', '.join(rec['branches'])} failed its gates earlier; republishing it "
+                                        "from main still fails (below). This run made no API calls and spent ₹0; "
+                                        "batches already paid for are collected by the first run that recovers. "
+                                        "Fix the failing gate on main; the next run recovers by itself (or "
+                                        f"republish now: republish_branch {rec['branches'][0]})."))
+                say(f"issue: {issues.upsert(title, body, ['weekly-grow', 'needs-action'])}")
+                print(failure_block(rec["gate_res"]), flush=True)
+                return 1
         # PREFLIGHT: nothing is spent unless the fresh checkout passes
-        pre = preflight_checks()
+        if recovered:
+            # every gate (a superset of preflight) just passed on this tree
+            pre = [{"gate": "preflight: covered by the self-recovery gates", "ok": True, "tail": "", "failed": []}]
+            say("preflight: covered (self-recovery ran every gate on this tree)")
+        else:
+            pre = preflight_checks()
         if not all(g["ok"] for g in pre):
             block = failure_block(pre)
             body = issue_body(date, "preflight failed — nothing spent, nothing submitted", p1=[], p2=[],
@@ -683,7 +882,8 @@ def main() -> int:
         if os.environ.get("WEEKLY_BUDGET_INR"):        # optional owner override: can only lower it
             weekly = min(weekly, float(os.environ["WEEKLY_BUDGET_INR"]))
         exhausted = mstat["remaining_inr"] < 1.0
-        if hold or exhausted:
+        no_new_paid = bool(hold)          # a conflicting branch: collect what was paid for, start nothing new
+        if no_new_paid or exhausted:
             weekly = 0.0
             note = hold or "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
         budget = core.Budget(weekly)
@@ -726,8 +926,9 @@ def main() -> int:
         checkpoint(date, "collected and checked")
         # Libraries being built by the workflow: finish them (already paid for)
         for lib in queued.building():
+            fo_ok, fo_why = queued_finish_followon(manual=manual, build_queued=build_queued, no_new_paid=no_new_paid)
             try:
-                r = queued.finish(lib, cl, mock=cl.mock)
+                r = queued.finish(lib, cl, mock=cl.mock, paid_followon=fo_ok, why_not=fo_why)
             except Exception as e:  # noqa: BLE001
                 from backend.app.extraction.spend_gate import SpendGateRefused
                 from backend.app.extraction.spend_ledger import SpendCapExceededError
@@ -778,31 +979,64 @@ def main() -> int:
                 say(f"submit {slug}: {r.get('submitted', 0)} papers, projected ₹{r.get('projected_inr', 0):.2f}")
                 p2.append(r)
             checkpoint(date, "submitted")
-        # A queued library, if the money rule says it is affordable (one at a time)
-        if budget.weekly_inr > 0 and not queued.building() and build_queued:
+        # A queued library: at most one per run, only if allowed at all
+        # (queued_start_decision), affordable under the money rule, and only
+        # after a FREE dry run of its build passes every gate.
+        started = 0
+        allowed, why = queued_start_decision(weekly_inr=budget.weekly_inr, hold=bool(hold),
+                                             recovery_failed=bool(recovery_failed),
+                                             building=bool(queued.building()), build_queued=build_queued,
+                                             started_this_run=started)
+        q = registry_queued()
+        if not allowed and q:
+            say(f"queued libraries: none started ({why})")
+            builds.append({"slug": q[0]["slug"], "status": "not started this run", "detail": why})
+        if allowed:
             rem = money.status(ref)["remaining_inr"] - budget.committed
-            for lib in registry_queued():
+            for lib in q:
                 queued.apply_core_scope(lib)          # free; only in-scope papers are built
-                queued.open_fulltext(lib, cl)
+                queued.open_fulltext(lib, cl)         # free; full text changes the projection (about 3x)
                 proj = queued.projection_inr(lib)
-                if money.queued_affordable(proj, rem, budget.weekly_inr, money.load()):
-                    try:
-                        r = queued.start(lib, cl)
-                    except Exception as e:  # noqa: BLE001
-                        from backend.app.extraction.spend_gate import SpendGateRefused
-                        if not isinstance(e, SpendGateRefused):
-                            raise
-                        builds.append({"slug": lib["slug"], "status": "waiting for money",
-                                       "detail": "refused by the money rule"})
-                        break
-                    say(f"queued {lib['slug']}: submitted {r.get('submitted')} papers, projected ₹{proj:.2f}")
-                    checkpoint(date, f"queued {lib['slug']} submitted")
-                    builds.append({"slug": lib["slug"], "status": "building (extraction submitted)",
-                                   "detail": f"projected ₹{proj:.2f}; finishes next week"})
-                else:
+                if not money.queued_affordable(proj, rem, budget.weekly_inr, money.load()):
                     builds.append({"slug": lib["slug"], "status": "waiting for money",
                                    "detail": f"needs ₹{proj * 1.5 + 4 * budget.weekly_inr:.2f} "
                                              f"(projection x1.5 + 4 weeks of growth), ₹{rem:.2f} remains"})
+                    break
+                # pace (config/growth.json): at most N starts a month, and never
+                # into the minimum weekly growth reserve
+                st_now = money.status(ref)
+                pace = queued.pace_check(proj_inr=proj, available_inr=st_now["available_inr"],
+                                         growth_committed_inr=budget.committed,
+                                         weeks_after=max(0, money.weeks_left(money.load(), ref) - 1), ref=ref)
+                say(f"queued {lib['slug']}: projected ₹{proj:.2f}; pace: {pace['reason']} "
+                    f"(₹{pace['left_after_inr']:.2f} left after it, weekly growth after ₹{pace['weekly_growth_after_inr']})")
+                if not pace["ok"]:
+                    builds.append({"slug": lib["slug"], "status": "waiting (pace)", "detail": pace["reason"]})
+                    if pace["blocked_by"] == "month":
+                        break                         # no queued build this month at all
+                    continue                          # a cheaper queued library may still fit
+                dg = dry_gate(lib["slug"])
+                if not dg["ok"]:
+                    dry_fail.append({"slug": lib["slug"], **dg})
+                    builds.append({"slug": lib["slug"], "status": "skipped this week: its free dry run failed "
+                                   "(₹0 spent)", "detail": dg["detail"]})
+                    continue                          # the next queued library may still go (one per run)
+                try:
+                    r = queued.start(lib, cl)
+                except Exception as e:  # noqa: BLE001
+                    from backend.app.extraction.spend_gate import SpendGateRefused
+                    if not isinstance(e, SpendGateRefused):
+                        raise
+                    builds.append({"slug": lib["slug"], "status": "waiting for money",
+                                   "detail": "refused by the money rule"})
+                    break
+                started += 1
+                queued.record_start(lib["slug"], date, f"weekly run of {date}: projected ₹{proj:.2f}")
+                say(f"queued {lib['slug']}: dry run passed; submitted {r.get('submitted')} papers, "
+                    f"projected ₹{proj:.2f}")
+                checkpoint(date, f"queued {lib['slug']} submitted")
+                builds.append({"slug": lib["slug"], "status": "building (extraction submitted)",
+                               "detail": f"free dry run: {dg['detail']}; projected ₹{proj:.2f}; finishes next week"})
                 break
         diff = diff_items(before, items_snapshot())
     except Exception as exc:  # noqa: BLE001  (GrowStop or anything unexpected)
@@ -836,16 +1070,22 @@ def main() -> int:
     fingerprint(date, gate_res, l1, diff)
     ok = all(g["ok"] for g in gate_res)
     live = None
+    sha = None
     if ok:
         _record_resolved(_ON_MAIN_BRANCHES, f"its paid data was already on main; the site was republished by "
                                             f"the weekly run of {date} (branch kept, never deleted)")
-        sha = publish_main(date)
+        try:
+            sha = publish_main(date)
+        except MainMoved as e:
+            ok = False
+            gate_res = gate_res + (e.gate_res or [{"gate": "publish to main (main moved underneath)", "ok": False,
+                                                   "failed": [], "tail": str(e)}])
+    if ok:
         status = f"published to main ({sha[:7]})"
         wait = int(os.environ.get("GROW_LIVE_WAIT_S", "300"))
         say(f"waiting {wait}s for the deployment")
         time.sleep(wait)
-        r = sh([PY, "tools/live-check.py", SITE, "--vercel-host",
-                os.environ.get("GROW_VERCEL_HOST", "researchmap-one.vercel.app")], check=False, timeout=600)
+        r = sh([PY, "tools/live-check.py", SITE, "--vercel-host", vercel_host()], check=False, timeout=600)
         live = (r.returncode == 0, redact(r.stdout + r.stderr))
         if not live[0]:
             status += " — LIVE CHECK FAILED"
@@ -856,6 +1096,14 @@ def main() -> int:
         status = "publish gates failed — the site was not changed"
     if note and note.startswith("Budget exhausted"):
         status += " — BUDGET EXHAUSTED"
+    if recovered:
+        note = (f"Self-recovery: {', '.join(recovered['branches'])} republished to main "
+                f"({recovered['sha'][:7]}) before any new paid work; every gate passed; ₹0. "
+                + (note or "")).strip()
+    for d in dry_fail:
+        note = ((note or "") + f" Queued library {d['slug']} skipped this week: its free dry run failed "
+                f"({d['detail']}); ₹0 spent on it. Details below.").strip()
+        gate_res = gate_res + [g for g in d.get("gate_res", []) if not g["ok"]]
     body = issue_body(date, status, p1=p1, p2=p2, diff=diff, spent=l1[0] - l0[0], ledger=l1,
                       budget=budget, gate_res=gate_res, branch=branch, live=live, money=mstat,
                       builds=builds, note=note)
@@ -1088,18 +1336,121 @@ def _identity() -> list[str]:
     return ["-c", "user.name=researchmap-bot", "-c", "user.email=researchmap-bot@users.noreply.github.com"]
 
 
-def publish_main(date: str) -> str:
-    _no_git_writes_in_tests("publish_main")
+class MainMoved(RuntimeError):
+    """main moved underneath this run and the run's work could not be put on
+    the new main (its data conflicts, or the gates fail there). `gate_res`
+    holds the gate rows when the gates were the reason."""
+    def __init__(self, what: str, gate_res: list[dict] | None = None):
+        super().__init__(what)
+        self.gate_res = gate_res or []
+
+
+PUSH_ATTEMPTS = 3        # tries when main moved underneath (each one re-applies, regenerates, re-gates)
+NET_TRIES = 4            # tries per push on network errors (backoff GROW_RETRY_BASE_S, default 20 s)
+
+
+def _push(refspec: str) -> tuple[bool, bool, str]:
+    """Push with backoff on network errors. Returns (ok, rejected_because_
+    the_remote_moved, stderr). Never forces."""
+    base = float(os.environ.get("GROW_RETRY_BASE_S", "20"))
+    err = ""
+    for k in range(NET_TRIES):
+        r = sh(["git", "push", "origin", refspec], check=False)
+        if r.returncode == 0:
+            return True, False, ""
+        err = redact((r.stderr or r.stdout or "").strip())
+        if re.search(r"rejected|non-fast-forward|fetch first|stale info", err):
+            return False, True, err
+        if k < NET_TRIES - 1:
+            say(f"push {refspec} failed (attempt {k + 1}/{NET_TRIES}, retrying): {err[-200:]}")
+            time.sleep(base * (2 ** k))
+    return False, False, err
+
+
+_MOVED: set[str] = set()
+
+
+def _mock_move_main(at: str) -> None:
+    """Offline e2e only (GROW_MOCK=1, a local stand-in remote): the owner
+    pushes a cosmetic site edit to main just before this run's own push
+    (GROW_MOCK_MOVE_MAIN=checkpoint|publish), once per run."""
+    if not MOCK or os.environ.get("GROW_MOCK_MOVE_MAIN") != at or at in _MOVED:
+        return
+    _MOVED.add(at)
+    import tempfile
+    side = Path(tempfile.mkdtemp(prefix="owner-")) / "c"
+    url = git("remote", "get-url", "origin")
+    sh(["git", "clone", "-q", "-b", "main", url, str(side)])
+    css = side / "frontend" / "app" / "globals.css"
+    css.write_text(css.read_text() + f"\n/* owner's cosmetic edit during a run ({at}) */\n")
+    sh(["git", "-C", str(side), "add", "frontend/app/globals.css"])
+    sh(["git", "-C", str(side), "-c", "user.name=owner", "-c", "user.email=owner@example.invalid", "commit",
+        "-q", "-m", f"owner: cosmetic edit during a run ({at})"])
+    sh(["git", "-C", str(side), "push", "-q", "origin", "HEAD:main"])
+    say(f"(mock) the owner pushed a cosmetic edit to main during this run ({at})")
+
+
+def _fetch_main() -> None:
+    base = float(os.environ.get("GROW_RETRY_BASE_S", "20"))
+    for k in range(NET_TRIES):
+        if sh(["git", "fetch", "-q", "origin", "+refs/heads/main:refs/remotes/origin/main"], check=False).returncode == 0:
+            return
+        time.sleep(base * (2 ** k))
+    raise RuntimeError("could not fetch origin/main (network) after retries")
+
+
+def _onto_new_main(paths: tuple[str, ...], msg: str, *, regenerate_and_gate: bool) -> None:
+    """main moved: rebuild this run's commit on the new main. Its own changes
+    under `paths` (data/ and the run's records) are re-applied with a 3-way
+    merge; everything generated is regenerated on the new main and every gate
+    runs again. The run's commit is only ever local, so nothing published is
+    rewritten. Raises MainMoved when that cannot be done cleanly."""
+    _no_git_writes_in_tests("_onto_new_main")
+    ours = git("rev-parse", "HEAD")
+    _fetch_main()
+    base = git("merge-base", ours, "origin/main")
+    patch = sh(["git", "diff", "--binary", base, ours, "--", *paths]).stdout
+    git("reset", "-q", "--hard", "origin/main")          # local: the run's own unpushed commit only
+    if patch.strip():
+        r = subprocess.run(["git", "apply", "--3way", "--index", "-"], cwd=ROOT, input=patch,
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            git("reset", "-q", "--hard", ours)            # back to the run's own commit (for a branch)
+            raise MainMoved("this run's data conflicts with what was pushed to main meanwhile: "
+                            + redact((r.stderr or r.stdout).strip()[-400:]))
+    if regenerate_and_gate:
+        regenerate()
+        res = gates()
+        if not all(g["ok"] for g in res):
+            raise MainMoved("the publish gates fail on the new main", res)
     git("add", "-A")
-    git(*_identity(), "commit", "-q", "-m", f"weekly grow {date}\n\nAutomated by .github/workflows/weekly-grow.yml; "
-        f"see docs/releases/{date}.json and docs/CHANGELOG.md.")
-    r = sh(["git", "push", "origin", "HEAD:main"], check=False)
-    local = git("rev-parse", "HEAD")
-    remote = git("ls-remote", "origin", "refs/heads/main").split()[0:1]
-    if r.returncode != 0 or remote != [local]:
-        raise RuntimeError(f"push to main failed (exit {r.returncode}); remote main is {remote}")
-    say(f"pushed main {local[:7]} (ls-remote agrees)")
-    return local
+    if git("diff", "--cached", "--name-only"):
+        git(*_identity(), "commit", "-q", "-m", msg)
+
+
+def publish_main(date: str, msg: str | None = None) -> str:
+    """Commit everything and push to main (fast-forward only). If main moved
+    underneath, the work is rebuilt on the new main (re-applied, regenerated,
+    every gate rerun) and pushed again, at most PUSH_ATTEMPTS times."""
+    _no_git_writes_in_tests("publish_main")
+    msg = msg or (f"weekly grow {date}\n\nAutomated by .github/workflows/weekly-grow.yml; "
+                  f"see docs/releases/{date}.json and docs/CHANGELOG.md.")
+    git("add", "-A")
+    git(*_identity(), "commit", "-q", "-m", msg)
+    _mock_move_main("publish")
+    for attempt in range(1, PUSH_ATTEMPTS + 1):
+        ok, moved, err = _push("HEAD:main")
+        local = git("rev-parse", "HEAD")
+        remote = git("ls-remote", "origin", "refs/heads/main").split()[0:1]
+        if ok and remote == [local]:
+            say(f"pushed main {local[:7]} (ls-remote agrees)")
+            return local
+        if not moved or attempt == PUSH_ATTEMPTS:
+            raise RuntimeError(f"push to main failed (attempt {attempt}): {err[-300:]}; remote main is {remote}")
+        say(f"main moved underneath this run (push rejected, attempt {attempt}/{PUSH_ATTEMPTS}): rebuilding "
+            "on the new main — re-apply this run's data, regenerate, rerun every gate")
+        _onto_new_main(("data", "docs/releases", "docs/CHANGELOG.md"), msg, regenerate_and_gate=True)
+    raise RuntimeError("unreachable")
 
 
 BOOKKEEPING = ("data",)        # everything paid for or recorded; never the public site or docs
@@ -1117,7 +1468,10 @@ def publish_bookkeeping(date: str, msg: str, *, keep_rest: bool = False) -> str 
     """Commit ONLY data/ (ledger, projections, batch states, extraction cache,
     verdict logs, corpus files) to main and push, so paid work is never lost
     and the next run resumes. The public site (frontend/, docs/) is not
-    touched. Unless keep_rest, the rest of the working tree is then reset."""
+    touched. Unless keep_rest, the rest of the working tree is then reset.
+    If main moved underneath, the data commit is rebased onto the new main
+    (keeping the rest of the working tree) and pushed again, at most
+    PUSH_ATTEMPTS times; a conflict leaves it for the run's branch."""
     _no_git_writes_in_tests("publish_bookkeeping")
     git("add", "--", *BOOKKEEPING)
     if not git("diff", "--cached", "--name-only"):
@@ -1125,10 +1479,24 @@ def publish_bookkeeping(date: str, msg: str, *, keep_rest: bool = False) -> str 
             _reset_rest()
         return None
     git(*_identity(), "commit", "-q", "-m", msg)
-    r = sh(["git", "push", "origin", "HEAD:main"], check=False)
+    _mock_move_main("checkpoint")
+    ok = False
+    for attempt in range(1, PUSH_ATTEMPTS + 1):
+        pushed, moved, err = _push("HEAD:main")
+        local = git("rev-parse", "HEAD")
+        remote = git("ls-remote", "origin", "refs/heads/main").split()[0:1]
+        ok = pushed and remote == [local]
+        if ok or not moved or attempt == PUSH_ATTEMPTS:
+            break
+        say(f"main moved underneath this run (bookkeeping push rejected, attempt {attempt}/{PUSH_ATTEMPTS}): "
+            "rebasing the data commit onto the new main")
+        _fetch_main()
+        r = sh(["git", "-c", "rebase.autoStash=true", *_identity(), "rebase", "-q", "origin/main"], check=False)
+        if r.returncode != 0:
+            sh(["git", "rebase", "--abort"], check=False)
+            say("bookkeeping conflicts with the new main; it stays in this run's commit for its branch")
+            break
     local = git("rev-parse", "HEAD")
-    remote = git("ls-remote", "origin", "refs/heads/main").split()[0:1]
-    ok = r.returncode == 0 and remote == [local]
     say(f"bookkeeping {'pushed' if ok else 'PUSH FAILED'} {local[:7]}")
     if not keep_rest:
         _reset_rest()
@@ -1146,11 +1514,12 @@ def publish_branch(date: str, msg: str) -> str:
     branch = f"grow/{date}"
     git("checkout", "-q", "-B", branch)
     git("add", "-A")
-    git(*_identity(), "commit", "-q", "-m", msg)
-    r = sh(["git", "push", "origin", f"{branch}:{branch}"], check=False)
+    if git("diff", "--cached", "--name-only"):
+        git(*_identity(), "commit", "-q", "-m", msg)
+    pushed, _moved, _err = _push(f"{branch}:{branch}")
     local = git("rev-parse", "HEAD")
     remote = git("ls-remote", "origin", f"refs/heads/{branch}").split()[0:1]
-    if r.returncode != 0 or remote != [local]:
+    if not pushed or remote != [local]:
         say(f"WARNING: push of {branch} failed (exit {r.returncode}); work exists only in this runner")
     else:
         say(f"pushed {branch} {local[:7]} (ls-remote agrees)")
@@ -1158,4 +1527,6 @@ def publish_branch(date: str, msg: str) -> str:
 
 
 if __name__ == "__main__":
+    if "--dry-gate-build" in sys.argv:
+        raise SystemExit(dry_gate_build(sys.argv[sys.argv.index("--dry-gate-build") + 1]))
     raise SystemExit(dry_run() if "--dry-run" in sys.argv else main())

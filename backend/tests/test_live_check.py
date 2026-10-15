@@ -1,6 +1,8 @@
 """tools/live-check.py against a local mock HTTP server: a healthy site
 passes (analytics 404 is only a warning); a missing security header, a
-foreign canonical host, or a broken og:image each fail."""
+foreign canonical host, or a broken og:image each fail. The old
+*.vercel.app host passes when it redirects to the site or serves it with
+the site's canonical host, and fails when it claims its own."""
 
 from __future__ import annotations
 
@@ -105,3 +107,68 @@ def test_fetch_follows_308_on_any_python(server):
     state["headers"] = {**state["headers"], "Location": base + "/"}  # used only by the 308
     status, _, _, final = live_check.fetch(base + "/old")
     assert status == 200 and final.rstrip("/") == base
+
+
+@pytest.fixture
+def vercel_server():
+    """A second host standing in for the old *.vercel.app address."""
+    state = {}
+
+    class H(BaseHTTPRequestHandler):
+        def do_GET(self):
+            status, body, extra = state["route"]
+            self.send_response(status)
+            for k, v in extra.items():
+                self.send_header(k, v)
+            self.end_headers()
+            self.wfile.write(body.encode())
+
+        def log_message(self, *a):
+            pass
+
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), H)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    yield f"127.0.0.1:{srv.server_address[1]}", state
+    srv.shutdown()
+
+
+def _vercel_row(base, state, vhost):
+    state["routes"], state["headers"] = _site(base)
+    code = live_check.main([base, "--vercel-host", vhost])
+    row = [(s, l, d) for s, l, d in live_check.results if "vercel.app" in l]
+    return code, row
+
+
+def test_old_vercel_host_serving_the_site_with_the_domains_canonical_passes(server, vercel_server):
+    base, state = server
+    vhost, vstate = vercel_server
+    vstate["route"] = (200, f'<html><head><link rel="canonical" href="{base}/"/></head></html>', {})
+    code, row = _vercel_row(base, state, vhost)
+    assert code == 0 and row and row[0][0] == "PASS", row
+
+
+def test_old_vercel_host_redirecting_to_the_domain_passes(server, vercel_server):
+    base, state = server
+    vhost, vstate = vercel_server
+    vstate["route"] = (308, "", {"Location": base + "/"})
+    code, row = _vercel_row(base, state, vhost)
+    assert code == 0 and row and row[0][0] == "PASS", row
+
+
+def test_old_vercel_host_claiming_its_own_canonical_fails(server, vercel_server):
+    base, state = server
+    vhost, vstate = vercel_server
+    vstate["route"] = (200, f'<html><head><link rel="canonical" href="http://{vhost}/"/></head></html>', {})
+    code, row = _vercel_row(base, state, vhost)
+    assert code == 1 and row and row[0][0] == "FAIL", row
+
+
+def test_default_base_is_the_configured_site(monkeypatch):
+    """No base given: the site in frontend/site.config.json, unless
+    NEXT_PUBLIC_SITE_URL overrides it."""
+    import json
+    cfg = json.loads((REPO / "frontend" / "site.config.json").read_text())
+    monkeypatch.delenv("NEXT_PUBLIC_SITE_URL", raising=False)
+    assert live_check._site_defaults()[0] == cfg["siteUrl"].rstrip("/")
+    monkeypatch.setenv("NEXT_PUBLIC_SITE_URL", "https://example.org/")
+    assert live_check._site_defaults()[0] == "https://example.org"

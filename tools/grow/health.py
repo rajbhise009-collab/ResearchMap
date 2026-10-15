@@ -1,7 +1,8 @@
 """Daily health check (called by .github/workflows/daily-health.yml).
 
-Runs tools/live-check.py and the quick production smoke checks against
-NEXT_PUBLIC_SITE_URL (fallback https://researchmap-one.vercel.app). On
+Runs tools/live-check.py and the quick production smoke checks against the
+configured site (frontend/site.config.json siteUrl; NEXT_PUBLIC_SITE_URL
+overrides it). On
 failure it opens or updates ONE Issue ("Daily health check failing"); when
 the checks pass again it closes that Issue. Exit 1 on failure.
 """
@@ -14,11 +15,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "grow"))
+sys.path.insert(0, str(ROOT / "tools"))
 import issues  # noqa: E402
 from run_weekly import redact  # noqa: E402
+from site_url import site_url, vercel_host  # noqa: E402
 
 TITLE = "Daily health check failing"
-SITE = (os.environ.get("NEXT_PUBLIC_SITE_URL") or "https://researchmap-one.vercel.app").rstrip("/")
+SITE = site_url()
 
 
 def run(cmd: list[str]) -> tuple[bool, str]:
@@ -27,8 +30,7 @@ def run(cmd: list[str]) -> tuple[bool, str]:
 
 
 def main() -> int:
-    checks = [("live check", [sys.executable, "tools/live-check.py", SITE, "--vercel-host",
-                              os.environ.get("GROW_VERCEL_HOST", "researchmap-one.vercel.app")]),
+    checks = [("live check", [sys.executable, "tools/live-check.py", SITE, "--vercel-host", vercel_host()]),
               ("smoke checks", [sys.executable, "tools/qa/smoke.py", SITE, "--quick"])]
     res = [(name, *run(cmd)) for name, cmd in checks]
     for name, ok, out in res:
