@@ -35,11 +35,35 @@ build. Scenarios:
  14  zero-spend REPUBLISH of that branch (manual, no keys): regenerated on
      main, gates pass, main fast-forwarded, ledger untouched, branch kept and
      recorded as resolved, the run's Issue closed
+ 15  SELF-RECOVERY: a gate fails; the NEXT scheduled run republishes that
+     branch from main (regenerate, every gate) BEFORE any new paid work, then
+     grows as usual. If the recovery itself fails: no API call at all (₹0,
+     nothing collected), main untouched, the Issue says so; the run after
+     recovers by itself
+ 16  a queued library whose FREE dry run (mock build + every gate in a
+     throwaway worktree) fails is skipped that week: ₹0 spent on it, it stays
+     queued, the Issue says why (inside scenario 2's run)
+ 17  main moves underneath a run (the owner pushes a cosmetic edit during it):
+     at the final publish and at a checkpoint the push is rejected, the run
+     re-applies its work on the new main, regenerates, reruns the gates and
+     pushes; never forced; the owner's commit stays in main's history
+ (budget exhausted mid-run is scenario 6)
 
 --quick skips the publish gates except in scenario 7 (honoured only with
 GROW_MOCK=1). Every run takes the SCHEDULED path (event=schedule, empty
 inputs). Writes <E2E_DIR>/grow-e2e.json and, on a full pass,
 docs/releases/growth-e2e-passed.json.
+
+The marker is bound to the TREE that was tested, not a commit: tested_tree
+is the git tree of the commit the run cloned, with the marker file itself
+left out (a file cannot hold the hash of a tree that contains it). A squash
+or rebase that keeps the content keeps the tree; any other change breaks it.
+Check a commit (e.g. a PR head) against it with:
+
+  python tools/grow/e2e_mock.py --verify-marker <rev>
+
+which exits 1 unless <rev>'s tree, marker left out, is the tested tree.
+(It is a check for a PR, not a standing test: main moves every week.)
 """
 from __future__ import annotations
 
@@ -48,6 +72,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 from pathlib import Path
 
@@ -60,6 +85,7 @@ MONEY = OUT / "money.json"
 PORT = "8797"
 SITE = f"http://127.0.0.1:{PORT}"
 FAKE_SECRET = "oa-FAKE-SECRET-value-123456"
+MARKER_REL = "docs/releases/growth-e2e-passed.json"
 R: list[dict] = []
 
 
@@ -150,6 +176,13 @@ def setup():
         git("-c", "user.name=e2e", "-c", "user.email=e2e@example.invalid", "commit", "-q", "-m",
             "e2e: start the mock world with no real pending batches")
         git("push", "-q", "origin", "HEAD:main")
+    # The mock world builds several queued libraries in one month; the real
+    # pace limit (1 a month, ₹15 weekly reserve) is pinned by
+    # backend/tests/grow/test_queued_pace.py.
+    g = json.loads((WORK / "config" / "growth.json").read_text())
+    g["max_queued_builds_per_month"] = 3
+    (WORK / "config" / "growth.json").write_text(json.dumps(g, indent=2) + "\n")
+    commit_push("e2e: allow 3 queued builds a month in the mock world", ["config/growth.json"])
     _set_money(650)
 
 
@@ -173,20 +206,51 @@ def sync_main():
     git("reset", "-q", "--hard", "origin/main")
 
 
-def write_marker(results):
-    head = git("rev-parse", "HEAD", cwd=ROOT)
-    m = ROOT / "docs" / "releases" / "growth-e2e-passed.json"
+def tree_without_marker(rev: str = "HEAD", repo: Path = ROOT) -> str:
+    """The git tree of <rev> with the marker file left out (in a temporary
+    index; the repository's own index and working tree are not touched)."""
+    with tempfile.TemporaryDirectory() as td:
+        env = {**os.environ, "GIT_INDEX_FILE": str(Path(td) / "index")}
+        for cmd in (["read-tree", rev], ["rm", "-q", "--cached", "--ignore-unmatch", MARKER_REL]):
+            subprocess.run(["git", *cmd], cwd=repo, env=env, check=True, capture_output=True, text=True)
+        return subprocess.run(["git", "write-tree"], cwd=repo, env=env, check=True, capture_output=True,
+                              text=True).stdout.strip()
+
+
+def verify_marker(rev: str = "HEAD", repo: Path = ROOT) -> tuple[bool, str]:
+    """Does <rev> carry a full-pass marker whose tested tree is <rev>'s own
+    tree (marker left out)?"""
+    r = subprocess.run(["git", "show", f"{rev}:{MARKER_REL}"], cwd=repo, capture_output=True, text=True)
+    if r.returncode:
+        return False, f"{rev} has no {MARKER_REL}"
+    m = json.loads(r.stdout)
+    tree = tree_without_marker(rev, repo)
+    if not (m.get("full") and m.get("failed") == 0):
+        return False, f"the marker is not a full pass: full={m.get('full')} failed={m.get('failed')}"
+    if m.get("tested_tree") != tree:
+        return False, (f"{rev}'s tree (marker left out) is {tree}, the marker's tested tree is "
+                       f"{m.get('tested_tree')}: this content was not the content tested")
+    return True, f"{rev}'s tree (marker left out) {tree} is the tested tree ({m['passed']} checks passed)"
+
+
+def write_marker(results, tested_commit: str):
+    m = ROOT / MARKER_REL
     m.parent.mkdir(parents=True, exist_ok=True)
     m.write_text(json.dumps({
         "what": "tools/grow/e2e_mock.py full run (every publish gate in scenarios 1, 2 and 7), mocked OpenAlex "
                 "and Gemini, temporary ledger and money config, local stand-in for GitHub",
-        "date": time.strftime("%Y-%m-%d"), "tested_commit": head, "full": True,
+        "date": time.strftime("%Y-%m-%d"), "tested_commit": tested_commit,
+        "tested_tree": tree_without_marker(tested_commit),
+        "tested_tree_note": "git tree of tested_commit with this file left out; check a commit with "
+                            "python tools/grow/e2e_mock.py --verify-marker <rev>",
+        "full": True,
         "passed": sum(r["ok"] for r in results), "failed": sum(not r["ok"] for r in results),
         "scenarios": sorted({str(r["scenario"]) for r in results}),
     }, indent=1) + "\n")
 
 
 def main() -> int:
+    tested = git("rev-parse", "HEAD", cwd=ROOT)      # what setup() clones; fixed before anything runs
     setup()
     srv = subprocess.Popen([PY, "tools/qa/serve.py", PORT], cwd=WORK,
                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -222,10 +286,21 @@ def main() -> int:
         submitted = {s: (len(json.loads((WORK / "data/domains" / s / "grow/pending.json").read_text())["entries"])
                          if pend[s] else 0) for s in growing}
         l_before = ledger_inr()
-        r = run_weekly(d, **({} if QUICK else full))
+        nxt = queued0[1] if len(queued0) > 1 else None
+        r = run_weekly(d, **({} if QUICK else full), **({"GROW_FAIL_DRY_GATE": nxt} if nxt else {}))
         it = issue(d)
         after = {s: papers(s) for s in growing}
         new_lib = queued0[0]
+        if nxt:
+            led = json.loads((WORK / "data" / "spend_ledger.json").read_text())["entries"]
+            key = registry()[nxt].get("domain_key") or nxt
+            check(16, registry()[nxt]["status"] == "queued", f"{nxt}: its dry run failed, so it stays queued",
+                  registry()[nxt]["status"])
+            check(16, not any(key in (e.get("stage") or "") or nxt in (e.get("stage") or "") for e in led),
+                  f"₹0 spent on {nxt} (no ledger entry for it)")
+            check(16, "dry run" in r.stdout and nxt in it["body"] and "free dry run failed" in it["body"],
+                  "the run log and the Issue say why it was skipped", it["body"][:300])
+            check(16, r.returncode == 0, "a failed dry run does not fail the week's run", r.stdout[-300:])
         check(2, r.returncode == 0, "week 2 exits 0", r.stdout[-800:])
         check(2, all(after[s] - before[s] == submitted[s] for s in growing),
               "every submitted paper that extracted cleanly was added", (before, after, submitted))
@@ -453,6 +528,73 @@ def main() -> int:
               "nothing spent, submitted or collected")
         check(14, failed in resolved and remote_head(failed) is not None, "branch recorded as resolved and kept")
         check(14, it.get("state") == "closed", "the failed run's Issue is closed", it.get("state"))
+        # 15 self-recovery ----------------------------------------------------
+        sync_main()
+        d1 = "2027-01-04"
+        r = run_weekly(d1, GROW_FAIL_GATE="smoke checks on the build")
+        check(15, r.returncode == 1 and remote_head(f"grow/{d1}") is not None,
+              "a gate fails: grow/<date> branch, site unchanged", r.stdout[-300:])
+        sync_main()
+        d2 = "2027-01-11"
+        m = remote_head()
+        r = run_weekly(d2, GROW_GATES="skip")
+        out = r.stdout
+        resolved = json.loads(sh(["git", "show", "main:data/grow/resolved_branches.json"], cwd=REMOTE).stdout)
+        rec_i = out.find(f"self-recovery: republished grow/{d1}")
+        sub_i = out.find("submit ")
+        check(15, r.returncode == 0 and rec_i >= 0, "the next scheduled run republishes the failed branch",
+              out[-400:])
+        check(15, rec_i >= 0 and (sub_i < 0 or rec_i < sub_i) and rec_i < out.find("collect "),
+              "recovery happens BEFORE any paid step (collect, submit)")
+        check(15, f"grow/{d1}" in resolved["resolved"] and remote_head(f"grow/{d1}") is not None,
+              "the branch is recorded resolved and kept")
+        log = git("log", "--format=%s", f"{m}..main", cwd=REMOTE)
+        check(15, "self-recovery" in log and "Self-recovery" in issue(d2)["body"],
+              "a self-recovery commit on main; the Issue says so", log[:300])
+        # recovery that still fails: no new paid work at all
+        sync_main()
+        d3, d4 = "2027-01-18", "2027-01-25"
+        r = run_weekly(d3, GROW_FAIL_GATE="smoke checks on the build")
+        sync_main()
+        pub_before, jobs0 = public_tree_sha("main"), len(list(MOCKST.glob("*.json")))
+        led_before = sh(["git", "show", "main:data/spend_ledger.json"], cwd=REMOTE).stdout
+        m4 = remote_head()
+        r = run_weekly(d4, GROW_FAIL_GATE="smoke checks on the build")
+        it = issue(d4)
+        check(15, r.returncode == 1 and it["body"].startswith("**Status:** self-recovery failed"),
+              "recovery still fails: the run stops with its own status", it["body"][:200])
+        tail = r.stdout.split("self-recovery FAILED")[-1]
+        paid_fo = [ln for ln in tail.splitlines() if ln.startswith("follow-on ") and "deferred" not in ln]
+        check(15, "self-recovery FAILED" in r.stdout and "submit " not in tail and "collect " not in tail
+              and not paid_fo and len(list(MOCKST.glob("*.json"))) == jobs0,
+              "no API call at all: nothing collected, submitted or checked", paid_fo[:2])
+        check(15, remote_head() == m4 and sh(["git", "show", "main:data/spend_ledger.json"], cwd=REMOTE).stdout
+              == led_before, "₹0: main (and its ledger) untouched")
+        check(15, public_tree_sha("main") == pub_before and remote_head(f"grow/{d4}") is None,
+              "site unchanged and no new branch", r.stdout[-300:])
+        check(15, "smoke checks on the build" in it["body"] and "needs-action" in it["labels"],
+              "the one Issue names the failing gate")
+        sync_main()
+        r = run_weekly("2027-02-01", GROW_GATES="skip")
+        check(15, r.returncode == 0 and f"self-recovery: republished grow/{d3}" in r.stdout,
+              "once the gate passes, the next run recovers by itself", r.stdout[-300:])
+        # 17 main moves underneath a run ----------------------------------------
+        for d, at in (("2027-02-08", "publish"), ("2027-02-15", "checkpoint")):
+            sync_main()
+            r = run_weekly(d, GROW_GATES="skip", GROW_MOCK_MOVE_MAIN=at)
+            sync_main()
+            owner = git("log", "--format=%H", "-1", "--grep", f"cosmetic edit during a run ({at})", "main",
+                        cwd=REMOTE)
+            css = sh(["git", "show", "main:frontend/app/globals.css"], cwd=REMOTE).stdout
+            kept = bool(owner) and sh(["git", "merge-base", "--is-ancestor", owner, "main"], cwd=REMOTE,
+                                      check_=False).returncode == 0
+            check(17, r.returncode == 0 and "main moved underneath" in r.stdout,
+                  f"{at}: push rejected, rebuilt on the new main and pushed", r.stdout[-400:])
+            check(17, kept and f"cosmetic edit during a run ({at})" in css,
+                  f"{at}: the owner's commit stays in main's history (never forced)")
+            if at == "publish":
+                check(17, sh(["git", "cat-file", "-e", f"main:docs/releases/{d}.json"], cwd=REMOTE,
+                             check_=False).returncode == 0, "publish: the run's own release record is on main")
         # 10 --------------------------------------------------------------
         e = env("x", NEXT_PUBLIC_SITE_URL="http://127.0.0.1:9")
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=e)
@@ -475,9 +617,18 @@ def main() -> int:
     n_fail = sum(not x["ok"] for x in R)
     print(f"\ne2e: PASS={len(R) - n_fail} FAIL={n_fail} (logs in {OUT})")
     if not QUICK and n_fail == 0:
-        write_marker(R)
+        if git("rev-parse", "HEAD", cwd=ROOT) != tested:
+            print(f"e2e: HEAD moved during the run (tested {tested}); no marker written")
+            return 1
+        write_marker(R, tested)
+        print(f"e2e: marker written for tree {tree_without_marker(tested)} (commit {tested})")
     return 1 if n_fail else 0
 
 
 if __name__ == "__main__":
+    if "--verify-marker" in sys.argv:
+        i = sys.argv.index("--verify-marker")
+        ok, why = verify_marker(sys.argv[i + 1] if len(sys.argv) > i + 1 else "HEAD")
+        print(("OK: " if ok else "MISMATCH: ") + why)
+        raise SystemExit(0 if ok else 1)
     raise SystemExit(main())

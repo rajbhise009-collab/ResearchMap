@@ -19,10 +19,13 @@ audit) was done when the domain was queued: data/domains/<slug>/.
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 import time
+from pathlib import Path
 
 from backend.app.api import registry
+from backend.app.config import REPO_ROOT
 from backend.app.grow.core import FOLLOWON_WAIT_S, Clients, with_retry
 
 
@@ -92,6 +95,74 @@ def apply_core_scope(lib: dict) -> dict:
     return {"slug": cfg.slug, "kept": len(keep), "excluded_now": moved, "excluded_total": len(out)}
 
 
+# --- pace: how often a new library may be started -------------------------------------
+
+GROWTH_CFG = REPO_ROOT / "config" / "growth.json"
+BUILDS_LOG = REPO_ROOT / "data" / "grow" / "queued_builds.json"
+DEFAULT_MAX_PER_MONTH = 1
+DEFAULT_MIN_WEEKLY_RESERVE_INR = 15.0
+PAD = 1.5                    # the money rule's padding on a projection
+
+
+def pace_config(path: Path | None = None) -> dict:
+    """max_queued_builds_per_month (default 1) and min_weekly_growth_reserve_inr
+    (default 15) from config/growth.json."""
+    p = path or GROWTH_CFG
+    c = json.loads(p.read_text()) if p.exists() else {}
+    return {"max_per_month": int(c.get("max_queued_builds_per_month", DEFAULT_MAX_PER_MONTH)),
+            "min_weekly_reserve_inr": float(c.get("min_weekly_growth_reserve_inr", DEFAULT_MIN_WEEKLY_RESERVE_INR))}
+
+
+def builds_log(path: Path | None = None) -> list[dict]:
+    p = path or BUILDS_LOG
+    return json.loads(p.read_text()).get("started", []) if p.exists() else []
+
+
+def record_start(slug: str, date: str, source: str, path: Path | None = None) -> None:
+    p = path or BUILDS_LOG
+    d = json.loads(p.read_text()) if p.exists() else {"started": []}
+    d.setdefault("started", []).append({"slug": slug, "date": date, "source": source})
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n")
+
+
+def pace_check(*, proj_inr: float, available_inr: float, growth_committed_inr: float, weeks_after: int,
+               ref: dt.date, cfg: dict | None = None, log: list[dict] | None = None) -> dict:
+    """May a queued library be started now, at this pace? (After the money
+    rule says it is affordable.) Two limits, both from config/growth.json:
+
+      - at most max_per_month queued builds STARTED in ref's calendar month;
+      - the money left after it (available - this week's growth commitments
+        - the padded projection) must still fund min_weekly_reserve_inr of
+        growth in each of the weeks_after remaining weeks: a queued build
+        never cuts into that reserve.
+
+    Returns {ok, reason, this_month, left_after_inr, reserve_needed_inr,
+    weekly_growth_after_inr}."""
+    cfg = cfg or pace_config()
+    log = builds_log() if log is None else log
+    month = ref.strftime("%Y-%m")
+    this_month = [e for e in log if str(e.get("date", "")).startswith(month)]
+    left = available_inr - growth_committed_inr - proj_inr * PAD
+    need = cfg["min_weekly_reserve_inr"] * max(0, weeks_after)
+    out = {"this_month": [e["slug"] for e in this_month], "left_after_inr": round(left, 2),
+           "reserve_needed_inr": round(need, 2),
+           "weekly_growth_after_inr": round(left / weeks_after, 2) if weeks_after > 0 else None}
+    if len(this_month) >= cfg["max_per_month"]:
+        return {**out, "ok": False, "blocked_by": "month",
+                "reason": f"{len(this_month)} queued build(s) already started in {month} "
+                                              f"({', '.join(out['this_month'])}); the limit is {cfg['max_per_month']} "
+                                              "per month (config/growth.json max_queued_builds_per_month)"}
+    if left + 1e-9 < need:
+        return {**out, "ok": False, "blocked_by": "reserve",
+                "reason": f"it would leave ₹{left:.2f} after this week, less than the "
+                                              f"₹{cfg['min_weekly_reserve_inr']:.0f}/week growth reserve for the "
+                                              f"{weeks_after} remaining weeks (₹{need:.2f}; config/growth.json "
+                                              "min_weekly_growth_reserve_inr)"}
+    return {**out, "ok": True, "blocked_by": None,
+            "reason": "within the monthly limit and the weekly growth reserve"}
+
+
 def projection_inr(lib: dict) -> float:
     from backend.app.corpus import multi_domain_extract as X
     return float(X.dry_run(_key(lib))["proj_cost_inr"]) / 2      # batch rate
@@ -104,7 +175,13 @@ def start(lib: dict, cl: Clients) -> dict:
     return r
 
 
-def finish(lib: dict, cl: Clients, *, mock: bool = False) -> dict:
+def finish(lib: dict, cl: Clients, *, mock: bool = False, paid_followon: bool = True,
+           why_not: str = "") -> dict:
+    """Collect the library's extraction batch (already paid for when it was
+    submitted), then its follow-on checks (paid: disagreement classification,
+    embeddings, future-work matching, method-lead confirmation). With
+    paid_followon=False only the collection runs; the library stays
+    'building' and its follow-on checks run in a later run."""
     from backend.app.corpus import multi_domain_extract as X
     from backend.app.corpus import multi_domain_reason as R
     from backend.app.corpus.multi_domain_reason_incremental import write_coverage
@@ -122,6 +199,8 @@ def finish(lib: dict, cl: Clients, *, mock: bool = False) -> dict:
             registry.set_status(slug, "queued")
             return {**out, "status": "failed: back in the queue"}
         X._batch_state_path(key).unlink()
+    if not paid_followon:
+        return {**out, "status": f"collected; follow-on checks wait ({why_not or 'no paid work this run'})"}
     exts = R.load_extractions(slug)
     pairs = R.compute_shortlist(exts, use_real_embeddings=True, slug=slug, embed_client=cl.embed)
     try:

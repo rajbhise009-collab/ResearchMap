@@ -1,4 +1,7 @@
 {
   "paused": false,
-  "note": "Set paused to true to stop all weekly growth (no collection, no spending, no publishing). The run still opens its Issue saying it is paused. Set back to false to resume; anything submitted before the pause is collected on the next run."
+  "note": "Set paused to true to stop all weekly growth (no collection, no spending, no publishing). The run still opens its Issue saying it is paused. Set back to false to resume; anything submitted before the pause is collected on the next run.",
+  "max_queued_builds_per_month": 1,
+  "min_weekly_growth_reserve_inr": 15,
+  "queued_note": "A queued (new) library is started at most max_queued_builds_per_month times per calendar month (IST), counted from data/grow/queued_builds.json, and only if the money left afterwards (its padded projection and this week's growth taken out) still funds at least min_weekly_growth_reserve_inr of growth in every remaining week of the horizon. Both are checked after the money rule and before the free dry run."
 }

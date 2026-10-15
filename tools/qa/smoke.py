@@ -4,8 +4,9 @@
 
 Per engine, desktop and iPhone 13: a shared Diet link with no ?lib opens
 Diet; then for EVERY library in libraries.json: its card, one settled search
-with gap results (Diet "alc", ML fairness "fair", LLM calibration "halluc",
-others their most distinctive in-domain title phrase), "melanoma treatment"
+(backend/app/api/search_phrases.smoke_phrase: the hand-picked phrase or a
+generated one, verified against the built index to reach result cards; a
+library showing 3+ results must show gaps for it), "melanoma treatment"
 refused, /gaps lists results, one gap page with its headline and (desktop) a
 working .bib export; axe finds zero serious/critical issues on the home
 page, /gaps and a gap page; no console errors anywhere. Exit 1 on any failure. --quick: Chromium
@@ -33,7 +34,6 @@ def rec(ok, label, detail=""):
 
 LIBS = json.loads((DATA / "libraries.json").read_text())["libraries"]
 FACTS = {l["slug"]: l for l in json.loads((DATA / "site-facts.json").read_text())["libraries"]}
-SETTLED = {"diet-and-mortality": "alc", "ml-fairness": "fair", "llm-calibration": "halluc"}
 
 
 def _lib_dir(lib):
@@ -47,15 +47,13 @@ def _first_gap(lib):
 
 
 def _phrase(slug):
-    """A settled search for a library without a hand-picked one: its most
-    distinctive title phrase that the search answers in_domain."""
+    """The library's settled search, chosen and verified against its built
+    index (backend/app/api/search_phrases.smoke_phrase)."""
     sys.path.insert(0, str(ROOT))
-    from backend.app.api.search_index import search
-    from backend.app.api.search_phrases import INDEX, queries   # stdlib only (no pytest)
-    for q in queries(slug):
-        if search(INDEX[slug], q)["verdict"] == "in_domain":
-            return q
-    return slug.replace("-", " ")
+    from backend.app.api.search_phrases import smoke_phrase   # stdlib only (no pytest)
+    pick = smoke_phrase(slug, FACTS.get(slug, {}).get("results_total", 0))
+    print(f"phrase {slug}: '{pick['query']}' — {pick['reason']}", flush=True)
+    return pick
 
 
 def ctx(p, br, mobile):
@@ -120,7 +118,9 @@ def run(p, base, engine, mobile, axe):
         f"{tag} shared Diet link with no ?lib opens Diet")
     c.close()
     for lib in LIBS:
-        slug, q = lib["slug"], SETTLED.get(lib["slug"]) or _phrase(lib["slug"])
+        slug = lib["slug"]
+        pick = _phrase(slug)
+        q = pick["query"]
         c = ctx(p, br, mobile)
         pg = page(c, errs)
         pg.goto(f"{base}/?lib={slug}")
@@ -131,8 +131,8 @@ def run(p, base, engine, mobile, axe):
         banner = "that's not in this library" in b or "at the edge of this library" in b
         # A small or brand-new library may have few visible results (e.g. all
         # its disagreements still await the owner's audit): gap hits are
-        # required only when it has at least 3.
-        need_gaps = FACTS.get(slug, {}).get("results_total", 0) >= 3
+        # required only when it shows at least 3 (the picker records why).
+        need_gaps = pick["need_gaps"]
         rec(n > 0 and (g > 0 or not need_gaps) and not banner,
             f"{tag} {slug} '{q}' → results" + (" incl. gaps" if need_gaps else ""),
             f"results={n} gaps={g} banner={banner}")

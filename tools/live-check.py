@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Check a deployed ResearchMap site from the outside. Standard library only.
 
-  python3 tools/live-check.py https://researchmap-one.vercel.app
-  python3 tools/live-check.py https://example.org --vercel-host researchmap-one.vercel.app
+  python3 tools/live-check.py                       # the configured site (frontend/site.config.json)
+  python3 tools/live-check.py https://www.research-map.com --vercel-host researchmap-one.vercel.app
 
 Checks (FAIL exits non-zero; WARN and SKIP do not):
   - https works (when the base URL is https)
@@ -14,14 +14,20 @@ Checks (FAIL exits non-zero; WARN and SKIP do not):
   - the Vercel analytics script (WARN only: it 404s until Web Analytics is
     enabled in the Vercel dashboard)
   - redirects to the base URL, when the host resolves (else SKIP):
-    http -> https, www <-> apex, and the *.vercel.app host (--vercel-host)
+    http -> https and www <-> apex
+  - the old *.vercel.app host (--vercel-host): it either redirects to the
+    base URL, or serves the site with its canonical URL on the base host
+    (search engines then credit the domain); anything else FAILs
+Network errors are retried with backoff before a check fails.
 """
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import socket
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -44,9 +50,20 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
 _noredir = urllib.request.build_opener(_NoRedirect)
 
 
-def fetch(url: str, follow: bool = True, timeout: float = 20.0):
-    """(status, headers, body, final_url); status -1 on network error.
-    Redirects (301/302/303/307/308) are followed here, up to 5 hops, so the
+def fetch(url: str, follow: bool = True, timeout: float = 20.0, tries: int = 3):
+    """(status, headers, body, final_url); status -1 on network error, after
+    `tries` attempts with backoff (transient errors do not fail a check)."""
+    for k in range(tries):
+        r = _fetch_once(url, follow, timeout)
+        if r[0] != -1 and r[0] < 500:
+            return r
+        if k < tries - 1:
+            time.sleep(float(os.environ.get("LIVE_CHECK_RETRY_S", "3")) * (2 ** k))
+    return r
+
+
+def _fetch_once(url: str, follow: bool, timeout: float):
+    """Redirects (301/302/303/307/308) are followed here, up to 5 hops, so the
     result does not depend on the Python version's urllib."""
     for _ in range(6):
         req = urllib.request.Request(url, headers=UA)
@@ -100,11 +117,19 @@ def check_page(base: str, path: str, label: str) -> None:
         note("PASS" if ok else "FAIL", f"{label}: og:image returns 200", f"{img} -> {si}")
 
 
+def _site_defaults() -> tuple[str, str]:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from site_url import site_url, vercel_host   # tools/site_url.py (stdlib only)
+    return site_url(), vercel_host()
+
+
 def main(argv: list[str] | None = None) -> int:
+    default_base, default_vercel = _site_defaults()
     ap = argparse.ArgumentParser()
-    ap.add_argument("base")
-    ap.add_argument("--vercel-host", default="researchmap-one.vercel.app",
-                    help="the project's *.vercel.app host; '' to skip that redirect check")
+    ap.add_argument("base", nargs="?", default=default_base,
+                    help=f"the site to check (default: the configured site, {default_base})")
+    ap.add_argument("--vercel-host", default=default_vercel,
+                    help="the project's *.vercel.app host; '' to skip that check")
     a = ap.parse_args(argv)
     base = a.base.rstrip("/")
     u = urllib.parse.urlparse(base)
@@ -151,6 +176,24 @@ def main(argv: list[str] | None = None) -> int:
         ok = st == 200 and final.rstrip("/").startswith(base)
         note("PASS" if ok else "FAIL", label, f"{src} -> {final} ({st})")
 
+    def vercel_check(src: str, base: str) -> None:
+        """The old *.vercel.app address: a redirect to the base URL passes;
+        so does serving the site whose canonical URL is on the base host."""
+        label = "*.vercel.app -> base URL (redirect, or canonical on the base host)"
+        h = host_of(src)
+        if not resolves(h):
+            note("SKIP", label, f"{h} does not resolve")
+            return
+        st, _, body, final = fetch(src)
+        if st == 200 and final.rstrip("/").startswith(base):
+            note("PASS", label, f"{src} redirects to {final}")
+            return
+        canon = re.findall(r'<link rel="canonical" href="([^"]+)"', body)
+        if st == 200 and canon and all(host_of(c) == host_of(base) for c in canon):
+            note("PASS", label, f"{src} serves the site; canonical {canon[0]}")
+            return
+        note("FAIL", label, f"{src} -> {final} ({st}); canonical {canon[:1] or 'missing'}")
+
     if u.scheme == "https":
         redirect_check(f"http://{host}/", "http -> https")
     else:
@@ -165,7 +208,7 @@ def main(argv: list[str] | None = None) -> int:
     elif a.vercel_host.lower() == host:
         note("SKIP", "*.vercel.app redirect", "the base URL is the vercel.app host")
     else:
-        redirect_check(f"https://{a.vercel_host}/", "*.vercel.app -> base URL")
+        vercel_check(f"{u.scheme}://{a.vercel_host}/", base)
 
     fails = sum(1 for s_, _, _ in results if s_ == "FAIL")
     print(f"\n{fails} failed, {sum(1 for s_, _, _ in results if s_ == 'PASS')} passed, "
