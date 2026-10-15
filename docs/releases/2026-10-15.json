@@ -1,0 +1,146 @@
+{
+ "date": "2026-10-15",
+ "parent_commit": "7ff7919f3c9c1b2bd10a5de7685135398530a07c",
+ "libraries": {
+  "llm-calibration": {
+   "papers": 113,
+   "results": 66,
+   "set_aside": 10,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "7f21e33111392ad66f50d9c30db00a5660a9d29dfd1bc696f52798beeb05b809"
+  },
+  "diet-and-mortality": {
+   "papers": 101,
+   "results": 11,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "bb7f1b16e6e4c3c6a8a55efaf396c6206ed48d928dbbde7c5b14cc01cedb37fa"
+  },
+  "ml-fairness": {
+   "papers": 111,
+   "results": 69,
+   "set_aside": 2,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "2ff3c36d2a62460fb86f48ebe3c11b092e5f9ea5573207f62cc8408527163804"
+  },
+  "nudge-effectiveness": {
+   "papers": 42,
+   "results": 7,
+   "set_aside": 0,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "08f0895435d15a70978ec6d89dba02c53d53d5b024253901bee95740760b8a4b"
+  },
+  "social-media-teen-mental-health": {
+   "papers": 106,
+   "results": 31,
+   "set_aside": 6,
+   "flagged_not_checked": 2,
+   "opportunities_sha256": "f14bb93becfb4b124a538a184ebd6a1638d4db8e625781fccb4a9463f8720b98"
+  }
+ },
+ "ledger_inr": 1268.2003,
+ "ledger_cap_inr": 1450.0,
+ "gates": [
+  {
+   "gate": "typecheck",
+   "ok": true
+  },
+  {
+   "gate": "production build (+ consistency before and after)",
+   "ok": true
+  },
+  {
+   "gate": "full tests",
+   "ok": true
+  },
+  {
+   "gate": "docs check",
+   "ok": true
+  },
+  {
+   "gate": "consistency script",
+   "ok": true
+  },
+  {
+   "gate": "banned-phrase tests",
+   "ok": true
+  },
+  {
+   "gate": "search regression suite",
+   "ok": true
+  },
+  {
+   "gate": "hardening tests (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "browser hunt (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "smoke checks on the build",
+   "ok": true
+  }
+ ],
+ "results_changed": {
+  "llm-calibration": {
+   "shown_before": 66,
+   "shown_after": 66,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "diet-and-mortality": {
+   "shown_before": 11,
+   "shown_after": 11,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "ml-fairness": {
+   "shown_before": 65,
+   "shown_after": 69,
+   "removed_shown": [
+    {
+     "id": "opp-ml-fairness-orphan-openalex-w3203106571-f1",
+     "headline": "Develop frameworks for evaluating and auditing algorithmic fairness solutions in real-world, dynamic organizational contexts rather than relying on synthetic or decontextualized benchmark datasets.",
+     "reason": "open question answered: the later paper W7221350550 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)"
+    },
+    {
+     "id": "opp-ml-fairness-orphan-openalex-w4402747641-f4",
+     "headline": "Investigate recruiter-algorithm interaction dynamics and human screening workflows to inform more granular fairness metrics.",
+     "reason": "open question answered: the later paper W7221166090 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)"
+    }
+   ],
+   "removed_not_shown": [
+    {
+     "id": "opp-ml-fairness-hole-w1988368118-w2892038960",
+     "headline": "\u201cLocal techniques for conditional discrimination\u201d might solve a problem reported by \u201cFairness through Causal Awareness\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2963174898-w4220718380",
+     "headline": "\u201cProbabilistic Convex Optimization Pre-Processing\u201d might solve a problem reported by \u201cEvaluation and Mitigation of Racial Bias in Clinical Machine Learning Models: Scoping Review\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    }
+   ],
+   "verdict_changed": []
+  },
+  "nudge-effectiveness": {
+   "shown_before": 0,
+   "shown_after": 7,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "social-media-teen-mental-health": {
+   "shown_before": 31,
+   "shown_after": 31,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  }
+ }
+}

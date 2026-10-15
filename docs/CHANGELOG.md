@@ -2,6 +2,17 @@
 
 One entry per weekly growth run (newest first).
 
+## 2026-10-15 (republished grow/2026-10-12)
+
+- diet-and-mortality: results shown 11 -> 11 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- ml-fairness: results shown 65 -> 69 (+6 new, -2 no longer shown); 0 flagged disagreements (not yet checked); 2 set-aside item(s) dropped (never shown)
+-   - no longer shown: opp-ml-fairness-orphan-openalex-w3203106571-f1 — open question answered: the later paper W7221350550 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)
+-   - no longer shown: opp-ml-fairness-orphan-openalex-w4402747641-f4 — open question answered: the later paper W7221166090 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w1988368118-w2892038960 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2963174898-w4220718380 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+- nudge-effectiveness: results shown 0 -> 7 (+7 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- social-media-teen-mental-health: results shown 31 -> 31 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+
 ## 2026-10-12
 
 - diet-and-mortality: 0 papers added

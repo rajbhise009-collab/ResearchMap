@@ -8,6 +8,10 @@
   "grow/2026-10-10": {
    "date": "2026-10-10",
    "reason": "republished to main on 2026-10-10 by the zero-spend republish mode (every gate passed; branch kept, never deleted)"
+  },
+  "grow/2026-10-12": {
+   "date": "2026-10-15",
+   "reason": "republished to main on 2026-10-15 by the zero-spend republish mode (every gate passed; branch kept, never deleted)"
   }
  }
 }

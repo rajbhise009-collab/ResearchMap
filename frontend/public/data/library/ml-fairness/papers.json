@@ -1,5 +1,5 @@
 {
-  "total": 109,
+  "total": 111,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1199,6 +1199,28 @@
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7221166090",
+      "wid": "W7221166090",
+      "title": "Impact of Artificial Intelligence on Recruitment and Selection",
+      "year": 2026,
+      "doi": "https://doi.org/10.48175/ijarsct-38760",
+      "venue": "International Journal of Advanced Research in Science Communication and Technology",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221350550",
+      "wid": "W7221350550",
+      "title": "Reframing machine learning and fairness in organizations and recruitment",
+      "year": 2026,
+      "doi": "https://doi.org/10.1080/01972243.2026.2741804",
+      "venue": "The Information Society",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
     }
   ]
 }
