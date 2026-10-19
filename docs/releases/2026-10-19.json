@@ -1,0 +1,135 @@
+{
+ "date": "2026-10-19",
+ "parent_commit": "e5748cf90e8348488e9e2c921bca8860e9776c5e",
+ "libraries": {
+  "llm-calibration": {
+   "papers": 113,
+   "results": 66,
+   "set_aside": 10,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "7f21e33111392ad66f50d9c30db00a5660a9d29dfd1bc696f52798beeb05b809"
+  },
+  "diet-and-mortality": {
+   "papers": 101,
+   "results": 11,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "bb7f1b16e6e4c3c6a8a55efaf396c6206ed48d928dbbde7c5b14cc01cedb37fa"
+  },
+  "ml-fairness": {
+   "papers": 112,
+   "results": 70,
+   "set_aside": 6,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "498351924b9d6e0330c8e8714712370d4cc107a788b515b213c1a4113d26f2cf"
+  },
+  "nudge-effectiveness": {
+   "papers": 44,
+   "results": 7,
+   "set_aside": 0,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "d1f9ab432b0b26726c4aad0e648bc5d43e3fe351d0679fcb11bf9c2fff74a6d1"
+  },
+  "social-media-teen-mental-health": {
+   "papers": 106,
+   "results": 31,
+   "set_aside": 6,
+   "flagged_not_checked": 2,
+   "opportunities_sha256": "f14bb93becfb4b124a538a184ebd6a1638d4db8e625781fccb4a9463f8720b98"
+  }
+ },
+ "ledger_inr": 1273.4376,
+ "ledger_cap_inr": 1450.0,
+ "gates": [
+  {
+   "gate": "typecheck",
+   "ok": true
+  },
+  {
+   "gate": "production build (+ consistency before and after)",
+   "ok": true
+  },
+  {
+   "gate": "full tests",
+   "ok": true
+  },
+  {
+   "gate": "docs check",
+   "ok": true
+  },
+  {
+   "gate": "consistency script",
+   "ok": true
+  },
+  {
+   "gate": "banned-phrase tests",
+   "ok": true
+  },
+  {
+   "gate": "search regression suite",
+   "ok": true
+  },
+  {
+   "gate": "hardening tests (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "browser hunt (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "smoke checks on the build",
+   "ok": true
+  }
+ ],
+ "results_changed": {
+  "llm-calibration": {
+   "shown_before": 66,
+   "shown_after": 66,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "diet-and-mortality": {
+   "shown_before": 11,
+   "shown_after": 11,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "ml-fairness": {
+   "shown_before": 69,
+   "shown_after": 70,
+   "removed_shown": [],
+   "removed_not_shown": [
+    {
+     "id": "opp-ml-fairness-hole-w2157928966-w4288414189",
+     "headline": "\u201cData Massaging for Non-Discrimination\u201d might solve a problem reported by \u201cExplaining models\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w4289751798-w3136620301",
+     "headline": "\u201cGeneralized Entropy Unfairness Measurement Framework\u201d might solve a problem reported by \u201cFairness perceptions of algorithmic decision-making: A systematic review of the empirical literature\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    }
+   ],
+   "verdict_changed": []
+  },
+  "nudge-effectiveness": {
+   "shown_before": 7,
+   "shown_after": 7,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "social-media-teen-mental-health": {
+   "shown_before": 31,
+   "shown_after": 31,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  }
+ }
+}

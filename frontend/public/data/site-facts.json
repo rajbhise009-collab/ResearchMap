@@ -127,13 +127,13 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "built": "2026-10-12",
+      "built": "2026-10-19",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 111,
-      "claims_read": 111,
+      "papers": 112,
+      "claims_read": 112,
       "full_text": 56,
-      "abstract_only": 55,
-      "gap_cards": 69,
+      "abstract_only": 56,
+      "gap_cards": 70,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -155,16 +155,16 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 68,
+          "count": 69,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 69,
-      "set_aside_total": 2,
+      "results_total": 70,
+      "set_aside_total": 6,
       "growth": {
         "grows": true,
-        "added": 12,
+        "added": 13,
         "last_added": "2026-10-12"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (94 pairs); pairs worded differently are never compared.",
@@ -190,10 +190,10 @@
       "blurb": "Whether defaults, reminders, social-norm messages and other changes to how choices are presented change what people do, and how large those effects really are.",
       "built": null,
       "built_basis": null,
-      "papers": 42,
-      "claims_read": 42,
+      "papers": 44,
+      "claims_read": 44,
       "full_text": 12,
-      "abstract_only": 30,
+      "abstract_only": 32,
       "gap_cards": 7,
       "results": [
         {
@@ -225,14 +225,14 @@
       "set_aside_total": 0,
       "growth": {
         "grows": true,
-        "added": 0,
-        "last_added": null
+        "added": 2,
+        "last_added": "2026-10-12"
       },
-      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (19 pairs); pairs worded differently are never compared.",
+      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (23 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {
-        "shortlisted": 19,
-        "classified": 19,
+        "shortlisted": 23,
+        "classified": 23,
         "flagged": 0,
         "hand_checked": 0,
         "confirmed": 0,

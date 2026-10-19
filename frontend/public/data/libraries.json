@@ -30,7 +30,7 @@
       "is_default": false,
       "not_advice_note": null,
       "health_adjacent": false,
-      "n_papers": 111,
+      "n_papers": 112,
       "snapshot_path": "/data/library/ml-fairness"
     },
     {
@@ -41,7 +41,7 @@
       "is_default": false,
       "not_advice_note": "Research-literature analysis, not policy or professional advice.",
       "health_adjacent": false,
-      "n_papers": 42,
+      "n_papers": 44,
       "snapshot_path": "/data/library/nudge-effectiveness"
     },
     {

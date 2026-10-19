@@ -16,8 +16,8 @@ and produced zero".
 |:--|--:|--:|:--|--:|--:|:--|:--|
 | llm-calibration | 113 | 113 (100%) | 437 / 437 pairs | 0 (of 2 flagged) | 1 | 63 | 12 (2 substantive) |
 | diet-and-mortality | 101 | 101 (100%) | 152 / 152 pairs | 5 (of 10 flagged) | 2 | 4 | 0 (0 substantive) |
-| ml-fairness | 111 | 111 (100%) | 94 / 94 pairs | 0 | 1 | 68 | 2 (0 substantive) |
-| nudge-effectiveness | 42 | 42 (100%) | 19 / 19 pairs | 0 | 0 | 7 | 0 (0 substantive) |
+| ml-fairness | 112 | 112 (100%) | 94 / 94 pairs | 0 | 1 | 69 | 6 (0 substantive) |
+| nudge-effectiveness | 44 | 44 (100%) | 23 / 23 pairs | 0 | 0 | 7 | 0 (0 substantive) |
 | social-media-teen-mental-health | 106 | 105 (99%) | 214 / 214 pairs | 2 (of 8 flagged) | 4 | 25 | 0 (0 substantive) |
 <!-- /gen:scorer-status -->
 

@@ -1,42 +1,42 @@
 {
-  "papers": 42,
+  "papers": 44,
   "full_text": 12,
-  "abstract_only": 30,
-  "n_extractions": 42,
-  "extraction_coverage_note": "Claims read from 42 of 42 papers.",
+  "abstract_only": 32,
+  "n_extractions": 44,
+  "extraction_coverage_note": "Claims read from 44 of 44 papers.",
   "zero_finding_note": "Zero here means none were found among the papers read. It does not mean none exist.",
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [],
   "disagreement_check": {
-    "shortlist_pairs": 19,
-    "classified_pairs": 19,
+    "shortlist_pairs": 23,
+    "classified_pairs": 23,
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
-    "date": "2026-10-12",
+    "date": "2026-10-19",
     "shortlist_settings": {
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 42
+    "papers_covered": 44
   },
   "extraction_coverage_share": 1.0,
   "assertion_strength": {
-    "total_claims": 250,
+    "total_claims": 260,
     "distribution": {
-      "firm": 244,
+      "firm": 254,
       "hedged": 6
     },
-    "firm_share": 0.976,
-    "hedged_share": 0.024
+    "firm_share": 0.9769230769230769,
+    "hedged_share": 0.023076923076923078
   },
   "gap_type_counts": {
-    "n_papers": 42,
-    "n_limitations": 76,
+    "n_papers": 44,
+    "n_limitations": 79,
     "limitation_categories": {
+      "ecological-validity": 3,
       "scope-restriction": 2,
       "sample-representativeness": 2,
-      "ecological-validity": 2,
       "inconsistent-field-effectiveness": 1,
       "lack-of-randomized-trials": 1,
       "scarcity-of-interventions": 1,
@@ -106,9 +106,11 @@
       "rational-choice-inadequacy": 1,
       "lack-of-theoretical-model": 1,
       "lack-of-normative-framework": 1,
-      "architect-cognitive-bias": 1
+      "architect-cognitive-bias": 1,
+      "study-design": 1,
+      "sample-generalizability": 1
     },
-    "n_future_work_items": 47
+    "n_future_work_items": 49
   },
   "n_confirmed_contradictions": 0,
   "raw_flagged_contradictions": 0,
@@ -128,9 +130,9 @@
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 35,
+  "core": 37,
   "peripheral": 7,
   "manifest_hash": null,
   "relationships": 0,
-  "note": "Multi-domain library \u2014 claims extracted from 42 of 42 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 44 of 44 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

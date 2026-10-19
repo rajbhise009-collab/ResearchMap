@@ -1,5 +1,5 @@
 {
-  "total": 42,
+  "total": 44,
   "items": [
     {
       "paper_id": "https://openalex.org/W1481908410",
@@ -460,6 +460,28 @@
       "doi": "https://doi.org/10.1177/0956797609355572",
       "venue": "Psychological Science",
       "domain_centrality": "peripheral",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7220837300",
+      "wid": "W7220837300",
+      "title": "Opting out of Voter Registration: An Analysis of Statewide Automatic Voter Registration Policies in the United States (2012-2024)",
+      "year": 2026,
+      "doi": "https://doi.org/10.1177/1532673x261493513",
+      "venue": "American Politics Research",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7220978122",
+      "wid": "W7220978122",
+      "title": "\u201cHealth Is in the Air\u201d: Visual and Olfactory Nudges and Food Choices at University Vending Machines",
+      "year": 2026,
+      "doi": "https://doi.org/10.3390/nu18193292",
+      "venue": "Nutrients",
+      "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
     }

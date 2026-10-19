@@ -1,5 +1,5 @@
 {
-  "total": 111,
+  "total": 112,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1218,6 +1218,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.1080/01972243.2026.2741804",
       "venue": "The Information Society",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221439909",
+      "wid": "W7221439909",
+      "title": "Algorithmic Empowerment: The Fair Allocation of Visibility in Platformized Publics",
+      "year": 2026,
+      "doi": "https://doi.org/10.1177/29777984261494012",
+      "venue": "Media Technology and Governance",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
