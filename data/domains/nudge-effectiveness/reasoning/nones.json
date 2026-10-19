@@ -1,5 +1,5 @@
 {
-  "n": 10,
+  "n": 14,
   "items": [
     {
       "from_claim_id": "openalex:W2576088228:c2",
@@ -100,6 +100,46 @@
       "b_paper_id": "openalex:W3125531654",
       "b_text": "Designating an option as the default increases the frequency with which it is chosen relative to non-default options.",
       "explanation": "Claim B asserts the existence of the default effect, whereas Claim A identifies an underlying psychological mechanism (reference dependence) without directly reinforcing or contradicting the behavioral outcome."
+    },
+    {
+      "from_claim_id": "openalex:W2143855644:c2",
+      "to_claim_id": "openalex:W7220978122:c3",
+      "similarity": 0.8180035352706909,
+      "a_paper_id": "openalex:W2143855644",
+      "a_text": "In the lab study, shelf display location (top versus bottom) had no significant effect on healthy snack choice.",
+      "b_paper_id": "openalex:W7220978122",
+      "b_text": "Purchases of products classified as healthy during the visual condition did not differ significantly from the control condition.",
+      "explanation": "The claims evaluate distinct choice architecture interventions (shelf height placement versus a visual prompt condition), so neither directly supports nor contradicts the other."
+    },
+    {
+      "from_claim_id": "openalex:W2143855644:c3",
+      "to_claim_id": "openalex:W7220978122:c3",
+      "similarity": 0.817793607711792,
+      "a_paper_id": "openalex:W2143855644",
+      "a_text": "In the lab study, there was no significant interaction effect between shelf arrangement and assortment structure on healthy snack choice.",
+      "b_paper_id": "openalex:W7220978122",
+      "b_text": "Purchases of products classified as healthy during the visual condition did not differ significantly from the control condition.",
+      "explanation": "The claims evaluate null effects of different nudge interventions (interaction between shelf arrangement and assortment structure versus a visual condition against a control) on healthy food choices."
+    },
+    {
+      "from_claim_id": "openalex:W2143855644:c6",
+      "to_claim_id": "openalex:W7220978122:c3",
+      "similarity": 0.8081238865852356,
+      "a_paper_id": "openalex:W2143855644",
+      "a_text": "In the field study, snack display manipulations had no significant main or interactive effects on the sales of unhealthy snacks or total snacks.",
+      "b_paper_id": "openalex:W7220978122",
+      "b_text": "Purchases of products classified as healthy during the visual condition did not differ significantly from the control condition.",
+      "explanation": "The claims evaluate the effects of display or visual nudges on different product categories (unhealthy/total snacks versus healthy products), addressing distinct outcomes rather than reinforcing or contradicting each other."
+    },
+    {
+      "from_claim_id": "openalex:W2346094809:c3",
+      "to_claim_id": "openalex:W7220978122:c3",
+      "similarity": 0.8080753087997437,
+      "a_paper_id": "openalex:W2346094809",
+      "a_text": "There was no difference in the sales of healthy products between the nudge condition and the nudge plus disclosure condition.",
+      "b_paper_id": "openalex:W7220978122",
+      "b_text": "Purchases of products classified as healthy during the visual condition did not differ significantly from the control condition.",
+      "explanation": "The claims evaluate entirely different experimental comparisons (nudge versus nudge plus disclosure, compared to a visual nudge versus control), representing distinct interventions rather than a shared finding."
     }
   ]
 }

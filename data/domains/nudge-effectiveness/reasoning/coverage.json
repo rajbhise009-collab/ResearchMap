@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-12",
-  "n_papers_in_check": 42,
+  "date": "2026-10-19",
+  "n_papers_in_check": 44,
   "paper_ids": [
     "openalex:W1481908410",
     "openalex:W1497087006",
@@ -43,10 +43,12 @@
     "openalex:W3125531654",
     "openalex:W3182583425",
     "openalex:W3190969019",
-    "openalex:W4377115728"
+    "openalex:W4377115728",
+    "openalex:W7220837300",
+    "openalex:W7220978122"
   ],
-  "shortlist_pairs": 19,
-  "classified_pairs": 19,
+  "shortlist_pairs": 23,
+  "classified_pairs": 23,
   "unclassified_pairs": 0,
   "papers_with_pending_pairs": 0,
   "pending_paper_ids": [],
@@ -55,5 +57,5 @@
     "threshold": 0.8,
     "max_per_claim": 2
   },
-  "note": "built by the weekly workflow (backend/app/grow/queued.py)"
+  "note": "updated by the weekly growth run"
 }

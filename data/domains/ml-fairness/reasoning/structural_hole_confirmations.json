@@ -118,5 +118,55 @@
     "b_pid": "openalex:W4288414189",
     "method": "Data Massaging for Non-Discrimination",
     "limitation": "The study was conducted with crowdworkers rather than judges or domain experts who would be actual users of algorithmic recidivism prediction tools."
+  },
+  "opp:hole:W2974817986->W4386712902": {
+    "verdict": "not_addressing",
+    "reason": "A software toolkit for algorithmic bias detection and mitigation does not address a survey paper's limitation regarding the generalizability of findings across diverse literature.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2974817986",
+    "b_pid": "openalex:W4386712902",
+    "method": "AI Fairness 360 (AIF360)",
+    "limitation": "Research nuances, sample sizes, and contextual factors across the reviewed literature may affect the generalizability of the findings."
+  },
+  "opp:hole:W2809878087->W4220718380": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's method of demonstrating algorithmic fairness definitions on a unified case study does not address Paper B's limitation regarding literature search strategy and vocabulary heterogeneity in a scoping review.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2809878087",
+    "b_pid": "openalex:W4220718380",
+    "method": "Unifying Case Study Demonstration",
+    "limitation": "The search strategy may have overlooked relevant publications due to the heterogeneity of terminology used to describe machine learning and racial bias."
+  },
+  "opp:hole:W3101206394->W4220718380": {
+    "verdict": "not_addressing",
+    "reason": "A taxonomic conceptual synthesis of fairness definitions does not address the information retrieval limitation of vocabulary heterogeneity in a scoping review's search strategy.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W3101206394",
+    "b_pid": "openalex:W4220718380",
+    "method": "Taxonomic Conceptual Synthesis",
+    "limitation": "The search strategy may have overlooked relevant publications due to the heterogeneity of terminology used to describe machine learning and racial bias."
+  },
+  "opp:hole:W2902802452->W4220718380": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's technical framework for distributive justice in clinical machine learning cannot resolve Paper B's scoping review limitation concerning literature search terms and publication retrieval.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2902802452",
+    "b_pid": "openalex:W4220718380",
+    "method": "Distributive Justice Framework for Clinical ML",
+    "limitation": "The search strategy may have overlooked relevant publications due to the heterogeneity of terminology used to describe machine learning and racial bias."
+  },
+  "opp:hole:W2809878087->W4386712902": {
+    "verdict": "not_addressing",
+    "reason": "Demonstrating fairness definitions on a single unifying case study does not resolve the generalizability issues stemming from disparate research nuances and sample sizes across the reviewed literature.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2809878087",
+    "b_pid": "openalex:W4386712902",
+    "method": "Unifying Case Study Demonstration",
+    "limitation": "Research nuances, sample sizes, and contextual factors across the reviewed literature may affect the generalizability of the findings."
   }
 }

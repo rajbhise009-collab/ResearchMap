@@ -1,0 +1,97 @@
+{
+  "paper_id": "openalex:W7220837300",
+  "claims": [
+    {
+      "id": "openalex:W7220837300:c1",
+      "paper_id": "openalex:W7220837300",
+      "text": "Automatic Voter Registration (AVR) increases voter registration by 1.8 percentage points among the full electorate.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220837300:c2",
+      "paper_id": "openalex:W7220837300",
+      "text": "Automatic Voter Registration (AVR) increases voter registration by 3.5 percentage points among young voters.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220837300:c3",
+      "paper_id": "openalex:W7220837300",
+      "text": "Automatic Voter Registration (AVR) does not impact individual-level turnout.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220837300:c4",
+      "paper_id": "openalex:W7220837300",
+      "text": "Implementation of an AVR policy is not associated with an increase in voter registration for individuals who moved within the past year.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220837300:c5",
+      "paper_id": "openalex:W7220837300",
+      "text": "Implementation of an AVR policy is not associated with an increase in turnout for individuals who moved within the past year.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220837300:e1",
+      "claim_id": "openalex:W7220837300:c1",
+      "description": "Difference in difference estimates suggest that AVR increases registration by 1.8 percentage points among the full electorate.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220837300:e2",
+      "claim_id": "openalex:W7220837300:c2",
+      "description": "Difference in difference estimates indicate AVR increases registration by 3.5 percentage points among young voters.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220837300:e3",
+      "claim_id": "openalex:W7220837300:c3",
+      "description": "Difference in difference estimates show AVR does not impact individual-level turnout.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220837300:e4",
+      "claim_id": "openalex:W7220837300:c4",
+      "description": "The implementation of an AVR policy is not associated with an increase in registration for those who have moved within the past year.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7220837300:e5",
+      "claim_id": "openalex:W7220837300:c5",
+      "description": "The implementation of an AVR policy is not associated with an increase in turnout for those who have moved within the past year.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220837300:m1",
+      "paper_id": "openalex:W7220837300",
+      "name": "Difference-in-differences estimation",
+      "description": "Evaluated the impact of statewide opt-out AVR policy adoption on registration and turnout across the electorate and subgroups using survey data from 2012 to 2024.",
+      "datasets": [
+        "CES (Cooperative Election Study)",
+        "CPS (Current Population Survey)"
+      ],
+      "conditions": [
+        "United States electorate (2012-2024)",
+        "Adoption of opt-out Automatic Voter Registration (AVR)"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-19T10:58:47.009535Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

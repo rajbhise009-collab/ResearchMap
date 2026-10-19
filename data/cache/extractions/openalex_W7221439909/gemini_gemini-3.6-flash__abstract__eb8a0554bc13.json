@@ -1,0 +1,144 @@
+{
+  "paper_id": "openalex:W7221439909",
+  "claims": [
+    {
+      "id": "openalex:W7221439909:c1",
+      "paper_id": "openalex:W7221439909",
+      "text": "Platforms produce and allocate visibility rather than merely distorting a neutral flow of communication.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221439909:c2",
+      "paper_id": "openalex:W7221439909",
+      "text": "Visibility is defined as the institutionally produced probability that a communicative act will be delivered to an audience.",
+      "type": "theoretical",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221439909:c3",
+      "paper_id": "openalex:W7221439909",
+      "text": "The Algorithmic Empowerment Principle (AEP) articulates platforms' epistemic responsibilities as gatekeepers of public attention.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221439909:c4",
+      "paper_id": "openalex:W7221439909",
+      "text": "The Algorithmic Empowerment Principle holds that platforms with gatekeeping power owe structurally disadvantaged groups a fair opportunity for epistemic participation.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221439909:c5",
+      "paper_id": "openalex:W7221439909",
+      "text": "When background inequality measurably reduces a group's fair chance to reach an audience, platforms should allocate a reasonable additional share of algorithmic attention to its speech.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221439909:c6",
+      "paper_id": "openalex:W7221439909",
+      "text": "Duties of epistemic redress govern platform ranking design.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221439909:c7",
+      "paper_id": "openalex:W7221439909",
+      "text": "Duties of epistemic redress include visibility audits.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221439909:c8",
+      "paper_id": "openalex:W7221439909",
+      "text": "Duties of epistemic redress require platforms to justify their choices to affected communities.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221439909:e1",
+      "claim_id": "openalex:W7221439909:c1",
+      "description": "\"This article argues that platforms produce and allocate visibility...\"",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221439909:e2",
+      "claim_id": "openalex:W7221439909:c2",
+      "description": "\"...visibility, defined as the institutionally produced probability that a communicative act will be delivered to an audience.\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221439909:e3",
+      "claim_id": "openalex:W7221439909:c3",
+      "description": "\"Drawing on scholarship on epistemic injustice, the article develops the Algorithmic Empowerment Principle (AEP) to articulate platforms’ epistemic responsibilities as gatekeepers of public attention.\"",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221439909:e4",
+      "claim_id": "openalex:W7221439909:c4",
+      "description": "\"The AEP holds that platforms with gatekeeping power owe structurally disadvantaged groups a fair opportunity for epistemic participation.\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221439909:e5",
+      "claim_id": "openalex:W7221439909:c5",
+      "description": "\"When background inequality measurably reduces a group's fair chance to reach an audience, platforms should allocate a reasonable additional share of algorithmic attention to its speech.\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221439909:e6",
+      "claim_id": "openalex:W7221439909:c6",
+      "description": "\"The article then develops duties of epistemic redress covering ranking design...\"",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221439909:e7",
+      "claim_id": "openalex:W7221439909:c7",
+      "description": "\"...and visibility audits...\"",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221439909:e8",
+      "claim_id": "openalex:W7221439909:c8",
+      "description": "\"...while requiring platforms to justify their choices to affected communities.\"",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221439909:m1",
+      "paper_id": "openalex:W7221439909",
+      "name": "Algorithmic Empowerment Principle (AEP)",
+      "description": "A normative framework based on epistemic injustice scholarship delineating platforms' epistemic duties to allocate additional visibility to structurally disadvantaged groups.",
+      "datasets": [],
+      "conditions": [
+        "platforms with gatekeeping power",
+        "background inequality measurably reducing a group's fair chance to reach an audience"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221439909:l1",
+      "paper_id": "openalex:W7221439909",
+      "text": "Much algorithmic fairness scholarship relies on the language of noninterference, evaluating platforms primarily by whether they distort an assumed neutral flow of communication.",
+      "normalized_category": "narrow-theoretical-framing",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-19T10:58:46.600704Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

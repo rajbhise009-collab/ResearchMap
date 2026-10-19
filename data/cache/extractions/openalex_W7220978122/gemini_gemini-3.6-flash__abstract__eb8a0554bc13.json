@@ -1,0 +1,132 @@
+{
+  "paper_id": "openalex:W7220978122",
+  "claims": [
+    {
+      "id": "openalex:W7220978122:c1",
+      "paper_id": "openalex:W7220978122",
+      "text": "Products classified as healthy were purchased more frequently during the olfactory condition compared to the control condition.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220978122:c2",
+      "paper_id": "openalex:W7220978122",
+      "text": "Products classified as healthy were purchased more frequently during the olfactory condition compared to the visual condition.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220978122:c3",
+      "paper_id": "openalex:W7220978122",
+      "text": "Purchases of products classified as healthy during the visual condition did not differ significantly from the control condition.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220978122:c4",
+      "paper_id": "openalex:W7220978122",
+      "text": "Higher product prices were associated with lower odds of purchasing a product classified as healthy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7220978122:c5",
+      "paper_id": "openalex:W7220978122",
+      "text": "Time of day was not significantly associated with purchasing choices of healthy versus non-healthy products.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7220978122:e1",
+      "claim_id": "openalex:W7220978122:c1",
+      "description": "Among N = 1043 purchases, products classified as healthy were more frequent during the olfactory week than during the control week.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220978122:e2",
+      "claim_id": "openalex:W7220978122:c2",
+      "description": "Among N = 1043 purchases, products classified as healthy were more frequent during the olfactory week than during the visual week.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220978122:e3",
+      "claim_id": "openalex:W7220978122:c3",
+      "description": "The visual condition did not differ significantly from control.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220978122:e4",
+      "claim_id": "openalex:W7220978122:c4",
+      "description": "Higher prices were associated with lower odds of purchasing a product classified as healthy in binary logistic regression analysis.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7220978122:e5",
+      "claim_id": "openalex:W7220978122:c5",
+      "description": "Time of day was not significantly associated with purchasing behavior in the logistic regression model.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7220978122:m1",
+      "paper_id": "openalex:W7220978122",
+      "name": "Quasi-experimental field sensory nudging intervention",
+      "description": "Field study tracking university vending machine purchases across three consecutive one-week sensory cue conditions, analyzed with binary logistic regression incorporating price and time of day.",
+      "datasets": [
+        "Vending machine transaction logs (N = 1043 purchases)"
+      ],
+      "conditions": [
+        "control",
+        "visual (nature-themed poster)",
+        "olfactory (jasmine fragrance)"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7220978122:l1",
+      "paper_id": "openalex:W7220978122",
+      "text": "Much of existing evidence on sensory cues and food choice is derived from laboratory studies, leaving everyday settings underexplored.",
+      "normalized_category": "ecological-validity",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7220978122:l2",
+      "paper_id": "openalex:W7220978122",
+      "text": "The study relied on a quasi-experimental consecutive-week design rather than a randomized or counterbalanced design.",
+      "normalized_category": "study-design",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7220978122:l3",
+      "paper_id": "openalex:W7220978122",
+      "text": "The intervention was conducted only within a university vending-machine environment, limiting generalizability across diverse real-world food-choice settings.",
+      "normalized_category": "sample-generalizability",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7220978122:f1",
+      "paper_id": "openalex:W7220978122",
+      "text": "Confirming the sensory nudging findings using randomized or counterbalanced experimental designs.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7220978122:f2",
+      "paper_id": "openalex:W7220978122",
+      "text": "Replicating sensory cue interventions across diverse real-world food-choice settings beyond university contexts.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-19T10:58:47.009978Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
