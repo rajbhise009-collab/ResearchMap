@@ -1,0 +1,1236 @@
+{
+ "batch_id": "fvsbcgtqlkea5ximhshmmnx3ws4c3qidwhyr",
+ "slug": "ml-fairness",
+ "submitted_on": "2026-10-19",
+ "submitted_at": 1792408107.8811314,
+ "projected_inr": 0.929628,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7221598232": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7221598232",
+   "openalex_id": "https://openalex.org/W7221598232",
+   "title": "Pareto optimization of textual and engagement features for crime-related social media analytics",
+   "year": 2026,
+   "doi": "https://doi.org/10.1177/18758967261496722",
+   "venue": "Journal of Intelligent & Fuzzy Systems",
+   "field": "computer science",
+   "cited_by_count": 0,
+   "abstract": "Crime-related social media content provides valuable information for situational awareness and policy support; however, engagement-driven signals, such as likes and retweets, can introduce popularity bias and affect predictive outcomes. This study proposes a fairness-aware, Pareto-based, multi-objective optimization framework for feature selection and Random Forest hyperparameter optimization, leveraging textual and engagement features. A dataset of 32,000 crime-related tweets covering Fraud, Accident, and Murder was represented using TF-IDF and interaction-based features. Four optimization strategies, Particle Swarm Optimization (PSO), Ant Colony Optimization (ACO), Evolutionary Reinforcement Learning (ERL), and Non-Dominated Sorting Genetic Algorithm II (NSGA-II), were comparatively evaluated. NSGA-II jointly maximized classification performance while minimizing a fairness penalty based on Statistical Parity Difference (SPD), Disparate Impact (DI), and Equality of Opportunity Difference (EOD). In this study, fairness refers to mitigating engagement-driven popularity bias across behavioral user groups rather than demographic discrimination. NSGA-II achieved an accuracy of 0.8118 and an F1-score of 0.8051, with an SPD of 0.08, DI of 0.97, and EOD of 0.06, demonstrating the most favorable balance between predictive performance and behavioral fairness. Although removing engagement features improved standalone Accuracy and F1-score, retaining them enabled explicit assessment and mitigation of engagement-driven bias. Stratified cross-validation and comparative analysis across the optimization strategies further supported the consistency of the observed results. The findings demonstrate that integrating fairness objectives directly into Pareto-based optimization provides a practical and interpretable approach to balancing predictive effectiveness and engagement-driven fairness in crime-related social media analytics.",
+   "label": "on-domain",
+   "rationale": "strong in-domain term: 'disparate impact'; core scope: same sentence: fairness 'bias' + algorithmic 'predict'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-19",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7221598232",
+   "doi": "https://doi.org/10.1177/18758967261496722",
+   "title": "Pareto optimization of textual and engagement features for crime-related social media analytics",
+   "display_name": "Pareto optimization of textual and engagement features for crime-related social media analytics",
+   "publication_year": 2026,
+   "publication_date": "2026-10-13",
+   "ids": {
+    "openalex": "https://openalex.org/W7221598232",
+    "doi": "https://doi.org/10.1177/18758967261496722"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1177/18758967261496722",
+    "doi": "https://doi.org/10.1177/18758967261496722",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1177/18758967261496722",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S179157397",
+     "display_name": "Journal of Intelligent & Fuzzy Systems",
+     "issn_l": "1064-1246",
+     "issn": [
+      "1064-1246",
+      "1875-8967"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "anvur-scientific",
+      "cwts-core",
+      "poland-70",
+      "russia-white-list-2"
+     ],
+     "host_organization": "https://openalex.org/P4310318577",
+     "host_organization_name": "IOS Press",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310318577"
+     ],
+     "host_organization_lineage_names": [
+      "IOS Press"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of Intelligent &amp; Fuzzy Systems: Applications in Engineering and Technology",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5027408239",
+      "display_name": "Elizabeth Leah George",
+      "orcid": "https://orcid.org/0000-0002-2604-4496",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-2604-4496"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I161045824",
+       "display_name": "Avinashilingam University",
+       "ror": "https://ror.org/05dxzqa20",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I161045824"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Elizabeth Leah George",
+     "raw_affiliation_strings": [
+      "Department of Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women, Coimbatore, India"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-2604-4496",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women, Coimbatore, India",
+       "institution_ids": [
+        "https://openalex.org/I161045824"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5006390938",
+      "display_name": "Parthasarathy Subashini",
+      "orcid": "https://orcid.org/0000-0002-5786-4497",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-5786-4497"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I161045824",
+       "display_name": "Avinashilingam University",
+       "ror": "https://ror.org/05dxzqa20",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I161045824"
+       ]
+      }
+     ],
+     "countries": [
+      "IN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Subashini Parthasarathy",
+     "raw_affiliation_strings": [
+      "Department of Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women, Coimbatore, India"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-5786-4497",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer Science, Avinashilingam Institute for Home Science and Higher Education for Women, Coimbatore, India",
+       "institution_ids": [
+        "https://openalex.org/I161045824"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5027408239"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I161045824"
+   ],
+   "apc_list": {
+    "value": 4150,
+    "currency": "USD",
+    "value_usd": 4150
+   },
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.86222997,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T11550",
+    "display_name": "Text and Document Classification Technologies",
+    "score": 0.4909999966621399,
+    "subfield": {
+     "id": "https://openalex.org/subfields/1702",
+     "display_name": "Artificial Intelligence"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/17",
+     "display_name": "Computer Science"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T11550",
+     "display_name": "Text and Document Classification Technologies",
+     "score": 0.4909999966621399,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.08579999953508377,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11652",
+     "display_name": "Imbalanced Data Classification Techniques",
+     "score": 0.08129999786615372,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/multi-objective-optimization",
+     "display_name": "multi-objective optimization",
+     "score": 0.8840000033378601
+    },
+    {
+     "id": "https://openalex.org/keywords/algorithmic-fairness",
+     "display_name": "algorithmic fairness",
+     "score": 0.7369999885559082
+    },
+    {
+     "id": "https://openalex.org/keywords/popularity-bias",
+     "display_name": "popularity bias",
+     "score": 0.9539999961853027
+    },
+    {
+     "id": "https://openalex.org/keywords/social-media-analytics",
+     "display_name": "social media analytics",
+     "score": 0.8289999961853027
+    },
+    {
+     "id": "https://openalex.org/keywords/nsga-ii",
+     "display_name": "NSGA-II",
+     "score": 0.7940000295639038
+    },
+    {
+     "id": "https://openalex.org/keywords/feature-selection",
+     "display_name": "feature selection",
+     "score": 0.7120000123977661
+    },
+    {
+     "id": "https://openalex.org/keywords/indirect-discrimination",
+     "display_name": "indirect discrimination",
+     "score": 0.9950000047683716
+    },
+    {
+     "id": "https://openalex.org/keywords/fraud-detection",
+     "display_name": "fraud detection",
+     "score": 0.7739999890327454
+    },
+    {
+     "id": "https://openalex.org/keywords/accident-detection",
+     "display_name": "accident detection",
+     "score": 0.8309999704360962
+    },
+    {
+     "id": "https://openalex.org/keywords/particle-swarm-optimization",
+     "display_name": "particle swarm optimization",
+     "score": 0.6069999933242798
+    },
+    {
+     "id": "https://openalex.org/keywords/ant-colony-optimization",
+     "display_name": "ant colony optimization",
+     "score": 0.9900000095367432
+    },
+    {
+     "id": "https://openalex.org/keywords/evolutionary-reinforcement-learning",
+     "display_name": "evolutionary reinforcement learning",
+     "score": 0.9919999837875366
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.6664999723434448
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.5527999997138977
+    },
+    {
+     "id": "https://openalex.org/C119857082",
+     "wikidata": "https://www.wikidata.org/wiki/Q2539",
+     "display_name": "Machine learning",
+     "level": 1,
+     "score": 0.4918999969959259
+    },
+    {
+     "id": "https://openalex.org/C2780586970",
+     "wikidata": "https://www.wikidata.org/wiki/Q1357284",
+     "display_name": "Popularity",
+     "level": 2,
+     "score": 0.4867999851703644
+    },
+    {
+     "id": "https://openalex.org/C109718341",
+     "wikidata": "https://www.wikidata.org/wiki/Q1385229",
+     "display_name": "Metaheuristic",
+     "level": 2,
+     "score": 0.47929999232292175
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.4681999981403351
+    },
+    {
+     "id": "https://openalex.org/C68781425",
+     "wikidata": "https://www.wikidata.org/wiki/Q2052203",
+     "display_name": "Multi-objective optimization",
+     "level": 2,
+     "score": 0.45590001344680786
+    },
+    {
+     "id": "https://openalex.org/C85617194",
+     "wikidata": "https://www.wikidata.org/wiki/Q2072794",
+     "display_name": "Particle swarm optimization",
+     "level": 2,
+     "score": 0.39879998564720154
+    },
+    {
+     "id": "https://openalex.org/C148483581",
+     "wikidata": "https://www.wikidata.org/wiki/Q446488",
+     "display_name": "Feature selection",
+     "level": 2,
+     "score": 0.38609999418258667
+    },
+    {
+     "id": "https://openalex.org/C137836250",
+     "wikidata": "https://www.wikidata.org/wiki/Q984063",
+     "display_name": "Optimization problem",
+     "level": 2,
+     "score": 0.382099986076355
+    },
+    {
+     "id": "https://openalex.org/C2776436953",
+     "wikidata": "https://www.wikidata.org/wiki/Q5163215",
+     "display_name": "Consistency (knowledge bases)",
+     "level": 2,
+     "score": 0.3564999997615814
+    },
+    {
+     "id": "https://openalex.org/C137635306",
+     "wikidata": "https://www.wikidata.org/wiki/Q182667",
+     "display_name": "Pareto principle",
+     "level": 2,
+     "score": 0.3546999990940094
+    },
+    {
+     "id": "https://openalex.org/C8642999",
+     "wikidata": "https://www.wikidata.org/wiki/Q4171168",
+     "display_name": "Hyperparameter",
+     "level": 2,
+     "score": 0.3384999930858612
+    },
+    {
+     "id": "https://openalex.org/C111696304",
+     "wikidata": "https://www.wikidata.org/wiki/Q2303697",
+     "display_name": "Sorting",
+     "level": 2,
+     "score": 0.33180001378059387
+    },
+    {
+     "id": "https://openalex.org/C83209312",
+     "wikidata": "https://www.wikidata.org/wiki/Q1053367",
+     "display_name": "Predictive analytics",
+     "level": 2,
+     "score": 0.32280001044273376
+    },
+    {
+     "id": "https://openalex.org/C2776401178",
+     "wikidata": "https://www.wikidata.org/wiki/Q12050496",
+     "display_name": "Feature (linguistics)",
+     "level": 2,
+     "score": 0.3197999894618988
+    },
+    {
+     "id": "https://openalex.org/C169258074",
+     "wikidata": "https://www.wikidata.org/wiki/Q245748",
+     "display_name": "Random forest",
+     "level": 2,
+     "score": 0.31859999895095825
+    },
+    {
+     "id": "https://openalex.org/C97541855",
+     "wikidata": "https://www.wikidata.org/wiki/Q830687",
+     "display_name": "Reinforcement learning",
+     "level": 2,
+     "score": 0.31380000710487366
+    },
+    {
+     "id": "https://openalex.org/C81917197",
+     "wikidata": "https://www.wikidata.org/wiki/Q628760",
+     "display_name": "Selection (genetic algorithm)",
+     "level": 2,
+     "score": 0.30059999227523804
+    },
+    {
+     "id": "https://openalex.org/C124101348",
+     "wikidata": "https://www.wikidata.org/wiki/Q172491",
+     "display_name": "Data mining",
+     "level": 1,
+     "score": 0.3001999855041504
+    },
+    {
+     "id": "https://openalex.org/C79158427",
+     "wikidata": "https://www.wikidata.org/wiki/Q485396",
+     "display_name": "Analytics",
+     "level": 2,
+     "score": 0.28929999470710754
+    },
+    {
+     "id": "https://openalex.org/C2522767166",
+     "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+     "display_name": "Data science",
+     "level": 1,
+     "score": 0.28760001063346863
+    },
+    {
+     "id": "https://openalex.org/C153083717",
+     "wikidata": "https://www.wikidata.org/wiki/Q6535263",
+     "display_name": "Leverage (statistics)",
+     "level": 2,
+     "score": 0.28139999508857727
+    },
+    {
+     "id": "https://openalex.org/C193254401",
+     "wikidata": "https://www.wikidata.org/wiki/Q2160088",
+     "display_name": "Robust optimization",
+     "level": 2,
+     "score": 0.27959999442100525
+    },
+    {
+     "id": "https://openalex.org/C2778049539",
+     "wikidata": "https://www.wikidata.org/wiki/Q17002908",
+     "display_name": "Bayesian optimization",
+     "level": 2,
+     "score": 0.27090001106262207
+    },
+    {
+     "id": "https://openalex.org/C12267149",
+     "wikidata": "https://www.wikidata.org/wiki/Q282453",
+     "display_name": "Support vector machine",
+     "level": 2,
+     "score": 0.25609999895095825
+    },
+    {
+     "id": "https://openalex.org/C105902424",
+     "wikidata": "https://www.wikidata.org/wiki/Q1197129",
+     "display_name": "Evolutionary computation",
+     "level": 2,
+     "score": 0.2558000087738037
+    },
+    {
+     "id": "https://openalex.org/C40128228",
+     "wikidata": "https://www.wikidata.org/wiki/Q460851",
+     "display_name": "Ant colony optimization algorithms",
+     "level": 2,
+     "score": 0.25060001015663147
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1177/18758967261496722",
+     "doi": "https://doi.org/10.1177/18758967261496722",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1177/18758967261496722",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S179157397",
+      "display_name": "Journal of Intelligent & Fuzzy Systems",
+      "issn_l": "1064-1246",
+      "issn": [
+       "1064-1246",
+       "1875-8967"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "anvur-scientific",
+       "cwts-core",
+       "poland-70",
+       "russia-white-list-2"
+      ],
+      "host_organization": "https://openalex.org/P4310318577",
+      "host_organization_name": "IOS Press",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310318577"
+      ],
+      "host_organization_lineage_names": [
+       "IOS Press"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of Intelligent &amp; Fuzzy Systems: Applications in Engineering and Technology",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "score": 0.6601999998092651,
+     "id": "https://metadata.un.org/sdg/16",
+     "display_name": "Peace, justice, and strong institutions"
+    },
+    {
+     "score": 0.5,
+     "id": "https://metadata.un.org/sdg/10",
+     "display_name": "Reduced inequalities"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 22,
+   "referenced_works": [
+    "https://openalex.org/W1585939719",
+    "https://openalex.org/W2097246321",
+    "https://openalex.org/W2126105956",
+    "https://openalex.org/W2523693978",
+    "https://openalex.org/W2969896603",
+    "https://openalex.org/W3021271484",
+    "https://openalex.org/W4377091740",
+    "https://openalex.org/W4385655392",
+    "https://openalex.org/W4385987427",
+    "https://openalex.org/W4393224518",
+    "https://openalex.org/W4393929524",
+    "https://openalex.org/W4401486572",
+    "https://openalex.org/W4402686545",
+    "https://openalex.org/W4403036535",
+    "https://openalex.org/W4404544918",
+    "https://openalex.org/W4408138635",
+    "https://openalex.org/W4411874851",
+    "https://openalex.org/W4414223076",
+    "https://openalex.org/W4414974365",
+    "https://openalex.org/W7116662937",
+    "https://openalex.org/W7117777973",
+    "https://openalex.org/W7134931991"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Crime-related": [
+     0
+    ],
+    "social": [
+     1,
+     233
+    ],
+    "media": [
+     2,
+     234
+    ],
+    "content": [
+     3
+    ],
+    "provides": [
+     4,
+     218
+    ],
+    "valuable": [
+     5
+    ],
+    "information": [
+     6
+    ],
+    "for": [
+     7,
+     38
+    ],
+    "situational": [
+     8
+    ],
+    "awareness": [
+     9
+    ],
+    "and": [
+     10,
+     19,
+     25,
+     41,
+     48,
+     60,
+     66,
+     84,
+     113,
+     143,
+     156,
+     168,
+     178,
+     185,
+     192,
+     221,
+     228
+    ],
+    "policy": [
+     11
+    ],
+    "support;": [
+     12
+    ],
+    "however,": [
+     13
+    ],
+    "engagement-driven": [
+     14,
+     126,
+     188,
+     229
+    ],
+    "signals,": [
+     15
+    ],
+    "such": [
+     16
+    ],
+    "as": [
+     17
+    ],
+    "likes": [
+     18
+    ],
+    "retweets,": [
+     20
+    ],
+    "can": [
+     21
+    ],
+    "introduce": [
+     22
+    ],
+    "popularity": [
+     23,
+     127
+    ],
+    "bias": [
+     24,
+     128
+    ],
+    "affect": [
+     26
+    ],
+    "predictive": [
+     27,
+     166,
+     226
+    ],
+    "outcomes.": [
+     28
+    ],
+    "This": [
+     29
+    ],
+    "study": [
+     30
+    ],
+    "proposes": [
+     31
+    ],
+    "a": [
+     32,
+     101,
+     219
+    ],
+    "fairness-aware,": [
+     33
+    ],
+    "Pareto-based,": [
+     34
+    ],
+    "multi-objective": [
+     35
+    ],
+    "optimization": [
+     36,
+     70,
+     197,
+     217
+    ],
+    "framework": [
+     37
+    ],
+    "feature": [
+     39
+    ],
+    "selection": [
+     40
+    ],
+    "Random": [
+     42
+    ],
+    "Forest": [
+     43
+    ],
+    "hyperparameter": [
+     44
+    ],
+    "optimization,": [
+     45
+    ],
+    "leveraging": [
+     46
+    ],
+    "textual": [
+     47
+    ],
+    "engagement": [
+     49,
+     173
+    ],
+    "features.": [
+     50,
+     68
+    ],
+    "A": [
+     51
+    ],
+    "dataset": [
+     52
+    ],
+    "of": [
+     53,
+     115,
+     141,
+     146,
+     151,
+     154,
+     158,
+     187,
+     203
+    ],
+    "32,000": [
+     54
+    ],
+    "crime-related": [
+     55,
+     232
+    ],
+    "tweets": [
+     56
+    ],
+    "covering": [
+     57
+    ],
+    "Fraud,": [
+     58
+    ],
+    "Accident,": [
+     59
+    ],
+    "Murder": [
+     61
+    ],
+    "was": [
+     62
+    ],
+    "represented": [
+     63
+    ],
+    "using": [
+     64
+    ],
+    "TF-IDF": [
+     65
+    ],
+    "interaction-based": [
+     67
+    ],
+    "Four": [
+     69
+    ],
+    "strategies,": [
+     71
+    ],
+    "Particle": [
+     72
+    ],
+    "Swarm": [
+     73
+    ],
+    "Optimization": [
+     74,
+     78
+    ],
+    "(PSO),": [
+     75
+    ],
+    "Ant": [
+     76
+    ],
+    "Colony": [
+     77
+    ],
+    "(ACO),": [
+     79
+    ],
+    "Evolutionary": [
+     80
+    ],
+    "Reinforcement": [
+     81
+    ],
+    "Learning": [
+     82
+    ],
+    "(ERL),": [
+     83
+    ],
+    "Non-Dominated": [
+     85
+    ],
+    "Sorting": [
+     86
+    ],
+    "Genetic": [
+     87
+    ],
+    "Algorithm": [
+     88
+    ],
+    "II": [
+     89
+    ],
+    "(NSGA-II),": [
+     90
+    ],
+    "were": [
+     91
+    ],
+    "comparatively": [
+     92
+    ],
+    "evaluated.": [
+     93
+    ],
+    "NSGA-II": [
+     94,
+     137
+    ],
+    "jointly": [
+     95
+    ],
+    "maximized": [
+     96
+    ],
+    "classification": [
+     97
+    ],
+    "performance": [
+     98,
+     167
+    ],
+    "while": [
+     99
+    ],
+    "minimizing": [
+     100
+    ],
+    "fairness": [
+     102,
+     122,
+     212,
+     230
+    ],
+    "penalty": [
+     103
+    ],
+    "based": [
+     104
+    ],
+    "on": [
+     105
+    ],
+    "Statistical": [
+     106
+    ],
+    "Parity": [
+     107
+    ],
+    "Difference": [
+     108,
+     117
+    ],
+    "(SPD),": [
+     109
+    ],
+    "Disparate": [
+     110
+    ],
+    "Impact": [
+     111
+    ],
+    "(DI),": [
+     112
+    ],
+    "Equality": [
+     114
+    ],
+    "Opportunity": [
+     116
+    ],
+    "(EOD).": [
+     118
+    ],
+    "In": [
+     119
+    ],
+    "this": [
+     120
+    ],
+    "study,": [
+     121
+    ],
+    "refers": [
+     123
+    ],
+    "to": [
+     124,
+     224
+    ],
+    "mitigating": [
+     125
+    ],
+    "across": [
+     129,
+     195
+    ],
+    "behavioral": [
+     130,
+     169
+    ],
+    "user": [
+     131
+    ],
+    "groups": [
+     132
+    ],
+    "rather": [
+     133
+    ],
+    "than": [
+     134
+    ],
+    "demographic": [
+     135
+    ],
+    "discrimination.": [
+     136
+    ],
+    "achieved": [
+     138
+    ],
+    "an": [
+     139,
+     144,
+     149
+    ],
+    "accuracy": [
+     140
+    ],
+    "0.8118": [
+     142
+    ],
+    "F1-score": [
+     145
+    ],
+    "0.8051,": [
+     147
+    ],
+    "with": [
+     148
+    ],
+    "SPD": [
+     150
+    ],
+    "0.08,": [
+     152
+    ],
+    "DI": [
+     153
+    ],
+    "0.97,": [
+     155
+    ],
+    "EOD": [
+     157
+    ],
+    "0.06,": [
+     159
+    ],
+    "demonstrating": [
+     160
+    ],
+    "the": [
+     161,
+     196,
+     201,
+     204
+    ],
+    "most": [
+     162
+    ],
+    "favorable": [
+     163
+    ],
+    "balance": [
+     164
+    ],
+    "between": [
+     165
+    ],
+    "fairness.": [
+     170
+    ],
+    "Although": [
+     171
+    ],
+    "removing": [
+     172
+    ],
+    "features": [
+     174
+    ],
+    "improved": [
+     175
+    ],
+    "standalone": [
+     176
+    ],
+    "Accuracy": [
+     177
+    ],
+    "F1-score,": [
+     179
+    ],
+    "retaining": [
+     180
+    ],
+    "them": [
+     181
+    ],
+    "enabled": [
+     182
+    ],
+    "explicit": [
+     183
+    ],
+    "assessment": [
+     184
+    ],
+    "mitigation": [
+     186
+    ],
+    "bias.": [
+     189
+    ],
+    "Stratified": [
+     190
+    ],
+    "cross-validation": [
+     191
+    ],
+    "comparative": [
+     193
+    ],
+    "analysis": [
+     194
+    ],
+    "strategies": [
+     198
+    ],
+    "further": [
+     199
+    ],
+    "supported": [
+     200
+    ],
+    "consistency": [
+     202
+    ],
+    "observed": [
+     205
+    ],
+    "results.": [
+     206
+    ],
+    "The": [
+     207
+    ],
+    "findings": [
+     208
+    ],
+    "demonstrate": [
+     209
+    ],
+    "that": [
+     210
+    ],
+    "integrating": [
+     211
+    ],
+    "objectives": [
+     213
+    ],
+    "directly": [
+     214
+    ],
+    "into": [
+     215
+    ],
+    "Pareto-based": [
+     216
+    ],
+    "practical": [
+     220
+    ],
+    "interpretable": [
+     222
+    ],
+    "approach": [
+     223
+    ],
+    "balancing": [
+     225
+    ],
+    "effectiveness": [
+     227
+    ],
+    "in": [
+     231
+    ],
+    "analytics.": [
+     235
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-16T09:59:22.235173",
+   "created_date": "2026-10-14T00:00:00"
+  }
+ ]
+}

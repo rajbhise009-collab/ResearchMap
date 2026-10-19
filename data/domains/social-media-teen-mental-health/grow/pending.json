@@ -1,0 +1,2509 @@
+{
+ "batch_id": "amoz5heaszhkeumn0dwl930vc0c4khwu5n5d",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-10-19",
+ "submitted_at": 1792408105.157164,
+ "projected_inr": 4.176837,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7222007007": "fulltext",
+  "openalex:W7222160172": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7222007007",
+   "openalex_id": "https://openalex.org/W7222007007",
+   "title": "The impact of social media use on appearance anxiety among college students \u2014the chain mediating effect of upward social comparison and envy",
+   "year": 2026,
+   "doi": "https://doi.org/10.3389/fpsyt.2026.1962984",
+   "venue": "Frontiers in Psychiatry",
+   "field": "psychology",
+   "cited_by_count": 0,
+   "abstract": "Background The widespread adoption of digital media has reshaped young people\u2019s aesthetic experiences. The abundance of idealized and digitally enhanced appearance-related content on social media has made appearance anxiety increasingly prevalent among university students. However, the psychological pathways linking social media use to appearance anxiety require systematic examination. This study examined the relationship between social media use and appearance anxiety among university students and tested the chain mediating roles of upward social comparison and envy. Methods Using convenience sampling, 1,640 university students in China completed the Social Media Use Intensity Scale, Appearance Anxiety Scale, Upward Social Comparison Scale, and Envy Scale. Confirmatory factor analysis, correlation analysis, and PROCESS Model 6 analysis with 5,000 percentile bootstrap samples were used to examine the relationship between social media use and appearance anxiety and the chain mediating effects of upward social comparison and envy. All regression equations controlled for gender, educational level, and average daily social media use time. Results (1) Social media use was significantly and positively associated with appearance anxiety among university students. (2) Upward social comparison mediated the relationship between social media use and appearance anxiety. (3) Envy mediated the relationship between social media use and appearance anxiety. (4) Upward social comparison and envy showed a significant chain mediating effect in the relationship between social media use and appearance anxiety. Conclusion This study provided preliminary cross-sectional evidence for an appearance-anxiety-specific comparison\u2013envy pattern linking social media use to appearance anxiety among university students. The findings provide theoretical and practical implications for aesthetic education and media literacy education in higher education within the digital media environment. They may also help guide university students toward more rational aesthetic perceptions, reduced appearance anxiety, and improved physical and mental well-being.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: young population 'students' + mental-health outcome 'anxi'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-19",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  },
+  {
+   "wid": "W7222160172",
+   "openalex_id": "https://openalex.org/W7222160172",
+   "title": "Mindful Awareness as a Mediator Between Social Appearance Anxiety and Social Media Addiction in Adolescents",
+   "year": 2026,
+   "doi": "https://doi.org/10.3928/02793695-20261009-01",
+   "venue": "Journal of Psychosocial Nursing and Mental Health Services",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "PURPOSE: Adolescence is a critical period for identity formation and social development, and social media can shape appearance perceptions and social acceptance. Social appearance anxiety may be associated with greater vulnerability to social media addiction, whereas mindful awareness may be linked to lower levels of this risk. The current study tested mindful awareness as a mediator between social appearance anxiety and social media addiction in adolescents. METHOD: The sample comprised 383 volunteer secondary school students in eastern T\u00fcrkiye during the 2024-2025 academic year. Participants completed standardized measures of social appearance anxiety, mindful awareness, and social media addiction. RESULTS: Social appearance anxiety was positively related to social media addiction and negatively related to mindful awareness; mindful awareness was also negatively related to addiction. CONCLUSION: Mediation results indicated partial mediation, suggesting mindfulness-based interventions may reduce appearance anxiety and promote healthier social media use among adolescents. Findings highlight mindful awareness as a target for prevention.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: young population 'Adolescen' + mental-health outcome 'Anxi'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-19",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7222007007",
+   "doi": "https://doi.org/10.3389/fpsyt.2026.1962984",
+   "title": "The impact of social media use on appearance anxiety among college students \u2014the chain mediating effect of upward social comparison and envy",
+   "display_name": "The impact of social media use on appearance anxiety among college students \u2014the chain mediating effect of upward social comparison and envy",
+   "publication_year": 2026,
+   "publication_date": "2026-10-15",
+   "ids": {
+    "openalex": "https://openalex.org/W7222007007",
+    "doi": "https://doi.org/10.3389/fpsyt.2026.1962984"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.3389/fpsyt.2026.1962984",
+    "doi": "https://doi.org/10.3389/fpsyt.2026.1962984",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3389/fpsyt.2026.1962984",
+    "pdf_url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1962984/pdf",
+    "source": {
+     "id": "https://openalex.org/S92766711",
+     "display_name": "Frontiers in Psychiatry",
+     "issn_l": "1664-0640",
+     "issn": [
+      "1664-0640"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "anvur-scientific",
+      "cwts-core",
+      "doaj",
+      "ki-jl-1",
+      "norway-1",
+      "poland-100",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320527",
+     "host_organization_name": "Frontiers Media",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320527"
+     ],
+     "host_organization_lineage_names": [
+      "Frontiers Media"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Frontiers in Psychiatry",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref",
+    "doaj"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1962984/pdf",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5129682125",
+      "display_name": "Yongjian Lin",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210094789",
+       "display_name": "Ningbo City College of Vocational Technology",
+       "ror": "https://ror.org/00vkb8q56",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I4210094789"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Yongjian Lin",
+     "raw_affiliation_strings": [
+      "School of Arts, Ningbo City College of Vocational Technology"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Arts, Ningbo City College of Vocational Technology",
+       "institution_ids": [
+        "https://openalex.org/I4210094789"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5100380118",
+      "display_name": "Zhihao Li",
+      "orcid": "https://orcid.org/0000-0002-1030-3924",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-1030-3924"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I191208505",
+       "display_name": "Xiamen University",
+       "ror": "https://ror.org/00mcjh785",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Zhihao Li",
+     "raw_affiliation_strings": [
+      "School of Aerospace Engineering, Xiamen University"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Aerospace Engineering, Xiamen University",
+       "institution_ids": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5158795371",
+      "display_name": "Luling Li",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I191208505",
+       "display_name": "Xiamen University",
+       "ror": "https://ror.org/00mcjh785",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Luling Li",
+     "raw_affiliation_strings": [
+      "School of Marxism, Xiamen University"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Marxism, Xiamen University",
+       "institution_ids": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5154748515",
+      "display_name": "Zhen LV",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I191208505",
+       "display_name": "Xiamen University",
+       "ror": "https://ror.org/00mcjh785",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Zhen Lv",
+     "raw_affiliation_strings": [
+      "Institute of Education, Xiamen University"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Institute of Education, Xiamen University",
+       "institution_ids": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5158811474",
+      "display_name": "Tianxiang Song",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210094789",
+       "display_name": "Ningbo City College of Vocational Technology",
+       "ror": "https://ror.org/00vkb8q56",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I4210094789"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Tianxiang Song",
+     "raw_affiliation_strings": [
+      "International School, Ningbo City College of Vocational Technology"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "International School, Ningbo City College of Vocational Technology",
+       "institution_ids": [
+        "https://openalex.org/I4210094789"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5134796419",
+      "display_name": "Xiujie Zhou",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I75867142",
+       "display_name": "Xiamen University of Technology",
+       "ror": "https://ror.org/01285e189",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I75867142"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Xiujie Zhou",
+     "raw_affiliation_strings": [
+      "School of Film Television and Communication, Xiamen University of Technology"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Film Television and Communication, Xiamen University of Technology",
+       "institution_ids": [
+        "https://openalex.org/I75867142"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5102445363",
+      "display_name": "Jianchao Ni",
+      "orcid": "https://orcid.org/0000-0002-4861-1877",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-4861-1877"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I191208505",
+       "display_name": "Xiamen University",
+       "ror": "https://ror.org/00mcjh785",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Jianchao Ni",
+     "raw_affiliation_strings": [
+      "Institute of Education, Xiamen University",
+      "School of Marxism, Xiamen University"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Institute of Education, Xiamen University",
+       "institution_ids": [
+        "https://openalex.org/I191208505"
+       ]
+      },
+      {
+       "raw_affiliation_string": "School of Marxism, Xiamen University",
+       "institution_ids": [
+        "https://openalex.org/I191208505"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 3,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5102445363",
+    "https://openalex.org/A5134796419"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I191208505",
+    "https://openalex.org/I75867142"
+   ],
+   "apc_list": {
+    "value": 3150,
+    "currency": "CHF",
+    "value_usd": 3801
+   },
+   "apc_paid": {
+    "value": 3150,
+    "currency": "CHF",
+    "value_usd": 3801
+   },
+   "fwci": 0.0,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.9109259,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "17",
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T12663",
+    "display_name": "Body Image and Dysmorphia Studies",
+    "score": 0.6786999702453613,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3203",
+     "display_name": "Clinical Psychology"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/32",
+     "display_name": "Psychology"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T12663",
+     "display_name": "Body Image and Dysmorphia Studies",
+     "score": 0.6786999702453613,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.31790000200271606,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10263",
+     "display_name": "Eating Disorders and Behaviors",
+     "score": 0.000699999975040555,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/social-media-use",
+     "display_name": "social media use",
+     "score": 0.9950000047683716
+    },
+    {
+     "id": "https://openalex.org/keywords/appearance-anxiety",
+     "display_name": "appearance anxiety",
+     "score": 0.9990000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/upward-social-comparison",
+     "display_name": "upward social comparison",
+     "score": 0.9940000176429749
+    },
+    {
+     "id": "https://openalex.org/keywords/envy",
+     "display_name": "envy",
+     "score": 0.9980000257492065
+    },
+    {
+     "id": "https://openalex.org/keywords/serial-mediation",
+     "display_name": "serial mediation",
+     "score": 0.8820000290870667
+    },
+    {
+     "id": "https://openalex.org/keywords/college-students",
+     "display_name": "university students",
+     "score": 0.9390000104904175
+    },
+    {
+     "id": "https://openalex.org/keywords/aesthetic-education",
+     "display_name": "aesthetic education",
+     "score": 0.5640000104904175
+    },
+    {
+     "id": "https://openalex.org/keywords/media-literacy",
+     "display_name": "media literacy",
+     "score": 0.9369999766349792
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.8100000023841858
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.792900025844574
+    },
+    {
+     "id": "https://openalex.org/C2777545354",
+     "wikidata": "https://www.wikidata.org/wiki/Q3557657",
+     "display_name": "Social anxiety",
+     "level": 3,
+     "score": 0.6668000221252441
+    },
+    {
+     "id": "https://openalex.org/C178233286",
+     "wikidata": "https://www.wikidata.org/wiki/Q645999",
+     "display_name": "Social comparison theory",
+     "level": 2,
+     "score": 0.5611000061035156
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.5196999907493591
+    },
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.4885999858379364
+    },
+    {
+     "id": "https://openalex.org/C138496976",
+     "wikidata": "https://www.wikidata.org/wiki/Q175002",
+     "display_name": "Developmental psychology",
+     "level": 1,
+     "score": 0.4472000002861023
+    },
+    {
+     "id": "https://openalex.org/C71104824",
+     "wikidata": "https://www.wikidata.org/wiki/Q1476639",
+     "display_name": "Structural equation modeling",
+     "level": 2,
+     "score": 0.4072999954223633
+    },
+    {
+     "id": "https://openalex.org/C40722632",
+     "wikidata": "https://www.wikidata.org/wiki/Q5160137",
+     "display_name": "Confirmatory factor analysis",
+     "level": 3,
+     "score": 0.37139999866485596
+    },
+    {
+     "id": "https://openalex.org/C65067816",
+     "wikidata": "https://www.wikidata.org/wiki/Q2295139",
+     "display_name": "Computer-assisted web interviewing",
+     "level": 2,
+     "score": 0.34549999237060547
+    },
+    {
+     "id": "https://openalex.org/C131158328",
+     "wikidata": "https://www.wikidata.org/wiki/Q1307337",
+     "display_name": "Social influence",
+     "level": 2,
+     "score": 0.31310001015663147
+    },
+    {
+     "id": "https://openalex.org/C97628146",
+     "wikidata": "https://www.wikidata.org/wiki/Q1507246",
+     "display_name": "Media literacy",
+     "level": 2,
+     "score": 0.28850001096725464
+    },
+    {
+     "id": "https://openalex.org/C2778660142",
+     "wikidata": "https://www.wikidata.org/wiki/Q6805591",
+     "display_name": "Media consumption",
+     "level": 2,
+     "score": 0.2851000130176544
+    },
+    {
+     "id": "https://openalex.org/C2778087770",
+     "wikidata": "https://www.wikidata.org/wiki/Q2297111",
+     "display_name": "Social support",
+     "level": 2,
+     "score": 0.2847999930381775
+    },
+    {
+     "id": "https://openalex.org/C17632256",
+     "wikidata": "https://www.wikidata.org/wiki/Q1076968",
+     "display_name": "Digital media",
+     "level": 2,
+     "score": 0.2822999954223633
+    },
+    {
+     "id": "https://openalex.org/C70410870",
+     "wikidata": "https://www.wikidata.org/wiki/Q199906",
+     "display_name": "Clinical psychology",
+     "level": 1,
+     "score": 0.2808000147342682
+    },
+    {
+     "id": "https://openalex.org/C206836424",
+     "wikidata": "https://www.wikidata.org/wiki/Q1510761",
+     "display_name": "Social change",
+     "level": 2,
+     "score": 0.266400009393692
+    }
+   ],
+   "mesh": [],
+   "locations_count": 2,
+   "locations": [
+    {
+     "id": "doi:10.3389/fpsyt.2026.1962984",
+     "doi": "https://doi.org/10.3389/fpsyt.2026.1962984",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.3389/fpsyt.2026.1962984",
+     "pdf_url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1962984/pdf",
+     "source": {
+      "id": "https://openalex.org/S92766711",
+      "display_name": "Frontiers in Psychiatry",
+      "issn_l": "1664-0640",
+      "issn": [
+       "1664-0640"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "anvur-scientific",
+       "cwts-core",
+       "doaj",
+       "ki-jl-1",
+       "norway-1",
+       "poland-100",
+       "russia-white-list-1",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310320527",
+      "host_organization_name": "Frontiers Media",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320527"
+      ],
+      "host_organization_lineage_names": [
+       "Frontiers Media"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Frontiers in Psychiatry",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "pmh:oai:doaj.org/article:b4d1073dc7fd4899bfa942db81c2f604",
+     "doi": null,
+     "is_oa": false,
+     "landing_page_url": "https://doaj.org/article/b4d1073dc7fd4899bfa942db81c2f604",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306401280",
+      "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": "Frontiers in Psychiatry, Vol 17 (2026)",
+     "raw_type": "article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.3389/fpsyt.2026.1962984",
+    "doi": "https://doi.org/10.3389/fpsyt.2026.1962984",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3389/fpsyt.2026.1962984",
+    "pdf_url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1962984/pdf",
+    "source": {
+     "id": "https://openalex.org/S92766711",
+     "display_name": "Frontiers in Psychiatry",
+     "issn_l": "1664-0640",
+     "issn": [
+      "1664-0640"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "anvur-scientific",
+      "cwts-core",
+      "doaj",
+      "ki-jl-1",
+      "norway-1",
+      "poland-100",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320527",
+     "host_organization_name": "Frontiers Media",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320527"
+     ],
+     "host_organization_lineage_names": [
+      "Frontiers Media"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Frontiers in Psychiatry",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "display_name": "Good health and well-being",
+     "id": "https://metadata.un.org/sdg/3",
+     "score": 0.5683000087738037
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [
+    {
+     "display_name": "Observational Study",
+     "id": "https://openalex.org/study-designs/observational-study"
+    }
+   ],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": true,
+    "pdf": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7222007007.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7222007007.grobid-xml"
+   },
+   "referenced_works_count": 39,
+   "referenced_works": [
+    "https://openalex.org/W1675078390",
+    "https://openalex.org/W1928177371",
+    "https://openalex.org/W1984186949",
+    "https://openalex.org/W2015151714",
+    "https://openalex.org/W2019242362",
+    "https://openalex.org/W2049987334",
+    "https://openalex.org/W2073512238",
+    "https://openalex.org/W2099556653",
+    "https://openalex.org/W2105846236",
+    "https://openalex.org/W2135370208",
+    "https://openalex.org/W2141323830",
+    "https://openalex.org/W2155491257",
+    "https://openalex.org/W2156684215",
+    "https://openalex.org/W2157300266",
+    "https://openalex.org/W2165364839",
+    "https://openalex.org/W2334175620",
+    "https://openalex.org/W2368770588",
+    "https://openalex.org/W2512980686",
+    "https://openalex.org/W2766210297",
+    "https://openalex.org/W2851168401",
+    "https://openalex.org/W2914201257",
+    "https://openalex.org/W2964768218",
+    "https://openalex.org/W2979968703",
+    "https://openalex.org/W3008114947",
+    "https://openalex.org/W3008631690",
+    "https://openalex.org/W3016196877",
+    "https://openalex.org/W3135042608",
+    "https://openalex.org/W3208334003",
+    "https://openalex.org/W4200364418",
+    "https://openalex.org/W4210347434",
+    "https://openalex.org/W4245267323",
+    "https://openalex.org/W4256689731",
+    "https://openalex.org/W4318262065",
+    "https://openalex.org/W4321788928",
+    "https://openalex.org/W4384305850",
+    "https://openalex.org/W4390502227",
+    "https://openalex.org/W4405743328",
+    "https://openalex.org/W4405810271",
+    "https://openalex.org/W4412006270"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Background": [
+     0
+    ],
+    "The": [
+     1,
+     13,
+     241
+    ],
+    "widespread": [
+     2
+    ],
+    "adoption": [
+     3
+    ],
+    "of": [
+     4,
+     15,
+     69,
+     134
+    ],
+    "digital": [
+     5,
+     260
+    ],
+    "media": [
+     6,
+     24,
+     40,
+     55,
+     124,
+     152,
+     158,
+     180,
+     192,
+     214,
+     233,
+     252,
+     261
+    ],
+    "has": [
+     7,
+     25
+    ],
+    "reshaped": [
+     8
+    ],
+    "young": [
+     9
+    ],
+    "people\u2019s": [
+     10
+    ],
+    "aesthetic": [
+     11,
+     249,
+     273
+    ],
+    "experiences.": [
+     12
+    ],
+    "abundance": [
+     14
+    ],
+    "idealized": [
+     16
+    ],
+    "and": [
+     17,
+     57,
+     63,
+     73,
+     98,
+     106,
+     126,
+     129,
+     138,
+     148,
+     162,
+     182,
+     194,
+     201,
+     216,
+     245,
+     251,
+     278,
+     281
+    ],
+    "digitally": [
+     18
+    ],
+    "enhanced": [
+     19
+    ],
+    "appearance-related": [
+     20
+    ],
+    "content": [
+     21
+    ],
+    "on": [
+     22
+    ],
+    "social": [
+     23,
+     39,
+     54,
+     71,
+     123,
+     136,
+     151,
+     173,
+     179,
+     191,
+     199,
+     213,
+     232
+    ],
+    "made": [
+     26
+    ],
+    "appearance": [
+     27,
+     43,
+     58,
+     127,
+     166,
+     183,
+     195,
+     217,
+     236,
+     276
+    ],
+    "anxiety": [
+     28,
+     44,
+     59,
+     128,
+     167,
+     237
+    ],
+    "increasingly": [
+     29
+    ],
+    "prevalent": [
+     30
+    ],
+    "among": [
+     31,
+     60,
+     168,
+     238
+    ],
+    "university": [
+     32,
+     61,
+     80,
+     169,
+     239,
+     268
+    ],
+    "students.": [
+     33,
+     170,
+     240
+    ],
+    "However,": [
+     34
+    ],
+    "the": [
+     35,
+     51,
+     65,
+     85,
+     120,
+     130,
+     176,
+     188,
+     210,
+     259
+    ],
+    "psychological": [
+     36
+    ],
+    "pathways": [
+     37
+    ],
+    "linking": [
+     38,
+     231
+    ],
+    "use": [
+     41,
+     56,
+     125,
+     153,
+     159,
+     181,
+     193,
+     215,
+     234
+    ],
+    "to": [
+     42,
+     118,
+     235
+    ],
+    "require": [
+     45
+    ],
+    "systematic": [
+     46
+    ],
+    "examination.": [
+     47
+    ],
+    "This": [
+     48,
+     220
+    ],
+    "study": [
+     49,
+     221
+    ],
+    "examined": [
+     50
+    ],
+    "relationship": [
+     52,
+     121,
+     177,
+     189,
+     211
+    ],
+    "between": [
+     53,
+     122,
+     178,
+     190,
+     212
+    ],
+    "students": [
+     62,
+     81,
+     269
+    ],
+    "tested": [
+     64
+    ],
+    "chain": [
+     66,
+     131,
+     206
+    ],
+    "mediating": [
+     67,
+     132,
+     207
+    ],
+    "roles": [
+     68
+    ],
+    "upward": [
+     70,
+     135
+    ],
+    "comparison": [
+     72,
+     137,
+     174,
+     200
+    ],
+    "envy.": [
+     74,
+     139
+    ],
+    "Methods": [
+     75
+    ],
+    "Using": [
+     76
+    ],
+    "convenience": [
+     77
+    ],
+    "sampling,": [
+     78
+    ],
+    "1,640": [
+     79
+    ],
+    "in": [
+     82,
+     209,
+     255
+    ],
+    "China": [
+     83
+    ],
+    "completed": [
+     84
+    ],
+    "Social": [
+     86,
+     95,
+     157
+    ],
+    "Media": [
+     87
+    ],
+    "Use": [
+     88
+    ],
+    "Intensity": [
+     89
+    ],
+    "Scale,": [
+     90,
+     93,
+     97
+    ],
+    "Appearance": [
+     91
+    ],
+    "Anxiety": [
+     92
+    ],
+    "Upward": [
+     94,
+     172,
+     198
+    ],
+    "Comparison": [
+     96
+    ],
+    "Envy": [
+     99,
+     186
+    ],
+    "Scale.": [
+     100
+    ],
+    "Confirmatory": [
+     101
+    ],
+    "factor": [
+     102
+    ],
+    "analysis,": [
+     103,
+     105
+    ],
+    "correlation": [
+     104
+    ],
+    "PROCESS": [
+     107
+    ],
+    "Model": [
+     108
+    ],
+    "6": [
+     109
+    ],
+    "analysis": [
+     110
+    ],
+    "with": [
+     111,
+     165
+    ],
+    "5,000": [
+     112
+    ],
+    "percentile": [
+     113
+    ],
+    "bootstrap": [
+     114
+    ],
+    "samples": [
+     115
+    ],
+    "were": [
+     116
+    ],
+    "used": [
+     117
+    ],
+    "examine": [
+     119
+    ],
+    "effects": [
+     133
+    ],
+    "All": [
+     140
+    ],
+    "regression": [
+     141
+    ],
+    "equations": [
+     142
+    ],
+    "controlled": [
+     143
+    ],
+    "for": [
+     144,
+     226,
+     248
+    ],
+    "gender,": [
+     145
+    ],
+    "educational": [
+     146
+    ],
+    "level,": [
+     147
+    ],
+    "average": [
+     149
+    ],
+    "daily": [
+     150
+    ],
+    "time.": [
+     154
+    ],
+    "Results": [
+     155
+    ],
+    "(1)": [
+     156
+    ],
+    "was": [
+     160
+    ],
+    "significantly": [
+     161
+    ],
+    "positively": [
+     163
+    ],
+    "associated": [
+     164
+    ],
+    "(2)": [
+     171
+    ],
+    "mediated": [
+     175,
+     187
+    ],
+    "anxiety.": [
+     184,
+     196,
+     218
+    ],
+    "(3)": [
+     185
+    ],
+    "(4)": [
+     197
+    ],
+    "envy": [
+     202
+    ],
+    "showed": [
+     203
+    ],
+    "a": [
+     204
+    ],
+    "significant": [
+     205
+    ],
+    "effect": [
+     208
+    ],
+    "Conclusion": [
+     219
+    ],
+    "provided": [
+     222
+    ],
+    "preliminary": [
+     223
+    ],
+    "cross-sectional": [
+     224
+    ],
+    "evidence": [
+     225
+    ],
+    "an": [
+     227
+    ],
+    "appearance-anxiety-specific": [
+     228
+    ],
+    "comparison\u2013envy": [
+     229
+    ],
+    "pattern": [
+     230
+    ],
+    "findings": [
+     242
+    ],
+    "provide": [
+     243
+    ],
+    "theoretical": [
+     244
+    ],
+    "practical": [
+     246
+    ],
+    "implications": [
+     247
+    ],
+    "education": [
+     250,
+     254,
+     257
+    ],
+    "literacy": [
+     253
+    ],
+    "higher": [
+     256
+    ],
+    "within": [
+     258
+    ],
+    "environment.": [
+     262
+    ],
+    "They": [
+     263
+    ],
+    "may": [
+     264
+    ],
+    "also": [
+     265
+    ],
+    "help": [
+     266
+    ],
+    "guide": [
+     267
+    ],
+    "toward": [
+     270
+    ],
+    "more": [
+     271
+    ],
+    "rational": [
+     272
+    ],
+    "perceptions,": [
+     274
+    ],
+    "reduced": [
+     275
+    ],
+    "anxiety,": [
+     277
+    ],
+    "improved": [
+     279
+    ],
+    "physical": [
+     280
+    ],
+    "mental": [
+     282
+    ],
+    "well-being.": [
+     283
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-18T09:31:52.927876",
+   "created_date": "2026-10-16T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7222160172",
+   "doi": "https://doi.org/10.3928/02793695-20261009-01",
+   "title": "Mindful Awareness as a Mediator Between Social Appearance Anxiety and Social Media Addiction in Adolescents",
+   "display_name": "Mindful Awareness as a Mediator Between Social Appearance Anxiety and Social Media Addiction in Adolescents",
+   "publication_year": 2026,
+   "publication_date": "2026-10-15",
+   "ids": {
+    "openalex": "https://openalex.org/W7222160172",
+    "doi": "https://doi.org/10.3928/02793695-20261009-01",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/42879693"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.3928/02793695-20261009-01",
+    "doi": "https://doi.org/10.3928/02793695-20261009-01",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.3928/02793695-20261009-01",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S31827231",
+     "display_name": "Journal of Psychosocial Nursing and Mental Health Services",
+     "issn_l": "0279-3695",
+     "issn": [
+      "0279-3695",
+      "1938-2413"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "dongbi-c",
+      "jufo-1",
+      "ki-jl-1",
+      "medline",
+      "norway-1",
+      "poland-40",
+      "russia-white-list-2"
+     ],
+     "host_organization": "https://openalex.org/P4320800624",
+     "host_organization_name": "Slack Incorporated (United States)",
+     "host_organization_lineage": [
+      "https://openalex.org/P4320800624"
+     ],
+     "host_organization_lineage_names": [
+      "Slack Incorporated (United States)"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Journal of Psychosocial Nursing and Mental Health Services",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref",
+    "pubmed"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5111285911",
+      "display_name": "Suheyla YURT",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I64134780",
+       "display_name": "Atat\u00fcrk University",
+       "ror": "https://ror.org/03je5c526",
+       "country_code": "TR",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I64134780"
+       ]
+      }
+     ],
+     "countries": [
+      "TR"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Suheyla Yurt",
+     "raw_affiliation_strings": [
+      "Atat\u00fcrk University, Faculty of Nursing, Department of Psychiatry Nursing, Erzurum"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Atat\u00fcrk University, Faculty of Nursing, Department of Psychiatry Nursing, Erzurum",
+       "institution_ids": [
+        "https://openalex.org/I64134780"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5116093874",
+      "display_name": "\u015eeyma Lalo\u011flu",
+      "orcid": "https://orcid.org/0000-0003-4429-4488",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-4429-4488"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I64134780",
+       "display_name": "Atat\u00fcrk University",
+       "ror": "https://ror.org/03je5c526",
+       "country_code": "TR",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I64134780"
+       ]
+      }
+     ],
+     "countries": [
+      "TR"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "\u015eeyma Lalo\u011flu",
+     "raw_affiliation_strings": [
+      "Atat\u00fcrk University, Faculty of Nursing, Department of Psychiatry Nursing, Erzurum"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Atat\u00fcrk University, Faculty of Nursing, Department of Psychiatry Nursing, Erzurum",
+       "institution_ids": [
+        "https://openalex.org/I64134780"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5061915256",
+      "display_name": "Nurg\u00fcl Karakurt",
+      "orcid": "https://orcid.org/0000-0001-7598-6554",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-7598-6554"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I265519392",
+       "display_name": "Erzurum Technical University",
+       "ror": "https://ror.org/038pb1155",
+       "country_code": "TR",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I265519392"
+       ]
+      }
+     ],
+     "countries": [
+      "TR"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Nurgul Karakurt",
+     "raw_affiliation_strings": [
+      "Erzurum Technical University, Faculty of Health Sciences, Nursing Department, Erzurum, Turkey"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Erzurum Technical University, Faculty of Health Sciences, Nursing Department, Erzurum, Turkey",
+       "institution_ids": [
+        "https://openalex.org/I265519392"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5158822346",
+      "display_name": "Sibel Asi Karaka\u015f",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I64134780",
+       "display_name": "Atat\u00fcrk University",
+       "ror": "https://ror.org/03je5c526",
+       "country_code": "TR",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I64134780"
+       ]
+      }
+     ],
+     "countries": [
+      "TR"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Sibel Asi Karaka\u015f",
+     "raw_affiliation_strings": [
+      "Atat\u00fcrk University, Faculty of Nursing, Department of Psychiatry Nursing, Erzurum"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Atat\u00fcrk University, Faculty of Nursing, Department of Psychiatry Nursing, Erzurum",
+       "institution_ids": [
+        "https://openalex.org/I64134780"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.94110374,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "10"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.9940999746322632,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.9940999746322632,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12663",
+     "display_name": "Body Image and Dysmorphia Studies",
+     "score": 0.002899999963119626,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10708",
+     "display_name": "Mindfulness and Compassion Interventions",
+     "score": 0.0008999999845400453,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3203",
+      "display_name": "Clinical Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/mindful-awareness",
+     "display_name": "mindful awareness",
+     "score": 0.9729999899864197
+    },
+    {
+     "id": "https://openalex.org/keywords/social-appearance-anxiety",
+     "display_name": "social appearance anxiety",
+     "score": 0.9860000014305115
+    },
+    {
+     "id": "https://openalex.org/keywords/social-media-addiction",
+     "display_name": "social media addiction",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/adolescents",
+     "display_name": "adolescents",
+     "score": 0.9879999756813049
+    },
+    {
+     "id": "https://openalex.org/keywords/mediation",
+     "display_name": "mediation",
+     "score": 0.8899999856948853
+    },
+    {
+     "id": "https://openalex.org/keywords/appearance-perception",
+     "display_name": "appearance perception",
+     "score": 0.5199999809265137
+    },
+    {
+     "id": "https://openalex.org/keywords/social-acceptance",
+     "display_name": "social acceptance",
+     "score": 0.8299999833106995
+    },
+    {
+     "id": "https://openalex.org/keywords/mindfulness-based-interventions",
+     "display_name": "mindfulness-based interventions",
+     "score": 0.8629999756813049
+    },
+    {
+     "id": "https://openalex.org/keywords/secondary-school-students",
+     "display_name": "high school students",
+     "score": 0.7120000123977661
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.8317999839782715
+    },
+    {
+     "id": "https://openalex.org/C2777545354",
+     "wikidata": "https://www.wikidata.org/wiki/Q3557657",
+     "display_name": "Social anxiety",
+     "level": 3,
+     "score": 0.7666000127792358
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.6747999787330627
+    },
+    {
+     "id": "https://openalex.org/C179420905",
+     "wikidata": "https://www.wikidata.org/wiki/Q223871",
+     "display_name": "Mediation",
+     "level": 2,
+     "score": 0.5552999973297119
+    },
+    {
+     "id": "https://openalex.org/C2780444219",
+     "wikidata": "https://www.wikidata.org/wiki/Q341045",
+     "display_name": "Mindfulness",
+     "level": 2,
+     "score": 0.5347999930381775
+    },
+    {
+     "id": "https://openalex.org/C48856860",
+     "wikidata": "https://www.wikidata.org/wiki/Q12029",
+     "display_name": "Addiction",
+     "level": 2,
+     "score": 0.5271000266075134
+    },
+    {
+     "id": "https://openalex.org/C27415008",
+     "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+     "display_name": "Psychological intervention",
+     "level": 2,
+     "score": 0.5008999705314636
+    },
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.49000000953674316
+    },
+    {
+     "id": "https://openalex.org/C26760741",
+     "wikidata": "https://www.wikidata.org/wiki/Q160402",
+     "display_name": "Perception",
+     "level": 2,
+     "score": 0.44999998807907104
+    },
+    {
+     "id": "https://openalex.org/C138496976",
+     "wikidata": "https://www.wikidata.org/wiki/Q175002",
+     "display_name": "Developmental psychology",
+     "level": 1,
+     "score": 0.43369999527931213
+    },
+    {
+     "id": "https://openalex.org/C70410870",
+     "wikidata": "https://www.wikidata.org/wiki/Q199906",
+     "display_name": "Clinical psychology",
+     "level": 1,
+     "score": 0.3919999897480011
+    },
+    {
+     "id": "https://openalex.org/C129573333",
+     "wikidata": "https://www.wikidata.org/wiki/Q913668",
+     "display_name": "Shyness",
+     "level": 3,
+     "score": 0.3610999882221222
+    },
+    {
+     "id": "https://openalex.org/C24614281",
+     "wikidata": "https://www.wikidata.org/wiki/Q17086331",
+     "display_name": "Moderated mediation",
+     "level": 2,
+     "score": 0.3546000123023987
+    },
+    {
+     "id": "https://openalex.org/C25148115",
+     "wikidata": "https://www.wikidata.org/wiki/Q304904",
+     "display_name": "Social competence",
+     "level": 3,
+     "score": 0.3368000090122223
+    },
+    {
+     "id": "https://openalex.org/C159894899",
+     "wikidata": "https://www.wikidata.org/wiki/Q7551193",
+     "display_name": "Social inhibition",
+     "level": 4,
+     "score": 0.3337000012397766
+    },
+    {
+     "id": "https://openalex.org/C95713431",
+     "wikidata": "https://www.wikidata.org/wiki/Q631425",
+     "display_name": "Vulnerability (computing)",
+     "level": 2,
+     "score": 0.33340001106262207
+    },
+    {
+     "id": "https://openalex.org/C129484327",
+     "wikidata": "https://www.wikidata.org/wiki/Q177603",
+     "display_name": "Social perception",
+     "level": 3,
+     "score": 0.32359999418258667
+    },
+    {
+     "id": "https://openalex.org/C2779501324",
+     "wikidata": "https://www.wikidata.org/wiki/Q581445",
+     "display_name": "Social vulnerability",
+     "level": 3,
+     "score": 0.31360000371932983
+    },
+    {
+     "id": "https://openalex.org/C2781240336",
+     "wikidata": "https://www.wikidata.org/wiki/Q5439398",
+     "display_name": "Fear of negative evaluation",
+     "level": 4,
+     "score": 0.3018999993801117
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.28850001096725464
+    },
+    {
+     "id": "https://openalex.org/C130064352",
+     "wikidata": "https://www.wikidata.org/wiki/Q853725",
+     "display_name": "Social relation",
+     "level": 2,
+     "score": 0.2874000072479248
+    },
+    {
+     "id": "https://openalex.org/C2778087770",
+     "wikidata": "https://www.wikidata.org/wiki/Q2297111",
+     "display_name": "Social support",
+     "level": 2,
+     "score": 0.274399995803833
+    },
+    {
+     "id": "https://openalex.org/C150966472",
+     "wikidata": "https://www.wikidata.org/wiki/Q3410145",
+     "display_name": "Psychosocial",
+     "level": 2,
+     "score": 0.2581999897956848
+    },
+    {
+     "id": "https://openalex.org/C2107291",
+     "wikidata": "https://www.wikidata.org/wiki/Q14886885",
+     "display_name": "Mediator",
+     "level": 2,
+     "score": 0.2581000030040741
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.2565999925136566
+    },
+    {
+     "id": "https://openalex.org/C110379092",
+     "wikidata": "https://www.wikidata.org/wiki/Q1571836",
+     "display_name": "Social environment",
+     "level": 2,
+     "score": 0.25209999084472656
+    }
+   ],
+   "mesh": [],
+   "locations_count": 2,
+   "locations": [
+    {
+     "id": "doi:10.3928/02793695-20261009-01",
+     "doi": "https://doi.org/10.3928/02793695-20261009-01",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.3928/02793695-20261009-01",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S31827231",
+      "display_name": "Journal of Psychosocial Nursing and Mental Health Services",
+      "issn_l": "0279-3695",
+      "issn": [
+       "0279-3695",
+       "1938-2413"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "dongbi-c",
+       "jufo-1",
+       "ki-jl-1",
+       "medline",
+       "norway-1",
+       "poland-40",
+       "russia-white-list-2"
+      ],
+      "host_organization": "https://openalex.org/P4320800624",
+      "host_organization_name": "Slack Incorporated (United States)",
+      "host_organization_lineage": [
+       "https://openalex.org/P4320800624"
+      ],
+      "host_organization_lineage_names": [
+       "Slack Incorporated (United States)"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of Psychosocial Nursing and Mental Health Services",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "pmid:42879693",
+     "doi": null,
+     "is_oa": false,
+     "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/42879693",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306525036",
+      "display_name": "PubMed",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I1299303238",
+      "host_organization_name": "National Institutes of Health",
+      "host_organization_lineage": [
+       "https://openalex.org/I1299303238"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Journal of psychosocial nursing and mental health services",
+     "raw_type": "Journal Article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "display_name": "Good health and well-being",
+     "id": "https://metadata.un.org/sdg/3",
+     "score": 0.8999999761581421
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [
+    {
+     "display_name": "Observational Study",
+     "id": "https://openalex.org/study-designs/observational-study"
+    }
+   ],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 48,
+   "referenced_works": [
+    "https://openalex.org/W1822476280",
+    "https://openalex.org/W1988050849",
+    "https://openalex.org/W2019242362",
+    "https://openalex.org/W2038702827",
+    "https://openalex.org/W2118242114",
+    "https://openalex.org/W2124126925",
+    "https://openalex.org/W2127662631",
+    "https://openalex.org/W2157300266",
+    "https://openalex.org/W2345498229",
+    "https://openalex.org/W2783775911",
+    "https://openalex.org/W2883889645",
+    "https://openalex.org/W2905476829",
+    "https://openalex.org/W2963173925",
+    "https://openalex.org/W2974002623",
+    "https://openalex.org/W3006120578",
+    "https://openalex.org/W3006836272",
+    "https://openalex.org/W3011113997",
+    "https://openalex.org/W3121380833",
+    "https://openalex.org/W3158697559",
+    "https://openalex.org/W3165787807",
+    "https://openalex.org/W3191010831",
+    "https://openalex.org/W4212985714",
+    "https://openalex.org/W4225816496",
+    "https://openalex.org/W4282920511",
+    "https://openalex.org/W4293109192",
+    "https://openalex.org/W4310039571",
+    "https://openalex.org/W4311517385",
+    "https://openalex.org/W4318162621",
+    "https://openalex.org/W4322629371",
+    "https://openalex.org/W4322764137",
+    "https://openalex.org/W4386334210",
+    "https://openalex.org/W4389831698",
+    "https://openalex.org/W4390502227",
+    "https://openalex.org/W4391532752",
+    "https://openalex.org/W4391877925",
+    "https://openalex.org/W4393176161",
+    "https://openalex.org/W4402994167",
+    "https://openalex.org/W4403539648",
+    "https://openalex.org/W4403592413",
+    "https://openalex.org/W4404601636",
+    "https://openalex.org/W4404722346",
+    "https://openalex.org/W4405079406",
+    "https://openalex.org/W4407791134",
+    "https://openalex.org/W4410207831",
+    "https://openalex.org/W4412916629",
+    "https://openalex.org/W4414510877",
+    "https://openalex.org/W4417025695",
+    "https://openalex.org/W4417483036"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "PURPOSE:": [
+     0
+    ],
+    "Adolescence": [
+     1
+    ],
+    "is": [
+     2
+    ],
+    "a": [
+     3,
+     54,
+     148
+    ],
+    "critical": [
+     4
+    ],
+    "period": [
+     5
+    ],
+    "for": [
+     6,
+     150
+    ],
+    "identity": [
+     7
+    ],
+    "formation": [
+     8
+    ],
+    "and": [
+     9,
+     12,
+     19,
+     60,
+     93,
+     108,
+     135
+    ],
+    "social": [
+     10,
+     13,
+     20,
+     32,
+     57,
+     61,
+     88,
+     94,
+     105,
+     138
+    ],
+    "development,": [
+     11
+    ],
+    "media": [
+     14,
+     33,
+     62,
+     95,
+     106,
+     139
+    ],
+    "can": [
+     15
+    ],
+    "shape": [
+     16
+    ],
+    "appearance": [
+     17,
+     23,
+     58,
+     89,
+     99,
+     133
+    ],
+    "perceptions": [
+     18
+    ],
+    "acceptance.": [
+     21
+    ],
+    "Social": [
+     22,
+     98
+    ],
+    "anxiety": [
+     24,
+     59,
+     100,
+     134
+    ],
+    "may": [
+     25,
+     38,
+     131
+    ],
+    "be": [
+     26,
+     39
+    ],
+    "associated": [
+     27
+    ],
+    "with": [
+     28
+    ],
+    "greater": [
+     29
+    ],
+    "vulnerability": [
+     30
+    ],
+    "to": [
+     31,
+     41,
+     104,
+     111,
+     120
+    ],
+    "addiction,": [
+     34
+    ],
+    "whereas": [
+     35
+    ],
+    "mindful": [
+     36,
+     51,
+     91,
+     112,
+     114,
+     145
+    ],
+    "awareness": [
+     37,
+     52,
+     115,
+     146
+    ],
+    "linked": [
+     40
+    ],
+    "lower": [
+     42
+    ],
+    "levels": [
+     43
+    ],
+    "of": [
+     44,
+     87
+    ],
+    "this": [
+     45
+    ],
+    "risk.": [
+     46
+    ],
+    "The": [
+     47,
+     67
+    ],
+    "current": [
+     48
+    ],
+    "study": [
+     49
+    ],
+    "tested": [
+     50
+    ],
+    "as": [
+     53,
+     147
+    ],
+    "mediator": [
+     55
+    ],
+    "between": [
+     56
+    ],
+    "addiction": [
+     63,
+     107
+    ],
+    "in": [
+     64,
+     75
+    ],
+    "adolescents.": [
+     65,
+     142
+    ],
+    "METHOD:": [
+     66
+    ],
+    "sample": [
+     68
+    ],
+    "comprised": [
+     69
+    ],
+    "383": [
+     70
+    ],
+    "volunteer": [
+     71
+    ],
+    "secondary": [
+     72
+    ],
+    "school": [
+     73
+    ],
+    "students": [
+     74
+    ],
+    "eastern": [
+     76
+    ],
+    "T\u00fcrkiye": [
+     77
+    ],
+    "during": [
+     78
+    ],
+    "the": [
+     79
+    ],
+    "2024-2025": [
+     80
+    ],
+    "academic": [
+     81
+    ],
+    "year.": [
+     82
+    ],
+    "Participants": [
+     83
+    ],
+    "completed": [
+     84
+    ],
+    "standardized": [
+     85
+    ],
+    "measures": [
+     86
+    ],
+    "anxiety,": [
+     90
+    ],
+    "awareness,": [
+     92
+    ],
+    "addiction.": [
+     96,
+     121
+    ],
+    "RESULTS:": [
+     97
+    ],
+    "was": [
+     101,
+     116
+    ],
+    "positively": [
+     102
+    ],
+    "related": [
+     103,
+     110,
+     119
+    ],
+    "negatively": [
+     109,
+     118
+    ],
+    "awareness;": [
+     113
+    ],
+    "also": [
+     117
+    ],
+    "CONCLUSION:": [
+     122
+    ],
+    "Mediation": [
+     123
+    ],
+    "results": [
+     124
+    ],
+    "indicated": [
+     125
+    ],
+    "partial": [
+     126
+    ],
+    "mediation,": [
+     127
+    ],
+    "suggesting": [
+     128
+    ],
+    "mindfulness-based": [
+     129
+    ],
+    "interventions": [
+     130
+    ],
+    "reduce": [
+     132
+    ],
+    "promote": [
+     136
+    ],
+    "healthier": [
+     137
+    ],
+    "use": [
+     140
+    ],
+    "among": [
+     141
+    ],
+    "Findings": [
+     143
+    ],
+    "highlight": [
+     144
+    ],
+    "target": [
+     149
+    ],
+    "prevention.": [
+     151
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-18T09:31:52.927876",
+   "created_date": "2026-10-16T00:00:00"
+  }
+ ]
+}
