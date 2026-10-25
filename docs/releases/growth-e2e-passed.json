@@ -1,8 +1,8 @@
 {
  "what": "tools/grow/e2e_mock.py full run (every publish gate in scenarios 1, 2 and 7), mocked OpenAlex and Gemini, temporary ledger and money config, local stand-in for GitHub",
- "date": "2026-10-15",
- "tested_commit": "c7f4d7913b817be0f3d00b6389803b549f111c34",
- "tested_tree": "6b269aa7b587e6ce9a0a7c0da972ec63352af10d",
+ "date": "2026-10-26",
+ "tested_commit": "7e89028ae7068da6d046c585a9fa3bb98eee9559",
+ "tested_tree": "e179a9a018c13bf76a373e61f7193f0eab63eb60",
  "tested_tree_note": "git tree of tested_commit with this file left out; check a commit with python tools/grow/e2e_mock.py --verify-marker <rev>",
  "full": true,
  "passed": 84,
