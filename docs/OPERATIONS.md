@@ -398,8 +398,39 @@ on main. The rest of the run's work is on `grow/<date>`.
 | `WEEKLY_BUDGET_INR` | variable (optional) | Lowers the computed weekly budget |
 | `NEXT_PUBLIC_SITE_URL` | variable (optional) | Both workflows and the frontend build; overrides `siteUrl` in `frontend/site.config.json` (the production domain, `https://www.research-map.com`). The live checks also accept the old `vercelHost` address there when it redirects to the domain or serves the site with the domain as its canonical URL. |
 
+| `GROW_GIT_NAME`, `GROW_GIT_EMAIL` | variables (optional) | Author of the weekly run's and keepalive's commits (default `researchmap-bot`). Required once the repository is private: see below. |
+
 Secrets are never printed. Every message is redacted, and OpenAlex errors
 never carry the request URL, which holds the key.
+
+## Private repository
+
+Everything keeps working when the repository is private, with two settings
+done at the same time as the switch:
+
+- **Vercel deploys (Hobby plan).** For a private repository, Vercel deploys a
+  commit only when its author email is verified on the GitHub account that
+  owns the Vercel project. The weekly run commits as `researchmap-bot`, which
+  would be blocked: the site would stop updating while the run reports
+  success. Set the repo variables `GROW_GIT_NAME` to your name and
+  `GROW_GIT_EMAIL` to your GitHub noreply address
+  (`<id>+<login>@users.noreply.github.com`, shown under GitHub Settings ->
+  Emails). Commits you merge through pull requests are already yours.
+- **Contact page.** `/contact` links to GitHub Issues only while
+  `repoIsPublic` is true in `frontend/site.config.json`. Set `contactEmail`
+  to a public address and `repoIsPublic` to `false` in the same commit;
+  otherwise visitors get a GitHub 404 and the launch check fails.
+
+Unchanged when private: the workflows (Linux runners; private repos use
+Actions minutes, about 300-450 a month here against the 2,000 free), their
+secrets and variables, `GITHUB_TOKEN` permissions (each workflow declares
+its own), Issues, and the daily health check (it reads the public site).
+GitHub Pages is not available for private repositories on the free plan,
+so its old copy (rajbhise009-collab.github.io/ResearchMap, a stale build)
+goes offline with the switch; it can also be unpublished first under
+Settings -> Pages. The Vercel site is the only one meant to be public. The keepalive
+workflow is only needed for public repositories (GitHub's 60-day rule) and is
+harmless otherwise.
 
 ## Testing the workflows without spending anything
 

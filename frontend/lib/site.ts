@@ -7,6 +7,9 @@ import config from "../site.config.json";
 export interface SiteConfig {
   siteName: string;
   authorName: string;
+  /** Copyright holder named in the footer, /terms and LICENSE. */
+  copyrightOwner: string;
+  copyrightYear: number;
   contactEmail: string;
   affiliation: string;
   repoUrl: string;

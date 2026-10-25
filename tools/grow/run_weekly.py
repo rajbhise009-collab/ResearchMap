@@ -1332,8 +1332,18 @@ def registry_queued() -> list[dict]:
     return registry.queued()
 
 
+BOT_NAME, BOT_EMAIL = "researchmap-bot", "researchmap-bot@users.noreply.github.com"
+
+
 def _identity() -> list[str]:
-    return ["-c", "user.name=researchmap-bot", "-c", "user.email=researchmap-bot@users.noreply.github.com"]
+    """Author of the run's commits. GROW_GIT_NAME / GROW_GIT_EMAIL (repo
+    variables) override the bot: once the repository is private, Vercel's
+    Hobby plan deploys only commits whose author email is verified on the
+    Vercel account owner's GitHub account (docs/OPERATIONS.md, "Private
+    repository"), so set GROW_GIT_EMAIL to the owner's GitHub noreply address."""
+    name = (os.environ.get("GROW_GIT_NAME") or "").strip() or BOT_NAME
+    email = (os.environ.get("GROW_GIT_EMAIL") or "").strip() or BOT_EMAIL
+    return ["-c", f"user.name={name}", "-c", f"user.email={email}"]
 
 
 class MainMoved(RuntimeError):

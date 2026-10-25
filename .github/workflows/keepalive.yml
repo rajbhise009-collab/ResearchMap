@@ -35,3 +35,6 @@ jobs:
 
       - name: Heartbeat if main has been quiet for 40 days
         run: python tools/grow/keepalive.py
+        env:
+          GROW_GIT_NAME: ${{ vars.GROW_GIT_NAME }}
+          GROW_GIT_EMAIL: ${{ vars.GROW_GIT_EMAIL }}

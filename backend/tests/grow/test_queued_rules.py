@@ -151,3 +151,22 @@ def test_self_recovery_runs_before_preflight():
     gates_src = src[src.index("def gates(*"):src.index("def ", src.index("def gates(*") + 10)]
     for step in ('"typecheck"', '"full tests"', "production build"):
         assert step in gates_src                       # recovery's gates cover all of preflight
+
+
+def test_commit_author_defaults_to_the_bot_and_follows_the_repo_variables(monkeypatch):
+    """Vercel's Hobby plan deploys a PRIVATE repo's commits only when the
+    author email is verified on the owner's GitHub account, so the weekly
+    run's author is configurable (GROW_GIT_NAME / GROW_GIT_EMAIL)."""
+    rw = _rw()
+    monkeypatch.delenv("GROW_GIT_NAME", raising=False)
+    monkeypatch.delenv("GROW_GIT_EMAIL", raising=False)
+    assert rw._identity() == ["-c", "user.name=researchmap-bot", "-c",
+                              "user.email=researchmap-bot@users.noreply.github.com"]
+    monkeypatch.setenv("GROW_GIT_NAME", "Owner")
+    monkeypatch.setenv("GROW_GIT_EMAIL", "1+owner@users.noreply.github.com")
+    assert rw._identity() == ["-c", "user.name=Owner", "-c", "user.email=1+owner@users.noreply.github.com"]
+    monkeypatch.setenv("GROW_GIT_EMAIL", "  ")                        # an empty variable keeps the bot
+    assert rw._identity()[-1] == "user.email=researchmap-bot@users.noreply.github.com"
+    for wf in ("weekly-grow.yml", "keepalive.yml"):
+        src = (REPO / ".github" / "workflows" / wf).read_text()
+        assert "GROW_GIT_EMAIL: ${{ vars.GROW_GIT_EMAIL }}" in src, wf
