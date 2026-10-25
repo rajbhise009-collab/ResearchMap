@@ -106,6 +106,8 @@ jobs:
           GROW_REPUBLISH: ${{ inputs.republish_branch }}
           WEEKLY_BUDGET_INR: ${{ vars.WEEKLY_BUDGET_INR }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          GROW_GIT_NAME: ${{ vars.GROW_GIT_NAME }}       # commit author (Vercel Hobby + private repo)
+          GROW_GIT_EMAIL: ${{ vars.GROW_GIT_EMAIL }}
           GROW_ISSUE_MARKER: ${{ runner.temp }}/grow-issue-written
         run: python tools/grow/run_weekly.py 2>&1 | tee "$RUNNER_TEMP/grow.log"
 

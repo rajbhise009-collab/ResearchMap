@@ -70,8 +70,9 @@ def export(outdir: Path = DEFAULT_OUT) -> int:
     _write(outdir / "language.json", language.language_pack())
     _write(outdir / "search-index.json", search_index.build_index(cards, details))
 
-    _write(outdir / "relationships.json",
-           {"items": [r.model_dump() for r in data.relationships()]})
+    # not deployed (no page reads it; it carried pipeline fields such as
+    # prompt_hash): see backend/tests/api/test_public_surface.py
+    (outdir / "relationships.json").unlink(missing_ok=True)
     _write(outdir / "stats.json", data.stats())
     _write(outdir / "findings.json", {"items": data.findings()})
 

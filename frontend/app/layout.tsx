@@ -171,6 +171,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <p className="foot-sources-intro">{lang.privacy_note.body}</p>
                   </section>
                 </div>
+                <p className="foot-legal">
+                  &copy; {site.copyrightYear} {site.copyrightOwner}. Code and original text: all rights
+                  reserved. Paper metadata and abstracts belong to their sources.{" "}
+                  <Link href="/terms/">Terms</Link>
+                </p>
               </div>
             </footer>
             <OptionalAnalytics />

@@ -468,16 +468,10 @@ def write_multi_domain_snapshot(slug: str, out_root: Path) -> dict:
         "items": data_mod.findings(),
     }))
 
-    # relationships.json — for now, just the contradiction pairs
-    (lib_dir / "relationships.json").write_text(json.dumps({
-        "items": [
-            {"from_paper_id": c.get("a_paper_id"),
-             "to_paper_id": c.get("b_paper_id"),
-             "type": "contradicts",
-             "note": c.get("explanation", "")[:400]}
-            for c in contradictions
-        ],
-    }))
+    # relationships.json is not deployed: no page reads it, and the claim
+    # relationships stay in the repo (data/), not on the public site
+    # (backend/tests/api/test_public_surface.py). Remove any old copy.
+    (lib_dir / "relationships.json").unlink(missing_ok=True)
 
     return {"slug": slug, "n_papers": len(entries),
             "n_extractions": len(exts),

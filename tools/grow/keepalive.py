@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -37,7 +38,9 @@ def main() -> int:
     p.write_text(json.dumps({"date": today, "why": "keeps the scheduled workflows enabled (60-day rule); "
                              "written by .github/workflows/keepalive.yml"}, indent=1) + "\n")
     git("add", str(p))
-    git("-c", "user.name=researchmap-bot", "-c", "user.email=researchmap-bot@users.noreply.github.com",
+    name = os.environ.get("GROW_GIT_NAME", "").strip() or "researchmap-bot"       # same author as the
+    email = os.environ.get("GROW_GIT_EMAIL", "").strip() or "researchmap-bot@users.noreply.github.com"  # weekly run
+    git("-c", f"user.name={name}", "-c", f"user.email={email}",
         "commit", "-q", "-m", f"keepalive {today}: no commit for {days:.0f} days")
     r = git("push", "origin", "HEAD:main", check=False)
     local = git("rev-parse", "HEAD").stdout.strip()

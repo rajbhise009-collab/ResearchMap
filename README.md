@@ -87,9 +87,12 @@ share previews and the sitemap use it; only production builds
 
 ## Licence
 
-Code: [MIT](LICENSE). Paper metadata comes from OpenAlex (CC0); paper text
-belongs to its authors and publishers, and the site shows only short
-extracted claims, abstracts and links, never full text.
+Proprietary, all rights reserved: see [LICENSE](LICENSE). The code and the
+original text are not licensed for reuse. Paper metadata comes from OpenAlex
+(CC0); paper titles, abstracts and quoted text belong to their authors and
+publishers, and the site shows only short extracted claims, abstracts and
+links, never full text. Versions up to commit 9f73ce4 (2026-10-19) were
+published under the MIT licence; copies obtained then keep those terms.
 
 ## How to cite
 

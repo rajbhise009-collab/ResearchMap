@@ -191,3 +191,6 @@ section.block p { color: var(--ink-soft); }
   .trust table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .trust td:last-child { white-space: normal; }
 }
+
+/* /terms: draft status line (remove with the line after legal review) */
+.trust-status { color: var(--muted); font-size: var(--step--1); margin: 0 0 var(--s-4); }

@@ -1,41 +1,25 @@
-MIT License
+Copyright (c) 2026 Raj Bhise. All rights reserved.
 
-Copyright (c) 2026 Raj Bhise
+This repository and the ResearchMap website are proprietary. This covers the
+source code, its build and data-processing tooling, the documentation, and the
+original text written for the site.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+No licence is granted. Without prior written permission from the copyright
+holder you may not copy, modify, merge, publish, distribute, sublicense, sell
+or otherwise use any part of it, except to the extent the law allows without
+permission.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Not covered by this notice, and owned by others under their own terms:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+  - Paper metadata from OpenAlex, released under CC0.
+  - Paper titles, abstracts, and any text quoted from papers, which belong to
+    their authors and publishers.
+  - Third-party software dependencies, each under its own licence (see
+    frontend/package-lock.json, tools/qa/package-lock.json and
+    requirements.txt).
 
----
+Earlier versions of this repository (up to and including commit 9f73ce4,
+2026-10-19) were published under the MIT licence. Copies obtained under that
+licence keep its terms; this notice applies to later versions.
 
-DATA-SOURCE ATTRIBUTION
-
-The paper metadata, citations, abstracts, and full-text used in the pipeline
-that produced this software's shipped snapshot come from third-party sources
-with their own terms. This code repository is MIT-licensed; the data those
-sources provide is NOT re-licensed here.
-
-- OpenAlex (https://openalex.org/) — paper metadata, citations, abstracts (CC0)
-- Semantic Scholar (https://www.semanticscholar.org/) — metadata enrichment;
-    see Semantic Scholar API terms for redistribution
-- Unpaywall (https://unpaywall.org/) — open-access PDFs for extraction
-- Europe PMC (https://europepmc.org/) — open-access full-text (JATS)
-- arXiv (https://arxiv.org/) — preprint full-text
-
-Only short structured extractions (claims, limitations, future-work
-statements — each under ~260 characters) are redistributed. Original paper
-full-text is used to produce those extractions and is NOT republished.
+THE SOFTWARE AND SITE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
