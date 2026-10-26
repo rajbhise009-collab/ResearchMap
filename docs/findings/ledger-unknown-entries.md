@@ -1,3 +1,4 @@
+<!-- internal: not published -->
 # Ledger "unknown" entries — what wrote them
 
 **2026-10-04.** Free audit; no API calls. Numbers below are generated

@@ -3,10 +3,10 @@
   "authorName": "",
   "copyrightOwner": "Raj Bhise",
   "copyrightYear": 2026,
-  "contactEmail": "",
+  "contactEmail": "contact@research-map.com",
   "affiliation": "",
   "repoUrl": "https://github.com/rajbhise009-collab/ResearchMap",
-  "repoIsPublic": true,
+  "repoIsPublic": false,
   "siteUrl": "https://www.research-map.com",
   "vercelHost": "researchmap-one.vercel.app"
 }

@@ -417,9 +417,11 @@ done at the same time as the switch:
   (`<id>+<login>@users.noreply.github.com`, shown under GitHub Settings ->
   Emails). Commits you merge through pull requests are already yours.
 - **Contact page.** `/contact` links to GitHub Issues only while
-  `repoIsPublic` is true in `frontend/site.config.json`. Set `contactEmail`
-  to a public address and `repoIsPublic` to `false` in the same commit;
-  otherwise visitors get a GitHub 404 and the launch check fails.
+  `repoIsPublic` is true in `frontend/site.config.json`. It is now `false`
+  and `contactEmail` is the site's public address, which is also the
+  contact given to Unpaywall (`backend.app.config.site_contact_email`).
+  That address must be able to receive mail (the domain needs MX records or
+  a forwarding service).
 
 Unchanged when private: the workflows (Linux runners; private repos use
 Actions minutes, about 300-450 a month here against the 2,000 free), their

@@ -172,3 +172,20 @@ def test_default_base_is_the_configured_site(monkeypatch):
     assert live_check._site_defaults()[0] == cfg["siteUrl"].rstrip("/")
     monkeypatch.setenv("NEXT_PUBLIC_SITE_URL", "https://example.org/")
     assert live_check._site_defaults()[0] == "https://example.org"
+
+
+def test_unpaywall_contact_is_the_site_contact_address(tmp_path, monkeypatch):
+    """Outside services that ask for a contact get the site's public
+    address (frontend/site.config.json contactEmail), never a personal one;
+    an unset address raises instead of guessing."""
+    import json
+    from backend.app import config
+    assert config.site_contact_email() == json.loads(config.SITE_CONFIG.read_text())["contactEmail"]
+    p = tmp_path / "site.config.json"
+    p.write_text(json.dumps({"contactEmail": ""}))
+    monkeypatch.setattr(config, "SITE_CONFIG", p)
+    with pytest.raises(RuntimeError):
+        config.site_contact_email()
+    for f in ("backend/app/corpus/multi_domain.py", "backend/app/corpus/recover_oa_fulltext.py"):
+        src = (config.REPO_ROOT / f).read_text()
+        assert "gmail.com" not in src and "site_contact_email()" in src, f

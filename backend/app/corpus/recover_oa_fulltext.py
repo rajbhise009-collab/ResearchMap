@@ -23,13 +23,12 @@ sys.path.insert(0, str(REPO_ROOT))
 
 import httpx  # noqa: E402
 
-from backend.app.config import get_settings  # noqa: E402
+from backend.app.config import get_settings, site_contact_email  # noqa: E402
 from backend.app.ingestion.fulltext import estimate_tokens  # noqa: E402
 from backend.app.ingestion.oa_fulltext import retrieve_oa_fulltext  # noqa: E402
 from backend.app.models import Paper, Source  # noqa: E402
 
 MANIFEST = REPO_ROOT / "data" / "live_samples" / "expanded_corpus_manifest.json"
-EMAIL = "raj.bhise009@gmail.com"
 
 
 def _paper(rec: dict) -> Paper:
@@ -72,7 +71,7 @@ def main() -> int:
     with httpx.Client(timeout=httpx.Timeout(60.0, connect=10.0),
                       headers={"User-Agent": "ResearchMap/0.1 oa"}) as client:
         for i, r in enumerate(targets, 1):
-            res = retrieve_oa_fulltext(_paper(r), email=EMAIL, client=client,
+            res = retrieve_oa_fulltext(_paper(r), email=site_contact_email(), client=client,
                                        use_cache=True)
             if res.fulltext and res.source:
                 r["input_source"] = "fulltext"

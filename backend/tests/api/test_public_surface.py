@@ -116,3 +116,35 @@ def test_the_rules_catch_what_they_should():
         name = parts[-1].lower()
         assert not (set(parts[:-1]) & FORBIDDEN_DIRS or name in FORBIDDEN_NAMES
                     or name.startswith(FORBIDDEN_PREFIXES) or name.endswith(FORBIDDEN_SUFFIXES)), rel
+
+
+INTERNAL_NOTES = ("ledger-reconciliation-2026-10-02", "ledger-unknown-entries", "new-library-scorer-status")
+
+
+def test_internal_findings_notes_stay_in_the_repo_but_are_not_published():
+    """Operations notes in docs/findings/ carry the internal marker: they
+    stay in the repo and are not exported to findings.json or built as
+    /findings/<slug>/ pages."""
+    import json
+    from backend.app.api import data
+    for slug in INTERNAL_NOTES:
+        p = REPO / "docs" / "findings" / f"{slug}.md"
+        assert p.exists() and data.is_internal(p), slug
+    assert not {f["slug"] for f in data.findings()} & set(INTERNAL_NOTES)
+    assert data.findings(), "the public findings must not all disappear"
+    for root, p in _deployed():
+        if p.name == "findings.json":
+            slugs = {i["slug"] for i in json.loads(p.read_text())["items"]}
+            assert not slugs & set(INTERNAL_NOTES), f"{root.name}/{p.relative_to(root)}"
+    out = REPO / "frontend" / "out" / "findings"
+    if out.is_dir():
+        assert not [s for s in INTERNAL_NOTES if (out / s).exists()]
+        assert any(out.iterdir())
+
+
+def test_the_internal_marker_is_honoured(tmp_path, monkeypatch):
+    from backend.app.api import data
+    (tmp_path / "a.md").write_text("# Public note\n")
+    (tmp_path / "b.md").write_text(data.INTERNAL_MARKER + "\n# Internal note\n")
+    monkeypatch.setattr(data, "FINDINGS_DIR", tmp_path)
+    assert [f["slug"] for f in data.findings()] == ["a"]

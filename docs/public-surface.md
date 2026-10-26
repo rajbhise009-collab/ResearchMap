@@ -24,8 +24,11 @@ OpenAlex) and the claims, methods, limitations and future-work items
 extracted from it, each with its paper ID: the site's traceability rule. The
 result files carry the scores and caveats the pages show.
 
-`/findings/` publishes every file in `docs/findings/` (rendered from
-`findings.json`). Anything put in that folder becomes public.
+`/findings/` publishes the files in `docs/findings/` (rendered from
+`findings.json`), except notes whose first line is
+`<!-- internal: not published -->`: they stay in the repo and are not
+exported. The ledger notes and the scorer-status note are marked so. Any
+other file put in that folder becomes public.
 
 ## Build-time only (never deployed)
 
