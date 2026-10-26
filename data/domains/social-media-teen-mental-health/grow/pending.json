@@ -1,0 +1,1820 @@
+{
+ "batch_id": "mwju60mli8s4klw876kethouk18f6savwyqa",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-10-26",
+ "submitted_at": 1793014141.8494673,
+ "projected_inr": 3.231333,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7223188562": "abstract",
+  "openalex:W7223247033": "fulltext"
+ },
+ "entries": [
+  {
+   "wid": "W7223188562",
+   "openalex_id": "https://openalex.org/W7223188562",
+   "title": "Algorithmic Persuasion and Digital Well-Being",
+   "year": 2026,
+   "doi": "https://doi.org/10.4018/979-8-2600-4921-1.ch007",
+   "venue": "IGI Global eBooks",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "Social media is deeply embedded in daily life, shaping behaviours and psychological states. This study examines how social media influences emotions and behaviours by analysing the relationships between anxiety, voyeurism, exhibitionism, and Fear of Missing Out (FoMO), as well as FoMO's role in driving compulsive use. Using a quantitative approach, a 30-item survey was administered to 108 children. Results show that social media engagement is associated with higher levels of anxiety, voyeurism, and exhibitionism, which increase FoMO. This psychological strain leads to compulsive social media use. Despite limitations, the findings highlight FoMO's central role in shaping children's online experiences and contribute to understanding problematic digital behaviour, offering implications for more responsible and effective digital strategies.",
+   "label": "on-domain",
+   "rationale": "same-sentence pair: 'social media' + 'well-being'; core scope: young population 'children' + mental-health outcome 'Well-Being'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-26",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7223247033",
+   "openalex_id": "https://openalex.org/W7223247033",
+   "title": "Associations Among Social Media Use, Sleep Duration, and Mental Health Indicators in a Synthetic Adolescent Dataset",
+   "year": 2026,
+   "doi": "https://doi.org/10.63313/ssh.9144",
+   "venue": "Social Sciences and Humanities",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "This study investigated the relationship between hours of social media using and hours of sleep duration, anxiety level, and stress level in a synthetic dataset containing 1,200 adolescent records. All four primary hypotheses were tested using Pearson correlations. A multiple linear regression analysis helped to examined whether daily social media use hours and screen time before bed were related to sleep duration, while accounting for age, gender, and physical activity. A one-way ANOVA compared sleep hours across four quartile-based social media use groups. The four primary correlations were approximately zero and statistically nonsignificant (rs = \u2212.009 to .031, all ps > .28). The regression model explained almost none of the variance in sleep duration (R\u00b2 = .001, p = .895), and average sleep duration did not differ significantly across the four usage groups (p = .348, \u03b7\u00b2 = .003). The additional analyses of addiction and social interaction also found no significant relationships in this dataset. However, because the records were synthetically generated and the mental health measures were not documented as validated instruments, the results cannot be generalized to real adolescents. The study suggests the importance of evaluating dataset construction and measurement validity before using the findings to evaluate psychological theories.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: young population 'Adolescen' + mental-health outcome 'Mental Health'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-26",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7223188562",
+   "doi": "https://doi.org/10.4018/979-8-2600-4921-1.ch007",
+   "title": "Algorithmic Persuasion and Digital Well-Being",
+   "display_name": "Algorithmic Persuasion and Digital Well-Being",
+   "publication_year": 2026,
+   "publication_date": "2026-10-22",
+   "ids": {
+    "openalex": "https://openalex.org/W7223188562",
+    "doi": "https://doi.org/10.4018/979-8-2600-4921-1.ch007"
+   },
+   "language": "ng",
+   "primary_location": {
+    "id": "doi:10.4018/979-8-2600-4921-1.ch007",
+    "doi": "https://doi.org/10.4018/979-8-2600-4921-1.ch007",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.4018/979-8-2600-4921-1.ch007",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S4306463409",
+     "display_name": "IGI Global eBooks",
+     "issn_l": null,
+     "issn": null,
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": "https://openalex.org/P4310320424",
+     "host_organization_name": "IGI Global",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320424"
+     ],
+     "host_organization_lineage_names": [
+      "IGI Global"
+     ],
+     "type": "ebook platform"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "The Algorithmic Child Consumer",
+    "raw_type": "book-chapter"
+   },
+   "volume": {
+    "id": "https://openalex.org/W7223174617",
+    "display_name": "The Algorithmic Child Consumer"
+   },
+   "type": "book-chapter",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5047033289",
+      "display_name": "Pedro Esp\u00edrito Santo",
+      "orcid": "https://orcid.org/0000-0001-8924-7912",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-8924-7912"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I169427155",
+       "display_name": "Universidade de Leiria e Oeste",
+       "ror": "https://ror.org/010dvvh94",
+       "country_code": "PT",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I169427155"
+       ]
+      }
+     ],
+     "countries": [
+      "PT"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Pedro Esp\u00edrito Santo",
+     "raw_affiliation_strings": [
+      "Polytechnic University of Leiria, Portugal"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-8924-7912",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Polytechnic University of Leiria, Portugal",
+       "institution_ids": [
+        "https://openalex.org/I169427155"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5079674977",
+      "display_name": "Patr\u00edcia Azinheira Cardoso",
+      "orcid": "https://orcid.org/0009-0003-0903-2930",
+      "observed_orcids": [
+       "https://orcid.org/0009-0003-0903-2930"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I293362453",
+       "display_name": "Universidade Polit\u00e9cnica de Coimbra",
+       "ror": "https://ror.org/01n8x4993",
+       "country_code": "PT",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I293362453"
+       ]
+      }
+     ],
+     "countries": [
+      "PT"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Patricia Milene Azinheira Cardoso",
+     "raw_affiliation_strings": [
+      "Polytechnic University of Coimbra, Portugal"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Polytechnic University of Coimbra, Portugal",
+       "institution_ids": [
+        "https://openalex.org/I293362453"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.97761787,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "169",
+    "last_page": "198"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.9994999766349792,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.9994999766349792,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T14114",
+     "display_name": "Digital Media and Philosophy",
+     "score": 0.00019999999494757503,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1706",
+      "display_name": "Computer Science Applications"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12060",
+     "display_name": "Child Development and Digital Technology",
+     "score": 9.999999747378752e-05,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3304",
+      "display_name": "Education"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/algorithmic-persuasion",
+     "display_name": "algorithmic persuasion",
+     "score": 0.9520000219345093
+    },
+    {
+     "id": "https://openalex.org/keywords/digital-well-being",
+     "display_name": "digital well-being",
+     "score": 0.9269999861717224
+    },
+    {
+     "id": "https://openalex.org/keywords/social-media",
+     "display_name": "social media",
+     "score": 0.8650000095367432
+    },
+    {
+     "id": "https://openalex.org/keywords/fear-of-missing-out",
+     "display_name": "fear of missing out",
+     "score": 0.8730000257492065
+    },
+    {
+     "id": "https://openalex.org/keywords/anxiety",
+     "display_name": "anxiety",
+     "score": 0.9649999737739563
+    },
+    {
+     "id": "https://openalex.org/keywords/voyeurism",
+     "display_name": "voyeurism",
+     "score": 0.9860000014305115
+    },
+    {
+     "id": "https://openalex.org/keywords/exhibitionism",
+     "display_name": "exhibitionism",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/social-media-addiction",
+     "display_name": "social media addiction",
+     "score": 0.9909999966621399
+    },
+    {
+     "id": "https://openalex.org/keywords/children",
+     "display_name": "children",
+     "score": 0.7789999842643738
+    },
+    {
+     "id": "https://openalex.org/keywords/online-behavior",
+     "display_name": "online behavior",
+     "score": 0.40299999713897705
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C2781310500",
+     "wikidata": "https://www.wikidata.org/wiki/Q1231428",
+     "display_name": "Persuasion",
+     "level": 2,
+     "score": 0.7610999941825867
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.6413000226020813
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.570900022983551
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.5546000003814697
+    },
+    {
+     "id": "https://openalex.org/C17632256",
+     "wikidata": "https://www.wikidata.org/wiki/Q1076968",
+     "display_name": "Digital media",
+     "level": 2,
+     "score": 0.4796999990940094
+    },
+    {
+     "id": "https://openalex.org/C108827166",
+     "wikidata": "https://www.wikidata.org/wiki/Q175975",
+     "display_name": "Internet privacy",
+     "level": 1,
+     "score": 0.3402000069618225
+    },
+    {
+     "id": "https://openalex.org/C180747234",
+     "wikidata": "https://www.wikidata.org/wiki/Q23373",
+     "display_name": "Cognitive psychology",
+     "level": 1,
+     "score": 0.296099990606308
+    },
+    {
+     "id": "https://openalex.org/C130064352",
+     "wikidata": "https://www.wikidata.org/wiki/Q853725",
+     "display_name": "Social relation",
+     "level": 2,
+     "score": 0.2696000039577484
+    },
+    {
+     "id": "https://openalex.org/C131158328",
+     "wikidata": "https://www.wikidata.org/wiki/Q1307337",
+     "display_name": "Social influence",
+     "level": 2,
+     "score": 0.26809999346733093
+    },
+    {
+     "id": "https://openalex.org/C198477413",
+     "wikidata": "https://www.wikidata.org/wiki/Q7647069",
+     "display_name": "Survey data collection",
+     "level": 2,
+     "score": 0.26739999651908875
+    },
+    {
+     "id": "https://openalex.org/C26517878",
+     "wikidata": "https://www.wikidata.org/wiki/Q228039",
+     "display_name": "Key (lock)",
+     "level": 2,
+     "score": 0.26249998807907104
+    },
+    {
+     "id": "https://openalex.org/C2984870255",
+     "wikidata": "https://www.wikidata.org/wiki/Q5196451",
+     "display_name": "User engagement",
+     "level": 2,
+     "score": 0.2605000138282776
+    },
+    {
+     "id": "https://openalex.org/C110875604",
+     "wikidata": "https://www.wikidata.org/wiki/Q75",
+     "display_name": "The Internet",
+     "level": 2,
+     "score": 0.2531999945640564
+    },
+    {
+     "id": "https://openalex.org/C2987946170",
+     "wikidata": "https://www.wikidata.org/wiki/Q853725",
+     "display_name": "Social relationship",
+     "level": 2,
+     "score": 0.2524000108242035
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.4018/979-8-2600-4921-1.ch007",
+     "doi": "https://doi.org/10.4018/979-8-2600-4921-1.ch007",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.4018/979-8-2600-4921-1.ch007",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306463409",
+      "display_name": "IGI Global eBooks",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/P4310320424",
+      "host_organization_name": "IGI Global",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320424"
+      ],
+      "host_organization_lineage_names": [
+       "IGI Global"
+      ],
+      "type": "ebook platform"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "The Algorithmic Child Consumer",
+     "raw_type": "book-chapter"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "display_name": "Good health and well-being",
+     "score": 0.46810001134872437,
+     "id": "https://metadata.un.org/sdg/3"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [
+    {
+     "display_name": "Observational Study",
+     "id": "https://openalex.org/study-designs/observational-study"
+    }
+   ],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 30,
+   "referenced_works": [
+    "https://openalex.org/W1536757930",
+    "https://openalex.org/W1968764063",
+    "https://openalex.org/W1969783025",
+    "https://openalex.org/W2032556867",
+    "https://openalex.org/W2047739059",
+    "https://openalex.org/W2077561391",
+    "https://openalex.org/W2294473634",
+    "https://openalex.org/W2409502070",
+    "https://openalex.org/W2468796193",
+    "https://openalex.org/W2566585401",
+    "https://openalex.org/W2596638815",
+    "https://openalex.org/W2606408756",
+    "https://openalex.org/W2606409393",
+    "https://openalex.org/W2792445075",
+    "https://openalex.org/W2887218930",
+    "https://openalex.org/W2914703880",
+    "https://openalex.org/W2948507959",
+    "https://openalex.org/W2964856141",
+    "https://openalex.org/W3043692962",
+    "https://openalex.org/W3081279913",
+    "https://openalex.org/W3129941792",
+    "https://openalex.org/W3174965833",
+    "https://openalex.org/W3175722325",
+    "https://openalex.org/W3192508769",
+    "https://openalex.org/W3199970943",
+    "https://openalex.org/W3202144030",
+    "https://openalex.org/W4307572639",
+    "https://openalex.org/W4320523421",
+    "https://openalex.org/W4323980157",
+    "https://openalex.org/W6946412367"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Social": [
+     0
+    ],
+    "media": [
+     1,
+     18,
+     62,
+     84
+    ],
+    "is": [
+     2,
+     64
+    ],
+    "deeply": [
+     3
+    ],
+    "embedded": [
+     4
+    ],
+    "in": [
+     5,
+     42,
+     94
+    ],
+    "daily": [
+     6
+    ],
+    "life,": [
+     7
+    ],
+    "shaping": [
+     8,
+     95
+    ],
+    "behaviours": [
+     9,
+     22
+    ],
+    "and": [
+     10,
+     21,
+     31,
+     72,
+     99,
+     111
+    ],
+    "psychological": [
+     11,
+     78
+    ],
+    "states.": [
+     12
+    ],
+    "This": [
+     13,
+     77
+    ],
+    "study": [
+     14
+    ],
+    "examines": [
+     15
+    ],
+    "how": [
+     16
+    ],
+    "social": [
+     17,
+     61,
+     83
+    ],
+    "influences": [
+     19
+    ],
+    "emotions": [
+     20
+    ],
+    "by": [
+     23
+    ],
+    "analysing": [
+     24
+    ],
+    "the": [
+     25,
+     88
+    ],
+    "relationships": [
+     26
+    ],
+    "between": [
+     27
+    ],
+    "anxiety,": [
+     28,
+     70
+    ],
+    "voyeurism,": [
+     29,
+     71
+    ],
+    "exhibitionism,": [
+     30,
+     73
+    ],
+    "Fear": [
+     32
+    ],
+    "of": [
+     33,
+     69
+    ],
+    "Missing": [
+     34
+    ],
+    "Out": [
+     35
+    ],
+    "(FoMO),": [
+     36
+    ],
+    "as": [
+     37,
+     39
+    ],
+    "well": [
+     38
+    ],
+    "FoMO's": [
+     40,
+     91
+    ],
+    "role": [
+     41,
+     93
+    ],
+    "driving": [
+     43
+    ],
+    "compulsive": [
+     44,
+     82
+    ],
+    "use.": [
+     45,
+     85
+    ],
+    "Using": [
+     46
+    ],
+    "a": [
+     47,
+     50
+    ],
+    "quantitative": [
+     48
+    ],
+    "approach,": [
+     49
+    ],
+    "30-item": [
+     51
+    ],
+    "survey": [
+     52
+    ],
+    "was": [
+     53
+    ],
+    "administered": [
+     54
+    ],
+    "to": [
+     55,
+     81,
+     101
+    ],
+    "108": [
+     56
+    ],
+    "children.": [
+     57
+    ],
+    "Results": [
+     58
+    ],
+    "show": [
+     59
+    ],
+    "that": [
+     60
+    ],
+    "engagement": [
+     63
+    ],
+    "associated": [
+     65
+    ],
+    "with": [
+     66
+    ],
+    "higher": [
+     67
+    ],
+    "levels": [
+     68
+    ],
+    "which": [
+     74
+    ],
+    "increase": [
+     75
+    ],
+    "FoMO.": [
+     76
+    ],
+    "strain": [
+     79
+    ],
+    "leads": [
+     80
+    ],
+    "Despite": [
+     86
+    ],
+    "limitations,": [
+     87
+    ],
+    "findings": [
+     89
+    ],
+    "highlight": [
+     90
+    ],
+    "central": [
+     92
+    ],
+    "children's": [
+     96
+    ],
+    "online": [
+     97
+    ],
+    "experiences": [
+     98
+    ],
+    "contribute": [
+     100
+    ],
+    "understanding": [
+     102
+    ],
+    "problematic": [
+     103
+    ],
+    "digital": [
+     104,
+     113
+    ],
+    "behaviour,": [
+     105
+    ],
+    "offering": [
+     106
+    ],
+    "implications": [
+     107
+    ],
+    "for": [
+     108
+    ],
+    "more": [
+     109
+    ],
+    "responsible": [
+     110
+    ],
+    "effective": [
+     112
+    ],
+    "strategies.": [
+     114
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-24T09:50:30.924529",
+   "created_date": "2026-10-22T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7223247033",
+   "doi": "https://doi.org/10.63313/ssh.9144",
+   "title": "Associations Among Social Media Use, Sleep Duration, and Mental Health Indicators in a Synthetic Adolescent Dataset",
+   "display_name": "Associations Among Social Media Use, Sleep Duration, and Mental Health Indicators in a Synthetic Adolescent Dataset",
+   "publication_year": 2026,
+   "publication_date": "2026-10-22",
+   "ids": {
+    "openalex": "https://openalex.org/W7223247033",
+    "doi": "https://doi.org/10.63313/ssh.9144"
+   },
+   "language": null,
+   "primary_location": {
+    "id": "doi:10.63313/ssh.9144",
+    "doi": "https://doi.org/10.63313/ssh.9144",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.63313/ssh.9144",
+    "pdf_url": "https://doi.org/10.63313/ssh.9144",
+    "source": {
+     "id": "https://openalex.org/S5407050337",
+     "display_name": "Social Sciences and Humanities",
+     "issn_l": "3104-4328",
+     "issn": [
+      "3104-4328",
+      "3104-4336"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "journal"
+    },
+    "license": "cc-by-sa",
+    "license_id": "https://openalex.org/licenses/cc-by-sa",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Social Sciences and Humanities",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://doi.org/10.63313/ssh.9144",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5159267138",
+      "display_name": "Ruixuan Zhao",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I113281461",
+       "display_name": "Bishop's University",
+       "ror": "https://ror.org/051prj435",
+       "country_code": "CA",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I113281461"
+       ]
+      }
+     ],
+     "countries": [
+      "CA"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Ruixuan Zhao",
+     "raw_affiliation_strings": [
+      "The Bishop Strachan School, Toronto, Ontario M4V 1X2, Canada"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "The Bishop Strachan School, Toronto, Ontario M4V 1X2, Canada",
+       "institution_ids": [
+        "https://openalex.org/I113281461"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5159267138"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I113281461"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.94462257,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "5",
+    "issue": "3",
+    "first_page": "62",
+    "last_page": "62"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.9945999979972839,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.9945999979972839,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10316",
+     "display_name": "Sleep and related disorders",
+     "score": 0.004800000227987766,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3205",
+      "display_name": "Experimental and Cognitive Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12060",
+     "display_name": "Child Development and Digital Technology",
+     "score": 0.00019999999494757503,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3304",
+      "display_name": "Education"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/social-media-use",
+     "display_name": "social media use",
+     "score": 0.9990000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/sleep-duration",
+     "display_name": "sleep duration",
+     "score": 0.996999979019165
+    },
+    {
+     "id": "https://openalex.org/keywords/adolescent-mental-health",
+     "display_name": "adolescent mental health",
+     "score": 0.7979999780654907
+    },
+    {
+     "id": "https://openalex.org/keywords/anxiety",
+     "display_name": "anxiety",
+     "score": 0.9919999837875366
+    },
+    {
+     "id": "https://openalex.org/keywords/stress",
+     "display_name": "stress",
+     "score": 0.9589999914169312
+    },
+    {
+     "id": "https://openalex.org/keywords/screen-time-before-bed",
+     "display_name": "screen time before bed",
+     "score": 0.9610000252723694
+    },
+    {
+     "id": "https://openalex.org/keywords/synthetic-data",
+     "display_name": "synthetic data",
+     "score": 0.7459999918937683
+    },
+    {
+     "id": "https://openalex.org/keywords/measurement-validity",
+     "display_name": "measurement validity",
+     "score": 0.7390000224113464
+    },
+    {
+     "id": "https://openalex.org/keywords/dataset-construction",
+     "display_name": "dataset construction",
+     "score": 0.4429999887943268
+    },
+    {
+     "id": "https://openalex.org/keywords/exercise",
+     "display_name": "physical activity",
+     "score": 0.43700000643730164
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.6557000279426575
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.6366000175476074
+    },
+    {
+     "id": "https://openalex.org/C2775841894",
+     "wikidata": "https://www.wikidata.org/wiki/Q4683692",
+     "display_name": "Sleep (system call)",
+     "level": 2,
+     "score": 0.5863000154495239
+    },
+    {
+     "id": "https://openalex.org/C152877465",
+     "wikidata": "https://www.wikidata.org/wiki/Q208042",
+     "display_name": "Regression analysis",
+     "level": 2,
+     "score": 0.5521000027656555
+    },
+    {
+     "id": "https://openalex.org/C99476002",
+     "wikidata": "https://www.wikidata.org/wiki/Q42297",
+     "display_name": "Analysis of variance",
+     "level": 2,
+     "score": 0.5163000226020813
+    },
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.5151000022888184
+    },
+    {
+     "id": "https://openalex.org/C70410870",
+     "wikidata": "https://www.wikidata.org/wiki/Q199906",
+     "display_name": "Clinical psychology",
+     "level": 1,
+     "score": 0.5120000243186951
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.47380000352859497
+    },
+    {
+     "id": "https://openalex.org/C48921125",
+     "wikidata": "https://www.wikidata.org/wiki/Q10861030",
+     "display_name": "Linear regression",
+     "level": 2,
+     "score": 0.4262999892234802
+    },
+    {
+     "id": "https://openalex.org/C48856860",
+     "wikidata": "https://www.wikidata.org/wiki/Q12029",
+     "display_name": "Addiction",
+     "level": 2,
+     "score": 0.42500001192092896
+    },
+    {
+     "id": "https://openalex.org/C102959455",
+     "wikidata": "https://www.wikidata.org/wiki/Q7313954",
+     "display_name": "Repeated measures design",
+     "level": 2,
+     "score": 0.4117000102996826
+    },
+    {
+     "id": "https://openalex.org/C1513209611",
+     "wikidata": "https://www.wikidata.org/wiki/Q177190",
+     "display_name": "Sleep disorder",
+     "level": 3,
+     "score": 0.34220001101493835
+    },
+    {
+     "id": "https://openalex.org/C3019903994",
+     "wikidata": "https://www.wikidata.org/wiki/Q35831",
+     "display_name": "Sleep patterns",
+     "level": 3,
+     "score": 0.3287999927997589
+    },
+    {
+     "id": "https://openalex.org/C83546350",
+     "wikidata": "https://www.wikidata.org/wiki/Q1139051",
+     "display_name": "Regression",
+     "level": 2,
+     "score": 0.3244999945163727
+    },
+    {
+     "id": "https://openalex.org/C2777545354",
+     "wikidata": "https://www.wikidata.org/wiki/Q3557657",
+     "display_name": "Social anxiety",
+     "level": 3,
+     "score": 0.310699999332428
+    },
+    {
+     "id": "https://openalex.org/C118552586",
+     "wikidata": "https://www.wikidata.org/wiki/Q7867",
+     "display_name": "Psychiatry",
+     "level": 1,
+     "score": 0.3068999946117401
+    },
+    {
+     "id": "https://openalex.org/C138496976",
+     "wikidata": "https://www.wikidata.org/wiki/Q175002",
+     "display_name": "Developmental psychology",
+     "level": 1,
+     "score": 0.3050000071525574
+    },
+    {
+     "id": "https://openalex.org/C196083921",
+     "wikidata": "https://www.wikidata.org/wiki/Q7915758",
+     "display_name": "Variance (accounting)",
+     "level": 2,
+     "score": 0.30390000343322754
+    },
+    {
+     "id": "https://openalex.org/C112758219",
+     "wikidata": "https://www.wikidata.org/wiki/Q16038819",
+     "display_name": "Duration (music)",
+     "level": 2,
+     "score": 0.302700012922287
+    },
+    {
+     "id": "https://openalex.org/C2776867660",
+     "wikidata": "https://www.wikidata.org/wiki/Q1814941",
+     "display_name": "Depression (economics)",
+     "level": 2,
+     "score": 0.2906999886035919
+    },
+    {
+     "id": "https://openalex.org/C11545786",
+     "wikidata": "https://www.wikidata.org/wiki/Q6883841",
+     "display_name": "Mixed-design analysis of variance",
+     "level": 3,
+     "score": 0.2890999913215637
+    },
+    {
+     "id": "https://openalex.org/C117220453",
+     "wikidata": "https://www.wikidata.org/wiki/Q5172842",
+     "display_name": "Correlation",
+     "level": 2,
+     "score": 0.28360000252723694
+    },
+    {
+     "id": "https://openalex.org/C2778087770",
+     "wikidata": "https://www.wikidata.org/wiki/Q2297111",
+     "display_name": "Social support",
+     "level": 2,
+     "score": 0.28200000524520874
+    },
+    {
+     "id": "https://openalex.org/C138528620",
+     "wikidata": "https://www.wikidata.org/wiki/Q2510752",
+     "display_name": "Explained variation",
+     "level": 2,
+     "score": 0.26899999380111694
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.63313/ssh.9144",
+     "doi": "https://doi.org/10.63313/ssh.9144",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.63313/ssh.9144",
+     "pdf_url": "https://doi.org/10.63313/ssh.9144",
+     "source": {
+      "id": "https://openalex.org/S5407050337",
+      "display_name": "Social Sciences and Humanities",
+      "issn_l": "3104-4328",
+      "issn": [
+       "3104-4328",
+       "3104-4336"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "journal"
+     },
+     "license": "cc-by-sa",
+     "license_id": "https://openalex.org/licenses/cc-by-sa",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Social Sciences and Humanities",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.63313/ssh.9144",
+    "doi": "https://doi.org/10.63313/ssh.9144",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.63313/ssh.9144",
+    "pdf_url": "https://doi.org/10.63313/ssh.9144",
+    "source": {
+     "id": "https://openalex.org/S5407050337",
+     "display_name": "Social Sciences and Humanities",
+     "issn_l": "3104-4328",
+     "issn": [
+      "3104-4328",
+      "3104-4336"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "journal"
+    },
+    "license": "cc-by-sa",
+    "license_id": "https://openalex.org/licenses/cc-by-sa",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Social Sciences and Humanities",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "display_name": "Good health and well-being",
+     "score": 0.9391000270843506,
+     "id": "https://metadata.un.org/sdg/3"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7223247033.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7223247033.grobid-xml"
+   },
+   "referenced_works_count": 4,
+   "referenced_works": [
+    "https://openalex.org/W1854080182",
+    "https://openalex.org/W2415849311",
+    "https://openalex.org/W2912969156",
+    "https://openalex.org/W4389831698"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "This": [
+     0
+    ],
+    "study": [
+     1,
+     182
+    ],
+    "investigated": [
+     2
+    ],
+    "the": [
+     3,
+     109,
+     129,
+     157,
+     163,
+     173,
+     184,
+     195
+    ],
+    "relationship": [
+     4
+    ],
+    "between": [
+     5
+    ],
+    "hours": [
+     6,
+     12,
+     51,
+     75
+    ],
+    "of": [
+     7,
+     13,
+     108,
+     142,
+     186
+    ],
+    "social": [
+     8,
+     48,
+     79,
+     145
+    ],
+    "media": [
+     9,
+     49,
+     80
+    ],
+    "using": [
+     10,
+     35,
+     194
+    ],
+    "and": [
+     11,
+     18,
+     52,
+     67,
+     90,
+     120,
+     144,
+     162,
+     190
+    ],
+    "sleep": [
+     14,
+     60,
+     74,
+     112,
+     122
+    ],
+    "duration,": [
+     15,
+     61
+    ],
+    "anxiety": [
+     16
+    ],
+    "level,": [
+     17
+    ],
+    "stress": [
+     19
+    ],
+    "level": [
+     20
+    ],
+    "in": [
+     21,
+     111,
+     152
+    ],
+    "a": [
+     22
+    ],
+    "synthetic": [
+     23
+    ],
+    "dataset": [
+     24,
+     188
+    ],
+    "containing": [
+     25
+    ],
+    "1,200": [
+     26
+    ],
+    "adolescent": [
+     27
+    ],
+    "records.": [
+     28
+    ],
+    "All": [
+     29
+    ],
+    "four": [
+     30,
+     77,
+     84,
+     130
+    ],
+    "primary": [
+     31,
+     85
+    ],
+    "hypotheses": [
+     32
+    ],
+    "were": [
+     33,
+     57,
+     87,
+     159,
+     167
+    ],
+    "tested": [
+     34
+    ],
+    "Pearson": [
+     36
+    ],
+    "correlations.": [
+     37
+    ],
+    "A": [
+     38,
+     70
+    ],
+    "multiple": [
+     39
+    ],
+    "linear": [
+     40
+    ],
+    "regression": [
+     41,
+     103
+    ],
+    "analysis": [
+     42
+    ],
+    "helped": [
+     43
+    ],
+    "to": [
+     44,
+     59,
+     96,
+     178,
+     197
+    ],
+    "examined": [
+     45
+    ],
+    "whether": [
+     46
+    ],
+    "daily": [
+     47
+    ],
+    "use": [
+     50,
+     81
+    ],
+    "screen": [
+     53
+    ],
+    "time": [
+     54
+    ],
+    "before": [
+     55,
+     193
+    ],
+    "bed": [
+     56
+    ],
+    "related": [
+     58
+    ],
+    "while": [
+     62
+    ],
+    "accounting": [
+     63
+    ],
+    "for": [
+     64
+    ],
+    "age,": [
+     65
+    ],
+    "gender,": [
+     66
+    ],
+    "physical": [
+     68
+    ],
+    "activity.": [
+     69
+    ],
+    "one-way": [
+     71
+    ],
+    "ANOVA": [
+     72
+    ],
+    "compared": [
+     73
+    ],
+    "across": [
+     76,
+     128
+    ],
+    "quartile-based": [
+     78
+    ],
+    "groups.": [
+     82
+    ],
+    "The": [
+     83,
+     102,
+     139,
+     181
+    ],
+    "correlations": [
+     86
+    ],
+    "approximately": [
+     88
+    ],
+    "zero": [
+     89
+    ],
+    "statistically": [
+     91
+    ],
+    "nonsignificant": [
+     92
+    ],
+    "(rs": [
+     93
+    ],
+    "=": [
+     94,
+     115,
+     118,
+     134,
+     137
+    ],
+    "\u2212.009": [
+     95
+    ],
+    ".031,": [
+     97
+    ],
+    "all": [
+     98
+    ],
+    "ps": [
+     99
+    ],
+    ">": [
+     100
+    ],
+    ".28).": [
+     101
+    ],
+    "model": [
+     104
+    ],
+    "explained": [
+     105
+    ],
+    "almost": [
+     106
+    ],
+    "none": [
+     107
+    ],
+    "variance": [
+     110
+    ],
+    "duration": [
+     113,
+     123
+    ],
+    "(R\u00b2": [
+     114
+    ],
+    ".001,": [
+     116
+    ],
+    "p": [
+     117
+    ],
+    ".895),": [
+     119
+    ],
+    "average": [
+     121
+    ],
+    "did": [
+     124
+    ],
+    "not": [
+     125,
+     168
+    ],
+    "differ": [
+     126
+    ],
+    "significantly": [
+     127
+    ],
+    "usage": [
+     131
+    ],
+    "groups": [
+     132
+    ],
+    "(p": [
+     133
+    ],
+    ".348,": [
+     135
+    ],
+    "\u03b7\u00b2": [
+     136
+    ],
+    ".003).": [
+     138
+    ],
+    "additional": [
+     140
+    ],
+    "analyses": [
+     141
+    ],
+    "addiction": [
+     143
+    ],
+    "interaction": [
+     146
+    ],
+    "also": [
+     147
+    ],
+    "found": [
+     148
+    ],
+    "no": [
+     149
+    ],
+    "significant": [
+     150
+    ],
+    "relationships": [
+     151
+    ],
+    "this": [
+     153
+    ],
+    "dataset.": [
+     154
+    ],
+    "However,": [
+     155
+    ],
+    "because": [
+     156
+    ],
+    "records": [
+     158
+    ],
+    "synthetically": [
+     160
+    ],
+    "generated": [
+     161
+    ],
+    "mental": [
+     164
+    ],
+    "health": [
+     165
+    ],
+    "measures": [
+     166
+    ],
+    "documented": [
+     169
+    ],
+    "as": [
+     170
+    ],
+    "validated": [
+     171
+    ],
+    "instruments,": [
+     172
+    ],
+    "results": [
+     174
+    ],
+    "cannot": [
+     175
+    ],
+    "be": [
+     176
+    ],
+    "generalized": [
+     177
+    ],
+    "real": [
+     179
+    ],
+    "adolescents.": [
+     180
+    ],
+    "suggests": [
+     183
+    ],
+    "importance": [
+     185
+    ],
+    "evaluating": [
+     187
+    ],
+    "construction": [
+     189
+    ],
+    "measurement": [
+     191
+    ],
+    "validity": [
+     192
+    ],
+    "findings": [
+     196
+    ],
+    "evaluate": [
+     198
+    ],
+    "psychological": [
+     199
+    ],
+    "theories.": [
+     200
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-24T09:50:30.924529",
+   "created_date": "2026-10-23T00:00:00"
+  }
+ ]
+}

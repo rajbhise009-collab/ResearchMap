@@ -1,0 +1,1630 @@
+{
+ "batch_id": "odllj2qt2erpq7wvhcn1yhoqpi175h2f7b49",
+ "slug": "ml-fairness",
+ "submitted_on": "2026-10-26",
+ "submitted_at": 1793014144.265963,
+ "projected_inr": 1.815786,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7222568097": "abstract",
+  "openalex:W7223409040": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7222568097",
+   "openalex_id": "https://openalex.org/W7222568097",
+   "title": "How Algorithmic Bias Shapes Consumer Acceptance of AI Recommendations: The Roles of Recommendation Strategy, Self\u2010Identity Threat, Perceived Warmth and Privacy Concerns",
+   "year": 2026,
+   "doi": "https://doi.org/10.1111/ijcs.70272",
+   "venue": "International Journal of Consumer Studies",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "ABSTRACT Algorithmic bias, as a socio\u2010technical phenomenon, may produce discriminatory outcomes that violate norms of justice and equality, thereby adversely affecting specific groups in society. Although algorithmic fairness has received widespread attention, how different recommendation strategies interact with algorithmic bias to influence consumers' psychological responses in intelligent recommendation scenarios remains underexplored. Grounded in identity process theory, this study focuses on two recommendation strategies (relevance\u2010based vs. similarity\u2010based recommendations) to examine the impact of algorithmic bias on consumers' recommendation acceptance intention, and further analyzes the moderating roles of perceived warmth and privacy concerns. Through four experimental studies (total N = 895), we find that algorithmic bias reduces consumers' acceptance intention, and this effect is more pronounced under similarity\u2010based (vs. relevance\u2010based) recommendation strategies. Perceived warmth and privacy concerns moderate the mediation pathway of self\u2010identity threat, such that relevance\u2010based recommendations (vs. similarity\u2010based recommendations) enhance recommendation acceptance intention by reducing self\u2010identity threat. These findings reveal that similarity\u2010based recommendations may exacerbate user resistance in the context of algorithmic bias. This study deepens the theoretical understanding of the psychological mechanisms underlying algorithmic unfairness in the digital age, extends the application of identity process theory to the domain of human\u2010computer interaction, and provides actionable empirical implications for enterprises in the ethical design and strategic optimization of intelligent recommendation systems.",
+   "label": "on-domain",
+   "rationale": "strong in-domain term: 'algorithmic fairness'; core scope: title: fairness 'Bias' + algorithmic 'Algorithm'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-26",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7223409040",
+   "openalex_id": "https://openalex.org/W7223409040",
+   "title": "AE-NS: An Auto-Encoding Network with Semantic Constraints for Robust Fair Classification on Tabular Data",
+   "year": 2026,
+   "doi": "https://doi.org/10.1007/s40745-026-00733-0",
+   "venue": "Annals of Data Science",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: title: fairness 'Fair' + algorithmic 'Classif'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-26",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7222568097",
+   "doi": "https://doi.org/10.1111/ijcs.70272",
+   "title": "How Algorithmic Bias Shapes Consumer Acceptance of AI Recommendations: The Roles of Recommendation Strategy, Self\u2010Identity Threat, Perceived Warmth and Privacy Concerns",
+   "display_name": "How Algorithmic Bias Shapes Consumer Acceptance of AI Recommendations: The Roles of Recommendation Strategy, Self\u2010Identity Threat, Perceived Warmth and Privacy Concerns",
+   "publication_year": 2026,
+   "publication_date": "2026-10-16",
+   "ids": {
+    "openalex": "https://openalex.org/W7222568097",
+    "doi": "https://doi.org/10.1111/ijcs.70272"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1111/ijcs.70272",
+    "doi": "https://doi.org/10.1111/ijcs.70272",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1111/ijcs.70272",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ijcs.70272",
+    "source": {
+     "id": "https://openalex.org/S173807628",
+     "display_name": "International Journal of Consumer Studies",
+     "issn_l": "1470-6423",
+     "issn": [
+      "1470-6423",
+      "1470-6431"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-a",
+      "anvur-scientific",
+      "cwts-core",
+      "fnege-3",
+      "jufo-1",
+      "ki-jl-1",
+      "norway-1",
+      "poland-100",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320595",
+     "host_organization_name": "Wiley",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320595"
+     ],
+     "host_organization_lineage_names": [
+      "Wiley"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "International Journal of Consumer Studies",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "bronze",
+    "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ijcs.70272",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5102207665",
+      "display_name": "Wei Du",
+      "orcid": "https://orcid.org/0009-0002-8247-1457",
+      "observed_orcids": [
+       "https://orcid.org/0009-0002-8247-1457"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I10535382",
+       "display_name": "Chongqing University of Posts and Telecommunications",
+       "ror": "https://ror.org/03dgaqz26",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I10535382"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Wei Du",
+     "raw_affiliation_strings": [
+      "School of Economics and Management Chongqing University of Posts and Telecommunications  Chongqing China"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0002-8247-1457",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Economics and Management Chongqing University of Posts and Telecommunications  Chongqing China",
+       "institution_ids": [
+        "https://openalex.org/I10535382"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5158924756",
+      "display_name": "Wenping Jiang",
+      "orcid": "https://orcid.org/0009-0001-9149-0054",
+      "observed_orcids": [
+       "https://orcid.org/0009-0001-9149-0054"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I10535382",
+       "display_name": "Chongqing University of Posts and Telecommunications",
+       "ror": "https://ror.org/03dgaqz26",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I10535382"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Wenping Jiang",
+     "raw_affiliation_strings": [
+      "School of Economics and Management Chongqing University of Posts and Telecommunications  Chongqing China"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0001-9149-0054",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Economics and Management Chongqing University of Posts and Telecommunications  Chongqing China",
+       "institution_ids": [
+        "https://openalex.org/I10535382"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5158924756"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I10535382"
+   ],
+   "apc_list": {
+    "value": 3400,
+    "currency": "USD",
+    "value_usd": 3400
+   },
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.92176324,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "50",
+    "issue": "6",
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10883",
+    "display_name": "Ethics and Social Impacts of AI",
+    "score": 0.4880000054836273,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3311",
+     "display_name": "Safety Research"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.4880000054836273,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10203",
+     "display_name": "Recommender Systems and Techniques",
+     "score": 0.2549000084400177,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1710",
+      "display_name": "Information Systems"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12128",
+     "display_name": "AI in Service Interactions",
+     "score": 0.1598999947309494,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/algorithmic-bias",
+     "display_name": "algorithmic bias",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/algorithmic-fairness",
+     "display_name": "algorithmic fairness",
+     "score": 0.8320000171661377
+    },
+    {
+     "id": "https://openalex.org/keywords/ai-recommendation-systems",
+     "display_name": "AI recommendation systems",
+     "score": 0.7250000238418579
+    },
+    {
+     "id": "https://openalex.org/keywords/recommendation-strategies",
+     "display_name": "recommendation strategies",
+     "score": 0.6439999938011169
+    },
+    {
+     "id": "https://openalex.org/keywords/similarity-based-recommendation",
+     "display_name": "similarity-based recommendation",
+     "score": 0.7799999713897705
+    },
+    {
+     "id": "https://openalex.org/keywords/perceived-warmth",
+     "display_name": "perceived warmth",
+     "score": 0.8080000281333923
+    },
+    {
+     "id": "https://openalex.org/keywords/privacy-concerns",
+     "display_name": "privacy concerns",
+     "score": 0.9990000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/identity-process-theory",
+     "display_name": "identity process theory",
+     "score": 0.9750000238418579
+    },
+    {
+     "id": "https://openalex.org/keywords/user-resistance",
+     "display_name": "user resistance",
+     "score": 0.45500001311302185
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C2779343474",
+     "wikidata": "https://www.wikidata.org/wiki/Q3109175",
+     "display_name": "Context (archaeology)",
+     "level": 2,
+     "score": 0.6229000091552734
+    },
+    {
+     "id": "https://openalex.org/C179420905",
+     "wikidata": "https://www.wikidata.org/wiki/Q223871",
+     "display_name": "Mediation",
+     "level": 2,
+     "score": 0.5889000296592712
+    },
+    {
+     "id": "https://openalex.org/C557471498",
+     "wikidata": "https://www.wikidata.org/wiki/Q554950",
+     "display_name": "Recommender system",
+     "level": 2,
+     "score": 0.5837000012397766
+    },
+    {
+     "id": "https://openalex.org/C120936955",
+     "wikidata": "https://www.wikidata.org/wiki/Q2155640",
+     "display_name": "Empirical research",
+     "level": 2,
+     "score": 0.5146999955177307
+    },
+    {
+     "id": "https://openalex.org/C2778355321",
+     "wikidata": "https://www.wikidata.org/wiki/Q17079427",
+     "display_name": "Identity (music)",
+     "level": 2,
+     "score": 0.5059999823570251
+    },
+    {
+     "id": "https://openalex.org/C98045186",
+     "wikidata": "https://www.wikidata.org/wiki/Q205663",
+     "display_name": "Process (computing)",
+     "level": 2,
+     "score": 0.4977000057697296
+    },
+    {
+     "id": "https://openalex.org/C139621336",
+     "wikidata": "https://www.wikidata.org/wiki/Q3190382",
+     "display_name": "Economic Justice",
+     "level": 2,
+     "score": 0.4932999908924103
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.48159998655319214
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.4690000116825104
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.4293000102043152
+    },
+    {
+     "id": "https://openalex.org/C108827166",
+     "wikidata": "https://www.wikidata.org/wiki/Q175975",
+     "display_name": "Internet privacy",
+     "level": 1,
+     "score": 0.3481999933719635
+    },
+    {
+     "id": "https://openalex.org/C123201435",
+     "wikidata": "https://www.wikidata.org/wiki/Q456632",
+     "display_name": "Information privacy",
+     "level": 2,
+     "score": 0.32899999618530273
+    },
+    {
+     "id": "https://openalex.org/C24614281",
+     "wikidata": "https://www.wikidata.org/wiki/Q17086331",
+     "display_name": "Moderated mediation",
+     "level": 2,
+     "score": 0.30730000138282776
+    },
+    {
+     "id": "https://openalex.org/C23213687",
+     "wikidata": "https://www.wikidata.org/wiki/Q301468",
+     "display_name": "Consumer behaviour",
+     "level": 2,
+     "score": 0.3061000108718872
+    },
+    {
+     "id": "https://openalex.org/C98447023",
+     "wikidata": "https://www.wikidata.org/wiki/Q1540351",
+     "display_name": "Social identity theory",
+     "level": 3,
+     "score": 0.296999990940094
+    },
+    {
+     "id": "https://openalex.org/C2776185967",
+     "wikidata": "https://www.wikidata.org/wiki/Q112945",
+     "display_name": "Technology acceptance model",
+     "level": 3,
+     "score": 0.2930000126361847
+    },
+    {
+     "id": "https://openalex.org/C36503486",
+     "wikidata": "https://www.wikidata.org/wiki/Q11235244",
+     "display_name": "Domain (mathematical analysis)",
+     "level": 2,
+     "score": 0.29109999537467957
+    },
+    {
+     "id": "https://openalex.org/C156325361",
+     "wikidata": "https://www.wikidata.org/wiki/Q1152864",
+     "display_name": "Grounded theory",
+     "level": 3,
+     "score": 0.28290000557899475
+    },
+    {
+     "id": "https://openalex.org/C56739046",
+     "wikidata": "https://www.wikidata.org/wiki/Q192060",
+     "display_name": "Knowledge management",
+     "level": 1,
+     "score": 0.272599995136261
+    },
+    {
+     "id": "https://openalex.org/C2780103759",
+     "wikidata": "https://www.wikidata.org/wiki/Q5264375",
+     "display_name": "Design science",
+     "level": 2,
+     "score": 0.2524999976158142
+    },
+    {
+     "id": "https://openalex.org/C75630572",
+     "wikidata": "https://www.wikidata.org/wiki/Q538904",
+     "display_name": "Applied psychology",
+     "level": 1,
+     "score": 0.25189998745918274
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1111/ijcs.70272",
+     "doi": "https://doi.org/10.1111/ijcs.70272",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1111/ijcs.70272",
+     "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ijcs.70272",
+     "source": {
+      "id": "https://openalex.org/S173807628",
+      "display_name": "International Journal of Consumer Studies",
+      "issn_l": "1470-6423",
+      "issn": [
+       "1470-6423",
+       "1470-6431"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "abdc-a",
+       "anvur-scientific",
+       "cwts-core",
+       "fnege-3",
+       "jufo-1",
+       "ki-jl-1",
+       "norway-1",
+       "poland-100",
+       "russia-white-list-1",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310320595",
+      "host_organization_name": "Wiley",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320595"
+      ],
+      "host_organization_lineage_names": [
+       "Wiley"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "International Journal of Consumer Studies",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1111/ijcs.70272",
+    "doi": "https://doi.org/10.1111/ijcs.70272",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1111/ijcs.70272",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ijcs.70272",
+    "source": {
+     "id": "https://openalex.org/S173807628",
+     "display_name": "International Journal of Consumer Studies",
+     "issn_l": "1470-6423",
+     "issn": [
+      "1470-6423",
+      "1470-6431"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-a",
+      "anvur-scientific",
+      "cwts-core",
+      "fnege-3",
+      "jufo-1",
+      "ki-jl-1",
+      "norway-1",
+      "poland-100",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320595",
+     "host_organization_name": "Wiley",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320595"
+     ],
+     "host_organization_lineage_names": [
+      "Wiley"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "International Journal of Consumer Studies",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320321106",
+     "display_name": "Ministry of Education of the People's Republic of China",
+     "ror": "https://ror.org/01mv9t934"
+    }
+   ],
+   "has_content": {
+    "grobid_xml": true,
+    "pdf": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7222568097.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7222568097.grobid-xml"
+   },
+   "referenced_works_count": 57,
+   "referenced_works": [
+    "https://openalex.org/W1507592641",
+    "https://openalex.org/W1544543982",
+    "https://openalex.org/W1975872179",
+    "https://openalex.org/W1983225075",
+    "https://openalex.org/W2000524122",
+    "https://openalex.org/W2001946961",
+    "https://openalex.org/W2020989719",
+    "https://openalex.org/W2026774436",
+    "https://openalex.org/W2036284655",
+    "https://openalex.org/W2084922063",
+    "https://openalex.org/W2087484885",
+    "https://openalex.org/W2109453861",
+    "https://openalex.org/W2118226919",
+    "https://openalex.org/W2123087429",
+    "https://openalex.org/W2124999700",
+    "https://openalex.org/W2150690631",
+    "https://openalex.org/W2157989366",
+    "https://openalex.org/W2467696562",
+    "https://openalex.org/W2503866476",
+    "https://openalex.org/W2972220252",
+    "https://openalex.org/W3009197985",
+    "https://openalex.org/W3022226646",
+    "https://openalex.org/W3036793170",
+    "https://openalex.org/W3081261125",
+    "https://openalex.org/W3084045387",
+    "https://openalex.org/W3097693500",
+    "https://openalex.org/W3122548859",
+    "https://openalex.org/W3160115740",
+    "https://openalex.org/W3170933632",
+    "https://openalex.org/W3184937181",
+    "https://openalex.org/W3199150109",
+    "https://openalex.org/W3202556542",
+    "https://openalex.org/W4211255666",
+    "https://openalex.org/W4281835755",
+    "https://openalex.org/W4283029564",
+    "https://openalex.org/W4303579574",
+    "https://openalex.org/W4360991875",
+    "https://openalex.org/W4384201980",
+    "https://openalex.org/W4387579102",
+    "https://openalex.org/W4390861686",
+    "https://openalex.org/W4390904399",
+    "https://openalex.org/W4391147091",
+    "https://openalex.org/W4391598857",
+    "https://openalex.org/W4392359802",
+    "https://openalex.org/W4400264729",
+    "https://openalex.org/W4401500403",
+    "https://openalex.org/W4402628043",
+    "https://openalex.org/W4403466849",
+    "https://openalex.org/W4404044737",
+    "https://openalex.org/W4406930467",
+    "https://openalex.org/W4408011924",
+    "https://openalex.org/W4408168569",
+    "https://openalex.org/W4408205037",
+    "https://openalex.org/W4408251241",
+    "https://openalex.org/W4409912976",
+    "https://openalex.org/W4410097113",
+    "https://openalex.org/W4411236535"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "ABSTRACT": [
+     0
+    ],
+    "Algorithmic": [
+     1
+    ],
+    "bias,": [
+     2
+    ],
+    "as": [
+     3
+    ],
+    "a": [
+     4
+    ],
+    "socio\u2010technical": [
+     5
+    ],
+    "phenomenon,": [
+     6
+    ],
+    "may": [
+     7,
+     153
+    ],
+    "produce": [
+     8
+    ],
+    "discriminatory": [
+     9
+    ],
+    "outcomes": [
+     10
+    ],
+    "that": [
+     11,
+     101,
+     133,
+     150
+    ],
+    "violate": [
+     12
+    ],
+    "norms": [
+     13
+    ],
+    "of": [
+     14,
+     71,
+     85,
+     129,
+     160,
+     169,
+     183,
+     190,
+     207
+    ],
+    "justice": [
+     15
+    ],
+    "and": [
+     16,
+     79,
+     88,
+     108,
+     122,
+     193,
+     204
+    ],
+    "equality,": [
+     17
+    ],
+    "thereby": [
+     18
+    ],
+    "adversely": [
+     19
+    ],
+    "affecting": [
+     20
+    ],
+    "specific": [
+     21
+    ],
+    "groups": [
+     22
+    ],
+    "in": [
+     23,
+     45,
+     52,
+     157,
+     176,
+     200
+    ],
+    "society.": [
+     24
+    ],
+    "Although": [
+     25
+    ],
+    "algorithmic": [
+     26,
+     38,
+     72,
+     102,
+     161,
+     174
+    ],
+    "fairness": [
+     27
+    ],
+    "has": [
+     28
+    ],
+    "received": [
+     29
+    ],
+    "widespread": [
+     30
+    ],
+    "attention,": [
+     31
+    ],
+    "how": [
+     32
+    ],
+    "different": [
+     33
+    ],
+    "recommendation": [
+     34,
+     47,
+     61,
+     76,
+     118,
+     140,
+     209
+    ],
+    "strategies": [
+     35,
+     62
+    ],
+    "interact": [
+     36
+    ],
+    "with": [
+     37
+    ],
+    "bias": [
+     39,
+     73,
+     103
+    ],
+    "to": [
+     40,
+     67,
+     187
+    ],
+    "influence": [
+     41
+    ],
+    "consumers'": [
+     42,
+     75,
+     105
+    ],
+    "psychological": [
+     43,
+     171
+    ],
+    "responses": [
+     44
+    ],
+    "intelligent": [
+     46,
+     208
+    ],
+    "scenarios": [
+     48
+    ],
+    "remains": [
+     49
+    ],
+    "underexplored.": [
+     50
+    ],
+    "Grounded": [
+     51
+    ],
+    "identity": [
+     53,
+     184
+    ],
+    "process": [
+     54,
+     185
+    ],
+    "theory,": [
+     55
+    ],
+    "this": [
+     56,
+     109
+    ],
+    "study": [
+     57,
+     164
+    ],
+    "focuses": [
+     58
+    ],
+    "on": [
+     59,
+     74
+    ],
+    "two": [
+     60
+    ],
+    "(relevance\u2010based": [
+     63
+    ],
+    "vs.": [
+     64
+    ],
+    "similarity\u2010based": [
+     65,
+     115,
+     137,
+     151
+    ],
+    "recommendations)": [
+     66,
+     138
+    ],
+    "examine": [
+     68
+    ],
+    "the": [
+     69,
+     82,
+     126,
+     158,
+     166,
+     170,
+     177,
+     181,
+     188,
+     201
+    ],
+    "impact": [
+     70
+    ],
+    "acceptance": [
+     77,
+     106,
+     141
+    ],
+    "intention,": [
+     78,
+     107
+    ],
+    "further": [
+     80
+    ],
+    "analyzes": [
+     81
+    ],
+    "moderating": [
+     83
+    ],
+    "roles": [
+     84
+    ],
+    "perceived": [
+     86
+    ],
+    "warmth": [
+     87,
+     121
+    ],
+    "privacy": [
+     89,
+     123
+    ],
+    "concerns.": [
+     90
+    ],
+    "Through": [
+     91
+    ],
+    "four": [
+     92
+    ],
+    "experimental": [
+     93
+    ],
+    "studies": [
+     94
+    ],
+    "(total": [
+     95
+    ],
+    "N": [
+     96
+    ],
+    "=": [
+     97
+    ],
+    "895),": [
+     98
+    ],
+    "we": [
+     99
+    ],
+    "find": [
+     100
+    ],
+    "reduces": [
+     104
+    ],
+    "effect": [
+     110
+    ],
+    "is": [
+     111
+    ],
+    "more": [
+     112
+    ],
+    "pronounced": [
+     113
+    ],
+    "under": [
+     114
+    ],
+    "(vs.": [
+     116,
+     136
+    ],
+    "relevance\u2010based)": [
+     117
+    ],
+    "strategies.": [
+     119
+    ],
+    "Perceived": [
+     120
+    ],
+    "concerns": [
+     124
+    ],
+    "moderate": [
+     125
+    ],
+    "mediation": [
+     127
+    ],
+    "pathway": [
+     128
+    ],
+    "self\u2010identity": [
+     130,
+     145
+    ],
+    "threat,": [
+     131
+    ],
+    "such": [
+     132
+    ],
+    "relevance\u2010based": [
+     134
+    ],
+    "recommendations": [
+     135,
+     152
+    ],
+    "enhance": [
+     139
+    ],
+    "intention": [
+     142
+    ],
+    "by": [
+     143
+    ],
+    "reducing": [
+     144
+    ],
+    "threat.": [
+     146
+    ],
+    "These": [
+     147
+    ],
+    "findings": [
+     148
+    ],
+    "reveal": [
+     149
+    ],
+    "exacerbate": [
+     154
+    ],
+    "user": [
+     155
+    ],
+    "resistance": [
+     156
+    ],
+    "context": [
+     159
+    ],
+    "bias.": [
+     162
+    ],
+    "This": [
+     163
+    ],
+    "deepens": [
+     165
+    ],
+    "theoretical": [
+     167
+    ],
+    "understanding": [
+     168
+    ],
+    "mechanisms": [
+     172
+    ],
+    "underlying": [
+     173
+    ],
+    "unfairness": [
+     175
+    ],
+    "digital": [
+     178
+    ],
+    "age,": [
+     179
+    ],
+    "extends": [
+     180
+    ],
+    "application": [
+     182
+    ],
+    "theory": [
+     186
+    ],
+    "domain": [
+     189
+    ],
+    "human\u2010computer": [
+     191
+    ],
+    "interaction,": [
+     192
+    ],
+    "provides": [
+     194
+    ],
+    "actionable": [
+     195
+    ],
+    "empirical": [
+     196
+    ],
+    "implications": [
+     197
+    ],
+    "for": [
+     198
+    ],
+    "enterprises": [
+     199
+    ],
+    "ethical": [
+     202
+    ],
+    "design": [
+     203
+    ],
+    "strategic": [
+     205
+    ],
+    "optimization": [
+     206
+    ],
+    "systems.": [
+     210
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-18T09:31:52.927876",
+   "created_date": "2026-10-17T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7223409040",
+   "doi": "https://doi.org/10.1007/s40745-026-00733-0",
+   "title": "AE-NS: An Auto-Encoding Network with Semantic Constraints for Robust Fair Classification on Tabular Data",
+   "display_name": "AE-NS: An Auto-Encoding Network with Semantic Constraints for Robust Fair Classification on Tabular Data",
+   "publication_year": 2026,
+   "publication_date": "2026-10-23",
+   "ids": {
+    "openalex": "https://openalex.org/W7223409040",
+    "doi": "https://doi.org/10.1007/s40745-026-00733-0"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1007/s40745-026-00733-0",
+    "doi": "https://doi.org/10.1007/s40745-026-00733-0",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1007/s40745-026-00733-0",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S2765063436",
+     "display_name": "Annals of Data Science",
+     "issn_l": "2198-5804",
+     "issn": [
+      "2198-5804",
+      "2198-5812"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "jufo-1",
+      "poland-20",
+      "russia-white-list-1"
+     ],
+     "host_organization": "https://openalex.org/P4310319900",
+     "host_organization_name": "Springer Science+Business Media",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319900",
+      "https://openalex.org/P4310319965"
+     ],
+     "host_organization_lineage_names": [
+      "Springer Science+Business Media",
+      "Springer Nature"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Annals of Data Science",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5065521530",
+      "display_name": "Raza Hasan",
+      "orcid": "https://orcid.org/0000-0002-8089-837X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-8089-837X"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I156118397",
+       "display_name": "Southampton Solent University",
+       "ror": "https://ror.org/05xydav19",
+       "country_code": "GB",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I156118397"
+       ]
+      }
+     ],
+     "countries": [
+      "GB"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Raza Hasan",
+     "raw_affiliation_strings": [
+      "Department of Science and Engineering, Southampton Solent University, E Park Terrace, SouthamptonHampshire, SO14 0YN, UK"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-8089-837X",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Science and Engineering, Southampton Solent University, E Park Terrace, SouthamptonHampshire, SO14 0YN, UK",
+       "institution_ids": [
+        "https://openalex.org/I156118397"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5077410561",
+      "display_name": "Salman Mahmood",
+      "orcid": "https://orcid.org/0000-0003-2860-4095",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-2860-4095"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": false,
+     "raw_author_name": "Salman Mahmood",
+     "raw_affiliation_strings": [
+      "Department of Computer Science, Nazeer Hussain University, ST-2, Near Karimabad, Karachi, 75950, Sindh, Pakistan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Computer Science, Nazeer Hussain University, ST-2, Near Karimabad, Karachi, 75950, Sindh, Pakistan",
+       "institution_ids": []
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 1,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5065521530"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I156118397"
+   ],
+   "apc_list": {
+    "value": 3190,
+    "currency": "USD",
+    "value_usd": 3190
+   },
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.92260083,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10883",
+    "display_name": "Ethics and Social Impacts of AI",
+    "score": 0.8773999810218811,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3311",
+     "display_name": "Safety Research"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.8773999810218811,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3311",
+      "display_name": "Safety Research"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12026",
+     "display_name": "Explainable Artificial Intelligence (XAI)",
+     "score": 0.02239999920129776,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10764",
+     "display_name": "Privacy-Preserving Technologies in Data",
+     "score": 0.016899999231100082,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/autoencoder",
+     "display_name": "autoencoder",
+     "score": 0.753000020980835
+    },
+    {
+     "id": "https://openalex.org/keywords/semantic-constraints",
+     "display_name": "semantic constraints",
+     "score": 0.8820000290870667
+    },
+    {
+     "id": "https://openalex.org/keywords/fair-classification",
+     "display_name": "fair classification",
+     "score": 0.878000020980835
+    },
+    {
+     "id": "https://openalex.org/keywords/algorithmic-fairness",
+     "display_name": "algorithmic fairness",
+     "score": 0.7730000019073486
+    },
+    {
+     "id": "https://openalex.org/keywords/tabular-data",
+     "display_name": "tabular data",
+     "score": 0.9890000224113464
+    },
+    {
+     "id": "https://openalex.org/keywords/robustness",
+     "display_name": "robustness",
+     "score": 0.5730000138282776
+    },
+    {
+     "id": "https://openalex.org/keywords/adversarial-robustness",
+     "display_name": "adversarial robustness",
+     "score": 0.46299999952316284
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.5898000001907349
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.4952999949455261
+    },
+    {
+     "id": "https://openalex.org/C2777212361",
+     "wikidata": "https://www.wikidata.org/wiki/Q5127848",
+     "display_name": "Class (philosophy)",
+     "level": 2,
+     "score": 0.3395000100135803
+    },
+    {
+     "id": "https://openalex.org/C124101348",
+     "wikidata": "https://www.wikidata.org/wiki/Q172491",
+     "display_name": "Data mining",
+     "level": 1,
+     "score": 0.3386000096797943
+    },
+    {
+     "id": "https://openalex.org/C153180895",
+     "wikidata": "https://www.wikidata.org/wiki/Q7148389",
+     "display_name": "Pattern recognition (psychology)",
+     "level": 2,
+     "score": 0.31709998846054077
+    },
+    {
+     "id": "https://openalex.org/C50644808",
+     "wikidata": "https://www.wikidata.org/wiki/Q192776",
+     "display_name": "Artificial neural network",
+     "level": 2,
+     "score": 0.27160000801086426
+    },
+    {
+     "id": "https://openalex.org/C11413529",
+     "wikidata": "https://www.wikidata.org/wiki/Q8366",
+     "display_name": "Algorithm",
+     "level": 1,
+     "score": 0.25949999690055847
+    },
+    {
+     "id": "https://openalex.org/C33923547",
+     "wikidata": "https://www.wikidata.org/wiki/Q395",
+     "display_name": "Mathematics",
+     "level": 0,
+     "score": 0.25929999351501465
+    },
+    {
+     "id": "https://openalex.org/C184337299",
+     "wikidata": "https://www.wikidata.org/wiki/Q1437428",
+     "display_name": "Semantics (computer science)",
+     "level": 2,
+     "score": 0.2393999993801117
+    },
+    {
+     "id": "https://openalex.org/C85407183",
+     "wikidata": "https://www.wikidata.org/wiki/Q1045785",
+     "display_name": "Semantic network",
+     "level": 2,
+     "score": 0.2378000020980835
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1007/s40745-026-00733-0",
+     "doi": "https://doi.org/10.1007/s40745-026-00733-0",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1007/s40745-026-00733-0",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S2765063436",
+      "display_name": "Annals of Data Science",
+      "issn_l": "2198-5804",
+      "issn": [
+       "2198-5804",
+       "2198-5812"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "jufo-1",
+       "poland-20",
+       "russia-white-list-1"
+      ],
+      "host_organization": "https://openalex.org/P4310319900",
+      "host_organization_name": "Springer Science+Business Media",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319900",
+       "https://openalex.org/P4310319965"
+      ],
+      "host_organization_lineage_names": [
+       "Springer Science+Business Media",
+       "Springer Nature"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Annals of Data Science",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 30,
+   "referenced_works": [
+    "https://openalex.org/W1961345416",
+    "https://openalex.org/W2085988980",
+    "https://openalex.org/W2765146466",
+    "https://openalex.org/W2935707772",
+    "https://openalex.org/W3000543388",
+    "https://openalex.org/W3014590323",
+    "https://openalex.org/W3089046691",
+    "https://openalex.org/W3092541244",
+    "https://openalex.org/W3111919937",
+    "https://openalex.org/W3135680506",
+    "https://openalex.org/W3153779216",
+    "https://openalex.org/W3162447981",
+    "https://openalex.org/W3165730310",
+    "https://openalex.org/W4210736086",
+    "https://openalex.org/W4226176347",
+    "https://openalex.org/W4243772471",
+    "https://openalex.org/W4288758404",
+    "https://openalex.org/W4376958471",
+    "https://openalex.org/W4385584492",
+    "https://openalex.org/W4398174495",
+    "https://openalex.org/W4400955258",
+    "https://openalex.org/W4402705238",
+    "https://openalex.org/W4403444281",
+    "https://openalex.org/W4408062748",
+    "https://openalex.org/W4409205374",
+    "https://openalex.org/W4412008824",
+    "https://openalex.org/W4414978697",
+    "https://openalex.org/W7124324139",
+    "https://openalex.org/W7130530131",
+    "https://openalex.org/W7168358517"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": null,
+   "counts_by_year": [],
+   "updated_date": "2026-10-25T09:29:13.331239",
+   "created_date": "2026-10-24T00:00:00"
+  }
+ ]
+}

@@ -1,0 +1,2018 @@
+{
+ "batch_id": "ityhx1p5agdxpbhw0h2ix0oqksirzaoxuzab",
+ "slug": "diet-and-mortality",
+ "submitted_on": "2026-10-26",
+ "submitted_at": 1793014146.097096,
+ "projected_inr": 0.940527,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7223185041": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7223185041",
+   "openalex_id": "https://openalex.org/W7223185041",
+   "title": "Baseline Food Supply-Based Dietary Scores and Ischemic Heart Disease Mortality: A Longitudinal Cross-Country Study",
+   "year": 2026,
+   "doi": "https://doi.org/10.3390/nu18203456",
+   "venue": "Nutrients",
+   "field": "medicine",
+   "cited_by_count": 0,
+   "abstract": "Background/Objectives: National food environments may be associated with cardiovascular risk, but how their association with country-level ischemic heart disease (IHD) mortality differs across diet-quality indices remains unclear. We compared six food supply-based dietary scores calculated using 2010 food data in relation to annual IHD mortality from 2010 to 2021. Methods: We conducted a longitudinal study of 148 countries with populations \u2265 1 million. Using 2010 FAOSTAT Food Balance Sheet data, we calculated the Dietary Approaches to Stop Hypertension (DASH) score, the Alternative Healthy Eating Index (AHEI), Mediterranean Diet Score (MDS), Traditional Japanese Diet Score (TJDS), Planetary Health Diet Index (PHDI), and Quantitative Index for Dietary Diversity (QUANTIDD). The outcome was age-standardized IHD mortality during 2010\u20132021. Associations between time-invariant baseline dietary scores and annual IHD mortality were assessed using multivariable-adjusted linear mixed-effects models. Effect sizes were expressed as mortality rate ratios (MRRs) per 1-standard deviation (SD) higher score; model fit was compared using Akaike information criterion (AIC) weights and marginal R2, and effect estimates were compared pairwise. Results: Higher DASH and AHEI scores were associated with lower IHD mortality. MRRs per 1-SD higher score were 0.914 (95% confidence interval, 0.849\u20130.983) for DASH and 0.908 (95% confidence interval, 0.838\u20130.985) for AHEI. No significant associations were observed for MDS, TJDS, PHDI, or QUANTIDD. DASH had the highest AIC weight (0.434), followed by AHEI (0.341), with a slightly higher marginal R2 for DASH. Pairwise comparisons showed no statistically significant differences in effect estimates between DASH and AHEI or between either of these scores and the other dietary scores. Conclusions: Higher baseline DASH and AHEI scores were associated with lower IHD mortality during 2010\u20132021, with similar effect estimates per 1-SD higher score and broadly comparable model fit. However, direct pairwise comparisons revealed no statistically significant differences in standardized effect sizes between these scores (DASH and AHEI) and the other dietary scores. These findings suggest that the relevance of dietary scores may depend on the outcome and analytic context rather than the superiority of a single index. Because this was an ecological study, these findings should not be interpreted as individual-level causal effects.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: mortality/survival outcome in title: 'Mortality'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-10-26",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7223185041",
+   "doi": "https://doi.org/10.3390/nu18203456",
+   "title": "Baseline Food Supply-Based Dietary Scores and Ischemic Heart Disease Mortality: A Longitudinal Cross-Country Study",
+   "display_name": "Baseline Food Supply-Based Dietary Scores and Ischemic Heart Disease Mortality: A Longitudinal Cross-Country Study",
+   "publication_year": 2026,
+   "publication_date": "2026-10-21",
+   "ids": {
+    "openalex": "https://openalex.org/W7223185041",
+    "doi": "https://doi.org/10.3390/nu18203456"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.3390/nu18203456",
+    "doi": "https://doi.org/10.3390/nu18203456",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/nu18203456",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S110785341",
+     "display_name": "Nutrients",
+     "issn_l": "2072-6643",
+     "issn": [
+      "2072-6643"
+     ],
+     "is_oa": true,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "anvur-scientific",
+      "cwts-core",
+      "ki-jl-1",
+      "medline",
+      "norway-1",
+      "poland-140",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310310987",
+     "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310310987"
+     ],
+     "host_organization_lineage_names": [
+      "Multidisciplinary Digital Publishing Institute"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Nutrients",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://doi.org/10.3390/nu18203456",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5027345744",
+      "display_name": "Saya Nosaka",
+      "orcid": "https://orcid.org/0009-0002-5730-6759",
+      "observed_orcids": [
+       "https://orcid.org/0009-0002-5730-6759"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I69740276",
+       "display_name": "Tokyo Metropolitan University",
+       "ror": "https://ror.org/00ws30h19",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I69740276"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Saya Nosaka",
+     "raw_affiliation_strings": [
+      "Department of Nutrition, Osaka Metropolitan University, Osaka 536-8525, Japan",
+      "Graduate School of Nutritional Science, Nagoya University of Arts and Sciences, Aichi 470-0196, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0002-5730-6759",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Nutrition, Osaka Metropolitan University, Osaka 536-8525, Japan",
+       "institution_ids": [
+        "https://openalex.org/I69740276"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Graduate School of Nutritional Science, Nagoya University of Arts and Sciences, Aichi 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5088819001",
+      "display_name": "Fumiya Kawase",
+      "orcid": "https://orcid.org/0000-0001-6187-4543",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-6187-4543"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I201537933",
+       "display_name": "Tohoku University",
+       "ror": "https://ror.org/01dq60k83",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I201537933"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Fumiya Kawase",
+     "raw_affiliation_strings": [
+      "Department of Sports and Health Sciences, Graduate School of Biomedical Engineering, Tohoku University, Sendai 980-8575, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-6187-4543",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Sports and Health Sciences, Graduate School of Biomedical Engineering, Tohoku University, Sendai 980-8575, Japan",
+       "institution_ids": [
+        "https://openalex.org/I201537933"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5036780514",
+      "display_name": "Tomoko Imai",
+      "orcid": "https://orcid.org/0000-0002-6552-3158",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-6552-3158"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I72023434",
+       "display_name": "Doshisha Women's College of Liberal Arts",
+       "ror": "https://ror.org/02p6jga18",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I72023434"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Tomoko Imai",
+     "raw_affiliation_strings": [
+      "Department of Food Science and Nutrition, Doshisha Women\u2019s College of Liberal Arts, Kyoto 602-0893, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-6552-3158",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Food Science and Nutrition, Doshisha Women\u2019s College of Liberal Arts, Kyoto 602-0893, Japan",
+       "institution_ids": [
+        "https://openalex.org/I72023434"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5020990077",
+      "display_name": "Ayako Sezaki",
+      "orcid": "https://orcid.org/0000-0002-3671-5476",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-3671-5476"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210086383",
+       "display_name": "National Institute of Biomedical Innovation, Health and Nutrition",
+       "ror": "https://ror.org/001rkbe13",
+       "country_code": "JP",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I4210086383"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Ayako Sezaki",
+     "raw_affiliation_strings": [
+      "Center for Nutritional Epidemiology and Policy Research, National Institutes of Biomedical Innovation, Health and Nutrition, Settsu 566-0002, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-3671-5476",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Center for Nutritional Epidemiology and Policy Research, National Institutes of Biomedical Innovation, Health and Nutrition, Settsu 566-0002, Japan",
+       "institution_ids": [
+        "https://openalex.org/I4210086383"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5039386319",
+      "display_name": "Keiko Miyamoto",
+      "orcid": "https://orcid.org/0000-0003-1856-8369",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-1856-8369"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Keiko Miyamoto",
+     "raw_affiliation_strings": [
+      "Department of Nursing, Nagoya University of Arts and Sciences, Nagoya 460-0001, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-1856-8369",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Nursing, Nagoya University of Arts and Sciences, Nagoya 460-0001, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5046569873",
+      "display_name": "Chisato Abe",
+      "orcid": "https://orcid.org/0000-0002-2165-9002",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-2165-9002"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2799546942",
+       "display_name": "Tsu City College",
+       "ror": "https://ror.org/01gjxh181",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2799546942"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Chisato Abe",
+     "raw_affiliation_strings": [
+      "Department of Food and Nutrition, Tsu City College, Tsu 514-0112, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-2165-9002",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Food and Nutrition, Tsu City College, Tsu 514-0112, Japan",
+       "institution_ids": [
+        "https://openalex.org/I2799546942"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5086384707",
+      "display_name": "Masayo Sanada",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2802022162",
+       "display_name": "Heisei College of Health Sciences",
+       "ror": "https://ror.org/04cadt597",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2802022162"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Masayo Sanada",
+     "raw_affiliation_strings": [
+      "Department of Nursing, Heisei College of Health Sciences, Gifu 501-1131, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Nursing, Heisei College of Health Sciences, Gifu 501-1131, Japan",
+       "institution_ids": [
+        "https://openalex.org/I2802022162"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5159227492",
+      "display_name": "Norie Sugihara",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I74042192",
+       "display_name": "Kanagawa University of Human Services",
+       "ror": "https://ror.org/03dhz6n86",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I74042192"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Norie Sugihara",
+     "raw_affiliation_strings": [
+      "Faculty of Health and Social Services, Kanagawa University of Human Services, Yokosuka 238-8522, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Faculty of Health and Social Services, Kanagawa University of Human Services, Yokosuka 238-8522, Japan",
+       "institution_ids": [
+        "https://openalex.org/I74042192"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5114138378",
+      "display_name": "Toshie Honda",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Toshie Honda",
+     "raw_affiliation_strings": [
+      "Department of Nursing, Nagoya University of Arts and Sciences, Nagoya 460-0001, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Nursing, Nagoya University of Arts and Sciences, Nagoya 460-0001, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5093568525",
+      "display_name": "Yuta Sumikama",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210132181",
+       "display_name": "Japanese Red Cross Nagoya Daiichi Hospital",
+       "ror": "https://ror.org/03f918r09",
+       "country_code": "JP",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I2799517759",
+        "https://openalex.org/I4210132181"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Yuta Sumikama",
+     "raw_affiliation_strings": [
+      "Department of Nutrition, Japanese Red Cross Aichi Medical Center Nagoya Daiichi Hospital, Nagoya 453-8511, Japan",
+      "Graduate School of Nutritional Science, Nagoya University of Arts and Sciences, Aichi 470-0196, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Nutrition, Japanese Red Cross Aichi Medical Center Nagoya Daiichi Hospital, Nagoya 453-8511, Japan",
+       "institution_ids": [
+        "https://openalex.org/I4210132181"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Graduate School of Nutritional Science, Nagoya University of Arts and Sciences, Aichi 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5071369372",
+      "display_name": "Ayaka Inden",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210099212",
+       "display_name": "Hamamatsu University Hospital",
+       "ror": "https://ror.org/00z8pd398",
+       "country_code": "JP",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I4210099212"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Ayaka Inden",
+     "raw_affiliation_strings": [
+      "Clinical Nutrition Unit, Hamamatsu University Hospital, Hamamatsu 431-3192, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Clinical Nutrition Unit, Hamamatsu University Hospital, Hamamatsu 431-3192, Japan",
+       "institution_ids": [
+        "https://openalex.org/I4210099212"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5090751076",
+      "display_name": "Takayoshi Tsukahara",
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Takayoshi Tsukahara",
+     "raw_affiliation_strings": [
+      "Graduate School of Nutritional Science, Nagoya University of Arts and Sciences, Aichi 470-0196, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Graduate School of Nutritional Science, Nagoya University of Arts and Sciences, Aichi 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5033928510",
+      "display_name": "Hiroshi Shimokata",
+      "orcid": "https://orcid.org/0000-0002-0830-2041",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-0830-2041"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I86710422",
+       "display_name": "Nagoya University of Arts and Sciences",
+       "ror": "https://ror.org/01cpxhg33",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Hiroshi Shimokata",
+     "raw_affiliation_strings": [
+      "Department of Nutritional Science, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+      "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Nutritional Science, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute of Health and Nutrition, Nagoya University of Arts and Sciences, Nisshin 470-0196, Japan",
+       "institution_ids": [
+        "https://openalex.org/I86710422"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 10,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5088819001"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I201537933",
+    "https://openalex.org/I86710422"
+   ],
+   "apc_list": {
+    "value": 2900,
+    "currency": "CHF",
+    "value_usd": 3499
+   },
+   "apc_paid": {
+    "value": 2900,
+    "currency": "CHF",
+    "value_usd": 3499
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.88993519,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "18",
+    "issue": "20",
+    "first_page": "3456",
+    "last_page": "3456"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10866",
+    "display_name": "Nutritional Studies and Diet",
+    "score": 0.9990000128746033,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2739",
+     "display_name": "Public Health, Environmental and Occupational Health"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/27",
+     "display_name": "Medicine"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/4",
+     "display_name": "Health Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10866",
+     "display_name": "Nutritional Studies and Diet",
+     "score": 0.9990000128746033,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2739",
+      "display_name": "Public Health, Environmental and Occupational Health"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11259",
+     "display_name": "Agriculture Sustainability and Environmental Impact",
+     "score": 0.0006000000284984708,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2303",
+      "display_name": "Ecology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/23",
+      "display_name": "Environmental Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T13522",
+     "display_name": "Cardiovascular Health and Risk Factors",
+     "score": 0.00019999999494757503,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2705",
+      "display_name": "Cardiology and Cardiovascular Medicine"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/ischemic-heart-disease-mortality",
+     "display_name": "ischemic heart disease mortality",
+     "score": 0.9470000267028809
+    },
+    {
+     "id": "https://openalex.org/keywords/dietary-quality-index",
+     "display_name": "diet quality index",
+     "score": 0.7599999904632568
+    },
+    {
+     "id": "https://openalex.org/keywords/food-supply",
+     "display_name": "food supply",
+     "score": 0.6759999990463257
+    },
+    {
+     "id": "https://openalex.org/keywords/dash-score",
+     "display_name": "DASH score",
+     "score": 0.6470000147819519
+    },
+    {
+     "id": "https://openalex.org/keywords/alternative-healthy-eating-index",
+     "display_name": "Alternative Healthy Eating Index",
+     "score": 0.9900000095367432
+    },
+    {
+     "id": "https://openalex.org/keywords/mediterranean-diet-score",
+     "display_name": "Mediterranean diet score",
+     "score": 0.8019999861717224
+    },
+    {
+     "id": "https://openalex.org/keywords/planetary-health-diet-index",
+     "display_name": "Planetary Health Diet Index",
+     "score": 0.984000027179718
+    },
+    {
+     "id": "https://openalex.org/keywords/dietary-diversity",
+     "display_name": "dietary diversity",
+     "score": 0.6349999904632568
+    },
+    {
+     "id": "https://openalex.org/keywords/cardiovascular-risk",
+     "display_name": "cardiovascular risk",
+     "score": 0.6629999876022339
+    },
+    {
+     "id": "https://openalex.org/keywords/cross-national-comparison",
+     "display_name": "cross-national comparison",
+     "score": 0.8619999885559082
+    },
+    {
+     "id": "https://openalex.org/keywords/model-fit-comparison",
+     "display_name": "model fit comparison",
+     "score": 0.5580000281333923
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C2776090536",
+     "wikidata": "https://www.wikidata.org/wiki/Q187819",
+     "display_name": "Dash",
+     "level": 2,
+     "score": 0.8539999723434448
+    },
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.7922999858856201
+    },
+    {
+     "id": "https://openalex.org/C44249647",
+     "wikidata": "https://www.wikidata.org/wiki/Q208498",
+     "display_name": "Confidence interval",
+     "level": 2,
+     "score": 0.570900022983551
+    },
+    {
+     "id": "https://openalex.org/C2778962194",
+     "wikidata": "https://www.wikidata.org/wiki/Q47564",
+     "display_name": "Mediterranean diet",
+     "level": 2,
+     "score": 0.5085999965667725
+    },
+    {
+     "id": "https://openalex.org/C126322002",
+     "wikidata": "https://www.wikidata.org/wiki/Q11180",
+     "display_name": "Internal medicine",
+     "level": 1,
+     "score": 0.4693000018596649
+    },
+    {
+     "id": "https://openalex.org/C207103383",
+     "wikidata": "https://www.wikidata.org/wiki/Q3930246",
+     "display_name": "Hazard ratio",
+     "level": 3,
+     "score": 0.46059998869895935
+    },
+    {
+     "id": "https://openalex.org/C2779134260",
+     "wikidata": "https://www.wikidata.org/wiki/Q12136",
+     "display_name": "Disease",
+     "level": 2,
+     "score": 0.44749999046325684
+    },
+    {
+     "id": "https://openalex.org/C129230472",
+     "wikidata": "https://www.wikidata.org/wiki/Q767036",
+     "display_name": "Food group",
+     "level": 2,
+     "score": 0.4235000014305115
+    },
+    {
+     "id": "https://openalex.org/C149923435",
+     "wikidata": "https://www.wikidata.org/wiki/Q37732",
+     "display_name": "Demography",
+     "level": 1,
+     "score": 0.40070000290870667
+    },
+    {
+     "id": "https://openalex.org/C2780221984",
+     "wikidata": "https://www.wikidata.org/wiki/Q131191",
+     "display_name": "Body mass index",
+     "level": 2,
+     "score": 0.3804999887943268
+    },
+    {
+     "id": "https://openalex.org/C50382708",
+     "wikidata": "https://www.wikidata.org/wiki/Q223218",
+     "display_name": "Proportional hazards model",
+     "level": 2,
+     "score": 0.3767000138759613
+    },
+    {
+     "id": "https://openalex.org/C82789193",
+     "wikidata": "https://www.wikidata.org/wiki/Q2142611",
+     "display_name": "Relative risk",
+     "level": 3,
+     "score": 0.36309999227523804
+    },
+    {
+     "id": "https://openalex.org/C179755657",
+     "wikidata": "https://www.wikidata.org/wiki/Q58702",
+     "display_name": "Mortality rate",
+     "level": 2,
+     "score": 0.34940001368522644
+    },
+    {
+     "id": "https://openalex.org/C2777984932",
+     "wikidata": "https://www.wikidata.org/wiki/Q7336293",
+     "display_name": "Risk of mortality",
+     "level": 2,
+     "score": 0.32919999957084656
+    },
+    {
+     "id": "https://openalex.org/C2778996794",
+     "wikidata": "https://www.wikidata.org/wiki/Q7307204",
+     "display_name": "Refined grains",
+     "level": 3,
+     "score": 0.32249999046325684
+    },
+    {
+     "id": "https://openalex.org/C164705383",
+     "wikidata": "https://www.wikidata.org/wiki/Q10379",
+     "display_name": "Cardiology",
+     "level": 1,
+     "score": 0.2782000005245209
+    },
+    {
+     "id": "https://openalex.org/C25511272",
+     "wikidata": "https://www.wikidata.org/wiki/Q295136",
+     "display_name": "Ecological study",
+     "level": 3,
+     "score": 0.2721000015735626
+    },
+    {
+     "id": "https://openalex.org/C84393581",
+     "wikidata": "https://www.wikidata.org/wiki/Q82642",
+     "display_name": "Blood pressure",
+     "level": 2,
+     "score": 0.26660001277923584
+    },
+    {
+     "id": "https://openalex.org/C64946054",
+     "wikidata": "https://www.wikidata.org/wiki/Q4874476",
+     "display_name": "Bayesian multivariate linear regression",
+     "level": 3,
+     "score": 0.263700008392334
+    },
+    {
+     "id": "https://openalex.org/C206680393",
+     "wikidata": "https://www.wikidata.org/wiki/Q5204325",
+     "display_name": "DASH diet",
+     "level": 3,
+     "score": 0.25450000166893005
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.3390/nu18203456",
+     "doi": "https://doi.org/10.3390/nu18203456",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.3390/nu18203456",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S110785341",
+      "display_name": "Nutrients",
+      "issn_l": "2072-6643",
+      "issn": [
+       "2072-6643"
+      ],
+      "is_oa": true,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "anvur-scientific",
+       "cwts-core",
+       "ki-jl-1",
+       "medline",
+       "norway-1",
+       "poland-140",
+       "russia-white-list-1",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310310987",
+      "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310310987"
+      ],
+      "host_organization_lineage_names": [
+       "Multidisciplinary Digital Publishing Institute"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Nutrients",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.3390/nu18203456",
+    "doi": "https://doi.org/10.3390/nu18203456",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/nu18203456",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S110785341",
+     "display_name": "Nutrients",
+     "issn_l": "2072-6643",
+     "issn": [
+      "2072-6643"
+     ],
+     "is_oa": true,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "anvur-scientific",
+      "cwts-core",
+      "ki-jl-1",
+      "medline",
+      "norway-1",
+      "poland-140",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310310987",
+     "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310310987"
+     ],
+     "host_organization_lineage_names": [
+      "Multidisciplinary Digital Publishing Institute"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Nutrients",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "score": 1.0,
+     "id": "https://metadata.un.org/sdg/3",
+     "display_name": "Good health and well-being"
+    }
+   ],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 38,
+   "referenced_works": [
+    "https://openalex.org/W1973070990",
+    "https://openalex.org/W1978290051",
+    "https://openalex.org/W2018539562",
+    "https://openalex.org/W2108176440",
+    "https://openalex.org/W2121413294",
+    "https://openalex.org/W2152436391",
+    "https://openalex.org/W2152572619",
+    "https://openalex.org/W2153570027",
+    "https://openalex.org/W2162555596",
+    "https://openalex.org/W2168831848",
+    "https://openalex.org/W2194915978",
+    "https://openalex.org/W2321007701",
+    "https://openalex.org/W2593977293",
+    "https://openalex.org/W2768758048",
+    "https://openalex.org/W2774486220",
+    "https://openalex.org/W2789711714",
+    "https://openalex.org/W2807970930",
+    "https://openalex.org/W2887958095",
+    "https://openalex.org/W2891417021",
+    "https://openalex.org/W2909678677",
+    "https://openalex.org/W2912641627",
+    "https://openalex.org/W2928401928",
+    "https://openalex.org/W2949958696",
+    "https://openalex.org/W3035463546",
+    "https://openalex.org/W3036043064",
+    "https://openalex.org/W3048564759",
+    "https://openalex.org/W3134829990",
+    "https://openalex.org/W4210973933",
+    "https://openalex.org/W4220854628",
+    "https://openalex.org/W4280506316",
+    "https://openalex.org/W4296112987",
+    "https://openalex.org/W4296293246",
+    "https://openalex.org/W4296293256",
+    "https://openalex.org/W4313877452",
+    "https://openalex.org/W4399369880",
+    "https://openalex.org/W4399566480",
+    "https://openalex.org/W7143595978",
+    "https://openalex.org/W7169495872"
+   ],
+   "related_works": [],
+   "abstract_inverted_index": {
+    "Background/Objectives:": [
+     0
+    ],
+    "National": [
+     1
+    ],
+    "food": [
+     2,
+     30,
+     37
+    ],
+    "environments": [
+     3
+    ],
+    "may": [
+     4,
+     315
+    ],
+    "be": [
+     5,
+     341
+    ],
+    "associated": [
+     6,
+     173,
+     262
+    ],
+    "with": [
+     7,
+     14,
+     58,
+     174,
+     221,
+     263,
+     269
+    ],
+    "cardiovascular": [
+     8
+    ],
+    "risk,": [
+     9
+    ],
+    "but": [
+     10
+    ],
+    "how": [
+     11
+    ],
+    "their": [
+     12
+    ],
+    "association": [
+     13
+    ],
+    "country-level": [
+     15
+    ],
+    "ischemic": [
+     16
+    ],
+    "heart": [
+     17
+    ],
+    "disease": [
+     18
+    ],
+    "(IHD)": [
+     19
+    ],
+    "mortality": [
+     20,
+     44,
+     112,
+     124,
+     137,
+     266
+    ],
+    "differs": [
+     21
+    ],
+    "across": [
+     22
+    ],
+    "diet-quality": [
+     23
+    ],
+    "indices": [
+     24
+    ],
+    "remains": [
+     25
+    ],
+    "unclear.": [
+     26
+    ],
+    "We": [
+     27,
+     50
+    ],
+    "compared": [
+     28,
+     150,
+     164
+    ],
+    "six": [
+     29
+    ],
+    "supply-based": [
+     31
+    ],
+    "dietary": [
+     32,
+     119,
+     252,
+     304,
+     313
+    ],
+    "scores": [
+     33,
+     120,
+     171,
+     248,
+     260,
+     297,
+     314
+    ],
+    "calculated": [
+     34,
+     71
+    ],
+    "using": [
+     35,
+     127,
+     151
+    ],
+    "2010": [
+     36,
+     46,
+     64
+    ],
+    "data": [
+     38
+    ],
+    "in": [
+     39,
+     236,
+     291
+    ],
+    "relation": [
+     40
+    ],
+    "to": [
+     41,
+     47,
+     75
+    ],
+    "annual": [
+     42,
+     122
+    ],
+    "IHD": [
+     43,
+     111,
+     123,
+     176,
+     265
+    ],
+    "from": [
+     45
+    ],
+    "2021.": [
+     48
+    ],
+    "Methods:": [
+     49
+    ],
+    "conducted": [
+     51
+    ],
+    "a": [
+     52,
+     222,
+     328
+    ],
+    "longitudinal": [
+     53
+    ],
+    "study": [
+     54
+    ],
+    "of": [
+     55,
+     246,
+     312,
+     327
+    ],
+    "148": [
+     56
+    ],
+    "countries": [
+     57
+    ],
+    "populations": [
+     59
+    ],
+    "\u2265": [
+     60
+    ],
+    "1": [
+     61
+    ],
+    "million.": [
+     62
+    ],
+    "Using": [
+     63
+    ],
+    "FAOSTAT": [
+     65
+    ],
+    "Food": [
+     66
+    ],
+    "Balance": [
+     67
+    ],
+    "Sheet": [
+     68
+    ],
+    "data,": [
+     69
+    ],
+    "we": [
+     70
+    ],
+    "the": [
+     72,
+     80,
+     212,
+     250,
+     302,
+     310,
+     318,
+     325
+    ],
+    "Dietary": [
+     73,
+     104
+    ],
+    "Approaches": [
+     74
+    ],
+    "Stop": [
+     76
+    ],
+    "Hypertension": [
+     77
+    ],
+    "(DASH)": [
+     78
+    ],
+    "score,": [
+     79
+    ],
+    "Alternative": [
+     81
+    ],
+    "Healthy": [
+     82
+    ],
+    "Eating": [
+     83
+    ],
+    "Index": [
+     84,
+     98,
+     102
+    ],
+    "(AHEI),": [
+     85
+    ],
+    "Mediterranean": [
+     86
+    ],
+    "Diet": [
+     87,
+     92,
+     97
+    ],
+    "Score": [
+     88,
+     93
+    ],
+    "(MDS),": [
+     89
+    ],
+    "Traditional": [
+     90
+    ],
+    "Japanese": [
+     91
+    ],
+    "(TJDS),": [
+     94
+    ],
+    "Planetary": [
+     95
+    ],
+    "Health": [
+     96
+    ],
+    "(PHDI),": [
+     99
+    ],
+    "and": [
+     100,
+     121,
+     157,
+     160,
+     169,
+     191,
+     241,
+     249,
+     258,
+     277,
+     299,
+     301,
+     320
+    ],
+    "Quantitative": [
+     101
+    ],
+    "for": [
+     103,
+     189,
+     197,
+     204,
+     227
+    ],
+    "Diversity": [
+     105
+    ],
+    "(QUANTIDD).": [
+     106
+    ],
+    "The": [
+     107
+    ],
+    "outcome": [
+     108,
+     319
+    ],
+    "was": [
+     109,
+     149,
+     333
+    ],
+    "age-standardized": [
+     110
+    ],
+    "during": [
+     113,
+     267
+    ],
+    "2010\u20132021.": [
+     114
+    ],
+    "Associations": [
+     115
+    ],
+    "between": [
+     116,
+     239,
+     244,
+     295
+    ],
+    "time-invariant": [
+     117
+    ],
+    "baseline": [
+     118,
+     256
+    ],
+    "were": [
+     125,
+     134,
+     163,
+     172,
+     183,
+     202,
+     261
+    ],
+    "assessed": [
+     126
+    ],
+    "multivariable-adjusted": [
+     128
+    ],
+    "linear": [
+     129
+    ],
+    "mixed-effects": [
+     130
+    ],
+    "models.": [
+     131
+    ],
+    "Effect": [
+     132
+    ],
+    "sizes": [
+     133,
+     294
+    ],
+    "expressed": [
+     135
+    ],
+    "as": [
+     136,
+     343
+    ],
+    "rate": [
+     138
+    ],
+    "ratios": [
+     139
+    ],
+    "(MRRs)": [
+     140
+    ],
+    "per": [
+     141,
+     179,
+     273
+    ],
+    "1-standard": [
+     142
+    ],
+    "deviation": [
+     143
+    ],
+    "(SD)": [
+     144
+    ],
+    "higher": [
+     145,
+     181,
+     224,
+     275
+    ],
+    "score;": [
+     146
+    ],
+    "model": [
+     147,
+     280
+    ],
+    "fit": [
+     148
+    ],
+    "Akaike": [
+     152
+    ],
+    "information": [
+     153
+    ],
+    "criterion": [
+     154
+    ],
+    "(AIC)": [
+     155
+    ],
+    "weights": [
+     156
+    ],
+    "marginal": [
+     158,
+     225
+    ],
+    "R2,": [
+     159
+    ],
+    "effect": [
+     161,
+     237,
+     271,
+     293
+    ],
+    "estimates": [
+     162,
+     238,
+     272
+    ],
+    "pairwise.": [
+     165
+    ],
+    "Results:": [
+     166
+    ],
+    "Higher": [
+     167,
+     255
+    ],
+    "DASH": [
+     168,
+     190,
+     210,
+     240,
+     257
+    ],
+    "AHEI": [
+     170,
+     219,
+     242,
+     259
+    ],
+    "lower": [
+     175,
+     264
+    ],
+    "mortality.": [
+     177
+    ],
+    "MRRs": [
+     178
+    ],
+    "1-SD": [
+     180,
+     274
+    ],
+    "score": [
+     182,
+     276
+    ],
+    "0.914": [
+     184
+    ],
+    "(95%": [
+     185,
+     193
+    ],
+    "confidence": [
+     186,
+     194
+    ],
+    "interval,": [
+     187,
+     195
+    ],
+    "0.849\u20130.983)": [
+     188
+    ],
+    "0.908": [
+     192
+    ],
+    "0.838\u20130.985)": [
+     196
+    ],
+    "AHEI.": [
+     198
+    ],
+    "No": [
+     199
+    ],
+    "significant": [
+     200,
+     234,
+     289
+    ],
+    "associations": [
+     201
+    ],
+    "observed": [
+     203
+    ],
+    "MDS,": [
+     205
+    ],
+    "TJDS,": [
+     206
+    ],
+    "PHDI,": [
+     207
+    ],
+    "or": [
+     208,
+     243
+    ],
+    "QUANTIDD.": [
+     209
+    ],
+    "had": [
+     211
+    ],
+    "highest": [
+     213
+    ],
+    "AIC": [
+     214
+    ],
+    "weight": [
+     215
+    ],
+    "(0.434),": [
+     216
+    ],
+    "followed": [
+     217
+    ],
+    "by": [
+     218
+    ],
+    "(0.341),": [
+     220
+    ],
+    "slightly": [
+     223
+    ],
+    "R2": [
+     226
+    ],
+    "DASH.": [
+     228
+    ],
+    "Pairwise": [
+     229
+    ],
+    "comparisons": [
+     230,
+     285
+    ],
+    "showed": [
+     231
+    ],
+    "no": [
+     232,
+     287
+    ],
+    "statistically": [
+     233,
+     288
+    ],
+    "differences": [
+     235,
+     290
+    ],
+    "either": [
+     245
+    ],
+    "these": [
+     247,
+     296,
+     337
+    ],
+    "other": [
+     251,
+     303
+    ],
+    "scores.": [
+     253,
+     305
+    ],
+    "Conclusions:": [
+     254
+    ],
+    "2010\u20132021,": [
+     268
+    ],
+    "similar": [
+     270
+    ],
+    "broadly": [
+     278
+    ],
+    "comparable": [
+     279
+    ],
+    "fit.": [
+     281
+    ],
+    "However,": [
+     282
+    ],
+    "direct": [
+     283
+    ],
+    "pairwise": [
+     284
+    ],
+    "revealed": [
+     286
+    ],
+    "standardized": [
+     292
+    ],
+    "(DASH": [
+     298
+    ],
+    "AHEI)": [
+     300
+    ],
+    "These": [
+     306
+    ],
+    "findings": [
+     307,
+     338
+    ],
+    "suggest": [
+     308
+    ],
+    "that": [
+     309
+    ],
+    "relevance": [
+     311
+    ],
+    "depend": [
+     316
+    ],
+    "on": [
+     317
+    ],
+    "analytic": [
+     321
+    ],
+    "context": [
+     322
+    ],
+    "rather": [
+     323
+    ],
+    "than": [
+     324
+    ],
+    "superiority": [
+     326
+    ],
+    "single": [
+     329
+    ],
+    "index.": [
+     330
+    ],
+    "Because": [
+     331
+    ],
+    "this": [
+     332
+    ],
+    "an": [
+     334
+    ],
+    "ecological": [
+     335
+    ],
+    "study,": [
+     336
+    ],
+    "should": [
+     339
+    ],
+    "not": [
+     340
+    ],
+    "interpreted": [
+     342
+    ],
+    "individual-level": [
+     344
+    ],
+    "causal": [
+     345
+    ],
+    "effects.": [
+     346
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-25T09:29:13.331239",
+   "created_date": "2026-10-22T00:00:00"
+  }
+ ]
+}
