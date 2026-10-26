@@ -1,0 +1,203 @@
+{
+  "paper_id": "openalex:W7221647136",
+  "claims": [
+    {
+      "id": "openalex:W7221647136:c1",
+      "paper_id": "openalex:W7221647136",
+      "text": "High physical activity was associated with lower risk of all-cause mortality (HR: 0.76 [95% CI: 0.74-0.79]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c2",
+      "paper_id": "openalex:W7221647136",
+      "text": "High physical activity was associated with lower risk of composite CVD mortality (HR: 0.74 [95% CI: 0.70-0.77]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c3",
+      "paper_id": "openalex:W7221647136",
+      "text": "High physical activity was associated with lower risk of incident composite CVD (HR: 0.90 [95% CI: 0.88-0.92]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c4",
+      "paper_id": "openalex:W7221647136",
+      "text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c5",
+      "paper_id": "openalex:W7221647136",
+      "text": "High diet quality was associated with lower risk of composite CVD mortality (HR: 0.81 [95% CI: 0.75-0.88]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c6",
+      "paper_id": "openalex:W7221647136",
+      "text": "High diet quality was associated with lower risk of incident composite CVD (HR: 0.87 [95% CI: 0.84-0.90]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c7",
+      "paper_id": "openalex:W7221647136",
+      "text": "Physical activity showed nonlinear associations with outcomes, plateauing at approximately 2,500 metabolic equivalent min/wk.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c8",
+      "paper_id": "openalex:W7221647136",
+      "text": "High physical activity combined with high diet quality was associated with lower all-cause mortality (HR: 0.64 [95% CI: 0.60-0.68]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c9",
+      "paper_id": "openalex:W7221647136",
+      "text": "High physical activity combined with high diet quality was associated with lower composite CVD mortality (HR: 0.61 [95% CI: 0.54-0.68]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c10",
+      "paper_id": "openalex:W7221647136",
+      "text": "High physical activity combined with high diet quality was associated with lower incident composite CVD (HR: 0.83 [95% CI: 0.79-0.88]).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c11",
+      "paper_id": "openalex:W7221647136",
+      "text": "Significant multiplicative interactions between physical activity and diet quality were observed for stroke mortality, composite CVD, and heart failure.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221647136:c12",
+      "paper_id": "openalex:W7221647136",
+      "text": "Joint associations of physical activity and diet quality with outcomes were stronger at more advanced cardiovascular-kidney-metabolic syndrome stages.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221647136:e1",
+      "claim_id": "openalex:W7221647136:c1",
+      "description": "High PA was associated with lower risks of all-cause mortality (HR: 0.76 [95% CI: 0.74-0.79]).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e2",
+      "claim_id": "openalex:W7221647136:c2",
+      "description": "High PA was associated with lower composite CVD mortality (0.74 [0.70-0.77]).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e3",
+      "claim_id": "openalex:W7221647136:c3",
+      "description": "High PA was associated with incident composite CVD (0.90 [0.88-0.92]).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e4",
+      "claim_id": "openalex:W7221647136:c4",
+      "description": "For high diet quality, corresponding HR (95% CI) for all-cause mortality was 0.81 (0.77-0.85).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e5",
+      "claim_id": "openalex:W7221647136:c5",
+      "description": "For high diet quality, composite CVD mortality HR was 0.81 (0.75-0.88).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e6",
+      "claim_id": "openalex:W7221647136:c6",
+      "description": "For high diet quality, incident composite CVD HR was 0.87 (0.84-0.90).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e7",
+      "claim_id": "openalex:W7221647136:c7",
+      "description": "PA showed nonlinear associations with these outcomes, plateauing at approximately 2,500 metabolic equivalent min/wk.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221647136:e8",
+      "claim_id": "openalex:W7221647136:c8",
+      "description": "High PA combined with high diet quality showed inverse associations with all-cause mortality (0.64 [0.60-0.68]).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e9",
+      "claim_id": "openalex:W7221647136:c9",
+      "description": "High PA combined with high diet quality showed composite CVD mortality HR of 0.61 (0.54-0.68).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e10",
+      "claim_id": "openalex:W7221647136:c10",
+      "description": "High PA combined with high diet quality showed incident composite CVD HR of 0.83 (0.79-0.88).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7221647136:e11",
+      "claim_id": "openalex:W7221647136:c11",
+      "description": "Significant multiplicative interactions between PA and diet quality were observed for stroke mortality, composite CVD, and heart failure.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221647136:e12",
+      "claim_id": "openalex:W7221647136:c12",
+      "description": "The joint associations with these outcomes were stronger at more advanced CKM syndrome stages.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221647136:m1",
+      "paper_id": "openalex:W7221647136",
+      "name": "Cox proportional hazards modeling",
+      "description": "Cox proportional hazards models assessed independent and joint associations of physical activity and diet quality with incident CVD, cause-specific CVD mortality, and all-cause mortality across CKM stages.",
+      "datasets": [
+        "UK Biobank"
+      ],
+      "conditions": [
+        "CKM syndrome stages 0 to 4",
+        "PA categorized as high (≥150 min/wk of walking or moderate-to-vigorous activity) or low",
+        "Diet quality classified as low, median, or high"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221647136:l1",
+      "paper_id": "openalex:W7221647136",
+      "text": "Physical activity and diet quality associations within the cardiovascular-kidney-metabolic framework remained previously unexplored.",
+      "normalized_category": "unexplored-framework",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-26T11:19:28.881555Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

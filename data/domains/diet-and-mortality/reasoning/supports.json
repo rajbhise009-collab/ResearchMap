@@ -1,5 +1,5 @@
 {
-  "n": 83,
+  "n": 90,
   "items": [
     {
       "from_claim_id": "openalex:W2109401990:c4",
@@ -830,6 +830,76 @@
       "b_paper_id": "openalex:W2789317488",
       "b_text": "Increased sedentary time is associated with an increased risk of type 2 diabetes mellitus with convincing epidemiological evidence (HR 1.91).",
       "explanation": "Both claims report a positive association between sedentary behaviors, such as television watching, and an increased risk of type 2 diabetes."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c1",
+      "to_claim_id": "openalex:W7221647136:c4",
+      "similarity": 0.8313872218132019,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "Greatest improvement in diet quality over a 12-year period is associated with lower all-cause mortality according to the Alternate Healthy Eating Index-2010 score (pooled HR 0.91, 95% CI 0.85-0.97).",
+      "b_paper_id": "openalex:W7221647136",
+      "b_text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "explanation": "Both claims independently find that higher or improved diet quality is significantly associated with a decreased risk of all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c8",
+      "to_claim_id": "openalex:W7221647136:c4",
+      "similarity": 0.8263458013534546,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "Consistently maintaining a high-quality diet over a 12-year period reduces all-cause mortality by 9% when assessed with the DASH diet score.",
+      "b_paper_id": "openalex:W7221647136",
+      "b_text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "explanation": "Both claims find that higher diet quality is associated with a statistically significant reduction in all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c6",
+      "to_claim_id": "openalex:W7221647136:c4",
+      "similarity": 0.8262869119644165,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "Consistently maintaining a high-quality diet over a 12-year period reduces all-cause mortality by 14% when assessed with the Alternate Healthy Eating Index score.",
+      "b_paper_id": "openalex:W7221647136",
+      "b_text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "explanation": "Both claims independently find that higher diet quality is associated with a significant reduction in the risk of all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c3",
+      "to_claim_id": "openalex:W7221647136:c4",
+      "similarity": 0.8259676694869995,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "Greatest improvement in diet quality over a 12-year period is associated with lower all-cause mortality according to the DASH diet score (pooled HR 0.89, 95% CI 0.84-0.95).",
+      "b_paper_id": "openalex:W7221647136",
+      "b_text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "explanation": "Both claims independently find that higher or improved diet quality is associated with a significantly reduced risk of all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c7",
+      "to_claim_id": "openalex:W7221647136:c4",
+      "similarity": 0.8225538730621338,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "Consistently maintaining a high-quality diet over a 12-year period reduces all-cause mortality by 11% when assessed with the Alternate Mediterranean Diet score.",
+      "b_paper_id": "openalex:W7221647136",
+      "b_text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "explanation": "Both claims independently find that higher diet quality is associated with a statistically significant reduction in all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c2",
+      "to_claim_id": "openalex:W7221647136:c4",
+      "similarity": 0.8185765743255615,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "Greatest improvement in diet quality over a 12-year period is associated with lower all-cause mortality according to the Alternate Mediterranean Diet score (pooled HR 0.84, 95% CI 0.78-0.91).",
+      "b_paper_id": "openalex:W7221647136",
+      "b_text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "explanation": "Both claims find that higher or improving diet quality is significantly associated with reduced all-cause mortality."
+    },
+    {
+      "from_claim_id": "openalex:W2734661169:c4",
+      "to_claim_id": "openalex:W7221647136:c4",
+      "similarity": 0.8087294101715088,
+      "a_paper_id": "openalex:W2734661169",
+      "a_text": "A 20-percentile increase in diet scores across three diet indexes is significantly associated with an 8 to 17% reduction in total mortality.",
+      "b_paper_id": "openalex:W7221647136",
+      "b_text": "High diet quality was associated with lower risk of all-cause mortality (HR: 0.81 [95% CI: 0.77-0.85]).",
+      "explanation": "Both claims independently find that higher diet quality scores are associated with a significant reduction in all-cause mortality."
     }
   ]
 }

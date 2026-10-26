@@ -1,0 +1,83 @@
+{
+  "paper_id": "openalex:W7222160172",
+  "claims": [
+    {
+      "id": "openalex:W7222160172:c1",
+      "paper_id": "openalex:W7222160172",
+      "text": "Social appearance anxiety is positively related to social media addiction in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222160172:c2",
+      "paper_id": "openalex:W7222160172",
+      "text": "Social appearance anxiety is negatively related to mindful awareness in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222160172:c3",
+      "paper_id": "openalex:W7222160172",
+      "text": "Mindful awareness is negatively related to social media addiction in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222160172:c4",
+      "paper_id": "openalex:W7222160172",
+      "text": "Mindful awareness partially mediates the relationship between social appearance anxiety and social media addiction in adolescents.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7222160172:e1",
+      "claim_id": "openalex:W7222160172:c1",
+      "description": "In a sample of 383 secondary school students, social appearance anxiety was positively related to social media addiction.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7222160172:e2",
+      "claim_id": "openalex:W7222160172:c2",
+      "description": "Standardized measures administered to 383 students showed social appearance anxiety was negatively related to mindful awareness.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7222160172:e3",
+      "claim_id": "openalex:W7222160172:c3",
+      "description": "Survey results from 383 participants demonstrated that mindful awareness was negatively related to social media addiction.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7222160172:e4",
+      "claim_id": "openalex:W7222160172:c4",
+      "description": "Mediation analysis testing mindful awareness as a mediator between social appearance anxiety and social media addiction indicated partial mediation.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7222160172:m1",
+      "paper_id": "openalex:W7222160172",
+      "name": "Mediation analysis using standardized survey measures",
+      "description": "Cross-sectional survey assessing social appearance anxiety, mindful awareness, and social media addiction using standardized instruments to evaluate mediation.",
+      "datasets": [
+        "Survey data from 383 volunteer secondary school students in eastern Türkiye"
+      ],
+      "conditions": [
+        "Secondary school students",
+        "2024-2025 academic year",
+        "Volunteer sample in eastern Türkiye"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-10-26T11:19:29.524205Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

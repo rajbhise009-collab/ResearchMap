@@ -1,0 +1,122 @@
+{
+  "paper_id": "openalex:W7221598232",
+  "claims": [
+    {
+      "id": "openalex:W7221598232:c1",
+      "paper_id": "openalex:W7221598232",
+      "text": "Engagement-driven signals can introduce popularity bias and affect predictive outcomes in crime-related social media analytics.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221598232:c2",
+      "paper_id": "openalex:W7221598232",
+      "text": "A fairness-aware, Pareto-based multi-objective optimization framework can be used for feature selection and Random Forest hyperparameter optimization using textual and engagement features.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221598232:c3",
+      "paper_id": "openalex:W7221598232",
+      "text": "NSGA-II achieved an accuracy of 0.8118 in crime classification.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221598232:c4",
+      "paper_id": "openalex:W7221598232",
+      "text": "NSGA-II achieved an F1-score of 0.8051 in crime classification.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221598232:c5",
+      "paper_id": "openalex:W7221598232",
+      "text": "NSGA-II achieved a Statistical Parity Difference (SPD) of 0.08, a Disparate Impact (DI) of 0.97, and an Equality of Opportunity Difference (EOD) of 0.06.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221598232:c6",
+      "paper_id": "openalex:W7221598232",
+      "text": "Removing engagement features improved standalone Accuracy and F1-score compared to retaining them.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221598232:e1",
+      "claim_id": "openalex:W7221598232:c3",
+      "description": "NSGA-II achieved an accuracy of 0.8118 on a dataset of 32,000 crime-related tweets covering Fraud, Accident, and Murder evaluated via stratified cross-validation.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221598232:e2",
+      "claim_id": "openalex:W7221598232:c4",
+      "description": "NSGA-II achieved an F1-score of 0.8051 on the 32,000 crime-related tweets dataset.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221598232:e3",
+      "claim_id": "openalex:W7221598232:c5",
+      "description": "Optimization via NSGA-II resulted in an SPD of 0.08, DI of 0.97, and EOD of 0.06 when jointly minimizing fairness penalties.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7221598232:e4",
+      "claim_id": "openalex:W7221598232:c6",
+      "description": "Evaluation showed that removing engagement features improved standalone Accuracy and F1-score.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221598232:m1",
+      "paper_id": "openalex:W7221598232",
+      "name": "Fairness-aware Pareto-based multi-objective optimization framework",
+      "description": "A multi-objective optimization approach using NSGA-II to jointly maximize Random Forest classification performance and minimize fairness penalties (SPD, DI, EOD) for feature selection and hyperparameter tuning.",
+      "datasets": [
+        "Dataset of 32,000 crime-related tweets covering Fraud, Accident, and Murder"
+      ],
+      "conditions": [
+        "TF-IDF textual features",
+        "Interaction-based engagement features",
+        "Stratified cross-validation",
+        "Comparison against PSO, ACO, and ERL"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221598232:l1",
+      "paper_id": "openalex:W7221598232",
+      "text": "Engagement-driven signals introduce popularity bias and affect predictive outcomes.",
+      "normalized_category": "popularity-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221598232:l2",
+      "paper_id": "openalex:W7221598232",
+      "text": "Fairness evaluation was restricted to mitigating engagement-driven popularity bias across behavioral user groups rather than addressing demographic discrimination.",
+      "normalized_category": "fairness-scope-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7221598232:l3",
+      "paper_id": "openalex:W7221598232",
+      "text": "Retaining engagement features resulted in lower standalone accuracy and F1-score compared to completely removing them.",
+      "normalized_category": "performance-tradeoff",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-10-26T11:19:29.200728Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

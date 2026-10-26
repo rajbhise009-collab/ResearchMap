@@ -1,5 +1,5 @@
 {
-  "n": 62,
+  "n": 63,
   "items": [
     {
       "from_claim_id": "openalex:W2109129984:c7",
@@ -620,6 +620,16 @@
       "b_paper_id": "openalex:W2734724639",
       "b_text": "Advanced fibrosis in NAFLD refers specifically to stage 3 bridging fibrosis or stage 4 cirrhosis.",
       "explanation": "Claim A discusses the progression pathway to cirrhosis within the NAFLD spectrum, while Claim B merely defines the staging criteria for advanced fibrosis."
+    },
+    {
+      "from_claim_id": "openalex:W2126726883:c5",
+      "to_claim_id": "openalex:W7221781168:c1",
+      "similarity": 0.8088672161102295,
+      "a_paper_id": "openalex:W2126726883",
+      "a_text": "Consumption of alcohol with meals did not substantially alter the inverse association with myocardial infarction risk.",
+      "b_paper_id": "openalex:W7221781168",
+      "b_text": "Moderate wine consumption, particularly alongside meals, has been associated with lower cardiovascular mortality.",
+      "explanation": "The claims evaluate different specific exposures and outcomes\u2014overall alcohol consumption and myocardial infarction risk versus moderate wine consumption and cardiovascular mortality\u2014and differ on whether meal timing modifies the protective association without directly contradicting."
     }
   ]
 }

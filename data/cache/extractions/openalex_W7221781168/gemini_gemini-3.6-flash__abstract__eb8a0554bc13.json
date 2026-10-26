@@ -1,0 +1,130 @@
+{
+  "paper_id": "openalex:W7221781168",
+  "claims": [
+    {
+      "id": "openalex:W7221781168:c1",
+      "paper_id": "openalex:W7221781168",
+      "text": "Moderate wine consumption, particularly alongside meals, has been associated with lower cardiovascular mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221781168:c2",
+      "paper_id": "openalex:W7221781168",
+      "text": "Moderate wine consumption, particularly alongside meals, has been associated with lower all-cause mortality.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221781168:c3",
+      "paper_id": "openalex:W7221781168",
+      "text": "Alcohol is an established carcinogen with evidence of increased cancer risk even at relatively low levels of consumption.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221781168:c4",
+      "paper_id": "openalex:W7221781168",
+      "text": "Moderation and synergy between lifestyle components may be more informative than the isolated attribution of health effects to individual foods or beverages.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7221781168:c5",
+      "paper_id": "openalex:W7221781168",
+      "text": "The health associations attributed to moderate wine consumption may be inseparable from the broader Mediterranean lifestyle context in which it is embedded.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7221781168:e1",
+      "claim_id": "openalex:W7221781168:c1",
+      "description": "Moderate wine consumption, particularly alongside meals, has traditionally been incorporated into Mediterranean diet scores and has been associated with lower cardiovascular mortality.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7221781168:e2",
+      "claim_id": "openalex:W7221781168:c2",
+      "description": "Moderate wine consumption, particularly alongside meals, has traditionally been incorporated into Mediterranean diet scores and has been associated with lower all-cause mortality.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7221781168:e3",
+      "claim_id": "openalex:W7221781168:c3",
+      "description": "Alcohol is also an established carcinogen, with evidence of increased cancer risk even at relatively low levels of consumption.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7221781168:e4",
+      "claim_id": "openalex:W7221781168:c4",
+      "description": "Drawing on the concept of the traditional Mediterranean lifestyle, the authors propose that moderation and synergy between lifestyle components may be more informative than isolated attribution of health effects.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W7221781168:e5",
+      "claim_id": "openalex:W7221781168:c5",
+      "description": "The authors hypothesize a 'hidden context' whereby health associations attributed to moderate wine consumption are inseparable from the broader Mediterranean lifestyle.",
+      "strength": 0.7
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7221781168:m1",
+      "paper_id": "openalex:W7221781168",
+      "name": "Critical narrative synthesis",
+      "description": "Critical examination and conceptual synthesis of emerging evidence on wine consumption, Mediterranean dietary patterns, and methodological challenges in alcohol epidemiology.",
+      "datasets": [],
+      "conditions": [
+        "Evaluation of Mediterranean alcohol-drinking patterns",
+        "Assessment of observational vs. Mendelian randomization evidence"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7221781168:l1",
+      "paper_id": "openalex:W7221781168",
+      "text": "Observational alcohol epidemiology is subject to abstainer-reference bias.",
+      "normalized_category": "selection-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221781168:l2",
+      "paper_id": "openalex:W7221781168",
+      "text": "Observational alcohol epidemiology is vulnerable to reverse causation.",
+      "normalized_category": "confounding-bias",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221781168:l3",
+      "paper_id": "openalex:W7221781168",
+      "text": "Observational alcohol epidemiology suffers from exposure misclassification.",
+      "normalized_category": "measurement-error",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7221781168:l4",
+      "paper_id": "openalex:W7221781168",
+      "text": "There is a divergence between findings from observational studies and Mendelian randomization studies regarding alcohol consumption.",
+      "normalized_category": "methodological-discrepancy",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7221781168:f1",
+      "paper_id": "openalex:W7221781168",
+      "text": "Evaluate the 'hidden context' hypothesis to investigate health associations of moderate wine consumption as inseparable from the broader Mediterranean lifestyle rather than searching for virtues in wine itself.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-10-26T11:19:28.882141Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
