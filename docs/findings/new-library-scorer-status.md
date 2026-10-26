@@ -1,3 +1,4 @@
+<!-- internal: not published -->
 # New-library scorer status
 
 **Date:** 2026-10-02 (iteration-4 update; scorer sections updated

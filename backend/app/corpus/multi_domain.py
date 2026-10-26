@@ -43,7 +43,7 @@ import httpx
 REPO_ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(REPO_ROOT))
 
-from backend.app.config import get_settings  # noqa: E402
+from backend.app.config import get_settings, site_contact_email  # noqa: E402
 from backend.app.ingestion.fulltext import (  # noqa: E402
     fetch_pdf_text,
     load_cached_fulltext,
@@ -59,11 +59,8 @@ from backend.app.ingestion.openalex import (  # noqa: E402
     OpenAlexClient,
 )
 
-# Email for Unpaywall's polite-pool request. Matches
-# backend/app/corpus/recover_oa_fulltext.py — this is the same service
-# and same use pattern Raj already authorised for the LLM-cal recovery,
-# not a new destination for the address.
-UNPAYWALL_EMAIL = "raj.bhise009@gmail.com"
+# Unpaywall's polite-pool contact: the site's public contact address
+# (frontend/site.config.json contactEmail), read when a request is made.
 
 DOMAINS_DIR = REPO_ROOT / "data" / "domains"
 
@@ -867,7 +864,7 @@ def retrieve_fulltext_one(e: dict, rec: dict, *, client: httpx.Client,
                           email: Optional[str] = None) -> Optional[str]:
     """Full text for one entry, stored in the shared cache. Returns the
     source tag, or None when only the abstract is available. Free."""
-    email = email or UNPAYWALL_EMAIL
+    email = email or site_contact_email()
     paper = _paper_for_fulltext(e)
     if load_cached_fulltext(paper.id):
         return "cache"
@@ -905,7 +902,7 @@ def retrieve_fulltext_all(config: DomainConfig, *, email: Optional[str] = None,
       3. No fuzzy title matching — the existing exact-match rule stays.
     Then falls back to `retrieve_oa_fulltext` for non-arXiv papers.
     """
-    email = email or UNPAYWALL_EMAIL
+    email = email or site_contact_email()
 
     payload = json.loads(_prelabel_path(config).read_text())
     entries = payload["entries"]

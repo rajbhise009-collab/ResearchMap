@@ -13,6 +13,7 @@ ANTHROPIC_API_KEY.
 
 from __future__ import annotations
 
+import json
 from enum import Enum
 from functools import lru_cache
 from pathlib import Path
@@ -227,4 +228,18 @@ def get_settings() -> Settings:
     return Settings()
 
 
-__all__ = ["Environment", "Settings", "get_settings", "REPO_ROOT"]
+SITE_CONFIG = REPO_ROOT / "frontend" / "site.config.json"
+
+
+def site_contact_email() -> str:
+    """The site's public contact address (frontend/site.config.json
+    contactEmail): the one address the project gives to outside services
+    that ask for a contact, e.g. Unpaywall's polite pool. Raises if unset
+    rather than falling back to a personal address."""
+    email = str(json.loads(SITE_CONFIG.read_text()).get("contactEmail") or "").strip()
+    if "@" not in email:
+        raise RuntimeError("frontend/site.config.json has no contactEmail; set it before calling Unpaywall")
+    return email
+
+
+__all__ = ["Environment", "Settings", "get_settings", "REPO_ROOT", "site_contact_email"]

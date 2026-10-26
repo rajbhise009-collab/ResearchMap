@@ -165,9 +165,22 @@ def _fingerprint() -> dict:
     return json.loads(p.read_text()) if p.exists() else {}
 
 
+# First line of a docs/findings note that stays in the repo but is not
+# published on /findings (operations notes: ledger, scorer status).
+INTERNAL_MARKER = "<!-- internal: not published -->"
+
+
+def is_internal(path: Path) -> bool:
+    return path.read_text().startswith(INTERNAL_MARKER)
+
+
 def findings() -> list[dict]:
+    """The published findings: every docs/findings/*.md except notes whose
+    first line is INTERNAL_MARKER."""
     out = []
     for path in sorted(FINDINGS_DIR.glob("*.md")):
+        if is_internal(path):
+            continue
         # Drop the doc_numbers generator markers (<!-- gen:x --> lines);
         # they are build plumbing, not reader text.
         text = re.sub(r"^<!-- /?gen:[\w-]+ -->\n", "", path.read_text(), flags=re.M)
