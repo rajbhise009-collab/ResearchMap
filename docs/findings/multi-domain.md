@@ -19,10 +19,10 @@ FX: 1 USD = ₹84.
 | library | slug | papers | core | peripheral | full text | claims extracted |
 |:--|:--|--:|--:|--:|--:|--:|
 | LLM calibration | `llm-calibration` | 113 | 100 | 13 | 67 (59%) | 113 of 113 |
-| Diet & mortality | `diet-and-mortality` | 101 | 68 | 33 | 17 (17%) | 101 of 101 |
-| ML fairness | `ml-fairness` | 112 | 112 | 0 | 56 (50%) | 112 of 112 |
+| Diet & mortality | `diet-and-mortality` | 103 | 70 | 33 | 17 (17%) | 103 of 103 |
+| ML fairness | `ml-fairness` | 113 | 113 | 0 | 56 (50%) | 113 of 113 |
 | Nudges | `nudge-effectiveness` | 44 | 37 | 7 | 12 (27%) | 44 of 44 |
-| Social media & teens | `social-media-teen-mental-health` | 106 | 74 | 32 | 24 (23%) | 105 of 106 |
+| Social media & teens | `social-media-teen-mental-health` | 108 | 76 | 32 | 25 (23%) | 107 of 108 |
 <!-- /gen:corpus -->
 
 Diet & mortality was completed in iteration 3 (synchronous API). ML
@@ -36,10 +36,10 @@ coverage.
 | library (shortlist settings) | shortlisted pairs | classified | flagged by classifier | hand-audited genuine | artifact | duplicate |
 |:--|--:|--:|--:|--:|--:|--:|
 | LLM calibration (frozen 2026-07; threshold 0.78, cap 10) | 437 | 437 | 2 | 0 | — | — |
-| Diet & mortality (threshold 0.80, cap 2) | 152 | 152 | 10 | 5 | 2 | 3 |
+| Diet & mortality (threshold 0.80, cap 2) | 160 | 160 | 10 | 5 | 2 | 3 |
 | ML fairness (threshold 0.80, cap 2) | 94 | 94 | 0 | 0 | — | — |
 | Nudges (threshold 0.80, cap 2) | 23 | 23 | 0 | 0 | — | — |
-| Social media & teens (threshold 0.80, cap 2) | 214 | 214 | 8 | 2 | 3 | 1 |
+| Social media & teens (threshold 0.80, cap 2) | 216 | 216 | 8 | 2 | 3 | 1 |
 <!-- /gen:yield -->
 
 Only shortlisted pairs are ever checked: a pair of claims reaches the
@@ -140,7 +140,7 @@ part of the honest contradiction count, not optional polish.
 ### ML fairness — what was measured
 
 <!-- gen:mlf-facts -->
-- Claims extracted from 112 of 112 papers.
+- Claims extracted from 113 of 113 papers.
 - 94 of 94 shortlisted pairs classified; 0 flagged as contradictions.
 <!-- /gen:mlf-facts -->
 - Pairs touching the impossibility-result papers, rebuilt from the cached
@@ -275,10 +275,10 @@ killed mid-loop; the ledger entries in `data/spend_ledger.json` under
 | library | full text | abstract only | full-text share |
 |:--|--:|--:|--:|
 | LLM calibration | 67 | 46 | 59% |
-| Diet & mortality | 17 | 84 | 17% |
-| ML fairness | 56 | 56 | 50% |
+| Diet & mortality | 17 | 86 | 17% |
+| ML fairness | 56 | 57 | 50% |
 | Nudges | 12 | 32 | 27% |
-| Social media & teens | 24 | 82 | 23% |
+| Social media & teens | 25 | 83 | 23% |
 <!-- /gen:fulltext -->
 
 Diet's full-text share is the lowest of the three. Biomedical journals are
@@ -292,10 +292,10 @@ Gap-type raw counts from the extractions:
 <!-- gen:gap-types -->
 | library | papers extracted | limitations | future-work items |
 |:--|--:|--:|--:|
-| Diet & mortality | 101 (17 full text) | 141 | 58 |
-| ML fairness | 112 (56 full text) | 258 | 170 |
+| Diet & mortality | 103 (17 full text) | 146 | 59 |
+| ML fairness | 113 (56 full text) | 261 | 170 |
 | Nudges | 44 (12 full text) | 79 | 49 |
-| Social media & teens | 105 (24 full text) | 152 | 106 |
+| Social media & teens | 107 (25 full text) | 158 | 110 |
 <!-- /gen:gap-types -->
 
 ## 6. Spend
@@ -324,26 +324,27 @@ edited.
 | `extract_fairness_batch` | 28 | $0.8660 | ₹72.75 |
 | `extract_nudges_batch` | 42 | $0.5980 | ₹50.24 |
 | `extract_social-media_batch` | 100 | $1.5277 | ₹128.32 |
-| `fw_match_diet-and-mortality` | 25 | $0.0509 | ₹4.28 |
-| `fw_match_ml-fairness` | 266 | $0.4359 | ₹36.61 |
+| `fw_match_diet-and-mortality` | 29 | $0.0562 | ₹4.72 |
+| `fw_match_ml-fairness` | 269 | $0.4393 | ₹36.90 |
 | `fw_match_nudge-effectiveness` | 49 | $0.0594 | ₹4.99 |
-| `fw_match_social-media-teen-mental-health` | 184 | $0.3222 | ₹27.06 |
+| `fw_match_social-media-teen-mental-health` | 185 | $0.3233 | ₹27.16 |
+| `grow_contradiction_diet-and-mortality` | 8 | $0.0169 | ₹1.42 |
 | `grow_contradiction_ml-fairness` | 3 | $0.0095 | ₹0.80 |
 | `grow_contradiction_nudge-effectiveness` | 4 | $0.0133 | ₹1.12 |
-| `grow_contradiction_social-media-teen-mental-health` | 53 | $0.1520 | ₹12.77 |
-| `grow_embed` | 27 | $0.0336 | ₹2.83 |
-| `grow_extract_diet-and-mortality_batch` | 4 | $0.0528 | ₹4.44 |
-| `grow_extract_ml-fairness_batch` | 14 | $0.2582 | ₹21.69 |
+| `grow_contradiction_social-media-teen-mental-health` | 55 | $0.1585 | ₹13.32 |
+| `grow_embed` | 32 | $0.0359 | ₹3.02 |
+| `grow_extract_diet-and-mortality_batch` | 6 | $0.0764 | ₹6.42 |
+| `grow_extract_ml-fairness_batch` | 15 | $0.2673 | ₹22.45 |
 | `grow_extract_nudge-effectiveness_batch` | 2 | $0.0224 | ₹1.88 |
-| `grow_extract_social-media-teen-mental-health_batch` | 8 | $0.1325 | ₹11.13 |
+| `grow_extract_social-media-teen-mental-health_batch` | 10 | $0.1764 | ₹14.82 |
 | `hedge_diet-and-mortality` | 200 | $0.3444 | ₹28.93 |
 | `hole_confirm_ml-fairness` | 17 | $0.0209 | ₹1.76 |
 | `hole_confirm_social-media-teen-mental-health` | 1 | $0.0021 | ₹0.18 |
 | `unknown` | 200 | $0.0060 | ₹0.50 |
 | `validation_v1_embed` | 5 | $0.1351 | ₹11.35 |
-| **total (ledger, after corrections)** | 2101 | **$15.1600** | **₹1,273.44** |
+| **total (ledger, after corrections)** | 2129 | **$15.2721** | **₹1,282.86** |
 | ceiling (config/money.json: account total − safety buffer) |  |  | ₹1,450.00 |
-| remaining (money rule) |  |  | ₹176.56 |
+| remaining (money rule) |  |  | ₹167.14 |
 <!-- /gen:spend -->
 
 The project budgets against this ledger, which records more spend than
@@ -374,10 +375,10 @@ translation as LLM calibration (`backend/app/api/library_cards.py`,
 | library | disagreements kept after checking | recurring limitations | method-transfer leads | unfollowed questions | set aside after checking | total results |
 |:--|--:|--:|--:|--:|--:|--:|
 | LLM calibration | 0 | 1 | 2 | 63 | 10 | 66 |
-| Diet & mortality | 5 | 2 | 0 | 4 | 5 | 11 |
-| ML fairness | 0 | 1 | 0 | 69 | 6 | 70 |
+| Diet & mortality | 5 | 2 | 0 | 6 | 5 | 13 |
+| ML fairness | 0 | 1 | 0 | 69 | 0 | 70 |
 | Nudges | 0 | 0 | 0 | 7 | 0 | 7 |
-| Social media & teens | 2 | 4 | 0 | 25 | 6 | 31 |
+| Social media & teens | 2 | 4 | 0 | 26 | 6 | 32 |
 <!-- /gen:scorer-yields -->
 
 - **Persistent limitations** — free, code only, same minimum of 3

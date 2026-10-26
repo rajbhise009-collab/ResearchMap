@@ -2,6 +2,25 @@
 
 One entry per weekly growth run (newest first).
 
+## 2026-10-26
+
+- diet-and-mortality: 2 papers added
+- ml-fairness: 1 papers added
+- nudge-effectiveness: 0 papers added
+- social-media-teen-mental-health: 2 papers added
+- new library ego-depletion: waiting for money
+- diet-and-mortality: results shown 11 -> 13 (+2 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- ml-fairness: results shown 70 -> 70 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked); 6 set-aside item(s) dropped (never shown)
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2809878087-w4220718380 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2974817986-w4386712902 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w3101206394-w4220718380 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2963174898-w4220718380 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2902802452-w4220718380 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+-   - dropped (was set_aside, never shown): opp-ml-fairness-hole-w2809878087-w4386712902 — method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate
+- nudge-effectiveness: results shown 7 -> 7 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- social-media-teen-mental-health: results shown 31 -> 32 (+1 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- spend recorded ₹9.42; remaining ₹167.14
+
 ## 2026-10-19
 
 - diet-and-mortality: 0 papers added

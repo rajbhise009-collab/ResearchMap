@@ -1,5 +1,5 @@
 {
-  "total": 101,
+  "total": 103,
   "items": [
     {
       "paper_id": "https://openalex.org/W2734724639",
@@ -1108,6 +1108,28 @@
       "year": 2026,
       "doi": "https://doi.org/10.1108/nfs-01-2026-0037",
       "venue": "Nutrition & Food Science",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221647136",
+      "wid": "W7221647136",
+      "title": "Associations of Physical Activity and Diet Quality With Mortality and Cardiovascular Disease in Cardiovascular-Kidney-Metabolic Syndrome",
+      "year": 2026,
+      "doi": "https://doi.org/10.1016/j.jacadv.2026.103338",
+      "venue": "JACC Advances",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221781168",
+      "wid": "W7221781168",
+      "title": "An Opinion Paper on the Cultural Heritage of Wine Consumption in the Frame of the Mediterranean Diet: The Missing Piece of the Puzzle",
+      "year": 2026,
+      "doi": "https://doi.org/10.3390/nu18203374",
+      "venue": "Nutrients",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true

@@ -1,0 +1,159 @@
+{
+ "date": "2026-10-26",
+ "parent_commit": "1b110279d3a26845ba566e0e5d28d1e2832d58ff",
+ "libraries": {
+  "llm-calibration": {
+   "papers": 113,
+   "results": 66,
+   "set_aside": 10,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "7f21e33111392ad66f50d9c30db00a5660a9d29dfd1bc696f52798beeb05b809"
+  },
+  "diet-and-mortality": {
+   "papers": 103,
+   "results": 13,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "74eb199d6a241937dbfeea7bf90775a02f4acae5202d9c3c3fccbd82143aa967"
+  },
+  "ml-fairness": {
+   "papers": 113,
+   "results": 70,
+   "set_aside": 0,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "7f4edf405146889bfa821ac9bd427d03d8e3a227aba4077405357fff91f62d63"
+  },
+  "nudge-effectiveness": {
+   "papers": 44,
+   "results": 7,
+   "set_aside": 0,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "d1f9ab432b0b26726c4aad0e648bc5d43e3fe351d0679fcb11bf9c2fff74a6d1"
+  },
+  "social-media-teen-mental-health": {
+   "papers": 108,
+   "results": 32,
+   "set_aside": 6,
+   "flagged_not_checked": 2,
+   "opportunities_sha256": "b562af7b4d520b47d855018aac8c3025e7b055bbae6154c4683e43624a33083c"
+  }
+ },
+ "ledger_inr": 1282.8572,
+ "ledger_cap_inr": 1450.0,
+ "gates": [
+  {
+   "gate": "typecheck",
+   "ok": true
+  },
+  {
+   "gate": "production build (+ consistency before and after)",
+   "ok": true
+  },
+  {
+   "gate": "full tests",
+   "ok": true
+  },
+  {
+   "gate": "docs check",
+   "ok": true
+  },
+  {
+   "gate": "consistency script",
+   "ok": true
+  },
+  {
+   "gate": "banned-phrase tests",
+   "ok": true
+  },
+  {
+   "gate": "search regression suite",
+   "ok": true
+  },
+  {
+   "gate": "hardening tests (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "browser hunt (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "smoke checks on the build",
+   "ok": true
+  }
+ ],
+ "results_changed": {
+  "llm-calibration": {
+   "shown_before": 66,
+   "shown_after": 66,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "diet-and-mortality": {
+   "shown_before": 11,
+   "shown_after": 13,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "ml-fairness": {
+   "shown_before": 70,
+   "shown_after": 70,
+   "removed_shown": [],
+   "removed_not_shown": [
+    {
+     "id": "opp-ml-fairness-hole-w2809878087-w4220718380",
+     "headline": "\u201cUnifying Case Study Demonstration\u201d might solve a problem reported by \u201cEvaluation and Mitigation of Racial Bias in Clinical Machine Learning Models: Scoping Review\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2974817986-w4386712902",
+     "headline": "\u201cAI Fairness 360 (AIF360)\u201d might solve a problem reported by \u201cAI Fairness in Data Management and Analytics: A Review on Challenges, Methodologies and Applications\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w3101206394-w4220718380",
+     "headline": "\u201cTaxonomic Conceptual Synthesis\u201d might solve a problem reported by \u201cEvaluation and Mitigation of Racial Bias in Clinical Machine Learning Models: Scoping Review\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2963174898-w4220718380",
+     "headline": "\u201cProbabilistic Convex Optimization Pre-Processing\u201d might solve a problem reported by \u201cEvaluation and Mitigation of Racial Bias in Clinical Machine Learning Models: Scoping Review\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2902802452-w4220718380",
+     "headline": "\u201cDistributive Justice Framework for Clinical ML\u201d might solve a problem reported by \u201cEvaluation and Mitigation of Racial Bias in Clinical Machine Learning Models: Scoping Review\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2809878087-w4386712902",
+     "headline": "\u201cUnifying Case Study Demonstration\u201d might solve a problem reported by \u201cAI Fairness in Data Management and Analytics: A Review on Challenges, Methodologies and Applications\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    }
+   ],
+   "verdict_changed": []
+  },
+  "nudge-effectiveness": {
+   "shown_before": 7,
+   "shown_after": 7,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "social-media-teen-mental-health": {
+   "shown_before": 31,
+   "shown_after": 32,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  }
+ }
+}

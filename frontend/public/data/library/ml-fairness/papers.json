@@ -1,5 +1,5 @@
 {
-  "total": 112,
+  "total": 113,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1229,6 +1229,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.1177/29777984261494012",
       "venue": "Media Technology and Governance",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7221598232",
+      "wid": "W7221598232",
+      "title": "Pareto optimization of textual and engagement features for crime-related social media analytics",
+      "year": 2026,
+      "doi": "https://doi.org/10.1177/18758967261496722",
+      "venue": "Journal of Intelligent & Fuzzy Systems",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true

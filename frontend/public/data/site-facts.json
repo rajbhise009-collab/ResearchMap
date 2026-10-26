@@ -65,13 +65,13 @@
       "name": "Diet and all-cause mortality",
       "short_name": "Diet & mortality",
       "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
-      "built": "2026-10-10",
+      "built": "2026-10-26",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 101,
-      "claims_read": 101,
+      "papers": 103,
+      "claims_read": 103,
       "full_text": 17,
-      "abstract_only": 84,
-      "gap_cards": 11,
+      "abstract_only": 86,
+      "gap_cards": 13,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -93,23 +93,23 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 4,
+          "count": 6,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 11,
+      "results_total": 13,
       "set_aside_total": 5,
       "growth": {
         "grows": true,
-        "added": 1,
-        "last_added": "2026-10-09"
+        "added": 3,
+        "last_added": "2026-10-19"
       },
-      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (152 pairs); pairs worded differently are never compared.",
+      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (160 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {
-        "shortlisted": 152,
-        "classified": 152,
+        "shortlisted": 160,
+        "classified": 160,
         "flagged": 10,
         "hand_checked": 10,
         "confirmed": 5,
@@ -127,12 +127,12 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "built": "2026-10-19",
+      "built": "2026-10-26",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 112,
-      "claims_read": 112,
+      "papers": 113,
+      "claims_read": 113,
       "full_text": 56,
-      "abstract_only": 56,
+      "abstract_only": 57,
       "gap_cards": 70,
       "results": [
         {
@@ -161,11 +161,11 @@
         }
       ],
       "results_total": 70,
-      "set_aside_total": 6,
+      "set_aside_total": 0,
       "growth": {
         "grows": true,
-        "added": 13,
-        "last_added": "2026-10-12"
+        "added": 14,
+        "last_added": "2026-10-19"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (94 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
@@ -249,11 +249,11 @@
       "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
       "built": null,
       "built_basis": null,
-      "papers": 106,
-      "claims_read": 105,
-      "full_text": 24,
-      "abstract_only": 82,
-      "gap_cards": 31,
+      "papers": 108,
+      "claims_read": 107,
+      "full_text": 25,
+      "abstract_only": 83,
+      "gap_cards": 32,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -275,23 +275,23 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 25,
+          "count": 26,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 31,
+      "results_total": 32,
       "set_aside_total": 6,
       "growth": {
         "grows": true,
-        "added": 6,
-        "last_added": "2026-10-11"
+        "added": 8,
+        "last_added": "2026-10-19"
       },
-      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (214 pairs); pairs worded differently are never compared.",
+      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (216 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {
-        "shortlisted": 214,
-        "classified": 214,
+        "shortlisted": 216,
+        "classified": 216,
         "flagged": 8,
         "hand_checked": 6,
         "confirmed": 2,

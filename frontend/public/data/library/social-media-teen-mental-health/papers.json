@@ -1,5 +1,5 @@
 {
-  "total": 106,
+  "total": 108,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1163,6 +1163,28 @@
       "year": 2026,
       "doi": "https://doi.org/10.3390/future4040032",
       "venue": "Future",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7222007007",
+      "wid": "W7222007007",
+      "title": "The impact of social media use on appearance anxiety among college students \u2014the chain mediating effect of upward social comparison and envy",
+      "year": 2026,
+      "doi": "https://doi.org/10.3389/fpsyt.2026.1962984",
+      "venue": "Frontiers in Psychiatry",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7222160172",
+      "wid": "W7222160172",
+      "title": "Mindful Awareness as a Mediator Between Social Appearance Anxiety and Social Media Addiction in Adolescents",
+      "year": 2026,
+      "doi": "https://doi.org/10.3928/02793695-20261009-01",
+      "venue": "Journal of Psychosocial Nursing and Mental Health Services",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
