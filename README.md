@@ -85,6 +85,10 @@ share previews and the sitemap use it; only production builds
 (`VERCEL_ENV=production`) are indexable. The site name lives in
 `frontend/site.config.json`. Step-by-step launch notes: `docs/LAUNCH.md`.
 
+## Not affiliated
+
+ResearchMap (research-map.com) is an independent project. It is not affiliated with, endorsed by, or connected to researchmap, the researcher database at researchmap.jp.
+
 ## Licence
 
 Proprietary, all rights reserved: see [LICENSE](LICENSE). The code and the

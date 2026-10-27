@@ -2,14 +2,17 @@ import "../components/pages.css";   // styles for every page except home (first 
 import Link from "next/link";
 import { getSiteFacts } from "../../lib/data";
 import { pageMeta } from "../../lib/meta";
-import { site } from "../../lib/site";
+import { site, NON_AFFILIATION } from "../../lib/site";
 import DocLayout from "../components/DocLayout";
 
-export const metadata = pageMeta({
+// The meta description (search snippet) carries the non-affiliation notice;
+// the Open Graph and Twitter descriptions are left as they were.
+const aboutMeta = pageMeta({
   title: "About",
   description: `What ${site.siteName} is and is not, how it works in five steps, and what each library covers.`,
   path: "/about/",
 });
+export const metadata = { ...aboutMeta, description: `${aboutMeta.description} ${NON_AFFILIATION}` };
 
 export default function About() {
   const facts = getSiteFacts();
@@ -22,6 +25,7 @@ export default function About() {
         the collection took up, limits that keep coming back, and pairs of findings that
         appear to disagree. Each result links to the papers and sentences behind it.
       </p>
+      <p className="trust-status">{NON_AFFILIATION}</p>
 
       <h2>What it is not</h2>
       <ul>

@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
-import { site, SITE_URL, IS_PRODUCTION } from "../lib/site";
+import { site, SITE_URL, IS_PRODUCTION, NON_AFFILIATION } from "../lib/site";
 import { ogImageFor } from "../lib/meta";
 import { getLanguage } from "../lib/data";
 import { DevModeProvider, DevBanner } from "./components/DevMode";
@@ -176,6 +176,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   reserved. Paper metadata and abstracts belong to their sources.{" "}
                   <Link href="/terms/">Terms</Link>
                 </p>
+                <p className="foot-disclaimer">{NON_AFFILIATION}</p>
               </div>
             </footer>
             <OptionalAnalytics />

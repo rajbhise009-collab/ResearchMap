@@ -20,6 +20,11 @@ export interface SiteConfig {
 
 export const site: SiteConfig = config as SiteConfig;
 
+/** Non-affiliation notice, shown verbatim in the footer, /about and /terms
+ *  (backend/tests/api/test_disclaimer.py fails if any of them loses it). */
+export const NON_AFFILIATION =
+  "ResearchMap (research-map.com) is an independent project. It is not affiliated with, endorsed by, or connected to researchmap, the researcher database at researchmap.jp.";
+
 /** Fallback when NEXT_PUBLIC_SITE_URL is not set at build time. */
 export const DEFAULT_SITE_URL = site.siteUrl;
 

@@ -192,5 +192,5 @@ section.block p { color: var(--ink-soft); }
   .trust td:last-child { white-space: normal; }
 }
 
-/* /terms: draft status line (remove with the line after legal review) */
+/* small muted notice line: the /terms draft status, the /about non-affiliation notice */
 .trust-status { color: var(--muted); font-size: var(--step--1); margin: 0 0 var(--s-4); }
