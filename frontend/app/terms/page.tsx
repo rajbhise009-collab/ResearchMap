@@ -1,6 +1,6 @@
 import "../components/pages.css";   // styles for every page except home (first paint)
 import { pageMeta } from "../../lib/meta";
-import { site } from "../../lib/site";
+import { site, NON_AFFILIATION } from "../../lib/site";
 import DocLayout from "../components/DocLayout";
 
 export const metadata = pageMeta({
@@ -36,6 +36,7 @@ export default function Terms() {
           This does not extend to material that belongs to others: paper metadata comes from
           OpenAlex (CC0), and paper titles, abstracts and quoted text belong to their authors and
           publishers.</li>
+        <li><strong>Not affiliated.</strong> {NON_AFFILIATION}</li>
         <li><strong>Using the site.</strong> You are welcome to read, link to and share individual
           pages. Automated scraping, bulk downloading or copying of the site&rsquo;s compiled content
           (its results, summaries and data files) is not permitted without written permission.
