@@ -1,0 +1,1120 @@
+{
+ "batch_id": "2exe7b0ekotvl4nz8zwx5cl2zw1qf4gyt3x0",
+ "slug": "nudge-effectiveness",
+ "submitted_on": "2026-11-02",
+ "submitted_at": 1793627456.4597666,
+ "projected_inr": 2.6582850000000002,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W4386392053": "fulltext"
+ },
+ "entries": [
+  {
+   "wid": "W4386392053",
+   "openalex_id": "https://openalex.org/W4386392053",
+   "title": "An accuracy self-nudge to reduce misinformation sharing online.",
+   "year": 2026,
+   "doi": "https://doi.org/10.1037/tmb0000221",
+   "venue": "Technology Mind and Behavior",
+   "field": "social sciences",
+   "cited_by_count": 1,
+   "abstract": "Self-nudging interventions enable people to redesign their own environment to encourage choices that are in line with their goals and preferences. Self-nudging is particularly relevant online, where users\u2019 autonomy is endangered by deceptive design and opaque algorithms. To date, experimental research on self-nudging interventions to confront online challenges is scarce. In this pre-registered experimental study (N = 965), participants in the self-nudge condition were informed about a nudge to reduce misinformation sharing and actively decided for or against its implementation during the study; participants in the nudge condition received the nudge without such information nor the option to choose. Both the self-nudge and the nudge increased sharing discernment, but the effect of the self-nudge was stronger. Beside developing an experimental methodology to test self-nudging in a controlled setting, this study provides evidence for the potential of self-nudging to avoid paternalism in the application of behavioral interventions online, without compromising on effectiveness.",
+   "label": "on-domain",
+   "rationale": "strong term in title: 'nudge' + pair anywhere: 'choices'; core scope: same sentence: 'nudg' + 'choices'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-02",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W4386392053",
+   "doi": "https://doi.org/10.1037/tmb0000221",
+   "title": "An accuracy self-nudge to reduce misinformation sharing online.",
+   "display_name": "An accuracy self-nudge to reduce misinformation sharing online.",
+   "publication_year": 2026,
+   "publication_date": "2026-10-29",
+   "ids": {
+    "openalex": "https://openalex.org/W4386392053",
+    "doi": "https://doi.org/10.1037/tmb0000221"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1037/tmb0000221",
+    "doi": "https://doi.org/10.1037/tmb0000221",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1037/tmb0000221",
+    "pdf_url": "https://psycnet.apa.org/fulltext/2028-47546-001.pdf",
+    "source": {
+     "id": "https://openalex.org/S4210236455",
+     "display_name": "Technology Mind and Behavior",
+     "issn_l": "2689-0208",
+     "issn": [
+      "2689-0208"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "dongbi-b",
+      "jufo-1",
+      "norway-1",
+      "oarl",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320262",
+     "host_organization_name": "American Psychological Association",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320262"
+     ],
+     "host_organization_lineage_names": [
+      "American Psychological Association"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Technology, Mind, and Behavior",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "indexed_in": [
+    "crossref",
+    "doaj"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://psycnet.apa.org/fulltext/2028-47546-001.pdf",
+    "any_repository_has_fulltext": true
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5040429395",
+      "display_name": "Friederike Stock",
+      "orcid": "https://orcid.org/0000-0002-8794-5669",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-8794-5669"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I39343248",
+       "display_name": "Humboldt-Universit\u00e4t zu Berlin",
+       "ror": "https://ror.org/01hcx6992",
+       "country_code": "DE",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I39343248"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4210120221",
+       "display_name": "Max Planck Institute for Human Development",
+       "ror": "https://ror.org/02pp7px91",
+       "country_code": "DE",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I149899117",
+        "https://openalex.org/I4210120221"
+       ]
+      }
+     ],
+     "countries": [
+      "DE"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Friederike Stock",
+     "raw_affiliation_strings": [
+      "Center for Adaptive Rationality , Max Planck Institute for Human Development , Berlin , Berlin , Germany",
+      "Institute for Psychology , Faculty of Life Sciences , Humboldt Universit\u00e4t zu Berlin",
+      "Humboldt Universit\u00e4t zu Berlin",
+      "Max Planck Institute for Human Development"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-8794-5669",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Center for Adaptive Rationality , Max Planck Institute for Human Development , Berlin , Berlin , Germany",
+       "institution_ids": [
+        "https://openalex.org/I4210120221"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Institute for Psychology , Faculty of Life Sciences , Humboldt Universit\u00e4t zu Berlin",
+       "institution_ids": [
+        "https://openalex.org/I39343248"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Humboldt Universit\u00e4t zu Berlin",
+       "institution_ids": [
+        "https://openalex.org/I39343248"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Max Planck Institute for Human Development",
+       "institution_ids": [
+        "https://openalex.org/I4210120221"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5068556395",
+      "display_name": "Ralph Hertwig",
+      "orcid": "https://orcid.org/0000-0002-9908-9556",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-9908-9556"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210120221",
+       "display_name": "Max Planck Institute for Human Development",
+       "ror": "https://ror.org/02pp7px91",
+       "country_code": "DE",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I149899117",
+        "https://openalex.org/I4210120221"
+       ]
+      }
+     ],
+     "countries": [
+      "DE"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Ralph Hertwig",
+     "raw_affiliation_strings": [
+      "Center for Adaptive Rationality , Max Planck Institute for Human Development , Berlin , Berlin , Germany",
+      "Max Planck Institute for Human Development"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-9908-9556",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Center for Adaptive Rationality , Max Planck Institute for Human Development , Berlin , Berlin , Germany",
+       "institution_ids": [
+        "https://openalex.org/I4210120221"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Max Planck Institute for Human Development",
+       "institution_ids": [
+        "https://openalex.org/I4210120221"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5026949484",
+      "display_name": "Philipp Lorenz-Spreen",
+      "orcid": "https://orcid.org/0000-0001-6319-4154",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-6319-4154"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210120221",
+       "display_name": "Max Planck Institute for Human Development",
+       "ror": "https://ror.org/02pp7px91",
+       "country_code": "DE",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I149899117",
+        "https://openalex.org/I4210120221"
+       ]
+      }
+     ],
+     "countries": [
+      "DE"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Philipp Lorenz-Spreen",
+     "raw_affiliation_strings": [
+      "Max Planck Institute for Human Development"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-6319-4154",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Max Planck Institute for Human Development",
+       "institution_ids": [
+        "https://openalex.org/I4210120221"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5040429395"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I39343248",
+    "https://openalex.org/I4210120221"
+   ],
+   "apc_list": {
+    "value": 1200,
+    "currency": "USD",
+    "value_usd": 1200
+   },
+   "apc_paid": {
+    "value": 1200,
+    "currency": "USD",
+    "value_usd": 1200
+   },
+   "fwci": 0.0,
+   "has_fulltext": true,
+   "cited_by_count": 1,
+   "citation_normalized_percentile": {
+    "value": 0.00146356,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": {
+    "min": 89,
+    "max": 94
+   },
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T11147",
+    "display_name": "Misinformation and Its Impacts",
+    "score": 0.8705999851226807,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T11147",
+     "display_name": "Misinformation and Its Impacts",
+     "score": 0.8705999851226807,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10315",
+     "display_name": "Decision-Making and Behavioral Economics",
+     "score": 0.1062999963760376,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1800",
+      "display_name": "General Decision Sciences"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/18",
+      "display_name": "Decision Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10803",
+     "display_name": "Innovative Human-Technology Interaction",
+     "score": 0.007000000216066837,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1709",
+      "display_name": "Human-Computer Interaction"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/misinformation-sharing",
+     "display_name": "misinformation sharing",
+     "score": 0.9670000076293945
+    },
+    {
+     "id": "https://openalex.org/keywords/online-misinformation",
+     "display_name": "online misinformation",
+     "score": 0.7570000290870667
+    },
+    {
+     "id": "https://openalex.org/keywords/nudging",
+     "display_name": "nudging",
+     "score": 0.515999972820282
+    },
+    {
+     "id": "https://openalex.org/keywords/paternalism",
+     "display_name": "paternalism",
+     "score": 0.6399999856948853
+    },
+    {
+     "id": "https://openalex.org/keywords/user-autonomy",
+     "display_name": "user autonomy",
+     "score": 0.6729999780654907
+    },
+    {
+     "id": "https://openalex.org/keywords/dark-patterns",
+     "display_name": "dark patterns",
+     "score": 0.7799999713897705
+    },
+    {
+     "id": "https://openalex.org/keywords/behavioral-interventions",
+     "display_name": "behavioral interventions",
+     "score": 0.7179999947547913
+    },
+    {
+     "id": "https://openalex.org/keywords/informed-consent",
+     "display_name": "informed consent",
+     "score": 0.46399998664855957
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C8858961",
+     "wikidata": "https://www.wikidata.org/wiki/Q7068367",
+     "display_name": "Nudge theory",
+     "level": 2,
+     "score": 0.9682044982910156
+    },
+    {
+     "id": "https://openalex.org/C27415008",
+     "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+     "display_name": "Psychological intervention",
+     "level": 2,
+     "score": 0.6600123047828674
+    },
+    {
+     "id": "https://openalex.org/C2776990098",
+     "wikidata": "https://www.wikidata.org/wiki/Q13579947",
+     "display_name": "Misinformation",
+     "level": 2,
+     "score": 0.5911572575569153
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.5116846561431885
+    },
+    {
+     "id": "https://openalex.org/C2679804",
+     "wikidata": "https://www.wikidata.org/wiki/Q58434",
+     "display_name": "Paternalism",
+     "level": 2,
+     "score": 0.4757285416126251
+    },
+    {
+     "id": "https://openalex.org/C65414064",
+     "wikidata": "https://www.wikidata.org/wiki/Q484105",
+     "display_name": "Autonomy",
+     "level": 2,
+     "score": 0.4597257971763611
+    },
+    {
+     "id": "https://openalex.org/C109574028",
+     "wikidata": "https://www.wikidata.org/wiki/Q647525",
+     "display_name": "Behavioral economics",
+     "level": 2,
+     "score": 0.4446299970149994
+    },
+    {
+     "id": "https://openalex.org/C108827166",
+     "wikidata": "https://www.wikidata.org/wiki/Q175975",
+     "display_name": "Internet privacy",
+     "level": 1,
+     "score": 0.3911260962486267
+    },
+    {
+     "id": "https://openalex.org/C75630572",
+     "wikidata": "https://www.wikidata.org/wiki/Q538904",
+     "display_name": "Applied psychology",
+     "level": 1,
+     "score": 0.3818676769733429
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.37859010696411133
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.32197821140289307
+    },
+    {
+     "id": "https://openalex.org/C38652104",
+     "wikidata": "https://www.wikidata.org/wiki/Q3510521",
+     "display_name": "Computer security",
+     "level": 1,
+     "score": 0.17259007692337036
+    },
+    {
+     "id": "https://openalex.org/C162324750",
+     "wikidata": "https://www.wikidata.org/wiki/Q8134",
+     "display_name": "Economics",
+     "level": 0,
+     "score": 0.1715584695339203
+    },
+    {
+     "id": "https://openalex.org/C17744445",
+     "wikidata": "https://www.wikidata.org/wiki/Q36442",
+     "display_name": "Political science",
+     "level": 0,
+     "score": 0.11767032742500305
+    },
+    {
+     "id": "https://openalex.org/C175444787",
+     "wikidata": "https://www.wikidata.org/wiki/Q39072",
+     "display_name": "Microeconomics",
+     "level": 1,
+     "score": 0.08834877610206604
+    },
+    {
+     "id": "https://openalex.org/C34447519",
+     "wikidata": "https://www.wikidata.org/wiki/Q179522",
+     "display_name": "Market economy",
+     "level": 1,
+     "score": 0.0
+    },
+    {
+     "id": "https://openalex.org/C118552586",
+     "wikidata": "https://www.wikidata.org/wiki/Q7867",
+     "display_name": "Psychiatry",
+     "level": 1,
+     "score": 0.0
+    },
+    {
+     "id": "https://openalex.org/C199539241",
+     "wikidata": "https://www.wikidata.org/wiki/Q7748",
+     "display_name": "Law",
+     "level": 1,
+     "score": 0.0
+    }
+   ],
+   "mesh": [],
+   "locations_count": 3,
+   "locations": [
+    {
+     "id": "doi:10.1037/tmb0000221",
+     "doi": "https://doi.org/10.1037/tmb0000221",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1037/tmb0000221",
+     "pdf_url": "https://psycnet.apa.org/fulltext/2028-47546-001.pdf",
+     "source": {
+      "id": "https://openalex.org/S4210236455",
+      "display_name": "Technology Mind and Behavior",
+      "issn_l": "2689-0208",
+      "issn": [
+       "2689-0208"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "doaj",
+       "dongbi-b",
+       "jufo-1",
+       "norway-1",
+       "oarl",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310320262",
+      "host_organization_name": "American Psychological Association",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320262"
+      ],
+      "host_organization_lineage_names": [
+       "American Psychological Association"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Technology, Mind, and Behavior",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "doi:10.31234/osf.io/awj97",
+     "doi": "https://doi.org/10.31234/osf.io/awj97",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.31234/osf.io/awj97",
+     "pdf_url": "https://osf.io/awj97/download",
+     "source": null,
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "acceptedVersion",
+     "is_accepted": true,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "posted-content"
+    },
+    {
+     "id": "pmh:oai:share.osf.io:7041c99c-58ec-471d-a01e-476431c3233d",
+     "doi": null,
+     "is_oa": true,
+     "landing_page_url": "https://osf.io/awj97",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306401687",
+      "display_name": "PsyArXiv (OSF Preprints)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I2799848540",
+      "host_organization_name": "Center for Open Science",
+      "host_organization_lineage": [
+       "https://openalex.org/I2799848540"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "Preprint"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1037/tmb0000221",
+    "doi": "https://doi.org/10.1037/tmb0000221",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1037/tmb0000221",
+    "pdf_url": "https://psycnet.apa.org/fulltext/2028-47546-001.pdf",
+    "source": {
+     "id": "https://openalex.org/S4210236455",
+     "display_name": "Technology Mind and Behavior",
+     "issn_l": "2689-0208",
+     "issn": [
+      "2689-0208"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "dongbi-b",
+      "jufo-1",
+      "norway-1",
+      "oarl",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320262",
+     "host_organization_name": "American Psychological Association",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320262"
+     ],
+     "host_organization_lineage_names": [
+      "American Psychological Association"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Technology, Mind, and Behavior",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320320879",
+     "display_name": "Deutsche Forschungsgemeinschaft",
+     "ror": "https://ror.org/018mejw64"
+    },
+    {
+     "id": "https://openalex.org/F4320320882",
+     "display_name": "Volkswagen Foundation",
+     "ror": "https://ror.org/03bsmfz84"
+    },
+    {
+     "id": "https://openalex.org/F4320322572",
+     "display_name": "Studienstiftung des Deutschen Volkes",
+     "ror": "https://ror.org/05xwwfy96"
+    },
+    {
+     "id": "https://openalex.org/F4320328926",
+     "display_name": "Max-Planck-Institut f\u00fcr Bildungsforschung",
+     "ror": "https://ror.org/02pp7px91"
+    }
+   ],
+   "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W4386392053.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W4386392053.grobid-xml"
+   },
+   "referenced_works_count": 24,
+   "referenced_works": [
+    "https://openalex.org/W1481908410",
+    "https://openalex.org/W2140619986",
+    "https://openalex.org/W2302521008",
+    "https://openalex.org/W2743157434",
+    "https://openalex.org/W3003606046",
+    "https://openalex.org/W3013473577",
+    "https://openalex.org/W3027848310",
+    "https://openalex.org/W3115872241",
+    "https://openalex.org/W3122199289",
+    "https://openalex.org/W3124726575",
+    "https://openalex.org/W3137986835",
+    "https://openalex.org/W3161219713",
+    "https://openalex.org/W3172358054",
+    "https://openalex.org/W3177125472",
+    "https://openalex.org/W4225127529",
+    "https://openalex.org/W4300107936",
+    "https://openalex.org/W4308433048",
+    "https://openalex.org/W4311351076",
+    "https://openalex.org/W4311696856",
+    "https://openalex.org/W4321003400",
+    "https://openalex.org/W4361270479",
+    "https://openalex.org/W4376143771",
+    "https://openalex.org/W4378229577",
+    "https://openalex.org/W6641604142"
+   ],
+   "related_works": [
+    "https://openalex.org/W4403954297",
+    "https://openalex.org/W4290803193",
+    "https://openalex.org/W4398145617",
+    "https://openalex.org/W7054902178",
+    "https://openalex.org/W3027848310",
+    "https://openalex.org/W4410049674",
+    "https://openalex.org/W4389574673",
+    "https://openalex.org/W4283330203",
+    "https://openalex.org/W4210677338",
+    "https://openalex.org/W4411346620"
+   ],
+   "abstract_inverted_index": {
+    "Self-nudging": [
+     0,
+     21
+    ],
+    "interventions": [
+     1,
+     43,
+     145
+    ],
+    "enable": [
+     2
+    ],
+    "people": [
+     3
+    ],
+    "to": [
+     4,
+     9,
+     44,
+     68,
+     97,
+     121,
+     137
+    ],
+    "redesign": [
+     5
+    ],
+    "their": [
+     6,
+     17
+    ],
+    "own": [
+     7
+    ],
+    "environment": [
+     8
+    ],
+    "encourage": [
+     10
+    ],
+    "choices": [
+     11
+    ],
+    "that": [
+     12
+    ],
+    "are": [
+     13
+    ],
+    "in": [
+     14,
+     59,
+     84,
+     124,
+     140
+    ],
+    "line": [
+     15
+    ],
+    "with": [
+     16
+    ],
+    "goals": [
+     18
+    ],
+    "and": [
+     19,
+     34,
+     72,
+     102
+    ],
+    "preferences.": [
+     20
+    ],
+    "is": [
+     22,
+     29,
+     48
+    ],
+    "particularly": [
+     23
+    ],
+    "relevant": [
+     24
+    ],
+    "online,": [
+     25,
+     146
+    ],
+    "where": [
+     26
+    ],
+    "users\u2019": [
+     27
+    ],
+    "autonomy": [
+     28
+    ],
+    "endangered": [
+     30
+    ],
+    "by": [
+     31
+    ],
+    "deceptive": [
+     32
+    ],
+    "design": [
+     33
+    ],
+    "opaque": [
+     35
+    ],
+    "algorithms.": [
+     36
+    ],
+    "To": [
+     37
+    ],
+    "date,": [
+     38
+    ],
+    "experimental": [
+     39,
+     53,
+     119
+    ],
+    "research": [
+     40
+    ],
+    "on": [
+     41,
+     149
+    ],
+    "self-nudging": [
+     42,
+     123,
+     136
+    ],
+    "confront": [
+     45
+    ],
+    "online": [
+     46
+    ],
+    "challenges": [
+     47
+    ],
+    "scarce.": [
+     49
+    ],
+    "In": [
+     50
+    ],
+    "this": [
+     51,
+     128
+    ],
+    "pre-registered": [
+     52
+    ],
+    "study": [
+     54,
+     129
+    ],
+    "(N": [
+     55
+    ],
+    "=": [
+     56
+    ],
+    "965),": [
+     57
+    ],
+    "participants": [
+     58,
+     83
+    ],
+    "the": [
+     60,
+     81,
+     85,
+     89,
+     95,
+     100,
+     103,
+     109,
+     112,
+     133,
+     141
+    ],
+    "self-nudge": [
+     61,
+     101,
+     113
+    ],
+    "condition": [
+     62,
+     87
+    ],
+    "were": [
+     63
+    ],
+    "informed": [
+     64
+    ],
+    "about": [
+     65
+    ],
+    "a": [
+     66,
+     125
+    ],
+    "nudge": [
+     67,
+     86,
+     90,
+     104
+    ],
+    "reduce": [
+     69
+    ],
+    "misinformation": [
+     70
+    ],
+    "sharing": [
+     71,
+     106
+    ],
+    "actively": [
+     73
+    ],
+    "decided": [
+     74
+    ],
+    "for": [
+     75,
+     132
+    ],
+    "or": [
+     76
+    ],
+    "against": [
+     77
+    ],
+    "its": [
+     78
+    ],
+    "implementation": [
+     79
+    ],
+    "during": [
+     80
+    ],
+    "study;": [
+     82
+    ],
+    "received": [
+     88
+    ],
+    "without": [
+     91,
+     147
+    ],
+    "such": [
+     92
+    ],
+    "information": [
+     93
+    ],
+    "nor": [
+     94
+    ],
+    "option": [
+     96
+    ],
+    "choose.": [
+     98
+    ],
+    "Both": [
+     99
+    ],
+    "increased": [
+     105
+    ],
+    "discernment,": [
+     107
+    ],
+    "but": [
+     108
+    ],
+    "effect": [
+     110
+    ],
+    "of": [
+     111,
+     135,
+     143
+    ],
+    "was": [
+     114
+    ],
+    "stronger.": [
+     115
+    ],
+    "Beside": [
+     116
+    ],
+    "developing": [
+     117
+    ],
+    "an": [
+     118
+    ],
+    "methodology": [
+     120
+    ],
+    "test": [
+     122
+    ],
+    "controlled": [
+     126
+    ],
+    "setting,": [
+     127
+    ],
+    "provides": [
+     130
+    ],
+    "evidence": [
+     131
+    ],
+    "potential": [
+     134
+    ],
+    "avoid": [
+     138
+    ],
+    "paternalism": [
+     139
+    ],
+    "application": [
+     142
+    ],
+    "behavioral": [
+     144
+    ],
+    "compromising": [
+     148
+    ],
+    "effectiveness.": [
+     150
+    ]
+   },
+   "counts_by_year": [
+    {
+     "year": 2024,
+     "cited_by_count": 1
+    }
+   ],
+   "updated_date": "2026-11-02T09:45:03.842371",
+   "created_date": "2023-09-03T00:00:00"
+  }
+ ]
+}

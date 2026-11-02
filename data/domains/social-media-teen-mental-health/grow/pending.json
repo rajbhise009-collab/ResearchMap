@@ -1,0 +1,1099 @@
+{
+ "batch_id": "ux5zn6z5wr6627q59omi5iasvh8vk99zovt2",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-11-02",
+ "submitted_at": 1793627451.872415,
+ "projected_inr": 2.7184500000000003,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7224266505": "fulltext"
+ },
+ "entries": [
+  {
+   "wid": "W7224266505",
+   "openalex_id": "https://openalex.org/W7224266505",
+   "title": "The Critique Came First: Citation and Authorship Continuity in Academic Challenges to the Youth Social Media Harm Thesis Before and After Meta's March 2023 Notes",
+   "year": 2026,
+   "doi": "https://doi.org/10.68481/rs95tu",
+   "venue": null,
+   "field": "decision sciences",
+   "cited_by_count": 0,
+   "abstract": "Meeting notes filed in federal court in October 2026 show Meta staff discussing, on 7 and 8 March 2023, how to \u201cturn other academics against Haidt\u201d and how to get \u201cthe academic community to disavow\u201d him. The notes raise a testable question: did the academic critique of the claim that smartphones and social media drove the rise in adolescent depression and anxiety change after that date? This paper tests it against the publication record. A rule defined corpus of 2,032 works from January 2017 to October 2026 that engage the harm thesis advanced by Jean Twenge and Jonathan Haidt was assembled from OpenCitations, Crossref, Semantic Scholar and scite, coded from titles and abstracts as critique, supportive or neither, and verified record by record. Critiques did not grow after the notes. Their share of works taking a side fell from 24.6 percent in the 24 months before to 16.7 percent in the 24 months after (odds ratio 0.62, 95 percent CI 0.33 to 1.14). Later critiques rest on earlier ones: 85 percent of later critiques with usable reference data cite at least one critique that predates the notes, against 56 percent of later supportive works (odds ratio 4.35, p < 0.001), and 29 percent share an author with an earlier critique, against a 17 percent same side rate for supportive works (p = 0.046). One record carries Facebook funder metadata, an adolescent mood study coded neither; no critique does. The critical literature predates the notes and kept building on its own base after them. The method cannot detect private contact with critics who were already publishing, which is the outreach the notes describe.",
+   "label": "on-domain",
+   "rationale": "strong term in title: 'social media' + pair anywhere: 'depression'; core scope: young population 'Youth' + mental-health outcome 'depress'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-02",
+   "found_via": "cites-both",
+   "found_via_detail": "cites both sides of 'smartphones and adolescent well-being'",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7224266505",
+   "doi": "https://doi.org/10.68481/rs95tu",
+   "title": "The Critique Came First: Citation and Authorship Continuity in Academic Challenges to the Youth Social Media Harm Thesis Before and After Meta's March 2023 Notes",
+   "display_name": "The Critique Came First: Citation and Authorship Continuity in Academic Challenges to the Youth Social Media Harm Thesis Before and After Meta's March 2023 Notes",
+   "publication_year": 2026,
+   "publication_date": "2026-10-29",
+   "ids": {
+    "openalex": "https://openalex.org/W7224266505",
+    "doi": "https://doi.org/10.68481/rs95tu"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.68481/rs95tu",
+    "doi": "https://doi.org/10.68481/rs95tu",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.68481/rs95tu",
+    "pdf_url": "https://realsafetyai.org/research/rs95tu/critique_came_first.pdf",
+    "source": null,
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": null,
+    "raw_type": "report"
+   },
+   "volume": null,
+   "type": "report",
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://realsafetyai.org/research/rs95tu/critique_came_first.pdf",
+    "any_repository_has_fulltext": null
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5140598045",
+      "display_name": "Travis Gilly",
+      "orcid": "https://orcid.org/0009-0007-2954-6313",
+      "observed_orcids": [
+       "https://orcid.org/0009-0007-2954-6313"
+      ]
+     },
+     "institutions": [],
+     "countries": [],
+     "is_corresponding": true,
+     "raw_author_name": "Travis Gilly",
+     "raw_affiliation_strings": [
+      "Real Safety AI Foundation Illinois , United States"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0007-2954-6313",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Real Safety AI Foundation Illinois , United States",
+       "institution_ids": []
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 0,
+   "institutions_distinct_count": 0,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5140598045"
+   ],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": null,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": null,
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10102",
+    "display_name": "scientometrics and bibliometrics research",
+    "score": 0.600600004196167,
+    "subfield": {
+     "id": "https://openalex.org/subfields/1804",
+     "display_name": "Statistics, Probability and Uncertainty"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/18",
+     "display_name": "Decision Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10102",
+     "display_name": "scientometrics and bibliometrics research",
+     "score": 0.600600004196167,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1804",
+      "display_name": "Statistics, Probability and Uncertainty"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/18",
+      "display_name": "Decision Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.07670000195503235,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11147",
+     "display_name": "Misinformation and Its Impacts",
+     "score": 0.05050000175833702,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/meta",
+     "display_name": "Meta",
+     "score": 0.3409999907016754
+    },
+    {
+     "id": "https://openalex.org/keywords/facebook",
+     "display_name": "Facebook",
+     "score": 0.32100000977516174
+    },
+    {
+     "id": "https://openalex.org/keywords/haidt",
+     "display_name": "Haidt",
+     "score": 0.5509999990463257
+    },
+    {
+     "id": "https://openalex.org/keywords/academic-criticism",
+     "display_name": "academic criticism",
+     "score": 0.4580000042915344
+    },
+    {
+     "id": "https://openalex.org/keywords/citation-patterns",
+     "display_name": "citation patterns",
+     "score": 0.6970000267028809
+    },
+    {
+     "id": "https://openalex.org/keywords/corporate-influence-on-research",
+     "display_name": "corporate influence on research",
+     "score": 0.4699999988079071
+    },
+    {
+     "id": "https://openalex.org/keywords/social-media-and-mental-health",
+     "display_name": "social media and mental health",
+     "score": 0.48100000619888306
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C2777363581",
+     "wikidata": "https://www.wikidata.org/wiki/Q15098235",
+     "display_name": "Harm",
+     "level": 2,
+     "score": 0.7132999897003174
+    },
+    {
+     "id": "https://openalex.org/C2778805511",
+     "wikidata": "https://www.wikidata.org/wiki/Q1713",
+     "display_name": "Citation",
+     "level": 2,
+     "score": 0.5983999967575073
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.5041999816894531
+    },
+    {
+     "id": "https://openalex.org/C144024400",
+     "wikidata": "https://www.wikidata.org/wiki/Q21201",
+     "display_name": "Sociology",
+     "level": 0,
+     "score": 0.40630000829696655
+    },
+    {
+     "id": "https://openalex.org/C109167261",
+     "wikidata": "https://www.wikidata.org/wiki/Q5421955",
+     "display_name": "Fell",
+     "level": 2,
+     "score": 0.37869998812675476
+    },
+    {
+     "id": "https://openalex.org/C2778449503",
+     "wikidata": "https://www.wikidata.org/wiki/Q329777",
+     "display_name": "Appeal",
+     "level": 2,
+     "score": 0.37779998779296875
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.361299991607666
+    },
+    {
+     "id": "https://openalex.org/C558461103",
+     "wikidata": "https://www.wikidata.org/wiki/Q154430",
+     "display_name": "Anxiety",
+     "level": 2,
+     "score": 0.36039999127388
+    },
+    {
+     "id": "https://openalex.org/C29595303",
+     "wikidata": "https://www.wikidata.org/wiki/Q165650",
+     "display_name": "Media studies",
+     "level": 1,
+     "score": 0.35929998755455017
+    },
+    {
+     "id": "https://openalex.org/C2780733359",
+     "wikidata": "https://www.wikidata.org/wiki/Q331769",
+     "display_name": "Mood",
+     "level": 2,
+     "score": 0.3540000021457672
+    },
+    {
+     "id": "https://openalex.org/C163258240",
+     "wikidata": "https://www.wikidata.org/wiki/Q25342",
+     "display_name": "Power (physics)",
+     "level": 2,
+     "score": 0.3248000144958496
+    },
+    {
+     "id": "https://openalex.org/C2776867660",
+     "wikidata": "https://www.wikidata.org/wiki/Q1814941",
+     "display_name": "Depression (economics)",
+     "level": 2,
+     "score": 0.30790001153945923
+    },
+    {
+     "id": "https://openalex.org/C17744445",
+     "wikidata": "https://www.wikidata.org/wiki/Q36442",
+     "display_name": "Political science",
+     "level": 0,
+     "score": 0.2948000133037567
+    },
+    {
+     "id": "https://openalex.org/C199539241",
+     "wikidata": "https://www.wikidata.org/wiki/Q7748",
+     "display_name": "Law",
+     "level": 1,
+     "score": 0.2930000126361847
+    },
+    {
+     "id": "https://openalex.org/C39549134",
+     "wikidata": "https://www.wikidata.org/wiki/Q133080",
+     "display_name": "Public relations",
+     "level": 1,
+     "score": 0.2892000079154968
+    },
+    {
+     "id": "https://openalex.org/C95457728",
+     "wikidata": "https://www.wikidata.org/wiki/Q309",
+     "display_name": "History",
+     "level": 0,
+     "score": 0.2827000021934509
+    },
+    {
+     "id": "https://openalex.org/C3018185140",
+     "wikidata": "https://www.wikidata.org/wiki/Q5286145",
+     "display_name": "Do no harm",
+     "level": 2,
+     "score": 0.27619999647140503
+    },
+    {
+     "id": "https://openalex.org/C36289849",
+     "wikidata": "https://www.wikidata.org/wiki/Q34749",
+     "display_name": "Social science",
+     "level": 1,
+     "score": 0.25440001487731934
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.68481/rs95tu",
+     "doi": "https://doi.org/10.68481/rs95tu",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.68481/rs95tu",
+     "pdf_url": "https://realsafetyai.org/research/rs95tu/critique_came_first.pdf",
+     "source": null,
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": null,
+     "raw_type": "report"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.68481/rs95tu",
+    "doi": "https://doi.org/10.68481/rs95tu",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.68481/rs95tu",
+    "pdf_url": "https://realsafetyai.org/research/rs95tu/critique_came_first.pdf",
+    "source": null,
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": null,
+    "raw_type": "report"
+   },
+   "sustainable_development_goals": [],
+   "sustainable_development_goals_aurora": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": true,
+    "pdf": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7224266505.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7224266505.grobid-xml"
+   },
+   "referenced_works_count": 40,
+   "referenced_works": [
+    "https://openalex.org/W183866246",
+    "https://openalex.org/W2053154970",
+    "https://openalex.org/W2578856715",
+    "https://openalex.org/W2770314219",
+    "https://openalex.org/W2786742231",
+    "https://openalex.org/W2788235370",
+    "https://openalex.org/W2790980665",
+    "https://openalex.org/W2896921383",
+    "https://openalex.org/W2911168426",
+    "https://openalex.org/W2912991937",
+    "https://openalex.org/W2934563845",
+    "https://openalex.org/W2944221730",
+    "https://openalex.org/W2945839590",
+    "https://openalex.org/W2947477571",
+    "https://openalex.org/W2969848594",
+    "https://openalex.org/W2979663154",
+    "https://openalex.org/W2981075629",
+    "https://openalex.org/W2998834126",
+    "https://openalex.org/W2999059035",
+    "https://openalex.org/W2999217075",
+    "https://openalex.org/W3002169893",
+    "https://openalex.org/W3002281830",
+    "https://openalex.org/W3004674378",
+    "https://openalex.org/W3013433991",
+    "https://openalex.org/W3016581557",
+    "https://openalex.org/W3016717998",
+    "https://openalex.org/W3038775985",
+    "https://openalex.org/W3039124223",
+    "https://openalex.org/W3136028244",
+    "https://openalex.org/W3183254835",
+    "https://openalex.org/W3185077430",
+    "https://openalex.org/W3195706482",
+    "https://openalex.org/W3210445122",
+    "https://openalex.org/W4210719381",
+    "https://openalex.org/W4384662964",
+    "https://openalex.org/W4389670596",
+    "https://openalex.org/W4392204063",
+    "https://openalex.org/W4393310025",
+    "https://openalex.org/W4399141199",
+    "https://openalex.org/W4413848495"
+   ],
+   "related_works": [
+    "https://openalex.org/W4409639536",
+    "https://openalex.org/W4414486019",
+    "https://openalex.org/W2977726540",
+    "https://openalex.org/W4405283223",
+    "https://openalex.org/W4282823329",
+    "https://openalex.org/W7154541022",
+    "https://openalex.org/W4256420977",
+    "https://openalex.org/W7006414220",
+    "https://openalex.org/W7153635271",
+    "https://openalex.org/W7171299871"
+   ],
+   "abstract_inverted_index": {
+    "Meeting": [
+     0
+    ],
+    "notes": [
+     1,
+     37,
+     243,
+     270
+    ],
+    "filed": [
+     2
+    ],
+    "in": [
+     3,
+     6,
+     57,
+     141,
+     149
+    ],
+    "federal": [
+     4
+    ],
+    "court": [
+     5
+    ],
+    "October": [
+     7,
+     85
+    ],
+    "2026": [
+     8,
+     86
+    ],
+    "show": [
+     9
+    ],
+    "Meta": [
+     10
+    ],
+    "staff": [
+     11
+    ],
+    "discussing,": [
+     12
+    ],
+    "on": [
+     13,
+     166,
+     247
+    ],
+    "7": [
+     14
+    ],
+    "and": [
+     15,
+     26,
+     51,
+     60,
+     96,
+     106,
+     111,
+     118,
+     200,
+     244
+    ],
+    "8": [
+     16
+    ],
+    "March": [
+     17
+    ],
+    "2023,": [
+     18
+    ],
+    "how": [
+     19,
+     27
+    ],
+    "to": [
+     20,
+     28,
+     33,
+     84,
+     146,
+     161
+    ],
+    "\u201cturn": [
+     21
+    ],
+    "other": [
+     22
+    ],
+    "academics": [
+     23
+    ],
+    "against": [
+     24,
+     70,
+     187,
+     210
+    ],
+    "Haidt\u201d": [
+     25
+    ],
+    "get": [
+     29
+    ],
+    "\u201cthe": [
+     30
+    ],
+    "academic": [
+     31,
+     44
+    ],
+    "community": [
+     32
+    ],
+    "disavow\u201d": [
+     34
+    ],
+    "him.": [
+     35
+    ],
+    "The": [
+     36,
+     238,
+     253
+    ],
+    "raise": [
+     38
+    ],
+    "a": [
+     39,
+     135,
+     211
+    ],
+    "testable": [
+     40
+    ],
+    "question:": [
+     41
+    ],
+    "did": [
+     42,
+     124
+    ],
+    "the": [
+     43,
+     47,
+     55,
+     71,
+     89,
+     128,
+     142,
+     150,
+     185,
+     242,
+     267,
+     269
+    ],
+    "critique": [
+     45,
+     182,
+     236
+    ],
+    "of": [
+     46,
+     78,
+     132,
+     171,
+     190
+    ],
+    "claim": [
+     48
+    ],
+    "that": [
+     49,
+     64,
+     87,
+     183
+    ],
+    "smartphones": [
+     50
+    ],
+    "social": [
+     52
+    ],
+    "media": [
+     53
+    ],
+    "drove": [
+     54
+    ],
+    "rise": [
+     56
+    ],
+    "adolescent": [
+     58,
+     230
+    ],
+    "depression": [
+     59
+    ],
+    "anxiety": [
+     61
+    ],
+    "change": [
+     62
+    ],
+    "after": [
+     63,
+     127,
+     153,
+     251
+    ],
+    "date?": [
+     65
+    ],
+    "This": [
+     66
+    ],
+    "paper": [
+     67
+    ],
+    "tests": [
+     68
+    ],
+    "it": [
+     69
+    ],
+    "publication": [
+     72
+    ],
+    "record.": [
+     73,
+     122
+    ],
+    "A": [
+     74
+    ],
+    "rule": [
+     75
+    ],
+    "defined": [
+     76
+    ],
+    "corpus": [
+     77
+    ],
+    "2,032": [
+     79
+    ],
+    "works": [
+     80,
+     133,
+     193,
+     219
+    ],
+    "from": [
+     81,
+     101,
+     109,
+     138
+    ],
+    "January": [
+     82
+    ],
+    "2017": [
+     83
+    ],
+    "engage": [
+     88
+    ],
+    "harm": [
+     90
+    ],
+    "thesis": [
+     91
+    ],
+    "advanced": [
+     92
+    ],
+    "by": [
+     93,
+     121
+    ],
+    "Jean": [
+     94
+    ],
+    "Twenge": [
+     95
+    ],
+    "Jonathan": [
+     97
+    ],
+    "Haidt": [
+     98
+    ],
+    "was": [
+     99
+    ],
+    "assembled": [
+     100
+    ],
+    "OpenCitations,": [
+     102
+    ],
+    "Crossref,": [
+     103
+    ],
+    "Semantic": [
+     104
+    ],
+    "Scholar": [
+     105
+    ],
+    "scite,": [
+     107
+    ],
+    "coded": [
+     108,
+     233
+    ],
+    "titles": [
+     110
+    ],
+    "abstracts": [
+     112
+    ],
+    "as": [
+     113
+    ],
+    "critique,": [
+     114,
+     209
+    ],
+    "supportive": [
+     115,
+     192,
+     218
+    ],
+    "or": [
+     116
+    ],
+    "neither,": [
+     117
+    ],
+    "verified": [
+     119
+    ],
+    "record": [
+     120,
+     224
+    ],
+    "Critiques": [
+     123
+    ],
+    "not": [
+     125
+    ],
+    "grow": [
+     126
+    ],
+    "notes.": [
+     129
+    ],
+    "Their": [
+     130
+    ],
+    "share": [
+     131,
+     203
+    ],
+    "taking": [
+     134
+    ],
+    "side": [
+     136,
+     215
+    ],
+    "fell": [
+     137
+    ],
+    "24.6": [
+     139
+    ],
+    "percent": [
+     140,
+     148,
+     158,
+     170,
+     189,
+     202,
+     213
+    ],
+    "24": [
+     143,
+     151
+    ],
+    "months": [
+     144,
+     152
+    ],
+    "before": [
+     145
+    ],
+    "16.7": [
+     147
+    ],
+    "(odds": [
+     154,
+     194
+    ],
+    "ratio": [
+     155,
+     195
+    ],
+    "0.62,": [
+     156
+    ],
+    "95": [
+     157
+    ],
+    "CI": [
+     159
+    ],
+    "0.33": [
+     160
+    ],
+    "1.14).": [
+     162
+    ],
+    "Later": [
+     163
+    ],
+    "critiques": [
+     164,
+     173
+    ],
+    "rest": [
+     165
+    ],
+    "earlier": [
+     167,
+     208
+    ],
+    "ones:": [
+     168
+    ],
+    "85": [
+     169
+    ],
+    "later": [
+     172,
+     191
+    ],
+    "with": [
+     174,
+     206,
+     259
+    ],
+    "usable": [
+     175
+    ],
+    "reference": [
+     176
+    ],
+    "data": [
+     177
+    ],
+    "cite": [
+     178
+    ],
+    "at": [
+     179
+    ],
+    "least": [
+     180
+    ],
+    "one": [
+     181
+    ],
+    "predates": [
+     184,
+     241
+    ],
+    "notes,": [
+     186
+    ],
+    "56": [
+     188
+    ],
+    "4.35,": [
+     196
+    ],
+    "p": [
+     197
+    ],
+    "<": [
+     198
+    ],
+    "0.001),": [
+     199
+    ],
+    "29": [
+     201
+    ],
+    "an": [
+     204,
+     207,
+     229
+    ],
+    "author": [
+     205
+    ],
+    "17": [
+     212
+    ],
+    "same": [
+     214
+    ],
+    "rate": [
+     216
+    ],
+    "for": [
+     217
+    ],
+    "(p": [
+     220
+    ],
+    "=": [
+     221
+    ],
+    "0.046).": [
+     222
+    ],
+    "One": [
+     223
+    ],
+    "carries": [
+     225
+    ],
+    "Facebook": [
+     226
+    ],
+    "funder": [
+     227
+    ],
+    "metadata,": [
+     228
+    ],
+    "mood": [
+     231
+    ],
+    "study": [
+     232
+    ],
+    "neither;": [
+     234
+    ],
+    "no": [
+     235
+    ],
+    "does.": [
+     237
+    ],
+    "critical": [
+     239
+    ],
+    "literature": [
+     240
+    ],
+    "kept": [
+     245
+    ],
+    "building": [
+     246
+    ],
+    "its": [
+     248
+    ],
+    "own": [
+     249
+    ],
+    "base": [
+     250
+    ],
+    "them.": [
+     252
+    ],
+    "method": [
+     254
+    ],
+    "cannot": [
+     255
+    ],
+    "detect": [
+     256
+    ],
+    "private": [
+     257
+    ],
+    "contact": [
+     258
+    ],
+    "critics": [
+     260
+    ],
+    "who": [
+     261
+    ],
+    "were": [
+     262
+    ],
+    "already": [
+     263
+    ],
+    "publishing,": [
+     264
+    ],
+    "which": [
+     265
+    ],
+    "is": [
+     266
+    ],
+    "outreach": [
+     268
+    ],
+    "describe.": [
+     271
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-10-31T12:09:11.096373",
+   "created_date": "2026-10-30T00:00:00"
+  }
+ ]
+}

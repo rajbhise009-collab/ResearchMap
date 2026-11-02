@@ -1,21 +1,21 @@
 {
  "diet-and-mortality": {
-  "extraction_served": "2026-10-26",
+  "extraction_served": "2026-11-02",
   "followon_owed": [],
   "followon_served": "2026-11-02"
  },
  "ml-fairness": {
-  "extraction_served": "2026-10-26",
+  "extraction_served": "2026-11-02",
   "followon_owed": [],
   "followon_served": "2026-11-02"
  },
  "nudge-effectiveness": {
-  "extraction_served": "2026-10-26",
+  "extraction_served": "2026-11-02",
   "followon_owed": [],
   "followon_served": "2026-11-02"
  },
  "social-media-teen-mental-health": {
-  "extraction_served": "2026-10-26",
+  "extraction_served": "2026-11-02",
   "followon_owed": [],
   "followon_served": "2026-11-02"
  }
