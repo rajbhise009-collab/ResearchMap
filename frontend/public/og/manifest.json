@@ -7,14 +7,14 @@
       "built": "2026-07-30"
     },
     "diet-and-mortality": {
-      "papers": 103,
-      "claims_read": 103,
-      "built": "2026-10-26"
+      "papers": 104,
+      "claims_read": 104,
+      "built": "2026-11-02"
     },
     "ml-fairness": {
-      "papers": 113,
-      "claims_read": 113,
-      "built": "2026-10-26"
+      "papers": 115,
+      "claims_read": 115,
+      "built": "2026-11-02"
     },
     "nudge-effectiveness": {
       "papers": 44,
@@ -22,11 +22,11 @@
       "built": null
     },
     "social-media-teen-mental-health": {
-      "papers": 108,
-      "claims_read": 107,
+      "papers": 110,
+      "claims_read": 109,
       "built": null
     }
   },
-  "total_papers": 481,
+  "total_papers": 486,
   "n_libraries": 5
 }

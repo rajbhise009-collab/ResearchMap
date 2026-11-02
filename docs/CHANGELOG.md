@@ -2,6 +2,19 @@
 
 One entry per weekly growth run (newest first).
 
+## 2026-11-02
+
+- diet-and-mortality: 1 papers added
+- ml-fairness: 2 papers added
+- nudge-effectiveness: 0 papers added
+- social-media-teen-mental-health: 2 papers added
+- new library ego-depletion: waiting for money
+- diet-and-mortality: results shown 13 -> 13 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- ml-fairness: results shown 70 -> 70 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- nudge-effectiveness: results shown 7 -> 7 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- social-media-teen-mental-health: results shown 32 -> 33 (+1 new, -0 no longer shown); 1 flagged disagreements (not yet checked)
+- spend recorded ₹6.78; remaining ₹160.36
+
 ## 2026-10-26
 
 - diet-and-mortality: 2 papers added

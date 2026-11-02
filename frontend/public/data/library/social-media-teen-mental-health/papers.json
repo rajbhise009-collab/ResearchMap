@@ -1,5 +1,5 @@
 {
-  "total": 108,
+  "total": 110,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1188,6 +1188,28 @@
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7223188562",
+      "wid": "W7223188562",
+      "title": "Algorithmic Persuasion and Digital Well-Being",
+      "year": 2026,
+      "doi": "https://doi.org/10.4018/979-8-2600-4921-1.ch007",
+      "venue": "IGI Global eBooks",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7223247033",
+      "wid": "W7223247033",
+      "title": "Associations Among Social Media Use, Sleep Duration, and Mental Health Indicators in a Synthetic Adolescent Dataset",
+      "year": 2026,
+      "doi": "https://doi.org/10.63313/ssh.9144",
+      "venue": "Social Sciences and Humanities",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
     }
   ]
 }

@@ -58,8 +58,8 @@ library is left for the rule to merge.
 | library | papers before | papers after | shortlisted pairs before | after | supports verdicts before | after | flagged before | after |
 |:--|--:|--:|--:|--:|--:|--:|--:|--:|
 | LLM calibration | 113 | 113 | 437 | 437 | unchanged | unchanged | 2 | 2 |
-| Diet & mortality | 103 | 103 | 160 | 160 | unchanged | unchanged | 10 | 10 |
+| Diet & mortality | 104 | 104 | 160 | 160 | unchanged | unchanged | 10 | 10 |
 | ML fairness | 100 | 99 | 95 | 91 | 82 | 78 | 0 | 0 |
 | Nudges | 44 | 44 | 23 | 23 | unchanged | unchanged | 0 | 0 |
-| Social media & teens | 108 | 108 | 216 | 216 | unchanged | unchanged | 8 | 8 |
+| Social media & teens | 110 | 110 | 220 | 220 | unchanged | unchanged | 9 | 9 |
 <!-- /gen:v2-counts -->

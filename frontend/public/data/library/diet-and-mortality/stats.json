@@ -1,9 +1,9 @@
 {
-  "papers": 103,
+  "papers": 104,
   "full_text": 17,
-  "abstract_only": 86,
-  "n_extractions": 103,
-  "extraction_coverage_note": "Claims read from 103 of 103 papers.",
+  "abstract_only": 87,
+  "n_extractions": 104,
+  "extraction_coverage_note": "Claims read from 104 of 104 papers.",
   "zero_finding_note": null,
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [
@@ -16,26 +16,26 @@
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
-    "date": "2026-10-26",
+    "date": "2026-11-02",
     "shortlist_settings": {
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 103
+    "papers_covered": 104
   },
   "extraction_coverage_share": 1.0,
   "assertion_strength": {
-    "total_claims": 585,
+    "total_claims": 590,
     "distribution": {
-      "firm": 577,
+      "firm": 582,
       "hedged": 8
     },
-    "firm_share": 0.9863247863247864,
-    "hedged_share": 0.013675213675213675
+    "firm_share": 0.9864406779661017,
+    "hedged_share": 0.013559322033898305
   },
   "gap_type_counts": {
-    "n_papers": 103,
-    "n_limitations": 146,
+    "n_papers": 104,
+    "n_limitations": 147,
     "limitation_categories": {
       "small-sample-size": 5,
       "residual-confounding": 3,
@@ -169,7 +169,8 @@
       "lack-of-statistical-significance": 1,
       "unexplored-framework": 1,
       "confounding-bias": 1,
-      "methodological-discrepancy": 1
+      "methodological-discrepancy": 1,
+      "ecological-fallacy": 1
     },
     "n_future_work_items": 59
   },
@@ -191,9 +192,9 @@
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 70,
+  "core": 71,
   "peripheral": 33,
   "manifest_hash": null,
   "relationships": 10,
-  "note": "Multi-domain library \u2014 claims extracted from 103 of 103 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 104 of 104 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

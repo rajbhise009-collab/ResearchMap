@@ -1,5 +1,5 @@
 {
-  "total": 103,
+  "total": 104,
   "items": [
     {
       "paper_id": "https://openalex.org/W2734724639",
@@ -1129,6 +1129,17 @@
       "title": "An Opinion Paper on the Cultural Heritage of Wine Consumption in the Frame of the Mediterranean Diet: The Missing Piece of the Puzzle",
       "year": 2026,
       "doi": "https://doi.org/10.3390/nu18203374",
+      "venue": "Nutrients",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7223185041",
+      "wid": "W7223185041",
+      "title": "Baseline Food Supply-Based Dietary Scores and Ischemic Heart Disease Mortality: A Longitudinal Cross-Country Study",
+      "year": 2026,
+      "doi": "https://doi.org/10.3390/nu18203456",
       "venue": "Nutrients",
       "domain_centrality": "core",
       "input_source": "abstract_only",

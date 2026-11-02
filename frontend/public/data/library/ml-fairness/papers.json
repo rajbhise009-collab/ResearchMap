@@ -1,5 +1,5 @@
 {
-  "total": 113,
+  "total": 115,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1240,6 +1240,28 @@
       "year": 2026,
       "doi": "https://doi.org/10.1177/18758967261496722",
       "venue": "Journal of Intelligent & Fuzzy Systems",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7222568097",
+      "wid": "W7222568097",
+      "title": "How Algorithmic Bias Shapes Consumer Acceptance of AI Recommendations: The Roles of Recommendation Strategy, Self\u2010Identity Threat, Perceived Warmth and Privacy Concerns",
+      "year": 2026,
+      "doi": "https://doi.org/10.1111/ijcs.70272",
+      "venue": "International Journal of Consumer Studies",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7223409040",
+      "wid": "W7223409040",
+      "title": "AE-NS: An Auto-Encoding Network with Semantic Constraints for Robust Fair Classification on Tabular Data",
+      "year": 2026,
+      "doi": "https://doi.org/10.1007/s40745-026-00733-0",
+      "venue": "Annals of Data Science",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
