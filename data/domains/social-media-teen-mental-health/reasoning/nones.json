@@ -1,5 +1,5 @@
 {
-  "n": 92,
+  "n": 94,
   "items": [
     {
       "from_claim_id": "openalex:W2788235370:c3",
@@ -920,6 +920,26 @@
       "b_paper_id": "openalex:W7220964971",
       "b_text": "Research on the links between adolescent loneliness, internalizing problems, and social media use has moved beyond simple cross-sectional studies.",
       "explanation": "Claim A reports a specific empirical association between high social media use and comorbid problems, while Claim B makes a methodological observation about the evolution of research designs in the field."
+    },
+    {
+      "from_claim_id": "openalex:W7220393051:c3",
+      "to_claim_id": "openalex:W7223188562:c1",
+      "similarity": 0.8116421699523926,
+      "a_paper_id": "openalex:W7220393051",
+      "a_text": "Evidence linking social media screen time to anxiety was weaker and less consistent across studies compared to evidence linking it to depression.",
+      "b_paper_id": "openalex:W7223188562",
+      "b_text": "Social media engagement is associated with higher levels of anxiety.",
+      "explanation": "Claim A compares the relative strength and consistency of evidence for anxiety versus depression, which neither contradicts nor directly supports Claim B's finding of an association between social media engagement and anxiety."
+    },
+    {
+      "from_claim_id": "openalex:W3101126289:c3",
+      "to_claim_id": "openalex:W7223188562:c1",
+      "similarity": 0.8026078939437866,
+      "a_paper_id": "openalex:W3101126289",
+      "a_text": "Anxious participants used social media to a lesser extent as a way to keep in touch with friends and family.",
+      "b_paper_id": "openalex:W7223188562",
+      "b_text": "Social media engagement is associated with higher levels of anxiety.",
+      "explanation": "The claims examine different dimensions of social media behavior, distinguishing between overall engagement level and the specific motivation of maintaining relationships with friends and family."
     }
   ]
 }

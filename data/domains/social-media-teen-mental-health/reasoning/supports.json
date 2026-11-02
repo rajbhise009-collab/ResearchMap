@@ -1,5 +1,5 @@
 {
-  "n": 134,
+  "n": 135,
   "items": [
     {
       "from_claim_id": "openalex:W2549950368:c1",
@@ -1340,6 +1340,16 @@
       "b_paper_id": "openalex:W7222160172",
       "b_text": "Social appearance anxiety is positively related to social media addiction in adolescents.",
       "explanation": "Both claims independently reinforce the finding that social media engagement is positively associated with appearance-related anxiety among adolescents."
+    },
+    {
+      "from_claim_id": "openalex:W2052878984:c3",
+      "to_claim_id": "openalex:W7223188562:c1",
+      "similarity": 0.846240758895874,
+      "a_paper_id": "openalex:W2052878984",
+      "a_text": "Individuals who use Facebook exhibit higher anxiety compared to non-users.",
+      "b_paper_id": "openalex:W7223188562",
+      "b_text": "Social media engagement is associated with higher levels of anxiety.",
+      "explanation": "Both claims independently find a positive association between social media use (specifically Facebook in Claim A) and higher levels of anxiety."
     }
   ]
 }

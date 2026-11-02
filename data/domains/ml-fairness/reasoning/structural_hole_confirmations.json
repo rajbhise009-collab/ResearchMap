@@ -168,5 +168,65 @@
     "b_pid": "openalex:W4386712902",
     "method": "Unifying Case Study Demonstration",
     "limitation": "Research nuances, sample sizes, and contextual factors across the reviewed literature may affect the generalizability of the findings."
+  },
+  "opp:hole:W3101206394->W3167179910": {
+    "verdict": "not_addressing",
+    "reason": "Taxonomic conceptual synthesis of definitions does not address Paper B's technical search limitation regarding bibliographic retrieval restricted to title, abstract, and keywords.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W3101206394",
+    "b_pid": "openalex:W3167179910",
+    "method": "Taxonomic Conceptual Synthesis",
+    "limitation": "The bibliometric search required terms to appear in title, abstract, or keywords, which may have excluded relevant studies mentioning terms only in the full text."
+  },
+  "opp:hole:W2809878087->W3167179910": {
+    "verdict": "not_addressing",
+    "reason": "A case-study method for explaining fairness definitions does not address the bibliometric search retrieval limitation of missing full-text literature.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2809878087",
+    "b_pid": "openalex:W3167179910",
+    "method": "Unifying Case Study Demonstration",
+    "limitation": "The bibliometric search required terms to appear in title, abstract, or keywords, which may have excluded relevant studies mentioning terms only in the full text."
+  },
+  "opp:hole:W2040825624->W4362714312": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's regularization technique for probabilistic models does not formulate or identify the missing real-world fairness notions highlighted in the graph mining survey.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2040825624",
+    "b_pid": "openalex:W4362714312",
+    "method": "Fairness-aware Regularization for Probabilistic Discriminative Models",
+    "limitation": "The surveyed fairness notions are by no means complete, as other types of biases could also exist depending on the needs of different real-world scenarios."
+  },
+  "opp:hole:W3101206394->W4362714312": {
+    "verdict": "not_addressing",
+    "reason": "Synthesizing existing literature into a taxonomic catalog does not address the limitation of uncovering or defining new, uncaptured types of biases that arise from diverse real-world scenarios.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W3101206394",
+    "b_pid": "openalex:W4362714312",
+    "method": "Taxonomic Conceptual Synthesis",
+    "limitation": "The surveyed fairness notions are by no means complete, as other types of biases could also exist depending on the needs of different real-world scenarios."
+  },
+  "opp:hole:W2809878087->W4362714312": {
+    "verdict": "not_addressing",
+    "reason": "Demonstrating existing algorithmic classification fairness metrics on a unifying case study does not discover or formalize the missing, domain-specific graph mining fairness notions highlighted in the survey.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2809878087",
+    "b_pid": "openalex:W4362714312",
+    "method": "Unifying Case Study Demonstration",
+    "limitation": "The surveyed fairness notions are by no means complete, as other types of biases could also exist depending on the needs of different real-world scenarios."
+  },
+  "opp:hole:W4362714312->W2773523653": {
+    "verdict": "not_addressing",
+    "reason": "Algorithmic fairness techniques in graph mining do not solve the fundamental data limitation of missing contextual information, such as personal responsibility and life history, required by egalitarian political theories.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W4362714312",
+    "b_pid": "openalex:W2773523653",
+    "method": "Taxonomy and systematic review of fair graph mining",
+    "limitation": "Translating complex egalitarian theories into practical ML tasks is difficult because required contextual data regarding personal responsibility, life history, and socio-economic context is rarely captured in available datasets."
   }
 }

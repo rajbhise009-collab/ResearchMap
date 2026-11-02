@@ -1,5 +1,5 @@
 {
-  "n": 8,
+  "n": 9,
   "items": [
     {
       "from_claim_id": "openalex:W2896921383:c2",
@@ -80,6 +80,16 @@
       "b_paper_id": "openalex:W7221031988",
       "b_text": "Social media use has a very small linear association with anxiety outcomes in young people (pooled r = 0.093, 95% CI [0.059, 0.126]).",
       "explanation": "Claim A identifies a non-linear, U-shaped association where moderate use correlates with the lowest anxiety, directly conflicting with Claim B's finding of a linear association between social media use and anxiety."
+    },
+    {
+      "from_claim_id": "openalex:W7220393051:c4",
+      "to_claim_id": "openalex:W7223188562:c1",
+      "similarity": 0.8008280396461487,
+      "a_paper_id": "openalex:W7220393051",
+      "a_text": "Two large cohort studies observed a non-linear, U-shaped relationship where moderate social media use was associated with lower anxiety symptoms than persistently low or high use.",
+      "b_paper_id": "openalex:W7223188562",
+      "b_text": "Social media engagement is associated with higher levels of anxiety.",
+      "explanation": "Claim A finds a non-linear, U-shaped relationship where moderate use is linked to lower anxiety than low use, directly conflicting with Claim B's assertion of a general association between social media engagement and higher anxiety."
     }
   ]
 }

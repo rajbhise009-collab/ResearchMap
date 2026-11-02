@@ -1,0 +1,202 @@
+{
+  "paper_id": "openalex:W7223247033",
+  "claims": [
+    {
+      "id": "openalex:W7223247033:c1",
+      "paper_id": "openalex:W7223247033",
+      "text": "Daily social media hours were not significantly correlated with sleep duration in the synthetic dataset (r = -0.009, p = .743).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223247033:c2",
+      "paper_id": "openalex:W7223247033",
+      "text": "Screen time before sleep was not significantly correlated with sleep duration in the synthetic dataset (r = .010, p = .723).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223247033:c3",
+      "paper_id": "openalex:W7223247033",
+      "text": "Daily social media hours were not significantly correlated with anxiety level in the synthetic dataset (r = .028, p = .335).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223247033:c4",
+      "paper_id": "openalex:W7223247033",
+      "text": "Daily social media hours were not significantly correlated with stress level in the synthetic dataset (r = .031, p = .288).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223247033:c5",
+      "paper_id": "openalex:W7223247033",
+      "text": "A multiple linear regression model predicting sleep duration from daily social media hours, screen time before sleep, age, gender, and physical activity explained almost none of the variance (R² = .001, p = .895).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223247033:c6",
+      "paper_id": "openalex:W7223247033",
+      "text": "Mean sleep duration did not differ significantly across quartile-based daily social media usage groups (F(3, 1196) = 1.10, p = .348, η² = .003).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223247033:c7",
+      "paper_id": "openalex:W7223247033",
+      "text": "In the synthetic dataset, records labeled with depression had significantly lower mean sleep duration than records without the depression label (t(40.99) = -15.75, p < .001, Cohen's d = -1.22).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223247033:c8",
+      "paper_id": "openalex:W7223247033",
+      "text": "Sleep duration was negatively correlated with the synthetic depression label (r = -.191, p < .001), while daily social media use was positively correlated with it (r = .175, p < .001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7223247033:e1",
+      "claim_id": "openalex:W7223247033:c1",
+      "description": "Pearson correlation between daily social media hours and sleep duration was r = −.009, p = .743, 95% CI [−.066, .047] across 1,200 records.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7223247033:e2",
+      "claim_id": "openalex:W7223247033:c2",
+      "description": "Pearson correlation between screen time before sleep and sleep duration was r = .010, p = .723, 95% CI [−.046, .067].",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7223247033:e3",
+      "claim_id": "openalex:W7223247033:c3",
+      "description": "Pearson correlation between daily social media hours and anxiety level was r = .028, p = .335, 95% CI [−.029, .084].",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7223247033:e4",
+      "claim_id": "openalex:W7223247033:c4",
+      "description": "Pearson correlation between daily social media hours and stress level was r = .031, p = .288, 95% CI [−.026, .087].",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7223247033:e5",
+      "claim_id": "openalex:W7223247033:c5",
+      "description": "Multiple regression predicting sleep duration gave F(5, 1194) = 0.33, p = .895, R² = .001, adjusted R² = −.003, with daily social media use (B = -0.007, p = .735) and screen time before sleep (B = 0.020, p = .730).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7223247033:e6",
+      "claim_id": "openalex:W7223247033:c6",
+      "description": "One-way ANOVA across four quartile groups showed mean sleep hours between 6.36 and 6.54 hours, F(3, 1196) = 1.10, p = .348, η² = .003.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7223247033:e7",
+      "claim_id": "openalex:W7223247033:c7",
+      "description": "Welch independent-samples t test showed records labeled 1 had lower mean sleep duration (M = 4.76, SD = 0.57, n = 31) than records labeled 0 (M = 6.49, SD = 1.43, n = 1,169), t(40.99) = −15.75, p < .001, Cohen's d = −1.22.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7223247033:e8",
+      "claim_id": "openalex:W7223247033:c8",
+      "description": "Point-biserial correlations showed sleep duration r = -.191, p < .001 and daily social media use r = .175, p < .001 with the binary depression label.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7223247033:m1",
+      "paper_id": "openalex:W7223247033",
+      "name": "Correlational analysis with Bonferroni correction",
+      "description": "Calculated Pearson correlation coefficients with Bonferroni-adjusted alpha of .0125 to test four primary hypotheses regarding screen use, sleep duration, anxiety, and stress.",
+      "datasets": [
+        "Teen Mental Health Dataset (Kaggle)"
+      ],
+      "conditions": [
+        "N = 1,200 records",
+        "Bonferroni-adjusted alpha = .0125 for primary tests",
+        "Two-tailed t-distribution with N - 2 degrees of freedom"
+      ]
+    },
+    {
+      "id": "openalex:W7223247033:m2",
+      "paper_id": "openalex:W7223247033",
+      "name": "Multiple linear regression and one-way ANOVA",
+      "description": "Regressed sleep duration onto daily social media hours, screen time before sleep, age, gender, and physical activity, and conducted a one-way ANOVA across quartile-based social media usage groups.",
+      "datasets": [
+        "Teen Mental Health Dataset (Kaggle)"
+      ],
+      "conditions": [
+        "Dependent variable: sleep duration",
+        "Predictors: daily social media use, screen time before sleep, age, female gender dummy, physical activity",
+        "Quartile cut points: 2.8, 4.5, and 6.3 hours/day"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7223247033:l1",
+      "paper_id": "openalex:W7223247033",
+      "text": "The data were artificially generated and did not come from real adolescents, meaning results cannot be generalized to real adolescents.",
+      "normalized_category": "synthetic-data-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7223247033:l2",
+      "paper_id": "openalex:W7223247033",
+      "text": "The dataset documentation does not explain how anxiety, stress, addiction, and social interaction were measured, nor are they documented as validated instruments.",
+      "normalized_category": "measurement-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7223247033:l3",
+      "paper_id": "openalex:W7223247033",
+      "text": "The binary depression label is neither explained nor validated as a clinical measure, and suffers from severe class imbalance (only 31 of 1,200 records labeled 1).",
+      "normalized_category": "construct-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7223247033:l4",
+      "paper_id": "openalex:W7223247033",
+      "text": "The dataset provides information at only one point in time and cannot determine temporal changes or causal relationships.",
+      "normalized_category": "cross-sectional-design",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7223247033:l5",
+      "paper_id": "openalex:W7223247033",
+      "text": "Most existing studies on social media and youth mental health are correlational and rely on self-reported data, making it difficult to establish whether social media directly causes these outcomes.",
+      "normalized_category": "self-report-confounding",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7223247033:f1",
+      "paper_id": "openalex:W7223247033",
+      "text": "Test nonlinear patterns and interaction effects among social media use, pre-bedtime screen use, addiction, and social interaction, and examine stability under alternative grouping methods.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7223247033:f2",
+      "paper_id": "openalex:W7223247033",
+      "text": "Collect real longitudinal adolescent data with validated psychological measures to evaluate adolescent well-being.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-11-02T13:42:37.546266Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

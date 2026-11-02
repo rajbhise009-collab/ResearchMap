@@ -1,0 +1,118 @@
+{
+  "paper_id": "openalex:W7222568097",
+  "claims": [
+    {
+      "id": "openalex:W7222568097:c1",
+      "paper_id": "openalex:W7222568097",
+      "text": "Algorithmic bias reduces consumers' acceptance intention of AI recommendations.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222568097:c2",
+      "paper_id": "openalex:W7222568097",
+      "text": "The negative effect of algorithmic bias on acceptance intention is more pronounced under similarity-based recommendation strategies compared to relevance-based recommendation strategies.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222568097:c3",
+      "paper_id": "openalex:W7222568097",
+      "text": "Relevance-based recommendations enhance recommendation acceptance intention relative to similarity-based recommendations by reducing self-identity threat.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222568097:c4",
+      "paper_id": "openalex:W7222568097",
+      "text": "Perceived warmth moderates the mediation pathway of self-identity threat between recommendation strategy and acceptance intention.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222568097:c5",
+      "paper_id": "openalex:W7222568097",
+      "text": "Privacy concerns moderate the mediation pathway of self-identity threat between recommendation strategy and acceptance intention.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7222568097:c6",
+      "paper_id": "openalex:W7222568097",
+      "text": "Similarity-based recommendations may exacerbate user resistance in the context of algorithmic bias.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7222568097:e1",
+      "claim_id": "openalex:W7222568097:c1",
+      "description": "Through four experimental studies (total N = 895), the authors find that algorithmic bias reduces consumers' acceptance intention.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7222568097:e2",
+      "claim_id": "openalex:W7222568097:c2",
+      "description": "Four experimental studies (total N = 895) show that the reduction in acceptance intention from algorithmic bias is more pronounced under similarity-based (vs. relevance-based) recommendation strategies.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7222568097:e3",
+      "claim_id": "openalex:W7222568097:c3",
+      "description": "Results indicate that relevance-based recommendations (vs. similarity-based recommendations) enhance recommendation acceptance intention by reducing self-identity threat.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7222568097:e4",
+      "claim_id": "openalex:W7222568097:c4",
+      "description": "Findings demonstrate that perceived warmth moderates the mediation pathway of self-identity threat.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7222568097:e5",
+      "claim_id": "openalex:W7222568097:c5",
+      "description": "Findings demonstrate that privacy concerns moderate the mediation pathway of self-identity threat.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7222568097:e6",
+      "claim_id": "openalex:W7222568097:c6",
+      "description": "Empirical results from four experimental studies reveal that similarity-based recommendations may exacerbate user resistance in the context of algorithmic bias.",
+      "strength": 0.8
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7222568097:m1",
+      "paper_id": "openalex:W7222568097",
+      "name": "Experimental consumer behavioral studies",
+      "description": "Four experimental studies examining the impact of algorithmic bias and recommendation strategies (relevance-based vs. similarity-based) on consumer acceptance intention, mediated by self-identity threat and moderated by perceived warmth and privacy concerns.",
+      "datasets": [],
+      "conditions": [
+        "Relevance-based recommendations",
+        "Similarity-based recommendations",
+        "Algorithmic bias present",
+        "Sample size total N = 895"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7222568097:l1",
+      "paper_id": "openalex:W7222568097",
+      "text": "How different recommendation strategies interact with algorithmic bias to influence consumers' psychological responses in intelligent recommendation scenarios remains underexplored.",
+      "normalized_category": "literature-gap",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-11-02T13:42:37.188104Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

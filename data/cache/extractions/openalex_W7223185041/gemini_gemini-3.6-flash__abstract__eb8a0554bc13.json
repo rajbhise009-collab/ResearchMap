@@ -1,0 +1,105 @@
+{
+  "paper_id": "openalex:W7223185041",
+  "claims": [
+    {
+      "id": "openalex:W7223185041:c1",
+      "paper_id": "openalex:W7223185041",
+      "text": "Higher baseline DASH score is associated with lower country-level ischemic heart disease mortality during 2010–2021 (MRR 0.914 per 1-SD higher score, 95% CI 0.849–0.983).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223185041:c2",
+      "paper_id": "openalex:W7223185041",
+      "text": "Higher baseline AHEI score is associated with lower country-level ischemic heart disease mortality during 2010–2021 (MRR 0.908 per 1-SD higher score, 95% CI 0.838–0.985).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223185041:c3",
+      "paper_id": "openalex:W7223185041",
+      "text": "No significant associations with country-level ischemic heart disease mortality are observed for MDS, TJDS, PHDI, or QUANTIDD.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223185041:c4",
+      "paper_id": "openalex:W7223185041",
+      "text": "DASH has the highest AIC weight (0.434) among the evaluated dietary scores, followed by AHEI (0.341), with a slightly higher marginal R2 for DASH.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223185041:c5",
+      "paper_id": "openalex:W7223185041",
+      "text": "Pairwise comparisons show no statistically significant differences in effect estimates between DASH and AHEI or between either of these scores and the other dietary scores.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7223185041:e1",
+      "claim_id": "openalex:W7223185041:c1",
+      "description": "MRRs per 1-SD higher score were 0.914 (95% confidence interval, 0.849–0.983) for DASH in multivariable-adjusted linear mixed-effects models across 148 countries.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7223185041:e2",
+      "claim_id": "openalex:W7223185041:c2",
+      "description": "MRRs per 1-SD higher score were 0.908 (95% confidence interval, 0.838–0.985) for AHEI in multivariable-adjusted linear mixed-effects models across 148 countries.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7223185041:e3",
+      "claim_id": "openalex:W7223185041:c3",
+      "description": "No significant associations were observed for MDS, TJDS, PHDI, or QUANTIDD in multivariable-adjusted linear mixed-effects models assessing annual IHD mortality.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7223185041:e4",
+      "claim_id": "openalex:W7223185041:c4",
+      "description": "DASH had the highest AIC weight (0.434), followed by AHEI (0.341), with a slightly higher marginal R2 for DASH.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7223185041:e5",
+      "claim_id": "openalex:W7223185041:c5",
+      "description": "Pairwise comparisons showed no statistically significant differences in effect estimates between DASH and AHEI or between either of these scores and the other dietary scores.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7223185041:m1",
+      "paper_id": "openalex:W7223185041",
+      "name": "Multivariable-adjusted linear mixed-effects modeling of food supply-based dietary scores",
+      "description": "Calculated six dietary scores (DASH, AHEI, MDS, TJDS, PHDI, QUANTIDD) from baseline food balance data and assessed their associations with annual age-standardized IHD mortality over time.",
+      "datasets": [
+        "2010 FAOSTAT Food Balance Sheet data"
+      ],
+      "conditions": [
+        "148 countries with populations ≥ 1 million",
+        "Outcome evaluated as age-standardized IHD mortality during 2010–2021",
+        "Time-invariant baseline dietary scores"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7223185041:l1",
+      "paper_id": "openalex:W7223185041",
+      "text": "Because this was an ecological study, the findings should not be interpreted as individual-level causal effects.",
+      "normalized_category": "ecological-fallacy",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-11-02T13:42:36.853693Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,94 @@
+{
+  "paper_id": "openalex:W7223188562",
+  "claims": [
+    {
+      "id": "openalex:W7223188562:c1",
+      "paper_id": "openalex:W7223188562",
+      "text": "Social media engagement is associated with higher levels of anxiety.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223188562:c2",
+      "paper_id": "openalex:W7223188562",
+      "text": "Social media engagement is associated with higher levels of voyeurism.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223188562:c3",
+      "paper_id": "openalex:W7223188562",
+      "text": "Social media engagement is associated with higher levels of exhibitionism.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223188562:c4",
+      "paper_id": "openalex:W7223188562",
+      "text": "Higher levels of anxiety, voyeurism, and exhibitionism increase Fear of Missing Out (FoMO).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7223188562:c5",
+      "paper_id": "openalex:W7223188562",
+      "text": "Psychological strain associated with FoMO leads to compulsive social media use.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7223188562:e1",
+      "claim_id": "openalex:W7223188562:c1",
+      "description": "A 30-item quantitative survey of 108 children showed social media engagement is associated with higher levels of anxiety.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7223188562:e2",
+      "claim_id": "openalex:W7223188562:c2",
+      "description": "Survey results from 108 children showed social media engagement is associated with higher levels of voyeurism.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7223188562:e3",
+      "claim_id": "openalex:W7223188562:c3",
+      "description": "Survey findings from 108 children demonstrated an association between social media engagement and higher levels of exhibitionism.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7223188562:e4",
+      "claim_id": "openalex:W7223188562:c4",
+      "description": "Quantitative analysis of 108 survey responses found that anxiety, voyeurism, and exhibitionism increase FoMO.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7223188562:e5",
+      "claim_id": "openalex:W7223188562:c5",
+      "description": "Survey results indicated that psychological strain results in compulsive social media use among children.",
+      "strength": 0.7
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7223188562:m1",
+      "paper_id": "openalex:W7223188562",
+      "name": "Quantitative Survey Administration",
+      "description": "A 30-item survey administered to children to analyze the relationships between social media engagement, anxiety, voyeurism, exhibitionism, FoMO, and compulsive use.",
+      "datasets": [],
+      "conditions": [
+        "Administered to 108 children",
+        "30-item survey instrument"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-11-02T13:42:37.545726Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

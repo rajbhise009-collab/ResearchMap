@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-26",
-  "n_papers_in_check": 103,
+  "date": "2026-11-02",
+  "n_papers_in_check": 104,
   "paper_ids": [
     "openalex:W1503681091",
     "openalex:W1520609538",
@@ -104,7 +104,8 @@
     "openalex:W4392600894",
     "openalex:W7220864522",
     "openalex:W7221647136",
-    "openalex:W7221781168"
+    "openalex:W7221781168",
+    "openalex:W7223185041"
   ],
   "shortlist_pairs": 160,
   "classified_pairs": 160,
