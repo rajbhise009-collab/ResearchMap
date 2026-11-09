@@ -1,9 +1,9 @@
 {
-  "papers": 110,
-  "full_text": 26,
+  "papers": 111,
+  "full_text": 27,
   "abstract_only": 84,
-  "n_extractions": 109,
-  "extraction_coverage_note": "Claims read from 109 of 110 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
+  "n_extractions": 110,
+  "extraction_coverage_note": "Claims read from 110 of 111 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
   "zero_finding_note": null,
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [],
@@ -13,26 +13,26 @@
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
-    "date": "2026-11-02",
+    "date": "2026-11-09",
     "shortlist_settings": {
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 109
+    "papers_covered": 110
   },
-  "extraction_coverage_share": 0.990909090909091,
+  "extraction_coverage_share": 0.990990990990991,
   "assertion_strength": {
-    "total_claims": 498,
+    "total_claims": 505,
     "distribution": {
-      "firm": 480,
+      "firm": 487,
       "hedged": 18
     },
-    "firm_share": 0.963855421686747,
-    "hedged_share": 0.03614457831325301
+    "firm_share": 0.9643564356435643,
+    "hedged_share": 0.03564356435643564
   },
   "gap_type_counts": {
-    "n_papers": 109,
-    "n_limitations": 163,
+    "n_papers": 110,
+    "n_limitations": 171,
     "limitation_categories": {
       "cross-sectional-design": 10,
       "self-report-bias": 7,
@@ -167,9 +167,17 @@
       "insufficient-mediator-granularity": 1,
       "synthetic-data-validity": 1,
       "construct-validity": 1,
-      "self-report-confounding": 1
+      "self-report-confounding": 1,
+      "unobserved-outreach": 1,
+      "llm-annotation-limitations": 1,
+      "abstract-only-coding": 1,
+      "missing-abstract-bias": 1,
+      "corpus-recall-bounds": 1,
+      "incomplete-metadata": 1,
+      "author-disambiguation-error": 1,
+      "limited-statistical-power": 1
     },
-    "n_future_work_items": 112
+    "n_future_work_items": 114
   },
   "n_confirmed_contradictions": 2,
   "raw_flagged_contradictions": 9,
@@ -189,9 +197,9 @@
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 78,
+  "core": 79,
   "peripheral": 32,
   "manifest_hash": null,
   "relationships": 9,
-  "note": "Multi-domain library \u2014 claims extracted from 109 of 110 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 110 of 111 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

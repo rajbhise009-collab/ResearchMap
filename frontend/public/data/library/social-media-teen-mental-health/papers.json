@@ -1,5 +1,5 @@
 {
-  "total": 110,
+  "total": 111,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1207,6 +1207,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.63313/ssh.9144",
       "venue": "Social Sciences and Humanities",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7224266505",
+      "wid": "W7224266505",
+      "title": "The Critique Came First: Citation and Authorship Continuity in Academic Challenges to the Youth Social Media Harm Thesis Before and After Meta's March 2023 Notes",
+      "year": 2026,
+      "doi": "https://doi.org/10.68481/rs95tu",
+      "venue": null,
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false

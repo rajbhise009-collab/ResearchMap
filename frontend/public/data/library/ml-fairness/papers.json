@@ -1,5 +1,5 @@
 {
-  "total": 115,
+  "total": 116,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1265,6 +1265,17 @@
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W4416191447",
+      "wid": "W4416191447",
+      "title": "Refocusing algorithmic fairness on feature-level bias: A diagnostic approach using dutch EHR data",
+      "year": 2026,
+      "doi": "https://doi.org/10.1371/journal.pdig.0001105",
+      "venue": "PLOS Digital Health",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
     }
   ]
 }

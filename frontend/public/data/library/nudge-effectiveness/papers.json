@@ -1,5 +1,5 @@
 {
-  "total": 44,
+  "total": 45,
   "items": [
     {
       "paper_id": "https://openalex.org/W1481908410",
@@ -484,6 +484,17 @@
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W4386392053",
+      "wid": "W4386392053",
+      "title": "An accuracy self-nudge to reduce misinformation sharing online.",
+      "year": 2026,
+      "doi": "https://doi.org/10.1037/tmb0000221",
+      "venue": "Technology Mind and Behavior",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
     }
   ]
 }

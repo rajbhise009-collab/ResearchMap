@@ -12,21 +12,21 @@
       "built": "2026-11-02"
     },
     "ml-fairness": {
-      "papers": 115,
-      "claims_read": 115,
-      "built": "2026-11-02"
+      "papers": 116,
+      "claims_read": 116,
+      "built": "2026-11-09"
     },
     "nudge-effectiveness": {
-      "papers": 44,
-      "claims_read": 44,
+      "papers": 45,
+      "claims_read": 45,
       "built": null
     },
     "social-media-teen-mental-health": {
-      "papers": 110,
-      "claims_read": 109,
+      "papers": 111,
+      "claims_read": 110,
       "built": null
     }
   },
-  "total_papers": 486,
+  "total_papers": 489,
   "n_libraries": 5
 }

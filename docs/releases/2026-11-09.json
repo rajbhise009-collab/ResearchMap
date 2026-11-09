@@ -1,0 +1,159 @@
+{
+ "date": "2026-11-09",
+ "parent_commit": "0a93b7ec5af7d13705e0397fc66918a6e8f38003",
+ "libraries": {
+  "llm-calibration": {
+   "papers": 113,
+   "results": 66,
+   "set_aside": 10,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "7f21e33111392ad66f50d9c30db00a5660a9d29dfd1bc696f52798beeb05b809"
+  },
+  "diet-and-mortality": {
+   "papers": 104,
+   "results": 13,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "19cf9cb32cb39e425c71099f49ac8785f7c56b6d04590cf7ca908f1927a9070d"
+  },
+  "ml-fairness": {
+   "papers": 116,
+   "results": 71,
+   "set_aside": 0,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "5b667d8976080c48fa69e0738ed6a804443de2a5f276c6d3721c4333053fc13c"
+  },
+  "nudge-effectiveness": {
+   "papers": 45,
+   "results": 9,
+   "set_aside": 0,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "1626d09257e990504645993d3a4341b7c62ef6dfcbd2fefd8d092a1af849b2a3"
+  },
+  "social-media-teen-mental-health": {
+   "papers": 111,
+   "results": 33,
+   "set_aside": 7,
+   "flagged_not_checked": 3,
+   "opportunities_sha256": "715de1c5c373d59d30a765c73a196ed9befbcd80c0d7b5bda71dffe7a7526ec5"
+  }
+ },
+ "ledger_inr": 1297.6735,
+ "ledger_cap_inr": 1450.0,
+ "gates": [
+  {
+   "gate": "typecheck",
+   "ok": true
+  },
+  {
+   "gate": "production build (+ consistency before and after)",
+   "ok": true
+  },
+  {
+   "gate": "full tests",
+   "ok": true
+  },
+  {
+   "gate": "docs check",
+   "ok": true
+  },
+  {
+   "gate": "consistency script",
+   "ok": true
+  },
+  {
+   "gate": "banned-phrase tests",
+   "ok": true
+  },
+  {
+   "gate": "search regression suite",
+   "ok": true
+  },
+  {
+   "gate": "hardening tests (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "browser hunt (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "smoke checks on the build",
+   "ok": true
+  }
+ ],
+ "results_changed": {
+  "llm-calibration": {
+   "shown_before": 66,
+   "shown_after": 66,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "diet-and-mortality": {
+   "shown_before": 13,
+   "shown_after": 13,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "ml-fairness": {
+   "shown_before": 70,
+   "shown_after": 71,
+   "removed_shown": [],
+   "removed_not_shown": [
+    {
+     "id": "opp-ml-fairness-hole-w3101206394-w4362714312",
+     "headline": "\u201cTaxonomic Conceptual Synthesis\u201d might solve a problem reported by \u201cFairness in Graph Mining: A Survey\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2809878087-w4362714312",
+     "headline": "\u201cUnifying Case Study Demonstration\u201d might solve a problem reported by \u201cFairness in Graph Mining: A Survey\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2040825624-w4362714312",
+     "headline": "\u201cFairness-aware Regularization for Probabilistic Discriminative Models\u201d might solve a problem reported by \u201cFairness in Graph Mining: A Survey\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w3101206394-w3167179910",
+     "headline": "\u201cTaxonomic Conceptual Synthesis\u201d might solve a problem reported by \u201cA scoping review on the use of machine learning in research on social determinants of health: Trends and research\u2026\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w2809878087-w3167179910",
+     "headline": "\u201cUnifying Case Study Demonstration\u201d might solve a problem reported by \u201cA scoping review on the use of machine learning in research on social determinants of health: Trends and research\u2026\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    },
+    {
+     "id": "opp-ml-fairness-hole-w4362714312-w2773523653",
+     "headline": "\u201cTaxonomy and systematic review of fair graph mining\u201d might solve a problem reported by \u201cFairness in Machine Learning: Lessons from Political Philosophy\u201d",
+     "was": "set_aside",
+     "reason": "method-transfer candidates are recomputed every run from the library's paper clusters; with the library's current papers this pair is no longer a candidate"
+    }
+   ],
+   "verdict_changed": []
+  },
+  "nudge-effectiveness": {
+   "shown_before": 7,
+   "shown_after": 9,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "social-media-teen-mental-health": {
+   "shown_before": 33,
+   "shown_after": 33,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  }
+ }
+}

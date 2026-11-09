@@ -257,9 +257,9 @@ starting table, not a prediction claim.
 |:--|--:|:--|--:|--:|:--|:--|:--|
 | llm-calibration | 0.818 | high | 2 | 0 | 113 / 113 (100%) | 437 / 437 | own shortlist settings (0.78, cap 10); both flags set aside as regime conflation |
 | diet-and-mortality | 0.44 | moderate | 10 | 5 | 104 / 104 (100%) | 160 / 160 | hand audit is the builder's, not expert review |
-| ml-fairness | 0.667 | high | 0 | 0 | 115 / 115 (100%) | 94 / 94 | zero not explained (see multi-domain.md §2, hypotheses untested) |
-| nudge-effectiveness | 0.504 | moderate | 0 | 0 | 44 / 44 (100%) | 23 / 23 | built 2026-10 or later; one hand audit by the builder, not experts |
-| social-media-teen-mental-health | 0.833 | high | 9 | 2 | 109 / 110 (99%) | 220 / 220 | 22% full text; the rubric does not enforce the adolescent population (blind audit 87% in/out, 67% exact); builder's audit, not experts |
+| ml-fairness | 0.667 | high | 0 | 0 | 116 / 116 (100%) | 94 / 94 | zero not explained (see multi-domain.md §2, hypotheses untested) |
+| nudge-effectiveness | 0.504 | moderate | 0 | 0 | 45 / 45 (100%) | 23 / 23 | built 2026-10 or later; one hand audit by the builder, not experts |
+| social-media-teen-mental-health | 0.833 | high | 9 | 2 | 110 / 111 (99%) | 220 / 220 | 22% full text; the rubric does not enforce the adolescent population (blind audit 87% in/out, 67% exact); builder's audit, not experts |
 <!-- /gen:measured -->
 
 Two of three predictions miss, now without coverage confounding:

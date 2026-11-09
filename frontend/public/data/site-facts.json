@@ -127,13 +127,13 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "built": "2026-11-02",
+      "built": "2026-11-09",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 115,
-      "claims_read": 115,
-      "full_text": 56,
+      "papers": 116,
+      "claims_read": 116,
+      "full_text": 57,
       "abstract_only": 59,
-      "gap_cards": 70,
+      "gap_cards": 71,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -155,17 +155,17 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 69,
+          "count": 70,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 70,
-      "set_aside_total": 6,
+      "results_total": 71,
+      "set_aside_total": 0,
       "growth": {
         "grows": true,
-        "added": 16,
-        "last_added": "2026-10-26"
+        "added": 17,
+        "last_added": "2026-11-02"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (94 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
@@ -190,11 +190,11 @@
       "blurb": "Whether defaults, reminders, social-norm messages and other changes to how choices are presented change what people do, and how large those effects really are.",
       "built": null,
       "built_basis": null,
-      "papers": 44,
-      "claims_read": 44,
-      "full_text": 12,
+      "papers": 45,
+      "claims_read": 45,
+      "full_text": 13,
       "abstract_only": 32,
-      "gap_cards": 7,
+      "gap_cards": 9,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -204,9 +204,9 @@
         },
         {
           "type": "persistent_limitations",
-          "count": 0,
+          "count": 2,
           "label": "recurring limitations",
-          "note": "none were found among the papers read, which is not the same as none existing"
+          "note": null
         },
         {
           "type": "structural_holes",
@@ -221,12 +221,12 @@
           "note": null
         }
       ],
-      "results_total": 7,
+      "results_total": 9,
       "set_aside_total": 0,
       "growth": {
         "grows": true,
-        "added": 2,
-        "last_added": "2026-10-12"
+        "added": 3,
+        "last_added": "2026-11-02"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (23 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
@@ -249,9 +249,9 @@
       "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
       "built": null,
       "built_basis": null,
-      "papers": 110,
-      "claims_read": 109,
-      "full_text": 26,
+      "papers": 111,
+      "claims_read": 110,
+      "full_text": 27,
       "abstract_only": 84,
       "gap_cards": 33,
       "results": [
@@ -284,8 +284,8 @@
       "set_aside_total": 7,
       "growth": {
         "grows": true,
-        "added": 10,
-        "last_added": "2026-10-26"
+        "added": 11,
+        "last_added": "2026-11-02"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (220 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",

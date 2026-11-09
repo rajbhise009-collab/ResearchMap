@@ -20,9 +20,9 @@ FX: 1 USD = ₹84.
 |:--|:--|--:|--:|--:|--:|--:|
 | LLM calibration | `llm-calibration` | 113 | 100 | 13 | 67 (59%) | 113 of 113 |
 | Diet & mortality | `diet-and-mortality` | 104 | 71 | 33 | 17 (16%) | 104 of 104 |
-| ML fairness | `ml-fairness` | 115 | 115 | 0 | 56 (49%) | 115 of 115 |
-| Nudges | `nudge-effectiveness` | 44 | 37 | 7 | 12 (27%) | 44 of 44 |
-| Social media & teens | `social-media-teen-mental-health` | 110 | 78 | 32 | 26 (24%) | 109 of 110 |
+| ML fairness | `ml-fairness` | 116 | 116 | 0 | 57 (49%) | 116 of 116 |
+| Nudges | `nudge-effectiveness` | 45 | 38 | 7 | 13 (29%) | 45 of 45 |
+| Social media & teens | `social-media-teen-mental-health` | 111 | 79 | 32 | 27 (24%) | 110 of 111 |
 <!-- /gen:corpus -->
 
 Diet & mortality was completed in iteration 3 (synchronous API). ML
@@ -140,7 +140,7 @@ part of the honest contradiction count, not optional polish.
 ### ML fairness — what was measured
 
 <!-- gen:mlf-facts -->
-- Claims extracted from 115 of 115 papers.
+- Claims extracted from 116 of 116 papers.
 - 94 of 94 shortlisted pairs classified; 0 flagged as contradictions.
 <!-- /gen:mlf-facts -->
 - Pairs touching the impossibility-result papers, rebuilt from the cached
@@ -276,9 +276,9 @@ killed mid-loop; the ledger entries in `data/spend_ledger.json` under
 |:--|--:|--:|--:|
 | LLM calibration | 67 | 46 | 59% |
 | Diet & mortality | 17 | 87 | 16% |
-| ML fairness | 56 | 59 | 49% |
-| Nudges | 12 | 32 | 27% |
-| Social media & teens | 26 | 84 | 24% |
+| ML fairness | 57 | 59 | 49% |
+| Nudges | 13 | 32 | 29% |
+| Social media & teens | 27 | 84 | 24% |
 <!-- /gen:fulltext -->
 
 Diet's full-text share is the lowest of the three. Biomedical journals are
@@ -293,9 +293,9 @@ Gap-type raw counts from the extractions:
 | library | papers extracted | limitations | future-work items |
 |:--|--:|--:|--:|
 | Diet & mortality | 104 (17 full text) | 147 | 59 |
-| ML fairness | 115 (56 full text) | 262 | 170 |
-| Nudges | 44 (12 full text) | 79 | 49 |
-| Social media & teens | 109 (26 full text) | 163 | 112 |
+| ML fairness | 116 (57 full text) | 268 | 174 |
+| Nudges | 45 (13 full text) | 85 | 53 |
+| Social media & teens | 110 (27 full text) | 171 | 114 |
 <!-- /gen:gap-types -->
 
 ## 6. Spend
@@ -325,26 +325,26 @@ edited.
 | `extract_nudges_batch` | 42 | $0.5980 | ₹50.24 |
 | `extract_social-media_batch` | 100 | $1.5277 | ₹128.32 |
 | `fw_match_diet-and-mortality` | 29 | $0.0562 | ₹4.72 |
-| `fw_match_ml-fairness` | 272 | $0.4422 | ₹37.15 |
-| `fw_match_nudge-effectiveness` | 49 | $0.0594 | ₹4.99 |
+| `fw_match_ml-fairness` | 275 | $0.4469 | ₹37.54 |
+| `fw_match_nudge-effectiveness` | 52 | $0.0669 | ₹5.62 |
 | `fw_match_social-media-teen-mental-health` | 185 | $0.3233 | ₹27.16 |
 | `grow_contradiction_diet-and-mortality` | 8 | $0.0169 | ₹1.42 |
 | `grow_contradiction_ml-fairness` | 3 | $0.0095 | ₹0.80 |
 | `grow_contradiction_nudge-effectiveness` | 4 | $0.0133 | ₹1.12 |
 | `grow_contradiction_social-media-teen-mental-health` | 59 | $0.1703 | ₹14.30 |
-| `grow_embed` | 36 | $0.0376 | ₹3.16 |
+| `grow_embed` | 42 | $0.0404 | ₹3.40 |
 | `grow_extract_diet-and-mortality_batch` | 7 | $0.0837 | ₹7.03 |
-| `grow_extract_ml-fairness_batch` | 17 | $0.2859 | ₹24.02 |
-| `grow_extract_nudge-effectiveness_batch` | 2 | $0.0224 | ₹1.88 |
-| `grow_extract_social-media-teen-mental-health_batch` | 12 | $0.2067 | ₹17.36 |
+| `grow_extract_ml-fairness_batch` | 18 | $0.3147 | ₹26.43 |
+| `grow_extract_nudge-effectiveness_batch` | 3 | $0.0461 | ₹3.88 |
+| `grow_extract_social-media-teen-mental-health_batch` | 13 | $0.2349 | ₹19.73 |
 | `hedge_diet-and-mortality` | 200 | $0.3444 | ₹28.93 |
 | `hole_confirm_ml-fairness` | 23 | $0.0290 | ₹2.44 |
 | `hole_confirm_social-media-teen-mental-health` | 1 | $0.0021 | ₹0.18 |
 | `unknown` | 200 | $0.0060 | ₹0.50 |
 | `validation_v1_embed` | 5 | $0.1351 | ₹11.35 |
-| **total (ledger, after corrections)** | 2151 | **$15.3529** | **₹1,289.64** |
+| **total (ledger, after corrections)** | 2166 | **$15.4485** | **₹1,297.67** |
 | ceiling (config/money.json: account total − safety buffer) |  |  | ₹1,450.00 |
-| remaining (money rule) |  |  | ₹160.36 |
+| remaining (money rule) |  |  | ₹152.33 |
 <!-- /gen:spend -->
 
 The project budgets against this ledger, which records more spend than
@@ -376,8 +376,8 @@ translation as LLM calibration (`backend/app/api/library_cards.py`,
 |:--|--:|--:|--:|--:|--:|--:|
 | LLM calibration | 0 | 1 | 2 | 63 | 10 | 66 |
 | Diet & mortality | 5 | 2 | 0 | 6 | 5 | 13 |
-| ML fairness | 0 | 1 | 0 | 69 | 6 | 70 |
-| Nudges | 0 | 0 | 0 | 7 | 0 | 7 |
+| ML fairness | 0 | 1 | 0 | 70 | 0 | 71 |
+| Nudges | 0 | 2 | 0 | 7 | 0 | 9 |
 | Social media & teens | 2 | 4 | 0 | 27 | 7 | 33 |
 <!-- /gen:scorer-yields -->
 
