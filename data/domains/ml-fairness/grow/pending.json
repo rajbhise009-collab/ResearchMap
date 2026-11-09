@@ -1,0 +1,3718 @@
+{
+ "batch_id": "ngpxtm4x7rktrt80y0okdg02oula41qyzj7h",
+ "slug": "ml-fairness",
+ "submitted_on": "2026-11-09",
+ "submitted_at": 1794233610.893079,
+ "projected_inr": 7.676991,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W4416338790": "fulltext",
+  "openalex:W4416249028": "fulltext",
+  "openalex:W7225077727": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W4416338790",
+   "openalex_id": "https://openalex.org/W4416338790",
+   "title": "Minority Collective Action for User-Side Fairness",
+   "year": 2026,
+   "doi": "https://doi.org/10.1145/3846167.3848593",
+   "venue": "ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO)",
+   "field": "computer science",
+   "cited_by_count": 4,
+   "abstract": "Machine learning models often preserve biases present in training data, leading to unfair treatment of certain minority groups. Despite an array of existing firm-side bias-mitigation techniques, these methods typically incur utility costs and require organizational buy-in. Recognizing that many models rely on user-contributed data, end-users can induce fairness through the framework of Algorithmic Collective Action. In this setting, a coordinated minority group strategically relabels its own data to enhance fairness without altering the firm\u2019s training process. We design practical, model-agnostic, minority-only collective-action methods and validate them on real-world datasets. Our findings show that a subgroup of the minority can substantially reduce unfairness with little impact on overall prediction error.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur within 30 tokens; core scope: same sentence: fairness 'biases' + algorithmic 'Machine learning'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "arxiv-openalex",
+   "abstract_only": false
+  },
+  {
+   "wid": "W4416249028",
+   "openalex_id": "https://openalex.org/W4416249028",
+   "title": "Fairness in infectious disease modeling",
+   "year": 2026,
+   "doi": "https://doi.org/10.1038/s41467-026-78981-0",
+   "venue": "Nature Communications",
+   "field": "mathematics",
+   "cited_by_count": 1,
+   "abstract": "ABSTRACT The concept of fairness has been extensively examined within the domains of Machine Learning and Artificial Intelligence more broadly. It remains, however, largely underexplored in the field of Computational Epidemiology. Considering the substantial influence that epidemic models exert on public health policy, particularly in the context of outbreak preparedness and response, this shortcoming is of great relevance. Here, we propose a mathematical framework, grounded in core principles from Social Epidemiology, for evaluating the fairness of computational epidemic models. We begin by applying our framework to a range of epidemic modeling approaches and simulation scenarios, such as the initial spread of COVID-19 in London, New York, and Santiago de Chile, as well as the 2016 Zika virus outbreak in Colombia, demonstrating its consistent capacity to assess model fairness across diverse disease dynamics. Subsequently, we illustrate how our definition of fairness can be incorporated into the design of immunization strategies as a way to enhance health equity while simultaneously improving the overall effectiveness of such interventions. Overall, our results offer a new systematic methodology for quantifying fairness in computational epidemiology.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur within 30 tokens; core scope: same sentence: fairness 'fairness' + algorithmic 'Machine Learning'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  },
+  {
+   "wid": "W7225077727",
+   "openalex_id": "https://openalex.org/W7225077727",
+   "title": "FairSEP: Harmonizing Multiple Fairness Metrics in Graph Neural Networks via Pareto Optimization",
+   "year": 2026,
+   "doi": "https://doi.org/10.1145/3799682.3840632",
+   "venue": "ACM International Conference on Information and Knowledge Management (CIKM)",
+   "field": "computer science",
+   "cited_by_count": 0,
+   "abstract": "Group fairness in Graph Neural Networks (GNNs) aims to mitigate performance disparities across demographic groups. While existing methods primarily focus on Demographic Parity and Equal Opportunity, Predictive Equality (\u0394FPR) remains under-explored, potentially leading to disparate error risks. Furthermore, these methods often rely on a single surrogate loss of fairness, which is insufficient to achieve multiple fairness criteria simultaneously. Moreover, these methods often apply uniform debiasing across different label groups, making it difficult to separately address group disparities in the positive and negative classes. Consequently, achieving an optimal trade-off between utility and multiple fairness metrics remains challenging. To address these issues, we propose FairSEP, a unified Pareto-optimized framework. Specifically, we construct a sensitive subspace from per-class centroid differences between sensitive groups, debias embeddings by removing their subspace projections, and enforce prediction consistency between original and debiased representations. On this basis, we introduce a conditional Wasserstein loss that minimizes the Wasserstein distance between predictive distributions of sensitive groups conditioned on true labels, explicitly reducing disparate error rates across groups. Finally, we design a Pareto-based strategy that automatically adjusts the loss weights to resolve conflicts between different objectives. Experiments on five benchmark datasets demonstrate that FairSEP achieves a superior trade-off compared to state-of-the-art baselines.",
+   "label": "on-domain",
+   "rationale": "strong in-domain term: 'demographic parity'; core scope: title: fairness 'Fairness' + algorithmic 'Neural Network'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W4416338790",
+   "doi": "https://doi.org/10.1145/3846167.3848593",
+   "title": "Minority Collective Action for User-Side Fairness",
+   "display_name": "Minority Collective Action for User-Side Fairness",
+   "publication_year": 2026,
+   "publication_date": "2026-11-03",
+   "ids": {
+    "openalex": "https://openalex.org/W4416338790",
+    "doi": "https://doi.org/10.1145/3846167.3848593"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1145/3846167.3848593",
+    "doi": "https://doi.org/10.1145/3846167.3848593",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1145/3846167.3848593",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S7407105071",
+     "display_name": "ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO)",
+     "issn_l": null,
+     "issn": null,
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": "https://openalex.org/P4310319798",
+     "host_organization_name": "Association for Computing Machinery",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319798"
+     ],
+     "host_organization_lineage_names": [
+      "Association for Computing Machinery"
+     ],
+     "type": "conference"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Proceedings of the 6th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization",
+    "raw_type": "proceedings-article"
+   },
+   "volume": null,
+   "type": "conference-paper",
+   "is_traditional": true,
+   "indexed_in": [
+    "arxiv",
+    "crossref",
+    "datacite"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://doi.org/10.1145/3846167.3848593",
+    "any_repository_has_fulltext": true
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5020938711",
+      "display_name": "Omri Ben-Dov",
+      "orcid": "https://orcid.org/0000-0002-3086-135X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-3086-135X"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210135521",
+       "display_name": "Max Planck Institute for Intelligent Systems",
+       "ror": "https://ror.org/04fq9j139",
+       "country_code": "DE",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I149899117",
+        "https://openalex.org/I4210135521"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4401726832",
+       "display_name": "T\u00fcbingen AI Center",
+       "ror": "https://ror.org/0107nyd78",
+       "country_code": "DE",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I149899117",
+        "https://openalex.org/I4210135521",
+        "https://openalex.org/I4401726832",
+        "https://openalex.org/I8087733"
+       ]
+      }
+     ],
+     "countries": [
+      "DE"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Omri Ben-Dov",
+     "raw_affiliation_strings": [
+      "Max Planck Institute for Intelligent Systems, T\u00fcbingen, Germany and T\u00fcbingen AI Center, T\u00fcbingen, Germany"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-3086-135X",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Max Planck Institute for Intelligent Systems, T\u00fcbingen, Germany and T\u00fcbingen AI Center, T\u00fcbingen, Germany",
+       "institution_ids": [
+        "https://openalex.org/I4210135521",
+        "https://openalex.org/I4401726832"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5008796112",
+      "display_name": "Samira Samadi",
+      "orcid": "https://orcid.org/0000-0003-3423-4414",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-3423-4414"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210135521",
+       "display_name": "Max Planck Institute for Intelligent Systems",
+       "ror": "https://ror.org/04fq9j139",
+       "country_code": "DE",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I149899117",
+        "https://openalex.org/I4210135521"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4401726832",
+       "display_name": "T\u00fcbingen AI Center",
+       "ror": "https://ror.org/0107nyd78",
+       "country_code": "DE",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I149899117",
+        "https://openalex.org/I4210135521",
+        "https://openalex.org/I4401726832",
+        "https://openalex.org/I8087733"
+       ]
+      }
+     ],
+     "countries": [
+      "DE"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Samira Samadi",
+     "raw_affiliation_strings": [
+      "Max Planck Institute for Intelligent Systems, T\u00fcbingen, Germany and T\u00fcbingen AI Center, T\u00fcbingen, Germany"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-3423-4414",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Max Planck Institute for Intelligent Systems, T\u00fcbingen, Germany and T\u00fcbingen AI Center, T\u00fcbingen, Germany",
+       "institution_ids": [
+        "https://openalex.org/I4210135521",
+        "https://openalex.org/I4401726832"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5035879433",
+      "display_name": "Amartya Sanyal",
+      "orcid": "https://orcid.org/0000-0002-4190-0449",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-4190-0449"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I124055696",
+       "display_name": "University of Copenhagen",
+       "ror": "https://ror.org/035b05819",
+       "country_code": "DK",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I124055696"
+       ]
+      }
+     ],
+     "countries": [
+      "DK"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Amartya Sanyal",
+     "raw_affiliation_strings": [
+      "University of Copenhagen, Copenhagen, Denmark"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-4190-0449",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "University of Copenhagen, Copenhagen, Denmark",
+       "institution_ids": [
+        "https://openalex.org/I124055696"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5017835131",
+      "display_name": "Alexandru \u0162ifrea",
+      "orcid": "https://orcid.org/0000-0003-0368-069X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-0368-069X"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I35440088",
+       "display_name": "ETH Zurich",
+       "ror": "https://ror.org/05a28rw58",
+       "country_code": "CH",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I2799323385",
+        "https://openalex.org/I35440088"
+       ]
+      }
+     ],
+     "countries": [
+      "CH"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Alexandru Tifrea",
+     "raw_affiliation_strings": [
+      "ETH Zurich, Zurich, Switzerland"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-0368-069X",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "ETH Zurich, Zurich, Switzerland",
+       "institution_ids": [
+        "https://openalex.org/I35440088"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 3,
+   "institutions_distinct_count": 4,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 4.114,
+   "has_fulltext": true,
+   "cited_by_count": 4,
+   "citation_normalized_percentile": {
+    "value": 0.93738104,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": true
+   },
+   "cited_by_percentile_year": {
+    "min": 89,
+    "max": 97
+   },
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "122",
+    "last_page": "137"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10883",
+    "display_name": "Ethics and Social Impacts of AI",
+    "score": 0.9976000189781189,
+    "subfield": {
+     "id": "https://openalex.org/subfields/1702",
+     "display_name": "Artificial Intelligence"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/17",
+     "display_name": "Computer Science"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.9976000189781189,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10764",
+     "display_name": "Privacy-Preserving Technologies in Data",
+     "score": 0.00039999998989515007,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12026",
+     "display_name": "Explainable Artificial Intelligence (XAI)",
+     "score": 0.0003000000142492354,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/algorithmic-fairness",
+     "display_name": "algorithmic fairness",
+     "score": 0.9120000004768372
+    },
+    {
+     "id": "https://openalex.org/keywords/minority-groups",
+     "display_name": "minority groups",
+     "score": 0.6959999799728394
+    },
+    {
+     "id": "https://openalex.org/keywords/collective-action",
+     "display_name": "collective action",
+     "score": 0.8970000147819519
+    },
+    {
+     "id": "https://openalex.org/keywords/bias-mitigation",
+     "display_name": "bias mitigation",
+     "score": 0.6380000114440918
+    },
+    {
+     "id": "https://openalex.org/keywords/model-agnostic-methods",
+     "display_name": "model-agnostic methods",
+     "score": 0.753000020980835
+    },
+    {
+     "id": "https://openalex.org/keywords/user-generated-data",
+     "display_name": "user-generated data",
+     "score": 0.5270000100135803
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C2777932401",
+     "wikidata": "https://www.wikidata.org/wiki/Q1471594",
+     "display_name": "Collective action",
+     "level": 3,
+     "score": 0.7160000205039978
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.5042999982833862
+    },
+    {
+     "id": "https://openalex.org/C2776639384",
+     "wikidata": "https://www.wikidata.org/wiki/Q840396",
+     "display_name": "Ideal (ethics)",
+     "level": 2,
+     "score": 0.501800000667572
+    },
+    {
+     "id": "https://openalex.org/C2780791683",
+     "wikidata": "https://www.wikidata.org/wiki/Q846785",
+     "display_name": "Action (physics)",
+     "level": 2,
+     "score": 0.4860000014305115
+    },
+    {
+     "id": "https://openalex.org/C175444787",
+     "wikidata": "https://www.wikidata.org/wiki/Q39072",
+     "display_name": "Microeconomics",
+     "level": 1,
+     "score": 0.4575999975204468
+    },
+    {
+     "id": "https://openalex.org/C18762648",
+     "wikidata": "https://www.wikidata.org/wiki/Q42213",
+     "display_name": "Work (physics)",
+     "level": 2,
+     "score": 0.3882000148296356
+    },
+    {
+     "id": "https://openalex.org/C162324750",
+     "wikidata": "https://www.wikidata.org/wiki/Q8134",
+     "display_name": "Economics",
+     "level": 0,
+     "score": 0.37560001015663147
+    },
+    {
+     "id": "https://openalex.org/C112930515",
+     "wikidata": "https://www.wikidata.org/wiki/Q4389547",
+     "display_name": "Risk analysis (engineering)",
+     "level": 1,
+     "score": 0.3635999858379364
+    },
+    {
+     "id": "https://openalex.org/C144133560",
+     "wikidata": "https://www.wikidata.org/wiki/Q4830453",
+     "display_name": "Business",
+     "level": 0,
+     "score": 0.34209999442100525
+    },
+    {
+     "id": "https://openalex.org/C100001284",
+     "wikidata": "https://www.wikidata.org/wiki/Q2248246",
+     "display_name": "Public economics",
+     "level": 1,
+     "score": 0.3402000069618225
+    },
+    {
+     "id": "https://openalex.org/C39549134",
+     "wikidata": "https://www.wikidata.org/wiki/Q133080",
+     "display_name": "Public relations",
+     "level": 1,
+     "score": 0.3240000009536743
+    },
+    {
+     "id": "https://openalex.org/C190253527",
+     "wikidata": "https://www.wikidata.org/wiki/Q295354",
+     "display_name": "Law and economics",
+     "level": 1,
+     "score": 0.3190999925136566
+    },
+    {
+     "id": "https://openalex.org/C148220186",
+     "wikidata": "https://www.wikidata.org/wiki/Q7111912",
+     "display_name": "Outcome (game theory)",
+     "level": 2,
+     "score": 0.30790001153945923
+    },
+    {
+     "id": "https://openalex.org/C2777211547",
+     "wikidata": "https://www.wikidata.org/wiki/Q17141490",
+     "display_name": "Training (meteorology)",
+     "level": 2,
+     "score": 0.29760000109672546
+    },
+    {
+     "id": "https://openalex.org/C26517878",
+     "wikidata": "https://www.wikidata.org/wiki/Q228039",
+     "display_name": "Key (lock)",
+     "level": 2,
+     "score": 0.2863999903202057
+    },
+    {
+     "id": "https://openalex.org/C2777732099",
+     "wikidata": "https://www.wikidata.org/wiki/Q214244",
+     "display_name": "Affirmative action",
+     "level": 2,
+     "score": 0.28630000352859497
+    },
+    {
+     "id": "https://openalex.org/C56739046",
+     "wikidata": "https://www.wikidata.org/wiki/Q192060",
+     "display_name": "Knowledge management",
+     "level": 1,
+     "score": 0.2856999933719635
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.2808000147342682
+    },
+    {
+     "id": "https://openalex.org/C118084267",
+     "wikidata": "https://www.wikidata.org/wiki/Q26110",
+     "display_name": "Positive economics",
+     "level": 1,
+     "score": 0.28040000796318054
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.260699987411499
+    },
+    {
+     "id": "https://openalex.org/C17744445",
+     "wikidata": "https://www.wikidata.org/wiki/Q36442",
+     "display_name": "Political science",
+     "level": 0,
+     "score": 0.25609999895095825
+    }
+   ],
+   "mesh": [],
+   "locations_count": 3,
+   "locations": [
+    {
+     "id": "doi:10.1145/3846167.3848593",
+     "doi": "https://doi.org/10.1145/3846167.3848593",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1145/3846167.3848593",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S7407105071",
+      "display_name": "ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/P4310319798",
+      "host_organization_name": "Association for Computing Machinery",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319798"
+      ],
+      "host_organization_lineage_names": [
+       "Association for Computing Machinery"
+      ],
+      "type": "conference"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Proceedings of the 6th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization",
+     "raw_type": "proceedings-article"
+    },
+    {
+     "id": "pmh:oai:arXiv.org:2508.15374",
+     "doi": null,
+     "is_oa": true,
+     "landing_page_url": "https://arxiv.org/abs/2508.15374",
+     "pdf_url": "https://arxiv.org/pdf/2508.15374",
+     "source": {
+      "id": "https://openalex.org/S4306400194",
+      "display_name": "arXiv (Cornell University)",
+      "issn_l": "2331-8422",
+      "issn": [
+       "2331-8422"
+      ],
+      "is_oa": true,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I205783295",
+      "host_organization_name": "Cornell University",
+      "host_organization_lineage": [
+       "https://openalex.org/I205783295"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": "cc-by-nc-nd",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "text"
+    },
+    {
+     "id": "doi:10.48550/arxiv.2508.15374",
+     "doi": "https://doi.org/10.48550/arxiv.2508.15374",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.48550/arxiv.2508.15374",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306400194",
+      "display_name": "arXiv (Cornell University)",
+      "issn_l": "2331-8422",
+      "issn": [
+       "2331-8422"
+      ],
+      "is_oa": true,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I205783295",
+      "host_organization_name": "Cornell University",
+      "host_organization_lineage": [
+       "https://openalex.org/I205783295"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": "cc-by-nc-nd",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+     "version": null,
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "Preprint"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1145/3846167.3848593",
+    "doi": "https://doi.org/10.1145/3846167.3848593",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1145/3846167.3848593",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S7407105071",
+     "display_name": "ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO)",
+     "issn_l": null,
+     "issn": null,
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": "https://openalex.org/P4310319798",
+     "host_organization_name": "Association for Computing Machinery",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319798"
+     ],
+     "host_organization_lineage_names": [
+      "Association for Computing Machinery"
+     ],
+     "type": "conference"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Proceedings of the 6th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization",
+    "raw_type": "proceedings-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "score": 0.9629999995231628,
+     "display_name": "Reduced inequalities",
+     "id": "https://metadata.un.org/sdg/10"
+    },
+    {
+     "score": 0.4399999976158142,
+     "display_name": "Peace, justice, and strong institutions",
+     "id": "https://metadata.un.org/sdg/16"
+    }
+   ],
+   "study_designs": [],
+   "awards": [
+    {
+     "id": "https://openalex.org/G3562914802",
+     "display_name": "European Lighthouse on Secure and Safe AI",
+     "funder_award_id": "101070617",
+     "funder_id": "https://openalex.org/F4320320300",
+     "funder_display_name": "European Commission"
+    }
+   ],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320310490",
+     "display_name": "Villum Fonden",
+     "ror": "https://ror.org/007ww2d15"
+    },
+    {
+     "id": "https://openalex.org/F4320317967",
+     "display_name": "International Max Planck Research School for Environmental, Cellular and Molecular Microbiology",
+     "ror": null
+    },
+    {
+     "id": "https://openalex.org/F4320320300",
+     "display_name": "European Commission",
+     "ror": "https://ror.org/00k4n6c32"
+    },
+    {
+     "id": "https://openalex.org/F4320322436",
+     "display_name": "Novo Nordisk",
+     "ror": "https://ror.org/0435rc536"
+    },
+    {
+     "id": "https://openalex.org/F4320325957",
+     "display_name": "Novo Nordisk Fonden",
+     "ror": "https://ror.org/04txyc737"
+    },
+    {
+     "id": "https://openalex.org/F4320327553",
+     "display_name": "International Max Planck Research School for Advanced Methods in Process and Systems Engineering",
+     "ror": "https://ror.org/04hazks31"
+    }
+   ],
+   "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W4416338790.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W4416338790.grobid-xml"
+   },
+   "referenced_works_count": 21,
+   "referenced_works": [
+    "https://openalex.org/W1963727356",
+    "https://openalex.org/W2023777287",
+    "https://openalex.org/W2059141064",
+    "https://openalex.org/W2100960835",
+    "https://openalex.org/W2116666691",
+    "https://openalex.org/W2155163959",
+    "https://openalex.org/W2157928966",
+    "https://openalex.org/W2893240881",
+    "https://openalex.org/W2920807444",
+    "https://openalex.org/W2965548693",
+    "https://openalex.org/W2980494306",
+    "https://openalex.org/W3200170939",
+    "https://openalex.org/W4228998938",
+    "https://openalex.org/W4230678099",
+    "https://openalex.org/W4253939677",
+    "https://openalex.org/W4400461591",
+    "https://openalex.org/W4402754234",
+    "https://openalex.org/W4409884259",
+    "https://openalex.org/W4415795448",
+    "https://openalex.org/W7133219270",
+    "https://openalex.org/W7133251591"
+   ],
+   "related_works": [
+    "https://openalex.org/W7162673619",
+    "https://openalex.org/W4399362445",
+    "https://openalex.org/W7155076000",
+    "https://openalex.org/W4399695303",
+    "https://openalex.org/W4308662808",
+    "https://openalex.org/W4386242309",
+    "https://openalex.org/W3032152562",
+    "https://openalex.org/W6945083473",
+    "https://openalex.org/W4378468562",
+    "https://openalex.org/W7129036024"
+   ],
+   "abstract_inverted_index": {
+    "Machine": [
+     0
+    ],
+    "learning": [
+     1
+    ],
+    "models": [
+     2,
+     39
+    ],
+    "often": [
+     3
+    ],
+    "preserve": [
+     4
+    ],
+    "biases": [
+     5
+    ],
+    "present": [
+     6
+    ],
+    "in": [
+     7
+    ],
+    "training": [
+     8,
+     74
+    ],
+    "data,": [
+     9,
+     43
+    ],
+    "leading": [
+     10
+    ],
+    "to": [
+     11,
+     67
+    ],
+    "unfair": [
+     12
+    ],
+    "treatment": [
+     13
+    ],
+    "of": [
+     14,
+     21,
+     51,
+     95
+    ],
+    "certain": [
+     15
+    ],
+    "minority": [
+     16,
+     60,
+     97
+    ],
+    "groups.": [
+     17
+    ],
+    "Despite": [
+     18
+    ],
+    "an": [
+     19
+    ],
+    "array": [
+     20
+    ],
+    "existing": [
+     22
+    ],
+    "firm-side": [
+     23
+    ],
+    "bias-mitigation": [
+     24
+    ],
+    "techniques,": [
+     25
+    ],
+    "these": [
+     26
+    ],
+    "methods": [
+     27,
+     82
+    ],
+    "typically": [
+     28
+    ],
+    "incur": [
+     29
+    ],
+    "utility": [
+     30
+    ],
+    "costs": [
+     31
+    ],
+    "and": [
+     32,
+     83
+    ],
+    "require": [
+     33
+    ],
+    "organizational": [
+     34
+    ],
+    "buy-in.": [
+     35
+    ],
+    "Recognizing": [
+     36
+    ],
+    "that": [
+     37,
+     92
+    ],
+    "many": [
+     38
+    ],
+    "rely": [
+     40
+    ],
+    "on": [
+     41,
+     86,
+     105
+    ],
+    "user-contributed": [
+     42
+    ],
+    "end-users": [
+     44
+    ],
+    "can": [
+     45,
+     98
+    ],
+    "induce": [
+     46
+    ],
+    "fairness": [
+     47,
+     69
+    ],
+    "through": [
+     48
+    ],
+    "the": [
+     49,
+     72,
+     96
+    ],
+    "framework": [
+     50
+    ],
+    "Algorithmic": [
+     52
+    ],
+    "Collective": [
+     53
+    ],
+    "Action.": [
+     54
+    ],
+    "In": [
+     55
+    ],
+    "this": [
+     56
+    ],
+    "setting,": [
+     57
+    ],
+    "a": [
+     58,
+     93
+    ],
+    "coordinated": [
+     59
+    ],
+    "group": [
+     61
+    ],
+    "strategically": [
+     62
+    ],
+    "relabels": [
+     63
+    ],
+    "its": [
+     64
+    ],
+    "own": [
+     65
+    ],
+    "data": [
+     66
+    ],
+    "enhance": [
+     68
+    ],
+    "without": [
+     70
+    ],
+    "altering": [
+     71
+    ],
+    "firm\u2019s": [
+     73
+    ],
+    "process.": [
+     75
+    ],
+    "We": [
+     76
+    ],
+    "design": [
+     77
+    ],
+    "practical,": [
+     78
+    ],
+    "model-agnostic,": [
+     79
+    ],
+    "minority-only": [
+     80
+    ],
+    "collective-action": [
+     81
+    ],
+    "validate": [
+     84
+    ],
+    "them": [
+     85
+    ],
+    "real-world": [
+     87
+    ],
+    "datasets.": [
+     88
+    ],
+    "Our": [
+     89
+    ],
+    "findings": [
+     90
+    ],
+    "show": [
+     91
+    ],
+    "subgroup": [
+     94
+    ],
+    "substantially": [
+     99
+    ],
+    "reduce": [
+     100
+    ],
+    "unfairness": [
+     101
+    ],
+    "with": [
+     102
+    ],
+    "little": [
+     103
+    ],
+    "impact": [
+     104
+    ],
+    "overall": [
+     106
+    ],
+    "prediction": [
+     107
+    ],
+    "error.": [
+     108
+    ]
+   },
+   "counts_by_year": [
+    {
+     "year": 2026,
+     "cited_by_count": 3
+    },
+    {
+     "year": 2025,
+     "cited_by_count": 1
+    }
+   ],
+   "updated_date": "2026-11-08T12:12:28.789561",
+   "created_date": "2025-10-10T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W4416249028",
+   "doi": "https://doi.org/10.1038/s41467-026-78981-0",
+   "title": "Fairness in infectious disease modeling",
+   "display_name": "Fairness in infectious disease modeling",
+   "publication_year": 2026,
+   "publication_date": "2026-11-02",
+   "ids": {
+    "openalex": "https://openalex.org/W4416249028",
+    "doi": "https://doi.org/10.1038/s41467-026-78981-0"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1038/s41467-026-78981-0",
+    "doi": "https://doi.org/10.1038/s41467-026-78981-0",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1038/s41467-026-78981-0",
+    "pdf_url": "https://www.nature.com/articles/s41467-026-78981-0_reference.pdf",
+    "source": {
+     "id": "https://openalex.org/S64187185",
+     "display_name": "Nature Communications",
+     "issn_l": "2041-1723",
+     "issn": [
+      "2041-1723"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "anvur-class-a",
+      "anvur-scientific",
+      "cwts-core",
+      "doaj",
+      "dongbi-a",
+      "doyens",
+      "jufo-3",
+      "ki-jl-3",
+      "medline",
+      "norway-2",
+      "oarl",
+      "poland-200",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310319908",
+     "host_organization_name": "Nature Portfolio",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319908",
+      "https://openalex.org/P4310319965"
+     ],
+     "host_organization_lineage_names": [
+      "Nature Portfolio",
+      "Springer Nature"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Nature Communications",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "article",
+   "is_traditional": true,
+   "indexed_in": [
+    "crossref",
+    "doaj"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://www.nature.com/articles/s41467-026-78981-0_reference.pdf",
+    "any_repository_has_fulltext": true
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5100332391",
+      "display_name": "Yuhan Li",
+      "orcid": "https://orcid.org/0000-0001-6445-2303",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-6445-2303"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I166337079",
+       "display_name": "Queen Mary University of London",
+       "ror": "https://ror.org/026zzn846",
+       "country_code": "GB",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I124357947",
+        "https://openalex.org/I166337079"
+       ]
+      }
+     ],
+     "countries": [
+      "GB"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Yuhan Li",
+     "raw_affiliation_strings": [
+      "School of Mathematical Sciences, Queen Mary University of London, London, UK",
+      "Queen Mary University of London, London, UK"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-6445-2303",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Mathematical Sciences, Queen Mary University of London, London, UK",
+       "institution_ids": [
+        "https://openalex.org/I166337079"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Queen Mary University of London, London, UK",
+       "institution_ids": [
+        "https://openalex.org/I166337079"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5069579180",
+      "display_name": "Nicol\u00f2 Gozzi",
+      "orcid": "https://orcid.org/0000-0002-9996-3194",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-9996-3194"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I134940468",
+       "display_name": "Institute for Scientific Interchange",
+       "ror": "https://ror.org/00te2x188",
+       "country_code": "IT",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I134940468"
+       ]
+      }
+     ],
+     "countries": [
+      "IT"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Nicol\u00f2 Gozzi",
+     "raw_affiliation_strings": [
+      "ISI Foundation, Turin, Italy"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-9996-3194",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "ISI Foundation, Turin, Italy",
+       "institution_ids": [
+        "https://openalex.org/I134940468"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5031799782",
+      "display_name": "Nicola Perra",
+      "orcid": "https://orcid.org/0000-0002-5559-3064",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-5559-3064"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I166337079",
+       "display_name": "Queen Mary University of London",
+       "ror": "https://ror.org/026zzn846",
+       "country_code": "GB",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I124357947",
+        "https://openalex.org/I166337079"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4210128584",
+       "display_name": "The Alan Turing Institute",
+       "ror": "https://ror.org/035dkdb55",
+       "country_code": "GB",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I4210128584"
+       ]
+      }
+     ],
+     "countries": [
+      "GB"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Nicola Perra",
+     "raw_affiliation_strings": [
+      "School of Mathematical Sciences, Queen Mary University of London, London, UK",
+      "The Alan Turing Institute, London, UK",
+      "Queen Mary University of London"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-5559-3064",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "School of Mathematical Sciences, Queen Mary University of London, London, UK",
+       "institution_ids": [
+        "https://openalex.org/I166337079"
+       ]
+      },
+      {
+       "raw_affiliation_string": "The Alan Turing Institute, London, UK",
+       "institution_ids": [
+        "https://openalex.org/I4210128584"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Queen Mary University of London",
+       "institution_ids": [
+        "https://openalex.org/I166337079"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5059787882",
+      "display_name": "Michele Tizzoni",
+      "orcid": "https://orcid.org/0000-0001-7246-2341",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-7246-2341"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I193223587",
+       "display_name": "University of Trento",
+       "ror": "https://ror.org/05trd4x28",
+       "country_code": "IT",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I193223587"
+       ]
+      }
+     ],
+     "countries": [
+      "IT"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Michele Tizzoni",
+     "raw_affiliation_strings": [
+      "Department of Sociology and Social Research, University of Trento, Trento, Italy",
+      "Department of Sociology and Social Research, University of Trento, Italy"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-7246-2341",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Sociology and Social Research, University of Trento, Trento, Italy",
+       "institution_ids": [
+        "https://openalex.org/I193223587"
+       ]
+      },
+      {
+       "raw_affiliation_string": "Department of Sociology and Social Research, University of Trento, Italy",
+       "institution_ids": [
+        "https://openalex.org/I193223587"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 2,
+   "institutions_distinct_count": 4,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5059787882"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I193223587"
+   ],
+   "apc_list": {
+    "value": 6990,
+    "currency": "USD",
+    "value_usd": 6990
+   },
+   "apc_paid": {
+    "value": 6990,
+    "currency": "USD",
+    "value_usd": 6990
+   },
+   "fwci": 2.1745,
+   "has_fulltext": true,
+   "cited_by_count": 1,
+   "citation_normalized_percentile": {
+    "value": 0.79912627,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": {
+    "min": 91,
+    "max": 95
+   },
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10482",
+    "display_name": "Mathematical and Theoretical Epidemiology and Ecology Models",
+    "score": 0.8672000169754028,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2604",
+     "display_name": "Applied Mathematics"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/26",
+     "display_name": "Mathematics"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10482",
+     "display_name": "Mathematical and Theoretical Epidemiology and Ecology Models",
+     "score": 0.8672000169754028,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2604",
+      "display_name": "Applied Mathematics"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/26",
+      "display_name": "Mathematics"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10410",
+     "display_name": "COVID-19 epidemiological studies",
+     "score": 0.11249999701976776,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2611",
+      "display_name": "Modeling and Simulation"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/26",
+      "display_name": "Mathematics"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.003000000026077032,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/fairness",
+     "display_name": "fairness",
+     "score": 0.6759999990463257
+    },
+    {
+     "id": "https://openalex.org/keywords/social-epidemiology",
+     "display_name": "social epidemiology",
+     "score": 0.8050000071525574
+    },
+    {
+     "id": "https://openalex.org/keywords/health-equity",
+     "display_name": "health equity",
+     "score": 0.9380000233650208
+    },
+    {
+     "id": "https://openalex.org/keywords/vaccination-strategies",
+     "display_name": "vaccination strategies",
+     "score": 0.8799999952316284
+    },
+    {
+     "id": "https://openalex.org/keywords/covid-19",
+     "display_name": "COVID-19 pandemic",
+     "score": 0.7509999871253967
+    },
+    {
+     "id": "https://openalex.org/keywords/zika-virus-outbreak",
+     "display_name": "Zika virus outbreak",
+     "score": 0.9509999752044678
+    },
+    {
+     "id": "https://openalex.org/keywords/outbreak-preparedness-and-response",
+     "display_name": "outbreak preparedness and response",
+     "score": 0.8169999718666077
+    },
+    {
+     "id": "https://openalex.org/keywords/public-health-policy",
+     "display_name": "public health policy",
+     "score": 0.8629999756813049
+    },
+    {
+     "id": "https://openalex.org/keywords/model-evaluation-framework",
+     "display_name": "model evaluation framework",
+     "score": 0.4410000145435333
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.544700026512146
+    },
+    {
+     "id": "https://openalex.org/C524204448",
+     "wikidata": "https://www.wikidata.org/wiki/Q788926",
+     "display_name": "Infectious disease (medical specialty)",
+     "level": 3,
+     "score": 0.5157999992370605
+    },
+    {
+     "id": "https://openalex.org/C539667460",
+     "wikidata": "https://www.wikidata.org/wiki/Q2414942",
+     "display_name": "Management science",
+     "level": 1,
+     "score": 0.51419997215271
+    },
+    {
+     "id": "https://openalex.org/C138816342",
+     "wikidata": "https://www.wikidata.org/wiki/Q189603",
+     "display_name": "Public health",
+     "level": 2,
+     "score": 0.5080999732017517
+    },
+    {
+     "id": "https://openalex.org/C199728807",
+     "wikidata": "https://www.wikidata.org/wiki/Q2578557",
+     "display_name": "Equity (law)",
+     "level": 2,
+     "score": 0.4821999967098236
+    },
+    {
+     "id": "https://openalex.org/C66024118",
+     "wikidata": "https://www.wikidata.org/wiki/Q1122506",
+     "display_name": "Computational model",
+     "level": 2,
+     "score": 0.4796000123023987
+    },
+    {
+     "id": "https://openalex.org/C2777042776",
+     "wikidata": "https://www.wikidata.org/wiki/Q4583103",
+     "display_name": "Preparedness",
+     "level": 2,
+     "score": 0.46810001134872437
+    },
+    {
+     "id": "https://openalex.org/C2779343474",
+     "wikidata": "https://www.wikidata.org/wiki/Q3109175",
+     "display_name": "Context (archaeology)",
+     "level": 2,
+     "score": 0.4668000042438507
+    },
+    {
+     "id": "https://openalex.org/C112930515",
+     "wikidata": "https://www.wikidata.org/wiki/Q4389547",
+     "display_name": "Risk analysis (engineering)",
+     "level": 1,
+     "score": 0.46050000190734863
+    },
+    {
+     "id": "https://openalex.org/C116675565",
+     "wikidata": "https://www.wikidata.org/wiki/Q3241045",
+     "display_name": "Outbreak",
+     "level": 2,
+     "score": 0.42899999022483826
+    },
+    {
+     "id": "https://openalex.org/C2777053367",
+     "wikidata": "https://www.wikidata.org/wiki/Q202864",
+     "display_name": "Zika virus",
+     "level": 3,
+     "score": 0.39640000462532043
+    },
+    {
+     "id": "https://openalex.org/C9652623",
+     "wikidata": "https://www.wikidata.org/wiki/Q190109",
+     "display_name": "Field (mathematics)",
+     "level": 2,
+     "score": 0.3781999945640564
+    },
+    {
+     "id": "https://openalex.org/C2779134260",
+     "wikidata": "https://www.wikidata.org/wiki/Q12136",
+     "display_name": "Disease",
+     "level": 2,
+     "score": 0.34850001335144043
+    },
+    {
+     "id": "https://openalex.org/C2522767166",
+     "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+     "display_name": "Data science",
+     "level": 1,
+     "score": 0.3456999957561493
+    },
+    {
+     "id": "https://openalex.org/C42475967",
+     "wikidata": "https://www.wikidata.org/wiki/Q194292",
+     "display_name": "Operations research",
+     "level": 1,
+     "score": 0.31209999322891235
+    },
+    {
+     "id": "https://openalex.org/C2164484",
+     "wikidata": "https://www.wikidata.org/wiki/Q5170150",
+     "display_name": "Core (optical fiber)",
+     "level": 2,
+     "score": 0.2669000029563904
+    },
+    {
+     "id": "https://openalex.org/C3008058167",
+     "wikidata": "https://www.wikidata.org/wiki/Q84263196",
+     "display_name": "Coronavirus disease 2019 (COVID-19)",
+     "level": 4,
+     "score": 0.26489999890327454
+    },
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.26030001044273376
+    },
+    {
+     "id": "https://openalex.org/C25287524",
+     "wikidata": "https://www.wikidata.org/wiki/Q13416790",
+     "display_name": "Social equality",
+     "level": 2,
+     "score": 0.25859999656677246
+    }
+   ],
+   "mesh": [],
+   "locations_count": 3,
+   "locations": [
+    {
+     "id": "doi:10.1038/s41467-026-78981-0",
+     "doi": "https://doi.org/10.1038/s41467-026-78981-0",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1038/s41467-026-78981-0",
+     "pdf_url": "https://www.nature.com/articles/s41467-026-78981-0_reference.pdf",
+     "source": {
+      "id": "https://openalex.org/S64187185",
+      "display_name": "Nature Communications",
+      "issn_l": "2041-1723",
+      "issn": [
+       "2041-1723"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "anvur-class-a",
+       "anvur-scientific",
+       "cwts-core",
+       "doaj",
+       "dongbi-a",
+       "doyens",
+       "jufo-3",
+       "ki-jl-3",
+       "medline",
+       "norway-2",
+       "oarl",
+       "poland-200",
+       "russia-white-list-1",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310319908",
+      "host_organization_name": "Nature Portfolio",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319908",
+       "https://openalex.org/P4310319965"
+      ],
+      "host_organization_lineage_names": [
+       "Nature Portfolio",
+       "Springer Nature"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Nature Communications",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "doi:10.1101/2025.11.11.25339990",
+     "doi": "https://doi.org/10.1101/2025.11.11.25339990",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1101/2025.11.11.25339990",
+     "pdf_url": "https://www.medrxiv.org/content/medrxiv/early/2025/11/13/2025.11.11.25339990.full.pdf",
+     "source": {
+      "id": "https://openalex.org/S3005729997",
+      "display_name": "medRxiv",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core"
+      ],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [
+       "https://openalex.org/P4310315909"
+      ],
+      "host_organization_lineage_names": [
+       "Cold Spring Harbor Laboratory Press"
+      ],
+      "type": "repository"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": "medRxiv",
+     "raw_type": "posted-content"
+    },
+    {
+     "id": "pmh:oai:iris.unitn.it:11572/510630",
+     "doi": null,
+     "is_oa": true,
+     "landing_page_url": "https://www.nature.com/articles/s41467-026-78981-0",
+     "pdf_url": "https://iris.unitn.it/bitstream/11572/510630/1/s41467-026-78981-0_reference.pdf",
+     "source": {
+      "id": "https://openalex.org/S4377196320",
+      "display_name": "Iris (University of Trento)",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I193223587",
+      "host_organization_name": "University of Trento",
+      "host_organization_lineage": [
+       "https://openalex.org/I193223587"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "info:eu-repo/semantics/article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1038/s41467-026-78981-0",
+    "doi": "https://doi.org/10.1038/s41467-026-78981-0",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1038/s41467-026-78981-0",
+    "pdf_url": "https://www.nature.com/articles/s41467-026-78981-0_reference.pdf",
+    "source": {
+     "id": "https://openalex.org/S64187185",
+     "display_name": "Nature Communications",
+     "issn_l": "2041-1723",
+     "issn": [
+      "2041-1723"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "anvur-class-a",
+      "anvur-scientific",
+      "cwts-core",
+      "doaj",
+      "dongbi-a",
+      "doyens",
+      "jufo-3",
+      "ki-jl-3",
+      "medline",
+      "norway-2",
+      "oarl",
+      "poland-200",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310319908",
+     "host_organization_name": "Nature Portfolio",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319908",
+      "https://openalex.org/P4310319965"
+     ],
+     "host_organization_lineage_names": [
+      "Nature Portfolio",
+      "Springer Nature"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Nature Communications",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "score": 0.7578999996185303,
+     "display_name": "Reduced inequalities",
+     "id": "https://metadata.un.org/sdg/10"
+    },
+    {
+     "score": 0.5683000087738037,
+     "display_name": "Good health and well-being",
+     "id": "https://metadata.un.org/sdg/3"
+    }
+   ],
+   "study_designs": [],
+   "awards": [],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320318977",
+     "display_name": "Institute for Scientific Interchange",
+     "ror": "https://ror.org/00te2x188"
+    },
+    {
+     "id": "https://openalex.org/F4320322275",
+     "display_name": "Universit\u00e0 degli Studi di Trento",
+     "ror": "https://ror.org/05trd4x28"
+    }
+   ],
+   "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W4416249028.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W4416249028.grobid-xml"
+   },
+   "referenced_works_count": 54,
+   "referenced_works": [
+    "https://openalex.org/W1882303714",
+    "https://openalex.org/W1990509433",
+    "https://openalex.org/W2009288217",
+    "https://openalex.org/W2035257134",
+    "https://openalex.org/W2069977841",
+    "https://openalex.org/W2104590203",
+    "https://openalex.org/W2132314077",
+    "https://openalex.org/W2149533068",
+    "https://openalex.org/W2161944342",
+    "https://openalex.org/W2755849266",
+    "https://openalex.org/W2902802452",
+    "https://openalex.org/W2975024646",
+    "https://openalex.org/W3010559291",
+    "https://openalex.org/W3013967887",
+    "https://openalex.org/W3021693646",
+    "https://openalex.org/W3034285292",
+    "https://openalex.org/W3104041940",
+    "https://openalex.org/W3116362583",
+    "https://openalex.org/W3120392574",
+    "https://openalex.org/W3157070895",
+    "https://openalex.org/W3161251579",
+    "https://openalex.org/W3162142963",
+    "https://openalex.org/W3165830381",
+    "https://openalex.org/W3175859364",
+    "https://openalex.org/W3184865800",
+    "https://openalex.org/W3189380656",
+    "https://openalex.org/W3196658365",
+    "https://openalex.org/W4205977082",
+    "https://openalex.org/W4220871826",
+    "https://openalex.org/W4220887281",
+    "https://openalex.org/W4229458095",
+    "https://openalex.org/W4237661782",
+    "https://openalex.org/W4283448859",
+    "https://openalex.org/W4286008048",
+    "https://openalex.org/W4294837428",
+    "https://openalex.org/W4302331569",
+    "https://openalex.org/W4310281035",
+    "https://openalex.org/W4366401092",
+    "https://openalex.org/W4378977571",
+    "https://openalex.org/W4379509237",
+    "https://openalex.org/W4385188996",
+    "https://openalex.org/W4386578952",
+    "https://openalex.org/W4387730443",
+    "https://openalex.org/W4388011360",
+    "https://openalex.org/W4388728618",
+    "https://openalex.org/W4390229867",
+    "https://openalex.org/W4390242390",
+    "https://openalex.org/W4392928550",
+    "https://openalex.org/W4396962461",
+    "https://openalex.org/W4401159882",
+    "https://openalex.org/W4403329659",
+    "https://openalex.org/W4406352948",
+    "https://openalex.org/W4409677836",
+    "https://openalex.org/W4417246363"
+   ],
+   "related_works": [
+    "https://openalex.org/W3196658365",
+    "https://openalex.org/W4229458095",
+    "https://openalex.org/W7221865686",
+    "https://openalex.org/W7154986866",
+    "https://openalex.org/W2983337823",
+    "https://openalex.org/W4281389747",
+    "https://openalex.org/W4409677836",
+    "https://openalex.org/W7151940371",
+    "https://openalex.org/W4407632314",
+    "https://openalex.org/W3201504529"
+   ],
+   "abstract_inverted_index": {
+    "ABSTRACT": [
+     0
+    ],
+    "The": [
+     1
+    ],
+    "concept": [
+     2
+    ],
+    "of": [
+     3,
+     12,
+     28,
+     47,
+     55,
+     75,
+     88,
+     100,
+     138,
+     146,
+     162
+    ],
+    "fairness": [
+     4,
+     74,
+     127,
+     139,
+     175
+    ],
+    "has": [
+     5
+    ],
+    "been": [
+     6
+    ],
+    "extensively": [
+     7
+    ],
+    "examined": [
+     8
+    ],
+    "within": [
+     9
+    ],
+    "the": [
+     10,
+     26,
+     32,
+     45,
+     73,
+     97,
+     113,
+     144,
+     159
+    ],
+    "domains": [
+     11
+    ],
+    "Machine": [
+     13
+    ],
+    "Learning": [
+     14
+    ],
+    "and": [
+     15,
+     50,
+     92,
+     106
+    ],
+    "Artificial": [
+     16
+    ],
+    "Intelligence": [
+     17
+    ],
+    "more": [
+     18
+    ],
+    "broadly.": [
+     19
+    ],
+    "It": [
+     20
+    ],
+    "remains,": [
+     21
+    ],
+    "however,": [
+     22
+    ],
+    "largely": [
+     23
+    ],
+    "underexplored": [
+     24
+    ],
+    "in": [
+     25,
+     44,
+     65,
+     102,
+     118,
+     176
+    ],
+    "field": [
+     27
+    ],
+    "Computational": [
+     29
+    ],
+    "Epidemiology.": [
+     30
+    ],
+    "Considering": [
+     31
+    ],
+    "substantial": [
+     33
+    ],
+    "influence": [
+     34
+    ],
+    "that": [
+     35
+    ],
+    "epidemic": [
+     36,
+     77,
+     89
+    ],
+    "models": [
+     37
+    ],
+    "exert": [
+     38
+    ],
+    "on": [
+     39
+    ],
+    "public": [
+     40
+    ],
+    "health": [
+     41,
+     154
+    ],
+    "policy,": [
+     42
+    ],
+    "particularly": [
+     43
+    ],
+    "context": [
+     46
+    ],
+    "outbreak": [
+     48,
+     117
+    ],
+    "preparedness": [
+     49
+    ],
+    "response,": [
+     51
+    ],
+    "this": [
+     52
+    ],
+    "shortcoming": [
+     53
+    ],
+    "is": [
+     54
+    ],
+    "great": [
+     56
+    ],
+    "relevance.": [
+     57
+    ],
+    "Here,": [
+     58
+    ],
+    "we": [
+     59,
+     133
+    ],
+    "propose": [
+     60
+    ],
+    "a": [
+     61,
+     86,
+     150,
+     169
+    ],
+    "mathematical": [
+     62
+    ],
+    "framework,": [
+     63
+    ],
+    "grounded": [
+     64
+    ],
+    "core": [
+     66
+    ],
+    "principles": [
+     67
+    ],
+    "from": [
+     68
+    ],
+    "Social": [
+     69
+    ],
+    "Epidemiology,": [
+     70
+    ],
+    "for": [
+     71,
+     173
+    ],
+    "evaluating": [
+     72
+    ],
+    "computational": [
+     76,
+     177
+    ],
+    "models.": [
+     78
+    ],
+    "We": [
+     79
+    ],
+    "begin": [
+     80
+    ],
+    "by": [
+     81
+    ],
+    "applying": [
+     82
+    ],
+    "our": [
+     83,
+     136,
+     166
+    ],
+    "framework": [
+     84
+    ],
+    "to": [
+     85,
+     124,
+     152
+    ],
+    "range": [
+     87
+    ],
+    "modeling": [
+     90
+    ],
+    "approaches": [
+     91
+    ],
+    "simulation": [
+     93
+    ],
+    "scenarios,": [
+     94
+    ],
+    "such": [
+     95,
+     163
+    ],
+    "as": [
+     96,
+     110,
+     112,
+     149
+    ],
+    "initial": [
+     98
+    ],
+    "spread": [
+     99
+    ],
+    "COVID-19": [
+     101
+    ],
+    "London,": [
+     103
+    ],
+    "New": [
+     104
+    ],
+    "York,": [
+     105
+    ],
+    "Santiago": [
+     107
+    ],
+    "de": [
+     108
+    ],
+    "Chile,": [
+     109
+    ],
+    "well": [
+     111
+    ],
+    "2016": [
+     114
+    ],
+    "Zika": [
+     115
+    ],
+    "virus": [
+     116
+    ],
+    "Colombia,": [
+     119
+    ],
+    "demonstrating": [
+     120
+    ],
+    "its": [
+     121
+    ],
+    "consistent": [
+     122
+    ],
+    "capacity": [
+     123
+    ],
+    "assess": [
+     125
+    ],
+    "model": [
+     126
+    ],
+    "across": [
+     128
+    ],
+    "diverse": [
+     129
+    ],
+    "disease": [
+     130
+    ],
+    "dynamics.": [
+     131
+    ],
+    "Subsequently,": [
+     132
+    ],
+    "illustrate": [
+     134
+    ],
+    "how": [
+     135
+    ],
+    "definition": [
+     137
+    ],
+    "can": [
+     140
+    ],
+    "be": [
+     141
+    ],
+    "incorporated": [
+     142
+    ],
+    "into": [
+     143
+    ],
+    "design": [
+     145
+    ],
+    "immunization": [
+     147
+    ],
+    "strategies": [
+     148
+    ],
+    "way": [
+     151
+    ],
+    "enhance": [
+     153
+    ],
+    "equity": [
+     155
+    ],
+    "while": [
+     156
+    ],
+    "simultaneously": [
+     157
+    ],
+    "improving": [
+     158
+    ],
+    "overall": [
+     160
+    ],
+    "effectiveness": [
+     161
+    ],
+    "interventions.": [
+     164
+    ],
+    "Overall,": [
+     165
+    ],
+    "results": [
+     167
+    ],
+    "offer": [
+     168
+    ],
+    "new": [
+     170
+    ],
+    "systematic": [
+     171
+    ],
+    "methodology": [
+     172
+    ],
+    "quantifying": [
+     174
+    ],
+    "epidemiology.": [
+     178
+    ]
+   },
+   "counts_by_year": [
+    {
+     "year": 2026,
+     "cited_by_count": 1
+    }
+   ],
+   "updated_date": "2026-11-09T13:22:03.289127",
+   "created_date": "2025-11-14T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7225077727",
+   "doi": "https://doi.org/10.1145/3799682.3840632",
+   "title": "FairSEP: Harmonizing Multiple Fairness Metrics in Graph Neural Networks via Pareto Optimization",
+   "display_name": "FairSEP: Harmonizing Multiple Fairness Metrics in Graph Neural Networks via Pareto Optimization",
+   "publication_year": 2026,
+   "publication_date": "2026-11-03",
+   "ids": {
+    "openalex": "https://openalex.org/W7225077727",
+    "doi": "https://doi.org/10.1145/3799682.3840632"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1145/3799682.3840632",
+    "doi": "https://doi.org/10.1145/3799682.3840632",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1145/3799682.3840632",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S4393918199",
+     "display_name": "ACM International Conference on Information and Knowledge Management (CIKM)",
+     "issn_l": "2155-0751",
+     "issn": [
+      "2155-0751"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "conference"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Proceedings of the 35th ACM International Conference on Information and Knowledge Management",
+    "raw_type": "proceedings-article"
+   },
+   "volume": null,
+   "type": "conference-paper",
+   "is_traditional": true,
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "hybrid",
+    "oa_url": "https://doi.org/10.1145/3799682.3840632",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5147914667",
+      "display_name": "Kaixing Liang",
+      "orcid": "https://orcid.org/0009-0003-8236-9732",
+      "observed_orcids": [
+       "https://orcid.org/0009-0003-8236-9732"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I5343935",
+       "display_name": "Guilin University of Electronic Technology",
+       "ror": "https://ror.org/05arjae42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Kaixing Liang",
+     "raw_affiliation_strings": [
+      "Guilin University of Electronic Technology, Guilin, Guangxi, China"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0003-8236-9732",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Guilin University of Electronic Technology, Guilin, Guangxi, China",
+       "institution_ids": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5022008175",
+      "display_name": "Xuemin Wang",
+      "orcid": "https://orcid.org/0000-0002-5041-8443",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-5041-8443"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I5343935",
+       "display_name": "Guilin University of Electronic Technology",
+       "ror": "https://ror.org/05arjae42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Xuemin Wang",
+     "raw_affiliation_strings": [
+      "Guilin University of Electronic Technology, Guilin, Guangxi, China"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-5041-8443",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Guilin University of Electronic Technology, Guilin, Guangxi, China",
+       "institution_ids": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5147928946",
+      "display_name": "Guofeng Xia",
+      "orcid": "https://orcid.org/0009-0005-9818-5326",
+      "observed_orcids": [
+       "https://orcid.org/0009-0005-9818-5326"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I5343935",
+       "display_name": "Guilin University of Electronic Technology",
+       "ror": "https://ror.org/05arjae42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Guofeng Xia",
+     "raw_affiliation_strings": [
+      "Guilin University of Electronic Technology, Guilin, Guangxi, China"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0005-9818-5326",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Guilin University of Electronic Technology, Guilin, Guangxi, China",
+       "institution_ids": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5118899994",
+      "display_name": "Zeyu Cao",
+      "orcid": "https://orcid.org/0000-0002-1566-2408",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-1566-2408",
+       "https://orcid.org/0009-0009-2036-2010"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I5343935",
+       "display_name": "Guilin University of Electronic Technology",
+       "ror": "https://ror.org/05arjae42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Zeyu Cao",
+     "raw_affiliation_strings": [
+      "Guilin University of Electronic Technology, Guilin, Guangxi, China"
+     ],
+     "raw_orcid": "https://orcid.org/0009-0009-2036-2010",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Guilin University of Electronic Technology, Guilin, Guangxi, China",
+       "institution_ids": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5015299890",
+      "display_name": "Liang Chang",
+      "orcid": "https://orcid.org/0000-0002-7262-4707",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-7262-4707"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I5343935",
+       "display_name": "Guilin University of Electronic Technology",
+       "ror": "https://ror.org/05arjae42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Liang Chang",
+     "raw_affiliation_strings": [
+      "Guilin University of Electronic Technology, Nanning, Guangxi, China"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-7262-4707",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Guilin University of Electronic Technology, Nanning, Guangxi, China",
+       "institution_ids": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5036224495",
+      "display_name": "Tianlong Gu",
+      "orcid": "https://orcid.org/0000-0002-1662-7110",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-1662-7110",
+       "https://orcid.org/0000-0002-1593-1292"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I159948400",
+       "display_name": "Jinan University",
+       "ror": "https://ror.org/02xe5ns62",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I159948400"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Tianlong Gu",
+     "raw_affiliation_strings": [
+      "Jinan University, Guangzhou, Guangdong, China"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-1662-7110",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Jinan University, Guangzhou, Guangdong, China",
+       "institution_ids": [
+        "https://openalex.org/I159948400"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5087222237",
+      "display_name": "Yuanjing Hao",
+      "orcid": "https://orcid.org/0000-0001-9568-9290",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-9568-9290"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I5343935",
+       "display_name": "Guilin University of Electronic Technology",
+       "ror": "https://ror.org/05arjae42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Yuanjing Hao",
+     "raw_affiliation_strings": [
+      "Guilin University of Electronic Technology, Guilin, Guangxi, China"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-9568-9290",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Guilin University of Electronic Technology, Guilin, Guangxi, China",
+       "institution_ids": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5100344589",
+      "display_name": "Wei Chen",
+      "orcid": "https://orcid.org/0000-0003-4065-9830",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-4065-9830"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I5343935",
+       "display_name": "Guilin University of Electronic Technology",
+       "ror": "https://ror.org/05arjae42",
+       "country_code": "CN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ],
+     "countries": [
+      "CN"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Wei Chen",
+     "raw_affiliation_strings": [
+      "Guilin University of Electronic Technology, Guilin, Guangxi, China"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-4065-9830",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Guilin University of Electronic Technology, Guilin, Guangxi, China",
+       "institution_ids": [
+        "https://openalex.org/I5343935"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.78726669,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "3019",
+    "last_page": "3030"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10883",
+    "display_name": "Ethics and Social Impacts of AI",
+    "score": 0.9541000127792358,
+    "subfield": {
+     "id": "https://openalex.org/subfields/1702",
+     "display_name": "Artificial Intelligence"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/17",
+     "display_name": "Computer Science"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/3",
+     "display_name": "Physical Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10883",
+     "display_name": "Ethics and Social Impacts of AI",
+     "score": 0.9541000127792358,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11273",
+     "display_name": "Advanced Graph Neural Networks",
+     "score": 0.008299999870359898,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10764",
+     "display_name": "Privacy-Preserving Technologies in Data",
+     "score": 0.008200000040233135,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1702",
+      "display_name": "Artificial Intelligence"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/group-fairness",
+     "display_name": "group fairness",
+     "score": 0.9169999957084656
+    },
+    {
+     "id": "https://openalex.org/keywords/graph-neural-networks",
+     "display_name": "graph neural networks",
+     "score": 0.9860000014305115
+    },
+    {
+     "id": "https://openalex.org/keywords/multi-objective-optimization",
+     "display_name": "multi-objective optimization",
+     "score": 0.8159999847412109
+    },
+    {
+     "id": "https://openalex.org/keywords/demographic-parity",
+     "display_name": "demographic parity",
+     "score": 0.8090000152587891
+    },
+    {
+     "id": "https://openalex.org/keywords/equality-of-opportunity",
+     "display_name": "equal opportunities",
+     "score": 0.9739999771118164
+    },
+    {
+     "id": "https://openalex.org/keywords/fairness-utility-trade-off",
+     "display_name": "fairness-utility trade-off",
+     "score": 0.7509999871253967
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.6394000053405762
+    },
+    {
+     "id": "https://openalex.org/C50644808",
+     "wikidata": "https://www.wikidata.org/wiki/Q192776",
+     "display_name": "Artificial neural network",
+     "level": 2,
+     "score": 0.539900004863739
+    },
+    {
+     "id": "https://openalex.org/C132525143",
+     "wikidata": "https://www.wikidata.org/wiki/Q141488",
+     "display_name": "Graph",
+     "level": 2,
+     "score": 0.44999998807907104
+    },
+    {
+     "id": "https://openalex.org/C68781425",
+     "wikidata": "https://www.wikidata.org/wiki/Q2052203",
+     "display_name": "Multi-objective optimization",
+     "level": 2,
+     "score": 0.4343999922275543
+    },
+    {
+     "id": "https://openalex.org/C126255220",
+     "wikidata": "https://www.wikidata.org/wiki/Q141495",
+     "display_name": "Mathematical optimization",
+     "level": 1,
+     "score": 0.4325999915599823
+    },
+    {
+     "id": "https://openalex.org/C137635306",
+     "wikidata": "https://www.wikidata.org/wiki/Q182667",
+     "display_name": "Pareto principle",
+     "level": 2,
+     "score": 0.384799987077713
+    },
+    {
+     "id": "https://openalex.org/C154945302",
+     "wikidata": "https://www.wikidata.org/wiki/Q11660",
+     "display_name": "Artificial intelligence",
+     "level": 1,
+     "score": 0.3828999996185303
+    },
+    {
+     "id": "https://openalex.org/C137836250",
+     "wikidata": "https://www.wikidata.org/wiki/Q984063",
+     "display_name": "Optimization problem",
+     "level": 2,
+     "score": 0.32589998841285706
+    },
+    {
+     "id": "https://openalex.org/C147764199",
+     "wikidata": "https://www.wikidata.org/wiki/Q6865248",
+     "display_name": "Minification",
+     "level": 2,
+     "score": 0.2797999978065491
+    },
+    {
+     "id": "https://openalex.org/C2986314615",
+     "wikidata": "https://www.wikidata.org/wiki/Q36829",
+     "display_name": "Pareto optimal",
+     "level": 3,
+     "score": 0.2709999978542328
+    },
+    {
+     "id": "https://openalex.org/C11413529",
+     "wikidata": "https://www.wikidata.org/wiki/Q8366",
+     "display_name": "Algorithm",
+     "level": 1,
+     "score": 0.2703999876976013
+    },
+    {
+     "id": "https://openalex.org/C88230418",
+     "wikidata": "https://www.wikidata.org/wiki/Q131476",
+     "display_name": "Graph theory",
+     "level": 2,
+     "score": 0.2648000121116638
+    },
+    {
+     "id": "https://openalex.org/C2779343474",
+     "wikidata": "https://www.wikidata.org/wiki/Q3109175",
+     "display_name": "Context (archaeology)",
+     "level": 2,
+     "score": 0.26170000433921814
+    },
+    {
+     "id": "https://openalex.org/C124101348",
+     "wikidata": "https://www.wikidata.org/wiki/Q172491",
+     "display_name": "Data mining",
+     "level": 1,
+     "score": 0.2578999996185303
+    },
+    {
+     "id": "https://openalex.org/C119857082",
+     "wikidata": "https://www.wikidata.org/wiki/Q2539",
+     "display_name": "Machine learning",
+     "level": 1,
+     "score": 0.25360000133514404
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1145/3799682.3840632",
+     "doi": "https://doi.org/10.1145/3799682.3840632",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1145/3799682.3840632",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4393918199",
+      "display_name": "ACM International Conference on Information and Knowledge Management (CIKM)",
+      "issn_l": "2155-0751",
+      "issn": [
+       "2155-0751"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": null,
+      "host_organization_name": null,
+      "host_organization_lineage": [],
+      "host_organization_lineage_names": [],
+      "type": "conference"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Proceedings of the 35th ACM International Conference on Information and Knowledge Management",
+     "raw_type": "proceedings-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1145/3799682.3840632",
+    "doi": "https://doi.org/10.1145/3799682.3840632",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1145/3799682.3840632",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S4393918199",
+     "display_name": "ACM International Conference on Information and Knowledge Management (CIKM)",
+     "issn_l": "2155-0751",
+     "issn": [
+      "2155-0751"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": null,
+     "host_organization_name": null,
+     "host_organization_lineage": [],
+     "host_organization_lineage_names": [],
+     "type": "conference"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Proceedings of the 35th ACM International Conference on Information and Knowledge Management",
+    "raw_type": "proceedings-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "score": 0.7578999996185303,
+     "display_name": "Reduced inequalities",
+     "id": "https://metadata.un.org/sdg/10"
+    }
+   ],
+   "study_designs": [],
+   "awards": [],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320321001",
+     "display_name": "National Natural Science Foundation of China",
+     "ror": "https://ror.org/01h0zpd94"
+    },
+    {
+     "id": "https://openalex.org/F4320321543",
+     "display_name": "China Postdoctoral Science Foundation",
+     "ror": "https://ror.org/0426zh255"
+    },
+    {
+     "id": "https://openalex.org/F4320322768",
+     "display_name": "Natural Science Foundation of Guangxi Province",
+     "ror": null
+    }
+   ],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 45,
+   "referenced_works": [
+    "https://openalex.org/W2100960835",
+    "https://openalex.org/W2962922665",
+    "https://openalex.org/W3016682301",
+    "https://openalex.org/W3035591180",
+    "https://openalex.org/W3117178429",
+    "https://openalex.org/W3171764584",
+    "https://openalex.org/W3192448376",
+    "https://openalex.org/W4280531198",
+    "https://openalex.org/W4281861579",
+    "https://openalex.org/W4328105084",
+    "https://openalex.org/W4362714312",
+    "https://openalex.org/W4366572717",
+    "https://openalex.org/W4389520245",
+    "https://openalex.org/W4392131519",
+    "https://openalex.org/W4393034172",
+    "https://openalex.org/W4393146624",
+    "https://openalex.org/W4393159796",
+    "https://openalex.org/W4393906348",
+    "https://openalex.org/W4396244005",
+    "https://openalex.org/W4396736359",
+    "https://openalex.org/W4400910165",
+    "https://openalex.org/W4401043454",
+    "https://openalex.org/W4401692674",
+    "https://openalex.org/W4401856727",
+    "https://openalex.org/W4401857188",
+    "https://openalex.org/W4401857238",
+    "https://openalex.org/W4403525120",
+    "https://openalex.org/W4404371500",
+    "https://openalex.org/W4404518193",
+    "https://openalex.org/W4407948347",
+    "https://openalex.org/W4409364652",
+    "https://openalex.org/W4409364727",
+    "https://openalex.org/W4409365539",
+    "https://openalex.org/W4409657319",
+    "https://openalex.org/W4411104404",
+    "https://openalex.org/W4412945432",
+    "https://openalex.org/W4413305854",
+    "https://openalex.org/W4413350072",
+    "https://openalex.org/W4413826002",
+    "https://openalex.org/W4414360501",
+    "https://openalex.org/W4415797175",
+    "https://openalex.org/W4415797996",
+    "https://openalex.org/W4417202950",
+    "https://openalex.org/W7133242791",
+    "https://openalex.org/W7163150341"
+   ],
+   "related_works": [
+    "https://openalex.org/W7225124118",
+    "https://openalex.org/W7019210065",
+    "https://openalex.org/W7125692989",
+    "https://openalex.org/W7171876062",
+    "https://openalex.org/W7196960483",
+    "https://openalex.org/W7220806212",
+    "https://openalex.org/W7168355006",
+    "https://openalex.org/W7078599886",
+    "https://openalex.org/W4415800638",
+    "https://openalex.org/W3012821910"
+   ],
+   "abstract_inverted_index": {
+    "Group": [
+     0
+    ],
+    "fairness": [
+     1,
+     55,
+     92
+    ],
+    "in": [
+     2,
+     77
+    ],
+    "Graph": [
+     3
+    ],
+    "Neural": [
+     4
+    ],
+    "Networks": [
+     5
+    ],
+    "(GNNs)": [
+     6
+    ],
+    "aims": [
+     7
+    ],
+    "to": [
+     8,
+     33,
+     52,
+     72,
+     179,
+     198
+    ],
+    "mitigate": [
+     9
+    ],
+    "performance": [
+     10
+    ],
+    "disparities": [
+     11,
+     76
+    ],
+    "across": [
+     12,
+     65,
+     165
+    ],
+    "demographic": [
+     13
+    ],
+    "groups.": [
+     14,
+     166
+    ],
+    "While": [
+     15
+    ],
+    "existing": [
+     16
+    ],
+    "methods": [
+     17,
+     39,
+     60
+    ],
+    "primarily": [
+     18
+    ],
+    "focus": [
+     19
+    ],
+    "on": [
+     20,
+     42,
+     157,
+     186
+    ],
+    "Demographic": [
+     21
+    ],
+    "Parity": [
+     22
+    ],
+    "and": [
+     23,
+     80,
+     90,
+     127,
+     133
+    ],
+    "Equal": [
+     24
+    ],
+    "Opportunity,": [
+     25
+    ],
+    "Predictive": [
+     26
+    ],
+    "Equality": [
+     27
+    ],
+    "(\u0394FPR)": [
+     28
+    ],
+    "remains": [
+     29,
+     94
+    ],
+    "under-explored,": [
+     30
+    ],
+    "potentially": [
+     31
+    ],
+    "leading": [
+     32
+    ],
+    "disparate": [
+     34,
+     162
+    ],
+    "error": [
+     35,
+     163
+    ],
+    "risks.": [
+     36
+    ],
+    "Furthermore,": [
+     37
+    ],
+    "these": [
+     38,
+     59,
+     98
+    ],
+    "often": [
+     40,
+     61
+    ],
+    "rely": [
+     41
+    ],
+    "a": [
+     43,
+     103,
+     110,
+     141,
+     170,
+     194
+    ],
+    "single": [
+     44
+    ],
+    "surrogate": [
+     45
+    ],
+    "loss": [
+     46,
+     144,
+     177
+    ],
+    "of": [
+     47,
+     153
+    ],
+    "fairness,": [
+     48
+    ],
+    "which": [
+     49
+    ],
+    "is": [
+     50
+    ],
+    "insufficient": [
+     51
+    ],
+    "achieve": [
+     53
+    ],
+    "multiple": [
+     54,
+     91
+    ],
+    "criteria": [
+     56
+    ],
+    "simultaneously.": [
+     57
+    ],
+    "Moreover,": [
+     58
+    ],
+    "apply": [
+     62
+    ],
+    "uniform": [
+     63
+    ],
+    "debiasing": [
+     64
+    ],
+    "different": [
+     66,
+     183
+    ],
+    "label": [
+     67
+    ],
+    "groups,": [
+     68,
+     119
+    ],
+    "making": [
+     69
+    ],
+    "it": [
+     70
+    ],
+    "difficult": [
+     71
+    ],
+    "separately": [
+     73
+    ],
+    "address": [
+     74,
+     97
+    ],
+    "group": [
+     75
+    ],
+    "the": [
+     78,
+     147,
+     176
+    ],
+    "positive": [
+     79
+    ],
+    "negative": [
+     81
+    ],
+    "classes.": [
+     82
+    ],
+    "Consequently,": [
+     83
+    ],
+    "achieving": [
+     84
+    ],
+    "an": [
+     85
+    ],
+    "optimal": [
+     86
+    ],
+    "trade-off": [
+     87,
+     196
+    ],
+    "between": [
+     88,
+     117,
+     131,
+     150,
+     182
+    ],
+    "utility": [
+     89
+    ],
+    "metrics": [
+     93
+    ],
+    "challenging.": [
+     95
+    ],
+    "To": [
+     96
+    ],
+    "issues,": [
+     99
+    ],
+    "we": [
+     100,
+     108,
+     139,
+     168
+    ],
+    "propose": [
+     101
+    ],
+    "FairSEP,": [
+     102
+    ],
+    "unified": [
+     104
+    ],
+    "Pareto-optimized": [
+     105
+    ],
+    "framework.": [
+     106
+    ],
+    "Specifically,": [
+     107
+    ],
+    "construct": [
+     109
+    ],
+    "sensitive": [
+     111,
+     118,
+     154
+    ],
+    "subspace": [
+     112,
+     125
+    ],
+    "from": [
+     113
+    ],
+    "per-class": [
+     114
+    ],
+    "centroid": [
+     115
+    ],
+    "differences": [
+     116
+    ],
+    "debias": [
+     120
+    ],
+    "embeddings": [
+     121
+    ],
+    "by": [
+     122
+    ],
+    "removing": [
+     123
+    ],
+    "their": [
+     124
+    ],
+    "projections,": [
+     126
+    ],
+    "enforce": [
+     128
+    ],
+    "prediction": [
+     129
+    ],
+    "consistency": [
+     130
+    ],
+    "original": [
+     132
+    ],
+    "debiased": [
+     134
+    ],
+    "representations.": [
+     135
+    ],
+    "On": [
+     136
+    ],
+    "this": [
+     137
+    ],
+    "basis,": [
+     138
+    ],
+    "introduce": [
+     140
+    ],
+    "conditional": [
+     142
+    ],
+    "Wasserstein": [
+     143,
+     148
+    ],
+    "that": [
+     145,
+     173,
+     191
+    ],
+    "minimizes": [
+     146
+    ],
+    "distance": [
+     149
+    ],
+    "predictive": [
+     151
+    ],
+    "distributions": [
+     152
+    ],
+    "groups": [
+     155
+    ],
+    "conditioned": [
+     156
+    ],
+    "true": [
+     158
+    ],
+    "labels,": [
+     159
+    ],
+    "explicitly": [
+     160
+    ],
+    "reducing": [
+     161
+    ],
+    "rates": [
+     164
+    ],
+    "Finally,": [
+     167
+    ],
+    "design": [
+     169
+    ],
+    "Pareto-based": [
+     171
+    ],
+    "strategy": [
+     172
+    ],
+    "automatically": [
+     174
+    ],
+    "adjusts": [
+     175
+    ],
+    "weights": [
+     178
+    ],
+    "resolve": [
+     180
+    ],
+    "conflicts": [
+     181
+    ],
+    "objectives.": [
+     184
+    ],
+    "Experiments": [
+     185
+    ],
+    "five": [
+     187
+    ],
+    "benchmark": [
+     188
+    ],
+    "datasets": [
+     189
+    ],
+    "demonstrate": [
+     190
+    ],
+    "FairSEP": [
+     192
+    ],
+    "achieves": [
+     193
+    ],
+    "superior": [
+     195
+    ],
+    "compared": [
+     197
+    ],
+    "state-of-the-art": [
+     199
+    ],
+    "baselines.": [
+     200
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-11-08T12:12:28.789561",
+   "created_date": "2026-11-03T00:00:00"
+  }
+ ]
+}

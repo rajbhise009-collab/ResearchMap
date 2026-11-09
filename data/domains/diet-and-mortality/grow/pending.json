@@ -1,0 +1,1340 @@
+{
+ "batch_id": "aogbsdllmtlfgz95lph37r962n2cdlgyrspt",
+ "slug": "diet-and-mortality",
+ "submitted_on": "2026-11-09",
+ "submitted_at": 1794233615.9107919,
+ "projected_inr": 0.915894,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7225329489": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7225329489",
+   "openalex_id": "https://openalex.org/W7225329489",
+   "title": "Alcohol-Related Health Disorders: A Narrative Review",
+   "year": 2026,
+   "doi": "https://doi.org/10.3390/clinpract16110207",
+   "venue": "Clinics and Practice",
+   "field": "medicine",
+   "cited_by_count": 0,
+   "abstract": "There is a theory that light drinking is good for health and can extend lifespan compared to those who do not drink. However, a 2018 WHO report showed that, when considering the burden of disease\u2014which includes not only deaths but also general health impairments\u2014zero alcohol consumption is the safest option, and that the burden of disease increases as alcohol consumption rises. The theory that light or moderate drinking is good for health is increasingly being refuted. Alcohol consumption is the cause of a wide range of diseases, including liver damage, metabolic disorders, cardiovascular diseases, malignancies, and sarcopenia. From a health economics perspective, alcohol consumption, which increases the risk of lifestyle-related diseases, also affects labor productivity. It is estimated that there are more than 10 million habitual drinkers in Japan whose drinking habits increase their risk of lifestyle-related diseases, and more than 1 million people with alcohol use disorder (scoring 20 or higher on the Alcohol Use Disorders Identification Test). However, the reality is that only about 50,000 Japanese people with alcohol use disorder actually receive treatment. This indicates that interventions for alcohol dependence in Japan are inadequate. This narrative review paper overviews recent topics of alcohol-related health disorders.",
+   "label": "on-domain",
+   "rationale": "same-sentence pair: 'alcohol consumption' + 'cardiovascular disease'; core scope: mortality/survival outcome reported: 'deaths' with 'increas'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-09",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7225329489",
+   "doi": "https://doi.org/10.3390/clinpract16110207",
+   "title": "Alcohol-Related Health Disorders: A Narrative Review",
+   "display_name": "Alcohol-Related Health Disorders: A Narrative Review",
+   "publication_year": 2026,
+   "publication_date": "2026-11-05",
+   "ids": {
+    "openalex": "https://openalex.org/W7225329489",
+    "doi": "https://doi.org/10.3390/clinpract16110207"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.3390/clinpract16110207",
+    "doi": "https://doi.org/10.3390/clinpract16110207",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/clinpract16110207",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S2764444712",
+     "display_name": "Clinics and Practice",
+     "issn_l": "2039-7275",
+     "issn": [
+      "2039-7275",
+      "2039-7283"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "norway-1",
+      "poland-40",
+      "russia-white-list-2",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310319913",
+     "host_organization_name": "PAGEPress (Italy)",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319913"
+     ],
+     "host_organization_lineage_names": [
+      "PAGEPress (Italy)"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Clinics and Practice",
+    "raw_type": "journal-article"
+   },
+   "volume": null,
+   "type": "review",
+   "is_traditional": true,
+   "indexed_in": [
+    "crossref",
+    "doaj"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://doi.org/10.3390/clinpract16110207",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5063339600",
+      "display_name": "Hiroki Nishikawa",
+      "orcid": "https://orcid.org/0000-0003-3489-2740",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-3489-2740"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I205143321",
+       "display_name": "Osaka Medical and Pharmaceutical University",
+       "ror": "https://ror.org/01y2kdt21",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I205143321"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Hiroki Nishikawa",
+     "raw_affiliation_strings": [
+      "The Second Department of Internal Medicine, Osaka Medical and Pharmaceutical University, Takatsuki 569-8686, Osaka, Japan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "The Second Department of Internal Medicine, Osaka Medical and Pharmaceutical University, Takatsuki 569-8686, Osaka, Japan",
+       "institution_ids": [
+        "https://openalex.org/I205143321"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5018505715",
+      "display_name": "Akira Asai",
+      "orcid": "https://orcid.org/0000-0002-2915-7875",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-2915-7875"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I205143321",
+       "display_name": "Osaka Medical and Pharmaceutical University",
+       "ror": "https://ror.org/01y2kdt21",
+       "country_code": "JP",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I205143321"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Akira Asai",
+     "raw_affiliation_strings": [
+      "The Second Department of Internal Medicine, Osaka Medical and Pharmaceutical University, Takatsuki 569-8686, Osaka, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0002-2915-7875",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "The Second Department of Internal Medicine, Osaka Medical and Pharmaceutical University, Takatsuki 569-8686, Osaka, Japan",
+       "institution_ids": [
+        "https://openalex.org/I205143321"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5110916890",
+      "display_name": "Soo Ki Kim",
+      "orcid": "https://orcid.org/0000-0001-5527-6555",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-5527-6555"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4210149763",
+       "display_name": "Kobe Asahi Hospital",
+       "ror": "https://ror.org/03zeamg24",
+       "country_code": "JP",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I4210149763"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": false,
+     "raw_author_name": "Soo Ki Kim",
+     "raw_affiliation_strings": [
+      "Department of Gastroenterology, Kobe Asahi Hospital, Kobe 653-8501, Hyogo, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-5527-6555",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Gastroenterology, Kobe Asahi Hospital, Kobe 653-8501, Hyogo, Japan",
+       "institution_ids": [
+        "https://openalex.org/I4210149763"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5017531623",
+      "display_name": "Sachiyo Yoshio",
+      "orcid": "https://orcid.org/0000-0001-7860-6916",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-7860-6916"
+      ]
+     },
+     "institutions": [
+      {
+       "id": "https://openalex.org/I4405286378",
+       "display_name": "National Institute of Global Health and Medicine",
+       "ror": "https://ror.org/01z463p85",
+       "country_code": "JP",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I4405286378"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4405286871",
+       "display_name": "Japan Institute for Health Security",
+       "ror": "https://ror.org/03c8bq125",
+       "country_code": "JP",
+       "type": "facility",
+       "lineage": [
+        "https://openalex.org/I1333985979",
+        "https://openalex.org/I4405286871"
+       ]
+      }
+     ],
+     "countries": [
+      "JP"
+     ],
+     "is_corresponding": true,
+     "raw_author_name": "Sachiyo Yoshio",
+     "raw_affiliation_strings": [
+      "Department of Human Immunology and Translational Research, National Institute of Global Health and Medicine, Japan Institute for Health Security, Shinjukuku 162-0052, Tokyo, Japan"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-7860-6916",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Human Immunology and Translational Research, National Institute of Global Health and Medicine, Japan Institute for Health Security, Shinjukuku 162-0052, Tokyo, Japan",
+       "institution_ids": [
+        "https://openalex.org/I4405286378",
+        "https://openalex.org/I4405286871"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 4,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5017531623"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I4405286378",
+    "https://openalex.org/I4405286871"
+   ],
+   "apc_list": {
+    "value": 1600,
+    "currency": "CHF",
+    "value_usd": 1930
+   },
+   "apc_paid": {
+    "value": 1600,
+    "currency": "CHF",
+    "value_usd": 1930
+   },
+   "fwci": 0.0,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.66515152,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "16",
+    "issue": "11",
+    "first_page": "207",
+    "last_page": "207"
+   },
+   "is_retracted": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T11207",
+    "display_name": "Alcohol Consumption and Health Effects",
+    "score": 0.9800000190734863,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2734",
+     "display_name": "Pathology and Forensic Medicine"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/27",
+     "display_name": "Medicine"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/4",
+     "display_name": "Health Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T11207",
+     "display_name": "Alcohol Consumption and Health Effects",
+     "score": 0.9800000190734863,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2734",
+      "display_name": "Pathology and Forensic Medicine"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10043",
+     "display_name": "Substance Abuse Treatment and Outcomes",
+     "score": 0.019700000062584877,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2713",
+      "display_name": "Epidemiology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12494",
+     "display_name": "Alcoholism and Thiamine Deficiency",
+     "score": 0.0,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2728",
+      "display_name": "Clinical Neurology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/alcohol-consumption",
+     "display_name": "alcohol consumption",
+     "score": 0.9179999828338623
+    },
+    {
+     "id": "https://openalex.org/keywords/disease-burden",
+     "display_name": "disease burden",
+     "score": 0.8009999990463257
+    },
+    {
+     "id": "https://openalex.org/keywords/light-drinking",
+     "display_name": "light drinking",
+     "score": 0.5590000152587891
+    },
+    {
+     "id": "https://openalex.org/keywords/liver-injury",
+     "display_name": "liver injury",
+     "score": 0.7630000114440918
+    },
+    {
+     "id": "https://openalex.org/keywords/metabolic-disorders",
+     "display_name": "metabolic disorders",
+     "score": 0.949999988079071
+    },
+    {
+     "id": "https://openalex.org/keywords/cardiovascular-disease",
+     "display_name": "cardiovascular disease",
+     "score": 0.9409999847412109
+    },
+    {
+     "id": "https://openalex.org/keywords/alcohol-related-cancer",
+     "display_name": "alcohol-related cancer",
+     "score": 0.7409999966621399
+    },
+    {
+     "id": "https://openalex.org/keywords/sarcopenia",
+     "display_name": "sarcopenia",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/lifestyle-related-diseases",
+     "display_name": "lifestyle-related diseases",
+     "score": 0.8309999704360962
+    },
+    {
+     "id": "https://openalex.org/keywords/labor-productivity",
+     "display_name": "labor productivity",
+     "score": 0.9629999995231628
+    },
+    {
+     "id": "https://openalex.org/keywords/alcoholism",
+     "display_name": "alcoholism",
+     "score": 0.984000027179718
+    },
+    {
+     "id": "https://openalex.org/keywords/alcoholism-treatment",
+     "display_name": "alcoholism treatment",
+     "score": 0.7070000171661377
+    },
+    {
+     "id": "https://openalex.org/keywords/alcohol-use-disorder-screening",
+     "display_name": "alcohol use disorder screening",
+     "score": 0.5669999718666077
+    },
+    {
+     "id": "https://openalex.org/keywords/japan",
+     "display_name": "Japan",
+     "score": 0.527999997138977
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.7892000079154968
+    },
+    {
+     "id": "https://openalex.org/C3020000205",
+     "wikidata": "https://www.wikidata.org/wiki/Q2412849",
+     "display_name": "Narrative review",
+     "level": 2,
+     "score": 0.7412999868392944
+    },
+    {
+     "id": "https://openalex.org/C3019635848",
+     "wikidata": "https://www.wikidata.org/wiki/Q154",
+     "display_name": "Alcohol consumption",
+     "level": 3,
+     "score": 0.7196000218391418
+    },
+    {
+     "id": "https://openalex.org/C27415008",
+     "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+     "display_name": "Psychological intervention",
+     "level": 2,
+     "score": 0.5590000152587891
+    },
+    {
+     "id": "https://openalex.org/C2908875944",
+     "wikidata": "https://www.wikidata.org/wiki/Q7331102",
+     "display_name": "Excessive alcohol consumption",
+     "level": 4,
+     "score": 0.5565000176429749
+    },
+    {
+     "id": "https://openalex.org/C30772137",
+     "wikidata": "https://www.wikidata.org/wiki/Q5164762",
+     "display_name": "Consumption (sociology)",
+     "level": 2,
+     "score": 0.527899980545044
+    },
+    {
+     "id": "https://openalex.org/C99454951",
+     "wikidata": "https://www.wikidata.org/wiki/Q932068",
+     "display_name": "Environmental health",
+     "level": 1,
+     "score": 0.5113000273704529
+    },
+    {
+     "id": "https://openalex.org/C2781066024",
+     "wikidata": "https://www.wikidata.org/wiki/Q156",
+     "display_name": "Alcohol",
+     "level": 2,
+     "score": 0.4724999964237213
+    },
+    {
+     "id": "https://openalex.org/C2779134260",
+     "wikidata": "https://www.wikidata.org/wiki/Q12136",
+     "display_name": "Disease",
+     "level": 2,
+     "score": 0.4449000060558319
+    },
+    {
+     "id": "https://openalex.org/C118552586",
+     "wikidata": "https://www.wikidata.org/wiki/Q7867",
+     "display_name": "Psychiatry",
+     "level": 1,
+     "score": 0.4422000050544739
+    },
+    {
+     "id": "https://openalex.org/C3020448403",
+     "wikidata": "https://www.wikidata.org/wiki/Q5282120",
+     "display_name": "Burden of disease",
+     "level": 3,
+     "score": 0.43790000677108765
+    },
+    {
+     "id": "https://openalex.org/C2779442783",
+     "wikidata": "https://www.wikidata.org/wiki/Q15326",
+     "display_name": "Alcohol use disorder",
+     "level": 3,
+     "score": 0.4242999851703644
+    },
+    {
+     "id": "https://openalex.org/C138816342",
+     "wikidata": "https://www.wikidata.org/wiki/Q189603",
+     "display_name": "Public health",
+     "level": 2,
+     "score": 0.42100000381469727
+    },
+    {
+     "id": "https://openalex.org/C199033989",
+     "wikidata": "https://www.wikidata.org/wiki/Q1318295",
+     "display_name": "Narrative",
+     "level": 2,
+     "score": 0.4104999899864197
+    },
+    {
+     "id": "https://openalex.org/C74909509",
+     "wikidata": "https://www.wikidata.org/wiki/Q10387",
+     "display_name": "Gerontology",
+     "level": 1,
+     "score": 0.38999998569488525
+    },
+    {
+     "id": "https://openalex.org/C2780664029",
+     "wikidata": "https://www.wikidata.org/wiki/Q5282120",
+     "display_name": "Disease burden",
+     "level": 3,
+     "score": 0.3643999993801117
+    },
+    {
+     "id": "https://openalex.org/C522683910",
+     "wikidata": "https://www.wikidata.org/wiki/Q11290178",
+     "display_name": "Alcohol and health",
+     "level": 4,
+     "score": 0.3449000120162964
+    },
+    {
+     "id": "https://openalex.org/C187155963",
+     "wikidata": "https://www.wikidata.org/wiki/Q629029",
+     "display_name": "Occupational safety and health",
+     "level": 2,
+     "score": 0.3434000015258789
+    },
+    {
+     "id": "https://openalex.org/C3018430727",
+     "wikidata": "https://www.wikidata.org/wiki/Q11058472",
+     "display_name": "Alcohol intake",
+     "level": 3,
+     "score": 0.3125999867916107
+    },
+    {
+     "id": "https://openalex.org/C116834253",
+     "wikidata": "https://www.wikidata.org/wiki/Q2039217",
+     "display_name": "Identification (biology)",
+     "level": 2,
+     "score": 0.3125
+    },
+    {
+     "id": "https://openalex.org/C526869908",
+     "wikidata": "https://www.wikidata.org/wiki/Q3298118",
+     "display_name": "Suicide prevention",
+     "level": 3,
+     "score": 0.3041999936103821
+    },
+    {
+     "id": "https://openalex.org/C185618831",
+     "wikidata": "https://www.wikidata.org/wiki/Q1851928",
+     "display_name": "Health promotion",
+     "level": 3,
+     "score": 0.2971000075340271
+    },
+    {
+     "id": "https://openalex.org/C190385971",
+     "wikidata": "https://www.wikidata.org/wiki/Q373494",
+     "display_name": "Injury prevention",
+     "level": 3,
+     "score": 0.29179999232292175
+    },
+    {
+     "id": "https://openalex.org/C3018154319",
+     "wikidata": "https://www.wikidata.org/wiki/Q12136",
+     "display_name": "Health problems",
+     "level": 2,
+     "score": 0.2867000102996826
+    },
+    {
+     "id": "https://openalex.org/C46578552",
+     "wikidata": "https://www.wikidata.org/wiki/Q2725393",
+     "display_name": "Global health",
+     "level": 3,
+     "score": 0.2831999957561493
+    },
+    {
+     "id": "https://openalex.org/C2779473830",
+     "wikidata": "https://www.wikidata.org/wiki/Q1540899",
+     "display_name": "MEDLINE",
+     "level": 2,
+     "score": 0.2754000127315521
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.2711000144481659
+    },
+    {
+     "id": "https://openalex.org/C78491826",
+     "wikidata": "https://www.wikidata.org/wiki/Q3045352",
+     "display_name": "Social determinants of health",
+     "level": 3,
+     "score": 0.27090001106262207
+    },
+    {
+     "id": "https://openalex.org/C140608501",
+     "wikidata": "https://www.wikidata.org/wiki/Q7318358",
+     "display_name": "Review article",
+     "level": 2,
+     "score": 0.2700999975204468
+    },
+    {
+     "id": "https://openalex.org/C50440223",
+     "wikidata": "https://www.wikidata.org/wiki/Q1475848",
+     "display_name": "Risk factor",
+     "level": 2,
+     "score": 0.26589998602867126
+    },
+    {
+     "id": "https://openalex.org/C3017944768",
+     "wikidata": "https://www.wikidata.org/wiki/Q1450463",
+     "display_name": "Poison control",
+     "level": 2,
+     "score": 0.26409998536109924
+    },
+    {
+     "id": "https://openalex.org/C160735492",
+     "wikidata": "https://www.wikidata.org/wiki/Q31207",
+     "display_name": "Health care",
+     "level": 2,
+     "score": 0.2524999976158142
+    },
+    {
+     "id": "https://openalex.org/C2984618805",
+     "wikidata": "https://www.wikidata.org/wiki/Q2284929",
+     "display_name": "Health risk",
+     "level": 2,
+     "score": 0.25119999051094055
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.3390/clinpract16110207",
+     "doi": "https://doi.org/10.3390/clinpract16110207",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.3390/clinpract16110207",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S2764444712",
+      "display_name": "Clinics and Practice",
+      "issn_l": "2039-7275",
+      "issn": [
+       "2039-7275",
+       "2039-7283"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "doaj",
+       "norway-1",
+       "poland-40",
+       "russia-white-list-2",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310319913",
+      "host_organization_name": "PAGEPress (Italy)",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319913"
+      ],
+      "host_organization_lineage_names": [
+       "PAGEPress (Italy)"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by",
+     "license_id": "https://openalex.org/licenses/cc-by",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Clinics and Practice",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.3390/clinpract16110207",
+    "doi": "https://doi.org/10.3390/clinpract16110207",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.3390/clinpract16110207",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S2764444712",
+     "display_name": "Clinics and Practice",
+     "issn_l": "2039-7275",
+     "issn": [
+      "2039-7275",
+      "2039-7283"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "norway-1",
+      "poland-40",
+      "russia-white-list-2",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310319913",
+     "host_organization_name": "PAGEPress (Italy)",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319913"
+     ],
+     "host_organization_lineage_names": [
+      "PAGEPress (Italy)"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by",
+    "license_id": "https://openalex.org/licenses/cc-by",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Clinics and Practice",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "display_name": "Good health and well-being",
+     "score": 0.98580002784729,
+     "id": "https://metadata.un.org/sdg/3"
+    }
+   ],
+   "study_designs": [],
+   "awards": [],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320311405",
+     "display_name": "Japan Agency for Medical Research and Development",
+     "ror": "https://ror.org/004rtk039"
+    }
+   ],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 67,
+   "referenced_works": [
+    "https://openalex.org/W1619454850",
+    "https://openalex.org/W1830916533",
+    "https://openalex.org/W1862726000",
+    "https://openalex.org/W1980955107",
+    "https://openalex.org/W2015888932",
+    "https://openalex.org/W2017052034",
+    "https://openalex.org/W2059395784",
+    "https://openalex.org/W2073887203",
+    "https://openalex.org/W2085480468",
+    "https://openalex.org/W2110608362",
+    "https://openalex.org/W2110676491",
+    "https://openalex.org/W2131056822",
+    "https://openalex.org/W2141170175",
+    "https://openalex.org/W2153909270",
+    "https://openalex.org/W2159839854",
+    "https://openalex.org/W2261017920",
+    "https://openalex.org/W2529713703",
+    "https://openalex.org/W2560673122",
+    "https://openalex.org/W2617988202",
+    "https://openalex.org/W2774664635",
+    "https://openalex.org/W2787107952",
+    "https://openalex.org/W2961821163",
+    "https://openalex.org/W2969253014",
+    "https://openalex.org/W2996659479",
+    "https://openalex.org/W3014599953",
+    "https://openalex.org/W3017755346",
+    "https://openalex.org/W3034691659",
+    "https://openalex.org/W3098573404",
+    "https://openalex.org/W3119881433",
+    "https://openalex.org/W3154562936",
+    "https://openalex.org/W3187441665",
+    "https://openalex.org/W3198500214",
+    "https://openalex.org/W3210673477",
+    "https://openalex.org/W3214325528",
+    "https://openalex.org/W4200070169",
+    "https://openalex.org/W4205094319",
+    "https://openalex.org/W4211190027",
+    "https://openalex.org/W4220847362",
+    "https://openalex.org/W4294631246",
+    "https://openalex.org/W4306734898",
+    "https://openalex.org/W4307021568",
+    "https://openalex.org/W4309153111",
+    "https://openalex.org/W4324088633",
+    "https://openalex.org/W4366422917",
+    "https://openalex.org/W4378172760",
+    "https://openalex.org/W4380422488",
+    "https://openalex.org/W4381199754",
+    "https://openalex.org/W4381885461",
+    "https://openalex.org/W4384700223",
+    "https://openalex.org/W4388430924",
+    "https://openalex.org/W4389778713",
+    "https://openalex.org/W4391248851",
+    "https://openalex.org/W4391540982",
+    "https://openalex.org/W4394961221",
+    "https://openalex.org/W4399043217",
+    "https://openalex.org/W4405790868",
+    "https://openalex.org/W4407007772",
+    "https://openalex.org/W4407468600",
+    "https://openalex.org/W4407820847",
+    "https://openalex.org/W4408124318",
+    "https://openalex.org/W4412067550",
+    "https://openalex.org/W4412877864",
+    "https://openalex.org/W4415223496",
+    "https://openalex.org/W7135043021",
+    "https://openalex.org/W7164407577",
+    "https://openalex.org/W7167468262",
+    "https://openalex.org/W7168028933"
+   ],
+   "related_works": [
+    "https://openalex.org/W7214060131",
+    "https://openalex.org/W2040453532",
+    "https://openalex.org/W3099297013",
+    "https://openalex.org/W2316789888",
+    "https://openalex.org/W2996680362",
+    "https://openalex.org/W2113151605",
+    "https://openalex.org/W3160184178",
+    "https://openalex.org/W3148835212",
+    "https://openalex.org/W3014079607",
+    "https://openalex.org/W4405996655"
+   ],
+   "abstract_inverted_index": {
+    "There": [
+     0
+    ],
+    "is": [
+     1,
+     7,
+     46,
+     68,
+     72,
+     78,
+     116,
+     162
+    ],
+    "a": [
+     2,
+     23,
+     82,
+     98
+    ],
+    "theory": [
+     3,
+     62
+    ],
+    "that": [
+     4,
+     51,
+     63,
+     118,
+     163,
+     178
+    ],
+    "light": [
+     5,
+     64
+    ],
+    "drinking": [
+     6,
+     67,
+     130
+    ],
+    "good": [
+     8,
+     69
+    ],
+    "for": [
+     9,
+     70,
+     180
+    ],
+    "health": [
+     10,
+     42,
+     71,
+     99,
+     196
+    ],
+    "and": [
+     11,
+     50,
+     95,
+     138
+    ],
+    "can": [
+     12
+    ],
+    "extend": [
+     13
+    ],
+    "lifespan": [
+     14
+    ],
+    "compared": [
+     15
+    ],
+    "to": [
+     16
+    ],
+    "those": [
+     17
+    ],
+    "who": [
+     18
+    ],
+    "do": [
+     19
+    ],
+    "not": [
+     20,
+     36
+    ],
+    "drink.": [
+     21
+    ],
+    "However,": [
+     22,
+     159
+    ],
+    "2018": [
+     24
+    ],
+    "WHO": [
+     25
+    ],
+    "report": [
+     26
+    ],
+    "showed": [
+     27
+    ],
+    "that,": [
+     28
+    ],
+    "when": [
+     29
+    ],
+    "considering": [
+     30
+    ],
+    "the": [
+     31,
+     47,
+     52,
+     79,
+     106,
+     153,
+     160
+    ],
+    "burden": [
+     32,
+     53
+    ],
+    "of": [
+     33,
+     54,
+     81,
+     85,
+     108,
+     135,
+     194
+    ],
+    "disease\u2014which": [
+     34
+    ],
+    "includes": [
+     35
+    ],
+    "only": [
+     37,
+     164
+    ],
+    "deaths": [
+     38
+    ],
+    "but": [
+     39
+    ],
+    "also": [
+     40,
+     111
+    ],
+    "general": [
+     41
+    ],
+    "impairments\u2014zero": [
+     43
+    ],
+    "alcohol": [
+     44,
+     58,
+     102,
+     145,
+     170,
+     181
+    ],
+    "consumption": [
+     45,
+     59,
+     77
+    ],
+    "safest": [
+     48
+    ],
+    "option,": [
+     49
+    ],
+    "disease": [
+     55
+    ],
+    "increases": [
+     56,
+     105
+    ],
+    "as": [
+     57
+    ],
+    "rises.": [
+     60
+    ],
+    "The": [
+     61
+    ],
+    "or": [
+     65,
+     150
+    ],
+    "moderate": [
+     66
+    ],
+    "increasingly": [
+     73
+    ],
+    "being": [
+     74
+    ],
+    "refuted.": [
+     75
+    ],
+    "Alcohol": [
+     76,
+     154
+    ],
+    "cause": [
+     80
+    ],
+    "wide": [
+     83
+    ],
+    "range": [
+     84
+    ],
+    "diseases,": [
+     86,
+     93,
+     110,
+     137
+    ],
+    "including": [
+     87
+    ],
+    "liver": [
+     88
+    ],
+    "damage,": [
+     89
+    ],
+    "metabolic": [
+     90
+    ],
+    "disorders,": [
+     91
+    ],
+    "cardiovascular": [
+     92
+    ],
+    "malignancies,": [
+     94
+    ],
+    "sarcopenia.": [
+     96
+    ],
+    "From": [
+     97
+    ],
+    "economics": [
+     100
+    ],
+    "perspective,": [
+     101
+    ],
+    "consumption,": [
+     103
+    ],
+    "which": [
+     104
+    ],
+    "risk": [
+     107,
+     134
+    ],
+    "lifestyle-related": [
+     109,
+     136
+    ],
+    "affects": [
+     112
+    ],
+    "labor": [
+     113
+    ],
+    "productivity.": [
+     114
+    ],
+    "It": [
+     115
+    ],
+    "estimated": [
+     117
+    ],
+    "there": [
+     119
+    ],
+    "are": [
+     120,
+     185
+    ],
+    "more": [
+     121,
+     139
+    ],
+    "than": [
+     122,
+     140
+    ],
+    "10": [
+     123
+    ],
+    "million": [
+     124,
+     142
+    ],
+    "habitual": [
+     125
+    ],
+    "drinkers": [
+     126
+    ],
+    "in": [
+     127,
+     183
+    ],
+    "Japan": [
+     128,
+     184
+    ],
+    "whose": [
+     129
+    ],
+    "habits": [
+     131
+    ],
+    "increase": [
+     132
+    ],
+    "their": [
+     133
+    ],
+    "1": [
+     141
+    ],
+    "people": [
+     143,
+     168
+    ],
+    "with": [
+     144,
+     169
+    ],
+    "use": [
+     146,
+     171
+    ],
+    "disorder": [
+     147,
+     172
+    ],
+    "(scoring": [
+     148
+    ],
+    "20": [
+     149
+    ],
+    "higher": [
+     151
+    ],
+    "on": [
+     152
+    ],
+    "Use": [
+     155
+    ],
+    "Disorders": [
+     156
+    ],
+    "Identification": [
+     157
+    ],
+    "Test).": [
+     158
+    ],
+    "reality": [
+     161
+    ],
+    "about": [
+     165
+    ],
+    "50,000": [
+     166
+    ],
+    "Japanese": [
+     167
+    ],
+    "actually": [
+     173
+    ],
+    "receive": [
+     174
+    ],
+    "treatment.": [
+     175
+    ],
+    "This": [
+     176,
+     187
+    ],
+    "indicates": [
+     177
+    ],
+    "interventions": [
+     179
+    ],
+    "dependence": [
+     182
+    ],
+    "inadequate.": [
+     186
+    ],
+    "narrative": [
+     188
+    ],
+    "review": [
+     189
+    ],
+    "paper": [
+     190
+    ],
+    "overviews": [
+     191
+    ],
+    "recent": [
+     192
+    ],
+    "topics": [
+     193
+    ],
+    "alcohol-related": [
+     195
+    ],
+    "disorders.": [
+     197
+    ]
+   },
+   "counts_by_year": [],
+   "updated_date": "2026-11-07T11:25:07.637180",
+   "created_date": "2026-11-06T00:00:00"
+  }
+ ]
+}
