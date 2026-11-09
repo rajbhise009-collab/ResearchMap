@@ -1,0 +1,223 @@
+{
+  "paper_id": "openalex:W4386392053",
+  "claims": [
+    {
+      "id": "openalex:W4386392053:c1",
+      "paper_id": "openalex:W4386392053",
+      "text": "In the naive analysis, participants in the self-nudge condition showed higher sharing discernment than participants in the captive control condition (b = 0.31, 95% CI [0.18, 0.45], d = 0.29).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386392053:c2",
+      "paper_id": "openalex:W4386392053",
+      "text": "Sharing discernment was higher in the self-nudge condition than in the captive nudge condition (b = 0.15, 95% CI [0.01, 0.28], d = 0.18), although this effect did not exceed the smallest effect size of interest (SESOI).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386392053:c3",
+      "paper_id": "openalex:W4386392053",
+      "text": "Sharing discernment was higher in the captive nudge condition than in the control condition (b = 0.16, 95% CI [0.03, 0.30], d = 0.11), replicating previous findings below the SESOI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386392053:c4",
+      "paper_id": "openalex:W4386392053",
+      "text": "In an intention-to-treat analysis pooling adopters and nonadopters, sharing discernment was higher in the self-nudge group than in the control condition (b = 0.18, 95% CI [0.06, 0.30], d = 0.16), but this did not exceed the SESOI.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386392053:c5",
+      "paper_id": "openalex:W4386392053",
+      "text": "In the intention-to-treat analysis, sharing discernment in the self-nudge group was not credibly higher than in the nudge condition (b = 0.02, 95% CI [-0.11, 0.15]).",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386392053:c6",
+      "paper_id": "openalex:W4386392053",
+      "text": "Propensity score nearest neighbor matching between the self-nudge condition and matched participants from the nudge condition indicated a small difference in veracity slopes (b = -0.15, 95% CI [-0.30, -0.01], d = 0.18) favoring self-selection.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386392053:c7",
+      "paper_id": "openalex:W4386392053",
+      "text": "The change in effect across 24 hours did not differ between the self-nudge and nudge conditions, with both interventions maintaining stable sharing discernment improvements upon repetition.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4386392053:c8",
+      "paper_id": "openalex:W4386392053",
+      "text": "Participants who chose not to adopt the self-nudge scored significantly higher on the Cognitive Reflection Test-2 (M = 2.74) than participants who adopted it (M = 2.42).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4386392053:e1",
+      "claim_id": "openalex:W4386392053:c1",
+      "description": "Participants in the self-nudge condition showed higher sharing discernment than control: b = 0.31, 95% CI [0.18, 0.45], d = 0.29.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386392053:e2",
+      "claim_id": "openalex:W4386392053:c2",
+      "description": "Sharing discernment was higher in self-nudge than nudge condition with b = 0.15 (95% CI [0.01, 0.28]; d = 0.18), not exceeding the SESOI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386392053:e3",
+      "claim_id": "openalex:W4386392053:c3",
+      "description": "Discernment was higher in nudge than control with b = 0.16 (95% CI [0.03, 0.30]; d = 0.11), below the SESOI of d = 0.21.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386392053:e4",
+      "claim_id": "openalex:W4386392053:c4",
+      "description": "Sharing discernment in the self-nudge ITT group was higher than control: b = 0.18, 95% CI [0.06, 0.30], d = 0.16, which does not exceed the SESOI.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386392053:e5",
+      "claim_id": "openalex:W4386392053:c5",
+      "description": "Discernment in the self-nudge intention-to-treat analysis group was not higher than in the nudge condition: b = 0.02, 95% CI [-0.11, 0.15].",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4386392053:e6",
+      "claim_id": "openalex:W4386392053:c6",
+      "description": "Bayesian model on matched nudge and self-nudge conditions observed a difference in veracity slopes: b = -0.15, 95% CI [-0.30, -0.01], d = 0.18.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4386392053:e7",
+      "claim_id": "openalex:W4386392053:c7",
+      "description": "Contrary to H4, the change in the effect of the interventions did not differ across the two groups after a delay of at least 24 hr; effects remained stable in size and direction.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4386392053:e8",
+      "claim_id": "openalex:W4386392053:c8",
+      "description": "Mean CRT-2 score in nonadopters was 2.74 (SD = 0.93) compared to 2.42 (SD = 1.16) in adopters, t(220.77) = 3.00, p = .003.",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4386392053:m1",
+      "paper_id": "openalex:W4386392053",
+      "name": "Postchoice Randomized Controlled Trial of Self-Nudging",
+      "description": "A preregistered experimental paradigm combining random assignment to choice vs. captive branches with postdecision randomization among adopters to isolate the effect of self-nudging from mere infobox exposure.",
+      "datasets": [
+        "24 pretested true and false political news headlines from Pennycook et al. (2021)"
+      ],
+      "conditions": [
+        "Captive control (rate funniness)",
+        "Captive nudge (rate accuracy prompt)",
+        "Choice: Self-nudge (opted in, received prompt immediately)",
+        "Choice: Potential adopters (opted in, prompt deferred)",
+        "Choice: Nonadopters (opted out, rate funniness)"
+      ]
+    },
+    {
+      "id": "openalex:W4386392053:m2",
+      "paper_id": "openalex:W4386392053",
+      "name": "Bayesian Hierarchical Regression with Intention-to-Treat and Propensity Matching",
+      "description": "Evaluation of sharing discernment through Bayesian hierarchical regressions with random intercepts for participant and headline, supplemented by weighted intention-to-treat analyses and propensity-score nearest neighbor matching.",
+      "datasets": [
+        "Prolific participant sharing ratings across 12 headlines at Assessment 1 (N = 965) and Assessment 2 (N = 494)"
+      ],
+      "conditions": [
+        "Unweighted preregistered model",
+        "Weighted ITT model combining self-nudge and nonadopters",
+        "Propensity-matched subsample comparison"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4386392053:l1",
+      "paper_id": "openalex:W4386392053",
+      "text": "The sample was recruited online and was heavily Democrat-leaning (72.4% when forced to choose), so results may not generalize to samples with different political leanings.",
+      "normalized_category": "sample-representativeness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386392053:l2",
+      "paper_id": "openalex:W4386392053",
+      "text": "The study design cannot fully disentangle the self-determination effect from exposure to the explanatory infobox, because there was no condition presenting the infobox without a choice.",
+      "normalized_category": "confounding-factors",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386392053:l3",
+      "paper_id": "openalex:W4386392053",
+      "text": "Covariate matching was not preregistered and cannot rule out unmeasured confounders that predict self-selection, such as baseline discernment or overconfidence.",
+      "normalized_category": "unmeasured-confounders",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386392053:l4",
+      "paper_id": "openalex:W4386392053",
+      "text": "In the captive nudge condition, participants were forced to respond to the prompt rather than being permitted to ignore or opt out as in real-world deployments, conferring an artificial advantage to the captive nudge.",
+      "normalized_category": "ecological-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386392053:l5",
+      "paper_id": "openalex:W4386392053",
+      "text": "Decay was only assessed over a 24-hour interval with repetition of the intervention, leaving decay over longer intervals and without repeated prompts untested.",
+      "normalized_category": "temporal-generalizability",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4386392053:l6",
+      "paper_id": "openalex:W4386392053",
+      "text": "Externally administered nudges typically shape behavior non-transparently, creating asymmetry of knowledge and power that threatens autonomy and risks paternalism.",
+      "normalized_category": "ethical-paternalism",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4386392053:f1",
+      "paper_id": "openalex:W4386392053",
+      "text": "Investigate durability of accuracy self-nudge effects after delays longer than 24 hours and without repeating the intervention.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4386392053:f2",
+      "paper_id": "openalex:W4386392053",
+      "text": "Introduce an experimental condition presenting the infobox without offering a choice to isolate the self-determination effect from information exposure.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4386392053:f3",
+      "paper_id": "openalex:W4386392053",
+      "text": "Assess additional variables such as overconfidence and baseline discernment to evaluate heterogeneities in who adopts and benefits from self-nudges.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4386392053:f4",
+      "paper_id": "openalex:W4386392053",
+      "text": "Apply and empirically test self-nudging paradigms to other online challenges such as hateful speech and polarization.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-11-09T14:06:09.435366Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

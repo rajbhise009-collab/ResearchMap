@@ -1,0 +1,200 @@
+{
+  "paper_id": "openalex:W7224266505",
+  "claims": [
+    {
+      "id": "openalex:W7224266505:c1",
+      "paper_id": "openalex:W7224266505",
+      "text": "Academic critiques of the youth social media harm thesis did not increase in volume or literature share after Meta's March 2023 meeting notes.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7224266505:c2",
+      "paper_id": "openalex:W7224266505",
+      "text": "The critique share of works taking a stance on the harm thesis fell from 24.6% in the 24 months before March 2023 to 16.7% in the 24 months after (odds ratio 0.62, 95% CI 0.33 to 1.14).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7224266505:c3",
+      "paper_id": "openalex:W7224266505",
+      "text": "84.8% of post-March 2023 critiques with usable reference data cite at least one critique published before the notes, compared to 56.1% of post-notes supportive works (odds ratio 4.35, p < 0.001).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7224266505:c4",
+      "paper_id": "openalex:W7224266505",
+      "text": "29.3% of post-March 2023 critiques share an author with an earlier critique, compared to 17.4% of supportive works sharing an author with an earlier supportive work (odds ratio 1.97, p = 0.046).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7224266505:c5",
+      "paper_id": "openalex:W7224266505",
+      "text": "No critique in the 2,032-work corpus lists Meta, Facebook, or Instagram as a funder in Crossref metadata.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7224266505:c6",
+      "paper_id": "openalex:W7224266505",
+      "text": "Only one record in the corpus lists Facebook funder metadata, which is an empirical adolescent mood study coded as neither critique nor supportive.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7224266505:c7",
+      "paper_id": "openalex:W7224266505",
+      "text": "Later critiques draw on the earlier critical literature in their resolved references at more than twice the rate that later supportive works do (6.8% pooled reference share vs 2.9%).",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7224266505:e1",
+      "claim_id": "openalex:W7224266505:c1",
+      "description": "Critiques held roughly level from 2020 onward, mostly between 5 and 15 works per half year, while supportive works grew steadily and then sharply after 2023.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7224266505:e2",
+      "claim_id": "openalex:W7224266505:c2",
+      "description": "Fisher's exact test across 24-month pre/post windows yielded 28/114 critiques before vs 32/192 after (odds ratio 0.62, 95% CI 0.33 to 1.14, p = 0.10).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7224266505:e3",
+      "claim_id": "openalex:W7224266505:c3",
+      "description": "39 of 46 later critiques with at least five resolved references cited an earlier critique, against 180 of 321 later supportive works (odds ratio 4.35, 95% CI 1.85 to 11.88, p < 0.001).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7224266505:e4",
+      "claim_id": "openalex:W7224266505:c4",
+      "description": "17 of 58 later critiques matched an earlier critique author on surname and first initial, compared to 66 of 380 later supportive works matching an earlier supportive author (odds ratio 1.97, 95% CI 0.99 to 3.80, p = 0.046).",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7224266505:e5",
+      "claim_id": "openalex:W7224266505:c5",
+      "description": "Examination of the Crossref funder field for all 2,032 records revealed zero critiques reporting Meta, Facebook, or Instagram support.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7224266505:e6",
+      "claim_id": "openalex:W7224266505:c6",
+      "description": "Minich and Moreno (2024), an EMA study finding adolescent smartphone use associated with better mood, was the sole record naming Facebook and was recoded N under verification rule R3.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7224266505:e7",
+      "claim_id": "openalex:W7224266505:c7",
+      "description": "Of resolved references in later critiques with at least 5 resolved references, 6.8% pointed to earlier critiques, compared to 2.9% of resolved references in later supportive works pointing to earlier critiques.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7224266505:m1",
+      "paper_id": "openalex:W7224266505",
+      "name": "Bibliometric citation and authorship continuity analysis",
+      "description": "Assembles a rule-defined corpus of works engaging the adolescent social media harm thesis, stance-codes them, and tests for changes in output share, citation continuity, and author continuity before versus after Meta's March 2023 meeting notes.",
+      "datasets": [
+        "OpenCitations",
+        "Semantic Scholar",
+        "scite",
+        "Crossref",
+        "OpenAlex",
+        "Europe PMC"
+      ],
+      "conditions": [
+        "Corpus restricted to works from January 2017 to October 2026 meeting topic and engagement criteria",
+        "Exclusion of March 2023 as a boundary month",
+        "LLM stance coding blind to dates on first pass followed by rule-based verification"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7224266505:l1",
+      "paper_id": "openalex:W7224266505",
+      "text": "The bibliometric design cannot detect private contact, direct outreach to existing critics, editorial influence, or changes in tone.",
+      "normalized_category": "unobserved-outreach",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7224266505:l2",
+      "paper_id": "openalex:W7224266505",
+      "text": "All stance coding was performed by a large language model rather than human experts, and the verification pass used the same model family while seeing publication dates.",
+      "normalized_category": "llm-annotation-limitations",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7224266505:l3",
+      "paper_id": "openalex:W7224266505",
+      "text": "Coding works based on titles and abstracts misses positions and nuances stated only in the full body text.",
+      "normalized_category": "abstract-only-coding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7224266505:l4",
+      "paper_id": "openalex:W7224266505",
+      "text": "191 works had no retrievable abstract and were coded from title alone under rule R4, pushing them toward a 'neither' classification.",
+      "normalized_category": "missing-abstract-bias",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7224266505:l5",
+      "paper_id": "openalex:W7224266505",
+      "text": "Corpus boundaries missed some relevant critical works, capturing only 12 of 19 pre-listed check list critiques.",
+      "normalized_category": "corpus-recall-bounds",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7224266505:l6",
+      "paper_id": "openalex:W7224266505",
+      "text": "Reference data and Crossref funder metadata are incomplete across records, and recent months are undercounted due to indexing lag.",
+      "normalized_category": "incomplete-metadata",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7224266505:l7",
+      "paper_id": "openalex:W7224266505",
+      "text": "Author matching on surname and first initial may produce false matches and miss authors who changed names.",
+      "normalized_category": "author-disambiguation-error",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W7224266505:l8",
+      "paper_id": "openalex:W7224266505",
+      "text": "Statistical window tests had limited statistical power due to sample size (~300 stance works across 24-month windows) and cannot rule out a small rise in critique share.",
+      "normalized_category": "limited-statistical-power",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7224266505:f1",
+      "paper_id": "openalex:W7224266505",
+      "text": "Conduct an independent human check of stance coding on a stratified random sample of 150 works blind to period and model codes.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W7224266505:f2",
+      "paper_id": "openalex:W7224266505",
+      "text": "Score abstract and conclusion language strength across the March 2023 boundary for critics publishing in both periods to evaluate changes in rhetorical forcefulness.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-11-09T14:06:09.723746Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

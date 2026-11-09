@@ -1,0 +1,223 @@
+{
+  "paper_id": "openalex:W4416191447",
+  "claims": [
+    {
+      "id": "openalex:W4416191447:c1",
+      "paper_id": "openalex:W4416191447",
+      "text": "The diagnostic framework Feature-Level Bias Identification And Sensemaking (FL-BIAS) systematically assesses underlying data structures and feature behavior between subgroups to identify algorithmic bias.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c2",
+      "paper_id": "openalex:W4416191447",
+      "text": "The Average Causal Mediated Effect indicating that non-Western background is associated with higher hospitalization rates through lower SES was statistically significant for both non-Western and Dutch groups.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c3",
+      "paper_id": "openalex:W4416191447",
+      "text": "The Average Direct Effect of migration background on hospitalization after accounting for SES was not statistically significant.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c4",
+      "paper_id": "openalex:W4416191447",
+      "text": "In sensitivity analysis of the mediation effect, the Average Causal Mediated Effect was eliminated when the sensitivity parameter rho reached -0.1.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c5",
+      "paper_id": "openalex:W4416191447",
+      "text": "For logistic regression models based on 32 ADGs, the equalized odds ratio was 0.899 on the full test set.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c6",
+      "paper_id": "openalex:W4416191447",
+      "text": "Non-Western individuals exhibited a slightly higher false negative rate (0.349) than Dutch individuals (0.333) in the logistic regression 32-ADG model.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c7",
+      "paper_id": "openalex:W4416191447",
+      "text": "Malignancy (ADG 32) had a higher logistic regression coefficient in the non-Western subgroup model compared to the Dutch subgroup model.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c8",
+      "paper_id": "openalex:W4416191447",
+      "text": "Cohort Shapley values for ADG 32 (Malignancy) were lower in the non-Western group than in the Dutch group for false negative cases and residuals.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416191447:c9",
+      "paper_id": "openalex:W4416191447",
+      "text": "The logistic regression model trained on medication prescription data (Rx-MG) demonstrated an equalized odds ratio of 0.971 and slightly higher F1-score than the 32-ADG model.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4416191447:e1",
+      "claim_id": "openalex:W4416191447:c1",
+      "description": "FL-BIAS (Feature-Level Bias Identification And Sensemaking): A diagnostic framework that systematically assesses underlying data structures and feature behavior between subgroups across exploratory data analysis and model fairness analysis phases.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416191447:e2",
+      "claim_id": "openalex:W4416191447:c2",
+      "description": "The Average Causal Mediated Effect (ACME)... was statistically significant for both the treated non-Western group (0.005695) and the control Dutch group (0.005758), with p-values less than 0.001.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416191447:e3",
+      "claim_id": "openalex:W4416191447:c3",
+      "description": "In contrast, the Average Direct Effect (ADE), which captures the direct effect of migration background on hospitalization after accounting for SES, was not statistically significant (p = 0.68).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416191447:e4",
+      "claim_id": "openalex:W4416191447:c4",
+      "description": "In sensitivity analysis, the mediation effect (ACME) was eliminated when ρ reached −0.1, revealing that a small degree of unobserved confounding could nullify the mediation effect.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4416191447:e5",
+      "claim_id": "openalex:W4416191447:c5",
+      "description": "Table 2 lists for LR - 32 ADGs Full test sample (28218) an EO of 0.899 and an FNR of 0.335.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416191447:e6",
+      "claim_id": "openalex:W4416191447:c6",
+      "description": "Table 2 reports FNR of 0.333 for LR - 32 ADGs Dutch and 0.349 for LR - 32 ADGs Non-western.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416191447:e7",
+      "claim_id": "openalex:W4416191447:c7",
+      "description": "In contrast, ADG 32 has a substantially higher coefficient in the non-Western subgroup model... ADG 32 (Malignancy) had a stronger association with hospitalization among non-Western patients.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4416191447:e8",
+      "claim_id": "openalex:W4416191447:c8",
+      "description": "Cohort Shapley values for ADG 32 were lower in the non-Western group (Fig 6; Fig 7), showing lower responsiveness for residuals and false negatives compared to the Dutch population.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4416191447:e9",
+      "claim_id": "openalex:W4416191447:c9",
+      "description": "Table 2 reports LR Rx-MG Full test sample achieved F1 score of 0.306 and EO of 0.971 compared to LR - 32 ADGs Full F1 score of 0.286 and EO of 0.899.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4416191447:m1",
+      "paper_id": "openalex:W4416191447",
+      "name": "Feature-Level Bias Identification And Sensemaking (FL-BIAS)",
+      "description": "A six-step diagnostic framework integrating exploratory data analysis (feature prevalence, Multiple Correspondence Analysis, Causal Mediation Analysis) and model fairness evaluation (fairness metrics, Kernel Shapley Values, and Cohort Shapley Values) to examine feature-level algorithmic bias.",
+      "datasets": [
+        "Dutch general practice EHR linked with Statistics Netherlands sociodemographic data"
+      ],
+      "conditions": [
+        "112,872 patients (83.8% Dutch, 16.2% non-Western background)",
+        "Johns Hopkins Aggregated Diagnosis Groups (ADGs)",
+        "Rx-defined Morbidity Groups (Rx-MGs)",
+        "Logistic regression baseline",
+        "XGBoost classification"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4416191447:l1",
+      "paper_id": "openalex:W4416191447",
+      "text": "The models exhibited overall underperformance, particularly low precision (0.147-0.204 across models) and high false negative rates in XGBoost, reducing the stability and interpretative validity of feature importance and Shapley Value analyses.",
+      "normalized_category": "model-underperformance",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416191447:l2",
+      "paper_id": "openalex:W4416191447",
+      "text": "SES did not include education levels or occupation due to 30% missing data in CBS records, potentially reducing its validity as a proxy measure and contributing to fragility in mediation estimates.",
+      "normalized_category": "missing-data-proxy-validity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416191447:l3",
+      "paper_id": "openalex:W4416191447",
+      "text": "The non-Western group lumped heterogeneous populations together, including second-generation migrants who differ in health literacy and screening behavior.",
+      "normalized_category": "subgroup-heterogeneity",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416191447:l4",
+      "paper_id": "openalex:W4416191447",
+      "text": "Unobserved confounders such as healthcare access and screening participation could not be controlled for directly, limiting the ability to draw firm causal conclusions.",
+      "normalized_category": "unobserved-confounding",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416191447:l5",
+      "paper_id": "openalex:W4416191447",
+      "text": "Predictive signal in primary care EHR diagnosis codes more than one year prior to hospitalization is fundamentally limited, and claims data were not linked to catch missing diagnoses.",
+      "normalized_category": "data-incompleteness",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416191447:l6",
+      "paper_id": "openalex:W4416191447",
+      "text": "Prior algorithmic fairness research in healthcare has largely relied on group-level fairness metrics that obscure underlying data structures and feature-level dynamics.",
+      "normalized_category": "prior-metric-limitations",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4416191447:f1",
+      "paper_id": "openalex:W4416191447",
+      "text": "Test different machine learning model architectures specifically designed for tabular data, such as TabNet, to handle sparse uninformative features and class imbalance.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4416191447:f2",
+      "paper_id": "openalex:W4416191447",
+      "text": "Implement bootstrapping to generate more rigorous confidence estimates for Shapley value analyses.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4416191447:f3",
+      "paper_id": "openalex:W4416191447",
+      "text": "Apply more granular feature engineering, such as splitting broad diagnostic categories like malignancy into severity-based stages (e.g., early-stage vs. advanced malignancy).",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4416191447:f4",
+      "paper_id": "openalex:W4416191447",
+      "text": "Incorporate Precision-Recall Area Under the Curve (PR-AUC) metrics and calibration curve comparisons across subgroups to improve evaluation under low event rates.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-11-09T14:06:09.099342Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
