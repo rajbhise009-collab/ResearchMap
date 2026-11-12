@@ -76,7 +76,9 @@ INFRA_BROWSER = "infrastructure: could not install test browser"
 BROWSER_HOLD = (f"{INFRA_BROWSER} (the runner's Chromium install failed after retries). Batches already paid "
                 "for were collected and committed; nothing new was started. The browser gates could not run, "
                 "so this run's data waits on a grow/<date> branch and the next run republishes it (self-recovery). "
-                "Not a site failure.")
+                "Not a site failure. Without a browser the share images are not regenerated either, so the "
+                "consistency checks (production build, full tests, consistency script) report share-image "
+                "mismatches; any other failure below is real.")
 
 
 def browser_ok() -> bool:
@@ -917,7 +919,7 @@ def main() -> int:
         no_new_paid = bool(hold or infra)
         if no_new_paid or exhausted:
             weekly = 0.0
-            note = hold or infra or "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
+            note = " ".join(x for x in (hold, infra) if x) or "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
         budget = core.Budget(weekly)
         say(f"money: remaining ₹{mstat['remaining_inr']:.2f}, weeks left {mstat.get('weeks_left')}, "
             f"weekly budget ₹{weekly:.2f}")
@@ -1130,6 +1132,9 @@ def main() -> int:
         status = "publish gates failed — the site was not changed"
         if infra_only(gate_res):
             status += f" ({INFRA_BROWSER}; not a site failure — the next run republishes it)"
+        elif infra:
+            status += (f" ({INFRA_BROWSER}: the browser gates could not run and the share images were not "
+                       "regenerated; the next run republishes it)")
     if note and note.startswith("Budget exhausted"):
         status += " — BUDGET EXHAUSTED"
     if recovered:

@@ -617,9 +617,12 @@ def main() -> int:
         check(18, r.returncode == 1 and public_tree_sha("main") == pub_before and remote_head(f"grow/{d}")
               is not None and led_main >= l_before,
               "the browser gates fail: site unchanged, paid work on main, grow/<date> branch", out[-300:])
-        check(18, "infrastructure: could not install test browser; not a site failure" in it["body"][:300]
-              and "smoke checks on the build" in out.split("GATE FAILURES")[-1],
-              "the Issue and the failure block say infrastructure, not a site failure", it["body"][:300])
+        fails = out.split("GATE FAILURES")[-1]
+        check(18, "(infrastructure: could not install test browser: the browser gates could not run and the share "
+              "images were not regenerated" in it["body"][:400] and "Not a site failure" in it["body"]
+              and "share-image mismatches" in it["body"] and "smoke checks on the build" in fails
+              and "share image papers" in fails,
+              "the Issue names the infrastructure cause and the share-image knock-on", it["body"][:400])
         sync_main()
         r = run_weekly("2027-03-01", GROW_GATES="skip")
         check(18, r.returncode == 0 and f"self-recovery: republished grow/{d}" in r.stdout,

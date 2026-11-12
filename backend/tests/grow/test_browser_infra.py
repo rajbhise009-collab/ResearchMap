@@ -311,6 +311,11 @@ def test_weekly_without_a_browser_collects_paid_work_and_starts_nothing_new():
     assert main.index("infra = None if browser_ok()") < main.index("core.collect(")
     assert 'allowed, why = False, f"{INFRA_BROWSER} (no new paid work)"' in main
     assert main.count("if infra_only(") == 2              # recovery failed, publish gates failed
+    # browser missing but other gates failed too (share images not regenerated): the cause is still named
+    gates_failed = main[main.index('status = "publish gates failed'):main.index("if note and note.startswith")]
+    assert "elif infra:" in gates_failed and "share images were not" in gates_failed
+    assert "share-image mismatches; any other failure below is real" in _rw().BROWSER_HOLD
+    assert 'note = " ".join(x for x in (hold, infra) if x)' in main
     regen = src[src.index("def regenerate()"):src.index("def _serve(")]
     assert "not browser_ok()" in regen                     # share images need the browser too
 
