@@ -47,7 +47,7 @@ def body(steps: dict, logs: list[str], run_url: str) -> tuple[str, list[str]]:
          "problem): run **Weekly grow** again from the Actions tab with **gates_only** ticked first (zero "
          "spend) to confirm the checks pass. The next scheduled run also retries on its own.", ""]
     for f in failed:
-        log = logs[0] if f == "install" else logs[1]
+        log = logs[0] if f in ("install", "browser") else logs[1]
         L += [f"## `{f}`: last {TAIL} lines", "", "```", redact(tail(log)), "```", ""]
     return "\n".join(L), failed
 

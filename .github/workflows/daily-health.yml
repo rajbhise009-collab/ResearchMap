@@ -3,10 +3,19 @@ name: Daily health
 # Checks the live site once a day (tools/live-check.py + quick smoke checks).
 # Opens or updates ONE Issue ("Daily health check failing") on failure and
 # closes it when the checks pass again. No secrets; spends nothing.
+#
+# The test browser (Chromium, for the smoke checks only) comes from the cache
+# or a plain download (tools/ci/install_browser.py: retried, no apt unless it
+# will not launch). If it cannot be installed, that is an INFRASTRUCTURE
+# failure, never the site being down: the live check still runs, no Issue
+# opens, and the 12:41 retry slot runs everything again the same day. Only a
+# repeat there opens an Issue ("Daily health: could not install test
+# browser"). The retry slot does nothing on days the 06:41 run did not need it.
 
 on:
   schedule:
     - cron: "41 6 * * *"        # daily 06:41 UTC
+    - cron: "41 12 * * *"       # retry slot: runs only after an infrastructure failure today
   workflow_dispatch:
 
 permissions:
@@ -17,10 +26,54 @@ concurrency:
   group: daily-health
   cancel-in-progress: true
 
+env:
+  PLAYWRIGHT_VERSION: "1.63.0"
+
 jobs:
-  health:
+  slot:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.decide.outputs.run }}
+      retry: ${{ steps.decide.outputs.retry }}
+      today: ${{ steps.today.outputs.date }}
+    steps:
+      - name: Today (UTC)
+        id: today
+        run: printf 'date=%s\n' "$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Did today's check fail on infrastructure? (retry slot only)
+        id: marker
+        if: github.event.schedule == '41 12 * * *'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: ${{ runner.temp }}/health-infra
+          key: health-infra-${{ steps.today.outputs.date }}
+          lookup-only: true
+
+      - name: Decide
+        id: decide
+        env:
+          IS_RETRY_SLOT: ${{ github.event.schedule == '41 12 * * *' }}
+          MARKED: ${{ steps.marker.outputs.cache-hit == 'true' }}
+        run: |
+          if [ "$IS_RETRY_SLOT" != "true" ]; then
+            printf 'run=true\nretry=false\n' >> "$GITHUB_OUTPUT"
+          elif [ "$MARKED" = "true" ]; then
+            printf 'run=true\nretry=true\n' >> "$GITHUB_OUTPUT"
+            printf 'Retry slot: the earlier check today failed on infrastructure; running every check again.\n'
+          else
+            printf 'run=false\nretry=false\n' >> "$GITHUB_OUTPUT"
+            printf 'Retry slot: no infrastructure failure today; nothing to do.\n'
+          fi
+
+  health:
+    needs: slot
+    if: needs.slot.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    outputs:
+      infra: ${{ steps.check.outputs.infra }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
 
@@ -34,13 +87,51 @@ jobs:
 
       - name: Install
         run: |
-          python -m pip install playwright==1.63.0
-          python -m playwright install --with-deps chromium
+          python -m pip install playwright==${{ env.PLAYWRIGHT_VERSION }}
           npm install --no-save --prefix "$RUNNER_TEMP/axe" axe-core@4.13.0
-          echo "AXE_PATH=$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js" >> "$GITHUB_ENV"
+          printf 'AXE_PATH=%s\n' "$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js" >> "$GITHUB_ENV"
+
+      - name: Test browser from the cache (keyed on the Playwright version)
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: ms-playwright-${{ runner.os }}-${{ env.PLAYWRIGHT_VERSION }}
+
+      # ok != 'true' (false, or empty if the step itself crashed or timed out)
+      # means "infrastructure: could not install test browser"; the live
+      # check below runs either way.
+      - name: Install the test browser (Chromium only, retried; apt only if it will not launch)
+        id: browser
+        continue-on-error: true
+        timeout-minutes: 35
+        run: python tools/ci/install_browser.py
+
+      # a partial download must never be saved under the version's cache key
+      - name: Drop a failed browser install from the cache
+        if: steps.browser.outputs.ok != 'true'
+        run: rm -rf ~/.cache/ms-playwright
 
       - name: Check the live site
+        id: check
         env:
           GH_TOKEN: ${{ github.token }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          HEALTH_BROWSER_OK: ${{ steps.browser.outputs.ok }}
+          HEALTH_RETRY: ${{ needs.slot.outputs.retry }}
         run: python tools/grow/health.py
+
+  # After an infrastructure-only failure: leave a marker for today's retry slot.
+  mark:
+    needs: [slot, health]
+    if: needs.health.result == 'success' && needs.health.outputs.infra == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Marker
+        run: mkdir -p "$RUNNER_TEMP/health-infra" && date -u > "$RUNNER_TEMP/health-infra/marker"
+
+      - name: Save the marker (read by the 12:41 retry slot)
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: ${{ runner.temp }}/health-infra
+          key: health-infra-${{ needs.slot.outputs.today }}

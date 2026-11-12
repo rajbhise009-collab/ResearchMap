@@ -48,6 +48,9 @@ concurrency:
   group: weekly-grow
   cancel-in-progress: false
 
+env:
+  PLAYWRIGHT_VERSION: "1.63.0"
+
 jobs:
   grow:
     runs-on: ubuntu-latest
@@ -73,11 +76,34 @@ jobs:
         run: |
           exec > >(tee "$RUNNER_TEMP/install.log") 2>&1
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt playwright==1.63.0
-          python -m playwright install --with-deps chromium
+          python -m pip install -r requirements.txt playwright==${{ env.PLAYWRIGHT_VERSION }}
           npm ci --prefix frontend
           npm install --no-save --prefix "$RUNNER_TEMP/axe" axe-core@4.13.0
           echo "AXE_PATH=$RUNNER_TEMP/axe/node_modules/axe-core/axe.min.js" >> "$GITHUB_ENV"
+
+      - name: Test browser from the cache (keyed on the Playwright version)
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830  # v4.3.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: ms-playwright-${{ runner.os }}-${{ env.PLAYWRIGHT_VERSION }}
+
+      # Chromium only, no apt (the runner image has its libraries), retried;
+      # never fails the run. If it still cannot be installed (ok != 'true'),
+      # the run collects what was already paid for, starts nothing new, and
+      # its browser gates fail as "infrastructure: could not install test
+      # browser": the existing gate-failure path (grow/<date> branch, then
+      # self-recovery by the next run) publishes it once a browser installs.
+      - name: Install the test browser (Chromium only, retried; apt only if it will not launch)
+        id: browser
+        continue-on-error: true
+        timeout-minutes: 35
+        shell: bash
+        run: python tools/ci/install_browser.py 2>&1 | tee -a "$RUNNER_TEMP/install.log"
+
+      # a partial download must never be saved under the version's cache key
+      - name: Drop a failed browser install from the cache
+        if: steps.browser.outputs.ok != 'true'
+        run: rm -rf ~/.cache/ms-playwright
 
       # The paid path (the API keys) runs only on main. A manual run on any
       # other branch may still use the free gates_only / republish paths.
@@ -109,6 +135,7 @@ jobs:
           GROW_GIT_NAME: ${{ vars.GROW_GIT_NAME }}       # commit author (Vercel Hobby + private repo)
           GROW_GIT_EMAIL: ${{ vars.GROW_GIT_EMAIL }}
           GROW_ISSUE_MARKER: ${{ runner.temp }}/grow-issue-written
+          GROW_BROWSER_OK: ${{ steps.browser.outputs.ok }}
         run: python tools/grow/run_weekly.py 2>&1 | tee "$RUNNER_TEMP/grow.log"
 
       # Any failure the run could not report itself (install failed, crash,

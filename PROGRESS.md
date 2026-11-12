@@ -1,5 +1,21 @@
 # PROGRESS
 
+## CI: test browser without apt (branch `ci-browser-install`) — 2026-11-12
+
+Daily health #36 (11 Nov, `cb72efe`) failed in "Install": `playwright install
+--with-deps` could not reach Ubuntu's package mirrors (DNS failure resolving
+azure.archive.ubuntu.com), so the live-site check never ran. ₹0 spent.
+
+- `tools/ci/install_browser.py` (both workflows):
+  - Chromium only, with no apt, since the runner image has the libraries;
+  - 3 attempts, each with a timeout (240 s), backoff of 15 s then 45 s;
+  - a launch check, and `install-deps` (apt) only if the browser will not launch;
+  - never fails its step; it writes `ok=true|false` as a step output.
+- **Cache:** `~/.cache/ms-playwright` is keyed on `PLAYWRIGHT_VERSION`, one value per workflow that the pip pin also uses. A failed install is deleted before the cache could save it, so a partial download is never stored under the version key.
+- **Daily health:** the live check always runs. Results are labelled either "site check failed" (the site Issue, as before) or "infrastructure: could not install test browser". An infrastructure failure on the first attempt opens no Issue and leaves a cache marker. The new 12:41 UTC retry slot runs only if that marker exists, and only a repeat there opens the separate Issue "Daily health: could not install test browser". The workflow's permissions are unchanged.
+- **Weekly grow:** with no browser, the run collects batches already paid for and starts nothing new (the existing `no_new_paid` path). Share images are not regenerated. The hunt and smoke gates fail as "FAIL (infrastructure)", so the data goes to `grow/<date>` and the next run's self-recovery republishes it. A crashed install step (empty output) counts as no browser.
+- **Tests:** `backend/tests/grow/test_browser_infra.py`. e2e scenario 18 (weekly run without a browser, then recovery) and scenario 10 extended (daily health's infrastructure and retry paths).
+
 ## UI v2 (branch `ui-v2`) — 2026-10-14
 
 Frontend-only pass in four checkpoints. Rules kept throughout:

@@ -9,7 +9,7 @@ so they cannot run up costs.
 | Workflow | When | What it does | Costs |
 |---|---|---|---|
 | **Weekly grow** (`.github/workflows/weekly-grow.yml`) | Mondays 05:23 UTC (10:53 IST), or **Actions → Weekly grow → Run workflow** | Adds papers to every growing library, builds a queued library when money allows, checks everything, publishes only if every check passes | Gemini, paced by the money rule (below) |
-| **Daily health** (`.github/workflows/daily-health.yml`) | Daily 06:41 UTC (12:11 IST), or by hand | Checks the live site (headers, sitemap, share images, search smoke checks) | Free |
+| **Daily health** (`.github/workflows/daily-health.yml`) | Daily 06:41 UTC (12:11 IST), or by hand; a retry slot at 12:41 UTC runs only after an infrastructure failure that day | Checks the live site (headers, sitemap, share images, search smoke checks) | Free |
 | Vercel | On every push to `main` | Rebuilds and deploys the site | Free |
 
 ### Which libraries exist
@@ -146,7 +146,9 @@ budget.
 | Weekly grow — <date> | **stopped cleanly — the site was not changed** | Read "What you need to do" in the Issue. |
 | Weekly grow — <date> | **paused** | Nothing; set `paused` to false to resume. |
 | Weekly grow — <date> | **… LIVE CHECK FAILED** | Roll back (below). |
-| Daily health check failing | (open) | The live site failed its checks. It closes itself when they pass again. |
+| Weekly grow — <date> | **publish gates failed … (infrastructure: could not install test browser; not a site failure …)** | Nothing: the runner could not install Chromium. Paid batches were collected and nothing new was started; the next run republishes by itself. |
+| Daily health check failing | (open) | **site check failed**: the live site failed its checks. It closes itself when they pass again. |
+| Daily health: could not install test browser | (open) | **infrastructure**, not the site: Chromium could not be installed on two runs in a row the same day (the live check passed). Run Daily health again by hand; it closes itself on the first full pass. |
 
 `needs-action` marks the Issues that need you.
 
@@ -260,6 +262,20 @@ submitted or published are never re-filtered. Proposed removals go to
 - **Daily health:** one Issue, "Daily health check failing". It is updated
   each failing day, closed on the first passing day, and reopened (never
   duplicated) if it fails again.
+- **Test browser (both workflows):** Chromium comes from the cache
+  (`~/.cache/ms-playwright`, keyed on the Playwright version) or a plain
+  download by `tools/ci/install_browser.py`: three attempts with backoff,
+  each with a timeout, and apt (`playwright install-deps`) only if the
+  installed browser will not launch. Its failure is labelled
+  "infrastructure: could not install test browser" and never counts as the
+  site being down:
+  - daily health still runs the live check (it needs no browser). A site
+    failure still opens the site Issue. Otherwise no Issue: the 12:41 UTC
+    retry slot runs everything again, and only a repeat there opens
+    "Daily health: could not install test browser" (label `infrastructure`);
+  - weekly grow collects batches already paid for and starts nothing new;
+    its browser gates fail as infrastructure, so the run's data waits on
+    `grow/<date>` and the next run republishes it (self-recovery, below).
 
 ## When a run's publish gates fail
 
