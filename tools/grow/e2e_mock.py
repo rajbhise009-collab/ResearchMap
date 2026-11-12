@@ -25,7 +25,10 @@ build. Scenarios:
      (recorded resolved on publish); one whose data conflicts with main holds
      new spending until the owner records it resolved (branches never deleted)
   9  pause (config/growth.json) then resume
- 10  daily health: site down -> Issue opened; site up -> Issue closed
+ 10  daily health: site down -> Issue opened; site up -> Issue closed. No test
+     browser (infrastructure) with the site up: the live check runs, no
+     Issue, a retry marker; on the retry: ONE infrastructure Issue, never
+     the site Issue; site down without a browser is still a site failure
  11  rotation week: a library never served (and owed its follow-on checks)
      goes first in both phases and gets papers
  12  scope exclusion: a paid-for paper outside the core scope is collected,
@@ -47,6 +50,11 @@ build. Scenarios:
      at the final publish and at a checkpoint the push is rejected, the run
      re-applies its work on the new main, regenerates, reruns the gates and
      pushes; never forced; the owner's commit stays in main's history
+ 18  the test browser could not be installed (infrastructure): the run
+     collects what was already paid for and starts nothing new; the browser
+     gates fail as infrastructure (site unchanged, grow/<date> branch, the
+     Issue says "not a site failure"); the next run, with a browser,
+     recovers by itself
  (budget exhausted mid-run is scenario 6)
 
 --quick skips the publish gates except in scenario 7 (honoured only with
@@ -595,6 +603,27 @@ def main() -> int:
             if at == "publish":
                 check(17, sh(["git", "cat-file", "-e", f"main:docs/releases/{d}.json"], cwd=REMOTE,
                              check_=False).returncode == 0, "publish: the run's own release record is on main")
+        # 18 no test browser (infrastructure) ---------------------------------
+        sync_main()
+        d = "2027-02-22"
+        pub_before, l_before = public_tree_sha("main"), ledger_inr()
+        pending = [p for p in MOCKST.glob("*.json")]
+        r = run_weekly(d, GROW_GATES=None, GROW_BROWSER_OK="false")
+        it = issue(d)
+        out = r.stdout
+        led_main = json.loads(sh(["git", "show", "main:data/spend_ledger.json"], cwd=REMOTE).stdout)["cumulative_inr"]
+        check(18, bool(pending) and "collect " in out and "submit " not in out and "dry run passed; submitted" not in out,
+              "no browser: already-paid batches collected, nothing new submitted or started", out[-400:])
+        check(18, r.returncode == 1 and public_tree_sha("main") == pub_before and remote_head(f"grow/{d}")
+              is not None and led_main >= l_before,
+              "the browser gates fail: site unchanged, paid work on main, grow/<date> branch", out[-300:])
+        check(18, "infrastructure: could not install test browser; not a site failure" in it["body"][:300]
+              and "smoke checks on the build" in out.split("GATE FAILURES")[-1],
+              "the Issue and the failure block say infrastructure, not a site failure", it["body"][:300])
+        sync_main()
+        r = run_weekly("2027-03-01", GROW_GATES="skip")
+        check(18, r.returncode == 0 and f"self-recovery: republished grow/{d}" in r.stdout,
+              "the next run, with a browser, recovers by itself", r.stdout[-300:])
         # 10 --------------------------------------------------------------
         e = env("x", NEXT_PUBLIC_SITE_URL="http://127.0.0.1:9")
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=e)
@@ -605,6 +634,29 @@ def main() -> int:
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=env("x"))
         check(10, r.returncode == 0 and json.loads(hp.read_text())["state"] == "closed", "site up -> Issue closed",
               r.stdout[-600:])
+        ip = ISSUES / "Daily-health--could-not-install-test-browser.json"
+        gho = OUT / "health-github-output"
+        gho.write_text("")
+        r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True,
+                           env=env("x", HEALTH_BROWSER_OK="false", GITHUB_OUTPUT=str(gho)))
+        check(10, r.returncode == 0 and gho.read_text() == "infra=true\n" and not ip.exists()
+              and json.loads(hp.read_text())["state"] == "closed" and "PASS: live check" in r.stdout,
+              "no browser, site up: live check ran, no Issue, retry marker", r.stdout[-600:])
+        r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True,
+                           env=env("x", HEALTH_BROWSER_OK="false", HEALTH_RETRY="true"))
+        check(10, r.returncode == 1 and ip.exists() and json.loads(ip.read_text())["state"] == "open"
+              and "infrastructure" in json.loads(ip.read_text())["labels"]
+              and json.loads(hp.read_text())["state"] == "closed",
+              "no browser on the retry too: ONE infrastructure Issue, the site Issue stays closed", r.stdout[-600:])
+        r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True,
+                           env=env("x", NEXT_PUBLIC_SITE_URL="http://127.0.0.1:9", HEALTH_BROWSER_OK="false"))
+        check(10, r.returncode == 1 and json.loads(hp.read_text())["state"] == "open"
+              and json.loads(hp.read_text())["body"].startswith("**site check failed**"),
+              "site down without a browser is still a site failure", r.stdout[-600:])
+        r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=env("x"))
+        check(10, r.returncode == 0 and json.loads(hp.read_text())["state"] == "closed"
+              and json.loads(ip.read_text())["state"] == "closed",
+              "browser back, site up: both Issues closed", r.stdout[-600:])
         # all -------------------------------------------------------------
         check("all", (ROOT / "data" / "spend_ledger.json").read_bytes() == real_ledger_before,
               "the real ledger was never touched")

@@ -72,6 +72,24 @@ from site_url import site_url, vercel_host  # noqa: E402   (frontend/site.config
 
 SITE = site_url()
 MOCK = os.environ.get("GROW_MOCK") == "1"
+INFRA_BROWSER = "infrastructure: could not install test browser"
+BROWSER_HOLD = (f"{INFRA_BROWSER} (the runner's Chromium install failed after retries). Batches already paid "
+                "for were collected and committed; nothing new was started. The browser gates could not run, "
+                "so this run's data waits on a grow/<date> branch and the next run republishes it (self-recovery). "
+                "Not a site failure.")
+
+
+def browser_ok() -> bool:
+    """False when the workflow could not install the test browser
+    (GROW_BROWSER_OK, from tools/ci/install_browser.py, is not "true"; empty
+    if that step crashed). Unset (local runs, tests): available."""
+    return os.environ.get("GROW_BROWSER_OK", "true").lower() == "true"
+
+
+def infra_only(gate_res: list[dict] | None) -> bool:
+    """Every failed gate failed only because the test browser was missing."""
+    bad = [g for g in gate_res or [] if not g["ok"]]
+    return bool(bad) and all(g.get("infra") for g in bad)
 LOG: list[str] = []
 
 
@@ -251,7 +269,9 @@ def regenerate() -> None:
     stale = (og.get("total_papers") != sum(l["papers"] for l in facts.values())
              or any((og.get("libraries") or {}).get(s, {}).get(k) != f[k]
                     for s, f in facts.items() for k in ("papers", "claims_read", "built")))
-    if stale:
+    if stale and not browser_ok():
+        say(f"share images: stale but not regenerated ({INFRA_BROWSER}); the browser gates fail this run")
+    elif stale:
         sh([PY, "tools/og/make_og_images.py"])
 
 
@@ -350,6 +370,12 @@ def gates(*, after_preflight: bool = False) -> list[dict]:
                                 ("smoke checks on the build", "tools/qa/smoke.py", ["--engines=chromium"])):
         if not built:
             res.append({"gate": name, "ok": False, "tail": "not run: the build failed"})
+            continue
+        if not browser_ok():
+            res.append({"gate": name, "ok": False, "infra": True, "failed": [],
+                        "tail": f"not run: {INFRA_BROWSER} (Chromium could not be installed on the runner). "
+                                "Not a site failure."})
+            say(f"gate FAIL: {name} — {INFRA_BROWSER}")
             continue
         r = _serve(lambda base: sh([PY, script, *extra] + ([base] if "smoke" in script else []),
                                    check=False, timeout=3600, env={"HUNT_BASE": base}, no_secrets=True))
@@ -836,7 +862,10 @@ def main() -> int:
                 say("self-recovery FAILED: no API calls this run (₹0); batches already paid for wait for "
                     "the next run")
                 lr = ledger_inr()
-                body = issue_body(date, "self-recovery failed — nothing spent, the site was not changed", p1=[],
+                status = "self-recovery failed — nothing spent, the site was not changed"
+                if infra_only(rec["gate_res"]):
+                    status += f" ({INFRA_BROWSER}; not a site failure)"
+                body = issue_body(date, status, p1=[],
                                   p2=[], diff=None, spent=0.0, ledger=lr, budget=core.Budget(0.0),
                                   gate_res=rec["gate_res"], money=money.status(ref),
                                   note=(f"{', '.join(rec['branches'])} failed its gates earlier; republishing it "
@@ -882,10 +911,13 @@ def main() -> int:
         if os.environ.get("WEEKLY_BUDGET_INR"):        # optional owner override: can only lower it
             weekly = min(weekly, float(os.environ["WEEKLY_BUDGET_INR"]))
         exhausted = mstat["remaining_inr"] < 1.0
-        no_new_paid = bool(hold)          # a conflicting branch: collect what was paid for, start nothing new
+        # a conflicting branch, or no test browser (this run cannot publish):
+        # collect what was paid for, start nothing new
+        infra = None if browser_ok() else BROWSER_HOLD
+        no_new_paid = bool(hold or infra)
         if no_new_paid or exhausted:
             weekly = 0.0
-            note = hold or "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
+            note = hold or infra or "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
         budget = core.Budget(weekly)
         say(f"money: remaining ₹{mstat['remaining_inr']:.2f}, weeks left {mstat.get('weeks_left')}, "
             f"weekly budget ₹{weekly:.2f}")
@@ -987,6 +1019,8 @@ def main() -> int:
                                              recovery_failed=bool(recovery_failed),
                                              building=bool(queued.building()), build_queued=build_queued,
                                              started_this_run=started)
+        if infra:
+            allowed, why = False, f"{INFRA_BROWSER} (no new paid work)"
         q = registry_queued()
         if not allowed and q:
             say(f"queued libraries: none started ({why})")
@@ -1094,6 +1128,8 @@ def main() -> int:
         publish_bookkeeping(date, f"weekly grow {date}: bookkeeping only (publish gates failed)", keep_rest=True)
         branch = publish_branch(date, f"weekly grow {date}: publish gates failed")
         status = "publish gates failed — the site was not changed"
+        if infra_only(gate_res):
+            status += f" ({INFRA_BROWSER}; not a site failure — the next run republishes it)"
     if note and note.startswith("Budget exhausted"):
         status += " — BUDGET EXHAUSTED"
     if recovered:
@@ -1128,7 +1164,8 @@ def gates_only_summary(date: str, rows: list[dict]) -> str:
     return "\n".join([f"## Weekly grow — gates only ({date}): "
                       + ("all passed" if not bad else f"{bad} FAILED"), "",
                       "| gate | result |", "|:--|:--|",
-                      *[f"| {g['gate']} | {'PASS' if g['ok'] else 'FAIL'} |" for g in rows], ""])
+                      *[f"| {g['gate']} | {'PASS' if g['ok'] else 'FAIL (infrastructure)' if g.get('infra') else 'FAIL'} |"
+                        for g in rows], ""])
 
 
 def gates_only(date: str) -> int:
