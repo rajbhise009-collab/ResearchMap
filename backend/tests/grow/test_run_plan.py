@@ -128,6 +128,17 @@ def test_search_stops_at_the_call_budget_and_says_so(mock_oa):
     assert "call budget" in (f["stopped"] or "") and not f["exhausted"]
 
 
+def test_an_openalex_outage_is_reported_never_called_running_out(mock_oa, monkeypatch):
+    oa = mock_oa(False)
+    monkeypatch.setenv("GROW_MOCK_FAIL", "openalex")
+    monkeypatch.setenv("GROW_RETRY_BASE_S", "0")
+    errs: list[str] = []
+    r = core.search("ml-fairness", core.CallBudget(oa, 600), ref=REF, need=5, errors=errs)
+    f = r["funnel"]
+    assert r["chosen"] == [] and not f["exhausted"] and "OpenAlex errors" in (f["stopped"] or "")
+    assert any("OpenAlex" in e for e in errs)
+
+
 def test_search_tiers_use_filter_lists_only():
     """Every candidate query is filter= (1 credit), never search=."""
     seen = []

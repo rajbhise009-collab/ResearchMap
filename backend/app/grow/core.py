@@ -343,15 +343,24 @@ def search(slug: str, oa, *, ref: dt.date, need: int, errors: list[str]) -> dict
     chosen: list[tuple[dict, dict]] = []
     drops: dict = {}
     stopped = None
+    failed: list[str] = []           # tiers an OpenAlex error cut short (after retries)
     for tier in SEARCH_TIERS:
         if len(chosen) >= need:
             break
         kept_before = len(chosen)
+        n_err = len(errors)
         try:
             new = [c for c in tier_candidates(tier, slug, oa, ref=ref, errors=errors) if c["wid"] not in seen]
+            if len(errors) > n_err:            # the tier caught an OpenAlex error itself
+                failed.append(tier)
         except CallBudget.Spent as e:
             stopped = str(e)
             break
+        except Exception as e:  # noqa: BLE001  (an OpenAlex error never crashes the run)
+            errors.append(f"{slug}: OpenAlex {tier}: {type(e).__name__}")
+            failed.append(tier)
+            tiers.append({"tier": tier, "seen": 0, "kept": 0, "error": True})
+            continue
         best: dict[str, dict] = {}
         for c in new:
             if c["wid"] not in best or REASON_RANK[c["reason"]] < REASON_RANK[best[c["wid"]]["reason"]]:
@@ -371,6 +380,10 @@ def search(slug: str, oa, *, ref: dt.date, need: int, errors: list[str]) -> dict
                 except CallBudget.Spent as e:
                     stopped = str(e)
                     break
+                except Exception as e:  # noqa: BLE001
+                    errors.append(f"{slug}: OpenAlex records ({tier}): {type(e).__name__}")
+                    failed.append(tier)
+                    break
                 tried.update(chunk)
             chosen, drops = select(slug, [c for c in seen.values() if c["wid"] in tried], records,
                                    ref=ref, cap=need)
@@ -384,6 +397,8 @@ def search(slug: str, oa, *, ref: dt.date, need: int, errors: list[str]) -> dict
     drops = dict(drops)
     if len(seen) > len(tried):
         drops["not examined (enough found, or the search stopped)"] = len(seen) - len(tried)
+    if failed and stopped is None and len(chosen) < need:
+        stopped = f"search cut short by OpenAlex errors in: {', '.join(dict.fromkeys(failed))}"
     exhausted = len(chosen) < need and stopped is None
     funnel = {"need": need, "seen": len(seen), "kept": len(chosen), "dropped": drops, "tiers": tiers,
               "exhausted": exhausted, "stopped": stopped,
