@@ -16,7 +16,7 @@ import yaml
 from backend.app.grow import core, plan
 
 REPO = Path(__file__).resolve().parents[3]
-REF = dt.date(2027, 3, 17)
+REF = dt.date(2031, 6, 4)       # a mock week no e2e scenario uses (its pool is not in any library)
 
 
 def _rw():
@@ -140,7 +140,7 @@ def test_search_tiers_use_filter_lists_only():
         core.tier_candidates(tier, "ml-fairness", Rec(), ref=REF, errors=[])
     assert seen and all("search" not in p and "filter" in p for p in seen)
     years = [p["filter"] for p in seen if "title_and_abstract.search" in p["filter"]]
-    assert [f.rsplit("publication_year:", 1)[1] for f in years] == ["2026-2027", "2022-2025", "2017-2021"]
+    assert [f.rsplit("publication_year:", 1)[1] for f in years] == ["2030-2031", "2026-2029", "2021-2025"]
     assert all(f.count("publication_year:") == 1 for f in years)       # the seed filter's own year was removed
 
 

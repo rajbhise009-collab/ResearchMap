@@ -935,7 +935,6 @@ def main() -> int:
             print(block, flush=True)
             return 3
         _reset_rest()          # the preflight build must not leave the tree dirty
-        record_run(date)       # after the reset, so it is kept (pushed with the first checkpoint)
         l0 = ledger_inr()
         manual, run_budget, build_queued = run_controls()
         mode, target = run_options()
@@ -967,6 +966,7 @@ def main() -> int:
         say(f"money: remaining ₹{mstat['remaining_inr']:.2f}, available ₹{mstat['available_inr']:.2f}, "
             f"this run's budget ₹{weekly:.2f}")
         cl = make_clients()
+        record_run(date)       # clients built (secrets present): pushed with the first checkpoint
         before = items_snapshot()
         # Phase 1a: collect earlier runs' growth batches (already paid for),
         # and finish any sync extraction a stopped run left (free, from the cache)

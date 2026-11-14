@@ -145,7 +145,12 @@ def env(date, **extra):
 def run_weekly(date, **extra):
     r = subprocess.run([PY, "tools/grow/run_weekly.py"], cwd=WORK, capture_output=True, text=True,
                        env=env(date, **extra), timeout=7200)
-    (OUT / f"run-{date}.log").write_text(r.stdout + "\n--- stderr ---\n" + r.stderr)
+    log = OUT / f"run-{date}.log"
+    n = 2
+    while log.exists():                    # several runs a day: one log each
+        log = OUT / f"run-{date}-{n}.log"
+        n += 1
+    log.write_text(r.stdout + "\n--- stderr ---\n" + r.stderr)
     return r
 
 
@@ -297,8 +302,8 @@ def main() -> int:
         check(1, it["body"].startswith("**Status:** published to main") and "## Money" in it["body"]
               and "this run's budget" in it["body"], "one Issue: published, with money and this run's budget")
         check(1, "## This run's plan" in it["body"] and "Fewer papers than the target" in it["body"]
-              and "every search tier tried" in it["body"] and "| recent" not in it["body"]
-              and "recent " in it["body"].split("## This run's plan")[1],
+              and "every search tier tried" in it["body"]
+              and "vocabulary 0/0" in it["body"].split("## This run's plan")[1],
               "the default target (55) is more than the mock world holds: the Issue says each library ran out, "
               "per tier, without loosening the rubric", it["body"][:300])
         fp = json.loads((WORK / "docs/releases" / f"{d}.json").read_text())
@@ -369,7 +374,8 @@ def main() -> int:
         check(4, led_main > l_before, "the spend recorded before the stop is on main (bookkeeping commit)")
         check(4, public_tree_sha("main") == pub_before, "site files on main unchanged")
         check(4, not git("ls-remote", "--heads", str(REMOTE), "grow/*"), "no blocking branch")
-        check(4, "OpenAlex" in it["body"] and "next week" in it["body"], "Issue explains and says it retries")
+        check(4, "OpenAlex" in it["body"] and "the next run tries again" in it["body"],
+              "Issue explains and says it retries")
         # 5 ---------------------------------------------------------------
         sync_main()
         d = "2026-11-02"
@@ -688,7 +694,7 @@ def main() -> int:
                                                       cwd=REMOTE, check_=False).returncode == 0,
               "manual run with main moved underneath: rebuilt on the new main, owner's commit kept", r.stdout[-300:])
         fd = "2027-03-12"
-        r = run_weekly(fd, **{**manual, "GROW_GATES": None}, GROW_FAIL_GATE="search regression suite")
+        r = run_weekly(fd, **manual, GROW_FAIL_GATE="search regression suite")
         sync_main()
         check(19, r.returncode == 1 and remote_head(f"grow/{fd}") is not None, "a failed gate leaves grow/<label>",
               r.stdout[-300:])
@@ -729,10 +735,12 @@ def main() -> int:
         after = {s_: papers(s_) for s_ in growing}
         led = json.loads((WORK / "data" / "spend_ledger.json").read_text())["entries"]
         sync_rows = [e for e in led if (e.get("stage") or "").startswith("grow_extract_sync")]
-        added = sum(after[s_] - before[s_] for s_ in growing)
-        check(20, r.returncode == 0 and added == 12 and len(sync_rows) == 12,
+        sync_added = sum(len(json.loads(p.read_text())["outcome"]["added"])
+                         for p in (WORK / "data/domains").glob(f"*/grow/history/{d}-sync-*.json"))
+        grown = sum(after[s_] - before[s_] for s_ in growing)       # also last run's collected batches
+        check(20, r.returncode == 0 and sync_added == 12 and len(sync_rows) == 12 and grown >= 12,
               "sync, target 12: twelve papers added IN THIS RUN, each billed once at the interactive rate",
-              (added, len(sync_rows), r.stdout[-300:]))
+              (sync_added, len(sync_rows), grown, r.stdout[-300:]))
         check(20, not list((WORK / "data/domains").glob("*/grow/pending.json"))
               and not list((WORK / "data/domains").glob("*/grow/sync_inflight.json")) and grow_jobs() == gj0,
               "no batch submitted for extraction, nothing left in flight", (gj0, grow_jobs()))
