@@ -9,9 +9,11 @@
 The ledger may overstate the console (projections round up), so measuring
 on the ledger is the conservative choice. `effective_cap_inr` turns the rule
 into a ledger-terms ceiling (cumulative + remaining), which SpendLedger
-enforces at call time in every path. Growth pacing:
+enforces at call time in every path. How much ONE growth run may commit
+is config/growth.json (backend/app/grow/plan.py):
 
-  weekly_budget = min(weekly_budget_max_inr, remaining / weeks_left)
+  run_budget = min(per_run_cost_cap_inr, manual run_budget_inr, available)
+  available  = remaining - batches submitted but not yet billed
 """
 
 from __future__ import annotations
@@ -69,22 +71,6 @@ def effective_cap_inr(cumulative_inr: float, entries: list[dict]) -> float | Non
     return cap
 
 
-def weeks_left(cfg: dict, today: dt.date | None = None) -> int:
-    today = today or dt.datetime.now(IST).date()
-    start = dt.date.fromisoformat(cfg["growth_horizon_start"])
-    elapsed = max(0, (today - start).days // 7)
-    return max(1, int(cfg["growth_horizon_weeks"]) - elapsed)
-
-
-def weekly_budget_inr(remaining: float, cfg: dict, today: dt.date | None = None) -> float:
-    return round(min(float(cfg["weekly_budget_max_inr"]), remaining / weeks_left(cfg, today)), 2)
-
-
-def queued_affordable(projection_inr: float, remaining: float, weekly: float, cfg: dict,
-                      mult: float = 1.5) -> bool:
-    return projection_inr * mult + int(cfg["queued_domain_reserve_weeks"]) * weekly <= remaining + 1e-9
-
-
 def pending_commitments() -> list[dict]:
     """Batches submitted but not yet collected (so not yet in the ledger):
     weekly-growth pending.json, queued-library extraction states, and
@@ -110,8 +96,9 @@ def pending_inr() -> float:
     return round(sum(c["projected_inr"] for c in pending_commitments()), 4)
 
 
-def status(today: dt.date | None = None) -> dict:
-    """Everything a run or a report needs, computed from the ledger + config."""
+def status(today: dt.date | None = None, manual_cap_inr: float | None = None) -> dict:
+    """Everything a run or a report needs, computed from the ledger + config.
+    run_budget_inr: what one growth run may commit now (plan.run_budget_inr)."""
     from backend.app.extraction.spend_ledger import SpendLedger
     cfg = load() or {}
     snap = SpendLedger.load().snapshot()
@@ -126,9 +113,11 @@ def status(today: dt.date | None = None) -> dict:
            "pending_inr": round(pend, 2), "available_inr": round(avail, 2),
            "console_spent_inr": cfg.get("console_spent_inr"),
            "console_spent_date": cfg.get("console_spent_date")}
-    if cfg:
-        out["weeks_left"] = weeks_left(cfg, today)
-        out["weekly_budget_inr"] = weekly_budget_inr(avail, cfg, today)
+    from backend.app.grow import plan
+    st = plan.load()
+    out["per_run_cost_cap_inr"] = st.per_run_cost_cap_inr
+    out["target_papers_per_run"] = st.target_papers_per_run
+    out["run_budget_inr"] = plan.run_budget_inr(st, avail, manual_cap_inr)
     return out
 
 

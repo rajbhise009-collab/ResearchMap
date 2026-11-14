@@ -76,7 +76,7 @@ def test_zero_budget_submits_nothing(monkeypatch, tmp_path):
     r = core.submit("ml-fairness", cl, core.Budget(0.0), picked["ml-fairness"], ref=dt.date(2026, 10, 12))
     assert r["submitted"] == 0 and r["projected_inr"] == 0
     if prep["items"]:
-        assert prep["dropped"].get("over weekly budget", 0) == len(prep["items"])
+        assert prep["dropped"].get("over this run's budget", 0) == len(prep["items"])
     assert not core.pending_path("ml-fairness").exists()
 
 
@@ -141,7 +141,7 @@ def test_round_robin_allocation_favours_open_candidates_then_low_coverage():
     # budget 6.0 padded x1.5 => 4 papers; a and c tie on candidates, c has fewer papers
     picked = core.allocate(prep, core.Budget(6.0), {"a": 200, "b": 50, "c": 100})
     assert [len(picked[s]) for s in ("c", "a", "b")] == [2, 1, 1]
-    assert prep["a"]["dropped"]["over weekly budget"] == 4
+    assert prep["a"]["dropped"]["over this run's budget"] == 4
 
 
 def test_transient_errors_retry_then_succeed():
@@ -160,15 +160,30 @@ def test_transient_errors_retry_then_succeed():
 def test_manual_run_inputs_and_controls(monkeypatch):
     _d, on = _wf("weekly-grow.yml")
     inp = on["workflow_dispatch"]["inputs"]
-    assert inp["run_budget_inr"]["default"] == "25"
+    assert inp["run_budget_inr"]["default"] == ""                     # empty: the per-run cap (config)
     assert inp["build_queued"]["type"] == "boolean" and inp["build_queued"]["default"] is False
+    assert inp["mode"]["type"] == "choice" and inp["mode"]["options"] == ["batch", "sync"]
+    assert inp["mode"]["default"] == "batch" and inp["target_papers"]["default"] == ""
     rw = _load_run_weekly()
     monkeypatch.setenv("GROW_EVENT", "schedule")
     assert rw.run_controls() == (False, None, True)                  # scheduled: money rule, queued allowed
+    monkeypatch.setenv("GROW_MODE", "sync")                           # inputs never steer a scheduled run
+    monkeypatch.setenv("GROW_TARGET_PAPERS", "3")
+    from backend.app.grow import plan
+    cfg = plan.load()
+    assert rw.run_options() == (cfg.mode, cfg.target_papers_per_run)
     monkeypatch.setenv("GROW_EVENT", "workflow_dispatch")
     monkeypatch.delenv("GROW_RUN_BUDGET_INR", raising=False)
     monkeypatch.delenv("GROW_BUILD_QUEUED", raising=False)
-    assert rw.run_controls() == (True, 25.0, False)                  # manual defaults
+    assert rw.run_controls() == (True, None, False)                  # manual defaults: the per-run cap
+    assert rw.run_options() == ("sync", 3)
+    for bad_mode, bad_target in (("fast", ""), ("", "-1"), ("", "x"), ("", "501")):
+        monkeypatch.setenv("GROW_MODE", bad_mode)
+        monkeypatch.setenv("GROW_TARGET_PAPERS", bad_target)
+        with pytest.raises(core.GrowStop):
+            rw.run_options()                                          # refused before anything is spent
+    monkeypatch.delenv("GROW_MODE")
+    monkeypatch.delenv("GROW_TARGET_PAPERS")
     monkeypatch.setenv("GROW_RUN_BUDGET_INR", "40")
     monkeypatch.setenv("GROW_BUILD_QUEUED", "true")
     assert rw.run_controls() == (True, 40.0, True)

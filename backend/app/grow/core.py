@@ -9,12 +9,16 @@ Phase 1 (collect):  fetch the extraction batch submitted last week; bill it
                     transfer confirmation. Anything a check has not reached
                     stays hidden (new disagreements show as "Flagged by the
                     system, not yet checked" and never count).
-Phase 2 (submit):   pick candidates from free OpenAlex queries, keep the
-                    ones the library's labelling rubric accepts, dedupe
+Phase 2 (submit):   pick candidates from free OpenAlex filter queries in
+                    widening tiers (search: recent citers, then the forward
+                    and backward citation snowball, then the library's own
+                    vocabulary by year), keep the ones the library's
+                    labelling rubric AND core scope accept, dedupe
                     (candidate rule + the full ingestion dedupe + title
                     rule), fetch open full text, and submit ONE batch whose
-                    projection x1.5 fits the week's remaining budget and the
-                    lifetime ledger ceiling.
+                    projection x1.5 fits the run's budget and the lifetime
+                    ledger ceiling (mode batch), or extract the papers in
+                    this run (mode sync, about 2x the cost: extract_sync).
 
 Libraries grown: every built, non-frozen library in data/library_registry.json.
 LLM-calibration is frozen: its corpus is the validation baseline (tag
@@ -34,18 +38,24 @@ from pathlib import Path
 from typing import Any, Callable
 
 from backend.app.config import REPO_ROOT
+from backend.app.grow.plan import SYNC_COST_FACTOR
 
 def grow_slugs() -> tuple[str, ...]:
     """Every built, non-frozen library (data/library_registry.json).
     LLM calibration is frozen: the validation baseline."""
     from backend.app.api import registry
     return tuple(registry.growable())
-MAX_NEW_PER_LIBRARY = 15
+MAX_NEW_PER_LIBRARY = 15     # default need of one library when none is given
 LOOKBACK_DAYS = 10
 EXTRACTION_MULT = 1.5        # projection padding for extraction (brief: x1.5)
 CLASSIFY_MULT = 2.0          # projection padding for classification calls
 FOLLOWON_WAIT_S = 45 * 60    # longest wait on a follow-on batch per run
-REASON_RANK = {"cites-both": 0, "orphan-citer": 1, "snowball": 2}
+GATE_RESERVE_S = 80 * 60     # run time kept back for regenerating, every gate and the publish
+REASON_RANK = {"cites-both": 0, "orphan-citer": 1, "snowball": 2, "snowball-forward": 3,
+               "snowball-backward": 4, "vocabulary": 5}
+SEARCH_TIERS = ("recent", "forward", "backward", "vocabulary")
+LIST_PER_PAGE = 200          # OpenAlex's maximum for a filter list
+FETCH_CHUNK = 50             # records fetched per openalex_id call
 
 
 class GrowStop(RuntimeError):
@@ -197,6 +207,190 @@ def find_candidates(slug: str, oa, *, ref: dt.date, lookback: int = LOOKBACK_DAY
     return list(best.values())
 
 
+class CallBudget:
+    """Counts this run's OpenAlex calls (all libraries together) and stops
+    the search at openalex_max_calls_per_run. Wraps any client with .get."""
+
+    class Spent(RuntimeError):
+        pass
+
+    def __init__(self, oa, max_calls: int):
+        self.oa, self.max_calls, self.calls = oa, max_calls, 0
+
+    @property
+    def left(self) -> int:
+        return max(0, self.max_calls - self.calls)
+
+    def get(self, path: str, params: dict) -> dict:
+        if self.calls >= self.max_calls:
+            raise CallBudget.Spent(f"OpenAlex call budget for this run used ({self.max_calls} calls)")
+        self.calls += 1
+        return self.oa.get(path, params)
+
+
+def _list(oa, flt: str, *, sort: str = "cited_by_count:desc", pages: int = 1) -> list[dict]:
+    out: list[dict] = []
+    for page in range(1, pages + 1):
+        body = with_retry(lambda: oa.get("/works", {"filter": flt, "per-page": str(LIST_PER_PAGE), "page": str(page),
+                                                    "sort": sort, "select": _SELECT}))
+        res = body.get("results") or []
+        out += res
+        if len(res) < LIST_PER_PAGE:
+            break
+    return out
+
+
+def _cand(w: dict, reason: str, detail: str) -> dict | None:
+    wid = _wid(w.get("id", ""))
+    if not wid or w.get("is_retracted") or w.get("is_paratext"):
+        return None
+    return {"wid": wid, "reason": reason, "detail": detail, "cited_by_count": w.get("cited_by_count") or 0}
+
+
+_YEAR_RX = None
+
+
+def _without_year(flt: str) -> str:
+    """The domain's seed filter with its own publication-year limit removed,
+    so each vocabulary query can set its own year slice."""
+    import re
+    global _YEAR_RX
+    _YEAR_RX = _YEAR_RX or re.compile(r",?publication_year:[^,]*")
+    return _YEAR_RX.sub("", flt).strip(",")
+
+
+def tier_candidates(tier: str, slug: str, oa, *, ref: dt.date, errors: list[str]) -> list[dict]:
+    """Candidates of one widening search tier, before rubric and dedupe.
+    Every call is an OpenAlex filter list (1 credit each), never search=.
+
+      recent      find_candidates: citers of the library's disagreements,
+                  open questions and papers, published in the last 10 days
+      forward     papers citing the library's papers: the last two years
+                  first (newest first), then all years (most cited first)
+      backward    works the library's papers cite, most co-cited first (older
+                  foundational papers the library is missing)
+      vocabulary  the library's own seed query (its rubric's strong terms and
+                  outcome terms) by year slice: the last two years, then 3-5
+                  and 6-10 years back, most cited first
+    """
+    if tier == "recent":
+        return find_candidates(slug, oa, ref=ref, errors=errors)
+    _pre, entries, raw = _library(slug)
+    lib = sorted({e["wid"] for e in entries})
+    out: list[dict] = []
+    if tier == "forward":
+        since = (ref - dt.timedelta(days=730)).isoformat()
+        for flt_extra, sort, why in ((f",from_publication_date:{since}", "publication_date:desc",
+                                      "cites papers in this library (last two years)"),
+                                     ("", "cited_by_count:desc", "cites papers in this library (any year)")):
+            for k in range(0, len(lib), 50):
+                chunk = lib[k:k + 50]
+                try:
+                    for w in _list(oa, f"cites:{'|'.join(chunk)}{flt_extra}", sort=sort):
+                        c = _cand(w, "snowball-forward", why)
+                        if c and c["wid"] not in chunk:
+                            out.append(c)
+                except CallBudget.Spent:
+                    raise
+                except Exception as e:  # noqa: BLE001
+                    errors.append(f"{slug}: OpenAlex forward snowball: {type(e).__name__}")
+        return out
+    if tier == "backward":
+        from collections import Counter
+        have = set(lib)
+        refs: Counter = Counter()
+        for r in raw:
+            if _wid(r.get("id", "")) in have:
+                refs.update({_wid(x) for x in r.get("referenced_works") or []} - have - {""})
+        ranked = [w for w, _n in refs.most_common()]
+        recs = fetch_records(oa, ranked[:4 * FETCH_CHUNK])
+        for w in ranked[:4 * FETCH_CHUNK]:
+            if w in recs:
+                c = _cand(recs[w], "snowball-backward", f"cited by {refs[w]} paper(s) in this library")
+                if c:
+                    c["record"] = recs[w]
+                    out.append(c)
+        return out
+    if tier == "vocabulary":
+        from backend.app.corpus.multi_domain_reason import DOMAINS
+        base = _without_year(DOMAINS[slug].seed_filter)
+        y = ref.year
+        for y0, y1 in ((y - 1, y), (y - 5, y - 2), (y - 10, y - 6)):
+            try:
+                for w in _list(oa, f"{base},publication_year:{y0}-{y1}"):
+                    c = _cand(w, "vocabulary", f"matches this library's own search terms ({y0}-{y1})")
+                    if c:
+                        out.append(c)
+            except CallBudget.Spent:
+                raise
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{slug}: OpenAlex vocabulary {y0}-{y1}: {type(e).__name__}")
+        return out
+    raise ValueError(f"unknown search tier {tier!r}")
+
+
+def search(slug: str, oa, *, ref: dt.date, need: int, errors: list[str]) -> dict:
+    """Widen the search tier by tier until the library has `need` in-scope,
+    deduplicated candidates, or every tier has been tried (exhausted). The
+    rubric, core scope and dedupe are exactly select()'s; nothing is loosened.
+    Records are fetched best-first in chunks, and fetching stops once enough
+    candidates are kept. Returns {chosen, records, funnel}; funnel reports,
+    per tier and in total, the candidates seen, kept and dropped by reason."""
+    seen: dict[str, dict] = {}
+    records: dict[str, dict] = {}
+    tried: set[str] = set()          # wids whose record was fetched (or asked for)
+    tiers: list[dict] = []
+    chosen: list[tuple[dict, dict]] = []
+    drops: dict = {}
+    stopped = None
+    for tier in SEARCH_TIERS:
+        if len(chosen) >= need:
+            break
+        kept_before = len(chosen)
+        try:
+            new = [c for c in tier_candidates(tier, slug, oa, ref=ref, errors=errors) if c["wid"] not in seen]
+        except CallBudget.Spent as e:
+            stopped = str(e)
+            break
+        best: dict[str, dict] = {}
+        for c in new:
+            if c["wid"] not in best or REASON_RANK[c["reason"]] < REASON_RANK[best[c["wid"]]["reason"]]:
+                best[c["wid"]] = c
+        new = sorted(best.values(), key=lambda c: (REASON_RANK[c["reason"]], -c["cited_by_count"], c["wid"]))
+        for c in new:
+            if "record" in c:
+                records[c["wid"]] = c.pop("record")
+                tried.add(c["wid"])
+        seen.update({c["wid"]: c for c in new})
+        todo = [c["wid"] for c in new if c["wid"] not in records]
+        for k in range(0, max(1, len(todo)), FETCH_CHUNK):
+            chunk = todo[k:k + FETCH_CHUNK]
+            if chunk:
+                try:
+                    records.update(fetch_records(oa, chunk))
+                except CallBudget.Spent as e:
+                    stopped = str(e)
+                    break
+                tried.update(chunk)
+            chosen, drops = select(slug, [c for c in seen.values() if c["wid"] in tried], records,
+                                   ref=ref, cap=need)
+            if len(chosen) >= need:
+                break
+        tiers.append({"tier": tier, "seen": len(new), "kept": len(chosen) - kept_before})
+        if stopped:
+            break
+    if not seen:
+        chosen, drops = [], {}
+    drops = dict(drops)
+    if len(seen) > len(tried):
+        drops["not examined (enough found, or the search stopped)"] = len(seen) - len(tried)
+    exhausted = len(chosen) < need and stopped is None
+    funnel = {"need": need, "seen": len(seen), "kept": len(chosen), "dropped": drops, "tiers": tiers,
+              "exhausted": exhausted, "stopped": stopped,
+              "short": max(0, need - len(chosen))}
+    return {"chosen": chosen, "records": records, "funnel": funnel}
+
+
 def fetch_records(oa, wids: list[str]) -> dict[str, dict]:
     out: dict[str, dict] = {}
     for k in range(0, len(wids), 50):
@@ -222,8 +416,9 @@ def _entry(rec: dict, cand: dict, label: str, rationale: str, ref: dt.date) -> d
 
 
 def select(slug: str, cands: list[dict], records: dict[str, dict], *,
-           ref: dt.date) -> tuple[list[tuple[dict, dict]], dict]:
-    """Rubric, then dedupe; ranked. Returns ([(entry, raw)], drop counts)."""
+           ref: dt.date, cap: int = MAX_NEW_PER_LIBRARY) -> tuple[list[tuple[dict, dict]], dict]:
+    """Rubric, then dedupe; ranked; at most `cap` (this run's need for the
+    library). Returns ([(entry, raw)], drop counts)."""
     from collections import Counter
 
     from backend.app.corpus.multi_domain import _abstract_of, classify
@@ -289,8 +484,8 @@ def select(slug: str, cands: list[dict], records: dict[str, dict], *,
             drops["duplicate by ingestion dedupe"] += 1
             continue
         accepted.append((e, r))
-    drops["over weekly per-library cap"] += max(0, len(accepted) - MAX_NEW_PER_LIBRARY)
-    return accepted[:MAX_NEW_PER_LIBRARY], dict(drops)
+    drops["beyond this run's need for the library"] += max(0, len(accepted) - cap)
+    return accepted[:cap], {k: v for k, v in drops.items() if v}
 
 
 # ---------------------------------------------------------------------------
@@ -310,15 +505,23 @@ def _prompt_for(entry: dict) -> tuple[str, str, float]:
     return prompt, src, cost(estimate_tokens(prompt), out_t, batch=True) * 84.0
 
 
-def prepare(slug: str, cl: Clients, *, ref: dt.date, errors: list[str]) -> dict:
-    """Free: candidates -> rubric -> dedupe -> full text -> rendered prompts
-    with per-paper projections, best first. Nothing is submitted here."""
+def prepare(slug: str, cl: Clients, *, ref: dt.date, errors: list[str], need: int = MAX_NEW_PER_LIBRARY,
+            oa=None) -> dict:
+    """Free: widening search (search) -> rubric -> core scope -> dedupe ->
+    full text -> rendered prompts with per-paper projections (batch and
+    sync), best first. Nothing is submitted here. `oa`: the run's
+    CallBudget-wrapped client (default: the clients' own)."""
     if pending_path(slug).exists():
         return {"slug": slug, "items": [], "candidates": 0, "dropped": {},
-                "note": "last batch not collected yet"}
-    cands = find_candidates(slug, cl.openalex, ref=ref, errors=errors)
-    records = fetch_records(cl.openalex, [c["wid"] for c in cands]) if cands else {}
-    chosen, drops = select(slug, cands, records, ref=ref)
+                "note": "last batch not collected yet",
+                "funnel": {"need": need, "seen": 0, "kept": 0, "dropped": {}, "tiers": [], "exhausted": False,
+                           "stopped": "its last batch is not collected yet (no new search)", "short": 0}}
+    if need <= 0:
+        return {"slug": slug, "items": [], "candidates": 0, "dropped": {}, "note": "no share this run",
+                "funnel": {"need": 0, "seen": 0, "kept": 0, "dropped": {}, "tiers": [], "exhausted": False,
+                           "stopped": None, "short": 0}}
+    found = search(slug, oa or cl.openalex, ref=ref, need=need, errors=errors)
+    chosen, drops, funnel = found["chosen"], found["funnel"]["dropped"], found["funnel"]
     items = []
     for e, r in chosen:
         try:
@@ -330,8 +533,9 @@ def prepare(slug: str, cl: Clients, *, ref: dt.date, errors: list[str]) -> dict:
         e["fulltext_source"] = src
         e["abstract_only"] = not src
         prompt, src2, inr = _prompt_for(e)
-        items.append({"entry": e, "record": r, "prompt": prompt, "src": src2, "inr": inr})
-    return {"slug": slug, "items": items, "candidates": len(cands), "dropped": drops}
+        items.append({"entry": e, "record": r, "prompt": prompt, "src": src2, "inr": inr,
+                      "inr_sync": inr * SYNC_COST_FACTOR})
+    return {"slug": slug, "items": items, "candidates": funnel["seen"], "dropped": drops, "funnel": funnel}
 
 
 # ---------------------------------------------------------------------------
@@ -388,27 +592,36 @@ def followon_owed(r: dict) -> list[str]:
 
 
 def allocate(prepared: dict[str, dict], budget: Budget, papers: dict[str, int],
-             order: list[str] | None = None) -> dict[str, list[dict]]:
+             order: list[str] | None = None, *, target: int | None = None,
+             mode: str = "batch") -> dict[str, list[dict]]:
     """Round-robin across libraries, one paper per library per round, until
-    the week's budget (padded x1.5) is spent. Library order each round: the
-    fair order (served longest ago first; see fair_order), else most open
-    candidates first, then fewest papers (lowest coverage)."""
+    the run's target is reached or its budget (padded x1.5) is spent. A
+    library that ran out of candidates simply drops out of later rounds, so
+    the others fill its share. Library order each round: the fair order
+    (served longest ago first; see fair_order), else most open candidates
+    first, then fewest papers (lowest coverage). mode sync prices each paper
+    at the interactive rate (about 2x)."""
+    key = "inr_sync" if mode == "sync" else "inr"
     order = [s for s in (order or []) if s in prepared] or \
         sorted(prepared, key=lambda s: (-len(prepared[s]["items"]), papers.get(s, 0), s))
     picked: dict[str, list[dict]] = {s: [] for s in prepared}
-    total = 0.0
+    total, n = 0.0, 0
     for rnd in range(max((len(p["items"]) for p in prepared.values()), default=0)):
         for s in order:
             items = prepared[s]["items"]
             if rnd >= len(items):
                 continue
             it = items[rnd]
-            if budget.fits((total + it["inr"]) * EXTRACTION_MULT):
+            cost = it.get(key, it["inr"] * (SYNC_COST_FACTOR if mode == "sync" else 1.0))
+            d = prepared[s]["dropped"]
+            if target is not None and n >= target:
+                d["beyond the run's target"] = d.get("beyond the run's target", 0) + 1
+            elif budget.fits((total + cost) * EXTRACTION_MULT):
                 picked[s].append(it)
-                total += it["inr"]
+                total += cost
+                n += 1
             else:
-                d = prepared[s]["dropped"]
-                d["over weekly budget"] = d.get("over weekly budget", 0) + 1
+                d["over this run's budget"] = d.get("over this run's budget", 0) + 1
     return picked
 
 
@@ -544,11 +757,125 @@ def collect(slug: str, cl: Clients, *, ref: dt.date) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# mode sync: extract in this run (interactive API, about 2x the batch price)
+# ---------------------------------------------------------------------------
+
+SYNC_CHECKPOINT_EVERY = 10   # papers between checkpoint pushes in a sync extraction
+
+
+def inflight_path(slug: str) -> Path:
+    return grow_dir(slug) / "sync_inflight.json"
+
+
+def _sync_one(it: dict, cl: Clients, *, slug: str, cache) -> str:
+    """Extract one paper (paid) unless its result is already cached (free).
+    Returns "ok", "cached" or the validation failure."""
+    from backend.app.corpus.multi_domain_extract import (
+        MODEL_ID, OUT_TOKENS_ABSTRACT, OUT_TOKENS_FULLTEXT, _paper_from_entry,
+    )
+    from backend.app.corpus.run_batch_corpus import V11, _validate_and_cache
+    e = it["entry"]
+    pid = f"openalex:{e['wid']}"
+    if cache.get(pid, MODEL_ID, it["src"], V11.hash) is not None:
+        return "cached"                       # paid once already: never again
+    if hasattr(cl.llm, "set_run_context"):
+        cl.llm.set_run_context(stage=f"grow_extract_sync_{slug}",
+                               est_output_tokens=OUT_TOKENS_FULLTEXT if it["src"] == "fulltext"
+                               else OUT_TOKENS_ABSTRACT)
+    text = with_retry(lambda: cl.llm.generate(it["prompt"]))
+    return _validate_and_cache(_paper_from_entry(e), text, src=it["src"], model=MODEL_ID, cache=cache)
+
+
+def extract_sync(slug: str, cl: Clients, budget: Budget, items: list[dict], *, ref: dt.date,
+                 checkpoint: Callable[[str], None] | None = None) -> dict:
+    """mode sync: extract the allocated papers NOW (paid, interactive rate)
+    and add the ones that validate to the library in this run. Each result
+    is validated and cached as it arrives (the spend is ledgered per call by
+    the client); a cached result is never paid for again. The in-flight file
+    (written before the first call and pushed by `checkpoint`) lets the next
+    run finish a killed run's papers from the cache for free (finish_inflight)."""
+    from backend.app.extraction.cache import ExtractionCache
+    from backend.app.extraction.spend_gate import preflight
+    proj = sum(it.get("inr_sync", it["inr"] * SYNC_COST_FACTOR) for it in items)
+    res = {"slug": slug, "submitted": len(items), "projected_inr": round(proj, 4), "mode": "sync", "added": []}
+    if not items:
+        return res
+    preflight(stage=f"grow_extract_sync_{slug}", projected_inr=proj, n_calls=len(items),
+              multiplier=EXTRACTION_MULT)
+    budget.commit(f"extract_sync_{slug}", proj, EXTRACTION_MULT)
+    _write(inflight_path(slug), {"slug": slug, "started_on": ref.isoformat(), "projected_inr": proj,
+                                 "src": {it["entry"]["wid"]: it["src"] for it in items},
+                                 "entries": [it["entry"] for it in items], "records": [it["record"] for it in items]})
+    if checkpoint:
+        checkpoint(f"sync extraction of {slug} started")
+    cache = ExtractionCache()
+    ok, fails = [], []
+    for n, it in enumerate(items, 1):
+        out = _sync_one(it, cl, slug=slug, cache=cache)
+        (ok if out in ("ok", "cached") else fails).append(it if out in ("ok", "cached") else
+                                                          (f"openalex:{it['entry']['wid']}", out))
+        if checkpoint and n % SYNC_CHECKPOINT_EVERY == 0 and n < len(items):
+            checkpoint(f"sync extraction of {slug}: {n}/{len(items)}")
+    res.update(_finish_sync(slug, ok, fails, ref=ref))
+    return res
+
+
+def _finish_sync(slug: str, ok: list[dict], fails: list, *, ref: dt.date) -> dict:
+    excluded: list[dict] = []
+    in_lib = set(add_to_library(slug, [(it["entry"], it["record"]) for it in ok], ref=ref, excluded=excluded))
+    added = [f"openalex:{it['entry']['wid']}" for it in ok if it["entry"]["wid"] in in_lib]
+    st = _read(inflight_path(slug)) if inflight_path(slug).exists() else {"slug": slug}
+    st["outcome"] = {"mode": "sync", "collected_on": ref.isoformat(), "added": added, "failed": fails,
+                     "scope_excluded": excluded}
+    _write(grow_dir(slug) / "history" / f"{ref.isoformat()}-sync-{int(time.time())}.json", st)
+    inflight_path(slug).unlink(missing_ok=True)
+    return {"status": "extracted in this run", "added": added,
+            "added_titles": [it["entry"]["title"] for it in ok if it["entry"]["wid"] in in_lib],
+            "failed": fails, "scope_excluded": excluded}
+
+
+def finish_inflight(slug: str, *, ref: dt.date) -> dict | None:
+    """A sync extraction a killed run left behind: its cached results are
+    added now (free); the rest are dropped from the in-flight list (they may
+    have been paid for; they stay eligible as candidates, and a cached result
+    is reused if they are picked again). Never calls an API."""
+    p = inflight_path(slug)
+    if not p.exists():
+        return None
+    from backend.app.corpus.multi_domain_extract import MODEL_ID
+    from backend.app.corpus.run_batch_corpus import V11
+    from backend.app.extraction.cache import ExtractionCache
+    st, cache = _read(p), ExtractionCache()
+    ok, fails = [], []
+    for e, r in zip(st["entries"], st["records"]):
+        src = st["src"].get(e["wid"], "abstract")
+        if cache.get(f"openalex:{e['wid']}", MODEL_ID, src, V11.hash) is not None:
+            ok.append({"entry": e, "record": r})
+        else:
+            fails.append((f"openalex:{e['wid']}", "no cached result (the earlier run stopped first)"))
+    out = _finish_sync(slug, ok, fails, ref=ref)
+    return {"slug": slug, **out, "status": "finished a stopped sync extraction from the cache (free)"}
+
+
+# ---------------------------------------------------------------------------
 # Phase 1b: paid follow-on checks for new material (each budget-gated)
 # ---------------------------------------------------------------------------
 
+def followon_wait_s() -> float:
+    """How long a follow-on batch may be waited for now: FOLLOWON_WAIT_S,
+    cut so the run keeps GATE_RESERVE_S before its deadline (GROW_DEADLINE_TS,
+    set by the weekly run from its job timeout). A batch not finished in time
+    stays pending (its state file is pushed) and the next run collects it,
+    paying nothing twice."""
+    import os
+    dl = os.environ.get("GROW_DEADLINE_TS")
+    if not dl:
+        return FOLLOWON_WAIT_S
+    return max(0.0, min(FOLLOWON_WAIT_S, float(dl) - time.time() - GATE_RESERVE_S))
+
+
 def followon(slug: str, cl: Clients, budget: Budget) -> dict:
-    """Each paid step is gated by the week's budget; if the money rule itself
+    """Each paid step is gated by the run's budget; if the money rule itself
     refuses (the money ran out mid-run), the step is skipped and reported as
     `money_refused` — never an error."""
     from backend.app.extraction.spend_gate import SpendGateRefused
@@ -564,6 +891,8 @@ def _followon(slug: str, cl: Clients, budget: Budget) -> dict:
     from backend.app.corpus.multi_domain_reason_incremental import write_coverage
     from backend.app.reasoning import run_library_scorers as S
     from backend.app.reasoning.library_corpus import embed_future_work
+    from backend.app.grow import plan
+    st = plan.load()
     out: dict[str, Any] = {"slug": slug}
 
     # a. disagreement check on new claim pairs (new claims embedded first;
@@ -574,6 +903,9 @@ def _followon(slug: str, cl: Clients, budget: Budget) -> dict:
     unseen = [p for p in pairs if (p.from_claim_id, p.to_claim_id) not in done]
     per = R.projected_inr_per_pair()
     n_fit = min(len(unseen), int(budget.remaining / (per * CLASSIFY_MULT))) if per > 0 else len(unseen)
+    # bounded per run as libraries grow: the rest stay unchecked (hidden,
+    # never counted) and are carried over to the next run
+    n_fit = min(n_fit, st.max_disagreement_pairs_per_run)
     todo = unseen[:n_fit]
     if todo:
         if hasattr(cl.llm, "set_run_context"):
@@ -597,35 +929,35 @@ def _followon(slug: str, cl: Clients, budget: Budget) -> dict:
             embed_future_work(slug, dry_run=False, client=cl.embed)
             budget.commit(f"embed_fw_{slug}", dry["projected_inr"], EXTRACTION_MULT)
         else:
-            out["fw_embed"] = "skipped: over weekly budget"
-    fwd = S.fwmatch(slug, dry_run=True)
+            out["fw_embed"] = "skipped: over this run's budget"
+    fwd = S.fwmatch(slug, dry_run=True, max_items=st.max_fw_pairs_per_run)
     if fwd["to_classify"] or S._state(slug, "fw_match").exists():
         if S._state(slug, "fw_match").exists() or budget.fits(fwd["projected_inr"] * CLASSIFY_MULT):
             if not S._state(slug, "fw_match").exists():
                 budget.commit(f"fw_match_{slug}", fwd["projected_inr"], CLASSIFY_MULT)
             try:
                 out["fw_match"] = S.fwmatch(slug, dry_run=False, client=cl.batch,
-                                            wait_timeout_s=FOLLOWON_WAIT_S)
+                                            wait_timeout_s=followon_wait_s(), max_items=st.max_fw_pairs_per_run)
             except S.BatchPending as e:
                 out["fw_match"] = f"pending: {e}"
         else:
-            out["fw_match"] = "skipped: over weekly budget"
+            out["fw_match"] = "skipped: over this run's budget"
     else:
         # nothing to classify: every embedded item has been looked at
         from backend.app.reasoning.library_corpus import load_library_corpus, mark_fw_checked
         mark_fw_checked(slug, load_library_corpus(slug).fw_ids)
 
     # c. confirmation of method-transfer leads (unconfirmed leads stay hidden)
-    cd = S.confirm(slug, dry_run=True)
+    cd = S.confirm(slug, dry_run=True, max_items=st.max_confirm_leads_per_run)
     if cd["to_confirm"] or S._state(slug, "hole_confirm").exists():
         if S._state(slug, "hole_confirm").exists() or budget.fits(cd["projected_inr"] * CLASSIFY_MULT):
             if not S._state(slug, "hole_confirm").exists():
                 budget.commit(f"hole_confirm_{slug}", cd["projected_inr"], CLASSIFY_MULT)
             try:
                 out["confirm"] = S.confirm(slug, dry_run=False, client=cl.batch,
-                                           wait_timeout_s=FOLLOWON_WAIT_S)
+                                           wait_timeout_s=followon_wait_s(), max_items=st.max_confirm_leads_per_run)
             except S.BatchPending as e:
                 out["confirm"] = f"pending: {e}"
         else:
-            out["confirm"] = "skipped: over weekly budget"
+            out["confirm"] = "skipped: over this run's budget"
     return out

@@ -160,6 +160,7 @@ def guards() -> str | None:
     if MOCK and not (url.startswith("/") or url.startswith("file:")):
         raise GrowStop("mock run against a real remote", "Mock runs may only push to a local test remote.")
     heads = git("ls-remote", "--heads", "origin", "grow/*")
+    _REMOTE_GROW[:] = [ln.split()[1].split("refs/heads/", 1)[-1] for ln in heads.splitlines() if ln.strip()]
     resolved = _resolved_branches()
     names = []
     for ln in heads.splitlines():
@@ -189,6 +190,7 @@ def guards() -> str | None:
 
 
 _ON_MAIN_BRANCHES: list[str] = []
+_REMOTE_GROW: list[str] = []          # grow/* branches on origin (guards); run_label avoids them
 
 
 def _today() -> str:
@@ -547,7 +549,7 @@ def unexplained(diff: dict) -> list[str]:
 
 
 def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, branch=None,
-               stop=None, live=None, money=None, builds=None, note=None) -> str:
+               stop=None, live=None, money=None, builds=None, note=None, plan_info=None) -> str:
     L = [f"**Status:** {status}", ""]
     if note:
         L += [f"> {note}", ""]
@@ -559,14 +561,18 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
               f"(config/money.json; ledger ₹{money['ledger_inr']:.2f}"
               + (f", console figure ₹{money['console_spent_inr']} as of {money['console_spent_date']}"
                  if money.get("console_spent_inr") is not None else "") + ")",
-              f"- weeks left in the growth horizon: {money.get('weeks_left')}; this week's budget: "
-              f"₹{budget.weekly_inr:.2f}",
-              f"- recorded this run: ₹{spent:.2f} (includes last week's batches at the batch rate)",
+              f"- available after batches already submitted: ₹{money.get('available_inr', 0):.2f}; this run's "
+              f"budget: ₹{budget.weekly_inr:.2f} (per-run cap ₹{money.get('per_run_cost_cap_inr', 0):.2f}, "
+              "config/growth.json; never above the money available)",
+              f"- recorded this run: ₹{spent:.2f} (includes earlier runs' batches, collected at the batch rate)",
               f"- new commitments this run (padded projections): ₹{budget.committed:.2f}", ""]
-    L += ["## Papers added this week", ""]
+    if plan_info:
+        L += _plan_lines(plan_info)
+    L += ["## Papers added this run", ""]
     owed = [(r["slug"], r["followon_owed"]) for r in p1 if r.get("followon_owed")]
     for r in p1:
-        if r.get("status") == "collected":
+        if r.get("status") in ("collected", "extracted in this run",
+                               "finished a stopped sync extraction from the cache (free)"):
             L.append(f"- {r['slug']}: {len(r['added'])} added"
                      + (f", {len(r['failed'])} failed extraction" if r["failed"] else ""))
             L += [f"  - {t}" for t in r.get("added_titles", [])]
@@ -575,7 +581,8 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
     if not p1:
         L.append("- none")
     if owed:
-        L += ["", "Follow-on checks carried over to next run (budget); that library goes first next week:", ""]
+        L += ["", "Follow-on checks carried over to the next run (budget or per-run cap); that library goes "
+              "first next run:", ""]
         L += [f"- {slug}: {', '.join(steps)}" for slug, steps in owed]
     excl = [(r["slug"], x) for r in p1 for x in r.get("scope_excluded", [])]
     if excl:
@@ -587,9 +594,10 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
     if builds:
         L += ["", "## New libraries", ""] + [f"- {b['slug']}: {b.get('status')}" + (
             f" — {b['detail']}" if b.get("detail") else "") for b in builds]
-    L += ["", "## Submitted for next week", ""]
+    L += ["", "## Submitted (batch: collected by the next run; sync: added above)", ""]
     for r in p2:
-        L.append(f"- {r['slug']}: {r.get('submitted', 0)} papers (projected ₹{r.get('projected_inr', 0):.2f}; "
+        L.append(f"- {r['slug']}: {r.get('submitted', 0)} papers, {r.get('mode', 'batch')} "
+                 f"(projected ₹{r.get('projected_inr', 0):.2f}; "
                  f"{r.get('candidates', 0)} candidates, dropped: {json.dumps(r.get('dropped', {}))})"
                  + (f" — {r['note']}" if r.get("note") else ""))
     if not p2:
@@ -648,6 +656,32 @@ def issue_body(date, status, *, p1, p2, diff, spent, ledger, budget, gate_res, b
     return redact("\n".join(L))
 
 
+def _plan_lines(pi: dict) -> list[str]:
+    """The run's plan: target, mode, budget, and per library what the search
+    saw, kept and dropped (by reason). Shortfall reasons when the run plans
+    fewer papers than its target."""
+    L = ["## This run's plan", "",
+         f"- target: {pi['target']} papers across {len(pi['shares'])} libraries (fair rotation); mode "
+         f"**{pi['mode']}** ({'papers appear in this run, about 2x the cost' if pi['mode'] == 'sync' else 'papers appear when the next run collects them'})",
+         f"- planned: **{pi['planned']}** papers, projected ₹{pi['projected_inr']:.2f} at the {pi['mode']} rate "
+         f"(padded x1.5: ₹{pi['projected_inr'] * 1.5:.2f}); the same papers in the other mode: "
+         f"₹{pi['projected_other_inr']:.2f}",
+         f"- OpenAlex filter calls used by the search: {pi['openalex_calls']} (limit {pi['openalex_limit']})"]
+    if pi.get("shortfall"):
+        L += ["", "**Fewer papers than the target:**", ""] + [f"- {x}" for x in pi["shortfall"]]
+    L += ["", "| library | share | search need | candidates seen | kept (in scope, new) | planned | tiers tried | "
+              "dropped by reason |", "|:--|--:|--:|--:|--:|--:|:--|:--|"]
+    for slug, f in pi["funnels"].items():
+        tiers = ", ".join(f"{t['tier']} {t['seen']}/{t['kept']}" for t in f.get("tiers", [])) or "—"
+        state = (" (ran out)" if f.get("exhausted") else "") + (f" ({f['stopped']})" if f.get("stopped") else "")
+        L.append(f"| {slug} | {pi['shares'].get(slug, 0)} | {f.get('need', 0)} | {f.get('seen', 0)} | "
+                 f"{f.get('kept', 0)}{state} | {pi['picked'].get(slug, 0)} | {tiers} | "
+                 f"{'; '.join(f'{k}: {v}' for k, v in sorted(f.get('dropped', {}).items())) or '—'} |")
+    L += ["", "Tiers: seen/kept per tier (recent citers; forward and backward citation snowball; the library's "
+          "own vocabulary by year). The rubric and core scope are never loosened to find more.", ""]
+    return L
+
+
 def queued_start_decision(*, weekly_inr: float, hold: bool, recovery_failed: bool, building: bool,
                           build_queued: bool, started_this_run: int) -> tuple[bool, str]:
     """May this run START a queued library at all? (Whether it is affordable is
@@ -664,7 +698,7 @@ def queued_start_decision(*, weekly_inr: float, hold: bool, recovery_failed: boo
     if not build_queued:
         return False, "manual run with build_queued=false"
     if weekly_inr <= 0:
-        return False, "no money this week"
+        return False, "no money this run"
     if building:
         return False, "a library is already being built"
     return True, "allowed; the money rule decides"
@@ -811,7 +845,9 @@ BUDGET_EXHAUSTED_ACTION = (
 def main() -> int:
     from backend.app.extraction import money
     from backend.app.grow import core, queued
+    from backend.app.grow import plan as gplan
     from backend.app.grow.clients import make_clients
+    plan_info: dict | None = None
     date = os.environ.get("GROW_DATE") or dt.datetime.now(dt.timezone.utc).date().isoformat()
     ref = dt.date.fromisoformat(date)
     title = f"Weekly grow — {date}"
@@ -839,6 +875,10 @@ def main() -> int:
                 and os.environ.get("GROW_EVENT", "workflow_dispatch") == "workflow_dispatch"):
             return republish(os.environ["GROW_REPUBLISH"].strip(), date)   # zero spend; manual only
         hold = guards()
+        date = run_label(date)           # several runs a day: each gets its own Issue, branch and record
+        title = f"Weekly grow — {date}"
+        os.environ.setdefault("GROW_DEADLINE_TS", str(time.time() + float(os.environ.get("GROW_TIME_BUDGET_S")
+                                                                          or 5 * 3600)))
         if paused():
             body = issue_body(date, "paused — nothing collected, spent or published", p1=[], p2=[], diff=None,
                               spent=0.0, ledger=ledger_inr(), budget=budget, gate_res=None,
@@ -895,23 +935,26 @@ def main() -> int:
             print(block, flush=True)
             return 3
         _reset_rest()          # the preflight build must not leave the tree dirty
+        record_run(date)       # after the reset, so it is kept (pushed with the first checkpoint)
         l0 = ledger_inr()
         manual, run_budget, build_queued = run_controls()
-        if run_budget is not None:
-            # Every paid call in this process is refused past this ledger
-            # total. Collecting batches submitted by an EARLIER run records
-            # money that run already committed, so that is added on top:
-            # this run's cap is for this run's new spending only.
-            pend0 = money.pending_inr()
-            os.environ["RUN_CAP_LEDGER_INR"] = str(round(l0[0] + pend0 + run_budget, 6))
-            say(f"manual run: total spend capped at ₹{run_budget:.2f}; queued builds "
-                f"{'allowed' if build_queued else 'skipped'}")
-        mstat = money.status(ref)
-        weekly = mstat.get("weekly_budget_inr", 0.0)
-        if run_budget is not None:
-            weekly = min(weekly, run_budget)
+        mode, target = run_options()
+        settings = gplan.load()
+        mstat = money.status(ref, manual_cap_inr=run_budget)
+        weekly = mstat["run_budget_inr"]             # min(per-run cap, manual cap, money available)
         if os.environ.get("WEEKLY_BUDGET_INR"):        # optional owner override: can only lower it
             weekly = min(weekly, float(os.environ["WEEKLY_BUDGET_INR"]))
+        # Every paid call in this process is refused past this ledger total
+        # (call time, every path). Collecting batches submitted by an EARLIER
+        # run records money that run already committed, so that is added on
+        # top: this run's cap is for this run's new spending only.
+        pend0 = money.pending_inr()
+        os.environ["RUN_CAP_LEDGER_INR"] = str(round(l0[0] + pend0 + weekly, 6))
+        say(f"{'manual' if manual else 'scheduled'} run: mode {mode}, target {target} papers, budget "
+            f"₹{weekly:.2f} (per-run cap ₹{settings.per_run_cost_cap_inr:.2f}"
+            + (f", run_budget_inr ₹{run_budget:.2f}" if run_budget is not None else "")
+            + f", available ₹{mstat['available_inr']:.2f}); queued builds "
+            f"{'allowed' if build_queued else 'skipped'}")
         exhausted = mstat["remaining_inr"] < 1.0
         # a conflicting branch, or no test browser (this run cannot publish):
         # collect what was paid for, start nothing new
@@ -921,13 +964,18 @@ def main() -> int:
             weekly = 0.0
             note = " ".join(x for x in (hold, infra) if x) or "Budget exhausted: " + BUDGET_EXHAUSTED_ACTION
         budget = core.Budget(weekly)
-        say(f"money: remaining ₹{mstat['remaining_inr']:.2f}, weeks left {mstat.get('weeks_left')}, "
-            f"weekly budget ₹{weekly:.2f}")
+        say(f"money: remaining ₹{mstat['remaining_inr']:.2f}, available ₹{mstat['available_inr']:.2f}, "
+            f"this run's budget ₹{weekly:.2f}")
         cl = make_clients()
         before = items_snapshot()
-        # Phase 1a: collect last week's growth batches (already paid for)
+        # Phase 1a: collect earlier runs' growth batches (already paid for),
+        # and finish any sync extraction a stopped run left (free, from the cache)
         collected: dict[str, dict] = {}
         for slug in core.grow_slugs():
+            fin = core.finish_inflight(slug, ref=ref)
+            if fin:
+                say(f"sync {slug}: {fin['status']}: added={len(fin['added'])}")
+                p1.append(fin)
             try:
                 r = core.collect(slug, cl, ref=ref)
             except Exception as e:  # noqa: BLE001
@@ -979,25 +1027,31 @@ def main() -> int:
         if builds:
             checkpoint(date, "queued library steps")
         regenerate()
-        # Phase 2: new candidates for every growing library, budget shared round-robin
+        # Phase 2: new candidates for every growing library: the run's target
+        # split by fair rotation, a widening search per library, then the
+        # budget shared round-robin (a library that ran out frees its share)
         prepared, errs = {}, []
         if budget.weekly_inr > 0:
-            for slug in core.grow_slugs():
-                prepared[slug] = core.prepare(slug, cl, ref=ref, errors=errs)
-            if errs:
+            plan_info = plan_phase2(cl, budget, ref=ref, target=target, mode=mode, settings=settings,
+                                    available=mstat["available_inr"], errs=errs)
+            prepared, order, picked = plan_info.pop("_prepared"), plan_info.pop("_order"), plan_info.pop("_picked")
+            if errs and not any(pr["funnel"]["seen"] for pr in prepared.values()):
                 raise core.GrowStop("OpenAlex errors (after retries): " + "; ".join(errs[:5]),
                                     "Check that the OPENALEX_API_KEY secret is valid and that api.openalex.org is "
-                                    "up. Nothing is lost; next week's run tries again.")
-            papers = {s_: len(json.loads((ROOT / "data/domains" / s_ / "prelabelled.json").read_text())["entries"])
-                      for s_ in prepared}
-            order = core.fair_order(list(prepared), "extraction", papers=papers,
-                                    candidates={s_: len(prepared[s_]["items"]) for s_ in prepared})
-            say("allocation order (fair): " + ", ".join(order))
-            picked = core.allocate(prepared, budget, papers, order)
+                                    "up. Nothing is lost; the next run tries again.")
+            if errs:
+                note = ((note or "") + " OpenAlex notes (search continued): " + "; ".join(errs[:5])).strip()
             for slug in order:
                 pr = prepared[slug]
                 try:
-                    r = core.submit(slug, cl, budget, picked[slug], ref=ref)
+                    if mode == "sync":
+                        r = core.extract_sync(slug, cl, budget, picked[slug], ref=ref,
+                                              checkpoint=lambda what: checkpoint(date, what))
+                        if r.get("added") or r.get("failed"):
+                            p1.append({"slug": slug, **{k: r[k] for k in ("status", "added", "added_titles",
+                                                                          "failed", "scope_excluded") if k in r}})
+                    else:
+                        r = core.submit(slug, cl, budget, picked[slug], ref=ref)
                 except Exception as e:  # noqa: BLE001
                     from backend.app.extraction.spend_gate import SpendGateRefused
                     if isinstance(e, SpendGateRefused):
@@ -1006,13 +1060,22 @@ def main() -> int:
                     else:
                         raise core.GrowStop(f"Gemini error while submitting {slug}: {type(e).__name__}: {e}",
                                             "Usually transient; next week's run tries again.") from None
+                r.setdefault("mode", mode)
                 r.update(candidates=pr["candidates"], dropped=pr["dropped"], note=r.get("note") or pr.get("note"))
                 # served: it got papers, or it had nothing to submit (not starved)
                 core.record_fairness(slug, "extraction", ref=ref,
                                      served=bool(r.get("submitted")) or not pr["items"])
-                say(f"submit {slug}: {r.get('submitted', 0)} papers, projected ₹{r.get('projected_inr', 0):.2f}")
+                say(f"submit {slug}: {r.get('submitted', 0)} papers ({mode}), projected "
+                    f"₹{r.get('projected_inr', 0):.2f}")
                 p2.append(r)
-            checkpoint(date, "submitted")
+            checkpoint(date, "submitted" if mode == "batch" else "extracted (sync)")
+            if mode == "sync" and any(r.get("added") for r in p2):
+                # the new papers' follow-on checks, in this run (budget-gated, bounded per run)
+                for slug in [r["slug"] for r in p2 if r.get("added")]:
+                    fo = core.followon(slug, cl, budget)
+                    say(f"follow-on {slug} (sync papers): {json.dumps(fo, default=str)[:300]}")
+                checkpoint(date, "follow-on checks for the sync papers")
+                regenerate()
         # A queued library: at most one per run, only if allowed at all
         # (queued_start_decision), affordable under the money rule, and only
         # after a FREE dry run of its build passes every gate.
@@ -1033,19 +1096,21 @@ def main() -> int:
                 queued.apply_core_scope(lib)          # free; only in-scope papers are built
                 queued.open_fulltext(lib, cl)         # free; full text changes the projection (about 3x)
                 proj = queued.projection_inr(lib)
-                if not money.queued_affordable(proj, rem, budget.weekly_inr, money.load()):
+                if not gplan.queued_affordable(proj, rem, budget.weekly_inr, settings):
                     builds.append({"slug": lib["slug"], "status": "waiting for money",
-                                   "detail": f"needs ₹{proj * 1.5 + 4 * budget.weekly_inr:.2f} "
-                                             f"(projection x1.5 + 4 weeks of growth), ₹{rem:.2f} remains"})
+                                   "detail": f"needs ₹{proj * 1.5 + settings.queued_reserve_runs * budget.weekly_inr:.2f} "
+                                             f"(projection x1.5 + {settings.queued_reserve_runs} runs of growth), "
+                                             f"₹{rem:.2f} remains"})
                     break
                 # pace (config/growth.json): at most N starts a month, and never
                 # into the minimum weekly growth reserve
                 st_now = money.status(ref)
                 pace = queued.pace_check(proj_inr=proj, available_inr=st_now["available_inr"],
                                          growth_committed_inr=budget.committed,
-                                         weeks_after=max(0, money.weeks_left(money.load(), ref) - 1), ref=ref)
+                                         runs_after=settings.queued_reserve_runs, ref=ref)
                 say(f"queued {lib['slug']}: projected ₹{proj:.2f}; pace: {pace['reason']} "
-                    f"(₹{pace['left_after_inr']:.2f} left after it, weekly growth after ₹{pace['weekly_growth_after_inr']})")
+                    f"(₹{pace['left_after_inr']:.2f} left after it, growth per run after "
+                    f"₹{pace['growth_per_run_after_inr']})")
                 if not pace["ok"]:
                     builds.append({"slug": lib["slug"], "status": "waiting (pace)", "detail": pace["reason"]})
                     if pace["blocked_by"] == "month":
@@ -1083,19 +1148,20 @@ def main() -> int:
         say(f"STOP: {stop.what}")
         l1 = ledger_inr() if l0[1] else l0
         try:
-            mstat = money.status(ref)          # after this run's spending, not before
+            mstat = money.status(ref, manual_cap_inr=run_controls()[1])   # after this run's spending
         except Exception:  # noqa: BLE001
             pass
         kept = publish_bookkeeping(date, f"weekly grow {date}: bookkeeping only ({stop.what[:50]})")
         body = issue_body(date, "stopped cleanly — the site was not changed", p1=p1, p2=p2, diff=diff,
                           spent=l1[0] - l0[0], ledger=l1, budget=budget, gate_res=None,
                           stop=(redact(stop.what), stop.action), money=mstat or None, builds=builds,
+                          plan_info=plan_info,
                           note=(f"Paid work committed to main as bookkeeping ({kept})." if kept else None))
         say(f"issue: {issues.upsert(title, body, ['weekly-grow', 'needs-action'])}")
         return 2
 
     l1 = ledger_inr()
-    mstat = money.status(ref)
+    mstat = money.status(ref, manual_cap_inr=run_controls()[1])
     added = {r["slug"]: len(r.get("added", [])) for r in p1}
     changelog(date, [f"{s_}: {n} papers added" for s_, n in added.items()]
               + [f"new library {b['slug']}: {b['status']}" for b in builds]
@@ -1147,7 +1213,7 @@ def main() -> int:
         gate_res = gate_res + [g for g in d.get("gate_res", []) if not g["ok"]]
     body = issue_body(date, status, p1=p1, p2=p2, diff=diff, spent=l1[0] - l0[0], ledger=l1,
                       budget=budget, gate_res=gate_res, branch=branch, live=live, money=mstat,
-                      builds=builds, note=note)
+                      builds=builds, note=note, plan_info=plan_info)
     needs = not ok or (live is not None and not live[0]) or bool(note) or bool(unexplained(diff))
     labels = ["weekly-grow"] + (["needs-action"] if needs else [])
     say(f"issue: {issues.upsert(title, body, labels)}")
@@ -1214,7 +1280,7 @@ def republish(branch: str, date: str) -> int:
     if all pass. The branch is recorded as resolved, never deleted."""
     title = f"Weekly grow — {branch.split('/', 1)[-1]}"
     say(f"REPUBLISH {branch}: no API calls, nothing submitted or collected")
-    if not re.fullmatch(r"grow/\d{4}-\d{2}-\d{2}", branch):
+    if not re.fullmatch(r"grow/\d{4}-\d{2}-\d{2}(?:-\d{1,3})?", branch):
         say(f"refused: {branch!r} is not a grow/<date> branch")
         return 2
     if git("status", "--porcelain"):
@@ -1275,97 +1341,256 @@ def run_controls() -> tuple[bool, float | None, bool]:
     manual = os.environ.get("GROW_EVENT") == "workflow_dispatch"
     if not manual:
         return False, None, True
-    raw = (os.environ.get("GROW_RUN_BUDGET_INR") or "25").strip()
-    return True, max(0.0, float(raw)), os.environ.get("GROW_BUILD_QUEUED", "false").lower() == "true"
+    raw = (os.environ.get("GROW_RUN_BUDGET_INR") or "").strip()     # empty: the per-run cap (config/growth.json)
+    return (True, max(0.0, float(raw)) if raw else None,
+            os.environ.get("GROW_BUILD_QUEUED", "false").lower() == "true")
+
+
+def run_options() -> tuple[str, int]:
+    """(mode, target papers). Scheduled runs: config/growth.json. Manual runs
+    may choose the mode (batch|sync) and the target (target_papers); an
+    invalid value stops the run before anything is spent."""
+    from backend.app.grow import plan as gplan
+    from backend.app.grow.core import GrowStop
+    st = gplan.load()
+    mode, target = st.mode, st.target_papers_per_run
+    if os.environ.get("GROW_EVENT") == "workflow_dispatch":
+        m = (os.environ.get("GROW_MODE") or "").strip().lower()
+        t = (os.environ.get("GROW_TARGET_PAPERS") or "").strip()
+        if m:
+            if m not in gplan.MODES:
+                raise GrowStop(f"invalid mode {m!r}", "Use mode batch or sync (nothing was spent).")
+            mode = m
+        if t:
+            if not t.isdigit() or not 0 <= int(t) <= 500:
+                raise GrowStop(f"invalid target_papers {t!r}", "Use a whole number from 0 to 500 (nothing was spent).")
+            target = int(t)
+    return mode, target
+
+
+def run_label(date: str) -> str:
+    """The run's label: its date, or date-2, date-3... when an earlier run
+    that day already has a branch, a release record or a run record (manual
+    runs can start any time). Labels the Issue, the grow/<label> branch and
+    docs/releases/<label>.json, so a later run never overwrites an earlier
+    run's report or record."""
+    taken = set(_REMOTE_GROW) | {p.stem for p in (ROOT / "docs" / "releases").glob(f"{date}*.json")}
+    rp = ROOT / "data" / "grow" / "runs.json"
+    if rp.exists():
+        taken |= {r["label"] for r in json.loads(rp.read_text()).get("runs", [])}
+    taken = {t.removeprefix("grow/") for t in taken}
+    if date not in taken:
+        return date
+    n = 2
+    while f"{date}-{n}" in taken:
+        n += 1
+    return f"{date}-{n}"
+
+
+def record_run(label: str) -> None:
+    """data/grow/runs.json: one row per growth run (committed with the run's
+    first checkpoint or bookkeeping push): its label, start time and event."""
+    rp = ROOT / "data" / "grow" / "runs.json"
+    d = json.loads(rp.read_text()) if rp.exists() else {"runs": []}
+    d["runs"].append({"label": label, "started_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+                      "event": os.environ.get("GROW_EVENT", "workflow_dispatch"),
+                      "mode": (os.environ.get("GROW_MODE") or "").strip() or None})
+    rp.parent.mkdir(parents=True, exist_ok=True)
+    rp.write_text(json.dumps(d, indent=1) + "\n")
+
+
+def plan_phase2(cl, budget, *, ref: dt.date, target: int, mode: str, settings, available: float,
+                errs: list[str]) -> dict:
+    """Free planning of Phase 2 (no paid call): the fair order, each
+    library's share of the target, the widening search per library (one
+    OpenAlex call budget for the whole run), and the round-robin allocation
+    within the run's budget. Used by the run and by the dry run. Returns the
+    plan_info shown in the Issue (plus _prepared/_order/_picked)."""
+    from backend.app.grow import core
+    from backend.app.grow import plan as gplan
+    slugs = list(core.grow_slugs())
+    papers = {s_: len(json.loads((ROOT / "data/domains" / s_ / "prelabelled.json").read_text())["entries"])
+              for s_ in slugs}
+    order0 = core.fair_order(slugs, "extraction", papers=papers)
+    shares = gplan.split_target(target, order0)
+    oa = core.CallBudget(cl.openalex, settings.openalex_max_calls_per_run)
+    prepared = {s_: core.prepare(s_, cl, ref=ref, errors=errs, need=gplan.candidate_need(shares[s_], settings), oa=oa)
+                for s_ in order0}
+    order = core.fair_order(list(prepared), "extraction", papers=papers,
+                            candidates={s_: len(prepared[s_]["items"]) for s_ in prepared})
+    say("allocation order (fair): " + ", ".join(order))
+    picked = core.allocate(prepared, budget, papers, order, target=target, mode=mode)
+    key, other = ("inr_sync", "inr") if mode == "sync" else ("inr", "inr_sync")
+    planned = sum(len(v) for v in picked.values())
+    proj = sum(it[key] for v in picked.values() for it in v)
+    proj_other = sum(it[other] for v in picked.values() for it in v)
+    over = sum(pr["dropped"].get("over this run's budget", 0) for pr in prepared.values())
+    exhausted = {s_: pr["funnel"]["short"] for s_, pr in prepared.items() if pr["funnel"].get("exhausted")}
+    info = {"target": target, "mode": mode, "shares": shares, "planned": planned, "projected_inr": proj,
+            "projected_other_inr": proj_other, "openalex_calls": oa.calls,
+            "openalex_limit": settings.openalex_max_calls_per_run,
+            "funnels": {s_: prepared[s_]["funnel"] for s_ in order}, "picked": {s_: len(picked[s_]) for s_ in order},
+            "shortfall": gplan.shortfall_reasons(target=target, planned=planned, budget_inr=budget.weekly_inr,
+                                                 cap_inr=settings.per_run_cost_cap_inr, available_inr=available,
+                                                 exhausted=exhausted, over_budget=over),
+            "_prepared": prepared, "_order": order, "_picked": picked}
+    for x in info["shortfall"]:
+        say(f"shortfall: {x}")
+    return info
+
+
+# Run-time model for the dry run (minutes). FIXED_MIN: the median of the last
+# four scheduled runs on GitHub (27.3-29.7 min, 19 Oct - 9 Nov 2026: install,
+# preflight, collect, follow-on checks, regenerate, every gate, publish and the
+# 5-minute live-check wait), which added 3-7 papers each. The rest scales with
+# the run: one OpenAlex call ~0.7 s, one open-full-text fetch ~3 s, one sync
+# extraction ~30 s (abstract) or ~60 s (full text) one after another under
+# the RPM/TPM limiter, and the follow-on batches' waits ~10 min + 0.3 min per
+# new paper. An estimate, not a measurement; the job timeout is 330 min.
+FIXED_MIN = 28.0
+
+
+def estimate_minutes(*, mode: str, papers: int, fulltext: int, calls: int, kept: int) -> float:
+    m = FIXED_MIN + calls * 0.7 / 60 + kept * 3 / 60 + 10 + 0.3 * papers
+    if mode == "sync":
+        m += ((papers - fulltext) * 30 + fulltext * 60) / 60
+    return round(m, 1)
+
+
+def followon_ratio(days: int = 45) -> float:
+    """Follow-on spend (disagreement checks, future-work matcher, method-
+    transfer confirmation, embeddings) per rupee of growth extraction, from
+    the ledger's last `days` days. Used only to ESTIMATE follow-on cost for
+    new papers in the dry run; a run's real follow-on checks are budget-gated."""
+    led = json.loads((ROOT / "data" / "spend_ledger.json").read_text())
+    since = time.time() - days * 86400
+    ext = fo = 0.0
+    for e in led.get("entries", []):
+        if float(e.get("ts", 0)) < since:
+            continue
+        stage = e.get("stage") or ""
+        if stage.startswith("grow_extract"):
+            ext += float(e.get("cost_inr", 0))
+        elif stage.startswith(("grow_contradiction", "fw_match", "hole_confirm", "grow_embed", "embed_fw")):
+            fo += float(e.get("cost_inr", 0))
+    return round(fo / ext, 3) if ext > 0 else 0.5
 
 
 def dry_run() -> int:
-    """Planned spend for a manual run with the defaults (or the GROW_* inputs),
-    without spending anything: free OpenAlex queries and projections only.
-    No Gemini call, no commit, no Issue."""
+    """What ONE run would do now, without spending anything: the widening
+    search per library (free OpenAlex filter calls; mocked with GROW_MOCK=1),
+    candidates seen / kept / dropped by reason, the plan within this run's
+    budget, the projected cost of the full target in batch and in sync mode,
+    the run time, and whether the money allows it. No Gemini call, no
+    commit, no Issue. GROW_TARGET_PAPERS / GROW_MODE / GROW_RUN_BUDGET_INR
+    override the config like a manual run's inputs."""
+    import copy
+
     from backend.app.corpus import multi_domain_reason as R
     from backend.app.extraction import money
-    from backend.app.grow import core, queued
+    from backend.app.grow import core
+    from backend.app.grow import plan as gplan
     from backend.app.grow.core import Clients
     from backend.app.reasoning import run_library_scorers as S
     os.environ.setdefault("GROW_EVENT", "workflow_dispatch")
     date = os.environ.get("GROW_DATE") or dt.datetime.now(dt.timezone.utc).date().isoformat()
     ref = dt.date.fromisoformat(date)
-    _manual, run_budget, build_queued = run_controls()
-    st = money.status(ref)
-    weekly = min(st["weekly_budget_inr"], run_budget) if run_budget is not None else st["weekly_budget_inr"]
-    if os.environ.get("WEEKLY_BUDGET_INR"):
-        weekly = min(weekly, float(os.environ["WEEKLY_BUDGET_INR"]))
+    _manual, run_budget, _build_queued = run_controls()
+    mode, target = run_options()
+    settings = gplan.load()
+    st = money.status(ref, manual_cap_inr=run_budget)
 
     class _NoPaid:
         def __getattr__(self, name):
             raise RuntimeError("dry run: no paid call")
 
-    import httpx
-    from backend.app.config import get_settings
-    from backend.app.corpus.multi_domain import retrieve_fulltext_one
-    from backend.app.refresh.weekly_candidates import LiveOpenAlexClient
-    k = get_settings().openalex_api_key
-    http = httpx.Client(timeout=25.0, follow_redirects=True, headers={"User-Agent": "ResearchMap/0.3 dry-run"})
-    cl = Clients(openalex=LiveOpenAlexClient(k.get_secret_value() if hasattr(k, "get_secret_value") else k),
-                 batch=_NoPaid(), embed=_NoPaid(), llm=_NoPaid(),
-                 fulltext=lambda e, r: retrieve_fulltext_one(e, r, client=http))
-    budget = core.Budget(weekly)
-    print(f"DRY RUN {date} — nothing is spent")
+    if MOCK:
+        from backend.app.grow.mocks import mock_clients
+        m = mock_clients()
+        cl = Clients(openalex=m.openalex, batch=_NoPaid(), embed=_NoPaid(), llm=_NoPaid(), fulltext=m.fulltext)
+    else:
+        import httpx
+        from backend.app.config import get_settings
+        from backend.app.corpus.multi_domain import retrieve_fulltext_one
+        from backend.app.refresh.weekly_candidates import LiveOpenAlexClient
+        k = get_settings().openalex_api_key
+        http = httpx.Client(timeout=25.0, follow_redirects=True, headers={"User-Agent": "ResearchMap/0.3 dry-run"})
+        cl = Clients(openalex=LiveOpenAlexClient(k.get_secret_value() if hasattr(k, "get_secret_value") else k),
+                     batch=_NoPaid(), embed=_NoPaid(), llm=_NoPaid(),
+                     fulltext=lambda e, r: retrieve_fulltext_one(e, r, client=http))
+    print(f"DRY RUN {date} — nothing is spent (OpenAlex filter calls only; no Gemini call)")
     print(f"money: ceiling ₹{st['ceiling_inr']:.2f}, ledger ₹{st['ledger_inr']:.2f}, remaining "
           f"₹{st['remaining_inr']:.2f}, pending (submitted, not yet billed) ₹{st['pending_inr']:.2f}, "
-          f"available ₹{st['available_inr']:.2f}, weeks left {st['weeks_left']}, "
-          f"money-rule weekly ₹{st['weekly_budget_inr']:.2f}")
+          f"available ₹{st['available_inr']:.2f}")
+    print(f"settings: target {target} papers, mode {mode}, per-run cap ₹{settings.per_run_cost_cap_inr:.2f}"
+          + (f", run_budget_inr ₹{run_budget:.2f}" if run_budget is not None else "")
+          + f" -> this run's budget ₹{st['run_budget_inr']:.2f}")
     for c in money.pending_commitments():
         print(f"  pending: {c['file']} — {c['papers']} papers, ₹{c['projected_inr']:.2f} (collected and billed "
-              "once by the next live run; its library gets no new submission until then)")
-    print(f"this run: cap ₹{run_budget if run_budget is not None else st['weekly_budget_inr']:.2f} "
-          f"(run_budget_inr), weekly budget used ₹{weekly:.2f}, queued builds "
-          f"{'allowed' if build_queued else 'SKIPPED (build_queued=false)'}")
-    rows, followon_total, errs = [], 0.0, []
+              "once by the next live run; its library gets no new search until then)")
+    backlog = 0.0
     for slug in core.grow_slugs():
-        f = 0.0
         exts = R.load_extractions(slug)
         pairs = R.compute_shortlist(exts, use_real_embeddings=True, slug=slug, embed_client=_NoPaid())
         done = R.load_classified_keys(slug)
         unseen = sum(1 for p in pairs if (p.from_claim_id, p.to_claim_id) not in done)
-        f += unseen * R.projected_inr_per_pair()
-        f += S.fwmatch(slug, dry_run=True).get("projected_inr", 0.0)
-        f += S.confirm(slug, dry_run=True).get("projected_inr", 0.0)
-        followon_total += f
-        rows.append([slug, f])
-    prepared = {s: core.prepare(s, cl, ref=ref, errors=errs) for s in core.grow_slugs()}
-    papers = {s: len(json.loads((ROOT / "data/domains" / s / "prelabelled.json").read_text())["entries"])
-              for s in prepared}
-    order = core.fair_order(list(prepared), "extraction", papers=papers,
-                            candidates={s_: len(prepared[s_]["items"]) for s_ in prepared})
-    print("allocation order (fair: served longest ago first): " + ", ".join(order))
-    picked = core.allocate(prepared, budget, papers, order)
-    print("\n| library | candidates | planned papers | follow-on checks ₹ | extraction ₹ (batch) | padded ×1.5 ₹ |")
-    print("|:--|--:|--:|--:|--:|--:|")
-    tot_x = 0.0
-    for slug, f in rows:
-        x = sum(it["inr"] for it in picked[slug])
-        tot_x += x
-        print(f"| {slug} | {len(prepared[slug]['items'])} | {len(picked[slug])} | {f:.2f} | {x:.2f} | {x * 1.5:.2f} |")
-        for it in picked[slug]:
-            e = it["entry"]
-            print(f"|   {e['wid']} | {it['src']} ({e.get('fulltext_source') or 'no open full text'}) | | | "
-                  f"{it['inr']:.2f} | |")
-    q = registry_queued()[:1]
-    if q:
-        print(f"\nqueued library {q[0]['slug']}: extraction projected ₹{queued.projection_inr(q[0]):.2f} "
-              f"— {'would be considered' if build_queued else 'skipped this run'}")
-    planned = tot_x + followon_total
-    cap = run_budget if run_budget is not None else None
-    print(f"\nplanned spend: ₹{planned:.2f} (extraction ₹{tot_x:.2f} + follow-on ₹{followon_total:.2f})"
-          + (f"; cap ₹{cap:.2f}" if cap is not None else ""))
-    print(f"available money afterwards: ₹{st['available_inr'] - planned:.2f} (if every projection is spent; "
-          f"pending ₹{st['pending_inr']:.2f} already counted)")
-    print("note: a live run fetches open full text again; a paper whose PDF was unreachable here but "
-          "reachable then costs about 3x more (abstract ~₹0.9, full text ~₹2.7).")
+        backlog += min(unseen, settings.max_disagreement_pairs_per_run) * R.projected_inr_per_pair()
+        backlog += S.fwmatch(slug, dry_run=True, max_items=settings.max_fw_pairs_per_run).get("projected_inr", 0.0)
+        backlog += S.confirm(slug, dry_run=True, max_items=settings.max_confirm_leads_per_run).get("projected_inr", 0.0)
+    errs: list[str] = []
+    info = plan_phase2(cl, core.Budget(st["run_budget_inr"]), ref=ref, target=target, mode=mode,
+                       settings=settings, available=st["available_inr"], errs=errs)
+    prepared, order = info.pop("_prepared"), info.pop("_order")
+    info.pop("_picked")
+    papers = {s_: len(json.loads((ROOT / "data/domains" / s_ / "prelabelled.json").read_text())["entries"])
+              for s_ in prepared}
+
+    def full(m: str) -> list[dict]:
+        prep = copy.deepcopy(prepared)
+        picked = core.allocate(prep, core.Budget(1e9), papers, order, target=target, mode=m)
+        return [it for v in picked.values() for it in v]
+
+    ratio = followon_ratio()
+    print("\n| library | share | search need | candidates seen | kept (in scope, new) | planned this run | "
+          "tiers (seen/kept) | dropped by reason |")
+    print("|:--|--:|--:|--:|--:|--:|:--|:--|")
+    for slug in order:
+        f = info["funnels"][slug]
+        tiers = ", ".join(f"{t['tier']} {t['seen']}/{t['kept']}" for t in f["tiers"]) or "—"
+        state = (" (ran out)" if f["exhausted"] else "") + (f" ({f['stopped']})" if f["stopped"] else "")
+        print(f"| {slug} | {info['shares'][slug]} | {f['need']} | {f['seen']} | {f['kept']}{state} | "
+              f"{info['picked'][slug]} | {tiers} | "
+              + ("; ".join(f"{k}: {v}" for k, v in sorted(f["dropped"].items())) or "—") + " |")
+    print(f"\nOpenAlex filter calls used: {info['openalex_calls']} (limit {settings.openalex_max_calls_per_run})")
+    kept = sum(info["funnels"][s_]["kept"] for s_ in order)
+    print(f"\nthis run as configured ({mode}, budget ₹{st['run_budget_inr']:.2f}): {info['planned']} papers, "
+          f"projected ₹{info['projected_inr']:.2f} (padded ₹{info['projected_inr'] * 1.5:.2f})")
+    for x in info["shortfall"]:
+        print(f"  shortfall: {x}")
+    print(f"\nthe full target ({target} papers) if money were no limit — {kept} in-scope candidates found:")
+    print("| mode | papers | of them full text | extraction ₹ | padded ×1.5 ₹ | follow-on ₹ (est.) | "
+          "total padded ₹ | run time (est.) | money allows it? |")
+    print("|:--|--:|--:|--:|--:|--:|--:|--:|:--|")
+    for m in ("batch", "sync"):
+        its = full(m)
+        x = sum(it["inr_sync" if m == "sync" else "inr"] for it in its)
+        nft = sum(1 for it in its if it["src"] == "fulltext")
+        fo = backlog + ratio * sum(it["inr"] for it in its)
+        tot = x * 1.5 + fo * 2.0
+        cap_ok = tot <= settings.per_run_cost_cap_inr + 1e-9
+        money_ok = tot <= st["available_inr"] + 1e-9
+        verdict = ("yes" if money_ok and cap_ok else
+                   f"money yes, but over the per-run cap ₹{settings.per_run_cost_cap_inr:.2f}" if money_ok else
+                   f"NO: needs ₹{tot:.2f}, ₹{st['available_inr']:.2f} available")
+        mins = estimate_minutes(mode=m, papers=len(its), fulltext=nft, calls=info["openalex_calls"], kept=kept)
+        print(f"| {m} | {len(its)} | {nft} | {x:.2f} | {x * 1.5:.2f} | {fo:.2f} | {tot:.2f} | ~{mins:.0f} min | "
+              f"{verdict} |")
+    print(f"\nfollow-on estimate: the current backlog within the per-run caps (₹{backlog:.2f}) + {ratio:.2f} x "
+          "extraction (the ledger's follow-on/extraction ratio, last 45 days); padded x2 in the totals")
+    print("note: a live run fetches open full text again; a paper whose PDF was unreachable here but reachable "
+          "then costs about 3x more (abstract ~₹0.9, full text ~₹2.7 at the batch rate).")
     if errs:
-        print("OpenAlex notes:", "; ".join(errs[:5]))
+        print("OpenAlex notes:", "; ".join(errs[:8]))
     return 0
 
 
@@ -1568,11 +1793,11 @@ def publish_branch(date: str, msg: str) -> str:
     git("add", "-A")
     if git("diff", "--cached", "--name-only"):
         git(*_identity(), "commit", "-q", "-m", msg)
-    pushed, _moved, _err = _push(f"{branch}:{branch}")
+    pushed, _moved, err = _push(f"{branch}:{branch}")
     local = git("rev-parse", "HEAD")
     remote = git("ls-remote", "origin", f"refs/heads/{branch}").split()[0:1]
     if not pushed or remote != [local]:
-        say(f"WARNING: push of {branch} failed (exit {r.returncode}); work exists only in this runner")
+        say(f"WARNING: push of {branch} failed ({err[-200:]}); work exists only in this runner")
     else:
         say(f"pushed {branch} {local[:7]} (ls-remote agrees)")
     return branch

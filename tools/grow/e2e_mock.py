@@ -50,6 +50,16 @@ build. Scenarios:
      at the final publish and at a checkpoint the push is rejected, the run
      re-applies its work on the new main, regenerates, reruns the gates and
      pushes; never forced; the owner's commit stays in main's history
+ 19  RUN ANY TIME (manual runs): with batches pending, right after another
+     run the same day (each run its own label and Issue), mid-week, with
+     main moved, with a failed branch waiting; then the next scheduled run.
+     No batch is billed twice, none is stranded, nothing blocks the next run
+ 20  supply and mode: the widening search (vocabulary tier) reaches a target
+     the recent tier cannot; mode sync adds the papers in the same run (each
+     billed once at the interactive rate, no batch); mode batch submits the
+     same target for the next run
+ 21  dry run: candidates and kept per library, batch and sync cost, run time
+     and the money verdict, with nothing spent or changed
  18  the test browser could not be installed (infrastructure): the run
      collects what was already paid for and starts nothing new; the browser
      gates fail as infrastructure (site unchanged, grow/<date> branch, the
@@ -140,6 +150,7 @@ def run_weekly(date, **extra):
 
 
 def issue(date):
+    """The run's Issue by its label (the date, or date-2... for a later run that day)."""
     p = ISSUES / f"Weekly-grow---{date}.json"
     return json.loads(p.read_text()) if p.exists() else {"body": "", "labels": [], "state": "missing"}
 
@@ -189,17 +200,19 @@ def setup():
     # backend/tests/grow/test_queued_pace.py.
     g = json.loads((WORK / "config" / "growth.json").read_text())
     g["max_queued_builds_per_month"] = 3
+    # and a per-run cap that fits scenario 20's sync target (12 papers at the
+    # interactive rate, padded); the committed cap is pinned by the unit tests
+    g["per_run_cost_cap_inr"] = 60
     (WORK / "config" / "growth.json").write_text(json.dumps(g, indent=2) + "\n")
-    commit_push("e2e: allow 3 queued builds a month in the mock world", ["config/growth.json"])
+    commit_push("e2e: allow 3 queued builds a month and a ₹60 per-run cap in the mock world",
+                ["config/growth.json"])
     _set_money(650)
 
 
 def _set_money(headroom):
     led = json.loads((WORK / "data" / "spend_ledger.json").read_text())["cumulative_inr"]
     MONEY.write_text(json.dumps({"account_total_inr": round(led + headroom, 2), "safety_buffer_inr": 50,
-                                 "console_spent_inr": None, "console_spent_date": None,
-                                 "growth_horizon_weeks": 12, "growth_horizon_start": "2026-10-12",
-                                 "weekly_budget_max_inr": 60, "queued_domain_reserve_weeks": 4}))
+                                 "console_spent_inr": None, "console_spent_date": None}))
 
 
 def commit_push(msg, files):
@@ -282,7 +295,12 @@ def main() -> int:
         building = [s for s, l in registry().items() if l["status"] == "building"]
         check(1, building == queued0[:1], "the first queued library started building", building)
         check(1, it["body"].startswith("**Status:** published to main") and "## Money" in it["body"]
-              and "weeks left" in it["body"], "one Issue: published, with money and weeks left")
+              and "this run's budget" in it["body"], "one Issue: published, with money and this run's budget")
+        check(1, "## This run's plan" in it["body"] and "Fewer papers than the target" in it["body"]
+              and "every search tier tried" in it["body"] and "| recent" not in it["body"]
+              and "recent " in it["body"].split("## This run's plan")[1],
+              "the default target (55) is more than the mock world holds: the Issue says each library ran out, "
+              "per tier, without loosening the rubric", it["body"][:300])
         fp = json.loads((WORK / "docs/releases" / f"{d}.json").read_text())
         check(1, fp["gates"] and all(g["ok"] for g in fp["gates"]), "every publish gate passed",
               [g for g in fp["gates"] or [] if not g["ok"]])
@@ -627,6 +645,123 @@ def main() -> int:
         r = run_weekly("2027-03-01", GROW_GATES="skip")
         check(18, r.returncode == 0 and f"self-recovery: republished grow/{d}" in r.stdout,
               "the next run, with a browser, recovers by itself", r.stdout[-300:])
+        # 19 RUN ANY TIME: manual runs never double-pay, strand or block --------
+        manual = dict(GROW_EVENT="workflow_dispatch", GROW_GATES="skip")
+        sync_main()
+        d = "2027-03-08"                                   # a Monday: the scheduled run submits batches
+        r = run_weekly(d, GROW_GATES="skip")
+        sync_main()
+        pend0 = sorted(str(p.relative_to(WORK)) for p in (WORK / "data/domains").glob("*/grow/pending.json"))
+        check(19, r.returncode == 0 and pend0, "scheduled run submits batches", r.stdout[-300:])
+        led0, jobs0 = ledger_inr(), len(list(MOCKST.glob("*.json")))
+        r = run_weekly(d, **manual, GROW_MOCK_FAIL="batch_pending")    # batches still running at Google
+        sync_main()
+        pend1 = sorted(str(p.relative_to(WORK)) for p in (WORK / "data/domains").glob("*/grow/pending.json"))
+        check(19, r.returncode == 0 and pend1 == pend0 and ledger_inr() == led0
+              and not any(f"submit {s_}: " in r.stdout and f"submit {s_}: 0 " not in r.stdout
+                          for s_ in [p.split("/")[2] for p in pend0]),
+              "with batches pending: nothing billed, no library with a pending batch submits again", r.stdout[-400:])
+        check(19, issue(f"{d}-2")["state"] == "open" and issue(d)["body"].startswith("**Status:** published"),
+              "a second run that day gets its own label and Issue; the first run's report is kept",
+              (issue(f"{d}-2")["state"], issue(d)["body"][:80]))
+        r = run_weekly(d, **manual)                        # right after: batches now done
+        sync_main()
+        hist = {}
+        for hp_ in (WORK / "data/domains").glob("*/grow/history/*.json"):
+            h = json.loads(hp_.read_text())
+            if h.get("batch_id"):
+                hist.setdefault(h["batch_id"], []).append(str(hp_))
+        check(19, r.returncode == 0 and all(not (WORK / p).exists() or p not in pend0 for p in pend1)
+              and all(len(v) == 1 for v in hist.values()),
+              "right after another run: each pending batch collected exactly once (one history record each)",
+              {k: v for k, v in hist.items() if len(v) > 1})
+        check(19, issue(f"{d}-3")["state"] == "open", "and a third run that day gets a third label")
+        mid = "2027-03-10"                                 # a Wednesday
+        r = run_weekly(mid, **manual)
+        sync_main()
+        check(19, r.returncode == 0 and issue(mid)["body"].startswith("**Status:** published"),
+              "mid-week manual run publishes", r.stdout[-300:])
+        r = run_weekly("2027-03-11", **manual, GROW_MOCK_MOVE_MAIN="checkpoint")
+        sync_main()
+        owner = git("log", "--format=%H", "-1", "--grep", "cosmetic edit during a run (checkpoint)", "main", cwd=REMOTE)
+        check(19, r.returncode == 0 and owner and sh(["git", "merge-base", "--is-ancestor", owner, "main"],
+                                                      cwd=REMOTE, check_=False).returncode == 0,
+              "manual run with main moved underneath: rebuilt on the new main, owner's commit kept", r.stdout[-300:])
+        fd = "2027-03-12"
+        r = run_weekly(fd, **{**manual, "GROW_GATES": None}, GROW_FAIL_GATE="search regression suite")
+        sync_main()
+        check(19, r.returncode == 1 and remote_head(f"grow/{fd}") is not None, "a failed gate leaves grow/<label>",
+              r.stdout[-300:])
+        r = run_weekly(fd, **manual)                       # same day, failed branch waiting
+        sync_main()
+        out = r.stdout
+        rec_i, col_i = out.find(f"self-recovery: republished grow/{fd}"), out.find("collect ")
+        check(19, r.returncode == 0 and rec_i >= 0 and (col_i < 0 or rec_i < col_i),
+              "manual run with a failed branch waiting: self-recovery first, then grows", out[-400:])
+        r = run_weekly("2027-03-15", GROW_GATES="skip")    # the next scheduled run
+        sync_main()
+        hist = {}
+        for hp_ in (WORK / "data/domains").glob("*/grow/history/*.json"):
+            h = json.loads(hp_.read_text())
+            if h.get("batch_id"):
+                hist.setdefault(h["batch_id"], []).append(str(hp_))
+        pend_ids = {json.loads(p.read_text())["batch_id"] for p in (WORK / "data/domains").glob("*/grow/pending.json")}
+        submitted_ids = {"batches/" + p.stem.split("_", 1)[1] for p in MOCKST.glob("*.json")
+                         if json.loads(p.read_text())["display_name"].startswith("researchmap-grow-")}
+        check(19, r.returncode == 0, "the next scheduled run is not blocked", r.stdout[-300:])
+        check(19, all(len(v) == 1 for v in hist.values()) and submitted_ids <= set(hist) | pend_ids,
+              "over all runs: no batch billed twice, none stranded (each collected once, or still pending on main)",
+              sorted(submitted_ids - set(hist) - pend_ids)[:5])
+        check(19, remote_head(f"grow/{fd}") is not None, "the recovered branch is kept (never deleted)")
+        # 20 SUPPLY + SYNC: the widening search reaches the target; sync adds the papers in the run --
+        sync_main()
+        d = "2027-03-17"
+        growing = [s_ for s_, l in registry().items() if l["status"] == "built" and not l["frozen"]]
+        before = {s_: papers(s_) for s_ in growing}
+
+        def grow_jobs():
+            return sum(1 for p in MOCKST.glob("*.json")
+                       if json.loads(p.read_text())["display_name"].startswith("researchmap-grow-"))
+        gj0 = grow_jobs()
+        r = run_weekly(d, **manual, GROW_MOCK_DEEP="1", GROW_MODE="sync", GROW_TARGET_PAPERS="12")
+        sync_main()
+        it = issue(d)
+        after = {s_: papers(s_) for s_ in growing}
+        led = json.loads((WORK / "data" / "spend_ledger.json").read_text())["entries"]
+        sync_rows = [e for e in led if (e.get("stage") or "").startswith("grow_extract_sync")]
+        added = sum(after[s_] - before[s_] for s_ in growing)
+        check(20, r.returncode == 0 and added == 12 and len(sync_rows) == 12,
+              "sync, target 12: twelve papers added IN THIS RUN, each billed once at the interactive rate",
+              (added, len(sync_rows), r.stdout[-300:]))
+        check(20, not list((WORK / "data/domains").glob("*/grow/pending.json"))
+              and not list((WORK / "data/domains").glob("*/grow/sync_inflight.json")) and grow_jobs() == gj0,
+              "no batch submitted for extraction, nothing left in flight", (gj0, grow_jobs()))
+        check(20, "vocabulary" in it["body"] and "mode **sync**" in it["body"] and "planned: **12**" in it["body"]
+              and "Fewer papers than the target" not in it["body"],
+              "the Issue shows the plan: the vocabulary tier found the extra candidates; target met", it["body"][:400])
+        d = "2027-03-18"
+        r = run_weekly(d, **manual, GROW_MOCK_DEEP="1", GROW_TARGET_PAPERS="12")
+        sync_main()
+        pend = [json.loads(p.read_text()) for p in (WORK / "data/domains").glob("*/grow/pending.json")]
+        check(20, r.returncode == 0 and sum(len(p_["entries"]) for p_ in pend) == 12
+              and "planned: **12**" in issue(d)["body"],
+              "batch, target 12: the same target submitted as batches for the next run", r.stdout[-300:])
+        # 21 DRY RUN: every number, nothing spent ------------------------------
+        sync_main()
+        led_b, jobs_b, head_b = (WORK / "data" / "spend_ledger.json").read_bytes(), len(list(MOCKST.glob("*.json"))), \
+            remote_head()
+        r = subprocess.run([PY, "tools/grow/run_weekly.py", "--dry-run"], cwd=WORK, capture_output=True, text=True,
+                           env=env("2027-03-22", GROW_MOCK_DEEP="1", GROW_TARGET_PAPERS="55"), timeout=1800)
+        (OUT / "dry-run.log").write_text(r.stdout + "\n--- stderr ---\n" + r.stderr)
+        out = r.stdout
+        check(21, r.returncode == 0 and all(f"| {s_} |" in out for s_ in growing)
+              and "| batch |" in out and "| sync |" in out and "money allows it?" in out and "run time" in out,
+              "dry run prints candidates and kept per library, batch and sync cost, run time, money verdict",
+              (out[-600:], r.stderr[-400:]))
+        check(21, (WORK / "data" / "spend_ledger.json").read_bytes() == led_b
+              and len(list(MOCKST.glob("*.json"))) == jobs_b and remote_head() == head_b
+              and not git("status", "--porcelain"),
+              "and spends nothing: ledger, batches, main and the checkout untouched")
         # 10 --------------------------------------------------------------
         e = env("x", NEXT_PUBLIC_SITE_URL="http://127.0.0.1:9")
         r = subprocess.run([PY, "tools/grow/health.py"], cwd=WORK, capture_output=True, text=True, env=e)
