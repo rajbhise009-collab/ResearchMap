@@ -1010,7 +1010,8 @@ def main() -> int:
         for lib in queued.building():
             fo_ok, fo_why = queued_finish_followon(manual=manual, build_queued=build_queued, no_new_paid=no_new_paid)
             try:
-                r = queued.finish(lib, cl, mock=cl.mock, paid_followon=fo_ok, why_not=fo_why)
+                with queued_money(run_budget):
+                    r = queued.finish(lib, cl, mock=cl.mock, paid_followon=fo_ok, why_not=fo_why)
             except Exception as e:  # noqa: BLE001
                 from backend.app.extraction.spend_gate import SpendGateRefused
                 from backend.app.extraction.spend_ledger import SpendCapExceededError
@@ -1123,7 +1124,8 @@ def main() -> int:
                                    "(₹0 spent)", "detail": dg["detail"]})
                     continue                          # the next queued library may still go (one per run)
                 try:
-                    r = queued.start(lib, cl)
+                    with queued_money(run_budget):
+                        r = queued.start(lib, cl)
                 except Exception as e:  # noqa: BLE001
                     from backend.app.extraction.spend_gate import SpendGateRefused
                     if not isinstance(e, SpendGateRefused):
@@ -1346,6 +1348,28 @@ def run_controls() -> tuple[bool, float | None, bool]:
             os.environ.get("GROW_BUILD_QUEUED", "false").lower() == "true")
 
 
+class queued_money:
+    """Queued (new) libraries have their own approval rule (affordability
+    with queued_reserve_runs, the monthly limit, the growth reserve, the free
+    dry run), so the per-run GROWTH cap (per_run_cost_cap_inr) does not apply
+    to their start and finish: inside this block only the money rule's
+    ceiling is enforced at call time. A manual run's explicit run_budget_inr
+    still caps everything, queued steps included."""
+
+    def __init__(self, manual_cap: float | None):
+        self.manual_cap, self.saved = manual_cap, None
+
+    def __enter__(self):
+        if self.manual_cap is None:
+            self.saved = os.environ.pop("RUN_CAP_LEDGER_INR", None)
+        return self
+
+    def __exit__(self, *exc):
+        if self.saved is not None:
+            os.environ["RUN_CAP_LEDGER_INR"] = self.saved
+        return False
+
+
 def run_options() -> tuple[str, int]:
     """(mode, target papers). Scheduled runs: config/growth.json. Manual runs
     may choose the mode (batch|sync) and the target (target_papers); an
@@ -1370,11 +1394,12 @@ def run_options() -> tuple[str, int]:
 
 def run_label(date: str) -> str:
     """The run's label: its date, or date-2, date-3... when an earlier run
-    that day already has a branch, a release record or a run record (manual
-    runs can start any time). Labels the Issue, the grow/<label> branch and
+    that day already has a grow/ branch or a row in data/grow/runs.json (every
+    run records itself there, pushed with its first checkpoint; manual runs
+    can start any time). Labels the Issue, the grow/<label> branch and
     docs/releases/<label>.json, so a later run never overwrites an earlier
     run's report or record."""
-    taken = set(_REMOTE_GROW) | {p.stem for p in (ROOT / "docs" / "releases").glob(f"{date}*.json")}
+    taken = set(_REMOTE_GROW)
     rp = ROOT / "data" / "grow" / "runs.json"
     if rp.exists():
         taken |= {r["label"] for r in json.loads(rp.read_text()).get("runs", [])}

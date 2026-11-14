@@ -4,7 +4,7 @@
   "target_papers_per_run": 55,
   "per_run_cost_cap_inr": 25,
   "mode": "batch",
-  "growth_note": "One run (scheduled or manual) aims to add target_papers_per_run papers across all growing libraries, split by fair rotation, and commits at most per_run_cost_cap_inr of NEW paid work (padded projections: extraction x1.5, classification x2; collecting an earlier run's batches does not count). The money rule (config/money.json) still caps every call at the ledger ceiling; a run that cannot afford its target adds fewer papers and says why in its Issue. mode: batch (papers appear the next run) or sync (the same run, about 2x the cost). Manual runs may lower the cap (run_budget_inr), change the target (target_papers) and pick the mode. See backend/app/grow/plan.py.",
+  "growth_note": "One run (scheduled or manual) aims to add target_papers_per_run papers across all growing libraries, split by fair rotation, and commits at most per_run_cost_cap_inr of NEW paid work (padded projections: extraction x1.5, classification x2; collecting an earlier run's batches does not count). The money rule (config/money.json) still caps every call at the ledger ceiling; a run that cannot afford its target adds fewer papers and says why in its Issue. mode: batch (papers appear the next run) or sync (the same run, about 2x the cost). Queued (new) library builds have their own rule (queued_note) and do not count against per_run_cost_cap_inr, unless a manual run sets run_budget_inr. Manual runs may lower the cap (run_budget_inr), change the target (target_papers) and pick the mode. See backend/app/grow/plan.py.",
   "max_disagreement_pairs_per_run": 400,
   "max_fw_pairs_per_run": 400,
   "max_confirm_leads_per_run": 150,

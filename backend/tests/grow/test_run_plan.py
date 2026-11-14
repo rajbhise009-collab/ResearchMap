@@ -342,17 +342,30 @@ def test_job_timeout_fits_under_githubs_six_hours_and_the_run_plans_for_less():
 def test_each_run_on_a_day_gets_its_own_label(monkeypatch, tmp_path):
     rw = _rw()
     monkeypatch.setattr(rw, "ROOT", tmp_path)
-    (tmp_path / "docs" / "releases").mkdir(parents=True)
+    monkeypatch.setattr(rw, "_REMOTE_GROW", [])
     assert rw.run_label("2026-11-16") == "2026-11-16"
-    (tmp_path / "docs" / "releases" / "2026-11-16.json").write_text("{}")
+    rw.record_run("2026-11-16")                                       # the first run that day
     assert rw.run_label("2026-11-16") == "2026-11-16-2"
-    monkeypatch.setattr(rw, "_REMOTE_GROW", ["grow/2026-11-16-2"])
+    monkeypatch.setattr(rw, "_REMOTE_GROW", ["grow/2026-11-16-2"])    # a failed second run's branch
     assert rw.run_label("2026-11-16") == "2026-11-16-3"
     rw.record_run("2026-11-16-3")
     assert rw.run_label("2026-11-16") == "2026-11-16-4"
     assert rw.run_label("2026-11-17") == "2026-11-17"
     runs = json.loads((tmp_path / "data" / "grow" / "runs.json").read_text())["runs"]
     assert runs[-1]["label"] == "2026-11-16-3" and runs[-1]["started_at"]
+
+
+def test_the_growth_cap_does_not_apply_to_queued_steps_unless_the_owner_set_one(monkeypatch):
+    rw = _rw()
+    monkeypatch.setenv("RUN_CAP_LEDGER_INR", "100")
+    with rw.queued_money(None):
+        import os
+        assert "RUN_CAP_LEDGER_INR" not in os.environ            # the money rule's ceiling only
+    assert os.environ["RUN_CAP_LEDGER_INR"] == "100"              # restored for growth
+    with rw.queued_money(25.0):
+        assert os.environ["RUN_CAP_LEDGER_INR"] == "100"          # an explicit manual cap covers queued too
+    src = (REPO / "tools" / "grow" / "run_weekly.py").read_text()
+    assert src.count("with queued_money(run_budget):") == 2
 
 
 def test_republish_accepts_a_labelled_branch_and_still_refuses_junk(monkeypatch):
