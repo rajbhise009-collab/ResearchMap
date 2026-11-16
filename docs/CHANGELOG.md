@@ -2,6 +2,21 @@
 
 One entry per weekly growth run (newest first).
 
+## 2026-11-16
+
+- diet-and-mortality: 1 papers added
+- ml-fairness: 3 papers added
+- nudge-effectiveness: 0 papers added
+- social-media-teen-mental-health: 3 papers added
+- new library ego-depletion: waiting for money
+- diet-and-mortality: results shown 13 -> 14 (+1 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- ml-fairness: results shown 71 -> 72 (+2 new, -1 no longer shown); 0 flagged disagreements (not yet checked)
+-   - no longer shown: opp-ml-fairness-orphan-openalex-w2902802452-f1 — open question answered: the later paper W4416249028 was judged to address it (addressed); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)
+- nudge-effectiveness: results shown 9 -> 9 (+0 new, -0 no longer shown); 0 flagged disagreements (not yet checked)
+- social-media-teen-mental-health: results shown 33 -> 32 (+0 new, -1 no longer shown); 0 flagged disagreements (not yet checked)
+-   - no longer shown: opp-social-media-teen-mental-health-orphan-openalex-w2593771132-f4 — open question answered: the later paper W7225428345 was judged to address it (partial); an open question a later paper addresses is no longer open (docs/opportunity-criteria.md)
+- spend recorded ₹19.85; remaining ₹132.48
+
 ## 2026-11-09
 
 - diet-and-mortality: 0 papers added

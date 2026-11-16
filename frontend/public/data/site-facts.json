@@ -65,13 +65,13 @@
       "name": "Diet and all-cause mortality",
       "short_name": "Diet & mortality",
       "blurb": "What the epidemiology and clinical-trial literature says about diet \u2014 food groups, dietary patterns, and specific regimes \u2014 and mortality-related outcomes.",
-      "built": "2026-11-02",
+      "built": "2026-11-16",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 104,
-      "claims_read": 104,
+      "papers": 105,
+      "claims_read": 105,
       "full_text": 17,
-      "abstract_only": 87,
-      "gap_cards": 13,
+      "abstract_only": 88,
+      "gap_cards": 14,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -93,17 +93,17 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 6,
+          "count": 7,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 13,
+      "results_total": 14,
       "set_aside_total": 5,
       "growth": {
         "grows": true,
-        "added": 4,
-        "last_added": "2026-10-26"
+        "added": 5,
+        "last_added": "2026-11-09"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (160 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
@@ -127,13 +127,13 @@
       "name": "Algorithmic fairness in machine learning",
       "short_name": "ML fairness",
       "blurb": "Definitions and metrics for fair machine-learning classifiers, incompatibility results between them, bias-mitigation methods, and audits of deployed systems.",
-      "built": "2026-11-09",
+      "built": "2026-11-16",
       "built_basis": "last run of the disagreement check over the final corpus",
-      "papers": 116,
-      "claims_read": 116,
-      "full_text": 57,
-      "abstract_only": 59,
-      "gap_cards": 71,
+      "papers": 119,
+      "claims_read": 119,
+      "full_text": 59,
+      "abstract_only": 60,
+      "gap_cards": 72,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -149,23 +149,23 @@
         },
         {
           "type": "structural_holes",
-          "count": 0,
+          "count": 2,
           "label": "unexplored connections",
-          "note": "none were found among the papers read, which is not the same as none existing"
+          "note": null
         },
         {
           "type": "orphaned_future_work",
-          "count": 70,
+          "count": 69,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 71,
-      "set_aside_total": 0,
+      "results_total": 72,
+      "set_aside_total": 9,
       "growth": {
         "grows": true,
-        "added": 17,
-        "last_added": "2026-11-02"
+        "added": 20,
+        "last_added": "2026-11-09"
       },
       "check_line": "The disagreement check compared every pair of closely similar claims from different papers (94 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
@@ -249,11 +249,11 @@
       "blurb": "What studies find about young people's social-media, smartphone and screen use and their depression, anxiety, loneliness and well-being, and why they disagree.",
       "built": null,
       "built_basis": null,
-      "papers": 111,
-      "claims_read": 110,
+      "papers": 114,
+      "claims_read": 113,
       "full_text": 27,
-      "abstract_only": 84,
-      "gap_cards": 33,
+      "abstract_only": 87,
+      "gap_cards": 32,
       "results": [
         {
           "type": "unresolved_contradictions",
@@ -275,23 +275,23 @@
         },
         {
           "type": "orphaned_future_work",
-          "count": 27,
+          "count": 26,
           "label": "open questions",
           "note": null
         }
       ],
-      "results_total": 33,
+      "results_total": 32,
       "set_aside_total": 7,
       "growth": {
         "grows": true,
-        "added": 11,
-        "last_added": "2026-11-02"
+        "added": 14,
+        "last_added": "2026-11-09"
       },
-      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (220 pairs); pairs worded differently are never compared.",
+      "check_line": "The disagreement check compared every pair of closely similar claims from different papers (235 pairs); pairs worded differently are never compared.",
       "not_run": "A fifth, experimental check (papers linked only through a third paper) is switched off in every library until it can be validated.",
       "disagreement_check": {
-        "shortlisted": 220,
-        "classified": 220,
+        "shortlisted": 235,
+        "classified": 235,
         "flagged": 9,
         "hand_checked": 6,
         "confirmed": 2,
