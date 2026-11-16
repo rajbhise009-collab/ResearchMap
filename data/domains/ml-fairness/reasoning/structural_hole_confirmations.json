@@ -228,5 +228,95 @@
     "b_pid": "openalex:W2773523653",
     "method": "Taxonomy and systematic review of fair graph mining",
     "limitation": "Translating complex egalitarian theories into practical ML tasks is difficult because required contextual data regarding personal responsibility, life history, and socio-economic context is rarely captured in available datasets."
+  },
+  "opp:hole:W2040825624->W3043023066": {
+    "verdict": "not_addressing",
+    "reason": "Paper A proposes a general fairness-regularization approach for probabilistic models, which does not address the specific structural bias of one-versus-marginal comparisons highlighted in Paper B.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2040825624",
+    "b_pid": "openalex:W3043023066",
+    "method": "Fairness-aware Regularization for Probabilistic Discriminative Models",
+    "limitation": "Metrics and regularizers were constructed using one-versus-marginal comparisons, which inherently make metrics for over-represented groups smaller because those groups comprise a larger fraction of the aggregate population."
+  },
+  "opp:hole:W2157928966->W3043023066": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's pre-processing data massaging technique does not address Paper B's specific mathematical critique regarding the formulation of one-versus-marginal evaluation metrics and regularizers.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2157928966",
+    "b_pid": "openalex:W3043023066",
+    "method": "Data Massaging for Non-Discrimination",
+    "limitation": "Metrics and regularizers were constructed using one-versus-marginal comparisons, which inherently make metrics for over-represented groups smaller because those groups comprise a larger fraction of the aggregate population."
+  },
+  "opp:hole:W2157928966->W2784397426": {
+    "verdict": "not_addressing",
+    "reason": "Data massaging is a pre-processing technique designed to enforce demographic parity by altering labels, which does not address the adversarial optimization challenges of local minima or tuning hyperparameters to achieve equality of odds.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2157928966",
+    "b_pid": "openalex:W2784397426",
+    "method": "Data Massaging for Non-Discrimination",
+    "limitation": "The adversarial training algorithm can run into local minima and produce results closer to demographic parity than equality of odds unless hyperparameter scaling is carefully adjusted over time."
+  },
+  "opp:hole:W1979769549->W2784397426": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's post-processing reject-option technique provides an alternative classification paradigm rather than resolving the training instabilities, local minima, or hyperparameter scaling difficulties inherent to Paper B's adversarial learning algorithm.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W1979769549",
+    "b_pid": "openalex:W2784397426",
+    "method": "Reject option probabilistic classification for discrimination reduction",
+    "limitation": "The adversarial training algorithm can run into local minima and produce results closer to demographic parity than equality of odds unless hyperparameter scaling is carefully adjusted over time."
+  },
+  "opp:hole:W2040825624->W2725155646": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's output-level probabilistic regularization bypasses latent representation learning entirely rather than resolving the accuracy degradation caused by enforcing fairness constraints within adversarial fair representations.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2040825624",
+    "b_pid": "openalex:W2725155646",
+    "method": "Fairness-aware Regularization for Probabilistic Discriminative Models",
+    "limitation": "Enforcing unbiased latent representations directly inside the model acts as a strong constraint that significantly degrades overall classification accuracy."
+  },
+  "opp:hole:W2963174898->W2788416960": {
+    "verdict": "not_addressing",
+    "reason": "Paper A's convex pre-processing method is an alternative data-transformation paradigm that does not resolve the gradient optimization instability inherent to min-max adversarial representation training in Paper B.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2963174898",
+    "b_pid": "openalex:W2788416960",
+    "method": "Probabilistic Convex Optimization Pre-Processing",
+    "limitation": "Optimizing group-normalized L1 loss with gradients in adversarial training can be difficult and exhibits training instability."
+  },
+  "opp:hole:W2963174898->W2784397426": {
+    "verdict": "not_addressing",
+    "reason": "Convex optimization pre-processing replaces adversarial in-processing with a different paradigm rather than resolving the adversarial training algorithm's local minima and hyperparameter scheduling instability.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2963174898",
+    "b_pid": "openalex:W2784397426",
+    "method": "Probabilistic Convex Optimization Pre-Processing",
+    "limitation": "The adversarial training algorithm can run into local minima and produce results closer to demographic parity than equality of odds unless hyperparameter scaling is carefully adjusted over time."
+  },
+  "opp:hole:W4385416124->W2725155646": {
+    "verdict": "substantive",
+    "reason": "Replacing rigid adversarial latent-space constraints with a reinforcement learning reward-shaping formulation offers an actionable alternative optimization framework to potentially alleviate the severe accuracy degradation in fair representation learning.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W4385416124",
+    "b_pid": "openalex:W2725155646",
+    "method": "Duelling Double-Deep Q-Network (DDQN) Bias Mitigation Framework",
+    "limitation": "Enforcing unbiased latent representations directly inside the model acts as a strong constraint that significantly degrades overall classification accuracy."
+  },
+  "opp:hole:W2904642422->W4385416124": {
+    "verdict": "substantive",
+    "reason": "Paper A's one-network adversarial fairness approach provides a differentiable mechanism to penalize sensitive attribute predictability, offering an actionable strategy to enforce equalized odds within Paper B's reinforcement learning policy networks despite dataset imbalance.",
+    "prompt_hash": "ccd1f406f789",
+    "detector_model": "gemini:gemini-flash-latest",
+    "a_pid": "openalex:W2904642422",
+    "b_pid": "openalex:W4385416124",
+    "method": "One-Network Adversarial Fairness",
+    "limitation": "The RL models did not completely fulfill equalized odds requirements, partly because the training datasets were imbalanced with respect to sensitive attributes."
   }
 }

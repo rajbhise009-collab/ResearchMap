@@ -1,0 +1,303 @@
+{
+  "paper_id": "openalex:W4416249028",
+  "claims": [
+    {
+      "id": "openalex:W4416249028:c1",
+      "paper_id": "openalex:W4416249028",
+      "text": "For COVID-19 in London, an SLIR model with homogeneous mixing and a flat IFR achieved an age-fairness score of F(age) = 0.577 [0.569, 0.584].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c2",
+      "paper_id": "openalex:W4416249028",
+      "text": "For COVID-19 in London, an SLIR model with age-stratified contacts and a flat IFR achieved an age-fairness score of F(age) = 0.528 [0.521, 0.535].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c3",
+      "paper_id": "openalex:W4416249028",
+      "text": "For COVID-19 in London, an SLIR model combining age-stratified contacts with an age-dependent IFR achieved a fairness score of F(age) = 0.923 [0.919, 0.927].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c4",
+      "paper_id": "openalex:W4416249028",
+      "text": "For COVID-19 in London, an SLIR model combining homogeneous mixing with a heterogeneous IFR achieved a fairness score of F(age) = 0.976 [0.973, 0.979].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c5",
+      "paper_id": "openalex:W4416249028",
+      "text": "In New York City COVID-19 modeling, a baseline model with equal susceptibility and homogeneous mixing across racial/ethnic groups yielded a fairness score of F(race) = 0.714 [0.705, 0.724].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c6",
+      "paper_id": "openalex:W4416249028",
+      "text": "In New York City COVID-19 modeling, introducing variable susceptibility with homogeneous IFR increased racial/ethnic fairness to F(race) = 0.901 [0.889, 0.912].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c7",
+      "paper_id": "openalex:W4416249028",
+      "text": "In New York City COVID-19 modeling, a model with homogeneous IFR and assortative mixing achieved the highest racial/ethnic fairness of F(race) = 0.906 [0.893, 0.918].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c8",
+      "paper_id": "openalex:W4416249028",
+      "text": "In New York City COVID-19 models, a baseline model with equally distributed contact rates and heterogeneous IFR achieved a fairness score of F(race) = 0.621 [0.613, 0.630].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c9",
+      "paper_id": "openalex:W4416249028",
+      "text": "In Santiago COVID-19 simulations ranked by Human Development Index (HDI), integrating human mobility data yielded an average RCI fairness score of F(HDI) = 0.97 compared to 0.93 without mobility data.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c10",
+      "paper_id": "openalex:W4416249028",
+      "text": "In Santiago COVID-19 simulations treated as unordered comunas, including human mobility data increased the average Theil-based fairness score from 0.63 to 0.79.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c11",
+      "paper_id": "openalex:W4416249028",
+      "text": "In multidimensional agent-based models of New York City, an age-stratified random network achieved a geographic fairness score of F(geo) = 0.934 [0.868, 0.982], while an age-stratified hybrid network achieved F(geo) = 0.937 [0.868, 0.981].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c12",
+      "paper_id": "openalex:W4416249028",
+      "text": "A full Theil-index-based vaccine allocation strategy (gamma = 1) in NYC yielded an overall median death reduction of 73.9% [56.6, 97.9] compared to 68.2% [53.8, 94.2] for a population-based strategy.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c13",
+      "paper_id": "openalex:W4416249028",
+      "text": "Vaccine allocation based on death rates reduced overall mortality by 72.1% [55.3, 97.1] but decreased relative death reduction for the White majority group to 65.2% [45.7, 96.3] relative to the population-based baseline of 68.9% [54.3, 94.4].",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416249028:c14",
+      "paper_id": "openalex:W4416249028",
+      "text": "Model fairness can be defined mathematically as an epidemic model's ability to capture the observed unequal distribution of disease burden according to equity-related demographic or socioeconomic traits.",
+      "type": "method",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4416249028:e1",
+      "claim_id": "openalex:W4416249028:c1",
+      "description": "\"This model does not adequately capture the higher concentration of deaths in the elderly groups, as shown by its fairness score of F(age) = 0.577 [0.569, 0.584].\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e2",
+      "claim_id": "openalex:W4416249028:c2",
+      "description": "\"Similarly, the model considering a flat IFR and an age-stratified contact matrix has a fairness score of F(age) = 0.528 [0.521, 0.535].\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e3",
+      "claim_id": "openalex:W4416249028:c3",
+      "description": "\"The model considering both age-stratified contacts and an age-dependent IFR has a fairness score of F(age) = 0.923 [0.919, 0.927] (Fig. 1b purple dots)\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e4",
+      "claim_id": "openalex:W4416249028:c4",
+      "description": "\"...while the one combining homogeneous mixing with a heterogeneous IFR has an even higher score of F(age)=0.976 [0.973, 0.979] (Fig. 1b turquoise dots).\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e5",
+      "claim_id": "openalex:W4416249028:c5",
+      "description": "\"As expected, the baseline model generates an equally distributed number of deaths among racial and ethnic groups, thus failing to capture the observed inequalities. Its fairness score is F(race) = 0.714 [0.705, 0.724].\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e6",
+      "claim_id": "openalex:W4416249028:c6",
+      "description": "\"By introducing variable susceptibility and maintaining a homogeneous IFR for all groups, the fairness of the model increases to F(race) = 0.901 [0.889, 0.912].\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e7",
+      "claim_id": "openalex:W4416249028:c7",
+      "description": "\"A model with a homogeneous IFR and assortative mixing achieves the highest fairness F(race) = 0.906 [0.893, 0.918].\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e8",
+      "claim_id": "openalex:W4416249028:c8",
+      "description": "\"For instance, a baseline model with equally distributed contact rates and heterogeneous IFR only achieves F(race) = 0.621 [0.613, 0.630] (Table S7).\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e9",
+      "claim_id": "openalex:W4416249028:c9",
+      "description": "\"According to Eq. 2, the model with mobility is characterized by an average fairness score of F(HDI) = 0.97, while excluding mobility data decreases the score to 0.93.\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e10",
+      "claim_id": "openalex:W4416249028:c10",
+      "description": "\"In this case, by including human mobility data, the average model’s fairness increases from 0.63 to 0.79.\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e11",
+      "claim_id": "openalex:W4416249028:c11",
+      "description": "\"This is exemplified by the Theil-index fairness scores of the age-stratified random network model (F(geo)=0.934 [0.868, 0.982]) compared to the age-stratified hybrid network model (F(geo) = 0.937 [0.868, 0.981]).\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e12",
+      "claim_id": "openalex:W4416249028:c12",
+      "description": "\"Table 1 compares the relative reduction in deaths achieved by different vaccine allocation strategies... Population-based 68.2 [53.8, 94.2]... Theil-index-based 73.9 [56.6, 97.9]\"",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e13",
+      "claim_id": "openalex:W4416249028:c13",
+      "description": "\"However, allocating vaccines according to group-specific death risk increases overall mortality reduction (72.1%) mainly in minority groups (Hispanic, Black, and Asian), while the majority group (Whites) experiences an increase in mortality relative to the population-based baseline.\" (Table 1: White death reduction 65.2% vs 68.9%).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416249028:e14",
+      "claim_id": "openalex:W4416249028:c14",
+      "description": "\"We define the fairness of an epidemic model as its ability to capture the (un)equal distribution of disease burden according to one or more equity-related features.\"",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4416249028:m1",
+      "paper_id": "openalex:W4416249028",
+      "name": "Relative Concentration Index (RCI) Model Fairness Metric",
+      "description": "Quantifies model fairness for ordered social groups by taking 1 minus the absolute difference between model and empirical Relative Concentration Indices divided by 2.",
+      "datasets": [
+        "London weekly COVID-19 mortality data by age",
+        "Santiago COVID-19 incidence by HDI"
+      ],
+      "conditions": [
+        "Ordered demographic/socioeconomic groups along a hierarchical continuum"
+      ]
+    },
+    {
+      "id": "openalex:W4416249028:m2",
+      "paper_id": "openalex:W4416249028",
+      "name": "Theil Index Component-based Model Fairness Metric",
+      "description": "Evaluates model fairness for unordered social groups or regions using an exponential of the negative sum of absolute differences between model and observed group-level Theil index components.",
+      "datasets": [
+        "NYC COVID-19 deaths by race/ethnicity",
+        "Santiago COVID-19 comuna deaths",
+        "Colombia ZIKV incidence data"
+      ],
+      "conditions": [
+        "Unordered categorical subgroups (e.g., race, ethnicity, or unranked spatial units)"
+      ]
+    },
+    {
+      "id": "openalex:W4416249028:m3",
+      "paper_id": "openalex:W4416249028",
+      "name": "Theil-index-weighted Vaccine Allocation Strategy",
+      "description": "Distributes vaccine doses across subgroups by weighting each subgroup's population share by its empirical Theil index ill-health component via parameter gamma.",
+      "datasets": [
+        "NYC COVID-19 surveillance data"
+      ],
+      "conditions": [
+        "Simulated second epidemic wave with 20% sterilizing vaccine coverage"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4416249028:l1",
+      "paper_id": "openalex:W4416249028",
+      "text": "Computational epidemiology lacks standard frameworks and general transferable definitions to address inequalities and model fairness systematically across pathogens and contexts.",
+      "normalized_category": "lack-of-standardization",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4416249028:l2",
+      "paper_id": "openalex:W4416249028",
+      "text": "The framework did not address how to correctly identify from available data which equity-related variables to include or how to mechanistically link social causes with biological disease exposure mechanisms.",
+      "normalized_category": "unmodeled-causal-mechanisms",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416249028:l3",
+      "paper_id": "openalex:W4416249028",
+      "text": "The vaccine allocation analysis relied on a stylized proof-of-concept scenario that assumed sterilizing immunity and omitted operational constraints, vaccine supply limits, adverse impacts, and waning immunity.",
+      "normalized_category": "simplifying-assumptions",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416249028:l4",
+      "paper_id": "openalex:W4416249028",
+      "text": "Covasim agent-based simulations in New York City could not explicitly represent inter-borough coupling because the simulator lacked spatial coupling functionality.",
+      "normalized_category": "tool-limitation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416249028:l5",
+      "paper_id": "openalex:W4416249028",
+      "text": "The framework was applied post-hoc to already calibrated models rather than directly integrating fairness scores into model fitting or policy optimization objective functions.",
+      "normalized_category": "post-hoc-evaluation-only",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4416249028:f1",
+      "paper_id": "openalex:W4416249028",
+      "text": "Integrate operational conditions such as logistics, vaccine hesitancy, and governance to evaluate fairness-informed allocation under real-world constraints.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4416249028:f2",
+      "paper_id": "openalex:W4416249028",
+      "text": "Incorporate fairness metrics directly into model fitting or policy optimization routines as objective functions or constraints rather than evaluating post hoc.",
+      "addressed_by": null
+    },
+    {
+      "id": "openalex:W4416249028:f3",
+      "paper_id": "openalex:W4416249028",
+      "text": "Conduct more extensive evaluations of fairness metrics across broader epidemic types and varied intervention scenarios.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-11-16T13:50:27.141527Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

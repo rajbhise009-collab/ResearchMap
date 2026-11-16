@@ -1,5 +1,5 @@
 {
-  "n": 94,
+  "n": 101,
   "items": [
     {
       "from_claim_id": "openalex:W2788235370:c3",
@@ -940,6 +940,76 @@
       "b_paper_id": "openalex:W7223188562",
       "b_text": "Social media engagement is associated with higher levels of anxiety.",
       "explanation": "The claims examine different dimensions of social media behavior, distinguishing between overall engagement level and the specific motivation of maintaining relationships with friends and family."
+    },
+    {
+      "from_claim_id": "openalex:W2998834126:c3",
+      "to_claim_id": "openalex:W7225428345:c1",
+      "similarity": 0.8134186267852783,
+      "a_paper_id": "openalex:W2998834126",
+      "a_text": "Research on digital technology usage and adolescent mental health has generated a mix of conflicting small positive, negative, and null associations.",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "The variation in the link between social media use and adolescent mental health across developmental stages remains insufficiently clarified.",
+      "explanation": "While both claims address complexities in the relationship between technology/social media and adolescent mental health, one summarizes the overall conflicting findings in the literature while the other highlights an understudied gap regarding developmental stages."
+    },
+    {
+      "from_claim_id": "openalex:W7221031988:c1",
+      "to_claim_id": "openalex:W7225428345:c3",
+      "similarity": 0.8132758736610413,
+      "a_paper_id": "openalex:W7221031988",
+      "a_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "The meta-analytic association between social media use and adolescent mental health demonstrates high heterogeneity (I2 = 93.85%).",
+      "explanation": "Claim A reports a specific pooled effect size for depression, whereas Claim B reports the statistical heterogeneity across mental health studies without directly supporting or refuting that effect size."
+    },
+    {
+      "from_claim_id": "openalex:W2944221730:c1",
+      "to_claim_id": "openalex:W7225428345:c7",
+      "similarity": 0.8043503761291504,
+      "a_paper_id": "openalex:W2944221730",
+      "a_text": "The median cross-sectional correlation between adolescent social media use and life satisfaction across all operationalizations was small and negative (psi = -0.13).",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "The correlation between social media use and worse mental health is weakest in middle school students (r = 0.201).",
+      "explanation": "The claims examine different outcome constructs and populations, with Claim A reporting an overall median correlation with life satisfaction and Claim B identifying an age-group-specific correlation with worse mental health."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c2",
+      "to_claim_id": "openalex:W7162303005:c1",
+      "similarity": 0.8038266897201538,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Adolescents who spent more time on electronic communication and screens had lower psychological well-being.",
+      "b_paper_id": "openalex:W7162303005",
+      "b_text": "Intense online communication with close friends was positively associated with mental well-being among 15-year-olds (b = 1.63, 95% CI: 0.57-2.70).",
+      "explanation": "The claims evaluate different specific constructs, as overall time spent on screens and electronic communication can negatively associate with well-being while targeted online communication with close friends can be positively associated."
+    },
+    {
+      "from_claim_id": "openalex:W7221031988:c1",
+      "to_claim_id": "openalex:W7225428345:c7",
+      "similarity": 0.8030905723571777,
+      "a_paper_id": "openalex:W7221031988",
+      "a_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "The correlation between social media use and worse mental health is weakest in middle school students (r = 0.201).",
+      "explanation": "The claims evaluate different outcome constructs (depression specifically versus general worse mental health) and report different effect sizes across distinct study populations, neither directly confirming nor precluding one another."
+    },
+    {
+      "from_claim_id": "openalex:W7223188562:c5",
+      "to_claim_id": "openalex:W7225455603:c5",
+      "similarity": 0.8014649152755737,
+      "a_paper_id": "openalex:W7223188562",
+      "a_text": "Psychological strain associated with FoMO leads to compulsive social media use.",
+      "b_paper_id": "openalex:W7225455603",
+      "b_text": "Compulsive and obsessive social media use causes psychological risks.",
+      "explanation": "The claims describe opposite directions of the relationship between psychological distress and compulsive social media use, with one examining psychological strain as an antecedent and the other identifying psychological risks as an outcome."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c2",
+      "to_claim_id": "openalex:W7162303005:c2",
+      "similarity": 0.8000757694244385,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Adolescents who spent more time on electronic communication and screens had lower psychological well-being.",
+      "b_paper_id": "openalex:W7162303005",
+      "b_text": "Intense online communication with larger friend groups was positively associated with mental well-being among 15-year-olds (b = 1.03, 95% CI: 0.44-1.62).",
+      "explanation": "Claim A examines general screen and electronic communication time, whereas Claim B specifically measures communication with larger friend groups, meaning both findings can independently coexist."
     }
   ]
 }

@@ -1,0 +1,246 @@
+{
+  "paper_id": "openalex:W4416338790",
+  "claims": [
+    {
+      "id": "openalex:W4416338790:c1",
+      "paper_id": "openalex:W4416338790",
+      "text": "For a deterministic Bayes classifier, perfect success of a minority collective under signal erasure is equivalent to almost-sure minority-focused counterfactual fairness.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c2",
+      "paper_id": "openalex:W4416338790",
+      "text": "In a 4-Gaussian mixture model setting with separable clusters, gradient descent ERM with logistic loss converges to the spurious majority direction yielding an asymptotic EqOd violation approaching 0.5 regardless of minority relabeling.",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c3",
+      "paper_id": "openalex:W4416338790",
+      "text": "When the collective predicts counterfactual labels via an algorithm with label error rate rho < 1/2, the lower bound on collective success scales inversely with (1 - 2*rho).",
+      "type": "theoretical",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c4",
+      "paper_id": "openalex:W4416338790",
+      "text": "Under Gaussian mixture settings where the minority and majority mean inner product is negative, fair representation learning via projection achieves an asymptotic 1-NN counterfactual classification error strictly lower than 1-NN on raw features.",
+      "type": "theoretical",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c5",
+      "paper_id": "openalex:W4416338790",
+      "text": "Increasing the minority collective size alpha decreases the lowest achievable EqOd violation across evaluated datasets until saturating around alpha = 0.3.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c6",
+      "paper_id": "openalex:W4416338790",
+      "text": "The proposed minority scoring methods (RB-prob, RB-label, RB-dist) achieve a given level of EqOd violation with fewer label flips than a random relabeling baseline.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c7",
+      "paper_id": "openalex:W4416338790",
+      "text": "Restricting RB-prob to 10 majority samples yields a Pareto front between error and EqOd comparable to that obtained with full majority knowledge.",
+      "type": "finding",
+      "confidence": 0.85,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c8",
+      "paper_id": "openalex:W4416338790",
+      "text": "RB-prob does not achieve zero EqOd violation on the evaluated benchmark datasets.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W4416338790:c9",
+      "paper_id": "openalex:W4416338790",
+      "text": "Applying FARE representation learning before computing KNN for RB-dist dominates the Pareto front of RB-dist computed on untransformed features.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W4416338790:e1",
+      "claim_id": "openalex:W4416338790:c1",
+      "description": "Proposition 2.2 / Proposition C.1 proves that S(alpha) = 1 if and only if h_alpha(X) = h_alpha(X_{A<-0}) P0-a.s. conditional on A = 1.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416338790:e2",
+      "claim_id": "openalex:W4416338790:c2",
+      "description": "Proposition 5.1 / Proposition C.3 shows that under concentration and separation conditions, for any relabeling of the minority, gradient descent of ERM with logistic loss converges to w*_{spu} propto mu + psi, satisfying EqOd(w*_{spu}) -> 0.5.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416338790:e3",
+      "claim_id": "openalex:W4416338790:c3",
+      "description": "Proposition 5.2 / Proposition C.6 establishes S(alpha) >= 1 - (2(1-alpha)/((1-2*rho)*alpha))*tau - epsilon/((1-epsilon)*(1-2*rho)*alpha).",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416338790:e4",
+      "claim_id": "openalex:W4416338790:c4",
+      "description": "Theorem C.7 proves that under mu_min^T Sigma^{-1} mu < 0 and Sigma_min = I, a projection P yields err_{1NN}^{rep} < 1/2 < err_{1NN}^{raw}.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4416338790:e5",
+      "claim_id": "openalex:W4416338790:c5",
+      "description": "Figure 3 and Figure 10 show across COMPAS, ACS-Income, Waterbirds, Adult, HSLS, and CivilComments that the minimum EqOd across all tested M values stabilizes around alpha = 0.3.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4416338790:e6",
+      "claim_id": "openalex:W4416338790:c6",
+      "description": "Figure 4 and Figure 11 plot EqOd versus minority label flips, showing the random baseline consistently yields higher EqOd across values of M compared to RB-prob, RB-label, and RB-dist.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W4416338790:e7",
+      "claim_id": "openalex:W4416338790:c7",
+      "description": "Figure 5 demonstrates that Pareto fronts for RB-prob with 10 majority samples closely track Pareto fronts with all majority samples on COMPAS, ACS-Income, and Waterbirds-Full.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W4416338790:e8",
+      "claim_id": "openalex:W4416338790:c8",
+      "description": "Figure 7 shows that while firm-side FARE and calibrated equalized odds attain 0 EqOd (with high error), the lowest EqOd achievable by RB-prob is bounded strictly above zero across COMPAS, Adult, HSLS, and ACS-Income.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W4416338790:e9",
+      "claim_id": "openalex:W4416338790:c9",
+      "description": "Figure 8 plots error rate versus EqOd showing that FARE transformed KNN features result in a Pareto front shifted lower and left relative to plain untransformed features across COMPAS, Adult, ACS-Income, and Waterbirds-Full.",
+      "strength": 0.9
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W4416338790:m1",
+      "paper_id": "openalex:W4416338790",
+      "name": "Rank by probability (RB-prob)",
+      "description": "Scores minority individuals using predicted positive label probabilities from a regressor trained exclusively on majority-group training data, flipping the top M scored members from 0 to 1.",
+      "datasets": [
+        "COMPAS",
+        "Adult",
+        "HSLS",
+        "ACS-Income",
+        "Waterbirds",
+        "CivilComments"
+      ],
+      "conditions": [
+        "Collective size alpha = 0.3",
+        "Gradient boosted decision tree classifier trained on the modified dataset",
+        "Evaluation on held-out test split without collective action"
+      ]
+    },
+    {
+      "id": "openalex:W4416338790:m2",
+      "paper_id": "openalex:W4416338790",
+      "name": "Rank by label (RB-label)",
+      "description": "Ranks minority candidates by the count of positive labels among their k-nearest majority neighbors in Euclidean space, flipping the top M candidates from 0 to 1.",
+      "datasets": [
+        "COMPAS",
+        "Adult",
+        "HSLS",
+        "ACS-Income",
+        "Waterbirds",
+        "CivilComments"
+      ],
+      "conditions": [
+        "Collective size alpha = 0.3",
+        "Neighborhood size k tuned on 15% validation split",
+        "Euclidean L2 distance"
+      ]
+    },
+    {
+      "id": "openalex:W4416338790:m3",
+      "paper_id": "openalex:W4416338790",
+      "name": "Rank by distance (RB-dist)",
+      "description": "Ranks minority candidates by the negative mean Euclidean distance to their k-nearest positive-labeled majority neighbors, flipping the top M candidates from 0 to 1.",
+      "datasets": [
+        "COMPAS",
+        "Adult",
+        "HSLS",
+        "ACS-Income",
+        "Waterbirds",
+        "CivilComments"
+      ],
+      "conditions": [
+        "Collective size alpha = 0.3",
+        "Neighborhood size k tuned on 15% validation split",
+        "Euclidean L2 distance or transformed FARE representation space"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W4416338790:l1",
+      "paper_id": "openalex:W4416338790",
+      "text": "Existing firm-side bias-mitigation techniques typically incur utility costs and require organizational buy-in.",
+      "normalized_category": "firm-side-dependency",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4416338790:l2",
+      "paper_id": "openalex:W4416338790",
+      "text": "Prior theoretical work on algorithmic collective action lacks empirical evaluation.",
+      "normalized_category": "lack-of-empirical-evaluation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W4416338790:l3",
+      "paper_id": "openalex:W4416338790",
+      "text": "True counterfactual fairness cannot be directly computed or evaluated on the benchmark datasets, requiring surrogate group fairness metrics.",
+      "normalized_category": "unidentifiable-counterfactuals",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416338790:l4",
+      "paper_id": "openalex:W4416338790",
+      "text": "Minority-only algorithmic collective action cannot generally achieve zero EqOd violation under ERM training.",
+      "normalized_category": "impossibility-of-zero-violation",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416338790:l5",
+      "paper_id": "openalex:W4416338790",
+      "text": "Flipping labels beyond a certain number M increases EqOd, shifting unfairness from the minority to the majority.",
+      "normalized_category": "over-flipping-penalty",
+      "source_scope": "this_work"
+    },
+    {
+      "id": "openalex:W4416338790:l6",
+      "paper_id": "openalex:W4416338790",
+      "text": "The collective modifies only labels and does not alter features, which can fail if counterfactual labels rely on features that are disjoint between groups due to distribution shift.",
+      "normalized_category": "label-only-intervention",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W4416338790:f1",
+      "paper_id": "openalex:W4416338790",
+      "text": "Study settings where minority features and counterfactual majority features are disjoint to determine when it is beneficial for the collective to modify features in addition to labels.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-11-16T13:50:27.142204Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}
