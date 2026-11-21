@@ -408,3 +408,25 @@ def test_dry_run_reports_both_modes_runtime_and_the_money_verdict():
     b = rw.estimate_minutes(mode="batch", papers=55, fulltext=20, calls=250, kept=80)
     s = rw.estimate_minutes(mode="sync", papers=55, fulltext=20, calls=250, kept=80)
     assert rw.FIXED_MIN < b < s < 330                                   # sync adds the extraction time
+
+
+def test_followon_estimate_ignores_library_builds(monkeypatch, tmp_path):
+    """The dry run's follow-on estimate comes from recent growth runs only: a
+    day with a library build (extract_<library>_batch) is left out."""
+    rw = _rw()
+    from backend.app.extraction.money import IST
+    day = lambda d: dt.datetime(2026, 11, d, 12, tzinfo=IST).timestamp()   # noqa: E731
+    entries = [{"ts": day(2), "stage": "grow_extract_x_batch", "cost_inr": 10.0},
+               {"ts": day(2), "stage": "grow_contradiction_x", "cost_inr": 5.0},
+               {"ts": day(9), "stage": "extract_newlib_batch", "cost_inr": 100.0},     # a library build day
+               {"ts": day(9), "stage": "grow_extract_x_batch", "cost_inr": 1.0},
+               {"ts": day(9), "stage": "fw_match_newlib", "cost_inr": 40.0},
+               {"ts": day(16), "stage": "grow_extract_y_batch", "cost_inr": 10.0},
+               {"ts": day(16), "stage": "hole_confirm_y", "cost_inr": 1.0}]
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "spend_ledger.json").write_text(json.dumps({"entries": entries}))
+    monkeypatch.setattr(rw, "ROOT", tmp_path)
+    assert rw.followon_ratio() == pytest.approx(6.0 / 20.0)
+    assert rw.followon_ratio(runs=1) == pytest.approx(0.1)
+    (tmp_path / "data" / "spend_ledger.json").write_text(json.dumps({"entries": []}))
+    assert rw.followon_ratio() == 0.5

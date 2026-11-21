@@ -1,5 +1,46 @@
 # PROGRESS
 
+## Growth per run: target, cost cap, wider search, batch|sync, run any time (branch `grow-per-run`) — 2026-11-21
+
+Goal: about 55 good papers per run, and manual runs that can start at any time without breaking anything. ₹0 spent building it. The live dry run used about 180 OpenAlex filter calls (owner-approved, at most 600) and no Gemini call.
+
+- **Config** (`config/growth.json`, `backend/app/grow/plan.py`):
+  - `target_papers_per_run` 55, split by fair rotation;
+  - `per_run_cost_cap_inr` is **₹25** (the owner's choice for now; raise it to reach the target);
+  - `mode` batch;
+  - follow-on caps per run;
+  - `openalex_max_calls_per_run` 600.
+
+  These replace the weekly pacing (remaining ÷ weeks; the horizon keys are gone from `config/money.json`). One run's budget = min(cap, manual `run_budget_inr`, money available), and it is also enforced as a call-time ledger cap. A run that can't reach its target adds fewer papers and says why in its Issue. Queued library builds keep their own rule (now counted in runs, `queued_reserve_runs` 4) and aren't under the growth cap unless a manual run sets `run_budget_inr`.
+- **Supply** (`core.search`): widening tiers, all `filter=` calls:
+  1. recent citers;
+  2. forward snowball, last two years then any year;
+  3. backward snowball, most co-cited first;
+  4. the library's own seed vocabulary by year slice.
+
+  A library searches until it has its share plus 50%, or every tier is tried. The rubric (on-domain only), core scope and dedupe are unchanged. The Issue reports, per library: share, need, candidates seen, kept, planned, tiers, and drops by reason. An OpenAlex error is reported, never mistaken for "ran out".
+- **Mode:**
+  - batch (default): papers appear the next run;
+  - sync (manual): extracted in the same run at 2.0× the batch price. Each result is cached as it arrives, so it is never paid twice. An in-flight file is pushed before the first call and every 10 papers, and the next run finishes a stopped one from the cache for free.
+- **Scale:**
+  - disagreement checks, future-work pairs and method-transfer leads are capped per run, with the rest carried over. A future-work item is marked checked only once all its pairs are looked at;
+  - job timeout 330 min (under GitHub's 6 h); the run plans for 300, and follow-on waits stop early enough to leave 80 min for gates and publish (an unfinished batch is collected next run);
+  - checkpoint pushes after every paid step, as before.
+- **Run any time:**
+  - each run gets a label (date, then date-2, date-3…, from `data/grow/runs.json` and the remote branches), so a second run that day never overwrites the first's Issue, branch or release record;
+  - fixed `publish_branch`'s NameError on a failed push;
+  - republish accepts `grow/<date>-N`.
+- **Dry run** (`python tools/grow/run_weekly.py --dry-run`, live on 21 Nov):
+  - every library found its full need: diet 21 of 887 seen, social media 21 of 751, ML fairness 21 of 679, nudges 20 of 560 (83 in scope, mostly from the forward and backward snowball; the vocabulary tier wasn't needed);
+  - at the ₹25 cap: **10 papers**;
+  - the full 55 would need about ₹294 padded in batch mode (₹112 extraction, 28 of them full text) or ₹462 in sync, against ₹132.48 available. All the money available buys about **28 papers in batch** or **16 in sync**;
+  - estimated run time about 60 min (batch) or about 101 min (sync).
+- **Actions minutes** (estimated; GitHub bills each job rounded up to the minute): about 265/month for weekly batch runs at the target, about 150/month for daily health and its retry-slot check, plus about 10 per PR for CI. That is roughly 450 of the 2,000 free minutes for a private repo.
+- **Tests:**
+  - `backend/tests/grow/test_run_plan.py`;
+  - pace, money and controls tests updated to the run-based names with the same assertions;
+  - e2e scenarios 19 (run any time: batches pending, right after another run, mid-week, main moved, failed branch waiting; no double-pay, nothing stranded, the next run not blocked), 20 (the search reaches the target; sync in-run; batch for the next run) and 21 (the dry run spends nothing).
+
 ## CI: test browser without apt (branch `ci-browser-install`) — 2026-11-12
 
 Daily health #36 (11 Nov, `cb72efe`) failed in "Install": `playwright install

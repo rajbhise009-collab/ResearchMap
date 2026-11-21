@@ -1482,22 +1482,30 @@ def estimate_minutes(*, mode: str, papers: int, fulltext: int, calls: int, kept:
     return round(m, 1)
 
 
-def followon_ratio(days: int = 45) -> float:
+def followon_ratio(runs: int = 5) -> float:
     """Follow-on spend (disagreement checks, future-work matcher, method-
-    transfer confirmation, embeddings) per rupee of growth extraction, from
-    the ledger's last `days` days. Used only to ESTIMATE follow-on cost for
-    new papers in the dry run; a run's real follow-on checks are budget-gated."""
+    transfer confirmation, embeddings) per rupee of growth extraction, over
+    the ledger's last `runs` growth-run days: days with growth extraction
+    (grow_extract_*) and no library build (extract_<library>_batch), so a
+    new library's one-off classification is not counted as growth's. Used
+    only to ESTIMATE follow-on cost for new papers in the dry run; a run's
+    real follow-on checks are budget-gated. 0.5 if there is no history."""
+    from collections import defaultdict
+    from backend.app.extraction.money import IST
     led = json.loads((ROOT / "data" / "spend_ledger.json").read_text())
-    since = time.time() - days * 86400
-    ext = fo = 0.0
+    by_day: dict[str, dict[str, float]] = defaultdict(lambda: {"ext": 0.0, "fo": 0.0, "build": 0.0})
     for e in led.get("entries", []):
-        if float(e.get("ts", 0)) < since:
-            continue
-        stage = e.get("stage") or ""
+        day = dt.datetime.fromtimestamp(float(e.get("ts", 0)), IST).date().isoformat()
+        stage, cost = e.get("stage") or "", float(e.get("cost_inr", 0))
         if stage.startswith("grow_extract"):
-            ext += float(e.get("cost_inr", 0))
+            by_day[day]["ext"] += cost
+        elif stage.startswith("extract_"):
+            by_day[day]["build"] += cost
         elif stage.startswith(("grow_contradiction", "fw_match", "hole_confirm", "grow_embed", "embed_fw")):
-            fo += float(e.get("cost_inr", 0))
+            by_day[day]["fo"] += cost
+    days = [d for d in sorted(by_day) if by_day[d]["ext"] > 0 and by_day[d]["build"] == 0][-runs:]
+    ext = sum(by_day[d]["ext"] for d in days)
+    fo = sum(by_day[d]["fo"] for d in days)
     return round(fo / ext, 3) if ext > 0 else 0.5
 
 
@@ -1594,8 +1602,8 @@ def dry_run() -> int:
         print(f"  shortfall: {x}")
     print(f"\nthe full target ({target} papers) if money were no limit — {kept} in-scope candidates found:")
     print("| mode | papers | of them full text | extraction ₹ | padded ×1.5 ₹ | follow-on ₹ (est.) | "
-          "total padded ₹ | run time (est.) | money allows it? |")
-    print("|:--|--:|--:|--:|--:|--:|--:|--:|:--|")
+          "total padded ₹ | run time (est.) | money allows it? | most papers the money available buys |")
+    print("|:--|--:|--:|--:|--:|--:|--:|--:|:--|--:|")
     for m in ("batch", "sync"):
         its = full(m)
         x = sum(it["inr_sync" if m == "sync" else "inr"] for it in its)
@@ -1608,10 +1616,17 @@ def dry_run() -> int:
                    f"money yes, but over the per-run cap ₹{settings.per_run_cost_cap_inr:.2f}" if money_ok else
                    f"NO: needs ₹{tot:.2f}, ₹{st['available_inr']:.2f} available")
         mins = estimate_minutes(mode=m, papers=len(its), fulltext=nft, calls=info["openalex_calls"], kept=kept)
+        # the most papers that fit ALL the money available, follow-on included:
+        # each rupee of extraction costs 1.5 (padded) + 2 x ratio (follow-on, padded)
+        prep = copy.deepcopy(prepared)
+        eff = max(0.0, st["available_inr"] - backlog * 2.0) * 1.5 / (1.5 + 2.0 * ratio * (0.5 if m == "sync" else 1.0))
+        most = sum(len(v) for v in core.allocate(prep, core.Budget(eff), papers, order, target=target,
+                                                  mode=m).values())
         print(f"| {m} | {len(its)} | {nft} | {x:.2f} | {x * 1.5:.2f} | {fo:.2f} | {tot:.2f} | ~{mins:.0f} min | "
-              f"{verdict} |")
+              f"{verdict} | {most} |")
     print(f"\nfollow-on estimate: the current backlog within the per-run caps (₹{backlog:.2f}) + {ratio:.2f} x "
-          "extraction (the ledger's follow-on/extraction ratio, last 45 days); padded x2 in the totals")
+          "extraction (the ledger's follow-on/extraction ratio over the last 5 growth runs without a library build); "
+          "padded x2 in the totals")
     print("note: a live run fetches open full text again; a paper whose PDF was unreachable here but reachable "
           "then costs about 3x more (abstract ~₹0.9, full text ~₹2.7 at the batch rate).")
     if errs:
