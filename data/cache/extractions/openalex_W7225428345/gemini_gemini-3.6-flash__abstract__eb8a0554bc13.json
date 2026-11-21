@@ -1,0 +1,173 @@
+{
+  "paper_id": "openalex:W7225428345",
+  "claims": [
+    {
+      "id": "openalex:W7225428345:c1",
+      "paper_id": "openalex:W7225428345",
+      "text": "The variation in the link between social media use and adolescent mental health across developmental stages remains insufficiently clarified.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c2",
+      "paper_id": "openalex:W7225428345",
+      "text": "Social media use is significantly associated with worse mental health in school-aged youth (r = 0.308, 95%CI: 0.239–0.374, p < 0.001).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c3",
+      "paper_id": "openalex:W7225428345",
+      "text": "The meta-analytic association between social media use and adolescent mental health demonstrates high heterogeneity (I2 = 93.85%).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c4",
+      "paper_id": "openalex:W7225428345",
+      "text": "The association between social media use and mental health differs significantly across educational stages (Q = 9.72, p = 0.008).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c5",
+      "paper_id": "openalex:W7225428345",
+      "text": "The correlation between social media use and worse mental health is strongest in primary school students (r = 0.367).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c6",
+      "paper_id": "openalex:W7225428345",
+      "text": "The correlation between social media use and worse mental health is r = 0.334 in high school students.",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c7",
+      "paper_id": "openalex:W7225428345",
+      "text": "The correlation between social media use and worse mental health is weakest in middle school students (r = 0.201).",
+      "type": "finding",
+      "confidence": 0.98,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c8",
+      "paper_id": "openalex:W7225428345",
+      "text": "No significant publication bias was detected in the meta-analysis.",
+      "type": "negative",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225428345:c9",
+      "paper_id": "openalex:W7225428345",
+      "text": "The meta-analytic results were stable in leave-one-out sensitivity analysis.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7225428345:e1",
+      "claim_id": "openalex:W7225428345:c2",
+      "description": "Meta-analysis of twelve studies with 15 effect sizes found r = 0.308, 95%CI: 0.239–0.374, p < 0.001.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225428345:e2",
+      "claim_id": "openalex:W7225428345:c3",
+      "description": "Heterogeneity testing yielded an I2 of 93.85%.",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7225428345:e3",
+      "claim_id": "openalex:W7225428345:c4",
+      "description": "Subgroup stratification by educational stage showed Q = 9.72, p = 0.008.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225428345:e4",
+      "claim_id": "openalex:W7225428345:c5",
+      "description": "Subgroup analysis yielded r = 0.367 for primary school students.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225428345:e5",
+      "claim_id": "openalex:W7225428345:c6",
+      "description": "Subgroup analysis yielded r = 0.334 for high schoolers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225428345:e6",
+      "claim_id": "openalex:W7225428345:c7",
+      "description": "Subgroup analysis yielded r = 0.201 for middle schoolers.",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225428345:e7",
+      "claim_id": "openalex:W7225428345:c8",
+      "description": "Publication bias assessment detected no significant publication bias.",
+      "strength": 0.85
+    },
+    {
+      "id": "openalex:W7225428345:e8",
+      "claim_id": "openalex:W7225428345:c9",
+      "description": "Leave-one-out sensitivity analysis confirmed that results were stable.",
+      "strength": 0.85
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7225428345:m1",
+      "paper_id": "openalex:W7225428345",
+      "name": "Random-effects meta-analysis and subgroup stratification",
+      "description": "Systematic literature search and random-effects meta-analysis with subgroup stratification, heterogeneity testing, publication bias assessment, and leave-one-out sensitivity analysis performed using Stata 17.0.",
+      "datasets": [
+        "PubMed",
+        "Web of Science",
+        "Cochrane Library",
+        "Embase",
+        "CNKI"
+      ],
+      "conditions": [
+        "Studies up to 1 February 2026",
+        "Reported correlation coefficients between social media use and mental health in school-aged youth",
+        "12 studies with 15 effect sizes included"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7225428345:l1",
+      "paper_id": "openalex:W7225428345",
+      "text": "The variation in the link between social media use and adolescent mental health across developmental stages remains insufficiently clarified in existing literature.",
+      "normalized_category": "insufficient-prior-research",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7225428345:l2",
+      "paper_id": "openalex:W7225428345",
+      "text": "High heterogeneity among included studies (I2 = 93.85%).",
+      "normalized_category": "high-heterogeneity",
+      "source_scope": "this_work"
+    }
+  ],
+  "future_work": [
+    {
+      "id": "openalex:W7225428345:f1",
+      "paper_id": "openalex:W7225428345",
+      "text": "Development of developmentally tailored prevention and intervention strategies for school-aged youth.",
+      "addressed_by": null
+    }
+  ],
+  "extracted_at": "2026-11-16T13:50:27.627922Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

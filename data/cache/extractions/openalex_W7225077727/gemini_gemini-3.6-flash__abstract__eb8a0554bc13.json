@@ -1,0 +1,119 @@
+{
+  "paper_id": "openalex:W7225077727",
+  "claims": [
+    {
+      "id": "openalex:W7225077727:c1",
+      "paper_id": "openalex:W7225077727",
+      "text": "FairSEP constructs a sensitive subspace from per-class centroid differences between sensitive groups.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225077727:c2",
+      "paper_id": "openalex:W7225077727",
+      "text": "FairSEP debiases embeddings by removing their sensitive subspace projections.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225077727:c3",
+      "paper_id": "openalex:W7225077727",
+      "text": "FairSEP enforces prediction consistency between original and debiased representations.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225077727:c4",
+      "paper_id": "openalex:W7225077727",
+      "text": "FairSEP utilizes a conditional Wasserstein loss to minimize the Wasserstein distance between predictive distributions of sensitive groups conditioned on true labels.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225077727:c5",
+      "paper_id": "openalex:W7225077727",
+      "text": "FairSEP employs a Pareto-based optimization strategy that automatically adjusts loss weights to resolve trade-offs among objectives.",
+      "type": "method",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7225077727:e1",
+      "claim_id": "openalex:W7225077727:c1",
+      "description": "Abstract states: 'Specifically, we construct a sensitive subspace from per-class centroid differences between sensitive groups...'",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225077727:e2",
+      "claim_id": "openalex:W7225077727:c2",
+      "description": "Abstract states: '...debias embeddings by removing their subspace projections...'",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225077727:e3",
+      "claim_id": "openalex:W7225077727:c3",
+      "description": "Abstract states: '...and enforce prediction consistency between original and debiased representations.'",
+      "strength": 0.9
+    },
+    {
+      "id": "openalex:W7225077727:e4",
+      "claim_id": "openalex:W7225077727:c4",
+      "description": "Abstract states: 'On this basis, we introduce a conditional Wasserstein loss that minimizes the Wasserstein distance between predictive distributions of sensitive groups conditioned on true labels, explicitly reducing disparate error rates across groups.'",
+      "strength": 0.95
+    },
+    {
+      "id": "openalex:W7225077727:e5",
+      "claim_id": "openalex:W7225077727:c5",
+      "description": "Abstract states: 'Finally, we design a Pareto-based strategy that automatically adjusts the loss weights to resolve conflicts between different objectives.'",
+      "strength": 0.95
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7225077727:m1",
+      "paper_id": "openalex:W7225077727",
+      "name": "FairSEP",
+      "description": "A Pareto-optimized framework for group fairness in graph neural networks that integrates sensitive subspace projection debiasing, prediction consistency, and conditional Wasserstein loss.",
+      "datasets": [
+        "five benchmark datasets"
+      ],
+      "conditions": [
+        "graph neural networks",
+        "multiple group fairness metrics",
+        "node classification"
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "openalex:W7225077727:l1",
+      "paper_id": "openalex:W7225077727",
+      "text": "Predictive Equality (ΔFPR) remains under-explored in existing group fairness GNN methods, potentially leading to disparate error risks.",
+      "normalized_category": "underexplored-predictive-equality",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7225077727:l2",
+      "paper_id": "openalex:W7225077727",
+      "text": "Existing fairness methods rely on a single surrogate loss, which is insufficient to achieve multiple fairness criteria simultaneously.",
+      "normalized_category": "single-surrogate-loss-limitation",
+      "source_scope": "prior_work"
+    },
+    {
+      "id": "openalex:W7225077727:l3",
+      "paper_id": "openalex:W7225077727",
+      "text": "Existing methods apply uniform debiasing across different label groups, making it difficult to separately address group disparities in positive and negative classes.",
+      "normalized_category": "uniform-debiasing-across-labels",
+      "source_scope": "prior_work"
+    }
+  ],
+  "future_work": [],
+  "extracted_at": "2026-11-16T13:50:27.142562Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

@@ -1,0 +1,194 @@
+{
+  "paper_id": "openalex:W7225455603",
+  "claims": [
+    {
+      "id": "openalex:W7225455603:c1",
+      "paper_id": "openalex:W7225455603",
+      "text": "Most college students actively use social media on a smartphone for more than three hours daily for socializing, entertainment, and education.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c2",
+      "paper_id": "openalex:W7225455603",
+      "text": "Moderate and goal-directed social media use is positively correlated with collaboration.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c3",
+      "paper_id": "openalex:W7225455603",
+      "text": "Moderate and goal-directed social media use is positively correlated with academic motivation.",
+      "type": "finding",
+      "confidence": 0.95,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c4",
+      "paper_id": "openalex:W7225455603",
+      "text": "Compulsive and obsessive social media use causes academic risks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c5",
+      "paper_id": "openalex:W7225455603",
+      "text": "Compulsive and obsessive social media use causes psychological risks.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c6",
+      "paper_id": "openalex:W7225455603",
+      "text": "Constant access to idealized images of peers stimulates upward social comparison.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c7",
+      "paper_id": "openalex:W7225455603",
+      "text": "Constant access to idealized images of peers leads to higher levels of anxiety and stress.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c8",
+      "paper_id": "openalex:W7225455603",
+      "text": "Constant access to idealized images of peers leads to poor psychological well-being.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c9",
+      "paper_id": "openalex:W7225455603",
+      "text": "Digital task-switching is not related to learning.",
+      "type": "negative",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c10",
+      "paper_id": "openalex:W7225455603",
+      "text": "Long periods of time spent online are linked with cognitive distraction and time substitution.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c11",
+      "paper_id": "openalex:W7225455603",
+      "text": "Long periods of time spent online are linked with late assignments.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    },
+    {
+      "id": "openalex:W7225455603:c12",
+      "paper_id": "openalex:W7225455603",
+      "text": "Long periods of time spent online are linked with lower grade point average.",
+      "type": "finding",
+      "confidence": 0.9,
+      "source_sentence_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "openalex:W7225455603:e1",
+      "claim_id": "openalex:W7225455603:c1",
+      "description": "Survey results show that most college students are actively using social media daily on a smartphone for more than three hours with a view to socializing, entertainment, and education.",
+      "strength": 0.8
+    },
+    {
+      "id": "openalex:W7225455603:e2",
+      "claim_id": "openalex:W7225455603:c2",
+      "description": "Statistical analysis of survey responses found that moderate and goal-directed social media use is positively correlated with collaboration.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e3",
+      "claim_id": "openalex:W7225455603:c3",
+      "description": "Statistical analysis showed moderate and goal-directed social media use is positively correlated with academic motivation.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e4",
+      "claim_id": "openalex:W7225455603:c4",
+      "description": "Survey analysis revealed that compulsive and obsessive social media use causes serious academic risks.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W7225455603:e5",
+      "claim_id": "openalex:W7225455603:c5",
+      "description": "Survey analysis revealed that compulsive and obsessive social media use causes serious psychological risks.",
+      "strength": 0.7
+    },
+    {
+      "id": "openalex:W7225455603:e6",
+      "claim_id": "openalex:W7225455603:c6",
+      "description": "Results indicate constant access to idealized images of peers stimulates social comparison among university students.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e7",
+      "claim_id": "openalex:W7225455603:c7",
+      "description": "Constant access to idealized images of peers was found to lead to higher levels of anxiety and stress.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e8",
+      "claim_id": "openalex:W7225455603:c8",
+      "description": "Constant access to idealized images of peers was reported to lead to poor psychological well-being.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e9",
+      "claim_id": "openalex:W7225455603:c9",
+      "description": "Analysis demonstrated that digital task-switching is not related to learning.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e10",
+      "claim_id": "openalex:W7225455603:c10",
+      "description": "Long periods of time spent online were found to be linked with cognitive distraction and time substitution.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e11",
+      "claim_id": "openalex:W7225455603:c11",
+      "description": "Long periods of time spent online were linked with late assignments among respondents.",
+      "strength": 0.75
+    },
+    {
+      "id": "openalex:W7225455603:e12",
+      "claim_id": "openalex:W7225455603:c12",
+      "description": "Statistical findings linked long periods of time spent online with lower grade point average.",
+      "strength": 0.75
+    }
+  ],
+  "methodologies": [
+    {
+      "id": "openalex:W7225455603:m1",
+      "paper_id": "openalex:W7225455603",
+      "name": "Descriptive survey methodology using stratified random sampling",
+      "description": "Questionnaires assessing social media usage, subjective well-being, and academic performance were administered to 331 undergraduate and graduate students from various faculties at the University of Sargodha and analyzed using SPSS.",
+      "datasets": [
+        "Survey of 331 undergraduate and graduate students at the University of Sargodha"
+      ],
+      "conditions": [
+        "Stratified random sampling",
+        "SPSS statistical software analysis"
+      ]
+    }
+  ],
+  "limitations": [],
+  "future_work": [],
+  "extracted_at": "2026-11-16T13:50:27.628321Z",
+  "extractor": "gemini:gemini-3.6-flash"
+}

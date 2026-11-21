@@ -1,5 +1,5 @@
 {
-  "n": 135,
+  "n": 145,
   "items": [
     {
       "from_claim_id": "openalex:W2549950368:c1",
@@ -1350,6 +1350,106 @@
       "b_paper_id": "openalex:W7223188562",
       "b_text": "Social media engagement is associated with higher levels of anxiety.",
       "explanation": "Both claims independently find a positive association between social media use (specifically Facebook in Claim A) and higher levels of anxiety."
+    },
+    {
+      "from_claim_id": "openalex:W2998834126:c3",
+      "to_claim_id": "openalex:W7225428345:c3",
+      "similarity": 0.8383415937423706,
+      "a_paper_id": "openalex:W2998834126",
+      "a_text": "Research on digital technology usage and adolescent mental health has generated a mix of conflicting small positive, negative, and null associations.",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "The meta-analytic association between social media use and adolescent mental health demonstrates high heterogeneity (I2 = 93.85%).",
+      "explanation": "The extremely high meta-analytic heterogeneity quantitatively supports the observation that findings across studies are conflicting and mixed."
+    },
+    {
+      "from_claim_id": "openalex:W2162403058:c4",
+      "to_claim_id": "openalex:W7225428345:c8",
+      "similarity": 0.8293317556381226,
+      "a_paper_id": "openalex:W2162403058",
+      "a_text": "No evidence of publication bias was found among the included prospective studies.",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "No significant publication bias was detected in the meta-analysis.",
+      "explanation": "Both claims independently find no evidence of significant publication bias in their respective syntheses of the literature on this topic."
+    },
+    {
+      "from_claim_id": "openalex:W2314000390:c1",
+      "to_claim_id": "openalex:W7225455603:c6",
+      "similarity": 0.8191045522689819,
+      "a_paper_id": "openalex:W2314000390",
+      "a_text": "Social networking sites provide abundant social comparison opportunities.",
+      "b_paper_id": "openalex:W7225455603",
+      "b_text": "Constant access to idealized images of peers stimulates upward social comparison.",
+      "explanation": "Both claims reinforce each other by affirming that social media environments foster and stimulate social comparison among users."
+    },
+    {
+      "from_claim_id": "openalex:W7221031988:c1",
+      "to_claim_id": "openalex:W7225428345:c2",
+      "similarity": 0.818049430847168,
+      "a_paper_id": "openalex:W7221031988",
+      "a_text": "Social media use has a very small linear association with depression outcomes in young people (pooled r = .08, 95% CI [0.04, 0.11]).",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "Social media use is significantly associated with worse mental health in school-aged youth (r = 0.308, 95%CI: 0.239\u20130.374, p < 0.001).",
+      "explanation": "Both claims find a statistically significant positive association between social media use and adverse mental health outcomes in youth."
+    },
+    {
+      "from_claim_id": "openalex:W1849635709:c3",
+      "to_claim_id": "openalex:W7225428345:c2",
+      "similarity": 0.8154659867286682,
+      "a_paper_id": "openalex:W1849635709",
+      "a_text": "Daily social networking site use of more than 2 hours is independently associated with poor self-rated mental health in children and adolescents.",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "Social media use is significantly associated with worse mental health in school-aged youth (r = 0.308, 95%CI: 0.239\u20130.374, p < 0.001).",
+      "explanation": "Both claims assert a statistically significant association between social media use and poorer mental health outcomes in youth."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c2",
+      "to_claim_id": "openalex:W7225428345:c6",
+      "similarity": 0.8142116069793701,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "The random-effects pooled correlation estimate between social media use and depressive symptoms across cross-sectional studies is r = 0.12.",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "The correlation between social media use and worse mental health is r = 0.334 in high school students.",
+      "explanation": "Both claims independently find a positive correlation between social media use and adverse mental health outcomes such as depressive symptoms."
+    },
+    {
+      "from_claim_id": "openalex:W7222007007:c2",
+      "to_claim_id": "openalex:W7225455603:c6",
+      "similarity": 0.8075457811355591,
+      "a_paper_id": "openalex:W7222007007",
+      "a_text": "Upward social comparison mediates the relationship between social media use and appearance anxiety.",
+      "b_paper_id": "openalex:W7225455603",
+      "b_text": "Constant access to idealized images of peers stimulates upward social comparison.",
+      "explanation": "Claim B provides a specific mechanism that reinforces Claim A's assertion that social media engagement leads to upward social comparison."
+    },
+    {
+      "from_claim_id": "openalex:W1991384030:c4",
+      "to_claim_id": "openalex:W7225455603:c12",
+      "similarity": 0.8050169944763184,
+      "a_paper_id": "openalex:W1991384030",
+      "a_text": "Facebook users have lower Grade Point Averages compared to non-users among university students.",
+      "b_paper_id": "openalex:W7225455603",
+      "b_text": "Long periods of time spent online are linked with lower grade point average.",
+      "explanation": "Both claims provide mutually reinforcing evidence that engagement with online platforms and internet use is associated with lower grade point averages."
+    },
+    {
+      "from_claim_id": "openalex:W2593771132:c1",
+      "to_claim_id": "openalex:W7225428345:c6",
+      "similarity": 0.80431067943573,
+      "a_paper_id": "openalex:W2593771132",
+      "a_text": "There is a small but statistically significant correlation between social media use and depressive symptoms in children and adolescents.",
+      "b_paper_id": "openalex:W7225428345",
+      "b_text": "The correlation between social media use and worse mental health is r = 0.334 in high school students.",
+      "explanation": "Both claims find a positive correlation between social media use and adverse mental health outcomes, such as depressive symptoms, among youth."
+    },
+    {
+      "from_claim_id": "openalex:W2788235370:c2",
+      "to_claim_id": "openalex:W7162303005:c4",
+      "similarity": 0.8030668497085571,
+      "a_paper_id": "openalex:W2788235370",
+      "a_text": "Adolescents who spent more time on electronic communication and screens had lower psychological well-being.",
+      "b_paper_id": "openalex:W7162303005",
+      "b_text": "Intense online communication with virtual friends was associated with poorer mental well-being among 15-year-olds (b = -0.61, 95% CI: -1.14, -0.08).",
+      "explanation": "Both claims find that higher levels of online or electronic communication among adolescents are linked to lower psychological or mental well-being."
     }
   ]
 }

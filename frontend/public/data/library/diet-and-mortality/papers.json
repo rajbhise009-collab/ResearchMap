@@ -1,5 +1,5 @@
 {
-  "total": 104,
+  "total": 105,
   "items": [
     {
       "paper_id": "https://openalex.org/W2734724639",
@@ -1141,6 +1141,17 @@
       "year": 2026,
       "doi": "https://doi.org/10.3390/nu18203456",
       "venue": "Nutrients",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7225329489",
+      "wid": "W7225329489",
+      "title": "Alcohol-Related Health Disorders: A Narrative Review",
+      "year": 2026,
+      "doi": "https://doi.org/10.3390/clinpract16110207",
+      "venue": "Clinics and Practice",
       "domain_centrality": "core",
       "input_source": "abstract_only",
       "abstract_only": true

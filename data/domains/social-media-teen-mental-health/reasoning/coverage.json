@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-09",
-  "n_papers_in_check": 110,
+  "date": "2026-11-16",
+  "n_papers_in_check": 113,
   "paper_ids": [
     "openalex:W1498181550",
     "openalex:W1518252434",
@@ -101,6 +101,7 @@
     "openalex:W3126140319",
     "openalex:W3197232629",
     "openalex:W4291885054",
+    "openalex:W7162303005",
     "openalex:W7220393051",
     "openalex:W7220961377",
     "openalex:W7220964971",
@@ -111,10 +112,12 @@
     "openalex:W7222160172",
     "openalex:W7223188562",
     "openalex:W7223247033",
-    "openalex:W7224266505"
+    "openalex:W7224266505",
+    "openalex:W7225428345",
+    "openalex:W7225455603"
   ],
-  "shortlist_pairs": 220,
-  "classified_pairs": 220,
+  "shortlist_pairs": 235,
+  "classified_pairs": 235,
   "unclassified_pairs": 0,
   "papers_with_pending_pairs": 0,
   "pending_paper_ids": [],

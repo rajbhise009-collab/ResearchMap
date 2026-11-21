@@ -1,38 +1,38 @@
 {
-  "papers": 111,
+  "papers": 114,
   "full_text": 27,
-  "abstract_only": 84,
-  "n_extractions": 110,
-  "extraction_coverage_note": "Claims read from 110 of 111 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
+  "abstract_only": 87,
+  "n_extractions": 113,
+  "extraction_coverage_note": "Claims read from 113 of 114 papers. We stopped reading to stay within budget, so the remaining 1 papers are not reflected in these results.",
   "zero_finding_note": null,
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [],
   "disagreement_check": {
-    "shortlist_pairs": 220,
-    "classified_pairs": 220,
+    "shortlist_pairs": 235,
+    "classified_pairs": 235,
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
-    "date": "2026-11-09",
+    "date": "2026-11-16",
     "shortlist_settings": {
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 110
+    "papers_covered": 113
   },
-  "extraction_coverage_share": 0.990990990990991,
+  "extraction_coverage_share": 0.9912280701754386,
   "assertion_strength": {
-    "total_claims": 505,
+    "total_claims": 531,
     "distribution": {
-      "firm": 487,
+      "firm": 513,
       "hedged": 18
     },
-    "firm_share": 0.9643564356435643,
-    "hedged_share": 0.03564356435643564
+    "firm_share": 0.9661016949152542,
+    "hedged_share": 0.03389830508474576
   },
   "gap_type_counts": {
-    "n_papers": 110,
-    "n_limitations": 171,
+    "n_papers": 113,
+    "n_limitations": 174,
     "limitation_categories": {
       "cross-sectional-design": 10,
       "self-report-bias": 7,
@@ -175,9 +175,12 @@
       "corpus-recall-bounds": 1,
       "incomplete-metadata": 1,
       "author-disambiguation-error": 1,
-      "limited-statistical-power": 1
+      "limited-statistical-power": 1,
+      "prior-work-granularity": 1,
+      "insufficient-prior-research": 1,
+      "high-heterogeneity": 1
     },
-    "n_future_work_items": 114
+    "n_future_work_items": 116
   },
   "n_confirmed_contradictions": 2,
   "raw_flagged_contradictions": 9,
@@ -192,14 +195,14 @@
   "scorer_yields": {
     "unresolved_contradictions": 2,
     "persistent_limitations": 4,
-    "orphaned_future_work": 27,
+    "orphaned_future_work": 26,
     "structural_holes": 0,
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 79,
+  "core": 82,
   "peripheral": 32,
   "manifest_hash": null,
   "relationships": 9,
-  "note": "Multi-domain library \u2014 claims extracted from 110 of 111 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 113 of 114 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }

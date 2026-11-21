@@ -1,5 +1,5 @@
 {
-  "total": 116,
+  "total": 119,
   "items": [
     {
       "paper_id": "https://openalex.org/W2100960835",
@@ -1276,6 +1276,39 @@
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W4416249028",
+      "wid": "W4416249028",
+      "title": "Fairness in infectious disease modeling",
+      "year": 2026,
+      "doi": "https://doi.org/10.1038/s41467-026-78981-0",
+      "venue": "Nature Communications",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W4416338790",
+      "wid": "W4416338790",
+      "title": "Minority Collective Action for User-Side Fairness",
+      "year": 2026,
+      "doi": "https://doi.org/10.1145/3846167.3848593",
+      "venue": "ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO)",
+      "domain_centrality": "core",
+      "input_source": "fulltext",
+      "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7225077727",
+      "wid": "W7225077727",
+      "title": "FairSEP: Harmonizing Multiple Fairness Metrics in Graph Neural Networks via Pareto Optimization",
+      "year": 2026,
+      "doi": "https://doi.org/10.1145/3799682.3840632",
+      "venue": "ACM International Conference on Information and Knowledge Management (CIKM)",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
     }
   ]
 }

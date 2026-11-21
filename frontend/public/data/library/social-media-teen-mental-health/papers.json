@@ -1,5 +1,5 @@
 {
-  "total": 111,
+  "total": 114,
   "items": [
     {
       "paper_id": "https://openalex.org/W2314751257",
@@ -1221,6 +1221,39 @@
       "domain_centrality": "core",
       "input_source": "fulltext",
       "abstract_only": false
+    },
+    {
+      "paper_id": "https://openalex.org/W7162303005",
+      "wid": "W7162303005",
+      "title": "Online communication with different types of friends and mental well\u2010being of adolescents in Sweden: A pooled cross\u2010sectional study",
+      "year": 2026,
+      "doi": "https://doi.org/10.1111/camh.70139",
+      "venue": "Child and Adolescent Mental Health",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7225428345",
+      "wid": "W7225428345",
+      "title": "Mental Health Effects of Social Media Use Among Adolescents Across Educational Stages: A Meta-Analysis",
+      "year": 2026,
+      "doi": "https://doi.org/10.1177/13591045261487468",
+      "venue": "Clinical Child Psychology and Psychiatry",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
+    },
+    {
+      "paper_id": "https://openalex.org/W7225455603",
+      "wid": "W7225455603",
+      "title": "Stressor\u2013Strain\u2013Outcome Dynamics of Digital Distractions: Investigating Social Media Usage, Subjective Well-Being, and Academic Performance Among University Students",
+      "year": 2026,
+      "doi": "https://doi.org/10.71317/kjard.2.11.2026.990",
+      "venue": "Kashmir Journal of Academic Research and Development",
+      "domain_centrality": "core",
+      "input_source": "abstract_only",
+      "abstract_only": true
     }
   ]
 }

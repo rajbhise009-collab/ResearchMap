@@ -1,9 +1,9 @@
 {
-  "papers": 104,
+  "papers": 105,
   "full_text": 17,
-  "abstract_only": 87,
-  "n_extractions": 104,
-  "extraction_coverage_note": "Claims read from 104 of 104 papers.",
+  "abstract_only": 88,
+  "n_extractions": 105,
+  "extraction_coverage_note": "Claims read from 105 of 105 papers.",
   "zero_finding_note": null,
   "disagreement_check_note": "The disagreement check compared every pair of closely similar claims from different papers.",
   "audit_doubts": [
@@ -16,25 +16,25 @@
     "unclassified_pairs": 0,
     "papers_with_pending_pairs": 0,
     "complete": true,
-    "date": "2026-11-02",
+    "date": "2026-11-16",
     "shortlist_settings": {
       "threshold": 0.8,
       "max_per_claim": 2
     },
-    "papers_covered": 104
+    "papers_covered": 105
   },
   "extraction_coverage_share": 1.0,
   "assertion_strength": {
-    "total_claims": 590,
+    "total_claims": 598,
     "distribution": {
-      "firm": 582,
+      "firm": 590,
       "hedged": 8
     },
-    "firm_share": 0.9864406779661017,
-    "hedged_share": 0.013559322033898305
+    "firm_share": 0.9866220735785953,
+    "hedged_share": 0.013377926421404682
   },
   "gap_type_counts": {
-    "n_papers": 104,
+    "n_papers": 105,
     "n_limitations": 147,
     "limitation_categories": {
       "small-sample-size": 5,
@@ -187,14 +187,14 @@
   "scorer_yields": {
     "unresolved_contradictions": 5,
     "persistent_limitations": 2,
-    "orphaned_future_work": 6,
+    "orphaned_future_work": 7,
     "structural_holes": 0,
     "structural_holes_substantive": 0
   },
   "scorers_skipped": {},
-  "core": 71,
+  "core": 72,
   "peripheral": 33,
   "manifest_hash": null,
   "relationships": 10,
-  "note": "Multi-domain library \u2014 claims extracted from 104 of 104 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
+  "note": "Multi-domain library \u2014 claims extracted from 105 of 105 papers. Scorers run: disagreement check (hand-audited), persistent limitations, orphaned future work, structural holes."
 }
