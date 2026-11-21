@@ -747,10 +747,13 @@ def dry_gate(slug: str) -> dict:
         cfg = json.loads((ROOT / "config" / "money.json").read_text())
         cfg["account_total_inr"] = 1e9          # the throwaway's own money rule: mock calls cost nothing real
         (tmp / "money.json").write_text(json.dumps(cfg))
-        r = sh([PY, "tools/grow/run_weekly.py", "--dry-gate-build", slug], cwd=wt, check=False, timeout=7200,
-               no_secrets=True, env={"GROW_MOCK": "1", "GROW_MOCK_STATE": str(tmp / "mock"),
-                                     "MONEY_CONFIG_PATH": str(tmp / "money.json"),
-                                     "GROW_ISSUE_DIR": str(tmp / "issues")})
+        # the throwaway's mock calls cost nothing real: this run's growth cap
+        # (RUN_CAP_LEDGER_INR) must not leak into it and refuse its mock build
+        with queued_money(None):
+            r = sh([PY, "tools/grow/run_weekly.py", "--dry-gate-build", slug], cwd=wt, check=False, timeout=7200,
+                   no_secrets=True, env={"GROW_MOCK": "1", "GROW_MOCK_STATE": str(tmp / "mock"),
+                                         "MONEY_CONFIG_PATH": str(tmp / "money.json"),
+                                         "GROW_ISSUE_DIR": str(tmp / "issues")})
         out = (r.stdout or "").strip().splitlines()
         res = json.loads(out[-1]) if out and out[-1].startswith("{") else None
         if res is None:

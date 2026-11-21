@@ -377,6 +377,8 @@ def test_the_growth_cap_does_not_apply_to_queued_steps_unless_the_owner_set_one(
         assert os.environ["RUN_CAP_LEDGER_INR"] == "100"          # an explicit manual cap covers queued too
     src = (REPO / "tools" / "grow" / "run_weekly.py").read_text()
     assert src.count("with queued_money(run_budget):") == 2
+    dg = src[src.index("def dry_gate(slug"):src.index("def dry_gate_build(")]
+    assert dg.index("with queued_money(None):") < dg.index('"--dry-gate-build"')   # free mock build: no cap leak
 
 
 def test_republish_accepts_a_labelled_branch_and_still_refuses_junk(monkeypatch):
