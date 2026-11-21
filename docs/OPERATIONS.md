@@ -39,17 +39,51 @@ validation test (tag `llm-cal-baseline-v1`).
     console_spent_inr − ledger spend recorded after that date.
 - **Enforcement:** at call time, before every paid call, in every path
   (local, batch, Actions). A call that would cross it is refused.
-- **Weekly budget** = min(₹60, remaining ÷ weeks left in a 12-week horizon
-  starting 2026-10-12). It is recalculated every run.
+- **One run's budget** (`config/growth.json`, `backend/app/grow/plan.py`) =
+  min(`per_run_cost_cap_inr`, a manual run's `run_budget_inr`, the money
+  available). Available = remaining − batches submitted but not yet billed.
+  The budget covers this run's NEW commitments (padded projections). Batches
+  an earlier run submitted are collected on top of it, because they were
+  approved when submitted. The same figure is also set as a call-time ledger
+  cap for the run.
+- **Target:** `target_papers_per_run` (default 55) across all growing
+  libraries, split by fair rotation. A run that cannot afford its target, or
+  whose libraries run out of in-scope candidates, adds fewer papers. Its
+  Issue says why ("Fewer papers than the target").
 - **Queued library:** built only when its extraction projection ×1.5 plus
-  four weeks of growth fits what remains.
+  `queued_reserve_runs` (default 4) runs of growth fits what remains.
 - **Padding:** every projection is padded before it is committed to
   (extraction ×1.5, classification ×2). A stage halts if the real cost per
   call exceeds 1.5× the projection. Batch state is saved, so nothing is paid
   twice.
 
-Each run's Issue shows the remaining money, the weeks left and this week's
-budget.
+Each run's Issue shows the remaining and available money, this run's
+budget, and its plan. The plan gives, per library: share, search need,
+candidates seen, kept, planned, tiers tried, and drops by reason.
+
+### Mode: batch or sync
+
+- **batch** (the default): extraction goes into a Gemini batch at the batch
+  price. The papers appear when the next run collects the batch.
+- **sync** (manual runs only, input `mode`): extraction runs in this run
+  through the interactive API, at about 2× the batch price. The papers, and
+  their follow-on checks, appear in this run.
+  - Each result is validated and cached as it arrives; a cached result is
+    never paid for again.
+  - An in-flight file is pushed before the first call, then again every 10
+    papers.
+  - If the job dies mid-way, the next run adds whatever was cached, for
+    free. At most the last 10 papers' cost can be lost.
+
+`python tools/grow/run_weekly.py --dry-run` prints, with nothing spent, what
+one run would do now:
+- candidates seen, kept and dropped per library;
+- the plan within this run's budget;
+- the full target's cost in batch and in sync mode;
+- the run time;
+- whether the money allows it.
+
+It uses OpenAlex filter calls (credits) and no Gemini call.
 
 ## One weekly run, step by step
 
@@ -67,9 +101,16 @@ budget.
      first run that recovers. The next run tries again by itself.
    - If a `grow/<date>` branch holds data that conflicts with main, it
      collects what was already paid for but starts nothing new.
-2. **Collect** last week's batches. Each is billed to the ledger once, at the
-   batch rate. Papers that extracted cleanly join their library.
-3. **Follow-on checks** on the new material, within the week's budget:
+2. **Collect** the batches earlier runs submitted. Each is billed to the
+   ledger once, at the batch rate. Papers that extracted cleanly join their
+   library. A sync extraction that a stopped run left is finished from the
+   cache, for free.
+3. **Follow-on checks** on the new material, within the run's budget and
+   bounded per run (`max_disagreement_pairs_per_run`, `max_fw_pairs_per_run`,
+   `max_confirm_leads_per_run`). Whatever a run does not reach stays
+   unchecked and hidden, and is carried over. A follow-on batch still running
+   near the run's deadline (300 of the job's 330 minutes, with time kept for
+   every gate) stays pending; the next run collects it.
    - **The disagreement check.** New disagreements show as
      **"Flagged by the system, not yet checked"** and never count until you
      audit them.
@@ -79,17 +120,28 @@ budget.
 4. **Finish a library being built**, if one was started last week. It gets
    the same checks, and its disagreements are flagged, not counted.
 5. **Rebuild** site data, docs numbers and (when needed) share images.
-6. **Submit** next week's papers. For each growing library:
-   - find candidates with free OpenAlex queries (papers citing both sides of
-     a checked disagreement, citing a paper whose open question is
-     unanswered, or recently citing the library);
-   - keep those its rubric accepts;
-   - dedupe (id, DOI, title, full ingestion dedupe);
-   - fetch open full text.
+6. **Submit** (batch) or **extract** (sync) this run's papers. Each growing
+   library gets a share of the target. It searches for its share plus a
+   spare (`candidate_spare_per_library`), widening tier by tier until it has
+   enough:
+   1. **recent:** papers from the last 10 days that cite both sides of a
+      checked disagreement, cite a paper whose open question is unanswered,
+      or cite the library;
+   2. **forward:** papers citing the library, from the last two years first,
+      then any year;
+   3. **backward:** works the library's papers cite, most co-cited first;
+   4. **vocabulary:** the library's own seed query, by year slice: the last
+      two years, then 3–5 and 6–10 years back.
 
-   The week's budget is then shared round-robin, one paper per library per
-   round. Libraries with the most open candidates go first, then those with
-   the fewest papers. At most 15 papers per library.
+   All of them are OpenAlex `filter=` calls. One run is limited to
+   `openalex_max_calls_per_run` calls. Every candidate passes the library's
+   rubric (on-domain only) and its core scope, then dedupe (id, DOI, title,
+   full ingestion dedupe). Nothing is loosened to find more: a library that
+   runs out says so. Open full text is fetched for the kept papers.
+
+   The run's budget is then shared round-robin, one paper per library per
+   round, up to the target. Library order is the fair order. A library that
+   ran out drops out of later rounds, so the others fill its share.
 7. **Start a queued library** (at most one per run) if it is affordable and
    no earlier failed run is unresolved. First, for free, the run builds that
    library with mocked OpenAlex and Gemini in a throwaway copy and runs every
@@ -99,11 +151,13 @@ budget.
    extraction is submitted now and finished next week.
    Two pace limits in `config/growth.json` apply first:
    `max_queued_builds_per_month` (default 1, counted per calendar month from
-   `data/grow/queued_builds.json`) and `min_weekly_growth_reserve_inr`
-   (default ₹15): a queued build may never leave less money than ₹15 of
-   growth for every remaining week of the horizon.
-8. **Fingerprint and changelog:** `docs/releases/<date>.json` and
-   `docs/CHANGELOG.md`.
+   `data/grow/queued_builds.json`), and `min_growth_reserve_per_run_inr`
+   (default ₹15) with `queued_reserve_runs` (default 4): a queued build may
+   never leave less money than ₹15 of growth for each of the next 4 runs.
+8. **Fingerprint and changelog:** `docs/releases/<label>.json` and
+   `docs/CHANGELOG.md`. The label is the run's date. A later run on the same
+   day gets `<date>-2`, `<date>-3` and so on (`data/grow/runs.json`), so it
+   never overwrites an earlier run's record, Issue or branch.
 9. **Publish gates.** Every one must pass:
    - full test suite, typecheck and production build;
    - the docs check and the cross-surface consistency script;
@@ -122,7 +176,7 @@ budget.
     - **Any gate fails:** the site is not changed. The run's work goes to
       `grow/<date>`, and the bookkeeping (everything under `data/`) is
       committed to main so nothing paid for is lost.
-11. **One Issue per run,** "Weekly grow — <date>".
+11. **One Issue per run,** "Weekly grow — <label>".
 
 ### When something goes wrong
 
@@ -230,8 +284,21 @@ submitted or published are never re-filtered. Proposed removals go to
 ## Unattended weekly growth
 
 - **Schedule:** Mondays 05:23 UTC (10:53 IST). A scheduled run has no
-  inputs: the weekly money rule decides everything. `run_budget_inr`,
-  `build_queued` and `gates_only` apply to manual runs only.
+  inputs: `config/growth.json` and the money rule decide everything.
+  `run_budget_inr` (can only lower the per-run cap), `mode`, `target_papers`,
+  `build_queued`, `gates_only` and `republish_branch` apply to manual runs
+  only.
+- **Run any time:** a manual run may start whenever you like. Runs never
+  overlap; a newer one waits. Each run has its own label, Issue and branch.
+  A library whose batch is still pending gets no new search until it is
+  collected. Every batch is billed once, when collected. A failed run's
+  branch is recovered first. The offline e2e proves this (scenario 19):
+  batches pending, right after another run, mid-week, with main moved, and
+  with a failed branch waiting.
+- **Time and Actions minutes:** the job timeout is 330 minutes (GitHub's
+  limit is 360); the run plans for 300. Measured on GitHub, a scheduled
+  run adding 3–7 papers took 27–30 minutes (19 Oct – 9 Nov 2026), and
+  `gates_only` takes about 13. The dry run estimates a run at the target.
 - **Concurrency:** one run at a time, scheduled and manual alike, and the
   keepalive shares the group. A running job is never cancelled. After every
   paid step, `data/` (ledger, batch states, pending batches) is pushed to

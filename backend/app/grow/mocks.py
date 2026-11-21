@@ -52,7 +52,14 @@ class MockOpenAlex:
             self.pool[slug] = self._build_pool(slug, 9_000_000_000 + n * 100_000 + (wk % 900) * 100, wk)
             for r in records.load(slug)["records"]:
                 self.owner[_wid(r["id"])] = slug
-        self.by_wid = {_wid(r["id"]): r for rs in self.pool.values() for r in rs}
+        # GROW_MOCK_DEEP=1: the library-vocabulary tier serves 30 more clean
+        # candidates per library (the widening search finds enough); unset, the
+        # deeper tiers find nothing new (the search runs out and says so)
+        self.deep: dict[str, list[dict]] = {}
+        if os.environ.get("GROW_MOCK_DEEP") == "1":
+            for n, slug in enumerate(grow_slugs()):
+                self.deep[slug] = self._deep_pool(slug, 8_000_000_000 + n * 100_000 + (wk % 900) * 100, wk)
+        self.by_wid = {_wid(r["id"]): r for rs in list(self.pool.values()) + list(self.deep.values()) for r in rs}
 
     @staticmethod
     def _build_pool(slug: str, base: int, wk: int) -> list[dict]:
@@ -111,6 +118,26 @@ class MockOpenAlex:
             out.append(mk(off[0], 8, off[0].get("title") or "Off-topic record"))
         return out
 
+    def _deep_pool(self, slug: str, base: int, wk: int) -> list[dict]:
+        pool = self._build_pool(slug, base, wk)
+        clean = [r for r in pool if r.get("abstract_inverted_index") and "duplicate" not in r["title"]
+                 and "twin" not in r["title"]][:1]
+        out = []
+        for i in range(30):
+            r = copy.deepcopy(clean[0])
+            r["id"] = f"https://openalex.org/W{base + 50 + i}"
+            r["title"] = r["display_name"] = f"Deep search test record {wk}-{i}: " + r["title"].split(": ", 1)[-1]
+            r["doi"] = None
+            r["cited_by_count"] = 30 - i
+            r["authorships"] = [{"author": {"display_name": f"Deep Author {wk}-{i}"}}]
+            idx = {}
+            for pos, w in enumerate((" ".join(sorted(r["abstract_inverted_index"], key=lambda k: r[
+                    "abstract_inverted_index"][k][0])) + f" variant {wk}-{i}").split()):
+                idx.setdefault(w, []).append(pos)
+            r["abstract_inverted_index"] = idx
+            out.append(r)
+        return out
+
     def get(self, path: str, params: dict) -> dict:
         self.requests_made += 1
         if _fail("openalex"):
@@ -119,6 +146,18 @@ class MockOpenAlex:
         if f.startswith("openalex_id:"):
             wids = f.split(":", 1)[1].split("|")
             return {"results": [self.by_wid[w] for w in wids if w in self.by_wid]}
+        if "title_and_abstract.search" in f:          # the vocabulary tier
+            sel = []
+            for s_, rs in self.deep.items():
+                from backend.app.corpus.multi_domain_reason import DOMAINS
+                if DOMAINS[s_].seed_filter.split(",publication_year")[0][:60] in f:
+                    sel = rs if params.get("page", "1") == "1" and f.endswith(f"{_this_year() - 1}-{_this_year()}") \
+                        else []
+            return {"results": [{k: r.get(k) for k in ("id", "doi", "display_name", "publication_year",
+                                                       "cited_by_count", "is_retracted", "is_paratext")}
+                                for r in sel]}
+        if f.startswith("cites:") and "," in f and ("from_publication_date" not in f or "to_publication_date" not in f):
+            return {"results": []}                   # the forward snowball tier: nothing new in the mock world
         cited = re.findall(r"cites:([W0-9|]+)", f)
         first = cited[0].split("|")[0] if cited else ""
         slug = self.owner.get(first)
@@ -187,6 +226,11 @@ class MockBatch:
                 for i, k in enumerate(keys)}
 
 
+def _this_year() -> int:
+    import datetime as dt
+    return dt.date.fromisoformat(os.environ.get("GROW_DATE") or dt.date.today().isoformat()).year
+
+
 def _first_contradiction_text(slug: str) -> str | None:
     p = domains_dir() / slug / "reasoning" / "contradictions.json"
     items = json.loads(p.read_text()).get("items", []) if p.exists() else []
@@ -230,7 +274,28 @@ class MockEmbed(MockEmbeddingClient):
 
 
 class MockLLM:
-    def generate(self, prompt: str) -> str:
+    """Interactive calls: a disagreement check, or (mode sync) an extraction,
+    recognised by the extraction prompt's paper id line. Each call is billed
+    to the ledger at the interactive rate, as the real client does."""
+
+    calls = 0
+
+    def set_run_context(self, *, stage: str, est_output_tokens: int = 5000) -> None:
+        self.stage = stage
+
+    def generate(self, prompt: str, *, validate=None) -> str:
+        m = re.search(r'"?paper_id"?\s*[:=]\s*"?(openalex:W\d+)', prompt) or re.search(r"(openalex:W\d+)", prompt)
+        stage = getattr(self, "stage", "")
+        if stage.startswith("grow_extract_sync") and m:
+            if _fail("gemini"):
+                raise RuntimeError("mock: Gemini unavailable (503)")
+            MockLLM.calls += 1
+            from backend.app.extraction.spend_ledger import SpendLedger
+            SpendLedger.load().record(stage=stage, model="gemini-3.6-flash", batch=False,
+                                      prompt_tokens=_USAGE["promptTokenCount"],
+                                      candidates_tokens=_USAGE["candidatesTokenCount"],
+                                      thoughts_tokens=_USAGE["thoughtsTokenCount"])
+            return json.dumps(_extraction(m.group(1), None))
         return json.dumps({"relationship": "contradicts", "explanation": "mock"})
 
 

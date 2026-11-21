@@ -100,17 +100,19 @@ def apply_core_scope(lib: dict) -> dict:
 GROWTH_CFG = REPO_ROOT / "config" / "growth.json"
 BUILDS_LOG = REPO_ROOT / "data" / "grow" / "queued_builds.json"
 DEFAULT_MAX_PER_MONTH = 1
-DEFAULT_MIN_WEEKLY_RESERVE_INR = 15.0
+DEFAULT_MIN_RUN_RESERVE_INR = 15.0
+DEFAULT_RESERVE_RUNS = 4
 PAD = 1.5                    # the money rule's padding on a projection
 
 
 def pace_config(path: Path | None = None) -> dict:
-    """max_queued_builds_per_month (default 1) and min_weekly_growth_reserve_inr
-    (default 15) from config/growth.json."""
+    """max_queued_builds_per_month (default 1), min_growth_reserve_per_run_inr
+    (default 15) and queued_reserve_runs (default 4) from config/growth.json."""
     p = path or GROWTH_CFG
     c = json.loads(p.read_text()) if p.exists() else {}
     return {"max_per_month": int(c.get("max_queued_builds_per_month", DEFAULT_MAX_PER_MONTH)),
-            "min_weekly_reserve_inr": float(c.get("min_weekly_growth_reserve_inr", DEFAULT_MIN_WEEKLY_RESERVE_INR))}
+            "min_run_reserve_inr": float(c.get("min_growth_reserve_per_run_inr", DEFAULT_MIN_RUN_RESERVE_INR)),
+            "reserve_runs": int(c.get("queued_reserve_runs", DEFAULT_RESERVE_RUNS))}
 
 
 def builds_log(path: Path | None = None) -> list[dict]:
@@ -126,28 +128,28 @@ def record_start(slug: str, date: str, source: str, path: Path | None = None) ->
     p.write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n")
 
 
-def pace_check(*, proj_inr: float, available_inr: float, growth_committed_inr: float, weeks_after: int,
+def pace_check(*, proj_inr: float, available_inr: float, growth_committed_inr: float, runs_after: int,
                ref: dt.date, cfg: dict | None = None, log: list[dict] | None = None) -> dict:
     """May a queued library be started now, at this pace? (After the money
     rule says it is affordable.) Two limits, both from config/growth.json:
 
       - at most max_per_month queued builds STARTED in ref's calendar month;
-      - the money left after it (available - this week's growth commitments
-        - the padded projection) must still fund min_weekly_reserve_inr of
-        growth in each of the weeks_after remaining weeks: a queued build
-        never cuts into that reserve.
+      - the money left after it (available - this run's growth commitments
+        - the padded projection) must still fund min_run_reserve_inr of
+        growth in each of runs_after later runs: a queued build never cuts
+        into that reserve.
 
     Returns {ok, reason, this_month, left_after_inr, reserve_needed_inr,
-    weekly_growth_after_inr}."""
+    growth_per_run_after_inr}."""
     cfg = cfg or pace_config()
     log = builds_log() if log is None else log
     month = ref.strftime("%Y-%m")
     this_month = [e for e in log if str(e.get("date", "")).startswith(month)]
     left = available_inr - growth_committed_inr - proj_inr * PAD
-    need = cfg["min_weekly_reserve_inr"] * max(0, weeks_after)
+    need = cfg["min_run_reserve_inr"] * max(0, runs_after)
     out = {"this_month": [e["slug"] for e in this_month], "left_after_inr": round(left, 2),
            "reserve_needed_inr": round(need, 2),
-           "weekly_growth_after_inr": round(left / weeks_after, 2) if weeks_after > 0 else None}
+           "growth_per_run_after_inr": round(left / runs_after, 2) if runs_after > 0 else None}
     if len(this_month) >= cfg["max_per_month"]:
         return {**out, "ok": False, "blocked_by": "month",
                 "reason": f"{len(this_month)} queued build(s) already started in {month} "
@@ -155,12 +157,12 @@ def pace_check(*, proj_inr: float, available_inr: float, growth_committed_inr: f
                                               "per month (config/growth.json max_queued_builds_per_month)"}
     if left + 1e-9 < need:
         return {**out, "ok": False, "blocked_by": "reserve",
-                "reason": f"it would leave ₹{left:.2f} after this week, less than the "
-                                              f"₹{cfg['min_weekly_reserve_inr']:.0f}/week growth reserve for the "
-                                              f"{weeks_after} remaining weeks (₹{need:.2f}; config/growth.json "
-                                              "min_weekly_growth_reserve_inr)"}
+                "reason": f"it would leave ₹{left:.2f} after this run, less than the "
+                          f"₹{cfg['min_run_reserve_inr']:.0f}/run growth reserve for {runs_after} later "
+                          f"runs (₹{need:.2f}; config/growth.json min_growth_reserve_per_run_inr, "
+                          "queued_reserve_runs)"}
     return {**out, "ok": True, "blocked_by": None,
-            "reason": "within the monthly limit and the weekly growth reserve"}
+            "reason": "within the monthly limit and the growth reserve"}
 
 
 def projection_inr(lib: dict) -> float:

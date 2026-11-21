@@ -1,7 +1,18 @@
 {
   "paused": false,
   "note": "Set paused to true to stop all weekly growth (no collection, no spending, no publishing). The run still opens its Issue saying it is paused. Set back to false to resume; anything submitted before the pause is collected on the next run.",
+  "target_papers_per_run": 55,
+  "per_run_cost_cap_inr": 25,
+  "mode": "batch",
+  "growth_note": "One run (scheduled or manual) aims to add target_papers_per_run papers across all growing libraries, split by fair rotation, and commits at most per_run_cost_cap_inr of NEW paid work (padded projections: extraction x1.5, classification x2; collecting an earlier run's batches does not count). The money rule (config/money.json) still caps every call at the ledger ceiling; a run that cannot afford its target adds fewer papers and says why in its Issue. mode: batch (papers appear the next run) or sync (the same run, about 2x the cost). Queued (new) library builds have their own rule (queued_note) and do not count against per_run_cost_cap_inr, unless a manual run sets run_budget_inr. Manual runs may lower the cap (run_budget_inr), change the target (target_papers) and pick the mode. See backend/app/grow/plan.py.",
+  "max_disagreement_pairs_per_run": 400,
+  "max_fw_pairs_per_run": 400,
+  "max_confirm_leads_per_run": 150,
+  "openalex_max_calls_per_run": 600,
+  "candidate_spare_per_library": 0.5,
+  "followon_note": "Follow-on checks are bounded per run; anything not reached stays unchecked (hidden, never counted) and is carried over to the next run. openalex_max_calls_per_run bounds the free candidate search (filter calls).",
   "max_queued_builds_per_month": 1,
-  "min_weekly_growth_reserve_inr": 15,
-  "queued_note": "A queued (new) library is started at most max_queued_builds_per_month times per calendar month (IST), counted from data/grow/queued_builds.json, and only if the money left afterwards (its padded projection and this week's growth taken out) still funds at least min_weekly_growth_reserve_inr of growth in every remaining week of the horizon. Both are checked after the money rule and before the free dry run."
+  "queued_reserve_runs": 4,
+  "min_growth_reserve_per_run_inr": 15,
+  "queued_note": "A queued (new) library is started at most max_queued_builds_per_month times per calendar month (IST), counted from data/grow/queued_builds.json; only if its padded projection plus queued_reserve_runs runs of growth fits the money remaining; and only if the money left afterwards still funds at least min_growth_reserve_per_run_inr of growth in each of queued_reserve_runs runs. Checked after the money rule and before the free dry run."
 }

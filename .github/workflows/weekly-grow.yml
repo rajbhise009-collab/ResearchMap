@@ -1,9 +1,13 @@
 name: Weekly grow
 
-# Adds new papers to the Diet & mortality and ML fairness libraries, two-phase:
-# collect last week's Gemini batch, then submit this week's. Runbook:
-# docs/OPERATIONS.md. Spend: capped by WEEKLY_BUDGET_INR (projection x1.5)
-# and the lifetime ledger ceiling, both enforced in code before any call.
+# Adds new papers to every growing library: collect the batches an earlier
+# run submitted, then search and submit this run's (mode batch), or extract
+# them in this run (mode sync, about 2x the cost). One run aims at
+# config/growth.json target_papers_per_run (default 55) and commits at most
+# per_run_cost_cap_inr; the lifetime ledger ceiling (config/money.json) is
+# enforced at call time. Runbook: docs/OPERATIONS.md. A manual run may start
+# at any time: runs never overlap (concurrency below), each gets its own
+# label, Issue and branch, and nothing paid for is paid twice.
 #
 # Security: schedule + manual triggers only (never pull_request); actions
 # pinned by commit SHA; secrets are passed only to the one step that needs
@@ -17,9 +21,19 @@ on:
   workflow_dispatch:
     inputs:
       run_budget_inr:
-        description: "Cap on TOTAL spend for this manual run, INR (enforced at call time)"
+        description: "Cap on NEW spend for this manual run, INR (enforced at call time); empty = the per-run cap in config/growth.json"
         required: false
-        default: "25"
+        default: ""
+      mode:
+        description: "batch (cheaper; papers appear next run) or sync (papers appear in this run, about 2x the cost)"
+        type: choice
+        options: ["batch", "sync"]
+        required: false
+        default: "batch"
+      target_papers:
+        description: "Papers to add in this run across all libraries; empty = target_papers_per_run in config/growth.json"
+        required: false
+        default: ""
       build_queued:
         description: "Also build a queued library if the money rule allows it"
         type: boolean
@@ -54,7 +68,11 @@ env:
 jobs:
   grow:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    # under GitHub's 6 h job limit; the run itself plans for 300 min
+    # (GROW_TIME_BUDGET_S): follow-on batch waits stop early enough to leave
+    # time for every gate and the publish, and an unfinished batch is
+    # collected by the next run (state pushed; nothing paid twice)
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
         with:
@@ -129,6 +147,9 @@ jobs:
           GROW_RUN_BUDGET_INR: ${{ inputs.run_budget_inr }}
           GROW_BUILD_QUEUED: ${{ inputs.build_queued }}
           GROW_GATES_ONLY: ${{ inputs.gates_only }}
+          GROW_MODE: ${{ inputs.mode }}
+          GROW_TARGET_PAPERS: ${{ inputs.target_papers }}
+          GROW_TIME_BUDGET_S: "18000"
           GROW_REPUBLISH: ${{ inputs.republish_branch }}
           WEEKLY_BUDGET_INR: ${{ vars.WEEKLY_BUDGET_INR }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}

@@ -12,8 +12,7 @@ from backend.app.extraction.spend_ledger import SpendCapExceededError, SpendLedg
 
 def _cfg(tmp_path, **kw):
     c = {"account_total_inr": 100, "safety_buffer_inr": 10, "console_spent_inr": None,
-         "console_spent_date": None, "growth_horizon_weeks": 12, "growth_horizon_start": "2026-10-12",
-         "weekly_budget_max_inr": 60, "queued_domain_reserve_weeks": 4, **kw}
+         "console_spent_date": None, **kw}
     p = tmp_path / "money.json"
     p.write_text(json.dumps(c))
     return p, c
@@ -55,14 +54,37 @@ def test_enforced_at_call_time(tmp_path, monkeypatch):
         led.check_headroom(prompt_tokens_est=2_000_000, output_tokens_est=2_000_000, batch=False, stage="t")
 
 
-def test_weekly_pacing_and_queued_affordability(tmp_path):
-    _p, c = _cfg(tmp_path)
-    assert money.weeks_left(c, dt.date(2026, 10, 12)) == 12
-    assert money.weeks_left(c, dt.date(2027, 6, 1)) == 1
-    assert money.weekly_budget_inr(120.0, c, dt.date(2026, 10, 12)) == 10.0
-    assert money.weekly_budget_inr(5000.0, c, dt.date(2026, 10, 12)) == 60.0   # capped
-    assert money.queued_affordable(20.0, 70.0, 10.0, c)          # 30 + 40 <= 70
-    assert not money.queued_affordable(21.0, 70.0, 10.0, c)
+def test_run_budget_and_queued_affordability(tmp_path):
+    """One run's budget: the per-run cap, lowered by a manual cap, never above
+    the money available. A queued library needs its padded projection plus
+    queued_reserve_runs runs of growth."""
+    from backend.app.grow import plan
+    gp = tmp_path / "growth.json"
+    gp.write_text(json.dumps({"per_run_cost_cap_inr": 60, "queued_reserve_runs": 4}))
+    st = plan.load(gp)
+    assert plan.run_budget_inr(st, 120.0) == 60.0                 # the per-run cap
+    assert plan.run_budget_inr(st, 10.0) == 10.0                  # never above the money available
+    assert plan.run_budget_inr(st, 120.0, 25.0) == 25.0           # a manual cap can only lower it
+    assert plan.run_budget_inr(st, 120.0, 90.0) == 60.0
+    assert plan.run_budget_inr(st, -5.0) == 0.0
+    assert plan.queued_affordable(20.0, 70.0, 10.0, st)           # 30 + 40 <= 70
+    assert not plan.queued_affordable(21.0, 70.0, 10.0, st)
+
+
+def test_status_reports_the_run_budget(tmp_path, monkeypatch):
+    mp, _c = _cfg(tmp_path, account_total_inr=1000)
+    lp = _ledger(tmp_path, [{"ts": 1.0, "cost_inr": 50.0, "cost_usd": 50.0 / 84, "stage": "x"}])
+    gp = tmp_path / "growth.json"
+    gp.write_text(json.dumps({"per_run_cost_cap_inr": 30}))
+    monkeypatch.setenv("MONEY_CONFIG_PATH", str(mp))
+    monkeypatch.setenv("SPEND_LEDGER_PATH", str(lp))
+    monkeypatch.setenv("GROWTH_CONFIG_PATH", str(gp))
+    monkeypatch.setattr(money, "_REPO_ROOT", tmp_path)            # no pending batches
+    SpendLedger.reset_for_tests()
+    st = money.status()
+    assert st["remaining_inr"] == pytest.approx(940.0) and st["run_budget_inr"] == 30.0
+    assert money.status(manual_cap_inr=12.0)["run_budget_inr"] == 12.0
+    assert "weekly_budget_inr" not in st and "weeks_left" not in st
 
 
 def test_run_cap_is_enforced_at_call_time(tmp_path, monkeypatch):

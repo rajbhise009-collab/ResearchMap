@@ -164,21 +164,29 @@ def _run_batch(slug: str, stage: str, prompts: dict[str, str], *, client=None,
 
 
 def confirm(slug: str, *, dry_run: bool, client=None,
-            wait_timeout_s: float = 26 * 3600) -> dict:
+            wait_timeout_s: float = 26 * 3600, max_items: int | None = None) -> dict:
+    """max_items: at most this many leads this run (weekly growth bounds the
+    cost as libraries grow); the rest stay unconfirmed (hidden) and are
+    confirmed by a later run. A batch already submitted is always resumed
+    as it was (nothing re-paid)."""
     rows = hole_leads(slug)
     out_p = confirmations_path(slug)
     done = json.loads(out_p.read_text()) if out_p.exists() else {}
-    todo = [r for r in rows if r["id"] not in done]
+    todo_all = [r for r in rows if r["id"] not in done]
+    todo = todo_all if max_items is None else todo_all[:max_items]
     prompts = {r["id"]: hole_prompt(r) for r in todo}
-    res = {"slug": slug, "leads": len(rows), "already_confirmed": len(rows) - len(todo),
-           "to_confirm": len(todo), "projected_inr": round(_project(prompts), 4) if prompts else 0.0}
+    res = {"slug": slug, "leads": len(rows), "already_confirmed": len(rows) - len(todo_all),
+           "to_confirm": len(todo), "carried_over": len(todo_all) - len(todo),
+           "projected_inr": round(_project(prompts), 4) if prompts else 0.0}
     if dry_run or not prompts:
         return res
     raw, money = _run_batch(slug, "hole_confirm", prompts, client=client,
                             wait_timeout_s=wait_timeout_s)
-    by_id = {r["id"]: r for r in todo}
+    by_id = {r["id"]: r for r in todo_all}
     from backend.app.reasoning.run_structural_confirm import _prompt_hash
     for oid, text in raw.items():
+        if oid not in by_id:              # a resumed batch's lead that is gone now
+            continue
         v, reason = _parse_hole(text)
         r = by_id[oid]
         done[oid] = {"verdict": v, "reason": reason, "prompt_hash": _prompt_hash(),
@@ -193,27 +201,36 @@ def confirm(slug: str, *, dry_run: bool, client=None,
 
 
 def fwmatch(slug: str, *, dry_run: bool, client=None,
-            wait_timeout_s: float = 26 * 3600) -> dict:
+            wait_timeout_s: float = 26 * 3600, max_items: int | None = None) -> dict:
+    """max_items: at most this many (future-work item, later paper) pairs this
+    run. A future-work item is marked checked only once ALL its pairs are
+    classified, so a capped run never hides an unchecked one; the rest are
+    carried over to a later run. A batch already submitted is resumed as it
+    was (nothing re-paid)."""
     rc, cands = fw_candidates(slug)
     ap = addressals_path(slug)
     done = {json.loads(l)["id"] for l in ap.read_text().splitlines() if l.strip()} if ap.exists() else set()
     # every future-work item, not only the already-checked ones the corpus
     # view exposes to the scorers (a new library has none checked yet)
     fw_text = {fw.id: fw.text for fw, _m in rc._loaded.future_work()}
-    todo = [c for c in cands if f"fwa:{c.fw_id}__{c.to_paper_id}" not in done]
+    todo_all = [c for c in cands if f"fwa:{c.fw_id}__{c.to_paper_id}" not in done]
+    todo = todo_all if max_items is None else todo_all[:max_items]
     prompts = {f"{c.fw_id}||{c.to_paper_id}": F.build_prompt(c, fw_text[c.fw_id]) for c in todo}
     res = {"slug": slug, "fw_items": len(rc.fw_ids), "candidate_pairs": len(cands),
-           "already_classified": len(cands) - len(todo), "to_classify": len(todo),
+           "already_classified": len(cands) - len(todo_all), "to_classify": len(todo),
+           "carried_over": len(todo_all) - len(todo),
            "projected_inr": round(_project(prompts), 4) if prompts else 0.0}
     if dry_run or not prompts:
         return res
     raw, money = _run_batch(slug, "fw_match", prompts, client=client,
                             wait_timeout_s=wait_timeout_s)
-    by_key = {f"{c.fw_id}||{c.to_paper_id}": c for c in todo}
+    by_key = {f"{c.fw_id}||{c.to_paper_id}": c for c in todo_all}
     counts = Counter()
     model = f"gemini:{get_settings().gemini_model}"
     with ap.open("a") as f:
         for key, text in raw.items():
+            if key not in by_key:         # a resumed batch's pair that is gone now
+                continue
             v = F.parse_verdict(text)
             if v is None:
                 counts["malformed"] += 1
@@ -225,7 +242,13 @@ def fwmatch(slug: str, *, dry_run: bool, client=None,
             f.flush()
     _state(slug, "fw_match").unlink(missing_ok=True)
     from backend.app.reasoning.library_corpus import mark_fw_checked
-    mark_fw_checked(slug, rc.fw_ids)    # every item this run looked at
+    done = {json.loads(l)["id"] for l in ap.read_text().splitlines() if l.strip()} if ap.exists() else set()
+    looked = set(raw)                   # classified or malformed: looked at by this batch
+    open_fw = {c.fw_id for c in cands if f"fwa:{c.fw_id}__{c.to_paper_id}" not in done
+               and f"{c.fw_id}||{c.to_paper_id}" not in looked}
+    # every item this run looked at in full; an item the per-run cap left
+    # pairs of is not marked, so it is never hidden as checked
+    mark_fw_checked(slug, [f for f in rc.fw_ids if f not in open_fw])
     res.update(money)
     res["verdicts"] = dict(counts)
     return res
