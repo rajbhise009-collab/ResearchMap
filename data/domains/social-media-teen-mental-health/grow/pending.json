@@ -1,0 +1,2926 @@
+{
+ "batch_id": "hr7jkszu9883a07f25zevknxignou86o0gvl",
+ "slug": "social-media-teen-mental-health",
+ "submitted_on": "2026-11-23",
+ "submitted_at": 1795451814.8957934,
+ "projected_inr": 1.8518219999999999,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7114914688": "abstract",
+  "openalex:W7236565024": "abstract"
+ },
+ "entries": [
+  {
+   "wid": "W7114914688",
+   "openalex_id": "https://openalex.org/W7114914688",
+   "title": "Exposure to relational information pollution in social media and mental health among adolescents and young adults",
+   "year": 2026,
+   "doi": "https://doi.org/10.1016/j.chbr.2026.101433",
+   "venue": "Computers in Human Behavior Reports",
+   "field": "social sciences",
+   "cited_by_count": 0,
+   "abstract": "Drawing from the literature on information pollution, we explored whether exposure to polluted content about users' social environment might influence users\u2019 mental health. To achieve this goal, we proposed the term \u201crelational information pollution\u201d to describe the extent to which users are exposed to harmful, polluted content about their social environment on social media. The working hypothesis of this study was that exposure to relational information pollution on social media is associated with higher depressive symptoms among adolescents and young adults. Multivariate linear regression and multiple-group analyses across gender and age-group models were conducted using data from a nationally representative survey of 1002 adolescent and young adult participants aged 14 to 18 years from the Spanish population. Relational information pollution showed a significant positive association with depressive symptoms (\u03b2 = .08, p < .01) after accounting for different personality characteristics, social media use mindsets (i.e., agency and valence), digital stress (i.e., social pressure or availability stress, approval anxiety, and FoMO), social support, sociodemographic characteristics (gender, age, and studying status at the time of the survey), frequency of social media use, and systematic response bias (social desirability and presence of parents or legal guardians during the completion of the questionnaire). Multiple-group analyses indicated equivalence in results between boys and girls, as well as between younger and older participants, suggesting that the association between relational information pollution and depressive symptoms transcends gender and age demographics. Exposure to relational information pollution on social media is pervasive among adolescents and young adults and is associated with increased depressive symptoms.",
+   "label": "on-domain",
+   "rationale": "anchor + topic co-occur in title; core scope: young population 'adolescen' + mental-health outcome 'mental health'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-23",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7236565024",
+   "openalex_id": "https://openalex.org/W7236565024",
+   "title": "A National Pediatric Primary Care Research Agenda",
+   "year": 2026,
+   "doi": "https://doi.org/10.1542/peds.2026-076589",
+   "venue": "PEDIATRICS",
+   "field": "medicine",
+   "cited_by_count": 0,
+   "abstract": "Pediatric primary care (PPC) promotes child wellbeing through health supervision, anticipatory guidance, screening, and intervention. Given an evolving PPC landscape, content experts collaborated with the American Academy of Pediatrics Pediatric Research in Office Settings network in an iterative, multiyear process to create a PPC research agenda to advance child health that reflects professional and family priorities. Using an adapted nominal group technique, we identified research areas of focus based on (1) what PPC clinicians said they frequently encounter in practice; (2) the extent of the problem for families nationally; (3) evidence gaps; and (4) areas in which research could have the highest impact on child health. From 2022 to 2024, we synthesized contributor feedback from 8 key content expert sessions. This process resulted in 6 interconnected domains of highest priority for PPC research: (1) child mental health, (2) obesity, (3) communicating science to support families, (4) pediatric workforce, (5) injury prevention, and (6) adolescent health. We identified cross-cutting themes that warrant research in connection with these 6 prioritized domains. Examples of such themes include removing barriers to access and ensuring quality services for all children; under-resourced communities; care coordination and linkages within and outside PPC; supporting parents/caregivers; and technology and social media, which can serve as tools to enhance practice and can be assets or threats to child wellbeing. This manuscript details a vision for a national, coordinated PPC research agenda to inform investigators' and funders' efforts to advance primary health care and the health of all children based on our results.",
+   "label": "on-domain",
+   "rationale": "same-sentence pair: 'social media' + 'wellbeing'; core scope: young population 'child' + mental-health outcome 'wellbeing'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-23",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7114914688",
+   "doi": "https://doi.org/10.1016/j.chbr.2026.101433",
+   "title": "Exposure to relational information pollution in social media and mental health among adolescents and young adults",
+   "display_name": "Exposure to relational information pollution in social media and mental health among adolescents and young adults",
+   "alternate_titles": [],
+   "publication_year": 2026,
+   "publication_date": "2026-11-20",
+   "ids": {
+    "openalex": "https://openalex.org/W7114914688",
+    "doi": "https://doi.org/10.1016/j.chbr.2026.101433"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1016/j.chbr.2026.101433",
+    "doi": "https://doi.org/10.1016/j.chbr.2026.101433",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1016/j.chbr.2026.101433",
+    "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2451958826005075/pdf",
+    "source": {
+     "id": "https://openalex.org/S4210198611",
+     "display_name": "Computers in Human Behavior Reports",
+     "issn_l": "2451-9588",
+     "issn": [
+      "2451-9588"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "jufo-1",
+      "norway-1",
+      "poland-20",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320990",
+     "host_organization_name": "Elsevier BV",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320990"
+     ],
+     "host_organization_lineage_names": [
+      "Elsevier BV"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-nd",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Computers in Human Behavior Reports",
+    "raw_type": "journal-article"
+   },
+   "parent_works": [],
+   "lineage": [
+    "https://openalex.org/W7114914688"
+   ],
+   "child_works_count": 0,
+   "pull_notice_works": [],
+   "type": "article",
+   "is_traditional": true,
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "gold",
+    "oa_url": "https://www.sciencedirect.com/science/article/pii/S2451958826005075/pdf",
+    "any_repository_has_fulltext": true
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": null,
+      "display_name": "Juan Herrero",
+      "type": null,
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I165339363",
+       "display_name": "Universidad de Oviedo",
+       "ror": "https://ror.org/006gksa02",
+       "country_code": "ES",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I165339363"
+       ]
+      }
+     ],
+     "countries": [
+      "ES"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Juan Herrero",
+     "raw_affiliation_strings": [
+      "Department of Psychology, Universidad de Oviedo, Office 212, Plaza Feijoo s/n, 33003, Oviedo, Spain"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Psychology, Universidad de Oviedo, Office 212, Plaza Feijoo s/n, 33003, Oviedo, Spain",
+       "institution_ids": [
+        "https://openalex.org/I165339363"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Andrea Torres",
+      "type": null,
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I165339363",
+       "display_name": "Universidad de Oviedo",
+       "ror": "https://ror.org/006gksa02",
+       "country_code": "ES",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I165339363"
+       ]
+      }
+     ],
+     "countries": [
+      "ES"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Andrea Torres",
+     "raw_affiliation_strings": [
+      "Department of Psychology, Universidad de Oviedo, Office 212, Plaza Feijoo s/n, 33003, Oviedo, Spain"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Psychology, Universidad de Oviedo, Office 212, Plaza Feijoo s/n, 33003, Oviedo, Spain",
+       "institution_ids": [
+        "https://openalex.org/I165339363"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": null,
+      "display_name": "Alberto Urue\u00f1a",
+      "type": null,
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I88060688",
+       "display_name": "Universidad Polit\u00e9cnica de Madrid",
+       "ror": "https://ror.org/03n6nwv02",
+       "country_code": "ES",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I88060688"
+       ]
+      }
+     ],
+     "countries": [
+      "ES"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Alberto Urue\u00f1a",
+     "raw_affiliation_strings": [
+      "Department of Organization Engineering, Business Administration, and Statistics, Universidad Polit\u00e9cnica de Madrid, C/ Jos\u00e9 Guti\u00e9rrez Abascal, 2, 28006, Madrid, Spain"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Organization Engineering, Business Administration, and Statistics, Universidad Polit\u00e9cnica de Madrid, C/ Jos\u00e9 Guti\u00e9rrez Abascal, 2, 28006, Madrid, Spain",
+       "institution_ids": [
+        "https://openalex.org/I88060688"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": null,
+      "display_name": "Hazal Dilan Erdem",
+      "type": null,
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I165339363",
+       "display_name": "Universidad de Oviedo",
+       "ror": "https://ror.org/006gksa02",
+       "country_code": "ES",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I165339363"
+       ]
+      }
+     ],
+     "countries": [
+      "ES"
+     ],
+     "is_corresponding": true,
+     "contributor_roles": [],
+     "raw_author_name": "Hazal Dilan Erdem",
+     "raw_affiliation_strings": [
+      "Department of Psychology, Universidad de Oviedo, Office 212, Plaza Feijoo s/n, 33003, Oviedo, Spain"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Department of Psychology, Universidad de Oviedo, Office 212, Plaza Feijoo s/n, 33003, Oviedo, Spain",
+       "institution_ids": [
+        "https://openalex.org/I165339363"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I165339363"
+   ],
+   "apc_list": {
+    "value": 1880,
+    "currency": "USD",
+    "value_usd": 1880
+   },
+   "apc_paid": {
+    "value": 1880,
+    "currency": "USD",
+    "value_usd": 1880
+   },
+   "fwci": 0.0,
+   "is_authors_truncated": false,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "reviewed_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.0,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": "24",
+    "issue": null,
+    "first_page": "101433",
+    "last_page": "101433"
+   },
+   "is_retracted": false,
+   "is_pulled": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10355",
+    "display_name": "Impact of Technology on Adolescents",
+    "score": 0.9937000274658203,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3312",
+     "display_name": "Sociology and Political Science"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/33",
+     "display_name": "Social Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10355",
+     "display_name": "Impact of Technology on Adolescents",
+     "score": 0.9937000274658203,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12488",
+     "display_name": "Mental Health via Writing",
+     "score": 0.00139999995008111,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3207",
+      "display_name": "Social Psychology"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/32",
+      "display_name": "Psychology"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11147",
+     "display_name": "Misinformation and Its Impacts",
+     "score": 0.000699999975040555,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3312",
+      "display_name": "Sociology and Political Science"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/social-media",
+     "display_name": "social media",
+     "score": 0.8109999895095825
+    },
+    {
+     "id": "https://openalex.org/keywords/depressive-symptoms",
+     "display_name": "depressive symptoms",
+     "score": 0.8629999756813049
+    },
+    {
+     "id": "https://openalex.org/keywords/adolescents",
+     "display_name": "adolescents",
+     "score": 0.9190000295639038
+    },
+    {
+     "id": "https://openalex.org/keywords/young-adults",
+     "display_name": "young adults",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/mental-health",
+     "display_name": "mental health",
+     "score": 0.8370000123977661
+    },
+    {
+     "id": "https://openalex.org/keywords/social-comparison",
+     "display_name": "social comparison",
+     "score": 0.47099998593330383
+    },
+    {
+     "id": "https://openalex.org/keywords/fear-of-missing-out",
+     "display_name": "fear of missing out",
+     "score": 0.7649999856948853
+    },
+    {
+     "id": "https://openalex.org/keywords/digital-stress",
+     "display_name": "digital stress",
+     "score": 0.8700000047683716
+    },
+    {
+     "id": "https://openalex.org/keywords/social-pressure",
+     "display_name": "social pressure",
+     "score": 0.7099999785423279
+    },
+    {
+     "id": "https://openalex.org/keywords/social-support",
+     "display_name": "social support",
+     "score": 0.6919999718666077
+    },
+    {
+     "id": "https://openalex.org/keywords/gender-differences",
+     "display_name": "gender differences",
+     "score": 0.7870000004768372
+    },
+    {
+     "id": "https://openalex.org/keywords/age-differences",
+     "display_name": "age differences",
+     "score": 0.9890000224113464
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.739799976348877
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.6442000269889832
+    },
+    {
+     "id": "https://openalex.org/C518677369",
+     "wikidata": "https://www.wikidata.org/wiki/Q202833",
+     "display_name": "Social media",
+     "level": 2,
+     "score": 0.5627999901771545
+    },
+    {
+     "id": "https://openalex.org/C142853389",
+     "wikidata": "https://www.wikidata.org/wiki/Q744778",
+     "display_name": "Association (psychology)",
+     "level": 2,
+     "score": 0.4560000002384186
+    },
+    {
+     "id": "https://openalex.org/C108170787",
+     "wikidata": "https://www.wikidata.org/wiki/Q3951828",
+     "display_name": "Agency (philosophy)",
+     "level": 2,
+     "score": 0.43290001153945923
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.43220001459121704
+    },
+    {
+     "id": "https://openalex.org/C187288502",
+     "wikidata": "https://www.wikidata.org/wiki/Q641118",
+     "display_name": "Personality",
+     "level": 2,
+     "score": 0.42419999837875366
+    },
+    {
+     "id": "https://openalex.org/C138496976",
+     "wikidata": "https://www.wikidata.org/wiki/Q175002",
+     "display_name": "Developmental psychology",
+     "level": 1,
+     "score": 0.39469999074935913
+    },
+    {
+     "id": "https://openalex.org/C2778087770",
+     "wikidata": "https://www.wikidata.org/wiki/Q2297111",
+     "display_name": "Social support",
+     "level": 2,
+     "score": 0.34389999508857727
+    },
+    {
+     "id": "https://openalex.org/C205545832",
+     "wikidata": "https://www.wikidata.org/wiki/Q17156455",
+     "display_name": "Young adult",
+     "level": 2,
+     "score": 0.3208000063896179
+    },
+    {
+     "id": "https://openalex.org/C3019858935",
+     "wikidata": "https://www.wikidata.org/wiki/Q4340209",
+     "display_name": "Depressive symptoms",
+     "level": 3,
+     "score": 0.31470000743865967
+    },
+    {
+     "id": "https://openalex.org/C110379092",
+     "wikidata": "https://www.wikidata.org/wiki/Q1571836",
+     "display_name": "Social environment",
+     "level": 2,
+     "score": 0.29499998688697815
+    },
+    {
+     "id": "https://openalex.org/C130064352",
+     "wikidata": "https://www.wikidata.org/wiki/Q853725",
+     "display_name": "Social relation",
+     "level": 2,
+     "score": 0.29350000619888306
+    },
+    {
+     "id": "https://openalex.org/C2780069185",
+     "wikidata": "https://www.wikidata.org/wiki/Q7977945",
+     "display_name": "Equivalence (formal languages)",
+     "level": 2,
+     "score": 0.2784999907016754
+    },
+    {
+     "id": "https://openalex.org/C131158328",
+     "wikidata": "https://www.wikidata.org/wiki/Q1307337",
+     "display_name": "Social influence",
+     "level": 2,
+     "score": 0.2709999978542328
+    },
+    {
+     "id": "https://openalex.org/C99454951",
+     "wikidata": "https://www.wikidata.org/wiki/Q932068",
+     "display_name": "Environmental health",
+     "level": 1,
+     "score": 0.25850000977516174
+    },
+    {
+     "id": "https://openalex.org/C2776035688",
+     "wikidata": "https://www.wikidata.org/wiki/Q1606558",
+     "display_name": "Affect (linguistics)",
+     "level": 2,
+     "score": 0.2581000030040741
+    },
+    {
+     "id": "https://openalex.org/C198477413",
+     "wikidata": "https://www.wikidata.org/wiki/Q7647069",
+     "display_name": "Survey data collection",
+     "level": 2,
+     "score": 0.2556000053882599
+    }
+   ],
+   "mesh": [],
+   "locations_count": 2,
+   "locations": [
+    {
+     "id": "doi:10.1016/j.chbr.2026.101433",
+     "doi": "https://doi.org/10.1016/j.chbr.2026.101433",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1016/j.chbr.2026.101433",
+     "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2451958826005075/pdf",
+     "source": {
+      "id": "https://openalex.org/S4210198611",
+      "display_name": "Computers in Human Behavior Reports",
+      "issn_l": "2451-9588",
+      "issn": [
+       "2451-9588"
+      ],
+      "is_oa": true,
+      "is_in_doaj": true,
+      "is_core": true,
+      "listed_in": [
+       "cwts-core",
+       "doaj",
+       "jufo-1",
+       "norway-1",
+       "poland-20",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310320990",
+      "host_organization_name": "Elsevier BV",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320990"
+      ],
+      "host_organization_lineage_names": [
+       "Elsevier BV"
+      ],
+      "type": "journal"
+     },
+     "license": "cc-by-nc-nd",
+     "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Computers in Human Behavior Reports",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "doi:10.2139/ssrn.5893629",
+     "doi": "https://doi.org/10.2139/ssrn.5893629",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.2139/ssrn.5893629",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4210172589",
+      "display_name": "SSRN Electronic Journal",
+      "issn_l": "1556-5068",
+      "issn": [
+       "1556-5068"
+      ],
+      "is_oa": true,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I1318003438",
+      "host_organization_name": "RELX Group (Netherlands)",
+      "host_organization_lineage": [
+       "https://openalex.org/I1318003438"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "submittedVersion",
+     "is_accepted": false,
+     "is_published": false,
+     "raw_source_name": null,
+     "raw_type": "posted-content"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1016/j.chbr.2026.101433",
+    "doi": "https://doi.org/10.1016/j.chbr.2026.101433",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1016/j.chbr.2026.101433",
+    "pdf_url": "https://www.sciencedirect.com/science/article/pii/S2451958826005075/pdf",
+    "source": {
+     "id": "https://openalex.org/S4210198611",
+     "display_name": "Computers in Human Behavior Reports",
+     "issn_l": "2451-9588",
+     "issn": [
+      "2451-9588"
+     ],
+     "is_oa": true,
+     "is_in_doaj": true,
+     "is_core": true,
+     "listed_in": [
+      "cwts-core",
+      "doaj",
+      "jufo-1",
+      "norway-1",
+      "poland-20",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310320990",
+     "host_organization_name": "Elsevier BV",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320990"
+     ],
+     "host_organization_lineage_names": [
+      "Elsevier BV"
+     ],
+     "type": "journal"
+    },
+    "license": "cc-by-nc-nd",
+    "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Computers in Human Behavior Reports",
+    "raw_type": "journal-article"
+   },
+   "sustainable_development_goals": [
+    {
+     "score": 0.9476000070571899,
+     "display_name": "Good health and well-being",
+     "id": "https://metadata.un.org/sdg/3"
+    }
+   ],
+   "study_designs": [
+    {
+     "display_name": "Observational Study",
+     "id": "https://openalex.org/study-designs/observational-study"
+    }
+   ],
+   "awards": [],
+   "funders": [
+    {
+     "id": "https://openalex.org/F4320313141",
+     "display_name": "Gobierno del Principado de Asturias",
+     "ror": "https://ror.org/05mj4yh71"
+    },
+    {
+     "id": "https://openalex.org/F4320330256",
+     "display_name": "Fundaci\u00f3n Bancaria Caixa d'Estalvis i Pensions de Barcelona",
+     "ror": "https://ror.org/05r3yzw86"
+    },
+    {
+     "id": "https://openalex.org/F4320335598",
+     "display_name": "Agencia Estatal de Investigaci\u00f3n",
+     "ror": "https://ror.org/003x0zc53"
+    }
+   ],
+   "has_content": {
+    "grobid_xml": true,
+    "pdf": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7114914688.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7114914688.grobid-xml"
+   },
+   "referenced_works_count": 66,
+   "referenced_works": [
+    "https://openalex.org/W1590139962",
+    "https://openalex.org/W1641003075",
+    "https://openalex.org/W1802927910",
+    "https://openalex.org/W1980555794",
+    "https://openalex.org/W2018076297",
+    "https://openalex.org/W2029087690",
+    "https://openalex.org/W2029487046",
+    "https://openalex.org/W2054785465",
+    "https://openalex.org/W2059262594",
+    "https://openalex.org/W2062181166",
+    "https://openalex.org/W2110004174",
+    "https://openalex.org/W2137810726",
+    "https://openalex.org/W2151548255",
+    "https://openalex.org/W2169863498",
+    "https://openalex.org/W2507943495",
+    "https://openalex.org/W2745126546",
+    "https://openalex.org/W2775514829",
+    "https://openalex.org/W2790166049",
+    "https://openalex.org/W2791544114",
+    "https://openalex.org/W2797202416",
+    "https://openalex.org/W2809106305",
+    "https://openalex.org/W2907837288",
+    "https://openalex.org/W2913707464",
+    "https://openalex.org/W2920914106",
+    "https://openalex.org/W2945677974",
+    "https://openalex.org/W2989673547",
+    "https://openalex.org/W3082921161",
+    "https://openalex.org/W3087305044",
+    "https://openalex.org/W3089553694",
+    "https://openalex.org/W3126075197",
+    "https://openalex.org/W3128068629",
+    "https://openalex.org/W3128520210",
+    "https://openalex.org/W3168589281",
+    "https://openalex.org/W3207266959",
+    "https://openalex.org/W4206219090",
+    "https://openalex.org/W4210942560",
+    "https://openalex.org/W4220934927",
+    "https://openalex.org/W4231760770",
+    "https://openalex.org/W4285091705",
+    "https://openalex.org/W4297519284",
+    "https://openalex.org/W4309756426",
+    "https://openalex.org/W4313305434",
+    "https://openalex.org/W4317037305",
+    "https://openalex.org/W4319030839",
+    "https://openalex.org/W4327573625",
+    "https://openalex.org/W4386805097",
+    "https://openalex.org/W4392215427",
+    "https://openalex.org/W4392507474",
+    "https://openalex.org/W4395087342",
+    "https://openalex.org/W4395691695",
+    "https://openalex.org/W4396694082",
+    "https://openalex.org/W4399969066",
+    "https://openalex.org/W4402356110",
+    "https://openalex.org/W4402359477",
+    "https://openalex.org/W4404501494",
+    "https://openalex.org/W4404698781",
+    "https://openalex.org/W4408888005",
+    "https://openalex.org/W4410412383",
+    "https://openalex.org/W4411611749",
+    "https://openalex.org/W4411754104",
+    "https://openalex.org/W4412902117",
+    "https://openalex.org/W4413928833",
+    "https://openalex.org/W4414138193",
+    "https://openalex.org/W4414167629",
+    "https://openalex.org/W7203645746",
+    "https://openalex.org/W7219426644"
+   ],
+   "related_works": [
+    "https://openalex.org/W7221031988",
+    "https://openalex.org/W7164785021",
+    "https://openalex.org/W4408979302",
+    "https://openalex.org/W2342755680",
+    "https://openalex.org/W2585381121",
+    "https://openalex.org/W3049599056",
+    "https://openalex.org/W4391260035",
+    "https://openalex.org/W4313644841",
+    "https://openalex.org/W7220459528",
+    "https://openalex.org/W2561306977"
+   ],
+   "abstract_inverted_index": {
+    "Drawing": [
+     0
+    ],
+    "from": [
+     1,
+     96,
+     113
+    ],
+    "the": [
+     2,
+     29,
+     36,
+     114,
+     170,
+     173,
+     194,
+     197,
+     219
+    ],
+    "literature": [
+     3
+    ],
+    "on": [
+     4,
+     51,
+     67,
+     238
+    ],
+    "information": [
+     5,
+     32,
+     65,
+     118,
+     223,
+     236
+    ],
+    "pollution,": [
+     6
+    ],
+    "we": [
+     7,
+     27
+    ],
+    "explored": [
+     8
+    ],
+    "whether": [
+     9
+    ],
+    "exposure": [
+     10,
+     62
+    ],
+    "to": [
+     11,
+     34,
+     38,
+     43,
+     63,
+     110,
+     234
+    ],
+    "polluted": [
+     12,
+     45
+    ],
+    "content": [
+     13,
+     46
+    ],
+    "about": [
+     14,
+     47
+    ],
+    "users'": [
+     15
+    ],
+    "social": [
+     16,
+     49,
+     52,
+     68,
+     140,
+     151,
+     160,
+     177,
+     239
+    ],
+    "environment": [
+     17,
+     50
+    ],
+    "might": [
+     18
+    ],
+    "influence": [
+     19
+    ],
+    "users\u2019": [
+     20
+    ],
+    "mental": [
+     21
+    ],
+    "health.": [
+     22
+    ],
+    "To": [
+     23
+    ],
+    "achieve": [
+     24
+    ],
+    "this": [
+     25,
+     58
+    ],
+    "goal,": [
+     26
+    ],
+    "proposed": [
+     28
+    ],
+    "term": [
+     30
+    ],
+    "\u201crelational": [
+     31
+    ],
+    "pollution\u201d": [
+     33
+    ],
+    "describe": [
+     35
+    ],
+    "extent": [
+     37
+    ],
+    "which": [
+     39
+    ],
+    "users": [
+     40
+    ],
+    "are": [
+     41
+    ],
+    "exposed": [
+     42
+    ],
+    "harmful,": [
+     44
+    ],
+    "their": [
+     48
+    ],
+    "media.": [
+     53
+    ],
+    "The": [
+     54
+    ],
+    "working": [
+     55
+    ],
+    "hypothesis": [
+     56
+    ],
+    "of": [
+     57,
+     101,
+     172,
+     176,
+     188,
+     196
+    ],
+    "study": [
+     59
+    ],
+    "was": [
+     60
+    ],
+    "that": [
+     61,
+     218
+    ],
+    "relational": [
+     64,
+     222,
+     235
+    ],
+    "pollution": [
+     66,
+     119,
+     224,
+     237
+    ],
+    "media": [
+     69,
+     141,
+     178,
+     240
+    ],
+    "is": [
+     70,
+     241,
+     249
+    ],
+    "associated": [
+     71,
+     250
+    ],
+    "with": [
+     72,
+     125,
+     251
+    ],
+    "higher": [
+     73
+    ],
+    "depressive": [
+     74,
+     126,
+     226,
+     253
+    ],
+    "symptoms": [
+     75,
+     127,
+     227
+    ],
+    "among": [
+     76,
+     243
+    ],
+    "adolescents": [
+     77,
+     244
+    ],
+    "and": [
+     78,
+     84,
+     89,
+     104,
+     146,
+     158,
+     166,
+     180,
+     186,
+     207,
+     214,
+     225,
+     230,
+     245,
+     248
+    ],
+    "young": [
+     79,
+     105,
+     246
+    ],
+    "adults.": [
+     80
+    ],
+    "Multivariate": [
+     81
+    ],
+    "linear": [
+     82
+    ],
+    "regression": [
+     83
+    ],
+    "multiple-group": [
+     85
+    ],
+    "analyses": [
+     86,
+     200
+    ],
+    "across": [
+     87
+    ],
+    "gender": [
+     88,
+     229
+    ],
+    "age-group": [
+     90
+    ],
+    "models": [
+     91
+    ],
+    "were": [
+     92
+    ],
+    "conducted": [
+     93
+    ],
+    "using": [
+     94
+    ],
+    "data": [
+     95
+    ],
+    "a": [
+     97,
+     121
+    ],
+    "nationally": [
+     98
+    ],
+    "representative": [
+     99
+    ],
+    "survey": [
+     100
+    ],
+    "1002": [
+     102
+    ],
+    "adolescent": [
+     103
+    ],
+    "adult": [
+     106
+    ],
+    "participants": [
+     107
+    ],
+    "aged": [
+     108
+    ],
+    "14": [
+     109
+    ],
+    "18": [
+     111
+    ],
+    "years": [
+     112
+    ],
+    "Spanish": [
+     115
+    ],
+    "population.": [
+     116
+    ],
+    "Relational": [
+     117
+    ],
+    "showed": [
+     120
+    ],
+    "significant": [
+     122
+    ],
+    "positive": [
+     123
+    ],
+    "association": [
+     124,
+     220
+    ],
+    "(\u03b2": [
+     128
+    ],
+    "=": [
+     129
+    ],
+    ".08,": [
+     130
+    ],
+    "p": [
+     131
+    ],
+    "<": [
+     132
+    ],
+    ".01)": [
+     133
+    ],
+    "after": [
+     134
+    ],
+    "accounting": [
+     135
+    ],
+    "for": [
+     136
+    ],
+    "different": [
+     137
+    ],
+    "personality": [
+     138
+    ],
+    "characteristics,": [
+     139
+    ],
+    "use": [
+     142
+    ],
+    "mindsets": [
+     143
+    ],
+    "(i.e.,": [
+     144,
+     150
+    ],
+    "agency": [
+     145
+    ],
+    "valence),": [
+     147
+    ],
+    "digital": [
+     148
+    ],
+    "stress": [
+     149
+    ],
+    "pressure": [
+     152
+    ],
+    "or": [
+     153,
+     190
+    ],
+    "availability": [
+     154
+    ],
+    "stress,": [
+     155
+    ],
+    "approval": [
+     156
+    ],
+    "anxiety,": [
+     157
+    ],
+    "FoMO),": [
+     159
+    ],
+    "support,": [
+     161
+    ],
+    "sociodemographic": [
+     162
+    ],
+    "characteristics": [
+     163
+    ],
+    "(gender,": [
+     164
+    ],
+    "age,": [
+     165
+    ],
+    "studying": [
+     167
+    ],
+    "status": [
+     168
+    ],
+    "at": [
+     169
+    ],
+    "time": [
+     171
+    ],
+    "survey),": [
+     174
+    ],
+    "frequency": [
+     175
+    ],
+    "use,": [
+     179
+    ],
+    "systematic": [
+     181
+    ],
+    "response": [
+     182
+    ],
+    "bias": [
+     183
+    ],
+    "(social": [
+     184
+    ],
+    "desirability": [
+     185
+    ],
+    "presence": [
+     187
+    ],
+    "parents": [
+     189
+    ],
+    "legal": [
+     191
+    ],
+    "guardians": [
+     192
+    ],
+    "during": [
+     193
+    ],
+    "completion": [
+     195
+    ],
+    "questionnaire).": [
+     198
+    ],
+    "Multiple-group": [
+     199
+    ],
+    "indicated": [
+     201
+    ],
+    "equivalence": [
+     202
+    ],
+    "in": [
+     203
+    ],
+    "results": [
+     204
+    ],
+    "between": [
+     205,
+     212,
+     221
+    ],
+    "boys": [
+     206
+    ],
+    "girls,": [
+     208
+    ],
+    "as": [
+     209,
+     211
+    ],
+    "well": [
+     210
+    ],
+    "younger": [
+     213
+    ],
+    "older": [
+     215
+    ],
+    "participants,": [
+     216
+    ],
+    "suggesting": [
+     217
+    ],
+    "transcends": [
+     228
+    ],
+    "age": [
+     231
+    ],
+    "demographics.": [
+     232
+    ],
+    "Exposure": [
+     233
+    ],
+    "pervasive": [
+     242
+    ],
+    "adults": [
+     247
+    ],
+    "increased": [
+     252
+    ],
+    "symptoms.": [
+     254
+    ]
+   },
+   "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W7114914688",
+   "counts_by_year": [],
+   "updated_date": "2026-11-23T12:01:36.302904",
+   "created_date": "2025-12-12T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7236565024",
+   "doi": "https://doi.org/10.1542/peds.2026-076589",
+   "title": "A National Pediatric Primary Care Research Agenda",
+   "display_name": "A National Pediatric Primary Care Research Agenda",
+   "alternate_titles": [],
+   "publication_year": 2026,
+   "publication_date": "2026-11-20",
+   "ids": {
+    "openalex": "https://openalex.org/W7236565024",
+    "doi": "https://doi.org/10.1542/peds.2026-076589",
+    "pmid": "https://pubmed.ncbi.nlm.nih.gov/43057312"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1542/peds.2026-076589",
+    "doi": "https://doi.org/10.1542/peds.2026-076589",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1542/peds.2026-076589",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S77494981",
+     "display_name": "PEDIATRICS",
+     "issn_l": "0031-4005",
+     "issn": [
+      "0031-4005",
+      "1098-4275"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "anvur-class-a",
+      "anvur-scientific",
+      "cwts-core",
+      "dongbi-a",
+      "doyens",
+      "erih-plus",
+      "jufo-3",
+      "ki-jl-3",
+      "medline",
+      "norway-2",
+      "poland-200",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310315734",
+     "host_organization_name": "American Academy of Pediatrics",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310315734"
+     ],
+     "host_organization_lineage_names": [
+      "American Academy of Pediatrics"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Pediatrics",
+    "raw_type": "journal-article"
+   },
+   "parent_works": [],
+   "lineage": [
+    "https://openalex.org/W7236565024"
+   ],
+   "child_works_count": 0,
+   "pull_notice_works": [],
+   "type": "article",
+   "is_traditional": true,
+   "indexed_in": [
+    "crossref",
+    "pubmed"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5007545587",
+      "display_name": "Alexander G. Fiks",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0001-6525-8764",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-6525-8764"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1335321130",
+       "display_name": "Children's Hospital of Philadelphia",
+       "ror": "https://ror.org/01z7r7q48",
+       "country_code": "US",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I1335321130"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": true,
+     "contributor_roles": [],
+     "raw_author_name": "Alexander G. Fiks",
+     "raw_affiliation_strings": [
+      "1Department of Pediatrics, Children\u2019s Hospital of Philadelphia, Philadelphia, Pennsylvania"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "1Department of Pediatrics, Children\u2019s Hospital of Philadelphia, Philadelphia, Pennsylvania",
+       "institution_ids": [
+        "https://openalex.org/I1335321130"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5062127071",
+      "display_name": "Everly Macario",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0003-1765-7335",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-1765-7335"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I1302094580",
+       "display_name": "American Academy of Pediatrics",
+       "ror": "https://ror.org/0512xad50",
+       "country_code": "US",
+       "type": "nonprofit",
+       "lineage": [
+        "https://openalex.org/I1302094580"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Everly Macario",
+     "raw_affiliation_strings": [
+      "2Primary Care Research, American Academy of Pediatrics, Itasca, Illinois"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "2Primary Care Research, American Academy of Pediatrics, Itasca, Illinois",
+       "institution_ids": [
+        "https://openalex.org/I1302094580"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5081574419",
+      "display_name": "Melissa S. Stockwell",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0002-2113-7247",
+      "observed_orcids": [
+       "https://orcid.org/0000-0002-2113-7247"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I78577930",
+       "display_name": "Columbia University",
+       "ror": "https://ror.org/00hj8s172",
+       "country_code": "US",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I78577930"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Melissa S. Stockwell",
+     "raw_affiliation_strings": [
+      "3Division of Child and Adolescent Health, Department of Pediatrics, Columbia University Vagelos College of Physicians and Surgeons and Department of Population and Family Health, Columbia University Mailman School of Public Health, New York, New York"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "3Division of Child and Adolescent Health, Department of Pediatrics, Columbia University Vagelos College of Physicians and Surgeons and Department of Population and Family Health, Columbia University Mailman School of Public Health, New York, New York",
+       "institution_ids": [
+        "https://openalex.org/I78577930"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5079727142",
+      "display_name": "Eliana M. Perrin",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0001-8876-730X",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-8876-730X"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I145311948",
+       "display_name": "Johns Hopkins University",
+       "ror": "https://ror.org/00za53h95",
+       "country_code": "US",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I145311948"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Eliana M. Perrin",
+     "raw_affiliation_strings": [
+      "4Department of Pediatrics, School of Medicine, School of Nursing, Johns Hopkins University, Baltimore, Maryland"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "4Department of Pediatrics, School of Medicine, School of Nursing, Johns Hopkins University, Baltimore, Maryland",
+       "institution_ids": [
+        "https://openalex.org/I145311948"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5088060708",
+      "display_name": "Michael D. Cabana",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0001-9376-2167",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-9376-2167"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I129975664",
+       "display_name": "Albert Einstein College of Medicine",
+       "ror": "https://ror.org/05cf8a891",
+       "country_code": "US",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I129975664",
+        "https://openalex.org/I4210112371"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I4210135976",
+       "display_name": "Children's Hospital at Montefiore",
+       "ror": "https://ror.org/03n0fp725",
+       "country_code": "US",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I4210135976"
+       ]
+      }
+     ],
+     "countries": [
+      "US"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Michael D. Cabana",
+     "raw_affiliation_strings": [
+      "5Department of Pediatrics, Albert Einstein College of Medicine and the Children\u2019s Hospital at Montefiore, Bronx, New York"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "5Department of Pediatrics, Albert Einstein College of Medicine and the Children\u2019s Hospital at Montefiore, Bronx, New York",
+       "institution_ids": [
+        "https://openalex.org/I129975664",
+        "https://openalex.org/I4210135976"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 6,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5007545587"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I1335321130"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "is_authors_truncated": false,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "reviewed_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.0,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "e2026076589",
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_pulled": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T13883",
+    "display_name": "Child and Adolescent Health",
+    "score": 0.9804999828338623,
+    "subfield": {
+     "id": "https://openalex.org/subfields/2735",
+     "display_name": "Pediatrics, Perinatology and Child Health"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/27",
+     "display_name": "Medicine"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/4",
+     "display_name": "Health Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T13883",
+     "display_name": "Child and Adolescent Health",
+     "score": 0.9804999828338623,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2735",
+      "display_name": "Pediatrics, Perinatology and Child Health"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11590",
+     "display_name": "Primary Care and Health Outcomes",
+     "score": 0.010599999688565731,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2714",
+      "display_name": "Family Practice"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12823",
+     "display_name": "Adolescent and Pediatric Healthcare",
+     "score": 0.0026000000070780516,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2735",
+      "display_name": "Pediatrics, Perinatology and Child Health"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/pediatric-primary-care",
+     "display_name": "pediatric primary care",
+     "score": 0.9990000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/research-agenda-setting",
+     "display_name": "research agenda setting",
+     "score": 0.8420000076293945
+    },
+    {
+     "id": "https://openalex.org/keywords/child-mental-health",
+     "display_name": "child mental health",
+     "score": 0.7889999747276306
+    },
+    {
+     "id": "https://openalex.org/keywords/childhood-obesity",
+     "display_name": "childhood obesity",
+     "score": 0.9629999995231628
+    },
+    {
+     "id": "https://openalex.org/keywords/pediatric-workforce",
+     "display_name": "pediatric workforce",
+     "score": 0.9900000095367432
+    },
+    {
+     "id": "https://openalex.org/keywords/injury-prevention",
+     "display_name": "injury prevention",
+     "score": 0.9950000047683716
+    },
+    {
+     "id": "https://openalex.org/keywords/adolescent-health",
+     "display_name": "adolescent health",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/health-care-access",
+     "display_name": "health care access",
+     "score": 0.6729999780654907
+    },
+    {
+     "id": "https://openalex.org/keywords/care-coordination",
+     "display_name": "care coordination",
+     "score": 0.8259999752044678
+    },
+    {
+     "id": "https://openalex.org/keywords/parent-and-caregiver-support",
+     "display_name": "parent and caregiver support",
+     "score": 0.7279999852180481
+    },
+    {
+     "id": "https://openalex.org/keywords/health-technology",
+     "display_name": "health technology",
+     "score": 0.5550000071525574
+    },
+    {
+     "id": "https://openalex.org/keywords/child-well-being",
+     "display_name": "child well-being",
+     "score": 0.5440000295639038
+    },
+    {
+     "id": "https://openalex.org/keywords/anticipatory-guidance",
+     "display_name": "anticipatory guidance",
+     "score": 0.5950000286102295
+    },
+    {
+     "id": "https://openalex.org/keywords/health-supervision",
+     "display_name": "health supervision",
+     "score": 0.5799999833106995
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C71924100",
+     "wikidata": "https://www.wikidata.org/wiki/Q11190",
+     "display_name": "Medicine",
+     "level": 0,
+     "score": 0.7950999736785889
+    },
+    {
+     "id": "https://openalex.org/C2776916960",
+     "wikidata": "https://www.wikidata.org/wiki/Q637156",
+     "display_name": "Warrant",
+     "level": 2,
+     "score": 0.6111999750137329
+    },
+    {
+     "id": "https://openalex.org/C2984752397",
+     "wikidata": "https://www.wikidata.org/wiki/Q3259956",
+     "display_name": "Primary care",
+     "level": 2,
+     "score": 0.5457000136375427
+    },
+    {
+     "id": "https://openalex.org/C159110408",
+     "wikidata": "https://www.wikidata.org/wiki/Q121176",
+     "display_name": "Nursing",
+     "level": 1,
+     "score": 0.5357000231742859
+    },
+    {
+     "id": "https://openalex.org/C2779530757",
+     "wikidata": "https://www.wikidata.org/wiki/Q1207505",
+     "display_name": "Quality (philosophy)",
+     "level": 2,
+     "score": 0.4803999960422516
+    },
+    {
+     "id": "https://openalex.org/C2992125907",
+     "wikidata": "https://www.wikidata.org/wiki/Q1741837",
+     "display_name": "Child health",
+     "level": 2,
+     "score": 0.4722000062465668
+    },
+    {
+     "id": "https://openalex.org/C134362201",
+     "wikidata": "https://www.wikidata.org/wiki/Q317309",
+     "display_name": "Mental health",
+     "level": 2,
+     "score": 0.4514000117778778
+    },
+    {
+     "id": "https://openalex.org/C160735492",
+     "wikidata": "https://www.wikidata.org/wiki/Q31207",
+     "display_name": "Health care",
+     "level": 2,
+     "score": 0.41429999470710754
+    },
+    {
+     "id": "https://openalex.org/C56995899",
+     "wikidata": "https://www.wikidata.org/wiki/Q1126687",
+     "display_name": "Focus group",
+     "level": 2,
+     "score": 0.4020000100135803
+    },
+    {
+     "id": "https://openalex.org/C98045186",
+     "wikidata": "https://www.wikidata.org/wiki/Q205663",
+     "display_name": "Process (computing)",
+     "level": 2,
+     "score": 0.3880000114440918
+    },
+    {
+     "id": "https://openalex.org/C2779473830",
+     "wikidata": "https://www.wikidata.org/wiki/Q1540899",
+     "display_name": "MEDLINE",
+     "level": 2,
+     "score": 0.3594000041484833
+    },
+    {
+     "id": "https://openalex.org/C509550671",
+     "wikidata": "https://www.wikidata.org/wiki/Q126945",
+     "display_name": "Medical education",
+     "level": 1,
+     "score": 0.35839998722076416
+    },
+    {
+     "id": "https://openalex.org/C163432668",
+     "wikidata": "https://www.wikidata.org/wiki/Q623543",
+     "display_name": "Primary health care",
+     "level": 3,
+     "score": 0.3095000088214874
+    },
+    {
+     "id": "https://openalex.org/C512399662",
+     "wikidata": "https://www.wikidata.org/wiki/Q3505712",
+     "display_name": "Family medicine",
+     "level": 1,
+     "score": 0.3089999854564667
+    },
+    {
+     "id": "https://openalex.org/C109260823",
+     "wikidata": "https://www.wikidata.org/wiki/Q407784",
+     "display_name": "Child development",
+     "level": 2,
+     "score": 0.30570000410079956
+    },
+    {
+     "id": "https://openalex.org/C2993037610",
+     "wikidata": "https://www.wikidata.org/wiki/Q1455871",
+     "display_name": "Child care",
+     "level": 2,
+     "score": 0.30140000581741333
+    },
+    {
+     "id": "https://openalex.org/C26517878",
+     "wikidata": "https://www.wikidata.org/wiki/Q228039",
+     "display_name": "Key (lock)",
+     "level": 2,
+     "score": 0.2872999906539917
+    },
+    {
+     "id": "https://openalex.org/C39549134",
+     "wikidata": "https://www.wikidata.org/wiki/Q133080",
+     "display_name": "Public relations",
+     "level": 1,
+     "score": 0.2745000123977661
+    },
+    {
+     "id": "https://openalex.org/C162446236",
+     "wikidata": "https://www.wikidata.org/wiki/Q653137",
+     "display_name": "Content analysis",
+     "level": 2,
+     "score": 0.2689000070095062
+    },
+    {
+     "id": "https://openalex.org/C71405471",
+     "wikidata": "https://www.wikidata.org/wiki/Q757012",
+     "display_name": "Quality management",
+     "level": 3,
+     "score": 0.2685000002384186
+    },
+    {
+     "id": "https://openalex.org/C2778087770",
+     "wikidata": "https://www.wikidata.org/wiki/Q2297111",
+     "display_name": "Social support",
+     "level": 2,
+     "score": 0.26460000872612
+    },
+    {
+     "id": "https://openalex.org/C2780877353",
+     "wikidata": "https://www.wikidata.org/wiki/Q2518253",
+     "display_name": "Health services research",
+     "level": 3,
+     "score": 0.2583000063896179
+    },
+    {
+     "id": "https://openalex.org/C184356942",
+     "wikidata": "https://www.wikidata.org/wiki/Q830382",
+     "display_name": "Best practice",
+     "level": 2,
+     "score": 0.25690001249313354
+    }
+   ],
+   "mesh": [],
+   "locations_count": 2,
+   "locations": [
+    {
+     "id": "doi:10.1542/peds.2026-076589",
+     "doi": "https://doi.org/10.1542/peds.2026-076589",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1542/peds.2026-076589",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S77494981",
+      "display_name": "PEDIATRICS",
+      "issn_l": "0031-4005",
+      "issn": [
+       "0031-4005",
+       "1098-4275"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "anvur-class-a",
+       "anvur-scientific",
+       "cwts-core",
+       "dongbi-a",
+       "doyens",
+       "erih-plus",
+       "jufo-3",
+       "ki-jl-3",
+       "medline",
+       "norway-2",
+       "poland-200",
+       "russia-white-list-1",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310315734",
+      "host_organization_name": "American Academy of Pediatrics",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310315734"
+      ],
+      "host_organization_lineage_names": [
+       "American Academy of Pediatrics"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Pediatrics",
+     "raw_type": "journal-article"
+    },
+    {
+     "id": "pmid:43057312",
+     "doi": null,
+     "is_oa": false,
+     "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/43057312",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S4306525036",
+      "display_name": "PubMed",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/I1299303238",
+      "host_organization_name": "National Institutes of Health",
+      "host_organization_lineage": [
+       "https://openalex.org/I1299303238"
+      ],
+      "host_organization_lineage_names": [],
+      "type": "repository"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Pediatrics",
+     "raw_type": "Journal Article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [
+    {
+     "score": 0.9940000176429749,
+     "display_name": "Good health and well-being",
+     "id": "https://metadata.un.org/sdg/3"
+    }
+   ],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "grobid_xml": false,
+    "pdf": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 138,
+   "referenced_works": [
+    "https://openalex.org/W40082950",
+    "https://openalex.org/W52579478",
+    "https://openalex.org/W1849514053",
+    "https://openalex.org/W1980144416",
+    "https://openalex.org/W2003197503",
+    "https://openalex.org/W2006110699",
+    "https://openalex.org/W2019909995",
+    "https://openalex.org/W2094055149",
+    "https://openalex.org/W2097098731",
+    "https://openalex.org/W2100085670",
+    "https://openalex.org/W2111053427",
+    "https://openalex.org/W2111390745",
+    "https://openalex.org/W2115889877",
+    "https://openalex.org/W2126610786",
+    "https://openalex.org/W2137173415",
+    "https://openalex.org/W2137870987",
+    "https://openalex.org/W2146821019",
+    "https://openalex.org/W2149469594",
+    "https://openalex.org/W2155340741",
+    "https://openalex.org/W2157484043",
+    "https://openalex.org/W2157631643",
+    "https://openalex.org/W2163544197",
+    "https://openalex.org/W2166841145",
+    "https://openalex.org/W2210659792",
+    "https://openalex.org/W2213468520",
+    "https://openalex.org/W2256736827",
+    "https://openalex.org/W2308411977",
+    "https://openalex.org/W2399158280",
+    "https://openalex.org/W2416916031",
+    "https://openalex.org/W2511702727",
+    "https://openalex.org/W2512277629",
+    "https://openalex.org/W2517830712",
+    "https://openalex.org/W2521211380",
+    "https://openalex.org/W2560479595",
+    "https://openalex.org/W2586454114",
+    "https://openalex.org/W2590899545",
+    "https://openalex.org/W2596838841",
+    "https://openalex.org/W2620990247",
+    "https://openalex.org/W2767105717",
+    "https://openalex.org/W2792314120",
+    "https://openalex.org/W2792792601",
+    "https://openalex.org/W2883970607",
+    "https://openalex.org/W2890366637",
+    "https://openalex.org/W2898247900",
+    "https://openalex.org/W2902167288",
+    "https://openalex.org/W2912843186",
+    "https://openalex.org/W2915002343",
+    "https://openalex.org/W2950859306",
+    "https://openalex.org/W2952540066",
+    "https://openalex.org/W2953617836",
+    "https://openalex.org/W2956031842",
+    "https://openalex.org/W2974087526",
+    "https://openalex.org/W2983468551",
+    "https://openalex.org/W2987568643",
+    "https://openalex.org/W3010897478",
+    "https://openalex.org/W3021720752",
+    "https://openalex.org/W3022734810",
+    "https://openalex.org/W3036970296",
+    "https://openalex.org/W3039124223",
+    "https://openalex.org/W3041162892",
+    "https://openalex.org/W3042613097",
+    "https://openalex.org/W3048517103",
+    "https://openalex.org/W3082773465",
+    "https://openalex.org/W3087656127",
+    "https://openalex.org/W3094743723",
+    "https://openalex.org/W3096590601",
+    "https://openalex.org/W3097590906",
+    "https://openalex.org/W3131592598",
+    "https://openalex.org/W3133743255",
+    "https://openalex.org/W3135148609",
+    "https://openalex.org/W3139037059",
+    "https://openalex.org/W3148182339",
+    "https://openalex.org/W3149032777",
+    "https://openalex.org/W3158162380",
+    "https://openalex.org/W3165011522",
+    "https://openalex.org/W3170823246",
+    "https://openalex.org/W3172730114",
+    "https://openalex.org/W3185777261",
+    "https://openalex.org/W3196292752",
+    "https://openalex.org/W3207998962",
+    "https://openalex.org/W4200411136",
+    "https://openalex.org/W4206158925",
+    "https://openalex.org/W4206909443",
+    "https://openalex.org/W4210566302",
+    "https://openalex.org/W4213189798",
+    "https://openalex.org/W4213428348",
+    "https://openalex.org/W4213436352",
+    "https://openalex.org/W4220844191",
+    "https://openalex.org/W4223973327",
+    "https://openalex.org/W4224133392",
+    "https://openalex.org/W4224286732",
+    "https://openalex.org/W4239641083",
+    "https://openalex.org/W4281653095",
+    "https://openalex.org/W4281662589",
+    "https://openalex.org/W4282972758",
+    "https://openalex.org/W4286449054",
+    "https://openalex.org/W4295082141",
+    "https://openalex.org/W4295902037",
+    "https://openalex.org/W4304957703",
+    "https://openalex.org/W4306674009",
+    "https://openalex.org/W4307813600",
+    "https://openalex.org/W4308767516",
+    "https://openalex.org/W4310641541",
+    "https://openalex.org/W4310959355",
+    "https://openalex.org/W4312101590",
+    "https://openalex.org/W4313857807",
+    "https://openalex.org/W4320482407",
+    "https://openalex.org/W4321851022",
+    "https://openalex.org/W4323066943",
+    "https://openalex.org/W4362522822",
+    "https://openalex.org/W4367047701",
+    "https://openalex.org/W4372204072",
+    "https://openalex.org/W4378072191",
+    "https://openalex.org/W4384627003",
+    "https://openalex.org/W4385476865",
+    "https://openalex.org/W4385630229",
+    "https://openalex.org/W4386160879",
+    "https://openalex.org/W4386525224",
+    "https://openalex.org/W4387660976",
+    "https://openalex.org/W4387691925",
+    "https://openalex.org/W4388627397",
+    "https://openalex.org/W4389506730",
+    "https://openalex.org/W4390068837",
+    "https://openalex.org/W4392379077",
+    "https://openalex.org/W4393382588",
+    "https://openalex.org/W4399352265",
+    "https://openalex.org/W4399774638",
+    "https://openalex.org/W4400577678",
+    "https://openalex.org/W4400798215",
+    "https://openalex.org/W4400873101",
+    "https://openalex.org/W4404013299",
+    "https://openalex.org/W4404686119",
+    "https://openalex.org/W4405721307",
+    "https://openalex.org/W4405877893",
+    "https://openalex.org/W4406685876",
+    "https://openalex.org/W4407204111",
+    "https://openalex.org/W4407955394",
+    "https://openalex.org/W7124720300"
+   ],
+   "related_works": [
+    "https://openalex.org/W2088773152",
+    "https://openalex.org/W1550252098",
+    "https://openalex.org/W7134272127",
+    "https://openalex.org/W4392095668",
+    "https://openalex.org/W4200498815",
+    "https://openalex.org/W2969300171",
+    "https://openalex.org/W2972990845",
+    "https://openalex.org/W2050496419",
+    "https://openalex.org/W2608203799",
+    "https://openalex.org/W4313702397"
+   ],
+   "abstract_inverted_index": {
+    "Pediatric": [
+     0,
+     29
+    ],
+    "primary": [
+     1,
+     239
+    ],
+    "care": [
+     2,
+     187,
+     241
+    ],
+    "(PPC)": [
+     3
+    ],
+    "promotes": [
+     4
+    ],
+    "child": [
+     5,
+     48,
+     104,
+     134,
+     217
+    ],
+    "wellbeing": [
+     6
+    ],
+    "through": [
+     7
+    ],
+    "health": [
+     8,
+     49,
+     240,
+     244
+    ],
+    "supervision,": [
+     9
+    ],
+    "anticipatory": [
+     10
+    ],
+    "guidance,": [
+     11
+    ],
+    "screening,": [
+     12
+    ],
+    "and": [
+     13,
+     53,
+     92,
+     151,
+     178,
+     189,
+     192,
+     197,
+     199,
+     210,
+     234,
+     242
+    ],
+    "intervention.": [
+     14
+    ],
+    "Given": [
+     15
+    ],
+    "an": [
+     16,
+     36,
+     57
+    ],
+    "evolving": [
+     17
+    ],
+    "PPC": [
+     18,
+     43,
+     72,
+     131,
+     228
+    ],
+    "landscape,": [
+     19
+    ],
+    "content": [
+     20,
+     117
+    ],
+    "experts": [
+     21
+    ],
+    "collaborated": [
+     22
+    ],
+    "with": [
+     23,
+     164
+    ],
+    "the": [
+     24,
+     81,
+     84,
+     100,
+     243
+    ],
+    "American": [
+     25
+    ],
+    "Academy": [
+     26
+    ],
+    "of": [
+     27,
+     66,
+     83,
+     127,
+     170,
+     245
+    ],
+    "Pediatrics": [
+     28
+    ],
+    "Research": [
+     30
+    ],
+    "in": [
+     31,
+     35,
+     78,
+     95,
+     123,
+     162
+    ],
+    "Office": [
+     32
+    ],
+    "Settings": [
+     33
+    ],
+    "network": [
+     34
+    ],
+    "iterative,": [
+     37
+    ],
+    "multiyear": [
+     38
+    ],
+    "process": [
+     39,
+     121
+    ],
+    "to": [
+     40,
+     46,
+     108,
+     142,
+     176,
+     207,
+     216,
+     231,
+     237
+    ],
+    "create": [
+     41
+    ],
+    "a": [
+     42,
+     222,
+     225
+    ],
+    "research": [
+     44,
+     64,
+     97,
+     161,
+     229
+    ],
+    "agenda": [
+     45,
+     230
+    ],
+    "advance": [
+     47,
+     238
+    ],
+    "that": [
+     50,
+     159
+    ],
+    "reflects": [
+     51
+    ],
+    "professional": [
+     52
+    ],
+    "family": [
+     54
+    ],
+    "priorities.": [
+     55
+    ],
+    "Using": [
+     56
+    ],
+    "adapted": [
+     58
+    ],
+    "nominal": [
+     59
+    ],
+    "group": [
+     60
+    ],
+    "technique,": [
+     61
+    ],
+    "we": [
+     62,
+     110
+    ],
+    "identified": [
+     63,
+     156
+    ],
+    "areas": [
+     65,
+     94
+    ],
+    "focus": [
+     67
+    ],
+    "based": [
+     68,
+     248
+    ],
+    "on": [
+     69,
+     103,
+     249
+    ],
+    "(1)": [
+     70,
+     133
+    ],
+    "what": [
+     71
+    ],
+    "clinicians": [
+     73
+    ],
+    "said": [
+     74
+    ],
+    "they": [
+     75
+    ],
+    "frequently": [
+     76
+    ],
+    "encounter": [
+     77
+    ],
+    "practice;": [
+     79
+    ],
+    "(2)": [
+     80,
+     137
+    ],
+    "extent": [
+     82
+    ],
+    "problem": [
+     85
+    ],
+    "for": [
+     86,
+     130,
+     182,
+     224
+    ],
+    "families": [
+     87
+    ],
+    "nationally;": [
+     88
+    ],
+    "(3)": [
+     89,
+     139
+    ],
+    "evidence": [
+     90
+    ],
+    "gaps;": [
+     91
+    ],
+    "(4)": [
+     93,
+     145
+    ],
+    "which": [
+     96,
+     202
+    ],
+    "could": [
+     98
+    ],
+    "have": [
+     99
+    ],
+    "highest": [
+     101,
+     128
+    ],
+    "impact": [
+     102
+    ],
+    "health.": [
+     105,
+     154
+    ],
+    "From": [
+     106
+    ],
+    "2022": [
+     107
+    ],
+    "2024,": [
+     109
+    ],
+    "synthesized": [
+     111
+    ],
+    "contributor": [
+     112
+    ],
+    "feedback": [
+     113
+    ],
+    "from": [
+     114
+    ],
+    "8": [
+     115
+    ],
+    "key": [
+     116
+    ],
+    "expert": [
+     118
+    ],
+    "sessions.": [
+     119
+    ],
+    "This": [
+     120,
+     219
+    ],
+    "resulted": [
+     122
+    ],
+    "6": [
+     124,
+     166
+    ],
+    "interconnected": [
+     125
+    ],
+    "domains": [
+     126
+    ],
+    "priority": [
+     129
+    ],
+    "research:": [
+     132
+    ],
+    "mental": [
+     135
+    ],
+    "health,": [
+     136
+    ],
+    "obesity,": [
+     138
+    ],
+    "communicating": [
+     140
+    ],
+    "science": [
+     141
+    ],
+    "support": [
+     143
+    ],
+    "families,": [
+     144
+    ],
+    "pediatric": [
+     146
+    ],
+    "workforce,": [
+     147
+    ],
+    "(5)": [
+     148
+    ],
+    "injury": [
+     149
+    ],
+    "prevention,": [
+     150
+    ],
+    "(6)": [
+     152
+    ],
+    "adolescent": [
+     153
+    ],
+    "We": [
+     155
+    ],
+    "cross-cutting": [
+     157
+    ],
+    "themes": [
+     158,
+     172
+    ],
+    "warrant": [
+     160
+    ],
+    "connection": [
+     163
+    ],
+    "these": [
+     165
+    ],
+    "prioritized": [
+     167
+    ],
+    "domains.": [
+     168
+    ],
+    "Examples": [
+     169
+    ],
+    "such": [
+     171
+    ],
+    "include": [
+     173
+    ],
+    "removing": [
+     174
+    ],
+    "barriers": [
+     175
+    ],
+    "access": [
+     177
+    ],
+    "ensuring": [
+     179
+    ],
+    "quality": [
+     180
+    ],
+    "services": [
+     181
+    ],
+    "all": [
+     183,
+     246
+    ],
+    "children;": [
+     184
+    ],
+    "under-resourced": [
+     185
+    ],
+    "communities;": [
+     186
+    ],
+    "coordination": [
+     188
+    ],
+    "linkages": [
+     190
+    ],
+    "within": [
+     191
+    ],
+    "outside": [
+     193
+    ],
+    "PPC;": [
+     194
+    ],
+    "supporting": [
+     195
+    ],
+    "parents/caregivers;": [
+     196
+    ],
+    "technology": [
+     198
+    ],
+    "social": [
+     200
+    ],
+    "media,": [
+     201
+    ],
+    "can": [
+     203,
+     211
+    ],
+    "serve": [
+     204
+    ],
+    "as": [
+     205
+    ],
+    "tools": [
+     206
+    ],
+    "enhance": [
+     208
+    ],
+    "practice": [
+     209
+    ],
+    "be": [
+     212
+    ],
+    "assets": [
+     213
+    ],
+    "or": [
+     214
+    ],
+    "threats": [
+     215
+    ],
+    "wellbeing.": [
+     218
+    ],
+    "manuscript": [
+     220
+    ],
+    "details": [
+     221
+    ],
+    "vision": [
+     223
+    ],
+    "national,": [
+     226
+    ],
+    "coordinated": [
+     227
+    ],
+    "inform": [
+     232
+    ],
+    "investigators'": [
+     233
+    ],
+    "funders'": [
+     235
+    ],
+    "efforts": [
+     236
+    ],
+    "children": [
+     247
+    ],
+    "our": [
+     250
+    ],
+    "results.": [
+     251
+    ]
+   },
+   "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W7236565024",
+   "counts_by_year": [],
+   "updated_date": "2026-11-22T12:46:00.618207",
+   "created_date": "2026-11-20T00:00:00"
+  }
+ ]
+}

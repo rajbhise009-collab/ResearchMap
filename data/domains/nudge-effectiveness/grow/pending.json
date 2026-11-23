@@ -1,0 +1,2947 @@
+{
+ "batch_id": "5v9y7p65yeuf0he59b4yfjtoxxg4c8gfppft",
+ "slug": "nudge-effectiveness",
+ "submitted_on": "2026-11-23",
+ "submitted_at": 1795451819.105884,
+ "projected_inr": 4.851945,
+ "ledger_recorded": false,
+ "input_source": {
+  "openalex:W7235835293": "abstract",
+  "openalex:W7236316877": "fulltext"
+ },
+ "entries": [
+  {
+   "wid": "W7235835293",
+   "openalex_id": "https://openalex.org/W7235835293",
+   "title": "Small choice, big impact: empowering children\u2019s digital resilience through nudging",
+   "year": 2026,
+   "doi": "https://doi.org/10.1108/yc-02-2026-2980",
+   "venue": "Young Consumers Insight and Ideas for Responsible Marketers",
+   "field": "decision sciences",
+   "cited_by_count": 0,
+   "abstract": "Purpose Children\u2019s increasing exposure to digital environments raises concerns about their vulnerability to persuasive design and the psychological risks of technology use. This study aims to examine whether nudging, defined as subtle design interventions that influence behavior without restricting choice, can promote children\u2019s digital agency and resilience. Addressing two central gaps in the literature, this study evaluates whether nudges undermine or enhance autonomy among young users and which types of nudges, reflexive (System 1) or reflective (System 2), are most effective for children\u2019s positive digital behavior. Design/methodology/approach Study 1, a field experiment with 19 children (7\u201312 years) and 25 young adults (18\u201325 years), tested whether providing reflective choices slows impulsive engagement. Study 2, a large between-subjects experiment (222 children; 182 adults), compared three nudge framing conditions: re-anchoring, goal achievement and hedonic framing. Findings Reflective choice prompts increased engagement duration, while developmental patterns revealed that goal-framed and hedonic nudges enhanced perceived agency, decision comfort and prosocial intentions, particularly among younger children. Cognitively demanding re-anchoring nudges were largely ineffective. Originality/value The findings provide context-specific evidence that well-calibrated nudges can support rather than necessarily diminish children\u2019s autonomy-related perceptions, offering a more cautious blueprint for designing digital environments that foster healthier and more intentional online behaviors.",
+   "label": "on-domain",
+   "rationale": "strong term in title: 'nudging' + pair anywhere: 'choices'; core scope: title: 'nudg' + 'choice'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-23",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "abstract_only",
+   "fulltext_source": null,
+   "abstract_only": true
+  },
+  {
+   "wid": "W7236316877",
+   "openalex_id": "https://openalex.org/W7236316877",
+   "title": "Intelligent Digital Solutions for Lifestyle Medicine: From Design to Deployment",
+   "year": 2026,
+   "doi": "https://doi.org/10.1201/9781003774785",
+   "venue": "CRC Press eBooks",
+   "field": "health professions",
+   "cited_by_count": 0,
+   "abstract": "This book directly addresses a critical challenge facing the healthcare system: the escalating prevalence and cost of chronic conditions. The solution lies in harnessing the simultaneous, rapid advancement of artificial intelligence (AI) and machine learning (ML). The authors present a structured approach to designing, developing, and deploying intelligent digital health solutions to support the prevention and better self-management of chronic diseases, ultimately aiming to contain spiraling healthcare costs. This text provides a comprehensive guide to applying intelligent digital health to chronic care management. It first establishes the foundational essentials of digital health, detailing its socio-technical components, including crucial people, process, and technology aspects, and the indispensable role of AI/ML. Next, it deeply explores chronic conditions, emphasizing prevention and wellness management, while integrating key theories for supporting technology design and behavior change, such as co-creation, user-centered design (UCD), Task\u2013Technology Fit (TTF), nudge theory, and gamification. The book champions a personalized approach, integrating precision medicine and genomics into lifestyle interventions. A significant highlight is the presentation of several real-world case studies demonstrating practical applications, including solutions for pre-diabetes reversal, a diabetes monitoring device (DiaMonD), a post-discharge cardiac rehab app, and an asthma management tool utilizing AI for trigger prediction. By focusing on orchestration and automation, the text shows how to ensure seamless data integration across multiple devices (e.g., smartwatches and sensors), providing evidence-based support for clinicians and empowering patients to take charge of their health. This book is an essential text for graduate and senior-level undergraduate students studying health informatics. For practitioners such as healthcare managers and IT consultants, entering the healthcare space this text would inform them of both the efficacy and importance of as well as how to design appropriate, effective, and efficient electronic healthcare initiatives.",
+   "label": "on-domain",
+   "rationale": "same-sentence pair: 'nudge' + 'behavior change'; core scope: same sentence: 'nudg' + 'behavio'",
+   "domain_centrality": "core",
+   "added_by": "weekly-grow",
+   "added_on": "2026-11-23",
+   "found_via": "snowball",
+   "found_via_detail": "cites papers in this library",
+   "input_source": "fulltext",
+   "fulltext_source": "unpaywall",
+   "abstract_only": false
+  }
+ ],
+ "records": [
+  {
+   "id": "https://openalex.org/W7235835293",
+   "doi": "https://doi.org/10.1108/yc-02-2026-2980",
+   "title": "Small choice, big impact: empowering children\u2019s digital resilience through nudging",
+   "display_name": "Small choice, big impact: empowering children\u2019s digital resilience through nudging",
+   "alternate_titles": [],
+   "publication_year": 2026,
+   "publication_date": "2026-11-19",
+   "ids": {
+    "openalex": "https://openalex.org/W7235835293",
+    "doi": "https://doi.org/10.1108/yc-02-2026-2980"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1108/yc-02-2026-2980",
+    "doi": "https://doi.org/10.1108/yc-02-2026-2980",
+    "is_oa": false,
+    "landing_page_url": "https://doi.org/10.1108/yc-02-2026-2980",
+    "pdf_url": null,
+    "source": {
+     "id": "https://openalex.org/S46472734",
+     "display_name": "Young Consumers Insight and Ideas for Responsible Marketers",
+     "issn_l": "1747-3616",
+     "issn": [
+      "1747-3616",
+      "1758-7212"
+     ],
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": true,
+     "listed_in": [
+      "abdc-b",
+      "anvur-scientific",
+      "cwts-core",
+      "jufo-1",
+      "norway-1",
+      "poland-70",
+      "russia-white-list-1",
+      "vabb-shw"
+     ],
+     "host_organization": "https://openalex.org/P4310319811",
+     "host_organization_name": "Emerald Publishing Limited",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310319811"
+     ],
+     "host_organization_lineage_names": [
+      "Emerald Publishing Limited"
+     ],
+     "type": "journal"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": "Young Consumers",
+    "raw_type": "journal-article"
+   },
+   "parent_works": [],
+   "lineage": [
+    "https://openalex.org/W7235835293"
+   ],
+   "child_works_count": 0,
+   "pull_notice_works": [],
+   "type": "article",
+   "is_traditional": true,
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": false,
+    "oa_status": "closed",
+    "oa_url": null,
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5001684709",
+      "display_name": "Nila Armelia Windasari",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0001-6298-9553",
+      "observed_orcids": [
+       "https://orcid.org/0000-0001-6298-9553"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I134635517",
+       "display_name": "Bandung Institute of Technology",
+       "ror": "https://ror.org/00apj8t60",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I134635517"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": true,
+     "contributor_roles": [],
+     "raw_author_name": "Nila Armelia Windasari",
+     "raw_affiliation_strings": [
+      "Bandung Institute of Technology School of Business and Management, , Bandung, Indonesia"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0001-6298-9553",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Bandung Institute of Technology School of Business and Management, , Bandung, Indonesia",
+       "institution_ids": [
+        "https://openalex.org/I134635517"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5076588756",
+      "display_name": "Sri Rahayu Hijrah Hati",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0003-2506-6981",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-2506-6981"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I29617571",
+       "display_name": "University of Indonesia",
+       "ror": "https://ror.org/0116zj450",
+       "country_code": "ID",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I29617571"
+       ]
+      }
+     ],
+     "countries": [
+      "ID"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Sri Rahayu Hijrah Hati",
+     "raw_affiliation_strings": [
+      "University of Indonesia Department of Management, Faculty of Economics and Business, , Jakarta,"
+     ],
+     "raw_orcid": "https://orcid.org/0000-0003-2506-6981",
+     "affiliations": [
+      {
+       "raw_affiliation_string": "University of Indonesia Department of Management, Faculty of Economics and Business, , Jakarta,",
+       "institution_ids": [
+        "https://openalex.org/I29617571"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5033203757",
+      "display_name": "Ramayah Thurasamy",
+      "type": null,
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I101407740",
+       "display_name": "Chandigarh University",
+       "ror": "https://ror.org/05t4pvx35",
+       "country_code": "IN",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I101407740"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I114972647",
+       "display_name": "University of Jordan",
+       "ror": "https://ror.org/05k89ew48",
+       "country_code": "JO",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I114972647"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I139322472",
+       "display_name": "Universiti Sains Malaysia",
+       "ror": "https://ror.org/02rgb2k63",
+       "country_code": "MY",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I139322472"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I181397559",
+       "display_name": "Asia Pacific University of Technology & Innovation",
+       "ror": "https://ror.org/03c52a632",
+       "country_code": "MY",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I181397559"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I200606013",
+       "display_name": "Daffodil International University",
+       "ror": "https://ror.org/052t4a858",
+       "country_code": "BD",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I200606013"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I45998257",
+       "display_name": "Sohar University",
+       "ror": "https://ror.org/02ftvf862",
+       "country_code": "OM",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I45998257"
+       ]
+      },
+      {
+       "id": "https://openalex.org/I84339108",
+       "display_name": "Sunway University",
+       "ror": "https://ror.org/04mjt7f73",
+       "country_code": "MY",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I84339108"
+       ]
+      }
+     ],
+     "countries": [
+      "BD",
+      "IN",
+      "JO",
+      "MY",
+      "OM"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Ramayah Thurasamy",
+     "raw_affiliation_strings": [
+      "Universiti Sains Malaysia School of Management, , Penang, ; Sunway Business School, Sunway University, Selangor, Malaysia; Faculty of Business, Sohar University, Sohar, Oman; Asia Pacific University of Technology and Innovation, Kuala Lumpur, Malaysia; Department of Information Technology and Management, Daffodil International University, Birulia, Bangladesh; University Center for Research and Development, Chandigarh University, Punjab, India and School of Business, The University of Jordan, Amman, Jordan"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Universiti Sains Malaysia School of Management, , Penang, ; Sunway Business School, Sunway University, Selangor, Malaysia; Faculty of Business, Sohar University, Sohar, Oman; Asia Pacific University of Technology and Innovation, Kuala Lumpur, Malaysia; Department of Information Technology and Management, Daffodil International University, Birulia, Bangladesh; University Center for Research and Development, Chandigarh University, Punjab, India and School of Business, The University of Jordan, Amman, Jordan",
+       "institution_ids": [
+        "https://openalex.org/I101407740",
+        "https://openalex.org/I114972647",
+        "https://openalex.org/I139322472",
+        "https://openalex.org/I181397559",
+        "https://openalex.org/I200606013",
+        "https://openalex.org/I45998257",
+        "https://openalex.org/I84339108"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 6,
+   "institutions_distinct_count": 9,
+   "corresponding_author_ids": [
+    "https://openalex.org/A5001684709"
+   ],
+   "corresponding_institution_ids": [
+    "https://openalex.org/I134635517"
+   ],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "is_authors_truncated": false,
+   "has_fulltext": false,
+   "cited_by_count": 0,
+   "reviewed_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.0,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": "1",
+    "last_page": "22"
+   },
+   "is_retracted": false,
+   "is_pulled": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T10315",
+    "display_name": "Decision-Making and Behavioral Economics",
+    "score": 0.7494999766349792,
+    "subfield": {
+     "id": "https://openalex.org/subfields/1800",
+     "display_name": "General Decision Sciences"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/18",
+     "display_name": "Decision Sciences"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/2",
+     "display_name": "Social Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T10315",
+     "display_name": "Decision-Making and Behavioral Economics",
+     "score": 0.7494999766349792,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1800",
+      "display_name": "General Decision Sciences"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/18",
+      "display_name": "Decision Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T10803",
+     "display_name": "Innovative Human-Technology Interaction",
+     "score": 0.10360000282526016,
+     "subfield": {
+      "id": "https://openalex.org/subfields/1709",
+      "display_name": "Human-Computer Interaction"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/17",
+      "display_name": "Computer Science"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/3",
+      "display_name": "Physical Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T12060",
+     "display_name": "Child Development and Digital Technology",
+     "score": 0.07100000232458115,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3304",
+      "display_name": "Education"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/33",
+      "display_name": "Social Sciences"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/2",
+      "display_name": "Social Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/nudging",
+     "display_name": "nudging",
+     "score": 0.9810000061988831
+    },
+    {
+     "id": "https://openalex.org/keywords/digital-agency",
+     "display_name": "digital agency",
+     "score": 0.8629999756813049
+    },
+    {
+     "id": "https://openalex.org/keywords/children-s-autonomy",
+     "display_name": "child autonomy",
+     "score": 0.7910000085830688
+    },
+    {
+     "id": "https://openalex.org/keywords/persuasive-design",
+     "display_name": "persuasive design",
+     "score": 0.9079999923706055
+    },
+    {
+     "id": "https://openalex.org/keywords/system-1-and-system-2",
+     "display_name": "System 1 and System 2",
+     "score": 0.7160000205039978
+    },
+    {
+     "id": "https://openalex.org/keywords/goal-framing",
+     "display_name": "goal framing",
+     "score": 0.824999988079071
+    },
+    {
+     "id": "https://openalex.org/keywords/prosocial-intentions",
+     "display_name": "prosocial intentions",
+     "score": 0.7459999918937683
+    },
+    {
+     "id": "https://openalex.org/keywords/children-s-online-behavior",
+     "display_name": "children's online behavior",
+     "score": 0.7269999980926514
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C8858961",
+     "wikidata": "https://www.wikidata.org/wiki/Q7068367",
+     "display_name": "Nudge theory",
+     "level": 2,
+     "score": 0.9115999937057495
+    },
+    {
+     "id": "https://openalex.org/C15744967",
+     "wikidata": "https://www.wikidata.org/wiki/Q9418",
+     "display_name": "Psychology",
+     "level": 0,
+     "score": 0.6516000032424927
+    },
+    {
+     "id": "https://openalex.org/C27415008",
+     "wikidata": "https://www.wikidata.org/wiki/Q7256382",
+     "display_name": "Psychological intervention",
+     "level": 2,
+     "score": 0.5569000244140625
+    },
+    {
+     "id": "https://openalex.org/C77805123",
+     "wikidata": "https://www.wikidata.org/wiki/Q161272",
+     "display_name": "Social psychology",
+     "level": 1,
+     "score": 0.4781999886035919
+    },
+    {
+     "id": "https://openalex.org/C65414064",
+     "wikidata": "https://www.wikidata.org/wiki/Q484105",
+     "display_name": "Autonomy",
+     "level": 2,
+     "score": 0.4440999925136566
+    },
+    {
+     "id": "https://openalex.org/C2776031354",
+     "wikidata": "https://www.wikidata.org/wiki/Q5104029",
+     "display_name": "Choice architecture",
+     "level": 2,
+     "score": 0.41850000619888306
+    },
+    {
+     "id": "https://openalex.org/C177264268",
+     "wikidata": "https://www.wikidata.org/wiki/Q1514741",
+     "display_name": "Set (abstract data type)",
+     "level": 2,
+     "score": 0.41179999709129333
+    },
+    {
+     "id": "https://openalex.org/C169087156",
+     "wikidata": "https://www.wikidata.org/wiki/Q2131593",
+     "display_name": "Framing (construction)",
+     "level": 2,
+     "score": 0.4050000011920929
+    },
+    {
+     "id": "https://openalex.org/C158608086",
+     "wikidata": "https://www.wikidata.org/wiki/Q2990613",
+     "display_name": "Prosocial behavior",
+     "level": 2,
+     "score": 0.39969998598098755
+    },
+    {
+     "id": "https://openalex.org/C108170787",
+     "wikidata": "https://www.wikidata.org/wiki/Q3951828",
+     "display_name": "Agency (philosophy)",
+     "level": 2,
+     "score": 0.39890000224113464
+    },
+    {
+     "id": "https://openalex.org/C26760741",
+     "wikidata": "https://www.wikidata.org/wiki/Q160402",
+     "display_name": "Perception",
+     "level": 2,
+     "score": 0.3799000084400177
+    },
+    {
+     "id": "https://openalex.org/C95713431",
+     "wikidata": "https://www.wikidata.org/wiki/Q631425",
+     "display_name": "Vulnerability (computing)",
+     "level": 2,
+     "score": 0.3720000088214874
+    },
+    {
+     "id": "https://openalex.org/C2777113389",
+     "wikidata": "https://www.wikidata.org/wiki/Q208195",
+     "display_name": "Pleasure",
+     "level": 2,
+     "score": 0.36959999799728394
+    },
+    {
+     "id": "https://openalex.org/C75630572",
+     "wikidata": "https://www.wikidata.org/wiki/Q538904",
+     "display_name": "Applied psychology",
+     "level": 1,
+     "score": 0.33160001039505005
+    },
+    {
+     "id": "https://openalex.org/C13200473",
+     "wikidata": "https://www.wikidata.org/wiki/Q2747831",
+     "display_name": "Reflexivity",
+     "level": 2,
+     "score": 0.3068999946117401
+    },
+    {
+     "id": "https://openalex.org/C137176749",
+     "wikidata": "https://www.wikidata.org/wiki/Q4105337",
+     "display_name": "Psychological resilience",
+     "level": 2,
+     "score": 0.3041999936103821
+    },
+    {
+     "id": "https://openalex.org/C17632256",
+     "wikidata": "https://www.wikidata.org/wiki/Q1076968",
+     "display_name": "Digital media",
+     "level": 2,
+     "score": 0.303600013256073
+    },
+    {
+     "id": "https://openalex.org/C141633740",
+     "wikidata": "https://www.wikidata.org/wiki/Q7450996",
+     "display_name": "Sense of agency",
+     "level": 2,
+     "score": 0.3034999966621399
+    },
+    {
+     "id": "https://openalex.org/C179420905",
+     "wikidata": "https://www.wikidata.org/wiki/Q223871",
+     "display_name": "Mediation",
+     "level": 2,
+     "score": 0.28760001063346863
+    },
+    {
+     "id": "https://openalex.org/C194995250",
+     "wikidata": "https://www.wikidata.org/wiki/Q531136",
+     "display_name": "Affordance",
+     "level": 2,
+     "score": 0.25949999690055847
+    },
+    {
+     "id": "https://openalex.org/C120936955",
+     "wikidata": "https://www.wikidata.org/wiki/Q2155640",
+     "display_name": "Empirical research",
+     "level": 2,
+     "score": 0.2547999918460846
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1108/yc-02-2026-2980",
+     "doi": "https://doi.org/10.1108/yc-02-2026-2980",
+     "is_oa": false,
+     "landing_page_url": "https://doi.org/10.1108/yc-02-2026-2980",
+     "pdf_url": null,
+     "source": {
+      "id": "https://openalex.org/S46472734",
+      "display_name": "Young Consumers Insight and Ideas for Responsible Marketers",
+      "issn_l": "1747-3616",
+      "issn": [
+       "1747-3616",
+       "1758-7212"
+      ],
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": true,
+      "listed_in": [
+       "abdc-b",
+       "anvur-scientific",
+       "cwts-core",
+       "jufo-1",
+       "norway-1",
+       "poland-70",
+       "russia-white-list-1",
+       "vabb-shw"
+      ],
+      "host_organization": "https://openalex.org/P4310319811",
+      "host_organization_name": "Emerald Publishing Limited",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310319811"
+      ],
+      "host_organization_lineage_names": [
+       "Emerald Publishing Limited"
+      ],
+      "type": "journal"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": "Young Consumers",
+     "raw_type": "journal-article"
+    }
+   ],
+   "best_oa_location": null,
+   "sustainable_development_goals": [],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": false,
+    "grobid_xml": false
+   },
+   "content_urls": null,
+   "referenced_works_count": 95,
+   "referenced_works": [
+    "https://openalex.org/W280603579",
+    "https://openalex.org/W1133992301",
+    "https://openalex.org/W1534083395",
+    "https://openalex.org/W1685870920",
+    "https://openalex.org/W1854663754",
+    "https://openalex.org/W1887964395",
+    "https://openalex.org/W1902511893",
+    "https://openalex.org/W1963170669",
+    "https://openalex.org/W1969634570",
+    "https://openalex.org/W1991270961",
+    "https://openalex.org/W1993184144",
+    "https://openalex.org/W2022923524",
+    "https://openalex.org/W2037659604",
+    "https://openalex.org/W2041328962",
+    "https://openalex.org/W2042581243",
+    "https://openalex.org/W2045923296",
+    "https://openalex.org/W2063481140",
+    "https://openalex.org/W2067933440",
+    "https://openalex.org/W2087356051",
+    "https://openalex.org/W2092131153",
+    "https://openalex.org/W2102260068",
+    "https://openalex.org/W2103676101",
+    "https://openalex.org/W2105280670",
+    "https://openalex.org/W2109434867",
+    "https://openalex.org/W2122517769",
+    "https://openalex.org/W2132738192",
+    "https://openalex.org/W2133044046",
+    "https://openalex.org/W2144332805",
+    "https://openalex.org/W2145107370",
+    "https://openalex.org/W2154098780",
+    "https://openalex.org/W2155479778",
+    "https://openalex.org/W2159323119",
+    "https://openalex.org/W2164448990",
+    "https://openalex.org/W2232839779",
+    "https://openalex.org/W2296067305",
+    "https://openalex.org/W2324071241",
+    "https://openalex.org/W2342719530",
+    "https://openalex.org/W2465340358",
+    "https://openalex.org/W2494377495",
+    "https://openalex.org/W2508642805",
+    "https://openalex.org/W2585220175",
+    "https://openalex.org/W2713673444",
+    "https://openalex.org/W2752099845",
+    "https://openalex.org/W2755309196",
+    "https://openalex.org/W2792183666",
+    "https://openalex.org/W2800068874",
+    "https://openalex.org/W2884150621",
+    "https://openalex.org/W2885925209",
+    "https://openalex.org/W2924877327",
+    "https://openalex.org/W2944106195",
+    "https://openalex.org/W2950242097",
+    "https://openalex.org/W2962220354",
+    "https://openalex.org/W2995715396",
+    "https://openalex.org/W2996151292",
+    "https://openalex.org/W2997160625",
+    "https://openalex.org/W3008325899",
+    "https://openalex.org/W3029022390",
+    "https://openalex.org/W3044820134",
+    "https://openalex.org/W3081261125",
+    "https://openalex.org/W3086535845",
+    "https://openalex.org/W3088366746",
+    "https://openalex.org/W3113151950",
+    "https://openalex.org/W3125633690",
+    "https://openalex.org/W3130697414",
+    "https://openalex.org/W3165767308",
+    "https://openalex.org/W3166125074",
+    "https://openalex.org/W3166377381",
+    "https://openalex.org/W3176062377",
+    "https://openalex.org/W3176379846",
+    "https://openalex.org/W3177307576",
+    "https://openalex.org/W3192963099",
+    "https://openalex.org/W3214521633",
+    "https://openalex.org/W3216152684",
+    "https://openalex.org/W3216536836",
+    "https://openalex.org/W4205744578",
+    "https://openalex.org/W4221014470",
+    "https://openalex.org/W4224241621",
+    "https://openalex.org/W4225120365",
+    "https://openalex.org/W4237356565",
+    "https://openalex.org/W4239138725",
+    "https://openalex.org/W4284892273",
+    "https://openalex.org/W4292157289",
+    "https://openalex.org/W4301958211",
+    "https://openalex.org/W4307258667",
+    "https://openalex.org/W4307563202",
+    "https://openalex.org/W4319787516",
+    "https://openalex.org/W4323308846",
+    "https://openalex.org/W4323665168",
+    "https://openalex.org/W4380265438",
+    "https://openalex.org/W4384824094",
+    "https://openalex.org/W4386069671",
+    "https://openalex.org/W4390277659",
+    "https://openalex.org/W4400849010",
+    "https://openalex.org/W4406959785",
+    "https://openalex.org/W7130505505"
+   ],
+   "related_works": [
+    "https://openalex.org/W7197003970",
+    "https://openalex.org/W4405792562",
+    "https://openalex.org/W4246153766",
+    "https://openalex.org/W2952638383",
+    "https://openalex.org/W2906632691",
+    "https://openalex.org/W4411456496",
+    "https://openalex.org/W4380880995",
+    "https://openalex.org/W4411558307",
+    "https://openalex.org/W4404800554",
+    "https://openalex.org/W3160264050"
+   ],
+   "abstract_inverted_index": {
+    "Purpose": [
+     0
+    ],
+    "Children\u2019s": [
+     1
+    ],
+    "increasing": [
+     2
+    ],
+    "exposure": [
+     3
+    ],
+    "to": [
+     4,
+     12,
+     25
+    ],
+    "digital": [
+     5,
+     43,
+     84,
+     192
+    ],
+    "environments": [
+     6,
+     193
+    ],
+    "raises": [
+     7
+    ],
+    "concerns": [
+     8
+    ],
+    "about": [
+     9
+    ],
+    "their": [
+     10
+    ],
+    "vulnerability": [
+     11
+    ],
+    "persuasive": [
+     13
+    ],
+    "design": [
+     14,
+     32
+    ],
+    "and": [
+     15,
+     45,
+     66,
+     97,
+     129,
+     145,
+     153,
+     197
+    ],
+    "the": [
+     16,
+     52
+    ],
+    "psychological": [
+     17
+    ],
+    "risks": [
+     18
+    ],
+    "of": [
+     19,
+     69
+    ],
+    "technology": [
+     20
+    ],
+    "use.": [
+     21
+    ],
+    "This": [
+     22
+    ],
+    "study": [
+     23,
+     55
+    ],
+    "aims": [
+     24
+    ],
+    "examine": [
+     26
+    ],
+    "whether": [
+     27,
+     57,
+     104
+    ],
+    "nudging,": [
+     28
+    ],
+    "defined": [
+     29
+    ],
+    "as": [
+     30
+    ],
+    "subtle": [
+     31
+    ],
+    "interventions": [
+     33
+    ],
+    "that": [
+     34,
+     143,
+     173,
+     194
+    ],
+    "influence": [
+     35
+    ],
+    "behavior": [
+     36
+    ],
+    "without": [
+     37
+    ],
+    "restricting": [
+     38
+    ],
+    "choice,": [
+     39
+    ],
+    "can": [
+     40,
+     176
+    ],
+    "promote": [
+     41
+    ],
+    "children\u2019s": [
+     42,
+     82,
+     182
+    ],
+    "agency": [
+     44
+    ],
+    "resilience.": [
+     46
+    ],
+    "Addressing": [
+     47
+    ],
+    "two": [
+     48
+    ],
+    "central": [
+     49
+    ],
+    "gaps": [
+     50
+    ],
+    "in": [
+     51
+    ],
+    "literature,": [
+     53
+    ],
+    "this": [
+     54
+    ],
+    "evaluates": [
+     56
+    ],
+    "nudges": [
+     58,
+     147,
+     163,
+     175
+    ],
+    "undermine": [
+     59
+    ],
+    "or": [
+     60,
+     74
+    ],
+    "enhance": [
+     61
+    ],
+    "autonomy": [
+     62
+    ],
+    "among": [
+     63,
+     157
+    ],
+    "young": [
+     64,
+     99
+    ],
+    "users": [
+     65
+    ],
+    "which": [
+     67
+    ],
+    "types": [
+     68
+    ],
+    "nudges,": [
+     70
+    ],
+    "reflexive": [
+     71
+    ],
+    "(System": [
+     72,
+     76
+    ],
+    "1)": [
+     73
+    ],
+    "reflective": [
+     75,
+     106
+    ],
+    "2),": [
+     77
+    ],
+    "are": [
+     78
+    ],
+    "most": [
+     79
+    ],
+    "effective": [
+     80
+    ],
+    "for": [
+     81,
+     190
+    ],
+    "positive": [
+     83
+    ],
+    "behavior.": [
+     85
+    ],
+    "Design/methodology/approach": [
+     86
+    ],
+    "Study": [
+     87,
+     111
+    ],
+    "1,": [
+     88
+    ],
+    "a": [
+     89,
+     113,
+     186
+    ],
+    "field": [
+     90
+    ],
+    "experiment": [
+     91,
+     116
+    ],
+    "with": [
+     92
+    ],
+    "19": [
+     93
+    ],
+    "children": [
+     94
+    ],
+    "(7\u201312": [
+     95
+    ],
+    "years)": [
+     96
+    ],
+    "25": [
+     98
+    ],
+    "adults": [
+     100
+    ],
+    "(18\u201325": [
+     101
+    ],
+    "years),": [
+     102
+    ],
+    "tested": [
+     103
+    ],
+    "providing": [
+     105
+    ],
+    "choices": [
+     107
+    ],
+    "slows": [
+     108
+    ],
+    "impulsive": [
+     109
+    ],
+    "engagement.": [
+     110
+    ],
+    "2,": [
+     112
+    ],
+    "large": [
+     114
+    ],
+    "between-subjects": [
+     115
+    ],
+    "(222": [
+     117
+    ],
+    "children;": [
+     118
+    ],
+    "182": [
+     119
+    ],
+    "adults),": [
+     120
+    ],
+    "compared": [
+     121
+    ],
+    "three": [
+     122
+    ],
+    "nudge": [
+     123
+    ],
+    "framing": [
+     124
+    ],
+    "conditions:": [
+     125
+    ],
+    "re-anchoring,": [
+     126
+    ],
+    "goal": [
+     127
+    ],
+    "achievement": [
+     128
+    ],
+    "hedonic": [
+     130,
+     146
+    ],
+    "framing.": [
+     131
+    ],
+    "Findings": [
+     132
+    ],
+    "Reflective": [
+     133
+    ],
+    "choice": [
+     134
+    ],
+    "prompts": [
+     135
+    ],
+    "increased": [
+     136
+    ],
+    "engagement": [
+     137
+    ],
+    "duration,": [
+     138
+    ],
+    "while": [
+     139
+    ],
+    "developmental": [
+     140
+    ],
+    "patterns": [
+     141
+    ],
+    "revealed": [
+     142
+    ],
+    "goal-framed": [
+     144
+    ],
+    "enhanced": [
+     148
+    ],
+    "perceived": [
+     149
+    ],
+    "agency,": [
+     150
+    ],
+    "decision": [
+     151
+    ],
+    "comfort": [
+     152
+    ],
+    "prosocial": [
+     154
+    ],
+    "intentions,": [
+     155
+    ],
+    "particularly": [
+     156
+    ],
+    "younger": [
+     158
+    ],
+    "children.": [
+     159
+    ],
+    "Cognitively": [
+     160
+    ],
+    "demanding": [
+     161
+    ],
+    "re-anchoring": [
+     162
+    ],
+    "were": [
+     164
+    ],
+    "largely": [
+     165
+    ],
+    "ineffective.": [
+     166
+    ],
+    "Originality/value": [
+     167
+    ],
+    "The": [
+     168
+    ],
+    "findings": [
+     169
+    ],
+    "provide": [
+     170
+    ],
+    "context-specific": [
+     171
+    ],
+    "evidence": [
+     172
+    ],
+    "well-calibrated": [
+     174
+    ],
+    "support": [
+     177
+    ],
+    "rather": [
+     178
+    ],
+    "than": [
+     179
+    ],
+    "necessarily": [
+     180
+    ],
+    "diminish": [
+     181
+    ],
+    "autonomy-related": [
+     183
+    ],
+    "perceptions,": [
+     184
+    ],
+    "offering": [
+     185
+    ],
+    "more": [
+     187,
+     198
+    ],
+    "cautious": [
+     188
+    ],
+    "blueprint": [
+     189
+    ],
+    "designing": [
+     191
+    ],
+    "foster": [
+     195
+    ],
+    "healthier": [
+     196
+    ],
+    "intentional": [
+     199
+    ],
+    "online": [
+     200
+    ],
+    "behaviors.": [
+     201
+    ]
+   },
+   "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W7235835293",
+   "counts_by_year": [],
+   "updated_date": "2026-11-21T10:27:49.728292",
+   "created_date": "2026-11-19T00:00:00"
+  },
+  {
+   "id": "https://openalex.org/W7236316877",
+   "doi": "https://doi.org/10.1201/9781003774785",
+   "title": "Intelligent Digital Solutions for Lifestyle Medicine: From Design to Deployment",
+   "display_name": "Intelligent Digital Solutions for Lifestyle Medicine: From Design to Deployment",
+   "alternate_titles": [],
+   "publication_year": 2026,
+   "publication_date": "2026-11-18",
+   "ids": {
+    "openalex": "https://openalex.org/W7236316877",
+    "doi": "https://doi.org/10.1201/9781003774785"
+   },
+   "language": "en",
+   "primary_location": {
+    "id": "doi:10.1201/9781003774785",
+    "doi": "https://doi.org/10.1201/9781003774785",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1201/9781003774785",
+    "pdf_url": "https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.1201/9781003774785&type=googlepdf",
+    "source": {
+     "id": "https://openalex.org/S4306463075",
+     "display_name": "CRC Press eBooks",
+     "issn_l": null,
+     "issn": null,
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": "https://openalex.org/P4310320584",
+     "host_organization_name": "CRC Press",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320584",
+      "https://openalex.org/P4310320547",
+      "https://openalex.org/P4310320449"
+     ],
+     "host_organization_lineage_names": [
+      "CRC Press",
+      "Taylor & Francis",
+      "Informa"
+     ],
+     "type": "ebook platform"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": null,
+    "raw_type": "monograph"
+   },
+   "parent_works": [],
+   "lineage": [
+    "https://openalex.org/W7236316877"
+   ],
+   "child_works_count": 13,
+   "pull_notice_works": [],
+   "type": "book",
+   "is_traditional": true,
+   "indexed_in": [
+    "crossref"
+   ],
+   "open_access": {
+    "is_oa": true,
+    "oa_status": "bronze",
+    "oa_url": "https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.1201/9781003774785&type=googlepdf",
+    "any_repository_has_fulltext": false
+   },
+   "authorships": [
+    {
+     "author_position": "first",
+     "author": {
+      "id": "https://openalex.org/A5107632315",
+      "display_name": "Nilmini Wickramasinghe",
+      "type": null,
+      "orcid": null,
+      "observed_orcids": []
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I196829312",
+       "display_name": "La Trobe University",
+       "ror": "https://ror.org/01rxfrp27",
+       "country_code": "AU",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I196829312"
+       ]
+      }
+     ],
+     "countries": [
+      "AU"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Nilmini Wickramasinghe",
+     "raw_affiliation_strings": [
+      "La Trobe University"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "La Trobe University",
+       "institution_ids": [
+        "https://openalex.org/I196829312"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "middle",
+     "author": {
+      "id": "https://openalex.org/A5107579360",
+      "display_name": "Ayesha Nilashini Wahala Thanthrige",
+      "type": null,
+      "orcid": "https://orcid.org/0009-0001-0518-2849",
+      "observed_orcids": [
+       "https://orcid.org/0009-0001-0518-2849"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I2799990285",
+       "display_name": "Epworth Hospital",
+       "ror": "https://ror.org/02ett6548",
+       "country_code": "AU",
+       "type": "healthcare",
+       "lineage": [
+        "https://openalex.org/I2799990285"
+       ]
+      }
+     ],
+     "countries": [
+      "AU"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Ayesha Thanthrige",
+     "raw_affiliation_strings": [
+      "Director Health Informatics Management at Epworth HealthCare , Victoria , Australia"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "Director Health Informatics Management at Epworth HealthCare , Victoria , Australia",
+       "institution_ids": [
+        "https://openalex.org/I2799990285"
+       ]
+      }
+     ]
+    },
+    {
+     "author_position": "last",
+     "author": {
+      "id": "https://openalex.org/A5039565710",
+      "display_name": "Zaid Zekiria Sako",
+      "type": null,
+      "orcid": "https://orcid.org/0000-0003-3336-3812",
+      "observed_orcids": [
+       "https://orcid.org/0000-0003-3336-3812"
+      ]
+     },
+     "acted_on_behalf_of": [],
+     "institutions": [
+      {
+       "id": "https://openalex.org/I196829312",
+       "display_name": "La Trobe University",
+       "ror": "https://ror.org/01rxfrp27",
+       "country_code": "AU",
+       "type": "education",
+       "lineage": [
+        "https://openalex.org/I196829312"
+       ]
+      }
+     ],
+     "countries": [
+      "AU"
+     ],
+     "is_corresponding": false,
+     "contributor_roles": [],
+     "raw_author_name": "Zaid Zekiria Sako",
+     "raw_affiliation_strings": [
+      "La Trobe University"
+     ],
+     "raw_orcid": null,
+     "affiliations": [
+      {
+       "raw_affiliation_string": "La Trobe University",
+       "institution_ids": [
+        "https://openalex.org/I196829312"
+       ]
+      }
+     ]
+    }
+   ],
+   "institutions": [],
+   "countries_distinct_count": 1,
+   "institutions_distinct_count": 2,
+   "corresponding_author_ids": [],
+   "corresponding_institution_ids": [],
+   "apc_list": null,
+   "apc_paid": null,
+   "fwci": 0.0,
+   "is_authors_truncated": false,
+   "has_fulltext": true,
+   "cited_by_count": 0,
+   "reviewed_by_count": 0,
+   "citation_normalized_percentile": {
+    "value": 0.0,
+    "is_in_top_1_percent": false,
+    "is_in_top_10_percent": false
+   },
+   "cited_by_percentile_year": null,
+   "biblio": {
+    "volume": null,
+    "issue": null,
+    "first_page": null,
+    "last_page": null
+   },
+   "is_retracted": false,
+   "is_pulled": false,
+   "is_paratext": false,
+   "is_xpac": false,
+   "primary_topic": {
+    "id": "https://openalex.org/T11446",
+    "display_name": "Mobile Health and mHealth Applications",
+    "score": 0.9589999914169312,
+    "subfield": {
+     "id": "https://openalex.org/subfields/3600",
+     "display_name": "General Health Professions"
+    },
+    "field": {
+     "id": "https://openalex.org/fields/36",
+     "display_name": "Health Professions"
+    },
+    "domain": {
+     "id": "https://openalex.org/domains/4",
+     "display_name": "Health Sciences"
+    }
+   },
+   "topics": [
+    {
+     "id": "https://openalex.org/T11446",
+     "display_name": "Mobile Health and mHealth Applications",
+     "score": 0.9589999914169312,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3600",
+      "display_name": "General Health Professions"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/36",
+      "display_name": "Health Professions"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T11636",
+     "display_name": "Artificial Intelligence in Healthcare and Education",
+     "score": 0.02019999921321869,
+     "subfield": {
+      "id": "https://openalex.org/subfields/2718",
+      "display_name": "Health Informatics"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/27",
+      "display_name": "Medicine"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    },
+    {
+     "id": "https://openalex.org/T13243",
+     "display_name": "Innovation in Digital Healthcare Systems",
+     "score": 0.007699999958276749,
+     "subfield": {
+      "id": "https://openalex.org/subfields/3605",
+      "display_name": "Health Information Management"
+     },
+     "field": {
+      "id": "https://openalex.org/fields/36",
+      "display_name": "Health Professions"
+     },
+     "domain": {
+      "id": "https://openalex.org/domains/4",
+      "display_name": "Health Sciences"
+     }
+    }
+   ],
+   "keywords": [
+    {
+     "id": "https://openalex.org/keywords/lifestyle-medicine",
+     "display_name": "lifestyle medicine",
+     "score": 0.8980000019073486
+    },
+    {
+     "id": "https://openalex.org/keywords/chronic-disease-prevention",
+     "display_name": "chronic disease prevention",
+     "score": 0.8109999895095825
+    },
+    {
+     "id": "https://openalex.org/keywords/chronic-disease-self-management",
+     "display_name": "chronic disease self-management",
+     "score": 0.8040000200271606
+    },
+    {
+     "id": "https://openalex.org/keywords/artificial-intelligence-in-healthcare",
+     "display_name": "artificial intelligence in healthcare",
+     "score": 0.8190000057220459
+    },
+    {
+     "id": "https://openalex.org/keywords/machine-learning",
+     "display_name": "machine learning",
+     "score": 0.9490000009536743
+    },
+    {
+     "id": "https://openalex.org/keywords/digital-health",
+     "display_name": "digital health",
+     "score": 0.6940000057220459
+    },
+    {
+     "id": "https://openalex.org/keywords/user-centered-design",
+     "display_name": "user-centered design",
+     "score": 0.7490000128746033
+    },
+    {
+     "id": "https://openalex.org/keywords/task-technology-fit",
+     "display_name": "task-technology fit",
+     "score": 0.8080000281333923
+    },
+    {
+     "id": "https://openalex.org/keywords/nudge-theory",
+     "display_name": "nudge theory",
+     "score": 0.9509999752044678
+    },
+    {
+     "id": "https://openalex.org/keywords/gamification",
+     "display_name": "gamification",
+     "score": 1.0
+    },
+    {
+     "id": "https://openalex.org/keywords/co-creation",
+     "display_name": "co-creation",
+     "score": 0.9290000200271606
+    },
+    {
+     "id": "https://openalex.org/keywords/precision-medicine",
+     "display_name": "precision medicine",
+     "score": 0.9179999828338623
+    },
+    {
+     "id": "https://openalex.org/keywords/genomics",
+     "display_name": "genomics",
+     "score": 0.8009999990463257
+    },
+    {
+     "id": "https://openalex.org/keywords/diabetes-monitoring",
+     "display_name": "diabetes monitoring",
+     "score": 0.9539999961853027
+    },
+    {
+     "id": "https://openalex.org/keywords/health-care-cost-containment",
+     "display_name": "health care cost containment",
+     "score": 0.6299999952316284
+    },
+    {
+     "id": "https://openalex.org/keywords/behavior-change",
+     "display_name": "behavior change",
+     "score": 0.8190000057220459
+    }
+   ],
+   "concepts": [
+    {
+     "id": "https://openalex.org/C2780433410",
+     "wikidata": "https://www.wikidata.org/wiki/Q5276090",
+     "display_name": "Digital health",
+     "level": 3,
+     "score": 0.6977999806404114
+    },
+    {
+     "id": "https://openalex.org/C202645933",
+     "wikidata": "https://www.wikidata.org/wiki/Q4930",
+     "display_name": "eHealth",
+     "level": 3,
+     "score": 0.5913000106811523
+    },
+    {
+     "id": "https://openalex.org/C105339364",
+     "wikidata": "https://www.wikidata.org/wiki/Q2297740",
+     "display_name": "Software deployment",
+     "level": 2,
+     "score": 0.5853999853134155
+    },
+    {
+     "id": "https://openalex.org/C29794715",
+     "wikidata": "https://www.wikidata.org/wiki/Q5362345",
+     "display_name": "Smartwatch",
+     "level": 3,
+     "score": 0.545799970626831
+    },
+    {
+     "id": "https://openalex.org/C199168358",
+     "wikidata": "https://www.wikidata.org/wiki/Q3367000",
+     "display_name": "Orchestration",
+     "level": 3,
+     "score": 0.5364999771118164
+    },
+    {
+     "id": "https://openalex.org/C2777601897",
+     "wikidata": "https://www.wikidata.org/wiki/Q3409113",
+     "display_name": "Presentation (obstetrics)",
+     "level": 2,
+     "score": 0.531000018119812
+    },
+    {
+     "id": "https://openalex.org/C26517878",
+     "wikidata": "https://www.wikidata.org/wiki/Q228039",
+     "display_name": "Key (lock)",
+     "level": 2,
+     "score": 0.5236999988555908
+    },
+    {
+     "id": "https://openalex.org/C160735492",
+     "wikidata": "https://www.wikidata.org/wiki/Q31207",
+     "display_name": "Health care",
+     "level": 2,
+     "score": 0.5069000124931335
+    },
+    {
+     "id": "https://openalex.org/C41008148",
+     "wikidata": "https://www.wikidata.org/wiki/Q21198",
+     "display_name": "Computer science",
+     "level": 0,
+     "score": 0.4641999900341034
+    },
+    {
+     "id": "https://openalex.org/C56739046",
+     "wikidata": "https://www.wikidata.org/wiki/Q192060",
+     "display_name": "Knowledge management",
+     "level": 1,
+     "score": 0.40459999442100525
+    },
+    {
+     "id": "https://openalex.org/C119770614",
+     "wikidata": "https://www.wikidata.org/wiki/Q5516347",
+     "display_name": "Gadget",
+     "level": 2,
+     "score": 0.40149998664855957
+    },
+    {
+     "id": "https://openalex.org/C2781050511",
+     "wikidata": "https://www.wikidata.org/wiki/Q46994",
+     "display_name": "Telehealth",
+     "level": 4,
+     "score": 0.3772999942302704
+    },
+    {
+     "id": "https://openalex.org/C2522767166",
+     "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+     "display_name": "Data science",
+     "level": 1,
+     "score": 0.3614000082015991
+    },
+    {
+     "id": "https://openalex.org/C177212765",
+     "wikidata": "https://www.wikidata.org/wiki/Q627335",
+     "display_name": "Workflow",
+     "level": 2,
+     "score": 0.3409999907016754
+    },
+    {
+     "id": "https://openalex.org/C54290928",
+     "wikidata": "https://www.wikidata.org/wiki/Q4845080",
+     "display_name": "Wearable technology",
+     "level": 3,
+     "score": 0.3303999900817871
+    },
+    {
+     "id": "https://openalex.org/C78780964",
+     "wikidata": "https://www.wikidata.org/wiki/Q7233193",
+     "display_name": "Position paper",
+     "level": 2,
+     "score": 0.321399986743927
+    },
+    {
+     "id": "https://openalex.org/C118643609",
+     "wikidata": "https://www.wikidata.org/wiki/Q189210",
+     "display_name": "Web application",
+     "level": 2,
+     "score": 0.31040000915527344
+    },
+    {
+     "id": "https://openalex.org/C2779363104",
+     "wikidata": "https://www.wikidata.org/wiki/Q17069079",
+     "display_name": "mHealth",
+     "level": 3,
+     "score": 0.3100999891757965
+    },
+    {
+     "id": "https://openalex.org/C100143864",
+     "wikidata": "https://www.wikidata.org/wiki/Q2902255",
+     "display_name": "Persuasive technology",
+     "level": 3,
+     "score": 0.30959999561309814
+    },
+    {
+     "id": "https://openalex.org/C127413603",
+     "wikidata": "https://www.wikidata.org/wiki/Q11023",
+     "display_name": "Engineering",
+     "level": 0,
+     "score": 0.3086000084877014
+    },
+    {
+     "id": "https://openalex.org/C2780378061",
+     "wikidata": "https://www.wikidata.org/wiki/Q25351891",
+     "display_name": "Service (business)",
+     "level": 2,
+     "score": 0.3068999946117401
+    },
+    {
+     "id": "https://openalex.org/C107457646",
+     "wikidata": "https://www.wikidata.org/wiki/Q207434",
+     "display_name": "Human\u2013computer interaction",
+     "level": 1,
+     "score": 0.3050000071525574
+    },
+    {
+     "id": "https://openalex.org/C110354214",
+     "wikidata": "https://www.wikidata.org/wiki/Q6314146",
+     "display_name": "Engineering management",
+     "level": 1,
+     "score": 0.30250000953674316
+    },
+    {
+     "id": "https://openalex.org/C157170001",
+     "wikidata": "https://www.wikidata.org/wiki/Q4781507",
+     "display_name": "Applications of artificial intelligence",
+     "level": 2,
+     "score": 0.29350000619888306
+    },
+    {
+     "id": "https://openalex.org/C195094911",
+     "wikidata": "https://www.wikidata.org/wiki/Q14167904",
+     "display_name": "Process management",
+     "level": 1,
+     "score": 0.28790000081062317
+    },
+    {
+     "id": "https://openalex.org/C150594956",
+     "wikidata": "https://www.wikidata.org/wiki/Q1334829",
+     "display_name": "Wearable computer",
+     "level": 2,
+     "score": 0.2847999930381775
+    },
+    {
+     "id": "https://openalex.org/C75684735",
+     "wikidata": "https://www.wikidata.org/wiki/Q858810",
+     "display_name": "Big data",
+     "level": 2,
+     "score": 0.2824000120162964
+    },
+    {
+     "id": "https://openalex.org/C163763905",
+     "wikidata": "https://www.wikidata.org/wiki/Q17075943",
+     "display_name": "Precision medicine",
+     "level": 2,
+     "score": 0.27559998631477356
+    },
+    {
+     "id": "https://openalex.org/C49774154",
+     "wikidata": "https://www.wikidata.org/wiki/Q131765",
+     "display_name": "Multimedia",
+     "level": 1,
+     "score": 0.26159998774528503
+    },
+    {
+     "id": "https://openalex.org/C170130773",
+     "wikidata": "https://www.wikidata.org/wiki/Q216378",
+     "display_name": "Usability",
+     "level": 2,
+     "score": 0.2599000036716461
+    },
+    {
+     "id": "https://openalex.org/C2777655877",
+     "wikidata": "https://www.wikidata.org/wiki/Q3475740",
+     "display_name": "Design science research",
+     "level": 3,
+     "score": 0.25839999318122864
+    },
+    {
+     "id": "https://openalex.org/C2778023277",
+     "wikidata": "https://www.wikidata.org/wiki/Q321703",
+     "display_name": "Premise",
+     "level": 2,
+     "score": 0.2515999972820282
+    }
+   ],
+   "mesh": [],
+   "locations_count": 1,
+   "locations": [
+    {
+     "id": "doi:10.1201/9781003774785",
+     "doi": "https://doi.org/10.1201/9781003774785",
+     "is_oa": true,
+     "landing_page_url": "https://doi.org/10.1201/9781003774785",
+     "pdf_url": "https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.1201/9781003774785&type=googlepdf",
+     "source": {
+      "id": "https://openalex.org/S4306463075",
+      "display_name": "CRC Press eBooks",
+      "issn_l": null,
+      "issn": null,
+      "is_oa": false,
+      "is_in_doaj": false,
+      "is_core": false,
+      "listed_in": [],
+      "host_organization": "https://openalex.org/P4310320584",
+      "host_organization_name": "CRC Press",
+      "host_organization_lineage": [
+       "https://openalex.org/P4310320584",
+       "https://openalex.org/P4310320547",
+       "https://openalex.org/P4310320449"
+      ],
+      "host_organization_lineage_names": [
+       "CRC Press",
+       "Taylor & Francis",
+       "Informa"
+      ],
+      "type": "ebook platform"
+     },
+     "license": null,
+     "license_id": null,
+     "version": "publishedVersion",
+     "is_accepted": true,
+     "is_published": true,
+     "raw_source_name": null,
+     "raw_type": "monograph"
+    }
+   ],
+   "best_oa_location": {
+    "id": "doi:10.1201/9781003774785",
+    "doi": "https://doi.org/10.1201/9781003774785",
+    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.1201/9781003774785",
+    "pdf_url": "https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.1201/9781003774785&type=googlepdf",
+    "source": {
+     "id": "https://openalex.org/S4306463075",
+     "display_name": "CRC Press eBooks",
+     "issn_l": null,
+     "issn": null,
+     "is_oa": false,
+     "is_in_doaj": false,
+     "is_core": false,
+     "listed_in": [],
+     "host_organization": "https://openalex.org/P4310320584",
+     "host_organization_name": "CRC Press",
+     "host_organization_lineage": [
+      "https://openalex.org/P4310320584",
+      "https://openalex.org/P4310320547",
+      "https://openalex.org/P4310320449"
+     ],
+     "host_organization_lineage_names": [
+      "CRC Press",
+      "Taylor & Francis",
+      "Informa"
+     ],
+     "type": "ebook platform"
+    },
+    "license": null,
+    "license_id": null,
+    "version": "publishedVersion",
+    "is_accepted": true,
+    "is_published": true,
+    "raw_source_name": null,
+    "raw_type": "monograph"
+   },
+   "sustainable_development_goals": [
+    {
+     "display_name": "Good health and well-being",
+     "id": "https://metadata.un.org/sdg/3",
+     "score": 0.9391000270843506
+    }
+   ],
+   "study_designs": [],
+   "awards": [],
+   "funders": [],
+   "has_content": {
+    "pdf": true,
+    "grobid_xml": true
+   },
+   "content_urls": {
+    "pdf": "https://content.openalex.org/works/W7236316877.pdf",
+    "grobid_xml": "https://content.openalex.org/works/W7236316877.grobid-xml"
+   },
+   "referenced_works_count": 214,
+   "referenced_works": [
+    "https://openalex.org/W43120215",
+    "https://openalex.org/W789208081",
+    "https://openalex.org/W1560894790",
+    "https://openalex.org/W1568271101",
+    "https://openalex.org/W1587451402",
+    "https://openalex.org/W1761117863",
+    "https://openalex.org/W1791587663",
+    "https://openalex.org/W1912558312",
+    "https://openalex.org/W1967039550",
+    "https://openalex.org/W1967661515",
+    "https://openalex.org/W2002817157",
+    "https://openalex.org/W2008251417",
+    "https://openalex.org/W2013050633",
+    "https://openalex.org/W2027390322",
+    "https://openalex.org/W2031370419",
+    "https://openalex.org/W2041391463",
+    "https://openalex.org/W2047559973",
+    "https://openalex.org/W2048653279",
+    "https://openalex.org/W2053128014",
+    "https://openalex.org/W2061419792",
+    "https://openalex.org/W2062723458",
+    "https://openalex.org/W2078017910",
+    "https://openalex.org/W2097541131",
+    "https://openalex.org/W2100379340",
+    "https://openalex.org/W2113033841",
+    "https://openalex.org/W2123179704",
+    "https://openalex.org/W2135652757",
+    "https://openalex.org/W2136451344",
+    "https://openalex.org/W2136608905",
+    "https://openalex.org/W2136922540",
+    "https://openalex.org/W2137045791",
+    "https://openalex.org/W2137977071",
+    "https://openalex.org/W2139035425",
+    "https://openalex.org/W2142912849",
+    "https://openalex.org/W2146868725",
+    "https://openalex.org/W2147456678",
+    "https://openalex.org/W2147478345",
+    "https://openalex.org/W2147641120",
+    "https://openalex.org/W2155152688",
+    "https://openalex.org/W2159478271",
+    "https://openalex.org/W2160271672",
+    "https://openalex.org/W2162021078",
+    "https://openalex.org/W2163767758",
+    "https://openalex.org/W2169434152",
+    "https://openalex.org/W2213371291",
+    "https://openalex.org/W2224950676",
+    "https://openalex.org/W2299342246",
+    "https://openalex.org/W2302893657",
+    "https://openalex.org/W2332885401",
+    "https://openalex.org/W2346000388",
+    "https://openalex.org/W2498503053",
+    "https://openalex.org/W2518716523",
+    "https://openalex.org/W2547134104",
+    "https://openalex.org/W2552511422",
+    "https://openalex.org/W2618581983",
+    "https://openalex.org/W2619251630",
+    "https://openalex.org/W2626532317",
+    "https://openalex.org/W2650932744",
+    "https://openalex.org/W2763144175",
+    "https://openalex.org/W2765304416",
+    "https://openalex.org/W2786689981",
+    "https://openalex.org/W2793598623",
+    "https://openalex.org/W2793890841",
+    "https://openalex.org/W2818757316",
+    "https://openalex.org/W2887086622",
+    "https://openalex.org/W2888461849",
+    "https://openalex.org/W2889374857",
+    "https://openalex.org/W2891497594",
+    "https://openalex.org/W2902493206",
+    "https://openalex.org/W2904557426",
+    "https://openalex.org/W2905260217",
+    "https://openalex.org/W2911480094",
+    "https://openalex.org/W2911625174",
+    "https://openalex.org/W2913496062",
+    "https://openalex.org/W2921959179",
+    "https://openalex.org/W2941008656",
+    "https://openalex.org/W2943847379",
+    "https://openalex.org/W2945464289",
+    "https://openalex.org/W2948835347",
+    "https://openalex.org/W2952176486",
+    "https://openalex.org/W2962977514",
+    "https://openalex.org/W2964094929",
+    "https://openalex.org/W2971340278",
+    "https://openalex.org/W2971637198",
+    "https://openalex.org/W2976010742",
+    "https://openalex.org/W2978544441",
+    "https://openalex.org/W2981869278",
+    "https://openalex.org/W2983607496",
+    "https://openalex.org/W2996006349",
+    "https://openalex.org/W2999460924",
+    "https://openalex.org/W3000232864",
+    "https://openalex.org/W3004612364",
+    "https://openalex.org/W3010415156",
+    "https://openalex.org/W3016172116",
+    "https://openalex.org/W3018519746",
+    "https://openalex.org/W3021260542",
+    "https://openalex.org/W3028242838",
+    "https://openalex.org/W3037678227",
+    "https://openalex.org/W3082570758",
+    "https://openalex.org/W3088366746",
+    "https://openalex.org/W3088834622",
+    "https://openalex.org/W3092471376",
+    "https://openalex.org/W3106057802",
+    "https://openalex.org/W3108759367",
+    "https://openalex.org/W3112872331",
+    "https://openalex.org/W3114602681",
+    "https://openalex.org/W3116683217",
+    "https://openalex.org/W3122731985",
+    "https://openalex.org/W3124756571",
+    "https://openalex.org/W3125976894",
+    "https://openalex.org/W3132626133",
+    "https://openalex.org/W3135367836",
+    "https://openalex.org/W3147430112",
+    "https://openalex.org/W3165564782",
+    "https://openalex.org/W3175746116",
+    "https://openalex.org/W3176576339",
+    "https://openalex.org/W3180874815",
+    "https://openalex.org/W3191036075",
+    "https://openalex.org/W3191163360",
+    "https://openalex.org/W3198295011",
+    "https://openalex.org/W3208180127",
+    "https://openalex.org/W3215779232",
+    "https://openalex.org/W4200366112",
+    "https://openalex.org/W4206486112",
+    "https://openalex.org/W4211246171",
+    "https://openalex.org/W4213145388",
+    "https://openalex.org/W4224270771",
+    "https://openalex.org/W4232019428",
+    "https://openalex.org/W4242883546",
+    "https://openalex.org/W4280651414",
+    "https://openalex.org/W4283076195",
+    "https://openalex.org/W4283518084",
+    "https://openalex.org/W4288084277",
+    "https://openalex.org/W4290601175",
+    "https://openalex.org/W4291465406",
+    "https://openalex.org/W4298378816",
+    "https://openalex.org/W4306180099",
+    "https://openalex.org/W4306382031",
+    "https://openalex.org/W4306742364",
+    "https://openalex.org/W4307644354",
+    "https://openalex.org/W4307934758",
+    "https://openalex.org/W4309269360",
+    "https://openalex.org/W4320026889",
+    "https://openalex.org/W4321495698",
+    "https://openalex.org/W4323900663",
+    "https://openalex.org/W4366208220",
+    "https://openalex.org/W4379769312",
+    "https://openalex.org/W4380049993",
+    "https://openalex.org/W4381487106",
+    "https://openalex.org/W4385146354",
+    "https://openalex.org/W4385448491",
+    "https://openalex.org/W4387305060",
+    "https://openalex.org/W4388187433",
+    "https://openalex.org/W4388654463",
+    "https://openalex.org/W4388907814",
+    "https://openalex.org/W4389462737",
+    "https://openalex.org/W4390584263",
+    "https://openalex.org/W4391903564",
+    "https://openalex.org/W4392662636",
+    "https://openalex.org/W4394012414",
+    "https://openalex.org/W4398245485",
+    "https://openalex.org/W4400865987",
+    "https://openalex.org/W4402321676",
+    "https://openalex.org/W4402776751",
+    "https://openalex.org/W4403630306",
+    "https://openalex.org/W4404449024",
+    "https://openalex.org/W4404754887",
+    "https://openalex.org/W4405416119",
+    "https://openalex.org/W4405745486",
+    "https://openalex.org/W4406026056",
+    "https://openalex.org/W4406230838",
+    "https://openalex.org/W4407026082",
+    "https://openalex.org/W4407054243",
+    "https://openalex.org/W4407561253",
+    "https://openalex.org/W4407794264",
+    "https://openalex.org/W4408335935",
+    "https://openalex.org/W4408840359",
+    "https://openalex.org/W4408878696",
+    "https://openalex.org/W4409151728",
+    "https://openalex.org/W4409303055",
+    "https://openalex.org/W4409786138",
+    "https://openalex.org/W4410299192",
+    "https://openalex.org/W4410919433",
+    "https://openalex.org/W4411062771",
+    "https://openalex.org/W4411131699",
+    "https://openalex.org/W4411288090",
+    "https://openalex.org/W4411766170",
+    "https://openalex.org/W4411896717",
+    "https://openalex.org/W4412156925",
+    "https://openalex.org/W4412555874",
+    "https://openalex.org/W4412739850",
+    "https://openalex.org/W4412780865",
+    "https://openalex.org/W4413258354",
+    "https://openalex.org/W4414397270",
+    "https://openalex.org/W4414530951",
+    "https://openalex.org/W4414552828",
+    "https://openalex.org/W4415123221",
+    "https://openalex.org/W4415554763",
+    "https://openalex.org/W4415614873",
+    "https://openalex.org/W4415619499",
+    "https://openalex.org/W4416135973",
+    "https://openalex.org/W4416195098",
+    "https://openalex.org/W7116063745",
+    "https://openalex.org/W7117471599",
+    "https://openalex.org/W7118177614",
+    "https://openalex.org/W7118986999",
+    "https://openalex.org/W7126106195",
+    "https://openalex.org/W7128904231",
+    "https://openalex.org/W7143955788",
+    "https://openalex.org/W7147276742",
+    "https://openalex.org/W7151556229",
+    "https://openalex.org/W7216407799",
+    "https://openalex.org/W7236058393",
+    "https://openalex.org/W7236068400"
+   ],
+   "related_works": [
+    "https://openalex.org/W7119970294",
+    "https://openalex.org/W4414225129",
+    "https://openalex.org/W7236462063",
+    "https://openalex.org/W7119504541",
+    "https://openalex.org/W7127420435",
+    "https://openalex.org/W7223955848",
+    "https://openalex.org/W7124921264",
+    "https://openalex.org/W4400700328",
+    "https://openalex.org/W4414778630",
+    "https://openalex.org/W4206284768"
+   ],
+   "abstract_inverted_index": {
+    "This": [
+     0,
+     68,
+     233
+    ],
+    "book": [
+     1,
+     145,
+     234
+    ],
+    "directly": [
+     2
+    ],
+    "addresses": [
+     3
+    ],
+    "a": [
+     4,
+     39,
+     71,
+     147,
+     177,
+     182
+    ],
+    "critical": [
+     5
+    ],
+    "challenge": [
+     6
+    ],
+    "facing": [
+     7
+    ],
+    "the": [
+     8,
+     11,
+     24,
+     53,
+     86,
+     104,
+     162,
+     203,
+     258,
+     268
+    ],
+    "healthcare": [
+     9,
+     66,
+     252,
+     259,
+     284
+    ],
+    "system:": [
+     10
+    ],
+    "escalating": [
+     12
+    ],
+    "prevalence": [
+     13
+    ],
+    "and": [
+     14,
+     32,
+     45,
+     55,
+     100,
+     103,
+     117,
+     128,
+     142,
+     153,
+     187,
+     201,
+     217,
+     224,
+     241,
+     254,
+     270,
+     281
+    ],
+    "cost": [
+     15
+    ],
+    "of": [
+     16,
+     28,
+     58,
+     89,
+     107,
+     164,
+     230,
+     266,
+     272
+    ],
+    "chronic": [
+     17,
+     59,
+     80,
+     113
+    ],
+    "conditions.": [
+     18
+    ],
+    "The": [
+     19,
+     36,
+     144
+    ],
+    "solution": [
+     20
+    ],
+    "lies": [
+     21
+    ],
+    "in": [
+     22
+    ],
+    "harnessing": [
+     23
+    ],
+    "simultaneous,": [
+     25
+    ],
+    "rapid": [
+     26
+    ],
+    "advancement": [
+     27
+    ],
+    "artificial": [
+     29
+    ],
+    "intelligence": [
+     30
+    ],
+    "(AI)": [
+     31
+    ],
+    "machine": [
+     33
+    ],
+    "learning": [
+     34
+    ],
+    "(ML).": [
+     35
+    ],
+    "authors": [
+     37
+    ],
+    "present": [
+     38
+    ],
+    "structured": [
+     40
+    ],
+    "approach": [
+     41
+    ],
+    "to": [
+     42,
+     51,
+     63,
+     74,
+     79,
+     207,
+     227,
+     277
+    ],
+    "designing,": [
+     43
+    ],
+    "developing,": [
+     44
+    ],
+    "deploying": [
+     46
+    ],
+    "intelligent": [
+     47,
+     76
+    ],
+    "digital": [
+     48,
+     77,
+     90
+    ],
+    "health": [
+     49,
+     78,
+     246
+    ],
+    "solutions": [
+     50,
+     173
+    ],
+    "support": [
+     52,
+     221
+    ],
+    "prevention": [
+     54,
+     116
+    ],
+    "better": [
+     56
+    ],
+    "self-management": [
+     57
+    ],
+    "diseases,": [
+     60
+    ],
+    "ultimately": [
+     61
+    ],
+    "aiming": [
+     62
+    ],
+    "contain": [
+     64
+    ],
+    "spiraling": [
+     65
+    ],
+    "costs.": [
+     67
+    ],
+    "text": [
+     69,
+     204,
+     238,
+     262
+    ],
+    "provides": [
+     70
+    ],
+    "comprehensive": [
+     72
+    ],
+    "guide": [
+     73
+    ],
+    "applying": [
+     75
+    ],
+    "care": [
+     81
+    ],
+    "management.": [
+     82
+    ],
+    "It": [
+     83
+    ],
+    "first": [
+     84
+    ],
+    "establishes": [
+     85
+    ],
+    "foundational": [
+     87
+    ],
+    "essentials": [
+     88
+    ],
+    "health,": [
+     91
+    ],
+    "detailing": [
+     92
+    ],
+    "its": [
+     93
+    ],
+    "socio-technical": [
+     94
+    ],
+    "components,": [
+     95
+    ],
+    "including": [
+     96,
+     172
+    ],
+    "crucial": [
+     97
+    ],
+    "people,": [
+     98
+    ],
+    "process,": [
+     99
+    ],
+    "technology": [
+     101,
+     126
+    ],
+    "aspects,": [
+     102
+    ],
+    "indispensable": [
+     105
+    ],
+    "role": [
+     106
+    ],
+    "AI/ML.": [
+     108
+    ],
+    "Next,": [
+     109
+    ],
+    "it": [
+     110
+    ],
+    "deeply": [
+     111
+    ],
+    "explores": [
+     112
+    ],
+    "conditions,": [
+     114
+    ],
+    "emphasizing": [
+     115
+    ],
+    "wellness": [
+     118
+    ],
+    "management,": [
+     119
+    ],
+    "while": [
+     120
+    ],
+    "integrating": [
+     121,
+     150
+    ],
+    "key": [
+     122
+    ],
+    "theories": [
+     123
+    ],
+    "for": [
+     124,
+     174,
+     194,
+     222,
+     239
+    ],
+    "supporting": [
+     125
+    ],
+    "design": [
+     127,
+     135,
+     278
+    ],
+    "behavior": [
+     129
+    ],
+    "change,": [
+     130
+    ],
+    "such": [
+     131,
+     250
+    ],
+    "as": [
+     132,
+     251,
+     273,
+     275
+    ],
+    "co-creation,": [
+     133
+    ],
+    "user-centered": [
+     134
+    ],
+    "(UCD),": [
+     136
+    ],
+    "Task\u2013Technology": [
+     137
+    ],
+    "Fit": [
+     138
+    ],
+    "(TTF),": [
+     139
+    ],
+    "nudge": [
+     140
+    ],
+    "theory,": [
+     141
+    ],
+    "gamification.": [
+     143
+    ],
+    "champions": [
+     146
+    ],
+    "personalized": [
+     148
+    ],
+    "approach,": [
+     149
+    ],
+    "precision": [
+     151
+    ],
+    "medicine": [
+     152
+    ],
+    "genomics": [
+     154
+    ],
+    "into": [
+     155
+    ],
+    "lifestyle": [
+     156
+    ],
+    "interventions.": [
+     157
+    ],
+    "A": [
+     158
+    ],
+    "significant": [
+     159
+    ],
+    "highlight": [
+     160
+    ],
+    "is": [
+     161,
+     235
+    ],
+    "presentation": [
+     163
+    ],
+    "several": [
+     165
+    ],
+    "real-world": [
+     166
+    ],
+    "case": [
+     167
+    ],
+    "studies": [
+     168
+    ],
+    "demonstrating": [
+     169
+    ],
+    "practical": [
+     170
+    ],
+    "applications,": [
+     171
+    ],
+    "pre-diabetes": [
+     175
+    ],
+    "reversal,": [
+     176
+    ],
+    "diabetes": [
+     178
+    ],
+    "monitoring": [
+     179
+    ],
+    "device": [
+     180
+    ],
+    "(DiaMonD),": [
+     181
+    ],
+    "post-discharge": [
+     183
+    ],
+    "cardiac": [
+     184
+    ],
+    "rehab": [
+     185
+    ],
+    "app,": [
+     186
+    ],
+    "an": [
+     188,
+     236
+    ],
+    "asthma": [
+     189
+    ],
+    "management": [
+     190
+    ],
+    "tool": [
+     191
+    ],
+    "utilizing": [
+     192
+    ],
+    "AI": [
+     193
+    ],
+    "trigger": [
+     195
+    ],
+    "prediction.": [
+     196
+    ],
+    "By": [
+     197
+    ],
+    "focusing": [
+     198
+    ],
+    "on": [
+     199
+    ],
+    "orchestration": [
+     200
+    ],
+    "automation,": [
+     202
+    ],
+    "shows": [
+     205
+    ],
+    "how": [
+     206,
+     276
+    ],
+    "ensure": [
+     208
+    ],
+    "seamless": [
+     209
+    ],
+    "data": [
+     210
+    ],
+    "integration": [
+     211
+    ],
+    "across": [
+     212
+    ],
+    "multiple": [
+     213
+    ],
+    "devices": [
+     214
+    ],
+    "(e.g.,": [
+     215
+    ],
+    "smartwatches": [
+     216
+    ],
+    "sensors),": [
+     218
+    ],
+    "providing": [
+     219
+    ],
+    "evidence-based": [
+     220
+    ],
+    "clinicians": [
+     223
+    ],
+    "empowering": [
+     225
+    ],
+    "patients": [
+     226
+    ],
+    "take": [
+     228
+    ],
+    "charge": [
+     229
+    ],
+    "their": [
+     231
+    ],
+    "health.": [
+     232
+    ],
+    "essential": [
+     237
+    ],
+    "graduate": [
+     240
+    ],
+    "senior-level": [
+     242
+    ],
+    "undergraduate": [
+     243
+    ],
+    "students": [
+     244
+    ],
+    "studying": [
+     245
+    ],
+    "informatics.": [
+     247
+    ],
+    "For": [
+     248
+    ],
+    "practitioners": [
+     249
+    ],
+    "managers": [
+     253
+    ],
+    "IT": [
+     255
+    ],
+    "consultants,": [
+     256
+    ],
+    "entering": [
+     257
+    ],
+    "space": [
+     260
+    ],
+    "this": [
+     261
+    ],
+    "would": [
+     263
+    ],
+    "inform": [
+     264
+    ],
+    "them": [
+     265
+    ],
+    "both": [
+     267
+    ],
+    "efficacy": [
+     269
+    ],
+    "importance": [
+     271
+    ],
+    "well": [
+     274
+    ],
+    "appropriate,": [
+     279
+    ],
+    "effective,": [
+     280
+    ],
+    "efficient": [
+     282
+    ],
+    "electronic": [
+     283
+    ],
+    "initiatives.": [
+     285
+    ]
+   },
+   "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W7236316877",
+   "counts_by_year": [],
+   "updated_date": "2026-11-21T10:27:49.728292",
+   "created_date": "2026-11-19T00:00:00"
+  }
+ ]
+}
