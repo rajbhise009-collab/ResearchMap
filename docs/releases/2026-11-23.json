@@ -1,0 +1,122 @@
+{
+ "date": "2026-11-23",
+ "parent_commit": "b255d356ce42e784afaa6db33b8fae541254388f",
+ "libraries": {
+  "llm-calibration": {
+   "papers": 113,
+   "results": 66,
+   "set_aside": 10,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "7f21e33111392ad66f50d9c30db00a5660a9d29dfd1bc696f52798beeb05b809"
+  },
+  "diet-and-mortality": {
+   "papers": 105,
+   "results": 14,
+   "set_aside": 5,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "e2419de85a3365fdc9e034184fd73ed29e447cde88b90207157e8c8cb243de75"
+  },
+  "ml-fairness": {
+   "papers": 119,
+   "results": 72,
+   "set_aside": 9,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "de6aa766e8ea93c5791c3803158e7e470762f62b8a7c4640ce6c4443852b9b69"
+  },
+  "nudge-effectiveness": {
+   "papers": 45,
+   "results": 9,
+   "set_aside": 0,
+   "flagged_not_checked": 0,
+   "opportunities_sha256": "1626d09257e990504645993d3a4341b7c62ef6dfcbd2fefd8d092a1af849b2a3"
+  },
+  "social-media-teen-mental-health": {
+   "papers": 114,
+   "results": 32,
+   "set_aside": 7,
+   "flagged_not_checked": 3,
+   "opportunities_sha256": "b220f0cb1e5dd32e30512413b3935ce4105ba82746a040da9b503ed6cd1a640b"
+  }
+ },
+ "ledger_inr": 1317.5215,
+ "ledger_cap_inr": 1342.52152,
+ "gates": [
+  {
+   "gate": "typecheck",
+   "ok": true
+  },
+  {
+   "gate": "production build (+ consistency before and after)",
+   "ok": true
+  },
+  {
+   "gate": "full tests",
+   "ok": true
+  },
+  {
+   "gate": "docs check",
+   "ok": true
+  },
+  {
+   "gate": "consistency script",
+   "ok": true
+  },
+  {
+   "gate": "banned-phrase tests",
+   "ok": true
+  },
+  {
+   "gate": "search regression suite",
+   "ok": true
+  },
+  {
+   "gate": "hardening tests (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "browser hunt (Part 3)",
+   "ok": true
+  },
+  {
+   "gate": "smoke checks on the build",
+   "ok": true
+  }
+ ],
+ "results_changed": {
+  "llm-calibration": {
+   "shown_before": 66,
+   "shown_after": 66,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "diet-and-mortality": {
+   "shown_before": 14,
+   "shown_after": 14,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "ml-fairness": {
+   "shown_before": 72,
+   "shown_after": 72,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "nudge-effectiveness": {
+   "shown_before": 9,
+   "shown_after": 9,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  },
+  "social-media-teen-mental-health": {
+   "shown_before": 32,
+   "shown_after": 32,
+   "removed_shown": [],
+   "removed_not_shown": [],
+   "verdict_changed": []
+  }
+ }
+}
